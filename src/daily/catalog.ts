@@ -1,4 +1,9 @@
 import type { LetterStrikeEncounter } from '../game/letterStrike.ts'
+import generatedMelancholy20260924 from './puzzles/2026-09-24.json' with { type: 'json' }
+
+// Frozen publication snapshot, independent of future generator rankings. Only
+// runtime encounter data belongs here; solutions and analysis stay in DEV.
+export const dailyEncounter20260924 = generatedMelancholy20260924 as LetterStrikeEncounter
 
 /**
  * Published letter-strike v1 catalog. Its one authored encounter repeats by

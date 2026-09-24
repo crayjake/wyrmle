@@ -18,7 +18,7 @@ import {
   createLetterStrikeGame, toggleLetterStrikeTile, clearLetterStrikeSelection,
   previewLetterStrike, submitLetterStrike,
 } from '../game/letterStrike'
-import type { LetterStrikeState } from '../game/letterStrike'
+import type { LetterStrikeEncounter, LetterStrikeState } from '../game/letterStrike'
 import { getLetterStrikeBattleEvents, getLetterStrikeBonuses, getLetterStrikeGrammarModifiers, getLetterStrikeTileSummary } from '../game/letterStrikeHud'
 import './DevCombat.css'
 
@@ -31,27 +31,30 @@ const modeLabels = { damage: 'DAMAGE MODE', 'letter-strike': 'LETTER-STRIKE MODE
 
 // This entire entry point is lazy-loaded only in DEV. Playtests never call the
 // daily hook or storage; a keyed remount discards all state on every mode change.
-export default function DevCombat({ initialMode, onExit, matchHint, onMatchHintChange, enemyGrid, onEnemyGridChange }: {
+export default function DevCombat({ initialMode, encounter, onExit, matchHint, onMatchHintChange, enemyGrid, onEnemyGridChange }: {
   initialMode: CombatMode; onExit: () => void
+  encounter?: LetterStrikeEncounter
   matchHint: MatchHintMode; onMatchHintChange: (mode: MatchHintMode) => void
   enemyGrid: boolean; onEnemyGridChange: (grid: boolean) => void
 }) {
   const [session, setSession] = useState({ mode: initialMode, revision: 0 })
   if (!import.meta.env.DEV) return null
   return <PlaytestBattle key={`${session.mode}:${session.revision}`} mode={session.mode}
+    encounter={encounter}
     onMode={mode => setSession(current => ({ mode, revision: current.revision + 1 }))}
     onExit={onExit} matchHint={matchHint} onMatchHintChange={onMatchHintChange}
     enemyGrid={enemyGrid} onEnemyGridChange={onEnemyGridChange} />
 }
 
-function PlaytestBattle({ mode, onMode, onExit, matchHint, onMatchHintChange, enemyGrid, onEnemyGridChange }: {
+function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onMatchHintChange, enemyGrid, onEnemyGridChange }: {
   mode: CombatMode; onMode: (mode: CombatMode) => void; onExit: () => void
+  encounter?: LetterStrikeEncounter
   matchHint: MatchHintMode; onMatchHintChange: (mode: MatchHintMode) => void
   enemyGrid: boolean; onEnemyGridChange: (grid: boolean) => void
 }) {
   const [run, setRun] = useState<Run>(() => mode === 'damage'
     ? { mode, game: createGame(melancholyEncounter) }
-    : { mode, game: createLetterStrikeGame() })
+    : { mode, game: createLetterStrikeGame(encounter) })
   const [phase, setPhase] = useState<Phase>('waiting')
   const [panel, setPanel] = useState<Panel>(null)
   const containerRef = useRef<HTMLElement>(null)
@@ -135,6 +138,7 @@ function PlaytestBattle({ mode, onMode, onExit, matchHint, onMatchHintChange, en
       {phase === 'waiting'
         ? <button type="button" onClick={() => setPhase('enemy')}>Begin</button>
         : <button type="button" onClick={() => onMode(mode)}>Restart</button>}
+      {encounter && <button type="button" onClick={onExit}>Return to generator</button>}
     </div>
     <div className="battle-info">
       <MyInfo name={letterGame ? 'RESOLVE' : 'YOU'} health={game.playerResolve} maxHealth={game.encounter.startingResolve} />
@@ -177,9 +181,9 @@ function PlaytestBattle({ mode, onMode, onExit, matchHint, onMatchHintChange, en
       {letterGame && <MatchHintControls value={matchHint} onChange={onMatchHintChange} />}
       <EnemyLayoutControls grid={enemyGrid} onChange={onEnemyGridChange} />
       <div className="dev-controls">
-        {(['damage', 'letter-strike'] as const).map(value =>
+        {(encounter ? ['letter-strike'] as const : ['damage', 'letter-strike'] as const).map(value =>
           <button className="daily-button" key={value} onClick={() => onMode(value)}>{modeLabels[value]}</button>)}
-        <button className="daily-button" onClick={onExit}>Return to daily game</button>
+        <button className="daily-button" onClick={onExit}>{encounter ? 'Return to generator' : 'Return to daily game'}</button>
       </div>
     </PlaytestPanel>}
     {panel === 'log' && <PlaytestPanel title="Playtest log" onClose={() => setPanel(null)}>
@@ -193,7 +197,7 @@ function PlaytestBattle({ mode, onMode, onExit, matchHint, onMatchHintChange, en
       </PlaytestPanel>
       : <PlaytestPanel title="Letter-strike mode" onClose={() => setPanel(null)}>
         <div className="daily-help">
-          <div>Remove every enemy letter before your five Resolve run out. Tiles can be selected in any order.</div>
+          <div>Remove every enemy letter before your {game.encounter.startingResolve} Resolve run out. Tiles can be selected in any order.</div>
           <div><strong>COUNTER</strong> words strike with every matching tile. <strong>NEUTRAL</strong> words get one normal matching strike, in spelling order. <strong>RESISTED</strong> words have no normal strikes.</div>
           {letterGame?.encounter.longWordRule && <div><strong>LONG +{letterGame.encounter.longWordRule.bonusStrikes}</strong> adds a normal strike allowance for neutral words of {letterGame.encounter.longWordRule.minimumLength}+ letters. It stacks with grammar weaknesses, but does not boost resisted words or counters.</div>}
           <div><strong>STRIKE</strong> guarantees its tile’s matching strike, even on a resisted word, without spending the normal or grammar allowance. Each tile strikes at most once. <strong>WARD</strong> makes the turn free.</div>

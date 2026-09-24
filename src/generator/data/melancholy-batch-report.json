@@ -1,0 +1,269 @@
+{
+  "seed": "melancholy-review-v1",
+  "requestedSeeds": 40,
+  "enemy": "MELANCHOLY",
+  "attempted": 80,
+  "solvable": 76,
+  "accepted": 33,
+  "enemyRejectionCounts": {},
+  "candidateRejectionReasons": {
+    "irrelevant-strike": 23,
+    "solution-unconfirmed": 4,
+    "missing-clutch": 7,
+    "decorative-semantic": 16,
+    "decorative-strike": 6,
+    "decorative-grammar": 3,
+    "few-reasonable-openings": 6,
+    "decorative-armour": 6,
+    "missing-familiar-winning-witness": 2,
+    "missing-route-variety": 1,
+    "missing-greedy-tradeoff": 2,
+    "premature-hopelessness": 1
+  },
+  "archetypeDistribution": {
+    "ward-timing": 12,
+    "refill-planning": 32,
+    "clutch-finish": 20,
+    "semantic-contrast": 28,
+    "multiple-routes": 24,
+    "strike-override": 12,
+    "grammar-twist": 12,
+    "greedy-trap": 12,
+    "armour-break": 8
+  },
+  "totalSolverStates": 8551,
+  "totalRuntimeMs": 385007.11593199987,
+  "averageSolverStates": 106.8875,
+  "averageRuntimeMs": 4812.588949149998,
+  "prematureHopelessness": {
+    "unknown": 8,
+    "zero": 63,
+    "low": 7,
+    "high": 2
+  },
+  "clutchOpportunities": {
+    "0": 45,
+    "1": 21,
+    "2": 10,
+    "3": 3,
+    "6": 1
+  },
+  "topQualityScores": [
+    {
+      "id": "generated-melancholy-melancholy-review-v1%3A38%3A0-mmelancholy-review-v1%3A38%3Ag0%3Ap0%3Am0",
+      "score": 64.23,
+      "seed": "melancholy-review-v1:38:g0:p0:m0",
+      "enemy": "MELANCHOLY"
+    },
+    {
+      "id": "generated-melancholy-melancholy-review-v1%3A14%3A0",
+      "score": 62.16,
+      "seed": "melancholy-review-v1:14:0",
+      "enemy": "MELANCHOLY"
+    },
+    {
+      "id": "generated-melancholy-melancholy-review-v1%3A27%3A0",
+      "score": 62.06,
+      "seed": "melancholy-review-v1:27:0",
+      "enemy": "MELANCHOLY"
+    },
+    {
+      "id": "generated-melancholy-melancholy-review-v1%3A2%3A0-mmelancholy-review-v1%3A2%3Ag0%3Ap0%3Am0",
+      "score": 61.19,
+      "seed": "melancholy-review-v1:2:g0:p0:m0",
+      "enemy": "MELANCHOLY"
+    },
+    {
+      "id": "generated-melancholy-melancholy-review-v1%3A7%3A0",
+      "score": 60.86,
+      "seed": "melancholy-review-v1:7:0",
+      "enemy": "MELANCHOLY"
+    },
+    {
+      "id": "generated-melancholy-melancholy-review-v1%3A22%3A0",
+      "score": 60.03,
+      "seed": "melancholy-review-v1:22:0",
+      "enemy": "MELANCHOLY"
+    },
+    {
+      "id": "generated-melancholy-melancholy-review-v1%3A27%3A0-mmelancholy-review-v1%3A27%3Ag0%3Ap0%3Am0",
+      "score": 58.99,
+      "seed": "melancholy-review-v1:27:g0:p0:m0",
+      "enemy": "MELANCHOLY"
+    },
+    {
+      "id": "generated-melancholy-melancholy-review-v1%3A8%3A0",
+      "score": 57.11,
+      "seed": "melancholy-review-v1:8:0",
+      "enemy": "MELANCHOLY"
+    },
+    {
+      "id": "generated-melancholy-melancholy-review-v1%3A35%3A0-mmelancholy-review-v1%3A35%3Ag0%3Ap0%3Am0",
+      "score": 57.01,
+      "seed": "melancholy-review-v1:35:g0:p0:m0",
+      "enemy": "MELANCHOLY"
+    },
+    {
+      "id": "generated-melancholy-melancholy-review-v1%3A37%3A0",
+      "score": 56.79,
+      "seed": "melancholy-review-v1:37:0",
+      "enemy": "MELANCHOLY"
+    },
+    {
+      "id": "generated-melancholy-melancholy-review-v1%3A33%3A0",
+      "score": 56.7,
+      "seed": "melancholy-review-v1:33:0",
+      "enemy": "MELANCHOLY"
+    },
+    {
+      "id": "generated-melancholy-melancholy-review-v1%3A33%3A0-mmelancholy-review-v1%3A33%3Ag0%3Ap0%3Am0",
+      "score": 55.99,
+      "seed": "melancholy-review-v1:33:g0:p0:m0",
+      "enemy": "MELANCHOLY"
+    },
+    {
+      "id": "generated-melancholy-melancholy-review-v1%3A37%3A0-mmelancholy-review-v1%3A37%3Ag0%3Ap0%3Am0",
+      "score": 55.68,
+      "seed": "melancholy-review-v1:37:g0:p0:m0",
+      "enemy": "MELANCHOLY"
+    },
+    {
+      "id": "generated-melancholy-melancholy-review-v1%3A15%3A0-mmelancholy-review-v1%3A15%3Ag0%3Ap0%3Am0",
+      "score": 55.35,
+      "seed": "melancholy-review-v1:15:g0:p0:m0",
+      "enemy": "MELANCHOLY"
+    },
+    {
+      "id": "generated-melancholy-melancholy-review-v1%3A9%3A0",
+      "score": 55.09,
+      "seed": "melancholy-review-v1:9:0",
+      "enemy": "MELANCHOLY"
+    },
+    {
+      "id": "generated-melancholy-melancholy-review-v1%3A23%3A0-mmelancholy-review-v1%3A23%3Ag0%3Ap0%3Am0",
+      "score": 55.07,
+      "seed": "melancholy-review-v1:23:g0:p0:m0",
+      "enemy": "MELANCHOLY"
+    },
+    {
+      "id": "generated-melancholy-melancholy-review-v1%3A32%3A0",
+      "score": 53.98,
+      "seed": "melancholy-review-v1:32:0",
+      "enemy": "MELANCHOLY"
+    },
+    {
+      "id": "generated-melancholy-melancholy-review-v1%3A4%3A0",
+      "score": 53.86,
+      "seed": "melancholy-review-v1:4:0",
+      "enemy": "MELANCHOLY"
+    },
+    {
+      "id": "generated-melancholy-melancholy-review-v1%3A20%3A0",
+      "score": 53.62,
+      "seed": "melancholy-review-v1:20:0",
+      "enemy": "MELANCHOLY"
+    },
+    {
+      "id": "generated-melancholy-melancholy-review-v1%3A23%3A0",
+      "score": 53.35,
+      "seed": "melancholy-review-v1:23:0",
+      "enemy": "MELANCHOLY"
+    }
+  ],
+  "acceptedSeeds": [
+    "melancholy-review-v1:1:0",
+    "melancholy-review-v1:2:g0:p0:m0",
+    "melancholy-review-v1:4:0",
+    "melancholy-review-v1:6:g0:p0:m0",
+    "melancholy-review-v1:7:0",
+    "melancholy-review-v1:8:0",
+    "melancholy-review-v1:9:0",
+    "melancholy-review-v1:14:0",
+    "melancholy-review-v1:15:g0:p0:m0",
+    "melancholy-review-v1:15:0",
+    "melancholy-review-v1:16:0",
+    "melancholy-review-v1:17:0",
+    "melancholy-review-v1:19:0",
+    "melancholy-review-v1:19:g0:p0:m0",
+    "melancholy-review-v1:20:0",
+    "melancholy-review-v1:22:0",
+    "melancholy-review-v1:23:g0:p0:m0",
+    "melancholy-review-v1:23:0",
+    "melancholy-review-v1:27:0",
+    "melancholy-review-v1:27:g0:p0:m0",
+    "melancholy-review-v1:32:0",
+    "melancholy-review-v1:33:0",
+    "melancholy-review-v1:33:g0:p0:m0",
+    "melancholy-review-v1:35:g0:p0:m0",
+    "melancholy-review-v1:35:0",
+    "melancholy-review-v1:36:g0:p0:m0",
+    "melancholy-review-v1:36:0",
+    "melancholy-review-v1:37:0",
+    "melancholy-review-v1:37:g0:p0:m0",
+    "melancholy-review-v1:38:g0:p0:m0",
+    "melancholy-review-v1:38:0"
+  ],
+  "search": {
+    "scope": "bounded-development-review",
+    "options": {
+      "candidateCount": 1,
+      "keep": 100,
+      "refinementRounds": 1,
+      "mutationsPerRound": 1,
+      "analysis": {
+        "solver": {
+          "maxStates": 100,
+          "beamWidth": 12
+        },
+        "counterfactualSolver": {
+          "maxStates": 40,
+          "beamWidth": 8
+        }
+      }
+    }
+  },
+  "acceptedUnique": 31,
+  "screeningNote": "Recorded screening pass used breadth-first reasonable-state sampling. The saved shortlist was reanalysed using the final alternating breadth/depth sampler.",
+  "review": {
+    "considered": 20,
+    "accepted": 17,
+    "samplingSchedule": "alternating-breadth-and-depth",
+    "maximumSampledStates": 64,
+    "solver": {
+      "maxStates": 100,
+      "beamWidth": 12
+    },
+    "counterfactualSolver": {
+      "maxStates": 40,
+      "beamWidth": 8
+    },
+    "selection": "Highest score per construction family, then best five families.",
+    "chosen": [
+      {
+        "id": "generated-melancholy-melancholy-review-v1%3A38%3A0-mmelancholy-review-v1%3A38%3Ag0%3Ap0%3Am0",
+        "seed": "melancholy-review-v1:38:g0:p0:m0",
+        "score": 69.53
+      },
+      {
+        "id": "generated-melancholy-melancholy-review-v1%3A27%3A0",
+        "seed": "melancholy-review-v1:27:0",
+        "score": 67.34
+      },
+      {
+        "id": "generated-melancholy-melancholy-review-v1%3A15%3A0-mmelancholy-review-v1%3A15%3Ag0%3Ap0%3Am0",
+        "seed": "melancholy-review-v1:15:g0:p0:m0",
+        "score": 66.93
+      },
+      {
+        "id": "generated-melancholy-melancholy-review-v1%3A14%3A0",
+        "seed": "melancholy-review-v1:14:0",
+        "score": 60.9
+      },
+      {
+        "id": "generated-melancholy-melancholy-review-v1%3A2%3A0-mmelancholy-review-v1%3A2%3Ag0%3Ap0%3Am0",
+        "seed": "melancholy-review-v1:2:g0:p0:m0",
+        "score": 60.57
+      }
+    ]
+  }
+}

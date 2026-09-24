@@ -1,9 +1,10 @@
-import { dailyEncounterV1, dailyEncounterV2, dailyEncounterV3, dailyEncounterV4 } from './catalog.ts'
+import { dailyEncounterV1, dailyEncounterV2, dailyEncounterV3, dailyEncounterV4, dailyEncounter20260924 } from './catalog.ts'
 import { validatePuzzleId } from './date.ts'
 import type { DailyPuzzleDefinition } from './types.ts'
 import {
   GAME_VERSION, GAME_VERSION_V2, GAME_VERSION_V3, GRAMMAR_RELEASE_DATE, LEGACY_GAME_VERSION,
   LEGACY_PUZZLE_VERSION, PUZZLE_VERSION, PUZZLE_VERSION_V2, PUZZLE_VERSION_V3,
+  GENERATED_MELANCHOLY_DATE, GENERATED_MELANCHOLY_PUZZLE_VERSION,
 } from './versions.ts'
 
 function deepFreeze<T>(value: T): T {
@@ -19,6 +20,7 @@ deepFreeze(dailyEncounterV1)
 deepFreeze(dailyEncounterV2)
 deepFreeze(dailyEncounterV3)
 deepFreeze(dailyEncounterV4)
+deepFreeze(dailyEncounter20260924)
 
 /** Old rules remain available only for dates on which those rules were published. */
 export function getSupportedDailyPuzzles(puzzleId: string): DailyPuzzleDefinition[] {
@@ -32,6 +34,12 @@ export function getSupportedDailyPuzzles(puzzleId: string): DailyPuzzleDefinitio
   }, {
     gameVersion: GAME_VERSION, puzzleVersion: PUZZLE_VERSION, encounter: dailyEncounterV4,
   }]
+  // A replacement gets its own version. Existing committed attempts keep the
+  // historical definition, while new/untouched attempts get the selected board.
+  if (puzzleId === GENERATED_MELANCHOLY_DATE) definitions.push({
+    gameVersion: GAME_VERSION, puzzleVersion: GENERATED_MELANCHOLY_PUZZLE_VERSION,
+    encounter: dailyEncounter20260924,
+  })
   return definitions.map((definition) => deepFreeze({ puzzleId, date: puzzleId, ...definition }))
 }
 

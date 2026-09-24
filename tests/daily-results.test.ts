@@ -12,7 +12,7 @@ import type { LetterStrikeState } from '../src/game/letterStrike.ts'
 
 function puzzle(date = '2026-09-24'): DailyPuzzleDefinition {
   // Historical result/stat fixtures keep their authored route across new releases.
-  return date < '2026-09-25' ? getDailyPuzzle(date)
+  return date < '2026-09-25' ? getDailyPuzzleForVersion(date, 'letter-strike-1', 1)
     : getDailyPuzzleForVersion(date, 'letter-strike-3', 3)
 }
 
@@ -428,10 +428,11 @@ test('future submission is a deterministic compact summary without local display
     completedAt: completed.completedAt,
   })
   assert.deepEqual(buildDailyScoreSubmission(structuredClone(completed)), submission)
-  let replay = createLetterStrikeGame(getDailyPuzzle(submission.puzzleId).encounter)
+  const definition = getDailyPuzzleForVersion(submission.puzzleId, submission.gameVersion, submission.puzzleVersion)
+  let replay = createLetterStrikeGame(definition.encounter)
   for (const ids of submission.tileIdsByTurn) replay = submitLetterStrike(replay, ids)
   assert.deepEqual(buildDailyScoreSubmission(buildDailyResult(
-    getDailyPuzzle(submission.puzzleId), replay, submission.completedAt,
+    definition, replay, submission.completedAt,
   )), submission)
   submission.tileIdsByTurn[0].push(999)
   submission.letterOutcomesByTurn[0][0].hitsAfter = 999

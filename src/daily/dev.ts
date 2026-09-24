@@ -7,7 +7,19 @@ import type { DailyPuzzleDefinition, StorageLike } from './types.ts'
 export function playDevOutcome(puzzle: DailyPuzzleDefinition, outcome: 'won' | 'lost', storage: StorageLike) {
   if (!import.meta.env.DEV) throw new Error('Development tools are disabled.')
   let game = createLetterStrikeGame(puzzle.encounter)
-  if (puzzle.gameVersion === 'letter-strike-4') {
+  if (puzzle.gameVersion === 'letter-strike-4' && puzzle.puzzleVersion === 5) {
+    // Frozen DEV-only replays for the generated September 24 publication.
+    const turns = outcome === 'won' ? [
+      [6, 8, 13, 1, 5], [20, 18, 0, 4, 11], [23, 7, 14],
+      [28, 9, 24, 2, 27, 16, 15], [34, 32, 26, 35], [29, 17, 12, 22, 10, 36, 31, 39],
+    ] : [
+      [10, 12, 4], [16, 0, 2], [18, 13, 11], [23, 24, 6], [26, 25, 27],
+    ]
+    for (const ids of turns) {
+      game = submitLetterStrike(game, ids)
+      if (game.error) throw new Error(game.error)
+    }
+  } else if (puzzle.gameVersion === 'letter-strike-4') {
     // Exact identities preserve the Ward E for CHEER and Strike L for MELODY.
     const turns = outcome === 'won' ? [
       [0, 1, 2], [4, 5, 15, 18, 16], [11, 20, 9, 10, 14, 17],

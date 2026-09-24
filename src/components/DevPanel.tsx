@@ -11,6 +11,7 @@ type Props = {
   puzzle: DailyPuzzleDefinition
   onLoad: (id: string) => void
   onPlaytest: (mode: 'damage' | 'letter-strike') => void
+  onGenerator: () => void
   onClose: () => void
   matchHint: MatchHintMode
   onMatchHintChange: (mode: MatchHintMode) => void
@@ -20,7 +21,7 @@ type Props = {
   onForceMode: (mode: DifficultyMode | null) => void
 }
 
-export default function DevPanel({ puzzle, onLoad, onPlaytest, onClose, matchHint, onMatchHintChange,
+export default function DevPanel({ puzzle, onLoad, onPlaytest, onGenerator, onClose, matchHint, onMatchHintChange,
   enemyGrid, onEnemyGridChange, onOnboarding, onForceMode }: Props) {
   const dialog = useRef<HTMLDialogElement>(null)
   const [date, setDate] = useState(puzzle.puzzleId)
@@ -49,6 +50,7 @@ export default function DevPanel({ puzzle, onLoad, onPlaytest, onClose, matchHin
       <div className="dev-controls" aria-label="Combat playtest mode">
         <button className="daily-button" onClick={() => onPlaytest('damage')}>DAMAGE MODE</button>
         <button className="daily-button" onClick={() => onPlaytest('letter-strike')}>LETTER-STRIKE MODE</button>
+        <button className="daily-button" onClick={onGenerator}>GENERATOR / SOLVER</button>
       </div>
       <p>Daily tools. Resets remove this browser’s completion records.</p>
       <div className="dev-controls" aria-label="Onboarding tools">

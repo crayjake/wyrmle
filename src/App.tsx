@@ -19,10 +19,12 @@ import ModeSelection from './components/ModeSelection'
 import { getOnboardingStage } from './preferences'
 import { useUserPreferences } from './useUserPreferences'
 import type { DifficultyMode } from './daily/types'
+import type { CandidatePuzzle } from './generator/types'
 import "./components/DailyPanels.css"
 
 const DevPanel = import.meta.env.DEV ? lazy(() => import('./components/DevPanel')) : null
 const DevCombat = import.meta.env.DEV ? lazy(() => import('./experimental/DevCombat')) : null
+const DevGenerator = import.meta.env.DEV ? lazy(() => import('./generator/DevGenerator')) : null
 const TutorialBattle = lazy(() => import('./tutorial/TutorialBattle'))
 
 type Phase = "waiting" | "enemy" | "tiles" | "ready"
@@ -45,6 +47,9 @@ export default function App() {
   })
   const [revision, setRevision] = useState(0)
   const [playtestMode, setPlaytestMode] = useState<'damage' | 'letter-strike' | null>(null)
+  const [generatorOpen, setGeneratorOpen] = useState(() => import.meta.env.DEV
+    && new URLSearchParams(window.location.search).get('generator') === '1')
+  const [generatedCandidate, setGeneratedCandidate] = useState<CandidatePuzzle | null>(null)
   const [matchHint, setMatchHint] = useState<MatchHintMode>('off')
   const [enemyGrid, setEnemyGrid] = useState(false)
 
@@ -98,6 +103,18 @@ export default function App() {
     setOnboarding('tutorial')
   }
 
+  if (DevGenerator && generatorOpen) return <Suspense fallback={<main className="container"><p>Loading generator…</p></main>}>
+    <DevGenerator onClose={() => setGeneratorOpen(false)} onPlay={candidate => {
+      setGeneratedCandidate(candidate); setGeneratorOpen(false); setPlaytestMode('letter-strike')
+    }} />
+  </Suspense>
+  if (DevCombat && playtestMode && generatedCandidate) return <Suspense fallback={null}>
+    <DevCombat key={generatedCandidate.id} initialMode="letter-strike" encounter={generatedCandidate.encounter}
+      onExit={() => { setPlaytestMode(null); setGeneratedCandidate(null); setGeneratorOpen(true) }}
+      matchHint={matchHint} onMatchHintChange={setMatchHint}
+      enemyGrid={enemyGrid} onEnemyGridChange={setEnemyGrid} />
+  </Suspense>
+
   if (onboarding === 'tutorial') return <Suspense fallback={<main className="container"><p>Loading tutorial…</p></main>}>
     <TutorialBattle onComplete={() => finishTutorial(true)} onSkip={() => finishTutorial(false)} />
   </Suspense>
@@ -111,17 +128,18 @@ export default function App() {
   </Suspense>
 
   return <DailyBattle key={`${puzzleId}:${revision}`} puzzleId={puzzleId} todayId={todayId} onLoad={loadPuzzle}
-    onPlaytest={setPlaytestMode} matchHint={matchHint} onMatchHintChange={setMatchHint}
+    onPlaytest={setPlaytestMode} onGenerator={() => setGeneratorOpen(true)} matchHint={matchHint} onMatchHintChange={setMatchHint}
     enemyGrid={import.meta.env.DEV && enemyGrid} onEnemyGridChange={setEnemyGrid}
     preferredMode={user.preferences.preferredMode} onChangeMode={mode => user.update({ preferredMode: mode })}
     preferencesError={user.error} onDevOnboarding={devOnboarding} devModeOverride={devModeOverride}
     onForceMode={setDevModeOverride} />
 }
 
-function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, matchHint, onMatchHintChange,
+function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, matchHint, onMatchHintChange,
   enemyGrid, onEnemyGridChange, preferredMode, onChangeMode, preferencesError, onDevOnboarding, devModeOverride, onForceMode }: {
   puzzleId: string; todayId: string; onLoad: (id: string) => void
   onPlaytest: (mode: 'damage' | 'letter-strike') => void
+  onGenerator: () => void
   matchHint: MatchHintMode; onMatchHintChange: (mode: MatchHintMode) => void
   enemyGrid: boolean; onEnemyGridChange: (grid: boolean) => void
   preferredMode: DifficultyMode; onChangeMode: (mode: DifficultyMode) => void
@@ -305,7 +323,7 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, matchHint, onMatch
         started={daily.started} onChangeMode={onChangeMode} error={preferencesError}
         onDev={DevPanel ? () => setPanel('dev') : undefined} onClose={() => setPanel(null)} />}
       {visiblePanel === 'dev' && DevPanel && <Suspense fallback={null}>
-        <DevPanel puzzle={puzzle} onLoad={onLoad} onPlaytest={onPlaytest} onClose={() => setPanel(null)}
+        <DevPanel puzzle={puzzle} onLoad={onLoad} onPlaytest={onPlaytest} onGenerator={onGenerator} onClose={() => setPanel(null)}
           matchHint={matchHint} onMatchHintChange={onMatchHintChange} onOnboarding={onDevOnboarding}
           enemyGrid={enemyGrid} onEnemyGridChange={onEnemyGridChange}
           onForceMode={onForceMode} />

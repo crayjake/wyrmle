@@ -31,11 +31,11 @@ test('UTC day arithmetic handles month, leap year and year boundaries', () => {
 })
 
 test('daily definitions are deterministic and independent of player progress and prototype defaults', () => {
-  const puzzle = getDailyPuzzle('2026-09-24')
+  const puzzle = getDailyPuzzle('2026-09-23')
   const before = structuredClone(puzzle)
   const game = submitWord(createGame(puzzle.encounter), [0, 1, 2])
   assert.equal(game.playedWords.length, 1)
-  assert.deepEqual(getDailyPuzzle('2026-09-24'), before)
+  assert.deepEqual(getDailyPuzzle('2026-09-23'), before)
   assert.notEqual(puzzle.encounter, letterStrikeEncounter)
   assert.notEqual(puzzle.encounter.tileEffects, letterStrikeEncounter.tileEffects)
   assert.equal(puzzle.encounter.startingTiles.map((tile) => tile.letter).join(''), 'JOYCHEERGLOOMADS')
@@ -43,12 +43,12 @@ test('daily definitions are deterministic and independent of player progress and
   assert.equal(puzzle.encounter.longWordRule, undefined)
   assert.equal(puzzle.encounter.enemy.semanticRelations.opposite.includes('GLAD'), false)
   // The initial authored catalog has one entry, deliberately repeated by date.
-  assert.deepEqual(getDailyPuzzle('2026-09-23').encounter, puzzle.encounter)
-  assert.notEqual(getDailyPuzzle('2026-09-23').puzzleId, puzzle.puzzleId)
+  assert.deepEqual(getDailyPuzzle('2026-09-22').encounter, puzzle.encounter)
+  assert.notEqual(getDailyPuzzle('2026-09-22').puzzleId, puzzle.puzzleId)
 })
 
 test('grammar release uses a fixed UTC boundary and never changes published v1 puzzle rules', () => {
-  const before = getDailyPuzzle('2026-09-24')
+  const before = getDailyPuzzleForVersion('2026-09-24', 'letter-strike-1', 1)
   const after = getDailyPuzzle('2026-09-25')
   assert.equal(before.gameVersion, 'letter-strike-1')
   assert.equal(before.puzzleVersion, 1)
@@ -63,12 +63,12 @@ test('grammar release uses a fixed UTC boundary and never changes published v1 p
   const newSad = submitWord(createGame(after.encounter), [12, 13, 14])
   assert.equal(oldSad.playedWords[0].strikes, 0)
   assert.equal(newSad.playedWords[0].strikes, 1)
-  assert.deepEqual(getDailyPuzzle('2026-09-24'), before)
+  assert.deepEqual(getDailyPuzzleForVersion('2026-09-24', 'letter-strike-1', 1), before)
   assert.deepEqual(getDailyPuzzle('2026-09-25'), after)
 })
 
 test('new September 25 attempts get additive Strike while archived v1 and v2 retain overlap', () => {
-  const v1 = getDailyPuzzle('2026-09-24')
+  const v1 = getDailyPuzzleForVersion('2026-09-24', 'letter-strike-1', 1)
   const v2 = getDailyPuzzleForVersion('2026-09-25', 'letter-strike-2', 2)
   const v3 = getDailyPuzzleForVersion('2026-09-25', 'letter-strike-3', 3)
   assert.equal(v1.encounter.strikeConsumesAllowance, true)
@@ -85,7 +85,7 @@ test('new September 25 attempts get additive Strike while archived v1 and v2 ret
 })
 
 test('daily definitions freeze every nested tile, rule, semantic list and catalog identity', () => {
-  const puzzle = getDailyPuzzle('2026-09-24')
+  const puzzle = getDailyPuzzle('2026-09-23')
   assert.ok(Object.isFrozen(puzzle))
   assert.ok(Object.isFrozen(puzzle.encounter))
   assert.ok(Object.isFrozen(puzzle.encounter.startingTiles))

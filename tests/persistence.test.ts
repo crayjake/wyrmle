@@ -25,7 +25,7 @@ class MemoryStorage implements StorageLike {
   key(index: number) { return [...this.data.keys()][index] ?? null }
 }
 
-const puzzle = getDailyPuzzle('2026-09-24')
+const puzzle = getDailyPuzzle('2026-09-23')
 const finishedAt = '2026-09-24T12:00:00.000Z'
 const currentWinTileIds = [
   [0, 1, 2], [4, 5, 15, 18, 16], [11, 20, 9, 10, 14, 17],
@@ -312,7 +312,7 @@ test('denied storage access blocks instead of pretending the user has no save', 
 
 test('reopening after UTC midnight resumes the latest unfinished earlier date', () => {
   const storage = new MemoryStorage()
-  const earlier = getDailyPuzzle('2026-09-23')
+  const earlier = getDailyPuzzle('2026-09-22')
   saveDailyRun(earlier, createGame(earlier.encounter), storage)
   saveDailyRun(puzzle, playWords(['JOY']), storage)
   assert.equal(getOpeningPuzzleId('2026-09-25', storage), puzzle.puzzleId)
@@ -375,10 +375,10 @@ test('every run and result version field rejects incompatible stored formats wit
 test('legacy damage runs and results are ignored and preserved through letter-strike save, reset and clear', () => {
   const storage = new MemoryStorage()
   const legacy = {
-    'wyrmle:daily:run:2026-09-23': '{old damaged numeric run',
-    'wyrmle:daily:result:2026-09-24': JSON.stringify({ gameVersion: '1', totalDamage: 33, won: true }),
-    'wyrmle:daily:v1:run:2026-09-24': JSON.stringify({ enemyHp: 33 }),
-    'wyrmle:daily:v1:result:2026-09-24': '{old numeric result',
+    'wyrmle:daily:run:2026-09-22': '{old damaged numeric run',
+    'wyrmle:daily:result:2026-09-23': JSON.stringify({ gameVersion: '1', totalDamage: 33, won: true }),
+    'wyrmle:daily:v1:run:2026-09-23': JSON.stringify({ enemyHp: 33 }),
+    'wyrmle:daily:v1:result:2026-09-23': '{old numeric result',
   }
   for (const [key, value] of Object.entries(legacy)) storage.setItem(key, value)
   assert.equal(getOpeningPuzzleId(puzzle.puzzleId, storage), puzzle.puzzleId)

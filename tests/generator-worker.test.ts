@@ -1,0 +1,27 @@
+import assert from 'node:assert/strict'
+import { test } from 'node:test'
+import { validateGeneratorRequest } from '../src/generator/workerMessages.ts'
+
+test('generator worker accepts and normalizes a bounded manual or automatic request', () => {
+  const request = { id: 1, seed: 'review-seed', enemy: ' melancholy ', candidateCount: 8 }
+  assert.deepEqual(validateGeneratorRequest(request), { ...request, enemy: 'MELANCHOLY' })
+  assert.equal(validateGeneratorRequest({ ...request, enemy: null }).enemy, null)
+  assert.equal(request.enemy, ' melancholy ')
+})
+
+test('generator worker rejects invalid counts instead of running unbounded or empty batches', () => {
+  const request = { id: 1, seed: 'review-seed', enemy: 'MELANCHOLY', candidateCount: 8 }
+  for (const count of [0, -1, 101, Number.POSITIVE_INFINITY, Number.NaN, 1.5]) {
+    assert.throws(() => validateGeneratorRequest({ ...request, candidateCount: count }), /between 1 and 100/)
+  }
+})
+
+test('generator worker reports malformed enemy, seed and message values before generation', () => {
+  const request = { id: 1, seed: 'review-seed', enemy: 'MELANCHOLY', candidateCount: 8 }
+  assert.throws(() => validateGeneratorRequest(null), /Invalid/)
+  assert.throws(() => validateGeneratorRequest({ ...request, enemy: '' }), /only letters/)
+  assert.throws(() => validateGeneratorRequest({ ...request, enemy: 'MELAN-CHOLY' }), /only letters/)
+  assert.throws(() => validateGeneratorRequest({ ...request, seed: '  ' }), /Seed/)
+  assert.throws(() => validateGeneratorRequest({ ...request, seed: 'X'.repeat(129) }), /Seed/)
+  assert.throws(() => validateGeneratorRequest({ ...request, id: 0 }), /Request ID/)
+})

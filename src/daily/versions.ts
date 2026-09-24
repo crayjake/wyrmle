@@ -10,3 +10,6 @@ export const GAME_VERSION = 'letter-strike-4'
 export const PUZZLE_VERSION = 4
 export const SAVE_VERSION = 4
 export const GRAMMAR_RELEASE_DATE = '2026-09-25'
+// Explicitly selected generated content; the existing v4 combat rules apply.
+export const GENERATED_MELANCHOLY_DATE = '2026-09-24'
+export const GENERATED_MELANCHOLY_PUZZLE_VERSION = 5
