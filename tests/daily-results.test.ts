@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { getDailyHistory } from '../src/daily/history.ts'
-import { getDailyPuzzle, getDailyPuzzleForVersion } from '../src/daily/puzzle.ts'
+import { getDailyPuzzleForVersion } from '../src/daily/puzzle.ts'
 import { buildDailyResult, getCompletedResults } from '../src/daily/results.ts'
 import { buildShareText } from '../src/daily/share.ts'
 import { calculateStats } from '../src/daily/stats.ts'
@@ -121,7 +121,7 @@ test('additive Strike in LAD records both removals and one tile activation in it
 })
 
 test('a v4 LONG neutral move records both actual removals in result and positional share data', () => {
-  const base = getDailyPuzzle('2026-09-25')
+  const base = getDailyPuzzleForVersion('2026-09-25', 'letter-strike-4', 4)
   const definition = { ...base, encounter: { ...base.encounter, startingResolve: 1 } }
   const game = playWord(createLetterStrikeGame(definition.encounter), 'THREAD')
   assert.equal(game.status, 'lost')
@@ -411,6 +411,9 @@ test('future submission is a deterministic compact summary without local display
   const submission = buildDailyScoreSubmission(completed)
   assert.deepEqual(submission, {
     mode: 'normal',
+    puzzleDifficulty: completed.puzzleDifficulty,
+    undosUsed: 0,
+    undosRemaining: 3,
     puzzleId: completed.puzzleId,
     gameVersion: completed.gameVersion,
     puzzleVersion: completed.puzzleVersion,
@@ -454,6 +457,6 @@ test('mode is explicit in completed results, sharing and future submissions with
   assert.equal(normalHeader, 'WYRMLE 2026-09-24 · NORMAL · VICTORY')
   assert.equal(hardHeader, 'WYRMLE 2026-09-24 · HARD · VICTORY')
   assert.deepEqual(hardBody, normalBody)
-  assert.deepEqual(buildDailyScoreSubmission(hard), { ...buildDailyScoreSubmission(normal), mode: 'hard' })
+  assert.deepEqual(buildDailyScoreSubmission(hard), { ...buildDailyScoreSubmission(normal), mode: 'hard', undosRemaining: 1 })
   assert.deepEqual(hard.turns, normal.turns)
 })

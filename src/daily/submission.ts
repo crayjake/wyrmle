@@ -10,6 +10,9 @@ import type { DailyResult, DailyScoreSubmission } from './types.ts'
 export function buildDailyScoreSubmission(result: DailyResult): DailyScoreSubmission {
   return {
     mode: result.mode,
+    puzzleDifficulty: result.puzzleDifficulty,
+    undosUsed: result.undosUsed,
+    undosRemaining: result.undosRemaining,
     puzzleId: result.puzzleId,
     gameVersion: result.gameVersion,
     puzzleVersion: result.puzzleVersion,
@@ -24,6 +27,9 @@ export function buildDailyScoreSubmission(result: DailyResult): DailyScoreSubmis
     letterOutcomesByTurn: result.turns.map((turn) => turn.letterOutcomes.map((outcome) => ({ ...outcome }))),
     wardSaves: result.wardSaves,
     strikeActivations: result.strikeActivations,
+    ...(result.turns.some((turn) => turn.recoveries) ? {
+      recoveriesByTurn: result.turns.map((turn) => (turn.recoveries ?? []).map((recovery) => ({ ...recovery }))),
+    } : {}),
     completedAt: result.completedAt,
   }
 }

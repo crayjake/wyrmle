@@ -13,6 +13,10 @@ type AttackInfoProps = {
     ready?: boolean
     message?: string
     metric?: 'damage' | 'strikes'
+    resolveBefore?: number
+    resolveAfter?: number
+    recoveryText?: string
+    grammarNote?: string
 }
 
 export default function AttackInfo({
@@ -23,6 +27,10 @@ export default function AttackInfo({
     ready = false,
     message,
     metric = 'damage',
+    resolveBefore,
+    resolveAfter,
+    recoveryText,
+    grammarNote,
 }: AttackInfoProps) {
     const segments = 12
     const filled = maxDamage > 0 ? Math.min(segments, Math.max(0, Math.round((damage / maxDamage) * segments))) : 0
@@ -44,6 +52,11 @@ export default function AttackInfo({
                         </span>
                     ))}
                 </div>
+                {resolveBefore !== undefined && resolveAfter !== undefined && <div className="strike-consequence">
+                    <span>Resolve {resolveBefore} → {resolveAfter}</span>
+                    {recoveryText && <span className="regen-warning"> · {recoveryText}</span>}
+                    {grammarNote && <span title="Word-type bonuses apply only when shown. Unlisted or ambiguous word types receive no grammar bonus."> · {grammarNote}</span>}
+                </div>}
             </div>
         )
     }

@@ -34,7 +34,7 @@ export function loadPreferences(storage: StorageLike): UserPreferences {
         const complete = typeof data.hasCompletedOnboarding === 'boolean'
           ? data.hasCompletedOnboarding : returning
         return {
-          preferredMode: data.preferredMode === 'hard' ? 'hard' : 'normal',
+          preferredMode: data.preferredMode === 'hard' || data.preferredMode === 'hardcore' ? data.preferredMode : 'normal',
           hasCompletedOnboarding: complete,
           // Older preference records may predate the interrupted-choice flag.
           hasChosenMode: typeof data.hasChosenMode === 'boolean' ? data.hasChosenMode : complete,

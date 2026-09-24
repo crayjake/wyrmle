@@ -14,12 +14,14 @@ export function buildShareText(result: DailyResult): string {
       throw new Error('Share rows require an outcome for every original enemy position.')
     }
     const positions = turn.letterOutcomes.map((outcome) => {
+      if (outcome.regenerated) return '↺'
       if (outcome.armourBroken && outcome.removed) return '▣'
       if (outcome.removed) return '■'
       if (outcome.armourBroken) return '◐'
       return '·'
     }).join('')
     const effects = (turn.resolveProtected ? '◇' : '') + (turn.strikeActivations > 0 ? '◆' : '')
+      + ((turn.recoveries?.length ?? 0) > 0 ? '↺' : '')
     return `${semanticPrefix[turn.semanticLabel]}  ${positions}${effects ? ` ${effects}` : ''}`
   })
   const resolve = '■'.repeat(result.resolveRemaining) + '□'.repeat(result.startingResolve - result.resolveRemaining)

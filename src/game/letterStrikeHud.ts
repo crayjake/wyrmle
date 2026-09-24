@@ -12,6 +12,7 @@ export type LetterStrikeTileSummary = {
 const gemPresentation: Record<LetterStrikeGem, { label: string; symbol: string }> = {
   strike: { label: 'STRIKE', symbol: '◆' },
   ward: { label: 'WARD', symbol: '◇' },
+  regen: { label: 'REGEN', symbol: '+' },
 }
 
 export function getLetterStrikeGrammarModifiers(state: Pick<LetterStrikeState, 'encounter'>): GrammarModifier[] {
@@ -26,6 +27,7 @@ export function getLetterStrikeBonuses(preview: LetterStrikePreview): AttackBonu
   if (!preview.valid) return []
   return [
     { label: preview.semanticLabel },
+    { label: `${preview.strikes} ${preview.strikes === 1 ? 'STRIKE' : 'STRIKES'}` },
     ...(preview.longWordModifier !== 0 ? [{ label: 'LONG', value: preview.longWordModifier }] : []),
     ...(preview.grammaticalModifier !== 0 && preview.grammaticalPartOfSpeech
       ? [{ label: preview.grammaticalPartOfSpeech.toUpperCase(), value: preview.grammaticalModifier }] : []),
@@ -37,15 +39,17 @@ export function getLetterStrikeBonuses(preview: LetterStrikePreview): AttackBonu
 export function getLetterStrikeTileSummary(
   state: Pick<LetterStrikeState, 'tiles' | 'encounter'>,
 ): readonly LetterStrikeTileSummary[] {
-  return (['strike', 'ward'] as const).flatMap(gem => {
+  return (['strike', 'ward', 'regen'] as const).flatMap(gem => {
     if (!state.tiles.some(tile => tile.type === 'gem' && tile.gem === gem)) return []
     const rule = state.encounter.tileEffects[gem]
+    if (!rule) return []
     return [{
       id: gem,
       ...gemPresentation[gem],
       detail: [
         ...(rule.strike ? ['STRIKES MATCHING LETTER'] : []),
         ...(rule.preventResolveLoss ? ['SAVE TURN'] : []),
+        ...(rule.regenerate ? ['MATCHING ENEMY LETTER RECOVERS AFTER STRIKES'] : []),
       ].join(' · '),
     }]
   })

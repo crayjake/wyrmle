@@ -1,0 +1,1788 @@
+{
+  "id": "generated-despair-enemy-variety-v1%3ADESPAIR%3A5",
+  "enemy": {
+    "word": "DESPAIR",
+    "definition": "The feeling that there is no hope of things getting better.",
+    "partOfSpeech": "noun",
+    "semanticRelations": {
+      "opposite": [
+        "HOPE",
+        "HOPEFUL",
+        "HOPEFULLY",
+        "OPTIMISM",
+        "OPTIMISTIC",
+        "CONFIDENT",
+        "CONFIDENCE",
+        "COURAGE",
+        "CHEER",
+        "CHEERFUL",
+        "JOY",
+        "HAPPY",
+        "ELATION",
+        "COMFORT",
+        "ENCOURAGE",
+        "ENCOURAGEMENT"
+      ],
+      "similar": [
+        "HOPELESS",
+        "HOPELESSNESS",
+        "MISERY",
+        "DESOLATE",
+        "GLOOM",
+        "DEPRESSION",
+        "SADNESS",
+        "SORROW"
+      ],
+      "related": [
+        "FEAR",
+        "WORRY",
+        "TEARS",
+        "CRY",
+        "HEART",
+        "RESCUE",
+        "HELP",
+        "PATIENCE",
+        "COMFORTING",
+        "LONELY"
+      ]
+    }
+  },
+  "enemyLetters": [
+    {
+      "id": "enemy-0",
+      "letter": "D",
+      "initialHits": 1,
+      "hitsRemaining": 1
+    },
+    {
+      "id": "enemy-1",
+      "letter": "E",
+      "initialHits": 2,
+      "hitsRemaining": 2
+    },
+    {
+      "id": "enemy-2",
+      "letter": "S",
+      "initialHits": 1,
+      "hitsRemaining": 1
+    },
+    {
+      "id": "enemy-3",
+      "letter": "P",
+      "initialHits": 1,
+      "hitsRemaining": 1
+    },
+    {
+      "id": "enemy-4",
+      "letter": "A",
+      "initialHits": 1,
+      "hitsRemaining": 1
+    },
+    {
+      "id": "enemy-5",
+      "letter": "I",
+      "initialHits": 1,
+      "hitsRemaining": 1
+    },
+    {
+      "id": "enemy-6",
+      "letter": "R",
+      "initialHits": 1,
+      "hitsRemaining": 1
+    }
+  ],
+  "startingResolve": 5,
+  "startingTiles": [
+    {
+      "id": 0,
+      "letter": "A",
+      "type": "normal"
+    },
+    {
+      "id": 1,
+      "letter": "W",
+      "type": "normal"
+    },
+    {
+      "id": 2,
+      "letter": "F",
+      "type": "normal"
+    },
+    {
+      "id": 3,
+      "letter": "Y",
+      "type": "normal"
+    },
+    {
+      "id": 4,
+      "letter": "D",
+      "type": "normal"
+    },
+    {
+      "id": 5,
+      "letter": "S",
+      "type": "normal"
+    },
+    {
+      "id": 6,
+      "letter": "D",
+      "type": "normal"
+    },
+    {
+      "id": 7,
+      "letter": "R",
+      "type": "normal"
+    },
+    {
+      "id": 8,
+      "letter": "O",
+      "type": "normal"
+    },
+    {
+      "id": 9,
+      "letter": "N",
+      "type": "normal"
+    },
+    {
+      "id": 10,
+      "letter": "R",
+      "type": "normal"
+    },
+    {
+      "id": 11,
+      "letter": "O",
+      "type": "gem",
+      "gem": "ward"
+    },
+    {
+      "id": 12,
+      "letter": "L",
+      "type": "normal"
+    },
+    {
+      "id": 13,
+      "letter": "T",
+      "type": "normal"
+    },
+    {
+      "id": 14,
+      "letter": "I",
+      "type": "normal"
+    },
+    {
+      "id": 15,
+      "letter": "E",
+      "type": "gem",
+      "gem": "strike"
+    }
+  ],
+  "refillQueue": "PAHYPEERHCOGDGDCNEMMOITTMPIOCYNEAHMSUNNYCLEARLYCHILDRENWOODENNIGHTHILARIOUSDISCOVERHARSHNESSHILA",
+  "minimumWordLength": 3,
+  "grammarModifiers": {
+    "adjective": 1
+  },
+  "wordPartsOfSpeech": {
+    "AFRAID": [
+      "adjective"
+    ],
+    "AGITATION": [
+      "noun"
+    ],
+    "ALARM": [
+      "noun",
+      "verb"
+    ],
+    "AMUSED": [
+      "adjective",
+      "verb"
+    ],
+    "AMUSEMENT": [
+      "noun"
+    ],
+    "ANARCHY": [
+      "noun"
+    ],
+    "ANGER": [
+      "noun"
+    ],
+    "ANGRY": [
+      "adjective"
+    ],
+    "ANIMAL": [
+      "noun"
+    ],
+    "ANXIETY": [
+      "noun"
+    ],
+    "APPLE": [
+      "noun"
+    ],
+    "ARGUE": [
+      "verb"
+    ],
+    "ARGUMENT": [
+      "noun"
+    ],
+    "ARRANGE": [
+      "verb"
+    ],
+    "ARRANGEMENT": [
+      "noun"
+    ],
+    "AUTUMN": [
+      "noun"
+    ],
+    "BALANCE": [
+      "noun",
+      "verb"
+    ],
+    "BECOME": [
+      "verb"
+    ],
+    "BEDLAM": [
+      "noun"
+    ],
+    "BELONG": [
+      "verb"
+    ],
+    "BENEVOLENCE": [
+      "noun"
+    ],
+    "BENEVOLENT": [
+      "adjective"
+    ],
+    "BLACK": [
+      "adjective",
+      "noun",
+      "verb"
+    ],
+    "BLISS": [
+      "noun"
+    ],
+    "BLISSFUL": [
+      "adjective"
+    ],
+    "BLUE": [
+      "adjective",
+      "noun",
+      "verb"
+    ],
+    "BOLD": [
+      "adjective",
+      "noun"
+    ],
+    "BOLDLY": [
+      "adverb"
+    ],
+    "BOOK": [
+      "noun"
+    ],
+    "BRAVE": [
+      "adjective"
+    ],
+    "BRAVERY": [
+      "noun"
+    ],
+    "BREAD": [
+      "noun"
+    ],
+    "BRUTAL": [
+      "adjective"
+    ],
+    "BRUTALITY": [
+      "noun"
+    ],
+    "CALM": [
+      "adjective",
+      "noun",
+      "verb"
+    ],
+    "CALMLY": [
+      "adverb"
+    ],
+    "CANE": [
+      "noun",
+      "verb"
+    ],
+    "CAR": [
+      "noun"
+    ],
+    "CARE": [
+      "noun",
+      "verb"
+    ],
+    "CARING": [
+      "adjective",
+      "verb"
+    ],
+    "CARRY": [
+      "noun",
+      "verb"
+    ],
+    "CAT": [
+      "noun"
+    ],
+    "CHAIN": [
+      "noun",
+      "verb"
+    ],
+    "CHAIR": [
+      "noun"
+    ],
+    "CHANGE": [
+      "noun",
+      "verb"
+    ],
+    "CHAOS": [
+      "noun"
+    ],
+    "CHAPTER": [
+      "noun"
+    ],
+    "CHARM": [
+      "noun",
+      "verb"
+    ],
+    "CHEER": [
+      "noun",
+      "verb"
+    ],
+    "CHEERFUL": [
+      "adjective"
+    ],
+    "CHEERFULNESS": [
+      "noun"
+    ],
+    "CHEERINESS": [
+      "noun"
+    ],
+    "CHEERY": [
+      "adjective"
+    ],
+    "CHEESE": [
+      "noun"
+    ],
+    "CHERRY": [
+      "noun"
+    ],
+    "CHILD": [
+      "noun"
+    ],
+    "CHILDREN": [
+      "noun"
+    ],
+    "CHIME": [
+      "noun",
+      "verb"
+    ],
+    "CHOCOLATE": [
+      "noun"
+    ],
+    "CHOOSE": [
+      "verb"
+    ],
+    "CLAIM": [
+      "noun",
+      "verb"
+    ],
+    "CLARITY": [
+      "noun"
+    ],
+    "CLAY": [
+      "noun"
+    ],
+    "CLEAN": [
+      "noun",
+      "verb",
+      "adjective"
+    ],
+    "CLEAR": [
+      "adjective",
+      "verb",
+      "adverb"
+    ],
+    "CLEARLY": [
+      "adverb"
+    ],
+    "CLEVER": [
+      "adjective"
+    ],
+    "CLIMB": [
+      "noun",
+      "verb"
+    ],
+    "CLOSET": [
+      "noun"
+    ],
+    "CLOTH": [
+      "noun"
+    ],
+    "CLOUD": [
+      "noun"
+    ],
+    "CLOUDY": [
+      "adjective"
+    ],
+    "COAL": [
+      "noun",
+      "verb"
+    ],
+    "COAT": [
+      "noun"
+    ],
+    "COFFEE": [
+      "noun"
+    ],
+    "COIL": [
+      "noun",
+      "verb"
+    ],
+    "COLD": [
+      "adjective",
+      "noun"
+    ],
+    "COLOR": [
+      "noun",
+      "verb"
+    ],
+    "COLOUR": [
+      "noun",
+      "verb"
+    ],
+    "COMEDY": [
+      "noun"
+    ],
+    "COMELY": [
+      "adjective"
+    ],
+    "COMFORT": [
+      "noun",
+      "verb"
+    ],
+    "COMFORTING": [
+      "adjective",
+      "verb"
+    ],
+    "COMICAL": [
+      "adjective"
+    ],
+    "COMICALLY": [
+      "adverb"
+    ],
+    "COMPASSION": [
+      "noun"
+    ],
+    "COMPASSIONATE": [
+      "adjective"
+    ],
+    "CONFIDENCE": [
+      "noun"
+    ],
+    "CONFIDENT": [
+      "adjective"
+    ],
+    "CONFLICT": [
+      "noun",
+      "verb"
+    ],
+    "CONFUSION": [
+      "noun"
+    ],
+    "CONTENTMENT": [
+      "noun"
+    ],
+    "CONTROL": [
+      "noun",
+      "verb"
+    ],
+    "COOK": [
+      "noun",
+      "verb"
+    ],
+    "COURAGE": [
+      "noun"
+    ],
+    "COURAGEOUS": [
+      "adjective"
+    ],
+    "CREAM": [
+      "noun"
+    ],
+    "CROWD": [
+      "noun",
+      "verb"
+    ],
+    "CRUEL": [
+      "adjective"
+    ],
+    "CRUELTY": [
+      "noun"
+    ],
+    "CRY": [
+      "noun",
+      "verb"
+    ],
+    "DANCE": [
+      "noun",
+      "verb"
+    ],
+    "DANGER": [
+      "noun"
+    ],
+    "DARING": [
+      "adjective",
+      "verb"
+    ],
+    "DARKNESS": [
+      "noun"
+    ],
+    "DAY": [
+      "noun"
+    ],
+    "DEAL": [
+      "noun",
+      "verb"
+    ],
+    "DEATH": [
+      "noun"
+    ],
+    "DELIGHT": [
+      "noun",
+      "verb"
+    ],
+    "DEPRESSED": [
+      "adjective",
+      "verb"
+    ],
+    "DEPRESSION": [
+      "noun"
+    ],
+    "DESOLATE": [
+      "adjective"
+    ],
+    "DESPAIR": [
+      "noun"
+    ],
+    "DISARRAY": [
+      "noun"
+    ],
+    "DISCOVER": [
+      "verb"
+    ],
+    "DISH": [
+      "noun"
+    ],
+    "DISORDER": [
+      "noun",
+      "verb"
+    ],
+    "DOG": [
+      "noun"
+    ],
+    "DOLEFUL": [
+      "adjective"
+    ],
+    "DOWNCAST": [
+      "adjective"
+    ],
+    "DREAD": [
+      "noun",
+      "verb"
+    ],
+    "DREAM": [
+      "noun",
+      "verb"
+    ],
+    "DREAMY": [
+      "adjective"
+    ],
+    "EARLY": [
+      "adjective",
+      "adverb"
+    ],
+    "EARTH": [
+      "noun"
+    ],
+    "EASILY": [
+      "adverb"
+    ],
+    "ELATED": [
+      "adjective",
+      "verb"
+    ],
+    "ELATION": [
+      "noun"
+    ],
+    "EMPATHY": [
+      "noun"
+    ],
+    "ENCOURAGE": [
+      "verb"
+    ],
+    "ENCOURAGEMENT": [
+      "noun"
+    ],
+    "END": [
+      "noun"
+    ],
+    "ENJOY": [
+      "verb"
+    ],
+    "ENRAGED": [
+      "adjective",
+      "verb"
+    ],
+    "EUPHORIA": [
+      "noun"
+    ],
+    "EVENING": [
+      "noun"
+    ],
+    "FAMILY": [
+      "noun"
+    ],
+    "FATHER": [
+      "noun"
+    ],
+    "FEAR": [
+      "noun"
+    ],
+    "FIELD": [
+      "noun"
+    ],
+    "FIRE": [
+      "noun",
+      "verb"
+    ],
+    "FLOWER": [
+      "noun"
+    ],
+    "FOLLOW": [
+      "verb"
+    ],
+    "FOOD": [
+      "noun"
+    ],
+    "FOREST": [
+      "noun"
+    ],
+    "FORGIVE": [
+      "verb"
+    ],
+    "FORGIVENESS": [
+      "noun"
+    ],
+    "FORK": [
+      "noun"
+    ],
+    "FRIEND": [
+      "noun"
+    ],
+    "FRIENDLY": [
+      "adjective"
+    ],
+    "FRIGHT": [
+      "noun"
+    ],
+    "FUNNY": [
+      "adjective"
+    ],
+    "FURIOUS": [
+      "adjective"
+    ],
+    "FURY": [
+      "noun"
+    ],
+    "GAME": [
+      "noun"
+    ],
+    "GARDEN": [
+      "noun"
+    ],
+    "GATHER": [
+      "verb"
+    ],
+    "GENTLE": [
+      "adjective"
+    ],
+    "GENTLENESS": [
+      "noun"
+    ],
+    "GLAD": [
+      "adjective"
+    ],
+    "GLEE": [
+      "noun"
+    ],
+    "GLEEFUL": [
+      "adjective"
+    ],
+    "GLOOM": [
+      "noun"
+    ],
+    "GLOOMY": [
+      "adjective"
+    ],
+    "GOAL": [
+      "noun"
+    ],
+    "GOLD": [
+      "noun"
+    ],
+    "GOLDEN": [
+      "adjective"
+    ],
+    "GREEN": [
+      "adjective",
+      "noun",
+      "verb"
+    ],
+    "GRIEF": [
+      "noun"
+    ],
+    "HAIR": [
+      "noun"
+    ],
+    "HALL": [
+      "noun"
+    ],
+    "HAND": [
+      "noun"
+    ],
+    "HAPPILY": [
+      "adverb"
+    ],
+    "HAPPINESS": [
+      "noun"
+    ],
+    "HAPPY": [
+      "adjective"
+    ],
+    "HARD": [
+      "adjective",
+      "adverb"
+    ],
+    "HARM": [
+      "noun",
+      "verb"
+    ],
+    "HARMONY": [
+      "noun"
+    ],
+    "HARSH": [
+      "adjective"
+    ],
+    "HARSHNESS": [
+      "noun"
+    ],
+    "HEAD": [
+      "noun"
+    ],
+    "HEAL": [
+      "verb"
+    ],
+    "HEALTHY": [
+      "adjective"
+    ],
+    "HEART": [
+      "noun"
+    ],
+    "HEARTY": [
+      "adjective"
+    ],
+    "HEAT": [
+      "noun",
+      "verb"
+    ],
+    "HEAVY": [
+      "adjective"
+    ],
+    "HELP": [
+      "noun",
+      "verb"
+    ],
+    "HELPFUL": [
+      "adjective"
+    ],
+    "HEN": [
+      "noun"
+    ],
+    "HEROIC": [
+      "adjective"
+    ],
+    "HEROISM": [
+      "noun"
+    ],
+    "HILARIOUS": [
+      "adjective"
+    ],
+    "HILARITY": [
+      "noun"
+    ],
+    "HILL": [
+      "noun"
+    ],
+    "HOLD": [
+      "noun",
+      "verb"
+    ],
+    "HOME": [
+      "noun",
+      "adjective",
+      "adverb",
+      "verb"
+    ],
+    "HOMELY": [
+      "adjective"
+    ],
+    "HONEST": [
+      "adjective"
+    ],
+    "HONEY": [
+      "noun"
+    ],
+    "HOPE": [
+      "noun",
+      "verb"
+    ],
+    "HOPEFUL": [
+      "adjective"
+    ],
+    "HOPEFULLY": [
+      "adverb"
+    ],
+    "HOPELESS": [
+      "adjective"
+    ],
+    "HOPELESSNESS": [
+      "noun"
+    ],
+    "HORSE": [
+      "noun"
+    ],
+    "HOUR": [
+      "noun"
+    ],
+    "HUMAN": [
+      "noun"
+    ],
+    "HUMANE": [
+      "adjective"
+    ],
+    "HUMANITY": [
+      "noun"
+    ],
+    "HUMBLE": [
+      "adjective"
+    ],
+    "HUNGRY": [
+      "adjective"
+    ],
+    "HURT": [
+      "noun",
+      "verb"
+    ],
+    "IRATE": [
+      "adjective"
+    ],
+    "IRE": [
+      "noun"
+    ],
+    "IRRITATED": [
+      "adjective",
+      "verb"
+    ],
+    "IRRITATION": [
+      "noun"
+    ],
+    "JOB": [
+      "noun"
+    ],
+    "JOLLITY": [
+      "noun"
+    ],
+    "JOLLY": [
+      "adjective"
+    ],
+    "JOVIAL": [
+      "adjective"
+    ],
+    "JOY": [
+      "noun"
+    ],
+    "JOYFUL": [
+      "adjective"
+    ],
+    "JOYFULLY": [
+      "adverb"
+    ],
+    "JOYOUS": [
+      "adjective"
+    ],
+    "JOYOUSLY": [
+      "adverb"
+    ],
+    "JUSTICE": [
+      "noun"
+    ],
+    "KIND": [
+      "adjective",
+      "noun"
+    ],
+    "KINDLY": [
+      "adverb"
+    ],
+    "KINDNESS": [
+      "noun"
+    ],
+    "KNIFE": [
+      "noun"
+    ],
+    "LAMB": [
+      "noun"
+    ],
+    "LAND": [
+      "noun"
+    ],
+    "LANE": [
+      "noun"
+    ],
+    "LARGE": [
+      "adjective"
+    ],
+    "LATE": [
+      "adjective",
+      "adverb"
+    ],
+    "LAUGH": [
+      "noun",
+      "verb"
+    ],
+    "LAUGHING": [
+      "adjective",
+      "verb"
+    ],
+    "LAUGHTER": [
+      "noun"
+    ],
+    "LEAF": [
+      "noun"
+    ],
+    "LEAN": [
+      "adjective",
+      "noun",
+      "verb"
+    ],
+    "LEARN": [
+      "verb"
+    ],
+    "LEMON": [
+      "noun"
+    ],
+    "LESSON": [
+      "noun"
+    ],
+    "LETTER": [
+      "noun",
+      "verb"
+    ],
+    "LIFE": [
+      "noun"
+    ],
+    "LIGHT": [
+      "noun",
+      "adjective",
+      "verb"
+    ],
+    "LIGHTER": [
+      "adjective",
+      "noun"
+    ],
+    "LINE": [
+      "noun"
+    ],
+    "LION": [
+      "noun"
+    ],
+    "LOAM": [
+      "noun"
+    ],
+    "LOAMY": [
+      "adjective"
+    ],
+    "LOAN": [
+      "noun",
+      "verb"
+    ],
+    "LONELY": [
+      "adjective"
+    ],
+    "LOOK": [
+      "noun",
+      "verb"
+    ],
+    "LOVELY": [
+      "adjective"
+    ],
+    "MALICE": [
+      "noun"
+    ],
+    "MALICIOUS": [
+      "adjective"
+    ],
+    "MAN": [
+      "noun"
+    ],
+    "MATCH": [
+      "noun"
+    ],
+    "MAYHEM": [
+      "noun"
+    ],
+    "MEAL": [
+      "noun"
+    ],
+    "MEAN": [
+      "adjective",
+      "noun",
+      "verb"
+    ],
+    "MELANCHOLY": [
+      "noun"
+    ],
+    "MELODY": [
+      "noun"
+    ],
+    "MELON": [
+      "noun"
+    ],
+    "MEMORIES": [
+      "noun"
+    ],
+    "MEMORY": [
+      "noun"
+    ],
+    "MEND": [
+      "noun",
+      "verb"
+    ],
+    "MERCIFUL": [
+      "adjective"
+    ],
+    "MERCY": [
+      "noun"
+    ],
+    "MERRIMENT": [
+      "noun"
+    ],
+    "MERRY": [
+      "adjective"
+    ],
+    "MESS": [
+      "noun",
+      "verb"
+    ],
+    "METAL": [
+      "noun"
+    ],
+    "MIND": [
+      "noun"
+    ],
+    "MINUTE": [
+      "noun"
+    ],
+    "MIRTH": [
+      "noun"
+    ],
+    "MIRTHFUL": [
+      "adjective"
+    ],
+    "MISERY": [
+      "noun"
+    ],
+    "MONEY": [
+      "noun"
+    ],
+    "MONTH": [
+      "noun"
+    ],
+    "MOOD": [
+      "noun"
+    ],
+    "MOON": [
+      "noun"
+    ],
+    "MORNING": [
+      "noun"
+    ],
+    "MOROSE": [
+      "adjective"
+    ],
+    "MOTHER": [
+      "noun"
+    ],
+    "MOTION": [
+      "noun",
+      "verb"
+    ],
+    "MOURNFUL": [
+      "adjective"
+    ],
+    "MOUSE": [
+      "noun"
+    ],
+    "MOUTH": [
+      "noun"
+    ],
+    "MUSIC": [
+      "noun"
+    ],
+    "NAIL": [
+      "noun",
+      "verb"
+    ],
+    "NAME": [
+      "noun"
+    ],
+    "NEAR": [
+      "adjective",
+      "verb",
+      "adverb"
+    ],
+    "NEARLY": [
+      "adverb"
+    ],
+    "NEAT": [
+      "adjective"
+    ],
+    "NEEDLE": [
+      "noun"
+    ],
+    "NIGHT": [
+      "noun"
+    ],
+    "NOISE": [
+      "noun",
+      "verb"
+    ],
+    "NOTE": [
+      "noun",
+      "verb"
+    ],
+    "NUMBER": [
+      "noun"
+    ],
+    "OCEAN": [
+      "noun"
+    ],
+    "OLD": [
+      "adjective"
+    ],
+    "ONION": [
+      "noun"
+    ],
+    "ONLY": [
+      "adjective",
+      "adverb"
+    ],
+    "OPTIMISM": [
+      "noun"
+    ],
+    "OPTIMISTIC": [
+      "adjective"
+    ],
+    "ORANGE": [
+      "noun"
+    ],
+    "ORDER": [
+      "noun",
+      "verb"
+    ],
+    "ORDERLY": [
+      "adjective"
+    ],
+    "ORGANISED": [
+      "adjective",
+      "verb"
+    ],
+    "ORGANIZED": [
+      "adjective",
+      "verb"
+    ],
+    "OWL": [
+      "noun"
+    ],
+    "PACIFY": [
+      "verb"
+    ],
+    "PAGE": [
+      "noun"
+    ],
+    "PAIN": [
+      "noun",
+      "verb"
+    ],
+    "PANIC": [
+      "noun",
+      "verb"
+    ],
+    "PART": [
+      "noun"
+    ],
+    "PATH": [
+      "noun"
+    ],
+    "PATIENCE": [
+      "noun"
+    ],
+    "PATIENT": [
+      "adjective",
+      "noun"
+    ],
+    "PATTERN": [
+      "noun",
+      "verb"
+    ],
+    "PEACE": [
+      "noun"
+    ],
+    "PEACEFUL": [
+      "adjective"
+    ],
+    "PEAR": [
+      "noun"
+    ],
+    "PIANO": [
+      "noun"
+    ],
+    "PLACE": [
+      "noun"
+    ],
+    "PLAN": [
+      "noun",
+      "verb"
+    ],
+    "PLANE": [
+      "noun",
+      "adjective",
+      "verb"
+    ],
+    "PLATE": [
+      "noun"
+    ],
+    "PLAY": [
+      "noun",
+      "verb"
+    ],
+    "PLAYFUL": [
+      "adjective"
+    ],
+    "PLAYFULLY": [
+      "adverb"
+    ],
+    "POEM": [
+      "noun"
+    ],
+    "POST": [
+      "noun",
+      "verb"
+    ],
+    "QUICK": [
+      "adjective",
+      "adverb"
+    ],
+    "QUICKLY": [
+      "adverb"
+    ],
+    "RAGE": [
+      "noun",
+      "verb"
+    ],
+    "RAIN": [
+      "noun"
+    ],
+    "RAINY": [
+      "adjective"
+    ],
+    "REACH": [
+      "noun",
+      "verb"
+    ],
+    "REALLY": [
+      "adverb"
+    ],
+    "REASSURANCE": [
+      "noun"
+    ],
+    "REASSURE": [
+      "verb"
+    ],
+    "RED": [
+      "adjective",
+      "noun"
+    ],
+    "REMAIN": [
+      "verb"
+    ],
+    "REMEMBER": [
+      "verb"
+    ],
+    "RESCUE": [
+      "noun",
+      "verb"
+    ],
+    "REST": [
+      "noun",
+      "verb"
+    ],
+    "RHYME": [
+      "noun"
+    ],
+    "RISK": [
+      "noun"
+    ],
+    "RIVER": [
+      "noun"
+    ],
+    "ROAD": [
+      "noun"
+    ],
+    "ROLL": [
+      "noun",
+      "verb"
+    ],
+    "RULE": [
+      "noun",
+      "verb"
+    ],
+    "RUN": [
+      "noun",
+      "verb"
+    ],
+    "SAD": [
+      "adjective"
+    ],
+    "SADLY": [
+      "adverb"
+    ],
+    "SADNESS": [
+      "noun"
+    ],
+    "SAFELY": [
+      "adverb"
+    ],
+    "SAFETY": [
+      "noun"
+    ],
+    "SALTY": [
+      "adjective"
+    ],
+    "SAND": [
+      "noun"
+    ],
+    "SANDY": [
+      "adjective"
+    ],
+    "SCARED": [
+      "adjective"
+    ],
+    "SCHOOL": [
+      "noun"
+    ],
+    "SCORE": [
+      "noun"
+    ],
+    "SEAL": [
+      "noun",
+      "verb"
+    ],
+    "SEASON": [
+      "noun"
+    ],
+    "SERENE": [
+      "adjective"
+    ],
+    "SERENITY": [
+      "noun"
+    ],
+    "SHADOW": [
+      "noun"
+    ],
+    "SHAPE": [
+      "noun",
+      "verb"
+    ],
+    "SHARE": [
+      "noun",
+      "verb"
+    ],
+    "SHELF": [
+      "noun"
+    ],
+    "SHIRT": [
+      "noun"
+    ],
+    "SHOE": [
+      "noun"
+    ],
+    "SHOUT": [
+      "noun",
+      "verb"
+    ],
+    "SIDE": [
+      "noun"
+    ],
+    "SILKY": [
+      "adjective"
+    ],
+    "SILLY": [
+      "adjective"
+    ],
+    "SILVER": [
+      "noun"
+    ],
+    "SING": [
+      "noun",
+      "verb"
+    ],
+    "SKY": [
+      "noun"
+    ],
+    "SLEEP": [
+      "noun",
+      "verb"
+    ],
+    "SLEEPY": [
+      "adjective"
+    ],
+    "SLOW": [
+      "adjective",
+      "adverb",
+      "verb"
+    ],
+    "SLOWLY": [
+      "adverb"
+    ],
+    "SMALL": [
+      "adjective"
+    ],
+    "SMELL": [
+      "noun",
+      "verb"
+    ],
+    "SMILE": [
+      "noun",
+      "verb"
+    ],
+    "SMILING": [
+      "adjective",
+      "verb"
+    ],
+    "SNOW": [
+      "noun"
+    ],
+    "SNOWY": [
+      "adjective"
+    ],
+    "SOFT": [
+      "adjective"
+    ],
+    "SOFTLY": [
+      "adverb"
+    ],
+    "SOLEMN": [
+      "adjective"
+    ],
+    "SOLVE": [
+      "verb"
+    ],
+    "SONG": [
+      "noun"
+    ],
+    "SOOTHE": [
+      "verb"
+    ],
+    "SOOTHING": [
+      "adjective",
+      "verb"
+    ],
+    "SORROW": [
+      "noun",
+      "verb"
+    ],
+    "SORROWFUL": [
+      "adjective"
+    ],
+    "SORT": [
+      "noun",
+      "verb"
+    ],
+    "SORTED": [
+      "adjective",
+      "verb"
+    ],
+    "SOUL": [
+      "noun"
+    ],
+    "SOUND": [
+      "noun",
+      "verb"
+    ],
+    "SOUR": [
+      "adjective",
+      "verb"
+    ],
+    "SPOON": [
+      "noun"
+    ],
+    "SPRING": [
+      "noun"
+    ],
+    "STABILITY": [
+      "noun"
+    ],
+    "STAR": [
+      "noun"
+    ],
+    "STEADY": [
+      "adjective"
+    ],
+    "STONE": [
+      "noun"
+    ],
+    "STORM": [
+      "noun"
+    ],
+    "STORMY": [
+      "adjective"
+    ],
+    "STORY": [
+      "noun"
+    ],
+    "STREAM": [
+      "noun"
+    ],
+    "STRUCTURE": [
+      "noun",
+      "verb"
+    ],
+    "SUMMER": [
+      "noun"
+    ],
+    "SUN": [
+      "noun"
+    ],
+    "SUNNY": [
+      "adjective"
+    ],
+    "SWEET": [
+      "adjective",
+      "noun"
+    ],
+    "SYSTEM": [
+      "noun",
+      "verb"
+    ],
+    "TABLE": [
+      "noun"
+    ],
+    "TASK": [
+      "noun"
+    ],
+    "TASTE": [
+      "noun",
+      "verb"
+    ],
+    "TEA": [
+      "noun"
+    ],
+    "TEACH": [
+      "verb"
+    ],
+    "TEACHER": [
+      "noun"
+    ],
+    "TEAM": [
+      "noun"
+    ],
+    "TEAR": [
+      "noun",
+      "verb"
+    ],
+    "TEARS": [
+      "noun",
+      "verb"
+    ],
+    "TELL": [
+      "noun",
+      "verb"
+    ],
+    "TENDER": [
+      "adjective"
+    ],
+    "TENDERNESS": [
+      "noun"
+    ],
+    "TERROR": [
+      "noun"
+    ],
+    "THING": [
+      "noun"
+    ],
+    "THIRSTY": [
+      "adjective"
+    ],
+    "THREAD": [
+      "noun",
+      "verb"
+    ],
+    "THREAT": [
+      "noun"
+    ],
+    "TIDY": [
+      "adjective"
+    ],
+    "TIME": [
+      "noun"
+    ],
+    "TIMID": [
+      "adjective"
+    ],
+    "TOAST": [
+      "noun"
+    ],
+    "TODAY": [
+      "noun"
+    ],
+    "TOMORROW": [
+      "noun"
+    ],
+    "TOOTH": [
+      "noun"
+    ],
+    "TOUCH": [
+      "noun",
+      "verb"
+    ],
+    "TRAGEDY": [
+      "noun"
+    ],
+    "TRAGIC": [
+      "adjective"
+    ],
+    "TRAIN": [
+      "noun"
+    ],
+    "TREAT": [
+      "noun",
+      "verb"
+    ],
+    "TURMOIL": [
+      "noun"
+    ],
+    "UNHAPPY": [
+      "adjective"
+    ],
+    "VALLEY": [
+      "noun"
+    ],
+    "VALOR": [
+      "noun"
+    ],
+    "VALOUR": [
+      "noun"
+    ],
+    "VICIOUS": [
+      "adjective"
+    ],
+    "VIOLENCE": [
+      "noun"
+    ],
+    "WALK": [
+      "noun",
+      "verb"
+    ],
+    "WARM": [
+      "adjective",
+      "verb"
+    ],
+    "WATER": [
+      "noun"
+    ],
+    "WHEEL": [
+      "noun"
+    ],
+    "WHITE": [
+      "adjective",
+      "noun"
+    ],
+    "WIND": [
+      "noun"
+    ],
+    "WINDOW": [
+      "noun"
+    ],
+    "WINDY": [
+      "adjective"
+    ],
+    "WINTER": [
+      "noun"
+    ],
+    "WOMAN": [
+      "noun"
+    ],
+    "WOOD": [
+      "noun"
+    ],
+    "WOODEN": [
+      "adjective"
+    ],
+    "WOOL": [
+      "noun"
+    ],
+    "WOOLLY": [
+      "adjective"
+    ],
+    "WORD": [
+      "noun"
+    ],
+    "WORK": [
+      "noun"
+    ],
+    "WORRY": [
+      "noun",
+      "verb"
+    ],
+    "WRATH": [
+      "noun"
+    ],
+    "YARN": [
+      "noun"
+    ],
+    "YEAR": [
+      "noun"
+    ],
+    "YELLOW": [
+      "adjective",
+      "noun",
+      "verb"
+    ],
+    "YOUNG": [
+      "adjective"
+    ]
+  },
+  "longWordRule": {
+    "minimumLength": 6,
+    "bonusStrikes": 1
+  },
+  "tileEffects": {
+    "strike": {
+      "strike": true,
+      "preventResolveLoss": false
+    },
+    "ward": {
+      "strike": false,
+      "preventResolveLoss": true
+    }
+  }
+}

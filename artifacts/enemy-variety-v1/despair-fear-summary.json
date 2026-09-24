@@ -1,0 +1,92 @@
+[
+  {
+    "enemy": "DESPAIR",
+    "attempted": 6,
+    "solvable": 6,
+    "accepted": 3,
+    "rejectionCounts": {
+      "irrelevant-strike": 2,
+      "decorative-semantic": 2
+    },
+    "acceptedCandidates": [
+      {
+        "seed": "enemy-variety-v1:DESPAIR:2",
+        "score": 56.79,
+        "bestObservedDepth": 3,
+        "minimumProven": false,
+        "reviewedFinishWords": [
+          "CLOSET",
+          "REST",
+          "SAND",
+          "SCORE",
+          "SEAL",
+          "SONG",
+          "SORT",
+          "SOUL",
+          "SOUND",
+          "STAR",
+          "STONE",
+          "CONFIDENT"
+        ],
+        "clutchStates": 0
+      },
+      {
+        "seed": "enemy-variety-v1:DESPAIR:5",
+        "score": 56.08,
+        "bestObservedDepth": 3,
+        "minimumProven": false,
+        "reviewedFinishWords": [
+          "ANGER",
+          "CANE",
+          "CAR",
+          "CARE",
+          "DANCE",
+          "DANGER",
+          "DAY",
+          "DREAD",
+          "GARDEN",
+          "NEAR",
+          "OCEAN",
+          "OPTIMISM"
+        ],
+        "clutchStates": 1
+      },
+      {
+        "seed": "enemy-variety-v1:DESPAIR:1",
+        "score": 53,
+        "bestObservedDepth": 4,
+        "minimumProven": false,
+        "reviewedFinishWords": [
+          "SAD",
+          "AMUSED",
+          "ELATED",
+          "CONFIDENT",
+          "ADEEMS",
+          "ADEPTS",
+          "ADIEUS",
+          "ADMITS",
+          "ADOPTS",
+          "ADULTS",
+          "AEDILE",
+          "AISLED"
+        ],
+        "clutchStates": 0
+      }
+    ]
+  },
+  {
+    "enemy": "FEAR",
+    "attempted": 6,
+    "solvable": 6,
+    "accepted": 0,
+    "rejectionCounts": {
+      "decorative-semantic": 6,
+      "decorative-strike": 2,
+      "decorative-grammar": 2,
+      "irrelevant-strike": 5,
+      "too-short": 1,
+      "missing-clutch": 1
+    },
+    "acceptedCandidates": []
+  }
+]

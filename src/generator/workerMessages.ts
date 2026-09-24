@@ -1,6 +1,6 @@
 import type { GenerationResult } from './generate.ts'
 
-export type GeneratorRequest = { id: number; enemy: string | null; seed: string; candidateCount: number }
+export type GeneratorRequest = { id: number; enemy: string | null; seed: string; candidateCount: number; includeRegenTile?: boolean }
 export type GeneratorProgress = { attempted: number; accepted: number; enemyWord: string }
 export type GeneratorResponse =
   | { id: number; type: 'progress'; progress: GeneratorProgress }
@@ -20,5 +20,8 @@ export function validateGeneratorRequest(value: unknown): GeneratorRequest {
   if (!Number.isSafeInteger(input.candidateCount) || input.candidateCount! < 1 || input.candidateCount! > 100) {
     throw new Error('Choose between 1 and 100 initial candidates.')
   }
-  return { id: input.id!, seed: input.seed, enemy: input.enemy?.trim().toUpperCase() ?? null, candidateCount: input.candidateCount! }
+  if (input.includeRegenTile !== undefined && typeof input.includeRegenTile !== 'boolean') throw new Error('REGEN choice must be a boolean.')
+  return { id: input.id!, seed: input.seed, enemy: input.enemy?.trim().toUpperCase() ?? null, candidateCount: input.candidateCount!,
+    ...(input.includeRegenTile === undefined ? {} : { includeRegenTile: input.includeRegenTile }),
+  }
 }

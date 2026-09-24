@@ -12,7 +12,7 @@ import { previewLetterStrike } from "./game/letterStrike"
 import { getLetterStrikeBonuses, getLetterStrikeGrammarModifiers, getLetterStrikeTileSummary } from "./game/letterStrikeHud"
 import { getDailyPuzzleId, validatePuzzleId } from "./daily/date"
 import { getDailyPuzzle } from "./daily/puzzle"
-import { getOpeningPuzzleId } from "./daily/persistence"
+import { getOpeningPuzzleId, getRunStorageKey, getResultStorageKey, resetDailyPuzzle } from "./daily/persistence"
 import { useDailyRun } from "./daily/useDailyRun"
 import { HelpPanel, HistoryErrorPanel, LogPanel, ResultPanel, SettingsPanel, StatsPanel } from "./components/DailyPanels"
 import ModeSelection from './components/ModeSelection'
@@ -20,6 +20,8 @@ import { getOnboardingStage } from './preferences'
 import { useUserPreferences } from './useUserPreferences'
 import type { DifficultyMode } from './daily/types'
 import type { CandidatePuzzle } from './generator/types'
+import type { TutorialStep } from './tutorial/tutorial'
+import { getPartsOfSpeech } from './game/dictionary'
 import "./components/DailyPanels.css"
 
 const DevPanel = import.meta.env.DEV ? lazy(() => import('./components/DevPanel')) : null
@@ -35,7 +37,8 @@ export default function App() {
   const user = useUserPreferences()
   const [onboarding, setOnboarding] = useState(() => getOnboardingStage(user.preferences))
   const [tutorialCompleted, setTutorialCompleted] = useState(false)
-  const [tutorialOnly, setTutorialOnly] = useState(false)
+  const [tutorialOnly, setTutorialOnly] = useState(user.preferences.hasChosenMode)
+  const [initialTutorialStep, setInitialTutorialStep] = useState<TutorialStep | undefined>()
   const [previewOnboarding, setPreviewOnboarding] = useState(false)
   const [choice, setChoice] = useState<DifficultyMode>(user.preferences.preferredMode)
   const [devModeOverride, setDevModeOverride] = useState<DifficultyMode | null>(null)
@@ -52,6 +55,18 @@ export default function App() {
   const [generatedCandidate, setGeneratedCandidate] = useState<CandidatePuzzle | null>(null)
   const [matchHint, setMatchHint] = useState<MatchHintMode>('off')
   const [enemyGrid, setEnemyGrid] = useState(false)
+
+  useEffect(() => {
+    // A beta reset in another tab also discards this tab's transient UI and pending turn.
+    const onReset = (event: StorageEvent) => {
+      if (event.newValue === null && (event.key === null
+        || event.key === getRunStorageKey(puzzleId) || event.key === getResultStorageKey(puzzleId))) {
+        setRevision(current => current + 1)
+      }
+    }
+    window.addEventListener('storage', onReset)
+    return () => window.removeEventListener('storage', onReset)
+  }, [puzzleId])
 
   useEffect(() => {
     const updateDay = () => setTodayId(getDailyPuzzleId(new Date()))
@@ -76,9 +91,9 @@ export default function App() {
   }
 
   function finishTutorial(completed: boolean) {
+    if (!previewOnboarding && !user.preferences.hasCompletedOnboarding) user.update({ hasCompletedOnboarding: true })
     if (tutorialOnly) { setOnboarding(null); return }
     setTutorialCompleted(completed)
-    if (!previewOnboarding) user.update({ hasCompletedOnboarding: true })
     setOnboarding('mode')
   }
 
@@ -97,10 +112,23 @@ export default function App() {
       return
     }
     setTutorialOnly(action === 'tutorial')
+    setInitialTutorialStep(undefined)
     setPreviewOnboarding(action === 'preview')
     setTutorialCompleted(false)
     setChoice(action === 'preview' ? 'normal' : user.preferences.preferredMode)
     setOnboarding('tutorial')
+  }
+
+  function replayTutorial(step?: string) {
+    setInitialTutorialStep(step as TutorialStep | undefined)
+    setTutorialOnly(true)
+    setPreviewOnboarding(false)
+    setOnboarding('tutorial')
+  }
+
+  function resetTutorial() {
+    user.update({ hasCompletedOnboarding: false })
+    replayTutorial()
   }
 
   if (DevGenerator && generatorOpen) return <Suspense fallback={<main className="container"><p>Loading generator…</p></main>}>
@@ -116,7 +144,7 @@ export default function App() {
   </Suspense>
 
   if (onboarding === 'tutorial') return <Suspense fallback={<main className="container"><p>Loading tutorial…</p></main>}>
-    <TutorialBattle onComplete={() => finishTutorial(true)} onSkip={() => finishTutorial(false)} />
+    <TutorialBattle key={initialTutorialStep ?? 'goal'} initialStep={initialTutorialStep} onComplete={() => finishTutorial(true)} onSkip={() => finishTutorial(false)} />
   </Suspense>
   if (onboarding === 'mode') return <ModeSelection value={choice} onChange={setChoice} onPlay={playDaily}
     completedTutorial={tutorialCompleted} error={user.error} />
@@ -132,11 +160,11 @@ export default function App() {
     enemyGrid={import.meta.env.DEV && enemyGrid} onEnemyGridChange={setEnemyGrid}
     preferredMode={user.preferences.preferredMode} onChangeMode={mode => user.update({ preferredMode: mode })}
     preferencesError={user.error} onDevOnboarding={devOnboarding} devModeOverride={devModeOverride}
-    onForceMode={setDevModeOverride} />
+    onForceMode={setDevModeOverride} onReplayTutorial={() => replayTutorial()} onResetTutorial={resetTutorial} onTutorialStep={replayTutorial} />
 }
 
 function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, matchHint, onMatchHintChange,
-  enemyGrid, onEnemyGridChange, preferredMode, onChangeMode, preferencesError, onDevOnboarding, devModeOverride, onForceMode }: {
+  enemyGrid, onEnemyGridChange, preferredMode, onChangeMode, preferencesError, onDevOnboarding, devModeOverride, onForceMode, onReplayTutorial, onResetTutorial, onTutorialStep }: {
   puzzleId: string; todayId: string; onLoad: (id: string) => void
   onPlaytest: (mode: 'damage' | 'letter-strike') => void
   onGenerator: () => void
@@ -145,14 +173,19 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, match
   preferredMode: DifficultyMode; onChangeMode: (mode: DifficultyMode) => void
   preferencesError: string | null; onDevOnboarding: (action: OnboardingAction) => void
   devModeOverride: DifficultyMode | null; onForceMode: (mode: DifficultyMode | null) => void
+  onReplayTutorial: () => void
+  onResetTutorial: () => void
+  onTutorialStep: (step: string) => void
 }) {
   const puzzle = useMemo(() => getDailyPuzzle(puzzleId), [puzzleId])
   const daily = useDailyRun(puzzle, preferredMode)
   const displayMode = import.meta.env.DEV && devModeOverride ? devModeOverride : daily.mode
   const { game, result } = daily
   const [panel, setPanel] = useState<Panel>(null)
+  const [resetError, setResetError] = useState<string | null>(null)
   const [resultDismissed, setResultDismissed] = useState(false)
   const [resolvedTurnCount, setResolvedTurnCount] = useState(game.playedWords.length)
+  const [undoEpoch, setUndoEpoch] = useState(0)
   const resolving = game.playedWords.length > resolvedTurnCount
   const resolutionComplete = useCallback(() => setResolvedTurnCount(game.playedWords.length), [game.playedWords.length])
   const visiblePanel = panel ?? (result && !resultDismissed && !resolving ? 'result' : null)
@@ -168,6 +201,23 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, match
   const enemy = game.encounter.enemy
   const interactive = visiblePhase === "ready" && game.status === "playing" && !daily.error && !result && !resolving
   const preview = previewLetterStrike(game)
+  const parts = game.encounter.wordPartsOfSpeech?.[preview.word] ?? getPartsOfSpeech(preview.word)
+  const grammarNote = preview.valid && Object.keys(game.encounter.grammarModifiers ?? {}).length > 0
+    && (!parts || parts.length !== 1)
+    ? parts && parts.length > 1 ? 'Multiple word types · no bonus' : 'Word type unknown · no bonus'
+    : undefined
+  function undoTurn() {
+    if (!resolving && daily.undo()) {
+      setResolvedTurnCount(Math.max(0, game.playedWords.length - 1))
+      setUndoEpoch(value => value + 1)
+      setPanel(null)
+    }
+  }
+  // Also handle an undo restored by another tab, before rendering its board.
+  if (game.playedWords.length < resolvedTurnCount) {
+    setResolvedTurnCount(game.playedWords.length)
+    setUndoEpoch(value => value + 1)
+  }
   const primaryLabel = result ? 'VIEW RESULT' : visiblePhase === 'waiting' ? 'BEGIN' : 'ATTACK'
   const primaryEnabled = result ? !resolving
     : visiblePhase === 'waiting' ? !daily.error
@@ -228,6 +278,7 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, match
           health={game.playerResolve}
           maxHealth={game.encounter.startingResolve}
         />
+        {!daily.started && puzzle.difficulty && <span className="daily-puzzle-difficulty">TODAY · DIFFICULTY: {puzzle.difficulty}</span>}
       </div>
 
       <div className="enemy-zone" data-grid-preview={import.meta.env.DEV && enemyGrid || undefined}>
@@ -235,15 +286,17 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, match
           name={enemy.word}
           partOfSpeech={enemy.partOfSpeech}
           definition={enemy.definition}
-          hideDefinition={displayMode === 'hard'}
+          hideDefinition={displayMode !== 'normal'}
           modifiers={getLetterStrikeGrammarModifiers(game)}
           modifierUnit="STRIKE"
           experimentalGrid={enemyGrid}
           introFinished={visiblePhase === 'ready'}
           letterStates={game.enemyLetters}
           predictedHits={interactive && preview.valid ? preview.hits : []}
+          predictedRecoveries={interactive && preview.valid ? preview.recoveries : undefined}
           resolvedHits={resolving ? game.playedWords.at(-1)?.preview.hits : undefined}
-          resolutionKey={resolving ? game.playedWords.length : undefined}
+          resolvedRecoveries={resolving ? game.playedWords.at(-1)?.preview.recoveries : undefined}
+          resolutionKey={resolving ? `${undoEpoch}:${game.playedWords.length}` : undefined}
           onResolutionComplete={resolutionComplete}
           revealedIndices={daily.resumed ? [...enemy.word].map((_, index) => index) : revealedEnemyIndices}
           registerLetter={registerLetter}
@@ -259,6 +312,10 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, match
           ready={interactive && preview.valid}
           message={message}
           bonuses={getLetterStrikeBonuses(preview)}
+          resolveBefore={interactive && preview.valid ? game.playerResolve : undefined}
+          resolveAfter={interactive && preview.valid ? game.playerResolve - preview.resolveCost : undefined}
+          recoveryText={preview.recoveries?.length ? `REGEN: ${preview.recoveries.map(hit => `${hit.letter} ${hit.hitsBefore === 0 ? 'returns' : 'gains armour'}`).join(', ')}` : undefined}
+          grammarNote={grammarNote}
         />
 
         <div className="controls">
@@ -309,8 +366,9 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, match
         onTilesDecoded={tilesDecoded}
       />}
       {visiblePanel === 'help' && <HelpPanel strikeConsumesAllowance={game.encounter.strikeConsumesAllowance}
-        longWordRule={game.encounter.longWordRule} onClose={() => setPanel(null)} />}
+        longWordRule={game.encounter.longWordRule} onReplayTutorial={onReplayTutorial} onClose={() => setPanel(null)} />}
       {visiblePanel === 'log' && <LogPanel game={game} date={puzzle.date}
+        onUndo={undoTurn} canUndo={daily.canUndo && !resolving} undosRemaining={daily.undosRemaining} undosUsed={daily.undosUsed}
         onClose={() => setPanel(null)} onShowStats={() => setPanel('stats')} />}
       {visiblePanel === 'result' && result && <ResultPanel result={result}
         onClose={() => { setResultDismissed(true); setPanel(null) }}
@@ -320,13 +378,23 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, match
         : <StatsPanel results={daily.history.results} todayId={todayId}
             inProgressIds={daily.history.inProgressIds} onResume={onLoad} onClose={() => setPanel(null)} />)}
       {visiblePanel === 'settings' && <SettingsPanel preferredMode={preferredMode} runMode={daily.mode}
-        started={daily.started} onChangeMode={onChangeMode} error={preferencesError}
+        onResetTutorial={onResetTutorial}
+        onResetPuzzle={() => {
+          try {
+            resetDailyPuzzle(puzzleId, window.localStorage)
+            onLoad(puzzleId)
+          } catch {
+            setResetError('Could not reset this puzzle. Please try again.')
+          }
+        }}
+        started={daily.started} onChangeMode={onChangeMode} error={resetError ?? preferencesError}
         onDev={DevPanel ? () => setPanel('dev') : undefined} onClose={() => setPanel(null)} />}
       {visiblePanel === 'dev' && DevPanel && <Suspense fallback={null}>
         <DevPanel puzzle={puzzle} onLoad={onLoad} onPlaytest={onPlaytest} onGenerator={onGenerator} onClose={() => setPanel(null)}
           matchHint={matchHint} onMatchHintChange={onMatchHintChange} onOnboarding={onDevOnboarding}
           enemyGrid={enemyGrid} onEnemyGridChange={onEnemyGridChange}
-          onForceMode={onForceMode} />
+          onForceMode={onForceMode} onTutorialStep={onTutorialStep}
+          onSetUndosUsed={daily.setUndosUsed} undosUsed={daily.undosUsed} undoLimit={daily.undoLimit} />
       </Suspense>}
     </main>
   )

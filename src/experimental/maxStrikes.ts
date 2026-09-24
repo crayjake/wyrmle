@@ -28,7 +28,7 @@ function getDictionaryMasks(): Uint32Array {
 
 function isStrikeTile(state: MaximumImmediateStrikesState, tile: LetterStrikeTile): boolean {
   return tile.type === 'gem' && tile.gem !== undefined
-    && state.encounter.tileEffects[tile.gem].strike
+    && state.encounter.tileEffects[tile.gem]?.strike === true
 }
 
 /**
@@ -42,7 +42,8 @@ function isStrikeTile(state: MaximumImmediateStrikesState, tile: LetterStrikeTil
  * reserve Strike copies until after normal hits. Track remaining same-letter
  * target capacity in word order, including repeated armour hits.
  * This maximizes attainable hits without enumerating equivalent tile IDs.
- * Ward and ordinary copies are interchangeable for this immediate-strike metric.
+ * Ward, REGEN and ordinary copies are interchangeable for this gross-strike
+ * metric: recovery happens after all strikes and never changes their count.
  */
 export function getMaximumImmediateStrikes(state: MaximumImmediateStrikesState): number {
   if (state.status !== 'playing') return 0

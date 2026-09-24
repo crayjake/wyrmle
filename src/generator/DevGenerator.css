@@ -89,3 +89,4 @@
   .generator-form :is(input, select) { width: 100%; min-width: 0; }
   .generator-heading { gap: 10px; }
 }
+.generator-regen { color: var(--red); border-color: var(--red); }

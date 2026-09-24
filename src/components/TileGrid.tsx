@@ -24,6 +24,7 @@ type TileGridProps = {
   tiles: readonly BoardTilePresentation[]
   specialTiles: readonly SpecialTilePresentation[]
   selectedTileIds: number[]
+  allowedTileIds?: readonly number[]
   enemyLetters?: readonly { letter: string; hitsRemaining: number }[]
   matchHint?: MatchHintMode
   damage?: number
@@ -47,6 +48,7 @@ export default function TileGrid({
   tiles,
   specialTiles,
   selectedTileIds,
+  allowedTileIds,
   enemyLetters = [],
   matchHint = 'off',
   damage,
@@ -91,7 +93,7 @@ export default function TileGrid({
               special={tile.type === "gem" ? specialTiles.find(special => special.id === tile.gem) : undefined}
               revealed={revealed}
               matchHint={matchingIds.has(tile.id) ? matchHint : 'off'}
-              disabled={!ready}
+              disabled={!ready || (allowedTileIds !== undefined && !allowedTileIds.includes(tile.id))}
               selected={selectedIndex !== -1}
               order={
                 selectedIndex !== -1

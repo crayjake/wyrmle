@@ -5,6 +5,7 @@ import { scorePuzzle } from '../src/generator/score.ts'
 import { validatePuzzle } from '../src/generator/validate.ts'
 import { getWordCommonness } from '../src/generator/lexicalProvider.ts'
 import { selectReviewCandidates } from '../src/generator/reviewSelection.ts'
+import { difficultyFromAnalysis } from '../src/generator/difficulty.ts'
 import type { RankedCandidate } from '../src/generator/generate.ts'
 
 const args = process.argv.slice(2)
@@ -34,7 +35,9 @@ for (const [index, item] of saved.entries()) {
   })
   const validation = validatePuzzle(item.candidate, analysis)
   const quality = scorePuzzle(item.candidate, analysis)
-  ranked.push({ candidate: item.candidate, analysis, validation, quality })
+  ranked.push({ candidate: item.candidate, analysis, validation, quality,
+    ...(analysis.bestWinDepth === null ? {} : { difficulty: difficultyFromAnalysis(item.candidate.encounter, analysis) }),
+  })
   console.log(`${index + 1}/${saved.length}: ${item.candidate.seed}; ${validation.accepted ? 'accepted' : 'rejected'}; score ${quality.total}; final states ${analysis.fairness.finalResolveStates}; rescues ${analysis.clutchOpportunityCount}`)
 }
 ranked.sort((a, b) => Number(b.validation.accepted) - Number(a.validation.accepted)

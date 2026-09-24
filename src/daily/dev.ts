@@ -2,12 +2,24 @@ import { createLetterStrikeGame, submitLetterStrike } from '../game/letterStrike
 import type { LetterStrikeState } from '../game/letterStrike.ts'
 import { resetDailyPuzzle, saveDailyRun } from './persistence.ts'
 import type { DailyPuzzleDefinition, StorageLike } from './types.ts'
+import { GENERATED_DESPAIR_PUZZLE_VERSION, GENERATED_MELANCHOLY_PUZZLE_VERSION } from './versions.ts'
 
-/** Real v1 engine replays, so test results pass the same restore checks as real play. */
+/** Real engine replays, so test results pass the same restore checks as real play. */
 export function playDevOutcome(puzzle: DailyPuzzleDefinition, outcome: 'won' | 'lost', storage: StorageLike) {
   if (!import.meta.env.DEV) throw new Error('Development tools are disabled.')
   let game = createLetterStrikeGame(puzzle.encounter)
-  if (puzzle.gameVersion === 'letter-strike-4' && puzzle.puzzleVersion === 5) {
+  if (puzzle.gameVersion === 'letter-strike-4' && puzzle.puzzleVersion === GENERATED_DESPAIR_PUZZLE_VERSION) {
+    // DESPAIR's three-word win, kept out of the production bundle with this module.
+    const turns = outcome === 'won' ? [
+      [1, 14, 9, 13, 15, 7], [18, 11, 20, 21], [5, 25, 0, 10, 22, 4],
+    ] : [
+      [8, 1, 12], [4, 0, 3], [6, 17, 19], [18, 15, 9], [14, 10, 21],
+    ]
+    for (const ids of turns) {
+      game = submitLetterStrike(game, ids)
+      if (game.error) throw new Error(game.error)
+    }
+  } else if (puzzle.gameVersion === 'letter-strike-4' && puzzle.puzzleVersion === GENERATED_MELANCHOLY_PUZZLE_VERSION) {
     // Frozen DEV-only replays for the generated September 24 publication.
     const turns = outcome === 'won' ? [
       [6, 8, 13, 1, 5], [20, 18, 0, 4, 11], [23, 7, 14],

@@ -61,20 +61,31 @@ function Stat({ label, children }: { label: string; children: ReactNode }) {
   return <div className="daily-stat"><dt>{label}</dt><dd>{children}</dd></div>
 }
 
-export function SettingsPanel({ preferredMode, runMode, started, error, onChangeMode, onDev, onClose }: PanelProps & {
+export function SettingsPanel({ preferredMode, runMode, started, error, onChangeMode, onDev, onResetPuzzle, onResetTutorial, onClose }: PanelProps & {
   preferredMode: DifficultyMode
   runMode: DifficultyMode
   started: boolean
   error: string | null
   onChangeMode: (mode: DifficultyMode) => void
   onDev?: () => void
+  onResetPuzzle: () => void
+  onResetTutorial: () => void
 }) {
   return <DailyDialog title="Settings" subtitle="This browser" onClose={onClose}>
     <ModeChoices value={preferredMode} onChange={onChangeMode} />
     <p className="mode-note">{started
       ? `This Daily stays in ${runMode.toUpperCase()}. Your preference applies to your next run.`
-      : 'Your choice applies when you begin. Both modes use the same Daily puzzle.'}</p>
+      : 'Your choice applies when you begin. Every mode uses the same Daily puzzle.'}</p>
     {error && <p className="mode-save-error" role="status">{error}</p>}
+    <section className="settings-beta" aria-label="Beta tools">
+      <h3>Beta tools</h3>
+      <div className="daily-panel-actions">
+        <button type="button" onClick={onResetPuzzle}>Reset puzzle</button>
+        <button type="button" onClick={onResetTutorial}>Reset tutorial</button>
+      </div>
+      <p>Reset puzzle clears this day’s progress and result so you can play again. Other days stay saved.</p>
+      <p>Reset tutorial starts the lessons again and keeps your puzzle progress.</p>
+    </section>
     {import.meta.env.DEV && onDev && <div className="daily-panel-actions">
       <button type="button" onClick={onDev}>Development tools</button>
     </div>}
@@ -122,17 +133,21 @@ export function ResultPanel({ result, onClose, onShowStats }: PanelProps & {
         <Stat label="Resisted">{result.resisted}</Stat>
       </dl>
       <dl className="daily-stats-list">
+        <Stat label="Puzzle difficulty">{result.puzzleDifficulty ?? 'Unrated'}</Stat>
+        <Stat label="Undos used">{result.undosUsed}</Stat>
+        <Stat label="Undos remaining">{result.undosRemaining}</Stat>
         <Stat label="Letters removed">{result.lettersDestroyed}</Stat>
         <Stat label="Armour breaks">{result.armourBroken}</Stat>
         <Stat label="Strike activations">{result.strikeActivations}</Stat>
         <Stat label="Ward saves">{result.wardSaves}</Stat>
+        {result.regenRecoveries !== undefined && <Stat label="Enemy recoveries">{result.regenRecoveries}</Stat>}
         <Stat label="Most removed in one word">{result.largestRemoval}</Stat>
       </dl>
       <details className="daily-words">
         <summary>Words played ({result.wordsPlayed.length})</summary>
         <p>{result.wordsPlayed.length > 0 ? result.wordsPlayed.join(' · ') : 'No words played.'}</p>
       </details>
-      <p className="daily-panel-note">This result is saved. Daily puzzles begin at midnight UTC.</p>
+      <p className="daily-panel-note">Result saved. During beta, Settings → Reset puzzle lets you play again. Daily puzzles begin at midnight UTC.</p>
       <details className="daily-share-details">
         <summary>Share preview &amp; symbols</summary>
         <pre className="daily-share-preview" aria-label="Spoiler-free share preview">{shareText}</pre>
@@ -140,6 +155,7 @@ export function ResultPanel({ result, onClose, onShowStats }: PanelProps & {
           <span>C Counter</span><span>N Neutral</span><span>R Resisted</span>
           <span>· Untouched</span><span>◐ Armour broken</span><span>■ Removed</span>
           <span>▣ Armour broken + removed</span><span>◇ Ward</span><span>◆ Strike</span>
+          {result.regenRecoveries !== undefined && <span>↺ Enemy recovery</span>}
         </p>
       </details>
       <div className="daily-panel-actions">
@@ -227,7 +243,7 @@ export function StatsPanel({ results, todayId, inProgressIds = [], onResume, onC
             <li key={result.puzzleId} className="daily-history-row">
               <time dateTime={result.date}>{result.date}</time>
               <span className={`daily-history-status ${result.won ? 'is-won' : 'is-lost'}`}>{result.won ? 'Won' : 'Lost'}</span>
-              <span className="daily-history-detail">{result.enemyWord} · {result.resolveRemaining}/{result.startingResolve} Resolve · {result.attacks} words · {result.lettersDestroyed} letters removed</span>
+              <span className="daily-history-detail">{result.enemyWord} · {result.resolveRemaining}/{result.startingResolve} Resolve · {result.attacks} words · {result.mode.toUpperCase()} · {result.undosUsed} {result.undosUsed === 1 ? 'undo' : 'undos'}{result.puzzleDifficulty ? ` · ${result.puzzleDifficulty} puzzle` : ''}</span>
             </li>
           ))}
         </ul>
@@ -237,35 +253,50 @@ export function StatsPanel({ results, todayId, inProgressIds = [], onResume, onC
   )
 }
 
-export function HelpPanel({ onClose, strikeConsumesAllowance = false, longWordRule }: PanelProps & {
+export function HelpPanel({ onClose, strikeConsumesAllowance = false, longWordRule, onReplayTutorial }: PanelProps & {
   strikeConsumesAllowance?: boolean
   longWordRule?: { minimumLength: number; bonusStrikes: number }
+  onReplayTutorial?: () => void
 }) {
   return (
     <DailyDialog title="How to play" subtitle="One puzzle each day" onClose={onClose}>
       <div className="daily-help">
-        <p>Choose tiles in any order to build an English word of at least three letters. Use each tile once per attack. Remove every letter of the enemy word to win.</p>
+        <p>Remove every enemy letter to win. Tap tiles in spelling order to build an English word of at least three letters. Tiles do not need to touch. Use each tile once per word; tap a selected tile again to remove it from your word.</p>
         <p><strong>COUNTER</strong> words strike with every matching tile. <strong>NEUTRAL</strong> words get one normal matching strike, in spelling order. <strong>RESISTED</strong> words have no normal strikes. Related words count as neutral.</p>
         {longWordRule && <p><strong>LONG +{longWordRule.bonusStrikes}</strong> gives neutral words of {longWordRule.minimumLength}+ letters an extra normal strike allowance. It stacks with grammar weaknesses, still needs matching tiles, and does not boost resisted words or counters.</p>}
         <p><span className="daily-help-gem">◆ Strike</span> guarantees its tile’s matching strike, even in a resisted word. {!strikeConsumesAllowance && 'It leaves the normal and grammar allowances available for other tiles. '}Each tile strikes at most once. A matching tile finishes wounded armour first, then targets from left to right.</p>
+        <p><span className="daily-help-regen">REGEN</span> helps the enemy after all your strikes. Each used REGEN tile restores one matching letter by one step: a dead letter returns unarmoured; a living unarmoured letter gains armour. Armour never exceeds two hits. Dead matches recover first, then living unarmoured matches, from left to right. If none can recover, it does nothing. The red <strong>+</strong> preview marks recovery before you attack.</p>
         <p>Highlighted enemy cells show exactly what your attack will do: blue <strong>−</strong> breaks armour; red <strong>×</strong> removes a letter. Armour loses its second outline on the first hit; defeated letters become centred <strong>·</strong> dots with no outline. Matching tiles resolve in your spelling order, so two strikes can break and remove the same armoured letter in one word.</p>
-        <p>Grammar labels under the definition are green for weaknesses and red for resistances. For example, an <strong>ADJECTIVE +1 STRIKE</strong> weakness lets a resisted adjective strike its first matching tile, or a neutral adjective strike its first two. Counters already use every matching tile. Grammar never creates a hit without a matching letter.</p>
+        <p>Grammar labels under the enemy are green for weaknesses and red for resistances. For example, an <strong>ADJECTIVE +1 STRIKE</strong> weakness lets a recognized adjective strike one extra matching tile. Some valid words have no confirmed word type; words with unknown or multiple types get no word-type bonus. Check the live preview to see what applies. Counters already use every matching tile. Grammar never creates a hit without a matching letter.</p>
         <p>Resolve is your remaining turns. Each valid word normally costs one; <span className="daily-help-gem">◇ Ward</span> makes that turn free. Used tiles are replaced. Removing the final enemy letter wins even when it spends your final Resolve.</p>
-        <p>Everyone receives the same daily puzzle. The day changes at <strong>midnight UTC</strong>. A win or loss completes that day permanently.</p>
+        <p>Normal shows the definition and allows <strong>3 undos</strong>; Hard hides the definition and allows <strong>1 undo</strong>; Hardcore hides it and has <strong>no undos</strong>. The puzzle is identical. Your mode stays fixed when you begin. Use Undo in the turn log to restore the complete state before your last word. A saved result cannot be undone.</p>
+        <p>The difficulty label rates the puzzle itself and is the same in every mode. The day changes at <strong>midnight UTC</strong>. During beta, use <strong>Settings → Reset puzzle</strong> to start the current day again, including after a win or loss. This clears that day’s saved progress and result. <strong>Reset tutorial</strong> restarts the lessons without changing your puzzle.</p>
         <p>Your committed attacks and results save automatically in this browser. Return here to resume an unfinished run. Clearing browser storage removes this local history.</p>
       </div>
-      <div className="daily-panel-actions"><button type="button" className="daily-panel-primary" onClick={onClose}>Return to the puzzle</button></div>
+      <div className="daily-panel-actions">
+        <button type="button" className="daily-panel-primary" onClick={onClose}>Return to the puzzle</button>
+        {onReplayTutorial && <button type="button" onClick={onReplayTutorial}>Replay tutorial</button>}
+      </div>
     </DailyDialog>
   )
 }
 
-export function LogPanel({ game, date, onShowStats, onClose }: PanelProps & {
+export function LogPanel({ game, date, onShowStats, onClose, onUndo, canUndo = false, undosRemaining = 0, undosUsed = 0 }: PanelProps & {
   game: LetterStrikeState
   date: string
   onShowStats: () => void
+  onUndo?: () => void
+  canUndo?: boolean
+  undosRemaining?: number
+  undosUsed?: number
 }) {
   const events = getLetterStrikeBattleEvents(game)
   return <DailyDialog title="Turn log" subtitle={`Daily · ${date} · UTC`} onClose={onClose}>
+    {onUndo && <div className="daily-undo-control">
+      <button type="button" className="daily-resume-button" onClick={onUndo} disabled={!canUndo}>Undo last word</button>
+      <span>{undosRemaining} {undosRemaining === 1 ? 'undo' : 'undos'} left · {undosUsed} used</span>
+      <p>{game.status === 'playing' ? 'Restores the board, enemy and Resolve before your last word.' : 'This result is saved and cannot be undone.'}</p>
+    </div>}
     {events.length > 0 ? <ol className="daily-turn-log" aria-label="All attacks, newest first">
       {events.map(event => {
         const attack = game.playedWords[event.id]
@@ -278,8 +309,9 @@ export function LogPanel({ game, date, onShowStats, onClose }: PanelProps & {
           </div>
           <div className="daily-turn-effects">
             <span className={event.semanticLabel === 'COUNTER' ? 'is-won' : event.semanticLabel === 'RESISTED' ? 'is-lost' : undefined}>{event.semanticLabel}</span>
-            {event.effectLabels.map(label => <span className="daily-help-gem" key={label}> · {label}</span>)}
+            {event.effectLabels.map(label => <span className={label === 'REGEN' ? 'daily-help-regen' : 'daily-help-gem'} key={label}> · {label}</span>)}
             <span> · {removed} removed{broken > 0 ? ` · ${broken} armour broken` : ''}</span>
+            {attack.preview.recoveries && <span className="daily-help-regen"> · {attack.preview.recoveries.length} {attack.preview.recoveries.length === 1 ? 'recovery' : 'recoveries'}</span>}
           </div>
         </li>
       })}

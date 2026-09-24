@@ -1,0 +1,856 @@
+[
+  {
+    "seed": "enemy-variety-v1:DESPAIR:2",
+    "score": 56.79,
+    "status": "unknown",
+    "cutoffs": [
+      "restricted-vocabulary",
+      "move-limit",
+      "beam-width",
+      "depth-limit"
+    ],
+    "routes": []
+  },
+  {
+    "seed": "enemy-variety-v1:DESPAIR:5",
+    "score": 56.08,
+    "status": "won",
+    "cutoffs": [
+      "restricted-vocabulary",
+      "move-limit",
+      "beam-width",
+      "depth-limit"
+    ],
+    "routes": [
+      {
+        "moves": [
+          {
+            "word": "WINTER",
+            "tileIds": [
+              1,
+              14,
+              9,
+              13,
+              15,
+              7
+            ],
+            "before": "DE²SPAIR",
+            "strikes": 3,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": true,
+            "resolve": 4,
+            "remaining": "DESPA"
+          },
+          {
+            "word": "HOPE",
+            "tileIds": [
+              18,
+              11,
+              20,
+              21
+            ],
+            "before": "DESPA",
+            "strikes": 2,
+            "semantic": "COUNTER",
+            "ward": true,
+            "strike": false,
+            "resolve": 4,
+            "remaining": "DSA"
+          },
+          {
+            "word": "SCARED",
+            "tileIds": [
+              5,
+              25,
+              0,
+              10,
+              22,
+              4
+            ],
+            "before": "DSA",
+            "strikes": 3,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": false,
+            "resolve": 3,
+            "remaining": ""
+          }
+        ],
+        "turns": 3,
+        "resolve": 3
+      },
+      {
+        "moves": [
+          {
+            "word": "FRIENDLY",
+            "tileIds": [
+              2,
+              7,
+              14,
+              15,
+              9,
+              4,
+              12,
+              3
+            ],
+            "before": "DE²SPAIR",
+            "strikes": 4,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": true,
+            "resolve": 4,
+            "remaining": "ESPA"
+          },
+          {
+            "word": "STEADY",
+            "tileIds": [
+              5,
+              13,
+              22,
+              17,
+              6,
+              19
+            ],
+            "before": "ESPA",
+            "strikes": 3,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": false,
+            "resolve": 3,
+            "remaining": "P"
+          },
+          {
+            "word": "HOPE",
+            "tileIds": [
+              18,
+              11,
+              16,
+              21
+            ],
+            "before": "P",
+            "strikes": 1,
+            "semantic": "COUNTER",
+            "ward": true,
+            "strike": false,
+            "resolve": 3,
+            "remaining": ""
+          }
+        ],
+        "turns": 3,
+        "resolve": 3
+      },
+      {
+        "moves": [
+          {
+            "word": "SAD",
+            "tileIds": [
+              5,
+              0,
+              4
+            ],
+            "before": "DE²SPAIR",
+            "strikes": 2,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": false,
+            "resolve": 4,
+            "remaining": "DE²PIR"
+          },
+          {
+            "word": "FRIENDLY",
+            "tileIds": [
+              2,
+              7,
+              14,
+              15,
+              9,
+              6,
+              12,
+              3
+            ],
+            "before": "DE²PIR",
+            "strikes": 4,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": true,
+            "resolve": 3,
+            "remaining": "EP"
+          },
+          {
+            "word": "HOPE",
+            "tileIds": [
+              18,
+              11,
+              16,
+              21
+            ],
+            "before": "EP",
+            "strikes": 2,
+            "semantic": "COUNTER",
+            "ward": true,
+            "strike": false,
+            "resolve": 3,
+            "remaining": ""
+          }
+        ],
+        "turns": 3,
+        "resolve": 3
+      },
+      {
+        "moves": [
+          {
+            "word": "STEADY",
+            "tileIds": [
+              5,
+              13,
+              15,
+              0,
+              4,
+              3
+            ],
+            "before": "DE²SPAIR",
+            "strikes": 4,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": true,
+            "resolve": 4,
+            "remaining": "EPIR"
+          },
+          {
+            "word": "FRIENDLY",
+            "tileIds": [
+              2,
+              7,
+              14,
+              21,
+              9,
+              6,
+              12,
+              19
+            ],
+            "before": "EPIR",
+            "strikes": 3,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": false,
+            "resolve": 3,
+            "remaining": "P"
+          },
+          {
+            "word": "HOPE",
+            "tileIds": [
+              18,
+              11,
+              16,
+              22
+            ],
+            "before": "P",
+            "strikes": 1,
+            "semantic": "COUNTER",
+            "ward": true,
+            "strike": false,
+            "resolve": 3,
+            "remaining": ""
+          }
+        ],
+        "turns": 3,
+        "resolve": 3
+      },
+      {
+        "moves": [
+          {
+            "word": "END",
+            "tileIds": [
+              15,
+              9,
+              4
+            ],
+            "before": "DE²SPAIR",
+            "strikes": 2,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": true,
+            "resolve": 4,
+            "remaining": "ESPAIR"
+          },
+          {
+            "word": "AFRAID",
+            "tileIds": [
+              0,
+              2,
+              7,
+              17,
+              14,
+              6
+            ],
+            "before": "ESPAIR",
+            "strikes": 3,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": false,
+            "resolve": 3,
+            "remaining": "ESP"
+          },
+          {
+            "word": "SLEEPY",
+            "tileIds": [
+              5,
+              12,
+              21,
+              22,
+              16,
+              19
+            ],
+            "before": "ESP",
+            "strikes": 3,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": false,
+            "resolve": 2,
+            "remaining": ""
+          }
+        ],
+        "turns": 3,
+        "resolve": 2
+      },
+      {
+        "moves": [
+          {
+            "word": "FRIENDLY",
+            "tileIds": [
+              2,
+              7,
+              14,
+              15,
+              9,
+              4,
+              12,
+              3
+            ],
+            "before": "DE²SPAIR",
+            "strikes": 4,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": true,
+            "resolve": 4,
+            "remaining": "ESPA"
+          },
+          {
+            "word": "STEADY",
+            "tileIds": [
+              5,
+              13,
+              22,
+              17,
+              6,
+              19
+            ],
+            "before": "ESPA",
+            "strikes": 3,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": false,
+            "resolve": 3,
+            "remaining": "P"
+          },
+          {
+            "word": "HOPE",
+            "tileIds": [
+              18,
+              26,
+              16,
+              21
+            ],
+            "before": "P",
+            "strikes": 1,
+            "semantic": "COUNTER",
+            "ward": false,
+            "strike": false,
+            "resolve": 2,
+            "remaining": ""
+          }
+        ],
+        "turns": 3,
+        "resolve": 2
+      },
+      {
+        "moves": [
+          {
+            "word": "FRIENDLY",
+            "tileIds": [
+              2,
+              7,
+              14,
+              15,
+              9,
+              4,
+              12,
+              3
+            ],
+            "before": "DE²SPAIR",
+            "strikes": 4,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": true,
+            "resolve": 4,
+            "remaining": "ESPA"
+          },
+          {
+            "word": "STEADY",
+            "tileIds": [
+              5,
+              13,
+              22,
+              17,
+              6,
+              19
+            ],
+            "before": "ESPA",
+            "strikes": 3,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": false,
+            "resolve": 3,
+            "remaining": "P"
+          },
+          {
+            "word": "PAGE",
+            "tileIds": [
+              16,
+              0,
+              27,
+              21
+            ],
+            "before": "P",
+            "strikes": 1,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": false,
+            "resolve": 2,
+            "remaining": ""
+          }
+        ],
+        "turns": 3,
+        "resolve": 2
+      },
+      {
+        "moves": [
+          {
+            "word": "FRIENDLY",
+            "tileIds": [
+              2,
+              7,
+              14,
+              15,
+              9,
+              4,
+              12,
+              3
+            ],
+            "before": "DE²SPAIR",
+            "strikes": 4,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": true,
+            "resolve": 4,
+            "remaining": "ESPA"
+          },
+          {
+            "word": "STEADY",
+            "tileIds": [
+              5,
+              13,
+              22,
+              17,
+              6,
+              19
+            ],
+            "before": "ESPA",
+            "strikes": 3,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": false,
+            "resolve": 3,
+            "remaining": "P"
+          },
+          {
+            "word": "PEAR",
+            "tileIds": [
+              16,
+              21,
+              0,
+              10
+            ],
+            "before": "P",
+            "strikes": 1,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": false,
+            "resolve": 2,
+            "remaining": ""
+          }
+        ],
+        "turns": 3,
+        "resolve": 2
+      },
+      {
+        "moves": [
+          {
+            "word": "SAD",
+            "tileIds": [
+              5,
+              0,
+              4
+            ],
+            "before": "DE²SPAIR",
+            "strikes": 2,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": false,
+            "resolve": 4,
+            "remaining": "DE²PIR"
+          },
+          {
+            "word": "FRIENDLY",
+            "tileIds": [
+              2,
+              7,
+              14,
+              15,
+              9,
+              6,
+              12,
+              3
+            ],
+            "before": "DE²PIR",
+            "strikes": 4,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": true,
+            "resolve": 3,
+            "remaining": "EP"
+          },
+          {
+            "word": "CHAPTER",
+            "tileIds": [
+              25,
+              18,
+              17,
+              16,
+              13,
+              21,
+              10
+            ],
+            "before": "EP",
+            "strikes": 2,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": false,
+            "resolve": 2,
+            "remaining": ""
+          }
+        ],
+        "turns": 3,
+        "resolve": 2
+      },
+      {
+        "moves": [
+          {
+            "word": "STEADY",
+            "tileIds": [
+              5,
+              13,
+              15,
+              0,
+              4,
+              3
+            ],
+            "before": "DE²SPAIR",
+            "strikes": 4,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": true,
+            "resolve": 4,
+            "remaining": "EPIR"
+          },
+          {
+            "word": "FRIENDLY",
+            "tileIds": [
+              2,
+              7,
+              14,
+              21,
+              9,
+              6,
+              12,
+              19
+            ],
+            "before": "EPIR",
+            "strikes": 3,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": false,
+            "resolve": 3,
+            "remaining": "P"
+          },
+          {
+            "word": "HOPE",
+            "tileIds": [
+              18,
+              26,
+              16,
+              22
+            ],
+            "before": "P",
+            "strikes": 1,
+            "semantic": "COUNTER",
+            "ward": false,
+            "strike": false,
+            "resolve": 2,
+            "remaining": ""
+          }
+        ],
+        "turns": 3,
+        "resolve": 2
+      },
+      {
+        "moves": [
+          {
+            "word": "STEADY",
+            "tileIds": [
+              5,
+              13,
+              15,
+              0,
+              4,
+              3
+            ],
+            "before": "DE²SPAIR",
+            "strikes": 4,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": true,
+            "resolve": 4,
+            "remaining": "EPIR"
+          },
+          {
+            "word": "FRIENDLY",
+            "tileIds": [
+              2,
+              7,
+              14,
+              21,
+              9,
+              6,
+              12,
+              19
+            ],
+            "before": "EPIR",
+            "strikes": 3,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": false,
+            "resolve": 3,
+            "remaining": "P"
+          },
+          {
+            "word": "PAGE",
+            "tileIds": [
+              16,
+              17,
+              27,
+              22
+            ],
+            "before": "P",
+            "strikes": 1,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": false,
+            "resolve": 2,
+            "remaining": ""
+          }
+        ],
+        "turns": 3,
+        "resolve": 2
+      },
+      {
+        "moves": [
+          {
+            "word": "STEADY",
+            "tileIds": [
+              5,
+              13,
+              15,
+              0,
+              4,
+              3
+            ],
+            "before": "DE²SPAIR",
+            "strikes": 4,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": true,
+            "resolve": 4,
+            "remaining": "EPIR"
+          },
+          {
+            "word": "FRIENDLY",
+            "tileIds": [
+              2,
+              7,
+              14,
+              21,
+              9,
+              6,
+              12,
+              19
+            ],
+            "before": "EPIR",
+            "strikes": 3,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": false,
+            "resolve": 3,
+            "remaining": "P"
+          },
+          {
+            "word": "PEAR",
+            "tileIds": [
+              16,
+              22,
+              17,
+              10
+            ],
+            "before": "P",
+            "strikes": 1,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": false,
+            "resolve": 2,
+            "remaining": ""
+          }
+        ],
+        "turns": 3,
+        "resolve": 2
+      },
+      {
+        "moves": [
+          {
+            "word": "SORTED",
+            "tileIds": [
+              5,
+              11,
+              7,
+              13,
+              15,
+              4
+            ],
+            "before": "DE²SPAIR",
+            "strikes": 3,
+            "semantic": "NEUTRAL",
+            "ward": true,
+            "strike": true,
+            "resolve": 5,
+            "remaining": "DEPAI"
+          },
+          {
+            "word": "AFRAID",
+            "tileIds": [
+              0,
+              2,
+              10,
+              17,
+              14,
+              6
+            ],
+            "before": "DEPAI",
+            "strikes": 3,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": false,
+            "resolve": 4,
+            "remaining": "EP"
+          },
+          {
+            "word": "HOPE",
+            "tileIds": [
+              18,
+              26,
+              16,
+              21
+            ],
+            "before": "EP",
+            "strikes": 2,
+            "semantic": "COUNTER",
+            "ward": false,
+            "strike": false,
+            "resolve": 3,
+            "remaining": ""
+          }
+        ],
+        "turns": 3,
+        "resolve": 3
+      },
+      {
+        "moves": [
+          {
+            "word": "ELATION",
+            "tileIds": [
+              15,
+              12,
+              0,
+              13,
+              14,
+              8,
+              9
+            ],
+            "before": "DE²SPAIR",
+            "strikes": 3,
+            "semantic": "COUNTER",
+            "ward": false,
+            "strike": true,
+            "resolve": 4,
+            "remaining": "DESPR"
+          },
+          {
+            "word": "HOPE",
+            "tileIds": [
+              18,
+              11,
+              20,
+              22
+            ],
+            "before": "DESPR",
+            "strikes": 2,
+            "semantic": "COUNTER",
+            "ward": true,
+            "strike": false,
+            "resolve": 4,
+            "remaining": "DSR"
+          },
+          {
+            "word": "SCARED",
+            "tileIds": [
+              5,
+              25,
+              17,
+              10,
+              21,
+              4
+            ],
+            "before": "DSR",
+            "strikes": 3,
+            "semantic": "NEUTRAL",
+            "ward": false,
+            "strike": false,
+            "resolve": 3,
+            "remaining": ""
+          }
+        ],
+        "turns": 3,
+        "resolve": 3
+      }
+    ]
+  }
+]

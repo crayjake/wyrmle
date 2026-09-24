@@ -1,10 +1,16 @@
-import { dailyEncounterV1, dailyEncounterV2, dailyEncounterV3, dailyEncounterV4, dailyEncounter20260924 } from './catalog.ts'
+import {
+  dailyEncounterV1, dailyEncounterV2, dailyEncounterV3, dailyEncounterV4,
+  dailyEncounter20260924, dailyEncounter20260924V6,
+} from './catalog.ts'
 import { validatePuzzleId } from './date.ts'
+import difficultyLabels from './difficultyLabels.json' with { type: 'json' }
+import type { PuzzleDifficultyLabel } from '../generator/difficulty.ts'
 import type { DailyPuzzleDefinition } from './types.ts'
 import {
   GAME_VERSION, GAME_VERSION_V2, GAME_VERSION_V3, GRAMMAR_RELEASE_DATE, LEGACY_GAME_VERSION,
   LEGACY_PUZZLE_VERSION, PUZZLE_VERSION, PUZZLE_VERSION_V2, PUZZLE_VERSION_V3,
   GENERATED_MELANCHOLY_DATE, GENERATED_MELANCHOLY_PUZZLE_VERSION,
+  GENERATED_DESPAIR_DATES, GENERATED_DESPAIR_PUZZLE_VERSION,
 } from './versions.ts'
 
 function deepFreeze<T>(value: T): T {
@@ -21,6 +27,7 @@ deepFreeze(dailyEncounterV2)
 deepFreeze(dailyEncounterV3)
 deepFreeze(dailyEncounterV4)
 deepFreeze(dailyEncounter20260924)
+deepFreeze(dailyEncounter20260924V6)
 
 /** Old rules remain available only for dates on which those rules were published. */
 export function getSupportedDailyPuzzles(puzzleId: string): DailyPuzzleDefinition[] {
@@ -40,10 +47,16 @@ export function getSupportedDailyPuzzles(puzzleId: string): DailyPuzzleDefinitio
     gameVersion: GAME_VERSION, puzzleVersion: GENERATED_MELANCHOLY_PUZZLE_VERSION,
     encounter: dailyEncounter20260924,
   })
-  return definitions.map((definition) => deepFreeze({ puzzleId, date: puzzleId, ...definition }))
+  if (GENERATED_DESPAIR_DATES.includes(puzzleId)) definitions.push({
+    gameVersion: GAME_VERSION, puzzleVersion: GENERATED_DESPAIR_PUZZLE_VERSION,
+    encounter: dailyEncounter20260924V6,
+  })
+  return definitions.map((definition) => deepFreeze({ puzzleId, date: puzzleId, ...definition,
+    difficulty: (difficultyLabels as Record<string, PuzzleDifficultyLabel>)[definition.encounter.id],
+  }))
 }
 
-/** Latest rules for a new attempt; committed saves are resolved by their version. */
+/** Latest publication for a new attempt; committed saves resolve their own version. */
 export function getDailyPuzzle(puzzleId: string): DailyPuzzleDefinition {
   return getSupportedDailyPuzzles(puzzleId).at(-1)!
 }

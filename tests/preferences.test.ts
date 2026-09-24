@@ -31,6 +31,14 @@ test('skip/completion survives interruption at mode selection without repeating 
   assert.equal(getOnboardingStage(loadPreferences(storage)), null)
 })
 
+test('Hardcore is a durable preferred mode and does not change onboarding completion', () => {
+  const storage = new MemoryStorage()
+  savePreferences(storage, { preferredMode: 'hardcore', hasCompletedOnboarding: true, hasChosenMode: true })
+  assert.equal(loadPreferences(storage).preferredMode, 'hardcore')
+  assert.equal(getOnboardingStage(loadPreferences(storage)), null)
+  assert.deepEqual([...storage.data.keys()], [PREFERENCES_KEY])
+})
+
 test('returning players skip forced onboarding, including historical and damaged Daily records', () => {
   for (const key of ['wyrmle:letter-strike:daily:v1:run:2026-09-24',
     'wyrmle:letter-strike:daily:v1:result:2026-09-24', 'wyrmle:daily:v1:run:2026-09-23']) {

@@ -1,0 +1,7627 @@
+{
+  "enemy": "ANGER",
+  "attempted": 6,
+  "accepted": 2,
+  "rejected": {
+    "decorative-semantic": 4,
+    "irrelevant-strike": 3,
+    "too-short": 3
+  },
+  "candidates": [
+    {
+      "seed": "enemy-variety-v1:ANGER:4",
+      "accepted": true,
+      "reasons": [],
+      "score": 53.61,
+      "archetypes": [
+        "armour-break",
+        "multiple-routes"
+      ],
+      "finishWords": [
+        "ANGER",
+        "STREAM",
+        "CANE",
+        "CAR",
+        "CARE",
+        "GAME",
+        "LAMB",
+        "LANE",
+        "LEAN",
+        "MAN",
+        "GENTLE"
+      ],
+      "turnCounts": [
+        3,
+        5
+      ],
+      "openings": [
+        "SERENITY",
+        "TENDER",
+        "EVENING",
+        "DARING"
+      ],
+      "lines": [
+        {
+          "words": [
+            "SERENITY",
+            "DANGER",
+            "ANGER"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "TENDER",
+            "ANGRY",
+            "ANGER"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "EVENING",
+            "DANGER",
+            "STREAM"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 2,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "SERENITY",
+            "DANGER",
+            "CANE"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "SERENITY",
+            "DANGER",
+            "CAR"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "SERENITY",
+            "DANGER",
+            "CARE"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "SERENITY",
+            "DANGER",
+            "GAME"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "SERENITY",
+            "DANGER",
+            "LAMB"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "SERENITY",
+            "DANGER",
+            "LANE"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "SERENITY",
+            "DANGER",
+            "LEAN"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "SERENITY",
+            "DANGER",
+            "MAN"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "DARING",
+            "GREEN",
+            "CALM",
+            "PEACE",
+            "GENTLE"
+          ],
+          "turns": 5,
+          "resolveRemaining": 1,
+          "finalHits": 1,
+          "finalSemantic": "COUNTER"
+        }
+      ],
+      "clutches": []
+    },
+    {
+      "seed": "enemy-variety-v1:ANGER:0",
+      "accepted": true,
+      "reasons": [],
+      "score": 35.72,
+      "archetypes": [
+        "ward-timing",
+        "refill-planning"
+      ],
+      "finishWords": [
+        "SERENITY",
+        "CANE",
+        "CLOSET",
+        "HEAL",
+        "HEAT",
+        "HELP",
+        "HEN",
+        "HOME",
+        "HOPE",
+        "LANE",
+        "LEAN",
+        "LEMON"
+      ],
+      "turnCounts": [
+        5,
+        4
+      ],
+      "openings": [
+        "SOOTHING",
+        "ORGANISED"
+      ],
+      "lines": [
+        {
+          "words": [
+            "SOOTHING",
+            "KINDNESS",
+            "CALM",
+            "PEACEFUL",
+            "SERENITY"
+          ],
+          "turns": 5,
+          "resolveRemaining": 1,
+          "finalHits": 1,
+          "finalSemantic": "COUNTER"
+        },
+        {
+          "words": [
+            "ORGANISED",
+            "KIND",
+            "CALM",
+            "CANE"
+          ],
+          "turns": 4,
+          "resolveRemaining": 2,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "ORGANISED",
+            "KIND",
+            "CALM",
+            "CLOSET"
+          ],
+          "turns": 4,
+          "resolveRemaining": 2,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "ORGANISED",
+            "KIND",
+            "CALM",
+            "HEAL"
+          ],
+          "turns": 4,
+          "resolveRemaining": 2,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "ORGANISED",
+            "KIND",
+            "CALM",
+            "HEAT"
+          ],
+          "turns": 4,
+          "resolveRemaining": 2,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "ORGANISED",
+            "KIND",
+            "CALM",
+            "HELP"
+          ],
+          "turns": 4,
+          "resolveRemaining": 2,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "ORGANISED",
+            "KIND",
+            "CALM",
+            "HEN"
+          ],
+          "turns": 4,
+          "resolveRemaining": 2,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "ORGANISED",
+            "KIND",
+            "CALM",
+            "HOME"
+          ],
+          "turns": 4,
+          "resolveRemaining": 2,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "ORGANISED",
+            "KIND",
+            "CALM",
+            "HOPE"
+          ],
+          "turns": 4,
+          "resolveRemaining": 2,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "ORGANISED",
+            "KIND",
+            "CALM",
+            "LANE"
+          ],
+          "turns": 4,
+          "resolveRemaining": 2,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "ORGANISED",
+            "KIND",
+            "CALM",
+            "LEAN"
+          ],
+          "turns": 4,
+          "resolveRemaining": 2,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "ORGANISED",
+            "KIND",
+            "CALM",
+            "LEMON"
+          ],
+          "turns": 4,
+          "resolveRemaining": 2,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        }
+      ],
+      "clutches": []
+    },
+    {
+      "seed": "enemy-variety-v1:ANGER:1",
+      "accepted": false,
+      "reasons": [
+        {
+          "code": "decorative-semantic",
+          "message": "The intended semantic mechanic barely changes observed winning lines or solutions."
+        },
+        {
+          "code": "irrelevant-strike",
+          "message": "The placed strike tile has negligible observed effect."
+        }
+      ],
+      "score": 41.98,
+      "archetypes": [
+        "armour-break",
+        "multiple-routes"
+      ],
+      "finishWords": [
+        "PACIFY",
+        "CAR",
+        "CHAIR",
+        "CHAOS",
+        "HAIR",
+        "HAPPY",
+        "HARSH"
+      ],
+      "turnCounts": [
+        5,
+        6
+      ],
+      "openings": [
+        "CHEER",
+        "BREVET",
+        "BELIER",
+        "BELTER",
+        "BERTHE"
+      ],
+      "lines": [
+        {
+          "words": [
+            "CHEER",
+            "PATIENCE",
+            "SOOTHING",
+            "FORGIVE",
+            "PACIFY"
+          ],
+          "turns": 5,
+          "resolveRemaining": 1,
+          "finalHits": 1,
+          "finalSemantic": "COUNTER"
+        },
+        {
+          "words": [
+            "BREVET",
+            "YOUNG",
+            "PATIENCE",
+            "COIL",
+            "FIRE",
+            "CAR"
+          ],
+          "turns": 6,
+          "resolveRemaining": 0,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "BREVET",
+            "YOUNG",
+            "PATIENCE",
+            "COIL",
+            "FIRE",
+            "CHAIR"
+          ],
+          "turns": 6,
+          "resolveRemaining": 0,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "BREVET",
+            "YOUNG",
+            "PATIENCE",
+            "COIL",
+            "FIRE",
+            "CHAOS"
+          ],
+          "turns": 6,
+          "resolveRemaining": 0,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "BREVET",
+            "YOUNG",
+            "PATIENCE",
+            "COIL",
+            "FIRE",
+            "HAIR"
+          ],
+          "turns": 6,
+          "resolveRemaining": 0,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "BREVET",
+            "YOUNG",
+            "PATIENCE",
+            "COIL",
+            "FIRE",
+            "HAPPY"
+          ],
+          "turns": 6,
+          "resolveRemaining": 0,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "BREVET",
+            "YOUNG",
+            "PATIENCE",
+            "COIL",
+            "FIRE",
+            "HARSH"
+          ],
+          "turns": 6,
+          "resolveRemaining": 0,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "BELIER",
+            "YOUNG",
+            "PATIENCE",
+            "SOOTHE",
+            "CRY",
+            "CAR"
+          ],
+          "turns": 6,
+          "resolveRemaining": 0,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "BELIER",
+            "YOUNG",
+            "PATIENCE",
+            "SOOTHE",
+            "CRY",
+            "CHAIR"
+          ],
+          "turns": 6,
+          "resolveRemaining": 0,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "BELIER",
+            "YOUNG",
+            "PATIENCE",
+            "SOOTHE",
+            "CRY",
+            "HAIR"
+          ],
+          "turns": 6,
+          "resolveRemaining": 0,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "BELTER",
+            "YOUNG",
+            "PATIENCE",
+            "FORGIVE",
+            "CRY",
+            "CHAOS"
+          ],
+          "turns": 6,
+          "resolveRemaining": 0,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "BERTHE",
+            "YOUNG",
+            "PATIENCE",
+            "FORGIVE",
+            "CRY",
+            "CHAOS"
+          ],
+          "turns": 6,
+          "resolveRemaining": 0,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        }
+      ],
+      "clutches": [
+        {
+          "remaining": "A",
+          "prefix": [
+            "BREVET",
+            "YOUNG",
+            "PATIENCE",
+            "COIL",
+            "FIRE"
+          ],
+          "finishes": [
+            "CAR"
+          ],
+          "hits": [
+            1
+          ]
+        },
+        {
+          "remaining": "A",
+          "prefix": [
+            "BELIER",
+            "YOUNG",
+            "PATIENCE",
+            "SOOTHE",
+            "CRY"
+          ],
+          "finishes": [
+            "CAR"
+          ],
+          "hits": [
+            1
+          ]
+        },
+        {
+          "remaining": "A",
+          "prefix": [
+            "BELTER",
+            "YOUNG",
+            "PATIENCE",
+            "FORGIVE",
+            "CRY"
+          ],
+          "finishes": [
+            "CHAOS"
+          ],
+          "hits": [
+            1
+          ]
+        },
+        {
+          "remaining": "A",
+          "prefix": [
+            "BERTHE",
+            "YOUNG",
+            "PATIENCE",
+            "FORGIVE",
+            "CRY"
+          ],
+          "finishes": [
+            "CHAOS"
+          ],
+          "hits": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "seed": "enemy-variety-v1:ANGER:2",
+      "accepted": false,
+      "reasons": [
+        {
+          "code": "too-short",
+          "message": "A witnessed win takes 2 turn(s); minimum target is 3."
+        },
+        {
+          "code": "decorative-semantic",
+          "message": "The intended semantic mechanic barely changes observed winning lines or solutions."
+        }
+      ],
+      "score": 32.8,
+      "archetypes": [
+        "greedy-trap",
+        "semantic-contrast"
+      ],
+      "finishWords": [
+        "FEAR",
+        "GLOOM",
+        "GRIEF",
+        "DOG",
+        "GOLD",
+        "GLOOMY",
+        "GLAD",
+        "LARGE",
+        "PACIFY"
+      ],
+      "turnCounts": [
+        3,
+        2,
+        5
+      ],
+      "openings": [
+        "CHEERY",
+        "TEACHER",
+        "HEARTY",
+        "SERENITY",
+        "MERCY"
+      ],
+      "lines": [
+        {
+          "words": [
+            "CHEERY",
+            "SOOTHING",
+            "FEAR"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "TEACHER",
+            "FRIEND",
+            "GLOOM"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HEARTY",
+            "END",
+            "GLOOM"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HEARTY",
+            "END",
+            "GRIEF"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HEARTY",
+            "HEN",
+            "DOG"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HEARTY",
+            "HEN",
+            "GLOOM"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HEARTY",
+            "HEN",
+            "GOLD"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HEARTY",
+            "HEN",
+            "GRIEF"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "TEACHER",
+            "FRIEND",
+            "GLOOMY"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "SERENITY",
+            "GLAD"
+          ],
+          "turns": 2,
+          "resolveRemaining": 4,
+          "finalHits": 2,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "SERENITY",
+            "LARGE"
+          ],
+          "turns": 2,
+          "resolveRemaining": 4,
+          "finalHits": 2,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "MERCY",
+            "SOOTHE",
+            "FORGIVE",
+            "GENTLE",
+            "PACIFY"
+          ],
+          "turns": 5,
+          "resolveRemaining": 1,
+          "finalHits": 1,
+          "finalSemantic": "COUNTER"
+        }
+      ],
+      "clutches": []
+    },
+    {
+      "seed": "enemy-variety-v1:ANGER:3",
+      "accepted": false,
+      "reasons": [
+        {
+          "code": "too-short",
+          "message": "A witnessed win takes 2 turn(s); minimum target is 3."
+        },
+        {
+          "code": "decorative-semantic",
+          "message": "The intended semantic mechanic barely changes observed winning lines or solutions."
+        },
+        {
+          "code": "irrelevant-strike",
+          "message": "The placed strike tile has negligible observed effect."
+        }
+      ],
+      "score": 25.52,
+      "archetypes": [
+        "ward-timing",
+        "refill-planning"
+      ],
+      "finishWords": [
+        "GAME",
+        "GOAL",
+        "MONEY",
+        "MOON",
+        "MOTION",
+        "NOISE",
+        "NOTE",
+        "ONION",
+        "SPOON",
+        "STONE",
+        "LION",
+        "CALM"
+      ],
+      "turnCounts": [
+        4,
+        3,
+        5
+      ],
+      "openings": [
+        "PEACEFUL",
+        "CHEERFUL",
+        "CHEERY",
+        "MERCY"
+      ],
+      "lines": [
+        {
+          "words": [
+            "PEACEFUL",
+            "MORNING",
+            "KINDNESS",
+            "GAME"
+          ],
+          "turns": 4,
+          "resolveRemaining": 2,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "PEACEFUL",
+            "MORNING",
+            "KINDNESS",
+            "GOAL"
+          ],
+          "turns": 4,
+          "resolveRemaining": 2,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "CHEERFUL",
+            "GLAD",
+            "MONEY"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "CHEERFUL",
+            "GLAD",
+            "MOON"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "CHEERFUL",
+            "GLAD",
+            "MOTION"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "CHEERFUL",
+            "GLAD",
+            "NOISE"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "CHEERFUL",
+            "GLAD",
+            "NOTE"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "CHEERFUL",
+            "GLAD",
+            "ONION"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "CHEERFUL",
+            "GLAD",
+            "SPOON"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "CHEERFUL",
+            "GLAD",
+            "STONE"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "CHEERY",
+            "GLAD",
+            "LION"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "MERCY",
+            "KIND",
+            "SOOTHING",
+            "GENTLENESS",
+            "CALM"
+          ],
+          "turns": 5,
+          "resolveRemaining": 1,
+          "finalHits": 1,
+          "finalSemantic": "COUNTER"
+        }
+      ],
+      "clutches": []
+    },
+    {
+      "seed": "enemy-variety-v1:ANGER:5",
+      "accepted": false,
+      "reasons": [
+        {
+          "code": "too-short",
+          "message": "A witnessed win takes 2 turn(s); minimum target is 3."
+        },
+        {
+          "code": "decorative-semantic",
+          "message": "The intended semantic mechanic barely changes observed winning lines or solutions."
+        },
+        {
+          "code": "irrelevant-strike",
+          "message": "The placed strike tile has negligible observed effect."
+        }
+      ],
+      "score": 22.16,
+      "archetypes": [
+        "armour-break",
+        "multiple-routes"
+      ],
+      "finishWords": [
+        "CAT",
+        "CLAIM",
+        "CLAY",
+        "COAL",
+        "COAT",
+        "FAMILY",
+        "LEAF",
+        "LOAM",
+        "MALICE",
+        "MEAL",
+        "METAL",
+        "SERENE"
+      ],
+      "turnCounts": [
+        3,
+        5
+      ],
+      "openings": [
+        "GENTLE",
+        "GLEE"
+      ],
+      "lines": [
+        {
+          "words": [
+            "GENTLE",
+            "DANGER",
+            "CAT"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "GENTLE",
+            "DANGER",
+            "CLAIM"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "GENTLE",
+            "DANGER",
+            "CLAY"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "GENTLE",
+            "DANGER",
+            "COAL"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "GENTLE",
+            "DANGER",
+            "COAT"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "GENTLE",
+            "DANGER",
+            "FAMILY"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "GENTLE",
+            "DANGER",
+            "LEAF"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "GENTLE",
+            "DANGER",
+            "LOAM"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "GENTLE",
+            "DANGER",
+            "MALICE"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "GENTLE",
+            "DANGER",
+            "MEAL"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "GENTLE",
+            "DANGER",
+            "METAL"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "GLEE",
+            "GENTLE",
+            "CALM",
+            "PATIENCE",
+            "SERENE"
+          ],
+          "turns": 5,
+          "resolveRemaining": 1,
+          "finalHits": 1,
+          "finalSemantic": "COUNTER"
+        }
+      ],
+      "clutches": []
+    }
+  ],
+  "deeper": {
+    "seed": "enemy-variety-v1:ANGER:4",
+    "states": 251,
+    "bestWinDepth": 3,
+    "minimumTurnsProven": false,
+    "openings": [
+      "GARDEN",
+      "SERENITY",
+      "END",
+      "EVENING",
+      "REST",
+      "TENDER",
+      "RED",
+      "DANGER",
+      "BRAVE",
+      "GREEN",
+      "STEADY",
+      "NEAR",
+      "DARING"
+    ],
+    "finishWords": [
+      "ANGER",
+      "STREAM",
+      "ALARM",
+      "CANE",
+      "CAR",
+      "CARE",
+      "CREAM",
+      "GAME",
+      "LAMB",
+      "LANE",
+      "LEAN",
+      "MAN",
+      "MEAL",
+      "MEAN",
+      "NAME",
+      "NEAR",
+      "PAGE",
+      "CAT",
+      "LEARN",
+      "PART",
+      "PEAR",
+      "PLACE",
+      "PLAN",
+      "SEAL",
+      "STAR",
+      "TEA",
+      "TEAR",
+      "BALANCE",
+      "METAL",
+      "PLANE",
+      "PLATE",
+      "TABLE",
+      "TEAM",
+      "GENTLE"
+    ],
+    "turnCounts": [
+      3,
+      4,
+      5
+    ],
+    "lines": [
+      [
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            10,
+            2,
+            6,
+            7,
+            8,
+            14
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "ANER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            20,
+            16,
+            9,
+            15,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "A",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "ANGER",
+          "tileIds": [
+            23,
+            18,
+            17,
+            1,
+            0
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            8,
+            6,
+            9,
+            14,
+            13,
+            3,
+            5
+          ],
+          "resolve": 5,
+          "hits": 4,
+          "remaining": "AG",
+          "ward": true,
+          "strike": true,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            15,
+            10,
+            20,
+            16
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "ANGER",
+          "tileIds": [
+            23,
+            18,
+            17,
+            1,
+            0
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "END",
+          "tileIds": [
+            8,
+            15,
+            7
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            1,
+            6,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "BALANCE",
+          "tileIds": [
+            11,
+            2,
+            24,
+            23,
+            14,
+            25,
+            20
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "G",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "ANGER",
+          "tileIds": [
+            27,
+            32,
+            10,
+            19,
+            0
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "EVENING",
+          "tileIds": [
+            1,
+            12,
+            8,
+            14,
+            13,
+            15,
+            10
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "AGR",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            18,
+            21,
+            9,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AR",
+          "ward": true,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MERCY",
+          "tileIds": [
+            26,
+            19,
+            16,
+            22,
+            5
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "ANGER",
+          "tileIds": [
+            23,
+            32,
+            17,
+            20,
+            0
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "REST",
+          "tileIds": [
+            6,
+            8,
+            4,
+            3
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "ANGE",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "EVENING",
+          "tileIds": [
+            19,
+            12,
+            9,
+            14,
+            13,
+            18,
+            10
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            15,
+            21,
+            20,
+            16
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "ANGER",
+          "tileIds": [
+            23,
+            32,
+            17,
+            1,
+            0
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "REST",
+          "tileIds": [
+            6,
+            8,
+            4,
+            3
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "ANGE",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "EVENING",
+          "tileIds": [
+            19,
+            12,
+            9,
+            14,
+            13,
+            18,
+            10
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            17,
+            23,
+            16,
+            7,
+            20,
+            15
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "ANGER",
+          "tileIds": [
+            2,
+            32,
+            21,
+            1,
+            0
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "TENDER",
+          "tileIds": [
+            3,
+            8,
+            15,
+            7,
+            9,
+            6
+          ],
+          "resolve": 5,
+          "hits": 4,
+          "remaining": "AG",
+          "ward": true,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "ANGRY",
+          "tileIds": [
+            2,
+            14,
+            21,
+            16,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "ANGER",
+          "tileIds": [
+            23,
+            18,
+            10,
+            1,
+            0
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "RED",
+          "tileIds": [
+            6,
+            8,
+            7
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "ANGE",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            1,
+            16,
+            9,
+            14,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "BALANCE",
+          "tileIds": [
+            11,
+            2,
+            24,
+            23,
+            15,
+            25,
+            20
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "G",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "ANGER",
+          "tileIds": [
+            27,
+            18,
+            10,
+            19,
+            0
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            14,
+            10,
+            8,
+            6
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            20,
+            16,
+            9,
+            15,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "CALM",
+          "tileIds": [
+            28,
+            29,
+            24,
+            26
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "G",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "ANGER",
+          "tileIds": [
+            23,
+            18,
+            17,
+            1,
+            0
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "END",
+          "tileIds": [
+            8,
+            15,
+            7
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            1,
+            6,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "BALANCE",
+          "tileIds": [
+            11,
+            2,
+            24,
+            23,
+            14,
+            22,
+            20
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "G",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "CALM",
+          "tileIds": [
+            25,
+            29,
+            31,
+            26
+          ],
+          "resolve": 2,
+          "hits": 0,
+          "remaining": "G",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "ANGER",
+          "tileIds": [
+            27,
+            32,
+            10,
+            19,
+            0
+          ],
+          "resolve": 1,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "BRAVE",
+          "tileIds": [
+            11,
+            6,
+            2,
+            12,
+            9
+          ],
+          "resolve": 5,
+          "hits": 2,
+          "remaining": "ANGE",
+          "ward": true,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            8,
+            15,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "AG",
+          "ward": false,
+          "strike": true,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "CALM",
+          "tileIds": [
+            28,
+            27,
+            24,
+            26
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "G",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "ANGER",
+          "tileIds": [
+            23,
+            14,
+            10,
+            1,
+            0
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "GREEN",
+          "tileIds": [
+            10,
+            6,
+            8,
+            9,
+            15
+          ],
+          "resolve": 5,
+          "hits": 2,
+          "remaining": "ANER",
+          "ward": true,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            1,
+            16,
+            20,
+            14,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "CALM",
+          "tileIds": [
+            28,
+            27,
+            24,
+            26
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "ANGER",
+          "tileIds": [
+            2,
+            18,
+            17,
+            19,
+            0
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "STEADY",
+          "tileIds": [
+            4,
+            3,
+            9,
+            2,
+            7,
+            5
+          ],
+          "resolve": 5,
+          "hits": 2,
+          "remaining": "ANGER",
+          "ward": true,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "EVENING",
+          "tileIds": [
+            8,
+            12,
+            20,
+            14,
+            13,
+            15,
+            10
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "AR",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "CALM",
+          "tileIds": [
+            28,
+            27,
+            24,
+            26
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "R",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "ANGER",
+          "tileIds": [
+            23,
+            18,
+            17,
+            1,
+            0
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "RED",
+          "tileIds": [
+            6,
+            8,
+            7
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "ANGE",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            1,
+            16,
+            9,
+            15,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "BALANCE",
+          "tileIds": [
+            11,
+            2,
+            24,
+            23,
+            14,
+            25,
+            20
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "G",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "CALM",
+          "tileIds": [
+            22,
+            29,
+            31,
+            26
+          ],
+          "resolve": 2,
+          "hits": 0,
+          "remaining": "G",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "ANGER",
+          "tileIds": [
+            27,
+            18,
+            10,
+            19,
+            0
+          ],
+          "resolve": 1,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "EVENING",
+          "tileIds": [
+            1,
+            12,
+            8,
+            14,
+            13,
+            15,
+            10
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "AGR",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            18,
+            21,
+            9,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AR",
+          "ward": true,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "STREAM",
+          "tileIds": [
+            4,
+            3,
+            0,
+            19,
+            23,
+            26
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            10,
+            2,
+            6,
+            7,
+            8,
+            14
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "ANER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            20,
+            16,
+            9,
+            15,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "A",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "ALARM",
+          "tileIds": [
+            23,
+            24,
+            27,
+            0,
+            26
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            10,
+            2,
+            6,
+            7,
+            8,
+            14
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "ANER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            20,
+            16,
+            9,
+            15,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "A",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "CANE",
+          "tileIds": [
+            22,
+            23,
+            18,
+            1
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            10,
+            2,
+            6,
+            7,
+            8,
+            14
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "ANER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            20,
+            16,
+            9,
+            15,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "A",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "CAR",
+          "tileIds": [
+            22,
+            23,
+            0
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            10,
+            2,
+            6,
+            7,
+            8,
+            14
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "ANER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            20,
+            16,
+            9,
+            15,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "A",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "CARE",
+          "tileIds": [
+            22,
+            23,
+            0,
+            1
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            10,
+            2,
+            6,
+            7,
+            8,
+            14
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "ANER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            20,
+            16,
+            9,
+            15,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "A",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "CREAM",
+          "tileIds": [
+            22,
+            0,
+            1,
+            23,
+            26
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            10,
+            2,
+            6,
+            7,
+            8,
+            14
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "ANER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            20,
+            16,
+            9,
+            15,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "A",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "GAME",
+          "tileIds": [
+            17,
+            23,
+            26,
+            1
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            10,
+            2,
+            6,
+            7,
+            8,
+            14
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "ANER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            20,
+            16,
+            9,
+            15,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "A",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "LAMB",
+          "tileIds": [
+            24,
+            23,
+            26,
+            11
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            10,
+            2,
+            6,
+            7,
+            8,
+            14
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "ANER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            20,
+            16,
+            9,
+            15,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "A",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "LANE",
+          "tileIds": [
+            24,
+            23,
+            18,
+            1
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            10,
+            2,
+            6,
+            7,
+            8,
+            14
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "ANER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            20,
+            16,
+            9,
+            15,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "A",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "LEAN",
+          "tileIds": [
+            24,
+            1,
+            23,
+            18
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            10,
+            2,
+            6,
+            7,
+            8,
+            14
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "ANER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            20,
+            16,
+            9,
+            15,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "A",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "MAN",
+          "tileIds": [
+            26,
+            23,
+            18
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            10,
+            2,
+            6,
+            7,
+            8,
+            14
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "ANER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            20,
+            16,
+            9,
+            15,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "A",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "MEAL",
+          "tileIds": [
+            26,
+            1,
+            23,
+            24
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            10,
+            2,
+            6,
+            7,
+            8,
+            14
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "ANER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            20,
+            16,
+            9,
+            15,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "A",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "MEAN",
+          "tileIds": [
+            26,
+            1,
+            23,
+            18
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            10,
+            2,
+            6,
+            7,
+            8,
+            14
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "ANER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            20,
+            16,
+            9,
+            15,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "A",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "NAME",
+          "tileIds": [
+            18,
+            23,
+            26,
+            1
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            10,
+            2,
+            6,
+            7,
+            8,
+            14
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "ANER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            20,
+            16,
+            9,
+            15,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "A",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "NEAR",
+          "tileIds": [
+            18,
+            1,
+            23,
+            0
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            8,
+            6,
+            9,
+            14,
+            13,
+            3,
+            5
+          ],
+          "resolve": 5,
+          "hits": 4,
+          "remaining": "AG",
+          "ward": true,
+          "strike": true,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            15,
+            10,
+            20,
+            16
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "ALARM",
+          "tileIds": [
+            23,
+            24,
+            27,
+            0,
+            26
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            8,
+            6,
+            9,
+            14,
+            13,
+            3,
+            5
+          ],
+          "resolve": 5,
+          "hits": 4,
+          "remaining": "AG",
+          "ward": true,
+          "strike": true,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            15,
+            10,
+            20,
+            16
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "CANE",
+          "tileIds": [
+            22,
+            23,
+            18,
+            1
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            8,
+            6,
+            9,
+            14,
+            13,
+            3,
+            5
+          ],
+          "resolve": 5,
+          "hits": 4,
+          "remaining": "AG",
+          "ward": true,
+          "strike": true,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            15,
+            10,
+            20,
+            16
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "CAR",
+          "tileIds": [
+            22,
+            23,
+            0
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            8,
+            6,
+            9,
+            14,
+            13,
+            3,
+            5
+          ],
+          "resolve": 5,
+          "hits": 4,
+          "remaining": "AG",
+          "ward": true,
+          "strike": true,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            15,
+            10,
+            20,
+            16
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "CARE",
+          "tileIds": [
+            22,
+            23,
+            0,
+            1
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            8,
+            6,
+            9,
+            14,
+            13,
+            3,
+            5
+          ],
+          "resolve": 5,
+          "hits": 4,
+          "remaining": "AG",
+          "ward": true,
+          "strike": true,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            15,
+            10,
+            20,
+            16
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "CREAM",
+          "tileIds": [
+            22,
+            0,
+            1,
+            23,
+            26
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            8,
+            6,
+            9,
+            14,
+            13,
+            3,
+            5
+          ],
+          "resolve": 5,
+          "hits": 4,
+          "remaining": "AG",
+          "ward": true,
+          "strike": true,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            15,
+            10,
+            20,
+            16
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "GAME",
+          "tileIds": [
+            17,
+            23,
+            26,
+            1
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            8,
+            6,
+            9,
+            14,
+            13,
+            3,
+            5
+          ],
+          "resolve": 5,
+          "hits": 4,
+          "remaining": "AG",
+          "ward": true,
+          "strike": true,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            15,
+            10,
+            20,
+            16
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "LAMB",
+          "tileIds": [
+            24,
+            23,
+            26,
+            11
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            8,
+            6,
+            9,
+            14,
+            13,
+            3,
+            5
+          ],
+          "resolve": 5,
+          "hits": 4,
+          "remaining": "AG",
+          "ward": true,
+          "strike": true,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            15,
+            10,
+            20,
+            16
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "LANE",
+          "tileIds": [
+            24,
+            23,
+            18,
+            1
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            8,
+            6,
+            9,
+            14,
+            13,
+            3,
+            5
+          ],
+          "resolve": 5,
+          "hits": 4,
+          "remaining": "AG",
+          "ward": true,
+          "strike": true,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            15,
+            10,
+            20,
+            16
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "LEAN",
+          "tileIds": [
+            24,
+            1,
+            23,
+            18
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            8,
+            6,
+            9,
+            14,
+            13,
+            3,
+            5
+          ],
+          "resolve": 5,
+          "hits": 4,
+          "remaining": "AG",
+          "ward": true,
+          "strike": true,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            15,
+            10,
+            20,
+            16
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MAN",
+          "tileIds": [
+            26,
+            23,
+            18
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            8,
+            6,
+            9,
+            14,
+            13,
+            3,
+            5
+          ],
+          "resolve": 5,
+          "hits": 4,
+          "remaining": "AG",
+          "ward": true,
+          "strike": true,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            15,
+            10,
+            20,
+            16
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MEAL",
+          "tileIds": [
+            26,
+            1,
+            23,
+            24
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            8,
+            6,
+            9,
+            14,
+            13,
+            3,
+            5
+          ],
+          "resolve": 5,
+          "hits": 4,
+          "remaining": "AG",
+          "ward": true,
+          "strike": true,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            15,
+            10,
+            20,
+            16
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MEAN",
+          "tileIds": [
+            26,
+            1,
+            23,
+            18
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            8,
+            6,
+            9,
+            14,
+            13,
+            3,
+            5
+          ],
+          "resolve": 5,
+          "hits": 4,
+          "remaining": "AG",
+          "ward": true,
+          "strike": true,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            15,
+            10,
+            20,
+            16
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "NAME",
+          "tileIds": [
+            18,
+            23,
+            26,
+            1
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            8,
+            6,
+            9,
+            14,
+            13,
+            3,
+            5
+          ],
+          "resolve": 5,
+          "hits": 4,
+          "remaining": "AG",
+          "ward": true,
+          "strike": true,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            15,
+            10,
+            20,
+            16
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "NEAR",
+          "tileIds": [
+            18,
+            1,
+            23,
+            0
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "END",
+          "tileIds": [
+            8,
+            15,
+            7
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            1,
+            6,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "BALANCE",
+          "tileIds": [
+            11,
+            2,
+            24,
+            23,
+            14,
+            25,
+            20
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "G",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "GAME",
+          "tileIds": [
+            10,
+            27,
+            26,
+            19
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "END",
+          "tileIds": [
+            8,
+            15,
+            7
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            1,
+            6,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "BALANCE",
+          "tileIds": [
+            11,
+            2,
+            24,
+            23,
+            14,
+            25,
+            20
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "G",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "PAGE",
+          "tileIds": [
+            30,
+            27,
+            10,
+            19
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "EVENING",
+          "tileIds": [
+            1,
+            12,
+            8,
+            14,
+            13,
+            15,
+            10
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "AGR",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            18,
+            21,
+            9,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AR",
+          "ward": true,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MERCY",
+          "tileIds": [
+            26,
+            19,
+            16,
+            22,
+            5
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "CANE",
+          "tileIds": [
+            25,
+            23,
+            32,
+            20
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "EVENING",
+          "tileIds": [
+            1,
+            12,
+            8,
+            14,
+            13,
+            15,
+            10
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "AGR",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            18,
+            21,
+            9,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AR",
+          "ward": true,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MERCY",
+          "tileIds": [
+            26,
+            19,
+            16,
+            22,
+            5
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "CAR",
+          "tileIds": [
+            25,
+            23,
+            0
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "EVENING",
+          "tileIds": [
+            1,
+            12,
+            8,
+            14,
+            13,
+            15,
+            10
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "AGR",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            18,
+            21,
+            9,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AR",
+          "ward": true,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MERCY",
+          "tileIds": [
+            26,
+            19,
+            16,
+            22,
+            5
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "CARE",
+          "tileIds": [
+            25,
+            23,
+            0,
+            20
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "EVENING",
+          "tileIds": [
+            1,
+            12,
+            8,
+            14,
+            13,
+            15,
+            10
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "AGR",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            18,
+            21,
+            9,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AR",
+          "ward": true,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MERCY",
+          "tileIds": [
+            26,
+            19,
+            16,
+            22,
+            5
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "CAT",
+          "tileIds": [
+            25,
+            23,
+            3
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "EVENING",
+          "tileIds": [
+            1,
+            12,
+            8,
+            14,
+            13,
+            15,
+            10
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "AGR",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            18,
+            21,
+            9,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AR",
+          "ward": true,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MERCY",
+          "tileIds": [
+            26,
+            19,
+            16,
+            22,
+            5
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "LANE",
+          "tileIds": [
+            24,
+            23,
+            32,
+            20
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "EVENING",
+          "tileIds": [
+            1,
+            12,
+            8,
+            14,
+            13,
+            15,
+            10
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "AGR",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            18,
+            21,
+            9,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AR",
+          "ward": true,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MERCY",
+          "tileIds": [
+            26,
+            19,
+            16,
+            22,
+            5
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "LEAN",
+          "tileIds": [
+            24,
+            20,
+            23,
+            32
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "EVENING",
+          "tileIds": [
+            1,
+            12,
+            8,
+            14,
+            13,
+            15,
+            10
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "AGR",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            18,
+            21,
+            9,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AR",
+          "ward": true,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MERCY",
+          "tileIds": [
+            26,
+            19,
+            16,
+            22,
+            5
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "LEARN",
+          "tileIds": [
+            24,
+            20,
+            23,
+            0,
+            32
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "EVENING",
+          "tileIds": [
+            1,
+            12,
+            8,
+            14,
+            13,
+            15,
+            10
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "AGR",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            18,
+            21,
+            9,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AR",
+          "ward": true,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MERCY",
+          "tileIds": [
+            26,
+            19,
+            16,
+            22,
+            5
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "NEAR",
+          "tileIds": [
+            32,
+            20,
+            23,
+            0
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "EVENING",
+          "tileIds": [
+            1,
+            12,
+            8,
+            14,
+            13,
+            15,
+            10
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "AGR",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            18,
+            21,
+            9,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AR",
+          "ward": true,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MERCY",
+          "tileIds": [
+            26,
+            19,
+            16,
+            22,
+            5
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "PAGE",
+          "tileIds": [
+            30,
+            23,
+            17,
+            20
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "EVENING",
+          "tileIds": [
+            1,
+            12,
+            8,
+            14,
+            13,
+            15,
+            10
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "AGR",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            18,
+            21,
+            9,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AR",
+          "ward": true,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MERCY",
+          "tileIds": [
+            26,
+            19,
+            16,
+            22,
+            5
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "PART",
+          "tileIds": [
+            30,
+            23,
+            0,
+            3
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "EVENING",
+          "tileIds": [
+            1,
+            12,
+            8,
+            14,
+            13,
+            15,
+            10
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "AGR",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            18,
+            21,
+            9,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AR",
+          "ward": true,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MERCY",
+          "tileIds": [
+            26,
+            19,
+            16,
+            22,
+            5
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "PEAR",
+          "tileIds": [
+            30,
+            20,
+            23,
+            0
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "EVENING",
+          "tileIds": [
+            1,
+            12,
+            8,
+            14,
+            13,
+            15,
+            10
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "AGR",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            18,
+            21,
+            9,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AR",
+          "ward": true,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MERCY",
+          "tileIds": [
+            26,
+            19,
+            16,
+            22,
+            5
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "PLACE",
+          "tileIds": [
+            30,
+            24,
+            23,
+            25,
+            20
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "EVENING",
+          "tileIds": [
+            1,
+            12,
+            8,
+            14,
+            13,
+            15,
+            10
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "AGR",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            18,
+            21,
+            9,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AR",
+          "ward": true,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MERCY",
+          "tileIds": [
+            26,
+            19,
+            16,
+            22,
+            5
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "PLAN",
+          "tileIds": [
+            30,
+            24,
+            23,
+            32
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "EVENING",
+          "tileIds": [
+            1,
+            12,
+            8,
+            14,
+            13,
+            15,
+            10
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "AGR",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            18,
+            21,
+            9,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AR",
+          "ward": true,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MERCY",
+          "tileIds": [
+            26,
+            19,
+            16,
+            22,
+            5
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "SEAL",
+          "tileIds": [
+            4,
+            20,
+            23,
+            24
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "EVENING",
+          "tileIds": [
+            1,
+            12,
+            8,
+            14,
+            13,
+            15,
+            10
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "AGR",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            18,
+            21,
+            9,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AR",
+          "ward": true,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MERCY",
+          "tileIds": [
+            26,
+            19,
+            16,
+            22,
+            5
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "STAR",
+          "tileIds": [
+            4,
+            3,
+            23,
+            0
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "EVENING",
+          "tileIds": [
+            1,
+            12,
+            8,
+            14,
+            13,
+            15,
+            10
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "AGR",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            18,
+            21,
+            9,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AR",
+          "ward": true,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MERCY",
+          "tileIds": [
+            26,
+            19,
+            16,
+            22,
+            5
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "TEA",
+          "tileIds": [
+            3,
+            20,
+            23
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "EVENING",
+          "tileIds": [
+            1,
+            12,
+            8,
+            14,
+            13,
+            15,
+            10
+          ],
+          "resolve": 4,
+          "hits": 3,
+          "remaining": "AGR",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            2,
+            18,
+            21,
+            9,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AR",
+          "ward": true,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MERCY",
+          "tileIds": [
+            26,
+            19,
+            16,
+            22,
+            5
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "TEAR",
+          "tileIds": [
+            3,
+            20,
+            23,
+            0
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            27,
+            14,
+            10,
+            20,
+            0
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "BALANCE",
+          "tileIds": [
+            11,
+            23,
+            24,
+            29,
+            32,
+            22,
+            1
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            27,
+            14,
+            10,
+            20,
+            0
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "CANE",
+          "tileIds": [
+            22,
+            23,
+            32,
+            1
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            27,
+            14,
+            10,
+            20,
+            0
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "CAT",
+          "tileIds": [
+            22,
+            23,
+            33
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            27,
+            14,
+            10,
+            20,
+            0
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "GAME",
+          "tileIds": [
+            17,
+            23,
+            26,
+            1
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            27,
+            14,
+            10,
+            20,
+            0
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "LAMB",
+          "tileIds": [
+            24,
+            23,
+            26,
+            11
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            27,
+            14,
+            10,
+            20,
+            0
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "LANE",
+          "tileIds": [
+            24,
+            23,
+            32,
+            1
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            27,
+            14,
+            10,
+            20,
+            0
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "LEAN",
+          "tileIds": [
+            24,
+            1,
+            23,
+            32
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            27,
+            14,
+            10,
+            20,
+            0
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MAN",
+          "tileIds": [
+            26,
+            23,
+            32
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            27,
+            14,
+            10,
+            20,
+            0
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MEAL",
+          "tileIds": [
+            26,
+            1,
+            23,
+            24
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            27,
+            14,
+            10,
+            20,
+            0
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MEAN",
+          "tileIds": [
+            26,
+            1,
+            23,
+            32
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            27,
+            14,
+            10,
+            20,
+            0
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "METAL",
+          "tileIds": [
+            26,
+            1,
+            33,
+            23,
+            24
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            27,
+            14,
+            10,
+            20,
+            0
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "NAME",
+          "tileIds": [
+            32,
+            23,
+            26,
+            1
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            27,
+            14,
+            10,
+            20,
+            0
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "PAGE",
+          "tileIds": [
+            30,
+            23,
+            17,
+            1
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            27,
+            14,
+            10,
+            20,
+            0
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "PLACE",
+          "tileIds": [
+            30,
+            24,
+            23,
+            22,
+            1
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            27,
+            14,
+            10,
+            20,
+            0
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "PLAN",
+          "tileIds": [
+            30,
+            24,
+            23,
+            32
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            27,
+            14,
+            10,
+            20,
+            0
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "PLANE",
+          "tileIds": [
+            30,
+            24,
+            23,
+            32,
+            1
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            27,
+            14,
+            10,
+            20,
+            0
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "PLATE",
+          "tileIds": [
+            30,
+            24,
+            23,
+            33,
+            1
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            27,
+            14,
+            10,
+            20,
+            0
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "TABLE",
+          "tileIds": [
+            33,
+            23,
+            11,
+            24,
+            1
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            27,
+            14,
+            10,
+            20,
+            0
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "TEA",
+          "tileIds": [
+            33,
+            1,
+            23
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "DANGER",
+          "tileIds": [
+            7,
+            27,
+            14,
+            10,
+            20,
+            0
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "TEAM",
+          "tileIds": [
+            33,
+            1,
+            23,
+            26
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            17,
+            27,
+            0,
+            7,
+            20,
+            14
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "BALANCE",
+          "tileIds": [
+            11,
+            23,
+            24,
+            29,
+            32,
+            22,
+            1
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            17,
+            27,
+            0,
+            7,
+            20,
+            14
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "CANE",
+          "tileIds": [
+            22,
+            23,
+            32,
+            1
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            17,
+            27,
+            0,
+            7,
+            20,
+            14
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "CAT",
+          "tileIds": [
+            22,
+            23,
+            33
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            17,
+            27,
+            0,
+            7,
+            20,
+            14
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "GAME",
+          "tileIds": [
+            10,
+            23,
+            26,
+            1
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            17,
+            27,
+            0,
+            7,
+            20,
+            14
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "LAMB",
+          "tileIds": [
+            24,
+            23,
+            26,
+            11
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            17,
+            27,
+            0,
+            7,
+            20,
+            14
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "LANE",
+          "tileIds": [
+            24,
+            23,
+            32,
+            1
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            17,
+            27,
+            0,
+            7,
+            20,
+            14
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "LEAN",
+          "tileIds": [
+            24,
+            1,
+            23,
+            32
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            17,
+            27,
+            0,
+            7,
+            20,
+            14
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MAN",
+          "tileIds": [
+            26,
+            23,
+            32
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            17,
+            27,
+            0,
+            7,
+            20,
+            14
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MEAL",
+          "tileIds": [
+            26,
+            1,
+            23,
+            24
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            17,
+            27,
+            0,
+            7,
+            20,
+            14
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "MEAN",
+          "tileIds": [
+            26,
+            1,
+            23,
+            32
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            17,
+            27,
+            0,
+            7,
+            20,
+            14
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "METAL",
+          "tileIds": [
+            26,
+            1,
+            33,
+            23,
+            24
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            17,
+            27,
+            0,
+            7,
+            20,
+            14
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "NAME",
+          "tileIds": [
+            32,
+            23,
+            26,
+            1
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            17,
+            27,
+            0,
+            7,
+            20,
+            14
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "PAGE",
+          "tileIds": [
+            30,
+            23,
+            10,
+            1
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            17,
+            27,
+            0,
+            7,
+            20,
+            14
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "PLACE",
+          "tileIds": [
+            30,
+            24,
+            23,
+            22,
+            1
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            17,
+            27,
+            0,
+            7,
+            20,
+            14
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "PLAN",
+          "tileIds": [
+            30,
+            24,
+            23,
+            32
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            17,
+            27,
+            0,
+            7,
+            20,
+            14
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "PLANE",
+          "tileIds": [
+            30,
+            24,
+            23,
+            32,
+            1
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "NEAR",
+          "tileIds": [
+            15,
+            8,
+            2,
+            6
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AGER",
+          "ward": false,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            4,
+            19,
+            16,
+            9,
+            18,
+            13,
+            3,
+            5
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "AG",
+          "ward": true,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "GARDEN",
+          "tileIds": [
+            17,
+            27,
+            0,
+            7,
+            20,
+            14
+          ],
+          "resolve": 3,
+          "hits": 2,
+          "remaining": "A",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "PLATE",
+          "tileIds": [
+            30,
+            24,
+            23,
+            33,
+            1
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        }
+      ],
+      [
+        {
+          "word": "DARING",
+          "tileIds": [
+            7,
+            2,
+            0,
+            13,
+            14,
+            10
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "ANGE",
+          "ward": false,
+          "strike": false,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "GREEN",
+          "tileIds": [
+            17,
+            6,
+            8,
+            9,
+            15
+          ],
+          "resolve": 4,
+          "hits": 2,
+          "remaining": "ANE",
+          "ward": true,
+          "strike": true,
+          "semantic": "NEUTRAL"
+        },
+        {
+          "word": "CALM",
+          "tileIds": [
+            22,
+            23,
+            24,
+            26
+          ],
+          "resolve": 3,
+          "hits": 1,
+          "remaining": "NE",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "PEACE",
+          "tileIds": [
+            30,
+            1,
+            27,
+            25,
+            19
+          ],
+          "resolve": 2,
+          "hits": 1,
+          "remaining": "N",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        },
+        {
+          "word": "GENTLE",
+          "tileIds": [
+            21,
+            20,
+            18,
+            3,
+            31,
+            34
+          ],
+          "resolve": 1,
+          "hits": 1,
+          "remaining": "",
+          "ward": false,
+          "strike": false,
+          "semantic": "COUNTER"
+        }
+      ]
+    ]
+  }
+}

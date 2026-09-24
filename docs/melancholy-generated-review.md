@@ -2,7 +2,7 @@
 
 These five boards were generated from seed-driven overlapping word pools and planned refills. None was hand-authored. Open `/?generator=1` in the development server to inspect and play them.
 
-Candidate **#1**, score **69.53**, is also the explicitly selected **September 24, 2026 daily**. Its runtime-only snapshot is [2026-09-24.json](../src/daily/puzzles/2026-09-24.json). The published board does not change when the DEV rankings are regenerated. Existing started/completed attempts keep their old version; fresh or untouched attempts use the generated board.
+Candidate **#1**, score **69.53**, was published as **September 24, 2026 puzzle version 5**. Its archived runtime-only snapshot is [2026-09-24.json](../src/daily/puzzles/2026-09-24.json), independent of later DEV rankings. Started/completed version 5 attempts keep this board. New or untouched attempts on both September 24 and 25 UTC use the exact selected [DESPAIR candidate](enemy-variety-review.md), version 6. **Settings → Beta tools → Reset puzzle** clears an older attempt and opens DESPAIR for its date.
 
 The recorded batch evaluated **80 candidates** (40 initial constructions plus 40 mutations), witnessed **76 solvable**, and recorded **33 passing evaluations / 31 distinct accepted exports**. Mean screening runtime was 4.81 seconds per evaluation; mean explored states were 106.9. Runtime is machine-dependent.
 

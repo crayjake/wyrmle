@@ -1,5 +1,10 @@
 .tutorial-battle .header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
   min-height: 2.75rem;
+  flex-shrink: 0;
+  background: var(--bg);
 }
 
 .tutorial-skip {
@@ -10,8 +15,8 @@
   background: transparent;
   font: inherit;
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.55rem;
-  letter-spacing: 0.08em;
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
   cursor: pointer;
 }
 
@@ -21,12 +26,19 @@
   outline-offset: 2px;
 }
 
+.tutorial-battle .battle-info {
+  width: min(100%, 26rem);
+  align-self: center;
+  padding: 0.3rem 0;
+}
+
 .tutorial-battle .battle-info > .tutorial-label {
   text-align: right;
 }
 
 .tutorial-battle .enemy-definition {
   text-align: center;
+  font-size: 0.7rem;
 }
 
 .tutorial-battle .enemy-matchup-detail {
@@ -38,22 +50,35 @@
   white-space: normal;
 }
 
+.tutorial-battle .enemy-matchups,
+.tutorial-battle .enemy-matchups li {
+  font-size: 0.65rem;
+}
+
 .tutorial-battle .enemy-zone {
+  flex: none;
   min-height: 0;
-  gap: 0.7rem;
+  gap: 0.75rem;
+  margin-top: clamp(0.25rem, 2dvh, 1.25rem);
 }
 
 .tutorial-coach {
-  width: min(100%, 23rem);
+  width: min(100%, 26rem);
   align-self: center;
   display: grid;
   justify-items: center;
-  gap: 0.25rem;
+  gap: 0.3rem;
   border-top: 1px solid color-mix(in srgb, var(--fg) 25%, transparent);
-  padding-top: 0.4rem;
-  font-size: 0.65rem;
-  line-height: 1.4;
-  letter-spacing: 0.04em;
+  padding-top: 0.65rem;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  letter-spacing: 0.035em;
+  text-align: center;
+}
+
+.tutorial-coach p {
+  margin: 0;
+  color: var(--emph);
 }
 
 .tutorial-coach-heading {
@@ -62,13 +87,13 @@
   justify-content: space-between;
   gap: 0.5rem;
   width: 100%;
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.25rem;
 }
 
 .tutorial-progress {
   color: var(--blue);
-  font-size: 0.5rem;
-  letter-spacing: 0.08em;
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
   white-space: nowrap;
 }
 
@@ -77,92 +102,45 @@
 }
 
 .tutorial-next {
-  color: var(--emph);
-  font-size: 0.6rem;
+  margin-top: 0.2rem;
+  color: var(--blue);
+  font-size: 0.7rem;
   text-transform: none;
   letter-spacing: 0.025em;
-  text-align: right;
-}
-
-.tutorial-next strong {
-  font-weight: inherit;
-  text-decoration: underline;
-  text-underline-offset: 0.15em;
 }
 
 .tutorial-label {
-  font-size: 0.5rem;
-  letter-spacing: 0.15em;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
 }
 
 .tutorial-note {
-  font-size: 0.6rem;
+  font-size: 0.75rem;
   text-transform: none;
-  letter-spacing: 0.025em;
+  letter-spacing: 0.01em;
 }
 
-.tutorial-battle .attack-button:not(:disabled) {
-  animation: tutorial-action-pulse 1.8s ease-in-out infinite;
+.tutorial-battle .player-zone {
+  margin-top: 0.5rem;
+  gap: 0.4rem;
 }
 
-.tutorial-battle .attack-button:focus-visible {
-  animation: none;
+.tutorial-battle .strike-details,
+.tutorial-battle .strike-status {
+  font-size: 0.65rem;
+  line-height: 1.3;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .tutorial-battle .attack-button:hover {
-    animation: none;
-  }
+.container.letter-combat.tutorial-battle .controls {
+  width: min(100%, clamp(11.75rem, calc(100dvh - 26rem), 17rem));
 }
 
-@keyframes tutorial-action-pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.72; }
+.tutorial-battle .tile:disabled:not(.selected) {
+  opacity: 0.25 !important;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .tutorial-battle .attack-button:not(:disabled) {
-    animation: none;
-  }
-}
-
-.tutorial-types {
-  display: grid;
-  grid-template-columns: max-content minmax(0, 1fr);
-  align-items: first baseline;
-  gap: 0.3rem 0.85rem;
-  width: min(100%, 16rem);
-  margin: 0;
-  text-align: left;
-  font-size: 0.55rem;
-}
-
-.tutorial-types dt,
-.tutorial-types dd {
-  margin: 0;
-}
-
-.tutorial-types dd {
-  text-transform: none;
-}
-
-.tutorial-good {
-  color: var(--green);
-}
-
-.tutorial-negative {
-  color: var(--red);
-}
-
-.tutorial-special {
-  color: var(--blue);
-}
-
-.tutorial-battle[data-tutorial-step="enemy"] .enemy-letter,
-.tutorial-battle[data-tutorial-step="armour"] .enemy-letter-armoured,
-.tutorial-battle[data-tutorial-step="armour-break"] .enemy-letter:not(.enemy-letter-removed) {
-  border-color: var(--blue);
-  outline-color: var(--blue);
+.tutorial-battle .tile.selected:disabled {
+  opacity: 1;
 }
 
 .tutorial-battle .tile[data-tutorial-hint="true"] {
@@ -171,31 +149,99 @@
   outline-offset: 2px;
 }
 
-.tutorial-battle[data-tutorial-step="strike"] .tile.strike:not(.selected),
-.tutorial-battle[data-tutorial-step="ward"] .tile.ward:not(.selected) {
+.tutorial-battle .tile[data-tutorial-match="true"] {
+  color: var(--blue);
   border-color: var(--blue);
 }
 
-.tutorial-battle .controls {
-  width: min(100%, clamp(12rem, calc(100dvh - 24rem), 17rem));
+.tutorial-battle[data-tutorial-step="goal"] .enemy-letter,
+.tutorial-battle[data-tutorial-step="matching"] .enemy-letter[data-enemy-index="1"],
+.tutorial-battle[data-tutorial-step="matching"] .enemy-letter[data-enemy-index="2"],
+.tutorial-battle[data-tutorial-step="armour"] .enemy-letter-armoured,
+.tutorial-battle[data-tutorial-step="armour-result"] .enemy-letter[data-enemy-index="0"],
+.tutorial-battle[data-tutorial-step="armour-finish"] .enemy-letter[data-enemy-index="0"] {
+  border-color: var(--blue);
+  outline-color: var(--blue);
+  color: var(--blue);
 }
 
-@media (max-height: 650px) {
+.tutorial-battle[data-tutorial-step="matching"] .enemy-letter[data-enemy-index="0"] {
+  opacity: 0.3 !important;
+}
+
+.tutorial-battle[data-tutorial-step="goal"] .battle-info,
+.tutorial-battle[data-tutorial-step="build"] .enemy-section {
+  opacity: 0.5;
+}
+
+.tutorial-battle[data-tutorial-step="resolve"] .enemy-section {
+  opacity: 0.35;
+}
+
+.tutorial-battle[data-tutorial-step="resolve"] .health-info,
+.tutorial-battle[data-tutorial-step="ward"] .health-info,
+.tutorial-battle[data-tutorial-step="ward-result"] .health-info {
+  outline: 1px solid var(--blue);
+  outline-offset: 5px;
+}
+
+.tutorial-mapping {
+  display: grid;
+  grid-template-columns: max-content 2rem max-content;
+  gap: 0.15rem 0.5rem;
+  align-items: center;
+  color: var(--blue);
+  text-transform: none;
+}
+
+.tutorial-mapping b {
+  font-weight: inherit;
+  color: var(--emph);
+  border-bottom: 1px solid var(--blue);
+}
+
+.tutorial-coach .tutorial-negative {
+  color: var(--red);
+}
+
+@media (max-height: 740px), (max-width: 430px) {
+  .container.letter-combat.tutorial-battle {
+    gap: 0.15rem;
+  }
+
+  .tutorial-battle .battle-info {
+    padding: 0;
+  }
+
   .tutorial-battle .enemy-zone {
-    gap: 0.35rem;
+    margin-top: 0;
+    gap: 0.25rem;
   }
 
   .tutorial-coach {
     gap: 0.12rem;
-    padding-top: 0.25rem;
-    font-size: 0.6rem;
+    padding-top: 0.2rem;
   }
 
   .tutorial-coach-heading {
-    margin-bottom: 0;
+    display: none;
   }
 
-  .tutorial-battle .controls {
-    width: min(100%, clamp(12rem, calc(100dvh - 25rem), 17rem));
+  .tutorial-battle .player-zone {
+    margin-top: 0.25rem;
+    gap: 0.25rem;
+  }
+
+  .container.letter-combat.tutorial-battle .controls {
+    width: min(100%, clamp(calc(176px + 0.9rem), calc(100dvh - 29rem), 17rem));
+    gap: 0.3rem;
+  }
+
+  .tutorial-battle .attack-line .word {
+    font-size: 1.1rem;
+  }
+
+  .tutorial-battle .tutorial-coach {
+    line-height: 1.35;
   }
 }

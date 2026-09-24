@@ -1,0 +1,1153 @@
+{
+  "enemy": "CHAOS",
+  "attempted": 6,
+  "accepted": 0,
+  "rejected": {
+    "too-short": 2,
+    "decorative-semantic": 3,
+    "irrelevant-strike": 2
+  },
+  "candidates": [
+    {
+      "seed": "enemy-variety-v1:CHAOS:4",
+      "accepted": false,
+      "reasons": [
+        {
+          "code": "irrelevant-strike",
+          "message": "The placed strike tile has negligible observed effect."
+        }
+      ],
+      "score": 45.73,
+      "archetypes": [
+        "semantic-contrast",
+        "multiple-routes"
+      ],
+      "finishWords": [
+        "CLOSET",
+        "POST",
+        "REST",
+        "SCORE",
+        "SMELL",
+        "SORT",
+        "STORM",
+        "STORY",
+        "STORMY",
+        "SORTED",
+        "HARMONY",
+        "SILLY"
+      ],
+      "turnCounts": [
+        3,
+        5,
+        4
+      ],
+      "openings": [
+        "HARMONY",
+        "CALM",
+        "ANCORA"
+      ],
+      "lines": [
+        {
+          "words": [
+            "HARMONY",
+            "CLARITY",
+            "CLOSET"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HARMONY",
+            "CLARITY",
+            "POST"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HARMONY",
+            "CLARITY",
+            "REST"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HARMONY",
+            "CLARITY",
+            "SCORE"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HARMONY",
+            "CLARITY",
+            "SMELL"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HARMONY",
+            "CLARITY",
+            "SORT"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "COUNTER"
+        },
+        {
+          "words": [
+            "HARMONY",
+            "CLARITY",
+            "STORM"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HARMONY",
+            "CLARITY",
+            "STORY"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HARMONY",
+            "CLARITY",
+            "STORMY"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HARMONY",
+            "CLARITY",
+            "SORTED"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "COUNTER"
+        },
+        {
+          "words": [
+            "CALM",
+            "CLARITY",
+            "ORDERLY",
+            "SYSTEM",
+            "HARMONY"
+          ],
+          "turns": 5,
+          "resolveRemaining": 1,
+          "finalHits": 1,
+          "finalSemantic": "COUNTER"
+        },
+        {
+          "words": [
+            "ANCORA",
+            "MOTHER",
+            "CRY",
+            "SILLY"
+          ],
+          "turns": 4,
+          "resolveRemaining": 2,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        }
+      ],
+      "clutches": []
+    },
+    {
+      "seed": "enemy-variety-v1:CHAOS:0",
+      "accepted": false,
+      "reasons": [
+        {
+          "code": "too-short",
+          "message": "A witnessed win takes 2 turn(s); minimum target is 3."
+        }
+      ],
+      "score": 45.56,
+      "archetypes": [
+        "ward-timing",
+        "refill-planning"
+      ],
+      "finishWords": [
+        "HARMONY",
+        "CANE",
+        "CAR",
+        "CARE",
+        "CAT",
+        "CLARITY",
+        "CLAY",
+        "COAL",
+        "COAT",
+        "COIL",
+        "CRY",
+        "OCEAN"
+      ],
+      "turnCounts": [
+        5,
+        3
+      ],
+      "openings": [
+        "SORT",
+        "AHIMSA"
+      ],
+      "lines": [
+        {
+          "words": [
+            "SORT",
+            "NEAT",
+            "STABILITY",
+            "CONTROL",
+            "HARMONY"
+          ],
+          "turns": 5,
+          "resolveRemaining": 1,
+          "finalHits": 1,
+          "finalSemantic": "COUNTER"
+        },
+        {
+          "words": [
+            "AHIMSA",
+            "SORT",
+            "CANE"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "AHIMSA",
+            "SORT",
+            "CAR"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "AHIMSA",
+            "SORT",
+            "CARE"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "AHIMSA",
+            "SORT",
+            "CAT"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "AHIMSA",
+            "SORT",
+            "CLARITY"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "COUNTER"
+        },
+        {
+          "words": [
+            "AHIMSA",
+            "SORT",
+            "CLAY"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "AHIMSA",
+            "SORT",
+            "COAL"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "AHIMSA",
+            "SORT",
+            "COAT"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "AHIMSA",
+            "SORT",
+            "COIL"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "AHIMSA",
+            "SORT",
+            "CRY"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "AHIMSA",
+            "SORT",
+            "OCEAN"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        }
+      ],
+      "clutches": []
+    },
+    {
+      "seed": "enemy-variety-v1:CHAOS:5",
+      "accepted": false,
+      "reasons": [
+        {
+          "code": "too-short",
+          "message": "A witnessed win takes 2 turn(s); minimum target is 3."
+        }
+      ],
+      "score": 40.41,
+      "archetypes": [
+        "semantic-contrast",
+        "multiple-routes"
+      ],
+      "finishWords": [
+        "SEAL",
+        "SIDE",
+        "TASTE",
+        "SAD",
+        "SALTY",
+        "STEADY",
+        "EASILY",
+        "SADLY",
+        "HARMONY",
+        "GOAL",
+        "LION",
+        "LOAN"
+      ],
+      "turnCounts": [
+        3,
+        5
+      ],
+      "openings": [
+        "HARMONY",
+        "CALM",
+        "CHROMA"
+      ],
+      "lines": [
+        {
+          "words": [
+            "HARMONY",
+            "CALM",
+            "SEAL"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HARMONY",
+            "CALM",
+            "SIDE"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HARMONY",
+            "CALM",
+            "TASTE"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HARMONY",
+            "CALM",
+            "SAD"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HARMONY",
+            "CALM",
+            "SALTY"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HARMONY",
+            "CALM",
+            "STEADY"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HARMONY",
+            "CALM",
+            "EASILY"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HARMONY",
+            "CALM",
+            "SADLY"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "CALM",
+            "CLARITY",
+            "SYSTEM",
+            "ORDERLY",
+            "HARMONY"
+          ],
+          "turns": 5,
+          "resolveRemaining": 1,
+          "finalHits": 1,
+          "finalSemantic": "COUNTER"
+        },
+        {
+          "words": [
+            "CHROMA",
+            "SAD",
+            "CAT",
+            "SYSTEM",
+            "GOAL"
+          ],
+          "turns": 5,
+          "resolveRemaining": 1,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "CHROMA",
+            "SAD",
+            "CAT",
+            "SYSTEM",
+            "LION"
+          ],
+          "turns": 5,
+          "resolveRemaining": 1,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "CHROMA",
+            "SAD",
+            "CAT",
+            "SYSTEM",
+            "LOAN"
+          ],
+          "turns": 5,
+          "resolveRemaining": 1,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        }
+      ],
+      "clutches": []
+    },
+    {
+      "seed": "enemy-variety-v1:CHAOS:1",
+      "accepted": false,
+      "reasons": [
+        {
+          "code": "decorative-semantic",
+          "message": "The intended semantic mechanic barely changes observed winning lines or solutions."
+        }
+      ],
+      "score": 38.34,
+      "archetypes": [
+        "clutch-finish",
+        "refill-planning"
+      ],
+      "finishWords": [
+        "NEAR",
+        "ROAD",
+        "SAND",
+        "SEASON",
+        "STAR",
+        "TASTE",
+        "TEA",
+        "TEAR",
+        "TEARS",
+        "TOAST",
+        "TREAT",
+        "HARMONY"
+      ],
+      "turnCounts": [
+        3,
+        6
+      ],
+      "openings": [
+        "HEROISM",
+        "TURMOIL"
+      ],
+      "lines": [
+        {
+          "words": [
+            "HEROISM",
+            "CLARITY",
+            "NEAR"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HEROISM",
+            "CLARITY",
+            "ROAD"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HEROISM",
+            "CLARITY",
+            "SAND"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HEROISM",
+            "CLARITY",
+            "SEASON"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HEROISM",
+            "CLARITY",
+            "STAR"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HEROISM",
+            "CLARITY",
+            "TASTE"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HEROISM",
+            "CLARITY",
+            "TEA"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HEROISM",
+            "CLARITY",
+            "TEAR"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HEROISM",
+            "CLARITY",
+            "TEARS"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HEROISM",
+            "CLARITY",
+            "TOAST"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HEROISM",
+            "CLARITY",
+            "TREAT"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "TURMOIL",
+            "SORTED",
+            "NEAT",
+            "CONTROL",
+            "CALM",
+            "HARMONY"
+          ],
+          "turns": 6,
+          "resolveRemaining": 0,
+          "finalHits": 1,
+          "finalSemantic": "COUNTER"
+        }
+      ],
+      "clutches": [
+        {
+          "remaining": "H",
+          "prefix": [
+            "TURMOIL",
+            "SORTED",
+            "NEAT",
+            "CONTROL",
+            "CALM"
+          ],
+          "finishes": [
+            "HARMONY"
+          ],
+          "hits": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "seed": "enemy-variety-v1:CHAOS:3",
+      "accepted": false,
+      "reasons": [
+        {
+          "code": "decorative-semantic",
+          "message": "The intended semantic mechanic barely changes observed winning lines or solutions."
+        }
+      ],
+      "score": 36.64,
+      "archetypes": [
+        "semantic-contrast",
+        "multiple-routes"
+      ],
+      "finishWords": [
+        "MISERY",
+        "REST",
+        "SMILE",
+        "SUN",
+        "SYSTEM",
+        "HARMONY",
+        "ANGER",
+        "LANE",
+        "LEAN",
+        "LEARN",
+        "NEAR",
+        "RAGE"
+      ],
+      "turnCounts": [
+        3,
+        5
+      ],
+      "openings": [
+        "COURAGE",
+        "ARRANGE",
+        "HEROIC"
+      ],
+      "lines": [
+        {
+          "words": [
+            "COURAGE",
+            "THREAT",
+            "MISERY"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "COURAGE",
+            "THREAT",
+            "REST"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "COURAGE",
+            "THREAT",
+            "SMILE"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "COURAGE",
+            "THREAT",
+            "SUN"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "COURAGE",
+            "THREAT",
+            "SYSTEM"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "COUNTER"
+        },
+        {
+          "words": [
+            "ARRANGE",
+            "SYSTEM",
+            "STRUCTURE",
+            "SORTED",
+            "HARMONY"
+          ],
+          "turns": 5,
+          "resolveRemaining": 1,
+          "finalHits": 1,
+          "finalSemantic": "COUNTER"
+        },
+        {
+          "words": [
+            "HEROIC",
+            "STREAM",
+            "ANGER"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HEROIC",
+            "STREAM",
+            "LANE"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HEROIC",
+            "STREAM",
+            "LEAN"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HEROIC",
+            "STREAM",
+            "LEARN"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HEROIC",
+            "STREAM",
+            "NEAR"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "HEROIC",
+            "STREAM",
+            "RAGE"
+          ],
+          "turns": 3,
+          "resolveRemaining": 3,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        }
+      ],
+      "clutches": []
+    },
+    {
+      "seed": "enemy-variety-v1:CHAOS:2",
+      "accepted": false,
+      "reasons": [
+        {
+          "code": "decorative-semantic",
+          "message": "The intended semantic mechanic barely changes observed winning lines or solutions."
+        },
+        {
+          "code": "irrelevant-strike",
+          "message": "The placed strike tile has negligible observed effect."
+        }
+      ],
+      "score": 30.65,
+      "archetypes": [
+        "greedy-trap",
+        "semantic-contrast"
+      ],
+      "finishWords": [
+        "HEAL",
+        "HEAT",
+        "SHOE",
+        "HEAVY",
+        "HARMONY",
+        "HALL",
+        "HOME",
+        "LAUGH",
+        "MOUTH"
+      ],
+      "turnCounts": [
+        6,
+        5
+      ],
+      "openings": [
+        "SCARED",
+        "CLEARLY",
+        "ADORNS"
+      ],
+      "lines": [
+        {
+          "words": [
+            "SCARED",
+            "CONTROL",
+            "MAN",
+            "SORT",
+            "RULE",
+            "HEAL"
+          ],
+          "turns": 6,
+          "resolveRemaining": 0,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "SCARED",
+            "CONTROL",
+            "MAN",
+            "SORT",
+            "RULE",
+            "HEAT"
+          ],
+          "turns": 6,
+          "resolveRemaining": 0,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "SCARED",
+            "CONTROL",
+            "MAN",
+            "SORT",
+            "RULE",
+            "SHOE"
+          ],
+          "turns": 6,
+          "resolveRemaining": 0,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "SCARED",
+            "CONTROL",
+            "MAN",
+            "SORT",
+            "RULE",
+            "HEAVY"
+          ],
+          "turns": 6,
+          "resolveRemaining": 0,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "CLEARLY",
+            "CONTROL",
+            "ARRANGE",
+            "SYSTEM",
+            "HARMONY"
+          ],
+          "turns": 5,
+          "resolveRemaining": 1,
+          "finalHits": 1,
+          "finalSemantic": "COUNTER"
+        },
+        {
+          "words": [
+            "ADORNS",
+            "CRY",
+            "BALANCE",
+            "SORT",
+            "SORT",
+            "HALL"
+          ],
+          "turns": 6,
+          "resolveRemaining": 0,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "ADORNS",
+            "CRY",
+            "BALANCE",
+            "SORT",
+            "SORT",
+            "HEAL"
+          ],
+          "turns": 6,
+          "resolveRemaining": 0,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "ADORNS",
+            "CRY",
+            "BALANCE",
+            "SORT",
+            "SORT",
+            "HEAT"
+          ],
+          "turns": 6,
+          "resolveRemaining": 0,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "ADORNS",
+            "CRY",
+            "BALANCE",
+            "SORT",
+            "SORT",
+            "HOME"
+          ],
+          "turns": 6,
+          "resolveRemaining": 0,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "ADORNS",
+            "CRY",
+            "BALANCE",
+            "SORT",
+            "SORT",
+            "LAUGH"
+          ],
+          "turns": 6,
+          "resolveRemaining": 0,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "ADORNS",
+            "CRY",
+            "BALANCE",
+            "SORT",
+            "SORT",
+            "MOUTH"
+          ],
+          "turns": 6,
+          "resolveRemaining": 0,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        },
+        {
+          "words": [
+            "ADORNS",
+            "CRY",
+            "BALANCE",
+            "SORT",
+            "SORT",
+            "SHOE"
+          ],
+          "turns": 6,
+          "resolveRemaining": 0,
+          "finalHits": 1,
+          "finalSemantic": "NEUTRAL"
+        }
+      ],
+      "clutches": [
+        {
+          "remaining": "H",
+          "prefix": [
+            "SCARED",
+            "CONTROL",
+            "MAN",
+            "SORT",
+            "RULE"
+          ],
+          "finishes": [
+            "HEAL"
+          ],
+          "hits": [
+            1
+          ]
+        },
+        {
+          "remaining": "H",
+          "prefix": [
+            "ADORNS",
+            "CRY",
+            "BALANCE",
+            "SORT",
+            "SORT"
+          ],
+          "finishes": [
+            "HALL"
+          ],
+          "hits": [
+            1
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -340,6 +340,32 @@
   white-space: nowrap;
 }
 
+.daily-help-regen {
+  color: var(--red);
+}
+
+.daily-undo-control {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.75rem;
+  margin: 0 0 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--fg) 20%, transparent);
+  font-size: 0.65rem;
+}
+
+.daily-undo-control p {
+  flex-basis: 100%;
+  margin: 0.15rem 0 0;
+  font-size: 0.6rem;
+}
+
+.daily-undo-control button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
 .daily-turn-log {
   display: grid;
   gap: 0.8rem;
@@ -403,4 +429,39 @@
 .dev-match-hints p {
   margin: 0.4rem 0 0;
   font-size: 0.65rem;
+}
+
+.dev-controls select {
+  min-width: 0;
+  max-width: 100%;
+  padding: 0.45rem;
+  border: 1px solid color-mix(in srgb, var(--fg) 55%, transparent);
+  border-radius: 0.1rem;
+  background: var(--bg);
+  color: var(--fg);
+  font: inherit;
+}
+
+.dev-controls input[type="number"] {
+  width: 3.5rem;
+}
+
+.settings-beta {
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid color-mix(in srgb, var(--fg) 25%, transparent);
+}
+
+.settings-beta h3 {
+  margin: 0;
+  color: var(--emph);
+  font-size: 0.7rem;
+  font-weight: normal;
+  letter-spacing: 0.08em;
+}
+
+.settings-beta p {
+  margin: 0.5rem 0 0;
+  font-size: 0.65rem;
+  line-height: 1.5;
 }

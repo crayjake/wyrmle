@@ -3,6 +3,8 @@ import type { LetterStrikeState } from '../game/letterStrike.ts'
 import { validatePuzzleId } from './date.ts'
 import { getDailyPuzzle, getDailyPuzzleForVersion, getSupportedDailyPuzzles } from './puzzle.ts'
 import { buildDailyResult } from './results.ts'
+import { undoLimit } from './modes.ts'
+import { captureUndoSnapshot, restoreUndoSnapshot } from './undo.ts'
 import type { DailyPuzzleDefinition, DailyResult, DailyRun, DailySession, DifficultyMode, StorageLike } from './types.ts'
 import { LEGACY_GAME_VERSION, SAVE_VERSION } from './versions.ts'
 
@@ -67,24 +69,36 @@ function puzzleForGame(puzzleId: string, game: LetterStrikeState): DailyPuzzleDe
 
 function supportedSaveVersion(version: unknown, puzzle: DailyPuzzleDefinition): boolean {
   return version === SAVE_VERSION
+    || version === 4
     || version === 3
     || (version === 2 && puzzle.puzzleVersion <= 3)
     || (version === 1 && puzzle.gameVersion === LEGACY_GAME_VERSION)
 }
 
 function assertMode(mode: unknown): asserts mode is DifficultyMode {
-  if (mode !== 'normal' && mode !== 'hard') throw new Error('The saved difficulty mode is invalid.')
+  if (mode !== 'normal' && mode !== 'hard' && mode !== 'hardcore') throw new Error('The saved difficulty mode is invalid.')
 }
 
 function storedMode(data: Record<string, unknown>, saveVersion: unknown): DifficultyMode {
   // Earlier schemas never carried a preference or a run-specific difficulty.
-  if (saveVersion !== SAVE_VERSION) return 'normal'
+  if (typeof saveVersion !== 'number' || saveVersion < 4) return 'normal'
   assertMode(data.mode)
+  if (saveVersion === 4 && data.mode === 'hardcore') throw new Error('The saved difficulty mode is invalid.')
   return data.mode
 }
 
 function withoutMode<T extends { mode: DifficultyMode }>(data: T): Omit<T, 'mode'> {
   const { mode: _mode, ...historical } = data
+  return historical
+}
+
+function withoutUndoRun(run: DailyRun) {
+  const { revision: _revision, undosUsed: _undosUsed, undoHistory: _undoHistory, ...historical } = run
+  return historical
+}
+
+function withoutAssistance(result: DailyResult) {
+  const { puzzleDifficulty: _difficulty, undosUsed: _used, undosRemaining: _remaining, ...historical } = result
   return historical
 }
 
@@ -94,7 +108,7 @@ function withoutMode<T extends { mode: DifficultyMode }>(data: T): Omit<T, 'mode
  */
 function legacyRunProjection(run: DailyRun): unknown {
   return {
-    ...withoutMode(run),
+    ...withoutMode(withoutUndoRun(run)),
     saveVersion: 1,
     playedWords: run.playedWords.map((turn) => {
       const preview: Record<string, unknown> = { ...turn.preview }
@@ -110,7 +124,7 @@ function legacyRunProjection(run: DailyRun): unknown {
 /** Schema 2 predates LONG; all its other preview fields are still mandatory. */
 function preLongRunProjection(run: DailyRun): unknown {
   return {
-    ...withoutMode(run),
+    ...withoutMode(withoutUndoRun(run)),
     saveVersion: 2,
     playedWords: run.playedWords.map((turn) => {
       const preview: Record<string, unknown> = { ...turn.preview }
@@ -122,7 +136,7 @@ function preLongRunProjection(run: DailyRun): unknown {
 
 function legacyResultProjection(result: DailyResult): unknown {
   const legacy: Record<string, unknown> = {
-    ...withoutMode(result),
+    ...withoutMode(withoutAssistance(result)),
     turns: result.turns.map((turn) => {
       const historicalTurn: Record<string, unknown> = { ...turn }
       delete historicalTurn.letterOutcomes
@@ -138,7 +152,10 @@ function validTimestamp(value: unknown): value is string {
   return typeof value === 'string' && Number.isFinite(Date.parse(value))
 }
 
-function snapshot(puzzle: DailyPuzzleDefinition, game: LetterStrikeState, completedAt: string | null, mode: DifficultyMode): DailyRun {
+function snapshot(
+  puzzle: DailyPuzzleDefinition, game: LetterStrikeState, completedAt: string | null,
+  mode: DifficultyMode, revision: number, undosUsed: number, undoHistory: LetterStrikeState[],
+): DailyRun {
   return {
     saveVersion: SAVE_VERSION,
     mode,
@@ -153,11 +170,15 @@ function snapshot(puzzle: DailyPuzzleDefinition, game: LetterStrikeState, comple
     playedWords: game.playedWords,
     status: game.status,
     completedAt,
+    revision,
+    undosUsed,
+    undoHistory,
   }
 }
 
-function replay(puzzle: DailyPuzzleDefinition, tileIdsByTurn: unknown[]): LetterStrikeState {
+function replayWithSnapshots(puzzle: DailyPuzzleDefinition, tileIdsByTurn: unknown[]) {
   let game = createLetterStrikeGame(puzzle.encounter)
+  const undoHistory: LetterStrikeState[] = []
   for (const ids of tileIdsByTurn) {
     if (!Array.isArray(ids) || ids.length > 16
       || ids.some((id) => !Number.isSafeInteger(id) || id < 0) || game.status !== 'playing') {
@@ -167,12 +188,29 @@ function replay(puzzle: DailyPuzzleDefinition, tileIdsByTurn: unknown[]): Letter
     if (next.error || next.playedWords.length !== game.playedWords.length + 1) {
       throw new Error('The saved turn history cannot be replayed with these rules.')
     }
+    undoHistory.push(captureUndoSnapshot(game))
     game = next
   }
-  return game
+  return { game, undoHistory }
 }
 
-function readRun(puzzle: DailyPuzzleDefinition, raw: string): { game: LetterStrikeState; completedAt: string | null; mode: DifficultyMode } {
+function replay(puzzle: DailyPuzzleDefinition, tileIdsByTurn: unknown[]): LetterStrikeState {
+  return replayWithSnapshots(puzzle, tileIdsByTurn).game
+}
+
+function assertUndoCount(value: unknown, mode: DifficultyMode): asserts value is number {
+  if (!Number.isSafeInteger(value) || typeof value !== 'number' || value < 0 || value > undoLimit(mode)) {
+    throw new Error('The saved undo count is invalid for this mode.')
+  }
+}
+
+function assertPuzzleDifficulty(value: unknown): asserts value is DailyResult['puzzleDifficulty'] {
+  if (value !== null && value !== 'EASY' && value !== 'MEDIUM' && value !== 'HARD' && value !== 'EXPERT') {
+    throw new Error('The saved puzzle difficulty is invalid.')
+  }
+}
+
+function readRun(puzzle: DailyPuzzleDefinition, raw: string) {
   const data: unknown = JSON.parse(raw)
   if (!record(data)) throw new Error('The saved run is damaged.')
   assertVersions(data, puzzle)
@@ -182,24 +220,31 @@ function readRun(puzzle: DailyPuzzleDefinition, raw: string): { game: LetterStri
     if (!record(turn) || !Array.isArray(turn.tiles)) throw new Error('The saved turn history is damaged.')
     return turn.tiles.map((tile: unknown) => record(tile) ? tile.id : null)
   })
-  const game = replay(puzzle, ids)
+  const { game, undoHistory } = replayWithSnapshots(puzzle, ids)
+  const undosUsed = data.saveVersion === SAVE_VERSION ? data.undosUsed : 0
+  const revision = data.saveVersion === SAVE_VERSION ? data.revision : game.playedWords.length + 1
+  assertUndoCount(undosUsed, mode)
+  if (typeof revision !== 'number' || !Number.isSafeInteger(revision) || revision < 0) {
+    throw new Error('The saved run revision is invalid.')
+  }
   const completedAt = data.completedAt
   if ((game.status === 'playing' && completedAt !== null)
     || (game.status !== 'playing' && !validTimestamp(completedAt))) {
     throw new Error('The saved completion timestamp is invalid.')
   }
   const timestamp = typeof completedAt === 'string' ? completedAt : null
-  const expected = snapshot(puzzle, game, timestamp, mode)
+  const expected = snapshot(puzzle, game, timestamp, mode, revision, undosUsed, undoHistory)
   const expectedShape = data.saveVersion === 1 ? legacyRunProjection(expected)
     : data.saveVersion === 2 ? preLongRunProjection(expected)
-      : data.saveVersion === 3 ? { ...withoutMode(expected), saveVersion: 3 } : expected
+      : data.saveVersion === 3 ? { ...withoutMode(withoutUndoRun(expected)), saveVersion: 3 }
+        : data.saveVersion === 4 ? { ...withoutUndoRun(expected), saveVersion: 4 } : expected
   if (!sameData(data, expectedShape)) {
     throw new Error('The saved run does not match its turn history.')
   }
-  return { game, completedAt: timestamp, mode }
+  return { game, completedAt: timestamp, mode, revision, undosUsed, undosRemaining: undoLimit(mode) - undosUsed, undoHistory }
 }
 
-function readResult(puzzle: DailyPuzzleDefinition, raw: string): { game: LetterStrikeState; result: DailyResult; mode: DifficultyMode } {
+function readResult(puzzle: DailyPuzzleDefinition, raw: string) {
   const envelope: unknown = JSON.parse(raw)
   if (!record(envelope) || !record(envelope.result)) throw new Error('The saved result is damaged.')
   if (!supportedSaveVersion(envelope.saveVersion, puzzle)) throw new Error('This result uses an unsupported save version.')
@@ -211,13 +256,22 @@ function readResult(puzzle: DailyPuzzleDefinition, raw: string): { game: LetterS
   }
   const game = replay(puzzle, data.turns.map((turn: unknown) => record(turn) ? turn.tileIds : null))
   if (game.status === 'playing') throw new Error('The saved result does not describe a completed game.')
-  const result = buildDailyResult(puzzle, game, data.completedAt, mode)
+  const undosUsed = envelope.saveVersion === SAVE_VERSION ? data.undosUsed : 0
+  assertUndoCount(undosUsed, mode)
+  const result = buildDailyResult(puzzle, game, data.completedAt, mode, undosUsed)
+  if (envelope.saveVersion === SAVE_VERSION) {
+    // Calibration may change without changing the authored puzzle or combat.
+    // Permanent results retain the rating recorded when that run finished.
+    assertPuzzleDifficulty(data.puzzleDifficulty)
+    result.puzzleDifficulty = data.puzzleDifficulty
+  }
   const expected = envelope.saveVersion === 1 ? legacyResultProjection(result)
-    : envelope.saveVersion === SAVE_VERSION ? result : withoutMode(result)
+    : envelope.saveVersion === SAVE_VERSION ? result
+      : envelope.saveVersion === 4 ? withoutAssistance(result) : withoutMode(withoutAssistance(result))
   if (!sameData(data, expected)) {
     throw new Error('The saved result does not match its turn history.')
   }
-  return { game, result, mode }
+  return { game, result, mode, revision: 0, undosUsed, undosRemaining: undoLimit(mode) - undosUsed, undoHistory: [] }
 }
 
 /** Read-only, safe to use while opening the game. Corruption never starts a new attempt. */
@@ -233,23 +287,26 @@ export function loadDailySession(puzzle: DailyPuzzleDefinition, storage: Storage
     }
     const rawRun = storage.getItem(getRunStorageKey(puzzle.puzzleId))
     const latest = getDailyPuzzle(puzzle.puzzleId)
-    if (rawRun === null) return { game: createLetterStrikeGame(latest.encounter), mode: preferredMode, started: false, result: null, resumed: false, error: null }
+    if (rawRun === null) return { game: createLetterStrikeGame(latest.encounter), mode: preferredMode, started: false, result: null, resumed: false, error: null,
+      revision: 0, undosUsed: 0, undosRemaining: undoLimit(preferredMode), undoHistory: [] }
     const pinned = storedPuzzle(puzzle.puzzleId, rawRun, false)
-    const { game, completedAt, mode } = readRun(pinned, rawRun)
+    const { game, completedAt, mode, revision, undosUsed, undosRemaining, undoHistory } = readRun(pinned, rawRun)
     // A validated Begin-only snapshot has no committed choices or outcome to
     // preserve. Upgrade it in memory; the next commit writes the latest version.
-    const untouched = game.status === 'playing' && game.playedWords.length === 0
+    const untouched = game.status === 'playing' && game.playedWords.length === 0 && undosUsed === 0
     return {
       game: untouched ? createLetterStrikeGame(latest.encounter) : game,
       mode,
+      revision, undosUsed, undosRemaining, undoHistory,
       started: true,
-      result: completedAt === null ? null : buildDailyResult(pinned, game, completedAt, mode),
+      result: completedAt === null ? null : buildDailyResult(pinned, game, completedAt, mode, undosUsed),
       resumed: true,
       error: null,
     }
   } catch (error) {
     const reason = error instanceof Error ? error.message : 'Local storage is unavailable.'
-    return { game: null, mode: 'normal', started: false, result: null, resumed: false, error: `${reason} Your saved data has been kept.` }
+    return { game: null, mode: 'normal', started: false, result: null, resumed: false, error: `${reason} Your saved data has been kept.`,
+      revision: 0, undosUsed: 0, undosRemaining: 3, undoHistory: [] }
   }
 }
 
@@ -264,6 +321,7 @@ export function saveDailyRun(
   storage: StorageLike,
   completedAt: string = new Date().toISOString(),
   requestedMode?: DifficultyMode,
+  expectedRevision?: number,
 ): DailySession {
   if (requestedMode !== undefined) assertMode(requestedMode)
   const existing = loadDailySession(puzzle, storage, requestedMode)
@@ -279,22 +337,74 @@ export function saveDailyRun(
   if (existing.started && requestedMode !== undefined && requestedMode !== existing.mode) {
     throw new Error('This Daily has already begun in another mode. Reload the saved run before continuing.')
   }
+  assertCurrentRevision(existing, expectedRevision)
   const mode = existing.mode
   // The caller may hold the latest dated definition while this attempt remains
   // pinned to older rules. Existing committed progress decides the version.
   const activePuzzle = puzzleForGame(puzzle.puzzleId, existing.game)
   if (!sameData(game.encounter, activePuzzle.encounter)) throw new Error('The run belongs to a different encounter. Reload the saved run before continuing.')
   const timestamp = game.status === 'playing' ? null : completedAt
-  const serialized = JSON.stringify(snapshot(activePuzzle, game, timestamp, mode))
+  const replayed = replayWithSnapshots(activePuzzle, game.playedWords.map((turn) => turn.tiles.map((tile) => tile.id)))
+  const revision = existing.revision + 1
+  const serialized = JSON.stringify(snapshot(activePuzzle, game, timestamp, mode, revision, existing.undosUsed, replayed.undoHistory))
   const canonical = readRun(activePuzzle, serialized).game
   if (existing.game.playedWords.length > canonical.playedWords.length
     || existing.game.playedWords.some((turn, index) => !sameData(turn, canonical.playedWords[index]))) {
     throw new Error('This puzzle changed in another tab. Reload the saved run before continuing.')
   }
-  const result = timestamp === null ? null : buildDailyResult(activePuzzle, canonical, timestamp, mode)
+  const result = timestamp === null ? null : buildDailyResult(activePuzzle, canonical, timestamp, mode, existing.undosUsed)
   if (result) storage.setItem(getResultStorageKey(puzzle.puzzleId), JSON.stringify({ saveVersion: SAVE_VERSION, result }))
   storage.setItem(getRunStorageKey(puzzle.puzzleId), serialized)
-  return { game: canonical, mode, started: true, result, resumed: existing.resumed, error: null }
+  return { game: canonical, mode, started: true, result, resumed: existing.resumed, error: null,
+    revision, undosUsed: existing.undosUsed, undosRemaining: existing.undosRemaining, undoHistory: replayed.undoHistory }
+}
+
+function assertCurrentRevision(existing: DailySession, expectedRevision: number | undefined) {
+  // All interactive callers carry the revision read with their board. Older
+  // import/DEV callers remain supported until an undo has introduced a branch.
+  if ((expectedRevision !== undefined && existing.revision !== expectedRevision)
+    || (expectedRevision === undefined && existing.undosUsed > 0)) {
+    throw new Error('This puzzle changed in another tab. Reload the saved run before continuing.')
+  }
+}
+
+/** A committed undo restores the saved whole state and consumes one allowance. */
+export function undoDailyRun(
+  puzzle: DailyPuzzleDefinition, storage: StorageLike, expectedRevision: number,
+): DailySession {
+  const existing = loadDailySession(puzzle, storage)
+  if (existing.error || !existing.game) throw new Error(existing.error ?? 'Unable to load this puzzle.')
+  if (existing.result || existing.game.status !== 'playing') throw new Error('This result has been finalized and cannot be undone.')
+  assertCurrentRevision(existing, expectedRevision)
+  if (!existing.started || existing.undoHistory.length === 0) throw new Error('Submit a word before using Undo.')
+  if (existing.undosRemaining <= 0) throw new Error('No undos remain for this Daily.')
+  const undoHistory = existing.undoHistory.slice(0, -1)
+  const game = restoreUndoSnapshot(existing.undoHistory.at(-1)!)
+  const activePuzzle = puzzleForGame(puzzle.puzzleId, game)
+  const undosUsed = existing.undosUsed + 1
+  const revision = existing.revision + 1
+  const serialized = JSON.stringify(snapshot(activePuzzle, game, null, existing.mode, revision, undosUsed, undoHistory))
+  // Validate the stored evidence before the single atomic run write.
+  readRun(activePuzzle, serialized)
+  storage.setItem(getRunStorageKey(puzzle.puzzleId), serialized)
+  return { ...existing, game, revision, undosUsed, undosRemaining: undoLimit(existing.mode) - undosUsed, undoHistory }
+}
+
+/** DEV-only control. It changes forgiveness metadata, never the puzzle or board. */
+export function setDailyUndosUsed(
+  puzzle: DailyPuzzleDefinition, storage: StorageLike, undosUsed: number, expectedRevision: number,
+): DailySession {
+  const existing = loadDailySession(puzzle, storage)
+  if (existing.error || !existing.game) throw new Error(existing.error ?? 'Unable to load this puzzle.')
+  if (!existing.started || existing.result) throw new Error('Only an active Daily can change its DEV undo count.')
+  assertCurrentRevision(existing, expectedRevision)
+  assertUndoCount(undosUsed, existing.mode)
+  const revision = existing.revision + 1
+  const activePuzzle = puzzleForGame(puzzle.puzzleId, existing.game)
+  storage.setItem(getRunStorageKey(puzzle.puzzleId), JSON.stringify(snapshot(
+    activePuzzle, existing.game, null, existing.mode, revision, undosUsed, existing.undoHistory,
+  )))
+  return { ...existing, revision, undosUsed, undosRemaining: undoLimit(existing.mode) - undosUsed }
 }
 
 function savedPuzzleIds(storage: StorageLike): string[] {
@@ -343,7 +453,7 @@ export function getInProgressPuzzleIds(storage: StorageLike): string[] {
   })
 }
 
-/** Invoked only by DEV controls; production UI never exposes resets. */
+/** Explicit beta/DEV reset for this date only; other dates and preferences stay saved. */
 export function resetDailyPuzzle(puzzleId: string, storage: StorageLike): void {
   storage.removeItem(getRunStorageKey(puzzleId))
   storage.removeItem(getResultStorageKey(puzzleId))

@@ -49,7 +49,7 @@ test('daily definitions are deterministic and independent of player progress and
 
 test('grammar release uses a fixed UTC boundary and never changes published v1 puzzle rules', () => {
   const before = getDailyPuzzleForVersion('2026-09-24', 'letter-strike-1', 1)
-  const after = getDailyPuzzle('2026-09-25')
+  const after = getDailyPuzzleForVersion('2026-09-25', 'letter-strike-4', 4)
   assert.equal(before.gameVersion, 'letter-strike-1')
   assert.equal(before.puzzleVersion, 1)
   assert.equal(before.encounter.grammarModifiers, undefined)
@@ -64,7 +64,7 @@ test('grammar release uses a fixed UTC boundary and never changes published v1 p
   assert.equal(oldSad.playedWords[0].strikes, 0)
   assert.equal(newSad.playedWords[0].strikes, 1)
   assert.deepEqual(getDailyPuzzleForVersion('2026-09-24', 'letter-strike-1', 1), before)
-  assert.deepEqual(getDailyPuzzle('2026-09-25'), after)
+  assert.deepEqual(getDailyPuzzleForVersion('2026-09-25', 'letter-strike-4', 4), after)
 })
 
 test('new September 25 attempts get additive Strike while archived v1 and v2 retain overlap', () => {
@@ -102,7 +102,7 @@ test('daily definitions freeze every nested tile, rule, semantic list and catalo
 })
 
 test('v4 publishes the long-word anchor board with Strike L, Ward E and deterministic authored refills', () => {
-  const definition = getDailyPuzzle('2026-09-25')
+  const definition = getDailyPuzzleForVersion('2026-09-25', 'letter-strike-4', 4)
   const state = createGame(definition.encounter)
   assert.equal(state.tiles.map((tile) => tile.letter).join(''), 'JOYTCHERGLOMSADE')
   assert.deepEqual(state.tiles.filter((tile) => tile.type === 'gem'), [
@@ -140,7 +140,7 @@ test('v4 publishes the long-word anchor board with Strike L, Ward E and determin
 })
 
 test('new SANDY grammar and GAY counter annotations belong only to v4 encounter rules', () => {
-  const current = getDailyPuzzle('2026-09-25')
+  const current = getDailyPuzzleForVersion('2026-09-25', 'letter-strike-4', 4)
   const archived = getDailyPuzzleForVersion(current.puzzleId, 'letter-strike-3', 3)
   const currentGay = previewLetterStrike(createGame(current.encounter), [8, 13, 2])
   assert.equal(currentGay.word, 'GAY')

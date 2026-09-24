@@ -84,5 +84,6 @@ export function useLetterResolution(
     remainingById,
     resolving,
     activeLetterId: resolving && applied > 0 ? hits[applied - 1]?.enemyLetterId : undefined,
+    activeIsRecovery: resolving && applied > 0 && hits[applied - 1].hitsAfter > hits[applied - 1].hitsBefore,
   }
 }

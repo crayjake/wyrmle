@@ -1,5 +1,6 @@
 import { useId } from 'react'
 import type { DifficultyMode } from '../daily/types'
+import { undoLimit } from '../daily/modes'
 import './Onboarding.css'
 
 export function ModeChoices({ value, onChange }: {
@@ -9,11 +10,11 @@ export function ModeChoices({ value, onChange }: {
   const name = useId()
   return <fieldset className="mode-choices">
     <legend>Choose your mode</legend>
-    {(['normal', 'hard'] as const).map(mode => <label className="mode-choice" key={mode}>
+    {(['normal', 'hard', 'hardcore'] as const).map(mode => <label className="mode-choice" key={mode}>
       <input type="radio" name={name} value={mode} checked={value === mode} onChange={() => onChange(mode)} />
       <span className="mode-choice-copy">
         <span className="mode-choice-heading">{mode}<span className="mode-recommended">{mode === 'normal' ? 'Recommended' : ''}</span></span>
-        <span className="mode-choice-description">Definitions {mode === 'normal' ? 'shown' : 'hidden'}</span>
+        <span className="mode-choice-description">Definition {mode === 'normal' ? 'shown' : 'hidden'} · {undoLimit(mode) === 0 ? 'No undos' : `${undoLimit(mode)} ${undoLimit(mode) === 1 ? 'undo' : 'undos'}`}</span>
       </span>
     </label>)}
   </fieldset>
@@ -31,9 +32,9 @@ export default function ModeSelection({ value, onChange, onPlay, completedTutori
     <div className="onboarding-choice">
       <h1>{completedTutorial ? "You're ready." : "Today's Wyrmle."}</h1>
       <ModeChoices value={value} onChange={onChange} />
-      <p className="mode-note">Same puzzle. Choose how much information you see.</p>
+      <p className="mode-note">Same Daily puzzle in every mode. Choose your information and undo allowance.</p>
       <button className="begin-button" type="button" onClick={onPlay}>Play today's Wyrmle</button>
-      <p className="mode-note">You can change your preference in Settings.</p>
+      <p className="mode-note">You can change your default later in Settings. This attempt’s mode stays fixed once you begin.</p>
       {error && <p className="mode-save-error" role="status">{error}</p>}
     </div>
   </main>

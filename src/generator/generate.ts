@@ -4,6 +4,8 @@ import { analysePuzzle } from './analyse.ts'
 import type { AnalysisOptions, PuzzleAnalysis } from './analyse.ts'
 import { constructBoard, overlappingLetters } from './constructBoard.ts'
 import { constructRefill } from './constructRefill.ts'
+import { difficultyFromAnalysis } from './difficulty.ts'
+import type { PuzzleDifficultyAnalysis } from './difficulty.ts'
 import { analyseEnemySuitability } from './enemySuitability.ts'
 import type { EnemySuitability } from './enemySuitability.ts'
 import { selectEnemy } from './enemySelector.ts'
@@ -28,6 +30,8 @@ export type GenerationOptions = {
   refinementBeamWidth?: number
   allowResolveMutation?: boolean
   startingResolve?: number
+  /** Opt-in preserves historical seed output and published daily snapshots. */
+  includeRegenTile?: boolean
   goal?: GenerationGoal
   provider?: LexicalProvider
   analysis?: AnalysisOptions
@@ -39,6 +43,8 @@ export type RankedCandidate = {
   analysis: PuzzleAnalysis
   validation: ReturnType<typeof validatePuzzle>
   quality: ReturnType<typeof scorePuzzle>
+  /** Unsolved candidates and archived review artifacts may omit a rating. */
+  difficulty?: PuzzleDifficultyAnalysis
 }
 export type GenerationResult = {
   seed: string
@@ -82,7 +88,7 @@ export function createCandidate(enemyWord: string, seed: string | number, option
   const words = pools.all.map(entry => entry.word)
   const board = constructBoard(anchors.map(anchor => anchor.word), words, random)
   const startingTiles = placeSpecialTiles(board, enemy, pools.counters.map(entry => entry.word),
-    anchors.filter(anchor => anchor.roles.includes('resisted')).map(anchor => anchor.word), random)
+    anchors.filter(anchor => anchor.roles.includes('resisted')).map(anchor => anchor.word), random, options)
   const armourCount = goal.archetypes.includes('armour-break') ? 2 : 1
   const id = `generated-${enemy.toLowerCase()}-${encodeURIComponent(String(seed))}`
   const startingResolve = options.startingResolve ?? 5
@@ -92,7 +98,9 @@ export function createCandidate(enemyWord: string, seed: string | number, option
     startingResolve, startingTiles, refillQueue: 'E'.repeat((startingResolve + 1) * 16), minimumWordLength: 3,
     grammarModifiers: { adjective: 1 }, wordPartsOfSpeech: pools.wordPartsOfSpeech,
     longWordRule: { minimumLength: 6, bonusStrikes: 1 },
-    tileEffects: { strike: { strike: true, preventResolveLoss: false }, ward: { strike: false, preventResolveLoss: true } },
+    tileEffects: { strike: { strike: true, preventResolveLoss: false }, ward: { strike: false, preventResolveLoss: true },
+      ...(options.includeRegenTile ? { regen: { strike: false, preventResolveLoss: false, regenerate: true } } : {}),
+    },
   }
   const targetTurns = goal.archetypes.includes('clutch-finish') ? startingResolve + 1 : startingResolve
   const refill = constructRefill(encounter, pools.all, random, targetTurns)
@@ -133,7 +141,9 @@ export function generateForEnemy(enemyWord: string, seed: string | number, optio
     })
     const validation = validatePuzzle(candidate, analysis, options.validation)
     const quality = scorePuzzle(candidate, analysis)
-    const ranked = { candidate, analysis, validation, quality }
+    const ranked: RankedCandidate = { candidate, analysis, validation, quality,
+      ...(analysis.bestWinDepth !== null ? { difficulty: difficultyFromAnalysis(candidate.encounter, analysis) } : {}),
+    }
     report.attempted++
     report.solvable += Number(analysis.solvable === true)
     report.acceptedCount += Number(validation.accepted)

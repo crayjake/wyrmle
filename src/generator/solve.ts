@@ -76,7 +76,7 @@ export function solvePuzzle(input: LetterStrikeEncounter | LetterStrikeState, op
   const maxStates = Math.max(0, options.maxStates ?? 160)
   const beamWidth = Math.max(1, options.beamWidth ?? 16)
   const maxWinningLines = Math.max(1, options.maxWinningLines ?? 12)
-  const wards = initial.tiles.filter(tile => tile.type === 'gem' && tile.gem && initial.encounter.tileEffects[tile.gem].preventResolveLoss).length
+  const wards = initial.tiles.filter(tile => tile.type === 'gem' && tile.gem && initial.encounter.tileEffects[tile.gem]?.preventResolveLoss).length
   const maxDepth = options.maxDepth ?? initial.playerResolve + wards
   const discoveryOptions: MoveDiscoveryOptions = {
     vocabulary: options.vocabulary,
@@ -91,7 +91,7 @@ export function solvePuzzle(input: LetterStrikeEncounter | LetterStrikeState, op
   const knownTerminal = new Map<string, boolean>()
   const winningLines: WinningLine[] = []
   const winningSignatures = new Set<string>()
-  const routeSignature = (line: readonly SolverMoveSummary[]) => line.map(move => `${move.word}:${move.wardUsed}:${move.strikeUsed}`).join('|')
+  const routeSignature = (line: readonly SolverMoveSummary[]) => line.map(move => `${move.word}:${move.wardUsed}:${move.strikeUsed}${move.regenUsed ? ':regen' : ''}`).join('|')
   const witnessRecords: { state: LetterStrikeState; depth: number; move: SolverMoveSummary; successor: LetterStrikeState }[] = []
   const cutoffs = new Set<string>()
   const vocabularyComplete = options.vocabulary === undefined
@@ -137,6 +137,7 @@ export function solvePuzzle(input: LetterStrikeEncounter | LetterStrikeState, op
         partsOfSpeech: state.encounter.wordPartsOfSpeech?.[preview.word] ?? getPartsOfSpeech(preview.word) ?? [],
         grammarModifier: preview.grammaticalModifier, longWordModifier: preview.longWordModifier,
         wardUsed: preview.resolveCost === 0, strikeUsed: preview.effectLabels.includes('STRIKE'),
+        ...(preview.effectLabels.includes('REGEN') ? { regenUsed: true as const, recoveries: preview.recoveries ?? [] } : {}),
         strikes: preview.strikes, resolveCost: preview.resolveCost, hits: preview.hits, letterOutcomes: preview.letterOutcomes,
       }
       witnessRecords.push({ state, depth: line.length, move: summary, successor: next })
@@ -264,7 +265,8 @@ export function solvePuzzle(input: LetterStrikeEncounter | LetterStrikeState, op
   }
 
   // Propagate only proven facts. Deduplication is safe because history/selection
-  // never constrain legal moves and refill position makes the graph acyclic.
+  // never constrain legal moves and refill position makes the graph acyclic,
+  // even when REGEN increases enemy health or revives a dead enemy slot.
   const ordered = [...records.values()].sort((a, b) => b.state.refillIndex - a.state.refillIndex)
   for (const record of ordered) {
     if (record.state.status !== 'playing') continue

@@ -15,8 +15,9 @@ const integer = (name: string, fallback: number, minimum = 0) => {
   return value
 }
 if (argumentsList.includes('--help')) {
-  console.log('npm run generate -- --count 200 --enemy MELANCHOLY --seed review --out artifacts/melancholy [--refine 1] [--dev-top]')
+  console.log('npm run generate -- --count 200 --enemy MELANCHOLY --seed review --out artifacts/melancholy [--refine 1] [--regen] [--dev-top]')
   console.log('Omit --enemy for suitability-based automatic enemy selection. --states and --beam control bounded search. No daily catalog is changed.')
+  console.log('--regen opts into one harmful REGEN tile; archived/default generation stays unchanged.')
   process.exit(0)
 }
 const count = integer('count', 10, 1)
@@ -25,6 +26,7 @@ const seed = argument('seed', 'melancholy-review-v1')
 const output = resolve(argument('out', 'artifacts/generated'))
 await mkdir(output, { recursive: true })
 const options: GenerationOptions = {
+  includeRegenTile: argumentsList.includes('--regen'),
   candidateCount: 1, keep: 100, refinementRounds: integer('refine', 0), mutationsPerRound: integer('mutations', 2),
   analysis: {
     solver: { maxStates: integer('states', 100, 1), beamWidth: integer('beam', 12, 1) },

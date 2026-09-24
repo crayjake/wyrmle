@@ -3,14 +3,15 @@ import { getSemanticRelation } from './semantic.ts'
 import { getSelectedTiles, refillBoard } from './tiles.ts'
 import type { EnemyConcept, PartOfSpeech } from './types.ts'
 
-export type LetterStrikeGem = 'strike' | 'ward'
+export type LetterStrikeGem = 'strike' | 'ward' | 'regen'
+export type LetterStrikeTileEffect = { strike: boolean; preventResolveLoss: boolean; regenerate?: boolean }
 export type LetterStrikeTile = {
   id: number
   letter: string
   type: 'normal' | 'gem'
   gem?: LetterStrikeGem
 }
-export type EnemyLetter = { id: string; letter: string; hitsRemaining: number; initialHits: number }
+export type EnemyLetter = { id: string; letter: string; hitsRemaining: number; initialHits: number; armourGained?: true }
 export type LetterStrikeEncounter = {
   id: string
   enemy: Pick<EnemyConcept, 'word' | 'definition' | 'partOfSpeech' | 'semanticRelations'>
@@ -24,9 +25,17 @@ export type LetterStrikeEncounter = {
   longWordRule?: { minimumLength: number; bonusStrikes: number }
   // Only archived encounters opt into the original overlapping Strike rule.
   strikeConsumesAllowance?: boolean
-  tileEffects: Record<LetterStrikeGem, { strike: boolean; preventResolveLoss: boolean }>
+  // REGEN is opt-in so archived encounters and their saved previews stay exact.
+  tileEffects: Record<'strike' | 'ward', LetterStrikeTileEffect> & { regen?: LetterStrikeTileEffect }
 }
 export type LetterStrikeHit = {
+  tileId: number
+  enemyLetterId: string
+  letter: string
+  hitsBefore: number
+  hitsAfter: number
+}
+export type LetterStrikeRecovery = {
   tileId: number
   enemyLetterId: string
   letter: string
@@ -40,6 +49,8 @@ export type LetterStrikeLetterOutcome = {
   hitsAfter: number
   armourBroken: boolean
   removed: boolean
+  regenerated?: true
+  recoveryCount?: number
 }
 export type LetterStrikeEvaluation = {
   word: string
@@ -52,6 +63,7 @@ export type LetterStrikeEvaluation = {
   effectLabels: string[]
   enemyLetters: EnemyLetter[]
   hits: LetterStrikeHit[]
+  recoveries?: LetterStrikeRecovery[]
   letterOutcomes: LetterStrikeLetterOutcome[]
 }
 export type LetterStrikePreview = LetterStrikeEvaluation & { valid: boolean; error: string | null }
@@ -138,7 +150,7 @@ export function createLetterStrikeGame(encounter = letterStrikeEncounter): Lette
       || ![1, 2].includes(letter.initialHits) || letter.hitsRemaining !== letter.initialHits)) {
     throw new Error('Enemy letters need distinct identities and one or two starting hits.')
   }
-  const wardTurns = startingTiles.filter(tile => tile.type === 'gem' && tile.gem && tileEffects[tile.gem].preventResolveLoss).length
+  const wardTurns = startingTiles.filter(tile => tile.type === 'gem' && tile.gem && tileEffects[tile.gem]?.preventResolveLoss).length
   if (!/^[a-z]+$/i.test(encounter.refillQueue) || encounter.refillQueue.length < (startingResolve + wardTurns) * 16) {
     throw new Error('Provide enough deterministic refill letters for all possible turns.')
   }
@@ -172,7 +184,15 @@ export function clearLetterStrikeSelection(state: LetterStrikeState): LetterStri
 // original left-to-right order. Dead slots never participate in targeting.
 export function selectEnemyTarget(letters: readonly EnemyLetter[], letter: string): EnemyLetter | undefined {
   const matches = letters.filter(target => target.hitsRemaining > 0 && target.letter === letter.toUpperCase())
-  return matches.find(target => target.hitsRemaining < target.initialHits) ?? matches[0]
+  return matches.find(target => target.hitsRemaining < target.initialHits
+    || (target.armourGained && target.hitsRemaining === 1)) ?? matches[0]
+}
+
+// Recover a dead copy before adding armour to a living copy. Array order is
+// the stable enemy-slot order; already armoured and unrelated slots never heal.
+export function selectEnemyRecoveryTarget(letters: readonly EnemyLetter[], letter: string): EnemyLetter | undefined {
+  const matches = letters.filter(target => target.letter === letter.toUpperCase())
+  return matches.find(target => target.hitsRemaining === 0) ?? matches.find(target => target.hitsRemaining === 1)
 }
 
 // A counter already permits all available matching tiles. Positive grammar
@@ -208,20 +228,24 @@ export function getLetterStrikeAllowance(encounter: LetterStrikeEncounter, word:
   }
 }
 
-// One entry per original slot, derived from the actual ordered strikes rather
-// than guessed from the encounter's final state. Dead/untouched slots remain.
-export function buildLetterStrikeOutcomes(letters: readonly EnemyLetter[], hits: readonly LetterStrikeHit[]): LetterStrikeLetterOutcome[] {
-  const finalHits = new Map(hits.map(hit => [hit.enemyLetterId, hit.hitsAfter]))
+// One entry per original slot. Strikes resolve first, then recoveries; the
+// visible outcome must describe the final state, including a revived letter.
+export function buildLetterStrikeOutcomes(
+  letters: readonly EnemyLetter[], hits: readonly LetterStrikeHit[], recoveries: readonly LetterStrikeRecovery[] = [],
+): LetterStrikeLetterOutcome[] {
+  const finalHits = new Map([...hits, ...recoveries].map(event => [event.enemyLetterId, event.hitsAfter]))
   const armourBreaks = new Set(hits.filter(hit => hit.hitsBefore > 1 && hit.hitsAfter <= 1).map(hit => hit.enemyLetterId))
   return letters.map((letter, position) => {
     const hitsAfter = finalHits.get(letter.id) ?? letter.hitsRemaining
+    const recoveryCount = recoveries.filter(event => event.enemyLetterId === letter.id).length
     return {
       enemyLetterId: letter.id,
       position,
       hitsBefore: letter.hitsRemaining,
       hitsAfter,
-      armourBroken: armourBreaks.has(letter.id),
+      armourBroken: armourBreaks.has(letter.id) && hitsAfter < 2,
       removed: letter.hitsRemaining > 0 && hitsAfter === 0,
+      ...(recoveryCount ? { regenerated: true as const, recoveryCount } : {}),
     }
   })
 }
@@ -250,12 +274,14 @@ export function evaluateLetterStrike(state: Pick<LetterStrikeState, 'encounter' 
   let normalStrikesRemaining = normalStrikeAllowance
   let resolveCost = 1
   let usesStrike = false
+  const regenTiles: LetterStrikeTile[] = []
   for (const tile of tiles) {
     // The public scorer also respects physical tile identity if called directly.
     if (seenTiles.has(tile.id)) continue
     seenTiles.add(tile.id)
     const effect = tile.type === 'gem' && tile.gem ? state.encounter.tileEffects[tile.gem] : undefined
     if (effect?.preventResolveLoss) resolveCost = 0
+    if (effect?.regenerate) regenTiles.push(tile)
     const normalStrike = normalStrikesRemaining > 0
     if (!normalStrike && !effect?.strike) continue
     const target = selectEnemyTarget(enemyLetters, tile.letter)
@@ -269,6 +295,17 @@ export function evaluateLetterStrike(state: Pick<LetterStrikeState, 'encounter' 
       normalStrikesRemaining -= 1
     }
   }
+  const recoveries: LetterStrikeRecovery[] = []
+  for (const tile of regenTiles) {
+    const target = selectEnemyRecoveryTarget(enemyLetters, tile.letter)
+    if (!target) continue
+    recoveries.push({ tileId: tile.id, enemyLetterId: target.id, letter: target.letter,
+      hitsBefore: target.hitsRemaining, hitsAfter: target.hitsRemaining + 1 })
+    target.hitsRemaining += 1
+    // Preserve the original authored HP while remembering that a later wound
+    // belongs to armour, so duplicate targeting still finishes wounded armour.
+    if (target.hitsRemaining === 2 && target.initialHits === 1) target.armourGained = true
+  }
   return {
     word,
     semanticLabel,
@@ -277,10 +314,11 @@ export function evaluateLetterStrike(state: Pick<LetterStrikeState, 'encounter' 
     grammaticalPartOfSpeech,
     strikes: hits.length,
     resolveCost,
-    effectLabels: [...(usesStrike ? ['STRIKE'] : []), ...(resolveCost === 0 ? ['WARD'] : [])],
+    effectLabels: [...(usesStrike ? ['STRIKE'] : []), ...(resolveCost === 0 ? ['WARD'] : []), ...(regenTiles.length ? ['REGEN'] : [])],
     enemyLetters,
     hits,
-    letterOutcomes: buildLetterStrikeOutcomes(state.enemyLetters, hits),
+    ...(regenTiles.length ? { recoveries } : {}),
+    letterOutcomes: buildLetterStrikeOutcomes(state.enemyLetters, hits, recoveries),
   }
 }
 
@@ -299,6 +337,7 @@ export function previewLetterStrike(state: LetterStrikeState, selectedTileIds: r
     error,
     ...(error !== null ? {
       strikes: 0, resolveCost: 0, effectLabels: [], hits: [],
+      ...(evaluation.recoveries ? { recoveries: [] } : {}),
       longWordModifier: 0, grammaticalModifier: 0, grammaticalPartOfSpeech: null,
       letterOutcomes: buildLetterStrikeOutcomes(state.enemyLetters, []),
       enemyLetters: state.enemyLetters.map(letter => ({ ...letter })),

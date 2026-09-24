@@ -113,6 +113,25 @@
   color: var(--red);
 }
 
+.letter-combat .strike-bonus[data-kind="regen"],
+.regen-warning,
+.letter-combat .tile.regen .tile-special {
+  color: var(--red);
+}
+
+.letter-combat .tile.regen { border-color: color-mix(in srgb, var(--red) 65%, transparent); }
+.letter-combat .enemy-letter[data-regenerated="true"] { color: var(--red); border-color: var(--red); outline-color: var(--red); }
+.letter-combat .enemy-letter[data-recovery] { color: var(--red); border-color: var(--red); }
+.enemy-recovery-marker {
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  font: 0.55rem 'Share Tech Mono', monospace;
+  color: var(--red);
+}
+.strike-consequence { font-size: 0.55rem; line-height: 1.3; text-align: center; opacity: 0.85; }
+.daily-puzzle-difficulty { font-size: 0.55rem; letter-spacing: 0.08em; text-align: right; }
+
 .letter-combat .strike-bonus[data-kind="strike"],
 .letter-combat .strike-bonus[data-kind="ward"] {
   color: var(--blue);

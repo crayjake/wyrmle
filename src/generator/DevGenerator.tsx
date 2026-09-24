@@ -6,6 +6,7 @@ import type { GeneratorProgress, GeneratorRequest, GeneratorResponse } from './w
 import type { SolverMoveSummary } from './findMoves.ts'
 import type { CandidatePuzzle } from './types.ts'
 import './DevGenerator.css'
+import { difficultyFromAnalysis } from './difficulty'
 
 type Props = { onPlay: (candidate: CandidatePuzzle) => void; onClose: () => void }
 type ResultFilter = 'accepted' | 'all' | 'rejected'
@@ -13,10 +14,10 @@ const savedCandidates = savedMelancholy as unknown as RankedCandidate[]
 // A playtest temporarily unmounts the browser. Keep this session's review queue
 // and selection in module memory; daily/localStorage records are unrelated.
 let reviewCache: {
-  enemy: string; automatic: boolean; seed: string; count: number
+  enemy: string; automatic: boolean; seed: string; count: number; includeRegenTile: boolean
   ranked: RankedCandidate[]; selectedId: string | null; filter: ResultFilter; result: GenerationResult | null
 } = {
-  enemy: 'MELANCHOLY', automatic: false, seed: 'melancholy-review', count: 8,
+  enemy: 'MELANCHOLY', automatic: false, seed: 'melancholy-review', count: 8, includeRegenTile: false,
   ranked: savedCandidates.slice(0, 5), selectedId: savedCandidates[0]?.candidate.id ?? null,
   filter: 'accepted', result: null,
 }
@@ -30,14 +31,16 @@ function Metric({ label, children }: { label: string; children: ReactNode }) {
 function MoveList({ moves }: { moves: readonly SolverMoveSummary[] }) {
   return <ol className="generator-moves">{moves.map((move, index) => <li key={`${index}:${move.tileIds.join(',')}`}>
     <strong>{move.word}</strong><span>{move.semanticLabel} · {move.strikes} strikes · {move.resolveCost} Resolve</span>
-    <span>{[move.wardUsed ? 'WARD' : '', move.strikeUsed ? 'STRIKE' : '', move.grammarModifier ? `Grammar ${move.grammarModifier > 0 ? '+' : ''}${move.grammarModifier}` : '', move.longWordModifier ? `LONG +${move.longWordModifier}` : ''].filter(Boolean).join(' · ')}</span>
+    <span>{[move.wardUsed ? 'WARD' : '', move.strikeUsed ? 'STRIKE' : '', move.regenUsed ? 'REGEN' : '', move.grammarModifier ? `Grammar ${move.grammarModifier > 0 ? '+' : ''}${move.grammarModifier}` : '', move.longWordModifier ? `LONG +${move.longWordModifier}` : ''].filter(Boolean).join(' · ')}</span>
     <small>Tile IDs: {move.tileIds.join(', ')}. Hits: {move.hits.map(hit => `${hit.letter} (${hit.enemyLetterId}, ${hit.hitsBefore}→${hit.hitsAfter})`).join('; ') || 'none'}.</small>
+    {!!move.recoveries?.length && <small className="regen-warning">Recovery: {move.recoveries.map(hit => `${hit.letter} ${hit.hitsBefore}→${hit.hitsAfter}`).join('; ')}</small>}
   </li>)}</ol>
 }
 
 function CandidateReview({ ranked, onPlay }: { ranked: RankedCandidate; onPlay: Props['onPlay'] }) {
   const { candidate, analysis, validation, quality } = ranked
   const { encounter } = candidate
+  const difficulty = ranked.difficulty ?? (analysis.bestWinDepth === null ? null : difficultyFromAnalysis(encounter, analysis))
   function download() {
     const url = URL.createObjectURL(new Blob([JSON.stringify(ranked, null, 2)], { type: 'application/json' }))
     const link = document.createElement('a')
@@ -53,6 +56,7 @@ function CandidateReview({ ranked, onPlay }: { ranked: RankedCandidate; onPlay: 
       <div className="generator-score"><strong>{quality.total.toFixed(1)}</strong><span>quality / 100</span></div>
     </header>
     <p className={validation.accepted ? 'generator-accepted' : 'generator-rejected'}>{validation.accepted ? 'Accepted for DEV review' : 'Rejected'} · {candidate.goal.description}</p>
+    {difficulty && <details><summary>Puzzle difficulty: {difficulty.label}{difficulty.estimated ? ' (estimate)' : ''}</summary><pre>{JSON.stringify(difficulty, null, 2)}</pre></details>}
     <div className="generator-actions">
       <button type="button" className="generator-primary" onClick={() => onPlay(candidate)}>Play this puzzle</button>
       <button type="button" onClick={download}>Export JSON</button>
@@ -63,7 +67,7 @@ function CandidateReview({ ranked, onPlay }: { ranked: RankedCandidate; onPlay: 
         <div className="generator-board" role="img" aria-label={encounter.startingTiles.map(tile => `${tile.letter}${tile.gem ? ` ${tile.gem}` : ''}`).join(', ')}>
           {encounter.startingTiles.map(tile => <div key={tile.id} className={`generator-tile${tile.gem ? ` generator-${tile.gem}` : ''}`}
             title={`${tile.letter} · tile ID ${tile.id}${tile.gem ? ` · ${tile.gem.toUpperCase()}` : ' · normal'}`}>
-            <span>{tile.letter}</span><small>#{tile.id}{tile.gem === 'ward' ? ' ◇ WARD' : tile.gem === 'strike' ? ' ◆ STRIKE' : ''}</small>
+            <span>{tile.letter}</span><small>#{tile.id}{tile.gem === 'ward' ? ' ◇ WARD' : tile.gem === 'strike' ? ' ◆ STRIKE' : tile.gem === 'regen' ? ' + REGEN' : ''}</small>
           </div>)}
         </div>
         <p className="generator-tile-legend">◇ Ward saves Resolve. ◆ Strike guarantees a matching hit.</p>
@@ -181,6 +185,7 @@ export default function DevGenerator({ onPlay, onClose }: Props) {
   const [automatic, setAutomatic] = useState(reviewCache.automatic)
   const [seed, setSeed] = useState(reviewCache.seed)
   const [count, setCount] = useState(reviewCache.count)
+  const [includeRegenTile, setIncludeRegenTile] = useState(reviewCache.includeRegenTile)
   const [ranked, setRanked] = useState<RankedCandidate[]>(reviewCache.ranked)
   const [selectedId, setSelectedId] = useState<string | null>(reviewCache.selectedId)
   const [filter, setFilter] = useState<ResultFilter>(reviewCache.filter)
@@ -191,8 +196,8 @@ export default function DevGenerator({ onPlay, onClose }: Props) {
   const [error, setError] = useState<string | null>(null)
   const [notice, setNotice] = useState<string | null>(null)
   useEffect(() => {
-    reviewCache = { enemy, automatic, seed, count, ranked, selectedId, filter, result }
-  }, [enemy, automatic, seed, count, ranked, selectedId, filter, result])
+    reviewCache = { enemy, automatic, seed, count, includeRegenTile, ranked, selectedId, filter, result }
+  }, [enemy, automatic, seed, count, includeRegenTile, ranked, selectedId, filter, result])
   useEffect(() => {
     const element = dialog.current
     const previousFocus = document.activeElement
@@ -232,7 +237,7 @@ export default function DevGenerator({ onPlay, onClose }: Props) {
         instance.terminate(); worker.current = null; setBusy(false)
         setError(event.message || 'Generator worker failed. The previous results are still available.')
       }
-      const request: GeneratorRequest = { id, enemy: automatic ? null : enemy.trim().toUpperCase(), seed, candidateCount: count }
+      const request: GeneratorRequest = { id, enemy: automatic ? null : enemy.trim().toUpperCase(), seed, candidateCount: count, includeRegenTile }
       instance.postMessage(request)
     } catch (failure) {
       worker.current?.terminate(); worker.current = null; setBusy(false)
@@ -256,6 +261,7 @@ export default function DevGenerator({ onPlay, onClose }: Props) {
       <label>Enemy word<input value={enemy} disabled={automatic || busy} onChange={event => setEnemy(event.target.value)} required={!automatic} pattern="[A-Za-z]+" maxLength={24} /></label>
       <label>Seed<input value={seed} disabled={busy} onChange={event => setSeed(event.target.value)} required maxLength={128} /></label>
       <label>Initial candidates<input type="number" min={1} max={100} value={count} disabled={busy} onChange={event => setCount(Number(event.target.value))} required /></label>
+      <label><input type="checkbox" checked={includeRegenTile} disabled={busy} onChange={event => setIncludeRegenTile(event.target.checked)} /> Include harmful REGEN tile</label>
       <button className="generator-primary" type="submit" disabled={busy}>Generate candidates</button>
       {busy && <button type="button" onClick={cancel}>Cancel</button>}
     </form>

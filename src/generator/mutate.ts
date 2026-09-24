@@ -4,7 +4,7 @@ import { getPartsOfSpeech, isDictionaryWord } from '../game/dictionary.ts'
 import { localLexicalProvider } from './lexicalProvider.ts'
 import type { CandidatePuzzle } from './types.ts'
 
-export const mutationKinds = ['starting-letter', 'tile-swap', 'refill-letter', 'move-ward', 'move-strike', 'armour', 'armour-copy', 'anchor', 'resolve'] as const
+export const mutationKinds = ['starting-letter', 'tile-swap', 'refill-letter', 'move-ward', 'move-strike', 'armour', 'armour-copy', 'anchor', 'resolve', 'move-regen'] as const
 export type MutationKind = typeof mutationKinds[number]
 
 export function mutateCandidate(candidate: CandidatePuzzle, seed: string | number, options: {
@@ -12,7 +12,8 @@ export function mutateCandidate(candidate: CandidatePuzzle, seed: string | numbe
 } = {}): CandidatePuzzle {
   const random = createRandom(seed)
   const result = structuredClone(candidate)
-  const kind = options.kind ?? random.pick(mutationKinds.filter(kind => options.allowResolveMutation || kind !== 'resolve'))
+  const kind = options.kind ?? random.pick(mutationKinds.filter(kind => (options.allowResolveMutation || kind !== 'resolve')
+    && (kind !== 'move-regen' || candidate.encounter.startingTiles.some(tile => tile.gem === 'regen'))))
   const tiles = result.encounter.startingTiles.map(tile => ({ ...tile }))
   const letters = [...new Set(result.enemyWord + result.anchors.map(anchor => anchor.word).join(''))]
   const index = random.int(16)
@@ -29,8 +30,8 @@ export function mutateCandidate(candidate: CandidatePuzzle, seed: string | numbe
     if (alternatives.length) queue[position] = random.pick(alternatives)
     result.encounter.refillQueue = queue.join('')
   }
-  if (kind === 'move-ward' || kind === 'move-strike') {
-    const gem = kind === 'move-ward' ? 'ward' : 'strike'
+  if (kind === 'move-ward' || kind === 'move-strike' || kind === 'move-regen') {
+    const gem = kind === 'move-ward' ? 'ward' : kind === 'move-strike' ? 'strike' : 'regen'
     const source = tiles.findIndex(tile => tile.gem === gem)
     const targets = tiles.map((tile, position) => ({ tile, position })).filter(({ tile }) => tile.type === 'normal'
       && (gem === 'ward' || result.enemyWord.includes(tile.letter)))
@@ -92,7 +93,7 @@ export function mutateCandidate(candidate: CandidatePuzzle, seed: string | numbe
   if (kind === 'resolve' && options.allowResolveMutation) {
     const possible = [result.encounter.startingResolve - 1, result.encounter.startingResolve + 1].filter(value => value >= 3 && value <= 6)
     if (possible.length) result.encounter.startingResolve = random.pick(possible)
-    const wards = tiles.filter(tile => tile.type === 'gem' && tile.gem && result.encounter.tileEffects[tile.gem].preventResolveLoss).length
+    const wards = tiles.filter(tile => tile.type === 'gem' && tile.gem && result.encounter.tileEffects[tile.gem]?.preventResolveLoss).length
     const minimum = (result.encounter.startingResolve + wards) * 16
     while (result.encounter.refillQueue.length < minimum) result.encounter.refillQueue += result.encounter.refillQueue
   }

@@ -96,13 +96,13 @@ test('grammar weaknesses project only configured nonzero encounter allowances', 
 test('current move bonuses show applied grammar between semantics and actual effects', () => {
   const state = createLetterStrikeGame()
   assert.deepEqual(getLetterStrikeBonuses(previewLetterStrike(state, wordIds(state, 'SAD'))), [
-    { label: 'RESISTED' }, { label: 'ADJECTIVE', value: 1 },
+    { label: 'RESISTED' }, { label: '1 STRIKE' }, { label: 'ADJECTIVE', value: 1 },
   ])
   assert.deepEqual(getLetterStrikeBonuses(previewLetterStrike(state, wordIds(state, 'JOY'))), [
-    { label: 'COUNTER' }, { label: 'WARD' },
+    { label: 'COUNTER' }, { label: '2 STRIKES' }, { label: 'WARD' },
   ])
   assert.deepEqual(getLetterStrikeBonuses(previewLetterStrike(state, wordIds(state, 'GLOOM'))), [
-    { label: 'RESISTED' }, { label: 'STRIKE' },
+    { label: 'RESISTED' }, { label: '1 STRIKE' }, { label: 'STRIKE' },
   ])
   assert.deepEqual(getLetterStrikeBonuses(previewLetterStrike(state, [])), [])
 })
@@ -126,7 +126,7 @@ test('LONG precedes grammar in previews and recorded log modifiers', () => {
   }
   const preview = previewLetterStrike(state)
   assert.deepEqual(getLetterStrikeBonuses(preview), [
-    { label: 'NEUTRAL' }, { label: 'LONG', value: 1 }, { label: 'ADJECTIVE', value: 1 },
+    { label: 'NEUTRAL' }, { label: '3 STRIKES' }, { label: 'LONG', value: 1 }, { label: 'ADJECTIVE', value: 1 },
   ])
   const submitted = submitLetterStrike(state)
   assert.deepEqual(getLetterStrikeBattleEvents(submitted)[0].effectLabels, ['LONG +1', 'ADJECTIVE +1'])

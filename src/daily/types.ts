@@ -1,7 +1,8 @@
 import type { LetterStrikeEncounter, LetterStrikeEvaluation, LetterStrikeGem, LetterStrikeLetterOutcome, LetterStrikeState } from '../game/letterStrike.ts'
+import type { PuzzleDifficultyLabel } from '../generator/difficulty.ts'
 
 /** Information shown to the player; never an input to combat resolution. */
-export type DifficultyMode = 'normal' | 'hard'
+export type DifficultyMode = 'normal' | 'hard' | 'hardcore'
 
 /** The authored puzzle is independent of any player's progress. */
 export type DailyPuzzleDefinition = {
@@ -10,6 +11,7 @@ export type DailyPuzzleDefinition = {
   readonly gameVersion: string
   readonly puzzleVersion: number
   readonly encounter: LetterStrikeEncounter
+  readonly difficulty?: PuzzleDifficultyLabel
 }
 
 /** Only committed gameplay is saved; selections, errors and animations are UI state. */
@@ -27,6 +29,11 @@ export type DailyRun = {
   playedWords: LetterStrikeState['playedWords']
   status: LetterStrikeState['status']
   completedAt: string | null
+  /** Monotonic across attacks, undos and DEV adjustments, including identical boards. */
+  revision: number
+  undosUsed: number
+  /** Immutable complete committed states, oldest first. UI selections are cleared. */
+  undoHistory: LetterStrikeState[]
 }
 
 export type ResultTurn = {
@@ -39,11 +46,15 @@ export type ResultTurn = {
   specialTiles: { tileId: number; gem: LetterStrikeGem }[]
   strikeActivations: number
   resolveProtected: boolean
+  recoveries?: NonNullable<LetterStrikeEvaluation['recoveries']>
 }
 
 /** Small permanent local record, separate from the board/run snapshot. */
 export type DailyResult = {
   mode: DifficultyMode
+  puzzleDifficulty: PuzzleDifficultyLabel | null
+  undosUsed: number
+  undosRemaining: number
   puzzleId: string
   date: string
   gameVersion: string
@@ -65,6 +76,7 @@ export type DailyResult = {
   neutral: number
   strikeActivations: number
   wardSaves: number
+  regenRecoveries?: number
   turns: ResultTurn[]
   completedAt: string
 }
@@ -72,6 +84,9 @@ export type DailyResult = {
 /** No local display fields. A future server must replay evidence, not trust this. */
 export type DailyScoreSubmission = {
   mode: DifficultyMode
+  puzzleDifficulty: PuzzleDifficultyLabel | null
+  undosUsed: number
+  undosRemaining: number
   puzzleId: string
   gameVersion: string
   puzzleVersion: number
@@ -86,11 +101,16 @@ export type DailyScoreSubmission = {
   letterOutcomesByTurn: LetterStrikeLetterOutcome[][]
   wardSaves: number
   strikeActivations: number
+  recoveriesByTurn?: NonNullable<LetterStrikeEvaluation['recoveries']>[]
   completedAt: string
 }
 
 export type DailySession = {
   mode: DifficultyMode
+  revision: number
+  undosUsed: number
+  undosRemaining: number
+  undoHistory: LetterStrikeState[]
   /** Begin has been saved, even when no words have been submitted yet. */
   started: boolean
   game: LetterStrikeState | null

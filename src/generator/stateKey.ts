@@ -21,6 +21,7 @@ export function stateKey(state: LetterStrikeState, ruleKey = encounterRuleKey(st
     state.status, state.playerResolve, state.refillIndex, state.nextTileId,
     // Board position matters: the refill is assigned in board order.
     state.tiles.map(tile => [tile.id, tile.letter.toUpperCase(), tile.type, tile.gem ?? null]),
-    state.enemyLetters.map(letter => [letter.id, letter.letter.toUpperCase(), letter.hitsRemaining, letter.initialHits]),
+    state.enemyLetters.map(letter => [letter.id, letter.letter.toUpperCase(), letter.hitsRemaining, letter.initialHits,
+      ...(letter.armourGained ? [true] : [])]),
   ])}`
 }

@@ -153,7 +153,9 @@ function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onMatchHin
         experimentalGrid={enemyGrid} introFinished={phase === 'ready'}
         letterStates={letterGame?.enemyLetters}
         predictedHits={interactive && preview.valid && 'hits' in preview ? preview.hits : []}
+        predictedRecoveries={interactive && preview.valid && 'recoveries' in preview ? preview.recoveries : undefined}
         resolvedHits={resolving ? letterGame?.playedWords.at(-1)?.preview.hits : undefined}
+        resolvedRecoveries={resolving ? letterGame?.playedWords.at(-1)?.preview.recoveries : undefined}
         resolutionKey={resolving ? game.playedWords.length : undefined}
         onResolutionComplete={resolutionComplete}
         revealedIndices={revealedEnemyIndices} registerLetter={registerLetter} />
@@ -161,7 +163,11 @@ function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onMatchHin
     </div>
     <div className="player-zone">
       <AttackInfo word={preview.word} damage={preview.amount} maxDamage={preview.maximum}
-        metric={metric} ready={interactive && preview.valid} message={message} bonuses={preview.bonuses} />
+        metric={metric} ready={interactive && preview.valid} message={message} bonuses={preview.bonuses}
+        resolveBefore={letterGame && interactive && preview.valid ? game.playerResolve : undefined}
+        resolveAfter={letterGame && interactive && preview.valid ? game.playerResolve - preview.resolveCost : undefined}
+        recoveryText={'recoveries' in preview && preview.recoveries?.length
+          ? `REGEN: ${preview.recoveries.map(hit => `${hit.letter} ${hit.hitsBefore === 0 ? 'returns' : 'gains armour'}`).join(', ')}` : undefined} />
       <div className="controls">
         <TileGrid revealedIndices={revealedTileIndices} registerTile={registerTile}
           ready={interactive} tiles={game.tiles} specialTiles={specialTiles}

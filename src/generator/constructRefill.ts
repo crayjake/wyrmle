@@ -9,7 +9,8 @@ export function selectWordIds(tiles: readonly LetterStrikeTile[], word: string, 
   const ids: number[] = []
   for (const letter of word) {
     const matches = tiles.filter(tile => tile.letter === letter && !ids.includes(tile.id))
-      .sort((a, b) => (preferSpecials ? 1 : -1) * (Number(b.type === 'gem') - Number(a.type === 'gem')) || a.id - b.id)
+      .sort((a, b) => Number(a.gem === 'regen') - Number(b.gem === 'regen')
+        || (preferSpecials ? 1 : -1) * (Number(b.type === 'gem') - Number(a.type === 'gem')) || a.id - b.id)
     if (!matches.length) return null
     ids.push(matches[0].id)
   }
@@ -49,9 +50,10 @@ export function constructRefill(
       const ids = selectWordIds(state.tiles, entry.word, turn > 0 || random.next() > 0.35)
       if (!ids) return []
       const preview = previewLetterStrike(state, ids)
-      if (!preview.valid || preview.strikes === 0) return []
-      return [{ entry, ids, preview, score: Math.min(preview.strikes, desiredHits) * 5
-        - Math.max(0, preview.strikes - desiredHits) * 3 + (preview.resolveCost === 0 ? 1.5 : 0)
+      const netStrikes = preview.strikes - (preview.recoveries?.length ?? 0)
+      if (!preview.valid || netStrikes <= 0) return []
+      return [{ entry, ids, preview, score: Math.min(netStrikes, desiredHits) * 5
+        - Math.max(0, netStrikes - desiredHits) * 3 + (preview.resolveCost === 0 ? 1.5 : 0)
         + (preview.semanticLabel === 'COUNTER' ? 2 : 0)
         + (entry.commonness ?? 0) + random.next() * 2 + (entry.word === intended ? 30 : 0) }]
     }).sort((a, b) => b.score - a.score || a.entry.word.localeCompare(b.entry.word))
@@ -59,7 +61,7 @@ export function constructRefill(
     if (!choice) break
     const consumed = new Set(choice.ids)
     const kept = state.tiles.filter(tile => !consumed.has(tile.id))
-    const futureHits = Math.max(1, Math.ceil((remainingHits - choice.preview.strikes) / Math.max(1, targetTurns - turn - 1)))
+    const futureHits = Math.max(1, Math.ceil((remainingHits - choice.preview.strikes + (choice.preview.recoveries?.length ?? 0)) / Math.max(1, targetTurns - turn - 1)))
     const future = words.flatMap(entry => {
       const missing = missingLetters(entry.word, kept)
       if (missing.length > choice.ids.length) return []
@@ -68,10 +70,11 @@ export function constructRefill(
       if (!ids) return []
       const projected: LetterStrikeState = { ...state, tiles: hypothetical, enemyLetters: choice.preview.enemyLetters }
       const preview = previewLetterStrike(projected, ids)
-      if (!preview.valid || preview.strikes === 0) return []
+      const netStrikes = preview.strikes - (preview.recoveries?.length ?? 0)
+      if (!preview.valid || netStrikes <= 0) return []
       const rareCoverage = preview.hits.reduce((sum, hit) => sum + 1 / Math.max(1, words.filter(word => word.word.includes(hit.letter)).length), 0)
-      return [{ entry, missing, score: Math.min(preview.strikes, futureHits) * 4
-        - Math.max(0, preview.strikes - futureHits) * 3 + rareCoverage * 30 + (preview.resolveCost === 0 ? 1.5 : 0)
+      return [{ entry, missing, score: Math.min(netStrikes, futureHits) * 4
+        - Math.max(0, netStrikes - futureHits) * 3 + rareCoverage * 30 + (preview.resolveCost === 0 ? 1.5 : 0)
         + (preview.semanticLabel === 'COUNTER' ? 2 : 0)
         + (entry.commonness ?? 0) + random.next() * 2 - (entry.word === choice.entry.word ? 1 : 0) }]
     }).sort((a, b) => b.score - a.score || a.entry.word.localeCompare(b.entry.word))

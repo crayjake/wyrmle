@@ -10,7 +10,7 @@ import type { SolverOptions, SolverResult, WinningLine } from './solve.ts'
 import type { CandidatePuzzle } from './types.ts'
 import { encounterRuleKey, stateKey } from './stateKey.ts'
 
-export type MechanicName = 'semantic' | 'ward' | 'strike' | 'grammar' | 'armour'
+export type MechanicName = 'semantic' | 'ward' | 'strike' | 'grammar' | 'armour' | 'regen'
 export type ReviewLine = { moves: SolverMoveSummary[]; turns: number; resolveRemaining: number }
 export type ClutchLine = {
   stateKey: string
@@ -34,6 +34,7 @@ export type MechanicComparison = {
   replayedWinningLines: number
   changedWinningOutcomes: number
   changedStrikeCount: number
+  changedRecoveryCount?: number
 }
 export type LetterOpportunity = {
   position: number
@@ -109,6 +110,7 @@ export type PuzzleAnalysis = {
   resistedBaitQuality: number
   wardImportance: number | null
   strikeImportance: number | null
+  regenImportance?: number | null
   armourImportance: number | null
   grammarImportance: number | null
   counterfactuals: MechanicComparison[]
@@ -126,8 +128,8 @@ export type PuzzleAnalysis = {
   criticalSinglePointLetters: number[]
   armouredLetterCoverage: number
   refillPlanningImportance: number
-  specialTileChoices: { ward: number; strike: number }
-  specialTileDecisions: Record<'ward' | 'strike', SpecialTileDecision>
+  specialTileChoices: { ward: number; strike: number; regen?: number }
+  specialTileDecisions: Record<'ward' | 'strike', SpecialTileDecision> & { regen?: SpecialTileDecision }
   notes: string[]
 }
 
@@ -155,11 +157,14 @@ const count = (text: string, letter: string) => [...text].filter(item => item ==
 /** Resolve plus remaining physical Ward tiles bounds all future submissions. */
 export function reachableRefillUpperBound(state: LetterStrikeState): string {
   const wards = state.tiles.filter(tile => tile.type === 'gem' && tile.gem
-    && state.encounter.tileEffects[tile.gem].preventResolveLoss).length
+    && state.encounter.tileEffects[tile.gem]?.preventResolveLoss).length
   return state.encounter.refillQueue.slice(state.refillIndex, state.refillIndex + (state.playerResolve + wards) * 16).toUpperCase()
 }
 
-/** A sound losing certificate; enough physical supply does NOT prove a win. */
+/** A sound losing certificate; enough physical supply does NOT prove a win.
+ * REGEN can only add obligations, so ignoring its future healing keeps this
+ * necessary-condition bound optimistic; dead slots are never permanently pruned.
+ */
 export function hasImpossibleLetterSupply(state: LetterStrikeState): boolean {
   if (state.status === 'won') return false
   if (state.status === 'lost') return true
@@ -175,7 +180,8 @@ export function counterfactualEncounter(encounter: LetterStrikeEncounter, mechan
   if (mechanic === 'armour') return { ...encounter, enemyLetters: encounter.enemyLetters.map(letter => ({ ...letter, initialHits: 1, hitsRemaining: 1 })) }
   return { ...encounter, tileEffects: Object.fromEntries(Object.entries(encounter.tileEffects).map(([name, effect]) => [name, {
     ...effect,
-    ...(mechanic === 'ward' ? { preventResolveLoss: false } : { strike: false }),
+    ...(mechanic === 'ward' ? { preventResolveLoss: false }
+      : mechanic === 'regen' ? effect.regenerate ? { regenerate: false } : {} : { strike: false }),
   }])) as LetterStrikeEncounter['tileEffects'] }
 }
 
@@ -184,7 +190,8 @@ function mechanicPresent(encounter: LetterStrikeEncounter, mechanic: MechanicNam
   if (mechanic === 'grammar') return Object.values(encounter.grammarModifiers ?? {}).some(value => value !== 0)
   if (mechanic === 'armour') return encounter.enemyLetters.some(letter => letter.initialHits > 1)
   return encounter.startingTiles.some(tile => tile.type === 'gem' && tile.gem
-    && (mechanic === 'ward' ? encounter.tileEffects[tile.gem].preventResolveLoss : encounter.tileEffects[tile.gem].strike))
+    && (mechanic === 'ward' ? encounter.tileEffects[tile.gem]?.preventResolveLoss
+      : mechanic === 'regen' ? encounter.tileEffects[tile.gem]?.regenerate : encounter.tileEffects[tile.gem]?.strike))
 }
 
 function compareMechanic(encounter: LetterStrikeEncounter, baseline: SolverResult, mechanic: MechanicName, options: AnalysisOptions): MechanicComparison {
@@ -193,6 +200,7 @@ function compareMechanic(encounter: LetterStrikeEncounter, baseline: SolverResul
     mechanic, present, importance: present ? null : 0, evidence: present ? 'unknown' : 'absent',
     withoutStatus: 'not-run', withoutBestWinDepth: null, withoutResolveRemaining: null,
     withoutSearchComplete: false, replayedWinningLines: 0, changedWinningOutcomes: 0, changedStrikeCount: 0,
+    ...(mechanic === 'regen' ? { changedRecoveryCount: 0 } : {}),
   }
   if (!present) return comparison
   const altered = counterfactualEncounter(encounter, mechanic)
@@ -207,15 +215,19 @@ function compareMechanic(encounter: LetterStrikeEncounter, baseline: SolverResul
     }
     const baselineStrikes = line.moves.reduce((sum, move) => sum + move.strikes, 0)
     const alteredStrikes = state.playedWords.reduce((sum, move) => sum + move.strikes, 0)
+    const recoveryDifference = Math.abs(line.moves.reduce((sum, move) => sum + (move.recoveries?.length ?? 0), 0)
+      - state.playedWords.reduce((sum, move) => sum + (move.preview.recoveries?.length ?? 0), 0))
     const outcomeChanged = state.status !== 'won' || turns !== line.turns || state.playerResolve !== line.resolveRemaining
     comparison.replayedWinningLines++
     comparison.changedWinningOutcomes += Number(outcomeChanged)
     comparison.changedStrikeCount += Math.abs(baselineStrikes - alteredStrikes)
+    if (comparison.changedRecoveryCount !== undefined) comparison.changedRecoveryCount += recoveryDifference
     impact.push(Math.max(
       state.status !== 'won' ? 0.7 : 0,
       Math.abs(turns - line.turns) / Math.max(1, line.turns),
       Math.abs(state.playerResolve - line.resolveRemaining) / (encounter.startingResolve + 1),
       0.1 * Math.abs(baselineStrikes - alteredStrikes) / Math.max(1, baselineStrikes),
+      0.1 * recoveryDifference / Math.max(1, baselineStrikes),
     ))
   }
   comparison.evidence = impact.length ? 'route-replay' : 'unknown'
@@ -427,7 +439,9 @@ export function analysePuzzle(input: CandidatePuzzle | LetterStrikeEncounter, op
   })
   const knownLineFamiliarity = known(lineFamiliarity)
   const bestLineFamiliarity = knownLineFamiliarity.length ? Math.max(...knownLineFamiliarity) : null
-  const counterfactuals = (['semantic', 'ward', 'strike', 'grammar', 'armour'] as const).map(mechanic => compareMechanic(encounter, solution, mechanic, options))
+  const hasRegen = mechanicPresent(encounter, 'regen')
+  const mechanics: MechanicName[] = ['semantic', 'ward', 'strike', 'grammar', 'armour', ...(hasRegen ? ['regen' as const] : [])]
+  const counterfactuals = mechanics.map(mechanic => compareMechanic(encounter, solution, mechanic, options))
   const importance = (mechanic: MechanicName) => counterfactuals.find(item => item.mechanic === mechanic)!.importance
   const bestLine = [...solution.winningLines].sort((a, b) => a.turns - b.turns || b.resolveRemaining - a.resolveRemaining)[0]
   const strongest = [...solution.rootMoves].sort((a, b) => scoreImmediateMove(b) - scoreImmediateMove(a))[0]
@@ -443,9 +457,10 @@ export function analysePuzzle(input: CandidatePuzzle | LetterStrikeEncounter, op
   const strategies = new Set(solution.winningLines.map(line => `${line.moves[0]?.word}|${line.moves.map(move => move.semanticLabel).join(',')}|ward:${line.moves.findIndex(move => move.wardUsed)}|strike:${line.moves.findIndex(move => move.strikeUsed)}`))
   const expanded = [...records.values()].filter(record => record.expanded)
   const assessed = provenDead + provenWinning
-  function specialDecision(mechanic: 'ward' | 'strike'): SpecialTileDecision {
+  function specialDecision(mechanic: 'ward' | 'strike' | 'regen'): SpecialTileDecision {
     const specialIds = initial.tiles.filter(tile => tile.type === 'gem' && tile.gem
-      && (mechanic === 'ward' ? encounter.tileEffects[tile.gem].preventResolveLoss : encounter.tileEffects[tile.gem].strike))
+      && (mechanic === 'ward' ? encounter.tileEffects[tile.gem]?.preventResolveLoss
+        : mechanic === 'regen' ? encounter.tileEffects[tile.gem]?.regenerate : encounter.tileEffects[tile.gem]?.strike))
       .map(tile => tile.id)
     const consumes = (move: SolverMoveSummary) => specialIds.some(id => move.tileIds.includes(id))
     const using = (moves: SolverMoveSummary[]) => new Set(moves.filter(consumes).map(move => move.word)).size
@@ -475,6 +490,7 @@ export function analysePuzzle(input: CandidatePuzzle | LetterStrikeEncounter, op
     'Clutch lines may include additional exact winning witnesses outside the reasonable-state sample; those witnesses do not inflate the sampled final-turn rescue rate.',
   ]
   if (solution.searchLimitReached) notes.push(`Solver limits: ${solution.cutoffReasons.join(', ')}.`)
+  if (hasRegen) notes.push('REGEN recovery is resolved after damage in every searched state. Its importance measures observed route changes; avoiding the harmful tile can itself be a valid strategy.')
   if (finalUnknown) notes.push(`${finalUnknown} sampled final-Resolve states have unknown one-move rescue status.`)
   return {
     solvable: solution.solvable === null && hasImpossibleLetterSupply(initial) ? false : solution.solvable, minimumTurnsToWin: solution.minimumTurnsToWin,
@@ -509,6 +525,7 @@ export function analysePuzzle(input: CandidatePuzzle | LetterStrikeEncounter, op
     neutralMoveUsage: winningMoves.filter(move => move.semanticLabel === 'NEUTRAL').length / Math.max(1, winningMoves.length),
     resistedMoveUsage: winningMoves.filter(move => move.semanticLabel === 'RESISTED').length / Math.max(1, winningMoves.length),
     semanticMechanicImportance: importance('semantic'), wardImportance: importance('ward'), strikeImportance: importance('strike'),
+    ...(hasRegen ? { regenImportance: importance('regen') } : {}),
     armourImportance: importance('armour'), grammarImportance: importance('grammar'), counterfactuals,
     resistedBaitQuality: clamp(solution.rootMoves.filter(move => move.semanticLabel === 'RESISTED' && move.word.length >= 4).length / 3)
       * (solution.rootMoves.some(move => move.semanticLabel === 'COUNTER') ? 1 : 0.25),
@@ -528,8 +545,11 @@ export function analysePuzzle(input: CandidatePuzzle | LetterStrikeEncounter, op
     specialTileChoices: {
       ward: new Set(solution.rootMoves.filter(move => move.wardUsed).map(move => move.word)).size,
       strike: new Set(solution.rootMoves.filter(move => move.strikeUsed).map(move => move.word)).size,
+      ...(hasRegen ? { regen: new Set(solution.rootMoves.filter(move => move.regenUsed).map(move => move.word)).size } : {}),
     },
-    specialTileDecisions: { ward: specialDecision('ward'), strike: specialDecision('strike') },
+    specialTileDecisions: { ward: specialDecision('ward'), strike: specialDecision('strike'),
+      ...(hasRegen ? { regen: specialDecision('regen') } : {}),
+    },
     notes,
   }
 }

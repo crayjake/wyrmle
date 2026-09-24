@@ -9,6 +9,8 @@
     "test": "node --test --test-isolation=none tests/*.test.ts",
     "generate": "node scripts/generate.ts",
     "review-generated": "node scripts/review-generated.ts",
+    "rate-dailies": "node scripts/rate-dailies.ts",
+    "prove-daily-minimum": "node scripts/prove-daily-minimum.ts",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview"

@@ -13,9 +13,11 @@ export type SolverMoveSummary = {
   longWordModifier: number
   wardUsed: boolean
   strikeUsed: boolean
+  regenUsed?: true
   strikes: number
   resolveCost: number
   hits: LetterStrikeEvaluation['hits']
+  recoveries?: LetterStrikeEvaluation['recoveries']
   letterOutcomes: LetterStrikeEvaluation['letterOutcomes']
 }
 
@@ -105,7 +107,7 @@ export function moveSummary(move: SolverMove): SolverMoveSummary {
 /** This defines a sampling preference, never legality or a pruning proof. */
 export function scoreImmediateMove(move: SolverMoveSummary, commonness?: (word: string) => number): number {
   const removed = move.letterOutcomes.filter(outcome => outcome.removed).length
-  return move.strikes * 100 + removed * 12 + (move.wardUsed ? 35 : 0)
+  return (move.strikes - (move.recoveries?.length ?? 0)) * 100 + removed * 12 + (move.wardUsed ? 35 : 0)
     + (commonness?.(move.word) ?? 0) * 10 + (move.semanticLabel === 'COUNTER' ? 5 : 0)
     - move.word.length * 0.01
 }
@@ -124,6 +126,7 @@ function buildMove(state: LetterStrikeState, tileIds: number[]): SolverMove | nu
     longWordModifier: preview.longWordModifier,
     wardUsed: preview.resolveCost === 0,
     strikeUsed: preview.effectLabels.includes('STRIKE'),
+    ...(preview.effectLabels.includes('REGEN') ? { regenUsed: true as const, recoveries: preview.recoveries ?? [] } : {}),
     strikes: preview.strikes,
     resolveCost: preview.resolveCost,
     hits: preview.hits,

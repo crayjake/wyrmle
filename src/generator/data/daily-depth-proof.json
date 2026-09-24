@@ -1,0 +1,11 @@
+{
+  "openingSelections": 17178,
+  "checked": 17178,
+  "possibleFinishingWords": 433795,
+  "secondSelections": 2824308,
+  "wins": [],
+  "provenMinimumWords": 3,
+  "reason": "Full dictionary physical opening enumeration; a winning next word must supply every remaining matching hit. Every such word and physical selection is evaluated by the real engine. A separate verified three-word win supplies the upper bound.",
+  "encounterHash": "c6b8282981c58a88334fbdc58939cf5f1f59a00e4e0f42d0a8710f76712f9f94",
+  "encounterId": "generated-despair-enemy-variety-v1%3ADESPAIR%3A5"
+}

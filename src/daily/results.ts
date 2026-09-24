@@ -1,5 +1,6 @@
 import type { LetterStrikeState } from '../game/letterStrike.ts'
 import type { DailyPuzzleDefinition, DailyResult, DifficultyMode } from './types.ts'
+import { undoLimit } from './modes.ts'
 
 /** Summarize committed turns; transient selections and animation state never enter history. */
 export function buildDailyResult(
@@ -7,17 +8,22 @@ export function buildDailyResult(
   game: LetterStrikeState,
   completedAt: string,
   mode: DifficultyMode = 'normal',
+  undosUsed = 0,
 ): DailyResult {
   if (game.status === 'playing') throw new Error('An unfinished run has no daily result.')
   const finishTime = new Date(completedAt)
   if (!Number.isFinite(finishTime.getTime())) throw new Error('A valid completion timestamp is required.')
+  if (!Number.isInteger(undosUsed) || undosUsed < 0 || undosUsed > undoLimit(mode)) {
+    throw new Error('Undo usage must fit the selected mode allowance.')
+  }
 
   const turns = game.playedWords.map((attack) => {
     const hitTileIds = new Set(attack.preview.hits.map((hit) => hit.tileId))
     const specialTiles = attack.tiles.flatMap((tile) => {
       if (tile.type !== 'gem' || !tile.gem) return []
       const effect = puzzle.encounter.tileEffects[tile.gem]
-      return effect.preventResolveLoss || (effect.strike && hitTileIds.has(tile.id))
+      return effect?.preventResolveLoss || (effect?.strike && hitTileIds.has(tile.id))
+        || attack.preview.recoveries?.some((recovery) => recovery.tileId === tile.id)
         ? [{ tileId: tile.id, gem: tile.gem }] : []
     })
     const letterOutcomes = attack.preview.letterOutcomes.map((outcome) => ({ ...outcome }))
@@ -35,13 +41,17 @@ export function buildDailyResult(
       tileIds: attack.tiles.map((tile) => tile.id),
       specialTiles,
       strikeActivations: attack.tiles.filter((tile) => tile.type === 'gem' && tile.gem
-        && puzzle.encounter.tileEffects[tile.gem].strike && hitTileIds.has(tile.id)).length,
+        && puzzle.encounter.tileEffects[tile.gem]?.strike && hitTileIds.has(tile.id)).length,
       resolveProtected: attack.preview.resolveCost === 0,
+      ...(attack.preview.recoveries ? { recoveries: attack.preview.recoveries.map((recovery) => ({ ...recovery })) } : {}),
     }
   })
 
   return {
     mode,
+    puzzleDifficulty: puzzle.difficulty ?? null,
+    undosUsed,
+    undosRemaining: undoLimit(mode) - undosUsed,
     puzzleId: puzzle.puzzleId,
     date: puzzle.date,
     gameVersion: puzzle.gameVersion,
@@ -63,6 +73,9 @@ export function buildDailyResult(
     neutral: turns.filter((turn) => turn.semanticLabel === 'NEUTRAL').length,
     strikeActivations: turns.reduce((total, turn) => total + turn.strikeActivations, 0),
     wardSaves: turns.filter((turn) => turn.resolveProtected).length,
+    ...(turns.some((turn) => turn.recoveries) ? {
+      regenRecoveries: turns.reduce((total, turn) => total + (turn.recoveries?.length ?? 0), 0),
+    } : {}),
     turns,
     completedAt: finishTime.toISOString(),
   }
