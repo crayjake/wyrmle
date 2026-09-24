@@ -2,26 +2,25 @@ import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } fro
 import "./App.css"
 
 import Header from "./components/Header"
-import { MyInfo, EnemyInfo } from "./components/HealthInfo"
+import { MyInfo } from "./components/HealthInfo"
 import Enemy from "./components/Enemy"
 import AttackInfo from "./components/AttackInfo"
 import TileGrid from "./components/TileGrid"
 import WyrmDecoder from "./components/WyrmDecoder"
-import EncounterHud from "./components/EncounterHud"
-import { previewAttack } from "./game/game"
-import { getActiveGrammarModifiers, getCurrentTileSummary, getRecentBattleEvents } from "./game/hud"
+import { previewLetterStrike } from "./game/letterStrike"
+import { getLetterStrikeBonuses, getLetterStrikeGrammarModifiers, getLetterStrikeTileSummary } from "./game/letterStrikeHud"
 import { getDailyPuzzleId, validatePuzzleId } from "./daily/date"
 import { getDailyPuzzle } from "./daily/puzzle"
 import { getOpeningPuzzleId } from "./daily/persistence"
 import { useDailyRun } from "./daily/useDailyRun"
-import { HelpPanel, HistoryErrorPanel, ResultPanel, StatsPanel } from "./components/DailyPanels"
+import { HelpPanel, HistoryErrorPanel, LogPanel, ResultPanel, StatsPanel } from "./components/DailyPanels"
 import "./components/DailyPanels.css"
 
 const DevPanel = import.meta.env.DEV ? lazy(() => import('./components/DevPanel')) : null
 const DevCombat = import.meta.env.DEV ? lazy(() => import('./experimental/DevCombat')) : null
 
 type Phase = "waiting" | "enemy" | "tiles" | "ready"
-type Panel = 'help' | 'stats' | 'result' | 'dev' | null
+type Panel = 'help' | 'log' | 'stats' | 'result' | 'dev' | null
 
 export default function App() {
   const [todayId, setTodayId] = useState(() => getDailyPuzzleId(new Date()))
@@ -72,7 +71,10 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest }: {
   const { game, result } = daily
   const [panel, setPanel] = useState<Panel>(null)
   const [resultDismissed, setResultDismissed] = useState(false)
-  const visiblePanel = panel ?? (result && !resultDismissed ? 'result' : null)
+  const [resolvedTurnCount, setResolvedTurnCount] = useState(game.playedWords.length)
+  const resolving = game.playedWords.length > resolvedTurnCount
+  const resolutionComplete = useCallback(() => setResolvedTurnCount(game.playedWords.length), [game.playedWords.length])
+  const visiblePanel = panel ?? (result && !resultDismissed && !resolving ? 'result' : null)
   const [phase, setPhase] = useState<Phase>("waiting")
   const visiblePhase = daily.resumed ? 'ready' : phase
   const containerRef = useRef<HTMLElement>(null)
@@ -83,8 +85,8 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest }: {
   const [revealedEnemyIndices, setRevealedEnemyIndices] = useState<number[]>([])
   const [revealedTileIndices, setRevealedTileIndices] = useState<number[]>([])
   const enemy = game.encounter.enemy
-  const interactive = visiblePhase === "ready" && game.status === "playing" && !daily.error && !result
-  const preview = previewAttack(game)
+  const interactive = visiblePhase === "ready" && game.status === "playing" && !daily.error && !result && !resolving
+  const preview = previewLetterStrike(game)
   const enemyDecoded = useCallback(() => setPhase("tiles"), [])
   const tilesDecoded = useCallback(() => setPhase("ready"), [])
   const registerLetter = useCallback((index: number, element: HTMLDivElement | null) => {
@@ -100,7 +102,8 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest }: {
     setRevealedTileIndices(current => current.includes(index) ? current : [...current, index])
   }, [])
 
-  const message = game.status === "won" ? "VICTORY"
+  const message = resolving ? undefined
+    : game.status === "won" ? "VICTORY"
     : game.status === "lost" ? "OUT OF RESOLVE"
     : daily.error ? "SAVE UNAVAILABLE"
     : visiblePhase === "waiting" ? "CLICK TO BEGIN"
@@ -112,7 +115,7 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest }: {
   }
 
   return (
-    <main className="container"
+    <main className="container letter-combat" data-combat-mode="letter-strike"
       ref={containerRef}
       onClick={event => {
         if ((event.target as HTMLElement).closest('button, a, input, dialog')) return
@@ -120,12 +123,12 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest }: {
       }}
     >
       <Header wyrmDockRef={wyrmDockRef} titleRef={wyrmTitleRef} showWyrm={visiblePhase === "ready"}
-        onHelp={() => setPanel('help')} onHistory={() => setPanel('stats')}
+        onHelp={() => setPanel('help')} onHistory={() => setPanel('log')}
         onSettings={DevPanel ? () => setPanel('dev') : undefined} />
 
       <div className="daily-meta" onClick={event => event.stopPropagation()}>
         <span>Daily {puzzle.date} · UTC</span>
-        {result ? <button type="button" onClick={() => setPanel('result')}>View result</button>
+        {result ? <button type="button" onClick={() => setPanel('result')} disabled={resolving}>View result</button>
           : visiblePhase === 'waiting' ? <button type="button" onClick={begin} disabled={!!daily.error}>Begin</button>
           : <span>{daily.resumed ? 'Resumed' : 'One attempt'}</span>}
       </div>
@@ -141,15 +144,9 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest }: {
 
       <div className="battle-info">
         <MyInfo
-          name="YOU"
+          name="RESOLVE"
           health={game.playerResolve}
           maxHealth={game.encounter.startingResolve}
-        />
-
-        <EnemyInfo
-          name={enemy.word}
-          health={game.enemyHp}
-          maxHealth={enemy.maxHealth}
         />
       </div>
 
@@ -158,25 +155,27 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest }: {
           name={enemy.word}
           partOfSpeech={enemy.partOfSpeech}
           definition={enemy.definition}
-          modifiers={getActiveGrammarModifiers(game)}
+          modifiers={getLetterStrikeGrammarModifiers(game)}
+          modifierUnit="STRIKE"
+          letterStates={game.enemyLetters}
+          predictedHits={interactive && preview.valid ? preview.hits : []}
+          resolvedHits={resolving ? game.playedWords.at(-1)?.preview.hits : undefined}
+          resolutionKey={resolving ? game.playedWords.length : undefined}
+          onResolutionComplete={resolutionComplete}
           revealedIndices={daily.resumed ? [...enemy.word].map((_, index) => index) : revealedEnemyIndices}
           registerLetter={registerLetter}
-        />
-
-        <EncounterHud
-          visible={visiblePhase === "ready"}
-          events={getRecentBattleEvents(game, 2)}
         />
       </div>
 
       <div className="player-zone">
         <AttackInfo
           word={preview.word}
-          damage={preview.totalDamage}
-          maxDamage={enemy.maxHealth}
+          damage={preview.strikes}
+          maxDamage={0}
+          metric="strikes"
           ready={interactive && preview.valid}
           message={message}
-          bonuses={preview.bonuses}
+          bonuses={getLetterStrikeBonuses(preview)}
         />
 
         <div className="controls">
@@ -185,9 +184,8 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest }: {
             registerTile={registerTile}
             ready={interactive}
             tiles={game.tiles}
-            specialTiles={getCurrentTileSummary(game)}
+            specialTiles={getLetterStrikeTileSummary(game)}
             selectedTileIds={game.selectedTileIds}
-            damage={preview.totalDamage}
             canAttack={interactive && preview.valid}
             onToggleTile={id => {
               if (interactive) daily.select(id)
@@ -216,7 +214,9 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest }: {
         onEnemyDecoded={enemyDecoded}
         onTilesDecoded={tilesDecoded}
       />}
-      {visiblePanel === 'help' && <HelpPanel onClose={() => setPanel(null)} />}
+      {visiblePanel === 'help' && <HelpPanel strikeConsumesAllowance={game.encounter.strikeConsumesAllowance} onClose={() => setPanel(null)} />}
+      {visiblePanel === 'log' && <LogPanel game={game} date={puzzle.date}
+        onClose={() => setPanel(null)} onShowStats={() => setPanel('stats')} />}
       {visiblePanel === 'result' && result && <ResultPanel result={result}
         onClose={() => { setResultDismissed(true); setPanel(null) }}
         onShowStats={() => { setResultDismissed(true); setPanel('stats') }} />}

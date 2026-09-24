@@ -1,23 +1,33 @@
-import type { Encounter } from '../game/types.ts'
+import type { LetterStrikeEncounter } from '../game/letterStrike.ts'
 
 /**
- * The v1 authored catalog contains one encounter, so dates currently repeat it.
- * Keep this published copy independent of prototype encounters/default rules.
- * Future catalog releases must preserve the definitions assigned to old dates.
+ * Published letter-strike v1 catalog. Its one authored encounter repeats by
+ * date; keep historical definitions independent of mutable prototype defaults.
  */
-export const dailyEncounterV1: Encounter = {
-  id: 'melancholy',
+export const dailyEncounterV1: LetterStrikeEncounter = {
+  id: 'daily-melancholy-letter-strike-v1',
   enemy: {
     word: 'MELANCHOLY',
     definition: 'a feeling of pensive sadness, typically with no obvious cause',
     partOfSpeech: 'noun',
-    maxHealth: 33,
     semanticRelations: {
+      opposite: ['JOY', 'CHEER', 'HAPPY', 'DELIGHT', 'ELATED', 'MERRY'],
       similar: ['SAD', 'SADNESS', 'GLOOM', 'GRIEF', 'SORROW', 'BLUE'],
-      opposite: ['JOY', 'CHEER', 'HAPPY', 'DELIGHT', 'ELATED'],
       related: ['TEARS', 'CRY', 'LONELY', 'MOOD'],
     },
   },
+  enemyLetters: [
+    { id: 'enemy-0', letter: 'M', hitsRemaining: 2, initialHits: 2 },
+    { id: 'enemy-1', letter: 'E', hitsRemaining: 1, initialHits: 1 },
+    { id: 'enemy-2', letter: 'L', hitsRemaining: 1, initialHits: 1 },
+    { id: 'enemy-3', letter: 'A', hitsRemaining: 1, initialHits: 1 },
+    { id: 'enemy-4', letter: 'N', hitsRemaining: 1, initialHits: 1 },
+    { id: 'enemy-5', letter: 'C', hitsRemaining: 1, initialHits: 1 },
+    { id: 'enemy-6', letter: 'H', hitsRemaining: 1, initialHits: 1 },
+    { id: 'enemy-7', letter: 'O', hitsRemaining: 1, initialHits: 1 },
+    { id: 'enemy-8', letter: 'L', hitsRemaining: 1, initialHits: 1 },
+    { id: 'enemy-9', letter: 'Y', hitsRemaining: 2, initialHits: 2 },
+  ],
   startingResolve: 5,
   startingTiles: [
     { id: 0, letter: 'J', type: 'normal' },
@@ -25,27 +35,38 @@ export const dailyEncounterV1: Encounter = {
     { id: 2, letter: 'Y', type: 'gem', gem: 'ward' },
     { id: 3, letter: 'C', type: 'normal' },
     { id: 4, letter: 'H', type: 'normal' },
-    { id: 5, letter: 'E', type: 'gem', gem: 'power' },
+    { id: 5, letter: 'E', type: 'normal' },
     { id: 6, letter: 'E', type: 'normal' },
     { id: 7, letter: 'R', type: 'normal' },
-    { id: 8, letter: 'S', type: 'normal' },
-    { id: 9, letter: 'A', type: 'normal' },
-    { id: 10, letter: 'D', type: 'normal' },
-    { id: 11, letter: 'G', type: 'normal' },
-    { id: 12, letter: 'L', type: 'normal' },
-    { id: 13, letter: 'O', type: 'normal' },
-    { id: 14, letter: 'O', type: 'normal' },
-    { id: 15, letter: 'M', type: 'normal' },
+    { id: 8, letter: 'G', type: 'normal' },
+    { id: 9, letter: 'L', type: 'gem', gem: 'strike' },
+    { id: 10, letter: 'O', type: 'normal' },
+    { id: 11, letter: 'O', type: 'normal' },
+    { id: 12, letter: 'M', type: 'normal' },
+    { id: 13, letter: 'A', type: 'normal' },
+    { id: 14, letter: 'D', type: 'normal' },
+    { id: 15, letter: 'S', type: 'normal' },
   ],
-  refillQueue: 'HAPPYEATJOYSCHEERGLADMOODJOYSCHEERGLADMOODJOYSCHEERGLADMOODJOYSCHEERGLADMOODJOYSCHEERGLADMOODJOYSCHEERGLADMOOD',
-  rules: {
-    minimumWordLength: 3,
-    damagePerLetter: 1,
-    semantic: { opposite: 5, similar: -3, related: -1, unrelated: 0, minimumDamage: 1 },
-    grammar: { enabled: true, bonus: 2 },
-    tileEffects: {
-      ward: { bonusDamage: 0, preventResolveLoss: true },
-      power: { bonusDamage: 3, preventResolveLoss: false },
-    },
+  refillQueue: 'RYERELATMENDNJOYSADMERRYDELIGHTELATEDNEONSADGLOOMJOYMERRYDELIGHTELATEDNEONSADGLOOMJOYMERRYDELIGHTELATEDNEONSADGLOOMJOYMERRYDELIGHTELATEDNEONSADGLOOMJOY',
+  minimumWordLength: 3,
+  // Historical v1/v2 rules let a Strike tile consume the normal allowance.
+  strikeConsumesAllowance: true,
+  tileEffects: {
+    strike: { strike: true, preventResolveLoss: false },
+    ward: { strike: false, preventResolveLoss: true },
   },
+}
+
+/** Release v2 changes only the encounter-defined adjective weakness. */
+export const dailyEncounterV2: LetterStrikeEncounter = {
+  ...structuredClone(dailyEncounterV1),
+  id: 'daily-melancholy-letter-strike-v2',
+  grammarModifiers: { adjective: 1 },
+}
+
+/** New attempts use additive Strike effects without changing the dated board. */
+export const dailyEncounterV3: LetterStrikeEncounter = {
+  ...structuredClone(dailyEncounterV2),
+  id: 'daily-melancholy-letter-strike-v3',
+  strikeConsumesAllowance: false,
 }

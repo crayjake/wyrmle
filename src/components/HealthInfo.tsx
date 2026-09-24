@@ -49,7 +49,7 @@ export function MyInfo(props: BasicHealthInfoProps) {
     <HealthInfo
       {...props}
       left
-      segments={5}
+      segments={props.maxHealth}
       colour="green"
     />
   )

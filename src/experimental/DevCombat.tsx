@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
 import Header from '../components/Header'
 import { MyInfo, EnemyInfo } from '../components/HealthInfo'
@@ -7,7 +7,6 @@ import AttackInfo from '../components/AttackInfo'
 import TileGrid from '../components/TileGrid'
 import EncounterHud from '../components/EncounterHud'
 import WyrmDecoder from '../components/WyrmDecoder'
-import { HelpPanel } from '../components/DailyPanels'
 import { createGame, toggleTile, clearSelection, previewAttack, submitWord } from '../game/game'
 import { melancholyEncounter } from '../game/encounters'
 import { getActiveGrammarModifiers, getCurrentTileSummary, getRecentBattleEvents } from '../game/hud'
@@ -15,9 +14,9 @@ import type { GameState } from '../game/types'
 import {
   createLetterStrikeGame, toggleLetterStrikeTile, clearLetterStrikeSelection,
   previewLetterStrike, submitLetterStrike,
-} from './letterStrike'
-import type { LetterStrikeState } from './letterStrike'
-import { getMaximumImmediateStrikes } from './maxStrikes'
+} from '../game/letterStrike'
+import type { LetterStrikeState } from '../game/letterStrike'
+import { getLetterStrikeBattleEvents, getLetterStrikeBonuses, getLetterStrikeGrammarModifiers, getLetterStrikeTileSummary } from '../game/letterStrikeHud'
 import './DevCombat.css'
 
 type CombatMode = 'damage' | 'letter-strike'
@@ -70,41 +69,28 @@ function PlaytestBattle({ mode, onMode, onExit }: {
   const tilesDecoded = useCallback(() => setPhase('ready'), [])
 
   const letterGame = run.mode === 'letter-strike' ? run.game : null
-  const strikeTiles = letterGame?.tiles
-  const strikeEnemy = letterGame?.enemyLetters
-  const strikeEncounter = letterGame?.encounter
-  const strikeStatus = letterGame?.status
-  // Selection changes do not change which complete words are available.
-  const maximumStrikes = useMemo(() => strikeTiles && strikeEnemy && strikeEncounter && strikeStatus
-    ? getMaximumImmediateStrikes({ tiles: strikeTiles, enemyLetters: strikeEnemy, encounter: strikeEncounter, status: strikeStatus })
-    : 0, [strikeTiles, strikeEnemy, strikeEncounter, strikeStatus])
   const game = run.game
+  const [resolvedTurnCount, setResolvedTurnCount] = useState(game.playedWords.length)
+  const resolving = letterGame !== null && game.playedWords.length > resolvedTurnCount
+  const resolutionComplete = useCallback(() => setResolvedTurnCount(game.playedWords.length), [game.playedWords.length])
   const enemy = game.encounter.enemy
-  const interactive = phase === 'ready' && game.status === 'playing'
+  const interactive = phase === 'ready' && game.status === 'playing' && !resolving
   const preview = run.mode === 'damage' ? (() => {
     const attack = previewAttack(run.game)
     return { ...attack, amount: attack.totalDamage, maximum: run.game.encounter.enemy.maxHealth }
   })() : (() => {
     const attack = previewLetterStrike(run.game)
     return {
-      ...attack, amount: attack.strikes, maximum: maximumStrikes,
-      bonuses: attack.valid
-        ? [attack.semanticLabel, ...attack.effectLabels].map(label => ({ label })) : [],
+      ...attack, amount: attack.strikes, maximum: 0,
+      bonuses: getLetterStrikeBonuses(attack),
     }
   })()
   const metric = run.mode === 'damage' ? 'damage' : 'strikes'
-  const events = run.mode === 'damage' ? getRecentBattleEvents(run.game) : run.game.playedWords
-    .map((attack, index) => ({
-      id: index, word: attack.word, damage: attack.strikes,
-      semanticLabel: attack.semanticLabel, effectLabels: attack.effectLabels,
-    })).reverse()
+  const events = run.mode === 'damage' ? getRecentBattleEvents(run.game) : getLetterStrikeBattleEvents(run.game)
   const specialTiles = run.mode === 'damage' ? getCurrentTileSummary(run.game)
-    : Object.entries(run.game.encounter.tileEffects).map(([id, rule]) => ({
-      id, label: id.toUpperCase(), symbol: id === 'ward' ? '◇' : '◆',
-      detail: [rule.strike ? 'MATCHING LETTER STRIKE' : '', rule.preventResolveLoss ? 'SAVE RESOLVE' : '']
-        .filter(Boolean).join(' · '),
-    }))
-  const message = game.status === 'won' ? 'VICTORY'
+    : getLetterStrikeTileSummary(run.game)
+  const message = resolving ? undefined
+    : game.status === 'won' ? 'VICTORY'
     : game.status === 'lost' ? 'OUT OF RESOLVE'
     : phase === 'waiting' ? 'CLICK TO BEGIN'
     : phase !== 'ready' ? 'DECODING'
@@ -126,7 +112,7 @@ function PlaytestBattle({ mode, onMode, onExit }: {
       : { ...current, game: submitLetterStrike(current.game) })
   }
 
-  return <main className="container dev-combat" data-combat-mode={mode} ref={containerRef}
+  return <main className={`container dev-combat${letterGame ? ' letter-combat' : ''}`} data-combat-mode={mode} ref={containerRef}
     onClick={event => {
       if ((event.target as HTMLElement).closest('button, a, input, dialog')) return
       if (phase === 'waiting') setPhase('enemy')
@@ -142,20 +128,22 @@ function PlaytestBattle({ mode, onMode, onExit }: {
         : <button type="button" onClick={() => onMode(mode)}>Restart</button>}
     </div>
     <div className="battle-info">
-      <MyInfo name="YOU" health={game.playerResolve} maxHealth={game.encounter.startingResolve} />
+      <MyInfo name={letterGame ? 'RESOLVE' : 'YOU'} health={game.playerResolve} maxHealth={game.encounter.startingResolve} />
       {run.mode === 'damage'
         ? <EnemyInfo name={enemy.word} health={run.game.enemyHp} maxHealth={run.game.encounter.enemy.maxHealth} />
-        : <div className="health-info">
-          <div className="name">ENEMY LETTERS</div>
-          <div className="health">{run.game.enemyLetters.filter(letter => letter.hitsRemaining > 0).length} LEFT</div>
-        </div>}
+        : null}
     </div>
     <div className="enemy-zone">
       <Enemy name={enemy.word} definition={enemy.definition} partOfSpeech={enemy.partOfSpeech}
-        modifiers={run.mode === 'damage' ? getActiveGrammarModifiers(run.game) : []}
+        modifiers={run.mode === 'damage' ? getActiveGrammarModifiers(run.game) : getLetterStrikeGrammarModifiers(run.game)}
+        modifierUnit={letterGame ? 'STRIKE' : undefined}
         letterStates={letterGame?.enemyLetters}
+        predictedHits={interactive && preview.valid && 'hits' in preview ? preview.hits : []}
+        resolvedHits={resolving ? letterGame?.playedWords.at(-1)?.preview.hits : undefined}
+        resolutionKey={resolving ? game.playedWords.length : undefined}
+        onResolutionComplete={resolutionComplete}
         revealedIndices={revealedEnemyIndices} registerLetter={registerLetter} />
-      <EncounterHud visible={phase === 'ready'} events={events.slice(0, 2)} metric={metric} />
+      {run.mode === 'damage' && <EncounterHud visible={phase === 'ready'} events={events.slice(0, 2)} metric={metric} />}
     </div>
     <div className="player-zone">
       <AttackInfo word={preview.word} damage={preview.amount} maxDamage={preview.maximum}
@@ -163,7 +151,7 @@ function PlaytestBattle({ mode, onMode, onExit }: {
       <div className="controls">
         <TileGrid revealedIndices={revealedTileIndices} registerTile={registerTile}
           ready={interactive} tiles={game.tiles} specialTiles={specialTiles}
-          selectedTileIds={game.selectedTileIds} damage={preview.amount} canAttack={interactive && preview.valid}
+          selectedTileIds={game.selectedTileIds} damage={run.mode === 'damage' ? preview.amount : undefined} canAttack={interactive && preview.valid}
           onToggleTile={select} onClear={clear} onAttack={attack} />
       </div>
     </div>
@@ -185,14 +173,20 @@ function PlaytestBattle({ mode, onMode, onExit }: {
       {events.length > 0 ? <div className="dev-combat-log"><EncounterHud visible events={events} metric={metric} /></div>
         : <p>No submitted words in this attempt.</p>}
     </PlaytestPanel>}
-    {panel === 'help' && (run.mode === 'damage' ? <HelpPanel onClose={() => setPanel(null)} />
+    {panel === 'help' && (run.mode === 'damage'
+      ? <PlaytestPanel title="Damage mode" onClose={() => setPanel(null)}>
+        <p>Select any tiles in word order to spell at least three letters. Longer words deal more damage; counters add a bonus. Power adds damage and Ward prevents Resolve loss.</p>
+        <p>Reduce enemy HP to zero before Resolve runs out. This DEV comparison does not save to daily history.</p>
+      </PlaytestPanel>
       : <PlaytestPanel title="Letter-strike mode" onClose={() => setPanel(null)}>
         <div className="daily-help">
           <div>Remove every enemy letter before your five Resolve run out. Tiles can be selected in any order.</div>
-          <div><strong>COUNTER</strong> words strike with every matching tile. <strong>NEUTRAL</strong> words strike with only the first matching tile in your spelling. <strong>RESISTED</strong> words have no normal strikes.</div>
-          <div><strong>STRIKE</strong> guarantees its tile’s matching strike, even on a resisted word. Each tile strikes at most once. <strong>WARD</strong> makes the turn free.</div>
+          <div><strong>COUNTER</strong> words strike with every matching tile. <strong>NEUTRAL</strong> words get one normal matching strike, in spelling order. <strong>RESISTED</strong> words have no normal strikes.</div>
+          <div><strong>STRIKE</strong> guarantees its tile’s matching strike, even on a resisted word, without spending the normal or grammar allowance. Each tile strikes at most once. <strong>WARD</strong> makes the turn free.</div>
           <div>Double outlines need two hits. The first breaks armour; the next removes the letter. Matching tiles finish wounded copies first, then target from left to right.</div>
-          <div>The charge bar compares this word’s strikes with the maximum immediate strikes available on this board.</div>
+          <div>Blue − previews an armour break; red × previews removal. Defeated letters become centred dots with no outline. Repeated matching tiles can break and remove one armoured letter in the same word.</div>
+          <div>Listed grammar weaknesses add matching-tile allowances: ADJECTIVE +1 lets resisted adjectives strike once and neutral adjectives twice. Counters already use all matching tiles.</div>
+          <div>This DEV comparison does not save to daily history.</div>
         </div>
       </PlaytestPanel>)}
   </main>

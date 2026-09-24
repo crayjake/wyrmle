@@ -1,7 +1,6 @@
 import englishWords from 'an-array-of-english-words/index.json' with { type: 'json' }
-import { getSemanticRelation } from '../game/semantic.ts'
-import { evaluateLetterStrike } from './letterStrike.ts'
-import type { LetterStrikeState, LetterStrikeTile } from './letterStrike.ts'
+import { evaluateLetterStrike, getLetterStrikeAllowance } from '../game/letterStrike.ts'
+import type { LetterStrikeState, LetterStrikeTile } from '../game/letterStrike.ts'
 
 export type MaximumImmediateStrikesState = Pick<LetterStrikeState, 'tiles' | 'enemyLetters' | 'encounter' | 'status'>
 
@@ -37,16 +36,17 @@ function isStrikeTile(state: MaximumImmediateStrikesState, tile: LetterStrikeTil
  * This searches attainable selections and scores them with the combat engine;
  * the board's raw matching-letter capacity is only an early-exit upper bound.
  *
- * For any word, counter hits are independent of special identities. Resisted
- * words maximize hits by choosing Strike copies first. Neutral words have one
- * fixed first living-letter match: use a non-Strike copy there when available,
- * reserving Strike copies for subsequent positions. Choose Strike copies first
- * everywhere else. That attains the most hits for each letter independently,
- * including repeated hits on armour, without enumerating equivalent tile IDs.
+ * The combat engine provides the semantic/grammar normal-hit allowance. Under
+ * additive rules, use Strike copies first so an ordinary copy cannot consume
+ * the last matching target and waste a guaranteed hit. Historical rules instead
+ * reserve Strike copies until after normal hits. Track remaining same-letter
+ * target capacity in word order, including repeated armour hits.
+ * This maximizes attainable hits without enumerating equivalent tile IDs.
  * Ward and ordinary copies are interchangeable for this immediate-strike metric.
  */
 export function getMaximumImmediateStrikes(state: MaximumImmediateStrikesState): number {
   if (state.status !== 'playing') return 0
+  const strikeConsumesAllowance = state.encounter.strikeConsumesAllowance === true
 
   const tileCounts = new Uint8Array(26)
   const enemyCapacity = new Uint16Array(26)
@@ -72,6 +72,7 @@ export function getMaximumImmediateStrikes(state: MaximumImmediateStrikesState):
   const usedLetters = new Uint8Array(26)
   const usedStrike = new Uint8Array(26)
   const usedOrdinary = new Uint8Array(26)
+  const remainingCapacity = new Uint16Array(26)
   let maximum = 0
   for (let index = 0; index < englishWords.length; index += 1) {
     const word = englishWords[index]
@@ -90,21 +91,26 @@ export function getMaximumImmediateStrikes(state: MaximumImmediateStrikesState):
     }
     if (!feasible) continue
 
-    const relation = getSemanticRelation(word, state.encounter.enemy)
-    let neutralMatchPending = relation === 'unrelated' || relation === 'related'
+    const matchingCapacity = usedLetters.reduce((sum, count, code) => sum + Math.min(count, enemyCapacity[code]), 0)
+    let normalStrikesRemaining = getLetterStrikeAllowance(state.encounter, word, matchingCapacity).normalStrikeAllowance
+    remainingCapacity.set(enemyCapacity)
     usedStrike.fill(0)
     usedOrdinary.fill(0)
     const selected: LetterStrikeTile[] = []
     for (let position = 0; position < word.length; position += 1) {
       const code = word.charCodeAt(position) - 97
-      const firstNeutralMatch = neutralMatchPending && enemyCapacity[code] > 0
-      if (firstNeutralMatch) neutralMatchPending = false
+      const normalMatch = normalStrikesRemaining > 0 && remainingCapacity[code] > 0
       const ordinaryAvailable = usedOrdinary[code] < ordinaryTiles[code].length
       const strikeAvailable = usedStrike[code] < strikeTiles[code].length
-      if (ordinaryAvailable && (firstNeutralMatch || !strikeAvailable)) {
+      const useOrdinary = ordinaryAvailable && (!strikeAvailable || (strikeConsumesAllowance && normalMatch))
+      if (useOrdinary) {
         selected.push(ordinaryTiles[code][usedOrdinary[code]++])
       } else {
         selected.push(strikeTiles[code][usedStrike[code]++])
+      }
+      if (remainingCapacity[code] > 0 && (normalMatch || !useOrdinary)) {
+        remainingCapacity[code] -= 1
+        if (normalMatch && (useOrdinary || strikeConsumesAllowance)) normalStrikesRemaining -= 1
       }
     }
     maximum = Math.max(maximum, evaluateLetterStrike(state, selected).strikes)

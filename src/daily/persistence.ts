@@ -1,13 +1,15 @@
-import { createGame, submitWord } from '../game/game.ts'
-import type { GameState } from '../game/types.ts'
+import { createLetterStrikeGame, submitLetterStrike } from '../game/letterStrike.ts'
+import type { LetterStrikeState } from '../game/letterStrike.ts'
 import { validatePuzzleId } from './date.ts'
-import { getDailyPuzzle } from './puzzle.ts'
+import { getDailyPuzzle, getDailyPuzzleForVersion, getSupportedDailyPuzzles } from './puzzle.ts'
 import { buildDailyResult } from './results.ts'
 import type { DailyPuzzleDefinition, DailyResult, DailyRun, DailySession, StorageLike } from './types.ts'
-import { GAME_VERSION, PUZZLE_VERSION, SAVE_VERSION } from './versions.ts'
+import { LEGACY_GAME_VERSION, SAVE_VERSION } from './versions.ts'
 
-export const RUN_STORAGE_PREFIX = 'wyrmle:daily:run:'
-export const RESULT_STORAGE_PREFIX = 'wyrmle:daily:result:'
+// Letter health is a different game/schema. Legacy numeric-damage keys remain
+// untouched and are never interpreted, reset or counted as letter-strike saves.
+export const RUN_STORAGE_PREFIX = 'wyrmle:letter-strike:daily:v1:run:'
+export const RESULT_STORAGE_PREFIX = 'wyrmle:letter-strike:daily:v1:result:'
 
 export function getRunStorageKey(puzzleId: string): string {
   return RUN_STORAGE_PREFIX + validatePuzzleId(puzzleId)
@@ -35,31 +37,81 @@ function sameData(left: unknown, right: unknown): boolean {
 }
 
 function assertVersions(value: Record<string, unknown>, puzzle: DailyPuzzleDefinition, checkSave = true): void {
-  if ((checkSave && value.saveVersion !== SAVE_VERSION)
+  if ((checkSave && !supportedSaveVersion(value.saveVersion, puzzle))
     || value.gameVersion !== puzzle.gameVersion || value.puzzleVersion !== puzzle.puzzleVersion) {
-    throw new Error('This save uses an unsupported game, puzzle, or save version.')
+    throw new Error(`This save uses an unsupported game, puzzle, or save version for ${puzzle.puzzleId}.`)
   }
   if (value.puzzleId !== puzzle.puzzleId) throw new Error('The saved puzzle date does not match this day.')
 }
 
 function assertPuzzle(puzzle: DailyPuzzleDefinition): void {
-  if (puzzle.gameVersion !== GAME_VERSION || puzzle.puzzleVersion !== PUZZLE_VERSION
-    || !sameData(puzzle, getDailyPuzzle(puzzle.puzzleId))) {
+  if (!sameData(puzzle, getDailyPuzzleForVersion(puzzle.puzzleId, puzzle.gameVersion, puzzle.puzzleVersion))) {
     throw new Error('This puzzle definition does not match the supported published version.')
   }
+}
+
+function storedPuzzle(puzzleId: string, raw: string, result: boolean): DailyPuzzleDefinition {
+  const parsed: unknown = JSON.parse(raw)
+  const data = result && record(parsed) ? parsed.result : parsed
+  if (!record(data) || typeof data.gameVersion !== 'string' || typeof data.puzzleVersion !== 'number') {
+    throw new Error(`This save uses an unsupported game or puzzle version for ${puzzleId}.`)
+  }
+  return getDailyPuzzleForVersion(puzzleId, data.gameVersion, data.puzzleVersion)
+}
+
+function puzzleForGame(puzzleId: string, game: LetterStrikeState): DailyPuzzleDefinition {
+  const puzzle = getSupportedDailyPuzzles(puzzleId).find((definition) => sameData(definition.encounter, game.encounter))
+  if (!puzzle) throw new Error('The run belongs to a different encounter.')
+  return puzzle
+}
+
+function supportedSaveVersion(version: unknown, puzzle: DailyPuzzleDefinition): boolean {
+  return version === SAVE_VERSION || (version === 1 && puzzle.gameVersion === LEGACY_GAME_VERSION)
+}
+
+/** Exact historical shapes, used only for comparison with saveVersion 1 data.
+ * No fields are removed from user data: every original field still has to match
+ * a canonical v1 replay. Returned sessions use the enriched current shape.
+ */
+function legacyRunProjection(run: DailyRun): unknown {
+  return {
+    ...run,
+    saveVersion: 1,
+    playedWords: run.playedWords.map((turn) => {
+      const preview: Record<string, unknown> = { ...turn.preview }
+      delete preview.grammaticalModifier
+      delete preview.grammaticalPartOfSpeech
+      delete preview.letterOutcomes
+      return { ...turn, preview }
+    }),
+  }
+}
+
+function legacyResultProjection(result: DailyResult): unknown {
+  const legacy: Record<string, unknown> = {
+    ...result,
+    turns: result.turns.map((turn) => {
+      const historicalTurn: Record<string, unknown> = { ...turn }
+      delete historicalTurn.letterOutcomes
+      return historicalTurn
+    }),
+  }
+  delete legacy.enemyLetterCount
+  delete legacy.largestRemoval
+  return legacy
 }
 
 function validTimestamp(value: unknown): value is string {
   return typeof value === 'string' && Number.isFinite(Date.parse(value))
 }
 
-function snapshot(puzzle: DailyPuzzleDefinition, game: GameState, completedAt: string | null): DailyRun {
+function snapshot(puzzle: DailyPuzzleDefinition, game: LetterStrikeState, completedAt: string | null): DailyRun {
   return {
     saveVersion: SAVE_VERSION,
     puzzleId: puzzle.puzzleId,
     gameVersion: puzzle.gameVersion,
     puzzleVersion: puzzle.puzzleVersion,
-    enemyHp: game.enemyHp,
+    enemyLetters: game.enemyLetters,
     playerResolve: game.playerResolve,
     tiles: game.tiles,
     refillIndex: game.refillIndex,
@@ -70,14 +122,14 @@ function snapshot(puzzle: DailyPuzzleDefinition, game: GameState, completedAt: s
   }
 }
 
-function replay(puzzle: DailyPuzzleDefinition, tileIdsByTurn: unknown[]): GameState {
-  let game = createGame(puzzle.encounter)
+function replay(puzzle: DailyPuzzleDefinition, tileIdsByTurn: unknown[]): LetterStrikeState {
+  let game = createLetterStrikeGame(puzzle.encounter)
   for (const ids of tileIdsByTurn) {
     if (!Array.isArray(ids) || ids.length > 16
       || ids.some((id) => !Number.isSafeInteger(id) || id < 0) || game.status !== 'playing') {
       throw new Error('The saved turn history is invalid.')
     }
-    const next = submitWord(game, ids)
+    const next = submitLetterStrike(game, ids)
     if (next.error || next.playedWords.length !== game.playedWords.length + 1) {
       throw new Error('The saved turn history cannot be replayed with these rules.')
     }
@@ -86,7 +138,7 @@ function replay(puzzle: DailyPuzzleDefinition, tileIdsByTurn: unknown[]): GameSt
   return game
 }
 
-function readRun(puzzle: DailyPuzzleDefinition, raw: string): { game: GameState; completedAt: string | null } {
+function readRun(puzzle: DailyPuzzleDefinition, raw: string): { game: LetterStrikeState; completedAt: string | null } {
   const data: unknown = JSON.parse(raw)
   if (!record(data)) throw new Error('The saved run is damaged.')
   assertVersions(data, puzzle)
@@ -102,16 +154,17 @@ function readRun(puzzle: DailyPuzzleDefinition, raw: string): { game: GameState;
     throw new Error('The saved completion timestamp is invalid.')
   }
   const timestamp = typeof completedAt === 'string' ? completedAt : null
-  if (!sameData(data, snapshot(puzzle, game, timestamp))) {
+  const expected = snapshot(puzzle, game, timestamp)
+  if (!sameData(data, data.saveVersion === 1 ? legacyRunProjection(expected) : expected)) {
     throw new Error('The saved run does not match its turn history.')
   }
   return { game, completedAt: timestamp }
 }
 
-function readResult(puzzle: DailyPuzzleDefinition, raw: string): { game: GameState; result: DailyResult } {
+function readResult(puzzle: DailyPuzzleDefinition, raw: string): { game: LetterStrikeState; result: DailyResult } {
   const envelope: unknown = JSON.parse(raw)
   if (!record(envelope) || !record(envelope.result)) throw new Error('The saved result is damaged.')
-  if (envelope.saveVersion !== SAVE_VERSION) throw new Error('This result uses an unsupported save version.')
+  if (!supportedSaveVersion(envelope.saveVersion, puzzle)) throw new Error('This result uses an unsupported save version.')
   const data = envelope.result
   assertVersions(data, puzzle, false)
   if (!Array.isArray(data.turns) || !validTimestamp(data.completedAt)) {
@@ -120,7 +173,9 @@ function readResult(puzzle: DailyPuzzleDefinition, raw: string): { game: GameSta
   const game = replay(puzzle, data.turns.map((turn: unknown) => record(turn) ? turn.tileIds : null))
   if (game.status === 'playing') throw new Error('The saved result does not describe a completed game.')
   const result = buildDailyResult(puzzle, game, data.completedAt)
-  if (!sameData(data, result)) throw new Error('The saved result does not match its turn history.')
+  if (!sameData(data, envelope.saveVersion === 1 ? legacyResultProjection(result) : result)) {
+    throw new Error('The saved result does not match its turn history.')
+  }
   return { game, result }
 }
 
@@ -131,14 +186,20 @@ export function loadDailySession(puzzle: DailyPuzzleDefinition, storage: Storage
     const rawResult = storage.getItem(getResultStorageKey(puzzle.puzzleId))
     if (rawResult !== null) {
       // Completion wins even if another tab/crash left the separate run stale.
-      return { ...readResult(puzzle, rawResult), resumed: true, error: null }
+      const pinned = storedPuzzle(puzzle.puzzleId, rawResult, true)
+      return { ...readResult(pinned, rawResult), resumed: true, error: null }
     }
     const rawRun = storage.getItem(getRunStorageKey(puzzle.puzzleId))
-    if (rawRun === null) return { game: createGame(puzzle.encounter), result: null, resumed: false, error: null }
-    const { game, completedAt } = readRun(puzzle, rawRun)
+    const latest = getDailyPuzzle(puzzle.puzzleId)
+    if (rawRun === null) return { game: createLetterStrikeGame(latest.encounter), result: null, resumed: false, error: null }
+    const pinned = storedPuzzle(puzzle.puzzleId, rawRun, false)
+    const { game, completedAt } = readRun(pinned, rawRun)
+    // A validated Begin-only snapshot has no committed choices or outcome to
+    // preserve. Upgrade it in memory; the next commit writes the latest version.
+    const untouched = game.status === 'playing' && game.playedWords.length === 0
     return {
-      game,
-      result: completedAt === null ? null : buildDailyResult(puzzle, game, completedAt),
+      game: untouched ? createLetterStrikeGame(latest.encounter) : game,
+      result: completedAt === null ? null : buildDailyResult(pinned, game, completedAt),
       resumed: true,
       error: null,
     }
@@ -155,7 +216,7 @@ export function loadDailySession(puzzle: DailyPuzzleDefinition, storage: Storage
  */
 export function saveDailyRun(
   puzzle: DailyPuzzleDefinition,
-  game: GameState,
+  game: LetterStrikeState,
   storage: StorageLike,
   completedAt: string = new Date().toISOString(),
 ): DailySession {
@@ -169,15 +230,18 @@ export function saveDailyRun(
     }
     return existing
   }
-  if (!sameData(game.encounter, puzzle.encounter)) throw new Error('The run belongs to a different encounter.')
+  // The caller may hold the latest dated definition while this attempt remains
+  // pinned to older rules. Existing committed progress decides the version.
+  const activePuzzle = puzzleForGame(puzzle.puzzleId, existing.game)
+  if (!sameData(game.encounter, activePuzzle.encounter)) throw new Error('The run belongs to a different encounter. Reload the saved run before continuing.')
   const timestamp = game.status === 'playing' ? null : completedAt
-  const serialized = JSON.stringify(snapshot(puzzle, game, timestamp))
-  const canonical = readRun(puzzle, serialized).game
+  const serialized = JSON.stringify(snapshot(activePuzzle, game, timestamp))
+  const canonical = readRun(activePuzzle, serialized).game
   if (existing.game.playedWords.length > canonical.playedWords.length
     || existing.game.playedWords.some((turn, index) => !sameData(turn, canonical.playedWords[index]))) {
     throw new Error('This puzzle changed in another tab. Reload the saved run before continuing.')
   }
-  const result = timestamp === null ? null : buildDailyResult(puzzle, canonical, timestamp)
+  const result = timestamp === null ? null : buildDailyResult(activePuzzle, canonical, timestamp)
   if (result) storage.setItem(getResultStorageKey(puzzle.puzzleId), JSON.stringify({ saveVersion: SAVE_VERSION, result }))
   storage.setItem(getRunStorageKey(puzzle.puzzleId), serialized)
   return { game: canonical, result, resumed: existing.resumed, error: null }

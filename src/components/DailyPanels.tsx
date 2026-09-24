@@ -4,6 +4,9 @@ import { getCompletedResults } from '../daily/results.ts'
 import { buildShareText } from '../daily/share.ts'
 import { calculateStats } from '../daily/stats.ts'
 import type { DailyResult } from '../daily/types.ts'
+import type { LetterStrikeState } from '../game/letterStrike.ts'
+import { getLetterStrikeBattleEvents } from '../game/letterStrikeHud.ts'
+import { MyInfo } from './HealthInfo'
 import './DailyPanels.css'
 
 type PanelProps = { onClose: () => void }
@@ -85,23 +88,39 @@ export function ResultPanel({ result, onClose, onShowStats }: PanelProps & {
   }
 
   return (
-    <DailyDialog title={result.won ? 'Enemy defeated' : 'Run failed'} subtitle={`Daily · ${result.date} · UTC`} onClose={onClose}>
+    <DailyDialog title={result.won ? 'Victory' : 'Defeat'} subtitle={`Daily · ${result.date} · UTC`} onClose={onClose}>
       <p className={`daily-result-outcome ${result.won ? 'is-won' : 'is-lost'}`}>
-        {result.won ? `${result.enemyWord} has fallen.` : 'Your Resolve is spent.'}
+        {result.won ? `${result.enemyWord} has fallen.` : `${result.enemyWord} remains. Your Resolve is spent.`}
       </p>
+      <div className="daily-result-resolve">
+        <MyInfo name="RESOLVE" health={result.resolveRemaining} maxHealth={result.startingResolve} />
+      </div>
       <dl className="daily-stats-grid">
-        <Stat label="Resolve">{result.resolveRemaining}<span className="daily-stat-unit"> / {result.startingResolve}</span></Stat>
-        <Stat label="Attacks">{result.attacks}</Stat>
-        <Stat label="Strongest hit">{result.strongestHit}<span className="daily-stat-unit"> dmg</span></Stat>
-        <Stat label="Counters">{result.counters}</Stat>
-        <Stat label="Specials used">{result.specialTilesTriggered}</Stat>
-        <Stat label="Total damage">{result.totalDamage}</Stat>
+        <Stat label="Counter">{result.counters}</Stat>
+        <Stat label="Neutral">{result.neutral}</Stat>
+        <Stat label="Resisted">{result.resisted}</Stat>
+      </dl>
+      <dl className="daily-stats-list">
+        <Stat label="Letters removed">{result.lettersDestroyed}</Stat>
+        <Stat label="Armour breaks">{result.armourBroken}</Stat>
+        <Stat label="Strike activations">{result.strikeActivations}</Stat>
+        <Stat label="Ward saves">{result.wardSaves}</Stat>
+        <Stat label="Most removed in one word">{result.largestRemoval}</Stat>
       </dl>
       <details className="daily-words">
         <summary>Words played ({result.wordsPlayed.length})</summary>
         <p>{result.wordsPlayed.length > 0 ? result.wordsPlayed.join(' · ') : 'No words played.'}</p>
       </details>
       <p className="daily-panel-note">This result is saved. Daily puzzles begin at midnight UTC.</p>
+      <details className="daily-share-details">
+        <summary>Share preview &amp; symbols</summary>
+        <pre className="daily-share-preview" aria-label="Spoiler-free share preview">{shareText}</pre>
+        <p className="daily-share-legend" aria-label="Share symbols">
+          <span>C Counter</span><span>N Neutral</span><span>R Resisted</span>
+          <span>· Untouched</span><span>◐ Armour broken</span><span>■ Removed</span>
+          <span>▣ Armour broken + removed</span><span>◇ Ward</span><span>◆ Strike</span>
+        </p>
+      </details>
       <div className="daily-panel-actions">
         <button type="button" className="daily-panel-primary" onClick={copyResult} disabled={copyStatus === 'copying'}>
           {copyStatus === 'copying' ? 'Copying…' : copyStatus === 'copied' ? 'Copied!' : 'Share result'}
@@ -110,9 +129,6 @@ export function ResultPanel({ result, onClose, onShowStats }: PanelProps & {
       </div>
       <p className="daily-share-status" role="status">
         {copyStatus === 'copied' ? 'Copied to clipboard. No words or enemy spoilers.' : copyStatus === 'manual' ? 'Clipboard unavailable. Select and copy your result below.' : 'Share a spoiler-free summary of your run.'}
-      </p>
-      <p className="daily-share-legend" aria-label="Share symbols">
-        <span>🟩 Counter</span><span>⬜ Neutral</span><span>🟨 Resisted</span><span>✦ Special</span><span>◇ Resolve protected</span>
       </p>
       {copyStatus === 'manual' && (
         <div className="daily-share-fallback">
@@ -151,9 +167,15 @@ export function StatsPanel({ results, todayId, inProgressIds = [], onResume, onC
       <dl className="daily-stats-list">
         <Stat label="Average word length">{stats.gamesPlayed > 0 ? stats.averageWordLength.toFixed(1) : '—'}</Stat>
         <Stat label="Longest word">{stats.longestWord ?? '—'}</Stat>
-        <Stat label="Counter hits">{stats.totalCounters}</Stat>
-        <Stat label="Resisted hits">{stats.totalResisted}</Stat>
-        <Stat label="Special tiles used">{stats.specialTilesUsed}</Stat>
+        <Stat label="Enemy letters removed">{stats.totalLettersDestroyed}</Stat>
+        <Stat label="Counter moves">{stats.totalCounters}</Stat>
+        <Stat label="Neutral moves">{stats.totalNeutral}</Stat>
+        <Stat label="Resisted moves">{stats.totalResisted}</Stat>
+        <Stat label="Strike activations">{stats.totalStrikeActivations}</Stat>
+        <Stat label="Ward saves">{stats.totalWardSaves}</Stat>
+        <Stat label="Armour broken">{stats.totalArmourBroken}</Stat>
+        <Stat label="Best Resolve remaining">{stats.gamesPlayed > 0 ? stats.bestResolveRemaining : '—'}</Stat>
+        <Stat label="Largest turn by strikes">{stats.largestSingleTurnStrikes}</Stat>
         <Stat label="Different enemies defeated">{stats.uniqueEnemyDefeats}</Stat>
       </dl>
       {unfinishedDays.length > 0 && (
@@ -184,7 +206,7 @@ export function StatsPanel({ results, todayId, inProgressIds = [], onResume, onC
             <li key={result.puzzleId} className="daily-history-row">
               <time dateTime={result.date}>{result.date}</time>
               <span className={`daily-history-status ${result.won ? 'is-won' : 'is-lost'}`}>{result.won ? 'Won' : 'Lost'}</span>
-              <span className="daily-history-detail">{result.enemyWord} · {result.resolveRemaining}/{result.startingResolve} Resolve · {result.attacks} attacks</span>
+              <span className="daily-history-detail">{result.enemyWord} · {result.resolveRemaining}/{result.startingResolve} Resolve · {result.attacks} words · {result.lettersDestroyed} letters removed</span>
             </li>
           ))}
         </ul>
@@ -194,20 +216,51 @@ export function StatsPanel({ results, todayId, inProgressIds = [], onResume, onC
   )
 }
 
-export function HelpPanel({ onClose }: PanelProps) {
+export function HelpPanel({ onClose, strikeConsumesAllowance = false }: PanelProps & { strikeConsumesAllowance?: boolean }) {
   return (
     <DailyDialog title="How to play" subtitle="One puzzle each day" onClose={onClose}>
       <div className="daily-help">
-        <p>Choose tiles in any order to build an English word of at least three letters. Use each tile once per attack. Submit the word to damage the enemy.</p>
-        <p>Longer words deal more damage. Opposites counter the enemy for a bonus; similar and related words are resisted. Watch your damage preview before attacking.</p>
-        <p>Each attack costs one Resolve. <span className="daily-help-gem">◇ Ward</span> protects your Resolve for that attack. <span className="daily-help-gem">◆ Power</span> adds damage. Used tiles are replaced.</p>
-        <p>Defeat the enemy before Resolve runs out. A finishing blow wins even when it spends your final Resolve.</p>
+        <p>Choose tiles in any order to build an English word of at least three letters. Use each tile once per attack. Remove every letter of the enemy word to win.</p>
+        <p><strong>COUNTER</strong> words strike with every matching tile. <strong>NEUTRAL</strong> words get one normal matching strike, in spelling order. <strong>RESISTED</strong> words have no normal strikes. Related words count as neutral.</p>
+        <p><span className="daily-help-gem">◆ Strike</span> guarantees its tile’s matching strike, even in a resisted word. {!strikeConsumesAllowance && 'It leaves the normal and grammar allowances available for other tiles. '}Each tile strikes at most once. A matching tile finishes wounded armour first, then targets from left to right.</p>
+        <p>Highlighted enemy cells show exactly what your attack will do: blue <strong>−</strong> breaks armour; red <strong>×</strong> removes a letter. Armour loses its second outline on the first hit; defeated letters become centred <strong>·</strong> dots with no outline. Matching tiles resolve in your spelling order, so two strikes can break and remove the same armoured letter in one word.</p>
+        <p>Grammar labels under the definition are green for weaknesses and red for resistances. For example, an <strong>ADJECTIVE +1 STRIKE</strong> weakness lets a resisted adjective strike its first matching tile, or a neutral adjective strike its first two. Counters already use every matching tile. Grammar never creates a hit without a matching letter.</p>
+        <p>Resolve is your remaining turns. Each valid word normally costs one; <span className="daily-help-gem">◇ Ward</span> makes that turn free. Used tiles are replaced. Removing the final enemy letter wins even when it spends your final Resolve.</p>
         <p>Everyone receives the same daily puzzle. The day changes at <strong>midnight UTC</strong>. A win or loss completes that day permanently.</p>
         <p>Your committed attacks and results save automatically in this browser. Return here to resume an unfinished run. Clearing browser storage removes this local history.</p>
       </div>
       <div className="daily-panel-actions"><button type="button" className="daily-panel-primary" onClick={onClose}>Return to the puzzle</button></div>
     </DailyDialog>
   )
+}
+
+export function LogPanel({ game, date, onShowStats, onClose }: PanelProps & {
+  game: LetterStrikeState
+  date: string
+  onShowStats: () => void
+}) {
+  const events = getLetterStrikeBattleEvents(game)
+  return <DailyDialog title="Turn log" subtitle={`Daily · ${date} · UTC`} onClose={onClose}>
+    {events.length > 0 ? <ol className="daily-turn-log" aria-label="All attacks, newest first">
+      {events.map(event => {
+        const attack = game.playedWords[event.id]
+        const removed = attack.preview.letterOutcomes.filter(outcome => outcome.removed).length
+        const broken = attack.preview.letterOutcomes.filter(outcome => outcome.armourBroken).length
+        return <li key={event.id}>
+          <div className="daily-turn-heading">
+            <span className="daily-turn-word">{event.word}</span>
+            <span>{event.damage} {event.damage === 1 ? 'STRIKE' : 'STRIKES'}</span>
+          </div>
+          <div className="daily-turn-effects">
+            <span className={event.semanticLabel === 'COUNTER' ? 'is-won' : event.semanticLabel === 'RESISTED' ? 'is-lost' : undefined}>{event.semanticLabel}</span>
+            {event.effectLabels.map(label => <span className="daily-help-gem" key={label}> · {label}</span>)}
+            <span> · {removed} removed{broken > 0 ? ` · ${broken} armour broken` : ''}</span>
+          </div>
+        </li>
+      })}
+    </ol> : <p>No words submitted yet.</p>}
+    <div className="daily-panel-actions"><button type="button" onClick={onShowStats}>Statistics</button></div>
+  </DailyDialog>
 }
 
 export function HistoryErrorPanel({ error, onClose }: PanelProps & { error: string }) {

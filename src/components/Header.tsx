@@ -27,7 +27,7 @@ export default function Header({ wyrmDockRef, titleRef, showWyrm, onHelp, onHist
                 <CircleHelp size={20} />
             </button>
 
-            <button className="icon-button" aria-label="History and statistics" onClick={onHistory}>
+            <button className="icon-button" aria-label="Log" title="Turn log" onClick={onHistory}>
                 <History size={20} />
             </button>
 

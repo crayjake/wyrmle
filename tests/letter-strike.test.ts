@@ -4,8 +4,8 @@ import {
   clearLetterStrikeSelection, createLetterStrikeGame, evaluateLetterStrike,
   letterStrikeEncounter, previewLetterStrike, selectEnemyTarget,
   submitLetterStrike, toggleLetterStrikeTile,
-} from '../src/experimental/letterStrike.ts'
-import type { EnemyLetter, LetterStrikeGem, LetterStrikeState } from '../src/experimental/letterStrike.ts'
+} from '../src/game/letterStrike.ts'
+import type { EnemyLetter, LetterStrikeGem, LetterStrikeState } from '../src/game/letterStrike.ts'
 
 function wordIds(state: LetterStrikeState, word: string): number[] {
   const ids: number[] = []
@@ -83,7 +83,8 @@ test('neutral words with no living matches remain valid zero-strike moves', () =
 
 test('RESISTED has no normal strikes while related words are NEUTRAL', () => {
   for (const word of ['SAD', 'GLOOM', 'SORROW']) {
-    const preview = previewLetterStrike(withWord(word))
+    const state = withWord(word)
+    const preview = previewLetterStrike({ ...state, encounter: { ...state.encounter, grammarModifiers: undefined } })
     assert.equal(preview.semanticLabel, 'RESISTED')
     assert.equal(preview.strikes, 0)
   }
@@ -108,12 +109,66 @@ test('STRIKE does not double-hit on a counter, including an armoured target', ()
   assert.equal(preview.enemyLetters[0].hitsRemaining, 1)
 })
 
-test('normal neutral strike and STRIKE on its first matching tile merge into one hit', () => {
-  const state = { ...withWord('ALERT', { 0: 'strike' }), enemyLetters: letters('AL', [0]) }
+test('LAD preserves its neutral allowance after the actual Strike L, in preview and submission', () => {
+  const state = createLetterStrikeGame()
+  const ids = wordIds(state, 'LAD')
+  const before = structuredClone(state)
+  const preview = previewLetterStrike(state, ids)
+  assert.equal(preview.semanticLabel, 'NEUTRAL')
+  assert.equal(preview.grammaticalModifier, 0)
+  assert.equal(preview.strikes, 2)
+  assert.deepEqual(preview.hits.map(hit => [hit.tileId, hit.letter]), [[9, 'L'], [13, 'A']])
+  assert.deepEqual(preview.effectLabels, ['STRIKE'])
+  const submitted = submitLetterStrike(state, ids)
+  assert.deepEqual(submitted.enemyLetters, preview.enemyLetters)
+  assert.deepEqual(submitted.playedWords[0].preview.hits, preview.hits)
+  assert.equal(submitted.playerResolve, 4)
+  assert.equal(submitted.tiles.some(tile => tile.id === 9), false)
+  assert.deepEqual(state, before)
+})
+
+test('Strike tiles before or after the normal neutral hit preserve the allowance', () => {
+  for (const strikeIndex of [0, 1]) {
+    const state = { ...withWord('ALERT', { [strikeIndex]: 'strike' }), enemyLetters: letters('AL', [0]) }
+    const preview = previewLetterStrike(state)
+    assert.equal(preview.strikes, 2)
+    assert.deepEqual(preview.hits.map(hit => hit.letter), ['A', 'L'])
+    assert.equal(preview.enemyLetters[0].hitsRemaining, 1)
+    assert.equal(preview.enemyLetters[1].hitsRemaining, 0)
+  }
+})
+
+test('an unmatched Strike leaves the neutral allowance for a living matching tile', () => {
+  const state = { ...withWord('LAD', { 0: 'strike' }), enemyLetters: letters('A') }
   const preview = previewLetterStrike(state)
   assert.equal(preview.strikes, 1)
-  assert.equal(preview.enemyLetters[0].hitsRemaining, 1)
-  assert.equal(preview.enemyLetters[1].hitsRemaining, 1)
+  assert.deepEqual(preview.hits.map(hit => hit.letter), ['A'])
+  assert.deepEqual(preview.effectLabels, [])
+})
+
+test('a lone matched Strike cannot reuse its tile to spend the remaining neutral allowance', () => {
+  const state = { ...withWord('LAD', { 0: 'strike' }), enemyLetters: letters('L', [0]) }
+  const preview = previewLetterStrike(state)
+  assert.equal(preview.strikes, 1)
+  assert.deepEqual(preview.hits.map(hit => [hit.hitsBefore, hit.hitsAfter]), [[2, 1]])
+})
+
+test('Strike followed by a separate neutral tile can break and remove the same armour', () => {
+  const state = { ...withWord('EEL', { 0: 'strike' }), enemyLetters: letters('E', [0]) }
+  const preview = previewLetterStrike(state)
+  assert.equal(preview.strikes, 2)
+  assert.deepEqual(preview.hits.map(hit => [hit.tileId, hit.hitsBefore, hit.hitsAfter]), [[0, 2, 1], [1, 1, 0]])
+  assert.equal(preview.letterOutcomes[0].armourBroken, true)
+  assert.equal(preview.letterOutcomes[0].removed, true)
+  assert.deepEqual(submitLetterStrike(state).enemyLetters, preview.enemyLetters)
+})
+
+test('archived encounters explicitly preserve the original overlapping Strike allowance', () => {
+  const state = createLetterStrikeGame()
+  const archived = { ...state, encounter: { ...state.encounter, strikeConsumesAllowance: true } }
+  const preview = previewLetterStrike(archived, wordIds(archived, 'LAD'))
+  assert.equal(preview.strikes, 1)
+  assert.deepEqual(preview.hits.map(hit => hit.letter), ['L'])
 })
 
 test('multiple Strike tiles each hit at most once and supplement a neutral normal strike', () => {
@@ -311,4 +366,141 @@ test('the deterministic fixture has a playable six-move victory using Ward and S
   assert.equal(state.playerResolve, 0)
   assert.equal(state.status, 'won')
   assert.ok(state.enemyLetters.every(letter => letter.hitsRemaining === 0))
+})
+
+test('predicted target IDs and final armour outcomes exactly match submitted enemy slots', () => {
+  const targets = letters('CEEH', [1])
+  targets[3].hitsRemaining = 0
+  const state = { ...withWord('CHEER'), enemyLetters: targets }
+  const preview = previewLetterStrike(state)
+  assert.deepEqual(preview.hits.map(hit => hit.enemyLetterId), ['target-0', 'target-1', 'target-1'])
+  assert.deepEqual(preview.hits.map(hit => [hit.hitsBefore, hit.hitsAfter]), [[1, 0], [2, 1], [1, 0]])
+  const projectedHits = new Map(state.enemyLetters.map(letter => [letter.id, letter.hitsRemaining]))
+  for (const hit of preview.hits) {
+    assert.equal(projectedHits.get(hit.enemyLetterId), hit.hitsBefore)
+    projectedHits.set(hit.enemyLetterId, hit.hitsAfter)
+  }
+  const submitted = submitLetterStrike(state)
+  assert.deepEqual(submitted.enemyLetters.map(letter => [letter.id, letter.hitsRemaining]), [...projectedHits])
+  assert.deepEqual(submitted.enemyLetters, preview.enemyLetters)
+  assert.deepEqual(submitted.enemyLetters.map(letter => [letter.id, letter.letter]), targets.map(letter => [letter.id, letter.letter]))
+  assert.equal(submitted.enemyLetters[2].hitsRemaining, 1)
+  assert.equal(submitted.enemyLetters[3].hitsRemaining, 0)
+})
+
+test('an untriggered Strike tile adds no preview or recorded effect label', () => {
+  const state = { ...withWord('GLOOM', { 1: 'strike' }), enemyLetters: letters('A') }
+  const preview = previewLetterStrike(state)
+  assert.equal(preview.valid, true)
+  assert.equal(preview.strikes, 0)
+  assert.deepEqual(preview.effectLabels, [])
+  const submitted = submitLetterStrike(state)
+  assert.deepEqual(submitted.playedWords[0].effectLabels, [])
+  assert.equal(submitted.playerResolve, 4)
+})
+
+test('dead and invalid targets never produce preview hits or actionable outcomes', () => {
+  const targets = letters('CHE')
+  targets.forEach(letter => { letter.hitsRemaining = 0 })
+  const state = { ...withWord('CHEER', { 0: 'strike' }), enemyLetters: targets }
+  const deadPreview = previewLetterStrike(state)
+  assert.equal(deadPreview.valid, true)
+  assert.equal(deadPreview.strikes, 0)
+  assert.deepEqual(deadPreview.hits, [])
+  assert.deepEqual(deadPreview.effectLabels, [])
+  assert.deepEqual(deadPreview.enemyLetters, targets)
+  for (const ids of [[], [0], [0, 0, 0], [999]]) {
+    const preview = previewLetterStrike(state, ids)
+    assert.equal(preview.valid, false)
+    assert.equal(preview.resolveCost, 0)
+    assert.deepEqual(preview.hits, [])
+    assert.deepEqual(preview.enemyLetters, targets)
+  }
+})
+
+test('encounter adjective weakness grants resisted one and neutral two matching strikes', () => {
+  const resisted = previewLetterStrike(withWord('SAD'))
+  assert.equal(resisted.semanticLabel, 'RESISTED')
+  assert.equal(resisted.grammaticalPartOfSpeech, 'adjective')
+  assert.equal(resisted.grammaticalModifier, 1)
+  assert.deepEqual(resisted.hits.map(hit => hit.letter), ['A'])
+  const neutral = previewLetterStrike(withWord('GLAD'))
+  assert.equal(neutral.semanticLabel, 'NEUTRAL')
+  assert.equal(neutral.grammaticalModifier, 1)
+  assert.deepEqual(neutral.hits.map(hit => hit.letter), ['L', 'A'])
+  const unrelatedNoun = withWord('GLAD')
+  unrelatedNoun.encounter = { ...unrelatedNoun.encounter, grammarModifiers: undefined }
+  assert.equal(previewLetterStrike(unrelatedNoun).strikes, 1)
+})
+
+test('grammar never creates unmatched hits or surplus counter strikes', () => {
+  const happy = previewLetterStrike(withWord('HAPPY'))
+  assert.equal(happy.semanticLabel, 'COUNTER')
+  assert.equal(happy.strikes, 3)
+  assert.equal(happy.grammaticalModifier, 0)
+  assert.equal(happy.grammaticalPartOfSpeech, null)
+  const noTargets = previewLetterStrike({ ...withWord('GLAD'), enemyLetters: letters('XYZ') })
+  assert.equal(noTargets.grammaticalModifier, 1)
+  assert.equal(noTargets.strikes, 0)
+})
+
+test('ambiguous and unknown parts of speech never infer grammatical bonuses', () => {
+  for (const word of ['CALM', 'BLUE', 'ALERT']) {
+    const preview = previewLetterStrike(withWord(word))
+    assert.equal(preview.valid, true)
+    assert.equal(preview.grammaticalModifier, 0, word)
+    assert.equal(preview.grammaticalPartOfSpeech, null, word)
+  }
+})
+
+test('Strike tiles preserve grammar and semantic allowances regardless of their order', () => {
+  const neutral = { ...withWord('GLAD', { 1: 'strike', 3: 'strike' }), enemyLetters: letters('LAD') }
+  const preview = previewLetterStrike(neutral)
+  assert.equal(preview.strikes, 3)
+  assert.deepEqual(preview.hits.map(hit => hit.tileId), [1, 2, 3])
+  const resisted = { ...withWord('SAD', { 0: 'strike' }), enemyLetters: letters('SA') }
+  assert.equal(previewLetterStrike(resisted).strikes, 2)
+  const laterStrike = { ...withWord('SAD', { 1: 'strike' }), enemyLetters: letters('SA') }
+  assert.equal(previewLetterStrike(laterStrike).strikes, 2)
+  const neutralGrammar = { ...withWord('GLAD', { 1: 'strike' }), enemyLetters: letters('LAD') }
+  assert.deepEqual(previewLetterStrike(neutralGrammar).hits.map(hit => hit.letter), ['L', 'A', 'D'])
+})
+
+test('negative grammar reduces normal allowances without blocking matching Strike tiles', () => {
+  const state = withWord('GLAD', { 1: 'strike' })
+  state.encounter = { ...state.encounter, grammarModifiers: { adjective: -1 } }
+  const preview = previewLetterStrike(state)
+  assert.equal(preview.grammaticalModifier, -1)
+  assert.equal(preview.strikes, 1)
+  assert.deepEqual(preview.effectLabels, ['STRIKE'])
+  const happy = withWord('HAPPY')
+  happy.encounter = { ...happy.encounter, grammarModifiers: { adjective: -1 } }
+  assert.deepEqual(previewLetterStrike(happy).hits.map(hit => hit.letter), ['H', 'A'])
+  const resisted = withWord('SAD')
+  resisted.encounter = { ...resisted.encounter, grammarModifiers: { adjective: -5 } }
+  assert.equal(previewLetterStrike(resisted).strikes, 0)
+  assert.equal(previewLetterStrike(resisted).grammaticalModifier, 0)
+})
+
+test('per-position outcomes distinguish untouched, broken, removed, and broken plus removed', () => {
+  const state = { ...withWord('CHEER'), enemyLetters: letters('CEHXY', [1, 2]) }
+  state.enemyLetters[4].hitsRemaining = 0
+  const preview = previewLetterStrike(state)
+  assert.deepEqual(preview.letterOutcomes, [
+    { enemyLetterId: 'target-0', position: 0, hitsBefore: 1, hitsAfter: 0, armourBroken: false, removed: true },
+    { enemyLetterId: 'target-1', position: 1, hitsBefore: 2, hitsAfter: 0, armourBroken: true, removed: true },
+    { enemyLetterId: 'target-2', position: 2, hitsBefore: 2, hitsAfter: 1, armourBroken: true, removed: false },
+    { enemyLetterId: 'target-3', position: 3, hitsBefore: 1, hitsAfter: 1, armourBroken: false, removed: false },
+    { enemyLetterId: 'target-4', position: 4, hitsBefore: 0, hitsAfter: 0, armourBroken: false, removed: false },
+  ])
+  const next = submitLetterStrike(state)
+  assert.deepEqual(next.playedWords[0].preview.letterOutcomes, preview.letterOutcomes)
+  assert.deepEqual(next.enemyLetters.map(letter => letter.hitsRemaining), preview.letterOutcomes.map(outcome => outcome.hitsAfter))
+  const invalid = previewLetterStrike(state, [])
+  assert.ok(invalid.letterOutcomes.every(outcome => !outcome.armourBroken && !outcome.removed && outcome.hitsBefore === outcome.hitsAfter))
+})
+
+test('authored armour has exactly two hits so every turn fits the supported outcome states', () => {
+  const encounter = { ...letterStrikeEncounter, enemyLetters: [{ id: 'thick', letter: 'E', initialHits: 3, hitsRemaining: 3 }] }
+  assert.throws(() => createLetterStrikeGame(encounter), /one or two/)
 })

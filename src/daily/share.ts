@@ -1,22 +1,34 @@
 import type { DailyResult, ResultTurn } from './types.ts'
 
-const relationSymbol: Record<ResultTurn['relation'], string> = {
-  opposite: '🟩',
-  unrelated: '⬜',
-  similar: '🟨',
-  related: '🟨',
+const semanticPrefix: Record<ResultTurn['semanticLabel'], string> = {
+  COUNTER: 'C',
+  NEUTRAL: 'N',
+  RESISTED: 'R',
 }
 
-/** Public share text deliberately omits enemy, words, tile identities and damage. */
+/** Each row tells that turn's positional story, never reconstructed from final state. */
 export function buildShareText(result: DailyResult): string {
-  const turns = result.turns.map((turn) => (
-    relationSymbol[turn.relation]
-    + '✦'.repeat(turn.specialTiles.length)
-    + (turn.resolveProtected ? '◇' : '')
-  )).join(' ')
+  const rows = result.turns.map((turn) => {
+    if (turn.letterOutcomes.length !== result.enemyLetterCount
+      || turn.letterOutcomes.some((outcome, position) => outcome.position !== position)) {
+      throw new Error('Share rows require an outcome for every original enemy position.')
+    }
+    const positions = turn.letterOutcomes.map((outcome) => {
+      if (outcome.armourBroken && outcome.removed) return '▣'
+      if (outcome.removed) return '■'
+      if (outcome.armourBroken) return '◐'
+      return '·'
+    }).join('')
+    const effects = (turn.resolveProtected ? '◇' : '') + (turn.strikeActivations > 0 ? '◆' : '')
+    return `${semanticPrefix[turn.semanticLabel]}  ${positions}${effects ? ` ${effects}` : ''}`
+  })
+  const resolve = '■'.repeat(result.resolveRemaining) + '□'.repeat(result.startingResolve - result.resolveRemaining)
   return [
-    `WYRMLE ${result.date} · ${result.won ? 'Victory' : 'Defeat'}`,
-    `Resolve ${result.resolveRemaining}/${result.startingResolve} · ${result.attacks} ${result.attacks === 1 ? 'attack' : 'attacks'}`,
-    turns,
-  ].filter(Boolean).join('\n')
+    `WYRMLE ${result.date} · ${result.won ? 'VICTORY' : 'DEFEAT'}`,
+    '',
+    'RESOLVE',
+    `${resolve} ${result.resolveRemaining}/${result.startingResolve}`,
+    '',
+    ...rows,
+  ].join('\n')
 }

@@ -3,6 +3,9 @@ import { useEffect, useState } from "react"
 import type { CSSProperties } from "react"
 import { introTimings } from "../intro/config"
 import type { GrammarModifier } from "../game/hud"
+import { useLetterResolution } from './useLetterResolution'
+import type { LetterResolutionHit } from './useLetterResolution'
+import './LetterCombat.css'
 
 type EnemyLetterState = {
   id: string
@@ -18,7 +21,12 @@ type EnemyProps = {
   revealedIndices: readonly number[]
   registerLetter: (index: number, element: HTMLDivElement | null) => void
   modifiers: readonly GrammarModifier[]
+  modifierUnit?: string
   letterStates?: readonly EnemyLetterState[]
+  predictedHits?: readonly LetterResolutionHit[]
+  resolvedHits?: readonly LetterResolutionHit[]
+  resolutionKey?: string | number
+  onResolutionComplete?: () => void
 }
 
 const GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ?#%&@"
@@ -34,12 +42,21 @@ export default function Enemy({
   revealedIndices,
   registerLetter,
   modifiers,
+  modifierUnit,
   letterStates,
+  predictedHits = [],
+  resolvedHits,
+  resolutionKey,
+  onResolutionComplete,
 }: EnemyProps) {
   const letters = letterStates?.map(state => state.letter) ?? name.toUpperCase().split("")
   const reducedMotion = useReducedMotion()
+  const resolution = useLetterResolution(resolvedHits, resolutionKey, reducedMotion, onResolutionComplete)
   const decoded = letters.every((_, index) => revealedIndices.includes(index))
   const activeModifiers = modifiers.filter(modifier => modifier.value !== 0)
+  // Hits arrive in engine order. The final hit describes the target's exact
+  // post-attack state, including multiple selected tiles hitting its armour.
+  const predictedByLetter = new Map(predictedHits.map(hit => [hit.enemyLetterId, hit]))
 
   const [display, setDisplay] = useState(
     letters.map(() => randomGlyph())
@@ -56,12 +73,18 @@ export default function Enemy({
   }, [name, decoded, reducedMotion])
 
   return (
-    <div className="enemy-section">
+    <div className="enemy-section" data-resolving={resolution.resolving || undefined}>
       <div className="enemy-container" style={{ '--enemy-letter-count': letters.length } as CSSProperties}>
         {letters.map((letter, i) => {
           const revealed = revealedIndices.includes(i)
           const state = letterStates?.[i]
-          const removed = state?.hitsRemaining === 0
+          const hitsRemaining = state ? resolution.remainingById.get(state.id) ?? state.hitsRemaining : undefined
+          const removed = hitsRemaining === 0
+          const predicted = state && revealed && !removed && !resolution.resolving ? predictedByLetter.get(state.id) : undefined
+          const targetOutcome = predicted ? (predicted.hitsAfter === 0 ? 'remove' : 'break') : undefined
+          const targetDescription = targetOutcome === 'remove'
+            ? hitsRemaining !== undefined && hitsRemaining > 1 ? 'armour will break and letter will be removed' : 'letter will be removed'
+            : targetOutcome === 'break' ? 'armour will break' : undefined
 
           return (
             <motion.div
@@ -69,15 +92,18 @@ export default function Enemy({
               ref={element => registerLetter(i, element)}
               data-enemy-index={i}
               data-revealed={revealed}
-              data-hits-remaining={state?.hitsRemaining}
+              data-hits-remaining={hitsRemaining}
+              data-struck={state && state.id === resolution.activeLetterId || undefined}
+              data-target-outcome={targetOutcome}
+              title={targetDescription}
               role={state ? 'img' : undefined}
               aria-label={state ? revealed
-                ? `${letter}, ${removed ? 'removed' : `${state.hitsRemaining} ${state.hitsRemaining === 1 ? 'strike' : 'strikes'} remaining`}`
+                ? `${letter}, ${removed ? 'removed' : `${hitsRemaining} ${hitsRemaining === 1 ? 'strike' : 'strikes'} remaining`}${targetDescription ? `, targeted: ${targetDescription}` : ''}`
                 : `Undecoded enemy letter ${i + 1}` : undefined}
               className={[
                 'enemy-letter',
                 revealed ? 'resolved' : 'scrambled',
-                state && state.hitsRemaining > 1 ? 'enemy-letter-armoured' : '',
+                hitsRemaining !== undefined && hitsRemaining > 1 ? 'enemy-letter-armoured' : '',
                 removed ? 'enemy-letter-removed' : '',
               ].join(' ')}
               initial={false}
@@ -90,7 +116,12 @@ export default function Enemy({
                 ease: "easeOut",
               }}
             >
-              {removed ? '' : revealed ? letter : display[i]}
+              <span className="enemy-letter-glyph" aria-hidden={state ? true : undefined}>
+                {revealed ? removed ? '·' : letter : display[i]}
+              </span>
+              {targetOutcome && <span className="enemy-target-marker" aria-hidden="true">
+                {targetOutcome === 'break' ? '−' : '×'}
+              </span>}
             </motion.div>
           )
         })}
@@ -115,12 +146,22 @@ export default function Enemy({
         <span>{definition}</span>
         {activeModifiers.length > 0 && (
           <ul className="enemy-matchups" aria-label="Enemy grammar matchups">
-            {activeModifiers.map(modifier => (
+            {activeModifiers.map((modifier, index) => (
               <li key={modifier.id}>
-                <span>{modifier.label}</span>
-                <span className={modifier.value > 0 ? 'enemy-matchup-positive' : 'enemy-matchup-negative'}>
-                  {modifier.value > 0 ? '+' : ''}{modifier.value}
-                </span>
+                {modifierUnit === 'STRIKE' ? <>
+                  {index > 0 && <span className="enemy-matchup-divider" aria-hidden="true">·</span>}
+                  <span className={modifier.value > 0 ? 'enemy-matchup-positive' : 'enemy-matchup-negative'}
+                    title={`${modifier.label} ${modifier.value > 0 ? '+' : ''}${modifier.value} STRIKE`}>
+                    {modifier.label}
+                    <span className="enemy-matchup-detail"> {modifier.value > 0 ? '+' : ''}{modifier.value} STRIKE</span>
+                  </span>
+                </> : <>
+                  <span>{modifier.label}</span>
+                  <span className={modifier.value > 0 ? 'enemy-matchup-positive' : 'enemy-matchup-negative'}>
+                    {modifier.value > 0 ? '+' : ''}{modifier.value}
+                    {modifierUnit ? ` ${modifierUnit}` : ''}
+                  </span>
+                </>}
               </li>
             ))}
           </ul>

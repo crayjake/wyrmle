@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { clearSelection, createGame, submitWord, toggleTile } from '../game/game.ts'
-import type { GameState } from '../game/types.ts'
+import { clearLetterStrikeSelection, createLetterStrikeGame, submitLetterStrike, toggleLetterStrikeTile } from '../game/letterStrike.ts'
+import type { LetterStrikeState } from '../game/letterStrike.ts'
 import { getInProgressPuzzleIds, loadDailySession, loadResults, saveDailyRun } from './persistence.ts'
 import type { DailyPuzzleDefinition, DailyResult, DailySession } from './types.ts'
 
@@ -33,8 +33,8 @@ export function useDailyRun(puzzle: DailyPuzzleDefinition) {
   const [session, setSession] = useState(() => readSession(puzzle))
   const sessionRef = useRef(session)
   const [history, setHistory] = useState(readHistory)
-  const pending = useRef<{ game: GameState; completedAt: string } | null>(null)
-  const game = session.game ?? createGame(puzzle.encounter)
+  const pending = useRef<{ game: LetterStrikeState; completedAt: string } | null>(null)
+  const game = session.game ?? createLetterStrikeGame(puzzle.encounter)
 
   const updateSession = useCallback((next: DailySession) => {
     sessionRef.current = next
@@ -50,13 +50,13 @@ export function useDailyRun(puzzle: DailyPuzzleDefinition) {
 
   useEffect(() => {
     const sync = (event: StorageEvent) => {
-      if (event.key === null || event.key.startsWith('wyrmle:')) refresh()
+      if (event.key === null || event.key.startsWith('wyrmle:letter-strike:daily:v1:')) refresh()
     }
     window.addEventListener('storage', sync)
     return () => window.removeEventListener('storage', sync)
   }, [refresh])
 
-  function commit(nextGame: GameState, completedAt = new Date().toISOString()): boolean {
+  function commit(nextGame: LetterStrikeState, completedAt = new Date().toISOString()): boolean {
     try {
       const saved = saveDailyRun(puzzle, nextGame, window.localStorage, completedAt)
       pending.current = null
@@ -82,19 +82,19 @@ export function useDailyRun(puzzle: DailyPuzzleDefinition) {
   function select(tileId: number) {
     const current = sessionRef.current
     if (!current.game || current.error || current.result) return
-    updateSession({ ...current, game: toggleTile(current.game, tileId) })
+    updateSession({ ...current, game: toggleLetterStrikeTile(current.game, tileId) })
   }
 
   function clear() {
     const current = sessionRef.current
     if (!current.game || current.error || current.result) return
-    updateSession({ ...current, game: clearSelection(current.game) })
+    updateSession({ ...current, game: clearLetterStrikeSelection(current.game) })
   }
 
   function attack() {
     const current = sessionRef.current
     if (!current.game || current.error || current.result) return
-    const next = submitWord(current.game)
+    const next = submitLetterStrike(current.game)
     if (next.playedWords.length === current.game.playedWords.length) {
       updateSession({ ...current, game: next })
     } else {

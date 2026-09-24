@@ -1,5 +1,5 @@
 type BattleActionsProps = {
-  damage: number
+  damage?: number
   canAttack: boolean
   canClear: boolean
   onClear: () => void
@@ -30,7 +30,7 @@ export default function BattleActions({
         disabled={!canAttack}
         onClick={onAttack}
       >
-        ATTACK {damage}
+        ATTACK{damage !== undefined ? ` ${damage}` : ''}
       </button>
     </div>
   )

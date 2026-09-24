@@ -1,12 +1,3 @@
-.dev-combat .enemy-letter-armoured {
-  outline: 1px solid var(--fg);
-  outline-offset: -3px;
-}
-
-.dev-combat .enemy-letter-removed {
-  border-color: transparent;
-}
-
 .dev-combat-log .encounter-hud {
   width: 100%;
 }

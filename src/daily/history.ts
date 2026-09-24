@@ -10,9 +10,12 @@ export type DailyHistoryEntry = {
   enemyWord: string | null
   quality: { resolveRemaining: number; startingResolve: number; fraction: number } | null
   attacks: number | null
-  totalDamage: number | null
+  totalStrikes: number | null
+  lettersDestroyed: number | null
+  armourBroken: number | null
   counters: number | null
-  specialTilesTriggered: number | null
+  strikeActivations: number | null
+  wardSaves: number | null
 }
 
 /** Calendar/archive projection, newest day first. Unplayed days reveal no enemy. */
@@ -42,9 +45,12 @@ export function getDailyHistory(
           fraction: result.resolveRemaining / result.startingResolve,
         } : null,
         attacks: result?.attacks ?? null,
-        totalDamage: result?.totalDamage ?? null,
+        totalStrikes: result?.totalStrikes ?? null,
+        lettersDestroyed: result?.lettersDestroyed ?? null,
+        armourBroken: result?.armourBroken ?? null,
         counters: result?.counters ?? null,
-        specialTilesTriggered: result?.specialTilesTriggered ?? null,
+        strikeActivations: result?.strikeActivations ?? null,
+        wardSaves: result?.wardSaves ?? null,
       }
     })
 }

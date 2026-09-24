@@ -1,4 +1,4 @@
-import type { Encounter, GameState, Gem, SemanticRelation } from '../game/types.ts'
+import type { LetterStrikeEncounter, LetterStrikeEvaluation, LetterStrikeGem, LetterStrikeLetterOutcome, LetterStrikeState } from '../game/letterStrike.ts'
 
 /** The authored puzzle is independent of any player's progress. */
 export type DailyPuzzleDefinition = {
@@ -6,7 +6,7 @@ export type DailyPuzzleDefinition = {
   readonly date: string
   readonly gameVersion: string
   readonly puzzleVersion: number
-  readonly encounter: Encounter
+  readonly encounter: LetterStrikeEncounter
 }
 
 /** Only committed gameplay is saved; selections, errors and animations are UI state. */
@@ -15,21 +15,25 @@ export type DailyRun = {
   puzzleId: string
   gameVersion: string
   puzzleVersion: number
-  enemyHp: number
+  enemyLetters: LetterStrikeState['enemyLetters']
   playerResolve: number
-  tiles: GameState['tiles']
+  tiles: LetterStrikeState['tiles']
   refillIndex: number
   nextTileId: number
-  playedWords: GameState['playedWords']
-  status: GameState['status']
+  playedWords: LetterStrikeState['playedWords']
+  status: LetterStrikeState['status']
   completedAt: string | null
 }
 
 export type ResultTurn = {
-  damage: number
-  relation: SemanticRelation
+  strikes: number
+  lettersDestroyed: number
+  armourBroken: number
+  semanticLabel: LetterStrikeEvaluation['semanticLabel']
+  letterOutcomes: LetterStrikeLetterOutcome[]
   tileIds: number[]
-  specialTiles: { tileId: number; gem: Gem }[]
+  specialTiles: { tileId: number; gem: LetterStrikeGem }[]
+  strikeActivations: number
   resolveProtected: boolean
 }
 
@@ -40,17 +44,22 @@ export type DailyResult = {
   gameVersion: string
   puzzleVersion: number
   enemyWord: string
+  enemyLetterCount: number
   won: boolean
   startingResolve: number
   resolveRemaining: number
   attacks: number
   wordsPlayed: string[]
-  totalDamage: number
+  totalStrikes: number
+  lettersDestroyed: number
+  armourBroken: number
   strongestHit: number
+  largestRemoval: number
   counters: number
   resisted: number
   neutral: number
-  specialTilesTriggered: number
+  strikeActivations: number
+  wardSaves: number
   turns: ResultTurn[]
   completedAt: string
 }
@@ -63,12 +72,19 @@ export type DailyScoreSubmission = {
   won: boolean
   resolveRemaining: number
   turnsUsed: number
-  totalDamage: number
+  totalStrikes: number
+  lettersDestroyed: number
+  armourBroken: number
+  tileIdsByTurn: number[][]
+  semanticSequence: ResultTurn['semanticLabel'][]
+  letterOutcomesByTurn: LetterStrikeLetterOutcome[][]
+  wardSaves: number
+  strikeActivations: number
   completedAt: string
 }
 
 export type DailySession = {
-  game: GameState | null
+  game: LetterStrikeState | null
   result: DailyResult | null
   resumed: boolean
   error: string | null

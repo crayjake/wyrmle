@@ -1,40 +1,34 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { getDailyHistory } from '../src/daily/history.ts'
+import { getDailyPuzzle } from '../src/daily/puzzle.ts'
 import { buildDailyResult, getCompletedResults } from '../src/daily/results.ts'
 import { buildShareText } from '../src/daily/share.ts'
 import { calculateStats } from '../src/daily/stats.ts'
 import { buildDailyScoreSubmission } from '../src/daily/submission.ts'
 import type { DailyPuzzleDefinition, DailyResult } from '../src/daily/types.ts'
-import { melancholyEncounter } from '../src/game/encounters.ts'
-import { createGame, submitWord } from '../src/game/game.ts'
-import type { GameState } from '../src/game/types.ts'
+import { createLetterStrikeGame, submitLetterStrike } from '../src/game/letterStrike.ts'
+import type { LetterStrikeState } from '../src/game/letterStrike.ts'
 
 function puzzle(date = '2026-09-24'): DailyPuzzleDefinition {
-  return {
-    puzzleId: date,
-    date,
-    gameVersion: '1',
-    puzzleVersion: 1,
-    encounter: melancholyEncounter,
-  }
+  return getDailyPuzzle(date)
 }
 
-function playWord(game: GameState, word: string): GameState {
+function playWord(game: LetterStrikeState, word: string): LetterStrikeState {
   const ids: number[] = []
   for (const letter of word) {
     const tile = game.tiles.find((tile) => tile.letter === letter && !ids.includes(tile.id))
     assert.ok(tile, `Missing tile for ${letter} in ${word}`)
     ids.push(tile.id)
   }
-  const next = submitWord(game, ids)
+  const next = submitLetterStrike(game, ids)
   assert.equal(next.error, null)
   return next
 }
 
-function wonGame(definition = puzzle()): GameState {
-  let game = createGame(definition.encounter)
-  for (const word of ['JOY', 'CHEER', 'HAPPY']) game = playWord(game, word)
+function wonGame(definition = puzzle()): LetterStrikeState {
+  let game = createLetterStrikeGame(definition.encounter)
+  for (const word of ['JOY', 'MERRY', 'CHEER', 'ELATED', 'MOLD', 'NAG']) game = playWord(game, word)
   assert.equal(game.status, 'won')
   return game
 }
@@ -47,79 +41,157 @@ function result(date = '2026-09-24', overrides: Partial<DailyResult> = {}): Dail
   }
 }
 
-test('completion captures turns, effects, Resolve and full scored damage without mutating the run', () => {
+test('completion records true letter strikes, unique armour breaks and turn evidence without mutation', () => {
   const definition = puzzle()
   const game = wonGame(definition)
   const before = structuredClone(game)
   const completed = buildDailyResult(definition, game, '2026-09-24T13:00:00+01:00')
-  assert.equal(completed.puzzleId, definition.puzzleId)
-  assert.equal(completed.date, definition.date)
-  assert.equal(completed.gameVersion, definition.gameVersion)
-  assert.equal(completed.puzzleVersion, definition.puzzleVersion)
-  assert.equal(completed.enemyWord, definition.encounter.enemy.word)
   assert.equal(completed.won, true)
   assert.equal(completed.startingResolve, 5)
-  assert.equal(completed.resolveRemaining, 3)
-  assert.equal(completed.attacks, 3)
-  assert.deepEqual(completed.wordsPlayed, ['JOY', 'CHEER', 'HAPPY'])
-  assert.equal(completed.totalDamage, game.playedWords.reduce((sum, attack) => sum + attack.damage, 0))
-  assert.ok(completed.totalDamage >= definition.encounter.enemy.maxHealth)
-  assert.equal(completed.strongestHit, Math.max(...game.playedWords.map((attack) => attack.damage)))
-  assert.equal(completed.counters, 3)
+  assert.equal(completed.resolveRemaining, 0)
+  assert.equal(completed.attacks, 6)
+  assert.equal(completed.totalStrikes, 12)
+  assert.equal(completed.lettersDestroyed, 10)
+  assert.equal(completed.armourBroken, 2)
+  assert.equal(completed.strongestHit, 3)
+  assert.equal(completed.largestRemoval, 2)
+  assert.equal(completed.enemyLetterCount, 10)
+  assert.equal(completed.counters, 4)
+  assert.equal(completed.neutral, 2)
   assert.equal(completed.resisted, 0)
-  assert.equal(completed.neutral, 0)
-  assert.equal(completed.specialTilesTriggered, 2)
+  assert.equal(completed.strikeActivations, 1)
+  assert.equal(completed.wardSaves, 1)
+  assert.deepEqual(completed.wordsPlayed, ['JOY', 'MERRY', 'CHEER', 'ELATED', 'MOLD', 'NAG'])
   assert.deepEqual(completed.turns[0], {
-    damage: 8,
-    relation: 'opposite',
-    tileIds: [0, 1, 2],
-    specialTiles: [{ tileId: 2, gem: 'ward' }],
-    resolveProtected: true,
+    strikes: 2, lettersDestroyed: 1, armourBroken: 1, semanticLabel: 'COUNTER',
+    letterOutcomes: game.playedWords[0].preview.letterOutcomes,
+    tileIds: [0, 1, 2], specialTiles: [{ tileId: 2, gem: 'ward' }],
+    strikeActivations: 0, resolveProtected: true,
   })
   assert.equal(completed.completedAt, '2026-09-24T12:00:00.000Z')
+  assert.equal('totalDamage' in completed, false)
   completed.turns[0].tileIds.push(999)
   completed.turns[0].specialTiles[0].tileId = 999
+  completed.turns[0].letterOutcomes[0].hitsAfter = 999
   completed.wordsPlayed[0] = 'CHANGED'
   assert.deepEqual(game, before)
 })
 
-test('similar and related words are both resisted; unrelated words are neutral', () => {
-  for (const [word, expected] of [
-    ['GLOOM', { resisted: 1, neutral: 0 }],
-    ['MOOD', { resisted: 1, neutral: 0 }],
-    ['DASH', { resisted: 0, neutral: 1 }],
+test('related words count as neutral, while resisted words can trigger real Strike hits', () => {
+  for (const [word, neutral, resisted, strikeActivations] of [
+    ['MOOD', 1, 0, 0], ['GLOOM', 0, 1, 1], ['SAD', 0, 1, 0],
   ] as const) {
-    const definition = { ...puzzle(), encounter: { ...melancholyEncounter, startingResolve: 1 } }
-    const game = playWord(createGame(definition.encounter), word)
+    const definition = { ...puzzle(), encounter: { ...puzzle().encounter, startingResolve: 1 } }
+    const game = playWord(createLetterStrikeGame(definition.encounter), word)
     assert.equal(game.status, 'lost')
-    const completed = buildDailyResult(definition, game, '2026-09-24T12:00:00.000Z')
-    assert.equal(completed.won, false)
-    assert.equal(completed.resolveRemaining, 0)
-    assert.equal(completed.resisted, expected.resisted)
-    assert.equal(completed.neutral, expected.neutral)
-    assert.equal(completed.counters, 0)
+    const completed = buildDailyResult(definition, game, '2026-09-24T12:00:00Z')
+    assert.equal(completed.neutral, neutral)
+    assert.equal(completed.resisted, resisted)
+    assert.equal(completed.strikeActivations, strikeActivations)
   }
 })
 
-test('total damage includes overkill and last-Resolve victories still count as wins', () => {
+test('selected Strike tiles with no living matching target are not counted as activations', () => {
   const definition = {
-    ...puzzle(),
-    encounter: {
-      ...melancholyEncounter,
-      startingResolve: 1,
-      enemy: { ...melancholyEncounter.enemy, maxHealth: 1 },
+    ...puzzle(), encounter: {
+      ...puzzle().encounter, startingResolve: 1,
+      enemyLetters: [{ id: 'm', letter: 'M', hitsRemaining: 2, initialHits: 2 }],
     },
   }
-  const completed = buildDailyResult(
-    definition, playWord(createGame(definition.encounter), 'DASH'), '2026-09-24T12:00:00Z',
-  )
-  assert.equal(completed.totalDamage, 4)
-  assert.equal(completed.resolveRemaining, 0)
+  const completed = buildDailyResult(definition,
+    playWord(createLetterStrikeGame(definition.encounter), 'GLOOM'), '2026-09-24T12:00:00Z')
+  assert.equal(completed.totalStrikes, 0)
+  assert.equal(completed.strikeActivations, 0)
+  assert.deepEqual(completed.turns[0].specialTiles, [])
+})
+
+test('additive Strike in LAD records both removals and one tile activation in its share row', () => {
+  const base = puzzle('2026-09-25')
+  const definition = { ...base, encounter: { ...base.encounter, strikeConsumesAllowance: false, startingResolve: 1 } }
+  const game = playWord(createLetterStrikeGame(definition.encounter), 'LAD')
+  const completed = buildDailyResult(definition, game, '2026-09-25T12:00:00Z')
+  assert.equal(completed.totalStrikes, 2)
+  assert.equal(completed.lettersDestroyed, 2)
+  assert.equal(completed.neutral, 1)
+  assert.equal(completed.strikeActivations, 1)
+  assert.deepEqual(completed.turns[0].letterOutcomes.filter(event => event.removed).map(event => event.position), [2, 3])
+  assert.match(buildShareText(completed), /N  ··■■······ ◆$/)
+})
+
+test('a Strike and neutral hit on one armoured letter share as a single break-and-remove event', () => {
+  const base = puzzle('2026-09-25')
+  const definition = { ...base, encounter: {
+    ...base.encounter, strikeConsumesAllowance: false,
+    enemyLetters: [{ id: 'e', letter: 'E', hitsRemaining: 2, initialHits: 2 }],
+    startingTiles: base.encounter.startingTiles.map(tile => tile.id === 5 ? { ...tile, type: 'gem' as const, gem: 'strike' as const } : tile),
+  } }
+  const game = submitLetterStrike(createLetterStrikeGame(definition.encounter), [5, 6, 9])
+  const completed = buildDailyResult(definition, game, '2026-09-25T12:00:00Z')
   assert.equal(completed.won, true)
+  assert.equal(completed.totalStrikes, 2)
+  assert.equal(completed.strikeActivations, 1)
+  assert.equal(completed.armourBroken, 1)
+  assert.equal(completed.lettersDestroyed, 1)
+  assert.match(buildShareText(completed), /N  ▣ ◆$/)
+})
+
+test('two hits to one armoured letter in a turn count one break and one destroyed letter', () => {
+  const definition = {
+    ...puzzle(), encounter: {
+      ...puzzle().encounter,
+      enemyLetters: [{ id: 'e', letter: 'E', hitsRemaining: 2, initialHits: 2 }],
+    },
+  }
+  const completed = buildDailyResult(definition,
+    playWord(createLetterStrikeGame(definition.encounter), 'CHEER'), '2026-09-24T12:00:00Z')
+  assert.equal(completed.won, true)
+  assert.equal(completed.totalStrikes, 2)
+  assert.equal(completed.armourBroken, 1)
+  assert.equal(completed.lettersDestroyed, 1)
+  assert.deepEqual(completed.turns[0].letterOutcomes, [{
+    enemyLetterId: 'e', position: 0, hitsBefore: 2, hitsAfter: 0, armourBroken: true, removed: true,
+  }])
+  assert.match(buildShareText(completed), /C  ▣$/)
+})
+
+test('separate armour-break and removal turns stay distinct even after the letter is dead', () => {
+  const definition = {
+    ...puzzle(), encounter: {
+      ...puzzle().encounter,
+      enemyLetters: [{ id: 'y', letter: 'Y', hitsRemaining: 2, initialHits: 2 }],
+    },
+  }
+  let game = createLetterStrikeGame(definition.encounter)
+  game = playWord(game, 'JOY')
+  game = playWord(game, 'MERRY')
+  const completed = buildDailyResult(definition, game, '2026-09-24T12:00:00Z')
+  assert.equal(game.enemyLetters[0].hitsRemaining, 0)
+  assert.equal(completed.turns[0].letterOutcomes[0].armourBroken, true)
+  assert.equal(completed.turns[0].letterOutcomes[0].removed, false)
+  assert.equal(completed.turns[1].letterOutcomes[0].armourBroken, false)
+  assert.equal(completed.turns[1].letterOutcomes[0].removed, true)
+  assert.match(buildShareText(completed), /C  ◐ ◇\nC  ■$/)
+})
+
+test('multiple Ward tiles protect one turn and count as one Ward save', () => {
+  const base = puzzle()
+  const definition = {
+    ...base, encounter: {
+      ...base.encounter,
+      startingTiles: base.encounter.startingTiles.map((tile) => tile.id === 1
+        ? { ...tile, type: 'gem' as const, gem: 'ward' as const } : tile),
+      enemyLetters: [{ id: 'o', letter: 'O', hitsRemaining: 1, initialHits: 1 }],
+    },
+  }
+  const completed = buildDailyResult(definition,
+    playWord(createLetterStrikeGame(definition.encounter), 'JOY'), '2026-09-24T12:00:00Z')
+  assert.equal(completed.wardSaves, 1)
+  assert.equal(completed.resolveRemaining, 5)
+  assert.equal(completed.turns[0].specialTiles.length, 2)
 })
 
 test('ongoing runs and invalid completion timestamps cannot become results', () => {
-  assert.throws(() => buildDailyResult(puzzle(), createGame(melancholyEncounter), '2026-09-24T12:00:00Z'))
+  assert.throws(() => buildDailyResult(puzzle(), createLetterStrikeGame(puzzle().encounter), '2026-09-24T12:00:00Z'))
   assert.throws(() => buildDailyResult(puzzle(), wonGame(), 'not a timestamp'))
 })
 
@@ -131,25 +203,34 @@ test('empty history has explicit zero statistics and no longest word', () => {
     currentStreak: 0,
     longestStreak: 0,
     averageResolveOnWins: 0,
+    averageResolveRemaining: 0,
     averageWordLength: 0,
     longestWord: null,
     totalCounters: 0,
+    totalNeutral: 0,
     totalResisted: 0,
-    specialTilesUsed: 0,
+    totalLettersDestroyed: 0,
+    totalStrikes: 0,
+    totalArmourBroken: 0,
+    totalStrikeActivations: 0,
+    totalWardSaves: 0,
     uniqueEnemyDefeats: 0,
+    bestResolveRemaining: 0,
+    largestSingleTurnStrikes: 0,
   })
 })
 
 test('stats derive totals, word lengths, win-only Resolve and distinct defeated concepts', () => {
   const history = [
-    result('2026-09-22', { wordsPlayed: ['JOY', 'CHEER'], counters: 2, specialTilesTriggered: 2 }),
+    result('2026-09-22', { resolveRemaining: 3, wordsPlayed: ['JOY', 'CHEER'], counters: 2, strikeActivations: 2 }),
     result('2026-09-23', {
       won: false, resolveRemaining: 0, wordsPlayed: ['GLOOM', 'CRY'],
-      counters: 0, resisted: 2, specialTilesTriggered: 1, enemyWord: 'FEAR',
+      counters: 0, resisted: 2, strikeActivations: 1, wardSaves: 0, enemyWord: 'FEAR',
+      lettersDestroyed: 4, totalStrikes: 5, armourBroken: 1,
     }),
     result('2026-09-24', {
       resolveRemaining: 1, wordsPlayed: ['DELIGHT', 'SAD'],
-      counters: 1, resisted: 1, specialTilesTriggered: 0, enemyWord: 'RAGE',
+      counters: 1, resisted: 1, strikeActivations: 0, enemyWord: 'RAGE',
     }),
   ]
   assert.deepEqual(calculateStats(history.reverse(), '2026-09-24'), {
@@ -159,12 +240,20 @@ test('stats derive totals, word lengths, win-only Resolve and distinct defeated 
     currentStreak: 1,
     longestStreak: 1,
     averageResolveOnWins: 2,
+    averageResolveRemaining: 4 / 3,
     averageWordLength: 26 / 6,
     longestWord: 'DELIGHT',
     totalCounters: 3,
+    totalNeutral: 6,
     totalResisted: 3,
-    specialTilesUsed: 3,
+    totalLettersDestroyed: 24,
+    totalStrikes: 29,
+    totalArmourBroken: 5,
+    totalStrikeActivations: 3,
+    totalWardSaves: 2,
     uniqueEnemyDefeats: 2,
+    bestResolveRemaining: 3,
+    largestSingleTurnStrikes: 3,
   })
 })
 
@@ -256,14 +345,18 @@ test('history distinguishes unplayed, in-progress, wins and losses without expos
   assert.equal(history[2].won, false)
   assert.equal(history[2].quality?.fraction, 0)
   assert.equal(history[3].enemyWord, 'MELANCHOLY')
-  assert.deepEqual(history[3].quality, { resolveRemaining: 3, startingResolve: 5, fraction: 3 / 5 })
-  assert.equal(history[3].attacks, 3)
+  assert.deepEqual(history[3].quality, { resolveRemaining: 0, startingResolve: 5, fraction: 0 })
+  assert.equal(history[3].attacks, 6)
 })
 
 test('share text encodes outcomes and turn effects but never words or enemy information', () => {
   const completed = result()
   const share = buildShareText(completed)
-  assert.equal(share, 'WYRMLE 2026-09-24 · Victory\nResolve 3/5 · 3 attacks\n🟩✦◇ 🟩✦ 🟩')
+  assert.equal(share, [
+    'WYRMLE 2026-09-24 · VICTORY', '', 'RESOLVE', '□□□□□ 0/5', '',
+    'C  ·······■·◐ ◇', 'C  ◐■·······■', 'C  ·····■■···',
+    'C  ··■■······', 'N  ■·······■· ◆', 'N  ····■·····',
+  ].join('\n'))
   for (const secret of [...completed.wordsPlayed, completed.enemyWord]) {
     assert.equal(share.toUpperCase().includes(secret.toUpperCase()), false)
   }
@@ -275,7 +368,23 @@ test('share text encodes outcomes and turn effects but never words or enemy info
   }
   assert.equal(buildShareText(abstractOnly), share)
   assert.equal(share.includes('983746'), false)
-  assert.match(buildShareText({ ...completed, won: false }), /Defeat/)
+  assert.match(buildShareText({ ...completed, won: false }), /DEFEAT/)
+  const rows = share.split('\n').filter((line) => /^[CNR]  /.test(line))
+  assert.equal(rows.length, completed.attacks)
+  assert.ok(rows.every((row) => row.split('  ')[1].split(' ')[0].length === completed.enemyLetterCount))
+  assert.doesNotMatch(share, /words|attacks/i)
+})
+
+test('Resolve share segments match the canonical resource and missing positional evidence is rejected', () => {
+  const completed = result()
+  for (let remaining = 0; remaining <= 5; remaining += 1) {
+    const text = buildShareText({ ...completed, resolveRemaining: remaining })
+    assert.equal(text.split('\n')[3], `${'■'.repeat(remaining)}${'□'.repeat(5 - remaining)} ${remaining}/5`)
+  }
+  const malformed = structuredClone(completed)
+  malformed.turns[0].letterOutcomes.pop()
+  assert.throws(() => buildShareText(malformed), /every original enemy position/)
+  assert.throws(() => buildShareText({ ...completed, enemyLetterCount: 9 }), /every original enemy position/)
 })
 
 test('future submission is a deterministic compact summary without local display data', () => {
@@ -287,12 +396,26 @@ test('future submission is a deterministic compact summary without local display
     gameVersion: completed.gameVersion,
     puzzleVersion: completed.puzzleVersion,
     won: true,
-    resolveRemaining: 3,
-    turnsUsed: 3,
-    totalDamage: completed.totalDamage,
+    resolveRemaining: 0,
+    turnsUsed: 6,
+    totalStrikes: completed.totalStrikes,
+    lettersDestroyed: 10,
+    armourBroken: 2,
+    tileIdsByTurn: completed.turns.map((turn) => turn.tileIds),
+    semanticSequence: completed.turns.map((turn) => turn.semanticLabel),
+    letterOutcomesByTurn: completed.turns.map((turn) => turn.letterOutcomes),
+    wardSaves: 1,
+    strikeActivations: 1,
     completedAt: completed.completedAt,
   })
   assert.deepEqual(buildDailyScoreSubmission(structuredClone(completed)), submission)
+  let replay = createLetterStrikeGame(getDailyPuzzle(submission.puzzleId).encounter)
+  for (const ids of submission.tileIdsByTurn) replay = submitLetterStrike(replay, ids)
+  assert.deepEqual(buildDailyScoreSubmission(buildDailyResult(
+    getDailyPuzzle(submission.puzzleId), replay, submission.completedAt,
+  )), submission)
+  submission.tileIdsByTurn[0].push(999)
+  submission.letterOutcomesByTurn[0][0].hitsAfter = 999
   assert.deepEqual(completed, before)
   for (const displayOnly of ['enemyWord', 'wordsPlayed', 'strongestHit', 'turns', 'score', 'stars']) {
     assert.equal(displayOnly in submission, false)

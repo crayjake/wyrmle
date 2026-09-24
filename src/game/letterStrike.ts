@@ -1,7 +1,7 @@
-import { isDictionaryWord, normalizeWord } from '../game/dictionary.ts'
-import { getSemanticRelation } from '../game/semantic.ts'
-import { getSelectedTiles, refillBoard } from '../game/tiles.ts'
-import type { EnemyConcept } from '../game/types.ts'
+import { getPartsOfSpeech, isDictionaryWord, normalizeWord } from './dictionary.ts'
+import { getSemanticRelation } from './semantic.ts'
+import { getSelectedTiles, refillBoard } from './tiles.ts'
+import type { EnemyConcept, PartOfSpeech } from './types.ts'
 
 export type LetterStrikeGem = 'strike' | 'ward'
 export type LetterStrikeTile = {
@@ -19,6 +19,9 @@ export type LetterStrikeEncounter = {
   startingTiles: readonly LetterStrikeTile[]
   refillQueue: string
   minimumWordLength: number
+  grammarModifiers?: Partial<Record<PartOfSpeech, number>>
+  // Only archived encounters opt into the original overlapping Strike rule.
+  strikeConsumesAllowance?: boolean
   tileEffects: Record<LetterStrikeGem, { strike: boolean; preventResolveLoss: boolean }>
 }
 export type LetterStrikeHit = {
@@ -28,14 +31,25 @@ export type LetterStrikeHit = {
   hitsBefore: number
   hitsAfter: number
 }
+export type LetterStrikeLetterOutcome = {
+  enemyLetterId: string
+  position: number
+  hitsBefore: number
+  hitsAfter: number
+  armourBroken: boolean
+  removed: boolean
+}
 export type LetterStrikeEvaluation = {
   word: string
   semanticLabel: 'COUNTER' | 'NEUTRAL' | 'RESISTED'
+  grammaticalModifier: number
+  grammaticalPartOfSpeech: PartOfSpeech | null
   strikes: number
   resolveCost: number
   effectLabels: string[]
   enemyLetters: EnemyLetter[]
   hits: LetterStrikeHit[]
+  letterOutcomes: LetterStrikeLetterOutcome[]
 }
 export type LetterStrikePreview = LetterStrikeEvaluation & { valid: boolean; error: string | null }
 export type LetterStrikePlayedWord = {
@@ -86,6 +100,7 @@ export const letterStrikeEncounter: LetterStrikeEncounter = {
   // original Strike L for MOLD; fixed refills also offer counters and bait.
   refillQueue: 'RYE' + 'RELAT' + 'MENDN' + 'JOYSAD' + 'MERRYDELIGHTELATEDNEONSADGLOOMJOY'.repeat(4),
   minimumWordLength: 3,
+  grammarModifiers: { adjective: 1 },
   tileEffects: {
     strike: { strike: true, preventResolveLoss: false },
     ward: { strike: false, preventResolveLoss: true },
@@ -103,6 +118,9 @@ export function createLetterStrikeGame(encounter = letterStrikeEncounter): Lette
   }
   if (!Number.isSafeInteger(startingResolve) || startingResolve < 1) throw new Error('Starting Resolve must be positive.')
   if (!Number.isSafeInteger(encounter.minimumWordLength) || encounter.minimumWordLength < 1) throw new Error('Minimum word length must be positive.')
+  if (Object.values(encounter.grammarModifiers ?? {}).some(value => !Number.isSafeInteger(value))) {
+    throw new Error('Grammar modifiers must be integer strike allowances.')
+  }
   if (enemyLetters.length === 0 || new Set(enemyLetters.map(letter => letter.id)).size !== enemyLetters.length
     || enemyLetters.some(letter => !/^[a-z]$/i.test(letter.letter)
       || ![1, 2].includes(letter.initialHits) || letter.hitsRemaining !== letter.initialHits)) {
@@ -145,16 +163,74 @@ export function selectEnemyTarget(letters: readonly EnemyLetter[], letter: strin
   return matches.find(target => target.hitsRemaining < target.initialHits) ?? matches[0]
 }
 
+// A counter already permits all available matching tiles. Positive grammar
+// cannot add phantom hits; negative grammar reduces that finite capacity.
+// For resisted/neutral words, modifiers change their 0/1 normal-hit budget.
+export function getLetterStrikeAllowance(encounter: LetterStrikeEncounter, word: string, matchingCapacity: number): {
+  semanticLabel: LetterStrikeEvaluation['semanticLabel']
+  grammaticalModifier: number
+  grammaticalPartOfSpeech: PartOfSpeech | null
+  normalStrikeAllowance: number
+} {
+  const relation = getSemanticRelation(word, encounter.enemy)
+  const semanticLabel = relation === 'opposite' ? 'COUNTER' : relation === 'similar' ? 'RESISTED' : 'NEUTRAL'
+  const parts = getPartsOfSpeech(word)
+  const partOfSpeech = parts?.length === 1 ? parts[0] : null
+  const configuredModifier = partOfSpeech ? encounter.grammarModifiers?.[partOfSpeech] ?? 0 : 0
+  const base = semanticLabel === 'COUNTER' ? matchingCapacity : semanticLabel === 'NEUTRAL' ? 1 : 0
+  const normalStrikeAllowance = Math.max(0, Math.min(
+    semanticLabel === 'COUNTER' ? matchingCapacity : Number.POSITIVE_INFINITY,
+    base + configuredModifier,
+  ))
+  const grammaticalModifier = normalStrikeAllowance - base
+  return {
+    semanticLabel,
+    grammaticalModifier,
+    grammaticalPartOfSpeech: grammaticalModifier !== 0 ? partOfSpeech : null,
+    normalStrikeAllowance,
+  }
+}
+
+// One entry per original slot, derived from the actual ordered strikes rather
+// than guessed from the encounter's final state. Dead/untouched slots remain.
+export function buildLetterStrikeOutcomes(letters: readonly EnemyLetter[], hits: readonly LetterStrikeHit[]): LetterStrikeLetterOutcome[] {
+  const finalHits = new Map(hits.map(hit => [hit.enemyLetterId, hit.hitsAfter]))
+  const armourBreaks = new Set(hits.filter(hit => hit.hitsBefore > 1 && hit.hitsAfter <= 1).map(hit => hit.enemyLetterId))
+  return letters.map((letter, position) => {
+    const hitsAfter = finalHits.get(letter.id) ?? letter.hitsRemaining
+    return {
+      enemyLetterId: letter.id,
+      position,
+      hitsBefore: letter.hitsRemaining,
+      hitsAfter,
+      armourBroken: armourBreaks.has(letter.id),
+      removed: letter.hitsRemaining > 0 && hitsAfter === 0,
+    }
+  })
+}
+
 // Pure scoring for already selected tiles. The preview validates real board IDs
 // and dictionary membership; the immediate-strike solver can reuse this scorer.
 export function evaluateLetterStrike(state: Pick<LetterStrikeState, 'encounter' | 'enemyLetters'>, tiles: readonly LetterStrikeTile[]): LetterStrikeEvaluation {
   const word = normalizeWord(tiles.map(tile => tile.letter).join(''))
-  const relation = getSemanticRelation(word, state.encounter.enemy)
-  const semanticLabel = relation === 'opposite' ? 'COUNTER' : relation === 'similar' ? 'RESISTED' : 'NEUTRAL'
+  const capacityByLetter = new Map<string, number>()
+  for (const letter of state.enemyLetters) {
+    capacityByLetter.set(letter.letter, (capacityByLetter.get(letter.letter) ?? 0) + letter.hitsRemaining)
+  }
+  let matchingCapacity = 0
+  for (const tile of new Map(tiles.map(tile => [tile.id, tile])).values()) {
+    const letter = tile.letter.toUpperCase()
+    const capacity = capacityByLetter.get(letter) ?? 0
+    if (capacity > 0) {
+      matchingCapacity += 1
+      capacityByLetter.set(letter, capacity - 1)
+    }
+  }
+  const { semanticLabel, grammaticalModifier, grammaticalPartOfSpeech, normalStrikeAllowance } = getLetterStrikeAllowance(state.encounter, word, matchingCapacity)
   const enemyLetters = state.enemyLetters.map(letter => ({ ...letter }))
   const hits: LetterStrikeHit[] = []
   const seenTiles = new Set<number>()
-  let neutralStrikeUsed = false
+  let normalStrikesRemaining = normalStrikeAllowance
   let resolveCost = 1
   let usesStrike = false
   for (const tile of tiles) {
@@ -163,23 +239,30 @@ export function evaluateLetterStrike(state: Pick<LetterStrikeState, 'encounter' 
     seenTiles.add(tile.id)
     const effect = tile.type === 'gem' && tile.gem ? state.encounter.tileEffects[tile.gem] : undefined
     if (effect?.preventResolveLoss) resolveCost = 0
-    if (effect?.strike) usesStrike = true
-    const normalStrike = semanticLabel === 'COUNTER' || (semanticLabel === 'NEUTRAL' && !neutralStrikeUsed)
+    const normalStrike = normalStrikesRemaining > 0
     if (!normalStrike && !effect?.strike) continue
     const target = selectEnemyTarget(enemyLetters, tile.letter)
     if (!target) continue
+    if (effect?.strike) usesStrike = true
     hits.push({ tileId: tile.id, enemyLetterId: target.id, letter: target.letter, hitsBefore: target.hitsRemaining, hitsAfter: target.hitsRemaining - 1 })
     target.hitsRemaining -= 1
-    if (semanticLabel === 'NEUTRAL' && normalStrike) neutralStrikeUsed = true
+    // Guaranteed tile hits leave semantic/grammar strikes for other tiles.
+    // Archived daily versions retain their original overlapping allowance.
+    if (normalStrike && (!effect?.strike || state.encounter.strikeConsumesAllowance === true)) {
+      normalStrikesRemaining -= 1
+    }
   }
   return {
     word,
     semanticLabel,
+    grammaticalModifier,
+    grammaticalPartOfSpeech,
     strikes: hits.length,
     resolveCost,
     effectLabels: [...(usesStrike ? ['STRIKE'] : []), ...(resolveCost === 0 ? ['WARD'] : [])],
     enemyLetters,
     hits,
+    letterOutcomes: buildLetterStrikeOutcomes(state.enemyLetters, hits),
   }
 }
 
@@ -198,6 +281,8 @@ export function previewLetterStrike(state: LetterStrikeState, selectedTileIds: r
     error,
     ...(error !== null ? {
       strikes: 0, resolveCost: 0, effectLabels: [], hits: [],
+      grammaticalModifier: 0, grammaticalPartOfSpeech: null,
+      letterOutcomes: buildLetterStrikeOutcomes(state.enemyLetters, []),
       enemyLetters: state.enemyLetters.map(letter => ({ ...letter })),
     } : {}),
   }

@@ -1,16 +1,16 @@
-import { createGame, submitWord } from '../game/game.ts'
-import type { GameState } from '../game/types.ts'
+import { createLetterStrikeGame, submitLetterStrike } from '../game/letterStrike.ts'
+import type { LetterStrikeState } from '../game/letterStrike.ts'
 import { resetDailyPuzzle, saveDailyRun } from './persistence.ts'
 import type { DailyPuzzleDefinition, StorageLike } from './types.ts'
 
 /** Real v1 engine replays, so test results pass the same restore checks as real play. */
 export function playDevOutcome(puzzle: DailyPuzzleDefinition, outcome: 'won' | 'lost', storage: StorageLike) {
   if (!import.meta.env.DEV) throw new Error('Development tools are disabled.')
-  let game = createGame(puzzle.encounter)
-  const words = outcome === 'won' ? ['JOY', 'CHEER', 'HAPPY'] : ['ACE', 'ADO', 'EGO', 'AHS', 'HOM']
+  let game = createLetterStrikeGame(puzzle.encounter)
+  const words = outcome === 'won' ? ['JOY', 'MERRY', 'CHEER', 'ELATED', 'MOLD', 'NAG'] : ['SAD', 'CEE', 'EEL', 'AGO', 'ERR']
   for (const word of words) {
     const ids = wordIds(game, word, outcome === 'lost')
-    game = submitWord(game, ids)
+    game = submitLetterStrike(game, ids)
     if (game.error) throw new Error(game.error)
   }
   if (game.status !== outcome) throw new Error('The development replay does not match this puzzle.')
@@ -18,7 +18,7 @@ export function playDevOutcome(puzzle: DailyPuzzleDefinition, outcome: 'won' | '
   return saveDailyRun(puzzle, game, storage)
 }
 
-function wordIds(game: GameState, word: string, normalOnly: boolean): number[] {
+function wordIds(game: LetterStrikeState, word: string, normalOnly: boolean): number[] {
   const ids: number[] = []
   for (const letter of word) {
     const tile = game.tiles.find(tile => tile.letter === letter && !ids.includes(tile.id)

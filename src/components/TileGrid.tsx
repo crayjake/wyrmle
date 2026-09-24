@@ -20,7 +20,7 @@ type TileGridProps = {
   tiles: readonly BoardTilePresentation[]
   specialTiles: readonly SpecialTilePresentation[]
   selectedTileIds: number[]
-  damage: number
+  damage?: number
   canAttack: boolean
   onToggleTile: (id: number) => void
   onClear: () => void
