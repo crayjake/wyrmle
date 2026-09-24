@@ -8,8 +8,10 @@ import Enemy from "./components/Enemy"
 import AttackInfo from "./components/AttackInfo"
 import TileGrid from "./components/TileGrid"
 import WyrmDecoder from "./components/WyrmDecoder"
+import EncounterHud from "./components/EncounterHud"
 import { clearSelection, createGame, previewAttack, submitWord, toggleTile } from "./game/game"
 import { melancholyEncounter } from "./game/encounters"
+import { getActiveGrammarModifiers, getCurrentTileSummary, getRecentBattleEvents } from "./game/hud"
 
 type Phase = "waiting" | "enemy" | "tiles" | "ready"
 
@@ -80,45 +82,53 @@ export default function App() {
         />
       </div>
 
-      <div className="enemy-section">
-      <Enemy
-        name={enemy.word}
-        partOfSpeech={enemy.partOfSpeech}
-        definition={enemy.definition}
-        revealedIndices={revealedEnemyIndices}
-        registerLetter={registerLetter}
-      />
+      <div className="enemy-zone">
+        <Enemy
+          name={enemy.word}
+          partOfSpeech={enemy.partOfSpeech}
+          definition={enemy.definition}
+          revealedIndices={revealedEnemyIndices}
+          registerLetter={registerLetter}
+        />
+
+        <EncounterHud
+          visible={phase === "ready"}
+          modifiers={getActiveGrammarModifiers(game)}
+          tiles={getCurrentTileSummary(game)}
+          events={getRecentBattleEvents(game, 2)}
+        />
       </div>
 
-
-      <AttackInfo
-        word={preview.word}
-        damage={preview.totalDamage}
-        maxDamage={enemy.maxHealth}
-        ready={interactive && preview.valid}
-        message={message}
-        bonuses={preview.bonuses}
-      />
-
-      <div className="controls">
-        <TileGrid
-          revealedIndices={revealedTileIndices}
-          registerTile={registerTile}
-          ready={interactive}
-          tiles={game.tiles}
-          selectedTileIds={game.selectedTileIds}
+      <div className="player-zone">
+        <AttackInfo
+          word={preview.word}
           damage={preview.totalDamage}
-          canAttack={interactive && preview.valid}
-          onToggleTile={id => {
-            if (interactive) setGame(current => toggleTile(current, id))
-          }}
-          onClear={() => {
-            if (interactive) setGame(current => clearSelection(current))
-          }}
-          onAttack={() => {
-            if (interactive) setGame(current => submitWord(current, current.selectedTileIds))
-          }}
+          maxDamage={enemy.maxHealth}
+          ready={interactive && preview.valid}
+          message={message}
+          bonuses={preview.bonuses}
         />
+
+        <div className="controls">
+          <TileGrid
+            revealedIndices={revealedTileIndices}
+            registerTile={registerTile}
+            ready={interactive}
+            tiles={game.tiles}
+            selectedTileIds={game.selectedTileIds}
+            damage={preview.totalDamage}
+            canAttack={interactive && preview.valid}
+            onToggleTile={id => {
+              if (interactive) setGame(current => toggleTile(current, id))
+            }}
+            onClear={() => {
+              if (interactive) setGame(current => clearSelection(current))
+            }}
+            onAttack={() => {
+              if (interactive) setGame(current => submitWord(current, current.selectedTileIds))
+            }}
+          />
+        </div>
       </div>
 
       <WyrmDecoder

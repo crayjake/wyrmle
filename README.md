@@ -20,6 +20,12 @@ Tests use Node's built-in TypeScript support; use Node 22.18+ or a newer support
 
 `src/intro/paths.ts` defines board visitation without changing gameplay tiles. The default follows alternating rows with rounded turns and a slower sine wave through each row; optional `'shuffle'` mode still uses a stable seed. `src/intro/movement.ts` defines centered sine movement, curved row turns, and head direction along the route. `WyrmDecoder` accepts `tilePath` and `seed` props for future puzzles. All intro durations, wave sizes, scramble intervals, and idle timing are in `src/intro/config.ts`; the full reveal and title pass take about eight seconds.
 
+## Encounter HUD
+
+`src/components/EncounterHud.tsx` renders the active grammar modifiers, remaining special tiles, and up to two recent attacks. The pure selectors in `src/game/hud.ts` supply all gameplay meaning: `getActiveGrammarModifiers` calls the existing grammar scorer with the current enemy/rules; `getCurrentTileSummary` counts actual board gems and reads their configured effects; `getRecentBattleEvents` uses the damage, semantic relation, and tile effects recorded in `playedWords` at submission time.
+
+The HUD appears after decoding inside the vertically centered enemy zone. Small ENCOUNTER, BOARD, and LAST TURN labels distinguish its left-aligned context from the current move. The player zone keeps the attack preview, grid, and actions together at the bottom with one muted divider. Short screens use inline context labels and only the latest attack. Context space is reserved during decoding so becoming ready does not shift the enemy; no empty history placeholder is rendered.
+
 ## Pure engine
 
 `src/game/` has no React or browser dependencies. Call `createGame(encounter)`, `toggleTile(state, tileId)`, `clearSelection(state)`, `previewAttack(state, selectedTileIds)`, and `submitWord(state, selectedTileIds)`. Functions return new state; selection order defines the word. Preview and submission use the same damage calculation. The tile-ID interface also supports future non-UI callers.

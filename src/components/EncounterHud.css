@@ -1,0 +1,102 @@
+.encounter-hud {
+  width: min(100%, 21rem);
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  color: var(--fg);
+  font: inherit;
+  font-size: 0.55rem;
+  line-height: 0.8rem;
+  letter-spacing: 0.06em;
+  text-align: left;
+}
+
+/* Reserve context space during decoding so the enemy never jumps at ready. */
+.encounter-hud[data-visible="false"] {
+  visibility: hidden;
+}
+
+.encounter-hud-section {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.encounter-hud-label {
+  font-size: 0.48rem;
+  letter-spacing: 0.2em;
+}
+
+.encounter-hud ul,
+.encounter-hud ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.encounter-hud-row {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.15rem;
+}
+
+.encounter-hud-row li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  white-space: nowrap;
+}
+
+.encounter-hud-row li + li::before {
+  content: "|";
+  margin-inline: 0.35rem;
+  opacity: 0.35;
+}
+
+.encounter-hud .hud-positive {
+  color: var(--blue);
+}
+
+.encounter-hud .hud-negative {
+  color: var(--red);
+}
+
+.encounter-hud .encounter-hud-history {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.encounter-hud-history li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 3ch minmax(0, 1.8fr);
+  gap: 0.65rem;
+}
+
+.encounter-hud-word,
+.encounter-hud-result {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.encounter-hud-result span + span::before {
+  content: " · ";
+  color: var(--fg);
+}
+
+@media (max-height: 740px) {
+  .encounter-hud {
+    gap: 0.15rem;
+  }
+
+  .encounter-hud-section {
+    grid-template-columns: 5rem minmax(0, 1fr);
+    column-gap: 0.35rem;
+  }
+
+  .encounter-hud-history li:nth-child(n + 2) {
+    display: none;
+  }
+}
