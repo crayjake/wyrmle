@@ -26,6 +26,18 @@ class MemoryStorage implements StorageLike {
 
 const puzzle = getDailyPuzzle('2026-09-24')
 const finishedAt = '2026-09-24T12:00:00.000Z'
+const currentWinTileIds = [
+  [0, 1, 2], [4, 5, 15, 18, 16], [11, 20, 9, 10, 14, 17],
+  [8, 21, 22, 27], [24, 30, 33, 26, 25, 19],
+]
+
+function playTurns(game: GameState, turns: number[][]): GameState {
+  for (const ids of turns) {
+    game = submitWord(game, ids)
+    assert.equal(game.error, null)
+  }
+  return game
+}
 
 function playWords(words: string[], normalOnly = false, game = createGame(puzzle.encounter)): GameState {
   for (const word of words) {
@@ -88,7 +100,13 @@ function versionedRunFixture(definition: DailyPuzzleDefinition, game: GameState,
     saveVersion: 2, puzzleId: definition.puzzleId, gameVersion: definition.gameVersion,
     puzzleVersion: definition.puzzleVersion, enemyLetters: game.enemyLetters,
     playerResolve: game.playerResolve, tiles: game.tiles, refillIndex: game.refillIndex,
-    nextTileId: game.nextTileId, playedWords: game.playedWords, status: game.status, completedAt,
+    nextTileId: game.nextTileId,
+    playedWords: game.playedWords.map((turn) => {
+      const preview: Record<string, unknown> = { ...turn.preview }
+      delete preview.longWordModifier
+      return { ...turn, preview }
+    }),
+    status: game.status, completedAt,
   }
 }
 
@@ -300,7 +318,7 @@ test('any saved attempt or completed result for today takes opening priority', (
     const storage = new MemoryStorage()
     saveDailyRun(puzzle, playWords(['JOY']), storage)
     const game = completed
-      ? playWords(['JOY', 'MERRY', 'CHEER', 'ELATED', 'MOLD', 'NAG'], false, createGame(today.encounter))
+      ? playTurns(createGame(today.encounter), currentWinTileIds)
       : createGame(today.encounter)
     saveDailyRun(today, game, storage, '2026-09-25T12:00:00.000Z')
     if (completed) storage.removeItem(getRunStorageKey(today.puzzleId))
@@ -388,7 +406,7 @@ test('original v1 active snapshots restore unchanged outcomes and enrich metadat
   assert.equal(storage.getItem(key), raw)
   const advanced = playWords(['CEE'], true, restored.game!)
   saveDailyRun(puzzle, advanced, storage)
-  assert.equal(JSON.parse(storage.getItem(key)!).saveVersion, 2)
+  assert.equal(JSON.parse(storage.getItem(key)!).saveVersion, 3)
   assert.deepEqual(loadDailySession(puzzle, storage).game, advanced)
 })
 
@@ -425,7 +443,7 @@ test('terminal legacy run can repair a missing result using enriched outcomes an
   assert.equal(loadDailySession(puzzle, storage).result?.completedAt, finishedAt)
   saveDailyRun(puzzle, createGame(puzzle.encounter), storage)
   const saved = JSON.parse(storage.getItem(getResultStorageKey(puzzle.puzzleId))!)
-  assert.equal(saved.saveVersion, 2)
+  assert.equal(saved.saveVersion, 3)
   assert.equal(saved.result.completedAt, finishedAt)
   assert.equal(saved.result.turns[0].letterOutcomes.length, 10)
   assert.equal(storage.getItem(getRunStorageKey(puzzle.puzzleId)), raw)
@@ -545,7 +563,7 @@ test('an unfinished v2 attempt can complete under its pinned version and restore
   assert.deepEqual(loadDailySession(latest, storage).result, saved.result)
 })
 
-test('validated zero-turn v2 snapshots upgrade in memory and commit v3 without clearing their storage first', () => {
+test('validated zero-turn v2 snapshots upgrade in memory and commit current rules without clearing storage first', () => {
   const storage = new MemoryStorage()
   const latest = getDailyPuzzle('2026-09-25')
   const archived = getDailyPuzzleForVersion(latest.puzzleId, 'letter-strike-2', 2)
@@ -560,7 +578,7 @@ test('validated zero-turn v2 snapshots upgrade in memory and commit v3 without c
   const firstMove = playWords(['LAD'], false, restored.game!)
   assert.equal(firstMove.playedWords[0].strikes, 2)
   saveDailyRun(latest, firstMove, storage)
-  assert.equal(JSON.parse(storage.getItem(key)!).gameVersion, 'letter-strike-3')
+  assert.equal(JSON.parse(storage.getItem(key)!).gameVersion, 'letter-strike-4')
   assert.deepEqual(loadDailySession(latest, storage).game, firstMove)
 })
 
@@ -585,5 +603,120 @@ test('rule pinning and zero-turn upgrades never bypass snapshot or version-pair 
     assert.ok(loadDailySession(latest, storage).error)
     assert.throws(() => saveDailyRun(latest, createGame(latest.encounter), storage))
     assert.equal(storage.getItem(key), raw)
+  }
+})
+
+test('pre-LONG v3 snapshots restore and continue without enabling LONG or rewriting their original bytes', () => {
+  const storage = new MemoryStorage()
+  const latest = getDailyPuzzle('2026-09-25')
+  const archived = getDailyPuzzleForVersion(latest.puzzleId, 'letter-strike-3', 3)
+  const original = playWords(['GLOOMS'], false, createGame(archived.encounter))
+  assert.equal(original.playedWords[0].preview.longWordModifier, 0)
+  assert.equal(original.playedWords[0].strikes, 2)
+  const fixture = versionedRunFixture(archived, original)
+  assert.equal('longWordModifier' in fixture.playedWords[0].preview, false)
+  const raw = JSON.stringify(fixture)
+  const key = getRunStorageKey(latest.puzzleId)
+  storage.setItem(key, raw)
+  const restored = loadDailySession(latest, storage)
+  assert.equal(restored.error, null)
+  assert.deepEqual(restored.game, original)
+  assert.equal(storage.getItem(key), raw)
+  const next = playWords(['CHEER'], false, restored.game!)
+  saveDailyRun(latest, next, storage)
+  const written = JSON.parse(storage.getItem(key)!)
+  assert.equal(written.saveVersion, 3)
+  assert.equal(written.gameVersion, 'letter-strike-3')
+  assert.equal(written.playedWords[0].preview.longWordModifier, 0)
+  assert.deepEqual(loadDailySession(latest, storage).game, next)
+})
+
+test('schema-2 v1 snapshots also normalize their absent LONG field without changing archived rules', () => {
+  const storage = new MemoryStorage()
+  const game = playWords(['GLOOM'])
+  const raw = JSON.stringify(versionedRunFixture(puzzle, game))
+  const key = getRunStorageKey(puzzle.puzzleId)
+  storage.setItem(key, raw)
+  const restored = loadDailySession(puzzle, storage)
+  assert.equal(restored.error, null)
+  assert.deepEqual(restored.game, game)
+  assert.equal(restored.game!.playedWords[0].preview.longWordModifier, 0)
+  assert.equal(storage.getItem(key), raw)
+})
+
+test('untouched v3 snapshots adopt the new authored board and LONG rule without a read-time write', () => {
+  const storage = new MemoryStorage()
+  const latest = getDailyPuzzle('2026-09-25')
+  const archived = getDailyPuzzleForVersion(latest.puzzleId, 'letter-strike-3', 3)
+  const raw = JSON.stringify(versionedRunFixture(archived, createGame(archived.encounter)))
+  const key = getRunStorageKey(latest.puzzleId)
+  storage.setItem(key, raw)
+  const restored = loadDailySession(latest, storage)
+  assert.equal(restored.error, null)
+  assert.equal(restored.game!.tiles.map((tile) => tile.letter).join(''), 'JOYTCHERGLOMSADE')
+  assert.equal(restored.game!.tiles[15].gem, 'ward')
+  assert.equal(restored.game!.encounter.longWordRule?.minimumLength, 6)
+  assert.equal(storage.getItem(key), raw)
+})
+
+test('pre-LONG v3 completions keep their result, share and finish timestamp under latest daily rules', () => {
+  const storage = new MemoryStorage()
+  const latest = getDailyPuzzle('2026-09-25')
+  const archived = getDailyPuzzleForVersion(latest.puzzleId, 'letter-strike-3', 3)
+  const game = playWords(['JOY', 'MERRY', 'CHEER', 'ELATED', 'MOLD', 'NAG'], false, createGame(archived.encounter))
+  const expected = buildDailyResult(archived, game, '2026-09-25T09:00:00.000Z')
+  const raw = JSON.stringify({ saveVersion: 2, result: expected })
+  const key = getResultStorageKey(latest.puzzleId)
+  storage.setItem(key, raw)
+  const restored = loadDailySession(latest, storage)
+  assert.deepEqual(restored.result, expected)
+  assert.equal(buildShareText(restored.result!), buildShareText(expected))
+  assert.equal(storage.getItem(key), raw)
+  assert.deepEqual(saveDailyRun(latest, createGame(latest.encounter), storage).result, expected)
+})
+
+test('pre-LONG adapters reject injected modifiers and current saves require their real LONG evidence', () => {
+  const latest = getDailyPuzzle('2026-09-25')
+  const archived = getDailyPuzzleForVersion(latest.puzzleId, 'letter-strike-3', 3)
+  const key = getRunStorageKey(latest.puzzleId)
+  const storage = new MemoryStorage()
+  const fixture = versionedRunFixture(archived, playWords(['GLOOMS'], false, createGame(archived.encounter)))
+  fixture.playedWords[0].preview.longWordModifier = 1
+  const original = JSON.stringify(fixture)
+  storage.setItem(key, original)
+  assert.match(loadDailySession(latest, storage).error!, /does not match/)
+  assert.equal(storage.getItem(key), original)
+  storage.removeItem(key)
+  saveDailyRun(latest, playWords(['THREAD'], false, createGame(latest.encounter)), storage)
+  for (const corruption of ['missing', 'altered', 'schema']) {
+    const raw = storage.getItem(key)!
+    const data = JSON.parse(raw)
+    if (corruption === 'missing') delete data.playedWords[0].preview.longWordModifier
+    if (corruption === 'altered') data.playedWords[0].preview.longWordModifier = 99
+    if (corruption === 'schema') data.saveVersion = 2
+    storage.setItem(key, JSON.stringify(data))
+    assert.equal(loadDailySession(latest, storage).game, null)
+    storage.setItem(key, raw)
+  }
+})
+
+test('v4 authored win and loss routes persist exact LONG, special and positional outcomes', () => {
+  const definition = getDailyPuzzle('2026-09-25')
+  for (const won of [true, false]) {
+    const storage = new MemoryStorage()
+    const turns = won ? currentWinTileIds : [[13, 4, 6], [14, 18, 8], [20, 16, 7], [22, 19, 12], [0, 25, 3]]
+    const game = playTurns(createGame(definition.encounter), turns)
+    assert.equal(game.status, won ? 'won' : 'lost')
+    assert.equal(game.playerResolve, won ? 1 : 0)
+    if (won) {
+      assert.deepEqual(game.playedWords.map((move) => move.word), ['JOY', 'CHEER', 'MELODY', 'GLAD', 'MOANER'])
+      assert.deepEqual(game.playedWords.map((move) => move.preview.longWordModifier), [0, 0, 1, 0, 1])
+    }
+    const completed = saveDailyRun(definition, game, storage, '2026-09-25T12:00:00.000Z')
+    assert.equal(completed.result!.gameVersion, 'letter-strike-4')
+    assert.equal(completed.result!.won, won)
+    assert.deepEqual(loadDailySession(definition, storage).game, game)
+    assert.deepEqual(loadDailySession(definition, storage).result, completed.result)
+    assert.equal(buildShareText(loadDailySession(definition, storage).result!), buildShareText(completed.result!))
   }
 })

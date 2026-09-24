@@ -1,8 +1,9 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import {
-  createLetterStrikeGame, previewLetterStrike,
+  previewLetterStrike,
 } from '../src/game/letterStrike.ts'
+import { createHistoricalBoardGame as createLetterStrikeGame } from './letter-strike-fixture.ts'
 import type { EnemyLetter, LetterStrikeState, LetterStrikeTile } from '../src/game/letterStrike.ts'
 import { getMaximumImmediateStrikes } from '../src/experimental/maxStrikes.ts'
 
@@ -185,6 +186,26 @@ test('grammar-aware solver matches exhaustive selections for positive and negati
           assert.equal(getMaximumImmediateStrikes(state), bruteForceMaximum(state), `Consumes allowance ${strikeConsumesAllowance}, ${semantic}, grammar ${modifier}, Strikes ${strikeIds}`)
         }
       }
+    }
+  }
+})
+
+test('LONG-aware solver matches exhaustive physical selections and respects semantic classes', () => {
+  for (const semantic of ['neutral', 'counter', 'resisted']) {
+    for (const strikeConsumesAllowance of [false, true]) {
+      const state = fixture(tiles('CLOSET', [1], [4]), enemy('CLOE'), semantic === 'counter' ? ['CLOSET'] : [], semantic === 'resisted' ? ['CLOSET'] : [])
+      state.encounter = { ...state.encounter, strikeConsumesAllowance, minimumWordLength: 6, longWordRule: { minimumLength: 6, bonusStrikes: 1 } }
+      assert.equal(getMaximumImmediateStrikes(state), bruteForceMaximum(state), `${semantic}; overlap ${strikeConsumesAllowance}`)
+    }
+  }
+})
+
+test('solver combines LONG, adjective allowance and duplicate-letter Strike against armour', () => {
+  for (const strikeConsumesAllowance of [false, true]) {
+    for (const strikeIds of [[], [0], [4], [0, 4]]) {
+      const state = fixture(tiles('LONELY', strikeIds), enemy('LONE', [0]))
+      state.encounter = { ...state.encounter, strikeConsumesAllowance, minimumWordLength: 6, longWordRule: { minimumLength: 6, bonusStrikes: 1 } }
+      assert.equal(getMaximumImmediateStrikes(state), bruteForceMaximum(state), `overlap ${strikeConsumesAllowance}, Strikes ${strikeIds}`)
     }
   }
 })

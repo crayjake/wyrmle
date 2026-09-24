@@ -104,7 +104,8 @@
   gap: 0.25rem;
 }
 
-.letter-combat .strike-bonus[data-kind="counter"] {
+.letter-combat .strike-bonus[data-kind="counter"],
+.letter-combat .strike-bonus[data-kind="long"] {
   color: var(--green);
 }
 

@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion"
 import type { Ref } from "react"
 import { introTimings } from "../intro/config"
+import type { MatchHintMode } from './tileMatchHints'
 
 export type SpecialTilePresentation = {
   id: string
@@ -18,6 +19,7 @@ type TileProps = {
   revealed?: boolean
   elementRef?: Ref<HTMLButtonElement>
   boardIndex?: number
+  matchHint?: MatchHintMode
   onClick?: () => void
 }
 
@@ -30,6 +32,7 @@ export default function Tile({
   revealed = false,
   elementRef,
   boardIndex,
+  matchHint = 'off',
   onClick,
 }: TileProps) {
   const reducedMotion = useReducedMotion()
@@ -39,6 +42,7 @@ export default function Tile({
       ref={elementRef}
       data-tile-index={boardIndex}
       data-revealed={revealed}
+      data-match-hint={revealed && matchHint !== 'off' ? matchHint : undefined}
       type="button"
       className={[
         "tile",
@@ -47,7 +51,7 @@ export default function Tile({
       ].join(" ")}
       disabled={disabled}
       aria-pressed={selected}
-      aria-label={`${letter}${revealed && special ? `, ${special.label} tile` : ""}`}
+      aria-label={`${letter}${revealed && special ? `, ${special.label} tile` : ""}${revealed && matchHint !== 'off' ? ', matches a surviving enemy letter' : ''}`}
       title={revealed && special ? `${special.label}${special.detail ? `: ${special.detail}` : ""}` : undefined}
       onClick={onClick}
       animate={

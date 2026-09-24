@@ -6,6 +6,7 @@ import { MyInfo } from "./components/HealthInfo"
 import Enemy from "./components/Enemy"
 import AttackInfo from "./components/AttackInfo"
 import TileGrid from "./components/TileGrid"
+import type { MatchHintMode } from './components/tileMatchHints'
 import WyrmDecoder from "./components/WyrmDecoder"
 import { previewLetterStrike } from "./game/letterStrike"
 import { getLetterStrikeBonuses, getLetterStrikeGrammarModifiers, getLetterStrikeTileSummary } from "./game/letterStrikeHud"
@@ -31,6 +32,7 @@ export default function App() {
   })
   const [revision, setRevision] = useState(0)
   const [playtestMode, setPlaytestMode] = useState<'damage' | 'letter-strike' | null>(null)
+  const [matchHint, setMatchHint] = useState<MatchHintMode>('off')
 
   useEffect(() => {
     const updateDay = () => setTodayId(getDailyPuzzleId(new Date()))
@@ -55,16 +57,18 @@ export default function App() {
   }
 
   if (DevCombat && playtestMode) return <Suspense fallback={null}>
-    <DevCombat initialMode={playtestMode} onExit={() => setPlaytestMode(null)} />
+    <DevCombat initialMode={playtestMode} onExit={() => setPlaytestMode(null)}
+      matchHint={matchHint} onMatchHintChange={setMatchHint} />
   </Suspense>
 
   return <DailyBattle key={`${puzzleId}:${revision}`} puzzleId={puzzleId} todayId={todayId} onLoad={loadPuzzle}
-    onPlaytest={setPlaytestMode} />
+    onPlaytest={setPlaytestMode} matchHint={matchHint} onMatchHintChange={setMatchHint} />
 }
 
-function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest }: {
+function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, matchHint, onMatchHintChange }: {
   puzzleId: string; todayId: string; onLoad: (id: string) => void
   onPlaytest: (mode: 'damage' | 'letter-strike') => void
+  matchHint: MatchHintMode; onMatchHintChange: (mode: MatchHintMode) => void
 }) {
   const puzzle = useMemo(() => getDailyPuzzle(puzzleId), [puzzleId])
   const daily = useDailyRun(puzzle)
@@ -184,6 +188,8 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest }: {
             registerTile={registerTile}
             ready={interactive}
             tiles={game.tiles}
+            enemyLetters={game.enemyLetters}
+            matchHint={matchHint}
             specialTiles={getLetterStrikeTileSummary(game)}
             selectedTileIds={game.selectedTileIds}
             canAttack={interactive && preview.valid}
@@ -214,7 +220,8 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest }: {
         onEnemyDecoded={enemyDecoded}
         onTilesDecoded={tilesDecoded}
       />}
-      {visiblePanel === 'help' && <HelpPanel strikeConsumesAllowance={game.encounter.strikeConsumesAllowance} onClose={() => setPanel(null)} />}
+      {visiblePanel === 'help' && <HelpPanel strikeConsumesAllowance={game.encounter.strikeConsumesAllowance}
+        longWordRule={game.encounter.longWordRule} onClose={() => setPanel(null)} />}
       {visiblePanel === 'log' && <LogPanel game={game} date={puzzle.date}
         onClose={() => setPanel(null)} onShowStats={() => setPanel('stats')} />}
       {visiblePanel === 'result' && result && <ResultPanel result={result}
@@ -225,7 +232,8 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest }: {
         : <StatsPanel results={daily.history.results} todayId={todayId}
             inProgressIds={daily.history.inProgressIds} onResume={onLoad} onClose={() => setPanel(null)} />)}
       {visiblePanel === 'dev' && DevPanel && <Suspense fallback={null}>
-        <DevPanel puzzle={puzzle} onLoad={onLoad} onPlaytest={onPlaytest} onClose={() => setPanel(null)} />
+        <DevPanel puzzle={puzzle} onLoad={onLoad} onPlaytest={onPlaytest} onClose={() => setPanel(null)}
+          matchHint={matchHint} onMatchHintChange={onMatchHintChange} />
       </Suspense>}
     </main>
   )

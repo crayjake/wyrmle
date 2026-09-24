@@ -66,7 +66,9 @@ function puzzleForGame(puzzleId: string, game: LetterStrikeState): DailyPuzzleDe
 }
 
 function supportedSaveVersion(version: unknown, puzzle: DailyPuzzleDefinition): boolean {
-  return version === SAVE_VERSION || (version === 1 && puzzle.gameVersion === LEGACY_GAME_VERSION)
+  return version === SAVE_VERSION
+    || (version === 2 && puzzle.puzzleVersion <= 3)
+    || (version === 1 && puzzle.gameVersion === LEGACY_GAME_VERSION)
 }
 
 /** Exact historical shapes, used only for comparison with saveVersion 1 data.
@@ -82,6 +84,20 @@ function legacyRunProjection(run: DailyRun): unknown {
       delete preview.grammaticalModifier
       delete preview.grammaticalPartOfSpeech
       delete preview.letterOutcomes
+      delete preview.longWordModifier
+      return { ...turn, preview }
+    }),
+  }
+}
+
+/** Schema 2 predates LONG; all its other preview fields are still mandatory. */
+function preLongRunProjection(run: DailyRun): unknown {
+  return {
+    ...run,
+    saveVersion: 2,
+    playedWords: run.playedWords.map((turn) => {
+      const preview: Record<string, unknown> = { ...turn.preview }
+      delete preview.longWordModifier
       return { ...turn, preview }
     }),
   }
@@ -155,7 +171,9 @@ function readRun(puzzle: DailyPuzzleDefinition, raw: string): { game: LetterStri
   }
   const timestamp = typeof completedAt === 'string' ? completedAt : null
   const expected = snapshot(puzzle, game, timestamp)
-  if (!sameData(data, data.saveVersion === 1 ? legacyRunProjection(expected) : expected)) {
+  const expectedShape = data.saveVersion === 1 ? legacyRunProjection(expected)
+    : data.saveVersion === 2 ? preLongRunProjection(expected) : expected
+  if (!sameData(data, expectedShape)) {
     throw new Error('The saved run does not match its turn history.')
   }
   return { game, completedAt: timestamp }

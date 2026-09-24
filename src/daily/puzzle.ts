@@ -1,9 +1,9 @@
-import { dailyEncounterV1, dailyEncounterV2, dailyEncounterV3 } from './catalog.ts'
+import { dailyEncounterV1, dailyEncounterV2, dailyEncounterV3, dailyEncounterV4 } from './catalog.ts'
 import { validatePuzzleId } from './date.ts'
 import type { DailyPuzzleDefinition } from './types.ts'
 import {
-  GAME_VERSION, GAME_VERSION_V2, GRAMMAR_RELEASE_DATE, LEGACY_GAME_VERSION,
-  LEGACY_PUZZLE_VERSION, PUZZLE_VERSION, PUZZLE_VERSION_V2,
+  GAME_VERSION, GAME_VERSION_V2, GAME_VERSION_V3, GRAMMAR_RELEASE_DATE, LEGACY_GAME_VERSION,
+  LEGACY_PUZZLE_VERSION, PUZZLE_VERSION, PUZZLE_VERSION_V2, PUZZLE_VERSION_V3,
 } from './versions.ts'
 
 function deepFreeze<T>(value: T): T {
@@ -18,6 +18,7 @@ function deepFreeze<T>(value: T): T {
 deepFreeze(dailyEncounterV1)
 deepFreeze(dailyEncounterV2)
 deepFreeze(dailyEncounterV3)
+deepFreeze(dailyEncounterV4)
 
 /** Old rules remain available only for dates on which those rules were published. */
 export function getSupportedDailyPuzzles(puzzleId: string): DailyPuzzleDefinition[] {
@@ -27,7 +28,9 @@ export function getSupportedDailyPuzzles(puzzleId: string): DailyPuzzleDefinitio
   }] : [{
     gameVersion: GAME_VERSION_V2, puzzleVersion: PUZZLE_VERSION_V2, encounter: dailyEncounterV2,
   }, {
-    gameVersion: GAME_VERSION, puzzleVersion: PUZZLE_VERSION, encounter: dailyEncounterV3,
+    gameVersion: GAME_VERSION_V3, puzzleVersion: PUZZLE_VERSION_V3, encounter: dailyEncounterV3,
+  }, {
+    gameVersion: GAME_VERSION, puzzleVersion: PUZZLE_VERSION, encounter: dailyEncounterV4,
   }]
   return definitions.map((definition) => deepFreeze({ puzzleId, date: puzzleId, ...definition }))
 }

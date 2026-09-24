@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import { createLetterStrikeGame, previewLetterStrike, submitLetterStrike } from '../src/game/letterStrike.ts'
+import { previewLetterStrike, submitLetterStrike } from '../src/game/letterStrike.ts'
+import { createHistoricalBoardGame as createLetterStrikeGame } from './letter-strike-fixture.ts'
 import type { LetterStrikeState } from '../src/game/letterStrike.ts'
 import { getLetterStrikeBattleEvents, getLetterStrikeBonuses, getLetterStrikeGrammarModifiers, getLetterStrikeTileSummary } from '../src/game/letterStrikeHud.ts'
 
@@ -114,4 +115,21 @@ test('history includes recorded grammar even when current encounter weaknesses c
   })
   const changed = { ...submitted, encounter: { ...submitted.encounter, grammarModifiers: { adjective: -1 } } }
   assert.deepEqual(getLetterStrikeBattleEvents(changed)[0].effectLabels, ['ADJECTIVE +1'])
+})
+
+test('LONG precedes grammar in previews and recorded log modifiers', () => {
+  const initial = createLetterStrikeGame()
+  const state = { ...initial,
+    tiles: [...'LONELYZZZZZZZZZZ'].map((letter, id) => ({ id, letter, type: 'normal' as const })),
+    selectedTileIds: [0, 1, 2, 3, 4, 5],
+    encounter: { ...initial.encounter, longWordRule: { minimumLength: 6, bonusStrikes: 1 } },
+  }
+  const preview = previewLetterStrike(state)
+  assert.deepEqual(getLetterStrikeBonuses(preview), [
+    { label: 'NEUTRAL' }, { label: 'LONG', value: 1 }, { label: 'ADJECTIVE', value: 1 },
+  ])
+  const submitted = submitLetterStrike(state)
+  assert.deepEqual(getLetterStrikeBattleEvents(submitted)[0].effectLabels, ['LONG +1', 'ADJECTIVE +1'])
+  const changed = { ...submitted, encounter: { ...submitted.encounter, longWordRule: undefined, grammarModifiers: undefined } }
+  assert.deepEqual(getLetterStrikeBattleEvents(changed)[0].effectLabels, ['LONG +1', 'ADJECTIVE +1'])
 })

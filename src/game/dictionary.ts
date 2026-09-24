@@ -41,3 +41,26 @@ const partsOfSpeech: Readonly<Record<string, readonly PartOfSpeech[]>> = {
 export function getPartsOfSpeech(word: string): readonly PartOfSpeech[] | undefined {
   return partsOfSpeech[normalizeWord(word)]
 }
+
+// Authored encounter annotations are opt-in. Keep the original lookup stable
+// so adding prototype vocabulary cannot rewrite archived daily results.
+export const prototypeWordPartsOfSpeech: Readonly<Record<string, readonly PartOfSpeech[]>> = {
+  SAD: ['adjective'],
+  GLAD: ['adjective'],
+  SANDY: ['adjective'],
+  GAY: ['adjective'],
+  GLOOMY: ['adjective'],
+  COMELY: ['adjective'],
+  HOMELY: ['adjective'],
+  STEADY: ['adjective'],
+  STORMY: ['adjective'],
+  DREAMY: ['adjective'],
+  HEARTY: ['adjective'],
+  LOAMY: ['adjective'],
+  MERRY: ['adjective'],
+  GLOOM: ['noun'],
+  JOY: ['noun'],
+  CHEER: ['noun', 'verb'],
+  CLOSET: ['noun'],
+  THREAD: ['noun', 'verb'],
+}

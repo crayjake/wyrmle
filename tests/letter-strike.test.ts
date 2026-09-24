@@ -1,11 +1,13 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import {
-  clearLetterStrikeSelection, createLetterStrikeGame, evaluateLetterStrike,
-  letterStrikeEncounter, previewLetterStrike, selectEnemyTarget,
+  clearLetterStrikeSelection, createLetterStrikeGame as createCurrentPrototype, evaluateLetterStrike,
+  previewLetterStrike, selectEnemyTarget,
   submitLetterStrike, toggleLetterStrikeTile,
 } from '../src/game/letterStrike.ts'
 import type { EnemyLetter, LetterStrikeGem, LetterStrikeState } from '../src/game/letterStrike.ts'
+import { createHistoricalBoardGame as createLetterStrikeGame, historicalBoardEncounter as letterStrikeEncounter } from './letter-strike-fixture.ts'
+import { getPartsOfSpeech, prototypeWordPartsOfSpeech } from '../src/game/dictionary.ts'
 
 function wordIds(state: LetterStrikeState, word: string): number[] {
   const ids: number[] = []
@@ -35,6 +37,11 @@ function withWord(word: string, specials: Record<number, LetterStrikeGem> = {}):
     })),
     selectedTileIds: [...word].map((_, index) => index),
   }
+}
+
+function withLongWord(word: string, specials: Record<number, LetterStrikeGem> = {}): LetterStrikeState {
+  const state = withWord(word, specials)
+  return { ...state, encounter: { ...state.encounter, longWordRule: { minimumLength: 6, bonusStrikes: 1 }, wordPartsOfSpeech: prototypeWordPartsOfSpeech } }
 }
 
 test('letter-strike fixture is isolated, deterministic, and owns each enemy letter', () => {
@@ -503,4 +510,178 @@ test('per-position outcomes distinguish untouched, broken, removed, and broken p
 test('authored armour has exactly two hits so every turn fits the supported outcome states', () => {
   const encounter = { ...letterStrikeEncounter, enemyLetters: [{ id: 'thick', letter: 'E', initialHits: 3, hitsRemaining: 3 }] }
   assert.throws(() => createLetterStrikeGame(encounter), /one or two/)
+})
+
+test('short neutral words keep one normal strike while six-letter neutrals gain LONG', () => {
+  for (const word of ['LAD', 'HEAR', 'ALERT']) {
+    const preview = previewLetterStrike(withLongWord(word))
+    assert.equal(preview.valid, true, word)
+    assert.equal(preview.semanticLabel, 'NEUTRAL', word)
+    assert.equal(preview.longWordModifier, 0, word)
+    assert.equal(preview.strikes, 1, word)
+  }
+  for (const [word, targets] of [['CLOSET', ['C', 'L']], ['THREAD', ['H', 'E']]] as const) {
+    const preview = previewLetterStrike(withLongWord(word))
+    assert.equal(preview.valid, true)
+    assert.equal(preview.longWordModifier, 1)
+    assert.equal(preview.grammaticalModifier, 0)
+    assert.deepEqual(preview.hits.map(hit => hit.letter), targets)
+  }
+})
+
+test('LONG is opt-in encounter data and does not change archived neutral allowances', () => {
+  assert.equal(previewLetterStrike(withWord('CLOSET')).strikes, 1)
+  assert.equal(previewLetterStrike(withWord('CLOSET')).longWordModifier, 0)
+  const state = withLongWord('CLOSET')
+  state.encounter = { ...state.encounter, longWordRule: { minimumLength: 7, bonusStrikes: 1 } }
+  assert.equal(previewLetterStrike(state).strikes, 1)
+  state.encounter = { ...state.encounter, longWordRule: { minimumLength: 6, bonusStrikes: 2 } }
+  assert.equal(previewLetterStrike(state).strikes, 3)
+  assert.equal(previewLetterStrike(state).longWordModifier, 2)
+})
+
+test('long resisted words receive no LONG, while counters still strike all matches', () => {
+  for (const word of ['SORROW', 'SADNESS']) {
+    const preview = previewLetterStrike(withLongWord(word))
+    assert.equal(preview.valid, true, word)
+    assert.equal(preview.semanticLabel, 'RESISTED')
+    assert.equal(preview.longWordModifier, 0)
+    assert.equal(preview.strikes, 0)
+  }
+  const counter = previewLetterStrike(withLongWord('DELIGHT'))
+  assert.equal(counter.semanticLabel, 'COUNTER')
+  assert.equal(counter.longWordModifier, 0)
+  assert.deepEqual(counter.hits.map(hit => hit.letter), ['E', 'L', 'H'])
+})
+
+test('LONG and adjective weakness stack with independent Strike and Ward effects', () => {
+  const normal = previewLetterStrike(withLongWord('LONELY'))
+  assert.equal(normal.semanticLabel, 'NEUTRAL')
+  assert.equal(normal.longWordModifier, 1)
+  assert.equal(normal.grammaticalModifier, 1)
+  assert.deepEqual(normal.hits.map(hit => hit.letter), ['L', 'O', 'N'])
+  const state = withLongWord('LONELY', { 0: 'strike', 3: 'ward' })
+  const preview = previewLetterStrike(state)
+  assert.deepEqual(preview.hits.map(hit => hit.letter), ['L', 'O', 'N', 'E'])
+  assert.deepEqual(preview.effectLabels, ['STRIKE', 'WARD'])
+  assert.equal(preview.resolveCost, 0)
+  const submitted = submitLetterStrike(state)
+  assert.equal(submitted.playerResolve, state.playerResolve)
+  assert.deepEqual(submitted.playedWords[0].preview, preview)
+  const resisted = previewLetterStrike(withLongWord('SADNESS', { 1: 'strike' }))
+  assert.equal(resisted.longWordModifier, 0)
+  assert.equal(resisted.strikes, 1)
+})
+
+test('LONG never creates unmatched strikes or hits beyond available physical tiles', () => {
+  const noTargets = { ...withLongWord('CLOSET'), enemyLetters: letters('Y') }
+  assert.equal(previewLetterStrike(noTargets).strikes, 0)
+  const oneMatch = { ...withLongWord('CLOSET'), enemyLetters: letters('C', [0]) }
+  const preview = previewLetterStrike(oneMatch)
+  assert.equal(preview.strikes, 1)
+  assert.equal(preview.enemyLetters[0].hitsRemaining, 1)
+  const deadTargets = { ...withLongWord('CLOSET'), enemyLetters: letters('CL') }
+  deadTargets.enemyLetters.forEach(letter => { letter.hitsRemaining = 0 })
+  assert.equal(previewLetterStrike(deadTargets).strikes, 0)
+})
+
+test('long neutral target order follows spelling order for the same available tiles', () => {
+  const state = withLongWord('THREAD')
+  const thread = previewLetterStrike(state)
+  const dearth = previewLetterStrike(state, wordIds(state, 'DEARTH'))
+  assert.deepEqual(thread.hits.map(hit => hit.letter), ['H', 'E'])
+  assert.deepEqual(dearth.hits.map(hit => hit.letter), ['E', 'A'])
+})
+
+test('invalid long words never expose an actionable LONG bonus or spend resources', () => {
+  const state = withLongWord('QZXQZX')
+  const preview = previewLetterStrike(state)
+  assert.equal(preview.valid, false)
+  assert.equal(preview.longWordModifier, 0)
+  assert.equal(preview.strikes, 0)
+  assert.equal(preview.resolveCost, 0)
+  assert.deepEqual({ ...submitLetterStrike(state), error: null }, state)
+})
+
+test('prototype anchor words have explicit deterministic part-of-speech data', () => {
+  assert.deepEqual(prototypeWordPartsOfSpeech.SAD, ['adjective'])
+  assert.deepEqual(prototypeWordPartsOfSpeech.GLAD, ['adjective'])
+  assert.deepEqual(prototypeWordPartsOfSpeech.GLOOM, ['noun'])
+  assert.deepEqual(prototypeWordPartsOfSpeech.JOY, ['noun'])
+  assert.deepEqual(prototypeWordPartsOfSpeech.CHEER, ['noun', 'verb'])
+  assert.deepEqual(prototypeWordPartsOfSpeech.CLOSET, ['noun'])
+  assert.deepEqual(prototypeWordPartsOfSpeech.THREAD, ['noun', 'verb'])
+})
+
+test('SANDY is a prototype adjective while archived encounters retain unknown POS behavior', () => {
+  const preview = previewLetterStrike(withLongWord('SANDY'))
+  assert.equal(preview.semanticLabel, 'NEUTRAL')
+  assert.equal(preview.grammaticalPartOfSpeech, 'adjective')
+  assert.equal(preview.grammaticalModifier, 1)
+  assert.deepEqual(preview.hits.map(hit => hit.letter), ['A', 'N'])
+  assert.equal(preview.longWordModifier, 0)
+  assert.equal(getPartsOfSpeech('SANDY'), undefined)
+  assert.equal(previewLetterStrike(withWord('SANDY')).strikes, 1)
+})
+
+test('GAY counters only when authored as an opposite and never gains surplus adjective hits', () => {
+  const state = withLongWord('GAY')
+  state.encounter = { ...state.encounter, enemy: { ...state.encounter.enemy, semanticRelations: {
+    ...state.encounter.enemy.semanticRelations, opposite: [...state.encounter.enemy.semanticRelations.opposite, 'GAY'],
+  } } }
+  const preview = previewLetterStrike(state)
+  assert.equal(preview.semanticLabel, 'COUNTER')
+  assert.equal(preview.grammaticalModifier, 0)
+  assert.deepEqual(preview.hits.map(hit => hit.letter), ['A', 'Y'])
+  assert.equal(getPartsOfSpeech('GAY'), undefined)
+})
+
+test('encounter POS annotations override historic ambiguity without mutating the global lookup', () => {
+  const state = withLongWord('GLOOM')
+  state.encounter = { ...state.encounter, grammarModifiers: { noun: 1 } }
+  const preview = previewLetterStrike(state)
+  assert.equal(preview.grammaticalPartOfSpeech, 'noun')
+  assert.equal(preview.strikes, 1)
+  assert.deepEqual(getPartsOfSpeech('GLOOM'), ['noun', 'verb'])
+  assert.deepEqual(getPartsOfSpeech('JOY'), ['noun', 'verb'])
+  assert.equal(getPartsOfSpeech('CLOSET'), undefined)
+  assert.equal(getPartsOfSpeech('THREAD'), undefined)
+  const ambiguous = withLongWord('THREAD')
+  ambiguous.encounter = { ...ambiguous.encounter, grammarModifiers: { noun: 2 } }
+  assert.equal(previewLetterStrike(ambiguous).grammaticalModifier, 0)
+})
+
+test('current GLOOMY is resisted adjective with independent Strike and no LONG allowance', () => {
+  const state = createCurrentPrototype()
+  const selected = wordIds(state, 'GLOOMY')
+  const preview = previewLetterStrike(state, selected)
+  assert.equal(preview.valid, true)
+  assert.equal(preview.semanticLabel, 'RESISTED')
+  assert.equal(preview.grammaticalPartOfSpeech, 'adjective')
+  assert.equal(preview.grammaticalModifier, 1)
+  assert.equal(preview.longWordModifier, 0)
+  assert.equal(preview.strikes, 2)
+  assert.deepEqual(preview.hits.map(hit => hit.letter), ['L', 'O'])
+  assert.deepEqual(preview.effectLabels, ['STRIKE'])
+  const noStrike = { ...state, tiles: state.tiles.map(tile => tile.gem === 'strike'
+    ? { id: tile.id, letter: tile.letter, type: 'normal' as const } : tile) }
+  const withoutSpecial = previewLetterStrike(noStrike, selected)
+  assert.equal(withoutSpecial.strikes, 1)
+  assert.deepEqual(withoutSpecial.effectLabels, [])
+  assert.deepEqual(submitLetterStrike(state, selected).playedWords[0].preview, preview)
+  assert.equal(getPartsOfSpeech('GLOOMY'), undefined)
+})
+
+test('curated refill adjectives receive current encounter grammar without changing archived annotations', () => {
+  const prototype = createCurrentPrototype()
+  for (const word of ['COMELY', 'HOMELY', 'STEADY', 'STORMY', 'DREAMY', 'HEARTY', 'LOAMY', 'CHEERY']) {
+    const state = { ...withWord(word), encounter: prototype.encounter }
+    const preview = previewLetterStrike(state)
+    assert.equal(preview.valid, true, word)
+    assert.equal(preview.grammaticalPartOfSpeech, 'adjective', word)
+    assert.equal(preview.grammaticalModifier, 1, word)
+    if (word !== 'CHEERY') assert.equal(getPartsOfSpeech(word), undefined, word)
+  }
+  assert.deepEqual(prototype.encounter.wordPartsOfSpeech?.MERRY, ['adjective'])
+  assert.equal(previewLetterStrike({ ...withWord('MERRY'), encounter: prototype.encounter }).semanticLabel, 'COUNTER')
 })

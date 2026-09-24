@@ -3,15 +3,19 @@ import { validatePuzzleId } from '../daily/date.ts'
 import { clearDailyHistory, inspectDailyStorage, resetDailyPuzzle } from '../daily/persistence.ts'
 import { playDevOutcome } from '../daily/dev.ts'
 import type { DailyPuzzleDefinition } from '../daily/types.ts'
+import MatchHintControls from './MatchHintControls'
+import type { MatchHintMode } from './tileMatchHints'
 
 type Props = {
   puzzle: DailyPuzzleDefinition
   onLoad: (id: string) => void
   onPlaytest: (mode: 'damage' | 'letter-strike') => void
   onClose: () => void
+  matchHint: MatchHintMode
+  onMatchHintChange: (mode: MatchHintMode) => void
 }
 
-export default function DevPanel({ puzzle, onLoad, onPlaytest, onClose }: Props) {
+export default function DevPanel({ puzzle, onLoad, onPlaytest, onClose, matchHint, onMatchHintChange }: Props) {
   const dialog = useRef<HTMLDialogElement>(null)
   const [date, setDate] = useState(puzzle.puzzleId)
   const [error, setError] = useState<string | null>(null)
@@ -34,12 +38,13 @@ export default function DevPanel({ puzzle, onLoad, onPlaytest, onClose }: Props)
         <h2 id="dev-title">Development</h2>
         <button type="button" className="daily-button" onClick={onClose}>Close</button>
       </div>
-      <p>Combat playtests start fresh and do not save to daily history.</p>
+      <p>Letter-strike playtests use the latest prototype board and rules. Playtests start fresh and do not save to daily history.</p>
       <div className="dev-controls" aria-label="Combat playtest mode">
         <button className="daily-button" onClick={() => onPlaytest('damage')}>DAMAGE MODE</button>
         <button className="daily-button" onClick={() => onPlaytest('letter-strike')}>LETTER-STRIKE MODE</button>
       </div>
       <p>Daily tools. Resets remove this browser’s completion records.</p>
+      <MatchHintControls value={matchHint} onChange={onMatchHintChange} />
       <form className="dev-controls" onSubmit={event => {
         event.preventDefault()
         act(() => onLoad(validatePuzzleId(date)))

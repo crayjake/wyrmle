@@ -216,12 +216,16 @@ export function StatsPanel({ results, todayId, inProgressIds = [], onResume, onC
   )
 }
 
-export function HelpPanel({ onClose, strikeConsumesAllowance = false }: PanelProps & { strikeConsumesAllowance?: boolean }) {
+export function HelpPanel({ onClose, strikeConsumesAllowance = false, longWordRule }: PanelProps & {
+  strikeConsumesAllowance?: boolean
+  longWordRule?: { minimumLength: number; bonusStrikes: number }
+}) {
   return (
     <DailyDialog title="How to play" subtitle="One puzzle each day" onClose={onClose}>
       <div className="daily-help">
         <p>Choose tiles in any order to build an English word of at least three letters. Use each tile once per attack. Remove every letter of the enemy word to win.</p>
         <p><strong>COUNTER</strong> words strike with every matching tile. <strong>NEUTRAL</strong> words get one normal matching strike, in spelling order. <strong>RESISTED</strong> words have no normal strikes. Related words count as neutral.</p>
+        {longWordRule && <p><strong>LONG +{longWordRule.bonusStrikes}</strong> gives neutral words of {longWordRule.minimumLength}+ letters an extra normal strike allowance. It stacks with grammar weaknesses, still needs matching tiles, and does not boost resisted words or counters.</p>}
         <p><span className="daily-help-gem">◆ Strike</span> guarantees its tile’s matching strike, even in a resisted word. {!strikeConsumesAllowance && 'It leaves the normal and grammar allowances available for other tiles. '}Each tile strikes at most once. A matching tile finishes wounded armour first, then targets from left to right.</p>
         <p>Highlighted enemy cells show exactly what your attack will do: blue <strong>−</strong> breaks armour; red <strong>×</strong> removes a letter. Armour loses its second outline on the first hit; defeated letters become centred <strong>·</strong> dots with no outline. Matching tiles resolve in your spelling order, so two strikes can break and remove the same armoured letter in one word.</p>
         <p>Grammar labels under the definition are green for weaknesses and red for resistances. For example, an <strong>ADJECTIVE +1 STRIKE</strong> weakness lets a resisted adjective strike its first matching tile, or a neutral adjective strike its first two. Counters already use every matching tile. Grammar never creates a hit without a matching letter.</p>

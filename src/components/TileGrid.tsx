@@ -5,6 +5,9 @@ import Tile from "./Tile"
 import type { SpecialTilePresentation } from "./Tile"
 import BattleActions from "./BattleActions"
 import { introTimings } from "../intro/config"
+import { getMatchingTileIds } from './tileMatchHints'
+import type { MatchHintMode } from './tileMatchHints'
+import './TileReadability.css'
 
 type BoardTilePresentation = {
   id: number
@@ -20,6 +23,8 @@ type TileGridProps = {
   tiles: readonly BoardTilePresentation[]
   specialTiles: readonly SpecialTilePresentation[]
   selectedTileIds: number[]
+  enemyLetters?: readonly { letter: string; hitsRemaining: number }[]
+  matchHint?: MatchHintMode
   damage?: number
   canAttack: boolean
   onToggleTile: (id: number) => void
@@ -40,6 +45,8 @@ export default function TileGrid({
   tiles,
   specialTiles,
   selectedTileIds,
+  enemyLetters = [],
+  matchHint = 'off',
   damage,
   canAttack,
   onToggleTile,
@@ -47,6 +54,8 @@ export default function TileGrid({
   onAttack,
 }: TileGridProps) {
   const reducedMotion = useReducedMotion()
+  const matchingIds = new Set(import.meta.env.DEV && matchHint !== 'off'
+    ? getMatchingTileIds(tiles, enemyLetters) : [])
   const decoded = tiles.every((_, index) => revealedIndices.includes(index))
   const [displayLetters, setDisplayLetters] = useState(
     tiles.map(() => randomGlyph())
@@ -78,6 +87,7 @@ export default function TileGrid({
               letter={revealed ? tile.letter : displayLetters[i]}
               special={tile.type === "gem" ? specialTiles.find(special => special.id === tile.gem) : undefined}
               revealed={revealed}
+              matchHint={matchingIds.has(tile.id) ? matchHint : 'off'}
               disabled={!ready}
               selected={selectedIndex !== -1}
               order={

@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { getDailyHistory } from '../src/daily/history.ts'
-import { getDailyPuzzle } from '../src/daily/puzzle.ts'
+import { getDailyPuzzle, getDailyPuzzleForVersion } from '../src/daily/puzzle.ts'
 import { buildDailyResult, getCompletedResults } from '../src/daily/results.ts'
 import { buildShareText } from '../src/daily/share.ts'
 import { calculateStats } from '../src/daily/stats.ts'
@@ -11,7 +11,9 @@ import { createLetterStrikeGame, submitLetterStrike } from '../src/game/letterSt
 import type { LetterStrikeState } from '../src/game/letterStrike.ts'
 
 function puzzle(date = '2026-09-24'): DailyPuzzleDefinition {
-  return getDailyPuzzle(date)
+  // Historical result/stat fixtures keep their authored route across new releases.
+  return date < '2026-09-25' ? getDailyPuzzle(date)
+    : getDailyPuzzleForVersion(date, 'letter-strike-3', 3)
 }
 
 function playWord(game: LetterStrikeState, word: string): LetterStrikeState {
@@ -116,6 +118,22 @@ test('additive Strike in LAD records both removals and one tile activation in it
   assert.equal(completed.strikeActivations, 1)
   assert.deepEqual(completed.turns[0].letterOutcomes.filter(event => event.removed).map(event => event.position), [2, 3])
   assert.match(buildShareText(completed), /N  ··■■······ ◆$/)
+})
+
+test('a v4 LONG neutral move records both actual removals in result and positional share data', () => {
+  const base = getDailyPuzzle('2026-09-25')
+  const definition = { ...base, encounter: { ...base.encounter, startingResolve: 1 } }
+  const game = playWord(createLetterStrikeGame(definition.encounter), 'THREAD')
+  assert.equal(game.status, 'lost')
+  assert.equal(game.playedWords[0].preview.longWordModifier, 1)
+  const completed = buildDailyResult(definition, game, '2026-09-25T12:00:00Z')
+  assert.equal(completed.gameVersion, 'letter-strike-4')
+  assert.equal(completed.neutral, 1)
+  assert.equal(completed.totalStrikes, 2)
+  assert.equal(completed.lettersDestroyed, 2)
+  assert.equal(completed.largestRemoval, 2)
+  assert.deepEqual(completed.turns[0].letterOutcomes.filter((event) => event.removed).map((event) => event.position), [1, 6])
+  assert.match(buildShareText(completed), /N  ·■····■···$/)
 })
 
 test('a Strike and neutral hit on one armoured letter share as a single break-and-remove event', () => {

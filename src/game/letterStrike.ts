@@ -1,4 +1,4 @@
-import { getPartsOfSpeech, isDictionaryWord, normalizeWord } from './dictionary.ts'
+import { getPartsOfSpeech, isDictionaryWord, normalizeWord, prototypeWordPartsOfSpeech } from './dictionary.ts'
 import { getSemanticRelation } from './semantic.ts'
 import { getSelectedTiles, refillBoard } from './tiles.ts'
 import type { EnemyConcept, PartOfSpeech } from './types.ts'
@@ -20,6 +20,8 @@ export type LetterStrikeEncounter = {
   refillQueue: string
   minimumWordLength: number
   grammarModifiers?: Partial<Record<PartOfSpeech, number>>
+  wordPartsOfSpeech?: Readonly<Record<string, readonly PartOfSpeech[]>>
+  longWordRule?: { minimumLength: number; bonusStrikes: number }
   // Only archived encounters opt into the original overlapping Strike rule.
   strikeConsumesAllowance?: boolean
   tileEffects: Record<LetterStrikeGem, { strike: boolean; preventResolveLoss: boolean }>
@@ -42,6 +44,7 @@ export type LetterStrikeLetterOutcome = {
 export type LetterStrikeEvaluation = {
   word: string
   semanticLabel: 'COUNTER' | 'NEUTRAL' | 'RESISTED'
+  longWordModifier: number
   grammaticalModifier: number
   grammaticalPartOfSpeech: PartOfSpeech | null
   strikes: number
@@ -74,14 +77,14 @@ export type LetterStrikeState = {
 }
 
 export const letterStrikeEncounter: LetterStrikeEncounter = {
-  id: 'experimental-melancholy-letter-strike',
+  id: 'prototype-melancholy-letter-strike-v4',
   enemy: {
     word: 'MELANCHOLY',
     definition: 'a feeling of pensive sadness, typically with no obvious cause',
     partOfSpeech: 'noun',
     semanticRelations: {
-      opposite: ['JOY', 'CHEER', 'HAPPY', 'DELIGHT', 'ELATED', 'MERRY'],
-      similar: ['SAD', 'SADNESS', 'GLOOM', 'GRIEF', 'SORROW', 'BLUE'],
+      opposite: ['JOY', 'CHEER', 'GLAD', 'GAY', 'HAPPY', 'DELIGHT', 'ELATED', 'MERRY'],
+      similar: ['SAD', 'SADNESS', 'GLOOM', 'GLOOMY', 'GRIEF', 'SORROW', 'BLUE'],
       related: ['TEARS', 'CRY', 'LONELY', 'MOOD'],
     },
   },
@@ -90,17 +93,21 @@ export const letterStrikeEncounter: LetterStrikeEncounter = {
     return { id: `enemy-${index}`, letter, hitsRemaining: initialHits, initialHits }
   }),
   startingResolve: 5,
-  startingTiles: [...'JOY CHEER GLOO MADS'.replaceAll(' ', '')].map((letter, id) => ({
+  startingTiles: [...'JOYT CHER GLOM SADE'.replaceAll(' ', '')].map((letter, id) => ({
     id,
     letter,
-    type: id === 2 || id === 9 ? 'gem' : 'normal',
-    ...(id === 2 ? { gem: 'ward' as const } : id === 9 ? { gem: 'strike' as const } : {}),
+    type: id === 15 || id === 9 ? 'gem' : 'normal',
+    ...(id === 15 ? { gem: 'ward' as const } : id === 9 ? { gem: 'strike' as const } : {}),
   })),
-  // One playable route: JOY, MERRY, CHEER, ELATED, MOLD, NAG. Preserve the
-  // original Strike L for MOLD; fixed refills also offer counters and bait.
-  refillQueue: 'RYE' + 'RELAT' + 'MENDN' + 'JOYSAD' + 'MERRYDELIGHTELATEDNEONSADGLOOMJOY'.repeat(4),
+  // Early R/E/Y keep counters available; N arrives for remaining enemy letters.
+  // Later PPY supports HAPPY; long-neutral anchors alternate with counters/bait.
+  refillQueue: 'RYE' + 'RELAT' + 'MENDN' + 'JOYSAD' + 'PPY' + 'MERRY' + 'DELIGHT'
+    + 'LEMONS' + 'CLOSET' + 'THREAD' + 'HAPPY' + 'NEAR' + 'ELATED' + 'SAD'
+    + 'GLOOM' + 'MERRY' + 'LEMONS' + 'THREAD' + 'CLOSET' + 'NEAR' + 'JOY',
   minimumWordLength: 3,
   grammarModifiers: { adjective: 1 },
+  wordPartsOfSpeech: prototypeWordPartsOfSpeech,
+  longWordRule: { minimumLength: 6, bonusStrikes: 1 },
   tileEffects: {
     strike: { strike: true, preventResolveLoss: false },
     ward: { strike: false, preventResolveLoss: true },
@@ -120,6 +127,11 @@ export function createLetterStrikeGame(encounter = letterStrikeEncounter): Lette
   if (!Number.isSafeInteger(encounter.minimumWordLength) || encounter.minimumWordLength < 1) throw new Error('Minimum word length must be positive.')
   if (Object.values(encounter.grammarModifiers ?? {}).some(value => !Number.isSafeInteger(value))) {
     throw new Error('Grammar modifiers must be integer strike allowances.')
+  }
+  if (encounter.longWordRule && (!Number.isSafeInteger(encounter.longWordRule.minimumLength)
+    || encounter.longWordRule.minimumLength < 1 || !Number.isSafeInteger(encounter.longWordRule.bonusStrikes)
+    || encounter.longWordRule.bonusStrikes < 0)) {
+    throw new Error('Long-word rules need a positive minimum length and a nonnegative integer bonus.')
   }
   if (enemyLetters.length === 0 || new Set(enemyLetters.map(letter => letter.id)).size !== enemyLetters.length
     || enemyLetters.some(letter => !/^[a-z]$/i.test(letter.letter)
@@ -165,26 +177,31 @@ export function selectEnemyTarget(letters: readonly EnemyLetter[], letter: strin
 
 // A counter already permits all available matching tiles. Positive grammar
 // cannot add phantom hits; negative grammar reduces that finite capacity.
-// For resisted/neutral words, modifiers change their 0/1 normal-hit budget.
+// Only neutral words can gain LONG. Grammar then modifies the resulting budget.
 export function getLetterStrikeAllowance(encounter: LetterStrikeEncounter, word: string, matchingCapacity: number): {
   semanticLabel: LetterStrikeEvaluation['semanticLabel']
+  longWordModifier: number
   grammaticalModifier: number
   grammaticalPartOfSpeech: PartOfSpeech | null
   normalStrikeAllowance: number
 } {
   const relation = getSemanticRelation(word, encounter.enemy)
   const semanticLabel = relation === 'opposite' ? 'COUNTER' : relation === 'similar' ? 'RESISTED' : 'NEUTRAL'
-  const parts = getPartsOfSpeech(word)
+  const parts = encounter.wordPartsOfSpeech?.[normalizeWord(word)] ?? getPartsOfSpeech(word)
   const partOfSpeech = parts?.length === 1 ? parts[0] : null
   const configuredModifier = partOfSpeech ? encounter.grammarModifiers?.[partOfSpeech] ?? 0 : 0
   const base = semanticLabel === 'COUNTER' ? matchingCapacity : semanticLabel === 'NEUTRAL' ? 1 : 0
+  const longWordModifier = semanticLabel === 'NEUTRAL' && encounter.longWordRule
+    && normalizeWord(word).length >= encounter.longWordRule.minimumLength ? encounter.longWordRule.bonusStrikes : 0
+  const allowanceBeforeGrammar = base + longWordModifier
   const normalStrikeAllowance = Math.max(0, Math.min(
     semanticLabel === 'COUNTER' ? matchingCapacity : Number.POSITIVE_INFINITY,
-    base + configuredModifier,
+    allowanceBeforeGrammar + configuredModifier,
   ))
-  const grammaticalModifier = normalStrikeAllowance - base
+  const grammaticalModifier = normalStrikeAllowance - allowanceBeforeGrammar
   return {
     semanticLabel,
+    longWordModifier,
     grammaticalModifier,
     grammaticalPartOfSpeech: grammaticalModifier !== 0 ? partOfSpeech : null,
     normalStrikeAllowance,
@@ -226,7 +243,7 @@ export function evaluateLetterStrike(state: Pick<LetterStrikeState, 'encounter' 
       capacityByLetter.set(letter, capacity - 1)
     }
   }
-  const { semanticLabel, grammaticalModifier, grammaticalPartOfSpeech, normalStrikeAllowance } = getLetterStrikeAllowance(state.encounter, word, matchingCapacity)
+  const { semanticLabel, longWordModifier, grammaticalModifier, grammaticalPartOfSpeech, normalStrikeAllowance } = getLetterStrikeAllowance(state.encounter, word, matchingCapacity)
   const enemyLetters = state.enemyLetters.map(letter => ({ ...letter }))
   const hits: LetterStrikeHit[] = []
   const seenTiles = new Set<number>()
@@ -255,6 +272,7 @@ export function evaluateLetterStrike(state: Pick<LetterStrikeState, 'encounter' 
   return {
     word,
     semanticLabel,
+    longWordModifier,
     grammaticalModifier,
     grammaticalPartOfSpeech,
     strikes: hits.length,
@@ -281,7 +299,7 @@ export function previewLetterStrike(state: LetterStrikeState, selectedTileIds: r
     error,
     ...(error !== null ? {
       strikes: 0, resolveCost: 0, effectLabels: [], hits: [],
-      grammaticalModifier: 0, grammaticalPartOfSpeech: null,
+      longWordModifier: 0, grammaticalModifier: 0, grammaticalPartOfSpeech: null,
       letterOutcomes: buildLetterStrikeOutcomes(state.enemyLetters, []),
       enemyLetters: state.enemyLetters.map(letter => ({ ...letter })),
     } : {}),

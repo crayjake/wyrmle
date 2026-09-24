@@ -383,3 +383,24 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+.dev-match-hints {
+  margin: 0.75rem 0;
+  padding: 0;
+  border: 0;
+}
+
+.dev-match-hints legend {
+  margin-bottom: 0.4rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+}
+
+.dev-match-hints button[aria-pressed="true"] {
+  color: var(--emph);
+  border-color: var(--emph);
+}
+
+.dev-match-hints p {
+  margin: 0.4rem 0 0;
+  font-size: 0.65rem;
+}

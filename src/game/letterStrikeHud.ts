@@ -26,6 +26,7 @@ export function getLetterStrikeBonuses(preview: LetterStrikePreview): AttackBonu
   if (!preview.valid) return []
   return [
     { label: preview.semanticLabel },
+    ...(preview.longWordModifier !== 0 ? [{ label: 'LONG', value: preview.longWordModifier }] : []),
     ...(preview.grammaticalModifier !== 0 && preview.grammaticalPartOfSpeech
       ? [{ label: preview.grammaticalPartOfSpeech.toUpperCase(), value: preview.grammaticalModifier }] : []),
     ...preview.effectLabels.map(label => ({ label })),
@@ -64,6 +65,7 @@ export function getLetterStrikeBattleEvents(
     damage: move.strikes,
     semanticLabel: move.semanticLabel,
     effectLabels: [
+      ...(move.preview.longWordModifier !== 0 ? [`LONG +${move.preview.longWordModifier}`] : []),
       ...(move.preview.grammaticalModifier !== 0 && move.preview.grammaticalPartOfSpeech
         ? [`${move.preview.grammaticalPartOfSpeech.toUpperCase()} ${move.preview.grammaticalModifier > 0 ? '+' : ''}${move.preview.grammaticalModifier}`] : []),
       ...move.effectLabels,

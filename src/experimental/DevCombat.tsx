@@ -5,6 +5,8 @@ import { MyInfo, EnemyInfo } from '../components/HealthInfo'
 import Enemy from '../components/Enemy'
 import AttackInfo from '../components/AttackInfo'
 import TileGrid from '../components/TileGrid'
+import MatchHintControls from '../components/MatchHintControls'
+import type { MatchHintMode } from '../components/tileMatchHints'
 import EncounterHud from '../components/EncounterHud'
 import WyrmDecoder from '../components/WyrmDecoder'
 import { createGame, toggleTile, clearSelection, previewAttack, submitWord } from '../game/game'
@@ -28,18 +30,20 @@ const modeLabels = { damage: 'DAMAGE MODE', 'letter-strike': 'LETTER-STRIKE MODE
 
 // This entire entry point is lazy-loaded only in DEV. Playtests never call the
 // daily hook or storage; a keyed remount discards all state on every mode change.
-export default function DevCombat({ initialMode, onExit }: {
+export default function DevCombat({ initialMode, onExit, matchHint, onMatchHintChange }: {
   initialMode: CombatMode; onExit: () => void
+  matchHint: MatchHintMode; onMatchHintChange: (mode: MatchHintMode) => void
 }) {
   const [session, setSession] = useState({ mode: initialMode, revision: 0 })
   if (!import.meta.env.DEV) return null
   return <PlaytestBattle key={`${session.mode}:${session.revision}`} mode={session.mode}
     onMode={mode => setSession(current => ({ mode, revision: current.revision + 1 }))}
-    onExit={onExit} />
+    onExit={onExit} matchHint={matchHint} onMatchHintChange={onMatchHintChange} />
 }
 
-function PlaytestBattle({ mode, onMode, onExit }: {
+function PlaytestBattle({ mode, onMode, onExit, matchHint, onMatchHintChange }: {
   mode: CombatMode; onMode: (mode: CombatMode) => void; onExit: () => void
+  matchHint: MatchHintMode; onMatchHintChange: (mode: MatchHintMode) => void
 }) {
   const [run, setRun] = useState<Run>(() => mode === 'damage'
     ? { mode, game: createGame(melancholyEncounter) }
@@ -151,6 +155,7 @@ function PlaytestBattle({ mode, onMode, onExit }: {
       <div className="controls">
         <TileGrid revealedIndices={revealedTileIndices} registerTile={registerTile}
           ready={interactive} tiles={game.tiles} specialTiles={specialTiles}
+          enemyLetters={letterGame?.enemyLetters} matchHint={letterGame ? matchHint : 'off'}
           selectedTileIds={game.selectedTileIds} damage={run.mode === 'damage' ? preview.amount : undefined} canAttack={interactive && preview.valid}
           onToggleTile={select} onClear={clear} onAttack={attack} />
       </div>
@@ -163,6 +168,7 @@ function PlaytestBattle({ mode, onMode, onExit }: {
 
     {panel === 'modes' && <PlaytestPanel title="Combat playtest" onClose={() => setPanel(null)}>
       <p>Each mode starts a fresh encounter. Playtests do not save to daily history.</p>
+      {letterGame && <MatchHintControls value={matchHint} onChange={onMatchHintChange} />}
       <div className="dev-controls">
         {(['damage', 'letter-strike'] as const).map(value =>
           <button className="daily-button" key={value} onClick={() => onMode(value)}>{modeLabels[value]}</button>)}
@@ -182,6 +188,7 @@ function PlaytestBattle({ mode, onMode, onExit }: {
         <div className="daily-help">
           <div>Remove every enemy letter before your five Resolve run out. Tiles can be selected in any order.</div>
           <div><strong>COUNTER</strong> words strike with every matching tile. <strong>NEUTRAL</strong> words get one normal matching strike, in spelling order. <strong>RESISTED</strong> words have no normal strikes.</div>
+          {letterGame?.encounter.longWordRule && <div><strong>LONG +{letterGame.encounter.longWordRule.bonusStrikes}</strong> adds a normal strike allowance for neutral words of {letterGame.encounter.longWordRule.minimumLength}+ letters. It stacks with grammar weaknesses, but does not boost resisted words or counters.</div>}
           <div><strong>STRIKE</strong> guarantees its tile’s matching strike, even on a resisted word, without spending the normal or grammar allowance. Each tile strikes at most once. <strong>WARD</strong> makes the turn free.</div>
           <div>Double outlines need two hits. The first breaks armour; the next removes the letter. Matching tiles finish wounded copies first, then target from left to right.</div>
           <div>Blue − previews an armour break; red × previews removal. Defeated letters become centred dots with no outline. Repeated matching tiles can break and remove one armoured letter in the same word.</div>

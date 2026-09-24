@@ -36,7 +36,7 @@ function isStrikeTile(state: MaximumImmediateStrikesState, tile: LetterStrikeTil
  * This searches attainable selections and scores them with the combat engine;
  * the board's raw matching-letter capacity is only an early-exit upper bound.
  *
- * The combat engine provides the semantic/grammar normal-hit allowance. Under
+ * The combat engine provides the semantic/LONG/grammar normal-hit allowance. Under
  * additive rules, use Strike copies first so an ordinary copy cannot consume
  * the last matching target and waste a guaranteed hit. Historical rules instead
  * reserve Strike copies until after normal hits. Track remaining same-letter
