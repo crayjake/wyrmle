@@ -1,5 +1,7 @@
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
+import type { Ref } from "react"
 import type { Tile as GameTile } from "../game/types"
+import { introTimings } from "../intro/config"
 
 type TileProps = {
   letter: string
@@ -8,6 +10,8 @@ type TileProps = {
   special?: GameTile["gem"]
   disabled?: boolean
   revealed?: boolean
+  elementRef?: Ref<HTMLButtonElement>
+  boardIndex?: number
   onClick?: () => void
 }
 
@@ -18,10 +22,17 @@ export default function Tile({
   special,
   disabled = false,
   revealed = false,
+  elementRef,
+  boardIndex,
   onClick,
 }: TileProps) {
+  const reducedMotion = useReducedMotion()
+
   return (
     <motion.button
+      ref={elementRef}
+      data-tile-index={boardIndex}
+      data-revealed={revealed}
       type="button"
       className={[
         "tile",
@@ -34,7 +45,9 @@ export default function Tile({
       title={revealed && special ? (special === "ward" ? "Ward: protects Resolve" : "Power: bonus damage") : undefined}
       onClick={onClick}
       animate={
-        revealed
+        reducedMotion
+          ? { opacity: revealed ? 1 : 0.5, scale: 1, y: 0 }
+          : revealed
           ? {
               opacity: 1,
               scale: [1, 1.16, 0.95, 1],
@@ -45,7 +58,7 @@ export default function Tile({
             }
       }
       transition={{
-        duration: 0.45,
+        duration: reducedMotion ? introTimings.reducedStage : introTimings.lockIn,
         ease: "easeOut",
       }}
     >

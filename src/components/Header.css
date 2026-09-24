@@ -1,0 +1,15 @@
+.header .title {
+  position: relative;
+}
+
+.wyrm-dock {
+  position: absolute;
+  left: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}

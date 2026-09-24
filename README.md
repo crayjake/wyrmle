@@ -14,6 +14,12 @@ npm run lint
 
 Tests use Node's built-in TypeScript support; use Node 22.18+ or a newer supported release. Word validation uses the same bundled `an-array-of-english-words` dictionary as the old project. Gameplay makes no API requests and requires no LLM.
 
+## Wordwyrm intro
+
+`src/components/WyrmDecoder.tsx` controls the CSS snake's intro route. It follows a continuous sine wave centered vertically on the enemy letters, revealing them as it passes, then leaves the screen and re-enters beside the board. After decoding the tiles, it exits again and re-enters at the title, passing through WYRMLE left-to-right before resting beside it. Completion callbacks preserve the `waiting → enemy → tiles → ready` phases; gameplay stays disabled until the intro finishes. Travel reads actual element bounds to follow resizing. `WyrmCharacter.tsx` provides its body wave, head bob, and occasional tongue flick, with slower idle motion in the header. Reduced motion skips travel, reveals both stages quickly, and keeps the header snake still.
+
+`src/intro/paths.ts` defines board visitation without changing gameplay tiles. The default follows alternating rows with rounded turns and a slower sine wave through each row; optional `'shuffle'` mode still uses a stable seed. `src/intro/movement.ts` defines centered sine movement, curved row turns, and head direction along the route. `WyrmDecoder` accepts `tilePath` and `seed` props for future puzzles. All intro durations, wave sizes, scramble intervals, and idle timing are in `src/intro/config.ts`; the full reveal and title pass take about eight seconds.
+
 ## Pure engine
 
 `src/game/` has no React or browser dependencies. Call `createGame(encounter)`, `toggleTile(state, tileId)`, `clearSelection(state)`, `previewAttack(state, selectedTileIds)`, and `submitWord(state, selectedTileIds)`. Functions return new state; selection order defines the word. Preview and submission use the same damage calculation. The tile-ID interface also supports future non-UI callers.

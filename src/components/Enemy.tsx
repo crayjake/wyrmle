@@ -1,12 +1,13 @@
-import { motion } from "framer-motion"
-import { useEffect, useRef, useState } from "react"
+import { motion, useReducedMotion } from "framer-motion"
+import { useEffect, useState } from "react"
+import { introTimings } from "../intro/config"
 
 type EnemyProps = {
   name: string
   definition: string
   partOfSpeech?: string
-  active: boolean
-  onDecoded?: () => void
+  revealedIndices: readonly number[]
+  registerLetter: (index: number, element: HTMLDivElement | null) => void
 }
 
 const GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ?#%&@"
@@ -19,78 +20,65 @@ export default function Enemy({
   name,
   definition,
   partOfSpeech,
-  active,
-  onDecoded,
+  revealedIndices,
+  registerLetter,
 }: EnemyProps) {
   const letters = name.toUpperCase().split("")
+  const reducedMotion = useReducedMotion()
+  const decoded = letters.every((_, index) => revealedIndices.includes(index))
 
   const [display, setDisplay] = useState(
     letters.map(() => randomGlyph())
   )
 
-  const [resolved, setResolved] = useState(0)
-  const resolvedRef = useRef(0)
-
   useEffect(() => {
+    if (decoded || reducedMotion) return
+
     const scramble = window.setInterval(() => {
-      setDisplay(
-        letters.map((letter, i) =>
-          i < resolvedRef.current ? letter : randomGlyph()
-        )
-      )
-    }, 70)
+      setDisplay(name.split("").map(() => randomGlyph()))
+    }, introTimings.enemyScrambleMs)
 
     return () => window.clearInterval(scramble)
-  }, [name])
-
-  useEffect(() => {
-    if (!active) return
-
-    const decode = window.setInterval(() => {
-      const next = resolvedRef.current + 1
-
-      resolvedRef.current = next
-      setResolved(next)
-
-      if (next >= letters.length) {
-        window.clearInterval(decode)
-        setDisplay(letters)
-
-        window.setTimeout(() => {
-          onDecoded?.()
-        }, 400)
-      }
-    }, 190)
-
-    return () => window.clearInterval(decode)
-  }, [active])
-
-  const decoded = resolved >= letters.length
+  }, [name, decoded, reducedMotion])
 
   return (
     <div className="enemy-section">
       <div className="enemy-container">
-        {display.map((letter, i) => (
-          <motion.div
-            key={i}
-            className={`enemy-letter ${
-              i < resolved ? "resolved" : "scrambled"
-            }`}
-          >
-            {letter}
-          </motion.div>
-        ))}
+        {letters.map((letter, i) => {
+          const revealed = revealedIndices.includes(i)
+
+          return (
+            <motion.div
+              key={i}
+              ref={element => registerLetter(i, element)}
+              data-enemy-index={i}
+              data-revealed={revealed}
+              className={`enemy-letter ${revealed ? "resolved" : "scrambled"}`}
+              initial={false}
+              animate={{
+                opacity: revealed ? 1 : 0.6,
+                scale: revealed && !reducedMotion ? [1, 1.1, 1] : 1,
+              }}
+              transition={{
+                duration: reducedMotion ? introTimings.reducedStage : introTimings.enemyLockIn,
+                ease: "easeOut",
+              }}
+            >
+              {revealed ? letter : display[i]}
+            </motion.div>
+          )
+        })}
       </div>
 
       <motion.div
         className="enemy-definition"
-        initial={{ opacity: 0, y: 4 }}
+        initial={{ opacity: 0, y: reducedMotion ? 0 : 4 }}
         animate={
           decoded
             ? { opacity: 1, y: 0 }
-            : { opacity: 0, y: 4 }
+            : { opacity: 0, y: reducedMotion ? 0 : 4 }
         }
-        transition={{ duration: 0.35 }}
+        transition={{ duration: reducedMotion ? introTimings.reducedStage : introTimings.definitionFade }}
       >
         {partOfSpeech && (
           <span className="part-of-speech">
