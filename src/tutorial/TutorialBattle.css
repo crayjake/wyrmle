@@ -49,9 +49,45 @@
   display: grid;
   justify-items: center;
   gap: 0.25rem;
+  border-top: 1px solid color-mix(in srgb, var(--fg) 25%, transparent);
+  padding-top: 0.4rem;
   font-size: 0.65rem;
   line-height: 1.4;
   letter-spacing: 0.04em;
+}
+
+.tutorial-coach-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  margin-bottom: 0.1rem;
+}
+
+.tutorial-progress {
+  color: var(--blue);
+  font-size: 0.5rem;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.tutorial-coach-heading .tutorial-label {
+  text-align: right;
+}
+
+.tutorial-next {
+  color: var(--emph);
+  font-size: 0.6rem;
+  text-transform: none;
+  letter-spacing: 0.025em;
+  text-align: right;
+}
+
+.tutorial-next strong {
+  font-weight: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }
 
 .tutorial-label {
@@ -92,19 +128,21 @@
 
 .tutorial-types {
   display: grid;
-  gap: 0.15rem;
-  width: min(100%, 19rem);
-}
-
-.tutorial-types p {
-  display: grid;
-  grid-template-columns: 6.5rem 1fr;
-  gap: 0.25rem;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: first baseline;
+  gap: 0.3rem 0.85rem;
+  width: min(100%, 16rem);
+  margin: 0;
   text-align: left;
   font-size: 0.55rem;
 }
 
-.tutorial-types p > :last-child {
+.tutorial-types dt,
+.tutorial-types dd {
+  margin: 0;
+}
+
+.tutorial-types dd {
   text-transform: none;
 }
 
@@ -149,7 +187,12 @@
 
   .tutorial-coach {
     gap: 0.12rem;
+    padding-top: 0.25rem;
     font-size: 0.6rem;
+  }
+
+  .tutorial-coach-heading {
+    margin-bottom: 0;
   }
 
   .tutorial-battle .controls {

@@ -1,3 +1,23 @@
+.dev-combat .daily-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--fg);
+  font-size: 0.55rem;
+  letter-spacing: 0.06em;
+}
+
+.dev-combat .daily-meta button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--emph);
+  font: inherit;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
 .dev-combat-log .encounter-hud {
   width: 100%;
 }

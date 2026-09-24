@@ -13,6 +13,20 @@ import './TutorialBattle.css'
 const enemyIndices = [0, 1, 2, 3]
 const tileIndices = Array.from({ length: 16 }, (_, index) => index)
 const registerLetter = () => {}
+const tutorialLessons: Record<TutorialState['step'], string> = {
+  enemy: 'THE ENEMY',
+  counter: 'COUNTER · BUILD HOT',
+  types: 'WORD MEANING',
+  strike: 'STRIKE · BUILD ICE',
+  grammar: 'WORD TYPE · BUILD ICY',
+  resolve: 'RESOLVE',
+  ward: 'WARD · BUILD LAD',
+  'ward-result': 'WARD ACTIVATED',
+  armour: 'ARMOUR · BUILD DIG',
+  'armour-break': 'ONE MORE · BUILD DUO',
+  complete: 'VICTORY',
+}
+const tutorialSteps = Object.keys(tutorialLessons)
 
 export default function TutorialBattle({ onComplete, onSkip }: {
   onComplete: () => void
@@ -66,9 +80,15 @@ export default function TutorialBattle({ onComplete, onSkip }: {
         predictedHits={move && preview.valid ? preview.hits : []}
         resolvedHits={lastMove?.preview.hits} resolutionKey={lastMove ? game.playedWords.length : undefined}
         onResolutionComplete={onResolutionComplete} />
-      <div className="tutorial-coach" aria-live="polite" aria-atomic="true">
+      <section className="tutorial-coach" aria-label="Tutorial instructions" aria-live="polite" aria-atomic="true">
+        <div className="tutorial-coach-heading">
+          <span className="tutorial-progress">TUTORIAL · {tutorialSteps.indexOf(step) + 1}/{tutorialSteps.length}</span>
+          {canContinue ? <span className="tutorial-next">Tap <strong>CONTINUE</strong> below ↓</span>
+            : canAttack ? <span className="tutorial-next">Tap <strong>ATTACK</strong> below ↓</span>
+              : <span className="tutorial-label">{tutorialLessons[step]}</span>}
+        </div>
         <TutorialPrompt state={state} ready={canAttack} />
-      </div>
+      </section>
     </div>
 
     <section className="player-zone" aria-label="Tutorial word selection">
@@ -102,39 +122,38 @@ export default function TutorialBattle({ onComplete, onSkip }: {
 function TutorialPrompt({ state, ready }: { state: TutorialState; ready: boolean }) {
   const { step, game } = state
   switch (step) {
-    case 'enemy': return <><span className="tutorial-label">THE ENEMY</span><p>REMOVE EVERY LETTER TO WIN.</p></>
-    case 'counter': return <><span className="tutorial-label">BUILD HOT</span>
-      <p>A COUNTER HAS THE OPPOSITE MEANING.</p>
-      <span className="tutorial-note">HOT is the opposite of COLD.</span>
+    case 'enemy': return <p>REMOVE EVERY LETTER TO WIN.</p>
+    case 'counter': return <>
+      <p>HOT IS COLD'S OPPOSITE: A COUNTER.</p>
       <span className="tutorial-note">{ready ? 'All matching letters strike. Here, only O matches.' : 'Build HOT. Every matching letter will strike.'}</span></>
-    case 'types': return <div className="tutorial-types">
-      <p><span className="tutorial-good">COUNTER</span><span>Opposite meaning · HOT<br />All matching letters strike</span></p>
-      <p><span>NEUTRAL</span><span>Other meaning · LAD<br />First matching letter strikes</span></p>
-      <p><span className="tutorial-negative">RESISTED</span><span>Similar meaning · ICE<br />No normal strike</span></p>
-    </div>
-    case 'strike': return <><span className="tutorial-label tutorial-special">STRIKE · BUILD ICE</span>
+    case 'types': return <dl className="tutorial-types">
+      <dt className="tutorial-good">COUNTER</dt><dd>Opposite meaning · HOT<br />All matching letters strike</dd>
+      <dt>NEUTRAL</dt><dd>Other meaning · LAD<br />First matching letter strikes</dd>
+      <dt className="tutorial-negative">RESISTED</dt><dd>Similar meaning · ICE<br />No normal strike</dd>
+    </dl>
+    case 'strike': return <>
       <p>THIS TILE ALWAYS HITS A MATCHING LETTER.</p>
       <span className="tutorial-note">ICE shares COLD's meaning, so it's resisted.</span>
       <span className="tutorial-note">The STRIKE C still hits.</span></>
-    case 'grammar': return <><span className="tutorial-label tutorial-good">WORD TYPE · BUILD ICY</span>
+    case 'grammar': return <>
       <p>THIS ENEMY GIVES ADJECTIVES +1 STRIKE.</p>
       <span className="tutorial-note">ICY describes something: it's an adjective.</span>
       <span className="tutorial-note">Resisted gives 0. The adjective bonus lets C strike.</span></>
-    case 'resolve': return <><span className="tutorial-label">RESOLVE</span>
+    case 'resolve': return <>
       <p>EACH WORD COSTS 1 RESOLVE.</p>
       <span className="tutorial-note">{game.encounter.startingResolve} → {game.playerResolve} after {game.playedWords.length} words</span></>
-    case 'ward': return <><span className="tutorial-label tutorial-special">WARD · BUILD LAD</span>
+    case 'ward': return <>
       <p>KEEP YOUR RESOLVE THIS TURN.</p>
       <span className="tutorial-note">Use the WARD A. Resolve: {game.playerResolve}/{game.encounter.startingResolve}</span></>
-    case 'ward-result': return <><span className="tutorial-label tutorial-special">WARD ACTIVATED</span>
+    case 'ward-result': return <>
       <p>{game.playerResolve} → {game.playerResolve} RESOLVE</p><span className="tutorial-note">Your word struck L. Your Resolve stayed.</span></>
-    case 'armour': return <><span className="tutorial-label">ARMOUR · BUILD DIG</span>
+    case 'armour': return <>
       <p>ARMOURED LETTERS NEED 2 STRIKES.</p>
       <span className="tutorial-note">DIG has one D. This strike breaks its armour.</span></>
-    case 'armour-break': return <><span className="tutorial-label">ONE MORE · BUILD DUO</span>
+    case 'armour-break': return <>
       <p>ARMOUR BROKEN. STRIKE D AGAIN.</p>
       <span className="tutorial-note">DUO has one D. This second strike removes it.</span></>
-    case 'complete': return <><span className="tutorial-label tutorial-good">VICTORY</span>
+    case 'complete': return <>
       <p>EVERY LETTER REMOVED.</p><span className="tutorial-note">Practice complete. Your Daily is waiting.</span></>
   }
 }

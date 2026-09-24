@@ -168,6 +168,16 @@
   letter-spacing: 0.08em;
 }
 
+.health-info.health-info-compact {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.health-info-compact .health-bar {
+  margin-top: 0;
+}
+
 
 /* Health bar */
 
@@ -198,11 +208,24 @@
    left for the encounter and the tutorial's longer explanations. */
 @media (max-width: 600px) and (orientation: portrait) {
   .container.letter-combat {
-    --board-size: clamp(12rem, calc(100dvh - 21rem), 17rem);
+    --board-size: clamp(12rem, calc(100dvh - 18.5rem), 18rem);
   }
 
   .container.letter-combat.tutorial-battle {
-    --board-size: clamp(12rem, calc(100dvh - 23rem), 17rem);
+    --board-size: clamp(12rem, calc(100dvh - 21rem), 18rem);
+  }
+
+  .container.letter-combat[data-enemy-grid="true"] {
+    /* Share short screens between two readable enemy rows and the board. */
+    --board-size: clamp(12rem, calc(100dvh - 19.5rem), 18rem);
+  }
+
+  .container.letter-combat:has(.daily-notice) {
+    --board-size: clamp(12rem, calc(100dvh - 19.75rem), 18rem);
+  }
+
+  .container.letter-combat[data-enemy-grid="true"]:has(.daily-notice) {
+    --board-size: clamp(12rem, calc(100dvh - 21.25rem), 18rem);
   }
 
   .container.letter-combat .controls {

@@ -4,6 +4,7 @@ import { clearDailyHistory, inspectDailyStorage, resetDailyPuzzle } from '../dai
 import { playDevOutcome } from '../daily/dev.ts'
 import type { DailyPuzzleDefinition, DifficultyMode } from '../daily/types.ts'
 import MatchHintControls from './MatchHintControls'
+import EnemyLayoutControls from './EnemyLayoutControls'
 import type { MatchHintMode } from './tileMatchHints'
 
 type Props = {
@@ -13,11 +14,14 @@ type Props = {
   onClose: () => void
   matchHint: MatchHintMode
   onMatchHintChange: (mode: MatchHintMode) => void
+  enemyGrid: boolean
+  onEnemyGridChange: (grid: boolean) => void
   onOnboarding: (action: 'replay' | 'tutorial' | 'reset' | 'preview') => void
   onForceMode: (mode: DifficultyMode | null) => void
 }
 
-export default function DevPanel({ puzzle, onLoad, onPlaytest, onClose, matchHint, onMatchHintChange, onOnboarding, onForceMode }: Props) {
+export default function DevPanel({ puzzle, onLoad, onPlaytest, onClose, matchHint, onMatchHintChange,
+  enemyGrid, onEnemyGridChange, onOnboarding, onForceMode }: Props) {
   const dialog = useRef<HTMLDialogElement>(null)
   const [date, setDate] = useState(puzzle.puzzleId)
   const [error, setError] = useState<string | null>(null)
@@ -63,6 +67,7 @@ export default function DevPanel({ puzzle, onLoad, onPlaytest, onClose, matchHin
       </div>
       {notice && <p role="status">{notice}</p>}
       <MatchHintControls value={matchHint} onChange={onMatchHintChange} />
+      <EnemyLayoutControls grid={enemyGrid} onChange={onEnemyGridChange} />
       <form className="dev-controls" onSubmit={event => {
         event.preventDefault()
         act(() => onLoad(validatePuzzleId(date)))

@@ -6,6 +6,7 @@ import Enemy from '../components/Enemy'
 import AttackInfo from '../components/AttackInfo'
 import TileGrid from '../components/TileGrid'
 import MatchHintControls from '../components/MatchHintControls'
+import EnemyLayoutControls from '../components/EnemyLayoutControls'
 import type { MatchHintMode } from '../components/tileMatchHints'
 import EncounterHud from '../components/EncounterHud'
 import WyrmDecoder from '../components/WyrmDecoder'
@@ -30,20 +31,23 @@ const modeLabels = { damage: 'DAMAGE MODE', 'letter-strike': 'LETTER-STRIKE MODE
 
 // This entire entry point is lazy-loaded only in DEV. Playtests never call the
 // daily hook or storage; a keyed remount discards all state on every mode change.
-export default function DevCombat({ initialMode, onExit, matchHint, onMatchHintChange }: {
+export default function DevCombat({ initialMode, onExit, matchHint, onMatchHintChange, enemyGrid, onEnemyGridChange }: {
   initialMode: CombatMode; onExit: () => void
   matchHint: MatchHintMode; onMatchHintChange: (mode: MatchHintMode) => void
+  enemyGrid: boolean; onEnemyGridChange: (grid: boolean) => void
 }) {
   const [session, setSession] = useState({ mode: initialMode, revision: 0 })
   if (!import.meta.env.DEV) return null
   return <PlaytestBattle key={`${session.mode}:${session.revision}`} mode={session.mode}
     onMode={mode => setSession(current => ({ mode, revision: current.revision + 1 }))}
-    onExit={onExit} matchHint={matchHint} onMatchHintChange={onMatchHintChange} />
+    onExit={onExit} matchHint={matchHint} onMatchHintChange={onMatchHintChange}
+    enemyGrid={enemyGrid} onEnemyGridChange={onEnemyGridChange} />
 }
 
-function PlaytestBattle({ mode, onMode, onExit, matchHint, onMatchHintChange }: {
+function PlaytestBattle({ mode, onMode, onExit, matchHint, onMatchHintChange, enemyGrid, onEnemyGridChange }: {
   mode: CombatMode; onMode: (mode: CombatMode) => void; onExit: () => void
   matchHint: MatchHintMode; onMatchHintChange: (mode: MatchHintMode) => void
+  enemyGrid: boolean; onEnemyGridChange: (grid: boolean) => void
 }) {
   const [run, setRun] = useState<Run>(() => mode === 'damage'
     ? { mode, game: createGame(melancholyEncounter) }
@@ -116,7 +120,8 @@ function PlaytestBattle({ mode, onMode, onExit, matchHint, onMatchHintChange }: 
       : { ...current, game: submitLetterStrike(current.game) })
   }
 
-  return <main className={`container dev-combat${letterGame ? ' letter-combat' : ''}`} data-combat-mode={mode} ref={containerRef}
+  return <main className={`container dev-combat${letterGame ? ' letter-combat' : ''}`} data-combat-mode={mode}
+    data-enemy-grid={enemyGrid || undefined} ref={containerRef}
     onClick={event => {
       if ((event.target as HTMLElement).closest('button, a, input, dialog')) return
       if (phase === 'waiting') setPhase('enemy')
@@ -137,10 +142,11 @@ function PlaytestBattle({ mode, onMode, onExit, matchHint, onMatchHintChange }: 
         ? <EnemyInfo name={enemy.word} health={run.game.enemyHp} maxHealth={run.game.encounter.enemy.maxHealth} />
         : null}
     </div>
-    <div className="enemy-zone">
+    <div className="enemy-zone" data-grid-preview={enemyGrid || undefined}>
       <Enemy name={enemy.word} definition={enemy.definition} partOfSpeech={enemy.partOfSpeech}
         modifiers={run.mode === 'damage' ? getActiveGrammarModifiers(run.game) : getLetterStrikeGrammarModifiers(run.game)}
         modifierUnit={letterGame ? 'STRIKE' : undefined}
+        experimentalGrid={enemyGrid} introFinished={phase === 'ready'}
         letterStates={letterGame?.enemyLetters}
         predictedHits={interactive && preview.valid && 'hits' in preview ? preview.hits : []}
         resolvedHits={resolving ? letterGame?.playedWords.at(-1)?.preview.hits : undefined}
@@ -169,6 +175,7 @@ function PlaytestBattle({ mode, onMode, onExit, matchHint, onMatchHintChange }: 
     {panel === 'modes' && <PlaytestPanel title="Combat playtest" onClose={() => setPanel(null)}>
       <p>Each mode starts a fresh encounter. Playtests do not save to daily history.</p>
       {letterGame && <MatchHintControls value={matchHint} onChange={onMatchHintChange} />}
+      <EnemyLayoutControls grid={enemyGrid} onChange={onEnemyGridChange} />
       <div className="dev-controls">
         {(['damage', 'letter-strike'] as const).map(value =>
           <button className="daily-button" key={value} onClick={() => onMode(value)}>{modeLabels[value]}</button>)}

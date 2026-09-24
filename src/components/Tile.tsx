@@ -84,8 +84,19 @@ export default function Tile({
 
       {revealed && special && (
         <span className="tile-special">
-          <span aria-hidden="true">{special.symbol}</span>
-          <span>{special.label}</span>
+          <span className="tile-special-symbol" aria-hidden="true">
+            {special.symbol === '◆' || special.symbol === '◇' ? (
+              <svg viewBox="0 0 12 12" focusable="false">
+                <path
+                  d="M6 1.5 10.5 6 6 10.5 1.5 6Z"
+                  fill={special.symbol === '◆' ? 'currentColor' : 'none'}
+                  stroke="currentColor"
+                  strokeWidth="1.25"
+                />
+              </svg>
+            ) : special.symbol}
+          </span>
+          <span className="tile-special-label">{special.label}</span>
         </span>
       )}
     </motion.button>

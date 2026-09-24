@@ -28,7 +28,9 @@ export default function WyrmCharacter({ idle }: WyrmCharacterProps) {
         {[0, 1, 2, 3].map(segment => (
           <motion.span
             key={segment}
-            initial={false}
+            // A loop must start on mount in production too. initial={false}
+            // skips it; development's Strict Mode remount can hide that bug.
+            initial={{ y: reducedMotion ? 0 : Math.sin(-segment * Math.PI / 2) * amplitude }}
             animate={{ y: reducedMotion ? 0 : bodyWave(segment, amplitude) }}
             transition={waveTransition}
           />
@@ -36,7 +38,7 @@ export default function WyrmCharacter({ idle }: WyrmCharacterProps) {
       </span>
       <motion.span
         className="wyrm-character-head"
-        initial={false}
+        initial={{ y: 0, rotate: 0 }}
         animate={{
           y: reducedMotion ? 0 : bodyWave(4, amplitude * 0.4),
           rotate: reducedMotion ? 0 : bodyWave(4, idle ? 1 : 2),
@@ -45,7 +47,7 @@ export default function WyrmCharacter({ idle }: WyrmCharacterProps) {
       >
         <motion.span
           className="wyrm-character-tongue"
-          initial={false}
+          initial={{ scaleX: reducedMotion ? 1 : 0 }}
           animate={{ scaleX: reducedMotion ? 1 : [0, 0, 1, 0, 0] }}
           transition={reducedMotion ? { duration: 0 } : {
             duration: introTimings.tongueFlick,

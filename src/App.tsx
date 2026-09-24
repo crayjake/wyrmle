@@ -46,6 +46,7 @@ export default function App() {
   const [revision, setRevision] = useState(0)
   const [playtestMode, setPlaytestMode] = useState<'damage' | 'letter-strike' | null>(null)
   const [matchHint, setMatchHint] = useState<MatchHintMode>('off')
+  const [enemyGrid, setEnemyGrid] = useState(false)
 
   useEffect(() => {
     const updateDay = () => setTodayId(getDailyPuzzleId(new Date()))
@@ -105,21 +106,24 @@ export default function App() {
 
   if (DevCombat && playtestMode) return <Suspense fallback={null}>
     <DevCombat initialMode={playtestMode} onExit={() => setPlaytestMode(null)}
-      matchHint={matchHint} onMatchHintChange={setMatchHint} />
+      matchHint={matchHint} onMatchHintChange={setMatchHint}
+      enemyGrid={enemyGrid} onEnemyGridChange={setEnemyGrid} />
   </Suspense>
 
   return <DailyBattle key={`${puzzleId}:${revision}`} puzzleId={puzzleId} todayId={todayId} onLoad={loadPuzzle}
     onPlaytest={setPlaytestMode} matchHint={matchHint} onMatchHintChange={setMatchHint}
+    enemyGrid={import.meta.env.DEV && enemyGrid} onEnemyGridChange={setEnemyGrid}
     preferredMode={user.preferences.preferredMode} onChangeMode={mode => user.update({ preferredMode: mode })}
     preferencesError={user.error} onDevOnboarding={devOnboarding} devModeOverride={devModeOverride}
     onForceMode={setDevModeOverride} />
 }
 
 function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, matchHint, onMatchHintChange,
-  preferredMode, onChangeMode, preferencesError, onDevOnboarding, devModeOverride, onForceMode }: {
+  enemyGrid, onEnemyGridChange, preferredMode, onChangeMode, preferencesError, onDevOnboarding, devModeOverride, onForceMode }: {
   puzzleId: string; todayId: string; onLoad: (id: string) => void
   onPlaytest: (mode: 'damage' | 'letter-strike') => void
   matchHint: MatchHintMode; onMatchHintChange: (mode: MatchHintMode) => void
+  enemyGrid: boolean; onEnemyGridChange: (grid: boolean) => void
   preferredMode: DifficultyMode; onChangeMode: (mode: DifficultyMode) => void
   preferencesError: string | null; onDevOnboarding: (action: OnboardingAction) => void
   devModeOverride: DifficultyMode | null; onForceMode: (mode: DifficultyMode | null) => void
@@ -179,6 +183,7 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, matchHint, onMatch
 
   return (
     <main className="container letter-combat" data-combat-mode="letter-strike" data-difficulty={displayMode}
+      data-enemy-grid={import.meta.env.DEV && enemyGrid || undefined}
       ref={containerRef}
       onClick={event => {
         if ((event.target as HTMLElement).closest('button, a, input, dialog')) return
@@ -207,7 +212,7 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, matchHint, onMatch
         />
       </div>
 
-      <div className="enemy-zone">
+      <div className="enemy-zone" data-grid-preview={import.meta.env.DEV && enemyGrid || undefined}>
         <Enemy
           name={enemy.word}
           partOfSpeech={enemy.partOfSpeech}
@@ -215,6 +220,8 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, matchHint, onMatch
           hideDefinition={displayMode === 'hard'}
           modifiers={getLetterStrikeGrammarModifiers(game)}
           modifierUnit="STRIKE"
+          experimentalGrid={enemyGrid}
+          introFinished={visiblePhase === 'ready'}
           letterStates={game.enemyLetters}
           predictedHits={interactive && preview.valid ? preview.hits : []}
           resolvedHits={resolving ? game.playedWords.at(-1)?.preview.hits : undefined}
@@ -300,6 +307,7 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, matchHint, onMatch
       {visiblePanel === 'dev' && DevPanel && <Suspense fallback={null}>
         <DevPanel puzzle={puzzle} onLoad={onLoad} onPlaytest={onPlaytest} onClose={() => setPanel(null)}
           matchHint={matchHint} onMatchHintChange={onMatchHintChange} onOnboarding={onDevOnboarding}
+          enemyGrid={enemyGrid} onEnemyGridChange={onEnemyGridChange}
           onForceMode={onForceMode} />
       </Suspense>}
     </main>

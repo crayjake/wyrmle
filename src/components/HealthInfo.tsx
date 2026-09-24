@@ -8,6 +8,7 @@ type HealthInfoProps = {
   colour?: "green" | "red"
   left?: boolean
   reversed?: boolean
+  compact?: boolean
 }
 
 type BasicHealthInfoProps = {
@@ -24,22 +25,27 @@ export default function HealthInfo({
   colour = "green",
   left = false,
   reversed = false,
+  compact = false,
 }: HealthInfoProps) {
   return (
-    <div className={`health-info ${left ? "left" : ""}`}>
+    <div className={`health-info ${left ? "left" : ""} ${compact ? 'health-info-compact' : ''}`}>
       <div className="name">{name}</div>
 
-      <div className="health">
+      {!compact && <div className="health">
         {health}/{maxHealth}
-      </div>
+      </div>}
 
-      <HealthBar
-        health={health}
-        maxHealth={maxHealth}
-        segments={segments}
-        colour={colour}
-        reversed={reversed}
-      />
+      <div className="health-segments" role="meter" aria-label={name}
+        aria-valuemin={0} aria-valuemax={maxHealth} aria-valuenow={health}
+        aria-valuetext={`${health} of ${maxHealth}`}>
+        <HealthBar
+          health={health}
+          maxHealth={maxHealth}
+          segments={segments}
+          colour={colour}
+          reversed={reversed}
+        />
+      </div>
     </div>
   )
 }
@@ -49,6 +55,7 @@ export function MyInfo(props: BasicHealthInfoProps) {
     <HealthInfo
       {...props}
       left
+      compact
       segments={props.maxHealth}
       colour="green"
     />

@@ -1,0 +1,47 @@
+.enemy-letter-space {
+  display: contents;
+}
+
+.enemy-zone[data-grid-preview="true"] {
+  min-height: 0;
+}
+
+.enemy-section[data-enemy-layout="grid"] {
+  --enemy-grid-gap: 0.3rem;
+  --enemy-grid-max-cell: 4rem;
+  --enemy-grid-height: calc(var(--enemy-grid-rows) * var(--enemy-grid-max-cell) + (var(--enemy-grid-rows) - 1) * var(--enemy-grid-gap));
+  flex: 1;
+  min-height: 0;
+  justify-content: center;
+}
+
+.enemy-section[data-enemy-layout="grid"] .enemy-letter-space {
+  /* Only the free space above the definition determines the grid's size. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 1 var(--enemy-grid-height);
+  min-height: 0;
+  width: 100%;
+  container-type: size;
+}
+
+.enemy-section[data-enemy-layout="grid"] .enemy-container {
+  --enemy-grid-cell: min(var(--enemy-grid-max-cell),
+    calc((100cqw - (var(--enemy-grid-columns) - 1) * var(--enemy-grid-gap)) / var(--enemy-grid-columns)),
+    calc((100cqh - (var(--enemy-grid-rows) - 1) * var(--enemy-grid-gap)) / var(--enemy-grid-rows)));
+  display: grid;
+  grid-template-columns: repeat(var(--enemy-grid-columns), var(--enemy-grid-cell));
+  gap: var(--enemy-grid-gap);
+  width: max-content;
+}
+
+.enemy-section[data-enemy-layout="grid"] .enemy-letter {
+  width: var(--enemy-grid-cell);
+  max-width: none;
+  font-size: calc(var(--enemy-grid-cell) * 0.8);
+}
+
+.enemy-section[data-enemy-layout="grid"] .enemy-definition {
+  flex: none;
+}

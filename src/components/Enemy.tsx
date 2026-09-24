@@ -6,6 +6,7 @@ import type { GrammarModifier } from "../game/hud"
 import { useLetterResolution } from './useLetterResolution'
 import type { LetterResolutionHit } from './useLetterResolution'
 import './LetterCombat.css'
+import './EnemyGrid.css'
 
 type EnemyLetterState = {
   id: string
@@ -28,6 +29,8 @@ type EnemyProps = {
   resolvedHits?: readonly LetterResolutionHit[]
   resolutionKey?: string | number
   onResolutionComplete?: () => void
+  experimentalGrid?: boolean
+  introFinished?: boolean
 }
 
 const GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ?#%&@"
@@ -50,11 +53,17 @@ export default function Enemy({
   resolvedHits,
   resolutionKey,
   onResolutionComplete,
+  experimentalGrid = false,
+  introFinished = false,
 }: EnemyProps) {
   const letters = letterStates?.map(state => state.letter) ?? name.toUpperCase().split("")
   const reducedMotion = useReducedMotion()
   const resolution = useLetterResolution(resolvedHits, resolutionKey, reducedMotion, onResolutionComplete)
   const decoded = letters.every((_, index) => revealedIndices.includes(index))
+  const gridEnabled = import.meta.env.DEV && experimentalGrid
+  // Wait until the decoder is docked, so its targets never move mid-route.
+  const gridActive = gridEnabled && introFinished && decoded
+  const gridColumns = Math.min(5, letters.length)
   const activeModifiers = modifiers.filter(modifier => modifier.value !== 0)
   // Hits arrive in engine order. The final hit describes the target's exact
   // post-attack state, including multiple selected tiles hitting its armour.
@@ -75,58 +84,68 @@ export default function Enemy({
   }, [name, decoded, reducedMotion])
 
   return (
-    <div className="enemy-section" data-resolving={resolution.resolving || undefined}>
-      <div className="enemy-container" style={{ '--enemy-letter-count': letters.length } as CSSProperties}>
-        {letters.map((letter, i) => {
-          const revealed = revealedIndices.includes(i)
-          const state = letterStates?.[i]
-          const hitsRemaining = state ? resolution.remainingById.get(state.id) ?? state.hitsRemaining : undefined
-          const removed = hitsRemaining === 0
-          const predicted = state && revealed && !removed && !resolution.resolving ? predictedByLetter.get(state.id) : undefined
-          const targetOutcome = predicted ? (predicted.hitsAfter === 0 ? 'remove' : 'break') : undefined
-          const targetDescription = targetOutcome === 'remove'
-            ? hitsRemaining !== undefined && hitsRemaining > 1 ? 'armour will break and letter will be removed' : 'letter will be removed'
-            : targetOutcome === 'break' ? 'armour will break' : undefined
+    <div className="enemy-section" data-resolving={resolution.resolving || undefined}
+      data-enemy-layout={gridActive ? 'grid' : 'row'} style={{
+        '--enemy-letter-count': letters.length,
+        '--enemy-grid-columns': gridColumns,
+        '--enemy-grid-rows': Math.ceil(letters.length / gridColumns),
+      } as CSSProperties}>
+      <div className="enemy-letter-space">
+        <div className="enemy-container">
+          {letters.map((letter, i) => {
+            const revealed = revealedIndices.includes(i)
+            const state = letterStates?.[i]
+            const hitsRemaining = state ? resolution.remainingById.get(state.id) ?? state.hitsRemaining : undefined
+            const removed = hitsRemaining === 0
+            const predicted = state && revealed && !removed && !resolution.resolving ? predictedByLetter.get(state.id) : undefined
+            const targetOutcome = predicted ? (predicted.hitsAfter === 0 ? 'remove' : 'break') : undefined
+            const targetDescription = targetOutcome === 'remove'
+              ? hitsRemaining !== undefined && hitsRemaining > 1 ? 'armour will break and letter will be removed' : 'letter will be removed'
+              : targetOutcome === 'break' ? 'armour will break' : undefined
 
-          return (
-            <motion.div
-              key={state?.id ?? i}
-              ref={element => registerLetter(i, element)}
-              data-enemy-index={i}
-              data-revealed={revealed}
-              data-hits-remaining={hitsRemaining}
-              data-struck={state && state.id === resolution.activeLetterId || undefined}
-              data-target-outcome={targetOutcome}
-              title={targetDescription}
-              role={state ? 'img' : undefined}
-              aria-label={state ? revealed
-                ? `${letter}, ${removed ? 'removed' : `${hitsRemaining} ${hitsRemaining === 1 ? 'strike' : 'strikes'} remaining`}${targetDescription ? `, targeted: ${targetDescription}` : ''}`
-                : `Undecoded enemy letter ${i + 1}` : undefined}
-              className={[
-                'enemy-letter',
-                revealed ? 'resolved' : 'scrambled',
-                hitsRemaining !== undefined && hitsRemaining > 1 ? 'enemy-letter-armoured' : '',
-                removed ? 'enemy-letter-removed' : '',
-              ].join(' ')}
-              initial={false}
-              animate={{
-                opacity: revealed ? 1 : 0.6,
-                scale: revealed && !reducedMotion ? [1, 1.1, 1] : 1,
-              }}
-              transition={{
-                duration: reducedMotion ? introTimings.reducedStage : introTimings.enemyLockIn,
-                ease: "easeOut",
-              }}
-            >
-              <span className="enemy-letter-glyph" aria-hidden={state ? true : undefined}>
-                {revealed ? removed ? '·' : letter : display[i]}
-              </span>
-              {targetOutcome && <span className="enemy-target-marker" aria-hidden="true">
-                {targetOutcome === 'break' ? '−' : '×'}
-              </span>}
-            </motion.div>
-          )
-        })}
+            return (
+              <motion.div
+                key={state?.id ?? i}
+                ref={element => registerLetter(i, element)}
+                data-enemy-index={i}
+                data-revealed={revealed}
+                data-hits-remaining={hitsRemaining}
+                data-struck={state && state.id === resolution.activeLetterId || undefined}
+                data-target-outcome={targetOutcome}
+                title={targetDescription}
+                role={state ? 'img' : undefined}
+                aria-label={state ? revealed
+                  ? `${letter}, ${removed ? 'removed' : `${hitsRemaining} ${hitsRemaining === 1 ? 'strike' : 'strikes'} remaining`}${targetDescription ? `, targeted: ${targetDescription}` : ''}`
+                  : `Undecoded enemy letter ${i + 1}` : undefined}
+                className={[
+                  'enemy-letter',
+                  revealed ? 'resolved' : 'scrambled',
+                  hitsRemaining !== undefined && hitsRemaining > 1 ? 'enemy-letter-armoured' : '',
+                  removed ? 'enemy-letter-removed' : '',
+                ].join(' ')}
+                initial={false}
+                layout={gridEnabled && !reducedMotion}
+                layoutDependency={gridActive}
+                animate={{
+                  opacity: revealed ? 1 : 0.6,
+                  scale: revealed && !reducedMotion ? [1, 1.1, 1] : 1,
+                }}
+                transition={{
+                  duration: reducedMotion ? introTimings.reducedStage : introTimings.enemyLockIn,
+                  ease: "easeOut",
+                  layout: { duration: 0.4, ease: 'easeInOut' },
+                }}
+              >
+                <span className="enemy-letter-glyph" aria-hidden={state ? true : undefined}>
+                  {revealed ? removed ? '·' : letter : display[i]}
+                </span>
+                {targetOutcome && <span className="enemy-target-marker" aria-hidden="true">
+                  {targetOutcome === 'break' ? '−' : '×'}
+                </span>}
+              </motion.div>
+            )
+          })}
+        </div>
       </div>
 
       <motion.div
