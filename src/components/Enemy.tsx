@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from "react"
 
 type EnemyProps = {
   name: string
+  definition: string
+  partOfSpeech?: string
   active: boolean
   onDecoded?: () => void
 }
@@ -15,6 +17,8 @@ function randomGlyph() {
 
 export default function Enemy({
   name,
+  definition,
+  partOfSpeech,
   active,
   onDecoded,
 }: EnemyProps) {
@@ -27,14 +31,11 @@ export default function Enemy({
   const [resolved, setResolved] = useState(0)
   const resolvedRef = useRef(0)
 
-  // Keep unresolved letters glitching.
   useEffect(() => {
     const scramble = window.setInterval(() => {
       setDisplay(
         letters.map((letter, i) =>
-          i < resolvedRef.current
-            ? letter
-            : randomGlyph()
+          i < resolvedRef.current ? letter : randomGlyph()
         )
       )
     }, 70)
@@ -42,71 +43,63 @@ export default function Enemy({
     return () => window.clearInterval(scramble)
   }, [name])
 
-  // Decode enemy after start.
   useEffect(() => {
     if (!active) return
 
-    let decode: number
-    let finish: number
+    const decode = window.setInterval(() => {
+      const next = resolvedRef.current + 1
 
-    const delay = window.setTimeout(() => {
-      decode = window.setInterval(() => {
-        const next = resolvedRef.current + 1
+      resolvedRef.current = next
+      setResolved(next)
 
-        resolvedRef.current = next
-        setResolved(next)
+      if (next >= letters.length) {
+        window.clearInterval(decode)
+        setDisplay(letters)
 
-        setDisplay(
-          letters.map((letter, i) =>
-            i < next ? letter : randomGlyph()
-          )
-        )
+        window.setTimeout(() => {
+          onDecoded?.()
+        }, 400)
+      }
+    }, 190)
 
-        if (next >= letters.length) {
-          window.clearInterval(decode)
-
-          setDisplay(letters)
-
-          finish = window.setTimeout(() => {
-            onDecoded?.()
-          }, 400)
-        }
-      }, 190)
-    }, 350)
-
-    return () => {
-      window.clearTimeout(delay)
-      window.clearInterval(decode)
-      window.clearTimeout(finish)
-    }
+    return () => window.clearInterval(decode)
   }, [active])
 
+  const decoded = resolved >= letters.length
+
   return (
-    <div className="enemy-container">
-      {display.map((letter, i) => (
-        <motion.div
-          key={i}
-          className={`enemy-letter ${
-            i < resolved ? "resolved" : "scrambled"
-          }`}
-          animate={
-            i < resolved
-              ? {
-                  opacity: 1,
-                  scale: [1, 1.18, 0.96, 1],
-                  y: [0, -4, 1, 0],
-                }
-              : {
-                  opacity: 0.55,
-                }
-          }
-          transition={{
-            duration: 0.4,
-          }}
-        >
-          {letter}
-        </motion.div>
-      ))}
+    <div className="enemy-section">
+      <div className="enemy-container">
+        {display.map((letter, i) => (
+          <motion.div
+            key={i}
+            className={`enemy-letter ${
+              i < resolved ? "resolved" : "scrambled"
+            }`}
+          >
+            {letter}
+          </motion.div>
+        ))}
+      </div>
+
+      <motion.div
+        className="enemy-definition"
+        initial={{ opacity: 0, y: 4 }}
+        animate={
+          decoded
+            ? { opacity: 1, y: 0 }
+            : { opacity: 0, y: 4 }
+        }
+        transition={{ duration: 0.35 }}
+      >
+        {partOfSpeech && (
+          <span className="part-of-speech">
+            {partOfSpeech}
+          </span>
+        )}
+
+        <span>{definition}</span>
+      </motion.div>
     </div>
   )
 }

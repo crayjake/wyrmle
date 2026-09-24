@@ -49,11 +49,13 @@ export default function App() {
       </div>
 
       <div className="enemy-section">
-        <Enemy
-          name="LAUGHTER"
-          active={phase === "enemy"}
-          onDecoded={() => setPhase("tiles")}
-        />
+      <Enemy
+        name="MELANCHOLY"
+        partOfSpeech="noun"
+        definition="a feeling of pensive sadness, typically with no obvious cause"
+        active={phase === "enemy"}
+        onDecoded={() => setPhase("tiles")}
+      />
       </div>
 
 

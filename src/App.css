@@ -201,10 +201,36 @@ hr {
   flex: 1;
 
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+
+  gap: 0.75rem;
 }
 
+.enemy-definition {
+  max-width: 28rem;
+
+  align-self: center;
+
+  color: var(--fg);
+
+  font-size: 0.6rem;
+  line-height: 1.45;
+  letter-spacing: 0.06em;
+
+  text-align: center;
+  text-transform: none;
+
+  opacity: 0.8;
+}
+
+.part-of-speech {
+  margin-right: 0.5rem;
+
+  color: var(--blue);
+
+  font-style: italic;
+}
 .enemy-container {
   display: flex;
   justify-content: center;

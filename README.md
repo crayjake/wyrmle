@@ -5,3 +5,5 @@ Ideas:
   - One turn is one health
   - Some tiles may negate damage
   - Some tiles may inflict extra damage
+
+Maybe nouns do more to nouns, adverbs to lots to verbs etc.
