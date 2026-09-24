@@ -1,6 +1,7 @@
 type BattleActionsProps = {
   damage: number
   canAttack: boolean
+  canClear: boolean
   onClear: () => void
   onAttack: () => void
 }
@@ -8,6 +9,7 @@ type BattleActionsProps = {
 export default function BattleActions({
   damage,
   canAttack,
+  canClear,
   onClear,
   onAttack,
 }: BattleActionsProps) {
@@ -16,6 +18,7 @@ export default function BattleActions({
       <button
         type="button"
         className="clear-button"
+        disabled={!canClear}
         onClick={onClear}
       >
         CLEAR

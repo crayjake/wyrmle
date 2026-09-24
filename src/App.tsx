@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useCallback, useState } from "react"
 import "./App.css"
 
 import Header from "./components/Header"
@@ -7,19 +7,30 @@ import Turn from "./components/Turn"
 import Enemy from "./components/Enemy"
 import AttackInfo from "./components/AttackInfo"
 import TileGrid from "./components/TileGrid"
+import { clearSelection, createGame, previewAttack, submitWord, toggleTile } from "./game/game"
+import { melancholyEncounter } from "./game/encounters"
 
 type Phase = "waiting" | "enemy" | "tiles" | "ready"
 
 export default function App() {
   const [phase, setPhase] = useState<Phase>("waiting")
+  const [game, setGame] = useState(() => createGame(melancholyEncounter))
+  const enemy = game.encounter.enemy
+  const interactive = phase === "ready" && game.status === "playing"
+  const preview = previewAttack(game)
+  const enemyDecoded = useCallback(() => setPhase("tiles"), [])
+  const tilesDecoded = useCallback(() => setPhase("ready"), [])
+
+  const message = game.status === "won" ? "VICTORY"
+    : game.status === "lost" ? "OUT OF RESOLVE"
+    : phase === "waiting" ? "CLICK TO BEGIN"
+    : phase !== "ready" ? "DECODING"
+    : game.error ?? (game.selectedTileIds.length > 0 ? preview.error ?? undefined : undefined)
 
   function begin() {
     if (phase !== "waiting") return
 
     setPhase("enemy")
-
-    // Later:
-    // startTimer()
   }
 
   return (
@@ -35,47 +46,57 @@ export default function App() {
       <div className="battle-info">
         <MyInfo
           name="YOU"
-          health={4}
-          maxHealth={5}
+          health={game.playerResolve}
+          maxHealth={game.encounter.startingResolve}
         />
 
-        <Turn turn={1} />
+        <Turn turn={game.playedWords.length + (game.status === "playing" ? 1 : 0)} />
 
         <EnemyInfo
-          name="LAUGHTER"
-          health={31}
-          maxHealth={45}
+          name={enemy.word}
+          health={game.enemyHp}
+          maxHealth={enemy.maxHealth}
         />
       </div>
 
       <div className="enemy-section">
       <Enemy
-        name="MELANCHOLY"
-        partOfSpeech="noun"
-        definition="a feeling of pensive sadness, typically with no obvious cause"
+        name={enemy.word}
+        partOfSpeech={enemy.partOfSpeech}
+        definition={enemy.definition}
         active={phase === "enemy"}
-        onDecoded={() => setPhase("tiles")}
+        onDecoded={enemyDecoded}
       />
       </div>
 
 
       <AttackInfo
-        word="BALLOONED"
-        damage={19}
-        maxDamage={24}
-        ready={phase === "ready"}
-        bonuses={[
-          { label: "SAPPHIRE", value: 5, symbol: "◆" },
-          { label: "LONG", value: 3 },
-          { label: "DOUBLE", value: 2 },
-        ]}
+        word={preview.word}
+        damage={preview.totalDamage}
+        maxDamage={enemy.maxHealth}
+        ready={interactive && preview.valid}
+        message={message}
+        bonuses={preview.bonuses}
       />
 
       <div className="controls">
         <TileGrid
           active={phase === "tiles"}
-          ready={phase === "ready"}
-          onDecoded={() => setPhase("ready")}
+          ready={interactive}
+          tiles={game.tiles}
+          selectedTileIds={game.selectedTileIds}
+          damage={preview.totalDamage}
+          canAttack={interactive && preview.valid}
+          onToggleTile={id => {
+            if (interactive) setGame(current => toggleTile(current, id))
+          }}
+          onClear={() => {
+            if (interactive) setGame(current => clearSelection(current))
+          }}
+          onAttack={() => {
+            if (interactive) setGame(current => submitWord(current, current.selectedTileIds))
+          }}
+          onDecoded={tilesDecoded}
         />
       </div>
     </main>

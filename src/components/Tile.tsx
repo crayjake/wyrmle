@@ -1,10 +1,11 @@
 import { motion } from "framer-motion"
+import type { Tile as GameTile } from "../game/types"
 
 type TileProps = {
   letter: string
   selected?: boolean
   order?: number
-  special?: "sapphire"
+  special?: GameTile["gem"]
   disabled?: boolean
   revealed?: boolean
   onClick?: () => void
@@ -28,6 +29,9 @@ export default function Tile({
         special ? `special ${special}` : "",
       ].join(" ")}
       disabled={disabled}
+      aria-pressed={selected}
+      aria-label={`${letter}${revealed && special ? `, ${special} tile` : ""}`}
+      title={revealed && special ? (special === "ward" ? "Ward: protects Resolve" : "Power: bonus damage") : undefined}
       onClick={onClick}
       animate={
         revealed
@@ -55,9 +59,9 @@ export default function Tile({
         </span>
       )}
 
-      {revealed && special === "sapphire" && (
+      {revealed && special && (
         <span className="tile-special">
-          ◆
+          {special === "ward" ? "◇" : "◆"}
         </span>
       )}
     </motion.button>

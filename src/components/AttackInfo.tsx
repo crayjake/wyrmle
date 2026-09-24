@@ -1,6 +1,6 @@
 type Bonus = {
     label: string
-    value: number
+    value?: number
     symbol?: string
 }
 
@@ -11,6 +11,7 @@ type AttackInfoProps = {
     maxDamage: number
     bonuses?: Bonus[]
     ready?: boolean
+    message?: string
 }
 
 export default function AttackInfo({
@@ -19,15 +20,16 @@ export default function AttackInfo({
     maxDamage,
     bonuses = [],
     ready = false,
+    message,
 }: AttackInfoProps) {
     const segments = 12
-    const filled = Math.round((damage / maxDamage) * segments)
+    const filled = Math.min(segments, Math.max(0, Math.round((damage / maxDamage) * segments)))
 
     return (
         <div className="attack-info">
             <div className="helper">
                 <div>WORD</div>
-                <div>{ready ? "READY TO ATTACK" : "BUILD YOUR WORD"}</div>
+                <div role="status">{message || (ready ? "READY TO ATTACK" : "BUILD YOUR WORD")}</div>
             </div>
 
             <div className="attack-line">
@@ -52,7 +54,9 @@ export default function AttackInfo({
                         <div className="bonus">
                             {bonus.symbol && <span className="bonus-symbol">{bonus.symbol}</span>}
                             <span>{bonus.label}</span>
-                            <span className="bonus-value">+{bonus.value}</span>
+                            {bonus.value !== undefined && (
+                                <span className="bonus-value">{bonus.value > 0 ? "+" : ""}{bonus.value}</span>
+                            )}
                         </div>
                     </div>
                 ))}

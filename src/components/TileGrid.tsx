@@ -2,38 +2,18 @@ import { useEffect, useRef, useState } from "react"
 
 import Tile from "./Tile"
 import BattleActions from "./BattleActions"
-
-type TileData = {
-  id: number
-  letter: string
-  special?: "sapphire"
-}
-
-const tiles: TileData[] = [
-  { id: 1, letter: "B" },
-  { id: 2, letter: "A" },
-  { id: 3, letter: "L" },
-  { id: 4, letter: "T" },
-
-  { id: 5, letter: "L" },
-  { id: 6, letter: "O" },
-  { id: 7, letter: "O", special: "sapphire" },
-  { id: 8, letter: "N" },
-
-  { id: 9, letter: "E" },
-  { id: 10, letter: "D" },
-  { id: 11, letter: "R" },
-  { id: 12, letter: "S" },
-
-  { id: 13, letter: "I" },
-  { id: 14, letter: "M" },
-  { id: 15, letter: "U" },
-  { id: 16, letter: "G" },
-]
+import type { Tile as GameTile } from "../game/types"
 
 type TileGridProps = {
   active: boolean
   ready: boolean
+  tiles: GameTile[]
+  selectedTileIds: number[]
+  damage: number
+  canAttack: boolean
+  onToggleTile: (id: number) => void
+  onClear: () => void
+  onAttack: () => void
   onDecoded?: () => void
 }
 
@@ -46,10 +26,15 @@ function randomGlyph() {
 export default function TileGrid({
   active,
   ready,
+  tiles,
+  selectedTileIds,
+  damage,
+  canAttack,
+  onToggleTile,
+  onClear,
+  onAttack,
   onDecoded,
 }: TileGridProps) {
-  const [selected, setSelected] = useState<number[]>([])
-
   const [displayLetters, setDisplayLetters] = useState(
     tiles.map(() => randomGlyph())
   )
@@ -59,6 +44,7 @@ export default function TileGrid({
 
   // Keep unrevealed tiles scrambling.
   useEffect(() => {
+    if (revealedRef.current >= tiles.length) return
     const scramble = window.setInterval(() => {
       setDisplayLetters(
         tiles.map((tile, i) =>
@@ -70,7 +56,7 @@ export default function TileGrid({
     }, 65)
 
     return () => window.clearInterval(scramble)
-  }, [])
+  }, [tiles, active])
 
   // Decode tiles after enemy finishes.
   useEffect(() => {
@@ -113,34 +99,20 @@ export default function TileGrid({
       window.clearInterval(decode)
       window.clearTimeout(finish)
     }
-  }, [active])
-
-  function toggleTile(id: number) {
-    if (!ready) return
-
-    setSelected(current =>
-      current.includes(id)
-        ? current.filter(tileId => tileId !== id)
-        : [...current, id]
-    )
-  }
-
-  function clear() {
-    setSelected([])
-  }
+  }, [active, tiles, onDecoded])
 
   return (
     <>
       <div className="tile-grid">
         {tiles.map((tile, i) => {
           const selectedIndex =
-            selected.indexOf(tile.id)
+            selectedTileIds.indexOf(tile.id)
 
           return (
             <Tile
               key={tile.id}
-              letter={displayLetters[i]}
-              special={tile.special}
+              letter={i < revealed ? tile.letter : displayLetters[i]}
+              special={tile.type === "gem" ? tile.gem : undefined}
               revealed={i < revealed}
               disabled={!ready}
               selected={selectedIndex !== -1}
@@ -149,21 +121,20 @@ export default function TileGrid({
                   ? selectedIndex + 1
                   : undefined
               }
-              onClick={() => toggleTile(tile.id)}
+              onClick={() => {
+                if (ready) onToggleTile(tile.id)
+              }}
             />
           )
         })}
       </div>
 
       <BattleActions
-        damage={19}
-        canAttack={
-          ready && selected.length >= 3
-        }
-        onClear={clear}
-        onAttack={() => {
-          console.log("attack")
-        }}
+        damage={damage}
+        canAttack={canAttack}
+        canClear={ready && selectedTileIds.length > 0}
+        onClear={onClear}
+        onAttack={onAttack}
       />
     </>
   )
