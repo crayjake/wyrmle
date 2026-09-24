@@ -1,0 +1,16 @@
+.dev-combat .enemy-letter-armoured {
+  outline: 1px solid var(--fg);
+  outline-offset: -3px;
+}
+
+.dev-combat .enemy-letter-removed {
+  border-color: transparent;
+}
+
+.dev-combat-log .encounter-hud {
+  width: 100%;
+}
+
+.dev-combat .encounter-hud[data-metric="strikes"] .encounter-hud-history li {
+  grid-template-columns: minmax(0, 1fr) 10ch minmax(0, 1.35fr);
+}

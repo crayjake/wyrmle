@@ -1,13 +1,19 @@
 import { motion, useReducedMotion } from "framer-motion"
 import type { Ref } from "react"
-import type { Tile as GameTile } from "../game/types"
 import { introTimings } from "../intro/config"
+
+export type SpecialTilePresentation = {
+  id: string
+  label: string
+  symbol: string
+  detail: string
+}
 
 type TileProps = {
   letter: string
   selected?: boolean
   order?: number
-  special?: GameTile["gem"]
+  special?: SpecialTilePresentation
   disabled?: boolean
   revealed?: boolean
   elementRef?: Ref<HTMLButtonElement>
@@ -37,12 +43,12 @@ export default function Tile({
       className={[
         "tile",
         selected ? "selected" : "",
-        special ? `special ${special}` : "",
+        special ? `special ${special.id}` : "",
       ].join(" ")}
       disabled={disabled}
       aria-pressed={selected}
-      aria-label={`${letter}${revealed && special ? `, ${special} tile` : ""}`}
-      title={revealed && special ? (special === "ward" ? "Ward: protects Resolve" : "Power: bonus damage") : undefined}
+      aria-label={`${letter}${revealed && special ? `, ${special.label} tile` : ""}`}
+      title={revealed && special ? `${special.label}${special.detail ? `: ${special.detail}` : ""}` : undefined}
       onClick={onClick}
       animate={
         reducedMotion
@@ -74,7 +80,8 @@ export default function Tile({
 
       {revealed && special && (
         <span className="tile-special">
-          {special === "ward" ? "◇" : "◆"}
+          <span aria-hidden="true">{special.symbol}</span>
+          <span>{special.label}</span>
         </span>
       )}
     </motion.button>

@@ -1,6 +1,15 @@
 import { motion, useReducedMotion } from "framer-motion"
 import { useEffect, useState } from "react"
+import type { CSSProperties } from "react"
 import { introTimings } from "../intro/config"
+import type { GrammarModifier } from "../game/hud"
+
+type EnemyLetterState = {
+  id: string
+  letter: string
+  hitsRemaining: number
+  initialHits?: number
+}
 
 type EnemyProps = {
   name: string
@@ -8,6 +17,8 @@ type EnemyProps = {
   partOfSpeech?: string
   revealedIndices: readonly number[]
   registerLetter: (index: number, element: HTMLDivElement | null) => void
+  modifiers: readonly GrammarModifier[]
+  letterStates?: readonly EnemyLetterState[]
 }
 
 const GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ?#%&@"
@@ -22,10 +33,13 @@ export default function Enemy({
   partOfSpeech,
   revealedIndices,
   registerLetter,
+  modifiers,
+  letterStates,
 }: EnemyProps) {
-  const letters = name.toUpperCase().split("")
+  const letters = letterStates?.map(state => state.letter) ?? name.toUpperCase().split("")
   const reducedMotion = useReducedMotion()
   const decoded = letters.every((_, index) => revealedIndices.includes(index))
+  const activeModifiers = modifiers.filter(modifier => modifier.value !== 0)
 
   const [display, setDisplay] = useState(
     letters.map(() => randomGlyph())
@@ -43,17 +57,29 @@ export default function Enemy({
 
   return (
     <div className="enemy-section">
-      <div className="enemy-container">
+      <div className="enemy-container" style={{ '--enemy-letter-count': letters.length } as CSSProperties}>
         {letters.map((letter, i) => {
           const revealed = revealedIndices.includes(i)
+          const state = letterStates?.[i]
+          const removed = state?.hitsRemaining === 0
 
           return (
             <motion.div
-              key={i}
+              key={state?.id ?? i}
               ref={element => registerLetter(i, element)}
               data-enemy-index={i}
               data-revealed={revealed}
-              className={`enemy-letter ${revealed ? "resolved" : "scrambled"}`}
+              data-hits-remaining={state?.hitsRemaining}
+              role={state ? 'img' : undefined}
+              aria-label={state ? revealed
+                ? `${letter}, ${removed ? 'removed' : `${state.hitsRemaining} ${state.hitsRemaining === 1 ? 'strike' : 'strikes'} remaining`}`
+                : `Undecoded enemy letter ${i + 1}` : undefined}
+              className={[
+                'enemy-letter',
+                revealed ? 'resolved' : 'scrambled',
+                state && state.hitsRemaining > 1 ? 'enemy-letter-armoured' : '',
+                removed ? 'enemy-letter-removed' : '',
+              ].join(' ')}
               initial={false}
               animate={{
                 opacity: revealed ? 1 : 0.6,
@@ -64,7 +90,7 @@ export default function Enemy({
                 ease: "easeOut",
               }}
             >
-              {revealed ? letter : display[i]}
+              {removed ? '' : revealed ? letter : display[i]}
             </motion.div>
           )
         })}
@@ -87,6 +113,18 @@ export default function Enemy({
         )}
 
         <span>{definition}</span>
+        {activeModifiers.length > 0 && (
+          <ul className="enemy-matchups" aria-label="Enemy grammar matchups">
+            {activeModifiers.map(modifier => (
+              <li key={modifier.id}>
+                <span>{modifier.label}</span>
+                <span className={modifier.value > 0 ? 'enemy-matchup-positive' : 'enemy-matchup-negative'}>
+                  {modifier.value > 0 ? '+' : ''}{modifier.value}
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
       </motion.div>
     </div>
   )

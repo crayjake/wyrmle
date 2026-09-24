@@ -2,15 +2,23 @@ import { useReducedMotion } from "framer-motion"
 import { useEffect, useState } from "react"
 
 import Tile from "./Tile"
+import type { SpecialTilePresentation } from "./Tile"
 import BattleActions from "./BattleActions"
-import type { Tile as GameTile } from "../game/types"
 import { introTimings } from "../intro/config"
+
+type BoardTilePresentation = {
+  id: number
+  letter: string
+  type: 'normal' | 'gem'
+  gem?: string
+}
 
 type TileGridProps = {
   revealedIndices: readonly number[]
   registerTile: (index: number, element: HTMLButtonElement | null) => void
   ready: boolean
-  tiles: GameTile[]
+  tiles: readonly BoardTilePresentation[]
+  specialTiles: readonly SpecialTilePresentation[]
   selectedTileIds: number[]
   damage: number
   canAttack: boolean
@@ -30,6 +38,7 @@ export default function TileGrid({
   registerTile,
   ready,
   tiles,
+  specialTiles,
   selectedTileIds,
   damage,
   canAttack,
@@ -67,7 +76,7 @@ export default function TileGrid({
               elementRef={element => registerTile(i, element)}
               boardIndex={i}
               letter={revealed ? tile.letter : displayLetters[i]}
-              special={tile.type === "gem" ? tile.gem : undefined}
+              special={tile.type === "gem" ? specialTiles.find(special => special.id === tile.gem) : undefined}
               revealed={revealed}
               disabled={!ready}
               selected={selectedIndex !== -1}

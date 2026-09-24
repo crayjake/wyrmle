@@ -67,8 +67,8 @@ export function getCurrentTileSummary(state: GameState): TileSummary[] {
 
 // History describes what happened at submission time; changing encounter rules
 // must not rewrite recorded damage, semantic results, or triggered effects.
-export function getRecentBattleEvents(state: GameState, limit = 3): BattleEvent[] {
-  const count = Math.min(4, Math.max(0, Math.trunc(limit) || 0))
+export function getRecentBattleEvents(state: GameState, limit = state.playedWords.length): BattleEvent[] {
+  const count = Math.min(state.playedWords.length, Math.max(0, Math.trunc(limit) || 0))
   const start = Math.max(0, state.playedWords.length - count)
   return state.playedWords.slice(start).map((attack, index) => ({
     id: start + index,

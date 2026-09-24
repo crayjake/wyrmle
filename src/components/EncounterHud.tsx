@@ -1,70 +1,42 @@
-import type { BattleEvent, GrammarModifier, TileSummary } from "../game/hud"
-import "./EncounterHud.css"
+import type { BattleEvent } from '../game/hud'
+import './EncounterHud.css'
 
 type EncounterHudProps = {
   visible: boolean
-  modifiers: readonly GrammarModifier[]
-  tiles: readonly TileSummary[]
   events: readonly BattleEvent[]
+  metric?: 'damage' | 'strikes'
 }
 
-export default function EncounterHud({ visible, modifiers, tiles, events }: EncounterHudProps) {
+export default function EncounterHud({ visible, events, metric = 'damage' }: EncounterHudProps) {
+  if (events.length === 0) return null
+
   return (
     <aside
       className="encounter-hud"
-      aria-label="Encounter status"
+      aria-label="Recent submitted attacks"
       aria-hidden={!visible}
       data-visible={visible}
+      data-metric={metric}
     >
-      {modifiers.length > 0 && (
-        <section className="encounter-hud-section" aria-label="Encounter modifiers">
-          <div className="encounter-hud-label">ENCOUNTER</div>
-          <ul className="encounter-hud-row encounter-hud-grammar" aria-label="Active grammar modifiers">
-            {modifiers.map(modifier => (
-              <li key={modifier.id}>
-                <span>{modifier.label}</span>
-                <span className={modifier.value < 0 ? "hud-negative" : "hud-positive"}>
-                  {modifier.value > 0 ? "+" : ""}{modifier.value}
+      <div className="encounter-hud-label">RECENT</div>
+      <ol className="encounter-hud-history" aria-label="Recent attacks, newest first">
+        {events.map(event => (
+          <li key={event.id} aria-label={`${event.word}, ${event.damage} ${metric === 'strikes' ? (event.damage === 1 ? 'strike' : 'strikes') : 'damage'}, ${[event.semanticLabel, ...event.effectLabels].join(', ')}`}>
+            <span className="encounter-hud-word" title={event.word}>{event.word}</span>
+            <span className="encounter-hud-damage">{event.damage} {metric === 'strikes' ? (event.damage === 1 ? 'STRIKE' : 'STRIKES') : 'DMG'}</span>
+            <span className="encounter-hud-result">
+              <span className={event.semanticLabel === 'COUNTER' ? 'hud-counter' : ['RESISTED', 'RELATED'].includes(event.semanticLabel) ? 'hud-negative' : undefined}>
+                {event.semanticLabel}
+              </span>
+              {event.effectLabels.map(label => (
+                <span className="encounter-hud-effect" key={label}>
+                  <span className="encounter-hud-dot" aria-hidden="true">·</span>{label}
                 </span>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-
-      {tiles.length > 0 && (
-        <section className="encounter-hud-section" aria-label="Board summary">
-          <div className="encounter-hud-label">BOARD</div>
-          <ul className="encounter-hud-row encounter-hud-tiles" aria-label="Current special tiles">
-            {tiles.map(tile => (
-              <li key={tile.id}>
-                <span className="hud-positive" aria-hidden="true">{tile.symbol}</span>
-                <span>{tile.label}</span>
-                <span>×{tile.count}</span>
-                <span className={tile.bonusDamage < 0 ? "hud-negative" : "hud-positive"}>{tile.detail}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-
-      {events.length > 0 && (
-        <section className="encounter-hud-section encounter-hud-last-turn" aria-label="Last turn">
-          <div className="encounter-hud-label">LAST TURN</div>
-          <ol className="encounter-hud-history" aria-label="Recent attacks, newest first">
-            {events.map(event => (
-              <li key={event.id}>
-                <span className="encounter-hud-word" title={event.word}>{event.word}</span>
-                <span className="hud-positive">+{event.damage}</span>
-                <span className="encounter-hud-result">
-                  <span>{event.semanticLabel}</span>
-                  {event.effectLabels.map(label => <span className="hud-positive" key={label}>{label}</span>)}
-                </span>
-              </li>
-            ))}
-          </ol>
-        </section>
-      )}
+              ))}
+            </span>
+          </li>
+        ))}
+      </ol>
     </aside>
   )
 }

@@ -7,9 +7,12 @@ type HeaderProps = {
     wyrmDockRef: Ref<HTMLSpanElement>
     titleRef: Ref<HTMLDivElement>
     showWyrm: boolean
+    onHelp: () => void
+    onHistory: () => void
+    onSettings?: () => void
 }
 
-export default function Header({ wyrmDockRef, titleRef, showWyrm }: HeaderProps) {
+export default function Header({ wyrmDockRef, titleRef, showWyrm, onHelp, onHistory, onSettings }: HeaderProps) {
     return (
         <header className="header">
             <div className="title" ref={titleRef}>
@@ -20,17 +23,17 @@ export default function Header({ wyrmDockRef, titleRef, showWyrm }: HeaderProps)
             </div>
 
             <nav className="header-actions">
-            <button className="icon-button" aria-label="Help">
+            <button className="icon-button" aria-label="Help" onClick={onHelp}>
                 <CircleHelp size={20} />
             </button>
 
-            <button className="icon-button" aria-label="History">
+            <button className="icon-button" aria-label="History and statistics" onClick={onHistory}>
                 <History size={20} />
             </button>
 
-            <button className="icon-button" aria-label="Settings">
+            {onSettings && <button className="icon-button" aria-label="Development tools" onClick={onSettings}>
                 <Settings size={20} />
-            </button>
+            </button>}
             </nav>
         </header>
     )

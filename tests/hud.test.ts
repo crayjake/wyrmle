@@ -161,7 +161,7 @@ test('history labels only triggered tile effects, including nonstandard configur
   }
 })
 
-test('recent history is newest first, defaults to three, caps at four, and preserves state', () => {
+test('history includes every played turn newest first, supports optional limits, and preserves state', () => {
   let state = createGame({
     ...melancholyEncounter,
     enemy: { ...melancholyEncounter.enemy, maxHealth: 100 },
@@ -176,11 +176,15 @@ test('recent history is newest first, defaults to three, caps at four, and prese
   Object.freeze(state)
   Object.freeze(state.playedWords)
   state.playedWords.forEach(Object.freeze)
-  assert.deepEqual(getRecentBattleEvents(state).map((entry) => entry.id), [4, 3, 2])
+  assert.deepEqual(getRecentBattleEvents(state).map((entry) => entry.id), [4, 3, 2, 1, 0])
   assert.deepEqual(getRecentBattleEvents(state, 1).map((entry) => entry.id), [4])
-  assert.deepEqual(getRecentBattleEvents(state, 20).map((entry) => entry.id), [4, 3, 2, 1])
+  assert.deepEqual(getRecentBattleEvents(state, 2.9).map((entry) => entry.id), [4, 3])
+  assert.deepEqual(getRecentBattleEvents(state, 20).map((entry) => entry.id), [4, 3, 2, 1, 0])
+  assert.deepEqual(getRecentBattleEvents(state, Infinity).map((entry) => entry.id), [4, 3, 2, 1, 0])
   assert.deepEqual(getRecentBattleEvents(state, 0), [])
   assert.deepEqual(getRecentBattleEvents(state, -1), [])
+  assert.deepEqual(getRecentBattleEvents(state, -Infinity), [])
+  assert.deepEqual(getRecentBattleEvents(state, NaN), [])
   getActiveGrammarModifiers(state)
   getCurrentTileSummary(state)
   assert.deepEqual(state, before)

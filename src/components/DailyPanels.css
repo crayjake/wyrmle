@@ -1,0 +1,324 @@
+.daily-panel {
+  width: min(27rem, calc(100vw - 2rem));
+  max-height: calc(100dvh - 2rem);
+  box-sizing: border-box;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 1.1rem;
+  border: 1px solid color-mix(in srgb, var(--fg) 60%, transparent);
+  border-radius: 0.1rem;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  text-align: left;
+  text-transform: none;
+  box-shadow: 0 0.8rem 4rem #0008;
+}
+
+.daily-panel::backdrop {
+  background: #080a09c9;
+}
+
+.daily-panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding-bottom: 0.85rem;
+  margin-bottom: 0.9rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--fg) 25%, transparent);
+}
+
+.daily-panel-kicker {
+  color: var(--blue);
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.daily-panel h2 {
+  margin: 0.3rem 0 0;
+  color: var(--emph);
+  font-family: 'Cutive Mono', monospace;
+  font-size: 1.45rem;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+.daily-panel-close {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--fg);
+  cursor: pointer;
+}
+
+.daily-panel :is(button, summary, textarea):focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+.daily-result-outcome {
+  margin: 0 0 0.8rem;
+}
+
+.daily-panel .is-won {
+  color: var(--green);
+}
+
+.daily-panel .is-lost {
+  color: var(--red);
+}
+
+.daily-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem 0.4rem;
+  margin: 0 0 1rem;
+}
+
+.daily-stat {
+  min-width: 0;
+}
+
+.daily-stat dt {
+  font-size: 0.62rem;
+  line-height: 1.35;
+}
+
+.daily-stat dd {
+  margin: 0;
+  color: var(--emph);
+  overflow-wrap: anywhere;
+}
+
+.daily-stats-grid dd {
+  margin-top: 0.15rem;
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.daily-stat-unit {
+  font-size: 0.65rem;
+  color: var(--fg);
+}
+
+.daily-stats-list {
+  display: grid;
+  gap: 0.35rem;
+  margin: 1rem 0;
+  padding-top: 0.7rem;
+  border-top: 1px solid color-mix(in srgb, var(--fg) 20%, transparent);
+}
+
+.daily-stats-list .daily-stat {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.daily-stats-list dd {
+  max-width: 11rem;
+  text-align: right;
+}
+
+.daily-words {
+  margin: 0 0 0.9rem;
+  font-size: 0.7rem;
+}
+
+.daily-words summary {
+  width: fit-content;
+  cursor: pointer;
+  color: var(--blue);
+}
+
+.daily-words p {
+  margin-top: 0.4rem;
+  overflow-wrap: anywhere;
+}
+
+.daily-panel-note,
+.daily-share-status {
+  font-size: 0.65rem;
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--fg) 80%, var(--bg));
+}
+
+.daily-panel-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.daily-panel-actions button {
+  flex: 1;
+  min-height: 2.6rem;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid color-mix(in srgb, var(--fg) 55%, transparent);
+  border-radius: 0.1rem;
+  background: transparent;
+  color: var(--fg);
+  font: inherit;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+.daily-panel-actions .daily-panel-primary {
+  border-color: var(--emph);
+  color: var(--emph);
+}
+
+.daily-panel-actions button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.daily-panel-actions button:hover:not(:disabled),
+.daily-panel-close:hover {
+  background: color-mix(in srgb, var(--fg) 8%, transparent);
+}
+
+.daily-share-status {
+  margin-top: 0.6rem;
+}
+
+.daily-share-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.7rem;
+  margin-top: 0.5rem;
+  color: color-mix(in srgb, var(--fg) 80%, var(--bg));
+  font-size: 0.6rem;
+}
+
+.daily-share-legend span {
+  white-space: nowrap;
+}
+
+.daily-share-fallback {
+  margin-top: 0.8rem;
+}
+
+.daily-share-fallback label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.65rem;
+}
+
+.daily-share-fallback textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 5rem;
+  max-height: 15rem;
+  padding: 0.65rem;
+  border: 1px solid color-mix(in srgb, var(--fg) 50%, transparent);
+  border-radius: 0.1rem;
+  background: transparent;
+  color: var(--fg);
+  font: inherit;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  resize: vertical;
+  text-transform: none;
+}
+
+.daily-history {
+  margin-bottom: 0.8rem;
+}
+
+.daily-history h3 {
+  margin: 0 0 0.5rem;
+  color: var(--blue);
+  font: inherit;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.daily-history ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.daily-history-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.15rem 0.6rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid color-mix(in srgb, var(--fg) 18%, transparent);
+  font-size: 0.65rem;
+}
+
+.daily-history-detail {
+  grid-column: 1 / -1;
+  color: color-mix(in srgb, var(--fg) 78%, var(--bg));
+  font-size: 0.6rem;
+  overflow-wrap: anywhere;
+}
+
+.daily-history-resume-row {
+  align-items: center;
+}
+
+.daily-history-detail-short {
+  grid-column: 1;
+  align-self: center;
+}
+
+.daily-resume-button {
+  justify-self: end;
+  grid-column: 2;
+  min-height: 2rem;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid color-mix(in srgb, var(--blue) 65%, transparent);
+  border-radius: 0.1rem;
+  background: transparent;
+  color: var(--blue);
+  font: inherit;
+  cursor: pointer;
+}
+
+.daily-resume-button:hover {
+  background: color-mix(in srgb, var(--blue) 8%, transparent);
+}
+
+.daily-help {
+  display: grid;
+  gap: 0.8rem;
+  line-height: 1.55;
+}
+
+.daily-help strong {
+  color: var(--emph);
+  font-weight: 400;
+}
+
+.daily-help-gem {
+  color: var(--blue);
+  white-space: nowrap;
+}
+
+@media (max-width: 360px) {
+  .daily-panel {
+    padding: 0.8rem;
+  }
+
+  .daily-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

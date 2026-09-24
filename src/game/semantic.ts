@@ -1,7 +1,7 @@
 import { normalizeWord } from './dictionary.ts'
 import type { EnemyConcept, SemanticRelation, SemanticRules } from './types.ts'
 
-export function getSemanticRelation(word: string, enemy: EnemyConcept): SemanticRelation {
+export function getSemanticRelation(word: string, enemy: Pick<EnemyConcept, 'semanticRelations'>): SemanticRelation {
   const normalized = normalizeWord(word)
   // Explicit precedence also makes accidentally overlapping groups deterministic.
   for (const relation of ['opposite', 'similar', 'related'] as const) {
