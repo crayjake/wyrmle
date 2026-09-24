@@ -3,7 +3,7 @@ import type { LetterStrikeState } from '../game/letterStrike.ts'
 import { validatePuzzleId } from './date.ts'
 import { getDailyPuzzle, getDailyPuzzleForVersion, getSupportedDailyPuzzles } from './puzzle.ts'
 import { buildDailyResult } from './results.ts'
-import type { DailyPuzzleDefinition, DailyResult, DailyRun, DailySession, StorageLike } from './types.ts'
+import type { DailyPuzzleDefinition, DailyResult, DailyRun, DailySession, DifficultyMode, StorageLike } from './types.ts'
 import { LEGACY_GAME_VERSION, SAVE_VERSION } from './versions.ts'
 
 // Letter health is a different game/schema. Legacy numeric-damage keys remain
@@ -67,8 +67,25 @@ function puzzleForGame(puzzleId: string, game: LetterStrikeState): DailyPuzzleDe
 
 function supportedSaveVersion(version: unknown, puzzle: DailyPuzzleDefinition): boolean {
   return version === SAVE_VERSION
+    || version === 3
     || (version === 2 && puzzle.puzzleVersion <= 3)
     || (version === 1 && puzzle.gameVersion === LEGACY_GAME_VERSION)
+}
+
+function assertMode(mode: unknown): asserts mode is DifficultyMode {
+  if (mode !== 'normal' && mode !== 'hard') throw new Error('The saved difficulty mode is invalid.')
+}
+
+function storedMode(data: Record<string, unknown>, saveVersion: unknown): DifficultyMode {
+  // Earlier schemas never carried a preference or a run-specific difficulty.
+  if (saveVersion !== SAVE_VERSION) return 'normal'
+  assertMode(data.mode)
+  return data.mode
+}
+
+function withoutMode<T extends { mode: DifficultyMode }>(data: T): Omit<T, 'mode'> {
+  const { mode: _mode, ...historical } = data
+  return historical
 }
 
 /** Exact historical shapes, used only for comparison with saveVersion 1 data.
@@ -77,7 +94,7 @@ function supportedSaveVersion(version: unknown, puzzle: DailyPuzzleDefinition): 
  */
 function legacyRunProjection(run: DailyRun): unknown {
   return {
-    ...run,
+    ...withoutMode(run),
     saveVersion: 1,
     playedWords: run.playedWords.map((turn) => {
       const preview: Record<string, unknown> = { ...turn.preview }
@@ -93,7 +110,7 @@ function legacyRunProjection(run: DailyRun): unknown {
 /** Schema 2 predates LONG; all its other preview fields are still mandatory. */
 function preLongRunProjection(run: DailyRun): unknown {
   return {
-    ...run,
+    ...withoutMode(run),
     saveVersion: 2,
     playedWords: run.playedWords.map((turn) => {
       const preview: Record<string, unknown> = { ...turn.preview }
@@ -105,7 +122,7 @@ function preLongRunProjection(run: DailyRun): unknown {
 
 function legacyResultProjection(result: DailyResult): unknown {
   const legacy: Record<string, unknown> = {
-    ...result,
+    ...withoutMode(result),
     turns: result.turns.map((turn) => {
       const historicalTurn: Record<string, unknown> = { ...turn }
       delete historicalTurn.letterOutcomes
@@ -121,9 +138,10 @@ function validTimestamp(value: unknown): value is string {
   return typeof value === 'string' && Number.isFinite(Date.parse(value))
 }
 
-function snapshot(puzzle: DailyPuzzleDefinition, game: LetterStrikeState, completedAt: string | null): DailyRun {
+function snapshot(puzzle: DailyPuzzleDefinition, game: LetterStrikeState, completedAt: string | null, mode: DifficultyMode): DailyRun {
   return {
     saveVersion: SAVE_VERSION,
+    mode,
     puzzleId: puzzle.puzzleId,
     gameVersion: puzzle.gameVersion,
     puzzleVersion: puzzle.puzzleVersion,
@@ -154,10 +172,11 @@ function replay(puzzle: DailyPuzzleDefinition, tileIdsByTurn: unknown[]): Letter
   return game
 }
 
-function readRun(puzzle: DailyPuzzleDefinition, raw: string): { game: LetterStrikeState; completedAt: string | null } {
+function readRun(puzzle: DailyPuzzleDefinition, raw: string): { game: LetterStrikeState; completedAt: string | null; mode: DifficultyMode } {
   const data: unknown = JSON.parse(raw)
   if (!record(data)) throw new Error('The saved run is damaged.')
   assertVersions(data, puzzle)
+  const mode = storedMode(data, data.saveVersion)
   if (!Array.isArray(data.playedWords)) throw new Error('The saved turn history is missing.')
   const ids = data.playedWords.map((turn: unknown) => {
     if (!record(turn) || !Array.isArray(turn.tiles)) throw new Error('The saved turn history is damaged.')
@@ -170,60 +189,67 @@ function readRun(puzzle: DailyPuzzleDefinition, raw: string): { game: LetterStri
     throw new Error('The saved completion timestamp is invalid.')
   }
   const timestamp = typeof completedAt === 'string' ? completedAt : null
-  const expected = snapshot(puzzle, game, timestamp)
+  const expected = snapshot(puzzle, game, timestamp, mode)
   const expectedShape = data.saveVersion === 1 ? legacyRunProjection(expected)
-    : data.saveVersion === 2 ? preLongRunProjection(expected) : expected
+    : data.saveVersion === 2 ? preLongRunProjection(expected)
+      : data.saveVersion === 3 ? { ...withoutMode(expected), saveVersion: 3 } : expected
   if (!sameData(data, expectedShape)) {
     throw new Error('The saved run does not match its turn history.')
   }
-  return { game, completedAt: timestamp }
+  return { game, completedAt: timestamp, mode }
 }
 
-function readResult(puzzle: DailyPuzzleDefinition, raw: string): { game: LetterStrikeState; result: DailyResult } {
+function readResult(puzzle: DailyPuzzleDefinition, raw: string): { game: LetterStrikeState; result: DailyResult; mode: DifficultyMode } {
   const envelope: unknown = JSON.parse(raw)
   if (!record(envelope) || !record(envelope.result)) throw new Error('The saved result is damaged.')
   if (!supportedSaveVersion(envelope.saveVersion, puzzle)) throw new Error('This result uses an unsupported save version.')
   const data = envelope.result
   assertVersions(data, puzzle, false)
+  const mode = storedMode(data, envelope.saveVersion)
   if (!Array.isArray(data.turns) || !validTimestamp(data.completedAt)) {
     throw new Error('The saved result is missing valid turn evidence or a finish timestamp.')
   }
   const game = replay(puzzle, data.turns.map((turn: unknown) => record(turn) ? turn.tileIds : null))
   if (game.status === 'playing') throw new Error('The saved result does not describe a completed game.')
-  const result = buildDailyResult(puzzle, game, data.completedAt)
-  if (!sameData(data, envelope.saveVersion === 1 ? legacyResultProjection(result) : result)) {
+  const result = buildDailyResult(puzzle, game, data.completedAt, mode)
+  const expected = envelope.saveVersion === 1 ? legacyResultProjection(result)
+    : envelope.saveVersion === SAVE_VERSION ? result : withoutMode(result)
+  if (!sameData(data, expected)) {
     throw new Error('The saved result does not match its turn history.')
   }
-  return { game, result }
+  return { game, result, mode }
 }
 
 /** Read-only, safe to use while opening the game. Corruption never starts a new attempt. */
-export function loadDailySession(puzzle: DailyPuzzleDefinition, storage: StorageLike): DailySession {
+export function loadDailySession(puzzle: DailyPuzzleDefinition, storage: StorageLike, preferredMode: DifficultyMode = 'normal'): DailySession {
   try {
+    assertMode(preferredMode)
     assertPuzzle(puzzle)
     const rawResult = storage.getItem(getResultStorageKey(puzzle.puzzleId))
     if (rawResult !== null) {
       // Completion wins even if another tab/crash left the separate run stale.
       const pinned = storedPuzzle(puzzle.puzzleId, rawResult, true)
-      return { ...readResult(pinned, rawResult), resumed: true, error: null }
+      return { ...readResult(pinned, rawResult), started: true, resumed: true, error: null }
     }
     const rawRun = storage.getItem(getRunStorageKey(puzzle.puzzleId))
     const latest = getDailyPuzzle(puzzle.puzzleId)
-    if (rawRun === null) return { game: createLetterStrikeGame(latest.encounter), result: null, resumed: false, error: null }
+    if (rawRun === null) return { game: createLetterStrikeGame(latest.encounter), mode: preferredMode, started: false, result: null, resumed: false, error: null }
     const pinned = storedPuzzle(puzzle.puzzleId, rawRun, false)
-    const { game, completedAt } = readRun(pinned, rawRun)
+    const { game, completedAt, mode } = readRun(pinned, rawRun)
     // A validated Begin-only snapshot has no committed choices or outcome to
     // preserve. Upgrade it in memory; the next commit writes the latest version.
     const untouched = game.status === 'playing' && game.playedWords.length === 0
     return {
       game: untouched ? createLetterStrikeGame(latest.encounter) : game,
-      result: completedAt === null ? null : buildDailyResult(pinned, game, completedAt),
+      mode,
+      started: true,
+      result: completedAt === null ? null : buildDailyResult(pinned, game, completedAt, mode),
       resumed: true,
       error: null,
     }
   } catch (error) {
     const reason = error instanceof Error ? error.message : 'Local storage is unavailable.'
-    return { game: null, result: null, resumed: false, error: `${reason} Your saved data has been kept.` }
+    return { game: null, mode: 'normal', started: false, result: null, resumed: false, error: `${reason} Your saved data has been kept.` }
   }
 }
 
@@ -237,8 +263,10 @@ export function saveDailyRun(
   game: LetterStrikeState,
   storage: StorageLike,
   completedAt: string = new Date().toISOString(),
+  requestedMode?: DifficultyMode,
 ): DailySession {
-  const existing = loadDailySession(puzzle, storage)
+  if (requestedMode !== undefined) assertMode(requestedMode)
+  const existing = loadDailySession(puzzle, storage, requestedMode)
   if (existing.error || !existing.game) throw new Error(existing.error ?? 'Unable to load this puzzle.')
   if (existing.result) {
     // This also repairs a missing result from a valid terminal run, preserving
@@ -248,21 +276,25 @@ export function saveDailyRun(
     }
     return existing
   }
+  if (existing.started && requestedMode !== undefined && requestedMode !== existing.mode) {
+    throw new Error('This Daily has already begun in another mode. Reload the saved run before continuing.')
+  }
+  const mode = existing.mode
   // The caller may hold the latest dated definition while this attempt remains
   // pinned to older rules. Existing committed progress decides the version.
   const activePuzzle = puzzleForGame(puzzle.puzzleId, existing.game)
   if (!sameData(game.encounter, activePuzzle.encounter)) throw new Error('The run belongs to a different encounter. Reload the saved run before continuing.')
   const timestamp = game.status === 'playing' ? null : completedAt
-  const serialized = JSON.stringify(snapshot(activePuzzle, game, timestamp))
+  const serialized = JSON.stringify(snapshot(activePuzzle, game, timestamp, mode))
   const canonical = readRun(activePuzzle, serialized).game
   if (existing.game.playedWords.length > canonical.playedWords.length
     || existing.game.playedWords.some((turn, index) => !sameData(turn, canonical.playedWords[index]))) {
     throw new Error('This puzzle changed in another tab. Reload the saved run before continuing.')
   }
-  const result = timestamp === null ? null : buildDailyResult(activePuzzle, canonical, timestamp)
+  const result = timestamp === null ? null : buildDailyResult(activePuzzle, canonical, timestamp, mode)
   if (result) storage.setItem(getResultStorageKey(puzzle.puzzleId), JSON.stringify({ saveVersion: SAVE_VERSION, result }))
   storage.setItem(getRunStorageKey(puzzle.puzzleId), serialized)
-  return { game: canonical, result, resumed: existing.resumed, error: null }
+  return { game: canonical, mode, started: true, result, resumed: existing.resumed, error: null }
 }
 
 function savedPuzzleIds(storage: StorageLike): string[] {

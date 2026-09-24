@@ -3,10 +3,11 @@ import { X } from 'lucide-react'
 import { getCompletedResults } from '../daily/results.ts'
 import { buildShareText } from '../daily/share.ts'
 import { calculateStats } from '../daily/stats.ts'
-import type { DailyResult } from '../daily/types.ts'
+import type { DailyResult, DifficultyMode } from '../daily/types.ts'
 import type { LetterStrikeState } from '../game/letterStrike.ts'
 import { getLetterStrikeBattleEvents } from '../game/letterStrikeHud.ts'
 import { MyInfo } from './HealthInfo'
+import { ModeChoices } from './ModeSelection'
 import './DailyPanels.css'
 
 type PanelProps = { onClose: () => void }
@@ -60,6 +61,26 @@ function Stat({ label, children }: { label: string; children: ReactNode }) {
   return <div className="daily-stat"><dt>{label}</dt><dd>{children}</dd></div>
 }
 
+export function SettingsPanel({ preferredMode, runMode, started, error, onChangeMode, onDev, onClose }: PanelProps & {
+  preferredMode: DifficultyMode
+  runMode: DifficultyMode
+  started: boolean
+  error: string | null
+  onChangeMode: (mode: DifficultyMode) => void
+  onDev?: () => void
+}) {
+  return <DailyDialog title="Settings" subtitle="This browser" onClose={onClose}>
+    <ModeChoices value={preferredMode} onChange={onChangeMode} />
+    <p className="mode-note">{started
+      ? `This Daily stays in ${runMode.toUpperCase()}. Your preference applies to your next run.`
+      : 'Your choice applies when you begin. Both modes use the same Daily puzzle.'}</p>
+    {error && <p className="mode-save-error" role="status">{error}</p>}
+    {import.meta.env.DEV && onDev && <div className="daily-panel-actions">
+      <button type="button" onClick={onDev}>Development tools</button>
+    </div>}
+  </DailyDialog>
+}
+
 export function ResultPanel({ result, onClose, onShowStats }: PanelProps & {
   result: DailyResult
   onShowStats: () => void
@@ -88,7 +109,7 @@ export function ResultPanel({ result, onClose, onShowStats }: PanelProps & {
   }
 
   return (
-    <DailyDialog title={result.won ? 'Victory' : 'Defeat'} subtitle={`Daily · ${result.date} · UTC`} onClose={onClose}>
+    <DailyDialog title={result.won ? 'Victory' : 'Defeat'} subtitle={`Daily · ${result.date} · ${result.mode.toUpperCase()} · UTC`} onClose={onClose}>
       <p className={`daily-result-outcome ${result.won ? 'is-won' : 'is-lost'}`}>
         {result.won ? `${result.enemyWord} has fallen.` : `${result.enemyWord} remains. Your Resolve is spent.`}
       </p>

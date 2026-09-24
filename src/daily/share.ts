@@ -24,7 +24,7 @@ export function buildShareText(result: DailyResult): string {
   })
   const resolve = '■'.repeat(result.resolveRemaining) + '□'.repeat(result.startingResolve - result.resolveRemaining)
   return [
-    `WYRMLE ${result.date} · ${result.won ? 'VICTORY' : 'DEFEAT'}`,
+    `WYRMLE ${result.date} · ${result.mode.toUpperCase()} · ${result.won ? 'VICTORY' : 'DEFEAT'}`,
     '',
     'RESOLVE',
     `${resolve} ${result.resolveRemaining}/${result.startingResolve}`,

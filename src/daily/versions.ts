@@ -8,5 +8,5 @@ export const GAME_VERSION_V3 = 'letter-strike-3'
 export const PUZZLE_VERSION_V3 = 3
 export const GAME_VERSION = 'letter-strike-4'
 export const PUZZLE_VERSION = 4
-export const SAVE_VERSION = 3
+export const SAVE_VERSION = 4
 export const GRAMMAR_RELEASE_DATE = '2026-09-25'

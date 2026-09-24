@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { validatePuzzleId } from '../daily/date.ts'
 import { clearDailyHistory, inspectDailyStorage, resetDailyPuzzle } from '../daily/persistence.ts'
 import { playDevOutcome } from '../daily/dev.ts'
-import type { DailyPuzzleDefinition } from '../daily/types.ts'
+import type { DailyPuzzleDefinition, DifficultyMode } from '../daily/types.ts'
 import MatchHintControls from './MatchHintControls'
 import type { MatchHintMode } from './tileMatchHints'
 
@@ -13,13 +13,16 @@ type Props = {
   onClose: () => void
   matchHint: MatchHintMode
   onMatchHintChange: (mode: MatchHintMode) => void
+  onOnboarding: (action: 'replay' | 'tutorial' | 'reset' | 'preview') => void
+  onForceMode: (mode: DifficultyMode | null) => void
 }
 
-export default function DevPanel({ puzzle, onLoad, onPlaytest, onClose, matchHint, onMatchHintChange }: Props) {
+export default function DevPanel({ puzzle, onLoad, onPlaytest, onClose, matchHint, onMatchHintChange, onOnboarding, onForceMode }: Props) {
   const dialog = useRef<HTMLDialogElement>(null)
   const [date, setDate] = useState(puzzle.puzzleId)
   const [error, setError] = useState<string | null>(null)
   const [snapshot, setSnapshot] = useState<string | null>(null)
+  const [notice, setNotice] = useState<string | null>(null)
   useEffect(() => {
     const element = dialog.current
     element?.showModal()
@@ -44,6 +47,21 @@ export default function DevPanel({ puzzle, onLoad, onPlaytest, onClose, matchHin
         <button className="daily-button" onClick={() => onPlaytest('letter-strike')}>LETTER-STRIKE MODE</button>
       </div>
       <p>Daily tools. Resets remove this browser’s completion records.</p>
+      <div className="dev-controls" aria-label="Onboarding tools">
+        <button className="daily-button" onClick={() => onOnboarding('replay')}>Replay onboarding</button>
+        <button className="daily-button" onClick={() => onOnboarding('tutorial')}>Launch tutorial directly</button>
+        <button className="daily-button" onClick={() => {
+          onOnboarding('reset'); setNotice('Onboarding flag reset. Reload to see the first-time flow.')
+        }}>Reset onboarding flag</button>
+        <button className="daily-button" onClick={() => onOnboarding('preview')}>Preview first-time flow</button>
+      </div>
+      <p>First-time preview keeps your preferences and Daily intact. Forced modes preview the presentation; the saved run mode stays fixed.</p>
+      <div className="dev-controls" aria-label="Difficulty preview">
+        <button className="daily-button" onClick={() => { onForceMode('normal'); onClose() }}>Force Normal</button>
+        <button className="daily-button" onClick={() => { onForceMode('hard'); onClose() }}>Force Hard</button>
+        <button className="daily-button" onClick={() => { onForceMode(null); onClose() }}>Use run mode</button>
+      </div>
+      {notice && <p role="status">{notice}</p>}
       <MatchHintControls value={matchHint} onChange={onMatchHintChange} />
       <form className="dev-controls" onSubmit={event => {
         event.preventDefault()

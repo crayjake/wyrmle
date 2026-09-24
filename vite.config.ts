@@ -3,5 +3,7 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  // Pages provides its project path at build time; local development stays at /.
+  base: process.env.VITE_BASE_PATH ?? '/',
   plugins: [react()],
 })

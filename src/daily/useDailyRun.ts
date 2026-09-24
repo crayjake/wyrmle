@@ -2,17 +2,17 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { clearLetterStrikeSelection, createLetterStrikeGame, submitLetterStrike, toggleLetterStrikeTile } from '../game/letterStrike.ts'
 import type { LetterStrikeState } from '../game/letterStrike.ts'
 import { getInProgressPuzzleIds, loadDailySession, loadResults, saveDailyRun } from './persistence.ts'
-import type { DailyPuzzleDefinition, DailyResult, DailySession } from './types.ts'
+import type { DailyPuzzleDefinition, DailyResult, DailySession, DifficultyMode } from './types.ts'
 
 function errorMessage(error: unknown): string {
   return error instanceof Error ? error.message : 'Local storage is unavailable.'
 }
 
-function readSession(puzzle: DailyPuzzleDefinition): DailySession {
+function readSession(puzzle: DailyPuzzleDefinition, preferredMode: DifficultyMode): DailySession {
   try {
-    return loadDailySession(puzzle, window.localStorage)
+    return loadDailySession(puzzle, window.localStorage, preferredMode)
   } catch (error) {
-    return { game: null, result: null, resumed: false, error: errorMessage(error) }
+    return { game: null, mode: preferredMode, started: false, result: null, resumed: false, error: errorMessage(error) }
   }
 }
 
@@ -29,12 +29,13 @@ function readHistory() {
 }
 
 /** UI orchestration only. Storage and engine transitions remain separate modules. */
-export function useDailyRun(puzzle: DailyPuzzleDefinition) {
-  const [session, setSession] = useState(() => readSession(puzzle))
+export function useDailyRun(puzzle: DailyPuzzleDefinition, preferredMode: DifficultyMode = 'normal') {
+  const [session, setSession] = useState(() => readSession(puzzle, preferredMode))
   const sessionRef = useRef(session)
   const [history, setHistory] = useState(readHistory)
-  const pending = useRef<{ game: LetterStrikeState; completedAt: string } | null>(null)
+  const pending = useRef<{ game: LetterStrikeState; completedAt: string; mode: DifficultyMode } | null>(null)
   const game = session.game ?? createLetterStrikeGame(puzzle.encounter)
+  const mode = session.started ? session.mode : preferredMode
 
   const updateSession = useCallback((next: DailySession) => {
     sessionRef.current = next
@@ -44,9 +45,9 @@ export function useDailyRun(puzzle: DailyPuzzleDefinition) {
   const refresh = useCallback(() => {
     // A failed write must be explicitly retried before this tab can advance.
     if (pending.current) return
-    updateSession(readSession(puzzle))
+    updateSession(readSession(puzzle, preferredMode))
     setHistory(readHistory())
-  }, [puzzle, updateSession])
+  }, [puzzle, preferredMode, updateSession])
 
   useEffect(() => {
     const sync = (event: StorageEvent) => {
@@ -56,15 +57,19 @@ export function useDailyRun(puzzle: DailyPuzzleDefinition) {
     return () => window.removeEventListener('storage', sync)
   }, [refresh])
 
-  function commit(nextGame: LetterStrikeState, completedAt = new Date().toISOString()): boolean {
+  function commit(
+    nextGame: LetterStrikeState,
+    completedAt = new Date().toISOString(),
+    runMode = sessionRef.current.started ? sessionRef.current.mode : preferredMode,
+  ): boolean {
     try {
-      const saved = saveDailyRun(puzzle, nextGame, window.localStorage, completedAt)
+      const saved = saveDailyRun(puzzle, nextGame, window.localStorage, completedAt, runMode)
       pending.current = null
       updateSession({ ...saved, resumed: sessionRef.current.resumed })
       setHistory(readHistory())
       return saved.error === null
     } catch (error) {
-      const recovered = readSession(puzzle)
+      const recovered = readSession(puzzle, preferredMode)
       if (recovered.result) {
         // The result-first write succeeded even if updating the run snapshot failed.
         pending.current = null
@@ -72,7 +77,7 @@ export function useDailyRun(puzzle: DailyPuzzleDefinition) {
         setHistory(readHistory())
         return true
       }
-      pending.current = { game: nextGame, completedAt }
+      pending.current = { game: nextGame, completedAt, mode: runMode }
       // Keep the selected word available for retry; never claim an unsaved turn succeeded.
       updateSession({ ...sessionRef.current, error: errorMessage(error) })
       return false
@@ -103,12 +108,12 @@ export function useDailyRun(puzzle: DailyPuzzleDefinition) {
   }
 
   function retry() {
-    if (pending.current) commit(pending.current.game, pending.current.completedAt)
+    if (pending.current) commit(pending.current.game, pending.current.completedAt, pending.current.mode)
     else refresh()
   }
 
   return {
-    game, result: session.result, resumed: session.resumed,
+    game, mode, started: session.started, result: session.result, resumed: session.resumed,
     error: session.error, history, select, clear, attack, retry,
     reloadSaved: () => { pending.current = null; refresh() },
     start: () => !sessionRef.current.error && commit(game),

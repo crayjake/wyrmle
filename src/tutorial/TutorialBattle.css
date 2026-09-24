@@ -1,0 +1,158 @@
+.tutorial-battle .header {
+  min-height: 2.75rem;
+}
+
+.tutorial-skip {
+  min-height: 2.75rem;
+  border: 0;
+  padding: 0 0.1rem;
+  color: var(--fg);
+  background: transparent;
+  font: inherit;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+.tutorial-skip:focus-visible,
+.tutorial-battle .tile:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.tutorial-battle .battle-info > .tutorial-label {
+  text-align: right;
+}
+
+.tutorial-battle .enemy-definition {
+  text-align: center;
+}
+
+.tutorial-battle .enemy-matchup-detail {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip-path: none;
+  white-space: normal;
+}
+
+.tutorial-battle .enemy-zone {
+  min-height: 0;
+  gap: 0.7rem;
+}
+
+.tutorial-coach {
+  width: min(100%, 23rem);
+  align-self: center;
+  display: grid;
+  justify-items: center;
+  gap: 0.25rem;
+  font-size: 0.65rem;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+}
+
+.tutorial-label {
+  font-size: 0.5rem;
+  letter-spacing: 0.15em;
+}
+
+.tutorial-note {
+  font-size: 0.6rem;
+  text-transform: none;
+  letter-spacing: 0.025em;
+}
+
+.tutorial-battle .attack-button:not(:disabled) {
+  animation: tutorial-action-pulse 1.8s ease-in-out infinite;
+}
+
+.tutorial-battle .attack-button:focus-visible {
+  animation: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tutorial-battle .attack-button:hover {
+    animation: none;
+  }
+}
+
+@keyframes tutorial-action-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.72; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tutorial-battle .attack-button:not(:disabled) {
+    animation: none;
+  }
+}
+
+.tutorial-types {
+  display: grid;
+  gap: 0.15rem;
+  width: min(100%, 19rem);
+}
+
+.tutorial-types p {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 0.25rem;
+  text-align: left;
+  font-size: 0.55rem;
+}
+
+.tutorial-types p > :last-child {
+  text-transform: none;
+}
+
+.tutorial-good {
+  color: var(--green);
+}
+
+.tutorial-negative {
+  color: var(--red);
+}
+
+.tutorial-special {
+  color: var(--blue);
+}
+
+.tutorial-battle[data-tutorial-step="enemy"] .enemy-letter,
+.tutorial-battle[data-tutorial-step="armour"] .enemy-letter-armoured,
+.tutorial-battle[data-tutorial-step="armour-break"] .enemy-letter:not(.enemy-letter-removed) {
+  border-color: var(--blue);
+  outline-color: var(--blue);
+}
+
+.tutorial-battle .tile[data-tutorial-hint="true"] {
+  border-color: var(--blue);
+  outline: 1px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.tutorial-battle[data-tutorial-step="strike"] .tile.strike:not(.selected),
+.tutorial-battle[data-tutorial-step="ward"] .tile.ward:not(.selected) {
+  border-color: var(--blue);
+}
+
+.tutorial-battle .controls {
+  width: min(100%, clamp(12rem, calc(100dvh - 24rem), 17rem));
+}
+
+@media (max-height: 650px) {
+  .tutorial-battle .enemy-zone {
+    gap: 0.35rem;
+  }
+
+  .tutorial-coach {
+    gap: 0.12rem;
+    font-size: 0.6rem;
+  }
+
+  .tutorial-battle .controls {
+    width: min(100%, clamp(12rem, calc(100dvh - 25rem), 17rem));
+  }
+}

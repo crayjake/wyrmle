@@ -1,5 +1,8 @@
+export type BattlePrimaryLabel = 'ATTACK' | 'CONTINUE' | 'BEGIN' | 'VIEW RESULT'
+
 type BattleActionsProps = {
   damage?: number
+  primaryLabel?: BattlePrimaryLabel
   canAttack: boolean
   canClear: boolean
   onClear: () => void
@@ -8,6 +11,7 @@ type BattleActionsProps = {
 
 export default function BattleActions({
   damage,
+  primaryLabel = 'ATTACK',
   canAttack,
   canClear,
   onClear,
@@ -30,7 +34,7 @@ export default function BattleActions({
         disabled={!canAttack}
         onClick={onAttack}
       >
-        ATTACK{damage !== undefined ? ` ${damage}` : ''}
+        {primaryLabel}{primaryLabel === 'ATTACK' && damage !== undefined ? ` ${damage}` : ''}
       </button>
     </div>
   )

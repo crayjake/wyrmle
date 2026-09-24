@@ -371,7 +371,7 @@ test('share text encodes outcomes and turn effects but never words or enemy info
   const completed = result()
   const share = buildShareText(completed)
   assert.equal(share, [
-    'WYRMLE 2026-09-24 · VICTORY', '', 'RESOLVE', '□□□□□ 0/5', '',
+    'WYRMLE 2026-09-24 · NORMAL · VICTORY', '', 'RESOLVE', '□□□□□ 0/5', '',
     'C  ·······■·◐ ◇', 'C  ◐■·······■', 'C  ·····■■···',
     'C  ··■■······', 'N  ■·······■· ◆', 'N  ····■·····',
   ].join('\n'))
@@ -410,6 +410,7 @@ test('future submission is a deterministic compact summary without local display
   const before = structuredClone(completed)
   const submission = buildDailyScoreSubmission(completed)
   assert.deepEqual(submission, {
+    mode: 'normal',
     puzzleId: completed.puzzleId,
     gameVersion: completed.gameVersion,
     puzzleVersion: completed.puzzleVersion,
@@ -438,4 +439,20 @@ test('future submission is a deterministic compact summary without local display
   for (const displayOnly of ['enemyWord', 'wordsPlayed', 'strongestHit', 'turns', 'score', 'stars']) {
     assert.equal(displayOnly in submission, false)
   }
+})
+
+test('mode is explicit in completed results, sharing and future submissions without changing outcome notation', () => {
+  const definition = puzzle()
+  const game = wonGame(definition)
+  const normal = buildDailyResult(definition, game, '2026-09-24T12:00:00Z')
+  const hard = buildDailyResult(definition, game, '2026-09-24T12:00:00Z', 'hard')
+  assert.equal(normal.mode, 'normal')
+  assert.equal(hard.mode, 'hard')
+  const [normalHeader, ...normalBody] = buildShareText(normal).split('\n')
+  const [hardHeader, ...hardBody] = buildShareText(hard).split('\n')
+  assert.equal(normalHeader, 'WYRMLE 2026-09-24 · NORMAL · VICTORY')
+  assert.equal(hardHeader, 'WYRMLE 2026-09-24 · HARD · VICTORY')
+  assert.deepEqual(hardBody, normalBody)
+  assert.deepEqual(buildDailyScoreSubmission(hard), { ...buildDailyScoreSubmission(normal), mode: 'hard' })
+  assert.deepEqual(hard.turns, normal.turns)
 })

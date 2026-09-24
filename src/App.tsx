@@ -14,16 +14,29 @@ import { getDailyPuzzleId, validatePuzzleId } from "./daily/date"
 import { getDailyPuzzle } from "./daily/puzzle"
 import { getOpeningPuzzleId } from "./daily/persistence"
 import { useDailyRun } from "./daily/useDailyRun"
-import { HelpPanel, HistoryErrorPanel, LogPanel, ResultPanel, StatsPanel } from "./components/DailyPanels"
+import { HelpPanel, HistoryErrorPanel, LogPanel, ResultPanel, SettingsPanel, StatsPanel } from "./components/DailyPanels"
+import ModeSelection from './components/ModeSelection'
+import { getOnboardingStage } from './preferences'
+import { useUserPreferences } from './useUserPreferences'
+import type { DifficultyMode } from './daily/types'
 import "./components/DailyPanels.css"
 
 const DevPanel = import.meta.env.DEV ? lazy(() => import('./components/DevPanel')) : null
 const DevCombat = import.meta.env.DEV ? lazy(() => import('./experimental/DevCombat')) : null
+const TutorialBattle = lazy(() => import('./tutorial/TutorialBattle'))
 
 type Phase = "waiting" | "enemy" | "tiles" | "ready"
-type Panel = 'help' | 'log' | 'stats' | 'result' | 'dev' | null
+type Panel = 'help' | 'log' | 'stats' | 'result' | 'settings' | 'dev' | null
+type OnboardingAction = 'replay' | 'tutorial' | 'reset' | 'preview'
 
 export default function App() {
+  const user = useUserPreferences()
+  const [onboarding, setOnboarding] = useState(() => getOnboardingStage(user.preferences))
+  const [tutorialCompleted, setTutorialCompleted] = useState(false)
+  const [tutorialOnly, setTutorialOnly] = useState(false)
+  const [previewOnboarding, setPreviewOnboarding] = useState(false)
+  const [choice, setChoice] = useState<DifficultyMode>(user.preferences.preferredMode)
+  const [devModeOverride, setDevModeOverride] = useState<DifficultyMode | null>(null)
   const [todayId, setTodayId] = useState(() => getDailyPuzzleId(new Date()))
   const [puzzleId, setPuzzleId] = useState(() => {
     const requested = import.meta.env.DEV ? new URLSearchParams(window.location.search).get('puzzle') : null
@@ -56,22 +69,64 @@ export default function App() {
     }
   }
 
+  function finishTutorial(completed: boolean) {
+    if (tutorialOnly) { setOnboarding(null); return }
+    setTutorialCompleted(completed)
+    if (!previewOnboarding) user.update({ hasCompletedOnboarding: true })
+    setOnboarding('mode')
+  }
+
+  function playDaily() {
+    if (!previewOnboarding) {
+      user.update({ preferredMode: choice, hasCompletedOnboarding: true, hasChosenMode: true })
+      loadPuzzle(todayId)
+    }
+    setOnboarding(null)
+  }
+
+  function devOnboarding(action: OnboardingAction) {
+    if (!import.meta.env.DEV) return
+    if (action === 'reset') {
+      user.update({ hasCompletedOnboarding: false, hasChosenMode: false })
+      return
+    }
+    setTutorialOnly(action === 'tutorial')
+    setPreviewOnboarding(action === 'preview')
+    setTutorialCompleted(false)
+    setChoice(action === 'preview' ? 'normal' : user.preferences.preferredMode)
+    setOnboarding('tutorial')
+  }
+
+  if (onboarding === 'tutorial') return <Suspense fallback={<main className="container"><p>Loading tutorial…</p></main>}>
+    <TutorialBattle onComplete={() => finishTutorial(true)} onSkip={() => finishTutorial(false)} />
+  </Suspense>
+  if (onboarding === 'mode') return <ModeSelection value={choice} onChange={setChoice} onPlay={playDaily}
+    completedTutorial={tutorialCompleted} error={user.error} />
+
   if (DevCombat && playtestMode) return <Suspense fallback={null}>
     <DevCombat initialMode={playtestMode} onExit={() => setPlaytestMode(null)}
       matchHint={matchHint} onMatchHintChange={setMatchHint} />
   </Suspense>
 
   return <DailyBattle key={`${puzzleId}:${revision}`} puzzleId={puzzleId} todayId={todayId} onLoad={loadPuzzle}
-    onPlaytest={setPlaytestMode} matchHint={matchHint} onMatchHintChange={setMatchHint} />
+    onPlaytest={setPlaytestMode} matchHint={matchHint} onMatchHintChange={setMatchHint}
+    preferredMode={user.preferences.preferredMode} onChangeMode={mode => user.update({ preferredMode: mode })}
+    preferencesError={user.error} onDevOnboarding={devOnboarding} devModeOverride={devModeOverride}
+    onForceMode={setDevModeOverride} />
 }
 
-function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, matchHint, onMatchHintChange }: {
+function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, matchHint, onMatchHintChange,
+  preferredMode, onChangeMode, preferencesError, onDevOnboarding, devModeOverride, onForceMode }: {
   puzzleId: string; todayId: string; onLoad: (id: string) => void
   onPlaytest: (mode: 'damage' | 'letter-strike') => void
   matchHint: MatchHintMode; onMatchHintChange: (mode: MatchHintMode) => void
+  preferredMode: DifficultyMode; onChangeMode: (mode: DifficultyMode) => void
+  preferencesError: string | null; onDevOnboarding: (action: OnboardingAction) => void
+  devModeOverride: DifficultyMode | null; onForceMode: (mode: DifficultyMode | null) => void
 }) {
   const puzzle = useMemo(() => getDailyPuzzle(puzzleId), [puzzleId])
-  const daily = useDailyRun(puzzle)
+  const daily = useDailyRun(puzzle, preferredMode)
+  const displayMode = import.meta.env.DEV && devModeOverride ? devModeOverride : daily.mode
   const { game, result } = daily
   const [panel, setPanel] = useState<Panel>(null)
   const [resultDismissed, setResultDismissed] = useState(false)
@@ -91,6 +146,10 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, matchHint, onMatch
   const enemy = game.encounter.enemy
   const interactive = visiblePhase === "ready" && game.status === "playing" && !daily.error && !result && !resolving
   const preview = previewLetterStrike(game)
+  const primaryLabel = result ? 'VIEW RESULT' : visiblePhase === 'waiting' ? 'BEGIN' : 'ATTACK'
+  const primaryEnabled = result ? !resolving
+    : visiblePhase === 'waiting' ? !daily.error
+    : interactive && preview.valid
   const enemyDecoded = useCallback(() => setPhase("tiles"), [])
   const tilesDecoded = useCallback(() => setPhase("ready"), [])
   const registerLetter = useCallback((index: number, element: HTMLDivElement | null) => {
@@ -119,7 +178,7 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, matchHint, onMatch
   }
 
   return (
-    <main className="container letter-combat" data-combat-mode="letter-strike"
+    <main className="container letter-combat" data-combat-mode="letter-strike" data-difficulty={displayMode}
       ref={containerRef}
       onClick={event => {
         if ((event.target as HTMLElement).closest('button, a, input, dialog')) return
@@ -128,14 +187,8 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, matchHint, onMatch
     >
       <Header wyrmDockRef={wyrmDockRef} titleRef={wyrmTitleRef} showWyrm={visiblePhase === "ready"}
         onHelp={() => setPanel('help')} onHistory={() => setPanel('log')}
-        onSettings={DevPanel ? () => setPanel('dev') : undefined} />
+        onSettings={() => setPanel('settings')} />
 
-      <div className="daily-meta" onClick={event => event.stopPropagation()}>
-        <span>Daily {puzzle.date} · UTC</span>
-        {result ? <button type="button" onClick={() => setPanel('result')} disabled={resolving}>View result</button>
-          : visiblePhase === 'waiting' ? <button type="button" onClick={begin} disabled={!!daily.error}>Begin</button>
-          : <span>{daily.resumed ? 'Resumed' : 'One attempt'}</span>}
-      </div>
       {todayId !== puzzleId && <div className="daily-notice" onClick={event => event.stopPropagation()}>
         <span>{puzzleId < todayId ? 'A new daily puzzle is ready.' : 'Development puzzle date.'}</span>
         <button className="daily-button" onClick={() => onLoad(todayId)}>Play today</button>
@@ -159,6 +212,7 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, matchHint, onMatch
           name={enemy.word}
           partOfSpeech={enemy.partOfSpeech}
           definition={enemy.definition}
+          hideDefinition={displayMode === 'hard'}
           modifiers={getLetterStrikeGrammarModifiers(game)}
           modifierUnit="STRIKE"
           letterStates={game.enemyLetters}
@@ -192,7 +246,8 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, matchHint, onMatch
             matchHint={matchHint}
             specialTiles={getLetterStrikeTileSummary(game)}
             selectedTileIds={game.selectedTileIds}
-            canAttack={interactive && preview.valid}
+            primaryLabel={primaryLabel}
+            canAttack={primaryEnabled}
             onToggleTile={id => {
               if (interactive) daily.select(id)
             }}
@@ -200,6 +255,14 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, matchHint, onMatch
               if (interactive) daily.clear()
             }}
             onAttack={() => {
+              if (result) {
+                if (!resolving) setPanel('result')
+                return
+              }
+              if (visiblePhase === 'waiting') {
+                if (!daily.error) begin()
+                return
+              }
               if (interactive) daily.attack()
             }}
           />
@@ -231,9 +294,13 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, matchHint, onMatch
         ? <HistoryErrorPanel error={daily.history.error} onClose={() => setPanel(null)} />
         : <StatsPanel results={daily.history.results} todayId={todayId}
             inProgressIds={daily.history.inProgressIds} onResume={onLoad} onClose={() => setPanel(null)} />)}
+      {visiblePanel === 'settings' && <SettingsPanel preferredMode={preferredMode} runMode={daily.mode}
+        started={daily.started} onChangeMode={onChangeMode} error={preferencesError}
+        onDev={DevPanel ? () => setPanel('dev') : undefined} onClose={() => setPanel(null)} />}
       {visiblePanel === 'dev' && DevPanel && <Suspense fallback={null}>
         <DevPanel puzzle={puzzle} onLoad={onLoad} onPlaytest={onPlaytest} onClose={() => setPanel(null)}
-          matchHint={matchHint} onMatchHintChange={onMatchHintChange} />
+          matchHint={matchHint} onMatchHintChange={onMatchHintChange} onOnboarding={onDevOnboarding}
+          onForceMode={onForceMode} />
       </Suspense>}
     </main>
   )

@@ -2,8 +2,8 @@
   display: inline-flex;
   align-items: center;
   flex: none;
-  width: 24px;
-  height: 10px;
+  width: 1.5rem;
+  height: 0.625rem;
   color: var(--green);
   line-height: 1;
   letter-spacing: 0;
@@ -18,22 +18,22 @@
 
 .wyrm-character-body > span {
   display: block;
-  width: 4px;
-  height: 5px;
+  width: 0.25rem;
+  height: 0.3125rem;
   border-radius: 1px;
   background: currentColor;
 }
 
 .wyrm-character-body > span:first-child {
-  width: 3px;
-  height: 3px;
+  width: 0.1875rem;
+  height: 0.1875rem;
 }
 
 .wyrm-character-head {
   position: relative;
   flex: none;
-  width: 8px;
-  height: 8px;
+  width: 0.5rem;
+  height: 0.5rem;
   border-radius: 2px;
   background: currentColor;
 }
@@ -42,26 +42,26 @@
 .wyrm-character-head::after {
   content: "";
   position: absolute;
-  right: 2px;
-  width: 2px;
-  height: 2px;
+  right: 0.125rem;
+  width: 0.125rem;
+  height: 0.125rem;
   background: var(--bg);
 }
 
 .wyrm-character-head::before {
-  top: 1px;
+  top: 0.0625rem;
 }
 
 .wyrm-character-head::after {
-  bottom: 1px;
+  bottom: 0.0625rem;
 }
 
 .wyrm-character-tongue {
   position: absolute;
   left: 100%;
-  top: 3px;
-  width: 4px;
-  height: 3px;
+  top: 0.1875rem;
+  width: 0.25rem;
+  height: 0.1875rem;
   background: var(--red);
   transform-origin: left center;
   clip-path: polygon(0 33%, 60% 33%, 100% 0, 100% 33%, 75% 50%, 100% 66%, 100% 100%, 60% 66%, 0 66%);

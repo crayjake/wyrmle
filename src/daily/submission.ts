@@ -9,6 +9,7 @@ import type { DailyResult, DailyScoreSubmission } from './types.ts'
  */
 export function buildDailyScoreSubmission(result: DailyResult): DailyScoreSubmission {
   return {
+    mode: result.mode,
     puzzleId: result.puzzleId,
     gameVersion: result.gameVersion,
     puzzleVersion: result.puzzleVersion,

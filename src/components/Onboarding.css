@@ -1,0 +1,109 @@
+.onboarding-choice {
+  width: min(100%, 21rem);
+  margin: auto;
+  text-align: left;
+}
+
+.onboarding-choice h1 {
+  margin: 0 0 2rem;
+  color: var(--emph);
+  font: 1.8rem 'Cutive Mono', monospace;
+}
+
+.mode-choices {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.mode-choices legend {
+  margin-bottom: 0.8rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.mode-choice {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 3rem;
+  cursor: pointer;
+}
+
+.mode-choice input {
+  appearance: none;
+  flex: none;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid var(--fg);
+  border-radius: 50%;
+  background: transparent;
+}
+
+.mode-choice input:checked {
+  border-color: var(--emph);
+}
+
+.mode-choice input:checked::after {
+  content: '';
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--emph);
+}
+
+.mode-choice input:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 4px;
+}
+
+.mode-choice-copy {
+  flex: 1;
+  display: grid;
+  gap: 0.15rem;
+}
+
+.mode-choice-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: var(--fg);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.mode-choice:has(input:checked) .mode-choice-heading {
+  color: var(--emph);
+}
+
+.mode-recommended {
+  color: var(--green);
+  font-size: 0.5rem;
+  letter-spacing: 0.06em;
+}
+
+.mode-choice-description,
+.mode-note {
+  font-size: 0.65rem;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.mode-note {
+  margin: 1rem 0;
+}
+
+.mode-save-error {
+  color: var(--red);
+  font-size: 0.65rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}

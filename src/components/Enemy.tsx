@@ -17,6 +17,7 @@ type EnemyLetterState = {
 type EnemyProps = {
   name: string
   definition: string
+  hideDefinition?: boolean
   partOfSpeech?: string
   revealedIndices: readonly number[]
   registerLetter: (index: number, element: HTMLDivElement | null) => void
@@ -38,6 +39,7 @@ function randomGlyph() {
 export default function Enemy({
   name,
   definition,
+  hideDefinition = false,
   partOfSpeech,
   revealedIndices,
   registerLetter,
@@ -143,7 +145,7 @@ export default function Enemy({
           </span>
         )}
 
-        <span>{definition}</span>
+        {!hideDefinition && <span>{definition}</span>}
         {activeModifiers.length > 0 && (
           <ul className="enemy-matchups" aria-label="Enemy grammar matchups">
             {activeModifiers.map((modifier, index) => (

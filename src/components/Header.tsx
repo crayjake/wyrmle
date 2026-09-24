@@ -31,7 +31,7 @@ export default function Header({ wyrmDockRef, titleRef, showWyrm, onHelp, onHist
                 <History size={20} />
             </button>
 
-            {onSettings && <button className="icon-button" aria-label="Development tools" onClick={onSettings}>
+            {onSettings && <button className="icon-button" aria-label="Settings" onClick={onSettings}>
                 <Settings size={20} />
             </button>}
             </nav>

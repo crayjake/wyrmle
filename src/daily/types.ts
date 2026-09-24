@@ -1,5 +1,8 @@
 import type { LetterStrikeEncounter, LetterStrikeEvaluation, LetterStrikeGem, LetterStrikeLetterOutcome, LetterStrikeState } from '../game/letterStrike.ts'
 
+/** Information shown to the player; never an input to combat resolution. */
+export type DifficultyMode = 'normal' | 'hard'
+
 /** The authored puzzle is independent of any player's progress. */
 export type DailyPuzzleDefinition = {
   readonly puzzleId: string
@@ -12,6 +15,7 @@ export type DailyPuzzleDefinition = {
 /** Only committed gameplay is saved; selections, errors and animations are UI state. */
 export type DailyRun = {
   saveVersion: number
+  mode: DifficultyMode
   puzzleId: string
   gameVersion: string
   puzzleVersion: number
@@ -39,6 +43,7 @@ export type ResultTurn = {
 
 /** Small permanent local record, separate from the board/run snapshot. */
 export type DailyResult = {
+  mode: DifficultyMode
   puzzleId: string
   date: string
   gameVersion: string
@@ -66,6 +71,7 @@ export type DailyResult = {
 
 /** No local display fields. A future server must replay evidence, not trust this. */
 export type DailyScoreSubmission = {
+  mode: DifficultyMode
   puzzleId: string
   gameVersion: string
   puzzleVersion: number
@@ -84,6 +90,9 @@ export type DailyScoreSubmission = {
 }
 
 export type DailySession = {
+  mode: DifficultyMode
+  /** Begin has been saved, even when no words have been submitted yet. */
+  started: boolean
   game: LetterStrikeState | null
   result: DailyResult | null
   resumed: boolean

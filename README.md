@@ -14,6 +14,21 @@ npm run lint
 
 Tests use Node's built-in TypeScript support; use Node 22.18+ or a newer supported release. Validation uses the bundled `an-array-of-english-words` dictionary. Gameplay makes no API requests and needs no LLM.
 
+## GitHub Pages
+
+In [repository Settings → Pages](https://github.com/crayjake/wyrmle/settings/pages), set **Build and deployment → Source → GitHub Actions**. Push this project, including `.github/workflows/pages.yml`, to `main`. The workflow installs locked dependencies on Node 24, runs tests and lint, typechecks/builds, then deploys `dist`. It can also be run manually from **Actions → Deploy to GitHub Pages → Run workflow** on `main`.
+
+The project site will be **https://crayjake.github.io/wyrmle/** after its first successful deployment. The workflow takes the base path from GitHub Pages, so scripts, lazy-loaded chunks, styles and the favicon work below `/wyrmle/`; a configured custom domain is supported too. Local `npm run dev` and ordinary builds keep `/` as their base. No `gh-pages` branch, deployment dependency or personal access token is needed. Onboarding, modes and Daily saves remain local to each browser and site origin.
+
+To check the project-site build locally:
+
+```sh
+VITE_BASE_PATH=/wyrmle/ npm run build
+VITE_BASE_PATH=/wyrmle/ npm run preview -- --host 127.0.0.1
+```
+
+Open **http://127.0.0.1:4173/wyrmle/**. Use the same base for build and preview. This follows the [Vite Pages deployment guide](https://vite.dev/guide/static-deploy#github-pages) and GitHub's [custom Pages workflow](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+
 ## Letter-strike rules
 
 - A valid word normally costs one Resolve. Invalid words spend nothing.
@@ -38,7 +53,19 @@ Committed hit records animate in selection order, so two hits to one armoured le
 
 The action area contains the selected word, semantic category, applied LONG/grammar allowances and triggered Strike/Ward effects, followed by tiles and actions. Exact predicted outcomes appear on the enemy cells; neither the current word nor the Attack button duplicates them with a strike count. Normal play has no numeric enemy HP, DMG, charge bar, WORD/READY labels, player-area divider, or permanent recent-history panel. Validation, decode and terminal messages remain available.
 
-The header's **Log** opens every submitted turn, newest first: strikes, semantic outcome, applied grammar, triggered effects, removed letters and armour breaks. Statistics are available from the Log and result screen. The definition stays attached to the enemy, with compact grammar labels underneath separated by dots, matching the current move's modifiers. Actual weaknesses are green and resistances red; neutral types are omitted. Exact allowances remain in accessible text and hover descriptions. Tile labels and explanations use the actual board and configured effects through `letterStrikeHud.ts`.
+The header's **Log** opens every submitted turn, newest first: strikes, semantic outcome, applied grammar, triggered effects, removed letters and armour breaks. Statistics are available from the Log and result screen. In Normal mode, the definition stays attached to the enemy, with compact grammar labels underneath separated by dots, matching the current move's modifiers. Actual weaknesses are green and resistances red; neutral types are omitted. Exact allowances remain in accessible text and hover descriptions. Tile labels and explanations use the actual board and configured effects through `letterStrikeHud.ts`.
+
+## Modes and first visit
+
+**Normal** is recommended and shows enemy definitions. **Hard** omits only the definition; part of speech and explicit encounter mechanics remain visible. Both modes use the identical Daily encounter, board, refill, Resolve, armour and combat rules. The production header's **Settings** changes the preferred mode. **Begin** fixes that Daily's mode, even before its first attack; later preference changes apply to the next run without resetting progress.
+
+First-time visitors play a short **COLD** tutorial with six manual words: **HOT → ICE → ICY → LAD → DIG → DUO**. It explains counters as opposite meanings and resistance as similar meanings. ICE uses Strike C; resisted adjective ICY demonstrates the enemy's visible **ADJECTIVE +1 STRIKE** bonus with an ordinary C. Ward A preserves Resolve. DIG and DUO each contain one D, showing its armour break and removal in separate words. The shared enemy, tile, preview and Resolve components use the real engine. **Skip tutorial** remains available throughout and goes straight to mode selection. Finishing presents **You're ready**, mode selection and **Play today's Wyrmle**. Action buttons have a 0.6rem gap below the grid in both tutorial and Daily play.
+
+Tutorial explanations use **Continue** in the bottom Attack button's position. It switches back to **Attack** while building a word, keeping the same real-preview and animation gates. An available action gently pulses; reduced-motion preferences disable the pulse. There is no separate Continue button above the grid.
+
+The Daily battle uses that same bottom action for **Begin**, **Attack**, and **View result**. Its date/mode/status row is omitted; mode remains available in Settings and results. Off-date and save-error notices still appear when needed.
+
+`UserPreferences` persists separately at `wyrmle:preferences:v1`: `preferredMode`, `hasCompletedOnboarding` and `hasChosenMode`. Skipping records completion before mode selection, so an interrupted choice resumes there. Existing Daily records identify returning visitors, who bypass onboarding. Tutorial state lives only in its own reducer; it writes no Daily run or result, consumes no attempt, and affects no statistics or streak. Returning players resume their unfinished Daily or open today's puzzle.
 
 ## Daily puzzle definition
 
@@ -57,14 +84,14 @@ Today's saved run/result takes opening priority; otherwise the latest unfinished
 | Data | Responsibility |
 | --- | --- |
 | `DailyPuzzleDefinition` | Immutable, versioned rules/content for a date |
-| `DailyRun` | Enemy-letter/armour states, Resolve, board/IDs, refill cursor/next ID, committed words/hits/effects, status and finish time |
-| `DailyResult` | Permanent completion summary and ordered turn evidence; statistics are derived from results |
+| `DailyRun` | Fixed run mode, enemy-letter/armour states, Resolve, board/IDs, refill cursor/next ID, committed words/hits/effects, status and finish time |
+| `DailyResult` | Mode, permanent completion summary and ordered turn evidence; statistics are derived from results |
 
 Runs use `wyrmle:letter-strike:daily:v1:run:YYYY-MM-DD`; results use the matching `result:` namespace. Former numeric-mode `wyrmle:daily:*` records are preserved untouched, excluded from the new game/statistics, and never reinterpreted as letter-strike saves. DEV reset/clear affects only the new namespace.
 
 `src/daily/persistence.ts` accepts an injected storage interface. It replays committed attacks against the canonical puzzle and verifies the entire snapshot: letter/armour states, board, Resolve, refill position, effects and result totals. Unsupported versions or corruption block the run while preserving the record.
 
-Save schema 3 records the explicit LONG modifier as well as positional outcomes. Schema 1/2 records are checked against their exact historical shape and version, then enriched in memory from canonical replay. This includes the old Strike allowance, vocabulary and absence of LONG. Reads never rewrite original bytes or completion timestamps; continuing an active run writes schema 3 while retaining its committed game version. Completed results remain authoritative and can display the current share format without reopening the puzzle.
+Save schema 4 adds `mode: "normal" | "hard"` to runs and results, retaining LONG modifiers and positional outcomes. Schema 1/2/3 records are checked against their exact historical shape and version, then enriched in memory from canonical replay with Normal mode. This preserves historical Strike allowances, vocabulary and LONG behavior. Reads never rewrite original bytes or completion timestamps; continuing an active run writes schema 4 while retaining its committed game version and mode. Completed results remain authoritative and can display the current share format without reopening the puzzle.
 
 Every accepted attack saves before the UI advances. Completion writes the authoritative result before the terminal run snapshot, so an interrupted second write cannot reopen the date. Results reconstruct missing/stale terminal runs; valid terminal runs recover missing results. The first completion stays authoritative. Stale tabs cannot replace it or regress progress, and storage events refresh other tabs.
 
@@ -72,16 +99,18 @@ Selections, errors and intro progress are transient. Refresh restores committed 
 
 ## Results and statistics
 
-`buildDailyResult(puzzle, game, completedAt)` is pure. It records outcome/enemy, remaining Resolve, words used, total strikes, letters removed, armour broken, largest single-turn removal, strongest strike count, Counter/Neutral/Resisted counts, actual Strike activations and Ward saves. The result presents Victory/Defeat, numeric Resolve plus one segment per starting Resolve, semantic breakdown and letter/effect totals. Word count is secondary in the optional history. Strike counts only when its tile hits. Ward counts once per protected turn. Armour is counted once per armoured letter. No score, stars or rankings are invented.
+`buildDailyResult(puzzle, game, completedAt, mode)` is pure. It records mode, outcome/enemy, remaining Resolve, words used, total strikes, letters removed, armour broken, largest single-turn removal, strongest strike count, Counter/Neutral/Resisted counts, actual Strike activations and Ward saves. The result presents Victory/Defeat with a subtle mode label, numeric Resolve plus one segment per starting Resolve, semantic breakdown and letter/effect totals. Word count is secondary in the optional history. Strike counts only when its tile hits. Ward counts once per protected turn. Armour is counted once per armoured letter. No score, stars or rankings are invented.
 
 `calculateStats(results, todayId)` derives played, wins, win rate, current/longest winning streaks, average Resolve on wins, best Resolve, largest turn by strikes, total removed letters, Counter/Neutral/Resisted moves, Strike activations, Ward saves and armour breaks, plus word-length and different-enemy statistics. Aggregates are not stored. Only the first completion per puzzle counts; future DEV dates are excluded. Streaks follow consecutive UTC dates. Yesterday can sustain a streak while today is unplayed. Completing an earlier run after midnight still belongs to its puzzle date.
 
+The current statistics screen stays combined. Stored result modes allow future Normal/Hard played, wins and streak comparisons without changing combat or permitting a second attempt at the same Daily.
+
 ## Spoiler-safe sharing
 
-`buildShareText(result)` in `src/daily/share.ts` is pure and independent of the UI. It returns date, outcome, a Resolve bar and one positional row per submitted word:
+`buildShareText(result)` in `src/daily/share.ts` is pure and independent of the UI. It returns date, mode, outcome, a Resolve bar and one positional row per submitted word:
 
 ```text
-WYRMLE 2026-09-25 · VICTORY
+WYRMLE 2026-09-25 · NORMAL · VICTORY
 
 RESOLVE
 ■□□□□ 1/5
@@ -99,13 +128,15 @@ The engine emits `letterOutcomes` for every original slot on every turn, includi
 
 ## Future global ranking boundary
 
-`buildDailyScoreSubmission(result)` in `src/daily/submission.ts` creates a deterministic payload: puzzle/game/puzzle versions, outcome, Resolve, turns, total strikes, removed letters, armour breaks, semantic sequence, per-turn positional outcomes, Ward/Strike usage, completion time, and ordered tile IDs for replay. A future submission call can run after successful completion persistence in `useDailyRun.ts`.
+`buildDailyScoreSubmission(result)` in `src/daily/submission.ts` creates a deterministic payload: mode, puzzle/game/puzzle versions, outcome, Resolve, turns, total strikes, removed letters, armour breaks, semantic sequence, per-turn positional outcomes, Ward/Strike usage, completion time, and ordered tile IDs for replay. A future submission call can run after successful completion persistence in `useDailyRun.ts`.
 
 A server must resolve the versioned puzzle, replay the evidence and calculate comparison values itself. Client timestamps and totals are not authoritative. No network request, leaderboard or fake ranking is implemented.
 
 ## Development comparison and tools
 
-In `npm run dev`, settings offers date selection, puzzle reset, history inspection/clear, and real engine win/loss replays. `/?puzzle=2026-09-24` selects a test date. Controls and date override are absent from production.
+In `npm run dev`, **Settings → Development tools** offers date selection, puzzle reset, history inspection/clear, and real engine win/loss replays. `/?puzzle=2026-09-24` selects a test date. Development controls and date override are absent from production; ordinary mode Settings remains available.
+
+Onboarding tools provide **Replay onboarding**, **Launch tutorial directly**, **Reset onboarding flag** (takes effect on reload), and **Preview first-time flow**. Direct tutorial launch returns to the Daily without changing preferences; first-time preview also leaves preferences and Daily records intact. **Force Normal / Force Hard** temporarily overrides presentation only, with **Use run mode** restoring the saved mode. These overrides do not rewrite the run or result mode and disappear on refresh.
 
 **DAMAGE MODE** and **LETTER-STRIKE MODE** launch disposable DEV comparisons. Switching or restarting creates a fresh encounter. They never save daily history; **Return to daily game** restores the saved daily. The previous numeric engine remains available through this DEV entry point; its rules and tests are intact.
 
@@ -113,10 +144,12 @@ The current letter-strike fixture is `JOYT / CHER / GLOM / SADE`, with Strike L 
 
 Enemy meaning and parts of speech are authored independently of the large validity dictionary. The current encounter includes GAY in its happy/counter sense, SANDY as an adjective, and GLOOMY as a resisted adjective. Useful prototype adjectives have explicit annotations; this remains a curated vocabulary, not complete dictionary-wide POS or semantic classification. New annotations are encounter-owned so they cannot change old saved turns.
 
-Tile letters are larger while square tile dimensions and grid spacing remain unchanged. Quiet borders, smaller selection-order numbers and subdued special labels keep letters dominant. Selected tiles retain the solid background and strong outline. In DEV settings, **MATCH HINT: OFF / DOT / UNDERLINE** compares two subtle blue indications that a tile letter still exists in the enemy. OFF is the default; hints are absent in production, never influence combat, and disappear when the final matching enemy instance dies. DOT leaves more space around the glyph and its special label on the mini viewport. Both alternatives remain available for comparison.
+Phone typography scales with viewport width, capped by height on short screens. The grid uses the available height up to 17rem, with extra room reserved for tutorial explanations; its letters grow with it. At 375 × 812 the root size is 18.75px, the grid is about 319px wide, and each tile is about 75px square with 36px letters. Shorter screens keep square touch targets and space below the grid without overlapping the tutorial. The warm `#11120d` background stays the same for both system colour preferences, with no outer frame. Quiet borders, smaller selection-order numbers and subdued special labels keep letters dominant. Selected tiles retain the solid background and strong outline.
+
+In DEV settings, **MATCH HINT: OFF / DOT / UNDERLINE** compares two subtle blue indications that a tile letter still exists in the enemy. OFF is the default; hints are absent in production, never influence combat, and disappear when the final matching enemy instance dies. DOT leaves more space around the glyph and its special label on the mini viewport. Both alternatives remain available for comparison.
 
 ## Intro and verification
 
-`WyrmDecoder.tsx` keeps the `waiting → enemy → tiles → ready` sequence and measures actual element bounds while moving. Enemy cells decode first, tiles follow the alternating-row route, and the wyrm returns through the title. Reduced motion reveals both stages quickly. Paths, timings, tile dimensions, font families and palette are unchanged.
+`WyrmDecoder.tsx` keeps the `waiting → enemy → tiles → ready` sequence and measures actual element bounds while moving. Enemy cells decode first, tiles follow the alternating-row route, and the wyrm returns through the title. Reduced motion reveals both stages quickly. Paths and timings are unchanged; the sprite and its dock scale with the phone UI. Font families and the authored terminal palette are retained.
 
 Engine tests cover exact predicted targets versus submission, dead-slot identity/position, sequential armour hits, duplicate targeting, semantics, LONG/grammar stacking, independent specials, Resolve and terminal states. Daily tests cover versioned frozen content, old/new exact restore, tampering, completion locks/partial writes, stale tabs, UTC boundaries, result/stat counts, positional share symbols and submission evidence. Hint tests check living/dead duplicate letters and their distinction from real predicted strikes. Browser checks cover the three hint modes, red/blue targets, square centered tiles, phone fit, old/new reloads, all starting anchors, full victory, logs, sharing and DEV/production separation.

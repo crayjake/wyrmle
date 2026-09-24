@@ -4,10 +4,10 @@
   left: 0;
   z-index: 3;
   pointer-events: none;
-  width: 24px;
-  height: 10px;
-  margin-left: -12px;
-  margin-top: -5px;
+  width: 1.5rem;
+  height: 0.625rem;
+  margin-left: -0.75rem;
+  margin-top: -0.3125rem;
   display: flex;
   align-items: center;
   color: var(--green);

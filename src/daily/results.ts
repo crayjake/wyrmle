@@ -1,11 +1,12 @@
 import type { LetterStrikeState } from '../game/letterStrike.ts'
-import type { DailyPuzzleDefinition, DailyResult } from './types.ts'
+import type { DailyPuzzleDefinition, DailyResult, DifficultyMode } from './types.ts'
 
 /** Summarize committed turns; transient selections and animation state never enter history. */
 export function buildDailyResult(
   puzzle: DailyPuzzleDefinition,
   game: LetterStrikeState,
   completedAt: string,
+  mode: DifficultyMode = 'normal',
 ): DailyResult {
   if (game.status === 'playing') throw new Error('An unfinished run has no daily result.')
   const finishTime = new Date(completedAt)
@@ -40,6 +41,7 @@ export function buildDailyResult(
   })
 
   return {
+    mode,
     puzzleId: puzzle.puzzleId,
     date: puzzle.date,
     gameVersion: puzzle.gameVersion,

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import Tile from "./Tile"
 import type { SpecialTilePresentation } from "./Tile"
 import BattleActions from "./BattleActions"
+import type { BattlePrimaryLabel } from "./BattleActions"
 import { introTimings } from "../intro/config"
 import { getMatchingTileIds } from './tileMatchHints'
 import type { MatchHintMode } from './tileMatchHints'
@@ -26,6 +27,7 @@ type TileGridProps = {
   enemyLetters?: readonly { letter: string; hitsRemaining: number }[]
   matchHint?: MatchHintMode
   damage?: number
+  primaryLabel?: BattlePrimaryLabel
   canAttack: boolean
   onToggleTile: (id: number) => void
   onClear: () => void
@@ -48,6 +50,7 @@ export default function TileGrid({
   enemyLetters = [],
   matchHint = 'off',
   damage,
+  primaryLabel,
   canAttack,
   onToggleTile,
   onClear,
@@ -105,6 +108,7 @@ export default function TileGrid({
 
       <BattleActions
         damage={damage}
+        primaryLabel={primaryLabel}
         canAttack={canAttack}
         canClear={ready && selectedTileIds.length > 0}
         onClear={onClear}
