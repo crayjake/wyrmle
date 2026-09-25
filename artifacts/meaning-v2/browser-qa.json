@@ -1,0 +1,28 @@
+{
+  "viewport": "375×629 CSS pixels, DPR 3; Chromium touch emulation, not physical iOS",
+  "checks": [
+    "CALM previews Counters CHAOS and 2 hits",
+    "AND plays and saves as v11",
+    "Reload preserves post-AND board",
+    "No horizontal overflow or app errors",
+    "Static Apple/precomposed/PNG favicon URLs match production directory; local built assets return image/png"
+  ],
+  "iconLinks": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://crayjake.github.io/wyrmle/apple-touch-icon-v2.png"
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://crayjake.github.io/wyrmle/apple-touch-icon-v2.png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://crayjake.github.io/wyrmle/icons/wyrm-192-v2.png"
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://crayjake.github.io/wyrmle/icons/wyrm-192-v2.png"
+    }
+  ]
+}

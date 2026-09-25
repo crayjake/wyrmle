@@ -1,12 +1,12 @@
 import { createLetterStrikeGame, submitLetterStrike } from '../game/letterStrike.ts'
-import type { LetterStrikeState } from '../game/letterStrike.ts'
+import type { LetterStrikeEncounter, LetterStrikeState } from '../game/letterStrike.ts'
 import { validatePuzzleId } from './date.ts'
 import { getDailyPuzzle, getDailyPuzzleForVersion, getSupportedDailyPuzzles } from './puzzle.ts'
 import { buildDailyResult } from './results.ts'
 import { undoLimit } from './modes.ts'
 import { captureUndoSnapshot, restoreUndoSnapshot } from './undo.ts'
 import type { DailyPuzzleDefinition, DailyResult, DailyRun, DailySession, DifficultyMode, StorageLike } from './types.ts'
-import { LEGACY_GAME_VERSION, SAVE_VERSION } from './versions.ts'
+import { LEGACY_GAME_VERSION, MEANING_GAME_VERSION, MEANING_PUZZLE_VERSION, MEANING_COVERAGE_PUZZLE_VERSION, SAVE_VERSION } from './versions.ts'
 
 // Letter health is a different game/schema. Legacy numeric-damage keys remain
 // untouched and are never interpreted, reset or counted as letter-strike saves.
@@ -36,6 +36,60 @@ function sameData(left: unknown, right: unknown): boolean {
   const keys = Object.keys(left)
   return keys.length === Object.keys(right).length
     && keys.every((key) => Object.hasOwn(right, key) && sameData(left[key], right[key]))
+}
+
+const vocabularyUpgradeChecks = new WeakMap<LetterStrikeEncounter, WeakMap<LetterStrikeEncounter, boolean>>()
+
+/** One explicitly reviewed correction, never a general rule-version migration. */
+export function canUpgradeMeaningVocabulary(from: DailyPuzzleDefinition, to: DailyPuzzleDefinition): boolean {
+  if (from.puzzleId !== '2026-09-25' || to.puzzleId !== from.puzzleId
+    || from.gameVersion !== MEANING_GAME_VERSION || to.gameVersion !== MEANING_GAME_VERSION
+    || from.puzzleVersion !== MEANING_PUZZLE_VERSION || to.puzzleVersion !== MEANING_COVERAGE_PUZZLE_VERSION) return false
+  // Only the exact reviewed publications qualify. This also pins permitted
+  // semantic corrections; an arbitrary edited table cannot authorize itself.
+  if (!sameData(from.encounter, getDailyPuzzleForVersion(from.puzzleId, from.gameVersion, from.puzzleVersion).encounter)
+    || !sameData(to.encounter, getDailyPuzzleForVersion(to.puzzleId, to.gameVersion, to.puzzleVersion).encounter)) return false
+  const immutable = Object.isFrozen(from.encounter) && Object.isFrozen(to.encounter)
+  const cached = immutable ? vocabularyUpgradeChecks.get(from.encounter)?.get(to.encounter) : undefined
+  if (cached !== undefined) return cached
+  const physicalRules = (encounter: LetterStrikeEncounter) => {
+    const { id: _id, meaningLexicon: _meanings, enemy, ...rules } = encounter
+    const { semanticRelations: _mirroredMeanings, ...concept } = enemy
+    return { ...rules, enemy: concept }
+  }
+  const compatible = from.encounter.meaningLexicon?.dictionaryVersion === 'oewn-2025-meanings-v1'
+    && to.encounter.meaningLexicon?.dictionaryVersion === 'wyrmle-defined-dictionary-v2'
+    && sameData(physicalRules(from.encounter), physicalRules(to.encounter))
+  if (immutable) {
+    let checks = vocabularyUpgradeChecks.get(from.encounter)
+    if (!checks) vocabularyUpgradeChecks.set(from.encounter, checks = new WeakMap())
+    checks.set(to.encounter, compatible)
+  }
+  return compatible
+}
+
+function samePosition(left: LetterStrikeState, right: LetterStrikeState): boolean {
+  const { encounter: _leftRules, ...leftPosition } = left
+  const { encounter: _rightRules, ...rightPosition } = right
+  return sameData(leftPosition, rightPosition)
+}
+
+function upgradedMeaningRun(
+  previous: DailyPuzzleDefinition, latest: DailyPuzzleDefinition,
+  game: LetterStrikeState, undoHistory: LetterStrikeState[],
+) {
+  if (game.status !== 'playing' || !canUpgradeMeaningVocabulary(previous, latest)) return null
+  try {
+    const upgraded = replayWithSnapshots(latest, game.playedWords.map(turn => turn.tiles.map(tile => tile.id)))
+    // Preserve every scored turn, tile identity, refill, life and undo position.
+    // Corrected meanings may change future options, never a played outcome.
+    if (!samePosition(game, upgraded.game) || undoHistory.length !== upgraded.undoHistory.length
+      || undoHistory.some((position, index) => !samePosition(position, upgraded.undoHistory[index]))) return null
+    return upgraded
+  } catch {
+    // A failed compatibility replay leaves the validated original run intact.
+    return null
+  }
 }
 
 function assertVersions(value: Record<string, unknown>, puzzle: DailyPuzzleDefinition, checkSave = true): void {
@@ -307,10 +361,11 @@ export function loadDailySession(puzzle: DailyPuzzleDefinition, storage: Storage
     // A validated Begin-only snapshot has no committed choices or outcome to
     // preserve. Upgrade it in memory; the next commit writes the latest version.
     const untouched = game.status === 'playing' && game.playedWords.length === 0 && undosUsed === 0
+    const upgraded = untouched ? null : upgradedMeaningRun(pinned, latest, game, undoHistory)
     return {
-      game: untouched ? createLetterStrikeGame(latest.encounter) : game,
+      game: untouched ? createLetterStrikeGame(latest.encounter) : upgraded?.game ?? game,
       mode,
-      revision, undosUsed, undosRemaining, undoHistory,
+      revision, undosUsed, undosRemaining, undoHistory: upgraded?.undoHistory ?? undoHistory,
       started: true,
       result: completedAt === null ? null : buildDailyResult(pinned, game, completedAt, mode, undosUsed),
       resumed: true,

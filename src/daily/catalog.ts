@@ -5,7 +5,9 @@ import lexicalDespair20260924 from './puzzles/2026-09-24-v7.json' with { type: '
 import reviveAnger20260925 from './puzzles/2026-09-25-v8.json' with { type: 'json' }
 import finiteAnger20260925 from './puzzles/2026-09-25-v9.json' with { type: 'json' }
 import meaningChaos20260925 from './puzzles/2026-09-25-v10.json' with { type: 'json' }
+import coveredMeaningChaos20260925 from './puzzles/2026-09-25-v11.json' with { type: 'json' }
 import { unpackMeaningLexicon } from '../game/meaningPacking.ts'
+import { unpackMeaningRevision } from '../game/meaningRevision.ts'
 
 // Frozen publication snapshot, independent of future generator rankings. Only
 // runtime encounter data belongs here; solutions and analysis stay in DEV.
@@ -19,6 +21,12 @@ export const dailyEncounter20260925V9 = finiteAnger20260925 as LetterStrikeEncou
 const { packedMeanings, ...meaningRules } = meaningChaos20260925
 export const dailyEncounter20260925V10 = { ...meaningRules,
   meaningLexicon: unpackMeaningLexicon(packedMeanings),
+} as LetterStrikeEncounter
+const { meaningBase, packedMeanings: coveredPackedMeanings, ...coveredMeaningRules } = coveredMeaningChaos20260925 as unknown as
+  LetterStrikeEncounter & { meaningBase?: string; packedMeanings: unknown }
+export const dailyEncounter20260925V11 = { ...coveredMeaningRules,
+  meaningLexicon: meaningBase === undefined ? unpackMeaningLexicon(coveredPackedMeanings)
+    : unpackMeaningRevision(dailyEncounter20260925V10, meaningBase, coveredPackedMeanings),
 } as LetterStrikeEncounter
 
 /**

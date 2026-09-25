@@ -27,16 +27,18 @@ def render(source: Path, target: Path, size: int | None = None):
 
 
 shutil.copyfile(SOURCE, PUBLIC / 'favicon.svg')
-for filename, size in [('apple-touch-icon-v1.png', 180), ('wyrm-192-v1.png', 192), ('wyrm-512-v1.png', 512)]:
+for filename, size in [('wyrm-192-v2.png', 192), ('wyrm-512-v2.png', 512)]:
     render(SOURCE, ICONS / filename, size)
-shutil.copyfile(ICONS / 'apple-touch-icon-v1.png', PUBLIC / 'apple-touch-icon.png')
+render(SOURCE, PUBLIC / 'apple-touch-icon-v2.png', 180)
+for fallback in ['apple-touch-icon.png', 'apple-touch-icon-precomposed.png']:
+    shutil.copyfile(PUBLIC / 'apple-touch-icon-v2.png', PUBLIC / fallback)
 with tempfile.TemporaryDirectory(prefix='wyrmle-brand-') as directory:
     temporary = Path(directory)
     # All essential artwork fits inside the manifest maskable 80%-diameter circle.
     masked = SOURCE.read_text().replace('<rect x="6"', '<g transform="translate(2.88 2.88) scale(0.82)"><rect x="6"')
     masked = masked.replace('</svg>', '</g></svg>')
     (temporary / 'maskable.svg').write_text(masked)
-    render(temporary / 'maskable.svg', ICONS / 'wyrm-maskable-512-v1.png', 512)
+    render(temporary / 'maskable.svg', ICONS / 'wyrm-maskable-512-v2.png', 512)
     small = []
     for size in [16, 32, 48]:
         png = temporary / f'{size}.png'

@@ -1,0 +1,483 @@
+{
+  "candidateId": "daily-chaos-2026-09-25-v11",
+  "routes": [
+    {
+      "words": [
+        "CLEAR",
+        "SORT",
+        "HARMONY"
+      ],
+      "tileIds": [
+        [
+          8,
+          10,
+          11,
+          1,
+          13
+        ],
+        [
+          6,
+          0,
+          3,
+          18
+        ],
+        [
+          7,
+          24,
+          22,
+          14,
+          21,
+          12,
+          16
+        ]
+      ],
+      "livesRemaining": 3,
+      "turns": [
+        {
+          "word": "CLEAR",
+          "tileIds": [
+            8,
+            10,
+            11,
+            1,
+            13
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 5,
+          "refills": 15,
+          "activeTiles": 16,
+          "recovery": []
+        },
+        {
+          "word": "SORT",
+          "tileIds": [
+            6,
+            0,
+            3,
+            18
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 4,
+          "refills": 11,
+          "activeTiles": 16,
+          "recovery": []
+        },
+        {
+          "word": "HARMONY",
+          "tileIds": [
+            7,
+            24,
+            22,
+            14,
+            21,
+            12,
+            16
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 3,
+          "refills": 4,
+          "activeTiles": 16,
+          "recovery": []
+        }
+      ]
+    },
+    {
+      "words": [
+        "CARE",
+        "SORT",
+        "HARMONY",
+        "NEAT"
+      ],
+      "tileIds": [
+        [
+          8,
+          1,
+          13,
+          11
+        ],
+        [
+          6,
+          0,
+          3,
+          18
+        ],
+        [
+          7,
+          15,
+          22,
+          14,
+          21,
+          12,
+          4
+        ],
+        [
+          29,
+          17,
+          24,
+          27
+        ]
+      ],
+      "livesRemaining": 2,
+      "turns": [
+        {
+          "word": "CARE",
+          "tileIds": [
+            8,
+            1,
+            13,
+            11
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 2,
+          "lives": 5,
+          "refills": 16,
+          "activeTiles": 16,
+          "recovery": []
+        },
+        {
+          "word": "SORT",
+          "tileIds": [
+            6,
+            0,
+            3,
+            18
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 4,
+          "refills": 12,
+          "activeTiles": 16,
+          "recovery": []
+        },
+        {
+          "word": "HARMONY",
+          "tileIds": [
+            7,
+            15,
+            22,
+            14,
+            21,
+            12,
+            4
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 3,
+          "refills": 5,
+          "activeTiles": 16,
+          "recovery": [
+            {
+              "tileId": 15,
+              "enemyLetterId": "enemy-2",
+              "letter": "A",
+              "hitsBefore": 0,
+              "hitsAfter": 1
+            }
+          ]
+        },
+        {
+          "word": "NEAT",
+          "tileIds": [
+            29,
+            17,
+            24,
+            27
+          ],
+          "meaning": "COUNTER",
+          "hits": 1,
+          "lives": 2,
+          "refills": 1,
+          "activeTiles": 16,
+          "recovery": []
+        }
+      ]
+    },
+    {
+      "words": [
+        "REACH",
+        "SORT",
+        "ANGER",
+        "SYSTEM",
+        "CHAIN"
+      ],
+      "tileIds": [
+        [
+          13,
+          11,
+          1,
+          8,
+          7
+        ],
+        [
+          6,
+          0,
+          3,
+          18
+        ],
+        [
+          24,
+          12,
+          9,
+          17,
+          22
+        ],
+        [
+          19,
+          4,
+          20,
+          27,
+          23,
+          14
+        ],
+        [
+          34,
+          30,
+          35,
+          25,
+          29
+        ]
+      ],
+      "livesRemaining": 1,
+      "turns": [
+        {
+          "word": "REACH",
+          "tileIds": [
+            13,
+            11,
+            1,
+            8,
+            7
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 2,
+          "lives": 5,
+          "refills": 15,
+          "activeTiles": 16,
+          "recovery": []
+        },
+        {
+          "word": "SORT",
+          "tileIds": [
+            6,
+            0,
+            3,
+            18
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 4,
+          "refills": 11,
+          "activeTiles": 16,
+          "recovery": []
+        },
+        {
+          "word": "ANGER",
+          "tileIds": [
+            24,
+            12,
+            9,
+            17,
+            22
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 3,
+          "refills": 6,
+          "activeTiles": 16,
+          "recovery": []
+        },
+        {
+          "word": "SYSTEM",
+          "tileIds": [
+            19,
+            4,
+            20,
+            27,
+            23,
+            14
+          ],
+          "meaning": "COUNTER",
+          "hits": 0,
+          "lives": 2,
+          "refills": 0,
+          "activeTiles": 16,
+          "recovery": []
+        },
+        {
+          "word": "CHAIN",
+          "tileIds": [
+            34,
+            30,
+            35,
+            25,
+            29
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 1,
+          "refills": 0,
+          "activeTiles": 11,
+          "recovery": []
+        }
+      ]
+    },
+    {
+      "words": [
+        "CHARM",
+        "SORT",
+        "ANGER",
+        "SYSTEM",
+        "HAND",
+        "CAT"
+      ],
+      "tileIds": [
+        [
+          8,
+          7,
+          1,
+          13,
+          14
+        ],
+        [
+          6,
+          0,
+          3,
+          18
+        ],
+        [
+          24,
+          12,
+          9,
+          11,
+          22
+        ],
+        [
+          19,
+          4,
+          20,
+          27,
+          17,
+          28
+        ],
+        [
+          30,
+          15,
+          29,
+          5
+        ],
+        [
+          34,
+          35,
+          32
+        ]
+      ],
+      "livesRemaining": 0,
+      "turns": [
+        {
+          "word": "CHARM",
+          "tileIds": [
+            8,
+            7,
+            1,
+            13,
+            14
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 2,
+          "lives": 5,
+          "refills": 15,
+          "activeTiles": 16,
+          "recovery": []
+        },
+        {
+          "word": "SORT",
+          "tileIds": [
+            6,
+            0,
+            3,
+            18
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 4,
+          "refills": 11,
+          "activeTiles": 16,
+          "recovery": []
+        },
+        {
+          "word": "ANGER",
+          "tileIds": [
+            24,
+            12,
+            9,
+            11,
+            22
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 3,
+          "refills": 6,
+          "activeTiles": 16,
+          "recovery": []
+        },
+        {
+          "word": "SYSTEM",
+          "tileIds": [
+            19,
+            4,
+            20,
+            27,
+            17,
+            28
+          ],
+          "meaning": "COUNTER",
+          "hits": 0,
+          "lives": 2,
+          "refills": 0,
+          "activeTiles": 16,
+          "recovery": []
+        },
+        {
+          "word": "HAND",
+          "tileIds": [
+            30,
+            15,
+            29,
+            5
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 1,
+          "refills": 0,
+          "activeTiles": 12,
+          "recovery": [
+            {
+              "tileId": 15,
+              "enemyLetterId": "enemy-2",
+              "letter": "A",
+              "hitsBefore": 0,
+              "hitsAfter": 1
+            }
+          ]
+        },
+        {
+          "word": "CAT",
+          "tileIds": [
+            34,
+            35,
+            32
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 0,
+          "refills": 0,
+          "activeTiles": 9,
+          "recovery": []
+        }
+      ]
+    }
+  ]
+}

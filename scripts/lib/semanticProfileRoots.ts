@@ -10,6 +10,7 @@ export type ConceptRoot = {
   concept: string
   antonyms?: ProfileRelation
   derivations?: boolean
+  similarities?: boolean
 }
 const n = (word: string, lex: string, sense = '00') => `oewn-${word}__1.${lex}.${sense}..`
 const root = (senseId: string, relation: ProfileRelation, concept: string, antonyms?: ProfileRelation): ConceptRoot =>
@@ -44,7 +45,7 @@ const calm = [
   counter('oewn-relax__2.29.00..', 'becoming relaxed'),
 ]
 
-export const semanticProfileRoots: Record<string, { enemySense: string; roots: ConceptRoot[] }> = {
+export const semanticProfileRoots: Record<string, { enemySense: string; version?: string; roots: ConceptRoot[] }> = {
   ANGER: {
     enemySense: n('anger', '12'),
     roots: [
@@ -157,6 +158,7 @@ export const semanticProfileRoots: Record<string, { enemySense: string; roots: C
   },
   CHAOS: {
     enemySense: n('chaos', '26'),
+    version: 'semantic-profiles-v2-chaos',
     roots: [
       akin(n('chaos', '26'), 'extreme confusion and disorder'),
       akin(n('disorder', '26', '02'), 'disorder and misplaced things', 'opposite'),
@@ -188,6 +190,35 @@ export const semanticProfileRoots: Record<string, { enemySense: string; roots: C
       counter(n('harmony', '26'), 'harmony between parts'),
       counter(n('structure', '07'), 'structure and arrangement'),
       counter('oewn-clear__5.00.00.clearheaded.00', 'clarity instead of confusion'),
+      // CHAOS includes turmoil as well as untidiness. Review the calmness and
+      // composure concepts explicitly: no graph edge from ORDER can supply
+      // these game counter-concepts, even though their definitions are present.
+      counter('oewn-calm__5.00.00.composed.00', 'calm and composure instead of turmoil'),
+      counter('oewn-composed__3.00.00..', 'self-possession instead of agitation'),
+      counter('oewn-compose__2.37.00..', 'regaining composure'),
+      counter('oewn-calm__2.37.00..', 'calming agitation'),
+      counter('oewn-calm__2.37.01..', 'becoming calm after agitation'),
+      counter('oewn-quiet__3.00.02..', 'quiet without agitation'),
+      counter('oewn-placid__5.00.00.good-natured.00', 'an even and unruffled temper'),
+      counter('oewn-relaxed__3.00.00..', 'relaxation without anxiety'),
+      counter('oewn-relax__2.29.00..', 'becoming relaxed'),
+      { ...counter(n('relaxation', '12'), 'refreshing tranquility without tension'), derivations: false },
+      // These nouns have derivations into still water or weather. Keep their
+      // emotional/state senses and synonyms without crossing that boundary.
+      { ...counter(n('tranquility', '26'), 'tranquility without disturbances'), derivations: false },
+      { ...counter(n('tranquility', '12'), 'peace and quiet'), derivations: false },
+      { ...counter(n('serenity', '07'), 'serenity and an untroubled disposition'), derivations: false },
+      { ...counter(n('peace', '12'), 'peace of mind'), derivations: false },
+      { ...counter(n('peace', '26', '01'), 'harmony and freedom from disputes'), derivations: false },
+      // Opposition to war alone does not establish an orderly or untroubled
+      // state, so do not expand this head into its political satellites.
+      { ...counter('oewn-peaceful__3.00.00..', 'peace without strife or turmoil'), similarities: false },
+      counter(n('coherence', '07'), 'logical and orderly relations between parts'),
+      { ...counter(n('clarity', '07', '01'), 'clear expression instead of confusion'), derivations: false },
+      counter(n('method', '09'), 'a systematic and orderly way of doing things'),
+      counter(n('system', '07'), 'methodical and well organized order'),
+      { ...counter(n('balance', '07'), 'harmonious arrangement of parts'), derivations: false },
+      { ...counter(n('stability', '26'), 'a stable social order'), derivations: false },
     ],
   },
 }

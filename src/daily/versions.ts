@@ -24,3 +24,5 @@ export const FINITE_REFILL_GAME_VERSION = 'letter-strike-6'
 export const FINITE_REFILL_PUZZLE_VERSION = 9
 export const MEANING_GAME_VERSION = 'letter-strike-7'
 export const MEANING_PUZZLE_VERSION = 10
+// Same physical puzzle and combat rules; corrected coverage and meaning profile.
+export const MEANING_COVERAGE_PUZZLE_VERSION = 11

@@ -1,6 +1,6 @@
 # Meaning-first gameplay and September 25 CHAOS
 
-September 25, 2026 now opens **CHAOS v10** (`letter-strike-7`) for fresh attempts. It has five lives, 20 finite replacement tiles, an armoured A, Hit A, Life R and Revive A. Existing committed attempts and completed results retain their own publication. **Settings → Beta tools → Reset puzzle** opens the replacement.
+This records the original **CHAOS v10** (`letter-strike-7`) publication. The current [v11 coverage and semantic correction](meaning-coverage-review.md) supersedes it while preserving the same physical puzzle: five lives, 20 finite replacement tiles, an armoured A, Hit A, Life R and Revive A. Archived v10 records and proof artifacts remain unchanged.
 
 ## Why CHEERFUL failed
 
@@ -10,7 +10,7 @@ New generation disables both grammar and length bonuses. Counters use every matc
 
 ## Definitions and semantics are compiled before search
 
-The accepted dictionary is now the definition-backed subset of the locally supported spellings: **116,197 forms** from [Open English Wordnet 2025](https://en-word.net/), including source irregulars and dictionary-filtered regular forms. A word with no source definition cannot be played in a meaning-era puzzle. OEWN focuses on nouns, verbs, adjectives and adverbs; it omits some common function words, including WHERE, THE and AND. These are consequently rejected in new puzzles, rather than silently accepted without meanings. Archived publications keep their original dictionary.
+The original v10 dictionary contains **116,197 forms** from [Open English Wordnet 2025](https://en-word.net/), including source irregulars and dictionary-filtered regular forms. It rejected words without source definitions. Using OEWN alone also wrongly excluded everyday words such as WHERE, THE and AND. The [v11 correction](meaning-coverage-review.md) supplies licensed definitions for those missing categories and adds an independent everyday-vocabulary audit. Archived v10 retains its original dictionary for replay.
 
 The offline source catalog preserves 185,129 senses, 107,519 synsets, definitions and typed relationships. [WordNet's relationships](https://wordnet.princeton.edu/) primarily connect senses within grammatical categories; they do not provide a complete gameplay counter classifier. Reviewed enemy profiles therefore pin specific source senses for counters, reinforcing concepts and related concepts. Bounded same-sense, derivational, adjective and adverb links expand those concepts. Explicit exclusions prevent unrelated readings such as physical lightness or generic diligence leaking into ANGER counters. CHEERFUL, CHEERY, happiness, smiles and laughter counter ANGER; CAREFUL remains neutral. Direct disorder families such as ANARCHY reinforce CHAOS.
 

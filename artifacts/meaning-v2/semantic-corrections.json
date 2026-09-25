@@ -1,0 +1,4286 @@
+{
+  "profileVersion": "semantic-profiles-v2-chaos",
+  "previousCounterCount": 198,
+  "newCounterCount": 354,
+  "changes": [
+    {
+      "word": "BALANCE",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-balance__1.07.00..",
+        "lemma": "balance",
+        "definition": "harmonious arrangement or relation of parts or elements within a whole (as in a design)",
+        "reason": "Counters chaos through harmonious arrangement of parts.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-balance__1.07.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "BALANCES",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-balance__1.07.00..",
+        "lemma": "balance",
+        "definition": "harmonious arrangement or relation of parts or elements within a whole (as in a design)",
+        "reason": "Counters chaos through harmonious arrangement of parts.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-balance__1.07.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "CALM",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-calm__5.00.00.composed.00",
+        "lemma": "calm",
+        "definition": "not agitated; without losing self-possession",
+        "reason": "Counters chaos through calm and composure instead of turmoil.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-calm__5.00.00.composed.00",
+        "evidence": []
+      }
+    },
+    {
+      "word": "CALMED",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-calm__2.37.00..",
+        "lemma": "calm",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "CALMER",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-calm__5.00.00.composed.00",
+        "lemma": "calm",
+        "definition": "not agitated; without losing self-possession",
+        "reason": "Counters chaos through calm and composure instead of turmoil.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-calm__5.00.00.composed.00",
+        "evidence": []
+      }
+    },
+    {
+      "word": "CALMEST",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-calm__5.00.00.composed.00",
+        "lemma": "calm",
+        "definition": "not agitated; without losing self-possession",
+        "reason": "Counters chaos through calm and composure instead of turmoil.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-calm__5.00.00.composed.00",
+        "evidence": []
+      }
+    },
+    {
+      "word": "CALMING",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-calm__2.37.00..",
+        "lemma": "calm",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "CALMLY",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-calmly__4.02.00..",
+        "lemma": "calmly",
+        "definition": "with self-possession (especially in times of stress)",
+        "reason": "Counters chaos through calm and composure instead of turmoil.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__5.00.00.composed.00",
+        "evidence": [
+          {
+            "type": "inverse-pertainym",
+            "from": "oewn-calm__5.00.00.composed.00",
+            "to": "oewn-calmly__4.02.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "CALMNESS",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-calmness__1.07.00..",
+        "lemma": "calmness",
+        "definition": "steadiness of mind under stress",
+        "reason": "Counters chaos through calm and composure instead of turmoil.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__5.00.00.composed.00",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-calm__5.00.00.composed.00",
+            "to": "oewn-calmness__1.07.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "CALMNESSES",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-calmness__1.07.00..",
+        "lemma": "calmness",
+        "definition": "steadiness of mind under stress",
+        "reason": "Counters chaos through calm and composure instead of turmoil.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__5.00.00.composed.00",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-calm__5.00.00.composed.00",
+            "to": "oewn-calmness__1.07.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "CALMS",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-calm__2.37.00..",
+        "lemma": "calm",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "CLARITIES",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-clarity__1.07.01..",
+        "lemma": "clarity",
+        "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+        "reason": "Counters chaos through clarity instead of confusion.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-clear__5.00.00.clearheaded.00",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-clear__5.00.00.clearheaded.00",
+            "to": "oewn-clearness__1.07.01.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-clearness__1.07.01..",
+            "to": "oewn-clarity__1.07.01.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-clarity__1.07.01..",
+        "lemma": "clarity",
+        "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+        "reason": "Counters chaos through clear expression instead of confusion.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-clarity__1.07.01..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "CLARITY",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-clarity__1.07.01..",
+        "lemma": "clarity",
+        "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+        "reason": "Counters chaos through clarity instead of confusion.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-clear__5.00.00.clearheaded.00",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-clear__5.00.00.clearheaded.00",
+            "to": "oewn-clearness__1.07.01.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-clearness__1.07.01..",
+            "to": "oewn-clarity__1.07.01.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-clarity__1.07.01..",
+        "lemma": "clarity",
+        "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+        "reason": "Counters chaos through clear expression instead of confusion.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-clarity__1.07.01..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "COHERENCE",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-coherence__1.07.00..",
+        "lemma": "coherence",
+        "definition": "logical and orderly and consistent relation of parts",
+        "reason": "Counters chaos through logical and orderly relations between parts.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-coherence__1.07.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "COHERENCES",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-coherence__1.07.00..",
+        "lemma": "coherence",
+        "definition": "logical and orderly and consistent relation of parts",
+        "reason": "Counters chaos through logical and orderly relations between parts.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-coherence__1.07.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "COHERENCIES",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-coherency__1.07.00..",
+        "lemma": "coherency",
+        "definition": "logical and orderly and consistent relation of parts",
+        "reason": "Counters chaos through logical and orderly relations between parts.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-coherence__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-coherence__1.07.00..",
+            "to": "oewn-coherency__1.07.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "COHERENCY",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-coherency__1.07.00..",
+        "lemma": "coherency",
+        "definition": "logical and orderly and consistent relation of parts",
+        "reason": "Counters chaos through logical and orderly relations between parts.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-coherence__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-coherence__1.07.00..",
+            "to": "oewn-coherency__1.07.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "COHERENT",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-coherent__3.00.00..",
+        "lemma": "coherent",
+        "definition": "marked by an orderly, logical, and aesthetically consistent relation of parts",
+        "reason": "Counters chaos through logical and orderly relations between parts.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-coherence__1.07.00..",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-coherence__1.07.00..",
+            "to": "oewn-coherent__3.00.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "COHERENTLY",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-coherently__4.02.00..",
+        "lemma": "coherently",
+        "definition": "in a coherent manner",
+        "reason": "Counters chaos through logical and orderly relations between parts.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-coherence__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-coherence__1.07.00..",
+            "to": "oewn-coherency__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "from": "oewn-coherency__1.07.00..",
+            "to": "oewn-coherent__5.00.00.rational.00"
+          },
+          {
+            "type": "inverse-pertainym",
+            "from": "oewn-coherent__5.00.00.rational.00",
+            "to": "oewn-coherently__4.02.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "COLLECTED",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-collected__5.00.00.composed.00",
+        "lemma": "collected",
+        "definition": "in full control of your faculties",
+        "reason": "Counters chaos through self-possession instead of agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-composed__3.00.00..",
+        "evidence": [
+          {
+            "type": "similar",
+            "from": "oewn-composed__3.00.00..",
+            "to": "oewn-collected__5.00.00.composed.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "COLLECTEDLY",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-collectedly__4.02.00..",
+        "lemma": "collectedly",
+        "definition": "in a self-collected or self-possessed manner",
+        "reason": "Counters chaos through self-possession instead of agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-composed__3.00.00..",
+        "evidence": [
+          {
+            "type": "similar",
+            "from": "oewn-composed__3.00.00..",
+            "to": "oewn-collected__5.00.00.composed.00"
+          },
+          {
+            "type": "inverse-pertainym",
+            "from": "oewn-collected__5.00.00.composed.00",
+            "to": "oewn-collectedly__4.02.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "COMPOSE",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-compose__2.37.00..",
+        "lemma": "compose",
+        "definition": "calm (someone, especially oneself); make quiet",
+        "reason": "Counters chaos through regaining composure.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-compose__2.37.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "COMPOSED",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-composed__3.00.00..",
+        "lemma": "composed",
+        "definition": "serenely self-possessed and free from agitation especially in times of stress",
+        "reason": "Counters chaos through self-possession instead of agitation.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-composed__3.00.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "COMPOSEDLY",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-composedly__4.02.00..",
+        "lemma": "composedly",
+        "definition": "in a self-collected or self-possessed manner",
+        "reason": "Counters chaos through self-possession instead of agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-composed__3.00.00..",
+        "evidence": [
+          {
+            "type": "inverse-pertainym",
+            "from": "oewn-composed__3.00.00..",
+            "to": "oewn-composedly__4.02.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "COMPOSES",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-compose__2.37.00..",
+        "lemma": "compose",
+        "definition": "calm (someone, especially oneself); make quiet",
+        "reason": "Counters chaos through regaining composure.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-compose__2.37.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "COMPOSING",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-compose__2.37.00..",
+        "lemma": "compose",
+        "definition": "calm (someone, especially oneself); make quiet",
+        "reason": "Counters chaos through regaining composure.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-compose__2.37.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "COMPOSURE",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-composure__1.07.00..",
+        "lemma": "composure",
+        "definition": "steadiness of mind under stress",
+        "reason": "Counters chaos through calm and composure instead of turmoil.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__5.00.00.composed.00",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-calm__5.00.00.composed.00",
+            "to": "oewn-calm__1.07.00.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__1.07.00..",
+            "to": "oewn-composure__1.07.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "COMPOSURES",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-composure__1.07.00..",
+        "lemma": "composure",
+        "definition": "steadiness of mind under stress",
+        "reason": "Counters chaos through calm and composure instead of turmoil.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__5.00.00.composed.00",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-calm__5.00.00.composed.00",
+            "to": "oewn-calm__1.07.00.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__1.07.00..",
+            "to": "oewn-composure__1.07.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "CONSISTENT",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-consistent__3.00.01..",
+        "lemma": "consistent",
+        "definition": "marked by an orderly, logical, and aesthetically consistent relation of parts",
+        "reason": "Counters chaos through logical and orderly relations between parts.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-coherence__1.07.00..",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-coherence__1.07.00..",
+            "to": "oewn-coherent__3.00.00.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-coherent__3.00.00..",
+            "to": "oewn-consistent__3.00.01.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "COOL",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-cool__5.00.00.composed.00",
+        "lemma": "cool",
+        "definition": "marked by calm self-control (especially in trying circumstances); unemotional",
+        "reason": "Counters chaos through self-possession instead of agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-composed__3.00.00..",
+        "evidence": [
+          {
+            "type": "similar",
+            "from": "oewn-composed__3.00.00..",
+            "to": "oewn-cool__5.00.00.composed.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "COOLER",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-cool__5.00.00.composed.00",
+        "lemma": "cool",
+        "definition": "marked by calm self-control (especially in trying circumstances); unemotional",
+        "reason": "Counters chaos through self-possession instead of agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-composed__3.00.00..",
+        "evidence": [
+          {
+            "type": "similar",
+            "from": "oewn-composed__3.00.00..",
+            "to": "oewn-cool__5.00.00.composed.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "COOLEST",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-cool__5.00.00.composed.00",
+        "lemma": "cool",
+        "definition": "marked by calm self-control (especially in trying circumstances); unemotional",
+        "reason": "Counters chaos through self-possession instead of agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-composed__3.00.00..",
+        "evidence": [
+          {
+            "type": "similar",
+            "from": "oewn-composed__3.00.00..",
+            "to": "oewn-cool__5.00.00.composed.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "COOLHEADED",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-coolheaded__5.00.00.composed.00",
+        "lemma": "coolheaded",
+        "definition": "marked by calm self-control (especially in trying circumstances); unemotional",
+        "reason": "Counters chaos through self-possession instead of agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-composed__3.00.00..",
+        "evidence": [
+          {
+            "type": "similar",
+            "from": "oewn-composed__3.00.00..",
+            "to": "oewn-coolheaded__5.00.00.composed.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "COOLLY",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-coolly__4.02.00..",
+        "lemma": "coolly",
+        "definition": "in a composed and unconcerned manner",
+        "reason": "Counters chaos through self-possession instead of agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-composed__3.00.00..",
+        "evidence": [
+          {
+            "type": "similar",
+            "from": "oewn-composed__3.00.00..",
+            "to": "oewn-cool__5.00.00.composed.00"
+          },
+          {
+            "type": "inverse-pertainym",
+            "from": "oewn-cool__5.00.00.composed.00",
+            "to": "oewn-coolly__4.02.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "DECOMPRESS",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-decompress__2.29.00..",
+        "lemma": "decompress",
+        "definition": "become less tense, rest, or take one's ease",
+        "reason": "Counters chaos through becoming relaxed.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-relax__2.29.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-relax__2.29.00..",
+            "to": "oewn-decompress__2.29.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "DECOMPRESSED",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-decompress__2.29.00..",
+        "lemma": "decompress",
+        "definition": "become less tense, rest, or take one's ease",
+        "reason": "Counters chaos through becoming relaxed.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-relax__2.29.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-relax__2.29.00..",
+            "to": "oewn-decompress__2.29.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "DECOMPRESSES",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-decompress__2.29.00..",
+        "lemma": "decompress",
+        "definition": "become less tense, rest, or take one's ease",
+        "reason": "Counters chaos through becoming relaxed.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-relax__2.29.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-relax__2.29.00..",
+            "to": "oewn-decompress__2.29.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "DECOMPRESSING",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-decompress__2.29.00..",
+        "lemma": "decompress",
+        "definition": "become less tense, rest, or take one's ease",
+        "reason": "Counters chaos through becoming relaxed.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-relax__2.29.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-relax__2.29.00..",
+            "to": "oewn-decompress__2.29.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "DEGAGE",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-degage__5.00.00.relaxed.00",
+        "lemma": "degage",
+        "definition": "free and relaxed in manner",
+        "reason": "Counters chaos through relaxation without anxiety.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-relaxed__3.00.00..",
+        "evidence": [
+          {
+            "type": "similar",
+            "from": "oewn-relaxed__3.00.00..",
+            "to": "oewn-degage__5.00.00.relaxed.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "EASINESS",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-easiness__1.12.00..",
+        "lemma": "easiness",
+        "definition": "a feeling of refreshing tranquility and an absence of tension or worry",
+        "reason": "Counters chaos through refreshing tranquility without tension.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-relaxation__1.12.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-relaxation__1.12.00..",
+            "to": "oewn-easiness__1.12.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "EASINESSES",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-easiness__1.12.00..",
+        "lemma": "easiness",
+        "definition": "a feeling of refreshing tranquility and an absence of tension or worry",
+        "reason": "Counters chaos through refreshing tranquility without tension.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-relaxation__1.12.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-relaxation__1.12.00..",
+            "to": "oewn-easiness__1.12.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "EQUABLE",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-equable__5.00.00.good-natured.00",
+        "lemma": "equable",
+        "definition": "not easily irritated",
+        "reason": "Counters chaos through an even and unruffled temper.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-placid__5.00.00.good-natured.00",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-placid__5.00.00.good-natured.00",
+            "to": "oewn-equable__5.00.00.good-natured.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "EQUABLY",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-equably__4.02.00..",
+        "lemma": "equably",
+        "definition": "in an equable manner",
+        "reason": "Counters chaos through an even and unruffled temper.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-placid__5.00.00.good-natured.00",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-placid__5.00.00.good-natured.00",
+            "to": "oewn-equable__5.00.00.good-natured.00"
+          },
+          {
+            "type": "inverse-pertainym",
+            "from": "oewn-equable__5.00.00.good-natured.00",
+            "to": "oewn-equably__4.02.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "EQUANIMITIES",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-equanimity__1.07.00..",
+        "lemma": "equanimity",
+        "definition": "steadiness of mind under stress",
+        "reason": "Counters chaos through calm and composure instead of turmoil.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__5.00.00.composed.00",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-calm__5.00.00.composed.00",
+            "to": "oewn-calm__1.07.00.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__1.07.00..",
+            "to": "oewn-equanimity__1.07.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "EQUANIMITY",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-equanimity__1.07.00..",
+        "lemma": "equanimity",
+        "definition": "steadiness of mind under stress",
+        "reason": "Counters chaos through calm and composure instead of turmoil.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__5.00.00.composed.00",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-calm__5.00.00.composed.00",
+            "to": "oewn-calm__1.07.00.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__1.07.00..",
+            "to": "oewn-equanimity__1.07.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "EQUANIMOUS",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-equanimous__5.00.00.composed.00",
+        "lemma": "equanimous",
+        "definition": "in full control of your faculties",
+        "reason": "Counters chaos through self-possession instead of agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-composed__3.00.00..",
+        "evidence": [
+          {
+            "type": "similar",
+            "from": "oewn-composed__3.00.00..",
+            "to": "oewn-equanimous__5.00.00.composed.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "HEARTSEASE",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-heartsease__1.12.00..",
+        "lemma": "heartsease",
+        "definition": "the absence of mental stress or anxiety",
+        "reason": "Counters chaos through peace of mind.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-peace__1.12.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-peace__1.12.00..",
+            "to": "oewn-heartsease__1.12.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "HEARTSEASES",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-heartsease__1.12.00..",
+        "lemma": "heartsease",
+        "definition": "the absence of mental stress or anxiety",
+        "reason": "Counters chaos through peace of mind.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-peace__1.12.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-peace__1.12.00..",
+            "to": "oewn-heartsease__1.12.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "IMPERTURBABLE",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-imperturbable__5.00.00.composed.00",
+        "lemma": "imperturbable",
+        "definition": "not easily perturbed or excited or upset; marked by extreme calm and composure",
+        "reason": "Counters chaos through self-possession instead of agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-composed__3.00.00..",
+        "evidence": [
+          {
+            "type": "similar",
+            "from": "oewn-composed__3.00.00..",
+            "to": "oewn-imperturbable__5.00.00.composed.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "LIMPIDITIES",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-limpidity__1.07.01..",
+        "lemma": "limpidity",
+        "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+        "reason": "Counters chaos through clarity instead of confusion.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-clear__5.00.00.clearheaded.00",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-clear__5.00.00.clearheaded.00",
+            "to": "oewn-clearness__1.07.01.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-clearness__1.07.01..",
+            "to": "oewn-limpidity__1.07.01.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-limpidity__1.07.01..",
+        "lemma": "limpidity",
+        "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+        "reason": "Counters chaos through clear expression instead of confusion.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-clarity__1.07.01..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-clarity__1.07.01..",
+            "to": "oewn-limpidity__1.07.01.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "LIMPIDITY",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-limpidity__1.07.01..",
+        "lemma": "limpidity",
+        "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+        "reason": "Counters chaos through clarity instead of confusion.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-clear__5.00.00.clearheaded.00",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-clear__5.00.00.clearheaded.00",
+            "to": "oewn-clearness__1.07.01.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-clearness__1.07.01..",
+            "to": "oewn-limpidity__1.07.01.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-limpidity__1.07.01..",
+        "lemma": "limpidity",
+        "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+        "reason": "Counters chaos through clear expression instead of confusion.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-clarity__1.07.01..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-clarity__1.07.01..",
+            "to": "oewn-limpidity__1.07.01.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "LOGICAL",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-logical__3.00.05..",
+        "lemma": "logical",
+        "definition": "marked by an orderly, logical, and aesthetically consistent relation of parts",
+        "reason": "Counters chaos through logical and orderly relations between parts.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-coherence__1.07.00..",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-coherence__1.07.00..",
+            "to": "oewn-coherent__3.00.00.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-coherent__3.00.00..",
+            "to": "oewn-logical__3.00.05.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "LUCID",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-lucid__5.00.00.rational.00",
+        "lemma": "lucid",
+        "definition": "capable of thinking and expressing yourself in a clear and consistent manner",
+        "reason": "Counters chaos through logical and orderly relations between parts.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-coherence__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-coherence__1.07.00..",
+            "to": "oewn-coherency__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "from": "oewn-coherency__1.07.00..",
+            "to": "oewn-coherent__5.00.00.rational.00"
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-coherent__5.00.00.rational.00",
+            "to": "oewn-lucid__5.00.00.rational.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "LUCIDER",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-lucid__5.00.00.rational.00",
+        "lemma": "lucid",
+        "definition": "capable of thinking and expressing yourself in a clear and consistent manner",
+        "reason": "Counters chaos through logical and orderly relations between parts.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-coherence__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-coherence__1.07.00..",
+            "to": "oewn-coherency__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "from": "oewn-coherency__1.07.00..",
+            "to": "oewn-coherent__5.00.00.rational.00"
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-coherent__5.00.00.rational.00",
+            "to": "oewn-lucid__5.00.00.rational.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "LUCIDEST",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-lucid__5.00.00.rational.00",
+        "lemma": "lucid",
+        "definition": "capable of thinking and expressing yourself in a clear and consistent manner",
+        "reason": "Counters chaos through logical and orderly relations between parts.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-coherence__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-coherence__1.07.00..",
+            "to": "oewn-coherency__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "from": "oewn-coherency__1.07.00..",
+            "to": "oewn-coherent__5.00.00.rational.00"
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-coherent__5.00.00.rational.00",
+            "to": "oewn-lucid__5.00.00.rational.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "LUCIDITIES",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-lucidity__1.07.00..",
+        "lemma": "lucidity",
+        "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+        "reason": "Counters chaos through clarity instead of confusion.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-clear__5.00.00.clearheaded.00",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-clear__5.00.00.clearheaded.00",
+            "to": "oewn-clearness__1.07.01.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-clearness__1.07.01..",
+            "to": "oewn-lucidity__1.07.00.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-lucidity__1.07.00..",
+        "lemma": "lucidity",
+        "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+        "reason": "Counters chaos through clear expression instead of confusion.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-clarity__1.07.01..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-clarity__1.07.01..",
+            "to": "oewn-lucidity__1.07.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "LUCIDITY",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-lucidity__1.07.00..",
+        "lemma": "lucidity",
+        "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+        "reason": "Counters chaos through clarity instead of confusion.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-clear__5.00.00.clearheaded.00",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-clear__5.00.00.clearheaded.00",
+            "to": "oewn-clearness__1.07.01.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-clearness__1.07.01..",
+            "to": "oewn-lucidity__1.07.00.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-lucidity__1.07.00..",
+        "lemma": "lucidity",
+        "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+        "reason": "Counters chaos through clear expression instead of confusion.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-clarity__1.07.01..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-clarity__1.07.01..",
+            "to": "oewn-lucidity__1.07.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "LUCIDLY",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-lucidly__4.02.00..",
+        "lemma": "lucidly",
+        "definition": "in a clear and lucid manner",
+        "reason": "Counters chaos through logical and orderly relations between parts.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-coherence__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-coherence__1.07.00..",
+            "to": "oewn-coherency__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "from": "oewn-coherency__1.07.00..",
+            "to": "oewn-coherent__5.00.00.rational.00"
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-coherent__5.00.00.rational.00",
+            "to": "oewn-lucid__5.00.00.rational.00"
+          },
+          {
+            "type": "inverse-pertainym",
+            "from": "oewn-lucid__5.00.00.rational.00",
+            "to": "oewn-lucidly__4.02.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "LUCIDNESS",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-lucidness__1.07.00..",
+        "lemma": "lucidness",
+        "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+        "reason": "Counters chaos through clarity instead of confusion.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-clear__5.00.00.clearheaded.00",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-clear__5.00.00.clearheaded.00",
+            "to": "oewn-clearness__1.07.01.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-clearness__1.07.01..",
+            "to": "oewn-lucidness__1.07.00.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-lucidness__1.07.00..",
+        "lemma": "lucidness",
+        "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+        "reason": "Counters chaos through clear expression instead of confusion.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-clarity__1.07.01..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-clarity__1.07.01..",
+            "to": "oewn-lucidness__1.07.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "LUCIDNESSES",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-lucidness__1.07.00..",
+        "lemma": "lucidness",
+        "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+        "reason": "Counters chaos through clarity instead of confusion.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-clear__5.00.00.clearheaded.00",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-clear__5.00.00.clearheaded.00",
+            "to": "oewn-clearness__1.07.01.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-clearness__1.07.01..",
+            "to": "oewn-lucidness__1.07.00.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-lucidness__1.07.00..",
+        "lemma": "lucidness",
+        "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+        "reason": "Counters chaos through clear expression instead of confusion.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-clarity__1.07.01..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-clarity__1.07.01..",
+            "to": "oewn-lucidness__1.07.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "LULL",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-lull__2.37.00..",
+        "lemma": "lull",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-lull__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "LULLED",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-lull__2.37.00..",
+        "lemma": "lull",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-lull__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "LULLING",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-lull__2.37.00..",
+        "lemma": "lull",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-lull__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "LULLS",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-lull__2.37.00..",
+        "lemma": "lull",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-lull__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "MELLOW",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-mellow__5.00.00.relaxed.00",
+        "lemma": "mellow",
+        "definition": "unhurried and relaxed",
+        "reason": "Counters chaos through relaxation without anxiety.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-relaxed__3.00.00..",
+        "evidence": [
+          {
+            "type": "similar",
+            "from": "oewn-relaxed__3.00.00..",
+            "to": "oewn-mellow__5.00.00.relaxed.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "MELLOWER",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-mellow__5.00.00.relaxed.00",
+        "lemma": "mellow",
+        "definition": "unhurried and relaxed",
+        "reason": "Counters chaos through relaxation without anxiety.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-relaxed__3.00.00..",
+        "evidence": [
+          {
+            "type": "similar",
+            "from": "oewn-relaxed__3.00.00..",
+            "to": "oewn-mellow__5.00.00.relaxed.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "MELLOWEST",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-mellow__5.00.00.relaxed.00",
+        "lemma": "mellow",
+        "definition": "unhurried and relaxed",
+        "reason": "Counters chaos through relaxation without anxiety.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-relaxed__3.00.00..",
+        "evidence": [
+          {
+            "type": "similar",
+            "from": "oewn-relaxed__3.00.00..",
+            "to": "oewn-mellow__5.00.00.relaxed.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "MELLOWLY",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-mellowly__4.02.00..",
+        "lemma": "mellowly",
+        "definition": "in a mellow manner",
+        "reason": "Counters chaos through relaxation without anxiety.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-relaxed__3.00.00..",
+        "evidence": [
+          {
+            "type": "similar",
+            "from": "oewn-relaxed__3.00.00..",
+            "to": "oewn-mellow__5.00.00.relaxed.00"
+          },
+          {
+            "type": "inverse-pertainym",
+            "from": "oewn-mellow__5.00.00.relaxed.00",
+            "to": "oewn-mellowly__4.02.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "METHOD",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-method__1.09.00..",
+        "lemma": "method",
+        "definition": "a way of doing something, especially a systematic way; implies an orderly logical arrangement (usually in steps)",
+        "reason": "Counters chaos through a systematic and orderly way of doing things.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-method__1.09.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "METHODS",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-method__1.09.00..",
+        "lemma": "method",
+        "definition": "a way of doing something, especially a systematic way; implies an orderly logical arrangement (usually in steps)",
+        "reason": "Counters chaos through a systematic and orderly way of doing things.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-method__1.09.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "NERVELESS",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-nerveless__5.00.00.composed.00",
+        "lemma": "nerveless",
+        "definition": "marked by calm self-control (especially in trying circumstances); unemotional",
+        "reason": "Counters chaos through self-possession instead of agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-composed__3.00.00..",
+        "evidence": [
+          {
+            "type": "similar",
+            "from": "oewn-composed__3.00.00..",
+            "to": "oewn-nerveless__5.00.00.composed.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "NERVELESSLY",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-nervelessly__4.02.00..",
+        "lemma": "nervelessly",
+        "definition": "in a composed and unconcerned manner",
+        "reason": "Counters chaos through self-possession instead of agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-composed__3.00.00..",
+        "evidence": [
+          {
+            "type": "similar",
+            "from": "oewn-composed__3.00.00..",
+            "to": "oewn-nerveless__5.00.00.composed.00"
+          },
+          {
+            "type": "inverse-pertainym",
+            "from": "oewn-nerveless__5.00.00.composed.00",
+            "to": "oewn-nervelessly__4.02.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "PEACE",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-peace__1.12.00..",
+        "lemma": "peace",
+        "definition": "the absence of mental stress or anxiety",
+        "reason": "Counters chaos through peace of mind.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-peace__1.12.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "PEACEABLE",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-peaceable__3.00.00..",
+        "lemma": "peaceable",
+        "definition": "not disturbed by strife or turmoil or war",
+        "reason": "Counters chaos through peace without strife or turmoil.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-peaceful__3.00.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-peaceful__3.00.00..",
+            "to": "oewn-peaceable__3.00.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "PEACEFUL",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-peaceful__3.00.00..",
+        "lemma": "peaceful",
+        "definition": "not disturbed by strife or turmoil or war",
+        "reason": "Counters chaos through peace without strife or turmoil.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-peaceful__3.00.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "PEACEFULLY",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-peacefully__4.02.00..",
+        "lemma": "peacefully",
+        "definition": "in a peaceful manner",
+        "reason": "Counters chaos through peace without strife or turmoil.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-peaceful__3.00.00..",
+        "evidence": [
+          {
+            "type": "inverse-pertainym",
+            "from": "oewn-peaceful__3.00.00..",
+            "to": "oewn-peacefully__4.02.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "PEACEFULNESS",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-peacefulness__1.12.00..",
+        "lemma": "peacefulness",
+        "definition": "the absence of mental stress or anxiety",
+        "reason": "Counters chaos through peace of mind.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-peace__1.12.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-peace__1.12.00..",
+            "to": "oewn-peacefulness__1.12.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "PEACEFULNESSES",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-peacefulness__1.12.00..",
+        "lemma": "peacefulness",
+        "definition": "the absence of mental stress or anxiety",
+        "reason": "Counters chaos through peace of mind.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-peace__1.12.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-peace__1.12.00..",
+            "to": "oewn-peacefulness__1.12.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "PEACES",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-peace__1.12.00..",
+        "lemma": "peace",
+        "definition": "the absence of mental stress or anxiety",
+        "reason": "Counters chaos through peace of mind.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-peace__1.12.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "PELLUCIDITIES",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-pellucidity__1.07.01..",
+        "lemma": "pellucidity",
+        "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+        "reason": "Counters chaos through clarity instead of confusion.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-clear__5.00.00.clearheaded.00",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-clear__5.00.00.clearheaded.00",
+            "to": "oewn-clearness__1.07.01.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-clearness__1.07.01..",
+            "to": "oewn-pellucidity__1.07.01.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-pellucidity__1.07.01..",
+        "lemma": "pellucidity",
+        "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+        "reason": "Counters chaos through clear expression instead of confusion.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-clarity__1.07.01..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-clarity__1.07.01..",
+            "to": "oewn-pellucidity__1.07.01.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "PELLUCIDITY",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-pellucidity__1.07.01..",
+        "lemma": "pellucidity",
+        "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+        "reason": "Counters chaos through clarity instead of confusion.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-clear__5.00.00.clearheaded.00",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-clear__5.00.00.clearheaded.00",
+            "to": "oewn-clearness__1.07.01.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-clearness__1.07.01..",
+            "to": "oewn-pellucidity__1.07.01.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-pellucidity__1.07.01..",
+        "lemma": "pellucidity",
+        "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+        "reason": "Counters chaos through clear expression instead of confusion.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-clarity__1.07.01..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-clarity__1.07.01..",
+            "to": "oewn-pellucidity__1.07.01.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "PLACID",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-placid__5.00.00.good-natured.00",
+        "lemma": "placid",
+        "definition": "not easily irritated",
+        "reason": "Counters chaos through an even and unruffled temper.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-placid__5.00.00.good-natured.00",
+        "evidence": []
+      }
+    },
+    {
+      "word": "PLACIDER",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-placid__5.00.00.good-natured.00",
+        "lemma": "placid",
+        "definition": "not easily irritated",
+        "reason": "Counters chaos through an even and unruffled temper.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-placid__5.00.00.good-natured.00",
+        "evidence": []
+      }
+    },
+    {
+      "word": "PLACIDEST",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-placid__5.00.00.good-natured.00",
+        "lemma": "placid",
+        "definition": "not easily irritated",
+        "reason": "Counters chaos through an even and unruffled temper.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-placid__5.00.00.good-natured.00",
+        "evidence": []
+      }
+    },
+    {
+      "word": "PLACIDITIES",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-placidity__1.07.00..",
+        "lemma": "placidity",
+        "definition": "a disposition free from stress or emotion",
+        "reason": "Counters chaos through an even and unruffled temper.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-placid__5.00.00.good-natured.00",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-placid__5.00.00.good-natured.00",
+            "to": "oewn-placidity__1.07.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "PLACIDITY",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-placidity__1.07.00..",
+        "lemma": "placidity",
+        "definition": "a disposition free from stress or emotion",
+        "reason": "Counters chaos through an even and unruffled temper.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-placid__5.00.00.good-natured.00",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-placid__5.00.00.good-natured.00",
+            "to": "oewn-placidity__1.07.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "PLACIDLY",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-placidly__4.02.00..",
+        "lemma": "placidly",
+        "definition": "in a placid and good-natured manner",
+        "reason": "Counters chaos through an even and unruffled temper.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-placid__5.00.00.good-natured.00",
+        "evidence": [
+          {
+            "type": "inverse-pertainym",
+            "from": "oewn-placid__5.00.00.good-natured.00",
+            "to": "oewn-placidly__4.02.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "PLACIDNESS",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-placidness__1.12.00..",
+        "lemma": "placidness",
+        "definition": "a feeling of calmness; a quiet and undisturbed feeling",
+        "reason": "Counters chaos through an even and unruffled temper.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-placid__5.00.00.good-natured.00",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-placid__5.00.00.good-natured.00",
+            "to": "oewn-placidness__1.12.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "PLACIDNESSES",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-placidness__1.12.00..",
+        "lemma": "placidness",
+        "definition": "a feeling of calmness; a quiet and undisturbed feeling",
+        "reason": "Counters chaos through an even and unruffled temper.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-placid__5.00.00.good-natured.00",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-placid__5.00.00.good-natured.00",
+            "to": "oewn-placidness__1.12.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "POISED",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-poised__5.00.00.composed.00",
+        "lemma": "poised",
+        "definition": "in full control of your faculties",
+        "reason": "Counters chaos through self-possession instead of agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-composed__3.00.00..",
+        "evidence": [
+          {
+            "type": "similar",
+            "from": "oewn-composed__3.00.00..",
+            "to": "oewn-poised__5.00.00.composed.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "PROPORTION",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-proportion__1.07.01..",
+        "lemma": "proportion",
+        "definition": "harmonious arrangement or relation of parts or elements within a whole (as in a design)",
+        "reason": "Counters chaos through harmonious arrangement of parts.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-balance__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-balance__1.07.00..",
+            "to": "oewn-proportion__1.07.01.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "PROPORTIONALITIES",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-proportionality__1.07.00..",
+        "lemma": "proportionality",
+        "definition": "harmonious arrangement or relation of parts or elements within a whole (as in a design)",
+        "reason": "Counters chaos through harmonious arrangement of parts.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-balance__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-balance__1.07.00..",
+            "to": "oewn-proportionality__1.07.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "PROPORTIONALITY",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-proportionality__1.07.00..",
+        "lemma": "proportionality",
+        "definition": "harmonious arrangement or relation of parts or elements within a whole (as in a design)",
+        "reason": "Counters chaos through harmonious arrangement of parts.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-balance__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-balance__1.07.00..",
+            "to": "oewn-proportionality__1.07.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "PROPORTIONS",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-proportion__1.07.01..",
+        "lemma": "proportion",
+        "definition": "harmonious arrangement or relation of parts or elements within a whole (as in a design)",
+        "reason": "Counters chaos through harmonious arrangement of parts.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-balance__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-balance__1.07.00..",
+            "to": "oewn-proportion__1.07.01.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "QUIESCENT",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-quiescent__5.00.00.quiet.02",
+        "lemma": "quiescent",
+        "definition": "marked by a state of tranquil repose",
+        "reason": "Counters chaos through quiet without agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-quiet__3.00.02..",
+        "evidence": [
+          {
+            "type": "similar",
+            "from": "oewn-quiet__3.00.02..",
+            "to": "oewn-quiescent__5.00.00.quiet.02"
+          }
+        ]
+      }
+    },
+    {
+      "word": "QUIET",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-quiet__3.00.02..",
+        "lemma": "quiet",
+        "definition": "characterized by an absence or near absence of agitation or activity",
+        "reason": "Counters chaos through quiet without agitation.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-quiet__3.00.02..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "QUIETED",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-quiet__2.37.00..",
+        "lemma": "quiet",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-quiet__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "QUIETEN",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-quieten__2.37.00..",
+        "lemma": "quieten",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-quieten__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "QUIETENED",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-quieten__2.37.00..",
+        "lemma": "quieten",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-quieten__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "QUIETENING",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-quieten__2.37.00..",
+        "lemma": "quieten",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-quieten__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "QUIETENS",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-quieten__2.37.00..",
+        "lemma": "quieten",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-quieten__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "QUIETER",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-quiet__3.00.02..",
+        "lemma": "quiet",
+        "definition": "characterized by an absence or near absence of agitation or activity",
+        "reason": "Counters chaos through quiet without agitation.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-quiet__3.00.02..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "QUIETEST",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-quiet__3.00.02..",
+        "lemma": "quiet",
+        "definition": "characterized by an absence or near absence of agitation or activity",
+        "reason": "Counters chaos through quiet without agitation.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-quiet__3.00.02..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "QUIETING",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-quiet__2.37.00..",
+        "lemma": "quiet",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-quiet__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "QUIETLY",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-quietly__4.02.02..",
+        "lemma": "quietly",
+        "definition": "with little or no activity or no agitation (‘quiet’ is a nonstandard variant for ‘quietly’)",
+        "reason": "Counters chaos through quiet without agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-quiet__3.00.02..",
+        "evidence": [
+          {
+            "type": "inverse-pertainym",
+            "from": "oewn-quiet__3.00.02..",
+            "to": "oewn-quietly__4.02.02.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "QUIETNESS",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-quietness__1.12.00..",
+        "lemma": "quietness",
+        "definition": "a state of peace and quiet",
+        "reason": "Counters chaos through quiet without agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-quiet__3.00.02..",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-quiet__3.00.02..",
+            "to": "oewn-quietness__1.12.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "QUIETNESSES",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-quietness__1.12.00..",
+        "lemma": "quietness",
+        "definition": "a state of peace and quiet",
+        "reason": "Counters chaos through quiet without agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-quiet__3.00.02..",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-quiet__3.00.02..",
+            "to": "oewn-quietness__1.12.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "QUIETS",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-quiet__2.37.00..",
+        "lemma": "quiet",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-quiet__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "QUIETUDE",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-quietude__1.12.00..",
+        "lemma": "quietude",
+        "definition": "a state of peace and quiet",
+        "reason": "Counters chaos through peace and quiet.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-tranquility__1.12.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-tranquility__1.12.00..",
+            "to": "oewn-quietude__1.12.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "QUIETUDES",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-quietude__1.12.00..",
+        "lemma": "quietude",
+        "definition": "a state of peace and quiet",
+        "reason": "Counters chaos through peace and quiet.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-tranquility__1.12.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-tranquility__1.12.00..",
+            "to": "oewn-quietude__1.12.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "RELAX",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-relax__2.29.00..",
+        "lemma": "relax",
+        "definition": "become less tense, rest, or take one's ease",
+        "reason": "Counters chaos through becoming relaxed.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-relax__2.29.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "RELAXATION",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-relaxation__1.12.00..",
+        "lemma": "relaxation",
+        "definition": "a feeling of refreshing tranquility and an absence of tension or worry",
+        "reason": "Counters chaos through refreshing tranquility without tension.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-relaxation__1.12.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "RELAXATIONS",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-relaxation__1.12.00..",
+        "lemma": "relaxation",
+        "definition": "a feeling of refreshing tranquility and an absence of tension or worry",
+        "reason": "Counters chaos through refreshing tranquility without tension.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-relaxation__1.12.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "RELAXED",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-relaxed__3.00.00..",
+        "lemma": "relaxed",
+        "definition": "without strain or anxiety",
+        "reason": "Counters chaos through relaxation without anxiety.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-relaxed__3.00.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "RELAXES",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-relax__2.29.00..",
+        "lemma": "relax",
+        "definition": "become less tense, rest, or take one's ease",
+        "reason": "Counters chaos through becoming relaxed.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-relax__2.29.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "RELAXING",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-relax__2.29.00..",
+        "lemma": "relax",
+        "definition": "become less tense, rest, or take one's ease",
+        "reason": "Counters chaos through becoming relaxed.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-relax__2.29.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "REPOSE",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-repose__1.07.00..",
+        "lemma": "repose",
+        "definition": "a disposition free from stress or emotion",
+        "reason": "Counters chaos through serenity and an untroubled disposition.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-serenity__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-serenity__1.07.00..",
+            "to": "oewn-repose__1.07.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "REPOSES",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-repose__1.07.00..",
+        "lemma": "repose",
+        "definition": "a disposition free from stress or emotion",
+        "reason": "Counters chaos through serenity and an untroubled disposition.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-serenity__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-serenity__1.07.00..",
+            "to": "oewn-repose__1.07.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "SEAMLESS",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-seamless__5.00.00.coherent.00",
+        "lemma": "seamless",
+        "definition": "perfectly consistent and coherent",
+        "reason": "Counters chaos through logical and orderly relations between parts.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-coherence__1.07.00..",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-coherence__1.07.00..",
+            "to": "oewn-coherent__3.00.00.."
+          },
+          {
+            "type": "similar",
+            "from": "oewn-coherent__3.00.00..",
+            "to": "oewn-seamless__5.00.00.coherent.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "SERENE",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-serene__5.00.00.composed.00",
+        "lemma": "serene",
+        "definition": "not agitated; without losing self-possession",
+        "reason": "Counters chaos through calm and composure instead of turmoil.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__5.00.00.composed.00",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__5.00.00.composed.00",
+            "to": "oewn-serene__5.00.00.composed.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "SERENELY",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-serenely__4.02.00..",
+        "lemma": "serenely",
+        "definition": "in a peacefully serene manner",
+        "reason": "Counters chaos through calm and composure instead of turmoil.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__5.00.00.composed.00",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__5.00.00.composed.00",
+            "to": "oewn-serene__5.00.00.composed.00"
+          },
+          {
+            "type": "inverse-pertainym",
+            "from": "oewn-serene__5.00.00.composed.00",
+            "to": "oewn-serenely__4.02.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "SERENER",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-serene__5.00.00.composed.00",
+        "lemma": "serene",
+        "definition": "not agitated; without losing self-possession",
+        "reason": "Counters chaos through calm and composure instead of turmoil.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__5.00.00.composed.00",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__5.00.00.composed.00",
+            "to": "oewn-serene__5.00.00.composed.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "SERENEST",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-serene__5.00.00.composed.00",
+        "lemma": "serene",
+        "definition": "not agitated; without losing self-possession",
+        "reason": "Counters chaos through calm and composure instead of turmoil.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__5.00.00.composed.00",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__5.00.00.composed.00",
+            "to": "oewn-serene__5.00.00.composed.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "SERENITIES",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-serenity__1.07.00..",
+        "lemma": "serenity",
+        "definition": "a disposition free from stress or emotion",
+        "reason": "Counters chaos through serenity and an untroubled disposition.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-serenity__1.07.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "SERENITY",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-serenity__1.07.00..",
+        "lemma": "serenity",
+        "definition": "a disposition free from stress or emotion",
+        "reason": "Counters chaos through serenity and an untroubled disposition.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-serenity__1.07.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "STABILITIES",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-stability__1.26.00..",
+        "lemma": "stability",
+        "definition": "a stable order (especially of society)",
+        "reason": "Counters chaos through a stable social order.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-stability__1.26.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "STABILITY",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-stability__1.26.00..",
+        "lemma": "stability",
+        "definition": "a stable order (especially of society)",
+        "reason": "Counters chaos through a stable social order.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-stability__1.26.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "STILL",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-still__2.37.00..",
+        "lemma": "still",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-still__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "STILLED",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-still__2.37.00..",
+        "lemma": "still",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-still__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "STILLING",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-still__2.37.00..",
+        "lemma": "still",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-still__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "STILLS",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-still__2.37.00..",
+        "lemma": "still",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-still__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "SYSTEM",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-system__1.07.00..",
+        "lemma": "system",
+        "definition": "an ordered manner; orderliness by virtue of being methodical and well organized",
+        "reason": "Counters chaos through methodical organization.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-organization__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-organization__1.07.00..",
+            "to": "oewn-system__1.07.00.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-system__1.07.00..",
+        "lemma": "system",
+        "definition": "an ordered manner; orderliness by virtue of being methodical and well organized",
+        "reason": "Counters chaos through methodical and well organized order.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-system__1.07.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "SYSTEMATIC",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-systematic__3.00.00..",
+        "lemma": "systematic",
+        "definition": "characterized by order and planning",
+        "reason": "Counters chaos through methodical organization.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-organization__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-organization__1.07.00..",
+            "to": "oewn-system__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systematic__3.00.00.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-systematic__3.00.00..",
+        "lemma": "systematic",
+        "definition": "characterized by order and planning",
+        "reason": "Counters chaos through methodical and well organized order.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-system__1.07.00..",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systematic__3.00.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "SYSTEMATICALLY",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-systematically__4.02.00..",
+        "lemma": "systematically",
+        "definition": "in a systematic or consistent manner",
+        "reason": "Counters chaos through methodical organization.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-organization__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-organization__1.07.00..",
+            "to": "oewn-system__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systematic__3.00.00.."
+          },
+          {
+            "type": "inverse-pertainym",
+            "from": "oewn-systematic__3.00.00..",
+            "to": "oewn-systematically__4.02.00.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-systematically__4.02.00..",
+        "lemma": "systematically",
+        "definition": "in a systematic or consistent manner",
+        "reason": "Counters chaos through methodical and well organized order.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-system__1.07.00..",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systematic__3.00.00.."
+          },
+          {
+            "type": "inverse-pertainym",
+            "from": "oewn-systematic__3.00.00..",
+            "to": "oewn-systematically__4.02.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "SYSTEMATISE",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-systematise__2.30.00..",
+        "lemma": "systematise",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical organization.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-organization__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-organization__1.07.00..",
+            "to": "oewn-system__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemise__2.30.00.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-systemise__2.30.00..",
+            "to": "oewn-systematise__2.30.00.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-systematise__2.30.00..",
+        "lemma": "systematise",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical and well organized order.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-system__1.07.00..",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemise__2.30.00.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-systemise__2.30.00..",
+            "to": "oewn-systematise__2.30.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "SYSTEMATISED",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-systematise__2.30.00..",
+        "lemma": "systematise",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical organization.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-organization__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-organization__1.07.00..",
+            "to": "oewn-system__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemise__2.30.00.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-systemise__2.30.00..",
+            "to": "oewn-systematise__2.30.00.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-systematise__2.30.00..",
+        "lemma": "systematise",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical and well organized order.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-system__1.07.00..",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemise__2.30.00.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-systemise__2.30.00..",
+            "to": "oewn-systematise__2.30.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "SYSTEMATISES",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-systematise__2.30.00..",
+        "lemma": "systematise",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical organization.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-organization__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-organization__1.07.00..",
+            "to": "oewn-system__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemise__2.30.00.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-systemise__2.30.00..",
+            "to": "oewn-systematise__2.30.00.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-systematise__2.30.00..",
+        "lemma": "systematise",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical and well organized order.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-system__1.07.00..",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemise__2.30.00.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-systemise__2.30.00..",
+            "to": "oewn-systematise__2.30.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "SYSTEMATISING",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-systematise__2.30.00..",
+        "lemma": "systematise",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical organization.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-organization__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-organization__1.07.00..",
+            "to": "oewn-system__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemise__2.30.00.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-systemise__2.30.00..",
+            "to": "oewn-systematise__2.30.00.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-systematise__2.30.00..",
+        "lemma": "systematise",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical and well organized order.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-system__1.07.00..",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemise__2.30.00.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-systemise__2.30.00..",
+            "to": "oewn-systematise__2.30.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "SYSTEMATIZE",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-systematize__2.30.00..",
+        "lemma": "systematize",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical organization.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-organization__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-organization__1.07.00..",
+            "to": "oewn-system__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemise__2.30.00.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-systemise__2.30.00..",
+            "to": "oewn-systematize__2.30.00.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-systematize__2.30.00..",
+        "lemma": "systematize",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical and well organized order.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-system__1.07.00..",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemise__2.30.00.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-systemise__2.30.00..",
+            "to": "oewn-systematize__2.30.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "SYSTEMATIZED",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-systematize__2.30.00..",
+        "lemma": "systematize",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical organization.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-organization__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-organization__1.07.00..",
+            "to": "oewn-system__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemise__2.30.00.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-systemise__2.30.00..",
+            "to": "oewn-systematize__2.30.00.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-systematize__2.30.00..",
+        "lemma": "systematize",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical and well organized order.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-system__1.07.00..",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemise__2.30.00.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-systemise__2.30.00..",
+            "to": "oewn-systematize__2.30.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "SYSTEMATIZES",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-systematize__2.30.00..",
+        "lemma": "systematize",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical organization.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-organization__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-organization__1.07.00..",
+            "to": "oewn-system__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemise__2.30.00.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-systemise__2.30.00..",
+            "to": "oewn-systematize__2.30.00.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-systematize__2.30.00..",
+        "lemma": "systematize",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical and well organized order.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-system__1.07.00..",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemise__2.30.00.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-systemise__2.30.00..",
+            "to": "oewn-systematize__2.30.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "SYSTEMATIZING",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-systematize__2.30.00..",
+        "lemma": "systematize",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical organization.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-organization__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-organization__1.07.00..",
+            "to": "oewn-system__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemise__2.30.00.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-systemise__2.30.00..",
+            "to": "oewn-systematize__2.30.00.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-systematize__2.30.00..",
+        "lemma": "systematize",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical and well organized order.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-system__1.07.00..",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemise__2.30.00.."
+          },
+          {
+            "type": "same-synset",
+            "from": "oewn-systemise__2.30.00..",
+            "to": "oewn-systematize__2.30.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "SYSTEMISE",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-systemise__2.30.00..",
+        "lemma": "systemise",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical organization.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-organization__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-organization__1.07.00..",
+            "to": "oewn-system__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemise__2.30.00.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-systemise__2.30.00..",
+        "lemma": "systemise",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical and well organized order.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-system__1.07.00..",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemise__2.30.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "SYSTEMISED",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-systemise__2.30.00..",
+        "lemma": "systemise",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical organization.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-organization__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-organization__1.07.00..",
+            "to": "oewn-system__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemise__2.30.00.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-systemise__2.30.00..",
+        "lemma": "systemise",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical and well organized order.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-system__1.07.00..",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemise__2.30.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "SYSTEMISES",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-systemise__2.30.00..",
+        "lemma": "systemise",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical organization.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-organization__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-organization__1.07.00..",
+            "to": "oewn-system__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemise__2.30.00.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-systemise__2.30.00..",
+        "lemma": "systemise",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical and well organized order.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-system__1.07.00..",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemise__2.30.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "SYSTEMISING",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-systemise__2.30.00..",
+        "lemma": "systemise",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical organization.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-organization__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-organization__1.07.00..",
+            "to": "oewn-system__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemise__2.30.00.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-systemise__2.30.00..",
+        "lemma": "systemise",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical and well organized order.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-system__1.07.00..",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemise__2.30.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "SYSTEMIZE",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-systemize__2.30.00..",
+        "lemma": "systemize",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical organization.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-organization__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-organization__1.07.00..",
+            "to": "oewn-system__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemize__2.30.00.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-systemize__2.30.00..",
+        "lemma": "systemize",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical and well organized order.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-system__1.07.00..",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemize__2.30.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "SYSTEMIZED",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-systemize__2.30.00..",
+        "lemma": "systemize",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical organization.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-organization__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-organization__1.07.00..",
+            "to": "oewn-system__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemize__2.30.00.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-systemize__2.30.00..",
+        "lemma": "systemize",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical and well organized order.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-system__1.07.00..",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemize__2.30.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "SYSTEMIZES",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-systemize__2.30.00..",
+        "lemma": "systemize",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical organization.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-organization__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-organization__1.07.00..",
+            "to": "oewn-system__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemize__2.30.00.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-systemize__2.30.00..",
+        "lemma": "systemize",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical and well organized order.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-system__1.07.00..",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemize__2.30.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "SYSTEMIZING",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-systemize__2.30.00..",
+        "lemma": "systemize",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical organization.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-organization__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-organization__1.07.00..",
+            "to": "oewn-system__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemize__2.30.00.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-systemize__2.30.00..",
+        "lemma": "systemize",
+        "definition": "arrange according to a system or reduce to a system",
+        "reason": "Counters chaos through methodical and well organized order.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-system__1.07.00..",
+        "evidence": [
+          {
+            "type": "derivation",
+            "from": "oewn-system__1.07.00..",
+            "to": "oewn-systemize__2.30.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "SYSTEMS",
+      "previous": {
+        "relation": "opposite",
+        "senseId": "oewn-system__1.07.00..",
+        "lemma": "system",
+        "definition": "an ordered manner; orderliness by virtue of being methodical and well organized",
+        "reason": "Counters chaos through methodical organization.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-organization__1.07.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-organization__1.07.00..",
+            "to": "oewn-system__1.07.00.."
+          }
+        ]
+      },
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-system__1.07.00..",
+        "lemma": "system",
+        "definition": "an ordered manner; orderliness by virtue of being methodical and well organized",
+        "reason": "Counters chaos through methodical and well organized order.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-system__1.07.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "TRANQUIL",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-tranquil__5.00.00.composed.00",
+        "lemma": "tranquil",
+        "definition": "not agitated; without losing self-possession",
+        "reason": "Counters chaos through calm and composure instead of turmoil.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__5.00.00.composed.00",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__5.00.00.composed.00",
+            "to": "oewn-tranquil__5.00.00.composed.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "TRANQUILER",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-tranquil__5.00.00.composed.00",
+        "lemma": "tranquil",
+        "definition": "not agitated; without losing self-possession",
+        "reason": "Counters chaos through calm and composure instead of turmoil.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__5.00.00.composed.00",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__5.00.00.composed.00",
+            "to": "oewn-tranquil__5.00.00.composed.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "TRANQUILEST",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-tranquil__5.00.00.composed.00",
+        "lemma": "tranquil",
+        "definition": "not agitated; without losing self-possession",
+        "reason": "Counters chaos through calm and composure instead of turmoil.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__5.00.00.composed.00",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__5.00.00.composed.00",
+            "to": "oewn-tranquil__5.00.00.composed.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "TRANQUILITIES",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-tranquility__1.26.00..",
+        "lemma": "tranquility",
+        "definition": "an untroubled state; free from disturbances",
+        "reason": "Counters chaos through tranquility without disturbances.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-tranquility__1.26.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "TRANQUILITY",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-tranquility__1.26.00..",
+        "lemma": "tranquility",
+        "definition": "an untroubled state; free from disturbances",
+        "reason": "Counters chaos through tranquility without disturbances.",
+        "confidence": "reviewed-profile",
+        "rootSense": "oewn-tranquility__1.26.00..",
+        "evidence": []
+      }
+    },
+    {
+      "word": "TRANQUILIZE",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-tranquilize__2.37.00..",
+        "lemma": "tranquilize",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-tranquilize__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "TRANQUILIZED",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-tranquilize__2.37.00..",
+        "lemma": "tranquilize",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-tranquilize__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "TRANQUILIZES",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-tranquilize__2.37.00..",
+        "lemma": "tranquilize",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-tranquilize__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "TRANQUILIZING",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-tranquilize__2.37.00..",
+        "lemma": "tranquilize",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-tranquilize__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "TRANQUILLISE",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-tranquillise__2.37.00..",
+        "lemma": "tranquillise",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-tranquillise__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "TRANQUILLISED",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-tranquillise__2.37.00..",
+        "lemma": "tranquillise",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-tranquillise__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "TRANQUILLISES",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-tranquillise__2.37.00..",
+        "lemma": "tranquillise",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-tranquillise__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "TRANQUILLISING",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-tranquillise__2.37.00..",
+        "lemma": "tranquillise",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-tranquillise__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "TRANQUILLITIES",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-tranquillity__1.26.00..",
+        "lemma": "tranquillity",
+        "definition": "an untroubled state; free from disturbances",
+        "reason": "Counters chaos through tranquility without disturbances.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-tranquility__1.26.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-tranquility__1.26.00..",
+            "to": "oewn-tranquillity__1.26.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "TRANQUILLITY",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-tranquillity__1.26.00..",
+        "lemma": "tranquillity",
+        "definition": "an untroubled state; free from disturbances",
+        "reason": "Counters chaos through tranquility without disturbances.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-tranquility__1.26.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-tranquility__1.26.00..",
+            "to": "oewn-tranquillity__1.26.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "TRANQUILLIZE",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-tranquillize__2.37.00..",
+        "lemma": "tranquillize",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-tranquillize__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "TRANQUILLIZED",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-tranquillize__2.37.00..",
+        "lemma": "tranquillize",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-tranquillize__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "TRANQUILLIZES",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-tranquillize__2.37.00..",
+        "lemma": "tranquillize",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-tranquillize__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "TRANQUILLIZING",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-tranquillize__2.37.00..",
+        "lemma": "tranquillize",
+        "definition": "make calm or still",
+        "reason": "Counters chaos through calming agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__2.37.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__2.37.00..",
+            "to": "oewn-tranquillize__2.37.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "TRANQUILLY",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-tranquilly__4.02.01..",
+        "lemma": "tranquilly",
+        "definition": "without emotional agitation",
+        "reason": "Counters chaos through calm and composure instead of turmoil.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-calm__5.00.00.composed.00",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-calm__5.00.00.composed.00",
+            "to": "oewn-tranquil__5.00.00.composed.00"
+          },
+          {
+            "type": "inverse-pertainym",
+            "from": "oewn-tranquil__5.00.00.composed.00",
+            "to": "oewn-tranquilly__4.02.01.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "UNBEND",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-unbend__2.29.01..",
+        "lemma": "unbend",
+        "definition": "become less tense, rest, or take one's ease",
+        "reason": "Counters chaos through becoming relaxed.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-relax__2.29.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-relax__2.29.00..",
+            "to": "oewn-unbend__2.29.01.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "UNBENDED",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-unbend__2.29.01..",
+        "lemma": "unbend",
+        "definition": "become less tense, rest, or take one's ease",
+        "reason": "Counters chaos through becoming relaxed.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-relax__2.29.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-relax__2.29.00..",
+            "to": "oewn-unbend__2.29.01.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "UNBENDING",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-unbend__2.29.01..",
+        "lemma": "unbend",
+        "definition": "become less tense, rest, or take one's ease",
+        "reason": "Counters chaos through becoming relaxed.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-relax__2.29.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-relax__2.29.00..",
+            "to": "oewn-unbend__2.29.01.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "UNBENDS",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-unbend__2.29.01..",
+        "lemma": "unbend",
+        "definition": "become less tense, rest, or take one's ease",
+        "reason": "Counters chaos through becoming relaxed.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-relax__2.29.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-relax__2.29.00..",
+            "to": "oewn-unbend__2.29.01.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "UNBENT",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-unbend__2.29.01..",
+        "lemma": "unbend",
+        "definition": "become less tense, rest, or take one's ease",
+        "reason": "Counters chaos through becoming relaxed.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-relax__2.29.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-relax__2.29.00..",
+            "to": "oewn-unbend__2.29.01.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "UNFLAPPABLE",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-unflappable__5.00.00.composed.00",
+        "lemma": "unflappable",
+        "definition": "not easily perturbed or excited or upset; marked by extreme calm and composure",
+        "reason": "Counters chaos through self-possession instead of agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-composed__3.00.00..",
+        "evidence": [
+          {
+            "type": "similar",
+            "from": "oewn-composed__3.00.00..",
+            "to": "oewn-unflappable__5.00.00.composed.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "UNFLUSTERED",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-unflustered__5.00.00.composed.00",
+        "lemma": "unflustered",
+        "definition": "free from emotional agitation or nervous tension",
+        "reason": "Counters chaos through self-possession instead of agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-composed__3.00.00..",
+        "evidence": [
+          {
+            "type": "similar",
+            "from": "oewn-composed__3.00.00..",
+            "to": "oewn-unflustered__5.00.00.composed.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "UNPERTURBED",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-unperturbed__5.00.00.composed.00",
+        "lemma": "unperturbed",
+        "definition": "free from emotional agitation or nervous tension",
+        "reason": "Counters chaos through self-possession instead of agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-composed__3.00.00..",
+        "evidence": [
+          {
+            "type": "similar",
+            "from": "oewn-composed__3.00.00..",
+            "to": "oewn-unperturbed__5.00.00.composed.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "UNRUFFLED",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-unruffled__5.00.00.composed.00",
+        "lemma": "unruffled",
+        "definition": "free from emotional agitation or nervous tension",
+        "reason": "Counters chaos through self-possession instead of agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-composed__3.00.00..",
+        "evidence": [
+          {
+            "type": "similar",
+            "from": "oewn-composed__3.00.00..",
+            "to": "oewn-unruffled__5.00.00.composed.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "UNSTRAINED",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-unstrained__5.00.00.relaxed.00",
+        "lemma": "unstrained",
+        "definition": "not placed under psychological stress",
+        "reason": "Counters chaos through relaxation without anxiety.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-relaxed__3.00.00..",
+        "evidence": [
+          {
+            "type": "similar",
+            "from": "oewn-relaxed__3.00.00..",
+            "to": "oewn-unstrained__5.00.00.relaxed.00"
+          }
+        ]
+      }
+    },
+    {
+      "word": "UNTROUBLED",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-untroubled__5.00.00.quiet.02",
+        "lemma": "untroubled",
+        "definition": "free from turmoil or worries",
+        "reason": "Counters chaos through quiet without agitation.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-quiet__3.00.02..",
+        "evidence": [
+          {
+            "type": "similar",
+            "from": "oewn-quiet__3.00.02..",
+            "to": "oewn-untroubled__5.00.00.quiet.02"
+          }
+        ]
+      }
+    },
+    {
+      "word": "UNWIND",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-unwind__2.29.00..",
+        "lemma": "unwind",
+        "definition": "become less tense, rest, or take one's ease",
+        "reason": "Counters chaos through becoming relaxed.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-relax__2.29.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-relax__2.29.00..",
+            "to": "oewn-unwind__2.29.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "UNWINDING",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-unwind__2.29.00..",
+        "lemma": "unwind",
+        "definition": "become less tense, rest, or take one's ease",
+        "reason": "Counters chaos through becoming relaxed.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-relax__2.29.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-relax__2.29.00..",
+            "to": "oewn-unwind__2.29.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "UNWINDS",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-unwind__2.29.00..",
+        "lemma": "unwind",
+        "definition": "become less tense, rest, or take one's ease",
+        "reason": "Counters chaos through becoming relaxed.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-relax__2.29.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-relax__2.29.00..",
+            "to": "oewn-unwind__2.29.00.."
+          }
+        ]
+      }
+    },
+    {
+      "word": "UNWOUND",
+      "previous": null,
+      "next": {
+        "relation": "opposite",
+        "senseId": "oewn-unwind__2.29.00..",
+        "lemma": "unwind",
+        "definition": "become less tense, rest, or take one's ease",
+        "reason": "Counters chaos through becoming relaxed.",
+        "confidence": "lexical-expansion",
+        "rootSense": "oewn-relax__2.29.00..",
+        "evidence": [
+          {
+            "type": "same-synset",
+            "from": "oewn-relax__2.29.00..",
+            "to": "oewn-unwind__2.29.00.."
+          }
+        ]
+      }
+    }
+  ]
+}

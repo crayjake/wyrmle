@@ -76,7 +76,7 @@ function expand(root: ConceptRoot): Candidate[] {
     // A satellite points back to a more general adjective head. Following that
     // direction loses its qualifying sense (e.g. gentle -> light). Expand from
     // heads to their satellites only, preserving the reviewed concept boundary.
-    if (item.sense.synset.endsWith('-a') && item.similarities === 0 && item.antonyms === 0) {
+    if (root.similarities !== false && item.sense.synset.endsWith('-a') && item.similarities === 0 && item.antonyms === 0) {
       for (const edge of synset.relations) if (edge.type === 'similar') {
         for (const id of getMeaningSynset(edge.target)!.senses) enqueue(id, 'similar', { similarities: 1 })
       }
@@ -125,7 +125,7 @@ for (const [enemy, configuration] of Object.entries(semanticProfileRoots)) {
     }
   }
   profiles[enemy] = {
-    version: VERSION, dictionaryVersion: WORD_MEANINGS_VERSION,
+    version: configuration.version ?? VERSION, dictionaryVersion: WORD_MEANINGS_VERSION,
     definition: getMeaningSense(configuration.enemySense)!.definition,
     policy: 'Reviewed game counter-concepts plus pinned enemy/related concepts. Source expansion: same synset, at most one derivation before at most one adjective-head-to-satellite similarity edge; no derivation from verb roots; explicitly approved core antonyms and exact adjective-to-adverb pertainym links only. Reviewed overbroad synsets excluded. No general hypernym, sentiment, substring, or runtime inference. Missing profile relation means no meaning bonus under this reviewed policy, not proof of universal semantic unrelatedness.',
     reviewedExclusions: excludedProfileConcepts,

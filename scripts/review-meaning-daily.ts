@@ -10,7 +10,7 @@ import type { SolverMoveSummary } from '../src/generator/findMoves.ts'
 
 const [candidatePath, witnessesPath, requestedOutput] = process.argv.slice(2)
 if (candidatePath && (!witnessesPath || !requestedOutput)) throw new Error('Pass candidate, opening certificate, and output paths, or omit all three to review the publication.')
-const published = candidatePath ? undefined : JSON.parse(gunzipSync(readFileSync('artifacts/meaning-v1/selected.json.gz')).toString())
+const published = candidatePath ? undefined : JSON.parse(gunzipSync(readFileSync('artifacts/meaning-v2/selected.json.gz')).toString())
 const candidate = (candidatePath ? JSON.parse(readFileSync(candidatePath, 'utf8')) : published.candidate) as CandidatePuzzle
 const certificate = (witnessesPath ? JSON.parse(readFileSync(witnessesPath, 'utf8')) : published.analysis.openingSafety) as OpeningSafetyReport
 const outputPath = requestedOutput ?? '/tmp/wyrmle-meaning-review.json'

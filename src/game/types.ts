@@ -1,4 +1,6 @@
-export type PartOfSpeech = 'noun' | 'verb' | 'adjective' | 'adverb'
+export const PARTS_OF_SPEECH = ['noun', 'verb', 'adjective', 'adverb',
+  'pronoun', 'preposition', 'conjunction', 'determiner', 'article', 'particle'] as const
+export type PartOfSpeech = typeof PARTS_OF_SPEECH[number]
 export type SemanticRelation = 'opposite' | 'similar' | 'related' | 'unrelated'
 export type Gem = 'ward' | 'power'
 

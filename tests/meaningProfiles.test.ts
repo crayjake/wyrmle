@@ -5,17 +5,22 @@ import {
 } from '../src/lexicon/meaningDictionary.ts'
 import profiles from '../src/lexicon/data/semantic-profiles-v1.json' with { type: 'json' }
 import {
-  getCoveredMeaningWords, getMeaningSense, getMeaningSynset, getWordMeanings,
+  getCoveredMeaningWords, getMeaningSense, getMeaningSynset, getWordMeanings, WORD_MEANINGS_VERSION,
 } from '../scripts/lib/wordMeanings.ts'
+import { getFunctionWord, getFunctionWords } from '../src/lexicon/functionWords.ts'
 
 test('new validity dictionary contains every defined spelling and no uncovered spelling', () => {
   const words = getDefinedDictionaryWords()
-  assert.deepEqual(words, getCoveredMeaningWords())
+  assert.deepEqual(words, [...new Set([...getCoveredMeaningWords(), ...getFunctionWords()])].sort())
   assert.deepEqual(words, [...words].sort())
-  assert.equal(words.length, 116_197)
+  assert.ok(words.length > 116_197)
   assert.equal(getDictionaryMeaning('AWFY'), undefined)
-  assert.equal(getDictionaryMeaning('THE'), undefined)
-  assert.equal(getDictionaryMeaning('WHERE'), undefined)
+  for (const word of ['THE', 'WHERE', 'AND', 'HOW', 'HER', 'SHE', 'HIM', 'YOU', 'WITH']) {
+    const entry = getDictionaryMeaning(word)!
+    assert.ok(entry?.definition.trim(), word)
+    assert.equal(entry.source, 'wiktionary-en', word)
+    assert.ok(getFunctionWord(word)?.senses.some(sense => sense.id === entry.senseId), word)
+  }
   const cheerful = getDictionaryMeaning(' cheerful ')!
   assert.equal(cheerful.word, 'CHEERFUL')
   assert.match(cheerful.definition, /good spirits/)
@@ -70,6 +75,52 @@ test('profiles use each enemy concept rather than a universal positive-negative 
   }
 })
 
+test('CHAOS counters cover calmness, peace, composure and coherent order as reviewed families', () => {
+  const families = [
+    ['CALM', 'CALMS', 'CALMED', 'CALMING', 'CALMER', 'CALMEST', 'CALMLY', 'CALMNESS'],
+    ['COMPOSE', 'COMPOSES', 'COMPOSING', 'COMPOSED', 'COMPOSEDLY', 'COMPOSURE', 'EQUANIMITY'],
+    ['SERENE', 'SERENER', 'SERENEST', 'SERENELY', 'SERENITY', 'TRANQUIL', 'TRANQUILLY', 'TRANQUILITY', 'TRANQUILLITY'],
+    ['QUIET', 'QUIETER', 'QUIETEST', 'QUIETLY', 'QUIETNESS', 'QUIETEN', 'QUIETED', 'QUIETUDE', 'UNTROUBLED'],
+    ['PEACE', 'PEACEFUL', 'PEACEFULLY', 'PEACEFULNESS', 'PEACEABLE'],
+    ['COOL', 'COOLER', 'COOLLY', 'COOLHEADED', 'COLLECTED', 'COLLECTEDLY', 'POISED', 'UNFLAPPABLE', 'UNRUFFLED'],
+    ['PLACID', 'PLACIDLY', 'PLACIDITY', 'RELAX', 'RELAXED', 'RELAXING', 'RELAXATION', 'MELLOW', 'UNWIND'],
+    ['ORDER', 'ORDERLY', 'TIDY', 'METHOD', 'METHODICAL', 'SYSTEM', 'SYSTEMATIC', 'COHERENCE', 'COHERENT', 'COHERENTLY', 'CLARITY', 'BALANCE', 'STABILITY'],
+  ]
+  for (const family of families) {
+    for (const word of family) assert.equal(profiles.CHAOS.relations[word]?.relation, 'opposite', word)
+  }
+  assert.equal(profiles.CHAOS.version, 'semantic-profiles-v2-chaos')
+  for (const [enemy, profile] of Object.entries(profiles)) {
+    if (enemy !== 'CHAOS') assert.equal(profile.version, 'semantic-profiles-v1', enemy)
+  }
+})
+
+test('CHAOS calmness expansion preserves the relevant sense rather than leaking into physical or political senses', () => {
+  const senses = {
+    CALM: 'oewn-calm__5.00.00.composed.00',
+    COOL: 'oewn-cool__5.00.00.composed.00',
+    TRANQUIL: 'oewn-tranquil__5.00.00.composed.00',
+    TRANQUILLY: 'oewn-tranquilly__4.02.01..',
+    QUIET: 'oewn-quiet__3.00.02..',
+    QUIETLY: 'oewn-quietly__4.02.02..',
+    PLACID: 'oewn-placid__5.00.00.good-natured.00',
+    STILL: 'oewn-still__2.37.00..',
+    REPOSE: 'oewn-repose__1.07.00..',
+    RELAXATION: 'oewn-relaxation__1.12.00..',
+    BALANCE: 'oewn-balance__1.07.00..',
+    CLARITY: 'oewn-clarity__1.07.01..',
+    COHERENT: 'oewn-coherent__3.00.00..',
+  }
+  for (const [word, sense] of Object.entries(senses)) assert.equal(profiles.CHAOS.relations[word]?.senseId, sense, word)
+  // Physical rest, silence, weather, sedation, lack of war, or merely positive
+  // sentiment do not by themselves establish composure or an orderly state.
+  for (const word of [
+    'REST', 'SLEEP', 'SLUMBER', 'STILLNESS', 'MOTIONLESS', 'WINDLESS', 'SILENT', 'NOISELESS',
+    'SEDATIVE', 'SEDATION', 'PACIFIST', 'PACIFISTIC', 'DOVISH', 'NONBELLIGERENT',
+    'HAPPY', 'CHEERFUL', 'KIND', 'EASY', 'MILD', 'COLD', 'COOLANT', 'ADHESIVE',
+  ]) assert.notEqual(profiles.CHAOS.relations[word]?.relation, 'opposite', word)
+})
+
 test('all six enemy profiles have meaningful counter and resistance examples', () => {
   const cases: [keyof typeof profiles, string[], string[]][] = [
     ['ANGER', ['CHEERFUL', 'CALM', 'PATIENCE'], ['ANGRY', 'RAGE', 'RESENTFUL']],
@@ -77,7 +128,7 @@ test('all six enemy profiles have meaningful counter and resistance examples', (
     ['FEAR', ['COURAGE', 'SAFE', 'SECURITY'], ['TERROR', 'PANIC', 'WORRY']],
     ['MELANCHOLY', ['JOY', 'CHEERY', 'HAPPY'], ['SAD', 'GLOOMY', 'TEARFUL']],
     ['CRUELTY', ['KIND', 'MERCY', 'COMPASSION'], ['CRUEL', 'MERCILESS', 'TORTURE']],
-    ['CHAOS', ['TIDY', 'ORDER', 'SORT', 'PLAN'], ['CHAOTIC', 'MESSY', 'RANDOM']],
+    ['CHAOS', ['TIDY', 'ORDER', 'SORT', 'PLAN', 'CALM', 'PEACE', 'SERENE'], ['CHAOTIC', 'MESSY', 'RANDOM']],
   ]
   for (const [enemy, counters, reinforcements] of cases) {
     for (const word of counters) assert.equal(profiles[enemy].relations[word]?.relation, 'opposite', `${enemy}: ${word}`)
@@ -87,7 +138,10 @@ test('all six enemy profiles have meaningful counter and resistance examples', (
 
 test('every generated profile record has licensed word evidence and a verifiable source path', () => {
   for (const [enemy, profile] of Object.entries(profiles)) {
-    assert.equal(profile.dictionaryVersion, MEANING_DICTIONARY_VERSION)
+    // Profiles retain their pinned OEWN relation graph; the merged validity
+    // dictionary adds function words without inventing graph relationships.
+    assert.equal(profile.dictionaryVersion, WORD_MEANINGS_VERSION)
+    assert.notEqual(profile.dictionaryVersion, MEANING_DICTIONARY_VERSION)
     for (const [word, record] of Object.entries(profile.relations)) {
       const context = `${enemy}: ${word}`
       assert.ok(getDictionaryMeaning(word), context)
@@ -95,7 +149,14 @@ test('every generated profile record has licensed word evidence and a verifiable
       assert.equal(record.definition, sense.definition, context)
       assert.equal(record.lemma, sense.lemma, context)
       assert.ok(getWordMeanings(word).senses.some(candidate => candidate.id === record.senseId), context)
-      assert.ok(profile.roots.some(root => root.senseId === record.rootSense), context)
+      const root = profile.roots.find(root => root.senseId === record.rootSense)
+      assert.ok(root, context)
+      if ('derivations' in root && root.derivations === false) {
+        assert.ok(record.evidence.every(edge => edge.type !== 'derivation'), context)
+      }
+      if ('similarities' in root && root.similarities === false) {
+        assert.ok(record.evidence.every(edge => edge.type !== 'similar'), context)
+      }
       assert.equal(record.confidence, record.evidence.length ? 'lexical-expansion' : 'reviewed-profile', context)
       assert.ok(record.evidence.filter(edge => edge.type === 'derivation').length <= 1, context)
       assert.ok(record.evidence.filter(edge => edge.type === 'similar').length <= 1, context)

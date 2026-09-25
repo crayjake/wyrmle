@@ -19,7 +19,7 @@ type SemanticProfile = { version: string; definition: string; relations: Record<
 const profiles = profilesData as unknown as Readonly<Record<string, SemanticProfile>>
 
 export const meaningLexicalProvider: LexicalProvider = {
-  id: 'wyrmle-definition-backed-semantics-1',
+  id: 'wyrmle-definition-backed-semantics-2',
   getEntry(word) {
     const normalized = word.trim().toUpperCase()
     const source = getDictionaryMeaning(normalized)
@@ -70,7 +70,7 @@ export function compilePuzzleMeanings(encounter: LetterStrikeEncounter): PuzzleM
       lemma: classification?.lemma ?? source.lemma, senseId: classification?.senseId ?? source.senseId,
       partsOfSpeech: Object.freeze([...source.partsOfSpeech]), relation: classification?.relation ?? 'unrelated',
       reason: classification?.reason ?? `This defined word does not match a counter or reinforcing sense in the reviewed ${enemyWord.toLowerCase()} profile.`,
-      source: 'oewn-2025', evidence: classification?.confidence ?? 'defined-neutral',
+      source: classification ? 'oewn-2025' : source.source, evidence: classification?.confidence ?? 'defined-neutral',
     })
   }
   return Object.freeze({ version: MEANING_LEXICON_VERSION, dictionaryVersion: MEANING_DICTIONARY_VERSION,

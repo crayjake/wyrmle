@@ -71,12 +71,14 @@ specific matched sense for a meaning bonus. Source sense order is preserved
 within an entry; OEWN does not provide an overall frequency ranking across all
 parts of speech for a spelling.
 
-This dictionary change deliberately excludes words without source definitions.
-It also exposes an OEWN limitation: these nine common function words, **THE, AND,
-HOW, HER, SHE, HIM, YOU, WITH and WHERE are not covered**. They are not silently
-accepted as neutral in the new rules. THERE, HERE, DID, CAN, ALL and BUT are
-covered. A future supplement needs actual licensed definitions and an explicit
-dictionary version, rather than invented glosses or a hidden exception list.
+The original OEWN-only dictionary omitted common grammatical words such as
+WHERE, THE and AND. That coverage gap is repaired by the separately pinned
+[Wiktionary function-word supplement](FUNCTION_WORDS.md). The merged
+`wyrmle-defined-dictionary-v2` preserves existing OEWN entries and adds licensed
+definitions for missing spellings. Importing whole grammatical categories and
+auditing an independent everyday-word corpus avoids a word-specific allowlist.
+Published puzzles retain each selected source sense and source identifier;
+archived v10 data keeps its original dictionary for historical replay.
 
 `data/semantic-profiles-v1.json` contains the offline game judgements, generated
 from reviewed, sense-pinned concepts in `scripts/lib/semanticProfileRoots.ts`.

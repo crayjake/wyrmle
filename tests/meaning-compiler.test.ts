@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import dictionaryData from '../src/lexicon/data/meaning-dictionary-v1.json' with { type: 'json' }
+import functionData from '../src/lexicon/data/function-words-v1.json' with { type: 'json' }
+import { getFunctionWord } from '../src/lexicon/functionWords.ts'
 import { getDictionaryMeaning, MEANING_DICTIONARY_VERSION } from '../src/lexicon/meaningDictionary.ts'
 import { getWordMeanings } from '../scripts/lib/wordMeanings.ts'
 import { isDictionaryWord } from '../src/game/dictionary.ts'
@@ -13,6 +15,9 @@ import { compilePuzzleMeanings, isMeaningCompilationCurrent, meaningLexicalProvi
 import { mutateCandidate, mutationKinds } from '../src/generator/mutate.ts'
 import { scorePuzzle } from '../src/generator/score.ts'
 import { encounterRuleKey } from '../src/generator/stateKey.ts'
+import { findPlayableWords, findValidMoves } from '../src/generator/findMoves.ts'
+import { canSpellEncounterWord } from '../src/game/meaningLexicon.ts'
+import { packMeaningLexicon, unpackMeaningLexicon } from '../src/game/meaningPacking.ts'
 import type { CandidatePuzzle } from '../src/generator/types.ts'
 import { validatePuzzle } from '../src/generator/validate.ts'
 
@@ -63,7 +68,8 @@ function selection(encounter: LetterStrikeEncounter, word: string): number[] {
 test('compilation covers every defined spelling in the complete physical supply, independently of solver budgets', () => {
   const encounter = fixture()
   const compiled = compilePuzzleMeanings(encounter)
-  const expected = Object.keys(dictionaryData.words).filter(word => independentlyFits(word, encounter)).sort()
+  const expected = [...new Set([...Object.keys(dictionaryData.words), ...Object.keys(functionData.words)])]
+    .filter(word => independentlyFits(word, encounter)).sort()
   assert.deepEqual(Object.keys(compiled.words), expected)
   assert.ok(expected.length > 100, 'The compiler must go well beyond the small construction anchor list.')
   assert.ok(compiled.words.DIRTY, 'A word using refill letters needs its meaning before those letters arrive.')
@@ -94,12 +100,15 @@ test('compilation counts duplicate letters, enforces board/word length limits an
 test('every stored definition and chosen sense is traceable to that spelling in the source catalog', () => {
   const compiled = compilePuzzleMeanings(fixture())
   for (const [word, entry] of Object.entries(compiled.words)) {
-    const source = getWordMeanings(word).senses.find(sense => sense.id === entry.senseId)
+    const source = entry.source === 'oewn-2025'
+      ? getWordMeanings(word).senses.find(sense => sense.id === entry.senseId)
+      : getFunctionWord(word)?.senses.find(sense => sense.id === entry.senseId)
     assert.ok(source, `${word}: chosen sense must belong to this spelling`)
-    assert.ok(source.definitions.includes(entry.definition), `${word}: definition must retain source wording`)
-    assert.equal(entry.lemma, source.lemma, `${word}: lemma must match the chosen source sense`)
+    const definitions = 'definitions' in source ? source.definitions : [source.definition]
+    const lemma = 'lemma' in source ? source.lemma : getFunctionWord(word)!.lemma
+    assert.ok(definitions.includes(entry.definition), `${word}: definition must retain source wording`)
+    assert.equal(entry.lemma, lemma, `${word}: lemma must match the chosen source sense`)
     assert.ok(entry.partsOfSpeech.includes(source.partOfSpeech), `${word}: chosen sense POS must be retained`)
-    assert.equal(entry.source, 'oewn-2025')
     assert.ok(entry.reason.trim(), `${word}: classification needs an explanation`)
   }
 })
@@ -128,6 +137,38 @@ test('CHEERFUL counters anger, CAREFUL stays neutral and ANGRY is resisted with 
   const roundTrip = JSON.parse(JSON.stringify(compiled)) as LetterStrikeEncounter
   assert.equal(isMeaningCompilationCurrent(roundTrip), true)
   assert.deepEqual(createLetterStrikeGame(roundTrip), game)
+})
+
+test('WHERE and other function words survive compilation, publication packing, preview, submission and solver discovery', () => {
+  const compiled = withCompiledMeanings(fixture('WHEREANDYOUHIMST', ''))
+  const meaningLexicon = unpackMeaningLexicon(JSON.parse(JSON.stringify(packMeaningLexicon(compiled.meaningLexicon!))))
+  const published = { ...compiled, meaningLexicon }
+  assert.equal(isMeaningCompilationCurrent(published), true)
+  const state = createLetterStrikeGame(published)
+  for (const word of ['WHERE', 'AND', 'YOU', 'HIM', 'HER', 'THE', 'HOW', 'SHE', 'WITH']) {
+    const meaning = meaningLexicon.words[word]
+    assert.ok(meaning?.definition.trim(), word)
+    assert.equal(meaning.source, 'wiktionary-en', word)
+    assert.equal(meaning.relation, 'unrelated', word)
+    assert.equal(meaning.evidence, 'defined-neutral', word)
+    assert.ok(findPlayableWords(state).includes(word), word)
+    const ids = selection(published, word)
+    const preview = previewLetterStrike(state, ids)
+    assert.equal(preview.valid, true, word)
+    assert.equal(preview.semanticLabel, 'NEUTRAL', word)
+    assert.equal(preview.grammaticalModifier, 0, word)
+    assert.equal(preview.longWordModifier, 0, word)
+    assert.deepEqual(submitLetterStrike(state, ids).playedWords[0].preview, preview, word)
+    assert.ok(findValidMoves(state, { vocabulary: [word] }).length > 0, word)
+  }
+  assert.match(meaningLexicon.words.WHERE.definition, /what place/)
+  assert.ok(meaningLexicon.words.WHERE.partsOfSpeech.includes('adverb'))
+  assert.equal(canSpellEncounterWord(published, ['Y', 'O', 'U']), true,
+    'A remaining YOU must not be declared an exhausted board.')
+  const missing = structuredClone(published)
+  delete (missing.meaningLexicon.words as Record<string, PuzzleWordMeaning>).WHERE
+  assert.equal(isMeaningCompilationCurrent(missing), false,
+    'Publication validation must reject a table that dropped a defined function word.')
 })
 
 test('the compiled lexicon is deeply immutable and unsupported enemy profiles fail explicitly', () => {

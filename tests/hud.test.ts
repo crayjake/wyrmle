@@ -20,6 +20,7 @@ function wordIds(state: GameState, word: string): number[] {
 test('HUD grammar lists only word types that modify the current enemy type', () => {
   const expected: Record<PartOfSpeech, string | null> = {
     noun: 'ADJECTIVE', verb: 'ADVERB', adjective: 'ADVERB', adverb: null,
+    pronoun: null, preposition: null, conjunction: null, determiner: null, article: null, particle: null,
   }
   for (const partOfSpeech of Object.keys(expected) as PartOfSpeech[]) {
     const state = createGame({

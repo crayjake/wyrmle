@@ -12,7 +12,7 @@ export type PuzzleWordMeaning = {
   partsOfSpeech: readonly PartOfSpeech[]
   relation: SemanticRelation
   reason: string
-  source: 'oewn-2025'
+  source: 'oewn-2025' | 'wiktionary-en'
   evidence: 'reviewed-profile' | 'lexical-expansion' | 'defined-neutral'
 }
 
@@ -100,7 +100,7 @@ export function validateMeaningLexicon(encounter: LetterStrikeEncounter): void {
   for (const [word, entry] of Object.entries(lexicon.words)) {
     if (!/^[A-Z]+$/.test(word) || word.length < lexicon.minimumWordLength || word.length > lexicon.maximumWordLength
       || !entry.definition?.trim() || !entry.senseId || !entry.lemma || !entry.reason
-      || entry.source !== 'oewn-2025' || !['opposite', 'similar', 'related', 'unrelated'].includes(entry.relation)) {
+      || !['oewn-2025', 'wiktionary-en'].includes(entry.source) || !['opposite', 'similar', 'related', 'unrelated'].includes(entry.relation)) {
       throw new Error(`Missing definition or semantic evidence for ${word}.`)
     }
   }

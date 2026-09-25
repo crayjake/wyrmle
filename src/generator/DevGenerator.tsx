@@ -1,20 +1,21 @@
 import { useEffect, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
 import savedMeaning from './data/meaning-review.json'
-import { dailyEncounter20260925V10 } from '../daily/catalog.ts'
+import { dailyEncounter20260925V11 } from '../daily/catalog.ts'
 import type { GenerationResult, RankedCandidate } from './generate.ts'
 import type { GeneratorProgress, GeneratorRequest, GeneratorResponse } from './workerMessages.ts'
 import type { SolverMoveSummary } from './findMoves.ts'
 import type { CandidatePuzzle } from './types.ts'
 import './DevGenerator.css'
 import { difficultyFromAnalysis } from './difficulty'
+import { inspectPuzzleMeaning } from './inspectMeaning.ts'
 
 type Props = { onPlay: (candidate: CandidatePuzzle) => void; onClose: () => void }
 type ResultFilter = 'accepted' | 'all' | 'rejected'
 // The review data omits the large meaning table: use the same frozen encounter
 // that gameplay publishes, without shipping another copy in the DEV bundle.
 const savedCandidates = [{ ...savedMeaning, candidate: {
-  ...savedMeaning.candidate, encounter: dailyEncounter20260925V10,
+  ...savedMeaning.candidate, encounter: dailyEncounter20260925V11,
 } }] as unknown as RankedCandidate[]
 // A playtest temporarily unmounts the browser. Keep this session's review queue
 // and selection in module memory; daily/localStorage records are unrelated.
@@ -53,8 +54,7 @@ function CandidateReview({ ranked, onPlay }: { ranked: RankedCandidate; onPlay: 
   const { encounter } = candidate
   const meanings = encounter.meaningLexicon
   const [meaningQuery, setMeaningQuery] = useState('')
-  const inspectedWord = meaningQuery.trim().toUpperCase()
-  const inspectedMeaning = meanings?.words[inspectedWord]
+  const inspection = inspectPuzzleMeaning(encounter, meaningQuery)
   const meaningCounts = meanings && Object.values(meanings.words).reduce((counts, word) => {
     counts[word.relation === 'opposite' ? 'counter' : word.relation === 'similar' ? 'resisted' : 'neutral']++
     return counts
@@ -136,11 +136,18 @@ function CandidateReview({ ranked, onPlay }: { ranked: RankedCandidate; onPlay: 
         <Metric label="Word lengths">{meanings.minimumWordLength}–{meanings.maximumWordLength}</Metric>
       </dl>
       <p>A neutral record means no counter or reinforcing sense was matched by this reviewed profile. Complete stored coverage does not claim that every possible meaning relationship has been reviewed.</p>
-      <label>Inspect a stored word<input value={meaningQuery} onChange={event => setMeaningQuery(event.target.value)} placeholder="CHEERFUL" autoCapitalize="characters" spellCheck={false} maxLength={32} /></label>
-      {inspectedWord && <div role="status" aria-live="polite">{inspectedMeaning ? <>
-        <p><strong>{inspectedWord} · {inspectedMeaning.relation === 'opposite' ? 'COUNTER' : inspectedMeaning.relation === 'similar' ? 'RESISTED' : 'NEUTRAL'}</strong>: {inspectedMeaning.definition}</p>
-        <p>{inspectedMeaning.reason}</p><p className="generator-note">{inspectedMeaning.senseId} · {inspectedMeaning.evidence}</p>
-      </> : <p>Not accepted in this puzzle’s stored dictionary.</p>}</div>}
+      <label>Inspect a word<input value={meaningQuery} onChange={event => setMeaningQuery(event.target.value)} placeholder="CHEERFUL" autoCapitalize="characters" spellCheck={false} maxLength={32} /></label>
+      {inspection && <div role="status" aria-live="polite">{inspection.kind === 'stored' ? <>
+        <p><strong>{inspection.word} · {inspection.meaning.relation === 'opposite' ? 'COUNTER' : inspection.meaning.relation === 'similar' ? 'RESISTED' : 'NEUTRAL'}</strong>: {inspection.meaning.definition}</p>
+        {inspection.meaning.evidence === 'defined-neutral'
+          ? <p><strong>No reviewed relation matched.</strong> This is the default neutral classification, not an individual review of every possible relationship.</p>
+          : <p>{inspection.meaning.reason}</p>}
+        <p className="generator-note">{inspection.meaning.source} · {inspection.meaning.senseId} · {inspection.meaning.evidence}</p>
+      </> : <>
+        <p><strong>{inspection.word}</strong>: {inspection.message}</p>
+        {inspection.kind !== 'undefined' && <><p>{inspection.meaning.definition}</p>
+          <p className="generator-note">{inspection.meaning.source} · {inspection.meaning.senseId}</p></>}
+      </>}</div>}
     </details>}
     {analysis.lexicalAudit && <details>
       <summary>Dictionary classification audit · {analysis.lexicalAudit.opening.words.toLocaleString()} opening words</summary>

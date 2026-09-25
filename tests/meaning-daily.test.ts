@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { gunzipSync } from 'node:zlib'
 import { test } from 'node:test'
-import { getDailyPuzzle, getDailyPuzzleForVersion } from '../src/daily/puzzle.ts'
+import { getDailyPuzzleForVersion } from '../src/daily/puzzle.ts'
 import { createLetterStrikeGame, submitLetterStrike } from '../src/game/letterStrike.ts'
 import { isMeaningCompilationCurrent } from '../src/generator/meaningCompiler.ts'
 import { isOpeningSafetyCertificateCurrent } from '../src/generator/openingSafety.ts'
@@ -10,9 +10,9 @@ import { getWordCommonness } from '../src/generator/lexicalProvider.ts'
 import type { RankedCandidate } from '../src/generator/generate.ts'
 
 const selected = JSON.parse(gunzipSync(readFileSync(new URL('../artifacts/meaning-v1/selected.json.gz', import.meta.url))).toString()) as RankedCandidate
-const puzzle = getDailyPuzzle('2026-09-25')
+const puzzle = getDailyPuzzleForVersion('2026-09-25', 'letter-strike-7', 10)
 
-test('today publishes the complete definition-backed CHAOS v10 with archived rules retained separately', () => {
+test('archived CHAOS v10 retains its exact definition-backed publication and original review', () => {
   assert.equal(puzzle.puzzleVersion, 10)
   assert.equal(puzzle.gameVersion, 'letter-strike-7')
   assert.equal(puzzle.encounter.enemy.word, 'CHAOS')
@@ -21,7 +21,7 @@ test('today publishes the complete definition-backed CHAOS v10 with archived rul
   assert.deepEqual(puzzle.encounter.grammarModifiers, {})
   assert.equal(puzzle.encounter.longWordRule, undefined)
   assert.equal(Object.keys(puzzle.encounter.meaningLexicon!.words).length, 29647)
-  assert.ok(isMeaningCompilationCurrent(puzzle.encounter))
+  assert.equal(isMeaningCompilationCurrent(puzzle.encounter), false, 'The new compiler must detect v10\'s obsolete coverage.')
   assert.ok(Object.isFrozen(puzzle.encounter.meaningLexicon!.words))
   assert.equal(puzzle.difficulty, 'MEDIUM')
   assert.equal(selected.validation.accepted, true)
@@ -35,7 +35,7 @@ test('today publishes the complete definition-backed CHAOS v10 with archived rul
   assert.equal(historical.encounter.meaningLexicon, undefined)
 })
 
-test('every one of 7999 full-dictionary physical openings has a legal familiar winning continuation', () => {
+test('every one of archived v10\'s 7999 full-dictionary physical openings keeps its familiar winning continuation', () => {
   const certificate = selected.analysis.openingSafety!
   assert.equal(isOpeningSafetyCertificateCurrent(puzzle.encounter, certificate), true)
   assert.equal(certificate.scope, 'all-valid-openings')

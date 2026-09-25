@@ -1,6 +1,7 @@
 import { MEANING_LEXICON_VERSION } from './meaningLexicon.ts'
 import type { PuzzleMeaningLexicon, PuzzleWordMeaning } from './meaningLexicon.ts'
 import type { PartOfSpeech, SemanticRelation } from './types.ts'
+import { PARTS_OF_SPEECH } from './types.ts'
 
 /** Lossless transport only. No meaning, scoring or validity is inferred here. */
 export const MEANING_PACKING_VERSION = 'wyrmle-packed-meanings-1' as const
@@ -18,7 +19,7 @@ export type PackedMeaningLexicon = Readonly<{
   words: Readonly<Record<string, number>>
 }>
 
-const parts = new Set<PartOfSpeech>(['noun', 'verb', 'adjective', 'adverb'])
+const parts = new Set<PartOfSpeech>(PARTS_OF_SPEECH)
 const relations = new Set<SemanticRelation>(['opposite', 'similar', 'related', 'unrelated'])
 const evidenceKinds = new Set<PuzzleWordMeaning['evidence']>([
   'reviewed-profile', 'lexical-expansion', 'defined-neutral',
@@ -125,7 +126,8 @@ export function unpackMeaningLexicon(packed: unknown): PuzzleMeaningLexicon {
     const relationValue = readString(relation) as SemanticRelation
     const evidenceValue = readString(evidence) as PuzzleWordMeaning['evidence']
     const sourceValue = readString(source)
-    if (!relations.has(relationValue) || !evidenceKinds.has(evidenceValue) || sourceValue !== 'oewn-2025') {
+    if (!relations.has(relationValue) || !evidenceKinds.has(evidenceValue)
+      || (sourceValue !== 'oewn-2025' && sourceValue !== 'wiktionary-en')) {
       return fail('unsupported record classification or source')
     }
     return Object.freeze({

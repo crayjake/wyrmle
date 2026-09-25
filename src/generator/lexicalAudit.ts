@@ -2,6 +2,7 @@ import englishWords from 'an-array-of-english-words/index.json' with { type: 'js
 import { getEncounterWordClassification, validateLexicalRules } from '../game/lexicalRules.ts'
 import type { LetterStrikeEncounter } from '../game/letterStrike.ts'
 import type { PartOfSpeech, SemanticRelation } from '../game/types.ts'
+import { PARTS_OF_SPEECH } from '../game/types.ts'
 import { lexiconMetadata } from '../lexicon/index.ts'
 import { getDefinedDictionaryWords, MEANING_DICTIONARY_VERSION } from '../lexicon/meaningDictionary.ts'
 
@@ -77,7 +78,7 @@ function auditDictionary(encounter?: LetterStrikeEncounter) {
   if (encounter?.meaningLexicon) {
     if (!definedDictionary) {
       const words = getDefinedDictionaryWords()
-      definedDictionary = { words, metadata: { package: 'Open English WordNet', version: MEANING_DICTIONARY_VERSION,
+      definedDictionary = { words, metadata: { package: 'WYRMLE definitions (OEWN + Wiktionary)', version: MEANING_DICTIONARY_VERSION,
         words: words.length, fingerprint: fingerprint(words.join('\n')) } }
     }
     return definedDictionary
@@ -120,7 +121,7 @@ function letterCounts(letters: string): Uint32Array {
 function emptyCounts(): LexicalAuditCounts {
   return {
     words: 0, singlePartOfSpeechWords: 0, multiplePartsOfSpeechWords: 0, unknownPartOfSpeechWords: 0,
-    partOfSpeechMemberships: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
+    partOfSpeechMemberships: Object.fromEntries(PARTS_OF_SPEECH.map(part => [part, 0])) as Record<PartOfSpeech, number>,
     partOfSpeechSources: { wordnet: 0, morphology: 0, curated: 0, unknown: 0 },
     semanticRelations: { opposite: 0, similar: 0, related: 0, unrelated: 0 },
     semanticSources: { 'curated-or-wordnet': 0, unlisted: 0, compiled: 0 },

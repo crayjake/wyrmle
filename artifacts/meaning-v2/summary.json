@@ -1,0 +1,59 @@
+{
+  "candidateId": "daily-chaos-2026-09-25-v11",
+  "seed": "meaning-review-20260925:2:0",
+  "enemy": "CHAOS",
+  "refills": 20,
+  "dictionaryWords": 29719,
+  "openingWords": 3060,
+  "openingSelections": 8041,
+  "openingSuccessors": 5493,
+  "openingScope": "all-valid-openings",
+  "vocabularyScope": "full-dictionary",
+  "accepted": true,
+  "quality": 82.01,
+  "difficulty": {
+    "minimumWordsToWin": null,
+    "bestKnownWordsToWin": 3,
+    "startingResolve": 5,
+    "winningLineCount": 30,
+    "viableOpeningCount": 25,
+    "requiredWordCommonness": 0.91,
+    "armourComplexity": 0.2,
+    "specialTileDependence": 0.5,
+    "grammarDependence": 0,
+    "trapComplexity": 0.25,
+    "clutchOnly": false,
+    "resolveSlack": null,
+    "estimatedResolveSlack": 2,
+    "mechanicComplexity": 0.27749999999999997,
+    "score": 33,
+    "label": "MEDIUM",
+    "estimated": true,
+    "evidence": "Bounded search: depth is a winning upper bound; route counts are observed lower bounds."
+  },
+  "reducedBoardWins": 10,
+  "semanticImportance": 0.6952380952380953,
+  "reviveImportance": 0.17346938775510204,
+  "limitations": [
+    {
+      "code": "bounded-fairness",
+      "message": "1 reasonable states remain unknown; the reported dead-state rate is conditional on assessed states."
+    },
+    {
+      "code": "unknown-vocabulary",
+      "message": "Some winning words lack local commonness annotations; no obscurity claim is made for them."
+    },
+    {
+      "code": "greedy-trap-unproved",
+      "message": "A different strategic opening was observed, but bounded search has not proved that the strongest immediate move loses."
+    },
+    {
+      "code": "minimum-depth-unproven",
+      "message": "The best witnessed solution depth is not a proved minimum."
+    },
+    {
+      "code": "bounded-search",
+      "message": "Search limits were reached; solution counts and opportunity counts are lower bounds."
+    }
+  ]
+}
