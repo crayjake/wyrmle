@@ -22,6 +22,8 @@ In [repository Settings → Pages](https://github.com/crayjake/wyrmle/settings/p
 
 The project site will be **https://crayjake.github.io/wyrmle/** after its first successful deployment. The workflow takes the base path from GitHub Pages, so scripts, lazy-loaded chunks, styles and the favicon work below `/wyrmle/`; a configured custom domain is supported too. Local `npm run dev` and ordinary builds keep `/` as their base. No `gh-pages` branch, deployment dependency or personal access token is needed. Onboarding, modes and Daily saves remain local to each browser and site origin.
 
+The [sharing and icons guide](docs/sharing-and-icons.md) covers the social preview, wyrm favicon, iPhone Home Screen icon, artwork exports and public URL configuration.
+
 To check the project-site build locally:
 
 ```sh

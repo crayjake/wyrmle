@@ -1,4 +1,5 @@
 import type { DailyResult, ResultTurn } from './types.ts'
+import { getPublicSiteUrl } from '../lib/publicSiteUrl.ts'
 
 const semanticPrefix: Record<ResultTurn['semanticLabel'], string> = {
   COUNTER: 'C',
@@ -32,5 +33,7 @@ export function buildShareText(result: DailyResult): string {
     `${resolve} ${result.resolveRemaining}/${result.startingResolve}`,
     '',
     ...rows,
+    '',
+    getPublicSiteUrl(),
   ].join('\n')
 }

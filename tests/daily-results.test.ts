@@ -117,7 +117,7 @@ test('additive Strike in LAD records both removals and one tile activation in it
   assert.equal(completed.neutral, 1)
   assert.equal(completed.strikeActivations, 1)
   assert.deepEqual(completed.turns[0].letterOutcomes.filter(event => event.removed).map(event => event.position), [2, 3])
-  assert.match(buildShareText(completed), /N  ··■■······ ◆$/)
+  assert.match(buildShareText(completed), /^N  ··■■······ ◆$/m)
 })
 
 test('a v4 LONG neutral move records both actual removals in result and positional share data', () => {
@@ -133,7 +133,7 @@ test('a v4 LONG neutral move records both actual removals in result and position
   assert.equal(completed.lettersDestroyed, 2)
   assert.equal(completed.largestRemoval, 2)
   assert.deepEqual(completed.turns[0].letterOutcomes.filter((event) => event.removed).map((event) => event.position), [1, 6])
-  assert.match(buildShareText(completed), /N  ·■····■···$/)
+  assert.match(buildShareText(completed), /^N  ·■····■···$/m)
 })
 
 test('a Strike and neutral hit on one armoured letter share as a single break-and-remove event', () => {
@@ -150,7 +150,7 @@ test('a Strike and neutral hit on one armoured letter share as a single break-an
   assert.equal(completed.strikeActivations, 1)
   assert.equal(completed.armourBroken, 1)
   assert.equal(completed.lettersDestroyed, 1)
-  assert.match(buildShareText(completed), /N  ▣ ◆$/)
+  assert.match(buildShareText(completed), /^N  ▣ ◆$/m)
 })
 
 test('two hits to one armoured letter in a turn count one break and one destroyed letter', () => {
@@ -169,7 +169,7 @@ test('two hits to one armoured letter in a turn count one break and one destroye
   assert.deepEqual(completed.turns[0].letterOutcomes, [{
     enemyLetterId: 'e', position: 0, hitsBefore: 2, hitsAfter: 0, armourBroken: true, removed: true,
   }])
-  assert.match(buildShareText(completed), /C  ▣$/)
+  assert.match(buildShareText(completed), /^C  ▣$/m)
 })
 
 test('separate armour-break and removal turns stay distinct even after the letter is dead', () => {
@@ -188,7 +188,7 @@ test('separate armour-break and removal turns stay distinct even after the lette
   assert.equal(completed.turns[0].letterOutcomes[0].removed, false)
   assert.equal(completed.turns[1].letterOutcomes[0].armourBroken, false)
   assert.equal(completed.turns[1].letterOutcomes[0].removed, true)
-  assert.match(buildShareText(completed), /C  ◐ ▪\nC  ■$/)
+  assert.match(buildShareText(completed), /^C  ◐ ▪\nC  ■$/m)
 })
 
 test('multiple Ward tiles protect one turn and count as one Ward save', () => {
@@ -367,13 +367,14 @@ test('history distinguishes unplayed, in-progress, wins and losses without expos
   assert.equal(history[3].attacks, 6)
 })
 
-test('share text encodes outcomes and turn effects but never words or enemy information', () => {
+test('share text includes the public game URL and outcomes without words or enemy information', () => {
   const completed = result()
   const share = buildShareText(completed)
   assert.equal(share, [
     'WYRMLE 2026-09-24 · NORMAL · VICTORY', '', 'LIVES', '□□□□□ 0/5', '',
     'C  ·······■·◐ ▪', 'C  ◐■·······■', 'C  ·····■■···',
     'C  ··■■······', 'N  ■·······■· ◆', 'N  ····■·····',
+    '', 'https://crayjake.github.io/wyrmle/',
   ].join('\n'))
   for (const secret of [...completed.wordsPlayed, completed.enemyWord]) {
     assert.equal(share.toUpperCase().includes(secret.toUpperCase()), false)

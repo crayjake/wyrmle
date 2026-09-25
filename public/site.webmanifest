@@ -1,0 +1,31 @@
+{
+  "name": "wyrmle",
+  "short_name": "wyrmle",
+  "description": "Build words, counter the enemy's meaning, and make every life count. A new word battle every day.",
+  "lang": "en-GB",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#25281f",
+  "theme_color": "#25281f",
+  "icons": [
+    {
+      "src": "icons/wyrm-192-v1.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/wyrm-512-v1.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/wyrm-maskable-512-v1.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
