@@ -10,6 +10,7 @@ import { getWordCommonness, localLexicalProvider } from './lexicalProvider.ts'
 import { solvePuzzle } from './solve.ts'
 import type { SolverOptions, SolverResult } from './solve.ts'
 import { stateKey } from './stateKey.ts'
+import { sha256 } from './sha256.ts'
 import type { CandidatePuzzle } from './types.ts'
 
 export type OpeningSafetyScope = 'all-damaging-openings' | 'all-valid-openings'
@@ -99,6 +100,10 @@ function currentDictionaryFingerprint(): string {
   return dictionaryFingerprint
 }
 const positionKey = (state: LetterStrikeState) => stateKey(state, '')
+// Definitions belong in the published encounter once, not duplicated in every
+// checkpoint. Keep archived certificate keys byte-for-byte compatible.
+const certificateEncounterKey = (encounter: LetterStrikeEncounter) => encounter.meaningLexicon
+  ? `sha256:${sha256(JSON.stringify(encounter))}` : JSON.stringify(encounter)
 const normalizedVocabulary = (words: readonly string[]) => [...new Set(words.map(normalizeWord))].sort()
 
 function summarizedMove(before: LetterStrikeState, after: LetterStrikeState, tileIds: readonly number[]): SolverMoveSummary {
@@ -167,7 +172,7 @@ function refreshTotals(report: OpeningSafetyReport): void {
 /** A current, non-vacuous certificate with no unknown or unsafe required opening. */
 export function isOpeningSafetyCertificateCurrent(encounter: LetterStrikeEncounter, report: OpeningSafetyReport): boolean {
   if (!report || report.schemaVersion !== 1 || report.encounterId !== encounter.id
-    || report.encounterKey !== JSON.stringify(encounter) || report.dictionaryFingerprint !== currentDictionaryFingerprint()
+    || report.encounterKey !== certificateEncounterKey(encounter) || report.dictionaryFingerprint !== currentDictionaryFingerprint()
     || !report.enumeration?.completePhysicalSelections || !Array.isArray(report.results)) return false
   const required = report.results.reduce((sum, result) => sum + result.openings.length, 0)
   return report.certified === true && report.status === 'certified' && required > 0
@@ -215,7 +220,7 @@ export function certifyOpeningSafety(input: CandidatePuzzle | LetterStrikeEncoun
     grouped.set(key, group)
   }
   const report: OpeningSafetyReport = {
-    schemaVersion: 1, encounterId: encounter.id, encounterKey: JSON.stringify(encounter),
+    schemaVersion: 1, encounterId: encounter.id, encounterKey: certificateEncounterKey(encounter),
     dictionaryFingerprint: currentDictionaryFingerprint(), scope,
     openingVocabulary: { scope: openingVocabulary ? 'restricted-spellings' : 'full-dictionary', words: openingVocabulary ?? null },
     familiarity: { required: requiredFamiliar, minimum, source, appliesTo: 'continuation-words' },

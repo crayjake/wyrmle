@@ -1,5 +1,6 @@
-import { canSpellDictionaryWord, isDictionaryWord, normalizeWord, prototypeWordPartsOfSpeech } from './dictionary.ts'
-import { getSemanticRelation } from './semantic.ts'
+import { normalizeWord, prototypeWordPartsOfSpeech } from './dictionary.ts'
+import { canSpellEncounterWord, getEncounterSemanticRelation, isEncounterWord, validateMeaningLexicon } from './meaningLexicon.ts'
+import type { PuzzleMeaningLexicon } from './meaningLexicon.ts'
 import { getSelectedTiles, refillBoard } from './tiles.ts'
 import type { EnemyConcept, PartOfSpeech } from './types.ts'
 import { getEncounterPartsOfSpeech, validateLexicalRules } from './lexicalRules.ts'
@@ -28,6 +29,7 @@ export type LetterStrikeEncounter = {
   wordPartsOfSpeech?: Readonly<Record<string, readonly PartOfSpeech[]>>
   // Omission preserves the exact sparse, single-POS rules of archived saves.
   lexicalRules?: LexicalRules
+  meaningLexicon?: PuzzleMeaningLexicon
   longWordRule?: { minimumLength: number; bonusStrikes: number }
   // Only archived encounters opt into the original overlapping Strike rule.
   strikeConsumesAllowance?: boolean
@@ -134,6 +136,7 @@ export const letterStrikeEncounter: LetterStrikeEncounter = {
 
 export function createLetterStrikeGame(encounter = letterStrikeEncounter): LetterStrikeState {
   validateLexicalRules(encounter)
+  validateMeaningLexicon(encounter)
   const { startingTiles, startingResolve, enemyLetters, tileEffects } = encounter
   if (startingTiles.length !== 16 || new Set(startingTiles.map(tile => tile.id)).size !== 16) {
     throw new Error('An encounter needs 16 tiles with unique IDs.')
@@ -171,7 +174,7 @@ export function createLetterStrikeGame(encounter = letterStrikeEncounter): Lette
     enemyLetters: enemyLetters.map(letter => ({ ...letter, letter: letter.letter.toUpperCase() })),
     playerResolve: startingResolve,
     playedWords: [],
-    status: encounter.finiteRefills && !canSpellDictionaryWord(startingTiles.map(tile => tile.letter), encounter.minimumWordLength)
+    status: encounter.finiteRefills && !canSpellEncounterWord(encounter, startingTiles.map(tile => tile.letter))
       ? 'lost' : 'playing',
     error: null,
   }
@@ -214,7 +217,7 @@ export function getLetterStrikeAllowance(encounter: LetterStrikeEncounter, word:
   grammaticalPartOfSpeech: PartOfSpeech | null
   normalStrikeAllowance: number
 } {
-  const relation = getSemanticRelation(word, encounter.enemy)
+  const relation = getEncounterSemanticRelation(encounter, word)
   const semanticLabel = relation === 'opposite' ? 'COUNTER' : relation === 'similar' ? 'RESISTED' : 'NEUTRAL'
   const parts = getEncounterPartsOfSpeech(encounter, word)
   // A submitted word has no sentence to disambiguate its use. Under new rules,
@@ -343,7 +346,7 @@ export function previewLetterStrike(state: LetterStrikeState, selectedTileIds: r
     : tiles.length !== selectedTileIds.length ? 'Selected tile is not on the board'
     : tiles.some(tile => tile.letter === '') ? 'Empty cells cannot be selected'
     : evaluation.word.length < state.encounter.minimumWordLength ? `Minimum ${state.encounter.minimumWordLength} letters`
-    : !isDictionaryWord(evaluation.word) ? 'Not a valid word'
+    : !isEncounterWord(state.encounter, evaluation.word) ? state.encounter.meaningLexicon ? 'Not in this puzzle’s dictionary' : 'Not a valid word'
     : null
   return {
     ...evaluation,
@@ -367,7 +370,7 @@ export function submitLetterStrike(state: LetterStrikeState, selectedTileIds: re
   const refilled = refillBoard(state, selectedTileIds)
   const status = preview.enemyLetters.every(letter => letter.hitsRemaining === 0) ? 'won'
     : playerResolve === 0 || (state.encounter.finiteRefills
-      && !canSpellDictionaryWord(refilled.tiles.map(tile => tile.letter), state.encounter.minimumWordLength)) ? 'lost' : 'playing'
+      && !canSpellEncounterWord(state.encounter, refilled.tiles.map(tile => tile.letter))) ? 'lost' : 'playing'
   return {
     ...state,
     ...refilled,

@@ -1,3 +1,6 @@
+import type { LetterStrikePreview } from '../game/letterStrike'
+import { getStrikeSummary } from './strikeSummary'
+
 type Bonus = {
     label: string
     value?: number
@@ -13,11 +16,9 @@ type AttackInfoProps = {
     ready?: boolean
     message?: string
     metric?: 'damage' | 'strikes'
+    strikePreview?: LetterStrikePreview
+    enemyWord?: string
     resolveBefore?: number
-    resolveAfter?: number
-    recoveryText?: string
-    grammarNote?: string
-    meaningNote?: string
 }
 
 export default function AttackInfo({
@@ -28,38 +29,35 @@ export default function AttackInfo({
     ready = false,
     message,
     metric = 'damage',
+    strikePreview,
+    enemyWord,
     resolveBefore,
-    resolveAfter,
-    recoveryText,
-    grammarNote,
-    meaningNote,
 }: AttackInfoProps) {
     const segments = 12
     const filled = maxDamage > 0 ? Math.min(segments, Math.max(0, Math.round((damage / maxDamage) * segments))) : 0
     const strikeMetric = metric === 'strikes'
 
     if (strikeMetric) {
+        const summary = strikePreview && getStrikeSummary(strikePreview, resolveBefore, enemyWord)
         return (
             <div className="attack-info" data-metric="strikes">
                 <div className="attack-line">
                     <div className="word">{word || '—'}</div>
                 </div>
-                <div className="bonuses strike-details" role="status">
-                    {message ? <span className="strike-status">{message}</span> : bonuses.map((bonus, index) => (
-                        <span className="strike-bonus" data-kind={bonus.label.toLowerCase()} key={bonus.label}>
-                            {index > 0 && <span className="strike-bonus-divider" aria-hidden="true">·</span>}
-                            {bonus.symbol && <span aria-hidden="true">{bonus.symbol}</span>}
-                            <span>{bonus.label}</span>
-                            {bonus.value !== undefined && <span>{bonus.value > 0 ? '+' : ''}{bonus.value}</span>}
-                        </span>
-                    ))}
+                <div className="strike-preview" role="status" aria-atomic="true">
+                    <div className="bonuses strike-details">
+                        {message ? <span className="strike-status">{message}</span> : summary && <>
+                            <span className="strike-meaning" data-kind={summary.kind}>{summary.meaning}</span>
+                            <span className="strike-bonus-divider" aria-hidden="true">·</span>
+                            <span className="strike-total">{summary.hits}</span>
+                        </>}
+                    </div>
+                    {!message && summary && summary.details.length > 0 && <div className="strike-effects">
+                        {summary.details.map(detail => <span className="strike-effect" data-kind={detail.kind} key={detail.text}>
+                            {detail.text}
+                        </span>)}
+                    </div>}
                 </div>
-                {resolveBefore !== undefined && resolveAfter !== undefined && <div className="strike-consequence">
-                    <span>Lives {resolveBefore} → {resolveAfter}</span>
-                    {recoveryText && <span className="regen-warning"> · {recoveryText}</span>}
-                    {grammarNote && <span> · {grammarNote}</span>}
-                    {meaningNote && <span> · {meaningNote}</span>}
-                </div>}
             </div>
         )
     }

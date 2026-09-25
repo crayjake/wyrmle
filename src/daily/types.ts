@@ -32,7 +32,8 @@ export type DailyRun = {
   /** Monotonic across attacks, undos and DEV adjustments, including identical boards. */
   revision: number
   undosUsed: number
-  /** Immutable complete committed states, oldest first. UI selections are cleared. */
+  /** Complete immutable states in memory, oldest first; UI selections cleared.
+   * Meaning-era storage omits each repeated encounter and restores the catalog reference. */
   undoHistory: LetterStrikeState[]
 }
 

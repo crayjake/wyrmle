@@ -1,0 +1,202 @@
+{
+  "browser": "Chromium phone viewport emulation; standalone CSS simulated, not physical iPhone",
+  "report": [
+    {
+      "label": "375x629 ready",
+      "width": 375,
+      "height": 629,
+      "scrollWidth": 375,
+      "mainScrollHeight": 629,
+      "mainClientHeight": 629,
+      "buttonTop": 574.28125,
+      "buttonBottom": 623,
+      "paddingBottom": "6px",
+      "minTile": 71.328125,
+      "preview": ""
+    },
+    {
+      "label": "GLEAN swipe + taps / commit / reload / undo",
+      "passed": true
+    },
+    {
+      "label": "375x629 CHARM selected",
+      "width": 375,
+      "height": 629,
+      "scrollWidth": 375,
+      "mainScrollHeight": 629,
+      "mainClientHeight": 629,
+      "buttonTop": 574.28125,
+      "buttonBottom": 623,
+      "paddingBottom": "6px",
+      "minTile": 71.328125,
+      "preview": "NEUTRAL MEANING\n·\n2 HITS\nHIT TILE\nLIFE SAVED"
+    },
+    {
+      "label": "375x629 SORT selected",
+      "width": 375,
+      "height": 629,
+      "scrollWidth": 375,
+      "mainScrollHeight": 629,
+      "mainClientHeight": 629,
+      "buttonTop": 574.28125,
+      "buttonBottom": 623,
+      "paddingBottom": "6px",
+      "minTile": 71.328125,
+      "preview": "COUNTERS CHAOS\n·\n2 HITS"
+    },
+    {
+      "label": "375x629 ANGER selected",
+      "width": 375,
+      "height": 629,
+      "scrollWidth": 375,
+      "mainScrollHeight": 629,
+      "mainClientHeight": 629,
+      "buttonTop": 574.28125,
+      "buttonBottom": 623,
+      "paddingBottom": "6px",
+      "minTile": 71.328125,
+      "preview": "NEUTRAL MEANING\n·\n1 HIT"
+    },
+    {
+      "label": "375x629 SYSTEM selected",
+      "width": 375,
+      "height": 629,
+      "scrollWidth": 375,
+      "mainScrollHeight": 629,
+      "mainClientHeight": 629,
+      "buttonTop": 574.28125,
+      "buttonBottom": 623,
+      "paddingBottom": "6px",
+      "minTile": 71.328125,
+      "preview": "COUNTERS CHAOS\n·\n0 HITS"
+    },
+    {
+      "label": "375x629 HAND selected",
+      "width": 375,
+      "height": 629,
+      "scrollWidth": 375,
+      "mainScrollHeight": 629,
+      "mainClientHeight": 629,
+      "buttonTop": 574.28125,
+      "buttonBottom": 623,
+      "paddingBottom": "6px",
+      "minTile": 71.328125,
+      "preview": "NEUTRAL MEANING\n·\n1 HIT\nREVIVE: A RETURNS"
+    },
+    {
+      "label": "375x629 CAT selected",
+      "width": 375,
+      "height": 629,
+      "scrollWidth": 375,
+      "mainScrollHeight": 629,
+      "mainClientHeight": 629,
+      "buttonTop": 574.28125,
+      "buttonBottom": 623,
+      "paddingBottom": "6px",
+      "minTile": 71.328125,
+      "preview": "NEUTRAL MEANING\n·\n1 HIT"
+    },
+    {
+      "label": "6-turn revive/exhaustion/clutch win",
+      "words": [
+        "CHARM",
+        "SORT",
+        "ANGER",
+        "SYSTEM",
+        "HAND",
+        "CAT"
+      ],
+      "storedCharacters": 39470,
+      "lives": 0
+    },
+    {
+      "label": "375x629 CLEAR selected",
+      "width": 375,
+      "height": 629,
+      "scrollWidth": 375,
+      "mainScrollHeight": 629,
+      "mainClientHeight": 629,
+      "buttonTop": 574.28125,
+      "buttonBottom": 623,
+      "paddingBottom": "6px",
+      "minTile": 71.328125,
+      "preview": "COUNTERS CHAOS\n·\n2 HITS\nHIT TILE\nLIFE SAVED"
+    },
+    {
+      "label": "375x629 standalone CSS simulation",
+      "width": 375,
+      "height": 629,
+      "scrollWidth": 375,
+      "mainScrollHeight": 629,
+      "mainClientHeight": 629,
+      "buttonTop": 568.28125,
+      "buttonBottom": 617,
+      "paddingBottom": "12px",
+      "minTile": 71.328125,
+      "preview": "COUNTERS CHAOS\n·\n2 HITS\nHIT TILE\nLIFE SAVED"
+    },
+    {
+      "label": "320x568 CLEAR selected",
+      "width": 320,
+      "height": 568,
+      "scrollWidth": 320,
+      "mainScrollHeight": 568,
+      "mainClientHeight": 568,
+      "buttonTop": 522,
+      "buttonBottom": 566,
+      "paddingBottom": "2px",
+      "minTile": 64.40625,
+      "preview": "COUNTERS CHAOS\n·\n2 HITS\nHIT TILE\nLIFE SAVED"
+    },
+    {
+      "label": "320x568 standalone CSS simulation",
+      "width": 320,
+      "height": 568,
+      "scrollWidth": 320,
+      "mainScrollHeight": 568,
+      "mainClientHeight": 568,
+      "buttonTop": 512,
+      "buttonBottom": 556,
+      "paddingBottom": "12px",
+      "minTile": 64.40625,
+      "preview": "COUNTERS CHAOS\n·\n2 HITS\nHIT TILE\nLIFE SAVED"
+    },
+    {
+      "label": "375x812 CLEAR selected",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375,
+      "mainScrollHeight": 812,
+      "mainClientHeight": 812,
+      "buttonTop": 746.375,
+      "buttonBottom": 797.9375,
+      "paddingBottom": "14.0625px",
+      "minTile": 80.15625,
+      "preview": "COUNTERS CHAOS\n·\n2 HITS\nHIT TILE\nLIFE SAVED"
+    },
+    {
+      "label": "375x812 standalone CSS simulation",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375,
+      "mainScrollHeight": 812,
+      "mainClientHeight": 812,
+      "buttonTop": 726.4375,
+      "buttonBottom": 778,
+      "paddingBottom": "34px",
+      "minTile": 80.15625,
+      "preview": "COUNTERS CHAOS\n·\n2 HITS\nHIT TILE\nLIFE SAVED"
+    },
+    {
+      "label": "320x568 three-word win",
+      "words": [
+        "CLEAR",
+        "SORT",
+        "HARMONY"
+      ],
+      "lives": 3,
+      "storedCharacters": 13939
+    }
+  ],
+  "errors": []
+}

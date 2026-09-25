@@ -181,10 +181,9 @@ function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onMatchHin
     <div className="player-zone">
       <AttackInfo word={preview.word} damage={preview.amount} maxDamage={preview.maximum}
         metric={metric} ready={interactive && preview.valid} message={message} bonuses={preview.bonuses}
+        strikePreview={'hits' in preview ? preview : undefined} enemyWord={enemy.word}
         resolveBefore={letterGame && interactive && preview.valid ? game.playerResolve : undefined}
-        resolveAfter={letterGame && interactive && preview.valid ? game.playerResolve - preview.resolveCost : undefined}
-        recoveryText={'recoveries' in preview && preview.recoveries?.length
-          ? `REGEN: ${preview.recoveries.map(hit => `${hit.letter} ${hit.hitsBefore === 0 ? 'returns' : 'gains armour'}`).join(', ')}` : undefined} />
+      />
       <div className="controls">
         <TileGrid revealedIndices={revealedTileIndices} registerTile={registerTile}
           ready={interactive} tiles={game.tiles} specialTiles={specialTiles}
@@ -221,13 +220,13 @@ function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onMatchHin
       </PlaytestPanel>
       : <PlaytestPanel title="Letter-strike mode" onClose={() => setPanel(null)}>
         <div className="daily-help">
-          <div>Remove every enemy letter before your {game.encounter.startingResolve} Resolve run out. Tiles can be selected in any order.</div>
-          <div><strong>COUNTER</strong> words strike with every matching tile. <strong>NEUTRAL</strong> words get one normal matching strike, in spelling order. <strong>RESISTED</strong> words have no normal strikes.</div>
+          <div>Remove every enemy letter before your {game.encounter.startingResolve} lives run out. Tap or swipe across tiles in spelling order; you can mix both.</div>
+          <div><strong>Meaning drives your hits.</strong> Counter words hit with every matching tile. Neutral words get one normal matching hit, in spelling order. Similar meanings are resisted and have no normal hits.</div>
           {letterGame?.encounter.longWordRule && <div><strong>LONG +{letterGame.encounter.longWordRule.bonusStrikes}</strong> adds a normal strike allowance for neutral words of {letterGame.encounter.longWordRule.minimumLength}+ letters. It stacks with grammar weaknesses, but does not boost resisted words or counters.</div>}
-          <div><strong>STRIKE</strong> guarantees its tile’s matching strike, even on a resisted word, without spending the normal or grammar allowance. Each tile strikes at most once. <strong>WARD</strong> makes the turn free.</div>
+          <div>A blue <strong>HIT</strong> tile guarantees its matching hit, even on a resisted word. A green <strong>LIFE</strong> tile saves the life this turn would cost. A red <strong>REVIVE</strong> tile restores its enemy letter or its armour after your hits.</div>
           <div>Double outlines need two hits. The first breaks armour; the next removes the letter. Matching tiles finish wounded copies first, then target from left to right.</div>
           <div>Blue − previews an armour break; red × previews removal. Defeated letters become centred dots with no outline. Repeated matching tiles can break and remove one armoured letter in the same word.</div>
-          <div>Listed grammar weaknesses add matching-tile allowances: ADJECTIVE +1 lets resisted adjectives strike once and neutral adjectives twice. Counters already use all matching tiles.</div>
+          {Object.values(letterGame?.encounter.grammarModifiers ?? {}).some(value => value !== 0) && <div>This encounter also has word-type bonuses: an ADJECTIVE +1 weakness gives adjectives one extra normal matching hit. Counters already use all matching tiles.</div>}
           <div>This DEV comparison does not save to daily history.</div>
         </div>
       </PlaytestPanel>)}

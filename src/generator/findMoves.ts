@@ -1,5 +1,6 @@
 import englishWords from 'an-array-of-english-words/index.json' with { type: 'json' }
-import { isDictionaryWord, normalizeWord } from '../game/dictionary.ts'
+import { normalizeWord } from '../game/dictionary.ts'
+import { isEncounterWord } from '../game/meaningLexicon.ts'
 import { getEncounterPartsOfSpeech } from '../game/lexicalRules.ts'
 import { submitLetterStrike } from '../game/letterStrike.ts'
 import type { LetterStrikeEvaluation, LetterStrikeState, LetterStrikeTile } from '../game/letterStrike.ts'
@@ -68,7 +69,7 @@ export function findPlayableWords(state: LetterStrikeState, vocabulary?: readonl
   }
   if (vocabulary) {
     return [...new Set(vocabulary.map(normalizeWord))].filter(word => {
-      if (word.length < state.encounter.minimumWordLength || word.length > state.tiles.length || !isDictionaryWord(word)) return false
+      if (word.length < state.encounter.minimumWordLength || word.length > state.tiles.length || !isEncounterWord(state.encounter, word)) return false
       const used = new Uint8Array(26)
       for (const letter of word) {
         const index = letter.charCodeAt(0) - 65
@@ -80,7 +81,7 @@ export function findPlayableWords(state: LetterStrikeState, vocabulary?: readonl
   }
   const key = `${state.encounter.minimumWordLength}:${[...counts].join(',')}`
   const cached = playableCache.get(key)
-  if (cached) return [...cached]
+  if (cached) return cached.filter(word => isEncounterWord(state.encounter, word))
   const words: string[] = []
   const masks = getDictionaryMasks()
   const used = new Uint8Array(26)
@@ -98,7 +99,7 @@ export function findPlayableWords(state: LetterStrikeState, vocabulary?: readonl
   }
   if (playableCache.size >= 512) playableCache.delete(playableCache.keys().next().value!)
   playableCache.set(key, words)
-  return words
+  return words.filter(word => isEncounterWord(state.encounter, word))
 }
 
 export function moveSummary(move: SolverMove): SolverMoveSummary {

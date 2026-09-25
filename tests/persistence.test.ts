@@ -7,7 +7,8 @@ import {
 import { getDailyPuzzle, getDailyPuzzleForVersion } from '../src/daily/puzzle.ts'
 import { buildDailyResult } from '../src/daily/results.ts'
 import { buildShareText } from '../src/daily/share.ts'
-import type { DailyPuzzleDefinition, DailyResult, StorageLike } from '../src/daily/types.ts'
+import type { DailyPuzzleDefinition, DailyResult, DailyRun, StorageLike } from '../src/daily/types.ts'
+import { captureUndoSnapshot } from '../src/daily/undo.ts'
 import { SAVE_VERSION } from '../src/daily/versions.ts'
 import { createLetterStrikeGame as createGame, submitLetterStrike as submitWord, toggleLetterStrikeTile as toggleTile } from '../src/game/letterStrike.ts'
 import type { LetterStrikeState as GameState } from '../src/game/letterStrike.ts'
@@ -31,7 +32,8 @@ const currentWinTileIds = [
   [0, 1, 2], [4, 5, 15, 18, 16], [11, 20, 9, 10, 14, 17],
   [8, 21, 22, 27], [24, 30, 33, 26, 25, 19],
 ]
-const selectedDailyWinTileIds = [[0, 14, 6, 7, 2, 15, 13, 10], [8, 17, 1, 12], [21, 16, 27, 18]]
+// Published meaning-first CHAOS: CLEAR → SORT → HARMONY.
+const selectedDailyWinTileIds = [[8, 10, 11, 1, 13], [6, 0, 3, 18], [7, 24, 22, 14, 21, 12, 16]]
 
 function playTurns(game: GameState, turns: number[][]): GameState {
   for (const ids of turns) {
@@ -109,6 +111,19 @@ function versionedRunFixture(definition: DailyPuzzleDefinition, game: GameState,
       return { ...turn, preview }
     }),
     status: game.status, completedAt,
+  }
+}
+
+function committedFirstMoveFixture(definition: DailyPuzzleDefinition, game: GameState): DailyRun {
+  assert.equal(game.playedWords.length, 1)
+  assert.equal(game.status, 'playing')
+  return {
+    saveVersion: SAVE_VERSION, puzzleId: definition.puzzleId, gameVersion: definition.gameVersion,
+    puzzleVersion: definition.puzzleVersion, mode: 'normal', revision: 1, undosUsed: 0,
+    undoHistory: [captureUndoSnapshot(createGame(definition.encounter))],
+    enemyLetters: game.enemyLetters, playerResolve: game.playerResolve, tiles: game.tiles,
+    refillIndex: game.refillIndex, nextTileId: game.nextTileId, playedWords: game.playedWords,
+    status: game.status, completedAt: null,
   }
 }
 
@@ -503,12 +518,14 @@ test('new-schema per-position outcomes are validated for both snapshots and perm
   }
 })
 
-test('grammar-enabled current days restore their rules and do not reinterpret future-date v1 DEV saves', () => {
+test('grammar-enabled archived days restore their rules and do not reinterpret future-date v1 DEV saves', () => {
   const storage = new MemoryStorage()
   const nextDay = getDailyPuzzle('2026-09-25')
-  const game = playWords(['GLAD'], false, createGame(nextDay.encounter))
+  const archived = getDailyPuzzleForVersion(nextDay.puzzleId, 'letter-strike-6', 9)
+  const game = playWords(['GLAD'], false, createGame(archived.encounter))
   assert.equal(game.playedWords[0].preview.grammaticalModifier, 1)
   assert.equal(game.playedWords[0].strikes, 2)
+  storage.setItem(getRunStorageKey(nextDay.puzzleId), JSON.stringify(committedFirstMoveFixture(archived, game)))
   saveDailyRun(nextDay, game, storage)
   assert.deepEqual(loadDailySession(nextDay, storage).game, game)
   const oldDev = { ...legacyRunFixture(playWords(['SAD'])), puzzleId: nextDay.puzzleId }
@@ -588,7 +605,8 @@ test('validated zero-turn v2 snapshots upgrade in memory and commit current rule
   assert.deepEqual(restored.game, createGame(latest.encounter))
   assert.equal(storage.getItem(key), raw)
   const firstMove = playTurns(restored.game!, selectedDailyWinTileIds.slice(0, 1))
-  assert.equal(firstMove.playedWords[0].strikes, 3)
+  assert.equal(firstMove.playedWords[0].strikes, 2)
+  assert.equal(firstMove.playedWords[0].preview.grammaticalModifier, 0)
   saveDailyRun(latest, firstMove, storage)
   assert.equal(JSON.parse(storage.getItem(key)!).gameVersion, latest.gameVersion)
   assert.equal(JSON.parse(storage.getItem(key)!).puzzleVersion, latest.puzzleVersion)
@@ -657,7 +675,7 @@ test('schema-2 v1 snapshots also normalize their absent LONG field without chang
   assert.equal(storage.getItem(key), raw)
 })
 
-test('untouched v3 snapshots adopt the scheduled Revive board and LONG rule without a read-time write', () => {
+test('untouched v3 snapshots adopt the scheduled meaning-first Revive board without a read-time write', () => {
   const storage = new MemoryStorage()
   const latest = getDailyPuzzle('2026-09-25')
   const archived = getDailyPuzzleForVersion(latest.puzzleId, 'letter-strike-3', 3)
@@ -668,10 +686,12 @@ test('untouched v3 snapshots adopt the scheduled Revive board and LONG rule with
   assert.equal(restored.error, null)
   assert.deepEqual(restored.game, createGame(latest.encounter))
   assert.deepEqual(restored.game!.tiles, latest.encounter.startingTiles)
-  assert.equal(restored.game!.tiles[6].gem, 'strike')
-  assert.equal(restored.game!.tiles[7].gem, 'ward')
-  assert.equal(restored.game!.tiles[11].gem, 'regen')
-  assert.equal(restored.game!.encounter.longWordRule?.minimumLength, 7)
+  assert.equal(restored.game!.tiles[1].gem, 'strike')
+  assert.equal(restored.game!.tiles[13].gem, 'ward')
+  assert.equal(restored.game!.tiles[15].gem, 'regen')
+  assert.equal(restored.game!.encounter.longWordRule, undefined)
+  assert.deepEqual(restored.game!.encounter.grammarModifiers, {})
+  assert.equal(restored.game!.encounter.meaningLexicon?.policy, 'defined-only')
   assert.equal(storage.getItem(key), raw)
 })
 
@@ -691,7 +711,7 @@ test('pre-LONG v3 completions keep their result, share and finish timestamp unde
   assert.deepEqual(saveDailyRun(latest, createGame(latest.encounter), storage).result, expected)
 })
 
-test('pre-LONG adapters reject injected modifiers and current saves require their real LONG evidence', () => {
+test('pre-LONG adapters reject injected modifiers and archived LONG saves require their real evidence', () => {
   const latest = getDailyPuzzle('2026-09-25')
   const archived = getDailyPuzzleForVersion(latest.puzzleId, 'letter-strike-3', 3)
   const key = getRunStorageKey(latest.puzzleId)
@@ -703,7 +723,11 @@ test('pre-LONG adapters reject injected modifiers and current saves require thei
   assert.match(loadDailySession(latest, storage).error!, /does not match/)
   assert.equal(storage.getItem(key), original)
   storage.removeItem(key)
-  saveDailyRun(latest, playTurns(createGame(latest.encounter), selectedDailyWinTileIds.slice(0, 1)), storage)
+  const bonusArchive = getDailyPuzzleForVersion(latest.puzzleId, 'letter-strike-6', 9)
+  const bonusGame = playTurns(createGame(bonusArchive.encounter), [[0, 14, 6, 7, 2, 15, 13, 10]])
+  assert.equal(bonusGame.playedWords[0].preview.longWordModifier, 1)
+  storage.setItem(key, JSON.stringify(committedFirstMoveFixture(bonusArchive, bonusGame)))
+  saveDailyRun(latest, bonusGame, storage)
   for (const corruption of ['missing', 'altered', 'schema']) {
     const raw = storage.getItem(key)!
     const data = JSON.parse(raw)

@@ -1,0 +1,55 @@
+{
+  "candidateId": "generated-chaos-meaning1-meaning-review-20260925%3A2%3A0-finite18-spare-ca",
+  "seed": "meaning-review-20260925:2:0",
+  "enemy": "CHAOS",
+  "refills": 20,
+  "dictionaryWords": 29647,
+  "openingWords": 3041,
+  "openingSelections": 7999,
+  "openingSuccessors": 5465,
+  "openingScope": "all-valid-openings",
+  "vocabularyScope": "full-dictionary",
+  "accepted": true,
+  "quality": 82.62,
+  "difficulty": {
+    "minimumWordsToWin": null,
+    "bestKnownWordsToWin": 3,
+    "startingResolve": 5,
+    "winningLineCount": 30,
+    "viableOpeningCount": 25,
+    "requiredWordCommonness": 0.91,
+    "armourComplexity": 0.2,
+    "specialTileDependence": 0.6,
+    "grammarDependence": 0,
+    "trapComplexity": 0.25,
+    "clutchOnly": false,
+    "resolveSlack": null,
+    "estimatedResolveSlack": 2,
+    "mechanicComplexity": 0.3125,
+    "score": 34,
+    "label": "MEDIUM",
+    "estimated": true,
+    "evidence": "Bounded search: depth is a winning upper bound; route counts are observed lower bounds."
+  },
+  "reducedBoardWins": 10,
+  "semanticImportance": 0.5952380952380952,
+  "reviveImportance": 0.13979591836734692,
+  "limitations": [
+    {
+      "code": "unknown-vocabulary",
+      "message": "Some winning words lack local commonness annotations; no obscurity claim is made for them."
+    },
+    {
+      "code": "greedy-trap-unproved",
+      "message": "A different strategic opening was observed, but bounded search has not proved that the strongest immediate move loses."
+    },
+    {
+      "code": "minimum-depth-unproven",
+      "message": "The best witnessed solution depth is not a proved minimum."
+    },
+    {
+      "code": "bounded-search",
+      "message": "Search limits were reached; solution counts and opportunity counts are lower bounds."
+    }
+  ]
+}

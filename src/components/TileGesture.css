@@ -1,0 +1,10 @@
+.tile-grid[data-swipe-ready="true"] {
+  /* Reserve one-finger movement for spelling; retain browser pinch zoom. */
+  touch-action: pinch-zoom;
+}
+
+.tile-grid .tile {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}

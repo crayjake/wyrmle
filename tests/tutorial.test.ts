@@ -6,6 +6,7 @@ import {
   getTutorialMove, tutorialEncounter, tutorialFixtures, tutorialReducer, tutorialSteps,
 } from '../src/tutorial/tutorial.ts'
 import type { TutorialState } from '../src/tutorial/tutorial.ts'
+import { crossedTileIds } from '../src/components/tileSelectionGesture.ts'
 
 function selectGuidedWord(state: TutorialState) {
   const move = getTutorialMove(state)
@@ -30,6 +31,51 @@ function attack(state: TutorialState) {
   assert.deepEqual(next.game, actual)
   return next
 }
+
+test('a fast guided swipe validates GLAD in order and never plays it automatically', () => {
+  const state = createTutorial('counter')
+  const move = getTutorialMove(state)!
+  const bounds = state.game.tiles.map((tile, index) => ({
+    id: tile.id, left: index % 4 * 50, right: index % 4 * 50 + 44,
+    top: Math.floor(index / 4) * 50, bottom: Math.floor(index / 4) * 50 + 44,
+  }))
+  const centers = move.tileIds.map(id => {
+    const tile = bounds.find(tile => tile.id === id)!
+    return { x: (tile.left + tile.right) / 2, y: (tile.top + tile.bottom) / 2 }
+  })
+  // All pointer samples can arrive before one React render. Crossed unrelated
+  // tiles and duplicate samples remain subject to the next-letter restriction.
+  const crossed = centers.slice(1).flatMap((point, index) => crossedTileIds(centers[index], point, bounds))
+  const selected = tutorialReducer(state, { type: 'select-many', tileIds: crossed })
+  assert.deepEqual(selected.game.selectedTileIds, move.tileIds)
+  assert.equal(previewLetterStrike(selected.game).word, 'GLAD')
+  assert.equal(selected.step, 'counter')
+  assert.equal(selected.game.playedWords.length, 0)
+  assert.equal(canAttackInTutorial(selected), true)
+  assert.deepEqual(tutorialReducer(selected, { type: 'select-many', tileIds: crossed }), selected)
+})
+
+test('guided swipes reject wrong or premature tiles and can append to tapped letters', () => {
+  let state = createTutorial('counter')
+  const move = getTutorialMove(state)!
+  const wrong = state.game.tiles.find(tile => !move.tileIds.includes(tile.id))!.id
+  state = tutorialReducer(state, { type: 'select-many', tileIds: [wrong, move.tileIds[3], move.tileIds[0], move.tileIds[2]] })
+  assert.deepEqual(state.game.selectedTileIds, move.tileIds.slice(0, 1))
+  state = tutorialReducer(state, { type: 'select', tileId: move.tileIds[1] })
+  state = tutorialReducer(state, { type: 'select-many', tileIds: [move.tileIds[0], ...move.tileIds.slice(2)] })
+  assert.deepEqual(state.game.selectedTileIds, move.tileIds)
+  state = tutorialReducer(state, { type: 'attack' })
+  assert.equal(state.step, 'neutral')
+  const sun = getTutorialMove(state)!
+  state = tutorialReducer(state, { type: 'select', tileId: sun.tileIds[0] })
+  state = tutorialReducer(state, { type: 'select-many', tileIds: sun.tileIds })
+  assert.equal(previewLetterStrike(state.game).word, 'SUN')
+  assert.deepEqual(state.game.selectedTileIds, sun.tileIds)
+  assert.equal(state.step, 'neutral')
+  assert.equal(state.game.status, 'playing')
+  assert.equal(state.game.playedWords.length, 1)
+  assert.equal(canAttackInTutorial(state), true)
+})
 
 test('the core demo needs just GLAD and SUN plays after its briefing, with no intermediate Continue', () => {
   const initial = createTutorial()

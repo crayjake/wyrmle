@@ -178,5 +178,25 @@
     "label": "MEDIUM",
     "estimated": true,
     "evidence": "Bounded search: depth is a winning upper bound; route counts are observed lower bounds."
+  },
+  "generated-chaos-meaning1-meaning-review-20260925%3A2%3A0-finite18-spare-ca": {
+    "minimumWordsToWin": null,
+    "bestKnownWordsToWin": 3,
+    "startingResolve": 5,
+    "winningLineCount": 30,
+    "viableOpeningCount": 25,
+    "requiredWordCommonness": 0.91,
+    "armourComplexity": 0.2,
+    "specialTileDependence": 0.6,
+    "grammarDependence": 0,
+    "trapComplexity": 0.25,
+    "clutchOnly": false,
+    "resolveSlack": null,
+    "estimatedResolveSlack": 2,
+    "mechanicComplexity": 0.3125,
+    "score": 34,
+    "label": "MEDIUM",
+    "estimated": true,
+    "evidence": "Bounded search: depth is a winning upper bound; route counts are observed lower bounds."
   }
 }

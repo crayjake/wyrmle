@@ -4,6 +4,7 @@ import { isDictionaryWord } from '../game/dictionary.ts'
 import { getEncounterPartsOfSpeech } from '../game/lexicalRules.ts'
 import { currentLexicalProvider, localLexicalProvider } from './lexicalProvider.ts'
 import type { CandidatePuzzle } from './types.ts'
+import { withCompiledMeanings } from './meaningCompiler.ts'
 
 export const mutationKinds = ['starting-letter', 'tile-swap', 'refill-letter', 'move-ward', 'move-strike', 'armour', 'armour-copy', 'anchor', 'resolve', 'move-regen', 'refill-length'] as const
 export type MutationKind = typeof mutationKinds[number]
@@ -114,6 +115,7 @@ export function mutateCandidate(candidate: CandidatePuzzle, seed: string | numbe
     }
   }
   result.encounter.startingTiles = tiles
+  if (candidate.encounter.meaningLexicon) result.encounter = withCompiledMeanings(result.encounter)
   // Only guaranteed opening anchors retain that claim after mutation.
   result.anchors = result.anchors.filter(anchor => anchor.expected !== 'opening' || canSpell(anchor.word, tiles.map(tile => tile.letter)))
   // Generation assigns each neighbourhood a full generation/parent/mutation

@@ -176,6 +176,15 @@ function snapshot(
   }
 }
 
+/** Meaning-era rules already belong to the version-pinned, immutable catalog. */
+function durableRun(run: DailyRun) {
+  return { ...run, undoHistory: run.undoHistory.map(snapshot => {
+    if (!snapshot.encounter.meaningLexicon) return snapshot
+    const { encounter: _encounter, ...position } = snapshot
+    return position
+  }) }
+}
+
 function replayWithSnapshots(puzzle: DailyPuzzleDefinition, tileIdsByTurn: unknown[]) {
   let game = createLetterStrikeGame(puzzle.encounter)
   const undoHistory: LetterStrikeState[] = []
@@ -238,7 +247,11 @@ function readRun(puzzle: DailyPuzzleDefinition, raw: string) {
     : data.saveVersion === 2 ? preLongRunProjection(expected)
       : data.saveVersion === 3 ? { ...withoutMode(withoutUndoRun(expected)), saveVersion: 3 }
         : data.saveVersion === 4 ? { ...withoutUndoRun(expected), saveVersion: 4 } : expected
-  if (!sameData(data, expectedShape)) {
+  // Older schema-5 snapshots included the full encounter. Accept those exact
+  // historical bytes too; new meaning-era saves store only positions. Both
+  // forms are checked against a replay using the supported puzzle definition.
+  const compactMatches = data.saveVersion === SAVE_VERSION && sameData(data, durableRun(expected))
+  if (!compactMatches && !sameData(data, expectedShape)) {
     throw new Error('The saved run does not match its turn history.')
   }
   return { game, completedAt: timestamp, mode, revision, undosUsed, undosRemaining: undoLimit(mode) - undosUsed, undoHistory }
@@ -346,7 +359,7 @@ export function saveDailyRun(
   const timestamp = game.status === 'playing' ? null : completedAt
   const replayed = replayWithSnapshots(activePuzzle, game.playedWords.map((turn) => turn.tiles.map((tile) => tile.id)))
   const revision = existing.revision + 1
-  const serialized = JSON.stringify(snapshot(activePuzzle, game, timestamp, mode, revision, existing.undosUsed, replayed.undoHistory))
+  const serialized = JSON.stringify(durableRun(snapshot(activePuzzle, game, timestamp, mode, revision, existing.undosUsed, replayed.undoHistory)))
   const canonical = readRun(activePuzzle, serialized).game
   if (existing.game.playedWords.length > canonical.playedWords.length
     || existing.game.playedWords.some((turn, index) => !sameData(turn, canonical.playedWords[index]))) {
@@ -383,7 +396,7 @@ export function undoDailyRun(
   const activePuzzle = puzzleForGame(puzzle.puzzleId, game)
   const undosUsed = existing.undosUsed + 1
   const revision = existing.revision + 1
-  const serialized = JSON.stringify(snapshot(activePuzzle, game, null, existing.mode, revision, undosUsed, undoHistory))
+  const serialized = JSON.stringify(durableRun(snapshot(activePuzzle, game, null, existing.mode, revision, undosUsed, undoHistory)))
   // Validate the stored evidence before the single atomic run write.
   readRun(activePuzzle, serialized)
   storage.setItem(getRunStorageKey(puzzle.puzzleId), serialized)
@@ -401,9 +414,9 @@ export function setDailyUndosUsed(
   assertUndoCount(undosUsed, existing.mode)
   const revision = existing.revision + 1
   const activePuzzle = puzzleForGame(puzzle.puzzleId, existing.game)
-  storage.setItem(getRunStorageKey(puzzle.puzzleId), JSON.stringify(snapshot(
+  storage.setItem(getRunStorageKey(puzzle.puzzleId), JSON.stringify(durableRun(snapshot(
     activePuzzle, existing.game, null, existing.mode, revision, undosUsed, existing.undoHistory,
-  )))
+  ))))
   return { ...existing, revision, undosUsed, undosRemaining: undoLimit(existing.mode) - undosUsed }
 }
 

@@ -92,6 +92,7 @@ export const tutorialSteps = [
 export type TutorialStep = typeof tutorialSteps[number]['id']
 export type TutorialState = { step: TutorialStep; game: LetterStrikeState }
 export type TutorialAction = { type: 'continue' } | { type: 'select'; tileId: number }
+  | { type: 'select-many'; tileIds: readonly number[] }
   | { type: 'clear' } | { type: 'attack' } | { type: 'jump'; step: TutorialStep }
 
 export const tutorialExamples = [
@@ -99,8 +100,6 @@ export const tutorialExamples = [
   { step: 'resisted', label: 'Resistance + HIT tiles', description: 'Similar meaning blocks normal hits. A HIT tile still hits its match.' },
   { step: 'ward', label: 'LIFE tiles', description: 'A green LIFE tile saves the life this turn would cost.' },
   { step: 'regen-dead', label: 'REVIVE', description: 'Red tiles help the enemy: matching letters return or gain armour.' },
-  { step: 'grammar', label: 'Word types', description: 'An enemy may give extra hits for a word type, such as adjectives.' },
-  { step: 'long', label: 'Long words', description: 'Neutral words of six or more letters get an extra hit.' },
 ] as const satisfies readonly { step: TutorialStep; label: string; description: string }[]
 
 const routes: readonly (readonly TutorialStep[])[] = [
@@ -198,6 +197,12 @@ export function getAllowedTutorialTileIds(state: TutorialState): number[] {
 
 export function tutorialReducer(state: TutorialState, action: TutorialAction): TutorialState {
   if (action.type === 'jump') return createTutorial(action.step)
+  if (action.type === 'select-many') {
+    // A single fast swipe can cross several letters before React renders.
+    // Validate each against the updated prefix, ignoring wrong/repeated tiles.
+    return action.tileIds.reduce((current, tileId) => current.game.selectedTileIds.includes(tileId)
+      ? current : tutorialReducer(current, { type: 'select', tileId }), state)
+  }
   if (action.type === 'select') {
     if (!getAllowedTutorialTileIds(state).includes(action.tileId)) return state
     return { ...state, game: toggleLetterStrikeTile(state.game, action.tileId) }

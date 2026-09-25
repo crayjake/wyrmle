@@ -2,9 +2,12 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { test } from 'node:test'
 import { getDailyPuzzle, getDailyPuzzleForVersion } from '../src/daily/puzzle.ts'
-import { loadDailySession, saveDailyRun, undoDailyRun } from '../src/daily/persistence.ts'
-import type { StorageLike } from '../src/daily/types.ts'
+import { getRunStorageKey, loadDailySession, saveDailyRun, undoDailyRun } from '../src/daily/persistence.ts'
+import { captureUndoSnapshot } from '../src/daily/undo.ts'
+import { SAVE_VERSION } from '../src/daily/versions.ts'
+import type { DailyPuzzleDefinition, DailyRun, StorageLike } from '../src/daily/types.ts'
 import { createLetterStrikeGame, submitLetterStrike } from '../src/game/letterStrike.ts'
+import type { LetterStrikeState } from '../src/game/letterStrike.ts'
 import { isOpeningSafetyCertificateCurrent } from '../src/generator/openingSafety.ts'
 import { getRefillGroups } from '../src/components/refillSupply.ts'
 
@@ -22,8 +25,26 @@ class MemoryStorage implements StorageLike {
   key(index: number) { return [...this.data.keys()][index] ?? null }
 }
 
-test('today publishes the certified finite19 puzzle as v9 while historical supplies remain unchanged', () => {
-  const puzzle = getDailyPuzzle('2026-09-25')
+const archivedFinite = () => getDailyPuzzleForVersion('2026-09-25', 'letter-strike-6', 9)
+
+// Once a date has a newer publication, a fresh attempt opens that version.
+// Seed the genuine first committed v9 turn to exercise continuing its archive.
+function pinArchivedFirstMove(puzzle: DailyPuzzleDefinition, game: LetterStrikeState, storage: StorageLike) {
+  assert.equal(game.playedWords.length, 1)
+  assert.equal(game.status, 'playing')
+  const run: DailyRun = {
+    saveVersion: SAVE_VERSION, puzzleId: puzzle.puzzleId, gameVersion: puzzle.gameVersion,
+    puzzleVersion: puzzle.puzzleVersion, mode: 'normal', revision: 1, undosUsed: 0,
+    undoHistory: [captureUndoSnapshot(createLetterStrikeGame(puzzle.encounter))],
+    enemyLetters: game.enemyLetters, playerResolve: game.playerResolve, tiles: game.tiles,
+    refillIndex: game.refillIndex, nextTileId: game.nextTileId, playedWords: game.playedWords,
+    status: game.status, completedAt: null,
+  }
+  storage.setItem(getRunStorageKey(puzzle.puzzleId), JSON.stringify(run))
+}
+
+test('archived v9 retains the certified finite19 puzzle and its historical supply', () => {
+  const puzzle = archivedFinite()
   assert.equal(puzzle.puzzleVersion, 9)
   assert.equal(puzzle.gameVersion, 'letter-strike-6')
   assert.deepEqual(puzzle.encounter, selected.candidate.encounter)
@@ -41,7 +62,7 @@ test('today publishes the certified finite19 puzzle as v9 while historical suppl
 })
 
 test('finite daily routes reproduce exact depletion, Revive, final-life wins and persisted empty cells', () => {
-  const puzzle = getDailyPuzzle('2026-09-25')
+  const puzzle = archivedFinite()
   assert.deepEqual(walkthroughs.routes.map(route => route.words.length).sort(), [3, 4, 5, 6])
   for (const route of walkthroughs.routes) {
     let state = createLetterStrikeGame(puzzle.encounter)
@@ -53,6 +74,7 @@ test('finite daily routes reproduce exact depletion, Revive, final-life wins and
       assert.equal(puzzle.encounter.refillQueue.length - state.refillIndex, route.turns[index].reserveRemaining)
       assert.equal(state.tiles.filter(tile => tile.letter).length, route.turns[index].activeTileCount)
       assert.equal(getRefillGroups(state)!.reduce((sum, group) => sum + group.count, 0), route.turns[index].reserveRemaining)
+      if (index === 0) pinArchivedFirstMove(puzzle, state, storage)
       saveDailyRun(puzzle, state, storage, '2026-09-25T18:00:00Z')
       assert.deepEqual(loadDailySession(puzzle, storage).game, state)
     }
@@ -69,12 +91,13 @@ test('finite daily routes reproduce exact depletion, Revive, final-life wins and
 })
 
 test('finite reserve and blank slots restore together through persisted Undo', () => {
-  const puzzle = getDailyPuzzle('2026-09-25')
+  const puzzle = archivedFinite()
   const route = walkthroughs.routes.find(route => route.words.length === 6)!
   const storage = new MemoryStorage()
   let state = createLetterStrikeGame(puzzle.encounter)
   for (const ids of route.tileIds.slice(0, 3)) {
     state = submitLetterStrike(state, ids)
+    if (state.playedWords.length === 1) pinArchivedFirstMove(puzzle, state, storage)
     saveDailyRun(puzzle, state, storage)
   }
   const before = state
@@ -89,7 +112,7 @@ test('finite reserve and blank slots restore together through persisted Undo', (
 })
 
 test('all204 certified physical opening choices still replay to a familiar win under finite rules', () => {
-  const encounter = getDailyPuzzle('2026-09-25').encounter
+  const encounter = archivedFinite().encounter
   const certificate = selected.analysis.openingSafety
   assert.equal(isOpeningSafetyCertificateCurrent(encounter, certificate), true)
   assert.equal(certificate.openingVocabulary.scope, 'restricted-spellings')

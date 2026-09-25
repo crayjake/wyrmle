@@ -3,6 +3,7 @@ import { getEncounterWordClassification, validateLexicalRules } from '../game/le
 import type { LetterStrikeEncounter } from '../game/letterStrike.ts'
 import type { PartOfSpeech, SemanticRelation } from '../game/types.ts'
 import { lexiconMetadata } from '../lexicon/index.ts'
+import { getDefinedDictionaryWords, MEANING_DICTIONARY_VERSION } from '../lexicon/meaningDictionary.ts'
 
 type Classification = ReturnType<typeof getEncounterWordClassification>
 export type LexicalAuditEntry = Classification & { word: string; openingPlayable: boolean }
@@ -70,8 +71,17 @@ function canonicalJson(value: unknown): string {
   return JSON.stringify(value)
 }
 
-let dictionary: { words: string[]; metadata: LexicalAudit['dictionary'] } | undefined
-function auditDictionary() {
+let dictionary: { words: readonly string[]; metadata: LexicalAudit['dictionary'] } | undefined
+let definedDictionary: { words: readonly string[]; metadata: LexicalAudit['dictionary'] } | undefined
+function auditDictionary(encounter?: LetterStrikeEncounter) {
+  if (encounter?.meaningLexicon) {
+    if (!definedDictionary) {
+      const words = getDefinedDictionaryWords()
+      definedDictionary = { words, metadata: { package: 'Open English WordNet', version: MEANING_DICTIONARY_VERSION,
+        words: words.length, fingerprint: fingerprint(words.join('\n')) } }
+    }
+    return definedDictionary
+  }
   if (!dictionary) {
     // Keep every accepted spelling; punctuation cannot be built from letter tiles.
     const words = [...new Set(englishWords.map(word => word.toUpperCase()))].sort()
@@ -86,6 +96,7 @@ function auditDictionary() {
 function auditInputs(encounter: LetterStrikeEncounter): string {
   return fingerprint(canonicalJson({
     lexicalRules: encounter.lexicalRules ?? null,
+    ...(encounter.meaningLexicon ? { meaningLexicon: encounter.meaningLexicon } : {}),
     lexiconMetadata: encounter.lexicalRules ? lexiconMetadata : null,
     enemyWord: encounter.enemy.word,
     semanticRelations: encounter.enemy.semanticRelations,
@@ -112,7 +123,7 @@ function emptyCounts(): LexicalAuditCounts {
     partOfSpeechMemberships: { noun: 0, verb: 0, adjective: 0, adverb: 0 },
     partOfSpeechSources: { wordnet: 0, morphology: 0, curated: 0, unknown: 0 },
     semanticRelations: { opposite: 0, similar: 0, related: 0, unrelated: 0 },
-    semanticSources: { 'curated-or-wordnet': 0, unlisted: 0 },
+    semanticSources: { 'curated-or-wordnet': 0, unlisted: 0, compiled: 0 },
     semanticFallbackWords: 0, unknownPartOfSpeechSamples: [], unlistedSemanticSamples: [],
   }
 }
@@ -146,7 +157,7 @@ export function auditEncounterLexicon(encounter: LetterStrikeEncounter, options:
   if (!Number.isSafeInteger(encounter.minimumWordLength) || encounter.minimumWordLength < 1) {
     throw new Error('Lexical audit requires a positive minimum word length.')
   }
-  const source = auditDictionary()
+  const source = auditDictionary(encounter)
   const openingLetters = encounter.startingTiles.map(tile => tile.letter).join('')
   const openingCounts = letterCounts(openingLetters)
   const supplyCounts = letterCounts(openingLetters + encounter.refillQueue)
@@ -192,7 +203,8 @@ export function auditEncounterLexicon(encounter: LetterStrikeEncounter, options:
     notes: [
       'Every bundled dictionary spelling that fits the opening letter multiset is classified before solver search; no move, selection, vocabulary or state budget limits this audit.',
       'The full opening-plus-refill multiset is an optimistic future spelling superset, not an enumeration of reachable boards. Refill order, consumed letters and remaining turns can make included words unreachable.',
-      'Unknown POS remains unknown and receives no inferred category. Unlisted semantics use the neutral gameplay fallback; absence from semantic lists does not establish unrelated meaning.',
+      encounter.meaningLexicon ? 'The definition-backed dictionary controls validity. Each spelling has a frozen definition and reviewed-profile classification; missing records are errors, never neutral defaults.'
+        : 'Unknown POS remains unknown and receives no inferred category. Unlisted semantics use the neutral gameplay fallback; absence from semantic lists does not establish unrelated meaning.',
       'Counts describe distinct spellings, not physical tile selections. Single and multiple POS counts partition known spellings; POS membership counts can overlap.',
       'FNV-1a fingerprints detect ordinary stale reports and are not cryptographic authenticity checks. Versioned lexical metadata records the source archive SHA-256.',
     ],
@@ -203,7 +215,7 @@ export function auditEncounterLexicon(encounter: LetterStrikeEncounter, options:
 /** Validates provenance/completeness; unknown annotations are reported separately. */
 export function isLexicalAuditCurrent(encounter: LetterStrikeEncounter, audit: LexicalAudit): boolean {
   if (!audit || !audit.dictionary || !audit.opening || !audit.supply) return false
-  const source = auditDictionary()
+  const source = auditDictionary(encounter)
   return audit.schemaVersion === AUDIT_SCHEMA_VERSION
     && audit.encounterId === encounter.id
     && canonicalJson(audit.lexicalRules) === canonicalJson(encounter.lexicalRules ?? null)

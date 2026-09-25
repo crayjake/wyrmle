@@ -4,6 +4,8 @@ import generatedDespair20260924 from './puzzles/2026-09-24-v6.json' with { type:
 import lexicalDespair20260924 from './puzzles/2026-09-24-v7.json' with { type: 'json' }
 import reviveAnger20260925 from './puzzles/2026-09-25-v8.json' with { type: 'json' }
 import finiteAnger20260925 from './puzzles/2026-09-25-v9.json' with { type: 'json' }
+import meaningChaos20260925 from './puzzles/2026-09-25-v10.json' with { type: 'json' }
+import { unpackMeaningLexicon } from '../game/meaningPacking.ts'
 
 // Frozen publication snapshot, independent of future generator rankings. Only
 // runtime encounter data belongs here; solutions and analysis stay in DEV.
@@ -14,6 +16,10 @@ export const dailyEncounter20260924V6 = generatedDespair20260924 as LetterStrike
 export const dailyEncounter20260924V7 = lexicalDespair20260924 as LetterStrikeEncounter
 export const dailyEncounter20260925V8 = reviveAnger20260925 as LetterStrikeEncounter
 export const dailyEncounter20260925V9 = finiteAnger20260925 as LetterStrikeEncounter
+const { packedMeanings, ...meaningRules } = meaningChaos20260925
+export const dailyEncounter20260925V10 = { ...meaningRules,
+  meaningLexicon: unpackMeaningLexicon(packedMeanings),
+} as LetterStrikeEncounter
 
 /**
  * Published letter-strike v1 catalog. Its one authored encounter repeats by

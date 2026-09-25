@@ -1,7 +1,7 @@
 import { writeFile } from 'node:fs/promises'
 import { dailyEncounterV1, dailyEncounterV2, dailyEncounterV3, dailyEncounterV4,
   dailyEncounter20260924, dailyEncounter20260924V6, dailyEncounter20260924V7,
-  dailyEncounter20260925V8, dailyEncounter20260925V9 } from '../src/daily/catalog.ts'
+  dailyEncounter20260925V8, dailyEncounter20260925V9, dailyEncounter20260925V10 } from '../src/daily/catalog.ts'
 import { analysePuzzle } from '../src/generator/analyse.ts'
 import { difficultyFromAnalysis } from '../src/generator/difficulty.ts'
 import { readFile } from 'node:fs/promises'
@@ -9,7 +9,7 @@ import { createHash } from 'node:crypto'
 
 // Offline only: public puzzles contain a label, never solution lengths or paths.
 const encounters = [dailyEncounterV1, dailyEncounterV2, dailyEncounterV3, dailyEncounterV4,
-  dailyEncounter20260924, dailyEncounter20260924V6, dailyEncounter20260924V7, dailyEncounter20260925V8, dailyEncounter20260925V9]
+  dailyEncounter20260924, dailyEncounter20260924V6, dailyEncounter20260924V7, dailyEncounter20260925V8, dailyEncounter20260925V9, dailyEncounter20260925V10]
 const reports: Record<string, ReturnType<typeof difficultyFromAnalysis>> = {}
 const labels: Record<string, string> = {}
 const historicalRoute = [[0, 1, 2], [12, 5, 7, 16, 17], [3, 4, 6, 18, 19],
@@ -25,6 +25,9 @@ const reviveWalkthroughs = JSON.parse(await readFile(new URL('../artifacts/reviv
 const finiteWalkthroughs = JSON.parse(await readFile(new URL('../artifacts/finite-refills-v1/selected-walkthroughs.json', import.meta.url), 'utf8')) as {
   routes: { tileIds: number[][] }[]
 }
+const meaningWalkthroughs = JSON.parse(await readFile(new URL('../artifacts/meaning-v1/walkthroughs.json', import.meta.url), 'utf8')) as {
+  routes: { tileIds: number[][] }[]
+}
 for (const encounter of encounters) {
   const analysis = analysePuzzle(encounter, {
     solver: { maxStates: 180, beamWidth: 16, hintLine: encounter === dailyEncounterV4 ? authoredRoute
@@ -36,6 +39,8 @@ for (const encounter of encounters) {
         hintLines: reviveWalkthroughs.routes.map(route => route.tileIds) } : {}),
       ...(encounter === dailyEncounter20260925V9 ? { hintLine: undefined,
         hintLines: finiteWalkthroughs.routes.map(route => route.tileIds) } : {}),
+      ...(encounter === dailyEncounter20260925V10 ? { hintLine: undefined,
+        hintLines: meaningWalkthroughs.routes.map(route => route.tileIds) } : {}),
     },
     counterfactualSolver: { maxStates: 40, beamWidth: 8 },
   })

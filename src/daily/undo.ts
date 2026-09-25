@@ -10,7 +10,18 @@ function freeze<T>(value: T): T {
 
 /** Preserve the entire committed state; a half-selected word is transient UI. */
 export function captureUndoSnapshot(game: LetterStrikeState): LetterStrikeState {
-  return freeze(structuredClone({ ...game, selectedTileIds: [], error: null }))
+  const { encounter, ...position } = game
+  // Published encounters are deeply frozen, shared definitions. Cloning their
+  // complete word meanings for every move wastes megabytes and invalidates
+  // identity-based lookup caches. Only the changing position needs a copy.
+  let immutableEncounter = encounter
+  if (!Object.isFrozen(encounter)) {
+    const { meaningLexicon, ...rules } = encounter
+    immutableEncounter = freeze({ ...structuredClone(rules), ...(meaningLexicon ? {
+      meaningLexicon: Object.isFrozen(meaningLexicon) ? meaningLexicon : freeze(structuredClone(meaningLexicon)),
+    } : {}) })
+  }
+  return freeze({ ...structuredClone({ ...position, selectedTileIds: [], error: null }), encounter: immutableEncounter })
 }
 
 /** Restore a snapshot directly. No damage, recovery, refill or grammar reversal. */

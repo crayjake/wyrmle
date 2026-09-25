@@ -93,7 +93,7 @@ test('September 24 and historical September 25 v7 share exact DESPAIR while the 
   assert.equal(currentToday.difficulty, published.difficulty)
   assert.equal(getDailyPuzzle(getDailyPuzzleId(new Date('2026-09-24T23:59:59.999Z'))).puzzleVersion, 7)
   assert.equal(getDailyPuzzle(getDailyPuzzleId(new Date('2026-09-25T00:30:00+01:00'))).puzzleVersion, 7)
-  assert.equal(getDailyPuzzle(getDailyPuzzleId(new Date('2026-09-25T00:00:00.000Z'))).puzzleVersion, 9)
+  assert.equal(getDailyPuzzle(getDailyPuzzleId(new Date('2026-09-25T00:00:00.000Z'))).puzzleVersion, 10)
   assert.equal(loadDailySession(currentToday, new MemoryStorage()).game?.encounter.id, published.encounter.id)
 })
 

@@ -1,0 +1,31 @@
+{
+  "version": "oewn-2025-meanings-v1",
+  "source": {
+    "name": "Open English Wordnet",
+    "version": "2025",
+    "license": "CC-BY-4.0",
+    "url": "https://en-word.net/static/english-wordnet-2025.xml.gz",
+    "sha256": "9ca6d1dcb75f822fdd66617f7d9da48142ace38dd544d6ad5e2feca1674ad3fe"
+  },
+  "dictionary": {
+    "package": "an-array-of-english-words",
+    "version": "2.0.0",
+    "sha256": "dadb53f5df46b5b26577fe1cadc85bf076d2d04cf554f6fcda693f2704555e06"
+  },
+  "catalog": {
+    "sha256": "45bf124f63a27591128e5648a0c7ae94e672a1b535a557765dba9b1bf129b51f",
+    "bytes": 8256301,
+    "uncompressedBytes": 35480111
+  },
+  "coverage": {
+    "dictionaryWords": 274937,
+    "coveredWords": 116197,
+    "directWords": 63750,
+    "morphologyOnlyWords": 52447,
+    "missingWords": 158740,
+    "entries": 135969,
+    "senses": 185129,
+    "synsets": 107519
+  },
+  "policy": "All source senses, definitions and relation targets retained. Only dictionary spellings are queryable as game words. Explicit forms and conservative regular morphology inherit source lemma senses and are labeled separately. No meaning or neutral classification is fabricated for uncovered words; meaning relations require separate reviewed game policy."
+}

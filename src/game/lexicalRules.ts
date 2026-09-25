@@ -1,5 +1,5 @@
 import { getPartsOfSpeech, normalizeWord } from './dictionary.ts'
-import { getSemanticRelation } from './semantic.ts'
+import { getEncounterSemanticRelation, getStoredWordMeaning } from './meaningLexicon.ts'
 import type { LetterStrikeEncounter } from './letterStrike.ts'
 import type { EnemyConcept, PartOfSpeech } from './types.ts'
 import { getLexicalPartsOfSpeech, getLexicalPosSource, getLexicalRelations, LEXICON_VERSION } from '../lexicon/index.ts'
@@ -18,6 +18,7 @@ export function validateLexicalRules(encounter: LetterStrikeEncounter): void {
 
 export function getEncounterPartsOfSpeech(encounter: LetterStrikeEncounter, word: string): readonly PartOfSpeech[] | undefined {
   validateLexicalRules(encounter)
+  if (encounter.meaningLexicon) return getStoredWordMeaning(encounter, word)?.partsOfSpeech
   const authored = encounter.wordPartsOfSpeech?.[normalizeWord(word)] ?? getPartsOfSpeech(word)
   return encounter.lexicalRules ? getLexicalPartsOfSpeech(word) ?? authored : authored
 }
@@ -26,10 +27,12 @@ export function getEncounterWordClassification(encounter: LetterStrikeEncounter,
   const partsOfSpeech = getEncounterPartsOfSpeech(encounter, word) ?? []
   const lexicalSource = encounter.lexicalRules ? getLexicalPosSource(word) : 'unknown'
   const partOfSpeechSource = lexicalSource !== 'unknown' ? lexicalSource : partsOfSpeech.length ? 'curated' : 'unknown'
-  const relation = getSemanticRelation(word, encounter.enemy)
+  const relation = getEncounterSemanticRelation(encounter, word)
+  const meaning = getStoredWordMeaning(encounter, word)
   return { partsOfSpeech, partOfSpeechSource, relation,
+    ...(meaning ? { definition: meaning.definition, semanticReason: meaning.reason } : {}),
     // An unlisted word is a gameplay fallback, not a proven absence of related meanings.
-    semanticSource: relation === 'unrelated' ? 'unlisted' as const : 'curated-or-wordnet' as const }
+    semanticSource: meaning ? 'compiled' as const : relation === 'unrelated' ? 'unlisted' as const : 'curated-or-wordnet' as const }
 }
 
 /** Authored gameplay meanings take precedence over strict, sense-pinned lexical links. */

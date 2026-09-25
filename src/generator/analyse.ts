@@ -185,7 +185,9 @@ export function hasImpossibleLetterSupply(state: LetterStrikeState): boolean {
 }
 
 export function counterfactualEncounter(encounter: LetterStrikeEncounter, mechanic: MechanicName): LetterStrikeEncounter {
-  if (mechanic === 'semantic') return { ...encounter, enemy: { ...encounter.enemy, semanticRelations: { opposite: [], similar: [], related: [] } } }
+  if (mechanic === 'semantic') return { ...encounter, enemy: { ...encounter.enemy, semanticRelations: { opposite: [], similar: [], related: [] } },
+    ...(encounter.meaningLexicon ? { meaningLexicon: { ...encounter.meaningLexicon,
+      words: Object.fromEntries(Object.entries(encounter.meaningLexicon.words).map(([word, meaning]) => [word, { ...meaning, relation: 'unrelated' as const }])) } } : {}) }
   if (mechanic === 'grammar') return { ...encounter, grammarModifiers: {} }
   if (mechanic === 'armour') return { ...encounter, enemyLetters: encounter.enemyLetters.map(letter => ({ ...letter, initialHits: 1, hitsRemaining: 1 })) }
   return { ...encounter, tileEffects: Object.fromEntries(Object.entries(encounter.tileEffects).map(([name, effect]) => [name, {
@@ -196,7 +198,9 @@ export function counterfactualEncounter(encounter: LetterStrikeEncounter, mechan
 }
 
 function mechanicPresent(encounter: LetterStrikeEncounter, mechanic: MechanicName): boolean {
-  if (mechanic === 'semantic') return encounter.enemy.semanticRelations.opposite.length + encounter.enemy.semanticRelations.similar.length > 0
+  if (mechanic === 'semantic') return encounter.meaningLexicon
+    ? Object.values(encounter.meaningLexicon.words).some(meaning => meaning.relation === 'opposite' || meaning.relation === 'similar')
+    : encounter.enemy.semanticRelations.opposite.length + encounter.enemy.semanticRelations.similar.length > 0
   if (mechanic === 'grammar') return Object.values(encounter.grammarModifiers ?? {}).some(value => value !== 0)
   if (mechanic === 'armour') return encounter.enemyLetters.some(letter => letter.initialHits > 1)
   return encounter.startingTiles.some(tile => tile.type === 'gem' && tile.gem

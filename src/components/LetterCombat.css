@@ -95,9 +95,30 @@
 .letter-combat .strike-details {
   min-height: 1rem;
   line-height: 1.3;
-  gap: 0.1rem 0.35rem;
+  gap: 0.1rem 0.4rem;
   flex-wrap: wrap;
+  letter-spacing: 0.025em;
 }
+
+.strike-preview { display: grid; gap: 2px; }
+.strike-meaning[data-kind="counter"] { color: var(--green); }
+.strike-meaning[data-kind="resisted"] { color: var(--red); }
+.strike-total { color: var(--emph); white-space: nowrap; }
+.strike-effects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1px 0.65rem;
+  font-size: max(12px, 0.67rem);
+  line-height: 1.3;
+  letter-spacing: 0.025em;
+}
+.strike-effect[data-kind="hit"] { color: var(--blue); }
+.strike-effect[data-kind="life"],
+.strike-effect[data-kind="legacy"] { color: var(--green); }
+.strike-effect[data-kind="revive"],
+.strike-effect[data-kind="legacy-resisted"],
+.strike-effect[data-kind="last-life"] { color: var(--red); }
 
 .letter-combat .strike-bonus {
   display: inline-flex;

@@ -4,7 +4,7 @@ import AttackInfo from '../components/AttackInfo'
 import TileGrid from '../components/TileGrid'
 import { MyInfo } from '../components/HealthInfo'
 import { previewLetterStrike } from '../game/letterStrike'
-import { getLetterStrikeBonuses, getLetterStrikeGrammarModifiers, getLetterStrikeTileSummary } from '../game/letterStrikeHud'
+import { getLetterStrikeGrammarModifiers, getLetterStrikeTileSummary } from '../game/letterStrikeHud'
 import {
   canAttackInTutorial, canContinueInTutorial, createTutorial, getAllowedTutorialTileIds,
   getTutorialMove, tutorialExamples, tutorialReducer,
@@ -47,9 +47,6 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
   const onResolutionComplete = useCallback(() => setResolving(false), [])
   const showPrediction = Boolean(move && preview.valid && !resolving)
   const visiblePreview = move ? preview : lastMove?.preview
-  const recoveryText = preview.recoveries?.length
-    ? preview.recoveries.map(recovery => `${recovery.letter} ${recovery.hitsBefore === 0 ? 'returns' : 'gains armour'}`).join(' · ')
-    : undefined
   const coreDemo = step === 'counter' || step === 'neutral'
   const jump = (step: TutorialStep) => { setResolving(false); dispatch({ type: 'jump', step }) }
   const header = <header className="header">
@@ -64,10 +61,10 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
       <h1 id="tutorial-title">{step === 'goal' ? 'Words are your weapons.' : 'You’re ready.'}</h1>
       {step === 'goal' ? <ul className="tutorial-summary">
         <li>Remove every letter of the enemy word to win.</li>
-        <li>Tap letters anywhere on the grid to spell a word of 3+ letters.</li>
+        <li>Tap or swipe across tiles to spell a word of 3+ letters. You can mix swipes and taps; tiles do not need to touch.</li>
         <li>You have 5 lives. Each word normally costs 1 life.</li>
         <li>Used tiles refill while supplies last; then they leave empty spaces.</li>
-        <li>Meaning matters: opposites hit harder; similar words are resisted. Check the highlighted targets and your lives before playing.</li>
+        <li>Meaning drives your hits: words that counter the enemy use every matching tile; neutral words use one; similar words are resisted. Check the highlighted targets before playing.</li>
       </ul> : <p className="tutorial-completion-note">Find a word, check its targets, then play it. The preview shows exactly what will happen. Your Daily puzzle is untouched.</p>}
       <div className="tutorial-intro-actions">
         <button type="button" className="daily-button tutorial-start" onClick={() => step === 'goal' ? jump('counter') : onComplete()}>
@@ -78,7 +75,7 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
           : <button type="button" className="daily-button" onClick={() => jump('counter')}>Replay the demo</button>}
       </div>
       <details className="tutorial-examples">
-        <summary>Optional: special tiles and extra rules</summary>
+        <summary>Optional: special tiles and armour</summary>
         <p>Explore any example now, or replay the tutorial from Settings later.</p>
         <div className="tutorial-example-list">
           {tutorialExamples.map(example => <button type="button" className="tutorial-example" key={example.step} onClick={() => jump(example.step)}>
@@ -114,11 +111,9 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
     </div>
     <section className="player-zone" aria-label="Practice word selection">
       <AttackInfo word={visiblePreview?.word ?? ''} damage={visiblePreview?.strikes ?? 0} maxDamage={0} metric="strikes"
-        bonuses={visiblePreview?.valid ? getLetterStrikeBonuses(visiblePreview) : []}
+        strikePreview={visiblePreview} enemyWord={game.encounter.enemy.word}
         ready={canAttack}
         resolveBefore={showPrediction ? game.playerResolve : undefined}
-        resolveAfter={showPrediction ? Math.max(0, game.playerResolve - preview.resolveCost) : undefined}
-        recoveryText={recoveryText}
         message={resolving ? 'Watch the result…' : !move ? 'CONTINUE TO FINISH'
           : !game.selectedTileIds.length ? `BUILD ${move.word}`
             : !selectedExpectedPrefix ? 'CLEAR TO START AGAIN'
@@ -130,6 +125,7 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
           allowedTileIds={allowedTileIds}
           primaryLabel={move?.action === 'attack' ? 'ATTACK' : 'CONTINUE'} canAttack={canAttack || canContinue}
           onToggleTile={tileId => dispatch({ type: 'select', tileId })}
+          onSelectTiles={tileIds => dispatch({ type: 'select-many', tileIds })}
           onClear={() => dispatch({ type: 'clear' })}
           onAttack={() => {
             if (canContinue) { dispatch({ type: 'continue' }); return }

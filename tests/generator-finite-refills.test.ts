@@ -5,6 +5,7 @@ import { captureUndoSnapshot, restoreUndoSnapshot } from '../src/daily/undo.ts'
 import { createCandidate, generateForEnemy } from '../src/generator/generate.ts'
 import { mutateCandidate } from '../src/generator/mutate.ts'
 import { solvePuzzle } from '../src/generator/solve.ts'
+import { withCompiledMeanings } from '../src/generator/meaningCompiler.ts'
 
 test('finite construction caps planned supply and keeps only legal engine-replayed trace prefixes', () => {
   const seed = 'finite-construction'
@@ -74,7 +75,8 @@ test('finite-only supply mutations change a bounded queue, invalidate old IDs an
 test('a padded construction route is not inherited as a win after finite truncation', () => {
   const ordinary = createCandidate('MELANCHOLY', 'construction-test:0')
   const finite = { ...ordinary.encounter, finiteRefills: true as const, refillQueue: '' }
-  const result = solvePuzzle(finite, { maxStates: 0, hintLine: ordinary.construction.plannedTileIds })
+  assert.throws(() => createLetterStrikeGame(finite), /stale/)
+  const result = solvePuzzle(withCompiledMeanings(finite), { maxStates: 0, hintLine: ordinary.construction.plannedTileIds })
   assert.notEqual(result.solvable, true)
   assert.deepEqual(result.winningLines, [])
 })

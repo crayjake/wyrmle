@@ -6,6 +6,7 @@ import { isLexicalAuditCurrent } from './lexicalAudit.ts'
 import { isOpeningSafetyCertificateCurrent } from './openingSafety.ts'
 import { createLetterStrikeGame } from '../game/letterStrike.ts'
 import { stateKey } from './stateKey.ts'
+import { isMeaningCompilationCurrent } from './meaningCompiler.ts'
 
 export type ValidationIssue = { code: string; message: string }
 export type ValidationResult = {
@@ -23,6 +24,12 @@ export function validatePuzzle(candidate: CandidatePuzzle, analysis: PuzzleAnaly
   const warnings: ValidationIssue[] = []
   const reject = (code: string, message: string) => reasons.push({ code, message })
   const warn = (code: string, message: string) => warnings.push({ code, message })
+  if (candidate.provenance.generatorVersion === 'letter-strike-generator-3' && !candidate.encounter.meaningLexicon) {
+    reject('missing-puzzle-meanings', 'Meaning-era candidates must package their definition-backed dictionary; removing it cannot restore legacy word validity.')
+  }
+  if (candidate.encounter.meaningLexicon && !isMeaningCompilationCurrent(candidate.encounter)) {
+    reject('stale-or-incomplete-meanings', 'Every allowed spelling needs current definition and semantic evidence compiled from the complete dictionary before solving.')
+  }
   if (candidate.encounter.finiteRefills) {
     if (!analysis.refillPressure || analysis.refillPressure.encounterKey !== stateKey(createLetterStrikeGame(candidate.encounter))) {
       reject('missing-refill-pressure', 'Finite-refill puzzles need current, replayed supply-pressure evidence.')

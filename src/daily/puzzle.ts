@@ -1,6 +1,6 @@
 import {
   dailyEncounterV1, dailyEncounterV2, dailyEncounterV3, dailyEncounterV4,
-  dailyEncounter20260924, dailyEncounter20260924V6, dailyEncounter20260924V7, dailyEncounter20260925V8, dailyEncounter20260925V9,
+  dailyEncounter20260924, dailyEncounter20260924V6, dailyEncounter20260924V7, dailyEncounter20260925V8, dailyEncounter20260925V9, dailyEncounter20260925V10,
 } from './catalog.ts'
 import { validatePuzzleId } from './date.ts'
 import difficultyLabels from './difficultyLabels.json' with { type: 'json' }
@@ -14,6 +14,7 @@ import {
   LEXICAL_GAME_VERSION, LEXICAL_DESPAIR_PUZZLE_VERSION,
   GENERATED_REVIVE_DATE, GENERATED_REVIVE_PUZZLE_VERSION,
   FINITE_REFILL_GAME_VERSION, FINITE_REFILL_PUZZLE_VERSION,
+  MEANING_GAME_VERSION, MEANING_PUZZLE_VERSION,
 } from './versions.ts'
 
 function deepFreeze<T>(value: T): T {
@@ -34,6 +35,7 @@ deepFreeze(dailyEncounter20260924V6)
 deepFreeze(dailyEncounter20260924V7)
 deepFreeze(dailyEncounter20260925V8)
 deepFreeze(dailyEncounter20260925V9)
+deepFreeze(dailyEncounter20260925V10)
 
 /** Old rules remain available only for dates on which those rules were published. */
 export function getSupportedDailyPuzzles(puzzleId: string): DailyPuzzleDefinition[] {
@@ -68,6 +70,10 @@ export function getSupportedDailyPuzzles(puzzleId: string): DailyPuzzleDefinitio
   if (puzzleId === GENERATED_REVIVE_DATE) definitions.push({
     gameVersion: FINITE_REFILL_GAME_VERSION, puzzleVersion: FINITE_REFILL_PUZZLE_VERSION,
     encounter: dailyEncounter20260925V9,
+  })
+  if (puzzleId === GENERATED_REVIVE_DATE) definitions.push({
+    gameVersion: MEANING_GAME_VERSION, puzzleVersion: MEANING_PUZZLE_VERSION,
+    encounter: dailyEncounter20260925V10,
   })
   return definitions.map((definition) => deepFreeze({ puzzleId, date: puzzleId, ...definition,
     difficulty: (difficultyLabels as Record<string, PuzzleDifficultyLabel>)[definition.encounter.id],

@@ -23,6 +23,7 @@ import { validatePuzzle } from './validate.ts'
 import type { ValidationConfig } from './config.ts'
 import type { AnchorWord, CandidatePuzzle, GenerationGoal, WordRole } from './types.ts'
 import { buildWordPools } from './wordPools.ts'
+import { meaningLexicalProvider, withCompiledMeanings } from './meaningCompiler.ts'
 
 export type GenerationOptions = {
   candidateCount?: number
@@ -38,6 +39,8 @@ export type GenerationOptions = {
   refillLimit?: number
   /** Only archival reproduction opts out of the complete, versioned lookup. */
   lexicalMode?: 'current' | 'legacy'
+  /** Only archival generation retains adjective and long-word bonuses. */
+  scoringMode?: 'meaning' | 'legacy-bonuses'
   goal?: GenerationGoal
   provider?: LexicalProvider
   analysis?: AnalysisOptions
@@ -66,15 +69,20 @@ export type GenerationResult = {
 }
 
 export function createCandidate(enemyWord: string, seed: string | number, options: GenerationOptions = {}): CandidatePuzzle {
+  const meaningOnly = options.lexicalMode !== 'legacy' && options.scoringMode !== 'legacy-bonuses'
   const refillLimit = validateRefillLimit(options.refillLimit)
   const enemy = normalizeWord(enemyWord)
-  const provider = options.provider ?? (options.lexicalMode === 'legacy' ? localLexicalProvider : currentLexicalProvider)
+  const provider = options.provider ?? (meaningOnly ? meaningLexicalProvider : options.lexicalMode === 'legacy' ? localLexicalProvider : currentLexicalProvider)
   const suitability = analyseEnemySuitability(enemy, provider)
   if (!suitability.eligible) throw new Error(suitability.rejectionReasons.join(' '))
   const entry = provider.getEntry(enemy)!
   const pools = buildWordPools(enemy, provider, { grammarPolicy: options.lexicalMode === 'legacy' ? 'single' : 'any-recognized' })
   const random = createRandom(seed)
   const goal = options.goal ?? chooseGenerationGoal(random)
+  const currentGoal = meaningOnly && goal.archetypes.includes('grammar-twist') ? {
+    ...goal, archetypes: [...new Set(goal.archetypes.map(type => type === 'grammar-twist' ? 'semantic-contrast' as const : type))],
+    description: 'Meaning and Hit tiles offer different ways through resisted words.',
+  } : goal
   const anchors: AnchorWord[] = []
   function addAnchor(pool: readonly LexicalEntry[], role: WordRole, maxLength = 9) {
     const compatible = pool.filter(entry => entry.word.length <= maxLength
@@ -83,31 +91,32 @@ export function createCandidate(enemyWord: string, seed: string | number, option
     if (!compatible.length) return
     const selected = random.pick(compatible.slice(0, 16))
     const roles: WordRole[] = [role]
-    if (pools.grammar.some(entry => entry.word === selected.word) && role !== 'grammar') roles.push('grammar')
+    if (!meaningOnly && pools.grammar.some(entry => entry.word === selected.word) && role !== 'grammar') roles.push('grammar')
     if (role === 'resisted') roles.push('decoy', 'strike')
     if (role === 'neutral') roles.push('ward')
     anchors.push({ word: selected.word, roles, expected: 'opening', commonness: selected.commonness })
   }
   addAnchor(pools.counters, 'counter', 7)
   addAnchor(pools.resisted, 'resisted', 7)
-  addAnchor(pools.grammar.filter(entry => pools.neutral.includes(entry)), 'grammar', 7)
+  if (meaningOnly) addAnchor(pools.counters, 'counter', 7)
+  else addAnchor(pools.grammar.filter(entry => pools.neutral.includes(entry)), 'grammar', 7)
   addAnchor(pools.neutral, 'neutral', 6)
   const words = pools.all.map(entry => entry.word)
   const board = constructBoard(anchors.map(anchor => anchor.word), words, random)
   const startingTiles = placeSpecialTiles(board, enemy, pools.counters.map(entry => entry.word),
     anchors.filter(anchor => anchor.roles.includes('resisted')).map(anchor => anchor.word), random, options)
   const armourCount = goal.archetypes.includes('armour-break') ? 2 : 1
-  const id = `generated-${enemy.toLowerCase()}-${options.lexicalMode === 'legacy' ? '' : 'lex2-'}${encodeURIComponent(String(seed))}${refillLimit === undefined ? '' : `-finite${refillLimit}`}`
+  const id = `generated-${enemy.toLowerCase()}-${meaningOnly ? 'meaning1-' : options.lexicalMode === 'legacy' ? '' : 'lex2-'}${encodeURIComponent(String(seed))}${refillLimit === undefined ? '' : `-finite${refillLimit}`}`
   const startingResolve = options.startingResolve ?? 5
-  const encounter: LetterStrikeEncounter = {
+  let encounter: LetterStrikeEncounter = {
     id, enemy: { word: enemy, definition: entry.definition, partOfSpeech: entry.partsOfSpeech[0],
-      semanticRelations: options.lexicalMode === 'legacy' ? pools.semanticRelations : enrichSemanticRelations(enemy, pools.semanticRelations) },
+      semanticRelations: meaningOnly || options.lexicalMode === 'legacy' ? pools.semanticRelations : enrichSemanticRelations(enemy, pools.semanticRelations) },
     enemyLetters: placeArmour(enemy, words, armourCount, random),
     startingResolve, startingTiles, refillQueue: 'E'.repeat((startingResolve + 1) * 16), minimumWordLength: 3,
     ...(refillLimit === undefined ? {} : { finiteRefills: true as const }),
-    grammarModifiers: { adjective: 1 }, wordPartsOfSpeech: pools.wordPartsOfSpeech,
+    grammarModifiers: meaningOnly ? {} : { adjective: 1 }, wordPartsOfSpeech: pools.wordPartsOfSpeech,
     ...(options.lexicalMode === 'legacy' ? {} : { lexicalRules: { ...currentLexicalRules } }),
-    longWordRule: { minimumLength: 6, bonusStrikes: 1 },
+    ...(meaningOnly ? {} : { longWordRule: { minimumLength: 6, bonusStrikes: 1 } }),
     tileEffects: { strike: { strike: true, preventResolveLoss: false }, ward: { strike: false, preventResolveLoss: true },
       ...(options.includeRegenTile ? { regen: { strike: false, preventResolveLoss: false, regenerate: true } } : {}),
     },
@@ -115,15 +124,16 @@ export function createCandidate(enemyWord: string, seed: string | number, option
   const targetTurns = goal.archetypes.includes('clutch-finish') ? startingResolve + 1 : startingResolve
   const refill = constructRefill(encounter, pools.all, random, targetTurns, refillLimit)
   encounter.refillQueue = refill.refillQueue
+  if (meaningOnly) encounter = withCompiledMeanings(encounter)
   for (const word of refill.construction.plannedWords) {
     if (anchors.some(anchor => anchor.word === word)) continue
     const roles: WordRole[] = pools.counters.some(entry => entry.word === word) ? ['counter'] : ['neutral']
     if (pools.clutch.some(entry => entry.word === word)) roles.push('clutch')
-    if (pools.grammar.some(entry => entry.word === word)) roles.push('grammar')
+    if (!meaningOnly && pools.grammar.some(entry => entry.word === word)) roles.push('grammar')
     anchors.push({ word, roles, expected: 'refill', commonness: provider.getEntry(word)?.commonness ?? null })
   }
-  return { id, seed: String(seed), enemyWord: enemy, encounter, goal: structuredClone(goal), anchors,
-    construction: refill.construction, provenance: { generatorVersion: options.lexicalMode === 'legacy' ? 'letter-strike-generator-1' : 'letter-strike-generator-2', lexicalProvider: provider.id } }
+  return { id, seed: String(seed), enemyWord: enemy, encounter, goal: structuredClone(currentGoal), anchors,
+    construction: refill.construction, provenance: { generatorVersion: meaningOnly ? 'letter-strike-generator-3' : options.lexicalMode === 'legacy' ? 'letter-strike-generator-1' : 'letter-strike-generator-2', lexicalProvider: provider.id } }
 }
 
 function compareCandidates(a: RankedCandidate, b: RankedCandidate): number {
@@ -134,7 +144,8 @@ function compareCandidates(a: RankedCandidate, b: RankedCandidate): number {
 /** Bounded deterministic hill climbing. Acceptance is always decided by analysis. */
 export function generateForEnemy(enemyWord: string, seed: string | number, options: GenerationOptions = {}): GenerationResult {
   validateRefillLimit(options.refillLimit)
-  const provider = options.provider ?? (options.lexicalMode === 'legacy' ? localLexicalProvider : currentLexicalProvider)
+  const provider = options.provider ?? (options.lexicalMode === 'legacy' ? localLexicalProvider
+    : options.scoringMode === 'legacy-bonuses' ? currentLexicalProvider : meaningLexicalProvider)
   const enemy = normalizeWord(enemyWord)
   const enemySuitability = analyseEnemySuitability(enemy, provider)
   const report: GenerationResult = { seed: String(seed), enemyWord: enemy, enemySuitability,
@@ -194,7 +205,8 @@ export function generateForEnemy(enemyWord: string, seed: string | number, optio
 /** Enemy screening precedes construction; the daily catalog is never modified. */
 export function generatePuzzle(seed: string | number, options: GenerationOptions = {}): GenerationResult {
   validateRefillLimit(options.refillLimit)
-  const provider = options.provider ?? (options.lexicalMode === 'legacy' ? localLexicalProvider : currentLexicalProvider)
+  const provider = options.provider ?? (options.lexicalMode === 'legacy' ? localLexicalProvider
+    : options.scoringMode === 'legacy-bonuses' ? currentLexicalProvider : meaningLexicalProvider)
   const selection = selectEnemy(seed, { provider })
   const eligible = selection.candidates.filter(entry => entry.eligible)
     .sort((a, b) => Number(b.word === selection.selected) - Number(a.word === selection.selected))

@@ -9,7 +9,8 @@ const clamp = (value: number) => Math.max(0, Math.min(1, value))
 
 /** Scores describe the observed candidate; validation is an independent gate. */
 export function scorePuzzle(candidate: CandidatePuzzle, analysis: PuzzleAnalysis, overrides: Partial<ScoreWeights> = {}): QualityScore {
-  const weights = { ...defaultScoreWeights, ...overrides }
+  const weights = { ...defaultScoreWeights,
+    ...(candidate.encounter.meaningLexicon ? { semanticChoices: 20, grammarRelevance: 0 } : {}), ...overrides }
   const components: ScoreComponent[] = []
   const add = (name: keyof ScoreWeights, value: number, explanation: string) => {
     const bounded = clamp(value)

@@ -10,7 +10,7 @@ import TileGrid from "./components/TileGrid"
 import type { MatchHintMode } from './components/tileMatchHints'
 import WyrmDecoder from "./components/WyrmDecoder"
 import { previewLetterStrike } from "./game/letterStrike"
-import { getLetterStrikeBonuses, getLetterStrikeGrammarModifiers, getLetterStrikeTileSummary } from "./game/letterStrikeHud"
+import { getLetterStrikeGrammarModifiers, getLetterStrikeTileSummary } from "./game/letterStrikeHud"
 import { getDailyPuzzleId, validatePuzzleId } from "./daily/date"
 import { getDailyPuzzle } from "./daily/puzzle"
 import { getOpeningPuzzleId, getRunStorageKey, getResultStorageKey, resetDailyPuzzle } from "./daily/persistence"
@@ -22,7 +22,6 @@ import { useUserPreferences } from './useUserPreferences'
 import type { DifficultyMode } from './daily/types'
 import type { CandidatePuzzle } from './generator/types'
 import type { TutorialStep } from './tutorial/tutorial'
-import { getEncounterWordClassification } from './game/lexicalRules'
 import "./components/DailyPanels.css"
 
 const DevPanel = import.meta.env.DEV ? lazy(() => import('./components/DevPanel')) : null
@@ -205,14 +204,6 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, match
   const enemy = game.encounter.enemy
   const interactive = visiblePhase === "ready" && game.status === "playing" && !daily.error && !result && !resolving
   const preview = previewLetterStrike(game)
-  const classification = getEncounterWordClassification(game.encounter, preview.word)
-  const parts = classification.partsOfSpeech
-  const grammarNote = preview.valid && Object.keys(game.encounter.grammarModifiers ?? {}).length > 0
-    ? parts.length === 0 ? 'Word type unknown · no bonus'
-      : !game.encounter.lexicalRules && parts.length > 1 ? 'Multiple word types · no bonus' : undefined
-    : undefined
-  const meaningNote = preview.valid && classification.relation === 'related' ? 'Related meaning · neutral'
-    : preview.valid && classification.semanticSource === 'unlisted' ? 'No listed meaning bonus' : undefined
   function undoTurn() {
     if (!resolving && daily.undo()) {
       setResolvedTurnCount(Math.max(0, game.playedWords.length - 1))
@@ -332,12 +323,9 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, match
           metric="strikes"
           ready={interactive && preview.valid}
           message={message}
-          bonuses={getLetterStrikeBonuses(preview)}
+          strikePreview={preview}
+          enemyWord={enemy.word}
           resolveBefore={interactive && preview.valid ? game.playerResolve : undefined}
-          resolveAfter={interactive && preview.valid ? game.playerResolve - preview.resolveCost : undefined}
-          recoveryText={preview.recoveries?.length ? `REVIVE: ${preview.recoveries.map(hit => `${hit.letter} ${hit.hitsBefore === 0 ? 'returns' : 'gains armour'}`).join(', ')}` : undefined}
-          grammarNote={grammarNote}
-          meaningNote={meaningNote}
         />
 
         <div className="controls">
@@ -392,6 +380,8 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, match
       {visiblePanel === 'help' && <HelpPanel strikeConsumesAllowance={game.encounter.strikeConsumesAllowance}
         finiteRefills={game.encounter.finiteRefills}
         anyRecognizedGrammar={Boolean(game.encounter.lexicalRules)}
+        hasGrammarModifiers={Object.values(game.encounter.grammarModifiers ?? {}).some(value => value !== 0)}
+        definitionBacked={Boolean(game.encounter.meaningLexicon)}
         longWordRule={game.encounter.longWordRule} onReplayTutorial={onReplayTutorial} onClose={() => setPanel(null)} />}
       {visiblePanel === 'log' && <LogPanel game={game} date={puzzle.date}
         onUndo={undoTurn} canUndo={daily.canUndo && !resolving} undosRemaining={daily.undosRemaining} undosUsed={daily.undosUsed}

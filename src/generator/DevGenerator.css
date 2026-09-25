@@ -46,8 +46,8 @@
 .generator-tile { min-height: 65px; display: grid; place-items: center; border: 1px solid #656071; background: #2a2632; border-radius: 5px; padding: 6px 2px; }
 .generator-tile > span { font-size: 24px; font-weight: 750; line-height: 1.2; }
 .generator-tile small { font-size: 9px; color: #c9c0d2; }
-.generator-tile.generator-ward { border-color: #84b9e2; background: #21374c; }
-.generator-tile.generator-strike { border-color: #eab572; background: #4a3424; }
+.generator-tile.generator-ward { border-color: var(--green); background: color-mix(in srgb, var(--green) 16%, #2a2632); }
+.generator-tile.generator-strike { border-color: var(--blue); background: color-mix(in srgb, var(--blue) 16%, #2a2632); }
 .generator-tile-legend { font-size: 11px; color: #c2b6ce; margin-top: 9px !important; }
 .generator-enemy { display: flex; flex-wrap: wrap; gap: 5px; margin: 10px 0 12px; }
 .generator-enemy > span { display: grid; place-items: center; min-width: 30px; border: 1px solid #736777; border-radius: 3px; padding: 2px 3px; font-weight: 700; }
