@@ -1,0 +1,59 @@
+.wyrm-life-resource {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.wyrm-life-icon {
+  flex: none;
+  color: var(--green);
+}
+
+.wyrm-life-meter {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  height: 20px;
+  padding-right: 5px;
+  color: var(--green);
+  vertical-align: middle;
+}
+
+.wyrm-life-segment,
+.wyrm-life-head {
+  box-sizing: border-box;
+  display: block;
+  flex: none;
+  width: 11px;
+  height: 12px;
+  border: 1px solid currentColor;
+  border-radius: 1px;
+  opacity: 0.38;
+}
+
+.wyrm-life-tail { width: 8px; height: 8px; }
+.wyrm-life-meter .is-filled { background: currentColor; opacity: 1; }
+.wyrm-life-head { position: relative; width: 15px; height: 15px; border-radius: 2px; }
+.wyrm-life-head::before,
+.wyrm-life-head::after {
+  content: '';
+  position: absolute;
+  right: 2px;
+  width: 3px;
+  height: 3px;
+  background: var(--bg);
+}
+.wyrm-life-head::before { top: 1px; }
+.wyrm-life-head::after { bottom: 1px; }
+.wyrm-life-tongue {
+  position: absolute;
+  left: 100%;
+  top: 5px;
+  width: 5px;
+  height: 4px;
+  background: var(--red);
+  clip-path: polygon(0 33%, 60% 33%, 100% 0, 100% 33%, 75% 50%, 100% 66%, 100% 100%, 60% 66%, 0 66%);
+}
+.wyrm-life-head:not(.is-filled) .wyrm-life-tongue { visibility: hidden; }
+
+.wyrm-life-meter[data-decoding] { visibility: hidden; }

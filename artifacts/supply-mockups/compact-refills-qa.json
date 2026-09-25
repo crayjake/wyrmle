@@ -1,0 +1,1554 @@
+[
+  {
+    "phase": "initial",
+    "width": 375,
+    "height": 629,
+    "evidence": {
+      "viewport": {
+        "width": 375,
+        "height": 629,
+        "dpr": 3
+      },
+      "fonts": [
+        {
+          "family": "Cutive Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        },
+        {
+          "family": "Share Tech Mono",
+          "status": "loaded"
+        }
+      ],
+      "fontsLoaded": {
+        "cutive": true,
+        "share": true
+      },
+      "row": {
+        "x": 13.28125,
+        "y": 38,
+        "width": 348.4375,
+        "height": 24,
+        "right": 361.71875,
+        "bottom": 62
+      },
+      "health": {
+        "x": 13.28125,
+        "y": 40,
+        "width": 73,
+        "height": 20,
+        "right": 86.28125,
+        "bottom": 60
+      },
+      "reserve": {
+        "x": 95.125,
+        "y": 38,
+        "width": 266.59375,
+        "height": 24,
+        "right": 361.71875,
+        "bottom": 62
+      },
+      "label": {
+        "x": 319.71875,
+        "y": 44.5,
+        "width": 42,
+        "height": 11,
+        "right": 361.71875,
+        "bottom": 55.5
+      },
+      "groups": [
+        {
+          "letter": null,
+          "count": "9",
+          "square": {
+            "x": 173.71875,
+            "y": 40,
+            "width": 20,
+            "height": 20,
+            "right": 193.71875,
+            "bottom": 60
+          },
+          "counter": {
+            "x": 171.71875,
+            "y": 36,
+            "width": 8,
+            "height": 10,
+            "right": 179.71875,
+            "bottom": 46
+          },
+          "svg": null,
+          "position": null
+        },
+        {
+          "letter": "A",
+          "count": "2",
+          "square": {
+            "x": 197.71875,
+            "y": 40,
+            "width": 20,
+            "height": 20,
+            "right": 217.71875,
+            "bottom": 60
+          },
+          "counter": {
+            "x": 195.71875,
+            "y": 36,
+            "width": 8,
+            "height": 10,
+            "right": 203.71875,
+            "bottom": 46
+          },
+          "svg": {
+            "x": 197.71875,
+            "y": 40,
+            "width": 20,
+            "height": 20,
+            "right": 217.71875,
+            "bottom": 60
+          },
+          "position": {
+            "x": "5.734375",
+            "y": "14.046875"
+          },
+          "renderedInkOffsetCssPixels": [
+            0.333,
+            0.0
+          ]
+        },
+        {
+          "letter": "N",
+          "count": "2",
+          "square": {
+            "x": 221.71875,
+            "y": 40,
+            "width": 20,
+            "height": 20,
+            "right": 241.71875,
+            "bottom": 60
+          },
+          "counter": {
+            "x": 219.71875,
+            "y": 36,
+            "width": 8,
+            "height": 10,
+            "right": 227.71875,
+            "bottom": 46
+          },
+          "svg": {
+            "x": 221.71875,
+            "y": 40,
+            "width": 20,
+            "height": 20,
+            "right": 241.71875,
+            "bottom": 60
+          },
+          "position": {
+            "x": "5.734375",
+            "y": "13.9375"
+          },
+          "renderedInkOffsetCssPixels": [
+            0.167,
+            0.0
+          ]
+        },
+        {
+          "letter": "G",
+          "count": "1",
+          "square": {
+            "x": 245.71875,
+            "y": 40,
+            "width": 20,
+            "height": 20,
+            "right": 265.71875,
+            "bottom": 60
+          },
+          "counter": {
+            "x": 243.71875,
+            "y": 36,
+            "width": 8,
+            "height": 10,
+            "right": 251.71875,
+            "bottom": 46
+          },
+          "svg": {
+            "x": 245.71875,
+            "y": 40,
+            "width": 20,
+            "height": 20,
+            "right": 265.71875,
+            "bottom": 60
+          },
+          "position": {
+            "x": "5.625",
+            "y": "14.046875"
+          },
+          "renderedInkOffsetCssPixels": [
+            0.5,
+            0.0
+          ]
+        },
+        {
+          "letter": "E",
+          "count": "4",
+          "square": {
+            "x": 269.71875,
+            "y": 40,
+            "width": 20,
+            "height": 20,
+            "right": 289.71875,
+            "bottom": 60
+          },
+          "counter": {
+            "x": 267.71875,
+            "y": 36,
+            "width": 8,
+            "height": 10,
+            "right": 275.71875,
+            "bottom": 46
+          },
+          "svg": {
+            "x": 269.71875,
+            "y": 40,
+            "width": 20,
+            "height": 20,
+            "right": 289.71875,
+            "bottom": 60
+          },
+          "position": {
+            "x": "5.734375",
+            "y": "14.046875"
+          },
+          "renderedInkOffsetCssPixels": [
+            0.5,
+            0.0
+          ]
+        },
+        {
+          "letter": "R",
+          "count": "1",
+          "square": {
+            "x": 293.71875,
+            "y": 40,
+            "width": 20,
+            "height": 20,
+            "right": 313.71875,
+            "bottom": 60
+          },
+          "counter": {
+            "x": 291.71875,
+            "y": 36,
+            "width": 8,
+            "height": 10,
+            "right": 299.71875,
+            "bottom": 46
+          },
+          "svg": {
+            "x": 293.71875,
+            "y": 40,
+            "width": 20,
+            "height": 20,
+            "right": 313.71875,
+            "bottom": 60
+          },
+          "position": {
+            "x": "5.40625",
+            "y": "14.046875"
+          },
+          "renderedInkOffsetCssPixels": [
+            0.167,
+            0.0
+          ]
+        }
+      ],
+      "description": "Refills remaining: other letters 9, A 2, N 2, G 1, E 4, R 1. Counts are reserve copies, not the next draw order.",
+      "overflow": 0,
+      "bodyWidth": 375,
+      "lives": "5",
+      "empty": 0
+    },
+    "screenshot": "/home/jake/Documents/wyrmle/artifacts/supply-mockups/compact-refills-initial-375x629.png",
+    "pixelScreenshot": "/home/jake/Documents/wyrmle/artifacts/supply-mockups/compact-refills-initial-375x629-dpr3.png",
+    "errors": [],
+    "failedRequests": []
+  },
+  {
+    "phase": "midgame",
+    "width": 375,
+    "height": 629,
+    "evidence": {
+      "viewport": {
+        "width": 375,
+        "height": 629,
+        "dpr": 3
+      },
+      "fonts": [
+        {
+          "family": "Cutive Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        },
+        {
+          "family": "Share Tech Mono",
+          "status": "loaded"
+        }
+      ],
+      "fontsLoaded": {
+        "cutive": true,
+        "share": true
+      },
+      "row": {
+        "x": 13.28125,
+        "y": 38,
+        "width": 348.4375,
+        "height": 24,
+        "right": 361.71875,
+        "bottom": 62
+      },
+      "health": {
+        "x": 13.28125,
+        "y": 40,
+        "width": 73,
+        "height": 20,
+        "right": 86.28125,
+        "bottom": 60
+      },
+      "reserve": {
+        "x": 95.125,
+        "y": 38,
+        "width": 266.59375,
+        "height": 24,
+        "right": 361.71875,
+        "bottom": 62
+      },
+      "label": {
+        "x": 319.71875,
+        "y": 44.5,
+        "width": 42,
+        "height": 11,
+        "right": 361.71875,
+        "bottom": 55.5
+      },
+      "groups": [
+        {
+          "letter": null,
+          "count": "8",
+          "square": {
+            "x": 221.71875,
+            "y": 40,
+            "width": 20,
+            "height": 20,
+            "right": 241.71875,
+            "bottom": 60
+          },
+          "counter": {
+            "x": 219.71875,
+            "y": 36,
+            "width": 8,
+            "height": 10,
+            "right": 227.71875,
+            "bottom": 46
+          },
+          "svg": null,
+          "position": null
+        },
+        {
+          "letter": "N",
+          "count": "2",
+          "square": {
+            "x": 245.71875,
+            "y": 40,
+            "width": 20,
+            "height": 20,
+            "right": 265.71875,
+            "bottom": 60
+          },
+          "counter": {
+            "x": 243.71875,
+            "y": 36,
+            "width": 8,
+            "height": 10,
+            "right": 251.71875,
+            "bottom": 46
+          },
+          "svg": {
+            "x": 245.71875,
+            "y": 40,
+            "width": 20,
+            "height": 20,
+            "right": 265.71875,
+            "bottom": 60
+          },
+          "position": {
+            "x": "5.734375",
+            "y": "13.9375"
+          },
+          "renderedInkOffsetCssPixels": [
+            0.167,
+            0.0
+          ]
+        },
+        {
+          "letter": "G",
+          "count": "1",
+          "square": {
+            "x": 269.71875,
+            "y": 40,
+            "width": 20,
+            "height": 20,
+            "right": 289.71875,
+            "bottom": 60
+          },
+          "counter": {
+            "x": 267.71875,
+            "y": 36,
+            "width": 8,
+            "height": 10,
+            "right": 275.71875,
+            "bottom": 46
+          },
+          "svg": {
+            "x": 269.71875,
+            "y": 40,
+            "width": 20,
+            "height": 20,
+            "right": 289.71875,
+            "bottom": 60
+          },
+          "position": {
+            "x": "5.625",
+            "y": "14.046875"
+          },
+          "renderedInkOffsetCssPixels": [
+            0.5,
+            0.0
+          ]
+        },
+        {
+          "letter": "R",
+          "count": "1",
+          "square": {
+            "x": 293.71875,
+            "y": 40,
+            "width": 20,
+            "height": 20,
+            "right": 313.71875,
+            "bottom": 60
+          },
+          "counter": {
+            "x": 291.71875,
+            "y": 36,
+            "width": 8,
+            "height": 10,
+            "right": 299.71875,
+            "bottom": 46
+          },
+          "svg": {
+            "x": 293.71875,
+            "y": 40,
+            "width": 20,
+            "height": 20,
+            "right": 313.71875,
+            "bottom": 60
+          },
+          "position": {
+            "x": "5.40625",
+            "y": "14.046875"
+          },
+          "renderedInkOffsetCssPixels": [
+            0.167,
+            0.0
+          ]
+        }
+      ],
+      "description": "Refills remaining: other letters 8, N 2, G 1, R 1. Counts are reserve copies, not the next draw order.",
+      "overflow": 0,
+      "bodyWidth": 375,
+      "lives": "5",
+      "empty": 0
+    },
+    "screenshot": "/home/jake/Documents/wyrmle/artifacts/supply-mockups/compact-refills-midgame-375x629.png",
+    "pixelScreenshot": "/home/jake/Documents/wyrmle/artifacts/supply-mockups/compact-refills-midgame-375x629-dpr3.png",
+    "errors": [],
+    "failedRequests": []
+  },
+  {
+    "phase": "one-left",
+    "width": 375,
+    "height": 629,
+    "evidence": {
+      "viewport": {
+        "width": 375,
+        "height": 629,
+        "dpr": 3
+      },
+      "fonts": [
+        {
+          "family": "Cutive Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        },
+        {
+          "family": "Share Tech Mono",
+          "status": "loaded"
+        }
+      ],
+      "fontsLoaded": {
+        "cutive": true,
+        "share": true
+      },
+      "row": {
+        "x": 13.28125,
+        "y": 38,
+        "width": 348.4375,
+        "height": 24,
+        "right": 361.71875,
+        "bottom": 62
+      },
+      "health": {
+        "x": 13.28125,
+        "y": 40,
+        "width": 73,
+        "height": 20,
+        "right": 86.28125,
+        "bottom": 60
+      },
+      "reserve": {
+        "x": 95.125,
+        "y": 38,
+        "width": 266.59375,
+        "height": 24,
+        "right": 361.71875,
+        "bottom": 62
+      },
+      "label": {
+        "x": 319.71875,
+        "y": 44.5,
+        "width": 42,
+        "height": 11,
+        "right": 361.71875,
+        "bottom": 55.5
+      },
+      "groups": [
+        {
+          "letter": null,
+          "count": "1",
+          "square": {
+            "x": 245.71875,
+            "y": 40,
+            "width": 20,
+            "height": 20,
+            "right": 265.71875,
+            "bottom": 60
+          },
+          "counter": {
+            "x": 243.71875,
+            "y": 36,
+            "width": 8,
+            "height": 10,
+            "right": 251.71875,
+            "bottom": 46
+          },
+          "svg": null,
+          "position": null
+        },
+        {
+          "letter": "N",
+          "count": "0",
+          "square": {
+            "x": 269.71875,
+            "y": 40,
+            "width": 20,
+            "height": 20,
+            "right": 289.71875,
+            "bottom": 60
+          },
+          "counter": {
+            "x": 267.71875,
+            "y": 36,
+            "width": 8,
+            "height": 10,
+            "right": 275.71875,
+            "bottom": 46
+          },
+          "svg": {
+            "x": 269.71875,
+            "y": 40,
+            "width": 20,
+            "height": 20,
+            "right": 289.71875,
+            "bottom": 60
+          },
+          "position": {
+            "x": "5.734375",
+            "y": "13.9375"
+          },
+          "renderedInkOffsetCssPixels": [
+            0.167,
+            0.0
+          ]
+        },
+        {
+          "letter": "R",
+          "count": "0",
+          "square": {
+            "x": 293.71875,
+            "y": 40,
+            "width": 20,
+            "height": 20,
+            "right": 313.71875,
+            "bottom": 60
+          },
+          "counter": {
+            "x": 291.71875,
+            "y": 36,
+            "width": 8,
+            "height": 10,
+            "right": 299.71875,
+            "bottom": 46
+          },
+          "svg": {
+            "x": 293.71875,
+            "y": 40,
+            "width": 20,
+            "height": 20,
+            "right": 313.71875,
+            "bottom": 60
+          },
+          "position": {
+            "x": "5.40625",
+            "y": "14.046875"
+          },
+          "renderedInkOffsetCssPixels": [
+            0.167,
+            0.0
+          ]
+        }
+      ],
+      "description": "Refills remaining: other letters 1, N 0, R 0. Counts are reserve copies, not the next draw order.",
+      "overflow": 0,
+      "bodyWidth": 375,
+      "lives": "3",
+      "empty": 0
+    },
+    "screenshot": "/home/jake/Documents/wyrmle/artifacts/supply-mockups/compact-refills-one-left-375x629.png",
+    "pixelScreenshot": "/home/jake/Documents/wyrmle/artifacts/supply-mockups/compact-refills-one-left-375x629-dpr3.png",
+    "errors": [],
+    "failedRequests": []
+  },
+  {
+    "phase": "empty",
+    "width": 375,
+    "height": 629,
+    "evidence": {
+      "viewport": {
+        "width": 375,
+        "height": 629,
+        "dpr": 3
+      },
+      "fonts": [
+        {
+          "family": "Cutive Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        },
+        {
+          "family": "Share Tech Mono",
+          "status": "loaded"
+        }
+      ],
+      "fontsLoaded": {
+        "cutive": true,
+        "share": true
+      },
+      "row": {
+        "x": 13.28125,
+        "y": 38,
+        "width": 348.4375,
+        "height": 24,
+        "right": 361.71875,
+        "bottom": 62
+      },
+      "health": {
+        "x": 13.28125,
+        "y": 40,
+        "width": 73,
+        "height": 20,
+        "right": 86.28125,
+        "bottom": 60
+      },
+      "reserve": {
+        "x": 95.125,
+        "y": 38,
+        "width": 266.59375,
+        "height": 24,
+        "right": 361.71875,
+        "bottom": 62
+      },
+      "label": {
+        "x": 319.71875,
+        "y": 44.5,
+        "width": 42,
+        "height": 11,
+        "right": 361.71875,
+        "bottom": 55.5
+      },
+      "groups": [
+        {
+          "letter": null,
+          "count": "0",
+          "square": {
+            "x": 269.71875,
+            "y": 40,
+            "width": 20,
+            "height": 20,
+            "right": 289.71875,
+            "bottom": 60
+          },
+          "counter": {
+            "x": 267.71875,
+            "y": 36,
+            "width": 8,
+            "height": 10,
+            "right": 275.71875,
+            "bottom": 46
+          },
+          "svg": null,
+          "position": null
+        },
+        {
+          "letter": "N",
+          "count": "0",
+          "square": {
+            "x": 293.71875,
+            "y": 40,
+            "width": 20,
+            "height": 20,
+            "right": 313.71875,
+            "bottom": 60
+          },
+          "counter": {
+            "x": 291.71875,
+            "y": 36,
+            "width": 8,
+            "height": 10,
+            "right": 299.71875,
+            "bottom": 46
+          },
+          "svg": {
+            "x": 293.71875,
+            "y": 40,
+            "width": 20,
+            "height": 20,
+            "right": 313.71875,
+            "bottom": 60
+          },
+          "position": {
+            "x": "5.734375",
+            "y": "13.9375"
+          },
+          "renderedInkOffsetCssPixels": [
+            0.167,
+            0.0
+          ]
+        }
+      ],
+      "description": "Refills remaining: other letters 0, N 0. Counts are reserve copies, not the next draw order.",
+      "overflow": 0,
+      "bodyWidth": 375,
+      "lives": "1",
+      "empty": 6
+    },
+    "screenshot": "/home/jake/Documents/wyrmle/artifacts/supply-mockups/compact-refills-empty-375x629.png",
+    "pixelScreenshot": "/home/jake/Documents/wyrmle/artifacts/supply-mockups/compact-refills-empty-375x629-dpr3.png",
+    "errors": [],
+    "failedRequests": []
+  },
+  {
+    "phase": "initial",
+    "width": 320,
+    "height": 568,
+    "evidence": {
+      "viewport": {
+        "width": 320,
+        "height": 568,
+        "dpr": 3
+      },
+      "fonts": [
+        {
+          "family": "Cutive Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        },
+        {
+          "family": "Share Tech Mono",
+          "status": "loaded"
+        }
+      ],
+      "fontsLoaded": {
+        "cutive": true,
+        "share": true
+      },
+      "row": {
+        "x": 12,
+        "y": 33,
+        "width": 296,
+        "height": 24,
+        "right": 308,
+        "bottom": 57
+      },
+      "health": {
+        "x": 12,
+        "y": 35,
+        "width": 73,
+        "height": 20,
+        "right": 85,
+        "bottom": 55
+      },
+      "reserve": {
+        "x": 93,
+        "y": 33,
+        "width": 215,
+        "height": 24,
+        "right": 308,
+        "bottom": 57
+      },
+      "label": {
+        "x": 266,
+        "y": 39.5,
+        "width": 42,
+        "height": 11,
+        "right": 308,
+        "bottom": 50.5
+      },
+      "groups": [
+        {
+          "letter": null,
+          "count": "9",
+          "square": {
+            "x": 120,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "right": 140,
+            "bottom": 55
+          },
+          "counter": {
+            "x": 118,
+            "y": 31,
+            "width": 8,
+            "height": 10,
+            "right": 126,
+            "bottom": 41
+          },
+          "svg": null,
+          "position": null
+        },
+        {
+          "letter": "A",
+          "count": "2",
+          "square": {
+            "x": 144,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "right": 164,
+            "bottom": 55
+          },
+          "counter": {
+            "x": 142,
+            "y": 31,
+            "width": 8,
+            "height": 10,
+            "right": 150,
+            "bottom": 41
+          },
+          "svg": {
+            "x": 144,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "right": 164,
+            "bottom": 55
+          },
+          "position": {
+            "x": "5.734375",
+            "y": "14.046875"
+          },
+          "renderedInkOffsetCssPixels": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "letter": "N",
+          "count": "2",
+          "square": {
+            "x": 168,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "right": 188,
+            "bottom": 55
+          },
+          "counter": {
+            "x": 166,
+            "y": 31,
+            "width": 8,
+            "height": 10,
+            "right": 174,
+            "bottom": 41
+          },
+          "svg": {
+            "x": 168,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "right": 188,
+            "bottom": 55
+          },
+          "position": {
+            "x": "5.734375",
+            "y": "13.9375"
+          },
+          "renderedInkOffsetCssPixels": [
+            -0.167,
+            0.0
+          ]
+        },
+        {
+          "letter": "G",
+          "count": "1",
+          "square": {
+            "x": 192,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "right": 212,
+            "bottom": 55
+          },
+          "counter": {
+            "x": 190,
+            "y": 31,
+            "width": 8,
+            "height": 10,
+            "right": 198,
+            "bottom": 41
+          },
+          "svg": {
+            "x": 192,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "right": 212,
+            "bottom": 55
+          },
+          "position": {
+            "x": "5.625",
+            "y": "14.046875"
+          },
+          "renderedInkOffsetCssPixels": [
+            0.167,
+            0.0
+          ]
+        },
+        {
+          "letter": "E",
+          "count": "4",
+          "square": {
+            "x": 216,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "right": 236,
+            "bottom": 55
+          },
+          "counter": {
+            "x": 214,
+            "y": 31,
+            "width": 8,
+            "height": 10,
+            "right": 222,
+            "bottom": 41
+          },
+          "svg": {
+            "x": 216,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "right": 236,
+            "bottom": 55
+          },
+          "position": {
+            "x": "5.734375",
+            "y": "14.046875"
+          },
+          "renderedInkOffsetCssPixels": [
+            0.167,
+            0.0
+          ]
+        },
+        {
+          "letter": "R",
+          "count": "1",
+          "square": {
+            "x": 240,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "right": 260,
+            "bottom": 55
+          },
+          "counter": {
+            "x": 238,
+            "y": 31,
+            "width": 8,
+            "height": 10,
+            "right": 246,
+            "bottom": 41
+          },
+          "svg": {
+            "x": 240,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "right": 260,
+            "bottom": 55
+          },
+          "position": {
+            "x": "5.40625",
+            "y": "14.046875"
+          },
+          "renderedInkOffsetCssPixels": [
+            -0.167,
+            0.0
+          ]
+        }
+      ],
+      "description": "Refills remaining: other letters 9, A 2, N 2, G 1, E 4, R 1. Counts are reserve copies, not the next draw order.",
+      "overflow": 0,
+      "bodyWidth": 320,
+      "lives": "5",
+      "empty": 0
+    },
+    "screenshot": "/home/jake/Documents/wyrmle/artifacts/supply-mockups/compact-refills-initial-320x568.png",
+    "pixelScreenshot": "/home/jake/Documents/wyrmle/artifacts/supply-mockups/compact-refills-initial-320x568-dpr3.png",
+    "errors": [],
+    "failedRequests": []
+  },
+  {
+    "phase": "midgame",
+    "width": 320,
+    "height": 568,
+    "evidence": {
+      "viewport": {
+        "width": 320,
+        "height": 568,
+        "dpr": 3
+      },
+      "fonts": [
+        {
+          "family": "Cutive Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        },
+        {
+          "family": "Share Tech Mono",
+          "status": "loaded"
+        }
+      ],
+      "fontsLoaded": {
+        "cutive": true,
+        "share": true
+      },
+      "row": {
+        "x": 12,
+        "y": 33,
+        "width": 296,
+        "height": 24,
+        "right": 308,
+        "bottom": 57
+      },
+      "health": {
+        "x": 12,
+        "y": 35,
+        "width": 73,
+        "height": 20,
+        "right": 85,
+        "bottom": 55
+      },
+      "reserve": {
+        "x": 93,
+        "y": 33,
+        "width": 215,
+        "height": 24,
+        "right": 308,
+        "bottom": 57
+      },
+      "label": {
+        "x": 266,
+        "y": 39.5,
+        "width": 42,
+        "height": 11,
+        "right": 308,
+        "bottom": 50.5
+      },
+      "groups": [
+        {
+          "letter": null,
+          "count": "8",
+          "square": {
+            "x": 168,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "right": 188,
+            "bottom": 55
+          },
+          "counter": {
+            "x": 166,
+            "y": 31,
+            "width": 8,
+            "height": 10,
+            "right": 174,
+            "bottom": 41
+          },
+          "svg": null,
+          "position": null
+        },
+        {
+          "letter": "N",
+          "count": "2",
+          "square": {
+            "x": 192,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "right": 212,
+            "bottom": 55
+          },
+          "counter": {
+            "x": 190,
+            "y": 31,
+            "width": 8,
+            "height": 10,
+            "right": 198,
+            "bottom": 41
+          },
+          "svg": {
+            "x": 192,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "right": 212,
+            "bottom": 55
+          },
+          "position": {
+            "x": "5.734375",
+            "y": "13.9375"
+          },
+          "renderedInkOffsetCssPixels": [
+            -0.167,
+            0.0
+          ]
+        },
+        {
+          "letter": "G",
+          "count": "1",
+          "square": {
+            "x": 216,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "right": 236,
+            "bottom": 55
+          },
+          "counter": {
+            "x": 214,
+            "y": 31,
+            "width": 8,
+            "height": 10,
+            "right": 222,
+            "bottom": 41
+          },
+          "svg": {
+            "x": 216,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "right": 236,
+            "bottom": 55
+          },
+          "position": {
+            "x": "5.625",
+            "y": "14.046875"
+          },
+          "renderedInkOffsetCssPixels": [
+            0.167,
+            0.0
+          ]
+        },
+        {
+          "letter": "R",
+          "count": "1",
+          "square": {
+            "x": 240,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "right": 260,
+            "bottom": 55
+          },
+          "counter": {
+            "x": 238,
+            "y": 31,
+            "width": 8,
+            "height": 10,
+            "right": 246,
+            "bottom": 41
+          },
+          "svg": {
+            "x": 240,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "right": 260,
+            "bottom": 55
+          },
+          "position": {
+            "x": "5.40625",
+            "y": "14.046875"
+          },
+          "renderedInkOffsetCssPixels": [
+            -0.167,
+            0.0
+          ]
+        }
+      ],
+      "description": "Refills remaining: other letters 8, N 2, G 1, R 1. Counts are reserve copies, not the next draw order.",
+      "overflow": 0,
+      "bodyWidth": 320,
+      "lives": "5",
+      "empty": 0
+    },
+    "screenshot": "/home/jake/Documents/wyrmle/artifacts/supply-mockups/compact-refills-midgame-320x568.png",
+    "pixelScreenshot": "/home/jake/Documents/wyrmle/artifacts/supply-mockups/compact-refills-midgame-320x568-dpr3.png",
+    "errors": [],
+    "failedRequests": []
+  },
+  {
+    "phase": "one-left",
+    "width": 320,
+    "height": 568,
+    "evidence": {
+      "viewport": {
+        "width": 320,
+        "height": 568,
+        "dpr": 3
+      },
+      "fonts": [
+        {
+          "family": "Cutive Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        },
+        {
+          "family": "Share Tech Mono",
+          "status": "loaded"
+        }
+      ],
+      "fontsLoaded": {
+        "cutive": true,
+        "share": true
+      },
+      "row": {
+        "x": 12,
+        "y": 33,
+        "width": 296,
+        "height": 24,
+        "right": 308,
+        "bottom": 57
+      },
+      "health": {
+        "x": 12,
+        "y": 35,
+        "width": 73,
+        "height": 20,
+        "right": 85,
+        "bottom": 55
+      },
+      "reserve": {
+        "x": 93,
+        "y": 33,
+        "width": 215,
+        "height": 24,
+        "right": 308,
+        "bottom": 57
+      },
+      "label": {
+        "x": 266,
+        "y": 39.5,
+        "width": 42,
+        "height": 11,
+        "right": 308,
+        "bottom": 50.5
+      },
+      "groups": [
+        {
+          "letter": null,
+          "count": "1",
+          "square": {
+            "x": 192,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "right": 212,
+            "bottom": 55
+          },
+          "counter": {
+            "x": 190,
+            "y": 31,
+            "width": 8,
+            "height": 10,
+            "right": 198,
+            "bottom": 41
+          },
+          "svg": null,
+          "position": null
+        },
+        {
+          "letter": "N",
+          "count": "0",
+          "square": {
+            "x": 216,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "right": 236,
+            "bottom": 55
+          },
+          "counter": {
+            "x": 214,
+            "y": 31,
+            "width": 8,
+            "height": 10,
+            "right": 222,
+            "bottom": 41
+          },
+          "svg": {
+            "x": 216,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "right": 236,
+            "bottom": 55
+          },
+          "position": {
+            "x": "5.734375",
+            "y": "13.9375"
+          },
+          "renderedInkOffsetCssPixels": [
+            -0.167,
+            0.0
+          ]
+        },
+        {
+          "letter": "R",
+          "count": "0",
+          "square": {
+            "x": 240,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "right": 260,
+            "bottom": 55
+          },
+          "counter": {
+            "x": 238,
+            "y": 31,
+            "width": 8,
+            "height": 10,
+            "right": 246,
+            "bottom": 41
+          },
+          "svg": {
+            "x": 240,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "right": 260,
+            "bottom": 55
+          },
+          "position": {
+            "x": "5.40625",
+            "y": "14.046875"
+          },
+          "renderedInkOffsetCssPixels": [
+            -0.167,
+            0.0
+          ]
+        }
+      ],
+      "description": "Refills remaining: other letters 1, N 0, R 0. Counts are reserve copies, not the next draw order.",
+      "overflow": 0,
+      "bodyWidth": 320,
+      "lives": "3",
+      "empty": 0
+    },
+    "screenshot": "/home/jake/Documents/wyrmle/artifacts/supply-mockups/compact-refills-one-left-320x568.png",
+    "pixelScreenshot": "/home/jake/Documents/wyrmle/artifacts/supply-mockups/compact-refills-one-left-320x568-dpr3.png",
+    "errors": [],
+    "failedRequests": []
+  },
+  {
+    "phase": "empty",
+    "width": 320,
+    "height": 568,
+    "evidence": {
+      "viewport": {
+        "width": 320,
+        "height": 568,
+        "dpr": 3
+      },
+      "fonts": [
+        {
+          "family": "Cutive Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        },
+        {
+          "family": "Share Tech Mono",
+          "status": "loaded"
+        }
+      ],
+      "fontsLoaded": {
+        "cutive": true,
+        "share": true
+      },
+      "row": {
+        "x": 12,
+        "y": 33,
+        "width": 296,
+        "height": 24,
+        "right": 308,
+        "bottom": 57
+      },
+      "health": {
+        "x": 12,
+        "y": 35,
+        "width": 73,
+        "height": 20,
+        "right": 85,
+        "bottom": 55
+      },
+      "reserve": {
+        "x": 93,
+        "y": 33,
+        "width": 215,
+        "height": 24,
+        "right": 308,
+        "bottom": 57
+      },
+      "label": {
+        "x": 266,
+        "y": 39.5,
+        "width": 42,
+        "height": 11,
+        "right": 308,
+        "bottom": 50.5
+      },
+      "groups": [
+        {
+          "letter": null,
+          "count": "0",
+          "square": {
+            "x": 216,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "right": 236,
+            "bottom": 55
+          },
+          "counter": {
+            "x": 214,
+            "y": 31,
+            "width": 8,
+            "height": 10,
+            "right": 222,
+            "bottom": 41
+          },
+          "svg": null,
+          "position": null
+        },
+        {
+          "letter": "N",
+          "count": "0",
+          "square": {
+            "x": 240,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "right": 260,
+            "bottom": 55
+          },
+          "counter": {
+            "x": 238,
+            "y": 31,
+            "width": 8,
+            "height": 10,
+            "right": 246,
+            "bottom": 41
+          },
+          "svg": {
+            "x": 240,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "right": 260,
+            "bottom": 55
+          },
+          "position": {
+            "x": "5.734375",
+            "y": "13.9375"
+          },
+          "renderedInkOffsetCssPixels": [
+            -0.167,
+            0.0
+          ]
+        }
+      ],
+      "description": "Refills remaining: other letters 0, N 0. Counts are reserve copies, not the next draw order.",
+      "overflow": 0,
+      "bodyWidth": 320,
+      "lives": "1",
+      "empty": 6
+    },
+    "screenshot": "/home/jake/Documents/wyrmle/artifacts/supply-mockups/compact-refills-empty-320x568.png",
+    "pixelScreenshot": "/home/jake/Documents/wyrmle/artifacts/supply-mockups/compact-refills-empty-320x568-dpr3.png",
+    "errors": [],
+    "failedRequests": []
+  }
+]

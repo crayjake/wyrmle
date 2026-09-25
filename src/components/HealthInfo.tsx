@@ -1,5 +1,7 @@
 import HealthBar from "./HealthBar"
 import WyrmLifeMeter from './WyrmLifeMeter'
+import type { Ref } from 'react'
+import { Heart } from 'lucide-react'
 
 type HealthInfoProps = {
   name: string
@@ -51,13 +53,17 @@ export default function HealthInfo({
   )
 }
 
-export function MyInfo({ wyrm = true, ...props }: BasicHealthInfoProps & { wyrm?: boolean }) {
+export function MyInfo({ wyrm = true, wyrmRef, decoding = false, ...props }: BasicHealthInfoProps & {
+  wyrm?: boolean
+  wyrmRef?: Ref<HTMLSpanElement>
+  decoding?: boolean
+}) {
   if (wyrm) return <div className="health-info left health-info-compact">
-    <div className="name">{props.name}</div>
-    <div className="health-segments" role="meter" aria-label={props.name}
+    <div className="health-segments wyrm-life-resource" role="meter" aria-label={props.name}
       aria-valuemin={0} aria-valuemax={props.maxHealth} aria-valuenow={props.health}
       aria-valuetext={`${props.health} of ${props.maxHealth}`}>
-      <WyrmLifeMeter lives={props.health} maximum={props.maxHealth} />
+      <Heart className="wyrm-life-icon" size={13} fill="currentColor" strokeWidth={1.5} aria-hidden="true" />
+      <WyrmLifeMeter lives={props.health} maximum={props.maxHealth} dockRef={wyrmRef} hidden={decoding} />
     </div>
   </div>
   return (

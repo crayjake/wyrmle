@@ -196,6 +196,7 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, match
   const enemyLetters = useRef<(HTMLDivElement | null)[]>([])
   const tileElements = useRef<(HTMLButtonElement | null)[]>([])
   const wyrmDockRef = useRef<HTMLSpanElement>(null)
+  const wyrmLifeRef = useRef<HTMLSpanElement>(null)
   const wyrmTitleRef = useRef<HTMLDivElement>(null)
   const [revealedEnemyIndices, setRevealedEnemyIndices] = useState<number[]>([])
   const [revealedTileIndices, setRevealedTileIndices] = useState<number[]>([])
@@ -281,6 +282,8 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, match
           name="LIVES"
           health={game.playerResolve}
           maxHealth={game.encounter.startingResolve}
+          wyrmRef={wyrmLifeRef}
+          decoding={visiblePhase === 'enemy' || visiblePhase === 'tiles'}
         />
         <RefillSupply game={game} />
         {!daily.started && puzzle.difficulty && <span className="daily-puzzle-difficulty">TODAY · DIFFICULTY: {puzzle.difficulty}</span>}
@@ -362,7 +365,8 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, match
         containerRef={containerRef}
         enemyLetters={enemyLetters}
         tileElements={tileElements}
-        dockRef={wyrmDockRef}
+        dockRef={wyrmLifeRef}
+        lifeSegments={game.encounter.startingResolve}
         titleRef={wyrmTitleRef}
         enemyCount={enemy.word.length}
         tileCount={game.tiles.length}

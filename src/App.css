@@ -263,7 +263,7 @@
 }
 
 .enemy-definition {
-  width: min(88%, 19rem, calc(var(--enemy-letter-count) * 2.2rem));
+  width: min(88%, 19rem, calc(var(--enemy-letter-count) * 2.85rem));
 
   align-self: center;
 

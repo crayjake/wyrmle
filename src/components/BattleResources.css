@@ -3,80 +3,51 @@
   align-items: center;
 }
 
-.wyrm-life-meter {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  height: 20px;
-  padding-right: 5px;
-  color: var(--green);
-  vertical-align: middle;
-}
-
-.wyrm-life-segment,
-.wyrm-life-head {
-  box-sizing: border-box;
-  display: block;
-  flex: none;
-  width: 11px;
-  height: 12px;
-  border: 1px solid currentColor;
-  border-radius: 1px;
-  opacity: 0.38;
-}
-
-.wyrm-life-tail { width: 8px; height: 8px; }
-.wyrm-life-meter .is-filled { background: currentColor; opacity: 1; }
-.wyrm-life-head { position: relative; width: 15px; height: 15px; border-radius: 2px; }
-.wyrm-life-head::before,
-.wyrm-life-head::after {
-  content: '';
-  position: absolute;
-  right: 2px;
-  width: 3px;
-  height: 3px;
-  background: var(--bg);
-}
-.wyrm-life-head::before { top: 1px; }
-.wyrm-life-head::after { bottom: 1px; }
-.wyrm-life-tongue {
-  position: absolute;
-  left: 100%;
-  top: 5px;
-  width: 5px;
-  height: 4px;
-  background: var(--red);
-  clip-path: polygon(0 33%, 60% 33%, 100% 0, 100% 33%, 75% 50%, 100% 66%, 100% 100%, 60% 66%, 0 66%);
-}
-.wyrm-life-head:not(.is-filled) .wyrm-life-tongue { visibility: hidden; }
-
 .refill-supply {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  flex-wrap: wrap;
-  gap: 4px 6px;
+  flex-wrap: nowrap;
+  gap: 4px;
   min-width: 0;
-  min-height: 20px;
+  min-height: 24px;
   letter-spacing: 0;
   line-height: 1;
 }
-.refill-group { display: inline-flex; align-items: center; gap: 3px; white-space: nowrap; }
-.refill-end { display: inline-flex; align-items: center; gap: 6px; }
+.refill-group { display: inline-flex; align-items: center; flex: none; }
 .refill-square {
   box-sizing: border-box;
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   position: relative;
   flex: none;
   border: 1px solid color-mix(in srgb, var(--fg) 45%, transparent);
   border-radius: 1px;
 }
 .refill-known { border-color: color-mix(in srgb, var(--emph) 70%, transparent); }
-.refill-letter { position: absolute; inset: -1px; width: 16px; height: 16px; overflow: visible; }
-.refill-letter text { font: 13px 'Cutive Mono', monospace; letter-spacing: 0; fill: var(--emph); }
-.refill-multiplier { display: inline-flex; align-items: center; height: 16px; font: 12px/1 'Share Tech Mono', monospace; }
-.refill-label { font: 11px/1 'Share Tech Mono', monospace; white-space: nowrap; }
+.refill-letter { position: absolute; inset: -1px; width: 20px; height: 20px; overflow: visible; }
+.refill-letter text {
+  font: 14px 'Cutive Mono', monospace;
+  letter-spacing: 0;
+  text-anchor: start;
+  dominant-baseline: alphabetic;
+  fill: var(--emph);
+}
+.refill-count {
+  position: absolute;
+  top: -5px;
+  left: -3px;
+  display: grid;
+  place-items: center;
+  min-width: 6px;
+  height: 10px;
+  padding: 0 1px;
+  background: var(--bg);
+  color: var(--fg);
+  font: 10px/1 'Share Tech Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+.refill-label { margin-left: 2px; font: 11px/1 'Share Tech Mono', monospace; white-space: nowrap; }
 .battle-info .daily-puzzle-difficulty { justify-self: end; }
 .battle-info:has(.refill-supply) .daily-puzzle-difficulty { grid-column: 1 / -1; }
 
@@ -88,13 +59,8 @@
   pointer-events: none;
 }
 
-/* Make room for a wrapped reserve and a complete move preview on short phones.
-   Keep tile geometry and text sizes; the definition stays inside the enemy's
-   visible width while a short definition can balance across two lines. */
+/* Keep the complete move preview in view on short phones without shrinking
+   tile geometry or text. */
 @media (max-width: 430px) and (max-height: 650px) {
-  .container.letter-combat:has(.refill-supply) .enemy-definition {
-    width: min(88%, 19rem, calc(var(--enemy-letter-count) * 2.65rem));
-  }
-  .container.letter-combat:has(.refill-supply) .refill-supply { row-gap: 2px; }
   .container.letter-combat:has(.refill-supply) .strike-details { line-height: 1.2; row-gap: 1px; }
 }

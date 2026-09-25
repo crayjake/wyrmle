@@ -1,0 +1,1047 @@
+{
+  "baseline": {
+    "frames": 605,
+    "boardFrames": 197,
+    "totalRectReads": 2823,
+    "maxReadsPerFrame": 14,
+    "boardRectReads": 1191,
+    "unchangedBoardFrames": 0,
+    "frameGapsOver25ms": 0,
+    "boardDisplacement": {
+      "min": 1.9416500714598293,
+      "max": 8.560516059794537,
+      "mean": 6.920182189385962
+    },
+    "arrivalDisplacement": {
+      "min": 1.9416500714598293,
+      "max": 4.930027383291086,
+      "mean": 4.239044020568807
+    }
+  },
+  "scenarios": [
+    {
+      "scenario": "normal",
+      "errors": [],
+      "stats": {
+        "frames": 455,
+        "boardFrames": 191,
+        "totalRectReads": 8,
+        "maxReadsPerFrame": 2,
+        "boardRectReads": 0,
+        "unchangedBoardFrames": 0,
+        "frameGapsOver25ms": 0,
+        "boardDisplacement": {
+          "min": 4.941009521484375,
+          "max": 7.60089111328125,
+          "mean": 6.330424221797984
+        },
+        "arrivalDisplacement": {
+          "min": 6.061997050818943,
+          "max": 7.222648620605469,
+          "mean": 6.377295596380133
+        }
+      },
+      "tileRevealOrder": [
+        0,
+        1,
+        2,
+        3,
+        7,
+        6,
+        5,
+        4,
+        8,
+        9,
+        10,
+        11,
+        15,
+        14,
+        13,
+        12
+      ],
+      "enemyRevealOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "exactSameUntransformedShape": true,
+      "doubleVisibleFrames": 0,
+      "earlyEnabledFrames": 0,
+      "handoff": {
+        "lastMovingTime": 8591.9,
+        "firstStaticTime": 8608.6,
+        "frameGap": 16.700000000000728,
+        "dockOffset": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "revealDistances": [
+        {
+          "t": 4435.100000000559,
+          "kind": "tile",
+          "index": 0,
+          "route": "tiles",
+          "decoder": {
+            "x": 79.72264862060547,
+            "y": 304.5
+          },
+          "target": {
+            "x": 72.5546875,
+            "y": 304.6953125
+          },
+          "distance": 7.170621562958671
+        },
+        {
+          "t": 4632.700000000186,
+          "kind": "tile",
+          "index": 1,
+          "route": "tiles",
+          "decoder": {
+            "x": 154.97335815429688,
+            "y": 304.5
+          },
+          "target": {
+            "x": 149.1953125,
+            "y": 304.6953125
+          },
+          "distance": 5.781345739167937
+        },
+        {
+          "t": 4832.4000000003725,
+          "kind": "tile",
+          "index": 2,
+          "route": "tiles",
+          "decoder": {
+            "x": 230.98568725585938,
+            "y": 304.5
+          },
+          "target": {
+            "x": 225.8359375,
+            "y": 304.6953125
+          },
+          "distance": 5.153452194464401
+        },
+        {
+          "t": 5034,
+          "kind": "tile",
+          "index": 3,
+          "route": "tiles",
+          "decoder": {
+            "x": 306.9497375488281,
+            "y": 305.07440185546875
+          },
+          "target": {
+            "x": 302.4765625,
+            "y": 304.6953125
+          },
+          "distance": 4.489209702930819
+        },
+        {
+          "t": 5283.600000000559,
+          "kind": "tile",
+          "index": 7,
+          "route": "tiles",
+          "decoder": {
+            "x": 302.1457824707031,
+            "y": 381.5
+          },
+          "target": {
+            "x": 302.4765625,
+            "y": 381.3359375
+          },
+          "distance": 0.36923154210859543
+        },
+        {
+          "t": 5499.700000000186,
+          "kind": "tile",
+          "index": 6,
+          "route": "tiles",
+          "decoder": {
+            "x": 220.05438232421875,
+            "y": 381.5
+          },
+          "target": {
+            "x": 225.8359375,
+            "y": 381.3359375
+          },
+          "distance": 5.783882498331826
+        },
+        {
+          "t": 5700.9000000003725,
+          "kind": "tile",
+          "index": 5,
+          "route": "tiles",
+          "decoder": {
+            "x": 143.6615447998047,
+            "y": 381.5
+          },
+          "target": {
+            "x": 149.1953125,
+            "y": 381.3359375
+          },
+          "distance": 5.536199189302275
+        },
+        {
+          "t": 5899.700000000186,
+          "kind": "tile",
+          "index": 4,
+          "route": "tiles",
+          "decoder": {
+            "x": 68.07853698730469,
+            "y": 382.07489013671875
+          },
+          "target": {
+            "x": 72.5546875,
+            "y": 381.3359375
+          },
+          "distance": 4.536736096756798
+        },
+        {
+          "t": 6150.100000000559,
+          "kind": "tile",
+          "index": 8,
+          "route": "tiles",
+          "decoder": {
+            "x": 74.11321258544922,
+            "y": 457.5
+          },
+          "target": {
+            "x": 72.5546875,
+            "y": 457.9765625
+          },
+          "distance": 1.6297583435530387
+        },
+        {
+          "t": 6349.700000000186,
+          "kind": "tile",
+          "index": 9,
+          "route": "tiles",
+          "decoder": {
+            "x": 150.1266632080078,
+            "y": 457.5
+          },
+          "target": {
+            "x": 149.1953125,
+            "y": 457.9765625
+          },
+          "distance": 1.0461959461367185
+        },
+        {
+          "t": 6549.800000000745,
+          "kind": "tile",
+          "index": 10,
+          "route": "tiles",
+          "decoder": {
+            "x": 226.13865661621094,
+            "y": 457.5
+          },
+          "target": {
+            "x": 225.8359375,
+            "y": 457.9765625
+          },
+          "distance": 0.5645800915067596
+        },
+        {
+          "t": 6768.600000000559,
+          "kind": "tile",
+          "index": 11,
+          "route": "tiles",
+          "decoder": {
+            "x": 308.4837951660156,
+            "y": 458.5672302246094
+          },
+          "target": {
+            "x": 302.4765625,
+            "y": 457.9765625
+          },
+          "distance": 6.0362018409377605
+        },
+        {
+          "t": 7018.4000000003725,
+          "kind": "tile",
+          "index": 15,
+          "route": "tiles",
+          "decoder": {
+            "x": 300.5332946777344,
+            "y": 534.5
+          },
+          "target": {
+            "x": 302.4765625,
+            "y": 534.6171875
+          },
+          "distance": 1.9467980735580241
+        },
+        {
+          "t": 7216.600000000559,
+          "kind": "tile",
+          "index": 14,
+          "route": "tiles",
+          "decoder": {
+            "x": 224.5215606689453,
+            "y": 534.5
+          },
+          "target": {
+            "x": 225.8359375,
+            "y": 534.6171875
+          },
+          "distance": 1.3195906047595263
+        },
+        {
+          "t": 7416.100000000559,
+          "kind": "tile",
+          "index": 13,
+          "route": "tiles",
+          "decoder": {
+            "x": 148.5095672607422,
+            "y": 534.5
+          },
+          "target": {
+            "x": 149.1953125,
+            "y": 534.6171875
+          },
+          "distance": 0.6956863110059048
+        },
+        {
+          "t": 7616.100000000559,
+          "kind": "tile",
+          "index": 12,
+          "route": "tile-exit",
+          "decoder": {
+            "x": 72.5,
+            "y": 534.5
+          },
+          "target": {
+            "x": 72.5546875,
+            "y": 534.6171875
+          },
+          "distance": 0.129319885603491
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Cutive Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        },
+        {
+          "family": "Share Tech Mono",
+          "status": "loaded"
+        }
+      ],
+      "tileCenterChecks": [
+        {
+          "index": 0,
+          "nearestFrameSegmentToActualTileCenterPx": 0.1953
+        },
+        {
+          "index": 1,
+          "nearestFrameSegmentToActualTileCenterPx": 0.1953
+        },
+        {
+          "index": 2,
+          "nearestFrameSegmentToActualTileCenterPx": 0.1953
+        },
+        {
+          "index": 3,
+          "nearestFrameSegmentToActualTileCenterPx": 0.0213
+        },
+        {
+          "index": 7,
+          "nearestFrameSegmentToActualTileCenterPx": 0.1069
+        },
+        {
+          "index": 6,
+          "nearestFrameSegmentToActualTileCenterPx": 0.1641
+        },
+        {
+          "index": 5,
+          "nearestFrameSegmentToActualTileCenterPx": 0.1641
+        },
+        {
+          "index": 4,
+          "nearestFrameSegmentToActualTileCenterPx": 0.3111
+        },
+        {
+          "index": 8,
+          "nearestFrameSegmentToActualTileCenterPx": 0.6222
+        },
+        {
+          "index": 9,
+          "nearestFrameSegmentToActualTileCenterPx": 0.4766
+        },
+        {
+          "index": 10,
+          "nearestFrameSegmentToActualTileCenterPx": 0.4766
+        },
+        {
+          "index": 11,
+          "nearestFrameSegmentToActualTileCenterPx": 0.415
+        },
+        {
+          "index": 15,
+          "nearestFrameSegmentToActualTileCenterPx": 0.29
+        },
+        {
+          "index": 14,
+          "nearestFrameSegmentToActualTileCenterPx": 0.1172
+        },
+        {
+          "index": 13,
+          "nearestFrameSegmentToActualTileCenterPx": 0.1172
+        },
+        {
+          "index": 12,
+          "nearestFrameSegmentToActualTileCenterPx": 0.1172
+        }
+      ],
+      "maxRouteDistanceFromActualTileCenterPx": 0.6222
+    },
+    {
+      "scenario": "reduced",
+      "errors": [],
+      "stats": {
+        "frames": 16,
+        "boardFrames": 0,
+        "totalRectReads": 0,
+        "maxReadsPerFrame": 0,
+        "boardRectReads": 0,
+        "unchangedBoardFrames": 0,
+        "frameGapsOver25ms": 0,
+        "boardDisplacement": {
+          "min": null,
+          "max": null,
+          "mean": null
+        },
+        "arrivalDisplacement": {
+          "min": null,
+          "max": null,
+          "mean": null
+        }
+      },
+      "tileRevealOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "enemyRevealOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "exactSameUntransformedShape": true,
+      "doubleVisibleFrames": 0,
+      "earlyEnabledFrames": 0,
+      "handoff": {
+        "firstStaticTime": 1047.4,
+        "frameGap": null,
+        "dockOffset": null
+      },
+      "revealDistances": [
+        {
+          "t": 1190.300000000745,
+          "kind": "tile",
+          "index": 0,
+          "decoder": null,
+          "target": {
+            "x": 72.5546875,
+            "y": 304.6953125
+          },
+          "distance": null
+        },
+        {
+          "t": 1191.5,
+          "kind": "tile",
+          "index": 1,
+          "decoder": null,
+          "target": {
+            "x": 149.1953125,
+            "y": 304.6953125
+          },
+          "distance": null
+        },
+        {
+          "t": 1191.6000000005588,
+          "kind": "tile",
+          "index": 2,
+          "decoder": null,
+          "target": {
+            "x": 225.8359375,
+            "y": 304.6953125
+          },
+          "distance": null
+        },
+        {
+          "t": 1191.6000000005588,
+          "kind": "tile",
+          "index": 3,
+          "decoder": null,
+          "target": {
+            "x": 302.4765625,
+            "y": 304.6953125
+          },
+          "distance": null
+        },
+        {
+          "t": 1191.6000000005588,
+          "kind": "tile",
+          "index": 4,
+          "decoder": null,
+          "target": {
+            "x": 72.5546875,
+            "y": 381.3359375
+          },
+          "distance": null
+        },
+        {
+          "t": 1191.6000000005588,
+          "kind": "tile",
+          "index": 5,
+          "decoder": null,
+          "target": {
+            "x": 149.1953125,
+            "y": 381.3359375
+          },
+          "distance": null
+        },
+        {
+          "t": 1191.6000000005588,
+          "kind": "tile",
+          "index": 6,
+          "decoder": null,
+          "target": {
+            "x": 225.8359375,
+            "y": 381.3359375
+          },
+          "distance": null
+        },
+        {
+          "t": 1191.6000000005588,
+          "kind": "tile",
+          "index": 7,
+          "decoder": null,
+          "target": {
+            "x": 302.4765625,
+            "y": 381.3359375
+          },
+          "distance": null
+        },
+        {
+          "t": 1191.6000000005588,
+          "kind": "tile",
+          "index": 8,
+          "decoder": null,
+          "target": {
+            "x": 72.5546875,
+            "y": 457.9765625
+          },
+          "distance": null
+        },
+        {
+          "t": 1191.6000000005588,
+          "kind": "tile",
+          "index": 9,
+          "decoder": null,
+          "target": {
+            "x": 149.1953125,
+            "y": 457.9765625
+          },
+          "distance": null
+        },
+        {
+          "t": 1191.6000000005588,
+          "kind": "tile",
+          "index": 10,
+          "decoder": null,
+          "target": {
+            "x": 225.8359375,
+            "y": 457.9765625
+          },
+          "distance": null
+        },
+        {
+          "t": 1191.6000000005588,
+          "kind": "tile",
+          "index": 11,
+          "decoder": null,
+          "target": {
+            "x": 302.4765625,
+            "y": 457.9765625
+          },
+          "distance": null
+        },
+        {
+          "t": 1191.6000000005588,
+          "kind": "tile",
+          "index": 12,
+          "decoder": null,
+          "target": {
+            "x": 72.5546875,
+            "y": 534.6171875
+          },
+          "distance": null
+        },
+        {
+          "t": 1191.7000000001863,
+          "kind": "tile",
+          "index": 13,
+          "decoder": null,
+          "target": {
+            "x": 149.1953125,
+            "y": 534.6171875
+          },
+          "distance": null
+        },
+        {
+          "t": 1191.7000000001863,
+          "kind": "tile",
+          "index": 14,
+          "decoder": null,
+          "target": {
+            "x": 225.8359375,
+            "y": 534.6171875
+          },
+          "distance": null
+        },
+        {
+          "t": 1191.7000000001863,
+          "kind": "tile",
+          "index": 15,
+          "decoder": null,
+          "target": {
+            "x": 302.4765625,
+            "y": 534.6171875
+          },
+          "distance": null
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Cutive Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        },
+        {
+          "family": "Share Tech Mono",
+          "status": "loaded"
+        }
+      ],
+      "tileCenterChecks": [],
+      "maxRouteDistanceFromActualTileCenterPx": null
+    },
+    {
+      "scenario": "resize",
+      "errors": [],
+      "stats": {
+        "frames": 456,
+        "boardFrames": 191,
+        "totalRectReads": 12,
+        "maxReadsPerFrame": 2,
+        "boardRectReads": 4,
+        "unchangedBoardFrames": 0,
+        "frameGapsOver25ms": 0,
+        "boardDisplacement": {
+          "min": 4.457044579793571,
+          "max": 57.85503008265167,
+          "mean": 6.163474974336064
+        },
+        "arrivalDisplacement": {
+          "min": 5.30760136788826,
+          "max": 6.841796875,
+          "mean": 5.856282558555304
+        }
+      },
+      "tileRevealOrder": [
+        0,
+        1,
+        2,
+        3,
+        7,
+        6,
+        5,
+        4,
+        8,
+        9,
+        10,
+        11,
+        15,
+        14,
+        13,
+        12
+      ],
+      "enemyRevealOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "exactSameUntransformedShape": true,
+      "doubleVisibleFrames": 0,
+      "earlyEnabledFrames": 0,
+      "handoff": {
+        "lastMovingTime": 8518.5,
+        "firstStaticTime": 8535.2,
+        "frameGap": 16.700000000000728,
+        "dockOffset": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "revealDistances": [
+        {
+          "t": 4343.5,
+          "kind": "tile",
+          "index": 0,
+          "route": "tiles",
+          "decoder": {
+            "x": 79.341796875,
+            "y": 304.5
+          },
+          "target": {
+            "x": 72.5546875,
+            "y": 304.6953125
+          },
+          "distance": 6.78991904523678
+        },
+        {
+          "t": 4543.299999999814,
+          "kind": "tile",
+          "index": 1,
+          "route": "tiles",
+          "decoder": {
+            "x": 154.97335815429688,
+            "y": 304.5
+          },
+          "target": {
+            "x": 149.1953125,
+            "y": 304.6953125
+          },
+          "distance": 5.781345739167937
+        },
+        {
+          "t": 4742.9000000003725,
+          "kind": "tile",
+          "index": 2,
+          "route": "tiles",
+          "decoder": {
+            "x": 230.98568725585938,
+            "y": 304.5
+          },
+          "target": {
+            "x": 225.8359375,
+            "y": 304.6953125
+          },
+          "distance": 5.153452194464401
+        },
+        {
+          "t": 4943.4000000003725,
+          "kind": "tile",
+          "index": 3,
+          "route": "tiles",
+          "decoder": {
+            "x": 306.9497375488281,
+            "y": 305.07440185546875
+          },
+          "target": {
+            "x": 302.4765625,
+            "y": 304.6953125
+          },
+          "distance": 4.489209702930819
+        },
+        {
+          "t": 5193.799999999814,
+          "kind": "tile",
+          "index": 7,
+          "route": "tiles",
+          "decoder": {
+            "x": 302.1457824707031,
+            "y": 381.5
+          },
+          "target": {
+            "x": 302.4765625,
+            "y": 381.3359375
+          },
+          "distance": 0.36923154210859543
+        },
+        {
+          "t": 5410.0999999996275,
+          "kind": "tile",
+          "index": 6,
+          "route": "tiles",
+          "decoder": {
+            "x": 188.62171936035156,
+            "y": 345
+          },
+          "target": {
+            "x": 194.609375,
+            "y": 345.390625
+          },
+          "distance": 6.000383983516283
+        },
+        {
+          "t": 5609.0999999996275,
+          "kind": "tile",
+          "index": 5,
+          "route": "tiles",
+          "decoder": {
+            "x": 119.88165283203125,
+            "y": 345
+          },
+          "target": {
+            "x": 125.40625,
+            "y": 345.390625
+          },
+          "distance": 5.538389816449663
+        },
+        {
+          "t": 5809.0999999996275,
+          "kind": "tile",
+          "index": 4,
+          "route": "tiles",
+          "decoder": {
+            "x": 51.218711853027344,
+            "y": 345.7515563964844
+          },
+          "target": {
+            "x": 56.203125,
+            "y": 345.390625
+          },
+          "distance": 4.997463946111269
+        },
+        {
+          "t": 6059.700000000186,
+          "kind": "tile",
+          "index": 8,
+          "route": "tiles",
+          "decoder": {
+            "x": 57.9305534362793,
+            "y": 414
+          },
+          "target": {
+            "x": 56.203125,
+            "y": 414.59375
+          },
+          "distance": 1.8266220367022667
+        },
+        {
+          "t": 6259.299999999814,
+          "kind": "tile",
+          "index": 9,
+          "route": "tiles",
+          "decoder": {
+            "x": 126.67143249511719,
+            "y": 414
+          },
+          "target": {
+            "x": 125.40625,
+            "y": 414.59375
+          },
+          "distance": 1.397578551799845
+        },
+        {
+          "t": 6459.0999999996275,
+          "kind": "tile",
+          "index": 10,
+          "route": "tiles",
+          "decoder": {
+            "x": 195.411376953125,
+            "y": 414
+          },
+          "target": {
+            "x": 194.609375,
+            "y": 414.59375
+          },
+          "distance": 0.9978708309777947
+        },
+        {
+          "t": 6661.5,
+          "kind": "tile",
+          "index": 11,
+          "route": "tiles",
+          "decoder": {
+            "x": 264.5000305175781,
+            "y": 414.00750732421875
+          },
+          "target": {
+            "x": 263.8125,
+            "y": 414.59375
+          },
+          "distance": 0.903536765997048
+        },
+        {
+          "t": 6927.799999999814,
+          "kind": "tile",
+          "index": 15,
+          "route": "tiles",
+          "decoder": {
+            "x": 262.221435546875,
+            "y": 484
+          },
+          "target": {
+            "x": 263.8125,
+            "y": 483.796875
+          },
+          "distance": 1.6039781356436738
+        },
+        {
+          "t": 7126.700000000186,
+          "kind": "tile",
+          "index": 14,
+          "route": "tiles",
+          "decoder": {
+            "x": 193.48007202148438,
+            "y": 484
+          },
+          "target": {
+            "x": 194.609375,
+            "y": 483.796875
+          },
+          "distance": 1.1474253713899054
+        },
+        {
+          "t": 7327,
+          "kind": "tile",
+          "index": 13,
+          "route": "tiles",
+          "decoder": {
+            "x": 124.73963165283203,
+            "y": 484
+          },
+          "target": {
+            "x": 125.40625,
+            "y": 483.796875
+          },
+          "distance": 0.6968786023447373
+        },
+        {
+          "t": 7528.799999999814,
+          "kind": "tile",
+          "index": 12,
+          "route": "tile-exit",
+          "decoder": {
+            "x": 56,
+            "y": 484
+          },
+          "target": {
+            "x": 56.203125,
+            "y": 483.796875
+          },
+          "distance": 0.287262129857035
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Cutive Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        },
+        {
+          "family": "Share Tech Mono",
+          "status": "loaded"
+        }
+      ],
+      "tileCenterChecks": [
+        {
+          "index": 0,
+          "nearestFrameSegmentToActualTileCenterPx": 0.1953
+        },
+        {
+          "index": 1,
+          "nearestFrameSegmentToActualTileCenterPx": 0.1953
+        },
+        {
+          "index": 2,
+          "nearestFrameSegmentToActualTileCenterPx": 0.1953
+        },
+        {
+          "index": 3,
+          "nearestFrameSegmentToActualTileCenterPx": 0.1072
+        },
+        {
+          "index": 7,
+          "nearestFrameSegmentToActualTileCenterPx": 0.1069
+        },
+        {
+          "index": 6,
+          "nearestFrameSegmentToActualTileCenterPx": 0.3906
+        },
+        {
+          "index": 5,
+          "nearestFrameSegmentToActualTileCenterPx": 0.3906
+        },
+        {
+          "index": 4,
+          "nearestFrameSegmentToActualTileCenterPx": 0.3266
+        },
+        {
+          "index": 8,
+          "nearestFrameSegmentToActualTileCenterPx": 0.719
+        },
+        {
+          "index": 9,
+          "nearestFrameSegmentToActualTileCenterPx": 0.5938
+        },
+        {
+          "index": 10,
+          "nearestFrameSegmentToActualTileCenterPx": 0.5938
+        },
+        {
+          "index": 11,
+          "nearestFrameSegmentToActualTileCenterPx": 0.5871
+        },
+        {
+          "index": 15,
+          "nearestFrameSegmentToActualTileCenterPx": 0.0612
+        },
+        {
+          "index": 14,
+          "nearestFrameSegmentToActualTileCenterPx": 0.2031
+        },
+        {
+          "index": 13,
+          "nearestFrameSegmentToActualTileCenterPx": 0.2031
+        },
+        {
+          "index": 12,
+          "nearestFrameSegmentToActualTileCenterPx": 0.2031
+        }
+      ],
+      "maxRouteDistanceFromActualTileCenterPx": 0.719
+    }
+  ],
+  "measurementNotes": [
+    "Chromium with iPhone13mini device profile at375x629, DPR3; not physical Safari. Resize scenario changes to320x568 after5tiles reveal.",
+    "Layout rectangles used by audit itself bypass counted getBoundingClientRect wrapper; counts cover application calls only.",
+    "Untransformed meter dimensions use offsetWidth/offsetHeight including children; rotating bounding boxes are intentionally not compared.",
+    "Visible tile-center path accuracy uses nearest line segment between adjacent captured frames within100ms of each reveal, excluding a frame crossing viewport resize.",
+    "Previous baseline was375x812, so compare relative slowing at tile arrivals, not absolute path speed across different heights.",
+    "Reduced motion calls reveal callbacks in snake order but batches the DOM commit; MutationObserver records tile DOM order for that single commit."
+  ]
+}

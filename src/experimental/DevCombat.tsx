@@ -62,6 +62,7 @@ function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onMatchHin
   const enemyElements = useRef<(HTMLDivElement | null)[]>([])
   const tileElements = useRef<(HTMLButtonElement | null)[]>([])
   const wyrmDockRef = useRef<HTMLSpanElement>(null)
+  const wyrmLifeRef = useRef<HTMLSpanElement>(null)
   const wyrmTitleRef = useRef<HTMLDivElement>(null)
   const [revealedEnemyIndices, setRevealedEnemyIndices] = useState<number[]>([])
   const [revealedTileIndices, setRevealedTileIndices] = useState<number[]>([])
@@ -142,7 +143,8 @@ function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onMatchHin
       {encounter && <button type="button" onClick={onExit}>Return to generator</button>}
     </div>
     <div className="battle-info">
-      <MyInfo name={letterGame ? 'LIVES' : 'YOU'} health={game.playerResolve} maxHealth={game.encounter.startingResolve} wyrm={Boolean(letterGame)} />
+      <MyInfo name={letterGame ? 'LIVES' : 'YOU'} health={game.playerResolve} maxHealth={game.encounter.startingResolve} wyrm={Boolean(letterGame)}
+        wyrmRef={wyrmLifeRef} decoding={phase === 'enemy' || phase === 'tiles'} />
       {letterGame && <RefillSupply game={letterGame} />}
       {run.mode === 'damage'
         ? <EnemyInfo name={enemy.word} health={run.game.enemyHp} maxHealth={run.game.encounter.enemy.maxHealth} />
@@ -179,7 +181,8 @@ function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onMatchHin
       </div>
     </div>
     <WyrmDecoder phase={phase} containerRef={containerRef} enemyLetters={enemyElements}
-      tileElements={tileElements} dockRef={wyrmDockRef} titleRef={wyrmTitleRef}
+      tileElements={tileElements} dockRef={letterGame ? wyrmLifeRef : wyrmDockRef} titleRef={wyrmTitleRef}
+      lifeSegments={letterGame ? game.encounter.startingResolve : undefined}
       enemyCount={enemy.word.length} tileCount={game.tiles.length}
       onEnemyReveal={revealEnemyLetter} onTileReveal={revealTile}
       onEnemyDecoded={enemyDecoded} onTilesDecoded={tilesDecoded} />

@@ -4,15 +4,20 @@
   left: 0;
   z-index: 3;
   pointer-events: none;
-  width: 1.5rem;
-  height: 0.625rem;
-  margin-left: -0.75rem;
-  margin-top: -0.3125rem;
-  display: flex;
-  align-items: center;
+  width: 0;
+  height: 0;
   color: var(--green);
   font-family: inherit;
   line-height: 1;
   letter-spacing: 0;
   user-select: none;
+}
+
+/* Keep the same pixel geometry as the resting meter, rotating around its centre. */
+.wyrm-decoder-visual {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
 }
