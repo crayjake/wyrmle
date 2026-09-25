@@ -1,0 +1,424 @@
+[
+  {
+    "width": 375,
+    "height": 629,
+    "opening": {
+      "enemy": {
+        "x": 13.28125,
+        "y": 95.359375,
+        "width": 348.4375,
+        "height": 106.140625,
+        "bottom": 201.5
+      },
+      "preview": {
+        "x": 13.28125,
+        "y": 221.859375,
+        "width": 348.4375,
+        "height": 46.171875,
+        "bottom": 268.03125
+      },
+      "board": {
+        "x": 36.890625,
+        "y": 269.03125,
+        "width": 301.203125,
+        "height": 301.25,
+        "bottom": 570.28125
+      },
+      "actions": {
+        "x": 36.890625,
+        "y": 574.28125,
+        "width": 301.203125,
+        "height": 48.71875,
+        "bottom": 623
+      },
+      "resource": {
+        "x": 13.28125,
+        "y": 38,
+        "width": 348.4375,
+        "height": 37,
+        "bottom": 75
+      },
+      "healthLabel": {
+        "x": 13.28125,
+        "y": 38,
+        "width": 30,
+        "height": 11,
+        "bottom": 49
+      },
+      "refillLabel": {
+        "x": 319.71875,
+        "y": 38,
+        "width": 42,
+        "height": 11,
+        "bottom": 49
+      },
+      "health": {
+        "x": 13.28125,
+        "y": 55,
+        "width": 73,
+        "height": 20,
+        "bottom": 75
+      },
+      "refills": {
+        "x": 221.71875,
+        "y": 55,
+        "width": 140,
+        "height": 20,
+        "bottom": 75
+      },
+      "overflow": 0,
+      "pageWidth": 375,
+      "previewText": "—",
+      "refillDescription": "Refills remaining: other letters 9, A 2, N 2, G 1, E 4, R 1. Counts are reserve copies, not the next draw order."
+    },
+    "preview": {
+      "enemy": {
+        "x": 13.28125,
+        "y": 81.125,
+        "width": 348.4375,
+        "height": 106.140625,
+        "bottom": 187.265625
+      },
+      "preview": {
+        "x": 13.28125,
+        "y": 193.390625,
+        "width": 348.4375,
+        "height": 74.640625,
+        "bottom": 268.03125
+      },
+      "board": {
+        "x": 36.890625,
+        "y": 269.03125,
+        "width": 301.203125,
+        "height": 301.25,
+        "bottom": 570.28125
+      },
+      "actions": {
+        "x": 36.890625,
+        "y": 574.28125,
+        "width": 301.203125,
+        "height": 48.71875,
+        "bottom": 623
+      },
+      "resource": {
+        "x": 13.28125,
+        "y": 38,
+        "width": 348.4375,
+        "height": 37,
+        "bottom": 75
+      },
+      "healthLabel": {
+        "x": 13.28125,
+        "y": 38,
+        "width": 30,
+        "height": 11,
+        "bottom": 49
+      },
+      "refillLabel": {
+        "x": 319.71875,
+        "y": 38,
+        "width": 42,
+        "height": 11,
+        "bottom": 49
+      },
+      "health": {
+        "x": 13.28125,
+        "y": 55,
+        "width": 73,
+        "height": 20,
+        "bottom": 75
+      },
+      "refills": {
+        "x": 221.71875,
+        "y": 55,
+        "width": 140,
+        "height": 20,
+        "bottom": 75
+      },
+      "overflow": 0,
+      "pageWidth": 375,
+      "previewText": "CHEERFUL\nNEUTRAL\n·\n3 HITS\n·\nLONG\n+1\n·\nADJECTIVE\n+1\n·\nHIT TILE\n·\nHEART\nLIVES 5 → 5 · NO LISTED MEANING BONUS",
+      "refillDescription": "Refills remaining: other letters 9, A 2, N 2, G 1, E 4, R 1. Counts are reserve copies, not the next draw order."
+    },
+    "midgame": {
+      "enemy": {
+        "x": 13.28125,
+        "y": 95.359375,
+        "width": 348.4375,
+        "height": 106.140625,
+        "bottom": 201.5
+      },
+      "preview": {
+        "x": 13.28125,
+        "y": 221.859375,
+        "width": 348.4375,
+        "height": 46.171875,
+        "bottom": 268.03125
+      },
+      "board": {
+        "x": 36.890625,
+        "y": 269.03125,
+        "width": 301.203125,
+        "height": 301.25,
+        "bottom": 570.28125
+      },
+      "actions": {
+        "x": 36.890625,
+        "y": 574.28125,
+        "width": 301.203125,
+        "height": 48.71875,
+        "bottom": 623
+      },
+      "resource": {
+        "x": 13.28125,
+        "y": 38,
+        "width": 348.4375,
+        "height": 37,
+        "bottom": 75
+      },
+      "healthLabel": {
+        "x": 13.28125,
+        "y": 38,
+        "width": 30,
+        "height": 11,
+        "bottom": 49
+      },
+      "refillLabel": {
+        "x": 319.71875,
+        "y": 38,
+        "width": 42,
+        "height": 11,
+        "bottom": 49
+      },
+      "health": {
+        "x": 13.28125,
+        "y": 55,
+        "width": 73,
+        "height": 20,
+        "bottom": 75
+      },
+      "refills": {
+        "x": 269.71875,
+        "y": 55,
+        "width": 92,
+        "height": 20,
+        "bottom": 75
+      },
+      "overflow": 0,
+      "pageWidth": 375,
+      "previewText": "—",
+      "refillDescription": "Refills remaining: other letters 7, A 1, N 2, G 1. Counts are reserve copies, not the next draw order."
+    }
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "opening": {
+      "enemy": {
+        "x": 12,
+        "y": 84.953125,
+        "width": 296,
+        "height": 101.265625,
+        "bottom": 186.21875
+      },
+      "preview": {
+        "x": 12,
+        "y": 203.1875,
+        "width": 296,
+        "height": 41.796875,
+        "bottom": 244.984375
+      },
+      "board": {
+        "x": 24,
+        "y": 245.984375,
+        "width": 272,
+        "height": 272.015625,
+        "bottom": 518
+      },
+      "actions": {
+        "x": 24,
+        "y": 522,
+        "width": 272,
+        "height": 44,
+        "bottom": 566
+      },
+      "resource": {
+        "x": 12,
+        "y": 31,
+        "width": 296,
+        "height": 37,
+        "bottom": 68
+      },
+      "healthLabel": {
+        "x": 12,
+        "y": 31,
+        "width": 30,
+        "height": 11,
+        "bottom": 42
+      },
+      "refillLabel": {
+        "x": 266,
+        "y": 31,
+        "width": 42,
+        "height": 11,
+        "bottom": 42
+      },
+      "health": {
+        "x": 12,
+        "y": 48,
+        "width": 73,
+        "height": 20,
+        "bottom": 68
+      },
+      "refills": {
+        "x": 168,
+        "y": 48,
+        "width": 140,
+        "height": 20,
+        "bottom": 68
+      },
+      "overflow": 0,
+      "pageWidth": 320,
+      "previewText": "—",
+      "refillDescription": "Refills remaining: other letters 9, A 2, N 2, G 1, E 4, R 1. Counts are reserve copies, not the next draw order."
+    },
+    "preview": {
+      "enemy": {
+        "x": 12,
+        "y": 69.875,
+        "width": 296,
+        "height": 101.265625,
+        "bottom": 171.140625
+      },
+      "preview": {
+        "x": 12,
+        "y": 173.015625,
+        "width": 296,
+        "height": 71.96875,
+        "bottom": 244.984375
+      },
+      "board": {
+        "x": 24,
+        "y": 245.984375,
+        "width": 272,
+        "height": 272.015625,
+        "bottom": 518
+      },
+      "actions": {
+        "x": 24,
+        "y": 522,
+        "width": 272,
+        "height": 44,
+        "bottom": 566
+      },
+      "resource": {
+        "x": 12,
+        "y": 31,
+        "width": 296,
+        "height": 37,
+        "bottom": 68
+      },
+      "healthLabel": {
+        "x": 12,
+        "y": 31,
+        "width": 30,
+        "height": 11,
+        "bottom": 42
+      },
+      "refillLabel": {
+        "x": 266,
+        "y": 31,
+        "width": 42,
+        "height": 11,
+        "bottom": 42
+      },
+      "health": {
+        "x": 12,
+        "y": 48,
+        "width": 73,
+        "height": 20,
+        "bottom": 68
+      },
+      "refills": {
+        "x": 168,
+        "y": 48,
+        "width": 140,
+        "height": 20,
+        "bottom": 68
+      },
+      "overflow": 0,
+      "pageWidth": 320,
+      "previewText": "CHEERFUL\nNEUTRAL\n·\n3 HITS\n·\nLONG\n+1\n·\nADJECTIVE\n+1\n·\nHIT TILE\n·\nHEART\nLIVES 5 → 5 · NO LISTED MEANING BONUS",
+      "refillDescription": "Refills remaining: other letters 9, A 2, N 2, G 1, E 4, R 1. Counts are reserve copies, not the next draw order."
+    },
+    "midgame": {
+      "enemy": {
+        "x": 12,
+        "y": 84.953125,
+        "width": 296,
+        "height": 101.265625,
+        "bottom": 186.21875
+      },
+      "preview": {
+        "x": 12,
+        "y": 203.1875,
+        "width": 296,
+        "height": 41.796875,
+        "bottom": 244.984375
+      },
+      "board": {
+        "x": 24,
+        "y": 245.984375,
+        "width": 272,
+        "height": 272.015625,
+        "bottom": 518
+      },
+      "actions": {
+        "x": 24,
+        "y": 522,
+        "width": 272,
+        "height": 44,
+        "bottom": 566
+      },
+      "resource": {
+        "x": 12,
+        "y": 31,
+        "width": 296,
+        "height": 37,
+        "bottom": 68
+      },
+      "healthLabel": {
+        "x": 12,
+        "y": 31,
+        "width": 30,
+        "height": 11,
+        "bottom": 42
+      },
+      "refillLabel": {
+        "x": 266,
+        "y": 31,
+        "width": 42,
+        "height": 11,
+        "bottom": 42
+      },
+      "health": {
+        "x": 12,
+        "y": 48,
+        "width": 73,
+        "height": 20,
+        "bottom": 68
+      },
+      "refills": {
+        "x": 216,
+        "y": 48,
+        "width": 92,
+        "height": 20,
+        "bottom": 68
+      },
+      "overflow": 0,
+      "pageWidth": 320,
+      "previewText": "—",
+      "refillDescription": "Refills remaining: other letters 7, A 1, N 2, G 1. Counts are reserve copies, not the next draw order."
+    }
+  }
+]

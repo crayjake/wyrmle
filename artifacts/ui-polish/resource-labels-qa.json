@@ -1,0 +1,1716 @@
+[
+  {
+    "width": 375,
+    "height": 629,
+    "reduced": false,
+    "before": {
+      "label": "Refills are decoding.",
+      "letters": [
+        "F",
+        "S",
+        "F",
+        "W",
+        "L",
+        "P"
+      ],
+      "counts": [
+        "?",
+        "?",
+        "?",
+        "?",
+        "?",
+        "?"
+      ],
+      "labels": [
+        {
+          "text": "LIVES",
+          "font": "11px / 11px \"Share Tech Mono\", monospace",
+          "spacing": "normal",
+          "box": {
+            "x": 13.28125,
+            "y": 38,
+            "width": 30,
+            "height": 11,
+            "right": 43.28125,
+            "bottom": 49
+          }
+        },
+        {
+          "text": "REFILLS",
+          "font": "11px / 11px \"Share Tech Mono\", monospace",
+          "spacing": "normal",
+          "box": {
+            "x": 319.71875,
+            "y": 38,
+            "width": 42,
+            "height": 11,
+            "right": 361.71875,
+            "bottom": 49
+          }
+        }
+      ],
+      "graphics": {
+        "wyrm": {
+          "x": 13.28125,
+          "y": 55,
+          "width": 73,
+          "height": 20,
+          "right": 86.28125,
+          "bottom": 75
+        },
+        "refills": {
+          "x": 221.71875,
+          "y": 55,
+          "width": 140,
+          "height": 20,
+          "right": 361.71875,
+          "bottom": 75
+        }
+      },
+      "squares": [
+        {
+          "x": 221.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 241.71875,
+          "bottom": 75
+        },
+        {
+          "x": 245.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 265.71875,
+          "bottom": 75
+        },
+        {
+          "x": 269.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 289.71875,
+          "bottom": 75
+        },
+        {
+          "x": 293.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 313.71875,
+          "bottom": 75
+        },
+        {
+          "x": 317.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 337.71875,
+          "bottom": 75
+        },
+        {
+          "x": 341.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 361.71875,
+          "bottom": 75
+        }
+      ],
+      "positions": [
+        {
+          "letter": "F",
+          "x": 5.734375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "S",
+          "x": 5.40625,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "F",
+          "x": 5.734375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "W",
+          "x": 5.734375,
+          "y": 13.1375,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "L",
+          "x": 5.84375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "P",
+          "x": 5.953125,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Cutive Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        },
+        {
+          "family": "Share Tech Mono",
+          "status": "loaded"
+        }
+      ],
+      "fontChecks": {
+        "cutive": true,
+        "share": true
+      },
+      "intervals": [
+        {
+          "timeout": 30000,
+          "handler": "() => {\n\t\t\t\tif (socket.readyState === socket.OPEN) socket.send(JSON.stringify({ type: \"ping\" }));\n\t\t\t}"
+        },
+        {
+          "timeout": 65,
+          "handler": "() => setDisplayLetters(scrambleLetters(groupCount))"
+        },
+        {
+          "timeout": 70,
+          "handler": "() => {\n\t\t\tsetDisplay(name.split(\"\").map(() => randomGlyph()));\n\t\t}"
+        },
+        {
+          "timeout": 65,
+          "handler": "() => {\n\t\t\tsetDisplayLetters(tiles.map(() => randomGlyph()));\n\t\t}"
+        },
+        {
+          "timeout": 30000,
+          "handler": "() => setTodayId(getDailyPuzzleId(new Date()))"
+        }
+      ],
+      "viewport": {
+        "width": 375,
+        "height": 629
+      },
+      "bodyWidth": 375,
+      "mainOverflow": 0,
+      "heart": false
+    },
+    "afterWait": {
+      "label": "Refills are decoding.",
+      "letters": [
+        "A",
+        "W",
+        "Q",
+        "K",
+        "K",
+        "@"
+      ],
+      "counts": [
+        "?",
+        "?",
+        "?",
+        "?",
+        "?",
+        "?"
+      ],
+      "labels": [
+        {
+          "text": "LIVES",
+          "font": "11px / 11px \"Share Tech Mono\", monospace",
+          "spacing": "normal",
+          "box": {
+            "x": 13.28125,
+            "y": 38,
+            "width": 30,
+            "height": 11,
+            "right": 43.28125,
+            "bottom": 49
+          }
+        },
+        {
+          "text": "REFILLS",
+          "font": "11px / 11px \"Share Tech Mono\", monospace",
+          "spacing": "normal",
+          "box": {
+            "x": 319.71875,
+            "y": 38,
+            "width": 42,
+            "height": 11,
+            "right": 361.71875,
+            "bottom": 49
+          }
+        }
+      ],
+      "graphics": {
+        "wyrm": {
+          "x": 13.28125,
+          "y": 55,
+          "width": 73,
+          "height": 20,
+          "right": 86.28125,
+          "bottom": 75
+        },
+        "refills": {
+          "x": 221.71875,
+          "y": 55,
+          "width": 140,
+          "height": 20,
+          "right": 361.71875,
+          "bottom": 75
+        }
+      },
+      "squares": [
+        {
+          "x": 221.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 241.71875,
+          "bottom": 75
+        },
+        {
+          "x": 245.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 265.71875,
+          "bottom": 75
+        },
+        {
+          "x": 269.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 289.71875,
+          "bottom": 75
+        },
+        {
+          "x": 293.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 313.71875,
+          "bottom": 75
+        },
+        {
+          "x": 317.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 337.71875,
+          "bottom": 75
+        },
+        {
+          "x": 341.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 361.71875,
+          "bottom": 75
+        }
+      ],
+      "positions": [
+        {
+          "letter": "A",
+          "x": 5.734375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "W",
+          "x": 5.734375,
+          "y": 13.1375,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "Q",
+          "x": 5.734375,
+          "y": 12.48125,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "K",
+          "x": 5.40625,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "K",
+          "x": 5.40625,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "@",
+          "x": 5.625,
+          "y": 12.590625,
+          "font": "14px \"Cutive Mono\", monospace"
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Cutive Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        },
+        {
+          "family": "Share Tech Mono",
+          "status": "loaded"
+        }
+      ],
+      "fontChecks": {
+        "cutive": true,
+        "share": true
+      },
+      "intervals": [
+        {
+          "timeout": 30000,
+          "handler": "() => {\n\t\t\t\tif (socket.readyState === socket.OPEN) socket.send(JSON.stringify({ type: \"ping\" }));\n\t\t\t}"
+        },
+        {
+          "timeout": 65,
+          "handler": "() => setDisplayLetters(scrambleLetters(groupCount))"
+        },
+        {
+          "timeout": 70,
+          "handler": "() => {\n\t\t\tsetDisplay(name.split(\"\").map(() => randomGlyph()));\n\t\t}"
+        },
+        {
+          "timeout": 65,
+          "handler": "() => {\n\t\t\tsetDisplayLetters(tiles.map(() => randomGlyph()));\n\t\t}"
+        },
+        {
+          "timeout": 30000,
+          "handler": "() => setTodayId(getDailyPuzzleId(new Date()))"
+        }
+      ],
+      "viewport": {
+        "width": 375,
+        "height": 629
+      },
+      "bodyWidth": 375,
+      "mainOverflow": 0,
+      "heart": false
+    },
+    "ready": {
+      "label": "Refills remaining: other letters 9, A 2, N 2, G 1, E 4, R 1. Counts are reserve copies, not the next draw order.",
+      "letters": [
+        "A",
+        "N",
+        "G",
+        "E",
+        "R"
+      ],
+      "counts": [
+        "9",
+        "2",
+        "2",
+        "1",
+        "4",
+        "1"
+      ],
+      "labels": [
+        {
+          "text": "LIVES",
+          "font": "11px / 11px \"Share Tech Mono\", monospace",
+          "spacing": "normal",
+          "box": {
+            "x": 13.28125,
+            "y": 38,
+            "width": 30,
+            "height": 11,
+            "right": 43.28125,
+            "bottom": 49
+          }
+        },
+        {
+          "text": "REFILLS",
+          "font": "11px / 11px \"Share Tech Mono\", monospace",
+          "spacing": "normal",
+          "box": {
+            "x": 319.71875,
+            "y": 38,
+            "width": 42,
+            "height": 11,
+            "right": 361.71875,
+            "bottom": 49
+          }
+        }
+      ],
+      "graphics": {
+        "wyrm": {
+          "x": 13.28125,
+          "y": 55,
+          "width": 73,
+          "height": 20,
+          "right": 86.28125,
+          "bottom": 75
+        },
+        "refills": {
+          "x": 221.71875,
+          "y": 55,
+          "width": 140,
+          "height": 20,
+          "right": 361.71875,
+          "bottom": 75
+        }
+      },
+      "squares": [
+        {
+          "x": 221.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 241.71875,
+          "bottom": 75
+        },
+        {
+          "x": 245.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 265.71875,
+          "bottom": 75
+        },
+        {
+          "x": 269.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 289.71875,
+          "bottom": 75
+        },
+        {
+          "x": 293.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 313.71875,
+          "bottom": 75
+        },
+        {
+          "x": 317.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 337.71875,
+          "bottom": 75
+        },
+        {
+          "x": 341.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 361.71875,
+          "bottom": 75
+        }
+      ],
+      "positions": [
+        {
+          "letter": "A",
+          "x": 5.734375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "N",
+          "x": 5.734375,
+          "y": 13.1375,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "G",
+          "x": 5.625,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "E",
+          "x": 5.734375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "R",
+          "x": 5.40625,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Cutive Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        },
+        {
+          "family": "Share Tech Mono",
+          "status": "loaded"
+        }
+      ],
+      "fontChecks": {
+        "cutive": true,
+        "share": true
+      },
+      "intervals": [
+        {
+          "timeout": 30000,
+          "handler": "() => {\n\t\t\t\tif (socket.readyState === socket.OPEN) socket.send(JSON.stringify({ type: \"ping\" }));\n\t\t\t}"
+        },
+        {
+          "timeout": 30000,
+          "handler": "() => setTodayId(getDailyPuzzleId(new Date()))"
+        }
+      ],
+      "viewport": {
+        "width": 375,
+        "height": 629
+      },
+      "bodyWidth": 375,
+      "mainOverflow": 0,
+      "heart": false
+    },
+    "errors": [],
+    "unmountCleanup": true
+  },
+  {
+    "width": 375,
+    "height": 629,
+    "reduced": true,
+    "before": {
+      "label": "Refills are decoding.",
+      "letters": [
+        "?",
+        "?",
+        "?",
+        "?",
+        "?",
+        "?"
+      ],
+      "counts": [
+        "?",
+        "?",
+        "?",
+        "?",
+        "?",
+        "?"
+      ],
+      "labels": [
+        {
+          "text": "LIVES",
+          "font": "11px / 11px \"Share Tech Mono\", monospace",
+          "spacing": "normal",
+          "box": {
+            "x": 13.28125,
+            "y": 38,
+            "width": 30,
+            "height": 11,
+            "right": 43.28125,
+            "bottom": 49
+          }
+        },
+        {
+          "text": "REFILLS",
+          "font": "11px / 11px \"Share Tech Mono\", monospace",
+          "spacing": "normal",
+          "box": {
+            "x": 319.71875,
+            "y": 38,
+            "width": 42,
+            "height": 11,
+            "right": 361.71875,
+            "bottom": 49
+          }
+        }
+      ],
+      "graphics": {
+        "wyrm": {
+          "x": 13.28125,
+          "y": 55,
+          "width": 73,
+          "height": 20,
+          "right": 86.28125,
+          "bottom": 75
+        },
+        "refills": {
+          "x": 221.71875,
+          "y": 55,
+          "width": 140,
+          "height": 20,
+          "right": 361.71875,
+          "bottom": 75
+        }
+      },
+      "squares": [
+        {
+          "x": 221.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 241.71875,
+          "bottom": 75
+        },
+        {
+          "x": 245.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 265.71875,
+          "bottom": 75
+        },
+        {
+          "x": 269.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 289.71875,
+          "bottom": 75
+        },
+        {
+          "x": 293.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 313.71875,
+          "bottom": 75
+        },
+        {
+          "x": 317.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 337.71875,
+          "bottom": 75
+        },
+        {
+          "x": 341.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 361.71875,
+          "bottom": 75
+        }
+      ],
+      "positions": [
+        {
+          "letter": "?",
+          "x": 5.84375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "?",
+          "x": 5.84375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "?",
+          "x": 5.84375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "?",
+          "x": 5.84375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "?",
+          "x": 5.84375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "?",
+          "x": 5.84375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Cutive Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        },
+        {
+          "family": "Share Tech Mono",
+          "status": "loaded"
+        }
+      ],
+      "fontChecks": {
+        "cutive": true,
+        "share": true
+      },
+      "intervals": [
+        {
+          "timeout": 30000,
+          "handler": "() => {\n\t\t\t\tif (socket.readyState === socket.OPEN) socket.send(JSON.stringify({ type: \"ping\" }));\n\t\t\t}"
+        },
+        {
+          "timeout": 30000,
+          "handler": "() => setTodayId(getDailyPuzzleId(new Date()))"
+        }
+      ],
+      "viewport": {
+        "width": 375,
+        "height": 629
+      },
+      "bodyWidth": 375,
+      "mainOverflow": 0,
+      "heart": false
+    },
+    "afterWait": {
+      "label": "Refills are decoding.",
+      "letters": [
+        "?",
+        "?",
+        "?",
+        "?",
+        "?",
+        "?"
+      ],
+      "counts": [
+        "?",
+        "?",
+        "?",
+        "?",
+        "?",
+        "?"
+      ],
+      "labels": [
+        {
+          "text": "LIVES",
+          "font": "11px / 11px \"Share Tech Mono\", monospace",
+          "spacing": "normal",
+          "box": {
+            "x": 13.28125,
+            "y": 38,
+            "width": 30,
+            "height": 11,
+            "right": 43.28125,
+            "bottom": 49
+          }
+        },
+        {
+          "text": "REFILLS",
+          "font": "11px / 11px \"Share Tech Mono\", monospace",
+          "spacing": "normal",
+          "box": {
+            "x": 319.71875,
+            "y": 38,
+            "width": 42,
+            "height": 11,
+            "right": 361.71875,
+            "bottom": 49
+          }
+        }
+      ],
+      "graphics": {
+        "wyrm": {
+          "x": 13.28125,
+          "y": 55,
+          "width": 73,
+          "height": 20,
+          "right": 86.28125,
+          "bottom": 75
+        },
+        "refills": {
+          "x": 221.71875,
+          "y": 55,
+          "width": 140,
+          "height": 20,
+          "right": 361.71875,
+          "bottom": 75
+        }
+      },
+      "squares": [
+        {
+          "x": 221.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 241.71875,
+          "bottom": 75
+        },
+        {
+          "x": 245.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 265.71875,
+          "bottom": 75
+        },
+        {
+          "x": 269.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 289.71875,
+          "bottom": 75
+        },
+        {
+          "x": 293.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 313.71875,
+          "bottom": 75
+        },
+        {
+          "x": 317.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 337.71875,
+          "bottom": 75
+        },
+        {
+          "x": 341.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 361.71875,
+          "bottom": 75
+        }
+      ],
+      "positions": [
+        {
+          "letter": "?",
+          "x": 5.84375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "?",
+          "x": 5.84375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "?",
+          "x": 5.84375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "?",
+          "x": 5.84375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "?",
+          "x": 5.84375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "?",
+          "x": 5.84375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Cutive Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        },
+        {
+          "family": "Share Tech Mono",
+          "status": "loaded"
+        }
+      ],
+      "fontChecks": {
+        "cutive": true,
+        "share": true
+      },
+      "intervals": [
+        {
+          "timeout": 30000,
+          "handler": "() => {\n\t\t\t\tif (socket.readyState === socket.OPEN) socket.send(JSON.stringify({ type: \"ping\" }));\n\t\t\t}"
+        },
+        {
+          "timeout": 30000,
+          "handler": "() => setTodayId(getDailyPuzzleId(new Date()))"
+        }
+      ],
+      "viewport": {
+        "width": 375,
+        "height": 629
+      },
+      "bodyWidth": 375,
+      "mainOverflow": 0,
+      "heart": false
+    },
+    "ready": {
+      "label": "Refills remaining: other letters 9, A 2, N 2, G 1, E 4, R 1. Counts are reserve copies, not the next draw order.",
+      "letters": [
+        "A",
+        "N",
+        "G",
+        "E",
+        "R"
+      ],
+      "counts": [
+        "9",
+        "2",
+        "2",
+        "1",
+        "4",
+        "1"
+      ],
+      "labels": [
+        {
+          "text": "LIVES",
+          "font": "11px / 11px \"Share Tech Mono\", monospace",
+          "spacing": "normal",
+          "box": {
+            "x": 13.28125,
+            "y": 38,
+            "width": 30,
+            "height": 11,
+            "right": 43.28125,
+            "bottom": 49
+          }
+        },
+        {
+          "text": "REFILLS",
+          "font": "11px / 11px \"Share Tech Mono\", monospace",
+          "spacing": "normal",
+          "box": {
+            "x": 319.71875,
+            "y": 38,
+            "width": 42,
+            "height": 11,
+            "right": 361.71875,
+            "bottom": 49
+          }
+        }
+      ],
+      "graphics": {
+        "wyrm": {
+          "x": 13.28125,
+          "y": 55,
+          "width": 73,
+          "height": 20,
+          "right": 86.28125,
+          "bottom": 75
+        },
+        "refills": {
+          "x": 221.71875,
+          "y": 55,
+          "width": 140,
+          "height": 20,
+          "right": 361.71875,
+          "bottom": 75
+        }
+      },
+      "squares": [
+        {
+          "x": 221.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 241.71875,
+          "bottom": 75
+        },
+        {
+          "x": 245.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 265.71875,
+          "bottom": 75
+        },
+        {
+          "x": 269.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 289.71875,
+          "bottom": 75
+        },
+        {
+          "x": 293.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 313.71875,
+          "bottom": 75
+        },
+        {
+          "x": 317.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 337.71875,
+          "bottom": 75
+        },
+        {
+          "x": 341.71875,
+          "y": 55,
+          "width": 20,
+          "height": 20,
+          "right": 361.71875,
+          "bottom": 75
+        }
+      ],
+      "positions": [
+        {
+          "letter": "A",
+          "x": 5.734375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "N",
+          "x": 5.734375,
+          "y": 13.1375,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "G",
+          "x": 5.625,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "E",
+          "x": 5.734375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "R",
+          "x": 5.40625,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Cutive Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        },
+        {
+          "family": "Share Tech Mono",
+          "status": "loaded"
+        }
+      ],
+      "fontChecks": {
+        "cutive": true,
+        "share": true
+      },
+      "intervals": [
+        {
+          "timeout": 30000,
+          "handler": "() => {\n\t\t\t\tif (socket.readyState === socket.OPEN) socket.send(JSON.stringify({ type: \"ping\" }));\n\t\t\t}"
+        },
+        {
+          "timeout": 30000,
+          "handler": "() => setTodayId(getDailyPuzzleId(new Date()))"
+        }
+      ],
+      "viewport": {
+        "width": 375,
+        "height": 629
+      },
+      "bodyWidth": 375,
+      "mainOverflow": 0,
+      "heart": false
+    },
+    "errors": []
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "reduced": true,
+    "before": {
+      "label": "Refills are decoding.",
+      "letters": [
+        "?",
+        "?",
+        "?",
+        "?",
+        "?",
+        "?"
+      ],
+      "counts": [
+        "?",
+        "?",
+        "?",
+        "?",
+        "?",
+        "?"
+      ],
+      "labels": [
+        {
+          "text": "LIVES",
+          "font": "11px / 11px \"Share Tech Mono\", monospace",
+          "spacing": "normal",
+          "box": {
+            "x": 12,
+            "y": 31,
+            "width": 30,
+            "height": 11,
+            "right": 42,
+            "bottom": 42
+          }
+        },
+        {
+          "text": "REFILLS",
+          "font": "11px / 11px \"Share Tech Mono\", monospace",
+          "spacing": "normal",
+          "box": {
+            "x": 266,
+            "y": 31,
+            "width": 42,
+            "height": 11,
+            "right": 308,
+            "bottom": 42
+          }
+        }
+      ],
+      "graphics": {
+        "wyrm": {
+          "x": 12,
+          "y": 48,
+          "width": 73,
+          "height": 20,
+          "right": 85,
+          "bottom": 68
+        },
+        "refills": {
+          "x": 168,
+          "y": 48,
+          "width": 140,
+          "height": 20,
+          "right": 308,
+          "bottom": 68
+        }
+      },
+      "squares": [
+        {
+          "x": 168,
+          "y": 48,
+          "width": 20,
+          "height": 20,
+          "right": 188,
+          "bottom": 68
+        },
+        {
+          "x": 192,
+          "y": 48,
+          "width": 20,
+          "height": 20,
+          "right": 212,
+          "bottom": 68
+        },
+        {
+          "x": 216,
+          "y": 48,
+          "width": 20,
+          "height": 20,
+          "right": 236,
+          "bottom": 68
+        },
+        {
+          "x": 240,
+          "y": 48,
+          "width": 20,
+          "height": 20,
+          "right": 260,
+          "bottom": 68
+        },
+        {
+          "x": 264,
+          "y": 48,
+          "width": 20,
+          "height": 20,
+          "right": 284,
+          "bottom": 68
+        },
+        {
+          "x": 288,
+          "y": 48,
+          "width": 20,
+          "height": 20,
+          "right": 308,
+          "bottom": 68
+        }
+      ],
+      "positions": [
+        {
+          "letter": "?",
+          "x": 5.84375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "?",
+          "x": 5.84375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "?",
+          "x": 5.84375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "?",
+          "x": 5.84375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "?",
+          "x": 5.84375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "?",
+          "x": 5.84375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Cutive Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        },
+        {
+          "family": "Share Tech Mono",
+          "status": "loaded"
+        }
+      ],
+      "fontChecks": {
+        "cutive": true,
+        "share": true
+      },
+      "intervals": [
+        {
+          "timeout": 30000,
+          "handler": "() => {\n\t\t\t\tif (socket.readyState === socket.OPEN) socket.send(JSON.stringify({ type: \"ping\" }));\n\t\t\t}"
+        },
+        {
+          "timeout": 30000,
+          "handler": "() => setTodayId(getDailyPuzzleId(new Date()))"
+        }
+      ],
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "bodyWidth": 320,
+      "mainOverflow": 0,
+      "heart": false
+    },
+    "afterWait": {
+      "label": "Refills are decoding.",
+      "letters": [
+        "?",
+        "?",
+        "?",
+        "?",
+        "?",
+        "?"
+      ],
+      "counts": [
+        "?",
+        "?",
+        "?",
+        "?",
+        "?",
+        "?"
+      ],
+      "labels": [
+        {
+          "text": "LIVES",
+          "font": "11px / 11px \"Share Tech Mono\", monospace",
+          "spacing": "normal",
+          "box": {
+            "x": 12,
+            "y": 31,
+            "width": 30,
+            "height": 11,
+            "right": 42,
+            "bottom": 42
+          }
+        },
+        {
+          "text": "REFILLS",
+          "font": "11px / 11px \"Share Tech Mono\", monospace",
+          "spacing": "normal",
+          "box": {
+            "x": 266,
+            "y": 31,
+            "width": 42,
+            "height": 11,
+            "right": 308,
+            "bottom": 42
+          }
+        }
+      ],
+      "graphics": {
+        "wyrm": {
+          "x": 12,
+          "y": 48,
+          "width": 73,
+          "height": 20,
+          "right": 85,
+          "bottom": 68
+        },
+        "refills": {
+          "x": 168,
+          "y": 48,
+          "width": 140,
+          "height": 20,
+          "right": 308,
+          "bottom": 68
+        }
+      },
+      "squares": [
+        {
+          "x": 168,
+          "y": 48,
+          "width": 20,
+          "height": 20,
+          "right": 188,
+          "bottom": 68
+        },
+        {
+          "x": 192,
+          "y": 48,
+          "width": 20,
+          "height": 20,
+          "right": 212,
+          "bottom": 68
+        },
+        {
+          "x": 216,
+          "y": 48,
+          "width": 20,
+          "height": 20,
+          "right": 236,
+          "bottom": 68
+        },
+        {
+          "x": 240,
+          "y": 48,
+          "width": 20,
+          "height": 20,
+          "right": 260,
+          "bottom": 68
+        },
+        {
+          "x": 264,
+          "y": 48,
+          "width": 20,
+          "height": 20,
+          "right": 284,
+          "bottom": 68
+        },
+        {
+          "x": 288,
+          "y": 48,
+          "width": 20,
+          "height": 20,
+          "right": 308,
+          "bottom": 68
+        }
+      ],
+      "positions": [
+        {
+          "letter": "?",
+          "x": 5.84375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "?",
+          "x": 5.84375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "?",
+          "x": 5.84375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "?",
+          "x": 5.84375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "?",
+          "x": 5.84375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "?",
+          "x": 5.84375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Cutive Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        },
+        {
+          "family": "Share Tech Mono",
+          "status": "loaded"
+        }
+      ],
+      "fontChecks": {
+        "cutive": true,
+        "share": true
+      },
+      "intervals": [
+        {
+          "timeout": 30000,
+          "handler": "() => {\n\t\t\t\tif (socket.readyState === socket.OPEN) socket.send(JSON.stringify({ type: \"ping\" }));\n\t\t\t}"
+        },
+        {
+          "timeout": 30000,
+          "handler": "() => setTodayId(getDailyPuzzleId(new Date()))"
+        }
+      ],
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "bodyWidth": 320,
+      "mainOverflow": 0,
+      "heart": false
+    },
+    "ready": {
+      "label": "Refills remaining: other letters 9, A 2, N 2, G 1, E 4, R 1. Counts are reserve copies, not the next draw order.",
+      "letters": [
+        "A",
+        "N",
+        "G",
+        "E",
+        "R"
+      ],
+      "counts": [
+        "9",
+        "2",
+        "2",
+        "1",
+        "4",
+        "1"
+      ],
+      "labels": [
+        {
+          "text": "LIVES",
+          "font": "11px / 11px \"Share Tech Mono\", monospace",
+          "spacing": "normal",
+          "box": {
+            "x": 12,
+            "y": 31,
+            "width": 30,
+            "height": 11,
+            "right": 42,
+            "bottom": 42
+          }
+        },
+        {
+          "text": "REFILLS",
+          "font": "11px / 11px \"Share Tech Mono\", monospace",
+          "spacing": "normal",
+          "box": {
+            "x": 266,
+            "y": 31,
+            "width": 42,
+            "height": 11,
+            "right": 308,
+            "bottom": 42
+          }
+        }
+      ],
+      "graphics": {
+        "wyrm": {
+          "x": 12,
+          "y": 48,
+          "width": 73,
+          "height": 20,
+          "right": 85,
+          "bottom": 68
+        },
+        "refills": {
+          "x": 168,
+          "y": 48,
+          "width": 140,
+          "height": 20,
+          "right": 308,
+          "bottom": 68
+        }
+      },
+      "squares": [
+        {
+          "x": 168,
+          "y": 48,
+          "width": 20,
+          "height": 20,
+          "right": 188,
+          "bottom": 68
+        },
+        {
+          "x": 192,
+          "y": 48,
+          "width": 20,
+          "height": 20,
+          "right": 212,
+          "bottom": 68
+        },
+        {
+          "x": 216,
+          "y": 48,
+          "width": 20,
+          "height": 20,
+          "right": 236,
+          "bottom": 68
+        },
+        {
+          "x": 240,
+          "y": 48,
+          "width": 20,
+          "height": 20,
+          "right": 260,
+          "bottom": 68
+        },
+        {
+          "x": 264,
+          "y": 48,
+          "width": 20,
+          "height": 20,
+          "right": 284,
+          "bottom": 68
+        },
+        {
+          "x": 288,
+          "y": 48,
+          "width": 20,
+          "height": 20,
+          "right": 308,
+          "bottom": 68
+        }
+      ],
+      "positions": [
+        {
+          "letter": "A",
+          "x": 5.734375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "N",
+          "x": 5.734375,
+          "y": 13.1375,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "G",
+          "x": 5.625,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "E",
+          "x": 5.734375,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        },
+        {
+          "letter": "R",
+          "x": 5.40625,
+          "y": 13.246875,
+          "font": "14px \"Cutive Mono\", monospace"
+        }
+      ],
+      "fonts": [
+        {
+          "family": "Cutive Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        },
+        {
+          "family": "Share Tech Mono",
+          "status": "loaded"
+        }
+      ],
+      "fontChecks": {
+        "cutive": true,
+        "share": true
+      },
+      "intervals": [
+        {
+          "timeout": 30000,
+          "handler": "() => {\n\t\t\t\tif (socket.readyState === socket.OPEN) socket.send(JSON.stringify({ type: \"ping\" }));\n\t\t\t}"
+        },
+        {
+          "timeout": 30000,
+          "handler": "() => setTodayId(getDailyPuzzleId(new Date()))"
+        }
+      ],
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "bodyWidth": 320,
+      "mainOverflow": 0,
+      "heart": false
+    },
+    "errors": []
+  }
+]

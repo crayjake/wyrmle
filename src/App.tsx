@@ -285,7 +285,7 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, match
           wyrmRef={wyrmLifeRef}
           decoding={visiblePhase === 'enemy' || visiblePhase === 'tiles'}
         />
-        <RefillSupply game={game} />
+        <RefillSupply game={game} decoded={visiblePhase === 'ready'} />
         {!daily.started && puzzle.difficulty && <span className="daily-puzzle-difficulty">TODAY · DIFFICULTY: {puzzle.difficulty}</span>}
       </div>
 

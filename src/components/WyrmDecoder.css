@@ -13,11 +13,27 @@
   user-select: none;
 }
 
-/* Keep the same pixel geometry as the resting meter, rotating around its centre. */
+/* The numeric-combat prototype retains the smaller header character. */
 .wyrm-decoder-visual {
   width: max-content;
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: translate(-50%, -50%);
+}
+
+.wyrm-decoder-piece {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Every part uses the resting meter's authored dimensions, but follows the
+   head independently. Body squares stay aligned with the board's axes. */
+.wyrm-decoder-piece > .wyrm-life-segment,
+.wyrm-decoder-piece > .wyrm-life-head {
+  position: absolute;
   transform: translate(-50%, -50%);
 }

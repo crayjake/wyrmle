@@ -1,19 +1,25 @@
 .battle-info:has(.wyrm-life-meter) {
   grid-template-columns: auto minmax(0, 1fr);
-  align-items: center;
+  align-items: start;
+}
+
+.resource-label {
+  font: 11px/1 'Share Tech Mono', monospace;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .refill-supply {
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-wrap: nowrap;
-  gap: 4px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
   min-width: 0;
-  min-height: 24px;
   letter-spacing: 0;
   line-height: 1;
 }
+.refill-tiles { display: flex; flex-wrap: nowrap; align-items: center; gap: 4px; height: 20px; }
 .refill-group { display: inline-flex; align-items: center; flex: none; }
 .refill-square {
   box-sizing: border-box;
@@ -47,7 +53,6 @@
   font: 10px/1 'Share Tech Mono', monospace;
   font-variant-numeric: tabular-nums;
 }
-.refill-label { margin-left: 2px; font: 11px/1 'Share Tech Mono', monospace; white-space: nowrap; }
 .battle-info .daily-puzzle-difficulty { justify-self: end; }
 .battle-info:has(.refill-supply) .daily-puzzle-difficulty { grid-column: 1 / -1; }
 
@@ -63,4 +68,8 @@
    tile geometry or text. */
 @media (max-width: 430px) and (max-height: 650px) {
   .container.letter-combat:has(.refill-supply) .strike-details { line-height: 1.2; row-gap: 1px; }
+}
+
+@media (max-width: 360px) and (max-height: 600px) {
+  .container.letter-combat:has(.refill-supply) { padding-block: 2px; }
 }

@@ -145,7 +145,7 @@ function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onMatchHin
     <div className="battle-info">
       <MyInfo name={letterGame ? 'LIVES' : 'YOU'} health={game.playerResolve} maxHealth={game.encounter.startingResolve} wyrm={Boolean(letterGame)}
         wyrmRef={wyrmLifeRef} decoding={phase === 'enemy' || phase === 'tiles'} />
-      {letterGame && <RefillSupply game={letterGame} />}
+      {letterGame && <RefillSupply game={letterGame} decoded={phase === 'ready'} />}
       {run.mode === 'damage'
         ? <EnemyInfo name={enemy.word} health={run.game.enemyHp} maxHealth={run.game.encounter.enemy.maxHealth} />
         : null}

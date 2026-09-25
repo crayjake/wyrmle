@@ -1,12 +1,13 @@
-.wyrm-life-resource {
-  display: inline-flex;
-  align-items: center;
+.health-info.health-info-compact.wyrm-life-info {
+  flex-direction: column;
+  align-items: flex-start;
   gap: 6px;
 }
 
-.wyrm-life-icon {
-  flex: none;
-  color: var(--green);
+.wyrm-life-resource {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
 }
 
 .wyrm-life-meter {
@@ -32,7 +33,7 @@
 }
 
 .wyrm-life-tail { width: 8px; height: 8px; }
-.wyrm-life-meter .is-filled { background: currentColor; opacity: 1; }
+.wyrm-life-segment.is-filled, .wyrm-life-head.is-filled { background: currentColor; opacity: 1; }
 .wyrm-life-head { position: relative; width: 15px; height: 15px; border-radius: 2px; }
 .wyrm-life-head::before,
 .wyrm-life-head::after {

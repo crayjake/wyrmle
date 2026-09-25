@@ -1,14 +1,14 @@
-import { animate, motion, useMotionValue, useReducedMotion } from "framer-motion"
-import { useEffect, useRef, useState } from "react"
+import { animate, motion, motionValue, useMotionValue, useReducedMotion } from "framer-motion"
+import { useEffect, useMemo, useRef, useState } from "react"
 import type { RefObject } from "react"
 import { introTimings } from "../intro/config"
 import type { TileRevealMode } from "../intro/config"
 import { getTileRevealOrder } from "../intro/paths"
-import { sampleSineTravel, unwrapAngle } from "../intro/movement"
 import type { Point } from "../intro/movement"
-import { createSmoothRoute } from "../intro/route"
+import { createGridRoute, sampleSnake } from "../intro/snake"
+import type { GridRoute } from "../intro/snake"
 import WyrmCharacter from "./WyrmCharacter"
-import WyrmLifeMeter from "./WyrmLifeMeter"
+import { WyrmLifePart } from "./WyrmLifeMeter"
 import "./WyrmDecoder.css"
 
 type WyrmDecoderProps = {
@@ -62,10 +62,13 @@ export default function WyrmDecoder({
   const reducedMotion = useReducedMotion()
   const [visible, setVisible] = useState(false)
   const [routeStage, setRouteStage] = useState("enemy")
+  const opacity = useMotionValue(0)
   const x = useMotionValue(0)
   const y = useMotionValue(0)
   const rotate = useMotionValue(0)
-  const opacity = useMotionValue(0)
+  const pieces = useMemo(() => Array.from({ length: lifeSegments ?? 0 }, () => ({
+    x: motionValue(0), y: motionValue(0), heading: motionValue(0),
+  })), [lifeSegments])
   const enemyArrivals = useRef(new Set<number>())
   const tileArrivals = useRef(new Set<number>())
 
@@ -76,9 +79,16 @@ export default function WyrmDecoder({
     let dirty = true
     const invalidate = () => { dirty = true }
     const observer = new ResizeObserver(invalidate)
-    const observed = [containerRef.current, dockRef.current, titleRef.current,
-      ...enemyLetters.current, ...tileElements.current]
-    for (const element of observed) if (element) observer.observe(element)
+    // Parents can reflow without changing a tile's own dimensions.
+    const observed = new Set<HTMLElement>()
+    for (const target of [containerRef.current, dockRef.current, titleRef.current,
+      ...enemyLetters.current, ...tileElements.current]) {
+      for (let element = target; element; element = element.parentElement) {
+        observed.add(element)
+        if (element === containerRef.current) break
+      }
+    }
+    for (const element of observed) observer.observe(element)
     window.addEventListener('resize', invalidate)
     document.fonts.addEventListener('loadingdone', invalidate)
 
@@ -87,20 +97,42 @@ export default function WyrmDecoder({
       const enemies = enemyLetters.current.slice(0, enemyCount).map(element => layoutCenter(element, container))
       const tiles = tileElements.current.slice(0, tileCount).map(element => layoutCenter(element, container))
       const dock = dockRef.current
-      let dockPoint = layoutCenter(dock, container)
-      // The static meter has no transform; retain its fractional pixel position
-      // so the moving copy and resting copy coincide exactly at the handoff.
+      let dockHead = layoutCenter(dock, container)
+      let offsets = pieces.map(() => 0)
+      let bodyLength = dock?.offsetWidth ?? 24
+      // Measure the resting pieces once per layout change. Their actual sizes
+      // and centres define the following distances and the final docking pose.
       if (dock && container) {
-        const target = dock.getBoundingClientRect()
         const bounds = container.getBoundingClientRect()
-        dockPoint = {
-          x: target.left + target.width / 2 - bounds.left - container.clientLeft + container.scrollLeft,
-          y: target.top + target.height / 2 - bounds.top - container.clientTop + container.scrollTop,
+        const target = dock.getBoundingClientRect()
+        const resting = [...dock.querySelectorAll<HTMLElement>('.wyrm-life-segment, .wyrm-life-head')]
+          .map(element => element.getBoundingClientRect())
+        const head = resting.at(-1) ?? target
+        const headX = head.left + head.width / 2
+        dockHead = {
+          x: headX - bounds.left - container.clientLeft + container.scrollLeft,
+          y: head.top + head.height / 2 - bounds.top - container.clientTop + container.scrollTop,
         }
+        offsets = pieces.map((_, index) => {
+          const part = resting[index]
+          return part ? headX - (part.left + part.width / 2) : 0
+        })
+        bodyLength = target.width
       }
+      const width = container?.clientWidth ?? 0
+      const margin = Math.max(introTimings.offscreenPaddingPx, bodyLength + 12)
+      const outside = (side: 'left' | 'right', atY: number) => ({ x: side === 'left' ? -margin : width + margin, y: atY })
       const order = getTileRevealOrder(tileCount, tilePath, seed)
-      return { enemies, tiles, dock: dockPoint, width: container?.clientWidth ?? 0,
-        order, boardRoute: createSmoothRoute(order.map(index => tiles[index])) }
+      const enemyFirst = enemies[0] ?? { x: 0, y: 0 }
+      const enemyLast = enemies.at(-1) ?? enemyFirst
+      const enemyRoute = createGridRoute([outside('left', enemyFirst.y), ...enemies, outside('right', enemyLast.y)])
+      const board = order.map(index => tiles[index])
+      const boardFirst = board[0] ?? { x: 0, y: 0 }
+      const boardLast = board.at(-1) ?? boardFirst
+      const boardRoute = createGridRoute([outside('left', boardFirst.y), ...board,
+        outside(boardLast.x < width / 2 ? 'left' : 'right', boardLast.y)])
+      const dockRoute = createGridRoute([outside('left', dockHead.y), dockHead])
+      return { enemyRoute, boardRoute, dockRoute, offsets, order }
     }
     let geometry: ReturnType<typeof measure> | undefined
     function layout() {
@@ -110,42 +142,31 @@ export default function WyrmDecoder({
       }
       return geometry
     }
-
     function runFor(duration: number, update?: (progress: number) => void, ease: "linear" | "easeInOut" = "easeInOut") {
       return new Promise<void>(resolve => {
         const playback = animate(0, 1, { duration, ease, onUpdate: update, onComplete: resolve })
         stopFrame = () => { playback.stop(); resolve() }
       })
     }
-    function place(point: Point & { angle: number }) {
-      x.set(point.x)
-      y.set(point.y)
-      rotate.set(unwrapAngle(rotate.get(), point.angle))
+    function place(route: GridRoute, progress: number) {
+      const distance = route.length * progress
+      const head = route.sample(distance)
+      x.set(head.x)
+      y.set(head.y)
+      rotate.set(head.angle)
+      const poses = sampleSnake(route, distance, layout().offsets)
+      pieces.forEach((piece, index) => {
+        piece.x.set(poses[index].x)
+        piece.y.set(poses[index].y)
+        // Square bodies stay upright; only the head's face changes direction
+        // in quarter turns. Each body piece reaches the corner separately.
+        piece.heading.set(index === pieces.length - 1 ? poses[index].angle : 0)
+      })
     }
-    function offscreen(side: "left" | "right", atY: number): Point {
-      // Leave enough room for the full life-meter-sized wyrm to clear the edge.
-      const margin = Math.max(introTimings.offscreenPaddingPx, (dockRef.current?.offsetWidth ?? 0) / 2 + 8)
-      return { x: side === "left" ? -margin : layout().width + margin, y: atY }
-    }
-    function showAt(point: Point, angle = 0) {
-      place({ ...point, angle })
+    function show(route: GridRoute) {
+      place(route, 0)
       opacity.set(1)
       setVisible(true)
-    }
-    function hide() { setVisible(false) }
-    async function travelTo(target: () => Point, duration: number, endAngle: number, ease: "linear" | "easeInOut" = "linear") {
-      const start = { x: x.get(), y: y.get() }
-      const startAngle = rotate.get()
-      let previousTarget: Point | undefined
-      let route = createSmoothRoute([start, target()], startAngle, endAngle)
-      await runFor(duration, progress => {
-        const nextTarget = target()
-        if (!previousTarget || previousTarget.x !== nextTarget.x || previousTarget.y !== nextTarget.y) {
-          route = createSmoothRoute([start, nextTarget], startAngle, endAngle)
-          previousTarget = nextTarget
-        }
-        place(route.sample(progress))
-      }, ease)
     }
     function revealOnce(index: number, arrivals: Set<number>, reveal: (index: number) => void) {
       if (arrivals.has(index)) return
@@ -169,77 +190,49 @@ export default function WyrmDecoder({
       }
 
       if (isEnemy) {
-        const course = (progress: number) => {
-          const { enemies } = layout()
-          const first = enemies[0] ?? { x: 0, y: 0 }
-          const last = enemies.at(-1) ?? first
-          return sampleSineTravel(
-            { x: first.x - introTimings.edgeGapPx * 2, y: first.y },
-            { x: last.x + introTimings.edgeGapPx * 2, y: last.y }, progress,
-            Math.min(introTimings.enemyWaveMaxPx,
-              (enemyLetters.current[0]?.offsetHeight ?? 30) * introTimings.enemyWaveHeightRatio),
-            introTimings.enemyWaveCycles)
-        }
-        const beginning = course(0)
         setRouteStage("enemy")
-        showAt(beginning, beginning.angle)
-        opacity.set(0)
-        await runFor(introTimings.appear, progress => opacity.set(progress))
-        if (cancelled) return
-        await runFor(introTimings.enemyDecode, progress => {
-          const point = course(progress)
-          place(point)
-          layout().enemies.forEach((center, index) => {
-            if (point.x >= center.x) revealOnce(index, enemyArrivals.current, onEnemyReveal)
-          })
+        show(layout().enemyRoute)
+        await runFor(introTimings.enemyDecode + introTimings.screenExit, progress => {
+          const { enemyRoute } = layout()
+          place(enemyRoute, progress)
+          for (let index = 0; index < enemyCount; index++) {
+            if (progress >= enemyRoute.arrivals[index + 1]) revealOnce(index, enemyArrivals.current, onEnemyReveal)
+          }
         }, "linear")
         if (cancelled) return
-        setRouteStage("enemy-exit")
-        const exitY = y.get()
-        await travelTo(() => offscreen("right", exitY), introTimings.screenExit, 0)
-        if (cancelled) return
-        hide()
+        setVisible(false)
         await runFor(introTimings.stagePause)
         if (!cancelled) onEnemyDecoded()
         return
       }
 
       if (tileCount > 0) {
-        const beginning = layout().boardRoute.sample(0)
-        setRouteStage("tile-entry")
-        showAt(offscreen("left", beginning.y))
-        await travelTo(() => layout().boardRoute.sample(0), introTimings.boardTravel, beginning.angle)
-        if (cancelled) return
         setRouteStage("tiles")
-        // One clock covers every tile and turn. Distance-based sampling carries
-        // each frame straight through arrivals instead of pausing at 15 hops.
-        await runFor(introTimings.tileDecode, progress => {
+        show(layout().boardRoute)
+        // Entry, every tile and corner, and exit share one uninterrupted clock.
+        // The head triggers reveals; the tail follows by distance along its path.
+        await runFor(introTimings.boardTravel + introTimings.tileDecode + introTimings.screenExit, progress => {
           const { boardRoute, order } = layout()
-          place(boardRoute.sample(progress))
+          place(boardRoute, progress)
           for (const [step, index] of order.entries()) {
-            if (progress >= boardRoute.arrivals[step]) revealOnce(index, tileArrivals.current, onTileReveal)
+            if (progress >= boardRoute.arrivals[step + 1]) revealOnce(index, tileArrivals.current, onTileReveal)
           }
         }, "linear")
         if (cancelled) return
-        setRouteStage("tile-exit")
-        const exitY = y.get()
-        const exitSide = x.get() < layout().width / 2 ? "left" : "right"
-        await travelTo(() => offscreen(exitSide, exitY), introTimings.screenExit, exitSide === "left" ? 180 : 0)
-        if (cancelled) return
-        hide()
+        setVisible(false)
         await runFor(introTimings.stagePause)
         if (cancelled) return
       }
 
-      // Return at the life meter's own height and ease into its exact footprint.
-      // Both instances render the same component, with no scaling or morph.
+      // A straight final approach naturally lays the trailing pieces into the
+      // same centres as the resting life meter, without scaling or a morph.
       setRouteStage("dock")
-      showAt(offscreen("left", layout().dock.y))
-      await travelTo(() => layout().dock, introTimings.titlePass, 0, "easeInOut")
+      show(layout().dockRoute)
+      await runFor(introTimings.titlePass, progress => place(layout().dockRoute, progress))
       if (cancelled) return
-      await runFor(introTimings.dockSettle, () => place({ ...layout().dock, angle: 0 }))
+      await runFor(introTimings.dockSettle, () => place(layout().dockRoute, 1))
       if (cancelled) return
-      hide()
+      setVisible(false)
       onTilesDecoded()
     }
     void decode()
@@ -251,14 +244,17 @@ export default function WyrmDecoder({
       document.fonts.removeEventListener('loadingdone', invalidate)
     }
   }, [phase, reducedMotion, containerRef, enemyLetters, tileElements, dockRef, titleRef, enemyCount, tileCount,
-    tilePath, seed, onEnemyReveal, onTileReveal, onEnemyDecoded, onTilesDecoded, x, y, rotate, opacity])
+    tilePath, seed, onEnemyReveal, onTileReveal, onEnemyDecoded, onTilesDecoded, pieces, x, y, rotate, opacity])
 
   if (!visible || reducedMotion) return null
-  return <motion.div className="wyrm-decoder" data-route={routeStage} aria-hidden="true"
+  if (lifeSegments === undefined) return <motion.div className="wyrm-decoder" data-route={routeStage} aria-hidden="true"
     style={{ x, y, rotate, opacity }}>
-    <span className="wyrm-decoder-visual">
-      {lifeSegments === undefined ? <WyrmCharacter idle={false} />
-        : <WyrmLifeMeter lives={lifeSegments} maximum={lifeSegments} />}
-    </span>
+    <span className="wyrm-decoder-visual"><WyrmCharacter idle={false} /></span>
+  </motion.div>
+  return <motion.div className="wyrm-decoder wyrm-decoder-snake" data-route={routeStage} aria-hidden="true" style={{ opacity }}>
+    {pieces.map((piece, index) => <motion.span key={index} className="wyrm-decoder-piece"
+      data-piece={index} style={{ x: piece.x, y: piece.y, rotate: piece.heading }}>
+      <WyrmLifePart kind={index === pieces.length - 1 ? 'head' : index === 0 ? 'tail' : 'body'} filled />
+    </motion.span>)}
   </motion.div>
 }
