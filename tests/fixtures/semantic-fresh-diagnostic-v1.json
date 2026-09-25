@@ -1,0 +1,288 @@
+{
+  "version": "wyrmle-semantic-fresh-diagnostic-v1",
+  "authoredAt": "2026-09-25",
+  "frozenPolicyDigest": "3e8f1135c0e5bb5f2cca1d5ede645a140d223017b9d56e983445107c9f5d341d",
+  "purpose": "Once-only diagnostic authored after the contextual policy freeze, before reading predictions. Eighteen spellings and all their dictionary lemmas are disjoint from the main, development-extension, and confirmation fixtures. Balanced one counter, one reinforcement and one neutral per enemy. This small assistant-authored diagnostic is reported separately and does not redefine the publication gates. Gold labels and sense constraints were withheld from the model implementer.",
+  "cases": [
+    {
+      "id": "ANGER/AMICABLE",
+      "enemy": "ANGER",
+      "word": "AMICABLE",
+      "split": "fresh-diagnostic",
+      "expected": "opposite",
+      "core": false,
+      "rationale": "Friendship and good will counter angry hostility.",
+      "legacyRelation": null,
+      "allowedSenses": [
+        {
+          "senseId": "oewn-amicable__3.00.00..",
+          "definition": "characterized by friendship and good will"
+        }
+      ]
+    },
+    {
+      "id": "ANGER/AGGRAVATE",
+      "enemy": "ANGER",
+      "word": "AGGRAVATE",
+      "split": "fresh-diagnostic",
+      "expected": "similar",
+      "core": false,
+      "rationale": "Exasperating or irritating someone produces anger; merely worsening a condition is insufficient.",
+      "legacyRelation": null,
+      "allowedSenses": [
+        {
+          "senseId": "oewn-aggravate__2.37.00..",
+          "definition": "exasperate or irritate"
+        }
+      ]
+    },
+    {
+      "id": "ANGER/CUPBOARD",
+      "enemy": "ANGER",
+      "word": "CUPBOARD",
+      "split": "fresh-diagnostic",
+      "expected": "neutral",
+      "core": false,
+      "rationale": "A storage cabinet does not intrinsically express, cause, or counter anger.",
+      "legacyRelation": null
+    },
+    {
+      "id": "DESPAIR/UPLIFT",
+      "enemy": "DESPAIR",
+      "word": "UPLIFT",
+      "split": "fresh-diagnostic",
+      "expected": "opposite",
+      "core": false,
+      "rationale": "Filling someone with optimism directly counters hopelessness; geological raising does not.",
+      "legacyRelation": null,
+      "allowedSenses": [
+        {
+          "senseId": "oewn-uplift__2.37.00..",
+          "definition": "fill with high spirits; fill with optimism"
+        }
+      ]
+    },
+    {
+      "id": "DESPAIR/BLEAK",
+      "enemy": "DESPAIR",
+      "word": "BLEAK",
+      "split": "fresh-diagnostic",
+      "expected": "similar",
+      "core": false,
+      "rationale": "Offering little or no hope reinforces despair; cold weather is not the intended sense.",
+      "legacyRelation": "similar",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-bleak__5.00.00.hopeless.00",
+          "definition": "offering little or no hope"
+        }
+      ]
+    },
+    {
+      "id": "DESPAIR/BICYCLE",
+      "enemy": "DESPAIR",
+      "word": "BICYCLE",
+      "split": "fresh-diagnostic",
+      "expected": "neutral",
+      "core": false,
+      "rationale": "A pedal-powered vehicle or riding it does not intrinsically express hope or hopelessness.",
+      "legacyRelation": null
+    },
+    {
+      "id": "FEAR/FORTITUDE",
+      "enemy": "FEAR",
+      "word": "FORTITUDE",
+      "split": "fresh-diagnostic",
+      "expected": "opposite",
+      "core": false,
+      "rationale": "Courageous endurance in adversity directly counters fear.",
+      "legacyRelation": null,
+      "allowedSenses": [
+        {
+          "senseId": "oewn-fortitude__1.07.00..",
+          "definition": "strength of mind that enables one to endure adversity with courage"
+        }
+      ]
+    },
+    {
+      "id": "FEAR/COWER",
+      "enemy": "FEAR",
+      "word": "COWER",
+      "split": "fresh-diagnostic",
+      "expected": "similar",
+      "core": false,
+      "rationale": "Showing fear expresses the enemy concept; crouching alone does not establish fear.",
+      "legacyRelation": null,
+      "allowedSenses": [
+        {
+          "senseId": "oewn-cower__2.38.00..",
+          "definition": "show submission or fear"
+        }
+      ]
+    },
+    {
+      "id": "FEAR/TUNNEL",
+      "enemy": "FEAR",
+      "word": "TUNNEL",
+      "split": "fresh-diagnostic",
+      "expected": "neutral",
+      "core": false,
+      "rationale": "A passageway or digging through material is not intrinsically frightening or reassuring.",
+      "legacyRelation": null
+    },
+    {
+      "id": "MELANCHOLY/FESTIVE",
+      "enemy": "MELANCHOLY",
+      "word": "FESTIVE",
+      "split": "fresh-diagnostic",
+      "expected": "opposite",
+      "core": false,
+      "rationale": "Offering fun and gaiety counters sadness.",
+      "legacyRelation": "opposite",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-festive__5.00.00.joyous.00",
+          "definition": "offering fun and gaiety"
+        }
+      ]
+    },
+    {
+      "id": "MELANCHOLY/DOLEFUL",
+      "enemy": "MELANCHOLY",
+      "word": "DOLEFUL",
+      "split": "fresh-diagnostic",
+      "expected": "similar",
+      "core": false,
+      "rationale": "Being filled with or evoking sadness reinforces melancholy.",
+      "legacyRelation": "similar",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-doleful__5.00.00.sad.00",
+          "definition": "filled with or evoking sadness"
+        }
+      ]
+    },
+    {
+      "id": "MELANCHOLY/BASKET",
+      "enemy": "MELANCHOLY",
+      "word": "BASKET",
+      "split": "fresh-diagnostic",
+      "expected": "neutral",
+      "core": false,
+      "rationale": "A woven container or basketball scoring equipment does not intrinsically express sadness or joy.",
+      "legacyRelation": null
+    },
+    {
+      "id": "CRUELTY/TENDERHEARTED",
+      "enemy": "CRUELTY",
+      "word": "TENDERHEARTED",
+      "split": "fresh-diagnostic",
+      "expected": "opposite",
+      "core": false,
+      "rationale": "Love and compassion for another person counter cruel treatment.",
+      "legacyRelation": "opposite",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-tenderhearted__5.00.00.loving.00",
+          "definition": "easily moved to love"
+        },
+        {
+          "senseId": "oewn-tenderhearted__5.00.00.compassionate.00",
+          "definition": "easily moved by another's distress"
+        }
+      ]
+    },
+    {
+      "id": "CRUELTY/TORMENT",
+      "enemy": "CRUELTY",
+      "word": "TORMENT",
+      "split": "fresh-diagnostic",
+      "expected": "similar",
+      "core": false,
+      "rationale": "Harassing, cruelly treating, or torturing someone reinforces cruelty; suffering alone need not involve cruel intent.",
+      "legacyRelation": "similar",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-torment__1.04.00..",
+          "definition": "the act of harassing someone"
+        },
+        {
+          "senseId": "oewn-torment__2.37.00..",
+          "definition": "torment emotionally or mentally"
+        },
+        {
+          "senseId": "oewn-torment__2.37.01..",
+          "definition": "treat cruelly"
+        },
+        {
+          "senseId": "oewn-torment__2.29.00..",
+          "definition": "subject to torture"
+        }
+      ]
+    },
+    {
+      "id": "CRUELTY/TEAPOT",
+      "enemy": "CRUELTY",
+      "word": "TEAPOT",
+      "split": "fresh-diagnostic",
+      "expected": "neutral",
+      "core": false,
+      "rationale": "A tea-brewing vessel does not intrinsically express cruelty or compassion.",
+      "legacyRelation": null
+    },
+    {
+      "id": "CHAOS/MARSHAL",
+      "enemy": "CHAOS",
+      "word": "MARSHAL",
+      "split": "fresh-diagnostic",
+      "expected": "opposite",
+      "core": false,
+      "rationale": "Putting things in proper rank or logical order counteracts disorder; an officer title alone is insufficient.",
+      "legacyRelation": null,
+      "allowedSenses": [
+        {
+          "senseId": "oewn-marshal__2.38.00..",
+          "definition": "place in proper rank"
+        },
+        {
+          "senseId": "oewn-marshal__2.35.00..",
+          "definition": "arrange in logical order"
+        }
+      ]
+    },
+    {
+      "id": "CHAOS/TUMULT",
+      "enemy": "CHAOS",
+      "word": "TUMULT",
+      "split": "fresh-diagnostic",
+      "expected": "similar",
+      "core": false,
+      "rationale": "Commotion, violent agitation, or a noisy disturbance are manifestations of disorder.",
+      "legacyRelation": null,
+      "allowedSenses": [
+        {
+          "senseId": "oewn-tumult__1.26.00..",
+          "definition": "a state of commotion and noise and confusion"
+        },
+        {
+          "senseId": "oewn-tumult__1.12.00..",
+          "definition": "violent agitation"
+        },
+        {
+          "senseId": "oewn-tumult__1.04.00..",
+          "definition": "the act of making a noisy disturbance"
+        }
+      ]
+    },
+    {
+      "id": "CHAOS/SCULPTURE",
+      "enemy": "CHAOS",
+      "word": "SCULPTURE",
+      "split": "fresh-diagnostic",
+      "expected": "neutral",
+      "core": false,
+      "rationale": "Artistic objects and physically shaping material are not intrinsically order or disorder in the enemy sense.",
+      "legacyRelation": null
+    }
+  ]
+}

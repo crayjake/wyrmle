@@ -1,0 +1,84 @@
+{
+  "command": "npm test",
+  "date": "2026-09-25",
+  "durationMilliseconds": 96184.095192,
+  "tests": 527,
+  "passed": 518,
+  "failed": 9,
+  "context": "Final model and daily publication artifacts intentionally remain unstaged. Existing tests and quality gates unchanged.",
+  "classification": {
+    "publicationMigration": {
+      "count": 6,
+      "file": "tests/meaning-vocabulary-upgrade.test.ts",
+      "cause": "Tests expect model-assessed publicationv12; current daily remainsv11. Includes version, metadata, undo routing and stale-tab guard assertions; verify again after actual publication lands."
+    },
+    "semanticQuality": {
+      "count": 3,
+      "file": "tests/semantic-model-quality.test.ts",
+      "cause": "Committed snapshot still old baseline, published refinement manifest absent, and old confirmation scores below gates."
+    },
+    "unrelatedRegressionsObserved": 0
+  },
+  "failedTests": [
+    "compact and former full v10 saves keep their scored publication after the model update",
+    "an undo after the model update retains v10 and its original dictionary at the start",
+    "a previously scored CALM turn stays on v10 when corrected semantics would change its outcome",
+    "the model publication validates old evidence and rejects replacement from a stale tab without changing saved bytes",
+    "scored v11 runs and undo positions stay on v11 until an explicit reset",
+    "fresh sessions and untouched v11 Begin snapshots use the model-assessed publication without rewriting storage",
+    "quality snapshot is the exact frozen hybrid output with actual memo and base-cache provenance",
+    "every eligible evaluation input has a complete valid frozen LLM review",
+    "frozen hybrid assessments pass the separate confirmation quality gates"
+  ],
+  "slowestTests": [
+    {
+      "name": "ranked bounded generation and automatic enemy choice reproduce the same seed",
+      "milliseconds": 17065.398311
+    },
+    {
+      "name": "finite construction caps planned supply and keeps only legal engine-replayed trace prefixes",
+      "milliseconds": 14489.35408
+    },
+    {
+      "name": "every unlimited mutation primitive is deterministic, preserves encounter validity and clears obsolete proof IDs",
+      "milliseconds": 9209.622246
+    },
+    {
+      "name": "punctuation and long mutation seeds retain distinct reversible candidate identities",
+      "milliseconds": 5097.032561
+    },
+    {
+      "name": "REGEN construction and mutation are opt-in, deterministic, and JSON replayable",
+      "milliseconds": 4963.102238
+    },
+    {
+      "name": "finite-only supply mutations change a bounded queue, invalidate old IDs and leave parents untouched",
+      "milliseconds": 4745.424754
+    },
+    {
+      "name": "automatic fallback reports aggregate progress and keep zero still recognizes acceptance",
+      "milliseconds": 4422.625494
+    },
+    {
+      "name": "greedy-trap validation separates absent tradeoffs from unproved observed alternatives",
+      "milliseconds": 3396.515747
+    },
+    {
+      "name": "an undo after the model update retains v10 and its original dictionary at the start",
+      "milliseconds": 3323.587198
+    },
+    {
+      "name": "new generation compiles meaning-only rules and every mutation refreshes their complete dictionary",
+      "milliseconds": 2821.524762
+    },
+    {
+      "name": "the compact cache preserves every recorded offline model decision and its output checksum",
+      "milliseconds": 2682.078587
+    },
+    {
+      "name": "all six enemies assess the entire accepted dictionary, including every applicable source sense",
+      "milliseconds": 1995.546689
+    }
+  ],
+  "nextCheck": "Rerun complete suite after final passing semantic cache, exact quality snapshot, and v12 publication are staged."
+}

@@ -93,4 +93,22 @@ node --test --test-isolation=none tests/semantic-model-quality.test.ts
 
 The snapshot pins the baseline cache identities, reviewer manifests, complete refinement-file digest, per-word input and memo provenance, and each evaluated inventory's review completeness. It fails publication quality if any required memo is missing, stale, invalid or unsuccessful, even when an unreviewed baseline happens to give the expected answer. Tests compare the snapshot with the actual current provider output.
 
+An optional third argument supplies a candidate refinement cache before replacing the published cache. It uses the same production provider and digest validation. Candidate results are archived separately; the committed quality snapshot must ultimately be regenerated from the actual published cache.
+
 This checks the fixed assessment algorithm on independent fixtures. A separate publication check proves that the particular puzzle has complete eligible-word review and valid source senses. Reviewing only fixture words does not certify an unrelated puzzle; reviewing a whole puzzle does not establish semantic correctness without the independent quality evaluation.
+
+## Fresh diagnostic after the contextual policy froze
+
+The [18-case diagnostic](../tests/fixtures/semantic-fresh-diagnostic-v1.json) was authored after policy `3e8f1135c0e5bb5f2cca1d5ede645a140d223017b9d56e983445107c9f5d341d` froze, before its predictions were inspected. It contains one counter, reinforcement and neutral word for each enemy. Both spellings and their dictionary lemmas are disjoint from all earlier scored and review cases. The [freeze record](../artifacts/semantic-assessment/evaluation/fresh-diagnostic/freeze.json) pins the original bytes as SHA-256 `4c86ac7f2e987526cdaacfd21207e824ad05888a6d5c1bba9f3d50616ad450b2`. No words or expected labels were supplied to the model implementer before the run.
+
+The [first actual hybrid result](../artifacts/semantic-assessment/evaluation/fresh-diagnostic/first-run/report.json) is **18/18 labels**, **12/12 constrained source senses**, **7/7 previously unprofiled scoring concepts**, and **0/6 neutral false positives**. Four decisions used the local LLM, three used source-direction proofs, five retained lexical expansions, and six retained baseline neutral decisions. This is a small assistant-authored diagnostic of the complete hybrid algorithm, not 18 new LLM classifications, a representative dictionary sample, or an estimate of dictionary-wide accuracy. It does not replace earlier failed reports or change the publication gates.
+
+That same frozen candidate **failed the existing quality gates** in its [actual contextual assessment](../artifacts/semantic-assessment/evaluation/contextual-candidate/summary.json): primary accuracy 140/144 with 29/30 source constraints, development-extension labels 13/13 with 12/13 source constraints, and confirmation accuracy 31/36 with one enemy at 4/6. All 44 eligible benchmark reviews were present and valid. The fresh diagnostic's success therefore does not justify publication. If the model changes in response, the 18 cases also become regression evidence for the later model.
+
+The one-shot reviewer refuses to overwrite existing results and verifies the frozen fixture and model-policy digests:
+
+```sh
+node scripts/review-fresh-semantic-diagnostic.ts candidate-refinement.json artifacts/semantic-assessment/evaluation/fresh-diagnostic/first-run
+```
+
+Any later execution belongs in a separate regression directory and must not be described as another unseen diagnostic.

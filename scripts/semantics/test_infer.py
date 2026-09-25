@@ -72,6 +72,40 @@ class DirectionalProofTests(unittest.TestCase):
         self.assertNotIn("deep-action", proofs, "A role plus two concept edges is out of scope")
         self.assertNotIn("agent-action", proofs, "Agents are not their associated states or events")
 
+    def test_group_taxonomy_does_not_inherit_polarity_but_exact_meanings_remain(self):
+        anchor = "oewn-collection__1.14.00.."
+        synonym = "oewn-assemblage__1.14.00.."
+        member = "oewn-subcollection__1.14.00.."
+        descendant = "oewn-specialized_collection__1.14.00.."
+        source = {
+            "senseSynsets": {anchor: "group", synonym: "group", member: "member", descendant: "descendant"},
+            "synsets": {
+                "group": {"relations": []},
+                "member": {"relations": [{"type": "hypernym", "target": "group"}]},
+                "descendant": {"relations": [{"type": "hypernym", "target": "member"}]},
+            },
+        }
+        for relation in ("opposite", "similar"):
+            profile = {"roots": [{"senseId": anchor, "relation": relation}], "relations": {},
+                       "excludedSenseIds": [], "reviewedExclusions": {}}
+            proofs = directional_proofs(source, profile, list(source["senseSynsets"]))
+            self.assertEqual(proofs[anchor][0]["relation"], relation)
+            self.assertEqual(proofs[synonym][0]["path"], [])
+            self.assertNotIn(member, proofs)
+            self.assertNotIn(descendant, proofs)
+
+    def test_group_guard_also_covers_an_explicit_role_followed_by_inheritance(self):
+        anchor = "oewn-collection__1.14.00.."
+        source = {
+            "senseSynsets": {anchor: "group", "member": "member", "action": "action"},
+            "synsets": {"group": {"relations": []}, "action": {"relations": []},
+                        "member": {"relations": [{"type": "hypernym", "target": "group"}]}},
+            "senseRoles": {"action": [{"type": "other", "qualifier": "event", "target": "member"}]},
+        }
+        profile = {"roots": [{"senseId": anchor, "relation": "opposite"}], "relations": {},
+                   "excludedSenseIds": [], "reviewedExclusions": {}}
+        self.assertNotIn("action", directional_proofs(source, profile, list(source["senseSynsets"])))
+
 
 if __name__ == "__main__":
     unittest.main()

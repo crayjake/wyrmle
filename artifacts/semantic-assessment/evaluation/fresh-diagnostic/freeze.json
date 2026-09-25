@@ -1,0 +1,8 @@
+{
+  "fixtureFile": "tests/fixtures/semantic-fresh-diagnostic-v1.json",
+  "sha256": "4c86ac7f2e987526cdaacfd21207e824ad05888a6d5c1bba9f3d50616ad450b2",
+  "policyDigest": "3e8f1135c0e5bb5f2cca1d5ede645a140d223017b9d56e983445107c9f5d341d",
+  "scoredCases": 18,
+  "novelScoringConcepts": 7,
+  "interpretation": "Diagnostic only; frozen before predictions. No changes to existing gates."
+}

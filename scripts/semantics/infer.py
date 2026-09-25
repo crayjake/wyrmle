@@ -37,6 +37,7 @@ CONFIG = {
     "reviewedPolicy": "reviewed-scoring-senses-precedence-related-open-to-inference",
     "lexicalEntailment": "same-synset-or-forward-hypernym-entails-causes-up-to-two-edges",
     "sourceRolePrefix": "optional-forward-other-state-or-event-counts-as-one-of-two-edges",
+    "groupHypernymPolicy": "noun.group-hypernym-paths-are-not-directional-evidence-use-neural-classifier",
     "embeddingInput": "lemma: definition",
     "embeddingMaxTokens": 256,
     "embeddingBatchSize": 64,
@@ -202,6 +203,16 @@ def directional_proofs(source, profile, ids):
                 continue
             seen.add(current)
             for anchor in anchors.get(current, []):
+                # The lexicographer-file number is part of the licensed sense
+                # key: 1.14 is noun.group. Membership in a group or sequence
+                # does not inherit its semantic polarity. A chaotic series is
+                # still a series; graph taxonomy alone cannot make it orderly.
+                # Keep exact reviewed meanings and same-synset evidence, but
+                # send inherited group classifications through normal model
+                # assessment and the existing contextual publication gate.
+                noun_group = anchor["senseId"].rsplit("__", 1)[-1].startswith("1.14.")
+                if noun_group and any(edge["type"] == "hypernym" for edge in path):
+                    continue
                 matches.append({"relation": anchor["relation"], "anchor": anchor["senseId"], "path": path})
             if len(path) >= 2:
                 continue

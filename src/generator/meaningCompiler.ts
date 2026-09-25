@@ -53,11 +53,24 @@ function fits(word: string, counts: Uint16Array, minimum: number, maximum: numbe
   return true
 }
 
+// Providers are fixed, immutable module data for this authoring process. The
+// physical multiset determines coverage; positions, special tiles and refill
+// order do not. Cache only our own immutable result, never caller-owned data.
+const compiledInventories = new Map<string, PuzzleMeaningLexicon>()
+const maximumCachedInventories = 16
+
 /** Exhausts the dictionary before search; solver budgets never limit coverage. */
 export function compilePuzzleMeanings(encounter: LetterStrikeEncounter): PuzzleMeaningLexicon {
   const enemyWord = encounter.enemy.word.toUpperCase()
   const assessment = semanticAssessmentProvider.metadata(enemyWord)
   const letterSupply = meaningSupply(encounter)
+  const inventoryKey = JSON.stringify([enemyWord, letterSupply, encounter.minimumWordLength, encounter.startingTiles.length])
+  const cached = compiledInventories.get(inventoryKey)
+  if (cached) {
+    compiledInventories.delete(inventoryKey)
+    compiledInventories.set(inventoryKey, cached)
+    return Object.freeze({ ...cached })
+  }
   const counts = new Uint16Array(26)
   for (const letter of letterSupply) counts[letter.charCodeAt(0) - 65]++
   const words: Record<string, PuzzleWordMeaning> = {}
@@ -67,9 +80,12 @@ export function compilePuzzleMeanings(encounter: LetterStrikeEncounter): PuzzleM
   }
   const refined = semanticRefinementProvider.refine(enemyWord, words)
   const metadata = refined.metadata ? readSemanticAssessmentMetadata({ ...assessment, refinement: refined.metadata }) : assessment
-  return Object.freeze({ version: MEANING_LEXICON_VERSION, dictionaryVersion: MEANING_DICTIONARY_VERSION,
-    profileVersion: assessment.version, policy: 'defined-only', enemyWord, letterSupply, assessment: metadata,
+  const compiled: PuzzleMeaningLexicon = Object.freeze({ version: MEANING_LEXICON_VERSION, dictionaryVersion: MEANING_DICTIONARY_VERSION,
+    profileVersion: assessment.version, policy: 'defined-only' as const, enemyWord, letterSupply, assessment: metadata,
     minimumWordLength: encounter.minimumWordLength, maximumWordLength: encounter.startingTiles.length, words: Object.freeze(refined.words) })
+  if (compiledInventories.size >= maximumCachedInventories) compiledInventories.delete(compiledInventories.keys().next().value!)
+  compiledInventories.set(inventoryKey, compiled)
+  return compiled
 }
 
 export function withCompiledMeanings(encounter: LetterStrikeEncounter): LetterStrikeEncounter {

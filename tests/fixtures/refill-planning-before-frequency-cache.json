@@ -1,0 +1,211 @@
+[
+  {
+    "seed": "letter-frequency-a",
+    "limit": null,
+    "output": {
+      "refillQueue": "LCYLLMERRYROJOJYNELCTTCAABENEVOLENTSOLEMNEARTHCHERRYENJOYPACIFYDEPRESSIONBLISSDESOLATEFATHERGENT",
+      "construction": {
+        "method": "overlapping-multisets-and-lookahead",
+        "plannedWords": [
+          "CHEER",
+          "CALMLY",
+          "MERRY",
+          "JOY",
+          "GOLDEN"
+        ],
+        "plannedTileIds": [
+          [
+            4,
+            5,
+            15,
+            6,
+            7
+          ],
+          [
+            17,
+            13,
+            9,
+            11,
+            16,
+            2
+          ],
+          [
+            21,
+            22,
+            23,
+            24,
+            18
+          ],
+          [
+            0,
+            1,
+            25
+          ],
+          [
+            8,
+            10,
+            19,
+            14,
+            33,
+            32
+          ]
+        ],
+        "refillBlocks": [
+          {
+            "offset": 0,
+            "letters": "LCYLL",
+            "supports": "CALMLY"
+          },
+          {
+            "offset": 5,
+            "letters": "MERRYR",
+            "supports": "MERRY"
+          },
+          {
+            "offset": 11,
+            "letters": "OJOJY",
+            "supports": "JOY"
+          },
+          {
+            "offset": 16,
+            "letters": "NEL",
+            "supports": "GOLDEN"
+          },
+          {
+            "offset": 19,
+            "letters": "CTTCAA",
+            "supports": "CAT"
+          }
+        ],
+        "mutations": []
+      }
+    }
+  },
+  {
+    "seed": "letter-frequency-b",
+    "limit": 12,
+    "output": {
+      "refillQueue": "INFERYMYERRE",
+      "construction": {
+        "method": "overlapping-multisets-and-lookahead",
+        "plannedWords": [
+          "CHEER",
+          "FRIENDLY",
+          "MERRY"
+        ],
+        "plannedTileIds": [
+          [
+            4,
+            5,
+            6,
+            15,
+            7
+          ],
+          [
+            18,
+            20,
+            16,
+            19,
+            17,
+            14,
+            9,
+            2
+          ],
+          [
+            11,
+            24,
+            25,
+            26,
+            21
+          ]
+        ],
+        "refillBlocks": [
+          {
+            "offset": 0,
+            "letters": "INFER",
+            "supports": "FRIENDLY"
+          },
+          {
+            "offset": 5,
+            "letters": "YMYERRE",
+            "supports": "MERRY"
+          }
+        ],
+        "mutations": [
+          "finite-refills:12"
+        ]
+      }
+    }
+  },
+  {
+    "seed": "letter-frequency-c",
+    "limit": 18,
+    "output": {
+      "refillQueue": "CUCLYDDLALGRRERNIN",
+      "construction": {
+        "method": "overlapping-multisets-and-lookahead",
+        "plannedWords": [
+          "CHEER",
+          "CLOUDY",
+          "GLAD",
+          "MERRY"
+        ],
+        "plannedTileIds": [
+          [
+            4,
+            5,
+            15,
+            6,
+            7
+          ],
+          [
+            16,
+            9,
+            1,
+            17,
+            14,
+            2
+          ],
+          [
+            8,
+            19,
+            13,
+            21
+          ],
+          [
+            11,
+            29,
+            27,
+            28,
+            20
+          ]
+        ],
+        "refillBlocks": [
+          {
+            "offset": 0,
+            "letters": "CUCLY",
+            "supports": "CLOUDY"
+          },
+          {
+            "offset": 5,
+            "letters": "DDLALG",
+            "supports": "GLAD"
+          },
+          {
+            "offset": 11,
+            "letters": "RRER",
+            "supports": "MERRY"
+          },
+          {
+            "offset": 15,
+            "letters": "NIN",
+            "supports": "MOTION"
+          }
+        ],
+        "mutations": [
+          "finite-refills:18"
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,779 @@
+{
+  "manifest": {
+    "modelDigest": "3605803b982cb64aead44f6c1b2ae36e3acdb41d8e46c8a94c6533bc4c67e597",
+    "modelId": "Qwen/Qwen3-4B-Instruct-2507",
+    "modelRevision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "policyDigest": "3e8f1135c0e5bb5f2cca1d5ede645a140d223017b9d56e983445107c9f5d341d",
+    "promptDigest": "d39bdd59e213a3ffaa0082843c6c41d987371d5a5c8535dbe291e0a46bdcc176",
+    "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+    "threshold": 0.5,
+    "trustedDecisionBases": [
+      "lexical-expansion",
+      "reviewed-profile",
+      "source-direction-proof"
+    ],
+    "version": "wyrmle-semantic-refinement-1"
+  },
+  "policy": {
+    "classification": "one-target-meaning-across-all-qualified-senses-with-cross-enemy-neutral-distractors",
+    "cosineMinimum": 0.5,
+    "input": "qualified-source-senses-sorted-by-id-with-lemma-pos-lexical-domain",
+    "invalid": "hard-fail",
+    "maxAttempts": 3,
+    "maxTokens": 100,
+    "meaningGroups": {
+      "ANGER": [
+        {
+          "concepts": [
+            "becoming calm",
+            "becoming relaxed",
+            "calm and composure",
+            "calming agitation",
+            "cheerfulness and good spirits",
+            "compassion and humane care",
+            "compassion for suffering",
+            "delight and enjoyment",
+            "forgiveness instead of resentment",
+            "friendliness and goodwill",
+            "gentleness and even temper",
+            "happiness and joy",
+            "kindness and consideration",
+            "kindness and forgiveness",
+            "laughter and mirth",
+            "patience and even temper",
+            "peace and freedom from disputes",
+            "peace of mind",
+            "peace without strife or turmoil",
+            "relaxation without anxiety",
+            "smiling and pleasure"
+          ],
+          "label": "CALM_KINDNESS_JOY",
+          "relation": "opposite"
+        },
+        {
+          "concepts": [
+            "anger and indignation",
+            "anger caused by irritation",
+            "annoyance and mild anger",
+            "feeling or expressing anger",
+            "fury and intense anger",
+            "resentment and bitter anger",
+            "wrath and intense anger"
+          ],
+          "label": "ANGER",
+          "relation": "similar"
+        },
+        {
+          "concepts": [
+            "despair and lost hope",
+            "hopeless despondency",
+            "hopelessness",
+            "the absence of hope"
+          ],
+          "label": "DESPAIR_HOPELESSNESS",
+          "relation": "neutral"
+        },
+        {
+          "concepts": [
+            "anxiety and apprehension",
+            "anxiety and nervous fear",
+            "anxious fear",
+            "anxious uneasiness",
+            "being afraid",
+            "dread of danger",
+            "fear of danger",
+            "horror and profound fear",
+            "provoking fear",
+            "terror and intense fear",
+            "worry and anxiety"
+          ],
+          "label": "FEAR_ANXIETY",
+          "relation": "neutral"
+        },
+        {
+          "concepts": [
+            "melancholy gloom",
+            "melancholy sadness",
+            "sadness and sorrow",
+            "sadness and unhappiness",
+            "sadness expressed in manner",
+            "sadness expressed in tears",
+            "thoughtful sadness"
+          ],
+          "label": "SADNESS_GLOOM",
+          "relation": "neutral"
+        },
+        {
+          "concepts": [
+            "brutality and extreme cruelty",
+            "cruel and inhumane behavior",
+            "deliberately causing pain",
+            "inhumanity and lack of compassion",
+            "lack of mercy"
+          ],
+          "label": "CRUELTY",
+          "relation": "neutral"
+        },
+        {
+          "concepts": [
+            "a confused disorderly state",
+            "absence of law or control",
+            "causing disorder",
+            "confused and disordered thought",
+            "disarray and untidiness",
+            "disorder and misplaced things",
+            "disorderly conduct",
+            "disturbed public order",
+            "extreme confusion and disorder",
+            "lack of order or plan",
+            "lawlessness and disorder",
+            "mess and disorder",
+            "turmoil and disturbance",
+            "unpredictable disorder"
+          ],
+          "label": "DISORDER_CONFUSION",
+          "relation": "neutral"
+        }
+      ],
+      "CHAOS": [
+        {
+          "concepts": [
+            "a stable social order",
+            "a systematic and orderly way of doing things",
+            "an even and unruffled temper",
+            "arranging things methodically",
+            "becoming calm after agitation",
+            "becoming relaxed",
+            "calm and composure instead of turmoil",
+            "calming agitation",
+            "clarity instead of confusion",
+            "clear expression instead of confusion",
+            "harmonious arrangement of parts",
+            "harmony and freedom from disputes",
+            "harmony between parts",
+            "logical and orderly relations between parts",
+            "logical arrangement",
+            "methodical and well organized order",
+            "methodical organization",
+            "order without disruption",
+            "organized and methodical arrangement",
+            "peace and quiet",
+            "peace of mind",
+            "peace without strife or turmoil",
+            "planning an orderly arrangement",
+            "proper arrangement and order",
+            "quiet without agitation",
+            "refreshing tranquility without tension",
+            "regaining composure",
+            "relaxation without anxiety",
+            "self-possession instead of agitation",
+            "serenity and an untroubled disposition",
+            "sorting into an orderly arrangement",
+            "structure and arrangement",
+            "tidiness and order",
+            "tranquility without disturbances"
+          ],
+          "label": "ORDER_CLARITY_CALM",
+          "relation": "opposite"
+        },
+        {
+          "concepts": [
+            "a confused disorderly state",
+            "absence of law or control",
+            "causing disorder",
+            "confused and disordered thought",
+            "disarray and untidiness",
+            "disorder and misplaced things",
+            "disorderly conduct",
+            "disturbed public order",
+            "extreme confusion and disorder",
+            "lack of order or plan",
+            "lawlessness and disorder",
+            "mess and disorder",
+            "turmoil and disturbance",
+            "unpredictable disorder"
+          ],
+          "label": "DISORDER_CONFUSION",
+          "relation": "similar"
+        },
+        {
+          "concepts": [
+            "anger and indignation",
+            "anger caused by irritation",
+            "annoyance and mild anger",
+            "feeling or expressing anger",
+            "fury and intense anger",
+            "resentment and bitter anger",
+            "wrath and intense anger"
+          ],
+          "label": "ANGER",
+          "relation": "neutral"
+        },
+        {
+          "concepts": [
+            "despair and lost hope",
+            "hopeless despondency",
+            "hopelessness",
+            "the absence of hope"
+          ],
+          "label": "DESPAIR_HOPELESSNESS",
+          "relation": "neutral"
+        },
+        {
+          "concepts": [
+            "anxiety and apprehension",
+            "anxiety and nervous fear",
+            "anxious fear",
+            "anxious uneasiness",
+            "being afraid",
+            "dread of danger",
+            "fear of danger",
+            "horror and profound fear",
+            "provoking fear",
+            "terror and intense fear",
+            "worry and anxiety"
+          ],
+          "label": "FEAR_ANXIETY",
+          "relation": "neutral"
+        },
+        {
+          "concepts": [
+            "melancholy gloom",
+            "melancholy sadness",
+            "sadness and sorrow",
+            "sadness and unhappiness",
+            "sadness expressed in manner",
+            "sadness expressed in tears",
+            "thoughtful sadness"
+          ],
+          "label": "SADNESS_GLOOM",
+          "relation": "neutral"
+        },
+        {
+          "concepts": [
+            "brutality and extreme cruelty",
+            "cruel and inhumane behavior",
+            "deliberately causing pain",
+            "inhumanity and lack of compassion",
+            "lack of mercy"
+          ],
+          "label": "CRUELTY",
+          "relation": "neutral"
+        }
+      ],
+      "CRUELTY": [
+        {
+          "concepts": [
+            "compassion and humane care",
+            "compassion for suffering",
+            "empathy for others",
+            "gentleness and even temper",
+            "humaneness and consideration",
+            "kindness and benevolence",
+            "kindness and consideration",
+            "kindness and forgiveness",
+            "mercy toward others"
+          ],
+          "label": "KINDNESS_MERCY",
+          "relation": "opposite"
+        },
+        {
+          "concepts": [
+            "brutality and extreme cruelty",
+            "cruel and inhumane behavior",
+            "deliberately causing pain",
+            "inhumanity and lack of compassion",
+            "lack of mercy"
+          ],
+          "label": "CRUELTY",
+          "relation": "similar"
+        },
+        {
+          "concepts": [
+            "anger and indignation",
+            "anger caused by irritation",
+            "annoyance and mild anger",
+            "feeling or expressing anger",
+            "fury and intense anger",
+            "resentment and bitter anger",
+            "wrath and intense anger"
+          ],
+          "label": "ANGER",
+          "relation": "neutral"
+        },
+        {
+          "concepts": [
+            "despair and lost hope",
+            "hopeless despondency",
+            "hopelessness",
+            "the absence of hope"
+          ],
+          "label": "DESPAIR_HOPELESSNESS",
+          "relation": "neutral"
+        },
+        {
+          "concepts": [
+            "anxiety and apprehension",
+            "anxiety and nervous fear",
+            "anxious fear",
+            "anxious uneasiness",
+            "being afraid",
+            "dread of danger",
+            "fear of danger",
+            "horror and profound fear",
+            "provoking fear",
+            "terror and intense fear",
+            "worry and anxiety"
+          ],
+          "label": "FEAR_ANXIETY",
+          "relation": "neutral"
+        },
+        {
+          "concepts": [
+            "melancholy gloom",
+            "melancholy sadness",
+            "sadness and sorrow",
+            "sadness and unhappiness",
+            "sadness expressed in manner",
+            "sadness expressed in tears",
+            "thoughtful sadness"
+          ],
+          "label": "SADNESS_GLOOM",
+          "relation": "neutral"
+        },
+        {
+          "concepts": [
+            "a confused disorderly state",
+            "absence of law or control",
+            "causing disorder",
+            "confused and disordered thought",
+            "disarray and untidiness",
+            "disorder and misplaced things",
+            "disorderly conduct",
+            "disturbed public order",
+            "extreme confusion and disorder",
+            "lack of order or plan",
+            "lawlessness and disorder",
+            "mess and disorder",
+            "turmoil and disturbance",
+            "unpredictable disorder"
+          ],
+          "label": "DISORDER_CONFUSION",
+          "relation": "neutral"
+        }
+      ],
+      "DESPAIR": [
+        {
+          "concepts": [
+            "an optimistic outlook",
+            "confident hopefulness",
+            "encouragement and support",
+            "giving hope and encouragement",
+            "hope for a better outcome",
+            "optimism about the future"
+          ],
+          "label": "HOPE_CONFIDENCE",
+          "relation": "opposite"
+        },
+        {
+          "concepts": [
+            "despair and lost hope",
+            "hopeless despondency",
+            "hopelessness",
+            "the absence of hope"
+          ],
+          "label": "DESPAIR_HOPELESSNESS",
+          "relation": "similar"
+        },
+        {
+          "concepts": [
+            "anger and indignation",
+            "anger caused by irritation",
+            "annoyance and mild anger",
+            "feeling or expressing anger",
+            "fury and intense anger",
+            "resentment and bitter anger",
+            "wrath and intense anger"
+          ],
+          "label": "ANGER",
+          "relation": "neutral"
+        },
+        {
+          "concepts": [
+            "anxiety and apprehension",
+            "anxiety and nervous fear",
+            "anxious fear",
+            "anxious uneasiness",
+            "being afraid",
+            "dread of danger",
+            "fear of danger",
+            "horror and profound fear",
+            "provoking fear",
+            "terror and intense fear",
+            "worry and anxiety"
+          ],
+          "label": "FEAR_ANXIETY",
+          "relation": "neutral"
+        },
+        {
+          "concepts": [
+            "melancholy gloom",
+            "melancholy sadness",
+            "sadness and sorrow",
+            "sadness and unhappiness",
+            "sadness expressed in manner",
+            "sadness expressed in tears",
+            "thoughtful sadness"
+          ],
+          "label": "SADNESS_GLOOM",
+          "relation": "neutral"
+        },
+        {
+          "concepts": [
+            "brutality and extreme cruelty",
+            "cruel and inhumane behavior",
+            "deliberately causing pain",
+            "inhumanity and lack of compassion",
+            "lack of mercy"
+          ],
+          "label": "CRUELTY",
+          "relation": "neutral"
+        },
+        {
+          "concepts": [
+            "a confused disorderly state",
+            "absence of law or control",
+            "causing disorder",
+            "confused and disordered thought",
+            "disarray and untidiness",
+            "disorder and misplaced things",
+            "disorderly conduct",
+            "disturbed public order",
+            "extreme confusion and disorder",
+            "lack of order or plan",
+            "lawlessness and disorder",
+            "mess and disorder",
+            "turmoil and disturbance",
+            "unpredictable disorder"
+          ],
+          "label": "DISORDER_CONFUSION",
+          "relation": "neutral"
+        }
+      ],
+      "FEAR": [
+        {
+          "concepts": [
+            "becoming calm",
+            "becoming relaxed",
+            "being safe from danger",
+            "boldness and daring",
+            "bravery and freedom from fear",
+            "calm and composure",
+            "calming agitation",
+            "confidence in oneself",
+            "courage in the face of danger",
+            "freedom from fear and anxiety",
+            "peace of mind",
+            "reassurance and restored confidence",
+            "relaxation without anxiety",
+            "safety from danger",
+            "security without fear or doubt"
+          ],
+          "label": "SAFETY_COURAGE_CALM",
+          "relation": "opposite"
+        },
+        {
+          "concepts": [
+            "anxiety and apprehension",
+            "anxiety and nervous fear",
+            "anxious fear",
+            "anxious uneasiness",
+            "being afraid",
+            "dread of danger",
+            "fear of danger",
+            "horror and profound fear",
+            "provoking fear",
+            "terror and intense fear",
+            "worry and anxiety"
+          ],
+          "label": "FEAR_ANXIETY",
+          "relation": "similar"
+        },
+        {
+          "concepts": [
+            "anger and indignation",
+            "anger caused by irritation",
+            "annoyance and mild anger",
+            "feeling or expressing anger",
+            "fury and intense anger",
+            "resentment and bitter anger",
+            "wrath and intense anger"
+          ],
+          "label": "ANGER",
+          "relation": "neutral"
+        },
+        {
+          "concepts": [
+            "despair and lost hope",
+            "hopeless despondency",
+            "hopelessness",
+            "the absence of hope"
+          ],
+          "label": "DESPAIR_HOPELESSNESS",
+          "relation": "neutral"
+        },
+        {
+          "concepts": [
+            "melancholy gloom",
+            "melancholy sadness",
+            "sadness and sorrow",
+            "sadness and unhappiness",
+            "sadness expressed in manner",
+            "sadness expressed in tears",
+            "thoughtful sadness"
+          ],
+          "label": "SADNESS_GLOOM",
+          "relation": "neutral"
+        },
+        {
+          "concepts": [
+            "brutality and extreme cruelty",
+            "cruel and inhumane behavior",
+            "deliberately causing pain",
+            "inhumanity and lack of compassion",
+            "lack of mercy"
+          ],
+          "label": "CRUELTY",
+          "relation": "neutral"
+        },
+        {
+          "concepts": [
+            "a confused disorderly state",
+            "absence of law or control",
+            "causing disorder",
+            "confused and disordered thought",
+            "disarray and untidiness",
+            "disorder and misplaced things",
+            "disorderly conduct",
+            "disturbed public order",
+            "extreme confusion and disorder",
+            "lack of order or plan",
+            "lawlessness and disorder",
+            "mess and disorder",
+            "turmoil and disturbance",
+            "unpredictable disorder"
+          ],
+          "label": "DISORDER_CONFUSION",
+          "relation": "neutral"
+        }
+      ],
+      "MELANCHOLY": [
+        {
+          "concepts": [
+            "cheerfulness and good spirits",
+            "delight and enjoyment",
+            "happiness and joy",
+            "laughter and mirth",
+            "merriment and joy",
+            "smiling and pleasure"
+          ],
+          "label": "JOY_CHEERFULNESS",
+          "relation": "opposite"
+        },
+        {
+          "concepts": [
+            "melancholy gloom",
+            "melancholy sadness",
+            "sadness and sorrow",
+            "sadness and unhappiness",
+            "sadness expressed in manner",
+            "sadness expressed in tears",
+            "thoughtful sadness"
+          ],
+          "label": "SADNESS_GLOOM",
+          "relation": "similar"
+        },
+        {
+          "concepts": [
+            "anger and indignation",
+            "anger caused by irritation",
+            "annoyance and mild anger",
+            "feeling or expressing anger",
+            "fury and intense anger",
+            "resentment and bitter anger",
+            "wrath and intense anger"
+          ],
+          "label": "ANGER",
+          "relation": "neutral"
+        },
+        {
+          "concepts": [
+            "despair and lost hope",
+            "hopeless despondency",
+            "hopelessness",
+            "the absence of hope"
+          ],
+          "label": "DESPAIR_HOPELESSNESS",
+          "relation": "neutral"
+        },
+        {
+          "concepts": [
+            "anxiety and apprehension",
+            "anxiety and nervous fear",
+            "anxious fear",
+            "anxious uneasiness",
+            "being afraid",
+            "dread of danger",
+            "fear of danger",
+            "horror and profound fear",
+            "provoking fear",
+            "terror and intense fear",
+            "worry and anxiety"
+          ],
+          "label": "FEAR_ANXIETY",
+          "relation": "neutral"
+        },
+        {
+          "concepts": [
+            "brutality and extreme cruelty",
+            "cruel and inhumane behavior",
+            "deliberately causing pain",
+            "inhumanity and lack of compassion",
+            "lack of mercy"
+          ],
+          "label": "CRUELTY",
+          "relation": "neutral"
+        },
+        {
+          "concepts": [
+            "a confused disorderly state",
+            "absence of law or control",
+            "causing disorder",
+            "confused and disordered thought",
+            "disarray and untidiness",
+            "disorder and misplaced things",
+            "disorderly conduct",
+            "disturbed public order",
+            "extreme confusion and disorder",
+            "lack of order or plan",
+            "lawlessness and disorder",
+            "mess and disorder",
+            "turmoil and disturbance",
+            "unpredictable disorder"
+          ],
+          "label": "DISORDER_CONFUSION",
+          "relation": "neutral"
+        }
+      ]
+    },
+    "modelId": "Qwen/Qwen3-4B-Instruct-2507",
+    "modelSha256": "3605803b982cb64aead44f6c1b2ae36e3acdb41d8e46c8a94c6533bc4c67e597",
+    "modelSourceRevision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "preserve": [
+      "reviewed-profile",
+      "lexical-expansion",
+      "source-direction-proof"
+    ],
+    "promptDigest": "d39bdd59e213a3ffaa0082843c6c41d987371d5a5c8535dbe291e0a46bdcc176",
+    "quantizationRepository": "unsloth/Qwen3-4B-Instruct-2507-GGUF",
+    "quantizationRevision": "a06e946bb6b655725eafa393f4a9745d460374c9",
+    "responseAggregation": "exactly-one-final-target-group-and-source-index",
+    "retrievalChannels": [
+      "lemma-definition",
+      "definition",
+      "lemma"
+    ],
+    "review": [
+      "local-vector-nli",
+      "qualified-local-vector-nli-neutral"
+    ],
+    "runtime": "llama.cpp-b11146",
+    "runtimeBuild": "b11146-7fe450e19",
+    "seed": 123,
+    "temperature": 0,
+    "thinking": false,
+    "validationRetryPrompt": "Your response failed validation: {error}. Use one of these supplied labels only: {allowedGroups}. The source index must be 0 through {maximumIndex}. Consider all supplied definitions, choose one supported target meaning if any, otherwise another supplied group or OTHER. Give a brief explanation and exactly one FINAL label index. Do not invent a group or use a group from an example.",
+    "version": "wyrmle-contextual-v1"
+  },
+  "prompt": {
+    "examples": [
+      [
+        "Groups: HEAT means heat or becoming hotter. COLD means cold or becoming colder. Definitions: 0: warm (adjective): having moderate heat.",
+        "Moderate heat belongs to HEAT. FINAL HEAT 0"
+      ],
+      [
+        "Groups: HEAT means heat or becoming hotter. COLD means cold or becoming colder. Definitions: 0: freeze (verb): make very cold.",
+        "Making cold belongs to COLD. FINAL COLD 0"
+      ],
+      [
+        "Groups: LIGHT means light or illumination. DARK means absence of light. Definitions: 0: search (verb): searching thoroughly and diligently.",
+        "Searching is an investigation, not light or darkness. FINAL OTHER 0"
+      ],
+      [
+        "Groups: JOY means great happiness. GRIEF means intense sorrow. Definitions: 0: lacrimal fluid (noun.substance): eye liquid from emotion or irritation.",
+        "Eye liquid is a physical substance, not a particular emotional state. FINAL OTHER 0"
+      ],
+      [
+        "Groups: REASON means rational thought. CONFUSION means confused thought. Definitions: 0: cabinet (noun.artifact): a storage unit with neatly arranged drawers.",
+        "The referent is storage furniture; its arrangement does not mean rational or confused thought. FINAL OTHER 0"
+      ],
+      [
+        "Groups: JOY means great happiness. GRIEF means intense sorrow. Definitions: 0: surprise (noun.feeling): the feeling caused by something unexpected or unusual.",
+        "Surprise is a distinct emotion; it does not mean either happiness or sorrow. FINAL OTHER 0"
+      ],
+      [
+        "Groups: HEAT means heat or becoming hotter. COLD means cold or becoming colder. Definitions: 0: heater (noun.artifact): a device that produces heat to warm a room.",
+        "The defining function directly produces heat. FINAL HEAT 0"
+      ]
+    ],
+    "lexnames": [
+      "adj.all",
+      "adj.pert",
+      "adv.all",
+      "noun.Tops",
+      "noun.act",
+      "noun.animal",
+      "noun.artifact",
+      "noun.attribute",
+      "noun.body",
+      "noun.cognition",
+      "noun.communication",
+      "noun.event",
+      "noun.feeling",
+      "noun.food",
+      "noun.group",
+      "noun.location",
+      "noun.motive",
+      "noun.object",
+      "noun.person",
+      "noun.phenomenon",
+      "noun.plant",
+      "noun.possession",
+      "noun.process",
+      "noun.quantity",
+      "noun.relation",
+      "noun.shape",
+      "noun.state",
+      "noun.substance",
+      "noun.time",
+      "verb.body",
+      "verb.change",
+      "verb.cognition",
+      "verb.communication",
+      "verb.competition",
+      "verb.consumption",
+      "verb.contact",
+      "verb.creation",
+      "verb.emotion",
+      "verb.motion",
+      "verb.perception",
+      "verb.possession",
+      "verb.social",
+      "verb.stative",
+      "verb.weather",
+      "adj.ppl"
+    ],
+    "system": "The first two supplied groups are the target meanings; the remaining groups are alternatives used for disambiguation. Consider every candidate definition. If any definition directly matches either target group, choose that supported target meaning; otherwise choose its best alternative group or OTHER. Choose exactly one definition and emit exactly one FINAL line, after one short explanation. Classify dictionary senses into the supplied meaning groups. Match what a definition itself denotes, including an action that directly creates the group meaning. Mere association, possible use, a physical object possessing a property, or an unspecified bodily sign is not a meaning match. An object with a defining protective/helpful function can match that function. Meanings may be actions, qualities, processes, emotions, states, or defining functions; do not require a psychological state. Use lemma, part of speech and dictionary domain to disambiguate. First give a reason of at most 15 words naming the denoted concept. Then finish with FINAL, the matching group label or OTHER, and the source definition number. Do not compare emotional valence or infer a specific emotion from a general emotion.",
+    "userTemplate": "Meaning groups:\n{meaningGroups}\nOTHER means none of those meanings.\nCandidate definitions:\n{numberedLemmaPosLexicalDomainDefinitions}"
+  }
+}

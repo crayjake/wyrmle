@@ -6,11 +6,11 @@ import confirmation from '../tests/fixtures/semantic-confirmation-v1.json' with 
 import { collectSemanticQualitySnapshot } from './lib/semanticQuality.ts'
 import { evaluateSemanticBenchmark, semanticBenchmark } from './evaluate-semantic-benchmark.ts'
 
-const [snapshotPath, reportDirectory] = process.argv.slice(2)
+const [snapshotPath, reportDirectory, refinementPath] = process.argv.slice(2)
 if (!snapshotPath || !reportDirectory) {
-  throw new Error('Usage: node scripts/review-contextual-semantics.ts SNAPSHOT.json REPORT_DIRECTORY')
+  throw new Error('Usage: node scripts/review-contextual-semantics.ts SNAPSHOT.json REPORT_DIRECTORY [REFINEMENT_CACHE.json]')
 }
-const snapshot = collectSemanticQualitySnapshot()
+const snapshot = collectSemanticQualitySnapshot(undefined, refinementPath)
 const primary = evaluateSemanticBenchmark(snapshot)
 const developmentReport = evaluateSemanticBenchmark(snapshot, 'all', {
   ...semanticBenchmark, version: development.version, cases: development.cases, reviewCases: [],

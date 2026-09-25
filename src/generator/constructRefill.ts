@@ -36,11 +36,23 @@ export function constructRefill(
   refillLimit?: number,
 ): Pick<CandidatePuzzle, 'construction'> & { refillQueue: string } {
   validateRefillLimit(refillLimit)
+  // Planning reuses these relations across many previews. Its own immutable
+  // copies enable indexed lookup without freezing a caller's mutable rules.
+  const planningEncounter: LetterStrikeEncounter = { ...encounter, enemy: { ...encounter.enemy,
+    semanticRelations: Object.freeze(Object.fromEntries(Object.entries(encounter.enemy.semanticRelations)
+      .map(([relation, entries]) => [relation, Object.freeze([...entries])]))) as LetterStrikeEncounter['enemy']['semanticRelations'],
+  } }
   const words = vocabulary.filter(entry => entry.word.length >= 3 && entry.word.length <= 10 && (entry.commonness ?? 0) >= 0.45)
+  // Rarity depends on the fixed planning vocabulary, not on a future move.
+  // Repeated letters count once per entry, matching the former includes() scan.
+  const letterCoverage = new Map<string, number>()
+  for (const entry of words) for (const letter of new Set(entry.word)) {
+    letterCoverage.set(letter, (letterCoverage.get(letter) ?? 0) + 1)
+  }
   const reservoir = random.shuffle(words.filter(entry => entry.word.length >= 5)).map(entry => entry.word).join('') || 'LATERMERRYHAPPY'
   const queueLength = Math.max((encounter.startingResolve + 1) * 16, refillLimit ?? 0)
   const pad = (prefix: string) => (prefix + reservoir.repeat(Math.ceil(queueLength / reservoir.length) + 1)).slice(0, Math.max(queueLength, prefix.length))
-  let state = createLetterStrikeGame({ ...encounter, refillQueue: pad('') })
+  let state = createLetterStrikeGame({ ...planningEncounter, refillQueue: pad('') })
   let prefix = ''
   const construction: CandidatePuzzle['construction'] = {
     method: 'overlapping-multisets-and-lookahead', plannedWords: [], plannedTileIds: [], refillBlocks: [], mutations: [],
@@ -75,7 +87,7 @@ export function constructRefill(
       const preview = previewLetterStrike(projected, ids)
       const netStrikes = preview.strikes - (preview.recoveries?.length ?? 0)
       if (!preview.valid || netStrikes <= 0) return []
-      const rareCoverage = preview.hits.reduce((sum, hit) => sum + 1 / Math.max(1, words.filter(word => word.word.includes(hit.letter)).length), 0)
+      const rareCoverage = preview.hits.reduce((sum, hit) => sum + 1 / Math.max(1, letterCoverage.get(hit.letter) ?? 0), 0)
       return [{ entry, missing, score: Math.min(netStrikes, futureHits) * 4
         - Math.max(0, netStrikes - futureHits) * 3 + rareCoverage * 30 + (preview.resolveCost === 0 ? 1.5 : 0)
         + (preview.semanticLabel === 'COUNTER' ? 2 : 0)
@@ -90,7 +102,7 @@ export function constructRefill(
     const letters = random.shuffle(block).join('')
     construction.refillBlocks.push({ offset: prefix.length, letters, supports: support })
     prefix += letters
-    state = { ...state, encounter: { ...encounter, refillQueue: pad(prefix) } }
+    state = { ...state, encounter: { ...planningEncounter, refillQueue: pad(prefix) } }
     construction.plannedWords.push(choice.entry.word)
     construction.plannedTileIds.push(choice.ids)
     state = submitLetterStrike(state, choice.ids)
@@ -104,7 +116,7 @@ export function constructRefill(
     // A shortened queue invalidates assumptions made by forward planning.
     // Keep only the prefix actually replayed under finite runtime rules. It is
     // still a proposal: only the solver can register a completed winning line.
-    let replay = createLetterStrikeGame({ ...encounter, finiteRefills: true, refillQueue })
+    let replay = createLetterStrikeGame({ ...planningEncounter, finiteRefills: true, refillQueue })
     let validTurns = 0
     for (const ids of construction.plannedTileIds) {
       if (replay.status !== 'playing') break

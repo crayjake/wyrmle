@@ -45,10 +45,19 @@ export function buildWordPools(enemyWord: string, provider: LexicalProvider = lo
   const enemy = provider.getEntry(normalizedEnemy)
   const maximumLength = Math.min(16, options.maximumLength ?? 12)
   const minimumCommonness = options.minimumCommonness ?? 0.5
+  const matchCounts = new Map<string, number>()
+  const matches = (word: string): number => {
+    let count = matchCounts.get(word)
+    if (count === undefined) {
+      count = matchingLetterCount(word, normalizedEnemy)
+      matchCounts.set(word, count)
+    }
+    return count
+  }
   const allowed = (entry: LexicalEntry) => entry.word.length >= 3 && entry.word.length <= maximumLength
     && /^[A-Z]+$/.test(entry.word) && isDictionaryWord(entry.word) && !entry.properNoun
     && entry.commonness !== null && entry.commonness >= minimumCommonness
-  const rank = (a: LexicalEntry, b: LexicalEntry) => matchingLetterCount(b.word, normalizedEnemy) - matchingLetterCount(a.word, normalizedEnemy)
+  const rank = (a: LexicalEntry, b: LexicalEntry) => matches(b.word) - matches(a.word)
     || (b.commonness ?? 0) - (a.commonness ?? 0) || a.word.length - b.word.length || a.word.localeCompare(b.word)
   const resolve = (words: readonly string[]) => [...new Set(words.map(normalizeWord))]
     .map(word => provider.getSubmittedWordEntry ? provider.getSubmittedWordEntry(word) : provider.getEntry(word))
@@ -63,10 +72,10 @@ export function buildWordPools(enemyWord: string, provider: LexicalProvider = lo
   const neutral = all.filter(entry => !counterSet.has(entry.word) && !resistedSet.has(entry.word))
   const grammar = all.filter(entry => (options.grammarPolicy === 'any-recognized' || entry.partsOfSpeech.length === 1)
     && entry.partsOfSpeech.includes(options.grammarPartOfSpeech ?? 'adjective'))
-  const ward = neutral.filter(entry => entry.word.length <= 5 && matchingLetterCount(entry.word, normalizedEnemy) > 0)
-  const strike = resisted.filter(entry => matchingLetterCount(entry.word, normalizedEnemy) > 0)
+  const ward = neutral.filter(entry => entry.word.length <= 5 && matches(entry.word) > 0)
+  const strike = resisted.filter(entry => matches(entry.word) > 0)
   const clutch = counters.filter(entry => entry.word.length >= 6 && entry.word.length <= 10 && (entry.commonness ?? 0) >= 0.65)
-  const decoys = [...resisted, ...neutral.filter(entry => entry.word.length >= 5 && matchingLetterCount(entry.word, normalizedEnemy) <= 2)].sort(rank)
+  const decoys = [...resisted, ...neutral.filter(entry => entry.word.length >= 5 && matches(entry.word) <= 2)].sort(rank)
   return {
     enemyWord: normalizedEnemy, providerId: provider.id,
     counters, resisted, related, neutral, grammar, ward, strike, clutch, decoys, all,

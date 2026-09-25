@@ -433,8 +433,8 @@
       }
     }
   },
-  "latestActualEvaluation": "final/summary.json",
-  "latestActualVerdict": "Primary and development pass; first confirmation has five false negatives and fails its frozen gates. Do not substitute prototype results for this report.",
+  "latestActualEvaluation": "contextual-candidate/summary.json",
+  "latestActualVerdict": "The frozen contextual hybrid has complete 44/44 eligible evaluation reviews, but fails source-sense constraints and confirmation accuracy. Fresh diagnostic 18/18 does not override these failed gates.",
   "freshOriginalFixture": "confirmation-original-fixture.json",
   "freshOriginalReport": "role-aware-first-confirmation-report.json",
   "threshold55Candidate": {
@@ -450,5 +450,19 @@
     "passed": false,
     "result": "Primary and development pass; confirmation unchanged 31/36. Five new CHAOS labels outside benchmark, no benchmark gains. Explicit root similarities:false policy must be considered before adopting; prototype not merged."
   },
-  "retrievalUnionDiagnosis": "retrieval-union-diagnostic.json"
+  "retrievalUnionDiagnosis": "retrieval-union-diagnostic.json",
+  "contextualCandidate": {
+    "report": "contextual-candidate/summary.json",
+    "predictions": "contextual-candidate/snapshot.json",
+    "policyDigest": "3e8f1135c0e5bb5f2cca1d5ede645a140d223017b9d56e983445107c9f5d341d",
+    "passed": false,
+    "result": "Primary 140/144 and 19/21 novel, but 29/30 source constraints. Development 13/13 labels but 12/13 source constraints. Confirmation 31/36 and 12/15 novel, with MELANCHOLY 4/6. All original gates retained."
+  },
+  "freshContextualDiagnostic": {
+    "fixture": "fresh-diagnostic/original-fixture.json",
+    "freeze": "fresh-diagnostic/freeze.json",
+    "report": "fresh-diagnostic/first-run/report.json",
+    "predictions": "fresh-diagnostic/first-run/snapshot.json",
+    "result": "Once-only after policy freeze: 18/18 labels,12/12 source constraints,7/7 novel concepts,0/6 neutral false positives. Four LLM decisions, three source proofs, five lexical expansions, six baseline neutral. Diagnostic only; not a replacement for failed existing gates."
+  }
 }

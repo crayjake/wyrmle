@@ -1,0 +1,19 @@
+{
+  "policyDigest": "3e8f1135c0e5bb5f2cca1d5ede645a140d223017b9d56e983445107c9f5d341d",
+  "modelId": "Qwen/Qwen3-4B-Instruct-2507",
+  "distinctInputs": 1065,
+  "statuses": {
+    "ok": 1057,
+    "error": 8
+  },
+  "executionBackends": {
+    "CPU": 239,
+    "Vulkan": 826
+  },
+  "attemptCounts": {
+    "1": 1052,
+    "3": 12,
+    "2": 1
+  },
+  "publicationReady": false
+}

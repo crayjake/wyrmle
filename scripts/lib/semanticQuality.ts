@@ -7,7 +7,7 @@ import refinementData from '../../src/generator/data/semantic-refinements-v1.jso
 import { semanticBenchmark } from '../evaluate-semantic-benchmark.ts'
 import type { SemanticBenchmarkPrediction, SemanticBenchmarkSnapshot } from '../evaluate-semantic-benchmark.ts'
 import { semanticAssessmentProvider } from '../../src/generator/semanticAssessments.ts'
-import { semanticBaseWordDigest, semanticRefinementDigest, semanticRefinementProvider } from '../../src/generator/semanticRefinement.ts'
+import { createSemanticRefinementProvider, semanticBaseWordDigest, semanticRefinementDigest, semanticRefinementProvider } from '../../src/generator/semanticRefinement.ts'
 import type { RefinementCache, RefinementManifest } from '../../src/generator/semanticRefinement.ts'
 import type { SemanticAssessmentMetadata, SemanticRefinementMetadata } from '../../src/game/semanticAssessment.ts'
 
@@ -26,12 +26,16 @@ export type SemanticQualitySnapshot = SemanticBenchmarkSnapshot & {
 }
 const sha = (value: Uint8Array): string => createHash('sha256').update(value).digest('hex')
 
-export function collectSemanticQualitySnapshot(inputs?: readonly { enemy: string; word: string }[]): SemanticQualitySnapshot {
+export function collectSemanticQualitySnapshot(inputs?: readonly { enemy: string; word: string }[], refinementPath?: string): SemanticQualitySnapshot {
   // Only spelling/enemy identities enter the assessor. Gold labels and source
   // constraints are consumed separately by the evaluator after collection.
   const identities = inputs ?? [...semanticBenchmark.cases, ...semanticBenchmark.reviewCases, ...development.cases, ...confirmation.cases]
     .map(({ enemy, word }) => ({ enemy, word }))
-  const cache = refinementData as unknown as RefinementCache
+  // A candidate package can be assessed before replacing the published cache.
+  // Both paths use the same production provider and all of its digest checks.
+  const refinementBytes = readFileSync(refinementPath ?? new URL('../../src/generator/data/semantic-refinements-v1.json', import.meta.url))
+  const cache = (refinementPath ? JSON.parse(refinementBytes.toString('utf8')) : refinementData) as unknown as RefinementCache
+  const provider = refinementPath ? createSemanticRefinementProvider(cache) : semanticRefinementProvider
   const baseCaches: SemanticQualitySnapshot['baseCaches'] = {}
   const manifests: SemanticQualitySnapshot['manifests'] = {}
   const inventories: SemanticQualitySnapshot['inventories'] = {}
@@ -41,7 +45,7 @@ export function collectSemanticQualitySnapshot(inputs?: readonly { enemy: string
     if (cache.enemies[enemy]) manifests[enemy] = cache.enemies[enemy].manifest
     const words = [...new Set(identities.filter(entry => entry.enemy === enemy).map(entry => entry.word))].sort()
     const baseline = Object.fromEntries(words.map(word => [word, semanticAssessmentProvider.word(enemy, word)]))
-    const reviewed = semanticRefinementProvider.refine(enemy, baseline)
+    const reviewed = provider.refine(enemy, baseline)
     inventories[enemy] = { ready: reviewed.ready, eligibleWords: reviewed.eligibleWords,
       reviewedWords: reviewed.reviewedWords, issues: reviewed.issues,
       ...(reviewed.metadata ? { metadata: reviewed.metadata } : {}) }
@@ -58,7 +62,7 @@ export function collectSemanticQualitySnapshot(inputs?: readonly { enemy: string
     modelId: [...new Set([...Object.values(baseCaches).map(base => base.modelId),
       ...Object.values(manifests).map(manifest => manifest.modelId)])].join(' + '),
     configurationHash: semanticRefinementDigest({ baseCaches, manifests }),
-    refinementFileDigest: sha(readFileSync(new URL('../../src/generator/data/semantic-refinements-v1.json', import.meta.url))),
+    refinementFileDigest: sha(refinementBytes),
     confirmationDigest: sha(readFileSync(new URL('../../tests/fixtures/semantic-confirmation-v1.json', import.meta.url))),
     baseCaches, manifests, inventories, records,
   }

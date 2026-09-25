@@ -6,13 +6,34 @@ import { canSpell, overlappingLetters } from '../src/generator/constructBoard.ts
 import { createCandidate, generateForEnemy, generatePuzzle } from '../src/generator/generate.ts'
 import type { GenerationOptions } from '../src/generator/generate.ts'
 import { currentLexicalProvider, localLexicalProvider } from '../src/generator/lexicalProvider.ts'
+import type { LexicalProvider } from '../src/generator/lexicalProvider.ts'
 import { mutateCandidate, mutationKinds } from '../src/generator/mutate.ts'
 import { buildWordPools } from '../src/generator/wordPools.ts'
 import { solvePuzzle } from '../src/generator/solve.ts'
 import { validatePuzzle } from '../src/generator/validate.ts'
-import { isMeaningCompilationCurrent, withCompiledMeanings } from '../src/generator/meaningCompiler.ts'
+import { isMeaningCompilationCurrent, meaningLexicalProvider, withCompiledMeanings } from '../src/generator/meaningCompiler.ts'
+
+// Structural tests need a fixed construction workload, while gameplay still
+// receives the full enemy relations and complete possible-word meaning table.
+// Restrict submitted-entry discovery as well as vocabulary(): counter lists
+// otherwise expand the pool back beyond this explicit fixture.
+const structuralVocabulary = Object.freeze(localLexicalProvider.vocabulary().flatMap(({ word }) => {
+  const entry = meaningLexicalProvider.getEntry(word)
+  return entry ? [entry] : []
+}))
+const structuralWords = new Set(structuralVocabulary.map(entry => entry.word))
+const structuralProvider: LexicalProvider = Object.freeze({
+  ...meaningLexicalProvider,
+  id: `${meaningLexicalProvider.id}+structural-fixture-v1`,
+  vocabulary: () => structuralVocabulary,
+  getSubmittedWordEntry(word: string) {
+    return structuralWords.has(word.trim().toUpperCase()) ? meaningLexicalProvider.getEntry(word) : undefined
+  },
+})
+const createStructuralCandidate = (enemy: string, seed: string) => createCandidate(enemy, seed, { provider: structuralProvider })
 
 const quickOptions: GenerationOptions = {
+  provider: structuralProvider,
   candidateCount: 2,
   refinementRounds: 0,
   analysis: {
@@ -29,8 +50,8 @@ const quickOptions: GenerationOptions = {
 test('seeded construction shares anchor letters, keeps 16 identities and guarantees opening anchors', () => {
   assert.deepEqual(overlappingLetters(['CHEER', 'CHEERY']).sort(), [...'CHEERY'].sort())
   for (let seed = 0; seed < 6; seed += 1) {
-    const candidate = createCandidate('melancholy', `construction-test:${seed}`)
-    assert.deepEqual(candidate, createCandidate('MELANCHOLY', `construction-test:${seed}`))
+    const candidate = createStructuralCandidate('melancholy', `construction-test:${seed}`)
+    assert.deepEqual(candidate, createStructuralCandidate('MELANCHOLY', `construction-test:${seed}`))
     assert.equal(candidate.encounter.startingTiles.length, 16)
     assert.equal(new Set(candidate.encounter.startingTiles.map(tile => tile.id)).size, 16)
     assert.equal(candidate.encounter.startingTiles.filter(tile => tile.gem === 'ward').length, 1)
@@ -39,15 +60,17 @@ test('seeded construction shares anchor letters, keeps 16 identities and guarant
       assert.equal(canSpell(anchor.word, candidate.encounter.startingTiles.map(tile => tile.letter)), true, anchor.word)
     }
     assert.doesNotThrow(() => createLetterStrikeGame(candidate.encounter))
+    assert.ok(Object.keys(candidate.encounter.meaningLexicon!.words).some(word => !structuralWords.has(word)),
+      'The fixture bounds construction, not the compiled gameplay dictionary.')
   }
-  assert.notDeepEqual(createCandidate('MELANCHOLY', 'construction-test:0').encounter.startingTiles,
-    createCandidate('MELANCHOLY', 'construction-test:1').encounter.startingTiles)
+  assert.notDeepEqual(createStructuralCandidate('MELANCHOLY', 'construction-test:0').encounter.startingTiles,
+    createStructuralCandidate('MELANCHOLY', 'construction-test:1').encounter.startingTiles)
 })
 
 test('purposeful refill plans replay through the actual game with identical words and board slots', () => {
   let wins = 0
   for (let seed = 0; seed < 6; seed += 1) {
-    const candidate = createCandidate('MELANCHOLY', `construction-test:${seed}`)
+    const candidate = createStructuralCandidate('MELANCHOLY', `construction-test:${seed}`)
     let state = createLetterStrikeGame(candidate.encounter)
     const trace = candidate.construction
     assert.equal(trace.plannedWords.length, trace.plannedTileIds.length)
@@ -97,7 +120,7 @@ test('default serialized candidates carry the complete definition-backed meaning
 })
 
 test('every unlimited mutation primitive is deterministic, preserves encounter validity and clears obsolete proof IDs', () => {
-  const source = createCandidate('MELANCHOLY', 'mutation-primitives')
+  const source = createStructuralCandidate('MELANCHOLY', 'mutation-primitives')
   // Give armour-copy an actual alternative: the first L is armoured, its copy is not.
   let firstL = true
   source.encounter.enemyLetters = source.encounter.enemyLetters.map(letter => {
@@ -162,8 +185,8 @@ test('ranked bounded generation and automatic enemy choice reproduce the same se
 })
 
 test('punctuation and long mutation seeds retain distinct reversible candidate identities', () => {
-  const colon = createCandidate('MELANCHOLY', 'same:seed')
-  const dash = createCandidate('MELANCHOLY', 'same-seed')
+  const colon = createStructuralCandidate('MELANCHOLY', 'same:seed')
+  const dash = createStructuralCandidate('MELANCHOLY', 'same-seed')
   assert.notEqual(colon.id, dash.id)
   assert.equal(decodeURIComponent(colon.id.slice('generated-melancholy-meaning2-'.length)), 'same:seed')
   const suffix = 'identical-suffix-that-is-longer-than-twenty-four-characters'
@@ -209,7 +232,7 @@ test('automatic fallback reports aggregate progress and keep zero still recogniz
 })
 
 test('a parent winning trace is only a proposal when the mutated physical board changes', () => {
-  const candidate = createCandidate('MELANCHOLY', 'construction-test:0')
+  const candidate = createStructuralCandidate('MELANCHOLY', 'construction-test:0')
   const oldIds = candidate.construction.plannedTileIds
   assert.ok(oldIds.length > 0)
   const mutated = structuredClone(candidate.encounter)
