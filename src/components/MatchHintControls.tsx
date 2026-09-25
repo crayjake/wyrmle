@@ -12,6 +12,6 @@ export default function MatchHintControls({ value, onChange }: {
         className="daily-button" type="button" key={mode} aria-pressed={value === mode}
         onClick={() => onChange(mode)}>{mode.toUpperCase()}</button>)}
     </div>
-    <p>Marks letters still in the enemy. Actual strike targets depend on your word.</p>
+    <p>Marks letters still in the enemy. Actual hit targets depend on your word.</p>
   </fieldset>
 }

@@ -57,8 +57,8 @@ test('special summary counts actual gems and removes types as they are consumed 
       bonusDamage: 3, preventsResolveLoss: false, detail: '+3',
     },
     {
-      id: 'ward', label: 'WARD', symbol: '◇', count: 1,
-      bonusDamage: 0, preventsResolveLoss: true, detail: 'SAVE TURN',
+      id: 'ward', label: 'HEART', symbol: '♥', count: 1,
+      bonusDamage: 0, preventsResolveLoss: true, detail: 'SAVES A LIFE THIS TURN',
     },
   ])
   const afterJoy = submitWord(initial, wordIds(initial, 'JOY'))
@@ -94,7 +94,7 @@ test('special summaries use configured effects per tile and current counts', () 
     id, count, detail, bonusDamage,
   })), [
     { id: 'power', count: 2, detail: '+7', bonusDamage: 7 },
-    { id: 'ward', count: 1, detail: '-1 SAVE TURN', bonusDamage: -1 },
+    { id: 'ward', count: 1, detail: '-1 SAVES A LIFE THIS TURN', bonusDamage: -1 },
   ])
 })
 

@@ -1,12 +1,19 @@
 import type { LetterStrikeEncounter } from '../game/letterStrike.ts'
 import generatedMelancholy20260924 from './puzzles/2026-09-24.json' with { type: 'json' }
 import generatedDespair20260924 from './puzzles/2026-09-24-v6.json' with { type: 'json' }
+import lexicalDespair20260924 from './puzzles/2026-09-24-v7.json' with { type: 'json' }
+import reviveAnger20260925 from './puzzles/2026-09-25-v8.json' with { type: 'json' }
+import finiteAnger20260925 from './puzzles/2026-09-25-v9.json' with { type: 'json' }
 
 // Frozen publication snapshot, independent of future generator rankings. Only
 // runtime encounter data belongs here; solutions and analysis stay in DEV.
 export const dailyEncounter20260924 = generatedMelancholy20260924 as LetterStrikeEncounter
 // The Sep 24 and Sep 25 publications share this exact frozen encounter.
 export const dailyEncounter20260924V6 = generatedDespair20260924 as LetterStrikeEncounter
+// Same board and refill; versioned broad word classification for fresh attempts.
+export const dailyEncounter20260924V7 = lexicalDespair20260924 as LetterStrikeEncounter
+export const dailyEncounter20260925V8 = reviveAnger20260925 as LetterStrikeEncounter
+export const dailyEncounter20260925V9 = finiteAnger20260925 as LetterStrikeEncounter
 
 /**
  * Published letter-strike v1 catalog. Its one authored encounter repeats by

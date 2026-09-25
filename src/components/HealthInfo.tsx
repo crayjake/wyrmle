@@ -1,4 +1,5 @@
 import HealthBar from "./HealthBar"
+import WyrmLifeMeter from './WyrmLifeMeter'
 
 type HealthInfoProps = {
   name: string
@@ -50,7 +51,15 @@ export default function HealthInfo({
   )
 }
 
-export function MyInfo(props: BasicHealthInfoProps) {
+export function MyInfo({ wyrm = true, ...props }: BasicHealthInfoProps & { wyrm?: boolean }) {
+  if (wyrm) return <div className="health-info left health-info-compact">
+    <div className="name">{props.name}</div>
+    <div className="health-segments" role="meter" aria-label={props.name}
+      aria-valuemin={0} aria-valuemax={props.maxHealth} aria-valuenow={props.health}
+      aria-valuetext={`${props.health} of ${props.maxHealth}`}>
+      <WyrmLifeMeter lives={props.health} maximum={props.maxHealth} />
+    </div>
+  </div>
   return (
     <HealthInfo
       {...props}

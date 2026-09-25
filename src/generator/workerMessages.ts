@@ -1,6 +1,7 @@
 import type { GenerationResult } from './generate.ts'
+import { validateRefillLimit } from './refillLimit.ts'
 
-export type GeneratorRequest = { id: number; enemy: string | null; seed: string; candidateCount: number; includeRegenTile?: boolean }
+export type GeneratorRequest = { id: number; enemy: string | null; seed: string; candidateCount: number; includeRegenTile?: boolean; refillLimit?: number }
 export type GeneratorProgress = { attempted: number; accepted: number; enemyWord: string }
 export type GeneratorResponse =
   | { id: number; type: 'progress'; progress: GeneratorProgress }
@@ -21,7 +22,9 @@ export function validateGeneratorRequest(value: unknown): GeneratorRequest {
     throw new Error('Choose between 1 and 100 initial candidates.')
   }
   if (input.includeRegenTile !== undefined && typeof input.includeRegenTile !== 'boolean') throw new Error('REGEN choice must be a boolean.')
+  const refillLimit = validateRefillLimit(input.refillLimit)
   return { id: input.id!, seed: input.seed, enemy: input.enemy?.trim().toUpperCase() ?? null, candidateCount: input.candidateCount!,
     ...(input.includeRegenTile === undefined ? {} : { includeRegenTile: input.includeRegenTile }),
+    ...(refillLimit === undefined ? {} : { refillLimit }),
   }
 }

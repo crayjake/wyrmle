@@ -16,3 +16,9 @@ export const GENERATED_MELANCHOLY_PUZZLE_VERSION = 5
 // Both days deliberately share the exact selected encounter.
 export const GENERATED_DESPAIR_DATES: readonly string[] = ['2026-09-24', '2026-09-25']
 export const GENERATED_DESPAIR_PUZZLE_VERSION = 6
+export const LEXICAL_GAME_VERSION = 'letter-strike-5'
+export const LEXICAL_DESPAIR_PUZZLE_VERSION = 7
+export const GENERATED_REVIVE_DATE = '2026-09-25'
+export const GENERATED_REVIVE_PUZZLE_VERSION = 8
+export const FINITE_REFILL_GAME_VERSION = 'letter-strike-6'
+export const FINITE_REFILL_PUZZLE_VERSION = 9

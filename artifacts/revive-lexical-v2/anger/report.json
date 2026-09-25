@@ -1,0 +1,77 @@
+{
+  "seed": "revive-lexical-v2:ANGER",
+  "requestedSeeds": 6,
+  "enemy": "ANGER",
+  "attempted": 6,
+  "solvable": 6,
+  "accepted": 2,
+  "acceptedUnique": 2,
+  "enemyRejectionCounts": {},
+  "candidateRejectionReasons": {
+    "too-short": 1,
+    "decorative-semantic": 3,
+    "irrelevant-strike": 2,
+    "decorative-strike": 1
+  },
+  "archetypeDistribution": {
+    "semantic-contrast": 2,
+    "multiple-routes": 3,
+    "armour-break": 1,
+    "clutch-finish": 1,
+    "refill-planning": 1,
+    "strike-override": 2,
+    "grammar-twist": 2
+  },
+  "totalSolverStates": 414,
+  "totalRuntimeMs": 34924.046923,
+  "averageSolverStates": 69,
+  "averageRuntimeMs": 5820.674487166667,
+  "prematureHopelessness": {
+    "unknown": 0,
+    "zero": 6,
+    "low": 0,
+    "high": 0
+  },
+  "clutchOpportunities": {
+    "0": 5,
+    "1": 1
+  },
+  "topQualityScores": [
+    {
+      "id": "generated-anger-lex2-revive-lexical-v2%3AANGER%3A4%3A0",
+      "score": 46.21,
+      "seed": "revive-lexical-v2:ANGER:4:0",
+      "enemy": "ANGER"
+    },
+    {
+      "id": "generated-anger-lex2-revive-lexical-v2%3AANGER%3A2%3A0",
+      "score": 43.29,
+      "seed": "revive-lexical-v2:ANGER:2:0",
+      "enemy": "ANGER"
+    }
+  ],
+  "acceptedSeeds": [
+    "revive-lexical-v2:ANGER:2:0",
+    "revive-lexical-v2:ANGER:4:0"
+  ],
+  "search": {
+    "scope": "bounded-development-review",
+    "options": {
+      "includeRegenTile": true,
+      "candidateCount": 1,
+      "keep": 100,
+      "refinementRounds": 0,
+      "mutationsPerRound": 2,
+      "analysis": {
+        "solver": {
+          "maxStates": 80,
+          "beamWidth": 12
+        },
+        "counterfactualSolver": {
+          "maxStates": 20,
+          "beamWidth": 8
+        }
+      }
+    }
+  }
+}

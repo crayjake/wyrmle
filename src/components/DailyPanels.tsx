@@ -5,7 +5,7 @@ import { buildShareText } from '../daily/share.ts'
 import { calculateStats } from '../daily/stats.ts'
 import type { DailyResult, DifficultyMode } from '../daily/types.ts'
 import type { LetterStrikeState } from '../game/letterStrike.ts'
-import { getLetterStrikeBattleEvents } from '../game/letterStrikeHud.ts'
+import { getDisplayEffectLabel, getLetterStrikeBattleEvents } from '../game/letterStrikeHud.ts'
 import { MyInfo } from './HealthInfo'
 import { ModeChoices } from './ModeSelection'
 import './DailyPanels.css'
@@ -122,10 +122,12 @@ export function ResultPanel({ result, onClose, onShowStats }: PanelProps & {
   return (
     <DailyDialog title={result.won ? 'Victory' : 'Defeat'} subtitle={`Daily · ${result.date} · ${result.mode.toUpperCase()} · UTC`} onClose={onClose}>
       <p className={`daily-result-outcome ${result.won ? 'is-won' : 'is-lost'}`}>
-        {result.won ? `${result.enemyWord} has fallen.` : `${result.enemyWord} remains. Your Resolve is spent.`}
+        {result.won ? `${result.enemyWord} has fallen.` : result.resolveRemaining > 0
+          ? `${result.enemyWord} remains. No playable words remain on the board.`
+          : `${result.enemyWord} remains. You are out of lives.`}
       </p>
       <div className="daily-result-resolve">
-        <MyInfo name="RESOLVE" health={result.resolveRemaining} maxHealth={result.startingResolve} />
+        <MyInfo name="LIVES" health={result.resolveRemaining} maxHealth={result.startingResolve} />
       </div>
       <dl className="daily-stats-grid">
         <Stat label="Counter">{result.counters}</Stat>
@@ -138,8 +140,8 @@ export function ResultPanel({ result, onClose, onShowStats }: PanelProps & {
         <Stat label="Undos remaining">{result.undosRemaining}</Stat>
         <Stat label="Letters removed">{result.lettersDestroyed}</Stat>
         <Stat label="Armour breaks">{result.armourBroken}</Stat>
-        <Stat label="Strike activations">{result.strikeActivations}</Stat>
-        <Stat label="Ward saves">{result.wardSaves}</Stat>
+        <Stat label="Hit tiles used">{result.strikeActivations}</Stat>
+        <Stat label="Lives saved by hearts">{result.wardSaves}</Stat>
         {result.regenRecoveries !== undefined && <Stat label="Enemy recoveries">{result.regenRecoveries}</Stat>}
         <Stat label="Most removed in one word">{result.largestRemoval}</Stat>
       </dl>
@@ -154,7 +156,7 @@ export function ResultPanel({ result, onClose, onShowStats }: PanelProps & {
         <p className="daily-share-legend" aria-label="Share symbols">
           <span>C Counter</span><span>N Neutral</span><span>R Resisted</span>
           <span>· Untouched</span><span>◐ Armour broken</span><span>■ Removed</span>
-          <span>▣ Armour broken + removed</span><span>◇ Ward</span><span>◆ Strike</span>
+          <span>▣ Armour broken + removed</span><span>♥ Heart</span><span>◆ Hit tile</span>
           {result.regenRecoveries !== undefined && <span>↺ Enemy recovery</span>}
         </p>
       </details>
@@ -199,7 +201,7 @@ export function StatsPanel({ results, todayId, inProgressIds = [], onResume, onC
         <Stat label="Win rate">{Math.round(stats.winRate)}<span className="daily-stat-unit">%</span></Stat>
         <Stat label="Current streak">{stats.currentStreak}</Stat>
         <Stat label="Best streak">{stats.longestStreak}</Stat>
-        <Stat label="Avg. win Resolve">{stats.wins > 0 ? stats.averageResolveOnWins.toFixed(1) : '—'}</Stat>
+        <Stat label="Avg. lives after a win">{stats.wins > 0 ? stats.averageResolveOnWins.toFixed(1) : '—'}</Stat>
       </dl>
       <dl className="daily-stats-list">
         <Stat label="Average word length">{stats.gamesPlayed > 0 ? stats.averageWordLength.toFixed(1) : '—'}</Stat>
@@ -208,11 +210,11 @@ export function StatsPanel({ results, todayId, inProgressIds = [], onResume, onC
         <Stat label="Counter moves">{stats.totalCounters}</Stat>
         <Stat label="Neutral moves">{stats.totalNeutral}</Stat>
         <Stat label="Resisted moves">{stats.totalResisted}</Stat>
-        <Stat label="Strike activations">{stats.totalStrikeActivations}</Stat>
-        <Stat label="Ward saves">{stats.totalWardSaves}</Stat>
+        <Stat label="Hit tiles used">{stats.totalStrikeActivations}</Stat>
+        <Stat label="Lives saved by hearts">{stats.totalWardSaves}</Stat>
         <Stat label="Armour broken">{stats.totalArmourBroken}</Stat>
-        <Stat label="Best Resolve remaining">{stats.gamesPlayed > 0 ? stats.bestResolveRemaining : '—'}</Stat>
-        <Stat label="Largest turn by strikes">{stats.largestSingleTurnStrikes}</Stat>
+        <Stat label="Most lives remaining">{stats.gamesPlayed > 0 ? stats.bestResolveRemaining : '—'}</Stat>
+        <Stat label="Most hits in one word">{stats.largestSingleTurnStrikes}</Stat>
         <Stat label="Different enemies defeated">{stats.uniqueEnemyDefeats}</Stat>
       </dl>
       {unfinishedDays.length > 0 && (
@@ -243,7 +245,7 @@ export function StatsPanel({ results, todayId, inProgressIds = [], onResume, onC
             <li key={result.puzzleId} className="daily-history-row">
               <time dateTime={result.date}>{result.date}</time>
               <span className={`daily-history-status ${result.won ? 'is-won' : 'is-lost'}`}>{result.won ? 'Won' : 'Lost'}</span>
-              <span className="daily-history-detail">{result.enemyWord} · {result.resolveRemaining}/{result.startingResolve} Resolve · {result.attacks} words · {result.mode.toUpperCase()} · {result.undosUsed} {result.undosUsed === 1 ? 'undo' : 'undos'}{result.puzzleDifficulty ? ` · ${result.puzzleDifficulty} puzzle` : ''}</span>
+              <span className="daily-history-detail">{result.enemyWord} · {result.resolveRemaining}/{result.startingResolve} lives · {result.attacks} words · {result.mode.toUpperCase()} · {result.undosUsed} {result.undosUsed === 1 ? 'undo' : 'undos'}{result.puzzleDifficulty ? ` · ${result.puzzleDifficulty} puzzle` : ''}</span>
             </li>
           ))}
         </ul>
@@ -253,25 +255,30 @@ export function StatsPanel({ results, todayId, inProgressIds = [], onResume, onC
   )
 }
 
-export function HelpPanel({ onClose, strikeConsumesAllowance = false, longWordRule, onReplayTutorial }: PanelProps & {
+export function HelpPanel({ onClose, strikeConsumesAllowance = false, longWordRule, onReplayTutorial, anyRecognizedGrammar = false, finiteRefills = false }: PanelProps & {
   strikeConsumesAllowance?: boolean
   longWordRule?: { minimumLength: number; bonusStrikes: number }
   onReplayTutorial?: () => void
+  anyRecognizedGrammar?: boolean
+  finiteRefills?: boolean
 }) {
   return (
     <DailyDialog title="How to play" subtitle="One puzzle each day" onClose={onClose}>
       <div className="daily-help">
         <p>Remove every enemy letter to win. Tap tiles in spelling order to build an English word of at least three letters. Tiles do not need to touch. Use each tile once per word; tap a selected tile again to remove it from your word.</p>
-        <p><strong>COUNTER</strong> words strike with every matching tile. <strong>NEUTRAL</strong> words get one normal matching strike, in spelling order. <strong>RESISTED</strong> words have no normal strikes. Related words count as neutral.</p>
-        {longWordRule && <p><strong>LONG +{longWordRule.bonusStrikes}</strong> gives neutral words of {longWordRule.minimumLength}+ letters an extra normal strike allowance. It stacks with grammar weaknesses, still needs matching tiles, and does not boost resisted words or counters.</p>}
-        <p><span className="daily-help-gem">◆ Strike</span> guarantees its tile’s matching strike, even in a resisted word. {!strikeConsumesAllowance && 'It leaves the normal and grammar allowances available for other tiles. '}Each tile strikes at most once. A matching tile finishes wounded armour first, then targets from left to right.</p>
-        <p><span className="daily-help-regen">REGEN</span> helps the enemy after all your strikes. Each used REGEN tile restores one matching letter by one step: a dead letter returns unarmoured; a living unarmoured letter gains armour. Armour never exceeds two hits. Dead matches recover first, then living unarmoured matches, from left to right. If none can recover, it does nothing. The red <strong>+</strong> preview marks recovery before you attack.</p>
-        <p>Highlighted enemy cells show exactly what your attack will do: blue <strong>−</strong> breaks armour; red <strong>×</strong> removes a letter. Armour loses its second outline on the first hit; defeated letters become centred <strong>·</strong> dots with no outline. Matching tiles resolve in your spelling order, so two strikes can break and remove the same armoured letter in one word.</p>
-        <p>Grammar labels under the enemy are green for weaknesses and red for resistances. For example, an <strong>ADJECTIVE +1 STRIKE</strong> weakness lets a recognized adjective strike one extra matching tile. Some valid words have no confirmed word type; words with unknown or multiple types get no word-type bonus. Check the live preview to see what applies. Counters already use every matching tile. Grammar never creates a hit without a matching letter.</p>
-        <p>Resolve is your remaining turns. Each valid word normally costs one; <span className="daily-help-gem">◇ Ward</span> makes that turn free. Used tiles are replaced. Removing the final enemy letter wins even when it spends your final Resolve.</p>
+        <p><strong>COUNTER</strong> words hit with every matching tile. <strong>NEUTRAL</strong> words get one normal matching hit, in spelling order. <strong>RESISTED</strong> words have no normal hits. Related words count as neutral.</p>
+        {longWordRule && <p><strong>LONG +{longWordRule.bonusStrikes}</strong> gives neutral words of {longWordRule.minimumLength}+ letters an extra normal hit. It stacks with grammar weaknesses, still needs matching tiles, and does not boost resisted words or counters.</p>}
+        <p><span className="daily-help-gem">◆ Hit tile</span> guarantees its tile’s matching hit, even in a resisted word. {!strikeConsumesAllowance && 'It leaves the normal and grammar allowances available for other tiles. '}Each tile hits at most once. A matching tile finishes wounded armour first, then targets from left to right.</p>
+        <p><span className="daily-help-regen">REVIVE</span> helps the enemy after all your hits. Each used Revive tile restores one matching enemy letter by one step: a dead letter returns unarmoured; a living unarmoured letter gains armour. Armour never exceeds two hits. Dead matches recover first, then living unarmoured matches, from left to right. If none can recover, it does nothing. The red <strong>+</strong> preview marks recovery before you play.</p>
+        <p>Highlighted enemy cells show exactly what your word will do: blue <strong>−</strong> breaks armour; red <strong>×</strong> removes a letter. Armour loses its second outline on the first hit; defeated letters become centred <strong>·</strong> dots with no outline. Matching tiles hit in your spelling order, so two hits can break and remove the same armoured letter in one word.</p>
+        <p>Grammar labels under the enemy are green for weaknesses and red for resistances. For example, an <strong>ADJECTIVE +1 HIT</strong> weakness lets a recognized adjective hit one extra matching tile. {anyRecognizedGrammar ? 'Any recognized word type can qualify; a word with several types receives its best applicable modifier once. Unknown word types receive no grammar bonus.' : 'This saved puzzle uses the original rules: unknown or multiple word types receive no grammar bonus.'} Check the live preview to see what applies. Counters already use every matching tile. Grammar never creates a hit without a matching letter.</p>
+        <p>Meaning labels use reviewed enemy meanings and dictionary relations. Related does not mean similar: WORRY is related to DESPAIR, so it is neutral. A word with no listed relationship also plays as neutral; that is a fallback, not a claim that its meaning is unrelated.</p>
+        <p>Each valid word normally costs one life. A <span className="daily-help-gem">♥ Heart tile</span> saves that life for its turn, so your lives stay the same. {finiteRefills ? 'Used tiles are replaced while refills remain.' : 'Used tiles are replaced.'} Removing the final enemy letter wins even when it spends your final life.</p>
+        {finiteRefills && <p><strong>REFILLS</strong> shows the finite reserve: letter tiles count copies of surviving enemy letters; the blank tile groups all other letters. These are counts, not the next letters in order. When the reserve runs out, used slots stay empty. Keep spelling with the tiles left on the board. An empty reserve alone does not end your run; you lose when no playable words remain or your lives run out.</p>}
         <p>Normal shows the definition and allows <strong>3 undos</strong>; Hard hides the definition and allows <strong>1 undo</strong>; Hardcore hides it and has <strong>no undos</strong>. The puzzle is identical. Your mode stays fixed when you begin. Use Undo in the turn log to restore the complete state before your last word. A saved result cannot be undone.</p>
         <p>The difficulty label rates the puzzle itself and is the same in every mode. The day changes at <strong>midnight UTC</strong>. During beta, use <strong>Settings → Reset puzzle</strong> to start the current day again, including after a win or loss. This clears that day’s saved progress and result. <strong>Reset tutorial</strong> restarts the lessons without changing your puzzle.</p>
-        <p>Your committed attacks and results save automatically in this browser. Return here to resume an unfinished run. Clearing browser storage removes this local history.</p>
+        <p>Your played words and results save automatically in this browser. Return here to resume an unfinished run. Clearing browser storage removes this local history.</p>
+        <p className="daily-panel-note">Word types and dictionary relations are adapted from <a href="https://en-word.net/" target="_blank" rel="noreferrer">Open English Wordnet 2025</a>, by the Open English Wordnet contributors, under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a>. WYRMLE combines categories, adds regular word forms and selects enemy meanings. Some valid words have no word-type data.</p>
       </div>
       <div className="daily-panel-actions">
         <button type="button" className="daily-panel-primary" onClick={onClose}>Return to the puzzle</button>
@@ -295,9 +302,9 @@ export function LogPanel({ game, date, onShowStats, onClose, onUndo, canUndo = f
     {onUndo && <div className="daily-undo-control">
       <button type="button" className="daily-resume-button" onClick={onUndo} disabled={!canUndo}>Undo last word</button>
       <span>{undosRemaining} {undosRemaining === 1 ? 'undo' : 'undos'} left · {undosUsed} used</span>
-      <p>{game.status === 'playing' ? 'Restores the board, enemy and Resolve before your last word.' : 'This result is saved and cannot be undone.'}</p>
+      <p>{game.status === 'playing' ? 'Restores the board, enemy and lives before your last word.' : 'This result is saved and cannot be undone.'}</p>
     </div>}
-    {events.length > 0 ? <ol className="daily-turn-log" aria-label="All attacks, newest first">
+    {events.length > 0 ? <ol className="daily-turn-log" aria-label="All played words, newest first">
       {events.map(event => {
         const attack = game.playedWords[event.id]
         const removed = attack.preview.letterOutcomes.filter(outcome => outcome.removed).length
@@ -305,11 +312,11 @@ export function LogPanel({ game, date, onShowStats, onClose, onUndo, canUndo = f
         return <li key={event.id}>
           <div className="daily-turn-heading">
             <span className="daily-turn-word">{event.word}</span>
-            <span>{event.damage} {event.damage === 1 ? 'STRIKE' : 'STRIKES'}</span>
+            <span>{event.damage} {event.damage === 1 ? 'HIT' : 'HITS'}</span>
           </div>
           <div className="daily-turn-effects">
             <span className={event.semanticLabel === 'COUNTER' ? 'is-won' : event.semanticLabel === 'RESISTED' ? 'is-lost' : undefined}>{event.semanticLabel}</span>
-            {event.effectLabels.map(label => <span className={label === 'REGEN' ? 'daily-help-regen' : 'daily-help-gem'} key={label}> · {label}</span>)}
+            {event.effectLabels.map(label => <span className={label === 'REGEN' ? 'daily-help-regen' : 'daily-help-gem'} key={label}> · {getDisplayEffectLabel(label)}</span>)}
             <span> · {removed} removed{broken > 0 ? ` · ${broken} armour broken` : ''}</span>
             {attack.preview.recoveries && <span className="daily-help-regen"> · {attack.preview.recoveries.length} {attack.preview.recoveries.length === 1 ? 'recovery' : 'recoveries'}</span>}
           </div>

@@ -1,0 +1,32 @@
+{
+  "defaults": {
+    "finite": false,
+    "revive": true
+  },
+  "request": {
+    "id": 1,
+    "enemy": "ANGER",
+    "seed": "revive-lexical-review",
+    "candidateCount": 1,
+    "includeRegenTile": true,
+    "refillLimit": 18
+  },
+  "dev": {
+    "refills": "Refills remaining: other letters 9, A 2, N 2, G 0, E 4, R 1. Counts are reserve copies, not the next draw order.",
+    "overflow": 0,
+    "bodyWidth": 375,
+    "headerWyrm": 0,
+    "meter": "5 of 5"
+  },
+  "remembered": {
+    "finite": true,
+    "budget": "18"
+  },
+  "noWordLoss": {
+    "outcome": "SAD remains. No playable words remain on the board.",
+    "lives": "4",
+    "boardMessage": "—\nNO PLAYABLE WORDS",
+    "helpFinite": 1
+  },
+  "errors": []
+}

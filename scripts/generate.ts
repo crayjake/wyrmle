@@ -3,6 +3,7 @@ import { resolve } from 'node:path'
 import { generateForEnemy, generatePuzzle } from '../src/generator/generate.ts'
 import type { GenerationOptions, RankedCandidate } from '../src/generator/generate.ts'
 import { selectReviewCandidates } from '../src/generator/reviewSelection.ts'
+import { validateRefillLimit } from '../src/generator/refillLimit.ts'
 
 const argumentsList = process.argv.slice(2)
 const argument = (name: string, fallback: string) => {
@@ -15,18 +16,22 @@ const integer = (name: string, fallback: number, minimum = 0) => {
   return value
 }
 if (argumentsList.includes('--help')) {
-  console.log('npm run generate -- --count 200 --enemy MELANCHOLY --seed review --out artifacts/melancholy [--refine 1] [--regen] [--dev-top]')
+  console.log('npm run generate -- --count 200 --enemy MELANCHOLY --seed review --out artifacts/melancholy [--refine 1] [--regen] [--refills 0..96] [--dev-top]')
   console.log('Omit --enemy for suitability-based automatic enemy selection. --states and --beam control bounded search. No daily catalog is changed.')
-  console.log('--regen opts into one harmful REGEN tile; archived/default generation stays unchanged.')
+  console.log('--regen includes one harmful Revive tile. Current generation uses versioned broad lexical annotations; --legacy reproduces archived seed rules.')
+  console.log('--refills N opts into N finite replacement letters (0–96). Length mutations may refine this budget; omitted keeps the historical padded supply.')
   process.exit(0)
 }
 const count = integer('count', 10, 1)
 const enemy = argument('enemy', '').toUpperCase()
 const seed = argument('seed', 'melancholy-review-v1')
 const output = resolve(argument('out', 'artifacts/generated'))
+const refillLimit = argumentsList.includes('--refills') ? validateRefillLimit(integer('refills', Number.NaN)) : undefined
 await mkdir(output, { recursive: true })
 const options: GenerationOptions = {
+  lexicalMode: argumentsList.includes('--legacy') ? 'legacy' : 'current',
   includeRegenTile: argumentsList.includes('--regen'),
+  ...(refillLimit === undefined ? {} : { refillLimit }),
   candidateCount: 1, keep: 100, refinementRounds: integer('refine', 0), mutationsPerRound: integer('mutations', 2),
   analysis: {
     solver: { maxStates: integer('states', 100, 1), beamWidth: integer('beam', 12, 1) },

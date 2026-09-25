@@ -8,10 +8,12 @@ export function encounterRuleKey(encounter: LetterStrikeEncounter): string {
     encounter.minimumWordLength,
     sortedEntries(encounter.grammarModifiers ?? {}),
     sortedEntries(encounter.wordPartsOfSpeech ?? {}),
+    ...(encounter.lexicalRules ? [encounter.lexicalRules] : []),
     encounter.longWordRule ?? null,
     encounter.strikeConsumesAllowance === true,
     encounter.tileEffects,
     encounter.refillQueue,
+    ...(encounter.finiteRefills ? ['finite-refills'] : []),
   ])
 }
 

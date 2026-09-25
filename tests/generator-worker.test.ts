@@ -25,3 +25,14 @@ test('generator worker reports malformed enemy, seed and message values before g
   assert.throws(() => validateGeneratorRequest({ ...request, seed: 'X'.repeat(129) }), /Seed/)
   assert.throws(() => validateGeneratorRequest({ ...request, id: 0 }), /Request ID/)
 })
+
+test('generator worker preserves finite zero and bounded refill choices without changing omitted defaults', () => {
+  const request = { id: 1, seed: 'finite-review', enemy: 'ANGER', candidateCount: 2, includeRegenTile: true }
+  assert.equal(Object.hasOwn(validateGeneratorRequest(request), 'refillLimit'), false)
+  for (const refillLimit of [0, 12, 18, 24, 96]) {
+    assert.deepEqual(validateGeneratorRequest({ ...request, refillLimit }), { ...request, refillLimit })
+  }
+  for (const refillLimit of [-1, 97, 1.5, Number.NaN, Number.POSITIVE_INFINITY, '12', null]) {
+    assert.throws(() => validateGeneratorRequest({ ...request, refillLimit }), /between 0 and 96/)
+  }
+})

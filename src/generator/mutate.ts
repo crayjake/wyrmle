@@ -1,10 +1,11 @@
 import { createRandom } from './random.ts'
 import { canSpell, overlappingLetters } from './constructBoard.ts'
-import { getPartsOfSpeech, isDictionaryWord } from '../game/dictionary.ts'
-import { localLexicalProvider } from './lexicalProvider.ts'
+import { isDictionaryWord } from '../game/dictionary.ts'
+import { getEncounterPartsOfSpeech } from '../game/lexicalRules.ts'
+import { currentLexicalProvider, localLexicalProvider } from './lexicalProvider.ts'
 import type { CandidatePuzzle } from './types.ts'
 
-export const mutationKinds = ['starting-letter', 'tile-swap', 'refill-letter', 'move-ward', 'move-strike', 'armour', 'armour-copy', 'anchor', 'resolve', 'move-regen'] as const
+export const mutationKinds = ['starting-letter', 'tile-swap', 'refill-letter', 'move-ward', 'move-strike', 'armour', 'armour-copy', 'anchor', 'resolve', 'move-regen', 'refill-length'] as const
 export type MutationKind = typeof mutationKinds[number]
 
 export function mutateCandidate(candidate: CandidatePuzzle, seed: string | number, options: {
@@ -12,7 +13,9 @@ export function mutateCandidate(candidate: CandidatePuzzle, seed: string | numbe
 } = {}): CandidatePuzzle {
   const random = createRandom(seed)
   const result = structuredClone(candidate)
+  if (options.kind === 'refill-length' && !candidate.encounter.finiteRefills) throw new Error('Refill length mutation requires a finite encounter.')
   const kind = options.kind ?? random.pick(mutationKinds.filter(kind => (options.allowResolveMutation || kind !== 'resolve')
+    && (kind !== 'refill-length' || candidate.encounter.finiteRefills)
     && (kind !== 'move-regen' || candidate.encounter.startingTiles.some(tile => tile.gem === 'regen'))))
   const tiles = result.encounter.startingTiles.map(tile => ({ ...tile }))
   const letters = [...new Set(result.enemyWord + result.anchors.map(anchor => anchor.word).join(''))]
@@ -23,12 +26,22 @@ export function mutateCandidate(candidate: CandidatePuzzle, seed: string | numbe
     if (alternatives.length) tiles[index].letter = random.pick(alternatives)
   }
   if (kind === 'tile-swap') [tiles[index], tiles[other]] = [tiles[other], tiles[index]]
-  if (kind === 'refill-letter') {
+  if (kind === 'refill-letter' && result.encounter.refillQueue.length > 0) {
     const queue = [...result.encounter.refillQueue]
     const position = random.int(Math.min(queue.length, 40))
     const alternatives = letters.filter(letter => letter !== queue[position])
     if (alternatives.length) queue[position] = random.pick(alternatives)
     result.encounter.refillQueue = queue.join('')
+  }
+  if (kind === 'refill-length') {
+    const queue = [...result.encounter.refillQueue]
+    const change = 1 + random.int(4)
+    const lengths = [queue.length - change, queue.length + change].filter(length => length >= 0 && length <= 96)
+    if (lengths.length) {
+      const length = random.pick(lengths)
+      while (queue.length < length) queue.push(random.pick(letters))
+      result.encounter.refillQueue = queue.slice(0, length).join('')
+    }
   }
   if (kind === 'move-ward' || kind === 'move-strike' || kind === 'move-regen') {
     const gem = kind === 'move-ward' ? 'ward' : kind === 'move-strike' ? 'strike' : 'regen'
@@ -65,8 +78,9 @@ export function mutateCandidate(candidate: CandidatePuzzle, seed: string | numbe
     const opening = result.anchors.filter(anchor => anchor.expected === 'opening')
     const relations = result.encounter.enemy.semanticRelations
     const isGrammar = (word: string) => {
-      const parts = result.encounter.wordPartsOfSpeech?.[word] ?? getPartsOfSpeech(word) ?? []
-      return parts.length === 1 && (result.encounter.grammarModifiers?.[parts[0]] ?? 0) > 0
+      const parts = getEncounterPartsOfSpeech(result.encounter, word) ?? []
+      return (Boolean(result.encounter.lexicalRules) || parts.length === 1)
+        && parts.some(part => (result.encounter.grammarModifiers?.[part] ?? 0) > 0)
     }
     const neutral = Object.keys(result.encounter.wordPartsOfSpeech ?? {}).filter(word => !relations.opposite.includes(word) && !relations.similar.includes(word))
     const replacements = opening.flatMap(selected => {
@@ -86,7 +100,7 @@ export function mutateCandidate(candidate: CandidatePuzzle, seed: string | numbe
       selected.roles = relations.opposite.includes(word) ? ['counter']
         : relations.similar.includes(word) ? ['resisted', 'decoy', 'strike'] : ['neutral', 'ward']
       if (isGrammar(word)) selected.roles.push('grammar')
-      selected.commonness = result.provenance.lexicalProvider === localLexicalProvider.id
+      selected.commonness = [localLexicalProvider.id, currentLexicalProvider.id].includes(result.provenance.lexicalProvider)
         ? localLexicalProvider.getEntry(word)?.commonness ?? null : null
     }
   }
@@ -95,7 +109,9 @@ export function mutateCandidate(candidate: CandidatePuzzle, seed: string | numbe
     if (possible.length) result.encounter.startingResolve = random.pick(possible)
     const wards = tiles.filter(tile => tile.type === 'gem' && tile.gem && result.encounter.tileEffects[tile.gem]?.preventResolveLoss).length
     const minimum = (result.encounter.startingResolve + wards) * 16
-    while (result.encounter.refillQueue.length < minimum) result.encounter.refillQueue += result.encounter.refillQueue
+    if (!result.encounter.finiteRefills) {
+      while (result.encounter.refillQueue.length < minimum) result.encounter.refillQueue += result.encounter.refillQueue
+    }
   }
   result.encounter.startingTiles = tiles
   // Only guaranteed opening anchors retain that claim after mutation.

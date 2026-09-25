@@ -1,0 +1,436 @@
+[
+  {
+    "variant": "right",
+    "opticalMetrics": [
+      {
+        "letter": "S",
+        "font": "13px / 13px \"Cutive Mono\", monospace",
+        "lineHeight": "13px",
+        "cell": {
+          "x": 259.9375,
+          "y": 54.0625,
+          "width": 16,
+          "height": 16
+        },
+        "glyphLineBox": {
+          "x": 263.9375,
+          "y": 55.5625,
+          "width": 8,
+          "height": 13
+        },
+        "baseline": 65.5625,
+        "canvasMetrics": {
+          "advance": 8,
+          "left": -2,
+          "right": 7,
+          "ascent": 7,
+          "descent": 0,
+          "fontAscent": 11,
+          "fontDescent": 4
+        },
+        "beforeInk": {
+          "left": 265.9375,
+          "right": 270.9375,
+          "top": 58.5625,
+          "bottom": 65.5625
+        },
+        "offset": {
+          "x": -0.5,
+          "y": 0
+        },
+        "previousTransformY": -0.26
+      },
+      {
+        "letter": "P",
+        "font": "13px / 13px \"Cutive Mono\", monospace",
+        "lineHeight": "13px",
+        "cell": {
+          "x": 296.9375,
+          "y": 54.0625,
+          "width": 16,
+          "height": 16
+        },
+        "glyphLineBox": {
+          "x": 300.9375,
+          "y": 55.5625,
+          "width": 8,
+          "height": 13
+        },
+        "baseline": 65.5625,
+        "canvasMetrics": {
+          "advance": 8,
+          "left": 0,
+          "right": 7,
+          "ascent": 7,
+          "descent": 0,
+          "fontAscent": 11,
+          "fontDescent": 4
+        },
+        "beforeInk": {
+          "left": 300.9375,
+          "right": 307.9375,
+          "top": 58.5625,
+          "bottom": 65.5625
+        },
+        "offset": {
+          "x": 0.5,
+          "y": 0
+        },
+        "previousTransformY": -0.26
+      }
+    ],
+    "browser": "Chromium with Playwright iPhone 13 Mini emulation; not a physical iPhone or Safari",
+    "device": {
+      "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Mobile/15E148 Safari/604.1",
+      "viewport": {
+        "width": 375,
+        "height": 629
+      },
+      "screen": {
+        "width": 375,
+        "height": 812
+      },
+      "deviceScaleFactor": 3,
+      "isMobile": true,
+      "hasTouch": true,
+      "defaultBrowserType": "webkit"
+    },
+    "route": [
+      "TILE",
+      "DAD",
+      "WHERE",
+      "ANGRY"
+    ],
+    "puzzleVersion": 7,
+    "refill": {
+      "rawQueueRemaining": 79,
+      "hidden": 72,
+      "known": [
+        {
+          "letter": "S",
+          "count": 6
+        },
+        {
+          "letter": "P",
+          "count": 1
+        }
+      ],
+      "scope": "Remaining stored queue, including letters that may not be reachable within remaining lives; order hidden"
+    },
+    "before": {
+      "x": 18.75,
+      "y": 397.625,
+      "width": 337.5,
+      "height": 337.5
+    },
+    "after": {
+      "x": 18.75,
+      "y": 397.625,
+      "width": 337.5,
+      "height": 337.5
+    },
+    "viewport": {
+      "width": 375,
+      "height": 812,
+      "dpr": 3
+    },
+    "fonts": [
+      {
+        "family": "Cutive Mono",
+        "status": "unloaded",
+        "weight": "400"
+      },
+      {
+        "family": "Cutive Mono",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "Share Tech Mono",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ],
+    "health": "1 of 5",
+    "headerWyrms": 0,
+    "healthWyrms": 1,
+    "enemy": [
+      {
+        "letter": "D, removed",
+        "remaining": "0"
+      },
+      {
+        "letter": "E, removed",
+        "remaining": "0"
+      },
+      {
+        "letter": "S, 1 hit remaining",
+        "remaining": "1"
+      },
+      {
+        "letter": "P, 1 hit remaining",
+        "remaining": "1"
+      },
+      {
+        "letter": "A, removed",
+        "remaining": "0"
+      },
+      {
+        "letter": "I, removed",
+        "remaining": "0"
+      },
+      {
+        "letter": "R, removed",
+        "remaining": "0"
+      }
+    ],
+    "overflow": 0,
+    "bodyWidth": 375,
+    "background": "#25281f",
+    "preview": "\u2014",
+    "failedRequests": [],
+    "fontResponses": [
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/cutivemono/v23/m8JWjfRfY7WVjVi2E-K9H6RCTm6o39uc.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/sharetechmono/v16/J7aHnp1uDWRBEqV98dVQztYldFcLowEFA87Heg.woff2",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "variant": "right",
+    "opticalMetrics": [
+      {
+        "letter": "S",
+        "font": "13px / 13px \"Cutive Mono\", monospace",
+        "lineHeight": "13px",
+        "cell": {
+          "x": 260.71875,
+          "y": 40.5,
+          "width": 16,
+          "height": 16
+        },
+        "glyphLineBox": {
+          "x": 264.71875,
+          "y": 42,
+          "width": 8,
+          "height": 13
+        },
+        "baseline": 52,
+        "canvasMetrics": {
+          "advance": 8,
+          "left": -2,
+          "right": 7,
+          "ascent": 7,
+          "descent": 0,
+          "fontAscent": 11,
+          "fontDescent": 4
+        },
+        "beforeInk": {
+          "left": 266.71875,
+          "right": 271.71875,
+          "top": 45,
+          "bottom": 52
+        },
+        "offset": {
+          "x": -0.5,
+          "y": 0
+        },
+        "previousTransformY": -0.26
+      },
+      {
+        "letter": "P",
+        "font": "13px / 13px \"Cutive Mono\", monospace",
+        "lineHeight": "13px",
+        "cell": {
+          "x": 297.71875,
+          "y": 40.5,
+          "width": 16,
+          "height": 16
+        },
+        "glyphLineBox": {
+          "x": 301.71875,
+          "y": 42,
+          "width": 8,
+          "height": 13
+        },
+        "baseline": 52,
+        "canvasMetrics": {
+          "advance": 8,
+          "left": 0,
+          "right": 7,
+          "ascent": 7,
+          "descent": 0,
+          "fontAscent": 11,
+          "fontDescent": 4
+        },
+        "beforeInk": {
+          "left": 301.71875,
+          "right": 308.71875,
+          "top": 45,
+          "bottom": 52
+        },
+        "offset": {
+          "x": 0.5,
+          "y": 0
+        },
+        "previousTransformY": -0.26
+      }
+    ],
+    "browser": "Chromium with Playwright iPhone 13 Mini emulation; not a physical iPhone or Safari",
+    "device": {
+      "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Mobile/15E148 Safari/604.1",
+      "viewport": {
+        "width": 375,
+        "height": 629
+      },
+      "screen": {
+        "width": 375,
+        "height": 812
+      },
+      "deviceScaleFactor": 3,
+      "isMobile": true,
+      "hasTouch": true,
+      "defaultBrowserType": "webkit"
+    },
+    "route": [
+      "TILE",
+      "DAD",
+      "WHERE",
+      "ANGRY"
+    ],
+    "puzzleVersion": 7,
+    "refill": {
+      "rawQueueRemaining": 79,
+      "hidden": 72,
+      "known": [
+        {
+          "letter": "S",
+          "count": 6
+        },
+        {
+          "letter": "P",
+          "count": 1
+        }
+      ],
+      "scope": "Remaining stored queue, including letters that may not be reachable within remaining lives; order hidden"
+    },
+    "before": {
+      "x": 36.890625,
+      "y": 269.03125,
+      "width": 301.203125,
+      "height": 301.25
+    },
+    "after": {
+      "x": 36.890625,
+      "y": 269.03125,
+      "width": 301.203125,
+      "height": 301.25
+    },
+    "viewport": {
+      "width": 375,
+      "height": 629,
+      "dpr": 3
+    },
+    "fonts": [
+      {
+        "family": "Cutive Mono",
+        "status": "unloaded",
+        "weight": "400"
+      },
+      {
+        "family": "Cutive Mono",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "Share Tech Mono",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ],
+    "health": "1 of 5",
+    "headerWyrms": 0,
+    "healthWyrms": 1,
+    "enemy": [
+      {
+        "letter": "D, removed",
+        "remaining": "0"
+      },
+      {
+        "letter": "E, removed",
+        "remaining": "0"
+      },
+      {
+        "letter": "S, 1 hit remaining",
+        "remaining": "1"
+      },
+      {
+        "letter": "P, 1 hit remaining",
+        "remaining": "1"
+      },
+      {
+        "letter": "A, removed",
+        "remaining": "0"
+      },
+      {
+        "letter": "I, removed",
+        "remaining": "0"
+      },
+      {
+        "letter": "R, removed",
+        "remaining": "0"
+      }
+    ],
+    "overflow": 0,
+    "bodyWidth": 375,
+    "background": "#25281f",
+    "preview": "\u2014",
+    "failedRequests": [],
+    "fontResponses": [
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/sharetechmono/v16/J7aHnp1uDWRBEqV98dVQztYldFcLowEFA87Heg.woff2",
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/cutivemono/v23/m8JWjfRfY7WVjVi2E-K9H6RCTm6o39uc.woff2",
+        "status": 200
+      }
+    ],
+    "rasterInkCheck": {
+      "method": "DPR3 screenshot pixels inside each 16px square; exclude border and identify yellow glyph ink",
+      "S": {
+        "centerMinusTileCenterCssPx": {
+          "x": -0.21875,
+          "y": -0.3333333333333333
+        }
+      },
+      "P": {
+        "centerMinusTileCenterCssPx": {
+          "x": 0.28125,
+          "y": -0.3333333333333333
+        }
+      },
+      "interpretation": "Remaining subpixel difference is at most one device pixel; glyph placement uses font ink bounds, with raster antialiasing/hinting quantization."
+    }
+  }
+]

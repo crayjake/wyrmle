@@ -1,0 +1,172 @@
+{
+  "seed": "revive-lexical-v2",
+  "requestedSeeds": 16,
+  "enemy": "DESPAIR",
+  "attempted": 48,
+  "solvable": 44,
+  "accepted": 14,
+  "acceptedUnique": 14,
+  "enemyRejectionCounts": {},
+  "candidateRejectionReasons": {
+    "decorative-semantic": 22,
+    "missing-familiar-winning-witness": 8,
+    "irrelevant-strike": 13,
+    "premature-hopelessness": 3,
+    "missing-greedy-tradeoff": 2,
+    "decorative-strike": 3,
+    "solution-unconfirmed": 4,
+    "missing-route-variety": 6,
+    "missing-clutch": 2
+  },
+  "archetypeDistribution": {
+    "ward-timing": 9,
+    "refill-planning": 12,
+    "greedy-trap": 15,
+    "semantic-contrast": 24,
+    "multiple-routes": 18,
+    "strike-override": 3,
+    "grammar-twist": 3,
+    "armour-break": 9,
+    "clutch-finish": 3
+  },
+  "totalSolverStates": 5321,
+  "totalRuntimeMs": 420251.1862260001,
+  "averageSolverStates": 110.85416666666667,
+  "averageRuntimeMs": 8755.233046375002,
+  "prematureHopelessness": {
+    "unknown": 7,
+    "zero": 32,
+    "low": 3,
+    "high": 6
+  },
+  "clutchOpportunities": {
+    "0": 27,
+    "1": 10,
+    "2": 5,
+    "3": 3,
+    "4": 2,
+    "5": 1
+  },
+  "topQualityScores": [
+    {
+      "id": "generated-despair-lex2-revive-lexical-v2%3A9%3A0",
+      "score": 53.63,
+      "seed": "revive-lexical-v2:9:0",
+      "enemy": "DESPAIR"
+    },
+    {
+      "id": "generated-despair-lex2-revive-lexical-v2%3A13%3A0",
+      "score": 50.62,
+      "seed": "revive-lexical-v2:13:0",
+      "enemy": "DESPAIR"
+    },
+    {
+      "id": "generated-despair-lex2-revive-lexical-v2%3A13%3A0-mrevive-lexical-v2%3A13%3Ag0%3Ap0%3Am1",
+      "score": 50.62,
+      "seed": "revive-lexical-v2:13:g0:p0:m1",
+      "enemy": "DESPAIR"
+    },
+    {
+      "id": "generated-despair-lex2-revive-lexical-v2%3A3%3A0",
+      "score": 50.61,
+      "seed": "revive-lexical-v2:3:0",
+      "enemy": "DESPAIR"
+    },
+    {
+      "id": "generated-despair-lex2-revive-lexical-v2%3A13%3A0-mrevive-lexical-v2%3A13%3Ag0%3Ap0%3Am0",
+      "score": 50.28,
+      "seed": "revive-lexical-v2:13:g0:p0:m0",
+      "enemy": "DESPAIR"
+    },
+    {
+      "id": "generated-despair-lex2-revive-lexical-v2%3A3%3A0-mrevive-lexical-v2%3A3%3Ag0%3Ap0%3Am0",
+      "score": 49.6,
+      "seed": "revive-lexical-v2:3:g0:p0:m0",
+      "enemy": "DESPAIR"
+    },
+    {
+      "id": "generated-despair-lex2-revive-lexical-v2%3A12%3A0",
+      "score": 48.65,
+      "seed": "revive-lexical-v2:12:0",
+      "enemy": "DESPAIR"
+    },
+    {
+      "id": "generated-despair-lex2-revive-lexical-v2%3A12%3A0-mrevive-lexical-v2%3A12%3Ag0%3Ap0%3Am1",
+      "score": 48.65,
+      "seed": "revive-lexical-v2:12:g0:p0:m1",
+      "enemy": "DESPAIR"
+    },
+    {
+      "id": "generated-despair-lex2-revive-lexical-v2%3A12%3A0-mrevive-lexical-v2%3A12%3Ag0%3Ap0%3Am0",
+      "score": 47.91,
+      "seed": "revive-lexical-v2:12:g0:p0:m0",
+      "enemy": "DESPAIR"
+    },
+    {
+      "id": "generated-despair-lex2-revive-lexical-v2%3A8%3A0",
+      "score": 47.2,
+      "seed": "revive-lexical-v2:8:0",
+      "enemy": "DESPAIR"
+    },
+    {
+      "id": "generated-despair-lex2-revive-lexical-v2%3A8%3A0-mrevive-lexical-v2%3A8%3Ag0%3Ap0%3Am0",
+      "score": 47.2,
+      "seed": "revive-lexical-v2:8:g0:p0:m0",
+      "enemy": "DESPAIR"
+    },
+    {
+      "id": "generated-despair-lex2-revive-lexical-v2%3A6%3A0",
+      "score": 43.75,
+      "seed": "revive-lexical-v2:6:0",
+      "enemy": "DESPAIR"
+    },
+    {
+      "id": "generated-despair-lex2-revive-lexical-v2%3A14%3A0",
+      "score": 39.75,
+      "seed": "revive-lexical-v2:14:0",
+      "enemy": "DESPAIR"
+    },
+    {
+      "id": "generated-despair-lex2-revive-lexical-v2%3A14%3A0-mrevive-lexical-v2%3A14%3Ag0%3Ap0%3Am0",
+      "score": 39.75,
+      "seed": "revive-lexical-v2:14:g0:p0:m0",
+      "enemy": "DESPAIR"
+    }
+  ],
+  "acceptedSeeds": [
+    "revive-lexical-v2:3:0",
+    "revive-lexical-v2:3:g0:p0:m0",
+    "revive-lexical-v2:6:0",
+    "revive-lexical-v2:8:0",
+    "revive-lexical-v2:8:g0:p0:m0",
+    "revive-lexical-v2:9:0",
+    "revive-lexical-v2:12:0",
+    "revive-lexical-v2:12:g0:p0:m1",
+    "revive-lexical-v2:12:g0:p0:m0",
+    "revive-lexical-v2:13:0",
+    "revive-lexical-v2:13:g0:p0:m1",
+    "revive-lexical-v2:13:g0:p0:m0",
+    "revive-lexical-v2:14:0",
+    "revive-lexical-v2:14:g0:p0:m0"
+  ],
+  "search": {
+    "scope": "bounded-development-review",
+    "options": {
+      "includeRegenTile": true,
+      "candidateCount": 1,
+      "keep": 100,
+      "refinementRounds": 1,
+      "mutationsPerRound": 2,
+      "analysis": {
+        "solver": {
+          "maxStates": 160,
+          "beamWidth": 16
+        },
+        "counterfactualSolver": {
+          "maxStates": 40,
+          "beamWidth": 8
+        }
+      }
+    }
+  }
+}

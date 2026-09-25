@@ -1,0 +1,854 @@
+[
+  {
+    "case": "finite-initial",
+    "enemy": {
+      "x": 13.28125,
+      "y": 82.90625,
+      "width": 348.4375,
+      "height": 125.03125,
+      "bottom": 207.9375
+    },
+    "viewport": {
+      "width": 375,
+      "height": 629
+    },
+    "board": {
+      "x": 36.890625,
+      "y": 269.03125,
+      "width": 301.203125,
+      "height": 301.25,
+      "bottom": 570.28125
+    },
+    "resources": {
+      "x": 13.28125,
+      "y": 38,
+      "width": 348.4375,
+      "height": 31,
+      "bottom": 69
+    },
+    "player": {
+      "x": 13.28125,
+      "y": 221.859375,
+      "width": 348.4375,
+      "height": 401.140625,
+      "bottom": 623
+    },
+    "actions": {
+      "x": 36.890625,
+      "y": 574.28125,
+      "width": 301.203125,
+      "height": 48.71875,
+      "bottom": 623
+    },
+    "overflow": 0,
+    "bodyWidth": 375,
+    "refills": "Refills remaining: other letters 9, A 2, N 2, G 0, E 4, R 1. Counts are reserve copies, not the next draw order.",
+    "emptyCount": 0,
+    "emptyDisabled": true,
+    "lifeSegments": 5,
+    "filledLives": 5,
+    "logoWyrms": 0,
+    "fonts": [
+      {
+        "family": "Cutive Mono",
+        "status": "unloaded"
+      },
+      {
+        "family": "Cutive Mono",
+        "status": "loaded"
+      },
+      {
+        "family": "Share Tech Mono",
+        "status": "loaded"
+      }
+    ],
+    "text": "LIVES\n×9\nA\n×2\nN\n×2\nG\n×0\nE\n×4\nR\nREFILLS",
+    "errors": []
+  },
+  {
+    "case": "finite-initial",
+    "enemy": {
+      "x": 13.28125,
+      "y": 85.40625,
+      "width": 348.4375,
+      "height": 125.03125,
+      "bottom": 210.4375
+    },
+    "viewport": {
+      "width": 375,
+      "height": 629
+    },
+    "board": {
+      "x": 36.890625,
+      "y": 269.03125,
+      "width": 301.203125,
+      "height": 301.25,
+      "bottom": 570.28125
+    },
+    "resources": {
+      "x": 13.28125,
+      "y": 38,
+      "width": 348.4375,
+      "height": 36,
+      "bottom": 74
+    },
+    "player": {
+      "x": 13.28125,
+      "y": 221.859375,
+      "width": 348.4375,
+      "height": 401.140625,
+      "bottom": 623
+    },
+    "actions": {
+      "x": 36.890625,
+      "y": 574.28125,
+      "width": 301.203125,
+      "height": 48.71875,
+      "bottom": 623
+    },
+    "overflow": 0,
+    "bodyWidth": 375,
+    "refills": "Refills remaining: other letters 9, D 2, E 3, S 0, P 2, A 1, I 0, R 1. Counts are reserve copies, not the next draw order.",
+    "emptyCount": 0,
+    "emptyDisabled": true,
+    "lifeSegments": 5,
+    "filledLives": 5,
+    "logoWyrms": 0,
+    "fonts": [
+      {
+        "family": "Cutive Mono",
+        "status": "unloaded"
+      },
+      {
+        "family": "Cutive Mono",
+        "status": "loaded"
+      },
+      {
+        "family": "Share Tech Mono",
+        "status": "loaded"
+      }
+    ],
+    "text": "LIVES\n×9\nD\n×2\nE\n×3\nS\n×0\nP\n×2\nA\nI\n×0\nR\nREFILLS",
+    "errors": []
+  },
+  {
+    "case": "legacy-initial",
+    "viewport": {
+      "width": 375,
+      "height": 629
+    },
+    "board": {
+      "x": 36.890625,
+      "y": 269.03125,
+      "width": 301.203125,
+      "height": 301.25,
+      "bottom": 570.28125
+    },
+    "resources": {
+      "x": 13.28125,
+      "y": 38,
+      "width": 348.4375,
+      "height": 20,
+      "bottom": 58
+    },
+    "enemy": {
+      "x": 13.28125,
+      "y": 77.40625,
+      "width": 348.4375,
+      "height": 125.03125,
+      "bottom": 202.4375
+    },
+    "player": {
+      "x": 13.28125,
+      "y": 221.859375,
+      "width": 348.4375,
+      "height": 401.140625,
+      "bottom": 623
+    },
+    "actions": {
+      "x": 36.890625,
+      "y": 574.28125,
+      "width": 301.203125,
+      "height": 48.71875,
+      "bottom": 623
+    },
+    "overflow": 0,
+    "bodyWidth": 375,
+    "emptyCount": 0,
+    "emptyDisabled": true,
+    "lifeSegments": 5,
+    "filledLives": 5,
+    "logoWyrms": 0,
+    "fonts": [
+      {
+        "family": "Cutive Mono",
+        "status": "unloaded"
+      },
+      {
+        "family": "Cutive Mono",
+        "status": "loaded"
+      },
+      {
+        "family": "Share Tech Mono",
+        "status": "loaded"
+      }
+    ],
+    "text": "LIVES",
+    "errors": []
+  },
+  {
+    "case": "finite-initial",
+    "enemy": {
+      "x": 12,
+      "y": 75.015625,
+      "width": 296,
+      "height": 120.15625,
+      "bottom": 195.171875
+    },
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "board": {
+      "x": 24,
+      "y": 243.984375,
+      "width": 272,
+      "height": 272.015625,
+      "bottom": 516
+    },
+    "resources": {
+      "x": 12,
+      "y": 33,
+      "width": 296,
+      "height": 36,
+      "bottom": 69
+    },
+    "player": {
+      "x": 12,
+      "y": 201.1875,
+      "width": 296,
+      "height": 362.8125,
+      "bottom": 564
+    },
+    "actions": {
+      "x": 24,
+      "y": 520,
+      "width": 272,
+      "height": 44,
+      "bottom": 564
+    },
+    "overflow": 0,
+    "bodyWidth": 320,
+    "refills": "Refills remaining: other letters 9, A 2, N 2, G 0, E 4, R 1. Counts are reserve copies, not the next draw order.",
+    "emptyCount": 0,
+    "emptyDisabled": true,
+    "lifeSegments": 5,
+    "filledLives": 5,
+    "logoWyrms": 0,
+    "fonts": [
+      {
+        "family": "Cutive Mono",
+        "status": "unloaded"
+      },
+      {
+        "family": "Cutive Mono",
+        "status": "loaded"
+      },
+      {
+        "family": "Share Tech Mono",
+        "status": "loaded"
+      }
+    ],
+    "text": "LIVES\n×9\nA\n×2\nN\n×2\nG\n×0\nE\n×4\nR\nREFILLS",
+    "errors": []
+  },
+  {
+    "case": "finite-initial",
+    "enemy": {
+      "x": 12,
+      "y": 75.578125,
+      "width": 296,
+      "height": 119.015625,
+      "bottom": 194.59375
+    },
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "board": {
+      "x": 24,
+      "y": 243.984375,
+      "width": 272,
+      "height": 272.015625,
+      "bottom": 516
+    },
+    "resources": {
+      "x": 12,
+      "y": 33,
+      "width": 296,
+      "height": 36,
+      "bottom": 69
+    },
+    "player": {
+      "x": 12,
+      "y": 201.1875,
+      "width": 296,
+      "height": 362.8125,
+      "bottom": 564
+    },
+    "actions": {
+      "x": 24,
+      "y": 520,
+      "width": 272,
+      "height": 44,
+      "bottom": 564
+    },
+    "overflow": 0,
+    "bodyWidth": 320,
+    "refills": "Refills remaining: other letters 9, D 2, E 3, S 0, P 2, A 1, I 0, R 1. Counts are reserve copies, not the next draw order.",
+    "emptyCount": 0,
+    "emptyDisabled": true,
+    "lifeSegments": 5,
+    "filledLives": 5,
+    "logoWyrms": 0,
+    "fonts": [
+      {
+        "family": "Cutive Mono",
+        "status": "unloaded"
+      },
+      {
+        "family": "Cutive Mono",
+        "status": "loaded"
+      },
+      {
+        "family": "Share Tech Mono",
+        "status": "loaded"
+      }
+    ],
+    "text": "LIVES\n×9\nD\n×2\nE\n×3\nS\n×0\nP\n×2\nA\nI\n×0\nR\nREFILLS",
+    "errors": []
+  },
+  {
+    "case": "legacy-initial",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "board": {
+      "x": 24,
+      "y": 243.984375,
+      "width": 272,
+      "height": 272.015625,
+      "bottom": 516
+    },
+    "resources": {
+      "x": 12,
+      "y": 33,
+      "width": 296,
+      "height": 20,
+      "bottom": 53
+    },
+    "enemy": {
+      "x": 12,
+      "y": 67.015625,
+      "width": 296,
+      "height": 120.15625,
+      "bottom": 187.171875
+    },
+    "player": {
+      "x": 12,
+      "y": 201.1875,
+      "width": 296,
+      "height": 362.8125,
+      "bottom": 564
+    },
+    "actions": {
+      "x": 24,
+      "y": 520,
+      "width": 272,
+      "height": 44,
+      "bottom": 564
+    },
+    "overflow": 0,
+    "bodyWidth": 320,
+    "emptyCount": 0,
+    "emptyDisabled": true,
+    "lifeSegments": 5,
+    "filledLives": 5,
+    "logoWyrms": 0,
+    "fonts": [
+      {
+        "family": "Cutive Mono",
+        "status": "unloaded"
+      },
+      {
+        "family": "Cutive Mono",
+        "status": "loaded"
+      },
+      {
+        "family": "Share Tech Mono",
+        "status": "loaded"
+      }
+    ],
+    "text": "LIVES",
+    "errors": []
+  },
+  {
+    "case": "finite-initial",
+    "enemy": {
+      "x": 14.0625,
+      "y": 139.984375,
+      "width": 346.875,
+      "height": 140.21875,
+      "bottom": 280.203125
+    },
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "board": {
+      "x": 18.75,
+      "y": 397.625,
+      "width": 337.5,
+      "height": 337.5,
+      "bottom": 735.125
+    },
+    "resources": {
+      "x": 14.0625,
+      "y": 51.5625,
+      "width": 346.875,
+      "height": 31,
+      "bottom": 82.5625
+    },
+    "player": {
+      "x": 14.0625,
+      "y": 337.625,
+      "width": 346.875,
+      "height": 460.3125,
+      "bottom": 797.9375
+    },
+    "actions": {
+      "x": 18.75,
+      "y": 746.375,
+      "width": 337.5,
+      "height": 51.5625,
+      "bottom": 797.9375
+    },
+    "overflow": 0,
+    "bodyWidth": 375,
+    "refills": "Refills remaining: other letters 9, A 2, N 2, G 0, E 4, R 1. Counts are reserve copies, not the next draw order.",
+    "emptyCount": 0,
+    "emptyDisabled": true,
+    "lifeSegments": 5,
+    "filledLives": 5,
+    "logoWyrms": 0,
+    "fonts": [
+      {
+        "family": "Cutive Mono",
+        "status": "unloaded"
+      },
+      {
+        "family": "Cutive Mono",
+        "status": "loaded"
+      },
+      {
+        "family": "Share Tech Mono",
+        "status": "loaded"
+      }
+    ],
+    "text": "LIVES\n×9\nA\n×2\nN\n×2\nG\n×0\nE\n×4\nR\nREFILLS",
+    "errors": []
+  },
+  {
+    "case": "legacy-initial",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "board": {
+      "x": 18.75,
+      "y": 397.625,
+      "width": 337.5,
+      "height": 337.5,
+      "bottom": 735.125
+    },
+    "resources": {
+      "x": 14.0625,
+      "y": 51.5625,
+      "width": 346.875,
+      "height": 20,
+      "bottom": 71.5625
+    },
+    "enemy": {
+      "x": 14.0625,
+      "y": 134.484375,
+      "width": 346.875,
+      "height": 140.21875,
+      "bottom": 274.703125
+    },
+    "player": {
+      "x": 14.0625,
+      "y": 337.625,
+      "width": 346.875,
+      "height": 460.3125,
+      "bottom": 797.9375
+    },
+    "actions": {
+      "x": 18.75,
+      "y": 746.375,
+      "width": 337.5,
+      "height": 51.5625,
+      "bottom": 797.9375
+    },
+    "overflow": 0,
+    "bodyWidth": 375,
+    "emptyCount": 0,
+    "emptyDisabled": true,
+    "lifeSegments": 5,
+    "filledLives": 5,
+    "logoWyrms": 0,
+    "fonts": [
+      {
+        "family": "Cutive Mono",
+        "status": "unloaded"
+      },
+      {
+        "family": "Cutive Mono",
+        "status": "loaded"
+      },
+      {
+        "family": "Share Tech Mono",
+        "status": "loaded"
+      }
+    ],
+    "text": "LIVES",
+    "errors": []
+  },
+  {
+    "case": "finite-initial",
+    "enemy": {
+      "x": 169,
+      "y": 253.53125,
+      "width": 1102,
+      "height": 129.765625,
+      "bottom": 383.296875
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "board": {
+      "x": 568,
+      "y": 630.390625,
+      "width": 304,
+      "height": 304.015625,
+      "bottom": 934.40625
+    },
+    "resources": {
+      "x": 169,
+      "y": 49.59375,
+      "width": 1102,
+      "height": 20,
+      "bottom": 69.59375
+    },
+    "player": {
+      "x": 552,
+      "y": 567.234375,
+      "width": 336,
+      "height": 420.765625,
+      "bottom": 988
+    },
+    "actions": {
+      "x": 568,
+      "y": 944,
+      "width": 304,
+      "height": 44,
+      "bottom": 988
+    },
+    "overflow": 0,
+    "bodyWidth": 1440,
+    "refills": "Refills remaining: other letters 9, A 2, N 2, G 0, E 4, R 1. Counts are reserve copies, not the next draw order.",
+    "emptyCount": 0,
+    "emptyDisabled": true,
+    "lifeSegments": 5,
+    "filledLives": 5,
+    "logoWyrms": 0,
+    "fonts": [
+      {
+        "family": "Cutive Mono",
+        "status": "unloaded"
+      },
+      {
+        "family": "Cutive Mono",
+        "status": "loaded"
+      },
+      {
+        "family": "Share Tech Mono",
+        "status": "loaded"
+      }
+    ],
+    "text": "LIVES\n×9\nA\n×2\nN\n×2\nG\n×0\nE\n×4\nR\nREFILLS",
+    "errors": []
+  },
+  {
+    "case": "legacy-initial",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "board": {
+      "x": 568,
+      "y": 630.390625,
+      "width": 304,
+      "height": 304.015625,
+      "bottom": 934.40625
+    },
+    "resources": {
+      "x": 169,
+      "y": 49.59375,
+      "width": 1102,
+      "height": 20,
+      "bottom": 69.59375
+    },
+    "enemy": {
+      "x": 169,
+      "y": 253.53125,
+      "width": 1102,
+      "height": 129.765625,
+      "bottom": 383.296875
+    },
+    "player": {
+      "x": 552,
+      "y": 567.234375,
+      "width": 336,
+      "height": 420.765625,
+      "bottom": 988
+    },
+    "actions": {
+      "x": 568,
+      "y": 944,
+      "width": 304,
+      "height": 44,
+      "bottom": 988
+    },
+    "overflow": 0,
+    "bodyWidth": 1440,
+    "emptyCount": 0,
+    "emptyDisabled": true,
+    "lifeSegments": 5,
+    "filledLives": 5,
+    "logoWyrms": 0,
+    "fonts": [
+      {
+        "family": "Cutive Mono",
+        "status": "unloaded"
+      },
+      {
+        "family": "Cutive Mono",
+        "status": "loaded"
+      },
+      {
+        "family": "Share Tech Mono",
+        "status": "loaded"
+      }
+    ],
+    "text": "LIVES",
+    "errors": []
+  },
+  {
+    "case": "finite-empty-and-undo",
+    "before": {
+      "viewport": {
+        "width": 375,
+        "height": 629
+      },
+      "board": {
+        "x": 36.890625,
+        "y": 269.03125,
+        "width": 301.203125,
+        "height": 301.25,
+        "bottom": 570.28125
+      },
+      "resources": {
+        "x": 13.28125,
+        "y": 38,
+        "width": 348.4375,
+        "height": 31,
+        "bottom": 69
+      },
+      "enemy": {
+        "x": 13.28125,
+        "y": 82.90625,
+        "width": 348.4375,
+        "height": 125.03125,
+        "bottom": 207.9375
+      },
+      "player": {
+        "x": 13.28125,
+        "y": 221.859375,
+        "width": 348.4375,
+        "height": 401.140625,
+        "bottom": 623
+      },
+      "actions": {
+        "x": 36.890625,
+        "y": 574.28125,
+        "width": 301.203125,
+        "height": 48.71875,
+        "bottom": 623
+      },
+      "overflow": 0,
+      "bodyWidth": 375,
+      "refills": "Refills remaining: other letters 1, A 1, N 0, G 0, E 1, R 0. Counts are reserve copies, not the next draw order.",
+      "emptyCount": 0,
+      "emptyDisabled": true,
+      "lifeSegments": 5,
+      "filledLives": 5,
+      "logoWyrms": 0,
+      "fonts": [
+        {
+          "family": "Cutive Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        },
+        {
+          "family": "Share Tech Mono",
+          "status": "loaded"
+        }
+      ],
+      "text": "LIVES\n×1\nA\nN\n×0\nG\n×0\nE\nR\n×0\nREFILLS"
+    },
+    "after": {
+      "viewport": {
+        "width": 375,
+        "height": 629
+      },
+      "board": {
+        "x": 36.890625,
+        "y": 269.03125,
+        "width": 301.203125,
+        "height": 301.25,
+        "bottom": 570.28125
+      },
+      "resources": {
+        "x": 13.28125,
+        "y": 38,
+        "width": 348.4375,
+        "height": 20,
+        "bottom": 58
+      },
+      "enemy": {
+        "x": 13.28125,
+        "y": 77.40625,
+        "width": 348.4375,
+        "height": 125.03125,
+        "bottom": 202.4375
+      },
+      "player": {
+        "x": 13.28125,
+        "y": 221.859375,
+        "width": 348.4375,
+        "height": 401.140625,
+        "bottom": 623
+      },
+      "actions": {
+        "x": 36.890625,
+        "y": 574.28125,
+        "width": 301.203125,
+        "height": 48.71875,
+        "bottom": 623
+      },
+      "overflow": 0,
+      "bodyWidth": 375,
+      "refills": "Refills remaining: other letters 0, A 0, N 0, G 0. Counts are reserve copies, not the next draw order.",
+      "emptyCount": 5,
+      "emptyDisabled": true,
+      "lifeSegments": 5,
+      "filledLives": 5,
+      "logoWyrms": 0,
+      "fonts": [
+        {
+          "family": "Cutive Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        },
+        {
+          "family": "Share Tech Mono",
+          "status": "loaded"
+        }
+      ],
+      "text": "LIVES\n×0\nA\n×0\nN\n×0\nG\n×0\nREFILLS"
+    },
+    "restored": {
+      "viewport": {
+        "width": 375,
+        "height": 629
+      },
+      "board": {
+        "x": 36.890625,
+        "y": 269.03125,
+        "width": 301.203125,
+        "height": 301.25,
+        "bottom": 570.28125
+      },
+      "resources": {
+        "x": 13.28125,
+        "y": 38,
+        "width": 348.4375,
+        "height": 31,
+        "bottom": 69
+      },
+      "enemy": {
+        "x": 13.28125,
+        "y": 82.90625,
+        "width": 348.4375,
+        "height": 125.03125,
+        "bottom": 207.9375
+      },
+      "player": {
+        "x": 13.28125,
+        "y": 221.859375,
+        "width": 348.4375,
+        "height": 401.140625,
+        "bottom": 623
+      },
+      "actions": {
+        "x": 36.890625,
+        "y": 574.28125,
+        "width": 301.203125,
+        "height": 48.71875,
+        "bottom": 623
+      },
+      "overflow": 0,
+      "bodyWidth": 375,
+      "refills": "Refills remaining: other letters 1, A 1, N 0, G 0, E 1, R 0. Counts are reserve copies, not the next draw order.",
+      "emptyCount": 0,
+      "emptyDisabled": true,
+      "lifeSegments": 5,
+      "filledLives": 5,
+      "logoWyrms": 0,
+      "fonts": [
+        {
+          "family": "Cutive Mono",
+          "status": "unloaded"
+        },
+        {
+          "family": "Cutive Mono",
+          "status": "loaded"
+        },
+        {
+          "family": "Share Tech Mono",
+          "status": "loaded"
+        }
+      ],
+      "text": "LIVES\n×1\nA\nN\n×0\nG\n×0\nE\nR\n×0\nREFILLS"
+    },
+    "errors": []
+  }
+]

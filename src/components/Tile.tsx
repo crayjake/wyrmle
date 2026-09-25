@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion"
+import { Heart } from 'lucide-react'
 import type { Ref } from "react"
 import { introTimings } from "../intro/config"
 import type { MatchHintMode } from './tileMatchHints'
@@ -16,6 +17,7 @@ type TileProps = {
   order?: number
   special?: SpecialTilePresentation
   disabled?: boolean
+  empty?: boolean
   revealed?: boolean
   elementRef?: Ref<HTMLButtonElement>
   boardIndex?: number
@@ -29,6 +31,7 @@ export default function Tile({
   order,
   special,
   disabled = false,
+  empty = false,
   revealed = false,
   elementRef,
   boardIndex,
@@ -42,18 +45,20 @@ export default function Tile({
       ref={elementRef}
       data-tile-index={boardIndex}
       data-revealed={revealed}
+      data-empty={empty || undefined}
       data-match-hint={revealed && matchHint !== 'off' ? matchHint : undefined}
       type="button"
       className={[
         "tile",
+        empty ? 'tile-empty' : '',
         selected ? "selected" : "",
         special ? `special ${special.id}` : "",
       ].join(" ")}
-      disabled={disabled}
+      disabled={disabled || empty}
       aria-pressed={selected}
-      aria-label={`${letter}${revealed && special ? `, ${special.label} tile` : ""}${revealed && matchHint !== 'off' ? ', matches a surviving enemy letter' : ''}`}
+      aria-label={empty ? 'Empty tile slot' : `${letter}${revealed && special ? `, ${special.label} tile` : ""}${revealed && matchHint !== 'off' ? ', matches a surviving enemy letter' : ''}`}
       title={revealed && special ? `${special.label}${special.detail ? `: ${special.detail}` : ""}` : undefined}
-      onClick={onClick}
+      onClick={empty ? undefined : onClick}
       animate={
         reducedMotion
           ? { opacity: revealed ? 1 : 0.5, scale: 1, y: 0 }
@@ -73,7 +78,7 @@ export default function Tile({
       }}
     >
       <span className="tile-letter">
-        {letter}
+        {empty ? '' : letter}
       </span>
 
       {selected && order !== undefined && (
@@ -82,10 +87,10 @@ export default function Tile({
         </span>
       )}
 
-      {revealed && special && (
+      {!empty && revealed && special && (
         <span className="tile-special">
           <span className="tile-special-symbol" aria-hidden="true">
-            {special.symbol === '◆' || special.symbol === '◇' ? (
+            {special.symbol === '♥' ? <Heart size={12} fill="currentColor" strokeWidth={1.5} aria-hidden="true" /> : special.symbol === '◆' || special.symbol === '◇' ? (
               <svg viewBox="0 0 12 12" focusable="false">
                 <path
                   d="M6 1.5 10.5 6 6 10.5 1.5 6Z"

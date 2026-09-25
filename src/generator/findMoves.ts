@@ -1,5 +1,6 @@
 import englishWords from 'an-array-of-english-words/index.json' with { type: 'json' }
-import { getPartsOfSpeech, isDictionaryWord, normalizeWord } from '../game/dictionary.ts'
+import { isDictionaryWord, normalizeWord } from '../game/dictionary.ts'
+import { getEncounterPartsOfSpeech } from '../game/lexicalRules.ts'
 import { submitLetterStrike } from '../game/letterStrike.ts'
 import type { LetterStrikeEvaluation, LetterStrikeState, LetterStrikeTile } from '../game/letterStrike.ts'
 import type { PartOfSpeech } from '../game/types.ts'
@@ -61,6 +62,7 @@ export function findPlayableWords(state: LetterStrikeState, vocabulary?: readonl
   let mask = 0
   for (const tile of state.tiles) {
     const index = tile.letter.toUpperCase().charCodeAt(0) - 65
+    if (!Number.isInteger(index) || index < 0 || index >= 26) continue
     counts[index] += 1
     mask |= 1 << index
   }
@@ -121,7 +123,7 @@ function buildMove(state: LetterStrikeState, tileIds: number[]): SolverMove | nu
     word: preview.word,
     tileIds: [...tileIds],
     semanticLabel: preview.semanticLabel,
-    partsOfSpeech: state.encounter.wordPartsOfSpeech?.[preview.word] ?? getPartsOfSpeech(preview.word) ?? [],
+    partsOfSpeech: getEncounterPartsOfSpeech(state.encounter, preview.word) ?? [],
     grammarModifier: preview.grammaticalModifier,
     longWordModifier: preview.longWordModifier,
     wardUsed: preview.resolveCost === 0,
@@ -150,6 +152,7 @@ export function discoverValidMoves(state: LetterStrikeState, options: MoveDiscov
   const byLetter = new Map<string, LetterStrikeTile[]>()
   for (const tile of state.tiles) {
     const letter = tile.letter.toUpperCase()
+    if (!letter) continue
     const bucket = byLetter.get(letter) ?? []
     bucket.push(tile)
     byLetter.set(letter, bucket)

@@ -24,6 +24,8 @@ export function scorePuzzle(candidate: CandidatePuzzle, analysis: PuzzleAnalysis
   add('grammarRelevance', (analysis.grammarImportance ?? 0) * 2, 'Measured effect of disabling encounter grammar.')
   add('armourRelevance', (analysis.armourImportance ?? 0) * 2 * analysis.armouredLetterCoverage, 'Armour changes play and has several matching word opportunities.')
   add('refillPlanning', analysis.refillPlanningImportance, 'Fraction of observed winning moves using newly refilled physical tiles.')
+  if (candidate.encounter.finiteRefills) add('finiteSupplyChoices', Math.min(1, (analysis.refillPressure?.winsOnReducedBoard ?? 0) / 3),
+    'Replayed wins that make further words after refill exhaustion has left empty board slots; final-turn exhaustion alone earns no credit.')
   add('lateSuspense', (analysis.penultimateRescueRate ?? 0) * Math.min(1, analysis.fairness.finalResolveStates / 3), 'Assessed sampled final-Resolve positions with at least one direct winning move.')
   add('clutch', Math.min(1, analysis.clutchOpportunityCount / 3) * (analysis.clutchWordCommonness ?? 0), 'Witnessed final-Resolve rescues with annotated fair vocabulary.')
   add('commonVocabulary', analysis.winningWordCommonness ?? 0, 'Mean familiarity of annotated winning words; unknown coverage is reported separately.')

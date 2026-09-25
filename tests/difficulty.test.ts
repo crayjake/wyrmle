@@ -49,7 +49,8 @@ test('the same Daily has the same intrinsic difficulty and board in every assist
   assert.deepEqual(states[0].game, states[1].game)
   assert.deepEqual(states[1].game, states[2].game)
   const analysis = (ratings as Record<string, { minimumWordsToWin: number | null; label: string }>)[puzzle.encounter.id]
-  assert.equal(analysis.minimumWordsToWin, 3)
+  // New lexical rules require fresh evidence; the v6 proof cannot be reused.
+  assert.equal(analysis.minimumWordsToWin, null)
   assert.equal(analysis.label, puzzle.difficulty)
   assert.equal('minimumWordsToWin' in puzzle, false)
 })

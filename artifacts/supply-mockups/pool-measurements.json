@@ -1,0 +1,134 @@
+[
+  {
+    "variant": "tiles",
+    "viewport": {
+      "width": 375,
+      "height": 667
+    },
+    "exampleData": true,
+    "underlyingRefillQueueUnchanged": true,
+    "before": {
+      "x": 27.4375,
+      "y": 270,
+      "width": 320.125,
+      "height": 320.125
+    },
+    "after": {
+      "x": 27.4375,
+      "y": 270,
+      "width": 320.125,
+      "height": 320.125
+    },
+    "overflow": 0,
+    "bodyWidth": 375,
+    "poolY": 67.59375,
+    "poolBottom": 92.59375,
+    "livesBottom": 62.90625,
+    "enemyTop": 101.859375,
+    "enemyBottom": 204.484375,
+    "playerTop": 213.75,
+    "knownLetters": [
+      "E",
+      "P"
+    ]
+  },
+  {
+    "variant": "grouped",
+    "viewport": {
+      "width": 375,
+      "height": 667
+    },
+    "exampleData": true,
+    "underlyingRefillQueueUnchanged": true,
+    "before": {
+      "x": 27.4375,
+      "y": 270,
+      "width": 320.125,
+      "height": 320.125
+    },
+    "after": {
+      "x": 27.4375,
+      "y": 270,
+      "width": 320.125,
+      "height": 320.125
+    },
+    "overflow": 0,
+    "bodyWidth": 375,
+    "poolY": 67.59375,
+    "poolBottom": 92.59375,
+    "livesBottom": 62.90625,
+    "enemyTop": 101.859375,
+    "enemyBottom": 204.484375,
+    "playerTop": 213.75,
+    "knownLetters": [
+      "E",
+      "P"
+    ]
+  },
+  {
+    "variant": "tiles",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "exampleData": true,
+    "underlyingRefillQueueUnchanged": true,
+    "before": {
+      "x": 24,
+      "y": 230.390625,
+      "width": 272,
+      "height": 272.015625
+    },
+    "after": {
+      "x": 24,
+      "y": 230.390625,
+      "width": 272,
+      "height": 272.015625
+    },
+    "overflow": 0,
+    "bodyWidth": 320,
+    "poolY": 57.671875,
+    "poolBottom": 82.671875,
+    "livesBottom": 53.671875,
+    "enemyTop": 89.015625,
+    "enemyBottom": 176.0625,
+    "playerTop": 182.421875,
+    "knownLetters": [
+      "E",
+      "P"
+    ]
+  },
+  {
+    "variant": "grouped",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "exampleData": true,
+    "underlyingRefillQueueUnchanged": true,
+    "before": {
+      "x": 24,
+      "y": 230.390625,
+      "width": 272,
+      "height": 272.015625
+    },
+    "after": {
+      "x": 24,
+      "y": 230.390625,
+      "width": 272,
+      "height": 272.015625
+    },
+    "overflow": 0,
+    "bodyWidth": 320,
+    "poolY": 57.671875,
+    "poolBottom": 82.671875,
+    "livesBottom": 53.671875,
+    "enemyTop": 89.015625,
+    "enemyBottom": 176.0625,
+    "playerTop": 182.421875,
+    "knownLetters": [
+      "E",
+      "P"
+    ]
+  }
+]

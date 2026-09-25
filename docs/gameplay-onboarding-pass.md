@@ -1,8 +1,28 @@
 # Gameplay, onboarding and difficulty review
 
-This review tested the frozen DESPAIR board now published for both September 24 and 25, 2026 UTC. New or untouched attempts on either date share that exact puzzle; started/completed attempts keep their original board, including older MELANCHOLY publications. Normal, Hard and Hardcore share each day's enemy, board, tile identities, armour, Resolve, refill and combat rules. REGEN is available in authored encounters and optional generation; it is not retrofitted into these published puzzles.
+## Current follow-up
 
-## First-time research before changes
+September 25, 2026 UTC now uses finite **ANGER v9**, the reviewed `early-r-long7-finite19-extra-g` variant with five lives, Heart E, Hit E, Revive N, a seven-letter LONG threshold and **19 replacement tiles**. September 24 keeps **DESPAIR v7**. Attempts with committed moves and completed results retain their original snapshots, including ANGER v8; an explicit beta reset opens that date's current publication. The [ANGER review](revive-candidate-notes.md) records its routes and the exact scope of its familiar-opening certificate. Its witnessed three-word win is an upper bound, not a proved minimum.
+
+The current introduction explains the goal and selection, followed by just **GLAD → SUN against SAD**. Armour, resistance, Hit, Heart, Revive, grammar and LONG are optional examples. The compulsory 26-step sequence tested below has been replaced. The demo uses the Daily layout and real combat components, with the next required letter highlighted. Reset tutorial, Skip and replay preserve Daily progress.
+
+The display now says **Lives**, **Heart**, **Hit**, **Play word**, **hits** and **Revive**. A Heart saves that turn's life cost; it does not add a life. Revive can return a dead matching enemy letter or give armour to a matching letter still alive. Internal effect codes and saved replay fields remain unchanged.
+
+The [lexical and onboarding review](lexical-onboarding-review.md) explains the underlying DIRTY/WORRY diagnosis, the offline Open English Wordnet data, full-dictionary annotation audit, versioned grammar policy and onboarding research. New rules retain every recognized word type, allowing any applicable type to earn the best configured modifier once. The old FAIR outcome recorded below is historical; it does not describe current broad-label rules.
+
+Phone legibility checks used **320×568, 375×667 and 375×812**. Daily idle and DIRTY previews and both SAD demo words had no horizontal or vertical overflow in those twelve checked states. Daily and demo boards matched exactly at each viewport: widths **272px, 320.125px and 337.5px**, respectively. The olive background is **`#25281f`**; centered definitions use a narrower measure and at least **14px** text, grammar labels at least **13px**, and essential small resource/tile/preview labels at least **11–12px**. Short screens reduce spacing while keeping the main tile letters unchanged. These checks preceded the finite resource-row implementation; older refill-count and wyrm-health images remain historical design comparisons.
+
+A fresh **375×629** browser also opened ANGER v8 with its MEDIUM label and played **CHEERFUL → GLAD → CANE** through visible controls, winning with three lives. Reset puzzle cleared the completed run/result; Reset tutorial preserved an active Daily through reload and Skip. All checks passed without browser errors. CHEERFUL's combined LONG, adjective, Hit and Heart preview exposed extra short-screen overflow; shared spacing was tightened and the full preview then fit both **375×629 and 320×568** without shrinking the grid or text.
+
+The finite follow-up makes replacement supply an actual encounter rule. Used slots become empty when the reserve runs out; remaining letters stay playable and the run only ends when no dictionary word can be spelled or lives run out, with victory taking precedence. Lives is shown by a segmented wyrm. The REFILLS display groups actual reserve copies by surviving enemy letter and puts other letters in a blank tile; it does not reveal queue order. Generation, solver transitions, pressure analysis, validation, undo and replay share the finite rule. The selected v9 review retains **32 winning strategies**, **14 with reduced-board play**, plus a fresh certificate for every physical choice among its **98 curated opening words**. Earlier v8 browser findings above do not claim final v9 browser verification.
+
+## Historical original gameplay pass
+
+The remainder preserves the earlier research and QA record, including its terminology, 26-step tutorial, test counts and DESPAIR v6 results. It is not the final verification report for the current release.
+
+That pass tested the frozen DESPAIR v6 board then published for both September 24 and 25, 2026 UTC. New or untouched attempts shared that exact puzzle; started/completed attempts kept their original board, including older MELANCHOLY publications. Normal, Hard and Hardcore shared each day's enemy, board, tile identities, armour, Resolve, refill and combat rules. REGEN was available in authored encounters and optional generation; it was not retrofitted into those DESPAIR snapshots.
+
+### First-time research before changes
 
 A fresh Chromium player agent used only the visible tutorial and game, without source, internal notes, stored solutions or application-state inspection. It completed the old tutorial and played FRIENDLY, HOPE and SHADY against DESPAIR.
 
@@ -15,7 +35,7 @@ A fresh Chromium player agent used only the visible tutorial and game, without s
 
 Once the player understood the enemy markers, its final preattack predictions matched the Daily outcomes. The redesign therefore teaches each marker and rule before the relevant commitment, and keeps those predictions explicit in normal play.
 
-## Independent player test after redesign
+### Independent player test after redesign
 
 A second fresh agent used only rendered UI and completed the revised tutorial, then played three Daily turns. All nine tutorial attack predictions matched the actual letters and Resolve changes. It correctly identified armour damage versus removal, STRIKE through resistance, WARD's free turn, and both REGEN previews before choosing the safe E.
 
@@ -29,9 +49,9 @@ Its Daily predictions also matched:
 
 The remaining confusion was grammar eligibility: FAIR seemed like an adjective, but its preview awarded no bonus. This prompted another copy revision: the preview now says **Word type unknown · no bonus** or **Multiple word types · no bonus**, while the grammar lesson and Help explicitly explain confirmed-type eligibility. The tester rechecked FAIR in a fresh context and confirmed that the explanation resolved its confusion. Semantic categories can still require checking the preview; they are not inferred from arbitrary natural-language meaning.
 
-The player found the individual lessons clear but the 26 steps somewhat long. That pacing is intentional for this full first-time explanation; Skip and later replay remain available. REGEN is taught through two real-engine inspections and a safe choice rather than forcing the player to heal the enemy. A development hot reload interrupted the first traversal; it was replayed through visible UI and treated as a testing interruption.
+The player found the individual lessons clear but the 26 steps somewhat long. That pass retained the full explanation with Skip and later replay; the follow-up above subsequently replaced its mandatory sequence. REGEN was taught through two real-engine inspections and a safe choice rather than forcing the player to heal the enemy. A development hot reload interrupted the first traversal; it was replayed through visible UI and treated as a testing interruption.
 
-## Revised tutorial
+### Revised tutorial
 
 Twenty-six short gated steps use the real engine, enemy, tiles, Resolve and preview components. There are nine submitted words and three inspection-only previews. Steps pause for acknowledgement after each outcome.
 
@@ -44,7 +64,7 @@ Twenty-six short gated steps use the real engine, enemy, tiles, Resolve and prev
 
 Unrelated tiles are disabled and dimmed; the next letter is highlighted. Skip is always available. First-time completion/Skip leads to mode choice. Help offers replay without changing Daily progress or statistics. Settings now offers **Beta tools → Reset tutorial**, which marks onboarding incomplete and starts the lessons immediately while preserving the Daily and preferred mode. Reloading during that reset keeps the tutorial open; completion or Skip returns to the Daily. DEV provides step/fixture jumps using real replayed states.
 
-## Gameplay and persistence
+### Gameplay and persistence
 
 REGEN resolves after all strikes. Each used REGEN tile restores one matching enemy copy: dead to one hit, or one hit to two. Dead copies take priority, then unarmoured living copies, with left-to-right ordering within each group. Already armoured and unrelated letters cannot benefit. Red recovery markers and text supplement the ordinary strike preview; history, solver and results retain the recovery evidence.
 
@@ -52,19 +72,19 @@ Normal provides a definition and three undos; Hard hides the definition and prov
 
 Schema 5 records undo usage and original result difficulty. Historical saves are validated against their original schema and enriched in memory without read-time writes. A later difficulty recalibration preserves completed results' original labels.
 
-During beta, production **Settings → Beta tools → Reset puzzle** clears the open date's run and result and starts a fresh attempt on its current publication. This switches an older September 24 or 25 attempt to DESPAIR. Other dates and preferences remain intact. Statistics are derived again from the remaining results. This explicit reset also permits replaying a completed date.
+During that beta pass, production **Settings → Beta tools → Reset puzzle** cleared the open date's run and result and started a fresh attempt on its current publication: DESPAIR v6 for September 24 and 25 at that time. Other dates and preferences remained intact. Statistics were derived again from the remaining results. This explicit reset also permitted replaying a completed date.
 
 After the final scheduling correction, all 312 automated tests, TypeScript, lint and production build pass; date/content tests cover both days sharing the exact DESPAIR encounter. The preceding production-browser checks verified active and completed puzzle resets, preservation of other days and preferred mode, statistics recalculation, reset synchronization across tabs, and tutorial reset/reload/Skip without changing Daily bytes. A browser clock at September 25 verified the selected DESPAIR board and MEDIUM label. Those browser checks used a temporary schedule with September 24 MELANCHOLY; September 24 has since been restored to DESPAIR. Beta controls were present and DEV controls absent in that production build.
 
-## Difficulty evidence
+### Difficulty evidence
 
 `src/generator/difficulty.ts` makes winning depth the primary input, adjusted by Resolve slack, observed strategy/opening diversity, required-word familiarity, armour, special-tile/grammar dependence, traps and proved clutch-only dependence. Thresholds and weights are centralized. Full analysis distinguishes a proved minimum from a bounded winning witness and observed route counts from exhaustive counts.
 
-The DESPAIR shared by September 24 and 25 is **MEDIUM**. Its three-word minimum is proved: exhaustive enumeration checked 17,178 physical opening selections and 2,824,308 potentially winning second-word selections without finding a one- or two-word win. A real-engine three-word win supplies the upper bound. The proof is fingerprinted to the exact encounter. `npm run prove-daily-minimum` reproduces it; `npm run rate-dailies` refreshes metadata and public labels.
+The archived DESPAIR v6 shared by both dates in that pass is **MEDIUM**. Its three-word minimum is proved: exhaustive enumeration checked 17,178 physical opening selections and 2,824,308 potentially winning second-word selections without finding a one- or two-word win. A real-engine three-word win supplies the upper bound. The proof is fingerprinted to the exact v6 encounter and does not transfer to DESPAIR v7's changed word labels or later ANGER versions. `npm run prove-daily-minimum` reproduces the archived proof; `npm run rate-dailies` refreshes metadata and public labels.
 
 Other archived ratings currently use bounded winning witnesses and are explicitly estimates in DEV metadata. Ordinary play receives only the difficulty label before Begin. Full analysis and solution-related metadata are excluded from the production bundle.
 
-## Validation
+### Validation
 
 At completion of the original gameplay pass, all 311 tests, TypeScript, lint and production build passed. Engine tests covered REGEN priority, caps, ordering, preview equality, solver choices and deterministic optional generation. Undo tests covered complete restoration, reload, all modes, finalization, stale tabs, storage failures and legacy migration. Tutorial tests replayed every step and DEV jump; difficulty tests covered depth, diversity, vocabulary and equal ratings across modes. The browser findings below also record that original pass.
 

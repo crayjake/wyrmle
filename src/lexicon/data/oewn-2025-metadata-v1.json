@@ -1,0 +1,31 @@
+{
+  "version": "oewn-2025-pos-v1",
+  "source": {
+    "name": "Open English Wordnet",
+    "version": "2025",
+    "url": "https://en-word.net/static/english-wordnet-2025.xml.gz",
+    "license": "CC-BY-4.0",
+    "sha256": "9ca6d1dcb75f822fdd66617f7d9da48142ace38dd544d6ad5e2feca1674ad3fe"
+  },
+  "dictionary": {
+    "package": "an-array-of-english-words",
+    "version": "2.0.0",
+    "sha256": "dadb53f5df46b5b26577fe1cadc85bf076d2d04cf554f6fcda693f2704555e06",
+    "words": 274937
+  },
+  "coverage": {
+    "wordnetWords": 63750,
+    "morphologyOnlyWords": 52447,
+    "wordsWithAdditionalInferredPos": 56616,
+    "coveredWords": 116197,
+    "unknownWords": 158740
+  },
+  "posBits": {
+    "noun": 1,
+    "verb": 2,
+    "adjective": 4,
+    "adverb": 8
+  },
+  "morphologyPolicy": "Regular noun/verb inflections; adjective comparatives without explicit irregular forms; dictionary intersection. No participle-to-adjective or -ly inference.",
+  "semanticPolicy": "Selected noun synset synonyms, direct sense antonyms and one derivation edge; explicit and regular forms inherit that entry's relation. Missing relation is unknown, never proof of unrelated meaning."
+}

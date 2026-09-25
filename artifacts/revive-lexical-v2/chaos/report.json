@@ -1,0 +1,71 @@
+{
+  "seed": "revive-lexical-v2:CHAOS",
+  "requestedSeeds": 6,
+  "enemy": "CHAOS",
+  "attempted": 6,
+  "solvable": 6,
+  "accepted": 1,
+  "acceptedUnique": 1,
+  "enemyRejectionCounts": {},
+  "candidateRejectionReasons": {
+    "missing-clutch": 1,
+    "too-short": 2,
+    "decorative-semantic": 2,
+    "irrelevant-strike": 2,
+    "decorative-strike": 1
+  },
+  "archetypeDistribution": {
+    "clutch-finish": 2,
+    "refill-planning": 2,
+    "strike-override": 2,
+    "grammar-twist": 2,
+    "semantic-contrast": 2,
+    "multiple-routes": 1,
+    "greedy-trap": 1
+  },
+  "totalSolverStates": 406,
+  "totalRuntimeMs": 35694.175222000005,
+  "averageSolverStates": 67.66666666666667,
+  "averageRuntimeMs": 5949.029203666668,
+  "prematureHopelessness": {
+    "unknown": 0,
+    "zero": 6,
+    "low": 0,
+    "high": 0
+  },
+  "clutchOpportunities": {
+    "0": 4,
+    "1": 2
+  },
+  "topQualityScores": [
+    {
+      "id": "generated-chaos-lex2-revive-lexical-v2%3ACHAOS%3A5%3A0",
+      "score": 32.67,
+      "seed": "revive-lexical-v2:CHAOS:5:0",
+      "enemy": "CHAOS"
+    }
+  ],
+  "acceptedSeeds": [
+    "revive-lexical-v2:CHAOS:5:0"
+  ],
+  "search": {
+    "scope": "bounded-development-review",
+    "options": {
+      "includeRegenTile": true,
+      "candidateCount": 1,
+      "keep": 100,
+      "refinementRounds": 0,
+      "mutationsPerRound": 2,
+      "analysis": {
+        "solver": {
+          "maxStates": 80,
+          "beamWidth": 12
+        },
+        "counterfactualSolver": {
+          "maxStates": 20,
+          "beamWidth": 8
+        }
+      }
+    }
+  }
+}

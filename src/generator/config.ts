@@ -13,6 +13,9 @@ export const defaultAnalysisConfig = {
 } as const
 
 export type ValidationConfig = {
+  requireOpeningSafety?: boolean
+  openingSafetyScope?: 'all-damaging-openings' | 'all-valid-openings'
+  allowRestrictedOpeningSafety?: boolean
   minimumWinningTurns: number
   maximumWinningTurns: number
   minimumReasonableOpenings: number
@@ -28,6 +31,9 @@ export type ValidationConfig = {
 }
 
 export const defaultValidationConfig: ValidationConfig = {
+  requireOpeningSafety: false,
+  openingSafetyScope: 'all-damaging-openings',
+  allowRestrictedOpeningSafety: false,
   minimumWinningTurns: 3,
   maximumWinningTurns: 7,
   minimumReasonableOpenings: 2,
@@ -54,6 +60,7 @@ export const defaultScoreWeights = {
   grammarRelevance: 4,
   armourRelevance: 4,
   refillPlanning: 5,
+  finiteSupplyChoices: 8,
   lateSuspense: 8,
   clutch: 5,
   commonVocabulary: 8,

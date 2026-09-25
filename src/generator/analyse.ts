@@ -5,10 +5,15 @@ import { discoverValidMoves, moveSummary, scoreImmediateMove } from './findMoves
 import type { SolverMoveSummary } from './findMoves.ts'
 import type { MoveDiscovery } from './findMoves.ts'
 import { getWordCommonness } from './lexicalProvider.ts'
-import { solvePuzzle } from './solve.ts'
+import { auditEncounterLexicon } from './lexicalAudit.ts'
+import type { LexicalAudit } from './lexicalAudit.ts'
+import type { OpeningSafetyReport } from './openingSafety.ts'
+import { selectDiverseWinningLines, solvePuzzle, winningStrategySignature } from './solve.ts'
 import type { SolverOptions, SolverResult, WinningLine } from './solve.ts'
 import type { CandidatePuzzle } from './types.ts'
 import { encounterRuleKey, stateKey } from './stateKey.ts'
+import { analyseRefillPressure } from './refillPressure.ts'
+import type { RefillPressureAnalysis } from './refillPressure.ts'
 
 export type MechanicName = 'semantic' | 'ward' | 'strike' | 'grammar' | 'armour' | 'regen'
 export type ReviewLine = { moves: SolverMoveSummary[]; turns: number; resolveRemaining: number }
@@ -60,6 +65,11 @@ export type SpecialTileDecision = {
   openingDiscoveryComplete: boolean
 }
 export type PuzzleAnalysis = {
+  /** Full-dictionary spelling audit, completed before bounded search for new lexical rules. */
+  lexicalAudit?: LexicalAudit
+  /** Optional separate opening certificate; exploratory analysis alone does not imply safety. */
+  openingSafety?: OpeningSafetyReport
+  refillPressure?: RefillPressureAnalysis
   solvable: boolean | null
   minimumTurnsToWin: number | null
   minimumTurnsProven: boolean
@@ -205,7 +215,8 @@ function compareMechanic(encounter: LetterStrikeEncounter, baseline: SolverResul
   if (!present) return comparison
   const altered = counterfactualEncounter(encounter, mechanic)
   const impact: number[] = []
-  for (const line of baseline.winningLines.slice(0, 6)) {
+  const replayLines = encounter.lexicalRules ? selectDiverseWinningLines(baseline.winningLines, 6) : baseline.winningLines.slice(0, 6)
+  for (const line of replayLines) {
     let state = createLetterStrikeGame(altered)
     let turns = 0
     for (const move of line.moves) {
@@ -281,6 +292,7 @@ export function analysePuzzle(input: CandidatePuzzle | LetterStrikeEncounter, op
   const encounter = 'encounter' in input ? input.encounter : input
   const initial = createLetterStrikeGame(encounter)
   const commonness = options.wordCommonness ?? getWordCommonness
+  const lexicalAudit = encounter.lexicalRules ? auditEncounterLexicon(encounter) : undefined
   const solution = options.solution ?? solvePuzzle(encounter, { ...options.solver,
     wordCommonness: options.solver?.wordCommonness ?? (word => commonness(word) ?? 0) })
   // Analysis augments a private graph so callers may safely reuse solver output.
@@ -454,7 +466,9 @@ export function analysePuzzle(input: CandidatePuzzle | LetterStrikeEncounter, op
       && identity(line.moves[0]) === identity(strongest)) ? true : null
     : strongestRecord?.canWin === false ? false : null
   const strategicOpening = bestLine?.moves[0] ?? null
-  const strategies = new Set(solution.winningLines.map(line => `${line.moves[0]?.word}|${line.moves.map(move => move.semanticLabel).join(',')}|ward:${line.moves.findIndex(move => move.wardUsed)}|strike:${line.moves.findIndex(move => move.strikeUsed)}`))
+  const strategies = new Set(solution.winningLines.map(line => encounter.lexicalRules || options.solver?.hintLines !== undefined
+    ? winningStrategySignature(line.moves)
+    : `${line.moves[0]?.word}|${line.moves.map(move => move.semanticLabel).join(',')}|ward:${line.moves.findIndex(move => move.wardUsed)}|strike:${line.moves.findIndex(move => move.strikeUsed)}`))
   const expanded = [...records.values()].filter(record => record.expanded)
   const assessed = provenDead + provenWinning
   function specialDecision(mechanic: 'ward' | 'strike' | 'regen'): SpecialTileDecision {
@@ -491,8 +505,11 @@ export function analysePuzzle(input: CandidatePuzzle | LetterStrikeEncounter, op
   ]
   if (solution.searchLimitReached) notes.push(`Solver limits: ${solution.cutoffReasons.join(', ')}.`)
   if (hasRegen) notes.push('REGEN recovery is resolved after damage in every searched state. Its importance measures observed route changes; avoiding the harmful tile can itself be a valid strategy.')
+  if (encounter.lexicalRules) notes.push('Winning witnesses retain distinct opening, semantic-pattern and special-timing strategies. Counterfactuals replay the same diverse sample of at most six prefixes and finishes for every mechanic; final-word variants do not crowd out distinct strategies.')
   if (finalUnknown) notes.push(`${finalUnknown} sampled final-Resolve states have unknown one-move rescue status.`)
   return {
+    ...(lexicalAudit ? { lexicalAudit } : {}),
+    ...(encounter.finiteRefills ? { refillPressure: analyseRefillPressure(encounter, solution.winningLines) } : {}),
     solvable: solution.solvable === null && hasImpossibleLetterSupply(initial) ? false : solution.solvable, minimumTurnsToWin: solution.minimumTurnsToWin,
     minimumTurnsProven: solution.minimumTurnsToWin !== null,
     bestWinDepth: solution.bestWinDepth, maximumResolveRemaining: solution.maximumResolveRemaining,

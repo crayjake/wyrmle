@@ -65,43 +65,56 @@ export const tutorialFixtures = {
   }),
 } satisfies Record<string, LetterStrikeEncounter>
 
+// Only the first four states form onboarding. The remaining routes are optional
+// practice examples, also available directly from the development tools.
 export const tutorialSteps = [
-  { id: 'goal', label: 'The goal' },
-  { id: 'resolve', label: 'Resolve' },
-  { id: 'build', label: 'Build GLAD' },
-  { id: 'matching', label: 'Matching letters' },
-  { id: 'counter', label: 'Counter' },
-  { id: 'counter-result', label: 'Counter result' },
-  { id: 'neutral', label: 'Neutral' },
-  { id: 'basic-complete', label: 'First victory' },
-  { id: 'armour', label: 'Armour' },
-  { id: 'armour-result', label: 'Armour broken' },
-  { id: 'armour-finish', label: 'Second strike' },
-  { id: 'armour-complete', label: 'Armour removed' },
-  { id: 'resisted', label: 'Resisted' },
-  { id: 'strike', label: 'Strike tile' },
-  { id: 'strike-result', label: 'Strike result' },
-  { id: 'ward', label: 'Ward tile' },
-  { id: 'ward-result', label: 'Ward result' },
-  { id: 'regen-dead', label: 'Regen revives' },
-  { id: 'regen-alive', label: 'Regen adds armour' },
-  { id: 'regen-safe', label: 'Avoid Regen' },
-  { id: 'regen-result', label: 'Safe result' },
-  { id: 'grammar', label: 'Word-type weakness' },
-  { id: 'grammar-result', label: 'Adjective result' },
-  { id: 'long', label: 'Long words' },
-  { id: 'long-result', label: 'Long result' },
+  { id: 'goal', label: 'Brief introduction' },
+  { id: 'counter', label: 'Demo · GLAD' },
+  { id: 'neutral', label: 'Demo · SUN' },
   { id: 'complete', label: 'Ready to play' },
+  { id: 'armour', label: 'Optional · Armour' },
+  { id: 'armour-finish', label: 'Armour · second hit' },
+  { id: 'armour-complete', label: 'Armour · result' },
+  { id: 'resisted', label: 'Optional · Resistance' },
+  { id: 'strike', label: 'Optional · HIT tile' },
+  { id: 'strike-result', label: 'HIT tile · result' },
+  { id: 'ward', label: 'Optional · Heart tile' },
+  { id: 'ward-result', label: 'Heart tile · result' },
+  { id: 'regen-dead', label: 'Optional · REVIVE revival' },
+  { id: 'regen-alive', label: 'REVIVE · armour' },
+  { id: 'regen-safe', label: 'REVIVE · safe choice' },
+  { id: 'regen-result', label: 'REVIVE · result' },
+  { id: 'grammar', label: 'Optional · Word types' },
+  { id: 'grammar-result', label: 'Word types · result' },
+  { id: 'long', label: 'Optional · Long words' },
+  { id: 'long-result', label: 'Long words · result' },
 ] as const
 export type TutorialStep = typeof tutorialSteps[number]['id']
 export type TutorialState = { step: TutorialStep; game: LetterStrikeState }
 export type TutorialAction = { type: 'continue' } | { type: 'select'; tileId: number }
-  | { type: 'clear' } | { type: 'attack' }
+  | { type: 'clear' } | { type: 'attack' } | { type: 'jump'; step: TutorialStep }
+
+export const tutorialExamples = [
+  { step: 'armour', label: 'Armour', description: 'Double border: two hits to remove a letter.' },
+  { step: 'resisted', label: 'Resistance + HIT tiles', description: 'Similar meaning blocks normal hits. A HIT tile still hits its match.' },
+  { step: 'ward', label: 'Heart tiles', description: 'Using a heart tile saves the life this turn would cost.' },
+  { step: 'regen-dead', label: 'REVIVE', description: 'Red tiles help the enemy: matching letters return or gain armour.' },
+  { step: 'grammar', label: 'Word types', description: 'An enemy may give extra hits for a word type, such as adjectives.' },
+  { step: 'long', label: 'Long words', description: 'Neutral words of six or more letters get an extra hit.' },
+] as const satisfies readonly { step: TutorialStep; label: string; description: string }[]
+
+const routes: readonly (readonly TutorialStep[])[] = [
+  ['goal', 'counter', 'neutral', 'complete'],
+  ['armour', 'armour-finish', 'armour-complete'],
+  ['resisted', 'strike', 'strike-result'],
+  ['ward', 'ward-result'],
+  ['regen-dead', 'regen-alive', 'regen-safe', 'regen-result'],
+  ['grammar', 'grammar-result'],
+  ['long', 'long-result'],
+]
 
 type GuidedMove = { word: string; action: 'continue' | 'attack'; special?: LetterStrikeGem }
 const moves: Partial<Record<TutorialStep, GuidedMove>> = {
-  build: { word: 'GLAD', action: 'continue' },
-  matching: { word: 'GLAD', action: 'continue' },
   counter: { word: 'GLAD', action: 'attack' },
   neutral: { word: 'SUN', action: 'attack' },
   armour: { word: 'SUN', action: 'attack' },
@@ -176,7 +189,7 @@ export function canContinueInTutorial(state: TutorialState): boolean {
 
 export function getAllowedTutorialTileIds(state: TutorialState): number[] {
   const move = getTutorialMove(state)
-  if (!move || state.step === 'matching' || state.step === 'counter') return []
+  if (!move) return []
   const selected = state.game.selectedTileIds
   const prefix = selected.every((id, index) => id === move.tileIds[index])
   const next = prefix ? move.tileIds[selected.length] : undefined
@@ -184,6 +197,7 @@ export function getAllowedTutorialTileIds(state: TutorialState): number[] {
 }
 
 export function tutorialReducer(state: TutorialState, action: TutorialAction): TutorialState {
+  if (action.type === 'jump') return createTutorial(action.step)
   if (action.type === 'select') {
     if (!getAllowedTutorialTileIds(state).includes(action.tileId)) return state
     return { ...state, game: toggleLetterStrikeTile(state.game, action.tileId) }
@@ -194,17 +208,19 @@ export function tutorialReducer(state: TutorialState, action: TutorialAction): T
   }
   if (action.type === 'continue' && !canContinueInTutorial(state)) return state
   if (action.type === 'attack' && !canAttackInTutorial(state)) return state
-  const index = tutorialSteps.findIndex(step => step.id === state.step)
-  const next = tutorialSteps[index + 1]
-  if (!next) return state
+  if (state.step === 'complete') return state
+  const route = routes.find(route => route.includes(state.step))!
+  const next = route[route.indexOf(state.step) + 1] ?? 'complete'
   const game = action.type === 'attack' ? submitLetterStrike(state.game) : state.game
-  return enterStep({ ...state, game }, next.id)
+  return enterStep({ ...state, game }, next)
 }
 
-// DEV jumps replay the same gated path. A late lesson never fabricates damage,
-// Resolve, tile identities or refill state.
+// DEV jumps and optional examples replay real moves in their own small route.
+// They never fabricate damage, Resolve, tile identities or refill state.
 export function createTutorial(step: TutorialStep = 'goal'): TutorialState {
-  let state: TutorialState = { step: 'goal', game: createLetterStrikeGame(tutorialEncounter) }
+  const route = routes.find(route => route.includes(step))
+  if (!route) throw new Error(`Unknown tutorial example: ${step}`)
+  let state = enterStep({ step: 'goal', game: createLetterStrikeGame(tutorialEncounter) }, route[0])
   while (state.step !== step) {
     const move = getTutorialMove(state)
     if (move && !isGuidedWordSelected(state)) {

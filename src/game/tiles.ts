@@ -42,7 +42,7 @@ export function applyTileEffects(
 export function refillBoard<TileType extends { id: number }>(state: TileSelection<TileType> & {
   refillIndex: number
   nextTileId: number
-  encounter: { refillQueue: string }
+  encounter: { refillQueue: string; finiteRefills?: true }
 }, selectedTileIds = state.selectedTileIds) {
   const consumed = new Set(selectedTileIds)
   let refillIndex = state.refillIndex
@@ -50,7 +50,10 @@ export function refillBoard<TileType extends { id: number }>(state: TileSelectio
   const tiles = state.tiles.map((tile): TileType | NormalTile => {
     if (!consumed.has(tile.id)) return tile
     const letter = state.encounter.refillQueue[refillIndex]
-    if (!letter) throw new Error('Encounter refill queue exhausted.')
+    if (!letter) {
+      if (!state.encounter.finiteRefills) throw new Error('Encounter refill queue exhausted.')
+      return { id: nextTileId++, letter: '', type: 'normal' }
+    }
     refillIndex += 1
     return { id: nextTileId++, letter: letter.toUpperCase(), type: 'normal' }
   })

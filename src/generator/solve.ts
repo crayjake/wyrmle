@@ -1,6 +1,6 @@
 import { createLetterStrikeGame, submitLetterStrike } from '../game/letterStrike.ts'
 import type { LetterStrikeEncounter, LetterStrikeState } from '../game/letterStrike.ts'
-import { getPartsOfSpeech } from '../game/dictionary.ts'
+import { getEncounterPartsOfSpeech } from '../game/lexicalRules.ts'
 import { discoverValidMoves, moveSummary, scoreImmediateMove } from './findMoves.ts'
 import type { MoveDiscoveryOptions, SolverMoveSummary } from './findMoves.ts'
 import { encounterRuleKey, stateKey } from './stateKey.ts'
@@ -17,6 +17,8 @@ export type SolverOptions = {
   wordCommonness?: (word: string) => number
   /** A construction witness is replayed through the engine; it is never a proof of optimality. */
   hintLine?: readonly (readonly number[])[]
+  /** Independently replayed witnesses; invalid routes cannot erase another route's evidence. */
+  hintLines?: readonly (readonly (readonly number[])[])[]
 }
 
 export type WinningLine = {
@@ -54,6 +56,8 @@ export type SolverResult = {
   cutoffReasons: string[]
   vocabularyComplete: boolean
   exhaustive: boolean
+  /** New witness selection only. Winning routes count distinct replayed physical lines. */
+  hintReplay?: { submittedRoutes: number; winningRoutes: number; duplicateRoutes: number; rejectedRoutes: number }
 }
 
 type SearchNode = { record: SearchStateRecord; line: SolverMoveSummary[]; score: number }
@@ -63,6 +67,54 @@ function makeRecord(state: LetterStrikeState, depth: number, key: string): Searc
     key, state, depth, moves: [], successorKeys: [], expanded: state.status !== 'playing',
     movesComplete: state.status !== 'playing', canWin: state.status === 'won' ? true : state.status === 'lost' ? false : null,
   }
+}
+
+/** A finishing-word variant alone is not a different opening/mechanic strategy. */
+export function winningStrategySignature(moves: readonly SolverMoveSummary[]): string {
+  return JSON.stringify([
+    moves[0]?.word ?? '', moves.map(move => move.semanticLabel),
+    moves.flatMap((move, index) => move.wardUsed ? [index] : []),
+    moves.flatMap((move, index) => move.strikeUsed ? [index] : []),
+    moves.flatMap((move, index) => move.regenUsed ? [index] : []),
+  ])
+}
+
+/**
+ * Select from already-ranked, real winning lines. Cover different prefixes,
+ * semantic patterns, special timing and finishes before taking near-duplicates.
+ * Selection never examines counterfactual impact, so all mechanics get the same
+ * representative evidence rather than individually favourable examples.
+ */
+export function selectDiverseWinningLines(ranked: readonly WinningLine[], limit: number): WinningLine[] {
+  const seenStrategies = new Set<string>()
+  const remaining = ranked.filter(line => {
+    const key = winningStrategySignature(line.moves)
+    if (seenStrategies.has(key)) return false
+    seenStrategies.add(key)
+    return true
+  }).map(line => ({ line, features: [
+    `opening:${line.moves[0]?.word ?? ''}`,
+    `prefix:${line.moves.slice(0, Math.max(1, line.moves.length - 1)).map(move => move.word).join(',')}`,
+    `semantic:${line.moves.map(move => move.semanticLabel).join(',')}`,
+    `ward:${line.moves.flatMap((move, index) => move.wardUsed ? [index] : []).join(',')}`,
+    `strike:${line.moves.flatMap((move, index) => move.strikeUsed ? [index] : []).join(',')}`,
+    `regen:${line.moves.flatMap((move, index) => move.regenUsed ? [index] : []).join(',')}`,
+    `finish:${line.resolveRemaining === 0 ? 'clutch' : 'reserve'}`,
+  ] }))
+  const selected: WinningLine[] = []
+  const covered = new Set<string>()
+  while (remaining.length && selected.length < limit) {
+    let chosen = 0
+    let mostNew = -1
+    for (let index = 0; index < remaining.length; index++) {
+      const novelty = remaining[index].features.filter(feature => !covered.has(feature)).length
+      if (novelty > mostNew) { chosen = index; mostNew = novelty }
+    }
+    const [{ line, features }] = remaining.splice(chosen, 1)
+    selected.push(line)
+    features.forEach(feature => covered.add(feature))
+  }
+  return selected
 }
 
 /**
@@ -76,6 +128,7 @@ export function solvePuzzle(input: LetterStrikeEncounter | LetterStrikeState, op
   const maxStates = Math.max(0, options.maxStates ?? 160)
   const beamWidth = Math.max(1, options.beamWidth ?? 16)
   const maxWinningLines = Math.max(1, options.maxWinningLines ?? 12)
+  const diverseWitnesses = Boolean(initial.encounter.lexicalRules) || options.hintLines !== undefined
   const wards = initial.tiles.filter(tile => tile.type === 'gem' && tile.gem && initial.encounter.tileEffects[tile.gem]?.preventResolveLoss).length
   const maxDepth = options.maxDepth ?? initial.playerResolve + wards
   const discoveryOptions: MoveDiscoveryOptions = {
@@ -103,44 +156,55 @@ export function solvePuzzle(input: LetterStrikeEncounter | LetterStrikeState, op
   let bestWinDepth: number | null = null
   let maximumResolveRemaining: number | null = null
   let constructionWitness: WinningLine | undefined
+  const hintReplay = { submittedRoutes: 0, winningRoutes: 0, duplicateRoutes: 0, rejectedRoutes: 0 }
+  const replayedHintSignatures = new Set<string>()
   const lineCommonness = (line: WinningLine) => line.moves.length === 0 ? 0
     : line.moves.reduce((sum, move) => sum + (options.wordCommonness?.(move.word) ?? 0), 0) / line.moves.length
+  const rankWinningLines = (a: WinningLine, b: WinningLine) => lineCommonness(b) - lineCommonness(a)
+    || a.turns - b.turns || b.resolveRemaining - a.resolveRemaining
+    || a.moves.map(move => move.word).join(' ').localeCompare(b.moves.map(move => move.word).join(' '))
   const registerWin = (state: LetterStrikeState, line: SolverMoveSummary[]) => {
     bestWinDepth = bestWinDepth === null ? line.length : Math.min(bestWinDepth, line.length)
     maximumResolveRemaining = Math.max(maximumResolveRemaining ?? -1, state.playerResolve)
     const signature = line.map(move => `${move.word}:${move.tileIds.join(',')}`).join('|')
     if (winningSignatures.has(signature)) return
     winningSignatures.add(signature)
-    const existingRoute = winningLines.findIndex(winning => routeSignature(winning.moves) === routeSignature(line))
+    const winning = { moves: line, finalState: state, turns: line.length, resolveRemaining: state.playerResolve }
+    const signatureForSelection = diverseWitnesses ? winningStrategySignature : routeSignature
+    const existingRoute = winningLines.findIndex(retained => signatureForSelection(retained.moves) === signatureForSelection(line))
     if (existingRoute >= 0) {
-      if (winningLines[existingRoute].resolveRemaining >= state.playerResolve) return
+      if (diverseWitnesses ? rankWinningLines(winningLines[existingRoute], winning) <= 0
+        : winningLines[existingRoute].resolveRemaining >= state.playerResolve) return
       winningLines.splice(existingRoute, 1)
     }
-    const winning = { moves: line, finalState: state, turns: line.length, resolveRemaining: state.playerResolve }
     winningLines.push(winning)
-    winningLines.sort((a, b) => lineCommonness(b) - lineCommonness(a) || a.turns - b.turns || b.resolveRemaining - a.resolveRemaining
-      || a.moves.map(move => move.word).join(' ').localeCompare(b.moves.map(move => move.word).join(' ')))
-    if (winningLines.length > maxWinningLines) winningLines.pop()
+    winningLines.sort(rankWinningLines)
+    if (diverseWitnesses && winningLines.length > maxWinningLines) {
+      const representatives = selectDiverseWinningLines(winningLines, maxWinningLines).sort(rankWinningLines)
+      winningLines.splice(0, winningLines.length, ...representatives)
+    } else if (winningLines.length > maxWinningLines) winningLines.pop()
   }
   if (initial.status === 'won') registerWin(initial, [])
 
   // Witnesses must satisfy the actual board IDs, dictionary and transition.
-  if (options.hintLine) {
+  for (const hint of [...(options.hintLine ? [options.hintLine] : []), ...(options.hintLines ?? [])]) {
+    hintReplay.submittedRoutes++
     let state = initial
     const line: SolverMoveSummary[] = []
-    for (const selection of options.hintLine) {
+    const localWitnessRecords: typeof witnessRecords = []
+    for (const selection of hint) {
       const next = submitLetterStrike(state, selection)
       if (next.playedWords.length !== state.playedWords.length + 1) break
       const preview = next.playedWords[next.playedWords.length - 1].preview
       const summary: SolverMoveSummary = {
         word: preview.word, tileIds: [...selection], semanticLabel: preview.semanticLabel,
-        partsOfSpeech: state.encounter.wordPartsOfSpeech?.[preview.word] ?? getPartsOfSpeech(preview.word) ?? [],
+        partsOfSpeech: getEncounterPartsOfSpeech(state.encounter, preview.word) ?? [],
         grammarModifier: preview.grammaticalModifier, longWordModifier: preview.longWordModifier,
         wardUsed: preview.resolveCost === 0, strikeUsed: preview.effectLabels.includes('STRIKE'),
         ...(preview.effectLabels.includes('REGEN') ? { regenUsed: true as const, recoveries: preview.recoveries ?? [] } : {}),
         strikes: preview.strikes, resolveCost: preview.resolveCost, hits: preview.hits, letterOutcomes: preview.letterOutcomes,
       }
-      witnessRecords.push({ state, depth: line.length, move: summary, successor: next })
+      localWitnessRecords.push({ state, depth: line.length, move: summary, successor: next })
       line.push(summary)
       state = next
       if (state.status === 'won') {
@@ -150,7 +214,15 @@ export function solvePuzzle(input: LetterStrikeEncounter | LetterStrikeState, op
       }
       if (state.status === 'lost') break
     }
-    if (state.status !== 'won') witnessRecords.length = 0
+    if (state.status === 'won') {
+      const signature = line.map(move => `${move.word}:${move.tileIds.join(',')}`).join('|')
+      if (replayedHintSignatures.has(signature)) hintReplay.duplicateRoutes++
+      else {
+        replayedHintSignatures.add(signature)
+        hintReplay.winningRoutes++
+        witnessRecords.push(...localWitnessRecords)
+      }
+    } else hintReplay.rejectedRoutes++
   }
 
   let frontier: SearchNode[] = initial.status === 'playing' ? [{ record: root, line: [], score: 0 }] : []
@@ -265,9 +337,9 @@ export function solvePuzzle(input: LetterStrikeEncounter | LetterStrikeState, op
   }
 
   // Propagate only proven facts. Deduplication is safe because history/selection
-  // never constrain legal moves and refill position makes the graph acyclic,
-  // even when REGEN increases enemy health or revives a dead enemy slot.
-  const ordered = [...records.values()].sort((a, b) => b.state.refillIndex - a.state.refillIndex)
+  // never constrain legal moves. Fresh tile IDs advance even after a finite
+  // queue empties, so they topologically order every move despite Revive.
+  const ordered = [...records.values()].sort((a, b) => b.state.nextTileId - a.state.nextTileId)
   for (const record of ordered) {
     if (record.state.status !== 'playing') continue
     const children = record.successorKeys.map(key => knownTerminal.get(key) ?? records.get(key)?.canWin ?? null)
@@ -276,7 +348,7 @@ export function solvePuzzle(input: LetterStrikeEncounter | LetterStrikeState, op
   }
   // A replayed witness may be outside the searched beam but proves its root.
   if (bestWinDepth !== null) root.canWin = true
-  if (constructionWitness && !winningLines.some(line => routeSignature(line.moves) === routeSignature(constructionWitness!.moves))) {
+  if (!diverseWitnesses && constructionWitness && !winningLines.some(line => routeSignature(line.moves) === routeSignature(constructionWitness!.moves))) {
     if (winningLines.length >= maxWinningLines) winningLines.pop()
     winningLines.push(constructionWitness)
   }
@@ -299,6 +371,7 @@ export function solvePuzzle(input: LetterStrikeEncounter | LetterStrikeState, op
     statesExplored, statesDiscovered, movesExamined,
     searchLimitReached: cutoffs.size > 0,
     cutoffReasons: [...cutoffs], vocabularyComplete, exhaustive,
+    ...(diverseWitnesses ? { hintReplay } : {}),
   }
 }
 

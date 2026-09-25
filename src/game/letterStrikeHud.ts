@@ -10,9 +10,14 @@ export type LetterStrikeTileSummary = {
 }
 
 const gemPresentation: Record<LetterStrikeGem, { label: string; symbol: string }> = {
-  strike: { label: 'STRIKE', symbol: '◆' },
-  ward: { label: 'WARD', symbol: '◇' },
-  regen: { label: 'REGEN', symbol: '+' },
+  strike: { label: 'HIT', symbol: '◆' },
+  ward: { label: 'HEART', symbol: '♥' },
+  regen: { label: 'REVIVE', symbol: '+' },
+}
+
+/** Translate recorded effect codes at the display boundary; saves stay exact. */
+export function getDisplayEffectLabel(label: string): string {
+  return label === 'STRIKE' ? 'HIT TILE' : label === 'WARD' ? 'HEART' : label === 'REGEN' ? 'REVIVE' : label
 }
 
 export function getLetterStrikeGrammarModifiers(state: Pick<LetterStrikeState, 'encounter'>): GrammarModifier[] {
@@ -27,11 +32,11 @@ export function getLetterStrikeBonuses(preview: LetterStrikePreview): AttackBonu
   if (!preview.valid) return []
   return [
     { label: preview.semanticLabel },
-    { label: `${preview.strikes} ${preview.strikes === 1 ? 'STRIKE' : 'STRIKES'}` },
+    { label: `${preview.strikes} ${preview.strikes === 1 ? 'HIT' : 'HITS'}` },
     ...(preview.longWordModifier !== 0 ? [{ label: 'LONG', value: preview.longWordModifier }] : []),
     ...(preview.grammaticalModifier !== 0 && preview.grammaticalPartOfSpeech
       ? [{ label: preview.grammaticalPartOfSpeech.toUpperCase(), value: preview.grammaticalModifier }] : []),
-    ...preview.effectLabels.map(label => ({ label })),
+    ...preview.effectLabels.map(label => ({ label: getDisplayEffectLabel(label) })),
   ]
 }
 
@@ -47,9 +52,9 @@ export function getLetterStrikeTileSummary(
       id: gem,
       ...gemPresentation[gem],
       detail: [
-        ...(rule.strike ? ['STRIKES MATCHING LETTER'] : []),
-        ...(rule.preventResolveLoss ? ['SAVE TURN'] : []),
-        ...(rule.regenerate ? ['MATCHING ENEMY LETTER RECOVERS AFTER STRIKES'] : []),
+        ...(rule.strike ? ['HITS MATCHING LETTER'] : []),
+        ...(rule.preventResolveLoss ? ['SAVES A LIFE THIS TURN'] : []),
+        ...(rule.regenerate ? ['MATCHING ENEMY LETTER RECOVERS AFTER HITS'] : []),
       ].join(' · '),
     }]
   })

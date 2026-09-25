@@ -25,6 +25,7 @@ export type WordPoolOptions = {
   minimumCommonness?: number
   maximumLength?: number
   grammarPartOfSpeech?: PartOfSpeech
+  grammarPolicy?: 'single' | 'any-recognized'
 }
 
 /** Potential matching tiles, including repeated enemy letters, without any combat assumptions. */
@@ -50,7 +51,8 @@ export function buildWordPools(enemyWord: string, provider: LexicalProvider = lo
   const rank = (a: LexicalEntry, b: LexicalEntry) => matchingLetterCount(b.word, normalizedEnemy) - matchingLetterCount(a.word, normalizedEnemy)
     || (b.commonness ?? 0) - (a.commonness ?? 0) || a.word.length - b.word.length || a.word.localeCompare(b.word)
   const resolve = (words: readonly string[]) => [...new Set(words.map(normalizeWord))]
-    .map(word => provider.getEntry(word)).filter((entry): entry is LexicalEntry => Boolean(entry && allowed(entry))).sort(rank)
+    .map(word => provider.getSubmittedWordEntry ? provider.getSubmittedWordEntry(word) : provider.getEntry(word))
+    .filter((entry): entry is LexicalEntry => Boolean(entry && allowed(entry))).sort(rank)
   const counters = resolve(enemy?.counters ?? [])
   const counterSet = new Set(counters.map(entry => entry.word))
   const resisted = resolve(enemy?.synonyms ?? []).filter(entry => !counterSet.has(entry.word))
@@ -59,7 +61,8 @@ export function buildWordPools(enemyWord: string, provider: LexicalProvider = lo
   const all = [...new Map([...provider.vocabulary(), ...counters, ...resisted, ...related]
     .filter(allowed).map(entry => [entry.word, entry])).values()].sort(rank)
   const neutral = all.filter(entry => !counterSet.has(entry.word) && !resistedSet.has(entry.word))
-  const grammar = all.filter(entry => entry.partsOfSpeech.length === 1 && entry.partsOfSpeech[0] === (options.grammarPartOfSpeech ?? 'adjective'))
+  const grammar = all.filter(entry => (options.grammarPolicy === 'any-recognized' || entry.partsOfSpeech.length === 1)
+    && entry.partsOfSpeech.includes(options.grammarPartOfSpeech ?? 'adjective'))
   const ward = neutral.filter(entry => entry.word.length <= 5 && matchingLetterCount(entry.word, normalizedEnemy) > 0)
   const strike = resisted.filter(entry => matchingLetterCount(entry.word, normalizedEnemy) > 0)
   const clutch = counters.filter(entry => entry.word.length >= 6 && entry.word.length <= 10 && (entry.commonness ?? 0) >= 0.65)

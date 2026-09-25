@@ -3,7 +3,9 @@ import { test } from 'node:test'
 import { createLetterStrikeGame, letterStrikeEncounter, previewLetterStrike, submitLetterStrike } from '../src/game/letterStrike.ts'
 import type { LetterStrikeState } from '../src/game/letterStrike.ts'
 import { discoverValidMoves, findValidMoves } from '../src/generator/findMoves.ts'
-import { solvePuzzle } from '../src/generator/solve.ts'
+import { solvePuzzle, winningStrategySignature } from '../src/generator/solve.ts'
+import { analysePuzzle } from '../src/generator/analyse.ts'
+import { currentLexicalRules } from '../src/game/lexicalRules.ts'
 import { stateKey } from '../src/generator/stateKey.ts'
 
 function fixture(board: string, enemy: string, resolve = 2): LetterStrikeState {
@@ -162,4 +164,109 @@ test('beam cutoff cannot be reported as impossible and capped move lists retain 
   const result = solvePuzzle(state, { maxStates: 1, beamWidth: 1, maxMovesPerState: 1 })
   assert.notEqual(result.status, 'impossible')
   assert.equal(result.exhaustive, false)
+})
+
+function hintForWords(initial: LetterStrikeState, words: readonly string[]): number[][] {
+  let state = initial
+  const selections: number[][] = []
+  for (const word of words) {
+    const move = findValidMoves(state, { vocabulary: [word] })[0]
+    assert.ok(move, `${word} must be physically playable in the test witness.`)
+    selections.push(move.tileIds)
+    state = move.resultingState
+  }
+  assert.equal(state.status, 'won', 'A fixture hint must be a real winning route.')
+  return selections
+}
+
+test('multiple hint routes merge independent real proofs and reject invalid prefixes without erasing valid hints', () => {
+  const state = fixture('CAT', 'CA')
+  const cat = hintForWords(state, ['CAT', 'ACT'])
+  const act = hintForWords(state, ['ACT', 'CAT'])
+  const invalid = [[2, 1, 0], [999, 998, 997]]
+  const result = solvePuzzle(state, { maxStates: 0, hintLine: cat, hintLines: [invalid, act, cat] })
+  assert.deepEqual(result.hintReplay, { submittedRoutes: 4, winningRoutes: 2, duplicateRoutes: 1, rejectedRoutes: 1 })
+  assert.equal(result.winningLines.length, 2)
+  assert.deepEqual(new Set(result.rootMoves.map(move => move.word)), new Set(['CAT', 'ACT']))
+  assert.equal(result.states.filter(record => record.canWin === true).length, 4)
+  assert.ok(result.states.every(record => record.moves.length === record.successorKeys.length))
+  assert.equal(result.statesExplored, 0, 'Replaying supplied evidence does not pretend to explore the search graph.')
+  assert.equal(result.movesExamined, 0)
+  assert.equal(result.solvable, true)
+  assert.equal(result.bestWinDepth, 2)
+  assert.equal(result.minimumTurnsProven, false)
+  assert.equal(result.minimumTurnsToWin, null)
+  assert.equal(result.exhaustive, false)
+  for (const line of result.winningLines) {
+    let replayed = state
+    for (const move of line.moves) replayed = submitLetterStrike(replayed, move.tileIds)
+    assert.deepEqual(replayed, line.finalState)
+    assert.equal(replayed.status, 'won')
+  }
+})
+
+test('finishing-word variants cannot crowd out a different opening and semantic strategy', () => {
+  const state = fixture('CATDOG', 'CD', 3)
+  state.encounter = { ...state.encounter, enemy: { ...state.encounter.enemy,
+    semanticRelations: { opposite: ['GOD'], similar: [], related: [] } } }
+  const variants = ['DOG', 'DOT', 'DAG', 'DAGO', 'DATO', 'DOAT', 'TOD'].map(word => hintForWords(state, ['CAT', word]))
+  const different = hintForWords(state, ['GOD', 'CAT'])
+  const result = solvePuzzle(state, { maxStates: 0, maxWinningLines: 2, hintLines: [...variants, different] })
+  assert.equal(result.hintReplay!.winningRoutes, 8, 'All eight supplied physical routes really win.')
+  assert.equal(result.winningLines.length, 2, 'Seven finishing variations share one strategy representative.')
+  assert.deepEqual(new Set(result.winningLines.map(line => line.moves[0].word)), new Set(['CAT', 'GOD']))
+  assert.equal(new Set(result.winningLines.map(line => winningStrategySignature(line.moves))).size, 2)
+  assert.equal(result.bestWinDepth, 2)
+  assert.equal(result.minimumTurnsProven, false)
+})
+
+test('different special-use turns remain distinct strategies despite matching opening and semantic categories', () => {
+  const state = fixture('CAATDOG', 'CD', 3)
+  state.tiles[2] = { ...state.tiles[2], type: 'gem', gem: 'ward' }
+  const earlyWard = [[0, 2, 3], [4, 5, 6]]
+  const preservedWard = [[0, 1, 3], [4, 5, 6]]
+  const lateWard = [[0, 1, 3], [4, 2, 6]]
+  const result = solvePuzzle(state, { maxStates: 0, maxWinningLines: 3, hintLines: [earlyWard, preservedWard, lateWard] })
+  assert.equal(result.winningLines.length, 3)
+  assert.deepEqual(new Set(result.winningLines.map(line => line.moves.findIndex(move => move.wardUsed))), new Set([0, -1, 1]))
+  assert.ok(result.winningLines.every(line => line.moves[0].word === 'CAT'))
+  assert.ok(result.winningLines.every(line => line.moves.every(move => move.semanticLabel === 'NEUTRAL')))
+  assert.equal(new Set(result.winningLines.map(line => winningStrategySignature(line.moves))).size, 3)
+})
+
+test('new lexical encounters use diverse retention automatically while legacy result shapes stay unchanged', () => {
+  const legacy = fixture('CATDOG', 'CD', 2)
+  const modern = { ...legacy, encounter: { ...legacy.encounter, lexicalRules: { ...currentLexicalRules } } }
+  const options = { strategy: 'bfs' as const, maxStates: 100, maxWinningLines: 12 }
+  const oldResult = solvePuzzle(legacy, options)
+  const newResult = solvePuzzle(modern, options)
+  assert.equal('hintReplay' in oldResult, false)
+  assert.equal('hintReplay' in newResult, true)
+  assert.ok(new Set(oldResult.winningLines.map(line => winningStrategySignature(line.moves))).size < oldResult.winningLines.length)
+  assert.equal(new Set(newResult.winningLines.map(line => winningStrategySignature(line.moves))).size, newResult.winningLines.length)
+  assert.equal(newResult.solvable, oldResult.solvable)
+  assert.equal(newResult.minimumTurnsToWin, oldResult.minimumTurnsToWin)
+})
+
+test('counterfactual sampling reaches a distinct meaningful route behind six finishing-word variations', () => {
+  const seed = fixture('CATDOGQQQQQQQQQQ', 'CD', 3)
+  const encounter = { ...seed.encounter, lexicalRules: { ...currentLexicalRules },
+    startingTiles: seed.tiles, enemyLetters: seed.enemyLetters,
+    enemy: { ...seed.encounter.enemy, semanticRelations: { opposite: ['COD'], similar: [], related: [] } } }
+  const initial = createLetterStrikeGame(encounter)
+  const variants = ['DOG', 'DOT', 'DAG', 'DAGO', 'DATO', 'DOAT'].map(word => hintForWords(initial, ['CAT', word]))
+  const counter = hintForWords(initial, ['COD'])
+  const base = solvePuzzle(encounter, { maxStates: 0, hintLines: [...variants, counter] })
+  // Simulate an older/external retained list: every entry is independently
+  // replayed by the real solver, but six near-identical prefixes come first.
+  const realLines = [...variants, counter].map(hintLine => solvePuzzle(encounter, { maxStates: 0, hintLine }).winningLines[0])
+  const analysis = analysePuzzle(encounter, { solution: { ...base, winningLines: realLines },
+    maxReasonableStates: 0, includeCounterfactuals: false, wordCommonness: () => 0.9 })
+  const semantic = analysis.counterfactuals.find(comparison => comparison.mechanic === 'semantic')!
+  assert.equal(semantic.replayedWinningLines, 2, 'Finishing variations contribute one representative, plus the distinct COD counter.')
+  assert.equal(semantic.changedWinningOutcomes, 1)
+  assert.ok(semantic.changedStrikeCount > 0)
+  assert.ok(semantic.importance! > 0)
+  assert.equal(analysis.winningLinesFound, 7, 'The supplied retained list still describes seven actual wins, not seven distinct strategies.')
+  assert.equal(analysis.numberOfDistinctWinningStrategies, 2)
 })

@@ -3,6 +3,7 @@ import "./App.css"
 
 import Header from "./components/Header"
 import { MyInfo } from "./components/HealthInfo"
+import RefillSupply from './components/RefillSupply'
 import Enemy from "./components/Enemy"
 import AttackInfo from "./components/AttackInfo"
 import TileGrid from "./components/TileGrid"
@@ -21,7 +22,7 @@ import { useUserPreferences } from './useUserPreferences'
 import type { DifficultyMode } from './daily/types'
 import type { CandidatePuzzle } from './generator/types'
 import type { TutorialStep } from './tutorial/tutorial'
-import { getPartsOfSpeech } from './game/dictionary'
+import { getEncounterWordClassification } from './game/lexicalRules'
 import "./components/DailyPanels.css"
 
 const DevPanel = import.meta.env.DEV ? lazy(() => import('./components/DevPanel')) : null
@@ -201,11 +202,14 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, match
   const enemy = game.encounter.enemy
   const interactive = visiblePhase === "ready" && game.status === "playing" && !daily.error && !result && !resolving
   const preview = previewLetterStrike(game)
-  const parts = game.encounter.wordPartsOfSpeech?.[preview.word] ?? getPartsOfSpeech(preview.word)
+  const classification = getEncounterWordClassification(game.encounter, preview.word)
+  const parts = classification.partsOfSpeech
   const grammarNote = preview.valid && Object.keys(game.encounter.grammarModifiers ?? {}).length > 0
-    && (!parts || parts.length !== 1)
-    ? parts && parts.length > 1 ? 'Multiple word types · no bonus' : 'Word type unknown · no bonus'
+    ? parts.length === 0 ? 'Word type unknown · no bonus'
+      : !game.encounter.lexicalRules && parts.length > 1 ? 'Multiple word types · no bonus' : undefined
     : undefined
+  const meaningNote = preview.valid && classification.relation === 'related' ? 'Related meaning · neutral'
+    : preview.valid && classification.semanticSource === 'unlisted' ? 'No listed meaning bonus' : undefined
   function undoTurn() {
     if (!resolving && daily.undo()) {
       setResolvedTurnCount(Math.max(0, game.playedWords.length - 1))
@@ -239,7 +243,7 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, match
 
   const message = resolving ? undefined
     : game.status === "won" ? "VICTORY"
-    : game.status === "lost" ? "OUT OF RESOLVE"
+    : game.status === "lost" ? game.playerResolve > 0 ? "NO PLAYABLE WORDS" : "OUT OF LIVES"
     : daily.error ? "SAVE UNAVAILABLE"
     : visiblePhase === "waiting" ? "CLICK TO BEGIN"
     : visiblePhase !== "ready" ? "DECODING"
@@ -258,7 +262,7 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, match
         if (visiblePhase === "waiting") begin()
       }}
     >
-      <Header wyrmDockRef={wyrmDockRef} titleRef={wyrmTitleRef} showWyrm={visiblePhase === "ready"}
+      <Header wyrmDockRef={wyrmDockRef} titleRef={wyrmTitleRef} showWyrm={false}
         onHelp={() => setPanel('help')} onHistory={() => setPanel('log')}
         onSettings={() => setPanel('settings')} />
 
@@ -274,10 +278,11 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, match
 
       <div className="battle-info">
         <MyInfo
-          name="RESOLVE"
+          name="LIVES"
           health={game.playerResolve}
           maxHealth={game.encounter.startingResolve}
         />
+        <RefillSupply game={game} />
         {!daily.started && puzzle.difficulty && <span className="daily-puzzle-difficulty">TODAY · DIFFICULTY: {puzzle.difficulty}</span>}
       </div>
 
@@ -314,8 +319,9 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, match
           bonuses={getLetterStrikeBonuses(preview)}
           resolveBefore={interactive && preview.valid ? game.playerResolve : undefined}
           resolveAfter={interactive && preview.valid ? game.playerResolve - preview.resolveCost : undefined}
-          recoveryText={preview.recoveries?.length ? `REGEN: ${preview.recoveries.map(hit => `${hit.letter} ${hit.hitsBefore === 0 ? 'returns' : 'gains armour'}`).join(', ')}` : undefined}
+          recoveryText={preview.recoveries?.length ? `REVIVE: ${preview.recoveries.map(hit => `${hit.letter} ${hit.hitsBefore === 0 ? 'returns' : 'gains armour'}`).join(', ')}` : undefined}
           grammarNote={grammarNote}
+          meaningNote={meaningNote}
         />
 
         <div className="controls">
@@ -366,6 +372,8 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, match
         onTilesDecoded={tilesDecoded}
       />}
       {visiblePanel === 'help' && <HelpPanel strikeConsumesAllowance={game.encounter.strikeConsumesAllowance}
+        finiteRefills={game.encounter.finiteRefills}
+        anyRecognizedGrammar={Boolean(game.encounter.lexicalRules)}
         longWordRule={game.encounter.longWordRule} onReplayTutorial={onReplayTutorial} onClose={() => setPanel(null)} />}
       {visiblePanel === 'log' && <LogPanel game={game} date={puzzle.date}
         onUndo={undoTurn} canUndo={daily.canUndo && !resolving} undosRemaining={daily.undosRemaining} undosUsed={daily.undosUsed}

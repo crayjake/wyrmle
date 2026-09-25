@@ -2,6 +2,7 @@ import { createLetterStrikeGame, previewLetterStrike, submitLetterStrike } from 
 import type { LetterStrikeEncounter, LetterStrikeState, LetterStrikeTile } from '../game/letterStrike.ts'
 import type { Random } from './random.ts'
 import type { CandidatePuzzle } from './types.ts'
+import { validateRefillLimit } from './refillLimit.ts'
 
 type PlanningWord = { word: string; commonness: number | null }
 
@@ -32,10 +33,12 @@ function missingLetters(word: string, kept: readonly LetterStrikeTile[]): string
  * the next lexical opportunity in the exact slots consumed by that move. */
 export function constructRefill(
   encounter: LetterStrikeEncounter, vocabulary: readonly PlanningWord[], random: Random, targetTurns = encounter.startingResolve,
+  refillLimit?: number,
 ): Pick<CandidatePuzzle, 'construction'> & { refillQueue: string } {
+  validateRefillLimit(refillLimit)
   const words = vocabulary.filter(entry => entry.word.length >= 3 && entry.word.length <= 10 && (entry.commonness ?? 0) >= 0.45)
   const reservoir = random.shuffle(words.filter(entry => entry.word.length >= 5)).map(entry => entry.word).join('') || 'LATERMERRYHAPPY'
-  const queueLength = (encounter.startingResolve + 1) * 16
+  const queueLength = Math.max((encounter.startingResolve + 1) * 16, refillLimit ?? 0)
   const pad = (prefix: string) => (prefix + reservoir.repeat(Math.ceil(queueLength / reservoir.length) + 1)).slice(0, Math.max(queueLength, prefix.length))
   let state = createLetterStrikeGame({ ...encounter, refillQueue: pad('') })
   let prefix = ''
@@ -93,5 +96,26 @@ export function constructRefill(
     state = submitLetterStrike(state, choice.ids)
     intended = next?.entry.word ?? null
   }
-  return { refillQueue: pad(prefix), construction }
+  const refillQueue = refillLimit === undefined ? pad(prefix) : pad(prefix).slice(0, refillLimit)
+  if (refillLimit !== undefined) {
+    construction.mutations.push(`finite-refills:${refillLimit}`)
+    construction.refillBlocks = construction.refillBlocks.filter(block => block.offset < refillLimit)
+      .map(block => ({ ...block, letters: block.letters.slice(0, refillLimit - block.offset) }))
+    // A shortened queue invalidates assumptions made by forward planning.
+    // Keep only the prefix actually replayed under finite runtime rules. It is
+    // still a proposal: only the solver can register a completed winning line.
+    let replay = createLetterStrikeGame({ ...encounter, finiteRefills: true, refillQueue })
+    let validTurns = 0
+    for (const ids of construction.plannedTileIds) {
+      if (replay.status !== 'playing') break
+      const next = submitLetterStrike(replay, ids)
+      if (next.playedWords.length !== replay.playedWords.length + 1) break
+      if (next.playedWords.at(-1)?.preview.word !== construction.plannedWords[validTurns]) break
+      validTurns++
+      replay = next
+    }
+    construction.plannedWords = construction.plannedWords.slice(0, validTurns)
+    construction.plannedTileIds = construction.plannedTileIds.slice(0, validTurns)
+  }
+  return { refillQueue, construction }
 }

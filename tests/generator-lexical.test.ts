@@ -1,10 +1,11 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { isDictionaryWord } from '../src/game/dictionary.ts'
-import { createLetterStrikeGame, letterStrikeEncounter, previewLetterStrike } from '../src/game/letterStrike.ts'
+import { createLetterStrikeGame, getLetterStrikeAllowance, letterStrikeEncounter, previewLetterStrike } from '../src/game/letterStrike.ts'
+import { currentLexicalRules, getEncounterPartsOfSpeech } from '../src/game/lexicalRules.ts'
 import { analyseEnemySuitability } from '../src/generator/enemySuitability.ts'
 import { selectEnemy } from '../src/generator/enemySelector.ts'
-import { getWordCommonness, localLexicalProvider } from '../src/generator/lexicalProvider.ts'
+import { currentLexicalProvider, getWordCommonness, localLexicalProvider } from '../src/generator/lexicalProvider.ts'
 import type { LexicalProvider } from '../src/generator/lexicalProvider.ts'
 import { buildWordPools, matchingLetterCount } from '../src/generator/wordPools.ts'
 
@@ -79,6 +80,27 @@ test('serialized semantic and grammar information agrees with real gameplay', ()
     assert.equal(preview.valid, true)
     assert.equal(preview.semanticLabel, semantic, word)
     assert.equal(preview.grammaticalModifier, grammar, word)
+  }
+})
+
+test('submitted enemy words keep their full runtime POS without changing authored enemy senses', () => {
+  const vocabulary = currentLexicalProvider.vocabulary()
+  for (const enemy of currentLexicalProvider.enemyWords()) {
+    assert.deepEqual(currentLexicalProvider.getEntry(enemy)?.partsOfSpeech,
+      localLexicalProvider.getEntry(enemy)?.partsOfSpeech, enemy)
+    assert.equal(analyseEnemySuitability(enemy, currentLexicalProvider).eligible, true, enemy)
+    const pools = buildWordPools(enemy, currentLexicalProvider, { grammarPolicy: 'any-recognized' })
+    const encounter = { ...letterStrikeEncounter, lexicalRules: currentLexicalRules,
+      enemy: { ...letterStrikeEncounter.enemy, semanticRelations: pools.semanticRelations },
+      wordPartsOfSpeech: pools.wordPartsOfSpeech }
+    for (const submitted of currentLexicalProvider.enemyWords()) {
+      const runtimeParts = getEncounterPartsOfSpeech(encounter, submitted)
+      assert.deepEqual(vocabulary.find(entry => entry.word === submitted)?.partsOfSpeech, runtimeParts, submitted)
+      assert.deepEqual(pools.all.find(entry => entry.word === submitted)?.partsOfSpeech, runtimeParts, `${enemy}: ${submitted}`)
+      assert.deepEqual(pools.wordPartsOfSpeech[submitted], runtimeParts, `${enemy}: ${submitted}`)
+    }
+    assert.ok(pools.grammar.some(entry => entry.word === 'MELANCHOLY'), enemy)
+    assert.equal(getLetterStrikeAllowance(encounter, 'MELANCHOLY', 4).grammaticalModifier, 1, enemy)
   }
 })
 

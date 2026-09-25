@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
-import savedMelancholy from './data/melancholy.json'
+import savedRevive from './data/revive-review.json'
 import type { GenerationResult, RankedCandidate } from './generate.ts'
 import type { GeneratorProgress, GeneratorRequest, GeneratorResponse } from './workerMessages.ts'
 import type { SolverMoveSummary } from './findMoves.ts'
@@ -10,14 +10,16 @@ import { difficultyFromAnalysis } from './difficulty'
 
 type Props = { onPlay: (candidate: CandidatePuzzle) => void; onClose: () => void }
 type ResultFilter = 'accepted' | 'all' | 'rejected'
-const savedCandidates = savedMelancholy as unknown as RankedCandidate[]
+const savedCandidates = savedRevive as unknown as RankedCandidate[]
 // A playtest temporarily unmounts the browser. Keep this session's review queue
 // and selection in module memory; daily/localStorage records are unrelated.
 let reviewCache: {
   enemy: string; automatic: boolean; seed: string; count: number; includeRegenTile: boolean
+  finiteRefills: boolean; refillLimit: number
   ranked: RankedCandidate[]; selectedId: string | null; filter: ResultFilter; result: GenerationResult | null
 } = {
-  enemy: 'MELANCHOLY', automatic: false, seed: 'melancholy-review', count: 8, includeRegenTile: false,
+  enemy: 'ANGER', automatic: false, seed: 'revive-lexical-review', count: 8, includeRegenTile: true,
+  finiteRefills: true, refillLimit: 19,
   ranked: savedCandidates.slice(0, 5), selectedId: savedCandidates[0]?.candidate.id ?? null,
   filter: 'accepted', result: null,
 }
@@ -94,10 +96,34 @@ function CandidateReview({ ranked, onPlay }: { ranked: RankedCandidate; onPlay: 
           <Metric label="Winning word familiarity">{percent(analysis.winningWordCommonness)}</Metric>
           <Metric label="Vocabulary annotated">{percent(analysis.winningVocabularyCoverage)}</Metric>
           <Metric label="Least familiar, best witness">{analysis.requiredObscureWordScore === null ? 'Unknown' : percent(1 - analysis.requiredObscureWordScore)}</Metric>
+          {encounter.finiteRefills && <Metric label="Finite refill tiles">{encounter.refillQueue.length}</Metric>}
+          {analysis.refillPressure && <>
+            <Metric label="Wins played on a reduced board">{analysis.refillPressure.winsOnReducedBoard} / {analysis.refillPressure.replayedWinningLines}</Metric>
+            <Metric label="Wins played after reserve emptied">{analysis.refillPressure.winsAfterRefillsExhausted}</Metric>
+            <Metric label="Fewest tiles before winning word">{analysis.refillPressure.minimumTilesBeforeWinningMove ?? 'Unknown'}</Metric>
+          </>}
         </dl>
         <p className="generator-note">Winning counts are observed lower bounds. Familiarity is a curated local estimate, not measured word frequency.</p>
       </section>
     </div>
+    {analysis.lexicalAudit && <details>
+      <summary>Dictionary classification audit · {analysis.lexicalAudit.opening.words.toLocaleString()} opening words</summary>
+      <p>Every spellable dictionary word is annotated before bounded search. Unknown means the source cannot classify it; unlisted meaning uses neutral gameplay without claiming unrelated meaning.</p>
+      <dl className="generator-metrics">
+        <Metric label="Lexicon version">{analysis.lexicalAudit.lexicon?.version ?? 'Legacy'}</Metric>
+        <Metric label="Opening POS known">{analysis.lexicalAudit.opening.words - analysis.lexicalAudit.opening.unknownPartOfSpeechWords} / {analysis.lexicalAudit.opening.words}</Metric>
+        <Metric label="Opening POS unknown">{analysis.lexicalAudit.opening.unknownPartOfSpeechWords}</Metric>
+        <Metric label="Opening semantic fallback">{analysis.lexicalAudit.opening.semanticFallbackWords}</Metric>
+        <Metric label="Supply spelling superset">{analysis.lexicalAudit.supply.words}</Metric>
+      </dl>
+      <p>The supply superset includes possible spellings from the whole refill supply, not proof that every spelling is reachable on a future board.</p>
+      <p>Full word-by-word export: <code>npm run audit-lexicon -- --date YYYY-MM-DD --out audit.json</code></p>
+    </details>}
+    {analysis.openingSafety && <details>
+      <summary>Opening recovery certificate · {analysis.openingSafety.safeSelections} safe / {analysis.openingSafety.enumeration.requiredSelections}</summary>
+      <p>{analysis.openingSafety.scope} · {analysis.openingSafety.openingVocabulary.scope}. {analysis.openingSafety.unknownSelections} unknown; {analysis.openingSafety.unsafeSelections} proved unsafe. Each safe choice has a replayed winning continuation.</p>
+      <p>A restricted spelling certificate covers only its listed words, including every physical tile choice. It does not certify the whole dictionary.</p>
+    </details>}
     <section aria-label="Fairness and suspense">
       <h4>Reasonable play &amp; late suspense</h4>
       <dl className="generator-metrics generator-metrics-wide">
@@ -186,6 +212,8 @@ export default function DevGenerator({ onPlay, onClose }: Props) {
   const [seed, setSeed] = useState(reviewCache.seed)
   const [count, setCount] = useState(reviewCache.count)
   const [includeRegenTile, setIncludeRegenTile] = useState(reviewCache.includeRegenTile)
+  const [finiteRefills, setFiniteRefills] = useState(reviewCache.finiteRefills)
+  const [refillLimit, setRefillLimit] = useState(reviewCache.refillLimit)
   const [ranked, setRanked] = useState<RankedCandidate[]>(reviewCache.ranked)
   const [selectedId, setSelectedId] = useState<string | null>(reviewCache.selectedId)
   const [filter, setFilter] = useState<ResultFilter>(reviewCache.filter)
@@ -196,8 +224,8 @@ export default function DevGenerator({ onPlay, onClose }: Props) {
   const [error, setError] = useState<string | null>(null)
   const [notice, setNotice] = useState<string | null>(null)
   useEffect(() => {
-    reviewCache = { enemy, automatic, seed, count, includeRegenTile, ranked, selectedId, filter, result }
-  }, [enemy, automatic, seed, count, includeRegenTile, ranked, selectedId, filter, result])
+    reviewCache = { enemy, automatic, seed, count, includeRegenTile, finiteRefills, refillLimit, ranked, selectedId, filter, result }
+  }, [enemy, automatic, seed, count, includeRegenTile, finiteRefills, refillLimit, ranked, selectedId, filter, result])
   useEffect(() => {
     const element = dialog.current
     const previousFocus = document.activeElement
@@ -237,7 +265,8 @@ export default function DevGenerator({ onPlay, onClose }: Props) {
         instance.terminate(); worker.current = null; setBusy(false)
         setError(event.message || 'Generator worker failed. The previous results are still available.')
       }
-      const request: GeneratorRequest = { id, enemy: automatic ? null : enemy.trim().toUpperCase(), seed, candidateCount: count, includeRegenTile }
+      const request: GeneratorRequest = { id, enemy: automatic ? null : enemy.trim().toUpperCase(), seed, candidateCount: count, includeRegenTile,
+        ...(finiteRefills ? { refillLimit } : {}) }
       instance.postMessage(request)
     } catch (failure) {
       worker.current?.terminate(); worker.current = null; setBusy(false)
@@ -261,12 +290,15 @@ export default function DevGenerator({ onPlay, onClose }: Props) {
       <label>Enemy word<input value={enemy} disabled={automatic || busy} onChange={event => setEnemy(event.target.value)} required={!automatic} pattern="[A-Za-z]+" maxLength={24} /></label>
       <label>Seed<input value={seed} disabled={busy} onChange={event => setSeed(event.target.value)} required maxLength={128} /></label>
       <label>Initial candidates<input type="number" min={1} max={100} value={count} disabled={busy} onChange={event => setCount(Number(event.target.value))} required /></label>
-      <label><input type="checkbox" checked={includeRegenTile} disabled={busy} onChange={event => setIncludeRegenTile(event.target.checked)} /> Include harmful REGEN tile</label>
+      <label><input type="checkbox" checked={includeRegenTile} disabled={busy} onChange={event => setIncludeRegenTile(event.target.checked)} /> Include enemy Revive tile</label>
+      <label><input type="checkbox" checked={finiteRefills} disabled={busy} onChange={event => setFiniteRefills(event.target.checked)} /> Finite refill supply</label>
+      {finiteRefills && <label>Initial refill tiles<input type="number" min={0} max={96} step={1} value={refillLimit} disabled={busy} onChange={event => setRefillLimit(Number(event.target.value))} required />
+        <small>Refinement may adjust this budget. Every candidate shows its final supply.</small></label>}
       <button className="generator-primary" type="submit" disabled={busy}>Generate candidates</button>
       {busy && <button type="button" onClick={cancel}>Cancel</button>}
     </form>
     <div className="generator-status" role="status" aria-live="polite">{busy ? <><progress aria-label="Generating and analysing puzzles" /><span>{progress ? `${progress.enemyWord}: ${progress.attempted} evaluated, ${progress.accepted} accepted` : 'Constructing and analysing candidates'} · {seconds}s. Refinements add further evaluations.</span></>
-      : notice ?? (result ? `${result.attempted} evaluated · ${result.solvable} witnessed solvable · ${result.acceptedCount} passed DEV gates · ${seconds}s` : `${ranked.length} saved MELANCHOLY candidates ready for review.`)}</div>
+      : notice ?? (result ? `${result.attempted} evaluated · ${result.solvable} witnessed solvable · ${result.acceptedCount} passed DEV gates · ${seconds}s` : `${ranked.length} saved Revive candidate${ranked.length === 1 ? '' : 's'} ready for review.`)}</div>
     {error && <p className="generator-rejected" role="alert">{error}</p>}
     {result && !result.enemySuitability.eligible && <section className="generator-rejected" aria-label="Rejected enemy">
       <h3>Enemy rejected: {result.enemySuitability.word || 'No suitable concept'}</h3>

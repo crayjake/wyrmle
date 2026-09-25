@@ -89,6 +89,7 @@ export default function TileGrid({
               key={tile.id}
               elementRef={element => registerTile(i, element)}
               boardIndex={i}
+              empty={tile.letter === ''}
               letter={revealed ? tile.letter : displayLetters[i]}
               special={tile.type === "gem" ? specialTiles.find(special => special.id === tile.gem) : undefined}
               revealed={revealed}
@@ -101,7 +102,7 @@ export default function TileGrid({
                   : undefined
               }
               onClick={() => {
-                if (ready) onToggleTile(tile.id)
+                if (ready && tile.letter !== '') onToggleTile(tile.id)
               }}
             />
           )

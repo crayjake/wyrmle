@@ -1,0 +1,464 @@
+[
+  {
+    "case": "clutch",
+    "words": [
+      "TEACHER",
+      "DOG",
+      "PEACEFUL",
+      "KIND",
+      "RUN",
+      "LANE"
+    ],
+    "turns": [
+      {
+        "word": "TEACHER",
+        "phase": "after",
+        "engine": {
+          "status": "playing",
+          "lives": 5,
+          "reserve": 12,
+          "activeTiles": 16
+        },
+        "ui": {
+          "board": {
+            "x": 36.890625,
+            "y": 269.03125,
+            "width": 301.203125,
+            "height": 301.25,
+            "bottom": 570.28125
+          },
+          "enemy": {
+            "x": 13.28125,
+            "y": 86.859375,
+            "width": 348.4375,
+            "height": 106.140625,
+            "bottom": 193
+          },
+          "preview": {
+            "x": 13.28125,
+            "y": 221.859375,
+            "width": 348.4375,
+            "height": 46.171875,
+            "bottom": 268.03125
+          },
+          "resources": {
+            "x": 13.28125,
+            "y": 38,
+            "width": 348.4375,
+            "height": 20,
+            "bottom": 58
+          },
+          "overflow": 0,
+          "bodyWidth": 375,
+          "refills": "Refills remaining: other letters 8, N 2, G 1, R 1. Counts are reserve copies, not the next draw order.",
+          "empty": 0,
+          "emptyDisabled": true,
+          "lives": "5",
+          "filledLives": 5,
+          "previewText": "—"
+        }
+      },
+      {
+        "word": "DOG",
+        "phase": "after",
+        "engine": {
+          "status": "playing",
+          "lives": 4,
+          "reserve": 9,
+          "activeTiles": 16
+        },
+        "ui": {
+          "board": {
+            "x": 36.890625,
+            "y": 269.03125,
+            "width": 301.203125,
+            "height": 301.25,
+            "bottom": 570.28125
+          },
+          "enemy": {
+            "x": 13.28125,
+            "y": 86.859375,
+            "width": 348.4375,
+            "height": 106.140625,
+            "bottom": 193
+          },
+          "preview": {
+            "x": 13.28125,
+            "y": 221.859375,
+            "width": 348.4375,
+            "height": 46.171875,
+            "bottom": 268.03125
+          },
+          "resources": {
+            "x": 13.28125,
+            "y": 38,
+            "width": 348.4375,
+            "height": 20,
+            "bottom": 58
+          },
+          "overflow": 0,
+          "bodyWidth": 375,
+          "refills": "Refills remaining: other letters 6, N 2, R 1. Counts are reserve copies, not the next draw order.",
+          "empty": 0,
+          "emptyDisabled": true,
+          "lives": "4",
+          "filledLives": 4,
+          "previewText": "—"
+        }
+      },
+      {
+        "word": "PEACEFUL",
+        "phase": "after",
+        "engine": {
+          "status": "playing",
+          "lives": 3,
+          "reserve": 1,
+          "activeTiles": 16
+        },
+        "ui": {
+          "board": {
+            "x": 36.890625,
+            "y": 269.03125,
+            "width": 301.203125,
+            "height": 301.25,
+            "bottom": 570.28125
+          },
+          "enemy": {
+            "x": 13.28125,
+            "y": 86.859375,
+            "width": 348.4375,
+            "height": 106.140625,
+            "bottom": 193
+          },
+          "preview": {
+            "x": 13.28125,
+            "y": 221.859375,
+            "width": 348.4375,
+            "height": 46.171875,
+            "bottom": 268.03125
+          },
+          "resources": {
+            "x": 13.28125,
+            "y": 38,
+            "width": 348.4375,
+            "height": 20,
+            "bottom": 58
+          },
+          "overflow": 0,
+          "bodyWidth": 375,
+          "refills": "Refills remaining: other letters 1, N 0, R 0. Counts are reserve copies, not the next draw order.",
+          "empty": 0,
+          "emptyDisabled": true,
+          "lives": "3",
+          "filledLives": 3,
+          "previewText": "—"
+        }
+      },
+      {
+        "word": "KIND",
+        "phase": "after",
+        "engine": {
+          "status": "playing",
+          "lives": 2,
+          "reserve": 0,
+          "activeTiles": 13
+        },
+        "ui": {
+          "board": {
+            "x": 36.890625,
+            "y": 269.03125,
+            "width": 301.203125,
+            "height": 301.25,
+            "bottom": 570.28125
+          },
+          "enemy": {
+            "x": 13.28125,
+            "y": 86.859375,
+            "width": 348.4375,
+            "height": 106.140625,
+            "bottom": 193
+          },
+          "preview": {
+            "x": 13.28125,
+            "y": 221.859375,
+            "width": 348.4375,
+            "height": 46.171875,
+            "bottom": 268.03125
+          },
+          "resources": {
+            "x": 13.28125,
+            "y": 38,
+            "width": 348.4375,
+            "height": 20,
+            "bottom": 58
+          },
+          "overflow": 0,
+          "bodyWidth": 375,
+          "refills": "Refills remaining: other letters 0, R 0. Counts are reserve copies, not the next draw order.",
+          "empty": 3,
+          "emptyDisabled": true,
+          "lives": "2",
+          "filledLives": 2,
+          "previewText": "—"
+        }
+      },
+      {
+        "phase": "reload-undo-redo",
+        "restored": {
+          "board": {
+            "x": 36.890625,
+            "y": 269.03125,
+            "width": 301.203125,
+            "height": 301.25,
+            "bottom": 570.28125
+          },
+          "enemy": {
+            "x": 13.28125,
+            "y": 86.859375,
+            "width": 348.4375,
+            "height": 106.140625,
+            "bottom": 193
+          },
+          "preview": {
+            "x": 13.28125,
+            "y": 221.859375,
+            "width": 348.4375,
+            "height": 46.171875,
+            "bottom": 268.03125
+          },
+          "resources": {
+            "x": 13.28125,
+            "y": 38,
+            "width": 348.4375,
+            "height": 20,
+            "bottom": 58
+          },
+          "overflow": 0,
+          "bodyWidth": 375,
+          "refills": "Refills remaining: other letters 0, R 0. Counts are reserve copies, not the next draw order.",
+          "empty": 3,
+          "emptyDisabled": true,
+          "lives": "2",
+          "filledLives": 2,
+          "previewText": "—"
+        },
+        "undone": {
+          "board": {
+            "x": 36.890625,
+            "y": 269.03125,
+            "width": 301.203125,
+            "height": 301.25,
+            "bottom": 570.28125
+          },
+          "enemy": {
+            "x": 13.28125,
+            "y": 86.859375,
+            "width": 348.4375,
+            "height": 106.140625,
+            "bottom": 193
+          },
+          "preview": {
+            "x": 13.28125,
+            "y": 221.859375,
+            "width": 348.4375,
+            "height": 46.171875,
+            "bottom": 268.03125
+          },
+          "resources": {
+            "x": 13.28125,
+            "y": 38,
+            "width": 348.4375,
+            "height": 20,
+            "bottom": 58
+          },
+          "overflow": 0,
+          "bodyWidth": 375,
+          "refills": "Refills remaining: other letters 1, N 0, R 0. Counts are reserve copies, not the next draw order.",
+          "empty": 0,
+          "emptyDisabled": true,
+          "lives": "3",
+          "filledLives": 3,
+          "previewText": "—"
+        },
+        "redone": {
+          "board": {
+            "x": 36.890625,
+            "y": 269.03125,
+            "width": 301.203125,
+            "height": 301.25,
+            "bottom": 570.28125
+          },
+          "enemy": {
+            "x": 13.28125,
+            "y": 86.859375,
+            "width": 348.4375,
+            "height": 106.140625,
+            "bottom": 193
+          },
+          "preview": {
+            "x": 13.28125,
+            "y": 221.859375,
+            "width": 348.4375,
+            "height": 46.171875,
+            "bottom": 268.03125
+          },
+          "resources": {
+            "x": 13.28125,
+            "y": 38,
+            "width": 348.4375,
+            "height": 20,
+            "bottom": 58
+          },
+          "overflow": 0,
+          "bodyWidth": 375,
+          "refills": "Refills remaining: other letters 0, R 0. Counts are reserve copies, not the next draw order.",
+          "empty": 3,
+          "emptyDisabled": true,
+          "lives": "2",
+          "filledLives": 2,
+          "previewText": "—"
+        },
+        "saved": null
+      },
+      {
+        "word": "RUN",
+        "phase": "after",
+        "engine": {
+          "status": "playing",
+          "lives": 1,
+          "reserve": 0,
+          "activeTiles": 10
+        },
+        "ui": {
+          "board": {
+            "x": 36.890625,
+            "y": 269.03125,
+            "width": 301.203125,
+            "height": 301.25,
+            "bottom": 570.28125
+          },
+          "enemy": {
+            "x": 13.28125,
+            "y": 86.859375,
+            "width": 348.4375,
+            "height": 106.140625,
+            "bottom": 193
+          },
+          "preview": {
+            "x": 13.28125,
+            "y": 221.859375,
+            "width": 348.4375,
+            "height": 46.171875,
+            "bottom": 268.03125
+          },
+          "resources": {
+            "x": 13.28125,
+            "y": 38,
+            "width": 348.4375,
+            "height": 20,
+            "bottom": 58
+          },
+          "overflow": 0,
+          "bodyWidth": 375,
+          "refills": "Refills remaining: other letters 0, N 0. Counts are reserve copies, not the next draw order.",
+          "empty": 6,
+          "emptyDisabled": true,
+          "lives": "1",
+          "filledLives": 1,
+          "previewText": "—"
+        }
+      },
+      {
+        "word": "LANE",
+        "phase": "preview",
+        "ui": {
+          "board": {
+            "x": 36.890625,
+            "y": 269.03125,
+            "width": 301.203125,
+            "height": 301.25,
+            "bottom": 570.28125
+          },
+          "enemy": {
+            "x": 13.28125,
+            "y": 78.65625,
+            "width": 348.4375,
+            "height": 106.140625,
+            "bottom": 184.796875
+          },
+          "preview": {
+            "x": 13.28125,
+            "y": 205.46875,
+            "width": 348.4375,
+            "height": 62.5625,
+            "bottom": 268.03125
+          },
+          "resources": {
+            "x": 13.28125,
+            "y": 38,
+            "width": 348.4375,
+            "height": 20,
+            "bottom": 58
+          },
+          "overflow": 0,
+          "bodyWidth": 375,
+          "refills": "Refills remaining: other letters 0, N 0. Counts are reserve copies, not the next draw order.",
+          "empty": 6,
+          "emptyDisabled": true,
+          "lives": "1",
+          "filledLives": 1,
+          "previewText": "LANE\nNEUTRAL\n·\n1 HIT\nLIVES 1 → 0 · NO LISTED MEANING BONUS"
+        }
+      },
+      {
+        "word": "LANE",
+        "phase": "after",
+        "engine": {
+          "status": "won",
+          "lives": 0,
+          "reserve": 0,
+          "activeTiles": 6
+        },
+        "ui": {
+          "board": {
+            "x": 36.890625,
+            "y": 269.03125,
+            "width": 301.203125,
+            "height": 301.25,
+            "bottom": 570.28125
+          },
+          "enemy": {
+            "x": 13.28125,
+            "y": 86.859375,
+            "width": 348.4375,
+            "height": 106.140625,
+            "bottom": 193
+          },
+          "preview": {
+            "x": 13.28125,
+            "y": 221.859375,
+            "width": 348.4375,
+            "height": 46.171875,
+            "bottom": 268.03125
+          },
+          "resources": {
+            "x": 13.28125,
+            "y": 38,
+            "width": 348.4375,
+            "height": 20,
+            "bottom": 58
+          },
+          "overflow": 0,
+          "bodyWidth": 375,
+          "refills": "Refills remaining: other letters 0. Counts are reserve copies, not the next draw order.",
+          "empty": 10,
+          "emptyDisabled": true,
+          "lives": "0",
+          "filledLives": 0,
+          "previewText": "—\nVICTORY"
+        }
+      }
+    ],
+    "errors": []
+  }
+]

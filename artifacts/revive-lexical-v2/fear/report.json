@@ -1,0 +1,115 @@
+{
+  "seed": "revive-lexical-v2",
+  "requestedSeeds": 16,
+  "enemy": "FEAR",
+  "attempted": 48,
+  "solvable": 47,
+  "accepted": 7,
+  "acceptedUnique": 6,
+  "enemyRejectionCounts": {},
+  "candidateRejectionReasons": {
+    "irrelevant-strike": 31,
+    "decorative-semantic": 21,
+    "missing-familiar-winning-witness": 2,
+    "decorative-strike": 3,
+    "decorative-grammar": 3,
+    "too-short": 5,
+    "missing-route-variety": 1,
+    "solution-unconfirmed": 1
+  },
+  "archetypeDistribution": {
+    "ward-timing": 9,
+    "refill-planning": 12,
+    "greedy-trap": 15,
+    "semantic-contrast": 24,
+    "multiple-routes": 18,
+    "strike-override": 3,
+    "grammar-twist": 3,
+    "armour-break": 9,
+    "clutch-finish": 3
+  },
+  "totalSolverStates": 4041,
+  "totalRuntimeMs": 372461.15857400006,
+  "averageSolverStates": 84.1875,
+  "averageRuntimeMs": 7759.607470291668,
+  "prematureHopelessness": {
+    "unknown": 7,
+    "zero": 41,
+    "low": 0,
+    "high": 0
+  },
+  "clutchOpportunities": {
+    "0": 33,
+    "1": 4,
+    "2": 6,
+    "3": 1,
+    "4": 3,
+    "5": 1
+  },
+  "topQualityScores": [
+    {
+      "id": "generated-fear-lex2-revive-lexical-v2%3A8%3A0-mrevive-lexical-v2%3A8%3Ag0%3Ap0%3Am0",
+      "score": 40.24,
+      "seed": "revive-lexical-v2:8:g0:p0:m0",
+      "enemy": "FEAR"
+    },
+    {
+      "id": "generated-fear-lex2-revive-lexical-v2%3A8%3A0-mrevive-lexical-v2%3A8%3Ag0%3Ap0%3Am1",
+      "score": 40.24,
+      "seed": "revive-lexical-v2:8:g0:p0:m1",
+      "enemy": "FEAR"
+    },
+    {
+      "id": "generated-fear-lex2-revive-lexical-v2%3A0%3A0-mrevive-lexical-v2%3A0%3Ag0%3Ap0%3Am0",
+      "score": 40.07,
+      "seed": "revive-lexical-v2:0:g0:p0:m0",
+      "enemy": "FEAR"
+    },
+    {
+      "id": "generated-fear-lex2-revive-lexical-v2%3A2%3A0",
+      "score": 38.28,
+      "seed": "revive-lexical-v2:2:0",
+      "enemy": "FEAR"
+    },
+    {
+      "id": "generated-fear-lex2-revive-lexical-v2%3A1%3A0",
+      "score": 33.88,
+      "seed": "revive-lexical-v2:1:0",
+      "enemy": "FEAR"
+    },
+    {
+      "id": "generated-fear-lex2-revive-lexical-v2%3A1%3A0-mrevive-lexical-v2%3A1%3Ag0%3Ap0%3Am1",
+      "score": 32.35,
+      "seed": "revive-lexical-v2:1:g0:p0:m1",
+      "enemy": "FEAR"
+    }
+  ],
+  "acceptedSeeds": [
+    "revive-lexical-v2:0:g0:p0:m0",
+    "revive-lexical-v2:1:0",
+    "revive-lexical-v2:1:g0:p0:m1",
+    "revive-lexical-v2:2:0",
+    "revive-lexical-v2:8:g0:p0:m0",
+    "revive-lexical-v2:8:g0:p0:m1"
+  ],
+  "search": {
+    "scope": "bounded-development-review",
+    "options": {
+      "includeRegenTile": true,
+      "candidateCount": 1,
+      "keep": 100,
+      "refinementRounds": 1,
+      "mutationsPerRound": 2,
+      "analysis": {
+        "solver": {
+          "maxStates": 160,
+          "beamWidth": 16
+        },
+        "counterfactualSolver": {
+          "maxStates": 40,
+          "beamWidth": 8
+        }
+      }
+    }
+  }
+}

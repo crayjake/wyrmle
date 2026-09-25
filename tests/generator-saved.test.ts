@@ -44,7 +44,7 @@ test('five shipped MELANCHOLY review candidates pass current default gates and h
 test('every saved generated board reproduces from its seed, including selected refinements', () => {
   for (const { candidate } of saved) {
     if (!candidate.provenance.parentId) {
-      assert.deepEqual(jsonValue(createCandidate(candidate.enemyWord, candidate.seed)), candidate)
+      assert.deepEqual(jsonValue(createCandidate(candidate.enemyWord, candidate.seed, { lexicalMode: 'legacy' })), candidate)
       continue
     }
     const rootId = candidate.provenance.rootId!
@@ -52,7 +52,7 @@ test('every saved generated board reproduces from its seed, including selected r
     const prefix = `generated-${candidate.enemyWord.toLowerCase()}-`
     assert.ok(rootId.startsWith(prefix))
     const rootSeed = decodeURIComponent(rootId.slice(prefix.length))
-    const original = createCandidate(candidate.enemyWord, rootSeed)
+    const original = createCandidate(candidate.enemyWord, rootSeed, { lexicalMode: 'legacy' })
     assert.deepEqual(jsonValue(mutateCandidate(original, candidate.seed)), candidate)
   }
 })

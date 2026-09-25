@@ -8,6 +8,8 @@
     "typecheck": "tsc -b",
     "test": "node --test --test-isolation=none tests/*.test.ts",
     "generate": "node scripts/generate.ts",
+    "audit-lexicon": "node scripts/audit-lexicon.ts",
+    "certify-openings": "node scripts/certify-opening-safety.ts",
     "review-generated": "node scripts/review-generated.ts",
     "rate-dailies": "node scripts/rate-dailies.ts",
     "prove-daily-minimum": "node scripts/prove-daily-minimum.ts",

@@ -1,7 +1,9 @@
-import { getPartsOfSpeech, isDictionaryWord, normalizeWord, prototypeWordPartsOfSpeech } from './dictionary.ts'
+import { canSpellDictionaryWord, isDictionaryWord, normalizeWord, prototypeWordPartsOfSpeech } from './dictionary.ts'
 import { getSemanticRelation } from './semantic.ts'
 import { getSelectedTiles, refillBoard } from './tiles.ts'
 import type { EnemyConcept, PartOfSpeech } from './types.ts'
+import { getEncounterPartsOfSpeech, validateLexicalRules } from './lexicalRules.ts'
+import type { LexicalRules } from './lexicalRules.ts'
 
 export type LetterStrikeGem = 'strike' | 'ward' | 'regen'
 export type LetterStrikeTileEffect = { strike: boolean; preventResolveLoss: boolean; regenerate?: boolean }
@@ -19,9 +21,13 @@ export type LetterStrikeEncounter = {
   startingResolve: number
   startingTiles: readonly LetterStrikeTile[]
   refillQueue: string
+  // Exhausted supply leaves inert empty cells; omission preserves archived rules.
+  finiteRefills?: true
   minimumWordLength: number
   grammarModifiers?: Partial<Record<PartOfSpeech, number>>
   wordPartsOfSpeech?: Readonly<Record<string, readonly PartOfSpeech[]>>
+  // Omission preserves the exact sparse, single-POS rules of archived saves.
+  lexicalRules?: LexicalRules
   longWordRule?: { minimumLength: number; bonusStrikes: number }
   // Only archived encounters opt into the original overlapping Strike rule.
   strikeConsumesAllowance?: boolean
@@ -127,6 +133,7 @@ export const letterStrikeEncounter: LetterStrikeEncounter = {
 }
 
 export function createLetterStrikeGame(encounter = letterStrikeEncounter): LetterStrikeState {
+  validateLexicalRules(encounter)
   const { startingTiles, startingResolve, enemyLetters, tileEffects } = encounter
   if (startingTiles.length !== 16 || new Set(startingTiles.map(tile => tile.id)).size !== 16) {
     throw new Error('An encounter needs 16 tiles with unique IDs.')
@@ -151,7 +158,8 @@ export function createLetterStrikeGame(encounter = letterStrikeEncounter): Lette
     throw new Error('Enemy letters need distinct identities and one or two starting hits.')
   }
   const wardTurns = startingTiles.filter(tile => tile.type === 'gem' && tile.gem && tileEffects[tile.gem]?.preventResolveLoss).length
-  if (!/^[a-z]+$/i.test(encounter.refillQueue) || encounter.refillQueue.length < (startingResolve + wardTurns) * 16) {
+  if (encounter.finiteRefills ? !/^[a-z]*$/i.test(encounter.refillQueue)
+    : !/^[a-z]+$/i.test(encounter.refillQueue) || encounter.refillQueue.length < (startingResolve + wardTurns) * 16) {
     throw new Error('Provide enough deterministic refill letters for all possible turns.')
   }
   return {
@@ -163,13 +171,14 @@ export function createLetterStrikeGame(encounter = letterStrikeEncounter): Lette
     enemyLetters: enemyLetters.map(letter => ({ ...letter, letter: letter.letter.toUpperCase() })),
     playerResolve: startingResolve,
     playedWords: [],
-    status: 'playing',
+    status: encounter.finiteRefills && !canSpellDictionaryWord(startingTiles.map(tile => tile.letter), encounter.minimumWordLength)
+      ? 'lost' : 'playing',
     error: null,
   }
 }
 
 export function toggleLetterStrikeTile(state: LetterStrikeState, id: number): LetterStrikeState {
-  if (state.status !== 'playing' || !state.tiles.some(tile => tile.id === id)) return state
+  if (state.status !== 'playing' || !state.tiles.some(tile => tile.id === id && tile.letter !== '')) return state
   const selectedTileIds = state.selectedTileIds.includes(id)
     ? state.selectedTileIds.filter(selectedId => selectedId !== id)
     : [...state.selectedTileIds, id]
@@ -207,8 +216,12 @@ export function getLetterStrikeAllowance(encounter: LetterStrikeEncounter, word:
 } {
   const relation = getSemanticRelation(word, encounter.enemy)
   const semanticLabel = relation === 'opposite' ? 'COUNTER' : relation === 'similar' ? 'RESISTED' : 'NEUTRAL'
-  const parts = encounter.wordPartsOfSpeech?.[normalizeWord(word)] ?? getPartsOfSpeech(word)
-  const partOfSpeech = parts?.length === 1 ? parts[0] : null
+  const parts = getEncounterPartsOfSpeech(encounter, word)
+  // A submitted word has no sentence to disambiguate its use. Under new rules,
+  // any recognized use qualifies; choose one best modifier, never stack types.
+  const partOfSpeech = encounter.lexicalRules && parts?.length
+    ? [...parts].sort((a, b) => (encounter.grammarModifiers?.[b] ?? 0) - (encounter.grammarModifiers?.[a] ?? 0))[0]
+    : parts?.length === 1 ? parts[0] : null
   const configuredModifier = partOfSpeech ? encounter.grammarModifiers?.[partOfSpeech] ?? 0 : 0
   const base = semanticLabel === 'COUNTER' ? matchingCapacity : semanticLabel === 'NEUTRAL' ? 1 : 0
   const longWordModifier = semanticLabel === 'NEUTRAL' && encounter.longWordRule
@@ -328,6 +341,7 @@ export function previewLetterStrike(state: LetterStrikeState, selectedTileIds: r
   const error = state.status !== 'playing' ? 'Encounter finished'
     : new Set(selectedTileIds).size !== selectedTileIds.length ? 'Cannot use the same tile twice'
     : tiles.length !== selectedTileIds.length ? 'Selected tile is not on the board'
+    : tiles.some(tile => tile.letter === '') ? 'Empty cells cannot be selected'
     : evaluation.word.length < state.encounter.minimumWordLength ? `Minimum ${state.encounter.minimumWordLength} letters`
     : !isDictionaryWord(evaluation.word) ? 'Not a valid word'
     : null
@@ -350,10 +364,13 @@ export function submitLetterStrike(state: LetterStrikeState, selectedTileIds: re
   const preview = previewLetterStrike(state, selectedTileIds)
   if (!preview.valid) return { ...state, error: preview.error }
   const playerResolve = Math.max(0, state.playerResolve - preview.resolveCost)
-  const status = preview.enemyLetters.every(letter => letter.hitsRemaining === 0) ? 'won' : playerResolve === 0 ? 'lost' : 'playing'
+  const refilled = refillBoard(state, selectedTileIds)
+  const status = preview.enemyLetters.every(letter => letter.hitsRemaining === 0) ? 'won'
+    : playerResolve === 0 || (state.encounter.finiteRefills
+      && !canSpellDictionaryWord(refilled.tiles.map(tile => tile.letter), state.encounter.minimumWordLength)) ? 'lost' : 'playing'
   return {
     ...state,
-    ...refillBoard(state, selectedTileIds),
+    ...refilled,
     selectedTileIds: [],
     enemyLetters: preview.enemyLetters,
     playerResolve,

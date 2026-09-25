@@ -5,7 +5,7 @@ import { createLetterStrikeGame, previewLetterStrike, submitLetterStrike } from 
 import { canSpell, overlappingLetters } from '../src/generator/constructBoard.ts'
 import { createCandidate, generateForEnemy, generatePuzzle } from '../src/generator/generate.ts'
 import type { GenerationOptions } from '../src/generator/generate.ts'
-import { localLexicalProvider } from '../src/generator/lexicalProvider.ts'
+import { currentLexicalProvider, localLexicalProvider } from '../src/generator/lexicalProvider.ts'
 import { mutateCandidate, mutationKinds } from '../src/generator/mutate.ts'
 import { buildWordPools } from '../src/generator/wordPools.ts'
 import { solvePuzzle } from '../src/generator/solve.ts'
@@ -72,7 +72,7 @@ test('purposeful refill plans replay through the actual game with identical word
 
 test('serialized candidates carry complete deterministic local semantic and grammar annotations', () => {
   const candidate = createCandidate('MELANCHOLY', 'serialized-lexicon')
-  const pools = buildWordPools('MELANCHOLY')
+  const pools = buildWordPools('MELANCHOLY', currentLexicalProvider, { grammarPolicy: 'any-recognized' })
   const restored = JSON.parse(JSON.stringify(candidate))
   assert.deepEqual(restored.encounter.enemy.semanticRelations, pools.semanticRelations)
   assert.deepEqual(restored.encounter.wordPartsOfSpeech, pools.wordPartsOfSpeech)
@@ -82,7 +82,7 @@ test('serialized candidates carry complete deterministic local semantic and gram
   assert.deepEqual(createLetterStrikeGame(restored.encounter), createLetterStrikeGame(candidate.encounter))
 })
 
-test('every mutation primitive is deterministic, preserves encounter validity and clears obsolete proof IDs', () => {
+test('every unlimited mutation primitive is deterministic, preserves encounter validity and clears obsolete proof IDs', () => {
   const source = createCandidate('MELANCHOLY', 'mutation-primitives')
   // Give armour-copy an actual alternative: the first L is armoured, its copy is not.
   let firstL = true
@@ -93,7 +93,7 @@ test('every mutation primitive is deterministic, preserves encounter validity an
     return { ...letter, initialHits: hits, hitsRemaining: hits }
   })
   const before = structuredClone(source)
-  for (const kind of mutationKinds) {
+  for (const kind of mutationKinds.filter(kind => kind !== 'refill-length')) {
     const options = { kind, allowResolveMutation: true }
     const mutation = mutateCandidate(source, `primitive:${kind}`, options)
     assert.deepEqual(mutation, mutateCandidate(source, `primitive:${kind}`, options), kind)
@@ -151,7 +151,7 @@ test('punctuation and long mutation seeds retain distinct reversible candidate i
   const colon = createCandidate('MELANCHOLY', 'same:seed')
   const dash = createCandidate('MELANCHOLY', 'same-seed')
   assert.notEqual(colon.id, dash.id)
-  assert.equal(decodeURIComponent(colon.id.slice('generated-melancholy-'.length)), 'same:seed')
+  assert.equal(decodeURIComponent(colon.id.slice('generated-melancholy-lex2-'.length)), 'same:seed')
   const suffix = 'identical-suffix-that-is-longer-than-twenty-four-characters'
   const first = mutateCandidate(colon, `first:${suffix}`, { kind: 'tile-swap' })
   const second = mutateCandidate(colon, `second:${suffix}`, { kind: 'tile-swap' })

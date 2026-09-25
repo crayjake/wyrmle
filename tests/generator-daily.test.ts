@@ -4,6 +4,7 @@ import savedCandidates from '../src/generator/data/melancholy.json' with { type:
 import { getDailyPuzzle, getDailyPuzzleForVersion } from '../src/daily/puzzle.ts'
 import { getRunStorageKey, getResultStorageKey, loadDailySession, saveDailyRun } from '../src/daily/persistence.ts'
 import { buildDailyResult } from '../src/daily/results.ts'
+import { withCurrentLexicalRules } from '../src/game/lexicalRules.ts'
 import { SAVE_VERSION } from '../src/daily/versions.ts'
 import type { DailyPuzzleDefinition, DailyRun, StorageLike } from '../src/daily/types.ts'
 import { createLetterStrikeGame, submitLetterStrike } from '../src/game/letterStrike.ts'
@@ -14,7 +15,7 @@ import { getDailyPuzzleId } from '../src/daily/date.ts'
 const today = '2026-09-24'
 const tomorrow = '2026-09-25'
 const currentToday = getDailyPuzzle(today)
-const published = getDailyPuzzle(tomorrow)
+const published = getDailyPuzzleForVersion(tomorrow, 'letter-strike-5', 7)
 const archived = getDailyPuzzleForVersion(today, 'letter-strike-1', 1)
 const archivedMelancholy = getDailyPuzzleForVersion(today, 'letter-strike-4', 5)
 const archivedDespair = getDailyPuzzleForVersion(today, 'letter-strike-4', 6)
@@ -51,12 +52,14 @@ function savedRun(puzzle: DailyPuzzleDefinition, game: LetterStrikeState): Omit<
     status: game.status, completedAt: null }
 }
 
-test('September 25 publishes the exact selected DESPAIR encounter as a frozen runtime-only snapshot', () => {
-  const selected = createCandidate('DESPAIR', 'enemy-variety-v1:DESPAIR:5')
-  assert.equal(published.gameVersion, 'letter-strike-4')
-  assert.equal(published.puzzleVersion, 6)
+test('Historical September 25 v7 retains the exact selected DESPAIR encounter as a frozen runtime-only snapshot', () => {
+  const selected = createCandidate('DESPAIR', 'enemy-variety-v1:DESPAIR:5', { lexicalMode: 'legacy' })
+  const expected = withCurrentLexicalRules(selected.encounter)
+  expected.id = 'daily-despair-lexical-v7'
+  assert.equal(published.gameVersion, 'letter-strike-5')
+  assert.equal(published.puzzleVersion, 7)
   assert.equal(published.encounter.enemy.word, 'DESPAIR')
-  assert.deepEqual(published.encounter, selected.encounter)
+  assert.deepEqual(published.encounter, expected)
   assert.notEqual(published.encounter, selected.encounter)
   assert.ok(Object.isFrozen(published.encounter.startingTiles[0]))
   assert.ok(Object.isFrozen(published.encounter.wordPartsOfSpeech))
@@ -66,7 +69,8 @@ test('September 25 publishes the exact selected DESPAIR encounter as a frozen ru
   assert.equal(getDailyPuzzle('2026-09-23').puzzleVersion, 1)
   assert.equal(getDailyPuzzle('2026-09-26').puzzleVersion, 4)
   assert.equal(published.difficulty, 'MEDIUM')
-  assert.deepEqual(published.encounter, archivedDespair.encounter)
+  assert.deepEqual(published.encounter.startingTiles, archivedDespair.encounter.startingTiles)
+  assert.equal(published.encounter.refillQueue, archivedDespair.encounter.refillQueue)
   assert.equal(archived.encounter.startingTiles.map(tile => tile.letter).join(''), 'JOYCHEERGLOOMADS')
   for (const date of ['2026-09-23', '2026-09-26']) {
     for (const version of [5, 6]) assert.throws(() => getDailyPuzzleForVersion(date, 'letter-strike-4', version), /unsupported/)
@@ -74,7 +78,7 @@ test('September 25 publishes the exact selected DESPAIR encounter as a frozen ru
   assert.throws(() => getDailyPuzzleForVersion(tomorrow, 'letter-strike-4', 5), /unsupported/)
 })
 
-test('September 24 and 25 share exact DESPAIR while the earlier MELANCHOLY snapshot stays available', () => {
+test('September 24 and historical September 25 v7 share exact DESPAIR while the earlier MELANCHOLY snapshot stays available', () => {
   assert.equal(best.quality.total, 69.53)
   assert.equal(best.validation.accepted, true)
   assert.equal(best.candidate.seed, 'melancholy-review-v1:38:g0:p0:m0')
@@ -83,16 +87,17 @@ test('September 24 and 25 share exact DESPAIR while the earlier MELANCHOLY snaps
   assert.notEqual(archivedMelancholy.encounter, best.candidate.encounter)
   assert.ok(Object.isFrozen(archivedMelancholy.encounter.startingTiles[0]))
   assert.ok(Object.isFrozen(archivedMelancholy.encounter.wordPartsOfSpeech))
-  assert.deepEqual(currentToday, archivedDespair)
+  assert.equal(currentToday.puzzleVersion, 7)
+  assert.deepEqual(currentToday.encounter.startingTiles, archivedDespair.encounter.startingTiles)
   assert.deepEqual(currentToday.encounter, published.encounter)
   assert.equal(currentToday.difficulty, published.difficulty)
-  assert.equal(getDailyPuzzle(getDailyPuzzleId(new Date('2026-09-24T23:59:59.999Z'))).puzzleVersion, 6)
-  assert.equal(getDailyPuzzle(getDailyPuzzleId(new Date('2026-09-25T00:30:00+01:00'))).puzzleVersion, 6)
-  assert.equal(getDailyPuzzle(getDailyPuzzleId(new Date('2026-09-25T00:00:00.000Z'))).puzzleVersion, 6)
+  assert.equal(getDailyPuzzle(getDailyPuzzleId(new Date('2026-09-24T23:59:59.999Z'))).puzzleVersion, 7)
+  assert.equal(getDailyPuzzle(getDailyPuzzleId(new Date('2026-09-25T00:30:00+01:00'))).puzzleVersion, 7)
+  assert.equal(getDailyPuzzle(getDailyPuzzleId(new Date('2026-09-25T00:00:00.000Z'))).puzzleVersion, 9)
   assert.equal(loadDailySession(currentToday, new MemoryStorage()).game?.encounter.id, published.encounter.id)
 })
 
-test('new Normal and Hard attempts play the same generated daily and can save, win and restore its exact route', () => {
+test('Normal and Hard attempts begun on v7 can save, win and restore their historical route', () => {
   const normal = loadDailySession(published, new MemoryStorage(), 'normal')
   const hard = loadDailySession(published, new MemoryStorage(), 'hard')
   assert.deepEqual(normal.game, hard.game)
@@ -101,7 +106,8 @@ test('new Normal and Hard attempts play the same generated daily and can save, w
   for (const mode of ['normal', 'hard'] as const) {
     const storage = new MemoryStorage()
     let game = createLetterStrikeGame(published.encounter)
-    saveDailyRun(published, game, storage, undefined, mode)
+    storage.setItem(getRunStorageKey(tomorrow), JSON.stringify({
+      ...savedRun(published, submitLetterStrike(game, quickRoute[0].tileIds)), mode }))
     for (const move of quickRoute) {
       game = submitLetterStrike(game, move.tileIds)
       assert.equal(game.error, null)
@@ -115,7 +121,7 @@ test('new Normal and Hard attempts play the same generated daily and can save, w
     }
     assert.equal(game.status, 'won')
     const completed = loadDailySession(published, storage)
-    assert.equal(completed.result?.puzzleVersion, 6)
+    assert.equal(completed.result?.puzzleVersion, 7)
     assert.equal(completed.result?.enemyWord, 'DESPAIR')
     assert.equal(completed.result?.attacks, 3)
     assert.equal(completed.result?.won, true)
@@ -125,6 +131,8 @@ test('new Normal and Hard attempts play the same generated daily and can save, w
 test('the published DESPAIR also supports its six-word last-Resolve clutch and restores the final result', () => {
   const storage = new MemoryStorage()
   let game = createLetterStrikeGame(published.encounter)
+  storage.setItem(getRunStorageKey(tomorrow), JSON.stringify(
+    savedRun(published, submitLetterStrike(game, clutchRoute[0].tileIds))))
   for (const [index, move] of clutchRoute.entries()) {
     if (index === clutchRoute.length - 1) {
       assert.equal(game.status, 'playing')
@@ -143,7 +151,7 @@ test('the published DESPAIR also supports its six-word last-Resolve clutch and r
   assert.equal(result?.won, true)
   assert.equal(result?.attacks, 6)
   assert.equal(result?.resolveRemaining, 0)
-  assert.equal(result?.puzzleVersion, 6)
+  assert.equal(result?.puzzleVersion, 7)
 })
 
 test('validated untouched September 24 saves adopt DESPAIR without changing mode or writing during load', () => {
@@ -157,7 +165,7 @@ test('validated untouched September 24 saves adopt DESPAIR without changing mode
     assert.equal(session.mode, 'hard')
     assert.equal(storage.getItem(getRunStorageKey(today)), raw)
     assert.equal(saveDailyRun(currentToday, session.game!, storage).error, null)
-    assert.equal(JSON.parse(storage.getItem(getRunStorageKey(today))!).puzzleVersion, 6)
+    assert.equal(JSON.parse(storage.getItem(getRunStorageKey(today))!).puzzleVersion, 7)
   }
 })
 
@@ -196,7 +204,7 @@ test('started and completed September 24 v1, v5 and DESPAIR v6 runs keep their o
   }
 })
 
-test('September 25 historical v4 progress and results remain pinned while untouched saves adopt DESPAIR', () => {
+test('September 25 historical v4 progress and results remain pinned while untouched saves adopt the latest daily', () => {
   const turns = [[0, 1, 2], [4, 5, 15, 18, 16], [11, 20, 9, 10, 14, 17],
     [8, 21, 22, 27], [24, 30, 33, 26, 25, 19]]
   for (const count of [0, 1, turns.length]) {
@@ -211,7 +219,7 @@ test('September 25 historical v4 progress and results remain pinned while untouc
     const loaded = loadDailySession(published, storage)
     assert.equal(loaded.error, null)
     assert.equal(loaded.mode, 'hard')
-    assert.deepEqual(loaded.game, count === 0 ? createLetterStrikeGame(published.encounter) : game)
+    assert.deepEqual(loaded.game, count === 0 ? createLetterStrikeGame(getDailyPuzzle(tomorrow).encounter) : game)
     assert.deepEqual(loaded.result, result)
     assert.equal(storage.getItem(key), raw)
     if (count === 1) {

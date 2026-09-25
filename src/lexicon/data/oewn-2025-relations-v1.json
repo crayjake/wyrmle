@@ -1,0 +1,554 @@
+{
+  "ANGER": {
+    "similar": [
+      "ANGER",
+      "ANGERS",
+      "CHOLER",
+      "CHOLERS",
+      "IRE",
+      "IRES"
+    ],
+    "opposite": [],
+    "related": [
+      "ANGERED",
+      "ANGERING",
+      "ANGRIER",
+      "ANGRIEST",
+      "ANGRY",
+      "CHOLERIC"
+    ],
+    "provenance": {
+      "source": "Open English Wordnet 2025",
+      "sense": "oewn-anger__1.12.00..",
+      "synset": "oewn-07531593-n",
+      "definition": "a strong emotion; a feeling that is oriented toward some real or supposed grievance",
+      "evidence": {
+        "ANGER": [
+          {
+            "category": "similar",
+            "relation": "same-synset",
+            "fromSense": "oewn-anger__1.12.00..",
+            "toSense": "oewn-anger__1.12.00.."
+          },
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-anger__1.12.00..",
+            "toSense": "oewn-anger__2.37.01.."
+          },
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-anger__1.12.00..",
+            "toSense": "oewn-anger__2.37.00.."
+          }
+        ],
+        "ANGERED": [
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-anger__1.12.00..",
+            "toSense": "oewn-anger__2.37.01.."
+          },
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-anger__1.12.00..",
+            "toSense": "oewn-anger__2.37.00.."
+          }
+        ],
+        "ANGERING": [
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-anger__1.12.00..",
+            "toSense": "oewn-anger__2.37.01.."
+          },
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-anger__1.12.00..",
+            "toSense": "oewn-anger__2.37.00.."
+          }
+        ],
+        "ANGERS": [
+          {
+            "category": "similar",
+            "relation": "same-synset",
+            "fromSense": "oewn-anger__1.12.00..",
+            "toSense": "oewn-anger__1.12.00.."
+          },
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-anger__1.12.00..",
+            "toSense": "oewn-anger__2.37.01.."
+          },
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-anger__1.12.00..",
+            "toSense": "oewn-anger__2.37.00.."
+          }
+        ],
+        "ANGRIER": [
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-anger__1.12.00..",
+            "toSense": "oewn-angry__3.00.00.."
+          }
+        ],
+        "ANGRIEST": [
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-anger__1.12.00..",
+            "toSense": "oewn-angry__3.00.00.."
+          }
+        ],
+        "ANGRY": [
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-anger__1.12.00..",
+            "toSense": "oewn-angry__3.00.00.."
+          }
+        ],
+        "CHOLER": [
+          {
+            "category": "similar",
+            "relation": "same-synset",
+            "fromSense": "oewn-anger__1.12.00..",
+            "toSense": "oewn-choler__1.12.01.."
+          }
+        ],
+        "CHOLERIC": [
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-choler__1.12.01..",
+            "toSense": "oewn-choleric__5.00.00.passionate.00"
+          },
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-choler__1.12.01..",
+            "toSense": "oewn-choleric__5.00.00.ill-natured.00"
+          },
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-choler__1.12.01..",
+            "toSense": "oewn-choleric__5.00.00.angry.00"
+          }
+        ],
+        "CHOLERS": [
+          {
+            "category": "similar",
+            "relation": "same-synset",
+            "fromSense": "oewn-anger__1.12.00..",
+            "toSense": "oewn-choler__1.12.01.."
+          }
+        ],
+        "IRE": [
+          {
+            "category": "similar",
+            "relation": "same-synset",
+            "fromSense": "oewn-anger__1.12.00..",
+            "toSense": "oewn-ire__1.12.00.."
+          }
+        ],
+        "IRES": [
+          {
+            "category": "similar",
+            "relation": "same-synset",
+            "fromSense": "oewn-anger__1.12.00..",
+            "toSense": "oewn-ire__1.12.00.."
+          }
+        ]
+      }
+    }
+  },
+  "CHAOS": {
+    "similar": [
+      "BEDLAM",
+      "BEDLAMS",
+      "CHAOS",
+      "CHAOSES",
+      "PANDEMONIUM",
+      "PANDEMONIUMS"
+    ],
+    "opposite": [],
+    "related": [
+      "CHAOTIC"
+    ],
+    "provenance": {
+      "source": "Open English Wordnet 2025",
+      "sense": "oewn-chaos__1.26.00..",
+      "synset": "oewn-13999769-n",
+      "definition": "a state of extreme confusion and disorder",
+      "evidence": {
+        "BEDLAM": [
+          {
+            "category": "similar",
+            "relation": "same-synset",
+            "fromSense": "oewn-chaos__1.26.00..",
+            "toSense": "oewn-bedlam__1.26.00.."
+          }
+        ],
+        "BEDLAMS": [
+          {
+            "category": "similar",
+            "relation": "same-synset",
+            "fromSense": "oewn-chaos__1.26.00..",
+            "toSense": "oewn-bedlam__1.26.00.."
+          }
+        ],
+        "CHAOS": [
+          {
+            "category": "similar",
+            "relation": "same-synset",
+            "fromSense": "oewn-chaos__1.26.00..",
+            "toSense": "oewn-chaos__1.26.00.."
+          }
+        ],
+        "CHAOSES": [
+          {
+            "category": "similar",
+            "relation": "same-synset",
+            "fromSense": "oewn-chaos__1.26.00..",
+            "toSense": "oewn-chaos__1.26.00.."
+          }
+        ],
+        "CHAOTIC": [
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-chaos__1.26.00..",
+            "toSense": "oewn-chaotic__5.00.00.wild.02"
+          }
+        ],
+        "PANDEMONIUM": [
+          {
+            "category": "similar",
+            "relation": "same-synset",
+            "fromSense": "oewn-chaos__1.26.00..",
+            "toSense": "oewn-pandemonium__1.26.00.."
+          }
+        ],
+        "PANDEMONIUMS": [
+          {
+            "category": "similar",
+            "relation": "same-synset",
+            "fromSense": "oewn-chaos__1.26.00..",
+            "toSense": "oewn-pandemonium__1.26.00.."
+          }
+        ]
+      }
+    }
+  },
+  "CRUELTY": {
+    "similar": [
+      "CRUELTIES",
+      "CRUELTY"
+    ],
+    "opposite": [],
+    "related": [],
+    "provenance": {
+      "source": "Open English Wordnet 2025",
+      "sense": "oewn-cruelty__1.04.00..",
+      "synset": "oewn-00425602-n",
+      "definition": "a cruel act; a deliberate infliction of pain and suffering",
+      "evidence": {
+        "CRUELTIES": [
+          {
+            "category": "similar",
+            "relation": "same-synset",
+            "fromSense": "oewn-cruelty__1.04.00..",
+            "toSense": "oewn-cruelty__1.04.00.."
+          }
+        ],
+        "CRUELTY": [
+          {
+            "category": "similar",
+            "relation": "same-synset",
+            "fromSense": "oewn-cruelty__1.04.00..",
+            "toSense": "oewn-cruelty__1.04.00.."
+          }
+        ]
+      }
+    }
+  },
+  "DESPAIR": {
+    "similar": [
+      "DESPAIR",
+      "DESPAIRS"
+    ],
+    "opposite": [
+      "HOPE",
+      "HOPES"
+    ],
+    "related": [
+      "DESPAIRED",
+      "DESPAIRING"
+    ],
+    "provenance": {
+      "source": "Open English Wordnet 2025",
+      "sense": "oewn-despair__1.12.00..",
+      "synset": "oewn-07557311-n",
+      "definition": "the feeling that everything is wrong and nothing will turn out well",
+      "evidence": {
+        "DESPAIR": [
+          {
+            "category": "similar",
+            "relation": "same-synset",
+            "fromSense": "oewn-despair__1.12.00..",
+            "toSense": "oewn-despair__1.12.00.."
+          },
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-despair__1.12.00..",
+            "toSense": "oewn-despair__2.37.00.."
+          }
+        ],
+        "DESPAIRED": [
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-despair__1.12.00..",
+            "toSense": "oewn-despair__2.37.00.."
+          }
+        ],
+        "DESPAIRING": [
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-despair__1.12.00..",
+            "toSense": "oewn-despair__2.37.00.."
+          }
+        ],
+        "DESPAIRS": [
+          {
+            "category": "similar",
+            "relation": "same-synset",
+            "fromSense": "oewn-despair__1.12.00..",
+            "toSense": "oewn-despair__1.12.00.."
+          },
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-despair__1.12.00..",
+            "toSense": "oewn-despair__2.37.00.."
+          }
+        ],
+        "HOPE": [
+          {
+            "category": "opposite",
+            "relation": "antonym",
+            "fromSense": "oewn-despair__1.12.00..",
+            "toSense": "oewn-hope__1.12.00.."
+          }
+        ],
+        "HOPES": [
+          {
+            "category": "opposite",
+            "relation": "antonym",
+            "fromSense": "oewn-despair__1.12.00..",
+            "toSense": "oewn-hope__1.12.00.."
+          }
+        ]
+      }
+    }
+  },
+  "FEAR": {
+    "similar": [
+      "FEAR",
+      "FEARFULNESS",
+      "FEARFULNESSES",
+      "FEARS",
+      "FRIGHT",
+      "FRIGHTS"
+    ],
+    "opposite": [
+      "FEARLESSNESS",
+      "FEARLESSNESSES"
+    ],
+    "related": [
+      "FEARED",
+      "FEARFUL",
+      "FEARING",
+      "FRIGHTED",
+      "FRIGHTING"
+    ],
+    "provenance": {
+      "source": "Open English Wordnet 2025",
+      "sense": "oewn-fear__1.12.00..",
+      "synset": "oewn-07534492-n",
+      "definition": "an emotion experienced in anticipation of some specific pain or danger (usually accompanied by a desire to flee or fight)",
+      "evidence": {
+        "FEAR": [
+          {
+            "category": "similar",
+            "relation": "same-synset",
+            "fromSense": "oewn-fear__1.12.00..",
+            "toSense": "oewn-fear__1.12.00.."
+          },
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-fear__1.12.00..",
+            "toSense": "oewn-fear__2.37.00.."
+          }
+        ],
+        "FEARED": [
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-fear__1.12.00..",
+            "toSense": "oewn-fear__2.37.00.."
+          }
+        ],
+        "FEARFUL": [
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-fearfulness__1.12.00..",
+            "toSense": "oewn-fearful__5.00.00.afraid.00"
+          }
+        ],
+        "FEARFULNESS": [
+          {
+            "category": "similar",
+            "relation": "same-synset",
+            "fromSense": "oewn-fear__1.12.00..",
+            "toSense": "oewn-fearfulness__1.12.00.."
+          }
+        ],
+        "FEARFULNESSES": [
+          {
+            "category": "similar",
+            "relation": "same-synset",
+            "fromSense": "oewn-fear__1.12.00..",
+            "toSense": "oewn-fearfulness__1.12.00.."
+          }
+        ],
+        "FEARING": [
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-fear__1.12.00..",
+            "toSense": "oewn-fear__2.37.00.."
+          }
+        ],
+        "FEARLESSNESS": [
+          {
+            "category": "opposite",
+            "relation": "antonym",
+            "fromSense": "oewn-fear__1.12.00..",
+            "toSense": "oewn-fearlessness__1.12.00.."
+          }
+        ],
+        "FEARLESSNESSES": [
+          {
+            "category": "opposite",
+            "relation": "antonym",
+            "fromSense": "oewn-fear__1.12.00..",
+            "toSense": "oewn-fearlessness__1.12.00.."
+          }
+        ],
+        "FEARS": [
+          {
+            "category": "similar",
+            "relation": "same-synset",
+            "fromSense": "oewn-fear__1.12.00..",
+            "toSense": "oewn-fear__1.12.00.."
+          },
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-fear__1.12.00..",
+            "toSense": "oewn-fear__2.37.00.."
+          }
+        ],
+        "FRIGHT": [
+          {
+            "category": "similar",
+            "relation": "same-synset",
+            "fromSense": "oewn-fear__1.12.00..",
+            "toSense": "oewn-fright__1.12.00.."
+          },
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-fright__1.12.00..",
+            "toSense": "oewn-fright__2.37.00.."
+          }
+        ],
+        "FRIGHTED": [
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-fright__1.12.00..",
+            "toSense": "oewn-fright__2.37.00.."
+          }
+        ],
+        "FRIGHTING": [
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-fright__1.12.00..",
+            "toSense": "oewn-fright__2.37.00.."
+          }
+        ],
+        "FRIGHTS": [
+          {
+            "category": "similar",
+            "relation": "same-synset",
+            "fromSense": "oewn-fear__1.12.00..",
+            "toSense": "oewn-fright__1.12.00.."
+          },
+          {
+            "category": "related",
+            "relation": "derivation",
+            "fromSense": "oewn-fright__1.12.00..",
+            "toSense": "oewn-fright__2.37.00.."
+          }
+        ]
+      }
+    }
+  },
+  "MELANCHOLY": {
+    "similar": [
+      "MELANCHOLIES",
+      "MELANCHOLY"
+    ],
+    "opposite": [],
+    "related": [],
+    "provenance": {
+      "source": "Open English Wordnet 2025",
+      "sense": "oewn-melancholy__1.12.00..",
+      "synset": "oewn-07548485-n",
+      "definition": "a feeling of thoughtful sadness",
+      "evidence": {
+        "MELANCHOLIES": [
+          {
+            "category": "similar",
+            "relation": "same-synset",
+            "fromSense": "oewn-melancholy__1.12.00..",
+            "toSense": "oewn-melancholy__1.12.00.."
+          }
+        ],
+        "MELANCHOLY": [
+          {
+            "category": "similar",
+            "relation": "same-synset",
+            "fromSense": "oewn-melancholy__1.12.00..",
+            "toSense": "oewn-melancholy__1.12.00.."
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,1812 @@
+<!DOCTYPE html><html lang="en"><head>
+    <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+
+    <script type="module" src="/@vite/client"></script>
+
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#191b14">
+    <title>wyrmle</title>
+  <style type="text/css" data-vite-dev-id="/home/jake/Documents/wyrmle/src/index.css">@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+:root {
+  font-family: 'Cutive Mono', monospace;
+
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: 0.18px;
+  color-scheme: dark;
+  color: var(--fg);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+
+  --bg: #25281f;
+  --fg: #c9c2a8;
+  --emph: #e3bd74;
+
+  --blue: #6fa597;
+  --green: #93bd74;
+  --red: #c77e6c;
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+/* Scale phone typography with its width, capped to leave room when browser
+   toolbars reduce the visible height. */
+@media (max-width: 600px) and (orientation: portrait) {
+  :root {
+    font-size: clamp(16px, min(5vw, calc(100dvh / 35.5)), 21.5px);
+  }
+}
+</style><style type="text/css" data-vite-dev-id="/home/jake/Documents/wyrmle/src/App.css">.container {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  height: 100dvh;
+  min-height: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  padding: 0.75rem;
+  gap: 0.6rem;
+
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.daily-notice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.daily-button {
+  min-height: 2rem;
+  border: 1px solid color-mix(in srgb, var(--fg) 55%, transparent);
+  border-radius: 0.1rem;
+  padding: 0.35rem 0.6rem;
+  background: transparent;
+  color: var(--emph);
+  font: inherit;
+  cursor: pointer;
+}
+
+.daily-button:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.dev-controls {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.dev-controls input {
+  color: var(--fg);
+  background: var(--bg);
+  border: 1px solid var(--fg);
+  padding: 0.5rem;
+  font: inherit;
+}
+
+.dev-snapshot {
+  max-height: 15rem;
+  overflow: auto;
+  font-size: 0.65rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  text-transform: none;
+}
+
+
+/* Header */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-family: 'Cutive Mono', monospace;
+}
+
+.header .title {
+  color: var(--emph);
+
+  font-size: 1.65rem;
+  line-height: 1;
+  letter-spacing: 0.04em;
+
+  text-shadow:
+    0.25px 0 0 currentColor,
+    -0.25px 0 0 currentColor;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  color: var(--fg);
+}
+
+.icon-button {
+  width: 1.75rem;
+  height: 1.75rem;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+
+  cursor: pointer;
+}
+
+.icon-button svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  stroke-width: 1.5;
+}
+
+
+/* Generic row */
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* Battle info */
+
+.battle-info {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: end;
+
+  gap: 0.5rem;
+}
+
+.health-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  width: 100%;
+  min-width: 0;
+
+  line-height: 1.1;
+}
+
+.health-info.left {
+  align-items: flex-start;
+}
+
+.health-info .name {
+  font-size: max(11px, 0.62rem);
+  letter-spacing: 0.15em;
+  opacity: 0.95;
+}
+
+.health-info .health {
+  color: var(--emph);
+
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+}
+
+.health-info.health-info-compact {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.health-info-compact .health-bar {
+  margin-top: 0;
+}
+
+
+/* Health bar */
+
+.health-bar {
+  display: flex;
+  gap: 0.1875rem;
+
+  margin-top: 0.25rem;
+}
+
+.health-bar.enemy {
+  flex-direction: row-reverse;
+}
+
+.health-box {
+  width: 0.6875rem;
+  height: 0.4375rem;
+
+  box-sizing: border-box;
+
+  border: 1px solid var(--fg);
+  background: transparent;
+
+  opacity: 0.35;
+}
+
+/* Let the board and its letters fill a phone comfortably, with enough room
+   left for the encounter and the tutorial's longer explanations. */
+@media (max-width: 600px) and (orientation: portrait) {
+  .container.letter-combat {
+    --board-size: clamp(12rem, calc(100dvh - 18.5rem), 18rem);
+  }
+
+  .container.letter-combat[data-enemy-grid="true"] {
+    /* Share short screens between two readable enemy rows and the board. */
+    --board-size: clamp(12rem, calc(100dvh - 19.5rem), 18rem);
+  }
+
+  .container.letter-combat:has(.daily-notice) {
+    --board-size: clamp(12rem, calc(100dvh - 19.75rem), 18rem);
+  }
+
+  .container.letter-combat[data-enemy-grid="true"]:has(.daily-notice) {
+    --board-size: clamp(12rem, calc(100dvh - 21.25rem), 18rem);
+  }
+
+  .container.letter-combat .controls {
+    width: min(100%, var(--board-size));
+  }
+
+  .container.letter-combat .tile-letter {
+    font-size: clamp(1.35rem, calc(var(--board-size) * 0.1125), 1.9rem);
+  }
+}
+
+.health-box.filled {
+  border-color: transparent;
+  opacity: 1;
+}
+
+.health-box.filled.green {
+  background: var(--green);
+}
+
+.health-box.filled.red {
+  background: var(--red);
+}
+
+
+/* Enemy */
+.enemy-zone {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.enemy-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.enemy-definition {
+  width: min(88%, 19rem, calc(var(--enemy-letter-count) * 2.2rem));
+
+  align-self: center;
+
+  color: var(--fg);
+
+  font-size: max(14px, 0.78rem);
+  line-height: 1.45;
+  letter-spacing: 0.025em;
+
+  text-align: center;
+  text-wrap: balance;
+  text-transform: none;
+
+  opacity: 0.95;
+}
+
+.part-of-speech {
+  margin-right: 0.5rem;
+
+  color: var(--blue);
+
+  font-style: italic;
+}
+.enemy-container {
+  --enemy-gap: clamp(1px, calc(1.8rem / var(--enemy-letter-count)), 4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: var(--enemy-gap);
+
+  width: min(100%, 32rem);
+  align-self: center;
+  box-sizing: border-box;
+}
+
+.enemy-letter {
+  flex: 0 1 2.5rem;
+
+  min-width: 0;
+  max-width: 2.5rem;
+  box-sizing: border-box;
+  aspect-ratio: 1;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid var(--fg);
+
+  color: var(--emph);
+
+  font-family: 'Cutive Mono', monospace;
+  font-size: min(2rem, calc(80vw / var(--enemy-letter-count)), calc(26rem / var(--enemy-letter-count)));
+  line-height: 1;
+}
+
+.enemy-letter.scrambled {
+  color: var(--blue);
+  opacity: 0.6;
+}
+
+.enemy-letter.resolved {
+  color: var(--emph);
+  opacity: 1;
+}
+
+.enemy-matchups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.9rem;
+  margin: 0.35rem 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--fg);
+  font-size: max(13px, 0.72rem);
+  line-height: 1.3;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.enemy-matchups li {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.enemy-matchup-positive {
+  color: var(--green);
+}
+
+.enemy-matchup-negative {
+  color: var(--red);
+}
+
+
+/* Current move stays together at the bottom, below encounter context. */
+.player-zone {
+  flex: none;
+  width: min(100%, 21rem);
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid color-mix(in srgb, var(--fg) 25%, transparent);
+}
+
+/* Attack info */
+
+.attack-info {
+  width: min(100%, 21rem);
+  align-self: center;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.4rem;
+
+}
+
+.helper {
+  display: flex;
+  justify-content: space-between;
+
+  font-size: max(11px, 0.62rem);
+  letter-spacing: 0.2em;
+
+  color: var(--fg);
+  opacity: 0.9;
+}
+
+.attack-line {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+
+  gap: 0.8rem;
+
+  padding-block: 0.1rem;
+}
+
+.word {
+  color: var(--emph);
+
+  font-family: 'Cutive Mono', monospace;
+  font-size: clamp(1.55rem, 7vw, 2rem);
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+
+.damage {
+  color: var(--emph);
+
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+
+  white-space: nowrap;
+}
+
+
+/* Attack bar */
+
+.attack-bar {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+
+  gap: 4px;
+}
+
+.attack-segment {
+  height: 9px;
+
+  box-sizing: border-box;
+
+  border: 1px solid var(--fg);
+  background: transparent;
+
+  opacity: 0.65;
+}
+
+.attack-segment.filled {
+  background: var(--emph);
+  border-color: var(--emph);
+
+  opacity: 1;
+}
+
+
+/* Bonuses */
+
+.bonuses {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 0.8rem;
+
+  font-size: max(12px, 0.67rem);
+  letter-spacing: 0.06em;
+
+  color: var(--fg);
+}
+
+.bonus-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.bonus-divider {
+  width: 1px;
+  height: 0.7rem;
+
+  margin: 0 0.75rem;
+
+  background: var(--fg);
+  opacity: 0.45;
+}
+
+.bonus {
+  display: flex;
+  align-items: center;
+
+  gap: 0.25rem;
+
+  white-space: nowrap;
+}
+
+.bonus-symbol,
+.bonus-value {
+  color: var(--blue);
+}
+
+
+/* Player controls */
+/* Attack info, grid and buttons should read as one block */
+
+.controls {
+  /* Safari's visible height changes with its toolbars. Reserve room for the
+     header, encounter and attack preview; keep square tiles at least 44px. */
+  width: min(100%, clamp(12rem, calc(100dvh - 26rem), 19rem));
+  align-self: center;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.6rem;
+
+  margin-top: 0.2rem;
+}
+
+
+/* Tiles */
+
+.tile-grid {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 0.3rem;
+}
+
+.tile {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 1;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+
+  border: 1px solid var(--fg);
+  border-radius: 0.1rem;
+
+  background: transparent;
+  color: var(--emph);
+
+  font-family: 'Cutive Mono', monospace;
+
+  cursor: pointer;
+}
+
+.tile-letter {
+  font-size: clamp(1.1rem, 4.5vw, 1.45rem);
+  line-height: 1;
+}
+
+.tile.selected {
+  background: #4b3b1f;
+  border-color: var(--emph);
+}
+
+.tile-order {
+  position: absolute;
+
+  top: 0.2rem;
+  left: 0.25rem;
+
+  color: var(--emph);
+
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.5rem;
+}
+
+.tile-special {
+  position: absolute;
+
+  inset-inline: 0.15rem;
+  bottom: 0.2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  color: var(--blue);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.45rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.tile:disabled {
+  cursor: default;
+}
+
+.tile:not(.selected):disabled {
+  opacity: 0.55;
+}
+
+
+/* Begin */
+
+.begin-button {
+  width: 100%;
+  min-height: 2.75rem;
+
+  border: 1px solid var(--emph);
+  border-radius: 0.1rem;
+
+  background: transparent;
+  color: var(--emph);
+
+  font: inherit;
+  letter-spacing: 0.2em;
+
+  cursor: pointer;
+}
+
+
+/* Actions */
+
+.battle-actions {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  gap: 0.5rem;
+}
+
+.battle-actions button {
+  min-height: 2.75rem;
+
+  border: 1px solid var(--fg);
+  border-radius: 0.1rem;
+
+  font: inherit;
+  letter-spacing: 0.12em;
+
+  cursor: pointer;
+}
+
+.clear-button {
+  background: transparent;
+  color: var(--fg);
+}
+
+.attack-button {
+  background: var(--emph);
+  border-color: var(--emph) !important;
+
+  color: var(--bg);
+}
+
+.attack-button:disabled {
+  background: transparent;
+  border-color: var(--fg) !important;
+
+  color: var(--fg);
+
+  opacity: 0.3;
+
+  cursor: default;
+}
+
+/* Keep phone spacing compact even while Safari's toolbars change the visible
+   height independently of its layout viewport. */
+@media (max-height: 740px), (max-width: 430px) {
+  .container {
+    gap: 0.25rem;
+  }
+
+  .enemy-zone {
+    gap: 0.4rem;
+  }
+
+  .enemy-section {
+    gap: 0.3rem;
+  }
+
+  .player-zone {
+    gap: 0.25rem;
+    padding-top: 0.2rem;
+  }
+
+  .attack-info {
+    gap: 0.25rem;
+  }
+
+  .controls {
+    gap: 0.6rem;
+    margin-top: 0;
+  }
+}
+
+/* Spend short-screen space on readable words rather than empty gaps. These
+   apply equally to Daily and practice; the board sizing rules do not change. */
+@media (max-width: 430px) and (max-height: 700px) {
+  .container.letter-combat { padding-block: 0.4rem; gap: 0.125rem; }
+  .letter-combat .enemy-zone,
+  .letter-combat .enemy-section { gap: 0.15rem; }
+  .letter-combat .controls { gap: 0.4rem; }
+}
+
+@media (max-width: 430px) and (max-height: 600px) {
+  .container.letter-combat { padding-block: 6px; gap: 1px; }
+  .letter-combat .enemy-zone { gap: 2px; }
+  .letter-combat .enemy-section { gap: 1px; }
+  .letter-combat .enemy-definition { line-height: 1.35; }
+  .letter-combat .controls { gap: 4px; }
+  .letter-combat .attack-line { padding-block: 0; }
+}
+</style><style type="text/css" data-vite-dev-id="/home/jake/Documents/wyrmle/src/components/WyrmCharacter.css">.wyrm-character {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  width: 1.5rem;
+  height: 0.625rem;
+  color: var(--green);
+  line-height: 1;
+  letter-spacing: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.wyrm-character-body {
+  display: flex;
+  align-items: center;
+}
+
+.wyrm-character-body > span {
+  display: block;
+  width: 0.25rem;
+  height: 0.3125rem;
+  border-radius: 1px;
+  background: currentColor;
+}
+
+.wyrm-character-body > span:first-child {
+  width: 0.1875rem;
+  height: 0.1875rem;
+}
+
+.wyrm-character-head {
+  position: relative;
+  flex: none;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+.wyrm-character-head::before,
+.wyrm-character-head::after {
+  content: "";
+  position: absolute;
+  right: 0.125rem;
+  width: 0.125rem;
+  height: 0.125rem;
+  background: var(--bg);
+}
+
+.wyrm-character-head::before {
+  top: 0.0625rem;
+}
+
+.wyrm-character-head::after {
+  bottom: 0.0625rem;
+}
+
+.wyrm-character-tongue {
+  position: absolute;
+  left: 100%;
+  top: 0.1875rem;
+  width: 0.25rem;
+  height: 0.1875rem;
+  background: var(--red);
+  transform-origin: left center;
+  clip-path: polygon(0 33%, 60% 33%, 100% 0, 100% 33%, 75% 50%, 100% 66%, 100% 100%, 60% 66%, 0 66%);
+}
+</style><style type="text/css" data-vite-dev-id="/home/jake/Documents/wyrmle/src/components/Header.css">.header .title {
+  position: relative;
+}
+
+.wyrm-dock {
+  position: absolute;
+  left: calc(100% + 0.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 0.625rem;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+</style><style type="text/css" data-vite-dev-id="/home/jake/Documents/wyrmle/src/components/LetterCombat.css">.letter-combat .enemy-letter {
+  position: relative;
+}
+
+.letter-combat .enemy-letter-armoured {
+  outline: 1px solid var(--fg);
+  outline-offset: -3px;
+}
+
+.letter-combat .enemy-letter[data-target-outcome] {
+  --target-colour: var(--blue);
+  border-color: var(--target-colour);
+  color: var(--target-colour);
+}
+
+.letter-combat .enemy-letter[data-target-outcome="remove"] {
+  --target-colour: var(--red);
+}
+
+.letter-combat .enemy-letter-armoured[data-target-outcome] {
+  outline-color: var(--target-colour);
+}
+
+.letter-combat .enemy-letter[data-struck="true"] {
+  color: var(--blue);
+  border-color: var(--blue);
+  outline-color: var(--blue);
+}
+
+.letter-combat .enemy-target-marker {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  color: inherit;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.55rem;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.letter-combat .enemy-letter-removed,
+.letter-combat .enemy-letter-removed[data-struck="true"] {
+  border-color: transparent;
+  outline: none;
+}
+
+.letter-combat .enemy-letter-removed[data-struck="true"] {
+  color: var(--red);
+}
+
+.letter-combat .enemy-letter-removed .enemy-letter-glyph {
+  /* Draw the dot's ink at the cell centre, independent of font baseline. */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3px;
+  height: 3px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: currentColor;
+  font-size: 0;
+  line-height: 0;
+  opacity: 0.4;
+}
+
+.letter-combat .player-zone {
+  border-top: 0;
+  padding-top: 0;
+  gap: 0.35rem;
+}
+
+.letter-combat .enemy-matchups,
+.letter-combat .enemy-matchups li {
+  gap: 0.35rem;
+  font-size: max(13px, 0.72rem);
+}
+
+.letter-combat .enemy-matchups {
+  justify-content: center;
+}
+
+.letter-combat .enemy-matchup-detail {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.letter-combat .attack-info[data-metric="strikes"] {
+  gap: 0.2rem;
+}
+
+.letter-combat .strike-details {
+  min-height: 1rem;
+  line-height: 1.3;
+  gap: 0.1rem 0.35rem;
+  flex-wrap: wrap;
+}
+
+.letter-combat .strike-bonus {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.letter-combat .strike-bonus[data-kind="counter"],
+.letter-combat .strike-bonus[data-kind="long"] {
+  color: var(--green);
+}
+
+.letter-combat .strike-bonus[data-kind="resisted"] {
+  color: var(--red);
+}
+
+.letter-combat .strike-bonus[data-kind="regen"],
+.letter-combat .strike-bonus[data-kind="revive"],
+.regen-warning,
+.letter-combat .tile.regen .tile-special {
+  color: var(--red);
+}
+
+.letter-combat .tile.regen { border-color: color-mix(in srgb, var(--red) 65%, transparent); }
+.letter-combat .enemy-letter[data-regenerated="true"] { color: var(--red); border-color: var(--red); outline-color: var(--red); }
+.letter-combat .enemy-letter[data-recovery] { color: var(--red); border-color: var(--red); }
+.enemy-recovery-marker {
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  font: 0.55rem 'Share Tech Mono', monospace;
+  color: var(--red);
+}
+.strike-consequence { font-size: max(11px, 0.62rem); line-height: 1.4; letter-spacing: 0.025em; text-align: center; opacity: 0.95; }
+.daily-puzzle-difficulty { font-size: max(11px, 0.62rem); letter-spacing: 0.06em; text-align: right; }
+
+/* Keep labels readable independently of phone width; tile dimensions stay shared. */
+.container.letter-combat .tile-special {
+  font-size: max(11px, 0.62rem);
+  opacity: 1;
+  gap: 0.1rem;
+}
+.container.letter-combat .tile-order {
+  font-size: max(11px, 0.62rem);
+  opacity: 1;
+}
+
+.letter-combat .strike-bonus[data-kind="strike"],
+.letter-combat .strike-bonus[data-kind="ward"],
+.letter-combat .strike-bonus[data-kind="hit tile"],
+.letter-combat .strike-bonus[data-kind="heart"] {
+  color: var(--blue);
+}
+
+.letter-combat .strike-bonus-divider,
+.letter-combat .strike-status {
+  color: var(--fg);
+}
+
+@media (max-height: 740px), (max-width: 430px) {
+  .letter-combat .player-zone {
+    gap: 0.25rem;
+  }
+}
+
+@media (max-width: 430px) and (max-height: 600px) {
+  .letter-combat .player-zone,
+  .letter-combat .attack-info[data-metric="strikes"] { gap: 1px; }
+}
+</style><style type="text/css" data-vite-dev-id="/home/jake/Documents/wyrmle/src/components/EnemyGrid.css">.enemy-letter-space {
+  display: contents;
+}
+
+.enemy-zone[data-grid-preview="true"] {
+  min-height: 0;
+}
+
+.enemy-section[data-enemy-layout="grid"] {
+  --enemy-grid-gap: 0.3rem;
+  --enemy-grid-max-cell: 4rem;
+  --enemy-grid-height: calc(var(--enemy-grid-rows) * var(--enemy-grid-max-cell) + (var(--enemy-grid-rows) - 1) * var(--enemy-grid-gap));
+  flex: 1;
+  min-height: 0;
+  justify-content: center;
+}
+
+.enemy-section[data-enemy-layout="grid"] .enemy-letter-space {
+  /* Only the free space above the definition determines the grid's size. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 1 var(--enemy-grid-height);
+  min-height: 0;
+  width: 100%;
+  container-type: size;
+}
+
+.enemy-section[data-enemy-layout="grid"] .enemy-container {
+  --enemy-grid-cell: min(var(--enemy-grid-max-cell),
+    calc((100cqw - (var(--enemy-grid-columns) - 1) * var(--enemy-grid-gap)) / var(--enemy-grid-columns)),
+    calc((100cqh - (var(--enemy-grid-rows) - 1) * var(--enemy-grid-gap)) / var(--enemy-grid-rows)));
+  display: grid;
+  grid-template-columns: repeat(var(--enemy-grid-columns), var(--enemy-grid-cell));
+  gap: var(--enemy-grid-gap);
+  width: max-content;
+}
+
+.enemy-section[data-enemy-layout="grid"] .enemy-letter {
+  width: var(--enemy-grid-cell);
+  max-width: none;
+  font-size: calc(var(--enemy-grid-cell) * 0.8);
+}
+
+.enemy-section[data-enemy-layout="grid"] .enemy-definition {
+  flex: none;
+}
+</style><style type="text/css" data-vite-dev-id="/home/jake/Documents/wyrmle/src/components/TileReadability.css">.letter-combat .tile {
+  border-color: color-mix(in srgb, var(--fg) 45%, transparent);
+}
+
+.letter-combat .tile-letter {
+  position: relative;
+  font-size: clamp(1.35rem, 6vw, 1.75rem);
+  line-height: 1;
+}
+
+.letter-combat .tile.selected {
+  border-color: var(--emph);
+}
+
+.letter-combat .tile-special {
+  font-size: 0.43rem;
+  opacity: 0.8;
+}
+
+.tile-special-symbol {
+  display: grid;
+  place-items: center;
+  flex: 0 0 1em;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.tile-special-symbol svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* Align with Share Tech Mono's capitals, which sit above the line-box centre. */
+  transform: translateY(-0.0625em);
+}
+
+.tile-special-label {
+  line-height: 1;
+}
+
+.letter-combat .tile-order {
+  top: 0.16rem;
+  left: 0.2rem;
+  font-size: 0.43rem;
+  line-height: 1;
+  opacity: 0.7;
+}
+
+.letter-combat .tile[data-match-hint="dot"]::after {
+  content: '';
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--blue);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.letter-combat .tile[data-match-hint="underline"] .tile-letter::after {
+  content: '';
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  bottom: 0;
+  height: 1px;
+  background: var(--blue);
+  opacity: 0.55;
+  pointer-events: none;
+}
+</style><style type="text/css" data-vite-dev-id="/home/jake/Documents/wyrmle/src/components/WyrmDecoder.css">.wyrm-decoder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  pointer-events: none;
+  width: 1.5rem;
+  height: 0.625rem;
+  margin-left: -0.75rem;
+  margin-top: -0.3125rem;
+  display: flex;
+  align-items: center;
+  color: var(--green);
+  font-family: inherit;
+  line-height: 1;
+  letter-spacing: 0;
+  user-select: none;
+}
+</style><style type="text/css" data-vite-dev-id="/home/jake/Documents/wyrmle/src/components/Onboarding.css">.onboarding-choice {
+  width: min(100%, 21rem);
+  margin: auto;
+  text-align: left;
+}
+
+.onboarding-choice h1 {
+  margin: 0 0 2rem;
+  color: var(--emph);
+  font: 1.8rem 'Cutive Mono', monospace;
+}
+
+.mode-choices {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.mode-choices legend {
+  margin-bottom: 0.8rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.mode-choice {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 3rem;
+  cursor: pointer;
+}
+
+.mode-choice input {
+  appearance: none;
+  flex: none;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid var(--fg);
+  border-radius: 50%;
+  background: transparent;
+}
+
+.mode-choice input:checked {
+  border-color: var(--emph);
+}
+
+.mode-choice input:checked::after {
+  content: '';
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--emph);
+}
+
+.mode-choice input:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 4px;
+}
+
+.mode-choice-copy {
+  flex: 1;
+  display: grid;
+  gap: 0.15rem;
+}
+
+.mode-choice-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: var(--fg);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.mode-choice:has(input:checked) .mode-choice-heading {
+  color: var(--emph);
+}
+
+.mode-recommended {
+  color: var(--green);
+  font-size: 0.5rem;
+  letter-spacing: 0.06em;
+}
+
+.mode-choice-description,
+.mode-note {
+  font-size: 0.65rem;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.mode-note {
+  margin: 1rem 0;
+}
+
+.mode-save-error {
+  color: var(--red);
+  font-size: 0.65rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+</style><style type="text/css" data-vite-dev-id="/home/jake/Documents/wyrmle/src/components/DailyPanels.css">.daily-panel {
+  width: min(27rem, calc(100vw - 2rem));
+  max-height: calc(100dvh - 2rem);
+  box-sizing: border-box;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 1.1rem;
+  border: 1px solid color-mix(in srgb, var(--fg) 60%, transparent);
+  border-radius: 0.1rem;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  text-align: left;
+  text-transform: none;
+  box-shadow: 0 0.8rem 4rem #0008;
+}
+
+.daily-panel::backdrop {
+  background: #080a09c9;
+}
+
+.daily-panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding-bottom: 0.85rem;
+  margin-bottom: 0.9rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--fg) 25%, transparent);
+}
+
+.daily-panel-kicker {
+  color: var(--blue);
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.daily-panel h2 {
+  margin: 0.3rem 0 0;
+  color: var(--emph);
+  font-family: 'Cutive Mono', monospace;
+  font-size: 1.45rem;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+.daily-panel-close {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--fg);
+  cursor: pointer;
+}
+
+.daily-panel :is(button, summary, textarea):focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+.daily-result-outcome {
+  margin: 0 0 0.8rem;
+}
+
+.daily-result-resolve {
+  margin-bottom: 1rem;
+}
+
+.daily-result-resolve .health {
+  font-size: 1.45rem;
+  margin-top: 0.2rem;
+}
+
+.daily-share-details {
+  font-size: 0.7rem;
+}
+
+.daily-share-details summary {
+  cursor: pointer;
+  color: var(--blue);
+}
+
+.daily-share-preview {
+  margin: 0.6rem 0;
+  overflow-x: auto;
+  color: var(--emph);
+  font: inherit;
+  line-height: 1.6;
+  white-space: pre;
+}
+
+.daily-panel .is-won {
+  color: var(--green);
+}
+
+.daily-panel .is-lost {
+  color: var(--red);
+}
+
+.daily-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem 0.4rem;
+  margin: 0 0 1rem;
+}
+
+.daily-stat {
+  min-width: 0;
+}
+
+.daily-stat dt {
+  font-size: 0.62rem;
+  line-height: 1.35;
+}
+
+.daily-stat dd {
+  margin: 0;
+  color: var(--emph);
+  overflow-wrap: anywhere;
+}
+
+.daily-stats-grid dd {
+  margin-top: 0.15rem;
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.daily-stat-unit {
+  font-size: 0.65rem;
+  color: var(--fg);
+}
+
+.daily-stats-list {
+  display: grid;
+  gap: 0.35rem;
+  margin: 1rem 0;
+  padding-top: 0.7rem;
+  border-top: 1px solid color-mix(in srgb, var(--fg) 20%, transparent);
+}
+
+.daily-stats-list .daily-stat {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.daily-stats-list dd {
+  max-width: 11rem;
+  text-align: right;
+}
+
+.daily-words {
+  margin: 0 0 0.9rem;
+  font-size: 0.7rem;
+}
+
+.daily-words summary {
+  width: fit-content;
+  cursor: pointer;
+  color: var(--blue);
+}
+
+.daily-words p {
+  margin-top: 0.4rem;
+  overflow-wrap: anywhere;
+}
+
+.daily-panel-note,
+.daily-share-status {
+  font-size: 0.65rem;
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--fg) 80%, var(--bg));
+}
+
+.daily-panel-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.daily-panel-actions button {
+  flex: 1;
+  min-height: 2.6rem;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid color-mix(in srgb, var(--fg) 55%, transparent);
+  border-radius: 0.1rem;
+  background: transparent;
+  color: var(--fg);
+  font: inherit;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+.daily-panel-actions .daily-panel-primary {
+  border-color: var(--emph);
+  color: var(--emph);
+}
+
+.daily-panel-actions button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.daily-panel-actions button:hover:not(:disabled),
+.daily-panel-close:hover {
+  background: color-mix(in srgb, var(--fg) 8%, transparent);
+}
+
+.daily-share-status {
+  margin-top: 0.6rem;
+}
+
+.daily-share-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.7rem;
+  margin-top: 0.5rem;
+  color: color-mix(in srgb, var(--fg) 80%, var(--bg));
+  font-size: 0.6rem;
+}
+
+.daily-share-legend span {
+  white-space: nowrap;
+}
+
+.daily-share-fallback {
+  margin-top: 0.8rem;
+}
+
+.daily-share-fallback label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.65rem;
+}
+
+.daily-share-fallback textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 5rem;
+  max-height: 15rem;
+  padding: 0.65rem;
+  border: 1px solid color-mix(in srgb, var(--fg) 50%, transparent);
+  border-radius: 0.1rem;
+  background: transparent;
+  color: var(--fg);
+  font: inherit;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  resize: vertical;
+  text-transform: none;
+}
+
+.daily-history {
+  margin-bottom: 0.8rem;
+}
+
+.daily-history h3 {
+  margin: 0 0 0.5rem;
+  color: var(--blue);
+  font: inherit;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.daily-history ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.daily-history-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.15rem 0.6rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid color-mix(in srgb, var(--fg) 18%, transparent);
+  font-size: 0.65rem;
+}
+
+.daily-history-detail {
+  grid-column: 1 / -1;
+  color: color-mix(in srgb, var(--fg) 78%, var(--bg));
+  font-size: 0.6rem;
+  overflow-wrap: anywhere;
+}
+
+.daily-history-resume-row {
+  align-items: center;
+}
+
+.daily-history-detail-short {
+  grid-column: 1;
+  align-self: center;
+}
+
+.daily-resume-button {
+  justify-self: end;
+  grid-column: 2;
+  min-height: 2rem;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid color-mix(in srgb, var(--blue) 65%, transparent);
+  border-radius: 0.1rem;
+  background: transparent;
+  color: var(--blue);
+  font: inherit;
+  cursor: pointer;
+}
+
+.daily-resume-button:hover {
+  background: color-mix(in srgb, var(--blue) 8%, transparent);
+}
+
+.daily-help {
+  display: grid;
+  gap: 0.8rem;
+  line-height: 1.55;
+}
+
+.daily-help strong {
+  color: var(--emph);
+  font-weight: 400;
+}
+
+.daily-help-gem {
+  color: var(--blue);
+  white-space: nowrap;
+}
+
+.daily-help-regen {
+  color: var(--red);
+}
+
+.daily-undo-control {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.75rem;
+  margin: 0 0 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--fg) 20%, transparent);
+  font-size: 0.65rem;
+}
+
+.daily-undo-control p {
+  flex-basis: 100%;
+  margin: 0.15rem 0 0;
+  font-size: 0.6rem;
+}
+
+.daily-undo-control button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.daily-turn-log {
+  display: grid;
+  gap: 0.8rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.daily-turn-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  color: var(--blue);
+  font-size: 0.65rem;
+}
+
+.daily-turn-word {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: var(--emph);
+  font-family: 'Cutive Mono', monospace;
+  font-size: 1rem;
+}
+
+.daily-turn-heading > span:last-child {
+  flex-shrink: 0;
+}
+
+.daily-turn-effects {
+  font-size: 0.6rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 360px) {
+  .daily-panel {
+    padding: 0.8rem;
+  }
+
+  .daily-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.dev-match-hints {
+  margin: 0.75rem 0;
+  padding: 0;
+  border: 0;
+}
+
+.dev-match-hints legend {
+  margin-bottom: 0.4rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+}
+
+.dev-match-hints button[aria-pressed="true"] {
+  color: var(--emph);
+  border-color: var(--emph);
+}
+
+.dev-match-hints p {
+  margin: 0.4rem 0 0;
+  font-size: 0.65rem;
+}
+
+.dev-controls select {
+  min-width: 0;
+  max-width: 100%;
+  padding: 0.45rem;
+  border: 1px solid color-mix(in srgb, var(--fg) 55%, transparent);
+  border-radius: 0.1rem;
+  background: var(--bg);
+  color: var(--fg);
+  font: inherit;
+}
+
+.dev-controls input[type="number"] {
+  width: 3.5rem;
+}
+
+.settings-beta {
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid color-mix(in srgb, var(--fg) 25%, transparent);
+}
+
+.settings-beta h3 {
+  margin: 0;
+  color: var(--emph);
+  font-size: 0.7rem;
+  font-weight: normal;
+  letter-spacing: 0.08em;
+}
+
+.settings-beta p {
+  margin: 0.5rem 0 0;
+  font-size: 0.65rem;
+  line-height: 1.5;
+}
+</style><style>
+   .battle-info{align-items:center!important;}
+   .mock-mid-refills{display:flex;align-items:center;justify-content:flex-end;gap:6px;min-height:21px;white-space:nowrap;}
+   .mock-mid-refills-label{font:11px/1 'Share Tech Mono',monospace;letter-spacing:0;}
+   .mock-mid-refills-entries{display:flex;align-items:center;gap:6px;}
+   .mock-mid-refill-group{display:flex;align-items:center;gap:3px;}
+   .mock-mid-refill-square{box-sizing:border-box;display:grid;place-items:center;width:16px;height:16px;border:1px solid color-mix(in srgb,var(--fg) 45%,transparent);border-radius:1px;flex:none;font:13px/1 'Cutive Mono',monospace;letter-spacing:0;color:var(--emph);}
+   .mock-mid-refill-square.known{border-color:color-mix(in srgb,var(--emph) 70%,transparent);}
+   .mock-mid-refill-square span{display:block;line-height:1;transform:translateY(-.02em);}
+   .mock-mid-refill-multiplier{display:flex;align-items:center;height:16px;font:12px/1 'Share Tech Mono',monospace;letter-spacing:0;}
+   .mock-wyrm-meter{display:flex;align-items:center;gap:6px;height:21px;}
+   .mock-wyrm-meter .wyrm-character{width:72px;height:18px;gap:3px;}
+   .mock-wyrm-meter .wyrm-character-body{gap:3px;}
+   .mock-wyrm-meter .wyrm-character-body>span{box-sizing:border-box;width:11px;height:12px;border:1px solid currentColor;background:transparent;opacity:.38;border-radius:1px;}
+   .mock-wyrm-meter .wyrm-character-body>span:first-child{width:8px;height:8px;}
+   .mock-wyrm-meter .wyrm-character-head{width:15px;height:15px;border-radius:2px;background:currentColor;}
+   .mock-wyrm-meter .wyrm-character-head:before,.mock-wyrm-meter .wyrm-character-head:after{right:3px;width:3px;height:3px;}
+   .mock-wyrm-meter .wyrm-character-head:before{top:2px;}.mock-wyrm-meter .wyrm-character-head:after{bottom:2px;}
+   .mock-wyrm-meter .wyrm-character-tongue{top:6px;width:5px;height:4px;}
+   .mock-wyrm-life-count{font:11px/1 'Share Tech Mono',monospace;letter-spacing:0;color:var(--green);}
+  </style></head>
+  <body>
+    <div id="root"><main class="container letter-combat" data-combat-mode="letter-strike" data-difficulty="normal"><header class="header"><div class="title">WYRMLE</div><nav class="header-actions"><button class="icon-button" aria-label="Help"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-question-mark lucide-help-circle lucide-circle-help" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg></button><button class="icon-button" aria-label="Log" title="Turn log"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-ccw-clock lucide-history" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path><path d="M12 7v5l4 2"></path></svg></button><button class="icon-button" aria-label="Settings"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings" aria-hidden="true"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"></path><circle cx="12" cy="12" r="3"></circle></svg></button></nav></header><div class="battle-info"><div class="health-info left health-info-compact"><div class="name">LIVES</div><div class="health-segments" role="meter" aria-label="Lives: 1 of 5" aria-valuemin="0" aria-valuemax="5" aria-valuenow="1" aria-valuetext="1 of 5"><div class="mock-wyrm-meter"><span class="wyrm-character" aria-hidden="true"><span class="wyrm-character-body"><span></span><span></span><span></span><span></span></span><span class="wyrm-character-head"><span class="wyrm-character-tongue"></span></span></span></div></div></div><div class="mock-mid-refills right" aria-label="Remaining refill counts; draw order is not shown"><div class="mock-mid-refills-entries"><span class="mock-mid-refill-group"><span class="mock-mid-refill-square"><span></span></span><span class="mock-mid-refill-multiplier">×72</span></span><span class="mock-mid-refill-group"><span class="mock-mid-refill-square known"><span>S</span></span><span class="mock-mid-refill-multiplier">×6</span></span><span class="mock-mid-refill-group"><span class="mock-mid-refill-square known"><span>P</span></span></span></div><span class="mock-mid-refills-label">REFILLS</span></div></div><div class="enemy-zone"><div class="enemy-section" data-enemy-layout="row" style="--enemy-letter-count: 7; --enemy-grid-columns: 5; --enemy-grid-rows: 2;"><div class="enemy-letter-space"><div class="enemy-container"><div data-enemy-index="0" data-revealed="true" data-hits-remaining="0" role="img" aria-label="D, removed" class="enemy-letter resolved  enemy-letter-removed" style="opacity: 1; transform: none;"><span class="enemy-letter-glyph" aria-hidden="true">·</span></div><div data-enemy-index="1" data-revealed="true" data-hits-remaining="0" role="img" aria-label="E, removed" class="enemy-letter resolved  enemy-letter-removed" style="opacity: 1; transform: none;"><span class="enemy-letter-glyph" aria-hidden="true">·</span></div><div data-enemy-index="2" data-revealed="true" data-hits-remaining="1" role="img" aria-label="S, 1 hit remaining" class="enemy-letter resolved  " style="opacity: 1; transform: none;"><span class="enemy-letter-glyph" aria-hidden="true">S</span></div><div data-enemy-index="3" data-revealed="true" data-hits-remaining="1" role="img" aria-label="P, 1 hit remaining" class="enemy-letter resolved  " style="opacity: 1; transform: none;"><span class="enemy-letter-glyph" aria-hidden="true">P</span></div><div data-enemy-index="4" data-revealed="true" data-hits-remaining="0" role="img" aria-label="A, removed" class="enemy-letter resolved  enemy-letter-removed" style="opacity: 1; transform: none;"><span class="enemy-letter-glyph" aria-hidden="true">·</span></div><div data-enemy-index="5" data-revealed="true" data-hits-remaining="0" role="img" aria-label="I, removed" class="enemy-letter resolved  enemy-letter-removed" style="opacity: 1; transform: none;"><span class="enemy-letter-glyph" aria-hidden="true">·</span></div><div data-enemy-index="6" data-revealed="true" data-hits-remaining="0" role="img" aria-label="R, removed" class="enemy-letter resolved  enemy-letter-removed" style="opacity: 1; transform: none;"><span class="enemy-letter-glyph" aria-hidden="true">·</span></div></div></div><div class="enemy-definition" style="opacity: 1; transform: none;"><span class="part-of-speech">noun</span><span>The feeling that there is no hope of things getting better.</span><ul class="enemy-matchups" aria-label="Enemy grammar matchups"><li><span class="enemy-matchup-positive" title="ADJECTIVE +1 HIT">ADJECTIVE<span class="enemy-matchup-detail"> +1 HIT</span></span></li></ul></div></div></div><div class="player-zone"><div class="attack-info" data-metric="strikes"><div class="attack-line"><div class="word">—</div></div><div class="bonuses strike-details" role="status"></div></div><div class="controls"><div class="tile-grid"><button data-tile-index="0" data-revealed="true" type="button" class="tile  " aria-pressed="false" aria-label="P" style="transform: none; opacity: 1;"><span class="tile-letter">P</span></button><button data-tile-index="1" data-revealed="true" type="button" class="tile  " aria-pressed="false" aria-label="D" style="transform: none; opacity: 1;"><span class="tile-letter">D</span></button><button data-tile-index="2" data-revealed="true" type="button" class="tile  " aria-pressed="false" aria-label="F" style="transform: none; opacity: 1;"><span class="tile-letter">F</span></button><button data-tile-index="3" data-revealed="true" type="button" class="tile  " aria-pressed="false" aria-label="Y" style="transform: none; opacity: 1;"><span class="tile-letter">Y</span></button><button data-tile-index="4" data-revealed="true" type="button" class="tile  " aria-pressed="false" aria-label="H" style="transform: none; opacity: 1;"><span class="tile-letter">H</span></button><button data-tile-index="5" data-revealed="true" type="button" class="tile  " aria-pressed="false" aria-label="S" style="transform: none; opacity: 1;"><span class="tile-letter">S</span></button><button data-tile-index="6" data-revealed="true" type="button" class="tile  " aria-pressed="false" aria-label="C" style="transform: none; opacity: 1;"><span class="tile-letter">C</span></button><button data-tile-index="7" data-revealed="true" type="button" class="tile  " aria-pressed="false" aria-label="R" style="transform: none; opacity: 1;"><span class="tile-letter">R</span></button><button data-tile-index="8" data-revealed="true" type="button" class="tile  " aria-pressed="false" aria-label="O" style="transform: none; opacity: 1;"><span class="tile-letter">O</span></button><button data-tile-index="9" data-revealed="true" type="button" class="tile  " aria-pressed="false" aria-label="G" style="transform: none; opacity: 1;"><span class="tile-letter">G</span></button><button data-tile-index="10" data-revealed="true" type="button" class="tile  " aria-pressed="false" aria-label="O" style="transform: none; opacity: 1;"><span class="tile-letter">O</span></button><button data-tile-index="11" data-revealed="true" type="button" class="tile  special ward" aria-pressed="false" aria-label="O, HEART tile" title="HEART: SAVES A LIFE THIS TURN" style="transform: none; opacity: 1;"><span class="tile-letter">O</span><span class="tile-special"><span class="tile-special-symbol" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart" aria-hidden="true"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path></svg></span><span class="tile-special-label">HEART</span></span></button><button data-tile-index="12" data-revealed="true" type="button" class="tile  " aria-pressed="false" aria-label="P" style="transform: none; opacity: 1;"><span class="tile-letter">P</span></button><button data-tile-index="13" data-revealed="true" type="button" class="tile  " aria-pressed="false" aria-label="D" style="transform: none; opacity: 1;"><span class="tile-letter">D</span></button><button data-tile-index="14" data-revealed="true" type="button" class="tile  " aria-pressed="false" aria-label="C" style="transform: none; opacity: 1;"><span class="tile-letter">C</span></button><button data-tile-index="15" data-revealed="true" type="button" class="tile  " aria-pressed="false" aria-label="N" style="transform: none; opacity: 1;"><span class="tile-letter">N</span></button></div><div class="battle-actions"><button type="button" class="clear-button" disabled="">CLEAR</button><button type="button" class="attack-button" disabled="">PLAY WORD</button></div></div></div></main></div>
+    <script type="module" src="/src/main.tsx?t=1790332989007"></script>
+  
+
+</body></html>

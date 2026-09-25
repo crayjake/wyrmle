@@ -75,16 +75,16 @@ export default function DevPanel({ puzzle, onLoad, onPlaytest, onGenerator, onCl
           event.preventDefault()
           onTutorialStep(tutorialStep)
         }}>
-          <label htmlFor="dev-tutorial-step">Tutorial step</label>
+          <label htmlFor="dev-tutorial-step">Demo / optional example</label>
           <select id="dev-tutorial-step" value={tutorialStep} onChange={event => setTutorialStep(event.target.value as TutorialStep)}>
             {tutorialSteps.map(step => <option key={step.id} value={step.id}>{step.label}</option>)}
           </select>
-          <button type="submit" className="daily-button">Jump to step</button>
+          <button type="submit" className="daily-button">Open practice</button>
         </form>
         <div className="dev-controls" aria-label="Load tutorial fixtures">
           {([
-            ['goal', 'Basic'], ['armour', 'Armour'], ['strike', 'Strike'],
-            ['ward', 'Ward'], ['regen-dead', 'Regen'], ['grammar', 'Grammar'], ['long', 'Long'],
+            ['goal', 'Basic'], ['armour', 'Armour'], ['strike', 'Hit tile'],
+            ['ward', 'Heart tile'], ['regen-dead', 'Regen'], ['grammar', 'Grammar'], ['long', 'Long'],
           ] as const).map(([step, label]) => <button className="daily-button" key={step}
             onClick={() => onTutorialStep(step)}>Load {label} fixture</button>)}
         </div>

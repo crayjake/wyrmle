@@ -1,0 +1,694 @@
+{
+  "candidateId": "generated-anger-lex2-revive-lexical-v2%3AANGER%3A2%3A0-early-r-long7-finite19-extra-g",
+  "initialRefills": 19,
+  "routes": [
+    {
+      "words": [
+        "CHEERFUL",
+        "GLAD",
+        "CANE"
+      ],
+      "tileIds": [
+        [
+          0,
+          14,
+          6,
+          7,
+          2,
+          15,
+          13,
+          10
+        ],
+        [
+          8,
+          17,
+          1,
+          12
+        ],
+        [
+          21,
+          16,
+          27,
+          18
+        ]
+      ],
+      "livesRemaining": 3,
+      "turns": [
+        {
+          "word": "CHEERFUL",
+          "tileIds": [
+            0,
+            14,
+            6,
+            7,
+            2,
+            15,
+            13,
+            10
+          ],
+          "reserveBefore": 19,
+          "reserveRemaining": 11,
+          "activeTilesBefore": 16,
+          "activeTileCount": 16,
+          "livesBefore": 5,
+          "livesRemaining": 5,
+          "hits": 3,
+          "semanticLabel": "NEUTRAL",
+          "recoveries": [],
+          "enemyRemaining": [
+            {
+              "letter": "A",
+              "hits": 1
+            },
+            {
+              "letter": "N",
+              "hits": 1
+            },
+            {
+              "letter": "G",
+              "hits": 1
+            }
+          ]
+        },
+        {
+          "word": "GLAD",
+          "tileIds": [
+            8,
+            17,
+            1,
+            12
+          ],
+          "reserveBefore": 11,
+          "reserveRemaining": 7,
+          "activeTilesBefore": 16,
+          "activeTileCount": 16,
+          "livesBefore": 5,
+          "livesRemaining": 4,
+          "hits": 2,
+          "semanticLabel": "NEUTRAL",
+          "recoveries": [],
+          "enemyRemaining": [
+            {
+              "letter": "N",
+              "hits": 1
+            }
+          ]
+        },
+        {
+          "word": "CANE",
+          "tileIds": [
+            21,
+            16,
+            27,
+            18
+          ],
+          "reserveBefore": 7,
+          "reserveRemaining": 3,
+          "activeTilesBefore": 16,
+          "activeTileCount": 16,
+          "livesBefore": 4,
+          "livesRemaining": 3,
+          "hits": 1,
+          "semanticLabel": "NEUTRAL",
+          "recoveries": [],
+          "enemyRemaining": []
+        }
+      ]
+    },
+    {
+      "words": [
+        "REACH",
+        "DEAL",
+        "GENTLE",
+        "END"
+      ],
+      "tileIds": [
+        [
+          2,
+          7,
+          1,
+          0,
+          14
+        ],
+        [
+          12,
+          6,
+          16,
+          10
+        ],
+        [
+          8,
+          18,
+          11,
+          3,
+          17,
+          22
+        ],
+        [
+          23,
+          27,
+          9
+        ]
+      ],
+      "livesRemaining": 2,
+      "turns": [
+        {
+          "word": "REACH",
+          "tileIds": [
+            2,
+            7,
+            1,
+            0,
+            14
+          ],
+          "reserveBefore": 19,
+          "reserveRemaining": 14,
+          "activeTilesBefore": 16,
+          "activeTileCount": 16,
+          "livesBefore": 5,
+          "livesRemaining": 5,
+          "hits": 1,
+          "semanticLabel": "NEUTRAL",
+          "recoveries": [],
+          "enemyRemaining": [
+            {
+              "letter": "A",
+              "hits": 1
+            },
+            {
+              "letter": "N",
+              "hits": 1
+            },
+            {
+              "letter": "G",
+              "hits": 1
+            },
+            {
+              "letter": "E",
+              "hits": 2
+            }
+          ]
+        },
+        {
+          "word": "DEAL",
+          "tileIds": [
+            12,
+            6,
+            16,
+            10
+          ],
+          "reserveBefore": 14,
+          "reserveRemaining": 10,
+          "activeTilesBefore": 16,
+          "activeTileCount": 16,
+          "livesBefore": 5,
+          "livesRemaining": 4,
+          "hits": 2,
+          "semanticLabel": "NEUTRAL",
+          "recoveries": [],
+          "enemyRemaining": [
+            {
+              "letter": "N",
+              "hits": 1
+            },
+            {
+              "letter": "G",
+              "hits": 1
+            },
+            {
+              "letter": "E",
+              "hits": 1
+            }
+          ]
+        },
+        {
+          "word": "GENTLE",
+          "tileIds": [
+            8,
+            18,
+            11,
+            3,
+            17,
+            22
+          ],
+          "reserveBefore": 10,
+          "reserveRemaining": 4,
+          "activeTilesBefore": 16,
+          "activeTileCount": 16,
+          "livesBefore": 4,
+          "livesRemaining": 3,
+          "hits": 3,
+          "semanticLabel": "COUNTER",
+          "recoveries": [
+            {
+              "tileId": 11,
+              "enemyLetterId": "enemy-1",
+              "letter": "N",
+              "hitsBefore": 0,
+              "hitsAfter": 1
+            }
+          ],
+          "enemyRemaining": [
+            {
+              "letter": "N",
+              "hits": 1
+            }
+          ]
+        },
+        {
+          "word": "END",
+          "tileIds": [
+            23,
+            27,
+            9
+          ],
+          "reserveBefore": 4,
+          "reserveRemaining": 1,
+          "activeTilesBefore": 16,
+          "activeTileCount": 16,
+          "livesBefore": 3,
+          "livesRemaining": 2,
+          "hits": 1,
+          "semanticLabel": "NEUTRAL",
+          "recoveries": [],
+          "enemyRemaining": []
+        }
+      ]
+    },
+    {
+      "words": [
+        "COURAGE",
+        "PEACEFUL",
+        "END",
+        "SERENITY",
+        "GLAD"
+      ],
+      "tileIds": [
+        [
+          0,
+          4,
+          13,
+          2,
+          1,
+          8,
+          6
+        ],
+        [
+          20,
+          22,
+          16,
+          21,
+          7,
+          15,
+          19,
+          10
+        ],
+        [
+          18,
+          29,
+          9
+        ],
+        [
+          31,
+          23,
+          28,
+          33,
+          27,
+          30,
+          3,
+          5
+        ],
+        [
+          34,
+          17,
+          26,
+          12
+        ]
+      ],
+      "livesRemaining": 1,
+      "turns": [
+        {
+          "word": "COURAGE",
+          "tileIds": [
+            0,
+            4,
+            13,
+            2,
+            1,
+            8,
+            6
+          ],
+          "reserveBefore": 19,
+          "reserveRemaining": 12,
+          "activeTilesBefore": 16,
+          "activeTileCount": 16,
+          "livesBefore": 5,
+          "livesRemaining": 4,
+          "hits": 3,
+          "semanticLabel": "NEUTRAL",
+          "recoveries": [],
+          "enemyRemaining": [
+            {
+              "letter": "N",
+              "hits": 1
+            },
+            {
+              "letter": "G",
+              "hits": 1
+            },
+            {
+              "letter": "E",
+              "hits": 1
+            }
+          ]
+        },
+        {
+          "word": "PEACEFUL",
+          "tileIds": [
+            20,
+            22,
+            16,
+            21,
+            7,
+            15,
+            19,
+            10
+          ],
+          "reserveBefore": 12,
+          "reserveRemaining": 4,
+          "activeTilesBefore": 16,
+          "activeTileCount": 16,
+          "livesBefore": 4,
+          "livesRemaining": 4,
+          "hits": 1,
+          "semanticLabel": "COUNTER",
+          "recoveries": [],
+          "enemyRemaining": [
+            {
+              "letter": "N",
+              "hits": 1
+            },
+            {
+              "letter": "G",
+              "hits": 1
+            }
+          ]
+        },
+        {
+          "word": "END",
+          "tileIds": [
+            18,
+            29,
+            9
+          ],
+          "reserveBefore": 4,
+          "reserveRemaining": 1,
+          "activeTilesBefore": 16,
+          "activeTileCount": 16,
+          "livesBefore": 4,
+          "livesRemaining": 3,
+          "hits": 1,
+          "semanticLabel": "NEUTRAL",
+          "recoveries": [],
+          "enemyRemaining": [
+            {
+              "letter": "G",
+              "hits": 1
+            }
+          ]
+        },
+        {
+          "word": "SERENITY",
+          "tileIds": [
+            31,
+            23,
+            28,
+            33,
+            27,
+            30,
+            3,
+            5
+          ],
+          "reserveBefore": 1,
+          "reserveRemaining": 0,
+          "activeTilesBefore": 16,
+          "activeTileCount": 9,
+          "livesBefore": 3,
+          "livesRemaining": 2,
+          "hits": 0,
+          "semanticLabel": "COUNTER",
+          "recoveries": [],
+          "enemyRemaining": [
+            {
+              "letter": "G",
+              "hits": 1
+            }
+          ]
+        },
+        {
+          "word": "GLAD",
+          "tileIds": [
+            34,
+            17,
+            26,
+            12
+          ],
+          "reserveBefore": 0,
+          "reserveRemaining": 0,
+          "activeTilesBefore": 9,
+          "activeTileCount": 5,
+          "livesBefore": 2,
+          "livesRemaining": 1,
+          "hits": 1,
+          "semanticLabel": "NEUTRAL",
+          "recoveries": [],
+          "enemyRemaining": []
+        }
+      ]
+    },
+    {
+      "words": [
+        "TEACHER",
+        "DOG",
+        "PEACEFUL",
+        "KIND",
+        "RUN",
+        "LANE"
+      ],
+      "tileIds": [
+        [
+          3,
+          6,
+          1,
+          0,
+          14,
+          7,
+          2
+        ],
+        [
+          9,
+          4,
+          8
+        ],
+        [
+          20,
+          18,
+          16,
+          21,
+          22,
+          15,
+          13,
+          10
+        ],
+        [
+          32,
+          30,
+          29,
+          12
+        ],
+        [
+          28,
+          19,
+          11
+        ],
+        [
+          17,
+          26,
+          27,
+          23
+        ]
+      ],
+      "livesRemaining": 0,
+      "turns": [
+        {
+          "word": "TEACHER",
+          "tileIds": [
+            3,
+            6,
+            1,
+            0,
+            14,
+            7,
+            2
+          ],
+          "reserveBefore": 19,
+          "reserveRemaining": 12,
+          "activeTilesBefore": 16,
+          "activeTileCount": 16,
+          "livesBefore": 5,
+          "livesRemaining": 5,
+          "hits": 3,
+          "semanticLabel": "NEUTRAL",
+          "recoveries": [],
+          "enemyRemaining": [
+            {
+              "letter": "N",
+              "hits": 1
+            },
+            {
+              "letter": "G",
+              "hits": 1
+            },
+            {
+              "letter": "R",
+              "hits": 1
+            }
+          ]
+        },
+        {
+          "word": "DOG",
+          "tileIds": [
+            9,
+            4,
+            8
+          ],
+          "reserveBefore": 12,
+          "reserveRemaining": 9,
+          "activeTilesBefore": 16,
+          "activeTileCount": 16,
+          "livesBefore": 5,
+          "livesRemaining": 4,
+          "hits": 1,
+          "semanticLabel": "NEUTRAL",
+          "recoveries": [],
+          "enemyRemaining": [
+            {
+              "letter": "N",
+              "hits": 1
+            },
+            {
+              "letter": "R",
+              "hits": 1
+            }
+          ]
+        },
+        {
+          "word": "PEACEFUL",
+          "tileIds": [
+            20,
+            18,
+            16,
+            21,
+            22,
+            15,
+            13,
+            10
+          ],
+          "reserveBefore": 9,
+          "reserveRemaining": 1,
+          "activeTilesBefore": 16,
+          "activeTileCount": 16,
+          "livesBefore": 4,
+          "livesRemaining": 3,
+          "hits": 0,
+          "semanticLabel": "COUNTER",
+          "recoveries": [],
+          "enemyRemaining": [
+            {
+              "letter": "N",
+              "hits": 1
+            },
+            {
+              "letter": "R",
+              "hits": 1
+            }
+          ]
+        },
+        {
+          "word": "KIND",
+          "tileIds": [
+            32,
+            30,
+            29,
+            12
+          ],
+          "reserveBefore": 1,
+          "reserveRemaining": 0,
+          "activeTilesBefore": 16,
+          "activeTileCount": 13,
+          "livesBefore": 3,
+          "livesRemaining": 2,
+          "hits": 1,
+          "semanticLabel": "COUNTER",
+          "recoveries": [],
+          "enemyRemaining": [
+            {
+              "letter": "R",
+              "hits": 1
+            }
+          ]
+        },
+        {
+          "word": "RUN",
+          "tileIds": [
+            28,
+            19,
+            11
+          ],
+          "reserveBefore": 0,
+          "reserveRemaining": 0,
+          "activeTilesBefore": 13,
+          "activeTileCount": 10,
+          "livesBefore": 2,
+          "livesRemaining": 1,
+          "hits": 1,
+          "semanticLabel": "NEUTRAL",
+          "recoveries": [
+            {
+              "tileId": 11,
+              "enemyLetterId": "enemy-1",
+              "letter": "N",
+              "hitsBefore": 0,
+              "hitsAfter": 1
+            }
+          ],
+          "enemyRemaining": [
+            {
+              "letter": "N",
+              "hits": 1
+            }
+          ]
+        },
+        {
+          "word": "LANE",
+          "tileIds": [
+            17,
+            26,
+            27,
+            23
+          ],
+          "reserveBefore": 0,
+          "reserveRemaining": 0,
+          "activeTilesBefore": 10,
+          "activeTileCount": 6,
+          "livesBefore": 1,
+          "livesRemaining": 0,
+          "hits": 1,
+          "semanticLabel": "NEUTRAL",
+          "recoveries": [],
+          "enemyRemaining": []
+        }
+      ]
+    }
+  ]
+}

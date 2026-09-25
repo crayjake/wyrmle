@@ -2,6 +2,10 @@ import type { PuzzleAnalysis, MechanicName } from './analyse.ts'
 import { defaultValidationConfig } from './config.ts'
 import type { ValidationConfig } from './config.ts'
 import type { CandidatePuzzle } from './types.ts'
+import { isLexicalAuditCurrent } from './lexicalAudit.ts'
+import { isOpeningSafetyCertificateCurrent } from './openingSafety.ts'
+import { createLetterStrikeGame } from '../game/letterStrike.ts'
+import { stateKey } from './stateKey.ts'
 
 export type ValidationIssue = { code: string; message: string }
 export type ValidationResult = {
@@ -19,6 +23,47 @@ export function validatePuzzle(candidate: CandidatePuzzle, analysis: PuzzleAnaly
   const warnings: ValidationIssue[] = []
   const reject = (code: string, message: string) => reasons.push({ code, message })
   const warn = (code: string, message: string) => warnings.push({ code, message })
+  if (candidate.encounter.finiteRefills) {
+    if (!analysis.refillPressure || analysis.refillPressure.encounterKey !== stateKey(createLetterStrikeGame(candidate.encounter))) {
+      reject('missing-refill-pressure', 'Finite-refill puzzles need current, replayed supply-pressure evidence.')
+    } else if (analysis.refillPressure.winsOnReducedBoard < 1) {
+      reject('decorative-refill-limit', 'No winning route plays from a board with empty slots. Merely running out on the final winning turn is not a supply decision.')
+    }
+    if (analysis.regenImportance !== undefined && analysis.regenImportance !== null
+      && analysis.regenImportance < config.minimumIntendedMechanicImportance) {
+      reject('decorative-finite-revive', 'The Revive tile in this finite-supply puzzle has negligible measured effect.')
+    }
+  }
+  if (config.requireOpeningSafety) {
+    const safety = analysis.openingSafety
+    if (!safety || !isOpeningSafetyCertificateCurrent(candidate.encounter, safety)) {
+      reject('opening-safety-unconfirmed', 'Every required opening needs a current exact winning continuation; missing, unsafe or unknown outcomes cannot pass the opening-safety gate.')
+    } else {
+      if (config.openingSafetyScope === 'all-valid-openings' && safety.scope !== 'all-valid-openings') {
+        reject('opening-safety-scope', 'This publication requires all valid openings; a damaging-only certificate excludes zero-damage choices.')
+      }
+      if (!safety.enumeration.vocabularyComplete) {
+        if (!config.allowRestrictedOpeningSafety) reject('restricted-opening-safety', 'A restricted spelling audit cannot certify every dictionary opening. Explicitly permit the declared restricted scope to review that narrower guarantee.')
+        else warn('restricted-opening-safety', 'Opening safety is certified only for the explicitly listed spelling subset, including all physical selections of those words.')
+      }
+      if (config.requireFamiliarWinningWitness && (!safety.familiarity.required || safety.familiarity.minimum < config.minimumWinningWordCommonness)) {
+        reject('opening-safety-familiarity', 'The opening certificate does not require every continuation word to meet this publication’s familiarity threshold.')
+      }
+    }
+  }
+  if (candidate.encounter.lexicalRules) {
+    if (!analysis.lexicalAudit) {
+      reject('missing-lexical-audit', 'Versioned lexical rules require a complete dictionary spelling audit before solving and validation.')
+    } else if (!isLexicalAuditCurrent(candidate.encounter, analysis.lexicalAudit)) {
+      reject('stale-lexical-audit', 'The lexical audit does not match the encounter, dictionary or lexical version, or its spelling enumeration is incomplete.')
+    } else {
+      const { opening, supply } = analysis.lexicalAudit
+      if (supply.unknownPartOfSpeechWords > 0) warn('unknown-parts-of-speech',
+        `${opening.unknownPartOfSpeechWords} opening spellings and ${supply.unknownPartOfSpeechWords} spellings in the full refill-supply superset have unknown POS; they receive no unsupported grammar category.`)
+      if (supply.semanticFallbackWords > 0) warn('unlisted-semantics',
+        `${opening.semanticFallbackWords} opening spellings and ${supply.semanticFallbackWords} spellings in the full refill-supply superset are unlisted semantically. Neutral gameplay fallback is not proof of unrelated meaning; the superset does not establish future reachability.`)
+    }
+  }
   if (analysis.solvable !== true) reject(analysis.solvable === false ? 'unsolvable' : 'solution-unconfirmed',
     analysis.solvable === false ? 'The puzzle has a proven losing initial state.' : 'No winning line was found within the search budget.')
   if (analysis.bestWinDepth !== null && analysis.bestWinDepth < config.minimumWinningTurns) {

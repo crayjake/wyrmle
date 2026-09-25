@@ -31,7 +31,7 @@ const currentWinTileIds = [
   [0, 1, 2], [4, 5, 15, 18, 16], [11, 20, 9, 10, 14, 17],
   [8, 21, 22, 27], [24, 30, 33, 26, 25, 19],
 ]
-const despairWinTileIds = [[1, 14, 9, 13, 15, 7], [18, 11, 20, 21], [5, 25, 0, 10, 22, 4]]
+const selectedDailyWinTileIds = [[0, 14, 6, 7, 2, 15, 13, 10], [8, 17, 1, 12], [21, 16, 27, 18]]
 
 function playTurns(game: GameState, turns: number[][]): GameState {
   for (const ids of turns) {
@@ -225,7 +225,7 @@ test('different dates keep independent runs and reset reconstructs only the sele
   const storage = new MemoryStorage()
   const other = getDailyPuzzle('2026-09-25')
   const first = playWords(['JOY'])
-  const second = playTurns(createGame(other.encounter), despairWinTileIds.slice(0, 1))
+  const second = playTurns(createGame(other.encounter), selectedDailyWinTileIds.slice(0, 1))
   saveDailyRun(puzzle, first, storage)
   saveDailyRun(other, second, storage)
   assert.deepEqual(loadDailySession(puzzle, storage).game, first)
@@ -329,7 +329,7 @@ test('any saved attempt or completed result for today takes opening priority', (
     const storage = new MemoryStorage()
     saveDailyRun(puzzle, playWords(['JOY']), storage)
     const game = completed
-      ? playTurns(createGame(today.encounter), despairWinTileIds)
+      ? playTurns(createGame(today.encounter), selectedDailyWinTileIds)
       : createGame(today.encounter)
     saveDailyRun(today, game, storage, '2026-09-25T12:00:00.000Z')
     if (completed) storage.removeItem(getRunStorageKey(today.puzzleId))
@@ -506,7 +506,7 @@ test('new-schema per-position outcomes are validated for both snapshots and perm
 test('grammar-enabled current days restore their rules and do not reinterpret future-date v1 DEV saves', () => {
   const storage = new MemoryStorage()
   const nextDay = getDailyPuzzle('2026-09-25')
-  const game = playWords(['SAD'], false, createGame(nextDay.encounter))
+  const game = playWords(['GLAD'], false, createGame(nextDay.encounter))
   assert.equal(game.playedWords[0].preview.grammaticalModifier, 1)
   assert.equal(game.playedWords[0].strikes, 2)
   saveDailyRun(nextDay, game, storage)
@@ -536,7 +536,7 @@ test('committed v2 runs replay and continue on overlap rules while callers hold 
   assert.equal(JSON.parse(storage.getItem(key)!).gameVersion, 'letter-strike-2')
   assert.equal(JSON.parse(storage.getItem(key)!).puzzleVersion, 2)
   assert.deepEqual(loadDailySession(latest, storage).game, advanced)
-  assert.throws(() => saveDailyRun(latest, playTurns(createGame(latest.encounter), despairWinTileIds.slice(0, 1)), storage), /different encounter/)
+  assert.throws(() => saveDailyRun(latest, playTurns(createGame(latest.encounter), selectedDailyWinTileIds.slice(0, 1)), storage), /different encounter/)
 })
 
 test('v2 wins and losses remain authoritative with unchanged sharing and first completion bytes', () => {
@@ -587,11 +587,11 @@ test('validated zero-turn v2 snapshots upgrade in memory and commit current rule
   assert.equal(restored.resumed, true)
   assert.deepEqual(restored.game, createGame(latest.encounter))
   assert.equal(storage.getItem(key), raw)
-  const firstMove = playTurns(restored.game!, despairWinTileIds.slice(0, 1))
+  const firstMove = playTurns(restored.game!, selectedDailyWinTileIds.slice(0, 1))
   assert.equal(firstMove.playedWords[0].strikes, 3)
   saveDailyRun(latest, firstMove, storage)
-  assert.equal(JSON.parse(storage.getItem(key)!).gameVersion, 'letter-strike-4')
-  assert.equal(JSON.parse(storage.getItem(key)!).puzzleVersion, 6)
+  assert.equal(JSON.parse(storage.getItem(key)!).gameVersion, latest.gameVersion)
+  assert.equal(JSON.parse(storage.getItem(key)!).puzzleVersion, latest.puzzleVersion)
   assert.deepEqual(loadDailySession(latest, storage).game, firstMove)
 })
 
@@ -657,7 +657,7 @@ test('schema-2 v1 snapshots also normalize their absent LONG field without chang
   assert.equal(storage.getItem(key), raw)
 })
 
-test('untouched v3 snapshots adopt the scheduled DESPAIR board and LONG rule without a read-time write', () => {
+test('untouched v3 snapshots adopt the scheduled Revive board and LONG rule without a read-time write', () => {
   const storage = new MemoryStorage()
   const latest = getDailyPuzzle('2026-09-25')
   const archived = getDailyPuzzleForVersion(latest.puzzleId, 'letter-strike-3', 3)
@@ -667,10 +667,11 @@ test('untouched v3 snapshots adopt the scheduled DESPAIR board and LONG rule wit
   const restored = loadDailySession(latest, storage)
   assert.equal(restored.error, null)
   assert.deepEqual(restored.game, createGame(latest.encounter))
-  assert.equal(restored.game!.tiles.map((tile) => tile.letter).join(''), 'AWFYDSDRONROLTIE')
-  assert.equal(restored.game!.tiles[15].gem, 'strike')
-  assert.equal(restored.game!.tiles[11].gem, 'ward')
-  assert.equal(restored.game!.encounter.longWordRule?.minimumLength, 6)
+  assert.deepEqual(restored.game!.tiles, latest.encounter.startingTiles)
+  assert.equal(restored.game!.tiles[6].gem, 'strike')
+  assert.equal(restored.game!.tiles[7].gem, 'ward')
+  assert.equal(restored.game!.tiles[11].gem, 'regen')
+  assert.equal(restored.game!.encounter.longWordRule?.minimumLength, 7)
   assert.equal(storage.getItem(key), raw)
 })
 
@@ -702,7 +703,7 @@ test('pre-LONG adapters reject injected modifiers and current saves require thei
   assert.match(loadDailySession(latest, storage).error!, /does not match/)
   assert.equal(storage.getItem(key), original)
   storage.removeItem(key)
-  saveDailyRun(latest, playTurns(createGame(latest.encounter), despairWinTileIds.slice(0, 1)), storage)
+  saveDailyRun(latest, playTurns(createGame(latest.encounter), selectedDailyWinTileIds.slice(0, 1)), storage)
   for (const corruption of ['missing', 'altered', 'schema']) {
     const raw = storage.getItem(key)!
     const data = JSON.parse(raw)
@@ -746,7 +747,7 @@ test('Normal, Hard and Hardcore share the exact puzzle, engine transitions, and 
     assert.equal(storage.length, 0)
     session = saveDailyRun(definition, session.game!, storage, finishedAt, mode)
     assert.equal(session.started, true)
-    for (const ids of despairWinTileIds) {
+    for (const ids of selectedDailyWinTileIds) {
       session = saveDailyRun(definition, submitWord(session.game!, ids), storage, finishedAt, mode)
     }
     assert.equal(session.result!.mode, mode)

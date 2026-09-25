@@ -34,7 +34,7 @@ export default function BattleActions({
         disabled={!canAttack}
         onClick={onAttack}
       >
-        {primaryLabel}{primaryLabel === 'ATTACK' && damage !== undefined ? ` ${damage}` : ''}
+        {primaryLabel === 'ATTACK' ? 'PLAY WORD' : primaryLabel}{primaryLabel === 'ATTACK' && damage !== undefined ? ` ${damage}` : ''}
       </button>
     </div>
   )

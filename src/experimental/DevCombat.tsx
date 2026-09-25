@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
 import Header from '../components/Header'
 import { MyInfo, EnemyInfo } from '../components/HealthInfo'
+import RefillSupply from '../components/RefillSupply'
 import Enemy from '../components/Enemy'
 import AttackInfo from '../components/AttackInfo'
 import TileGrid from '../components/TileGrid'
@@ -102,7 +103,7 @@ function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onMatchHin
     : getLetterStrikeTileSummary(run.game)
   const message = resolving ? undefined
     : game.status === 'won' ? 'VICTORY'
-    : game.status === 'lost' ? 'OUT OF RESOLVE'
+    : game.status === 'lost' ? game.playerResolve > 0 ? 'NO PLAYABLE WORDS' : 'OUT OF LIVES'
     : phase === 'waiting' ? 'CLICK TO BEGIN'
     : phase !== 'ready' ? 'DECODING'
     : game.error ?? (game.selectedTileIds.length > 0 ? preview.error ?? undefined : undefined)
@@ -129,7 +130,7 @@ function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onMatchHin
       if ((event.target as HTMLElement).closest('button, a, input, dialog')) return
       if (phase === 'waiting') setPhase('enemy')
     }}>
-    <Header wyrmDockRef={wyrmDockRef} titleRef={wyrmTitleRef} showWyrm={phase === 'ready'}
+    <Header wyrmDockRef={wyrmDockRef} titleRef={wyrmTitleRef} showWyrm={!letterGame && phase === 'ready'}
       onHelp={() => setPanel('help')} onHistory={() => setPanel('log')} onSettings={() => setPanel('modes')} />
     <div className="daily-meta">
       <button type="button" onClick={() => setPanel('modes')} aria-label="Switch combat mode">
@@ -141,7 +142,8 @@ function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onMatchHin
       {encounter && <button type="button" onClick={onExit}>Return to generator</button>}
     </div>
     <div className="battle-info">
-      <MyInfo name={letterGame ? 'RESOLVE' : 'YOU'} health={game.playerResolve} maxHealth={game.encounter.startingResolve} />
+      <MyInfo name={letterGame ? 'LIVES' : 'YOU'} health={game.playerResolve} maxHealth={game.encounter.startingResolve} wyrm={Boolean(letterGame)} />
+      {letterGame && <RefillSupply game={letterGame} />}
       {run.mode === 'damage'
         ? <EnemyInfo name={enemy.word} health={run.game.enemyHp} maxHealth={run.game.encounter.enemy.maxHealth} />
         : null}

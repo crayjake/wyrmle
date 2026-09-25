@@ -57,10 +57,11 @@ export function getCurrentTileSummary(state: GameState): TileSummary[] {
     return [{
       id: gem,
       ...gemLabels[gem],
+      ...(gem === 'ward' ? { label: 'HEART', symbol: '♥' } : {}),
       count,
       bonusDamage: rule.bonusDamage,
       preventsResolveLoss: rule.preventResolveLoss,
-      detail,
+      detail: detail.replace('SAVE TURN', 'SAVES A LIFE THIS TURN'),
     }]
   })
 }

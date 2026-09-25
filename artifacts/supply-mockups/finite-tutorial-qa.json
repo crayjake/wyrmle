@@ -1,0 +1,64 @@
+[
+  {
+    "width": 375,
+    "height": 629,
+    "measures": [
+      {
+        "step": "counter",
+        "board": {
+          "x": 36.890625,
+          "y": 269.03125,
+          "width": 301.203125,
+          "height": 301.25,
+          "bottom": 570.28125
+        },
+        "overflow": 0,
+        "bodyWidth": 375
+      },
+      {
+        "step": "neutral",
+        "board": {
+          "x": 36.890625,
+          "y": 269.03125,
+          "width": 301.203125,
+          "height": 301.25,
+          "bottom": 570.28125
+        },
+        "overflow": 0,
+        "bodyWidth": 375
+      }
+    ],
+    "complete": true
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "measures": [
+      {
+        "step": "counter",
+        "board": {
+          "x": 24,
+          "y": 243.984375,
+          "width": 272,
+          "height": 272.015625,
+          "bottom": 516
+        },
+        "overflow": 0,
+        "bodyWidth": 320
+      },
+      {
+        "step": "neutral",
+        "board": {
+          "x": 24,
+          "y": 243.984375,
+          "width": 272,
+          "height": 272.015625,
+          "bottom": 516
+        },
+        "overflow": 0,
+        "bodyWidth": 320
+      }
+    ],
+    "complete": true
+  }
+]

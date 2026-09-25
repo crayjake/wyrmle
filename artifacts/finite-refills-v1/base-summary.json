@@ -1,0 +1,4352 @@
+[
+  {
+    "id": "generated-anger-lex2-revive-lexical-v2%3AANGER%3A2%3A0-early-r-long7-finite12",
+    "enemy": "ANGER",
+    "refills": 12,
+    "accepted": false,
+    "reasons": [
+      "premature-hopelessness",
+      "single-point-letter-dependencies",
+      "missing-clutch"
+    ],
+    "quality": 36.56,
+    "difficulty": "MEDIUM",
+    "best": 3,
+    "strategies": 24,
+    "regen": 0.2833333333333333,
+    "semantic": 0.19999999999999998,
+    "pressure": {
+      "initialRefills": 12,
+      "replayedWinningLines": 24,
+      "winsOnReducedBoard": 23,
+      "winsAfterRefillsExhausted": 24,
+      "minimumTilesBeforeWinningMove": 7,
+      "reserveByEnemyLetter": [
+        {
+          "letter": "A",
+          "boardCopies": 1,
+          "reserveCopies": 2,
+          "requiredHits": 1
+        },
+        {
+          "letter": "N",
+          "boardCopies": 1,
+          "reserveCopies": 1,
+          "requiredHits": 1
+        },
+        {
+          "letter": "G",
+          "boardCopies": 1,
+          "reserveCopies": 0,
+          "requiredHits": 1
+        },
+        {
+          "letter": "E",
+          "boardCopies": 2,
+          "reserveCopies": 3,
+          "requiredHits": 2
+        },
+        {
+          "letter": "R",
+          "boardCopies": 1,
+          "reserveCopies": 0,
+          "requiredHits": 1
+        }
+      ],
+      "routes": [
+        {
+          "words": [
+            "CHEERFUL",
+            "END",
+            "DOG",
+            "CAT",
+            "NAIL"
+          ],
+          "firstEmptySlotAfterTurn": 3,
+          "movesOnReducedBoard": 2,
+          "movesWithNoRefills": 2,
+          "tilesBeforeWinningMove": 11,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "HOUR",
+            "DEAL",
+            "GENTLE",
+            "END"
+          ],
+          "firstEmptySlotAfterTurn": 3,
+          "movesOnReducedBoard": 1,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 14,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "REACH",
+            "DEAL",
+            "GENTLE",
+            "END"
+          ],
+          "firstEmptySlotAfterTurn": 3,
+          "movesOnReducedBoard": 1,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 13,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "CHEERY",
+            "GLAD",
+            "PATIENCE",
+            "END"
+          ],
+          "firstEmptySlotAfterTurn": 3,
+          "movesOnReducedBoard": 1,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 10,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "DREAD",
+            "GENTLE",
+            "PEACEFUL",
+            "CHAIN"
+          ],
+          "firstEmptySlotAfterTurn": 3,
+          "movesOnReducedBoard": 1,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 9,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "GENTLE",
+            "DREAD",
+            "PEACEFUL",
+            "CHAIN"
+          ],
+          "firstEmptySlotAfterTurn": 3,
+          "movesOnReducedBoard": 1,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 9,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "LATE",
+            "COURAGE",
+            "PEACEFUL",
+            "END"
+          ],
+          "firstEmptySlotAfterTurn": 3,
+          "movesOnReducedBoard": 1,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 9,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "RED",
+            "GENTLE",
+            "PEACEFUL",
+            "DAY",
+            "CHAIN"
+          ],
+          "firstEmptySlotAfterTurn": 3,
+          "movesOnReducedBoard": 2,
+          "movesWithNoRefills": 2,
+          "tilesBeforeWinningMove": 8,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "CHEERFUL",
+            "GLAD",
+            "PATIENCE"
+          ],
+          "firstEmptySlotAfterTurn": 3,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "RED",
+            "GENTLE",
+            "PEACEFUL",
+            "CHAIN"
+          ],
+          "firstEmptySlotAfterTurn": 3,
+          "movesOnReducedBoard": 1,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 11,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "ELATED",
+            "COURAGE",
+            "CANE"
+          ],
+          "firstEmptySlotAfterTurn": 2,
+          "movesOnReducedBoard": 1,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 15,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "CLEAR",
+            "GENTLE",
+            "PACIFY",
+            "HOPE",
+            "END"
+          ],
+          "firstEmptySlotAfterTurn": 3,
+          "movesOnReducedBoard": 2,
+          "movesWithNoRefills": 2,
+          "tilesBeforeWinningMove": 7,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "CRUEL",
+            "GENTLE",
+            "PACIFY",
+            "HOPE",
+            "END"
+          ],
+          "firstEmptySlotAfterTurn": 3,
+          "movesOnReducedBoard": 2,
+          "movesWithNoRefills": 2,
+          "tilesBeforeWinningMove": 7,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "CRUELTY",
+            "PEACEFUL",
+            "DOG",
+            "HEN",
+            "END"
+          ],
+          "firstEmptySlotAfterTurn": 2,
+          "movesOnReducedBoard": 3,
+          "movesWithNoRefills": 3,
+          "tilesBeforeWinningMove": 7,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "CLEAR",
+            "GENTLE",
+            "PACIFY",
+            "END"
+          ],
+          "firstEmptySlotAfterTurn": 3,
+          "movesOnReducedBoard": 1,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 11,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "CRUEL",
+            "GENTLE",
+            "PACIFY",
+            "END"
+          ],
+          "firstEmptySlotAfterTurn": 3,
+          "movesOnReducedBoard": 1,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 11,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "CRUELTY",
+            "PEACEFUL",
+            "DOG",
+            "END"
+          ],
+          "firstEmptySlotAfterTurn": 2,
+          "movesOnReducedBoard": 2,
+          "movesWithNoRefills": 2,
+          "tilesBeforeWinningMove": 10,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "GLEE",
+            "DREAD",
+            "PEACEFUL",
+            "CHAIN"
+          ],
+          "firstEmptySlotAfterTurn": 3,
+          "movesOnReducedBoard": 1,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 11,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "CHEERFUL",
+            "GLAD",
+            "PEACE",
+            "DAY",
+            "NOTE"
+          ],
+          "firstEmptySlotAfterTurn": 3,
+          "movesOnReducedBoard": 2,
+          "movesWithNoRefills": 3,
+          "tilesBeforeWinningMove": 8,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "CHEERFUL",
+            "GLAD",
+            "PEACE",
+            "END",
+            "PAIN"
+          ],
+          "firstEmptySlotAfterTurn": 3,
+          "movesOnReducedBoard": 2,
+          "movesWithNoRefills": 3,
+          "tilesBeforeWinningMove": 8,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "CHEERFUL",
+            "GLAD",
+            "PEACE",
+            "END"
+          ],
+          "firstEmptySlotAfterTurn": 3,
+          "movesOnReducedBoard": 1,
+          "movesWithNoRefills": 2,
+          "tilesBeforeWinningMove": 11,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "EARLY",
+            "GENTLE",
+            "PEACE",
+            "CHAIN"
+          ],
+          "firstEmptySlotAfterTurn": 3,
+          "movesOnReducedBoard": 1,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 12,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "HEARTY",
+            "GLEEFUL",
+            "CANE"
+          ],
+          "firstEmptySlotAfterTurn": 2,
+          "movesOnReducedBoard": 1,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 15,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "HEARTY",
+            "GLEEFUL",
+            "PEACE",
+            "PAIN"
+          ],
+          "firstEmptySlotAfterTurn": 2,
+          "movesOnReducedBoard": 2,
+          "movesWithNoRefills": 2,
+          "tilesBeforeWinningMove": 10,
+          "refillsRemaining": 0
+        }
+      ],
+      "scope": "exact-winning-route-replays"
+    },
+    "fairness": {
+      "reasonableStates": 54,
+      "provenDeadStates": 37,
+      "provenWinningStates": 14,
+      "unknownStates": 3,
+      "assessedFraction": 0.9444444444444444,
+      "prematureDeadStateRateLowerBound": 0.6851851851851852,
+      "prematureDeadStateRateUpperBound": 0.7407407407407407,
+      "finalResolveStates": 0,
+      "rescuedFinalStates": 0,
+      "finalStatesWithoutRescue": 0,
+      "finalStatesUnknown": 0,
+      "scope": "bounded-reasonable-state-sample",
+      "samplingSchedule": "alternating-breadth-and-depth",
+      "sampledDepthCounts": {
+        "0": 1,
+        "1": 3,
+        "2": 9,
+        "3": 18,
+        "4": 41
+      }
+    },
+    "clutches": 0,
+    "seconds": 1.7547486390000002,
+    "routes": [
+      {
+        "words": [
+          "CHEERFUL",
+          "END",
+          "DOG",
+          "CAT",
+          "NAIL"
+        ],
+        "lives": 1,
+        "ids": [
+          [
+            0,
+            14,
+            6,
+            7,
+            2,
+            15,
+            13,
+            10
+          ],
+          [
+            18,
+            11,
+            12
+          ],
+          [
+            9,
+            4,
+            8
+          ],
+          [
+            21,
+            1,
+            3
+          ],
+          [
+            27,
+            16,
+            25,
+            17
+          ]
+        ]
+      },
+      {
+        "words": [
+          "HOUR",
+          "DEAL",
+          "GENTLE",
+          "END"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            14,
+            4,
+            13,
+            2
+          ],
+          [
+            12,
+            6,
+            1,
+            10
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            17,
+            7
+          ],
+          [
+            22,
+            27,
+            9
+          ]
+        ]
+      },
+      {
+        "words": [
+          "REACH",
+          "DEAL",
+          "GENTLE",
+          "END"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            2,
+            7,
+            1,
+            0,
+            14
+          ],
+          [
+            12,
+            6,
+            16,
+            10
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            17,
+            22
+          ],
+          [
+            23,
+            27,
+            9
+          ]
+        ]
+      },
+      {
+        "words": [
+          "CHEERY",
+          "GLAD",
+          "PATIENCE",
+          "END"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            0,
+            14,
+            6,
+            7,
+            2,
+            5
+          ],
+          [
+            8,
+            10,
+            1,
+            9
+          ],
+          [
+            24,
+            16,
+            3,
+            25,
+            18,
+            11,
+            21,
+            23
+          ],
+          [
+            22,
+            27,
+            12
+          ]
+        ]
+      },
+      {
+        "words": [
+          "DREAD",
+          "GENTLE",
+          "PEACEFUL",
+          "CHAIN"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            9,
+            2,
+            6,
+            1,
+            12
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            10,
+            7
+          ],
+          [
+            20,
+            22,
+            26,
+            21,
+            23,
+            15,
+            13,
+            17
+          ],
+          [
+            0,
+            14,
+            16,
+            25,
+            27
+          ]
+        ]
+      },
+      {
+        "words": [
+          "GENTLE",
+          "DREAD",
+          "PEACEFUL",
+          "CHAIN"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            8,
+            6,
+            11,
+            3,
+            10,
+            7
+          ],
+          [
+            9,
+            2,
+            18,
+            16,
+            12
+          ],
+          [
+            20,
+            22,
+            26,
+            21,
+            23,
+            15,
+            13,
+            17
+          ],
+          [
+            0,
+            14,
+            1,
+            25,
+            27
+          ]
+        ]
+      },
+      {
+        "words": [
+          "LATE",
+          "COURAGE",
+          "PEACEFUL",
+          "END"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            10,
+            1,
+            3,
+            7
+          ],
+          [
+            0,
+            4,
+            13,
+            2,
+            16,
+            8,
+            6
+          ],
+          [
+            24,
+            18,
+            26,
+            21,
+            23,
+            15,
+            19,
+            17
+          ],
+          [
+            22,
+            27,
+            12
+          ]
+        ]
+      },
+      {
+        "words": [
+          "RED",
+          "GENTLE",
+          "PEACEFUL",
+          "DAY",
+          "CHAIN"
+        ],
+        "lives": 1,
+        "ids": [
+          [
+            2,
+            7,
+            9
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            10,
+            6
+          ],
+          [
+            24,
+            22,
+            16,
+            21,
+            23,
+            15,
+            13,
+            17
+          ],
+          [
+            12,
+            26,
+            5
+          ],
+          [
+            0,
+            14,
+            1,
+            25,
+            27
+          ]
+        ]
+      },
+      {
+        "words": [
+          "CHEERFUL",
+          "GLAD",
+          "PATIENCE"
+        ],
+        "lives": 3,
+        "ids": [
+          [
+            0,
+            14,
+            6,
+            7,
+            2,
+            15,
+            13,
+            10
+          ],
+          [
+            8,
+            17,
+            1,
+            9
+          ],
+          [
+            20,
+            16,
+            3,
+            25,
+            18,
+            27,
+            21,
+            22
+          ]
+        ]
+      },
+      {
+        "words": [
+          "RED",
+          "GENTLE",
+          "PEACEFUL",
+          "CHAIN"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            2,
+            7,
+            9
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            10,
+            6
+          ],
+          [
+            24,
+            22,
+            16,
+            21,
+            23,
+            15,
+            13,
+            17
+          ],
+          [
+            0,
+            14,
+            1,
+            25,
+            27
+          ]
+        ]
+      },
+      {
+        "words": [
+          "ELATED",
+          "COURAGE",
+          "CANE"
+        ],
+        "lives": 3,
+        "ids": [
+          [
+            6,
+            10,
+            1,
+            3,
+            7,
+            9
+          ],
+          [
+            21,
+            4,
+            13,
+            2,
+            16,
+            8,
+            18
+          ],
+          [
+            0,
+            26,
+            27,
+            22
+          ]
+        ]
+      },
+      {
+        "words": [
+          "CLEAR",
+          "GENTLE",
+          "PACIFY",
+          "HOPE",
+          "END"
+        ],
+        "lives": 1,
+        "ids": [
+          [
+            0,
+            10,
+            6,
+            1,
+            2
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            17,
+            7
+          ],
+          [
+            20,
+            26,
+            21,
+            25,
+            15,
+            5
+          ],
+          [
+            14,
+            4,
+            24,
+            23
+          ],
+          [
+            22,
+            27,
+            12
+          ]
+        ]
+      },
+      {
+        "words": [
+          "CRUEL",
+          "GENTLE",
+          "PACIFY",
+          "HOPE",
+          "END"
+        ],
+        "lives": 1,
+        "ids": [
+          [
+            0,
+            2,
+            13,
+            7,
+            10
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            17,
+            6
+          ],
+          [
+            20,
+            26,
+            21,
+            25,
+            15,
+            5
+          ],
+          [
+            14,
+            4,
+            24,
+            23
+          ],
+          [
+            22,
+            27,
+            12
+          ]
+        ]
+      },
+      {
+        "words": [
+          "CRUELTY",
+          "PEACEFUL",
+          "DOG",
+          "HEN",
+          "END"
+        ],
+        "lives": 1,
+        "ids": [
+          [
+            0,
+            2,
+            13,
+            7,
+            10,
+            3,
+            5
+          ],
+          [
+            20,
+            22,
+            1,
+            21,
+            6,
+            15,
+            19,
+            17
+          ],
+          [
+            9,
+            4,
+            8
+          ],
+          [
+            14,
+            18,
+            11
+          ],
+          [
+            23,
+            27,
+            12
+          ]
+        ]
+      },
+      {
+        "words": [
+          "CLEAR",
+          "GENTLE",
+          "PACIFY",
+          "END"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            0,
+            10,
+            6,
+            1,
+            2
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            17,
+            7
+          ],
+          [
+            20,
+            26,
+            21,
+            25,
+            15,
+            5
+          ],
+          [
+            22,
+            27,
+            12
+          ]
+        ]
+      },
+      {
+        "words": [
+          "CRUEL",
+          "GENTLE",
+          "PACIFY",
+          "END"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            0,
+            2,
+            13,
+            7,
+            10
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            17,
+            6
+          ],
+          [
+            20,
+            26,
+            21,
+            25,
+            15,
+            5
+          ],
+          [
+            22,
+            27,
+            12
+          ]
+        ]
+      },
+      {
+        "words": [
+          "CRUELTY",
+          "PEACEFUL",
+          "DOG",
+          "END"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            0,
+            2,
+            13,
+            7,
+            10,
+            3,
+            5
+          ],
+          [
+            20,
+            22,
+            1,
+            21,
+            6,
+            15,
+            19,
+            17
+          ],
+          [
+            9,
+            4,
+            8
+          ],
+          [
+            18,
+            27,
+            12
+          ]
+        ]
+      },
+      {
+        "words": [
+          "GLEE",
+          "DREAD",
+          "PEACEFUL",
+          "CHAIN"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            8,
+            10,
+            6,
+            7
+          ],
+          [
+            9,
+            2,
+            18,
+            16,
+            12
+          ],
+          [
+            24,
+            22,
+            1,
+            21,
+            23,
+            15,
+            13,
+            17
+          ],
+          [
+            0,
+            14,
+            26,
+            25,
+            27
+          ]
+        ]
+      },
+      {
+        "words": [
+          "CHEERFUL",
+          "GLAD",
+          "PEACE",
+          "DAY",
+          "NOTE"
+        ],
+        "lives": 1,
+        "ids": [
+          [
+            0,
+            14,
+            6,
+            7,
+            2,
+            15,
+            13,
+            10
+          ],
+          [
+            8,
+            17,
+            1,
+            9
+          ],
+          [
+            20,
+            22,
+            26,
+            21,
+            23
+          ],
+          [
+            12,
+            16,
+            5
+          ],
+          [
+            27,
+            4,
+            3,
+            18
+          ]
+        ]
+      },
+      {
+        "words": [
+          "CHEERFUL",
+          "GLAD",
+          "PEACE",
+          "END",
+          "PAIN"
+        ],
+        "lives": 1,
+        "ids": [
+          [
+            0,
+            14,
+            6,
+            7,
+            2,
+            15,
+            13,
+            10
+          ],
+          [
+            8,
+            17,
+            1,
+            9
+          ],
+          [
+            20,
+            22,
+            26,
+            21,
+            23
+          ],
+          [
+            18,
+            11,
+            12
+          ],
+          [
+            24,
+            16,
+            25,
+            27
+          ]
+        ]
+      },
+      {
+        "words": [
+          "CHEERFUL",
+          "GLAD",
+          "PEACE",
+          "END"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            0,
+            14,
+            6,
+            7,
+            2,
+            15,
+            13,
+            10
+          ],
+          [
+            8,
+            17,
+            1,
+            9
+          ],
+          [
+            20,
+            22,
+            26,
+            21,
+            23
+          ],
+          [
+            18,
+            27,
+            12
+          ]
+        ]
+      },
+      {
+        "words": [
+          "EARLY",
+          "GENTLE",
+          "PEACE",
+          "CHAIN"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            6,
+            1,
+            2,
+            10,
+            5
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            17,
+            7
+          ],
+          [
+            20,
+            22,
+            26,
+            21,
+            23
+          ],
+          [
+            0,
+            14,
+            16,
+            25,
+            27
+          ]
+        ]
+      },
+      {
+        "words": [
+          "HEARTY",
+          "GLEEFUL",
+          "CANE"
+        ],
+        "lives": 3,
+        "ids": [
+          [
+            14,
+            6,
+            1,
+            2,
+            3,
+            5
+          ],
+          [
+            8,
+            10,
+            18,
+            7,
+            15,
+            13,
+            17
+          ],
+          [
+            0,
+            16,
+            27,
+            22
+          ]
+        ]
+      },
+      {
+        "words": [
+          "HEARTY",
+          "GLEEFUL",
+          "PEACE",
+          "PAIN"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            14,
+            6,
+            1,
+            2,
+            3,
+            5
+          ],
+          [
+            8,
+            10,
+            18,
+            7,
+            15,
+            13,
+            17
+          ],
+          [
+            24,
+            22,
+            26,
+            21,
+            23
+          ],
+          [
+            20,
+            16,
+            25,
+            27
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "generated-anger-lex2-revive-lexical-v2%3AANGER%3A2%3A0-early-r-long7-finite18",
+    "enemy": "ANGER",
+    "refills": 18,
+    "accepted": true,
+    "reasons": [],
+    "quality": 63.78,
+    "difficulty": "MEDIUM",
+    "best": 3,
+    "strategies": 24,
+    "regen": 0.2639455782312925,
+    "semantic": 0.19999999999999998,
+    "pressure": {
+      "initialRefills": 18,
+      "replayedWinningLines": 24,
+      "winsOnReducedBoard": 11,
+      "winsAfterRefillsExhausted": 13,
+      "minimumTilesBeforeWinningMove": 8,
+      "reserveByEnemyLetter": [
+        {
+          "letter": "A",
+          "boardCopies": 1,
+          "reserveCopies": 2,
+          "requiredHits": 1
+        },
+        {
+          "letter": "N",
+          "boardCopies": 1,
+          "reserveCopies": 2,
+          "requiredHits": 1
+        },
+        {
+          "letter": "G",
+          "boardCopies": 1,
+          "reserveCopies": 0,
+          "requiredHits": 1
+        },
+        {
+          "letter": "E",
+          "boardCopies": 2,
+          "reserveCopies": 4,
+          "requiredHits": 2
+        },
+        {
+          "letter": "R",
+          "boardCopies": 1,
+          "reserveCopies": 1,
+          "requiredHits": 1
+        }
+      ],
+      "routes": [
+        {
+          "words": [
+            "CLOUD",
+            "FEAR",
+            "GENTLE",
+            "NEAR"
+          ],
+          "firstEmptySlotAfterTurn": 4,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 0,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "COAL",
+            "FEAR",
+            "GENTLE",
+            "NEAR"
+          ],
+          "firstEmptySlotAfterTurn": null,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 0,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "HOLD",
+            "FEAR",
+            "GENTLE",
+            "NEAR"
+          ],
+          "firstEmptySlotAfterTurn": null,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 0,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "CLOUDY",
+            "FEAR",
+            "GENTLE",
+            "NEAR"
+          ],
+          "firstEmptySlotAfterTurn": 4,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 0,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "COLD",
+            "FEAR",
+            "GENTLE",
+            "NEAR"
+          ],
+          "firstEmptySlotAfterTurn": null,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 0,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "OLD",
+            "FEAR",
+            "GENTLE",
+            "NEAR"
+          ],
+          "firstEmptySlotAfterTurn": null,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 0,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 1
+        },
+        {
+          "words": [
+            "CHEERY",
+            "GLAD",
+            "PATIENCE",
+            "FEAR",
+            "END"
+          ],
+          "firstEmptySlotAfterTurn": 4,
+          "movesOnReducedBoard": 1,
+          "movesWithNoRefills": 2,
+          "tilesBeforeWinningMove": 12,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "CHEERY",
+            "GLAD",
+            "PATIENCE",
+            "FEAR",
+            "SOUL",
+            "KIND"
+          ],
+          "firstEmptySlotAfterTurn": 4,
+          "movesOnReducedBoard": 2,
+          "movesWithNoRefills": 3,
+          "tilesBeforeWinningMove": 8,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "GARDEN",
+            "PEACEFUL",
+            "NEAR",
+            "SKY",
+            "HOPE",
+            "END"
+          ],
+          "firstEmptySlotAfterTurn": 4,
+          "movesOnReducedBoard": 2,
+          "movesWithNoRefills": 3,
+          "tilesBeforeWinningMove": 9,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "CHEERFUL",
+            "END",
+            "DOG",
+            "CAT",
+            "NAIL"
+          ],
+          "firstEmptySlotAfterTurn": 5,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 0,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "GARDEN",
+            "PEACEFUL",
+            "NEAR",
+            "SKY",
+            "END"
+          ],
+          "firstEmptySlotAfterTurn": 4,
+          "movesOnReducedBoard": 1,
+          "movesWithNoRefills": 2,
+          "tilesBeforeWinningMove": 13,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "GARDEN",
+            "PEACEFUL",
+            "NEAR",
+            "END"
+          ],
+          "firstEmptySlotAfterTurn": 4,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "HOUR",
+            "DEAL",
+            "GENTLE",
+            "END"
+          ],
+          "firstEmptySlotAfterTurn": null,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 0,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 1
+        },
+        {
+          "words": [
+            "REACH",
+            "DEAL",
+            "GENTLE",
+            "END"
+          ],
+          "firstEmptySlotAfterTurn": null,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 0,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "LAUGHTER",
+            "PEACEFUL",
+            "NEAR"
+          ],
+          "firstEmptySlotAfterTurn": 3,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 0,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "GENTLE",
+            "DREAD",
+            "PEACEFUL",
+            "SKY",
+            "CAR",
+            "HEN"
+          ],
+          "firstEmptySlotAfterTurn": 3,
+          "movesOnReducedBoard": 3,
+          "movesWithNoRefills": 3,
+          "tilesBeforeWinningMove": 9,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "TEACHER",
+            "DOG",
+            "PEACEFUL",
+            "KIND",
+            "RUN",
+            "LANE"
+          ],
+          "firstEmptySlotAfterTurn": 4,
+          "movesOnReducedBoard": 2,
+          "movesWithNoRefills": 3,
+          "tilesBeforeWinningMove": 9,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "DREAD",
+            "GENTLE",
+            "PEACEFUL",
+            "SKY",
+            "CANE"
+          ],
+          "firstEmptySlotAfterTurn": 3,
+          "movesOnReducedBoard": 2,
+          "movesWithNoRefills": 2,
+          "tilesBeforeWinningMove": 12,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "GENTLE",
+            "DREAD",
+            "PEACEFUL",
+            "SKY",
+            "CANE"
+          ],
+          "firstEmptySlotAfterTurn": 3,
+          "movesOnReducedBoard": 2,
+          "movesWithNoRefills": 2,
+          "tilesBeforeWinningMove": 12,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "CRUEL",
+            "GENTLE",
+            "PACIFY",
+            "SHOE",
+            "PEAR",
+            "END"
+          ],
+          "firstEmptySlotAfterTurn": 4,
+          "movesOnReducedBoard": 2,
+          "movesWithNoRefills": 2,
+          "tilesBeforeWinningMove": 9,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "ELATED",
+            "COURAGE",
+            "CANE"
+          ],
+          "firstEmptySlotAfterTurn": null,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 0,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 1
+        },
+        {
+          "words": [
+            "CRUEL",
+            "GENTLE",
+            "PACIFY",
+            "SHOE",
+            "KIND"
+          ],
+          "firstEmptySlotAfterTurn": 4,
+          "movesOnReducedBoard": 1,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 13,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "CRUELTY",
+            "PEACEFUL",
+            "DOG",
+            "KIND"
+          ],
+          "firstEmptySlotAfterTurn": 4,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "HEARTY",
+            "GLEEFUL",
+            "PEACE",
+            "END",
+            "CAR",
+            "SOUND"
+          ],
+          "firstEmptySlotAfterTurn": 4,
+          "movesOnReducedBoard": 2,
+          "movesWithNoRefills": 3,
+          "tilesBeforeWinningMove": 10,
+          "refillsRemaining": 0
+        }
+      ],
+      "scope": "exact-winning-route-replays"
+    },
+    "fairness": {
+      "reasonableStates": 38,
+      "provenDeadStates": 0,
+      "provenWinningStates": 35,
+      "unknownStates": 3,
+      "assessedFraction": 0.9210526315789473,
+      "prematureDeadStateRateLowerBound": 0,
+      "prematureDeadStateRateUpperBound": 0.07894736842105263,
+      "finalResolveStates": 0,
+      "rescuedFinalStates": 0,
+      "finalStatesWithoutRescue": 0,
+      "finalStatesUnknown": 0,
+      "scope": "bounded-reasonable-state-sample",
+      "samplingSchedule": "alternating-breadth-and-depth",
+      "sampledDepthCounts": {
+        "0": 1,
+        "1": 3,
+        "2": 9,
+        "3": 18,
+        "4": 24,
+        "5": 17
+      }
+    },
+    "clutches": 6,
+    "seconds": 2.067572598,
+    "routes": [
+      {
+        "words": [
+          "CLOUD",
+          "FEAR",
+          "GENTLE",
+          "NEAR"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            0,
+            10,
+            4,
+            13,
+            12
+          ],
+          [
+            15,
+            6,
+            1,
+            2
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            17,
+            7
+          ],
+          [
+            27,
+            22,
+            16,
+            28
+          ]
+        ]
+      },
+      {
+        "words": [
+          "COAL",
+          "FEAR",
+          "GENTLE",
+          "NEAR"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            0,
+            4,
+            1,
+            10
+          ],
+          [
+            15,
+            6,
+            16,
+            2
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            17,
+            7
+          ],
+          [
+            27,
+            22,
+            26,
+            28
+          ]
+        ]
+      },
+      {
+        "words": [
+          "HOLD",
+          "FEAR",
+          "GENTLE",
+          "NEAR"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            14,
+            4,
+            10,
+            12
+          ],
+          [
+            15,
+            6,
+            1,
+            2
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            17,
+            7
+          ],
+          [
+            27,
+            22,
+            16,
+            28
+          ]
+        ]
+      },
+      {
+        "words": [
+          "CLOUDY",
+          "FEAR",
+          "GENTLE",
+          "NEAR"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            0,
+            10,
+            4,
+            13,
+            12,
+            5
+          ],
+          [
+            15,
+            6,
+            1,
+            2
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            17,
+            7
+          ],
+          [
+            27,
+            22,
+            16,
+            28
+          ]
+        ]
+      },
+      {
+        "words": [
+          "COLD",
+          "FEAR",
+          "GENTLE",
+          "NEAR"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            0,
+            4,
+            10,
+            12
+          ],
+          [
+            15,
+            6,
+            1,
+            2
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            17,
+            7
+          ],
+          [
+            27,
+            22,
+            16,
+            28
+          ]
+        ]
+      },
+      {
+        "words": [
+          "OLD",
+          "FEAR",
+          "GENTLE",
+          "NEAR"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            4,
+            10,
+            12
+          ],
+          [
+            15,
+            6,
+            1,
+            2
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            17,
+            7
+          ],
+          [
+            27,
+            22,
+            16,
+            28
+          ]
+        ]
+      },
+      {
+        "words": [
+          "CHEERY",
+          "GLAD",
+          "PATIENCE",
+          "FEAR",
+          "END"
+        ],
+        "lives": 1,
+        "ids": [
+          [
+            0,
+            14,
+            6,
+            7,
+            2,
+            5
+          ],
+          [
+            8,
+            10,
+            1,
+            9
+          ],
+          [
+            24,
+            16,
+            3,
+            25,
+            18,
+            11,
+            21,
+            23
+          ],
+          [
+            15,
+            33,
+            26,
+            28
+          ],
+          [
+            22,
+            27,
+            12
+          ]
+        ]
+      },
+      {
+        "words": [
+          "CHEERY",
+          "GLAD",
+          "PATIENCE",
+          "FEAR",
+          "SOUL",
+          "KIND"
+        ],
+        "lives": 0,
+        "ids": [
+          [
+            0,
+            14,
+            6,
+            7,
+            2,
+            5
+          ],
+          [
+            8,
+            10,
+            1,
+            9
+          ],
+          [
+            24,
+            16,
+            3,
+            25,
+            18,
+            11,
+            21,
+            23
+          ],
+          [
+            15,
+            33,
+            26,
+            28
+          ],
+          [
+            31,
+            4,
+            13,
+            17
+          ],
+          [
+            32,
+            30,
+            27,
+            12
+          ]
+        ]
+      },
+      {
+        "words": [
+          "GARDEN",
+          "PEACEFUL",
+          "NEAR",
+          "SKY",
+          "HOPE",
+          "END"
+        ],
+        "lives": 0,
+        "ids": [
+          [
+            8,
+            1,
+            2,
+            9,
+            6,
+            11
+          ],
+          [
+            20,
+            18,
+            16,
+            21,
+            7,
+            15,
+            13,
+            10
+          ],
+          [
+            29,
+            23,
+            26,
+            28
+          ],
+          [
+            31,
+            32,
+            5
+          ],
+          [
+            14,
+            4,
+            24,
+            33
+          ],
+          [
+            22,
+            27,
+            12
+          ]
+        ]
+      },
+      {
+        "words": [
+          "CHEERFUL",
+          "END",
+          "DOG",
+          "CAT",
+          "NAIL"
+        ],
+        "lives": 1,
+        "ids": [
+          [
+            0,
+            14,
+            6,
+            7,
+            2,
+            15,
+            13,
+            10
+          ],
+          [
+            18,
+            11,
+            12
+          ],
+          [
+            9,
+            4,
+            8
+          ],
+          [
+            21,
+            1,
+            3
+          ],
+          [
+            27,
+            16,
+            25,
+            17
+          ]
+        ]
+      },
+      {
+        "words": [
+          "GARDEN",
+          "PEACEFUL",
+          "NEAR",
+          "SKY",
+          "END"
+        ],
+        "lives": 1,
+        "ids": [
+          [
+            8,
+            1,
+            2,
+            9,
+            6,
+            11
+          ],
+          [
+            20,
+            18,
+            16,
+            21,
+            7,
+            15,
+            13,
+            10
+          ],
+          [
+            29,
+            23,
+            26,
+            28
+          ],
+          [
+            31,
+            32,
+            5
+          ],
+          [
+            22,
+            27,
+            12
+          ]
+        ]
+      },
+      {
+        "words": [
+          "GARDEN",
+          "PEACEFUL",
+          "NEAR",
+          "END"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            8,
+            1,
+            2,
+            9,
+            6,
+            11
+          ],
+          [
+            20,
+            18,
+            16,
+            21,
+            7,
+            15,
+            13,
+            10
+          ],
+          [
+            29,
+            23,
+            26,
+            28
+          ],
+          [
+            22,
+            27,
+            12
+          ]
+        ]
+      },
+      {
+        "words": [
+          "HOUR",
+          "DEAL",
+          "GENTLE",
+          "END"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            14,
+            4,
+            13,
+            2
+          ],
+          [
+            12,
+            6,
+            1,
+            10
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            17,
+            7
+          ],
+          [
+            22,
+            27,
+            9
+          ]
+        ]
+      },
+      {
+        "words": [
+          "REACH",
+          "DEAL",
+          "GENTLE",
+          "END"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            2,
+            7,
+            1,
+            0,
+            14
+          ],
+          [
+            12,
+            6,
+            16,
+            10
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            17,
+            22
+          ],
+          [
+            23,
+            27,
+            9
+          ]
+        ]
+      },
+      {
+        "words": [
+          "LAUGHTER",
+          "PEACEFUL",
+          "NEAR"
+        ],
+        "lives": 3,
+        "ids": [
+          [
+            10,
+            1,
+            13,
+            8,
+            14,
+            3,
+            6,
+            2
+          ],
+          [
+            20,
+            23,
+            16,
+            21,
+            7,
+            15,
+            19,
+            17
+          ],
+          [
+            27,
+            18,
+            26,
+            28
+          ]
+        ]
+      },
+      {
+        "words": [
+          "GENTLE",
+          "DREAD",
+          "PEACEFUL",
+          "SKY",
+          "CAR",
+          "HEN"
+        ],
+        "lives": 0,
+        "ids": [
+          [
+            8,
+            6,
+            11,
+            3,
+            10,
+            7
+          ],
+          [
+            9,
+            2,
+            18,
+            16,
+            12
+          ],
+          [
+            20,
+            22,
+            26,
+            21,
+            23,
+            15,
+            13,
+            17
+          ],
+          [
+            31,
+            32,
+            5
+          ],
+          [
+            0,
+            1,
+            28
+          ],
+          [
+            14,
+            33,
+            27
+          ]
+        ]
+      },
+      {
+        "words": [
+          "TEACHER",
+          "DOG",
+          "PEACEFUL",
+          "KIND",
+          "RUN",
+          "LANE"
+        ],
+        "lives": 0,
+        "ids": [
+          [
+            3,
+            6,
+            1,
+            0,
+            14,
+            7,
+            2
+          ],
+          [
+            9,
+            4,
+            8
+          ],
+          [
+            20,
+            18,
+            16,
+            21,
+            22,
+            15,
+            13,
+            10
+          ],
+          [
+            32,
+            30,
+            29,
+            12
+          ],
+          [
+            28,
+            19,
+            11
+          ],
+          [
+            17,
+            26,
+            27,
+            23
+          ]
+        ]
+      },
+      {
+        "words": [
+          "DREAD",
+          "GENTLE",
+          "PEACEFUL",
+          "SKY",
+          "CANE"
+        ],
+        "lives": 1,
+        "ids": [
+          [
+            9,
+            2,
+            6,
+            1,
+            12
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            10,
+            7
+          ],
+          [
+            20,
+            22,
+            26,
+            21,
+            23,
+            15,
+            13,
+            17
+          ],
+          [
+            31,
+            32,
+            5
+          ],
+          [
+            0,
+            16,
+            27,
+            33
+          ]
+        ]
+      },
+      {
+        "words": [
+          "GENTLE",
+          "DREAD",
+          "PEACEFUL",
+          "SKY",
+          "CANE"
+        ],
+        "lives": 1,
+        "ids": [
+          [
+            8,
+            6,
+            11,
+            3,
+            10,
+            7
+          ],
+          [
+            9,
+            2,
+            18,
+            16,
+            12
+          ],
+          [
+            20,
+            22,
+            26,
+            21,
+            23,
+            15,
+            13,
+            17
+          ],
+          [
+            31,
+            32,
+            5
+          ],
+          [
+            0,
+            1,
+            27,
+            33
+          ]
+        ]
+      },
+      {
+        "words": [
+          "CRUEL",
+          "GENTLE",
+          "PACIFY",
+          "SHOE",
+          "PEAR",
+          "END"
+        ],
+        "lives": 0,
+        "ids": [
+          [
+            0,
+            2,
+            13,
+            7,
+            10
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            17,
+            6
+          ],
+          [
+            20,
+            26,
+            21,
+            25,
+            15,
+            5
+          ],
+          [
+            31,
+            14,
+            4,
+            23
+          ],
+          [
+            24,
+            33,
+            1,
+            28
+          ],
+          [
+            22,
+            27,
+            12
+          ]
+        ]
+      },
+      {
+        "words": [
+          "ELATED",
+          "COURAGE",
+          "CANE"
+        ],
+        "lives": 3,
+        "ids": [
+          [
+            6,
+            10,
+            1,
+            3,
+            7,
+            9
+          ],
+          [
+            21,
+            4,
+            13,
+            2,
+            16,
+            8,
+            18
+          ],
+          [
+            0,
+            26,
+            27,
+            22
+          ]
+        ]
+      },
+      {
+        "words": [
+          "CRUEL",
+          "GENTLE",
+          "PACIFY",
+          "SHOE",
+          "KIND"
+        ],
+        "lives": 1,
+        "ids": [
+          [
+            0,
+            2,
+            13,
+            7,
+            10
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            17,
+            6
+          ],
+          [
+            20,
+            26,
+            21,
+            25,
+            15,
+            5
+          ],
+          [
+            31,
+            14,
+            4,
+            23
+          ],
+          [
+            32,
+            30,
+            27,
+            12
+          ]
+        ]
+      },
+      {
+        "words": [
+          "CRUELTY",
+          "PEACEFUL",
+          "DOG",
+          "KIND"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            0,
+            2,
+            13,
+            7,
+            10,
+            3,
+            5
+          ],
+          [
+            20,
+            22,
+            1,
+            21,
+            6,
+            15,
+            19,
+            17
+          ],
+          [
+            9,
+            4,
+            8
+          ],
+          [
+            32,
+            25,
+            27,
+            12
+          ]
+        ]
+      },
+      {
+        "words": [
+          "HEARTY",
+          "GLEEFUL",
+          "PEACE",
+          "END",
+          "CAR",
+          "SOUND"
+        ],
+        "lives": 0,
+        "ids": [
+          [
+            14,
+            6,
+            1,
+            2,
+            3,
+            5
+          ],
+          [
+            8,
+            10,
+            18,
+            7,
+            15,
+            13,
+            17
+          ],
+          [
+            24,
+            22,
+            26,
+            21,
+            23
+          ],
+          [
+            33,
+            11,
+            9
+          ],
+          [
+            0,
+            16,
+            28
+          ],
+          [
+            31,
+            4,
+            19,
+            27,
+            12
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "generated-anger-lex2-revive-lexical-v2%3AANGER%3A2%3A0-early-r-long7-finite24",
+    "enemy": "ANGER",
+    "refills": 24,
+    "accepted": true,
+    "reasons": [],
+    "quality": 63.12,
+    "difficulty": "MEDIUM",
+    "best": 3,
+    "strategies": 24,
+    "regen": 0.24489795918367346,
+    "semantic": 0.19999999999999998,
+    "pressure": {
+      "initialRefills": 24,
+      "replayedWinningLines": 24,
+      "winsOnReducedBoard": 7,
+      "winsAfterRefillsExhausted": 10,
+      "minimumTilesBeforeWinningMove": 10,
+      "reserveByEnemyLetter": [
+        {
+          "letter": "A",
+          "boardCopies": 1,
+          "reserveCopies": 2,
+          "requiredHits": 1
+        },
+        {
+          "letter": "N",
+          "boardCopies": 1,
+          "reserveCopies": 4,
+          "requiredHits": 1
+        },
+        {
+          "letter": "G",
+          "boardCopies": 1,
+          "reserveCopies": 0,
+          "requiredHits": 1
+        },
+        {
+          "letter": "E",
+          "boardCopies": 2,
+          "reserveCopies": 4,
+          "requiredHits": 2
+        },
+        {
+          "letter": "R",
+          "boardCopies": 1,
+          "reserveCopies": 1,
+          "requiredHits": 1
+        }
+      ],
+      "routes": [
+        {
+          "words": [
+            "CLOUD",
+            "FEAR",
+            "GENTLE",
+            "NEAR"
+          ],
+          "firstEmptySlotAfterTurn": null,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 0,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 5
+        },
+        {
+          "words": [
+            "COAL",
+            "FEAR",
+            "GENTLE",
+            "NEAR"
+          ],
+          "firstEmptySlotAfterTurn": null,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 0,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 6
+        },
+        {
+          "words": [
+            "HOLD",
+            "FEAR",
+            "GENTLE",
+            "NEAR"
+          ],
+          "firstEmptySlotAfterTurn": null,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 0,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 6
+        },
+        {
+          "words": [
+            "CLOUDY",
+            "FEAR",
+            "GENTLE",
+            "NEAR"
+          ],
+          "firstEmptySlotAfterTurn": null,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 0,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 4
+        },
+        {
+          "words": [
+            "COLD",
+            "FEAR",
+            "GENTLE",
+            "NEAR"
+          ],
+          "firstEmptySlotAfterTurn": null,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 0,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 6
+        },
+        {
+          "words": [
+            "OLD",
+            "FEAR",
+            "GENTLE",
+            "NEAR"
+          ],
+          "firstEmptySlotAfterTurn": null,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 0,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 7
+        },
+        {
+          "words": [
+            "CHEERY",
+            "GLAD",
+            "PATIENCE",
+            "FEAR",
+            "END"
+          ],
+          "firstEmptySlotAfterTurn": 5,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 0,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "GARDEN",
+            "PEACEFUL",
+            "NEAR",
+            "SKY",
+            "HOPE",
+            "END"
+          ],
+          "firstEmptySlotAfterTurn": 5,
+          "movesOnReducedBoard": 1,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 15,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "CHEERFUL",
+            "END",
+            "DOG",
+            "CAT",
+            "NAIL"
+          ],
+          "firstEmptySlotAfterTurn": null,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 0,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 3
+        },
+        {
+          "words": [
+            "GARDEN",
+            "PEACEFUL",
+            "NEAR",
+            "SKY",
+            "END"
+          ],
+          "firstEmptySlotAfterTurn": null,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 0,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "GARDEN",
+            "PEACEFUL",
+            "NEAR",
+            "END"
+          ],
+          "firstEmptySlotAfterTurn": null,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 0,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 3
+        },
+        {
+          "words": [
+            "HOUR",
+            "DEAL",
+            "GENTLE",
+            "END"
+          ],
+          "firstEmptySlotAfterTurn": null,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 0,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 7
+        },
+        {
+          "words": [
+            "LAUGHTER",
+            "PEACEFUL",
+            "NEAR"
+          ],
+          "firstEmptySlotAfterTurn": null,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 0,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 4
+        },
+        {
+          "words": [
+            "DREAD",
+            "GENTLE",
+            "PEACEFUL",
+            "SKY",
+            "TEA",
+            "LION"
+          ],
+          "firstEmptySlotAfterTurn": 5,
+          "movesOnReducedBoard": 1,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 15,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "GENTLE",
+            "DREAD",
+            "PEACEFUL",
+            "SKY",
+            "TEA",
+            "LION"
+          ],
+          "firstEmptySlotAfterTurn": 5,
+          "movesOnReducedBoard": 1,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 15,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "TEACHER",
+            "DOG",
+            "PEACEFUL",
+            "KIND",
+            "SERENITY",
+            "PLAN"
+          ],
+          "firstEmptySlotAfterTurn": 5,
+          "movesOnReducedBoard": 1,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 10,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "LATE",
+            "COURAGE",
+            "PEACEFUL",
+            "KINDNESS",
+            "END"
+          ],
+          "firstEmptySlotAfterTurn": 4,
+          "movesOnReducedBoard": 1,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 13,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "TENDER",
+            "GLAD",
+            "PEACEFUL",
+            "HEN",
+            "SKY",
+            "CAR"
+          ],
+          "firstEmptySlotAfterTurn": 6,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "GREEN",
+            "LATE",
+            "PEACEFUL",
+            "KIND",
+            "SKY",
+            "CANE"
+          ],
+          "firstEmptySlotAfterTurn": 6,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "CRUEL",
+            "GENTLE",
+            "PACIFY",
+            "SHOE",
+            "RISK",
+            "END"
+          ],
+          "firstEmptySlotAfterTurn": 5,
+          "movesOnReducedBoard": 1,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 15,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "ELATED",
+            "COURAGE",
+            "CANE"
+          ],
+          "firstEmptySlotAfterTurn": null,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 0,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 7
+        },
+        {
+          "words": [
+            "CRUELTY",
+            "PEACEFUL",
+            "DOG",
+            "KIND",
+            "TEA",
+            "HEN"
+          ],
+          "firstEmptySlotAfterTurn": 5,
+          "movesOnReducedBoard": 1,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 15,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "EARLY",
+            "GENTLE",
+            "PEACE",
+            "CAR",
+            "DISH",
+            "KIND"
+          ],
+          "firstEmptySlotAfterTurn": 6,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 0,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 0
+        },
+        {
+          "words": [
+            "HEARTY",
+            "GLEEFUL",
+            "PEACE",
+            "END",
+            "CAR",
+            "KIND"
+          ],
+          "firstEmptySlotAfterTurn": 6,
+          "movesOnReducedBoard": 0,
+          "movesWithNoRefills": 1,
+          "tilesBeforeWinningMove": 16,
+          "refillsRemaining": 0
+        }
+      ],
+      "scope": "exact-winning-route-replays"
+    },
+    "fairness": {
+      "reasonableStates": 38,
+      "provenDeadStates": 0,
+      "provenWinningStates": 35,
+      "unknownStates": 3,
+      "assessedFraction": 0.9210526315789473,
+      "prematureDeadStateRateLowerBound": 0,
+      "prematureDeadStateRateUpperBound": 0.07894736842105263,
+      "finalResolveStates": 0,
+      "rescuedFinalStates": 0,
+      "finalStatesWithoutRescue": 0,
+      "finalStatesUnknown": 0,
+      "scope": "bounded-reasonable-state-sample",
+      "samplingSchedule": "alternating-breadth-and-depth",
+      "sampledDepthCounts": {
+        "0": 1,
+        "1": 3,
+        "2": 9,
+        "3": 18,
+        "4": 24,
+        "5": 17
+      }
+    },
+    "clutches": 10,
+    "seconds": 2.3656593129999997,
+    "routes": [
+      {
+        "words": [
+          "CLOUD",
+          "FEAR",
+          "GENTLE",
+          "NEAR"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            0,
+            10,
+            4,
+            13,
+            12
+          ],
+          [
+            15,
+            6,
+            1,
+            2
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            17,
+            7
+          ],
+          [
+            27,
+            22,
+            16,
+            28
+          ]
+        ]
+      },
+      {
+        "words": [
+          "COAL",
+          "FEAR",
+          "GENTLE",
+          "NEAR"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            0,
+            4,
+            1,
+            10
+          ],
+          [
+            15,
+            6,
+            16,
+            2
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            17,
+            7
+          ],
+          [
+            27,
+            22,
+            26,
+            28
+          ]
+        ]
+      },
+      {
+        "words": [
+          "HOLD",
+          "FEAR",
+          "GENTLE",
+          "NEAR"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            14,
+            4,
+            10,
+            12
+          ],
+          [
+            15,
+            6,
+            1,
+            2
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            17,
+            7
+          ],
+          [
+            27,
+            22,
+            16,
+            28
+          ]
+        ]
+      },
+      {
+        "words": [
+          "CLOUDY",
+          "FEAR",
+          "GENTLE",
+          "NEAR"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            0,
+            10,
+            4,
+            13,
+            12,
+            5
+          ],
+          [
+            15,
+            6,
+            1,
+            2
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            17,
+            7
+          ],
+          [
+            27,
+            22,
+            16,
+            28
+          ]
+        ]
+      },
+      {
+        "words": [
+          "COLD",
+          "FEAR",
+          "GENTLE",
+          "NEAR"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            0,
+            4,
+            10,
+            12
+          ],
+          [
+            15,
+            6,
+            1,
+            2
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            17,
+            7
+          ],
+          [
+            27,
+            22,
+            16,
+            28
+          ]
+        ]
+      },
+      {
+        "words": [
+          "OLD",
+          "FEAR",
+          "GENTLE",
+          "NEAR"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            4,
+            10,
+            12
+          ],
+          [
+            15,
+            6,
+            1,
+            2
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            17,
+            7
+          ],
+          [
+            27,
+            22,
+            16,
+            28
+          ]
+        ]
+      },
+      {
+        "words": [
+          "CHEERY",
+          "GLAD",
+          "PATIENCE",
+          "FEAR",
+          "END"
+        ],
+        "lives": 1,
+        "ids": [
+          [
+            0,
+            14,
+            6,
+            7,
+            2,
+            5
+          ],
+          [
+            8,
+            10,
+            1,
+            9
+          ],
+          [
+            24,
+            16,
+            3,
+            25,
+            18,
+            11,
+            21,
+            23
+          ],
+          [
+            15,
+            33,
+            26,
+            28
+          ],
+          [
+            22,
+            27,
+            12
+          ]
+        ]
+      },
+      {
+        "words": [
+          "GARDEN",
+          "PEACEFUL",
+          "NEAR",
+          "SKY",
+          "HOPE",
+          "END"
+        ],
+        "lives": 0,
+        "ids": [
+          [
+            8,
+            1,
+            2,
+            9,
+            6,
+            11
+          ],
+          [
+            20,
+            18,
+            16,
+            21,
+            7,
+            15,
+            13,
+            10
+          ],
+          [
+            29,
+            23,
+            26,
+            28
+          ],
+          [
+            31,
+            32,
+            5
+          ],
+          [
+            14,
+            4,
+            24,
+            33
+          ],
+          [
+            22,
+            27,
+            12
+          ]
+        ]
+      },
+      {
+        "words": [
+          "CHEERFUL",
+          "END",
+          "DOG",
+          "CAT",
+          "NAIL"
+        ],
+        "lives": 1,
+        "ids": [
+          [
+            0,
+            14,
+            6,
+            7,
+            2,
+            15,
+            13,
+            10
+          ],
+          [
+            18,
+            11,
+            12
+          ],
+          [
+            9,
+            4,
+            8
+          ],
+          [
+            21,
+            1,
+            3
+          ],
+          [
+            27,
+            16,
+            25,
+            17
+          ]
+        ]
+      },
+      {
+        "words": [
+          "GARDEN",
+          "PEACEFUL",
+          "NEAR",
+          "SKY",
+          "END"
+        ],
+        "lives": 1,
+        "ids": [
+          [
+            8,
+            1,
+            2,
+            9,
+            6,
+            11
+          ],
+          [
+            20,
+            18,
+            16,
+            21,
+            7,
+            15,
+            13,
+            10
+          ],
+          [
+            29,
+            23,
+            26,
+            28
+          ],
+          [
+            31,
+            32,
+            5
+          ],
+          [
+            22,
+            27,
+            12
+          ]
+        ]
+      },
+      {
+        "words": [
+          "GARDEN",
+          "PEACEFUL",
+          "NEAR",
+          "END"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            8,
+            1,
+            2,
+            9,
+            6,
+            11
+          ],
+          [
+            20,
+            18,
+            16,
+            21,
+            7,
+            15,
+            13,
+            10
+          ],
+          [
+            29,
+            23,
+            26,
+            28
+          ],
+          [
+            22,
+            27,
+            12
+          ]
+        ]
+      },
+      {
+        "words": [
+          "HOUR",
+          "DEAL",
+          "GENTLE",
+          "END"
+        ],
+        "lives": 2,
+        "ids": [
+          [
+            14,
+            4,
+            13,
+            2
+          ],
+          [
+            12,
+            6,
+            1,
+            10
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            17,
+            7
+          ],
+          [
+            22,
+            27,
+            9
+          ]
+        ]
+      },
+      {
+        "words": [
+          "LAUGHTER",
+          "PEACEFUL",
+          "NEAR"
+        ],
+        "lives": 3,
+        "ids": [
+          [
+            10,
+            1,
+            13,
+            8,
+            14,
+            3,
+            6,
+            2
+          ],
+          [
+            20,
+            23,
+            16,
+            21,
+            7,
+            15,
+            19,
+            17
+          ],
+          [
+            27,
+            18,
+            26,
+            28
+          ]
+        ]
+      },
+      {
+        "words": [
+          "DREAD",
+          "GENTLE",
+          "PEACEFUL",
+          "SKY",
+          "TEA",
+          "LION"
+        ],
+        "lives": 0,
+        "ids": [
+          [
+            9,
+            2,
+            6,
+            1,
+            12
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            10,
+            7
+          ],
+          [
+            20,
+            22,
+            26,
+            21,
+            23,
+            15,
+            13,
+            17
+          ],
+          [
+            34,
+            32,
+            5
+          ],
+          [
+            37,
+            33,
+            16
+          ],
+          [
+            38,
+            25,
+            4,
+            27
+          ]
+        ]
+      },
+      {
+        "words": [
+          "GENTLE",
+          "DREAD",
+          "PEACEFUL",
+          "SKY",
+          "TEA",
+          "LION"
+        ],
+        "lives": 0,
+        "ids": [
+          [
+            8,
+            6,
+            11,
+            3,
+            10,
+            7
+          ],
+          [
+            9,
+            2,
+            18,
+            16,
+            12
+          ],
+          [
+            20,
+            22,
+            26,
+            21,
+            23,
+            15,
+            13,
+            17
+          ],
+          [
+            34,
+            32,
+            5
+          ],
+          [
+            37,
+            33,
+            1
+          ],
+          [
+            38,
+            25,
+            4,
+            27
+          ]
+        ]
+      },
+      {
+        "words": [
+          "TEACHER",
+          "DOG",
+          "PEACEFUL",
+          "KIND",
+          "SERENITY",
+          "PLAN"
+        ],
+        "lives": 0,
+        "ids": [
+          [
+            3,
+            6,
+            1,
+            0,
+            14,
+            7,
+            2
+          ],
+          [
+            9,
+            4,
+            8
+          ],
+          [
+            20,
+            18,
+            16,
+            21,
+            22,
+            15,
+            13,
+            10
+          ],
+          [
+            32,
+            30,
+            29,
+            12
+          ],
+          [
+            31,
+            23,
+            28,
+            33,
+            11,
+            25,
+            37,
+            5
+          ],
+          [
+            24,
+            17,
+            26,
+            27
+          ]
+        ]
+      },
+      {
+        "words": [
+          "LATE",
+          "COURAGE",
+          "PEACEFUL",
+          "KINDNESS",
+          "END"
+        ],
+        "lives": 1,
+        "ids": [
+          [
+            10,
+            1,
+            3,
+            7
+          ],
+          [
+            0,
+            4,
+            13,
+            2,
+            16,
+            8,
+            6
+          ],
+          [
+            24,
+            18,
+            26,
+            21,
+            23,
+            15,
+            19,
+            17
+          ],
+          [
+            32,
+            25,
+            11,
+            9,
+            29,
+            33,
+            31,
+            34
+          ],
+          [
+            22,
+            27,
+            12
+          ]
+        ]
+      },
+      {
+        "words": [
+          "TENDER",
+          "GLAD",
+          "PEACEFUL",
+          "HEN",
+          "SKY",
+          "CAR"
+        ],
+        "lives": 0,
+        "ids": [
+          [
+            3,
+            6,
+            11,
+            9,
+            7,
+            2
+          ],
+          [
+            8,
+            10,
+            16,
+            12
+          ],
+          [
+            24,
+            18,
+            1,
+            21,
+            23,
+            15,
+            13,
+            17
+          ],
+          [
+            14,
+            33,
+            29
+          ],
+          [
+            31,
+            35,
+            5
+          ],
+          [
+            0,
+            26,
+            28
+          ]
+        ]
+      },
+      {
+        "words": [
+          "GREEN",
+          "LATE",
+          "PEACEFUL",
+          "KIND",
+          "SKY",
+          "CANE"
+        ],
+        "lives": 0,
+        "ids": [
+          [
+            8,
+            2,
+            6,
+            7,
+            11
+          ],
+          [
+            10,
+            16,
+            3,
+            18
+          ],
+          [
+            20,
+            22,
+            1,
+            21,
+            23,
+            15,
+            13,
+            17
+          ],
+          [
+            32,
+            30,
+            29,
+            9
+          ],
+          [
+            31,
+            35,
+            5
+          ],
+          [
+            0,
+            26,
+            27,
+            33
+          ]
+        ]
+      },
+      {
+        "words": [
+          "CRUEL",
+          "GENTLE",
+          "PACIFY",
+          "SHOE",
+          "RISK",
+          "END"
+        ],
+        "lives": 0,
+        "ids": [
+          [
+            0,
+            2,
+            13,
+            7,
+            10
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            17,
+            6
+          ],
+          [
+            20,
+            26,
+            21,
+            25,
+            15,
+            5
+          ],
+          [
+            31,
+            14,
+            4,
+            23
+          ],
+          [
+            28,
+            30,
+            34,
+            32
+          ],
+          [
+            22,
+            27,
+            12
+          ]
+        ]
+      },
+      {
+        "words": [
+          "ELATED",
+          "COURAGE",
+          "CANE"
+        ],
+        "lives": 3,
+        "ids": [
+          [
+            6,
+            10,
+            1,
+            3,
+            7,
+            9
+          ],
+          [
+            21,
+            4,
+            13,
+            2,
+            16,
+            8,
+            18
+          ],
+          [
+            0,
+            26,
+            27,
+            22
+          ]
+        ]
+      },
+      {
+        "words": [
+          "CRUELTY",
+          "PEACEFUL",
+          "DOG",
+          "KIND",
+          "TEA",
+          "HEN"
+        ],
+        "lives": 0,
+        "ids": [
+          [
+            0,
+            2,
+            13,
+            7,
+            10,
+            3,
+            5
+          ],
+          [
+            20,
+            22,
+            1,
+            21,
+            6,
+            15,
+            19,
+            17
+          ],
+          [
+            9,
+            4,
+            8
+          ],
+          [
+            32,
+            30,
+            11,
+            12
+          ],
+          [
+            37,
+            33,
+            26
+          ],
+          [
+            14,
+            18,
+            27
+          ]
+        ]
+      },
+      {
+        "words": [
+          "EARLY",
+          "GENTLE",
+          "PEACE",
+          "CAR",
+          "DISH",
+          "KIND"
+        ],
+        "lives": 0,
+        "ids": [
+          [
+            6,
+            1,
+            2,
+            10,
+            5
+          ],
+          [
+            8,
+            18,
+            11,
+            3,
+            17,
+            7
+          ],
+          [
+            20,
+            22,
+            26,
+            21,
+            23
+          ],
+          [
+            0,
+            16,
+            28
+          ],
+          [
+            9,
+            30,
+            31,
+            14
+          ],
+          [
+            32,
+            25,
+            27,
+            12
+          ]
+        ]
+      },
+      {
+        "words": [
+          "HEARTY",
+          "GLEEFUL",
+          "PEACE",
+          "END",
+          "CAR",
+          "KIND"
+        ],
+        "lives": 0,
+        "ids": [
+          [
+            14,
+            6,
+            1,
+            2,
+            3,
+            5
+          ],
+          [
+            8,
+            10,
+            18,
+            7,
+            15,
+            13,
+            17
+          ],
+          [
+            24,
+            22,
+            26,
+            21,
+            23
+          ],
+          [
+            33,
+            11,
+            9
+          ],
+          [
+            0,
+            16,
+            28
+          ],
+          [
+            32,
+            25,
+            27,
+            12
+          ]
+        ]
+      }
+    ]
+  }
+]

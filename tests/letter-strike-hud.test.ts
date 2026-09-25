@@ -18,8 +18,8 @@ function wordIds(state: LetterStrikeState, word: string): number[] {
 test('tile summaries describe only remaining special tile identities and active rules', () => {
   const state = createLetterStrikeGame()
   assert.deepEqual(getLetterStrikeTileSummary(state), [
-    { id: 'strike', label: 'STRIKE', symbol: '◆', detail: 'STRIKES MATCHING LETTER' },
-    { id: 'ward', label: 'WARD', symbol: '◇', detail: 'SAVE TURN' },
+    { id: 'strike', label: 'HIT', symbol: '◆', detail: 'HITS MATCHING LETTER' },
+    { id: 'ward', label: 'HEART', symbol: '♥', detail: 'SAVES A LIFE THIS TURN' },
   ])
   const withoutWard = submitLetterStrike(state, wordIds(state, 'JOY'))
   assert.deepEqual(getLetterStrikeTileSummary(withoutWard).map(summary => summary.id), ['strike'])
@@ -37,8 +37,8 @@ test('tile detail follows configured effects rather than hardcoded special names
     },
   } }
   assert.deepEqual(getLetterStrikeTileSummary(state), [
-    { id: 'strike', label: 'STRIKE', symbol: '◆', detail: 'SAVE TURN' },
-    { id: 'ward', label: 'WARD', symbol: '◇', detail: 'STRIKES MATCHING LETTER · SAVE TURN' },
+    { id: 'strike', label: 'HIT', symbol: '◆', detail: 'SAVES A LIFE THIS TURN' },
+    { id: 'ward', label: 'HEART', symbol: '♥', detail: 'HITS MATCHING LETTER · SAVES A LIFE THIS TURN' },
   ])
   const inactive = { ...state, encounter: { ...state.encounter, tileEffects: {
     strike: { strike: false, preventResolveLoss: false },
@@ -96,13 +96,13 @@ test('grammar weaknesses project only configured nonzero encounter allowances', 
 test('current move bonuses show applied grammar between semantics and actual effects', () => {
   const state = createLetterStrikeGame()
   assert.deepEqual(getLetterStrikeBonuses(previewLetterStrike(state, wordIds(state, 'SAD'))), [
-    { label: 'RESISTED' }, { label: '1 STRIKE' }, { label: 'ADJECTIVE', value: 1 },
+    { label: 'RESISTED' }, { label: '1 HIT' }, { label: 'ADJECTIVE', value: 1 },
   ])
   assert.deepEqual(getLetterStrikeBonuses(previewLetterStrike(state, wordIds(state, 'JOY'))), [
-    { label: 'COUNTER' }, { label: '2 STRIKES' }, { label: 'WARD' },
+    { label: 'COUNTER' }, { label: '2 HITS' }, { label: 'HEART' },
   ])
   assert.deepEqual(getLetterStrikeBonuses(previewLetterStrike(state, wordIds(state, 'GLOOM'))), [
-    { label: 'RESISTED' }, { label: '1 STRIKE' }, { label: 'STRIKE' },
+    { label: 'RESISTED' }, { label: '1 HIT' }, { label: 'HIT TILE' },
   ])
   assert.deepEqual(getLetterStrikeBonuses(previewLetterStrike(state, [])), [])
 })
@@ -126,7 +126,7 @@ test('LONG precedes grammar in previews and recorded log modifiers', () => {
   }
   const preview = previewLetterStrike(state)
   assert.deepEqual(getLetterStrikeBonuses(preview), [
-    { label: 'NEUTRAL' }, { label: '3 STRIKES' }, { label: 'LONG', value: 1 }, { label: 'ADJECTIVE', value: 1 },
+    { label: 'NEUTRAL' }, { label: '3 HITS' }, { label: 'LONG', value: 1 }, { label: 'ADJECTIVE', value: 1 },
   ])
   const submitted = submitLetterStrike(state)
   assert.deepEqual(getLetterStrikeBattleEvents(submitted)[0].effectLabels, ['LONG +1', 'ADJECTIVE +1'])

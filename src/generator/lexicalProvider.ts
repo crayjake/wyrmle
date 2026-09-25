@@ -1,5 +1,7 @@
 import { getPartsOfSpeech, isDictionaryWord, normalizeWord, prototypeWordPartsOfSpeech } from '../game/dictionary.ts'
 import type { PartOfSpeech } from '../game/types.ts'
+import { enrichSemanticRelations } from '../game/lexicalRules.ts'
+import { getLexicalPartsOfSpeech, LEXICON_VERSION } from '../lexicon/index.ts'
 
 export type LexicalEntry = {
   word: string
@@ -11,7 +13,7 @@ export type LexicalEntry = {
   /** Familiarity estimate in [0, 1], not a measured corpus frequency. */
   commonness: number | null
   commonnessSource: 'curated-estimate' | 'unknown'
-  semanticSource: 'curated-local' | 'dictionary-only'
+  semanticSource: 'curated-local' | 'dictionary-only' | 'curated-and-wordnet'
   semanticConfidence: number
   properNoun?: boolean
 }
@@ -20,6 +22,8 @@ export type LexicalEntry = {
 export interface LexicalProvider {
   readonly id: string
   getEntry(word: string): LexicalEntry | undefined
+  /** Submitted words can use every POS even when an enemy has one authored sense. */
+  getSubmittedWordEntry?(word: string): LexicalEntry | undefined
   enemyWords(): readonly string[]
   vocabulary(): readonly LexicalEntry[]
 }
@@ -186,6 +190,32 @@ export const localLexicalProvider: LexicalProvider = Object.freeze({
   },
   enemyWords: () => curatedEnemyWords,
   vocabulary: () => curatedVocabulary,
+})
+
+/** Broad annotation is independent of the small, familiarity-rated construction pool. */
+export const currentLexicalProvider: LexicalProvider = Object.freeze({
+  id: `wyrmle-curated-local-v1+${LEXICON_VERSION}`,
+  getEntry(word: string): LexicalEntry | undefined {
+    const entry = localLexicalProvider.getEntry(word)
+    if (!entry) return undefined
+    const isEnemy = curatedEnemyWords.includes(entry.word)
+    const relations = isEnemy ? enrichSemanticRelations(entry.word, {
+      opposite: entry.counters, similar: entry.synonyms, related: entry.related,
+    }) : undefined
+    return { ...entry,
+      // Enemy selection refers to its authored noun sense. Submitted words use
+      // the complete lexical POS union in the runtime scoring function.
+      partsOfSpeech: isEnemy ? entry.partsOfSpeech : getLexicalPartsOfSpeech(entry.word) ?? entry.partsOfSpeech,
+      ...(relations ? { counters: relations.opposite, synonyms: relations.similar,
+        related: relations.related, semanticSource: 'curated-and-wordnet' as const } : {}),
+    }
+  },
+  getSubmittedWordEntry(word: string): LexicalEntry | undefined {
+    const entry = currentLexicalProvider.getEntry(word)
+    return entry ? { ...entry, partsOfSpeech: getLexicalPartsOfSpeech(entry.word) ?? entry.partsOfSpeech } : undefined
+  },
+  enemyWords: () => curatedEnemyWords,
+  vocabulary: () => curatedVocabulary.map(entry => currentLexicalProvider.getSubmittedWordEntry!(entry.word)!),
 })
 
 export function getWordCommonness(word: string, provider: LexicalProvider = localLexicalProvider): number | null {

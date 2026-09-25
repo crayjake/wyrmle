@@ -109,7 +109,7 @@ export default function Enemy({
               ? hitsRemaining !== undefined && hitsRemaining > 1 ? 'armour will break and letter will be removed' : 'letter will be removed'
               : targetOutcome === 'break' ? 'armour will break' : undefined
             const recovery = state && revealed && !resolution.resolving ? recoveredByLetter.get(state.id) : undefined
-            const recoveryDescription = recovery ? recovery.hitsBefore === 0 ? 'then REGEN revives this letter' : 'then REGEN restores armour' : undefined
+            const recoveryDescription = recovery ? recovery.hitsBefore === 0 ? 'then the Revive tile revives this letter' : 'then the Revive tile restores armour' : undefined
 
             return (
               <motion.div
@@ -125,7 +125,7 @@ export default function Enemy({
                 title={[targetDescription, recoveryDescription].filter(Boolean).join('; ') || undefined}
                 role={state ? 'img' : undefined}
                 aria-label={state ? revealed
-                  ? `${letter}, ${removed ? 'removed' : `${hitsRemaining} ${hitsRemaining === 1 ? 'strike' : 'strikes'} remaining`}${targetDescription ? `, targeted: ${targetDescription}` : ''}${recoveryDescription ? `, ${recoveryDescription}` : ''}`
+                  ? `${letter}, ${removed ? 'removed' : `${hitsRemaining} ${hitsRemaining === 1 ? 'hit' : 'hits'} remaining`}${targetDescription ? `, targeted: ${targetDescription}` : ''}${recoveryDescription ? `, ${recoveryDescription}` : ''}`
                   : `Undecoded enemy letter ${i + 1}` : undefined}
                 className={[
                   'enemy-letter',
@@ -180,12 +180,12 @@ export default function Enemy({
           <ul className="enemy-matchups" aria-label="Enemy grammar matchups">
             {activeModifiers.map((modifier, index) => (
               <li key={modifier.id}>
-                {modifierUnit === 'STRIKE' ? <>
+                {modifierUnit === 'STRIKE' || modifierUnit === 'HIT' ? <>
                   {index > 0 && <span className="enemy-matchup-divider" aria-hidden="true">·</span>}
                   <span className={modifier.value > 0 ? 'enemy-matchup-positive' : 'enemy-matchup-negative'}
-                    title={`${modifier.label} ${modifier.value > 0 ? '+' : ''}${modifier.value} STRIKE`}>
+                    title={`${modifier.label} ${modifier.value > 0 ? '+' : ''}${modifier.value} HIT`}>
                     {modifier.label}
-                    <span className="enemy-matchup-detail"> {modifier.value > 0 ? '+' : ''}{modifier.value} STRIKE</span>
+                    <span className="enemy-matchup-detail"> {modifier.value > 0 ? '+' : ''}{modifier.value} HIT</span>
                   </span>
                 </> : <>
                   <span>{modifier.label}</span>
