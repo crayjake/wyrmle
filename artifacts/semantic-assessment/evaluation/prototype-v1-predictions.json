@@ -1,0 +1,1171 @@
+{
+  "modelId": "sentence-transformers/all-MiniLM-L6-v2 + cross-encoder/nli-deberta-v3-xsmall",
+  "configurationHash": "cf05a447cbe84386c1e84084e054635ff95b2d1b08c5ab4fcb678933a8581552",
+  "configuration": {
+    "embedding": "sentence-transformers/all-MiniLM-L6-v2",
+    "embeddingRevision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "nli": "cross-encoder/nli-deberta-v3-xsmall",
+    "nliRevision": "a150876415327c80daeff35ca6f68f5ed8cf5c24",
+    "cosineMinimum": 0.45,
+    "entailmentMinimum": 0.85,
+    "retrievalPerRelation": 2,
+    "premise": "definition",
+    "hypothesis": "definition",
+    "wordAggregation": "highest-entailment-then-cosine",
+    "reviewedPolicy": "reviewed-root-and-sense-graph-precedence"
+  },
+  "records": [
+    {
+      "enemy": "ANGER",
+      "word": "CALM",
+      "relation": "opposite",
+      "senseId": "oewn-calm__5.00.00.composed.00",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9929755926132202
+    },
+    {
+      "enemy": "ANGER",
+      "word": "CHEERFUL",
+      "relation": "opposite",
+      "senseId": "oewn-cheerful__3.00.00..",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.9415240287780762
+    },
+    {
+      "enemy": "ANGER",
+      "word": "PATIENT",
+      "relation": "opposite",
+      "senseId": "oewn-patient__3.00.00..",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.758956789970398
+    },
+    {
+      "enemy": "ANGER",
+      "word": "FORGIVE",
+      "relation": "opposite",
+      "senseId": "oewn-forgive__2.32.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9933798313140869
+    },
+    {
+      "enemy": "ANGER",
+      "word": "ANGER",
+      "relation": "similar",
+      "senseId": "oewn-anger__1.12.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9864228367805481
+    },
+    {
+      "enemy": "ANGER",
+      "word": "ANGRY",
+      "relation": "similar",
+      "senseId": "oewn-angry__3.00.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9916199445724487
+    },
+    {
+      "enemy": "ANGER",
+      "word": "RAGE",
+      "relation": "similar",
+      "senseId": "oewn-rage__1.12.00..",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.9916937947273254
+    },
+    {
+      "enemy": "ANGER",
+      "word": "FURIOUS",
+      "relation": "similar",
+      "senseId": "oewn-furious__5.00.00.angry.00",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.9864033460617065
+    },
+    {
+      "enemy": "ANGER",
+      "word": "CAREFUL",
+      "relation": "neutral",
+      "senseId": "oewn-careful__3.00.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": 0.26480409502983093
+    },
+    {
+      "enemy": "ANGER",
+      "word": "WHERE",
+      "relation": "neutral",
+      "senseId": "wikt-en-cc2583ca6b77811e71c6",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "ANGER",
+      "word": "TABLE",
+      "relation": "neutral",
+      "senseId": "oewn-table__1.14.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "ANGER",
+      "word": "RED",
+      "relation": "neutral",
+      "senseId": "oewn-red__5.00.01.chromatic.00",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "HOPE",
+      "relation": "opposite",
+      "senseId": "oewn-hope__1.12.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9813825488090515
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "HOPEFUL",
+      "relation": "opposite",
+      "senseId": "oewn-hopeful__3.00.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9910327792167664
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "OPTIMISM",
+      "relation": "opposite",
+      "senseId": "oewn-optimism__1.12.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9795158505439758
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "ENCOURAGE",
+      "relation": "opposite",
+      "senseId": "oewn-encourage__2.37.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9903715252876282
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "DESPAIR",
+      "relation": "similar",
+      "senseId": "oewn-despair__1.12.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9900347590446472
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "HOPELESS",
+      "relation": "similar",
+      "senseId": "oewn-hopeless__3.00.00..",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.7946908473968506
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "HOPELESSNESS",
+      "relation": "similar",
+      "senseId": "oewn-hopelessness__1.12.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9759945869445801
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "DESPERATE",
+      "relation": "similar",
+      "senseId": "oewn-desperate__5.00.00.hopeless.00",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.8859385251998901
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "WHERE",
+      "relation": "neutral",
+      "senseId": "wikt-en-cc2583ca6b77811e71c6",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "TABLE",
+      "relation": "neutral",
+      "senseId": "oewn-table__1.14.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "TOMORROW",
+      "relation": "neutral",
+      "senseId": "oewn-tomorrow__1.28.01..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "PENCIL",
+      "relation": "neutral",
+      "senseId": "oewn-pencil__1.06.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "FEAR",
+      "word": "BRAVE",
+      "relation": "opposite",
+      "senseId": "oewn-brave__5.00.00.bold.00",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.9608367085456848
+    },
+    {
+      "enemy": "FEAR",
+      "word": "COURAGE",
+      "relation": "opposite",
+      "senseId": "oewn-courage__1.07.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9833604097366333
+    },
+    {
+      "enemy": "FEAR",
+      "word": "SAFE",
+      "relation": "opposite",
+      "senseId": "oewn-safe__3.00.01..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9874504804611206
+    },
+    {
+      "enemy": "FEAR",
+      "word": "CALM",
+      "relation": "opposite",
+      "senseId": "oewn-calm__5.00.00.composed.00",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9932367205619812
+    },
+    {
+      "enemy": "FEAR",
+      "word": "FEAR",
+      "relation": "similar",
+      "senseId": "oewn-fear__1.12.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9850760102272034
+    },
+    {
+      "enemy": "FEAR",
+      "word": "AFRAID",
+      "relation": "similar",
+      "senseId": "oewn-afraid__3.00.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9914973378181458
+    },
+    {
+      "enemy": "FEAR",
+      "word": "TERROR",
+      "relation": "similar",
+      "senseId": "oewn-terror__1.12.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9891256093978882
+    },
+    {
+      "enemy": "FEAR",
+      "word": "WORRY",
+      "relation": "similar",
+      "senseId": "oewn-worry__1.12.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9905636310577393
+    },
+    {
+      "enemy": "FEAR",
+      "word": "WHERE",
+      "relation": "neutral",
+      "senseId": "wikt-en-cc2583ca6b77811e71c6",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "FEAR",
+      "word": "TABLE",
+      "relation": "neutral",
+      "senseId": "oewn-table__1.14.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "FEAR",
+      "word": "KNIFE",
+      "relation": "neutral",
+      "senseId": "oewn-knife__1.06.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "FEAR",
+      "word": "DARK",
+      "relation": "neutral",
+      "senseId": "oewn-dark__3.00.01..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "HAPPY",
+      "relation": "opposite",
+      "senseId": "oewn-happy__3.00.00..",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.9563369154930115
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "JOY",
+      "relation": "opposite",
+      "senseId": "oewn-joy__1.12.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.95062655210495
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "CHEERFUL",
+      "relation": "opposite",
+      "senseId": "oewn-cheerful__3.00.00..",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.9224371314048767
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "LAUGHTER",
+      "relation": "opposite",
+      "senseId": "oewn-laughter__1.04.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9731011986732483
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "SAD",
+      "relation": "similar",
+      "senseId": "oewn-sad__3.00.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9902965426445007
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "SADNESS",
+      "relation": "similar",
+      "senseId": "oewn-sadness__1.12.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.978734016418457
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "MELANCHOLY",
+      "relation": "similar",
+      "senseId": "oewn-melancholy__1.12.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9812524914741516
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "GLOOMY",
+      "relation": "similar",
+      "senseId": "oewn-gloomy__5.00.00.dejected.00",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.8691011071205139
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "WHERE",
+      "relation": "neutral",
+      "senseId": "wikt-en-cc2583ca6b77811e71c6",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "TABLE",
+      "relation": "neutral",
+      "senseId": "oewn-table__1.14.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "RAIN",
+      "relation": "neutral",
+      "senseId": "oewn-rain__1.19.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "SHOE",
+      "relation": "neutral",
+      "senseId": "oewn-shoe__1.06.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "KIND",
+      "relation": "opposite",
+      "senseId": "oewn-kind__3.00.00..",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.9329291582107544
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "MERCY",
+      "relation": "opposite",
+      "senseId": "oewn-mercy__1.04.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9876177906990051
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "COMPASSION",
+      "relation": "opposite",
+      "senseId": "oewn-compassion__1.12.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9879392385482788
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "HUMANE",
+      "relation": "opposite",
+      "senseId": "oewn-humane__3.00.00..",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.15166588127613068
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "CRUEL",
+      "relation": "similar",
+      "senseId": "oewn-cruel__5.00.01.inhumane.00",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9821017384529114
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "CRUELTY",
+      "relation": "similar",
+      "senseId": "oewn-cruelty__1.04.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9782005548477173
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "BRUTAL",
+      "relation": "similar",
+      "senseId": "oewn-brutal__5.00.01.inhumane.00",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.9846628904342651
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "TORTURE",
+      "relation": "similar",
+      "senseId": "oewn-torture__1.04.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9789080619812012
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "WHERE",
+      "relation": "neutral",
+      "senseId": "wikt-en-cc2583ca6b77811e71c6",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "TABLE",
+      "relation": "neutral",
+      "senseId": "oewn-table__1.14.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "KNIFE",
+      "relation": "neutral",
+      "senseId": "oewn-knife__1.06.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "RED",
+      "relation": "neutral",
+      "senseId": "oewn-red__5.00.01.chromatic.00",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "CALM",
+      "relation": "opposite",
+      "senseId": "oewn-calm__5.00.00.composed.00",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9927855730056763
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "ORDER",
+      "relation": "opposite",
+      "senseId": "oewn-order__1.14.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9693692326545715
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "TIDY",
+      "relation": "opposite",
+      "senseId": "oewn-tidy__3.00.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9851832985877991
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "PEACEFUL",
+      "relation": "opposite",
+      "senseId": "oewn-peaceful__3.00.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9898899793624878
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "CHAOS",
+      "relation": "similar",
+      "senseId": "oewn-chaos__1.26.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9820515513420105
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "MESS",
+      "relation": "similar",
+      "senseId": "oewn-mess__1.26.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9806755185127258
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "RANDOM",
+      "relation": "similar",
+      "senseId": "oewn-random__3.00.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9862261414527893
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "DISORDER",
+      "relation": "similar",
+      "senseId": "oewn-disorder__1.26.02..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9827004075050354
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "WHERE",
+      "relation": "neutral",
+      "senseId": "wikt-en-cc2583ca6b77811e71c6",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "TABLE",
+      "relation": "neutral",
+      "senseId": "oewn-table__1.14.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "SEVEN",
+      "relation": "neutral",
+      "senseId": "oewn-seven__5.00.00.cardinal.00",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "ADJECTIVE",
+      "relation": "neutral",
+      "senseId": "oewn-adjective__3.01.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "ANGER",
+      "word": "GENTLE",
+      "relation": "opposite",
+      "senseId": "oewn-gentle__5.00.00.mild.00",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.9732239842414856
+    },
+    {
+      "enemy": "ANGER",
+      "word": "KIND",
+      "relation": "opposite",
+      "senseId": "oewn-kind__3.00.00..",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.9043800830841064
+    },
+    {
+      "enemy": "ANGER",
+      "word": "PLACATE",
+      "relation": "opposite",
+      "senseId": "oewn-placate__2.37.00..",
+      "method": "lexical-expansion",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "ANGER",
+      "word": "PACIFY",
+      "relation": "opposite",
+      "senseId": "oewn-pacify__2.37.00..",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.26440563797950745
+    },
+    {
+      "enemy": "ANGER",
+      "word": "SOOTHE",
+      "relation": "neutral",
+      "senseId": "oewn-soothe__2.37.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": 0.18880164623260498
+    },
+    {
+      "enemy": "ANGER",
+      "word": "CONCILIATE",
+      "relation": "opposite",
+      "senseId": "oewn-conciliate__2.37.00..",
+      "method": "lexical-expansion",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "ANGER",
+      "word": "IRATE",
+      "relation": "similar",
+      "senseId": "oewn-irate__5.00.00.angry.00",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.9918172955513
+    },
+    {
+      "enemy": "ANGER",
+      "word": "IRRITATED",
+      "relation": "similar",
+      "senseId": "oewn-irritated__5.00.00.displeased.00",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.9923668503761292
+    },
+    {
+      "enemy": "ANGER",
+      "word": "CHAIR",
+      "relation": "neutral",
+      "senseId": "oewn-chair__1.06.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "ANGER",
+      "word": "KNIFE",
+      "relation": "neutral",
+      "senseId": "oewn-knife__1.06.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "ANGER",
+      "word": "HAMMER",
+      "relation": "neutral",
+      "senseId": "oewn-hammer__1.06.04..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "ANGER",
+      "word": "LEMON",
+      "relation": "neutral",
+      "senseId": "oewn-lemon__1.13.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "HEARTEN",
+      "relation": "opposite",
+      "senseId": "oewn-hearten__2.37.00..",
+      "method": "vector-nli",
+      "maxEntailment": 0.9240857362747192
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "PROMISING",
+      "relation": "opposite",
+      "senseId": "oewn-promise__2.32.00..",
+      "method": "vector-nli",
+      "maxEntailment": 0.9000993371009827
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "RESILIENT",
+      "relation": "neutral",
+      "senseId": "oewn-resilient__5.00.00.spirited.00",
+      "method": "vector-nli-neutral",
+      "maxEntailment": 0.0017026003915816545
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "REASSURE",
+      "relation": "neutral",
+      "senseId": "oewn-reassure__2.32.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": 0.02699357457458973
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "ENCOURAGEMENT",
+      "relation": "opposite",
+      "senseId": "oewn-encouragement__1.04.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9709850549697876
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "OPTIMISTIC",
+      "relation": "opposite",
+      "senseId": "oewn-optimistic__3.00.00..",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.7138024568557739
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "DESPONDENT",
+      "relation": "similar",
+      "senseId": "oewn-despondent__5.00.00.hopeless.00",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.9720250368118286
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "DESPAIRING",
+      "relation": "similar",
+      "senseId": "oewn-despair__2.37.00..",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.9787144064903259
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "WINDOW",
+      "relation": "neutral",
+      "senseId": "oewn-window__1.06.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "DOCTOR",
+      "relation": "neutral",
+      "senseId": "oewn-doctor__1.18.02..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "MONEY",
+      "relation": "neutral",
+      "senseId": "oewn-money__1.21.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "RAIN",
+      "relation": "neutral",
+      "senseId": "oewn-rain__1.19.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "FEAR",
+      "word": "PLUCK",
+      "relation": "neutral",
+      "senseId": "oewn-pluck__1.07.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": 0.04375956207513809
+    },
+    {
+      "enemy": "FEAR",
+      "word": "NERVE",
+      "relation": "neutral",
+      "senseId": "oewn-nerve__1.08.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": 0.13352777063846588
+    },
+    {
+      "enemy": "FEAR",
+      "word": "AUDACITY",
+      "relation": "neutral",
+      "senseId": "oewn-audacity__1.07.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": 0.6045317053794861
+    },
+    {
+      "enemy": "FEAR",
+      "word": "COMPOSED",
+      "relation": "opposite",
+      "senseId": "oewn-composed__3.00.00..",
+      "method": "vector-nli",
+      "maxEntailment": 0.9799664616584778
+    },
+    {
+      "enemy": "FEAR",
+      "word": "VALIANT",
+      "relation": "opposite",
+      "senseId": "oewn-valiant__5.00.00.brave.00",
+      "method": "lexical-expansion",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "FEAR",
+      "word": "REASSURE",
+      "relation": "opposite",
+      "senseId": "oewn-reassure__2.32.00..",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.9873803853988647
+    },
+    {
+      "enemy": "FEAR",
+      "word": "DREAD",
+      "relation": "similar",
+      "senseId": "oewn-dread__1.12.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9852480888366699
+    },
+    {
+      "enemy": "FEAR",
+      "word": "PANIC",
+      "relation": "similar",
+      "senseId": "oewn-panic__1.12.00..",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.9845463037490845
+    },
+    {
+      "enemy": "FEAR",
+      "word": "DOOR",
+      "relation": "neutral",
+      "senseId": "oewn-door__1.06.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "FEAR",
+      "word": "SHARK",
+      "relation": "neutral",
+      "senseId": "oewn-shark__1.05.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "FEAR",
+      "word": "SPIDER",
+      "relation": "neutral",
+      "senseId": "oewn-spider__1.05.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "FEAR",
+      "word": "CAREFUL",
+      "relation": "similar",
+      "senseId": "oewn-careful__5.00.00.troubled.00",
+      "method": "vector-nli",
+      "maxEntailment": 0.9907225370407104
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "EUPHORIC",
+      "relation": "opposite",
+      "senseId": "oewn-euphoric__3.00.00..",
+      "method": "vector-nli",
+      "maxEntailment": 0.9366048574447632
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "AMUSE",
+      "relation": "opposite",
+      "senseId": "oewn-amuse__2.32.00..",
+      "method": "vector-nli",
+      "maxEntailment": 0.9091770052909851
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "EXHILARATE",
+      "relation": "neutral",
+      "senseId": "oewn-exhilarate__2.37.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": 0.7732987403869629
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "JOLLY",
+      "relation": "opposite",
+      "senseId": "oewn-jolly__5.00.00.joyous.00",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.8116129040718079
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "BLITHE",
+      "relation": "opposite",
+      "senseId": "oewn-blithe__5.00.00.cheerful.00",
+      "method": "lexical-expansion",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "CHEER",
+      "relation": "opposite",
+      "senseId": "oewn-cheer__1.07.00..",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.9686934351921082
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "MOURNFUL",
+      "relation": "similar",
+      "senseId": "oewn-mournful__5.00.00.sad.00",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.9923163652420044
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "UNHAPPY",
+      "relation": "similar",
+      "senseId": "oewn-unhappy__3.00.00..",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.9936908483505249
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "MUSIC",
+      "relation": "neutral",
+      "senseId": "oewn-music__1.10.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "WINTER",
+      "relation": "neutral",
+      "senseId": "oewn-winter__1.28.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "CLOUD",
+      "relation": "similar",
+      "senseId": "oewn-cloud__2.37.00..",
+      "method": "vector-nli",
+      "maxEntailment": 0.962417483329773
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "VIOLIN",
+      "relation": "neutral",
+      "senseId": "oewn-violin__1.06.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "TENDER",
+      "relation": "neutral",
+      "senseId": "oewn-tender__3.00.03..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": 0.32341572642326355
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "BENIGN",
+      "relation": "opposite",
+      "senseId": "oewn-benign__5.00.00.kind.00",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.24694670736789703
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "SYMPATHETIC",
+      "relation": "opposite",
+      "senseId": "oewn-sympathetic__5.00.00.kind.00",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.9356691837310791
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "MERCIFUL",
+      "relation": "opposite",
+      "senseId": "oewn-merciful__3.00.00..",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.29114288091659546
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "GENTLE",
+      "relation": "opposite",
+      "senseId": "oewn-gentle__5.00.00.mild.00",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.9691203832626343
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "COMFORT",
+      "relation": "neutral",
+      "senseId": "oewn-comfort__1.26.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": 0.79554682970047
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "SADISTIC",
+      "relation": "neutral",
+      "senseId": "oewn-sadistic__3.00.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": 0.3870026171207428
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "ABUSE",
+      "relation": "similar",
+      "senseId": "oewn-abuse__1.04.02..",
+      "method": "vector-nli",
+      "maxEntailment": 0.9160757064819336
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "JUDGE",
+      "relation": "neutral",
+      "senseId": "oewn-judge__1.18.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "PRISON",
+      "relation": "neutral",
+      "senseId": "oewn-prison__1.06.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "SURGEON",
+      "relation": "neutral",
+      "senseId": "oewn-surgeon__1.18.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "SPOON",
+      "relation": "neutral",
+      "senseId": "oewn-spoon__1.06.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "METHODICAL",
+      "relation": "opposite",
+      "senseId": "oewn-methodical__5.00.00.organized.01",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.9178281426429749
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "SYSTEMATIC",
+      "relation": "opposite",
+      "senseId": "oewn-systematic__3.00.00..",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.9036120176315308
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "STRAIGHTEN",
+      "relation": "neutral",
+      "senseId": "oewn-straighten__2.38.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "STABILITY",
+      "relation": "opposite",
+      "senseId": "oewn-stability__1.26.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9844799637794495
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "COORDINATE",
+      "relation": "opposite",
+      "senseId": "oewn-coordinate__2.30.00..",
+      "method": "lexical-expansion",
+      "maxEntailment": 0.9006268978118896
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "REGULATE",
+      "relation": "neutral",
+      "senseId": "oewn-regulate__2.30.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "TURMOIL",
+      "relation": "similar",
+      "senseId": "oewn-turmoil__1.26.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.9910367727279663
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "JUMBLE",
+      "relation": "neutral",
+      "senseId": "oewn-jumble__1.26.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": 0.6367582678794861
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "ATOM",
+      "relation": "neutral",
+      "senseId": "oewn-atom__1.27.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "ANARCHIST",
+      "relation": "neutral",
+      "senseId": "oewn-anarchist__1.18.00..",
+      "method": "reviewed-profile",
+      "maxEntailment": 0.08446519076824188
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "VOLCANO",
+      "relation": "neutral",
+      "senseId": "oewn-volcano__1.17.01..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "MATHEMATICS",
+      "relation": "neutral",
+      "senseId": "oewn-mathematics__1.09.00..",
+      "method": "vector-nli-neutral",
+      "maxEntailment": null
+    }
+  ]
+}

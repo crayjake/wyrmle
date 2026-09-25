@@ -86,7 +86,7 @@ test('legacy-bonus serialized candidates retain their deterministic semantic and
 test('default serialized candidates carry the complete definition-backed meaning table without type or length bonuses', () => {
   const candidate = createCandidate('ANGER', 'serialized-meanings', { refillLimit: 12 })
   const restored = JSON.parse(JSON.stringify(candidate))
-  assert.equal(restored.provenance.generatorVersion, 'letter-strike-generator-3')
+  assert.equal(restored.provenance.generatorVersion, 'letter-strike-generator-4')
   assert.equal(restored.encounter.meaningLexicon.policy, 'defined-only')
   assert.ok(Object.keys(restored.encounter.meaningLexicon.words).length > 0)
   assert.deepEqual(restored.encounter.meaningLexicon, candidate.encounter.meaningLexicon)
@@ -165,7 +165,7 @@ test('punctuation and long mutation seeds retain distinct reversible candidate i
   const colon = createCandidate('MELANCHOLY', 'same:seed')
   const dash = createCandidate('MELANCHOLY', 'same-seed')
   assert.notEqual(colon.id, dash.id)
-  assert.equal(decodeURIComponent(colon.id.slice('generated-melancholy-meaning1-'.length)), 'same:seed')
+  assert.equal(decodeURIComponent(colon.id.slice('generated-melancholy-meaning2-'.length)), 'same:seed')
   const suffix = 'identical-suffix-that-is-longer-than-twenty-four-characters'
   const first = mutateCandidate(colon, `first:${suffix}`, { kind: 'tile-swap' })
   const second = mutateCandidate(colon, `second:${suffix}`, { kind: 'tile-swap' })

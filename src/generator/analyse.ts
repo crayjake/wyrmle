@@ -148,6 +148,8 @@ export type AnalysisOptions = {
   solution?: SolverResult
   counterfactualSolver?: Partial<SolverOptions>
   wordCommonness?: (word: string) => number | null
+  /** Stable authoring source for supplied familiarity scores, when available. */
+  commonnessSource?: string
   reasonableMovesPerState?: number
   reasonableScoreMargin?: number
   maxReasonableStates?: number
@@ -501,7 +503,9 @@ export function analysePuzzle(input: CandidatePuzzle | LetterStrikeEncounter, op
     'The fixed fairness state budget alternates breadth and deepest pending positions, preserving early opening diversity while sampling late Resolve; this is not an unbiased random-player distribution.',
     'Unknown bounded-search states are not counted as dead or safe. Fairness rates exclude unknown states and report an uncertainty interval.',
     'Letter supply is an optimistic physical upper bound. Observed word opportunities are lower bounds and do not guarantee future accessibility.',
-    'Commonness is a local curated familiarity estimate; missing annotations remain unknown. Required vocabulary describes the best observed winning line.',
+    options.wordCommonness
+      ? `Commonness uses the supplied authoring provider${options.commonnessSource ? ` (${options.commonnessSource})` : ''}; missing scores remain unknown. Required vocabulary describes the best observed winning line.`
+      : 'Commonness is a local curated familiarity estimate; missing annotations remain unknown. Required vocabulary describes the best observed winning line.',
     'Counterfactual replays are exact for the same tile-ID sequence; separate bounded searches compare witnessed solutions and cannot prove decorative mechanics unless exhaustive.',
     'The strategic opening is from the best observed line. Immediate-move optimality is reported only when proved, using physical tile identities and minimum-turn wins.',
     'Special preservation means retaining its physical tile, including an untriggered Strike tile. Automatic-opening claims require complete dictionary and tile-ID discovery within the reasonable-play definition.',

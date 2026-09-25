@@ -10,10 +10,10 @@ export type LexicalEntry = {
   synonyms: readonly string[]
   counters: readonly string[]
   related: readonly string[]
-  /** Familiarity estimate in [0, 1], not a measured corpus frequency. */
+  /** Familiarity proxy in [0, 1]; commonnessSource distinguishes corpus and editorial estimates. */
   commonness: number | null
-  commonnessSource: 'curated-estimate' | 'unknown'
-  semanticSource: 'curated-local' | 'dictionary-only' | 'curated-and-wordnet'
+  commonnessSource: 'curated-estimate' | 'corpus-frequency' | 'unknown'
+  semanticSource: 'curated-local' | 'dictionary-only' | 'curated-and-wordnet' | 'offline-model'
   semanticConfidence: number
   properNoun?: boolean
 }

@@ -150,7 +150,8 @@ test('WHERE and other function words survive compilation, publication packing, p
     assert.ok(meaning?.definition.trim(), word)
     assert.equal(meaning.source, 'wiktionary-en', word)
     assert.equal(meaning.relation, 'unrelated', word)
-    assert.equal(meaning.evidence, 'defined-neutral', word)
+    assert.equal(meaning.evidence, 'model-assessed', word)
+    assert.ok(meaning.assessment!.sensesEvaluated > 0, word)
     assert.ok(findPlayableWords(state).includes(word), word)
     const ids = selection(published, word)
     const preview = previewLetterStrike(state, ids)
@@ -161,7 +162,8 @@ test('WHERE and other function words survive compilation, publication packing, p
     assert.deepEqual(submitLetterStrike(state, ids).playedWords[0].preview, preview, word)
     assert.ok(findValidMoves(state, { vocabulary: [word] }).length > 0, word)
   }
-  assert.match(meaningLexicon.words.WHERE.definition, /what place/)
+  assert.ok(getFunctionWord('WHERE')!.senses.some(sense => sense.id === meaningLexicon.words.WHERE.senseId
+    && sense.definition === meaningLexicon.words.WHERE.definition), 'The selected contextual sense must retain its exact licensed definition.')
   assert.ok(meaningLexicon.words.WHERE.partsOfSpeech.includes('adverb'))
   assert.equal(canSpellEncounterWord(published, ['Y', 'O', 'U']), true,
     'A remaining YOU must not be declared an exhausted board.')
@@ -180,7 +182,7 @@ test('the compiled lexicon is deeply immutable and unsupported enemy profiles fa
     assert.ok(Object.isFrozen(entry.partsOfSpeech))
   }
   assert.throws(() => { (compiled.words.CHEERFUL as PuzzleWordMeaning).relation = 'similar' }, TypeError)
-  assert.throws(() => compilePuzzleMeanings({ ...fixture(), enemy: { ...fixture().enemy, word: 'CAT' } }), /No reviewed semantic profile/)
+  assert.throws(() => compilePuzzleMeanings({ ...fixture(), enemy: { ...fixture().enemy, word: 'CAT' } }), /No offline semantic assessment cache/)
 })
 
 test('recompilation detects removed/extra words, metadata drift and every altered meaning evidence field', () => {
@@ -199,6 +201,12 @@ test('recompilation detects removed/extra words, metadata drift and every altere
     ...(['definition', 'lemma', 'senseId', 'relation', 'reason', 'source', 'evidence'] as const).map(key =>
       [key, (_: LetterStrikeEncounter, lexicon: PuzzleMeaningLexicon) => { (lexicon.words.CHEERFUL as unknown as Record<string, unknown>)[key] = 'tampered' }] as const),
     ['partsOfSpeech', (_, lexicon) => { lexicon.words.CHEERFUL.partsOfSpeech = ['noun'] }],
+    ['missing assessment header', (_, lexicon) => { delete lexicon.assessment }],
+    ['missing word assessment', (_, lexicon) => { delete lexicon.words.CHEERFUL.assessment }],
+    ['changed model scores', (_, lexicon) => { lexicon.words.CHEERFUL.assessment = {
+      ...lexicon.words.CHEERFUL.assessment!, counterScore: 0.123456789,
+    } }],
+    ['changed model metadata', (_, lexicon) => { lexicon.assessment = { ...lexicon.assessment!, policyDigest: 'changed' } }],
   ]
   for (const [name, change] of changes) {
     const altered = structuredClone(original)
@@ -247,8 +255,12 @@ test('validation rejects definition tampering even when solver rule keys correct
   assert.ok(!validatePuzzle(candidate(original), analysis).reasons.some(reason => reason.code === 'stale-or-incomplete-meanings'))
   assert.ok(validatePuzzle(candidate(changed), analysis).reasons.some(reason => reason.code === 'stale-or-incomplete-meanings'))
   const removedTable = candidate({ ...original, meaningLexicon: undefined })
-  removedTable.provenance.generatorVersion = 'letter-strike-generator-3'
-  assert.ok(validatePuzzle(removedTable, analysis).reasons.some(reason => reason.code === 'missing-puzzle-meanings'))
+  for (const version of ['letter-strike-generator-3', 'letter-strike-generator-4']) {
+    removedTable.provenance.generatorVersion = version
+    assert.ok(validatePuzzle(removedTable, analysis).reasons.some(reason => reason.code === 'missing-puzzle-meanings'))
+  }
+  assert.ok(validatePuzzle(removedTable, analysis, { requireMeaningRefinement: true }).reasons
+    .some(reason => reason.code === 'meaning-refinement-incomplete'))
 })
 
 test('semantic analysis uses the compiled scoring table instead of legacy relation mirrors', () => {

@@ -2,6 +2,8 @@ import { canSpellDictionaryWord, isDictionaryWord, normalizeWord } from './dicti
 import { getSemanticRelation } from './semantic.ts'
 import type { LetterStrikeEncounter } from './letterStrike.ts'
 import type { PartOfSpeech, SemanticRelation } from './types.ts'
+import { readSemanticAssessmentMetadata, readWordSemanticAssessment } from './semanticAssessment.ts'
+import type { SemanticAssessmentMetadata, WordSemanticAssessment } from './semanticAssessment.ts'
 
 export const MEANING_LEXICON_VERSION = 'wyrmle-puzzle-meanings-1' as const
 
@@ -13,7 +15,8 @@ export type PuzzleWordMeaning = {
   relation: SemanticRelation
   reason: string
   source: 'oewn-2025' | 'wiktionary-en'
-  evidence: 'reviewed-profile' | 'lexical-expansion' | 'defined-neutral'
+  evidence: 'reviewed-profile' | 'lexical-expansion' | 'defined-neutral' | 'model-assessed'
+  assessment?: WordSemanticAssessment
 }
 
 /** Generated before solving; this same frozen table decides validity and hits. */
@@ -27,6 +30,7 @@ export type PuzzleMeaningLexicon = {
   letterSupply: string
   minimumWordLength: number
   maximumWordLength: number
+  assessment?: SemanticAssessmentMetadata
   words: Readonly<Record<string, PuzzleWordMeaning>>
 }
 
@@ -97,11 +101,29 @@ export function validateMeaningLexicon(encounter: LetterStrikeEncounter): void {
   if (Object.values(encounter.grammarModifiers ?? {}).some(value => value !== 0) || encounter.longWordRule) {
     throw new Error('Meaning-only puzzles cannot award word-type or long-word bonuses.')
   }
+  const assessment = Object.hasOwn(lexicon, 'assessment') ? readSemanticAssessmentMetadata(lexicon.assessment) : undefined
+  if (assessment && assessment.assessedWords < Object.keys(lexicon.words).length) {
+    throw new Error('Puzzle meaning data exceeds its assessed vocabulary coverage.')
+  }
+  let refinedWords = 0
   for (const [word, entry] of Object.entries(lexicon.words)) {
     if (!/^[A-Z]+$/.test(word) || word.length < lexicon.minimumWordLength || word.length > lexicon.maximumWordLength
       || !entry.definition?.trim() || !entry.senseId || !entry.lemma || !entry.reason
       || !['oewn-2025', 'wiktionary-en'].includes(entry.source) || !['opposite', 'similar', 'related', 'unrelated'].includes(entry.relation)) {
       throw new Error(`Missing definition or semantic evidence for ${word}.`)
     }
+    if (assessment) {
+      if (entry.evidence !== 'model-assessed') throw new Error(`Missing model assessment for ${word}.`)
+      const scores = readWordSemanticAssessment(entry.assessment)
+      if (scores.sensesEvaluated > assessment.assessedSenses) throw new Error(`Invalid assessed sense count for ${word}.`)
+      if (scores.decisionBasis === 'local-llm') {
+        refinedWords++
+        if (assessment.method !== 'local-llm' && !assessment.refinement) throw new Error(`LLM refinement for ${word} is missing its versioned metadata.`)
+      }
+    } else if (Object.hasOwn(entry, 'assessment') || entry.evidence === 'model-assessed') {
+      throw new Error(`Model assessment for ${word} is missing its versioned metadata.`)
+    }
   }
+  if (assessment?.refinement && (assessment.refinement.eligibleWords > Object.keys(lexicon.words).length
+    || assessment.refinement.reviewedWords !== refinedWords)) throw new Error('LLM refinement coverage does not match stored word evidence.')
 }

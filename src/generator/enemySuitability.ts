@@ -1,11 +1,11 @@
 import { isDictionaryWord, normalizeWord } from '../game/dictionary.ts'
 import { localLexicalProvider } from './lexicalProvider.ts'
-import type { LexicalProvider } from './lexicalProvider.ts'
+import type { LexicalEntry, LexicalProvider } from './lexicalProvider.ts'
 
 export type EnemySuitability = {
   word: string
   commonness: number | null
-  commonnessSource: 'curated-estimate' | 'unknown'
+  commonnessSource: LexicalEntry['commonnessSource']
   definitionQuality: number
   partOfSpeechClarity: number
   counterCount: number
@@ -57,12 +57,15 @@ export function analyseEnemySuitability(enemyWord: string, provider: LexicalProv
     : word.length === 5 || word.length === 10 ? 0.85
       : word.length === 4 || word.length === 11 ? 0.55 : 0
   const weights = config.weights
+  // Model assessment distinguishes counter, resisted and neutral meanings.
+  // A separate related-but-neutral class is an archived profile requirement.
+  const modelAssessed = entry?.semanticSource === 'offline-model'
   const overallScore = round(
-    (entry?.commonness ?? 0) * weights.commonness + definitionQuality * weights.definition
+    ((entry?.commonness ?? 0) * weights.commonness + definitionQuality * weights.definition
     + partOfSpeechClarity * weights.partOfSpeech + unit(counters.length / 12) * weights.counters
-    + unit(resisted.length / 8) * weights.resisted + unit(related.length / 8) * weights.related
+    + unit(resisted.length / 8) * weights.resisted + (modelAssessed ? 0 : unit(related.length / 8) * weights.related)
     + letterPlayability * weights.letters + lengthScore * weights.length
-    + (entry?.semanticConfidence ?? 0) * weights.confidence,
+    + (entry?.semanticConfidence ?? 0) * weights.confidence) / (modelAssessed ? 1 - weights.related : 1),
   )
   const rejectionReasons: string[] = []
   if (!/^[A-Z]+$/.test(word) || !isDictionaryWord(word)) rejectionReasons.push('Enemy is not a valid local dictionary word.')
@@ -75,7 +78,7 @@ export function analyseEnemySuitability(enemyWord: string, provider: LexicalProv
   if (partOfSpeechClarity !== 1) rejectionReasons.push('No clear part of speech for the intended enemy sense.')
   if (counters.length < config.minimumCounters) rejectionReasons.push(`Insufficient counter vocabulary (${counters.length}/${config.minimumCounters}).`)
   if (resisted.length < config.minimumResisted) rejectionReasons.push(`Poor semantic neighbourhood: insufficient resisted vocabulary (${resisted.length}/${config.minimumResisted}).`)
-  if (related.length < config.minimumRelated) rejectionReasons.push(`Insufficient related vocabulary (${related.length}/${config.minimumRelated}).`)
+  if (!modelAssessed && related.length < config.minimumRelated) rejectionReasons.push(`Insufficient related vocabulary (${related.length}/${config.minimumRelated}).`)
   if (counterLetterCoverage < config.minimumCounterLetterCoverage) rejectionReasons.push('Counter words cover too few enemy letters.')
   if (overallScore < config.minimumScore) rejectionReasons.push(`Overall suitability is below ${config.minimumScore}.`)
   return {

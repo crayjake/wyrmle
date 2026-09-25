@@ -1,0 +1,107 @@
+{
+  "purpose": "Retrieval eligibility diagnosis only; not a classification quality result",
+  "baseline": "Actual frozen .75 NLI + role cache failures",
+  "channelOrder": [
+    "lemma + definition",
+    "definition only",
+    "lemma only"
+  ],
+  "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+  "summary": {
+    "all": {
+      "total": 9,
+      "thresholds": {
+        "0.5": {
+          "channels": [
+            4,
+            6,
+            3
+          ],
+          "union": 6
+        },
+        "0.45": {
+          "channels": [
+            6,
+            7,
+            6
+          ],
+          "union": 8
+        },
+        "0.4": {
+          "channels": [
+            6,
+            8,
+            7
+          ],
+          "union": 9
+        }
+      }
+    },
+    "primary": {
+      "total": 4,
+      "thresholds": {
+        "0.5": {
+          "channels": [
+            2,
+            3,
+            1
+          ],
+          "union": 3
+        },
+        "0.45": {
+          "channels": [
+            3,
+            3,
+            3
+          ],
+          "union": 3
+        },
+        "0.4": {
+          "channels": [
+            3,
+            4,
+            3
+          ],
+          "union": 4
+        }
+      }
+    },
+    "confirmation": {
+      "total": 5,
+      "thresholds": {
+        "0.5": {
+          "channels": [
+            2,
+            3,
+            2
+          ],
+          "union": 3
+        },
+        "0.45": {
+          "channels": [
+            3,
+            4,
+            3
+          ],
+          "union": 5
+        },
+        "0.4": {
+          "channels": [
+            3,
+            4,
+            4
+          ],
+          "union": 5
+        }
+      }
+    }
+  },
+  "retrievalFiles": {
+    "anger.npz": "25572b28e78d6850bd3883c1d71b06be15820c8494bcf8ba1274573279b0c825",
+    "chaos.npz": "0eef063a512ecca74261687d29a6333d8445ab6f3e8b00d79ed27e7635e676ca",
+    "cruelty.npz": "37c7bc6e2d01cd8c2dca0ce6359e2dc6354ccc361b84a970314177661651f250",
+    "despair.npz": "85e8e30b03f27ba69204c3a29486bce9ab32d8a22abfd89f2c85d30373cb41ae",
+    "fear.npz": "2c5a87b6a79c48065d1c12bd755f1219b043c1ebc01c7ed17b5a6af0bc447bdc",
+    "melancholy.npz": "630e8e0d615b43344a9148ea4478f601e44a62fb0cf157cfeff6abf7512c6f45"
+  }
+}

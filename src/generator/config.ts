@@ -13,6 +13,8 @@ export const defaultAnalysisConfig = {
 } as const
 
 export type ValidationConfig = {
+  /** Release requires complete contextual review; draft search may use the base assessment. */
+  requireMeaningRefinement?: boolean
   requireOpeningSafety?: boolean
   openingSafetyScope?: 'all-damaging-openings' | 'all-valid-openings'
   allowRestrictedOpeningSafety?: boolean
@@ -31,6 +33,7 @@ export type ValidationConfig = {
 }
 
 export const defaultValidationConfig: ValidationConfig = {
+  requireMeaningRefinement: false,
   requireOpeningSafety: false,
   openingSafetyScope: 'all-damaging-openings',
   allowRestrictedOpeningSafety: false,

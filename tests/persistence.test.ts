@@ -741,7 +741,7 @@ test('pre-LONG adapters reject injected modifiers and archived LONG saves requir
 })
 
 test('v4 authored win and loss routes persist exact LONG, special and positional outcomes', () => {
-  const definition = getDailyPuzzle('2026-09-26')
+  const definition = getDailyPuzzle('2026-09-27')
   for (const won of [true, false]) {
     const storage = new MemoryStorage()
     const turns = won ? currentWinTileIds : [[13, 4, 6], [14, 18, 8], [20, 16, 7], [22, 19, 12], [0, 25, 3]]
@@ -822,7 +822,7 @@ test('historical Begin snapshots default to Normal even when the preference is H
 })
 
 test('schema 3 runs and results gain Normal metadata read-only and reject injected difficulty', () => {
-  const definition = getDailyPuzzle('2026-09-26')
+  const definition = getDailyPuzzle('2026-09-27')
   for (const completed of [false, true]) {
     const storage = new MemoryStorage()
     const game = playTurns(createGame(definition.encounter), completed ? currentWinTileIds : currentWinTileIds.slice(0, 1))

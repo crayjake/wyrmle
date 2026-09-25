@@ -6,6 +6,7 @@ import type { LetterStrikeEncounter } from '../src/game/letterStrike.ts'
 import { certifyOpeningSafety } from '../src/generator/openingSafety.ts'
 import type { OpeningSafetyReport, OpeningSafetyScope } from '../src/generator/openingSafety.ts'
 import { getWordCommonness, localLexicalProvider } from '../src/generator/lexicalProvider.ts'
+import { getGenerationWordCommonness, GENERATION_COMMONNESS_SOURCE, getGenerationFamiliarVocabulary } from '../src/generator/familiarity.ts'
 
 const args = process.argv.slice(2)
 const argument = (name: string, fallback?: string) => {
@@ -45,10 +46,15 @@ if (inputPath) {
 const scope = argument('scope', 'all-damaging-openings') as OpeningSafetyScope
 if (!['all-damaging-openings', 'all-valid-openings'].includes(scope)) throw new Error('Unsupported opening scope.')
 const minimum = number('minimum-commonness', 0.5)
+const modelAssessed = !!encounter.meaningLexicon?.assessment
+const commonness = modelAssessed ? getGenerationWordCommonness : getWordCommonness
+const commonnessSource = modelAssessed ? GENERATION_COMMONNESS_SOURCE : localLexicalProvider.id
+const familiarVocabulary = modelAssessed ? getGenerationFamiliarVocabulary(minimum)
+  : localLexicalProvider.vocabulary().filter(entry => (commonness(entry.word) ?? -1) >= minimum).map(entry => entry.word)
 const words = argument('words')
 if (words && args.includes('--common-openings')) throw new Error('Choose --words or --common-openings, not both.')
 const openingVocabulary = words?.split(',') ?? (args.includes('--common-openings')
-  ? localLexicalProvider.vocabulary().filter(entry => (getWordCommonness(entry.word) ?? -1) >= minimum).map(entry => entry.word)
+  ? familiarVocabulary
   : undefined)
 const resumePath = argument('resume')
 const resume: OpeningSafetyReport | undefined = resumePath ? JSON.parse(readFileSync(resolve(resumePath), 'utf8')) : undefined
@@ -65,6 +71,7 @@ const save = (path: string, report: OpeningSafetyReport) => {
 let lastProgress = ''
 const report = certifyOpeningSafety(encounter, {
   scope, openingVocabulary, minimumCommonness: minimum,
+  wordCommonness: commonness, commonnessSource, familiarVocabulary,
   requireFamiliarContinuation: !args.includes('--allow-obscure'),
   maxSuccessors: number('successors', 100), maxDurationMs: number('seconds', 30) * 1000,
   solver: { maxStates: number('states', 100), beamWidth: number('beam', 12, 1),

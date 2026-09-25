@@ -1,0 +1,48 @@
+{
+  "kind": "Exploratory gameplay review outside scored benchmark",
+  "provenance": "Reported during independent puzzle review after the main and first confirmation sets were frozen. May inform further development; do not present as unseen validation.",
+  "configurationHash": "f4bfe5f023ea7d76d3a1434a734d6ffa08c8aca300fd2a184e1717fbece547a1",
+  "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+  "records": [
+    {
+      "word": "STORY",
+      "enemy": "CHAOS",
+      "actual": {
+        "counterCosine": 0.509501,
+        "counterScore": 0.884119,
+        "inferredCandidates": 1,
+        "margin": 0.884119,
+        "method": "local-vector-nli",
+        "relation": "opposite",
+        "resistedCosine": 0.358112,
+        "resistedScore": 0.0,
+        "selectedAnchor": "oewn-structure__1.07.00..",
+        "senseId": "oewn-story__1.06.00..",
+        "sensesEvaluated": 6
+      },
+      "selectedDefinition": "a structure consisting of a room or set of rooms at a single position along a vertical scale",
+      "finding": "A building floor is a physical structure; this selected sense does not itself counter confusion or disorder. Association with STRUCTURE is insufficient.",
+      "suggestedRelationForSelectedSense": "neutral"
+    },
+    {
+      "word": "STOREY",
+      "enemy": "CHAOS",
+      "actual": {
+        "counterCosine": 0.521798,
+        "counterScore": 0.884119,
+        "inferredCandidates": 1,
+        "margin": 0.884119,
+        "method": "local-vector-nli",
+        "relation": "opposite",
+        "resistedCosine": 0.233167,
+        "resistedScore": 0.0,
+        "selectedAnchor": "oewn-structure__1.07.00..",
+        "senseId": "oewn-storey__1.06.00..",
+        "sensesEvaluated": 1
+      },
+      "selectedDefinition": "a structure consisting of a room or set of rooms at a single position along a vertical scale",
+      "finding": "A building floor is a physical structure; this selected sense does not itself counter confusion or disorder. Association with STRUCTURE is insufficient.",
+      "suggestedRelationForSelectedSense": "neutral"
+    }
+  ]
+}

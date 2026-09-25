@@ -123,7 +123,7 @@ function CandidateReview({ ranked, onPlay }: { ranked: RankedCandidate; onPlay: 
             <Metric label="Fewest tiles before winning word">{analysis.refillPressure.minimumTilesBeforeWinningMove ?? 'Unknown'}</Metric>
           </>}
         </dl>
-        <p className="generator-note">Winning counts are observed lower bounds. Familiarity is a curated local estimate, not measured word frequency.</p>
+        <p className="generator-note">Winning counts are observed lower bounds. Familiarity is an authoring estimate; its source and coverage are recorded in the analysis notes.</p>
       </section>
     </div>
     {meanings && meaningCounts && <details>
@@ -132,10 +132,17 @@ function CandidateReview({ ranked, onPlay }: { ranked: RankedCandidate; onPlay: 
       <dl className="generator-metrics">
         <Metric label="Counters / neutral / resisted">{meaningCounts.counter} / {meaningCounts.neutral} / {meaningCounts.resisted}</Metric>
         <Metric label="Dictionary version">{meanings.dictionaryVersion}</Metric>
-        <Metric label="Reviewed profile version">{meanings.profileVersion}</Metric>
+        <Metric label="Assessment version">{meanings.profileVersion}</Metric>
+        {meanings.assessment && <Metric label="Base assessment">{meanings.assessment.modelId}</Metric>}
+        {meanings.assessment?.refinement && <>
+          <Metric label="Context model">{meanings.assessment.refinement.modelId}</Metric>
+          <Metric label="Context review coverage">{meanings.assessment.refinement.reviewedWords} / {meanings.assessment.refinement.eligibleWords}</Metric>
+        </>}
         <Metric label="Word lengths">{meanings.minimumWordLength}–{meanings.maximumWordLength}</Metric>
       </dl>
-      <p>A neutral record means no counter or reinforcing sense was matched by this reviewed profile. Complete stored coverage does not claim that every possible meaning relationship has been reviewed.</p>
+      <p>{meanings.assessment
+        ? 'Every applicable source sense was assessed offline. Neutral means the stored evidence did not support a counter or reinforcing meaning under the versioned scoring policy.'
+        : 'This archived table used reviewed profiles; unmatched words received a neutral classification.'}</p>
       <label>Inspect a word<input value={meaningQuery} onChange={event => setMeaningQuery(event.target.value)} placeholder="CHEERFUL" autoCapitalize="characters" spellCheck={false} maxLength={32} /></label>
       {inspection && <div role="status" aria-live="polite">{inspection.kind === 'stored' ? <>
         <p><strong>{inspection.word} · {inspection.meaning.relation === 'opposite' ? 'COUNTER' : inspection.meaning.relation === 'similar' ? 'RESISTED' : 'NEUTRAL'}</strong>: {inspection.meaning.definition}</p>
@@ -143,6 +150,9 @@ function CandidateReview({ ranked, onPlay }: { ranked: RankedCandidate; onPlay: 
           ? <p><strong>No reviewed relation matched.</strong> This is the default neutral classification, not an individual review of every possible relationship.</p>
           : <p>{inspection.meaning.reason}</p>}
         <p className="generator-note">{inspection.meaning.source} · {inspection.meaning.senseId} · {inspection.meaning.evidence}</p>
+        {inspection.meaning.assessment && <p className="generator-note">
+          {inspection.meaning.assessment.sensesEvaluated} senses assessed · decision: {inspection.meaning.assessment.decisionBasis ?? 'model'} · base NLI counter {inspection.meaning.assessment.counterScore.toFixed(3)} · base NLI resisted {inspection.meaning.assessment.resistedScore.toFixed(3)} · base anchor: {inspection.meaning.assessment.selectedAnchor}
+        </p>}
       </> : <>
         <p><strong>{inspection.word}</strong>: {inspection.message}</p>
         {inspection.kind !== 'undefined' && <><p>{inspection.meaning.definition}</p>

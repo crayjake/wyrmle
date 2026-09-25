@@ -106,7 +106,7 @@ export function createCandidate(enemyWord: string, seed: string | number, option
   const startingTiles = placeSpecialTiles(board, enemy, pools.counters.map(entry => entry.word),
     anchors.filter(anchor => anchor.roles.includes('resisted')).map(anchor => anchor.word), random, options)
   const armourCount = goal.archetypes.includes('armour-break') ? 2 : 1
-  const id = `generated-${enemy.toLowerCase()}-${meaningOnly ? 'meaning1-' : options.lexicalMode === 'legacy' ? '' : 'lex2-'}${encodeURIComponent(String(seed))}${refillLimit === undefined ? '' : `-finite${refillLimit}`}`
+  const id = `generated-${enemy.toLowerCase()}-${meaningOnly ? 'meaning2-' : options.lexicalMode === 'legacy' ? '' : 'lex2-'}${encodeURIComponent(String(seed))}${refillLimit === undefined ? '' : `-finite${refillLimit}`}`
   const startingResolve = options.startingResolve ?? 5
   let encounter: LetterStrikeEncounter = {
     id, enemy: { word: enemy, definition: entry.definition, partOfSpeech: entry.partsOfSpeech[0],
@@ -133,7 +133,7 @@ export function createCandidate(enemyWord: string, seed: string | number, option
     anchors.push({ word, roles, expected: 'refill', commonness: provider.getEntry(word)?.commonness ?? null })
   }
   return { id, seed: String(seed), enemyWord: enemy, encounter, goal: structuredClone(currentGoal), anchors,
-    construction: refill.construction, provenance: { generatorVersion: meaningOnly ? 'letter-strike-generator-3' : options.lexicalMode === 'legacy' ? 'letter-strike-generator-1' : 'letter-strike-generator-2', lexicalProvider: provider.id } }
+    construction: refill.construction, provenance: { generatorVersion: meaningOnly ? 'letter-strike-generator-4' : options.lexicalMode === 'legacy' ? 'letter-strike-generator-1' : 'letter-strike-generator-2', lexicalProvider: provider.id } }
 }
 
 function compareCandidates(a: RankedCandidate, b: RankedCandidate): number {

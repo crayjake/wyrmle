@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import walkthroughs from '../artifacts/meaning-v1/walkthroughs.json' with { type: 'json' }
+import correctedWalkthroughs from '../artifacts/meaning-v2/walkthroughs.json' with { type: 'json' }
 import {
   canUpgradeMeaningVocabulary, getResultStorageKey, getRunStorageKey,
   loadDailySession, resetDailyPuzzle, saveDailyRun, undoDailyRun,
@@ -23,18 +24,19 @@ class MemoryStorage implements StorageLike {
   key(index: number) { return [...this.data.keys()][index] ?? null }
 }
 
-const latest = getDailyPuzzle('2026-09-25')
-const archived = getDailyPuzzleForVersion(latest.puzzleId, 'letter-strike-7', 10)
+const corrected = getDailyPuzzleForVersion('2026-09-25', 'letter-strike-7', 11)
+const archived = getDailyPuzzleForVersion(corrected.puzzleId, 'letter-strike-7', 10)
+const current = getDailyPuzzle('2026-09-25')
 const at = '2026-09-25T17:00:00.000Z'
-const key = getRunStorageKey(latest.puzzleId)
+const key = getRunStorageKey(corrected.puzzleId)
 
 function position(game: LetterStrikeState) {
   const { encounter: _encounter, ...state } = game
   return state
 }
 
-function historicalRun(turns: number[][], compact = true, undosUsed = 0) {
-  let game = createLetterStrikeGame(archived.encounter)
+function historicalRun(turns: number[][], compact = true, undosUsed = 0, publication = archived) {
+  let game = createLetterStrikeGame(publication.encounter)
   const undoHistory: LetterStrikeState[] = []
   for (const ids of turns) {
     undoHistory.push(captureUndoSnapshot(game))
@@ -42,8 +44,8 @@ function historicalRun(turns: number[][], compact = true, undosUsed = 0) {
     assert.equal(game.error, null)
   }
   const raw = JSON.stringify({
-    saveVersion: SAVE_VERSION, mode: 'normal', puzzleId: archived.puzzleId,
-    gameVersion: archived.gameVersion, puzzleVersion: archived.puzzleVersion,
+    saveVersion: SAVE_VERSION, mode: 'normal', puzzleId: publication.puzzleId,
+    gameVersion: publication.gameVersion, puzzleVersion: publication.puzzleVersion,
     enemyLetters: game.enemyLetters, playerResolve: game.playerResolve,
     tiles: game.tiles, refillIndex: game.refillIndex, nextTileId: game.nextTileId,
     playedWords: game.playedWords, status: game.status,
@@ -55,19 +57,19 @@ function historicalRun(turns: number[][], compact = true, undosUsed = 0) {
 }
 
 test('only the exact reviewed v10 to v11 meaning correction qualifies for an active upgrade', () => {
-  assert.equal(latest.puzzleVersion, 11)
-  assert.equal(canUpgradeMeaningVocabulary(archived, latest), true)
-  const lexicon = latest.encounter.meaningLexicon!
+  assert.equal(corrected.puzzleVersion, 11)
+  assert.equal(canUpgradeMeaningVocabulary(archived, corrected), true)
+  const lexicon = corrected.encounter.meaningLexicon!
   const altered = (patch: Partial<DailyPuzzleDefinition['encounter']>): DailyPuzzleDefinition => ({
-    ...latest, encounter: { ...latest.encounter, ...patch },
+    ...corrected, encounter: { ...corrected.encounter, ...patch },
   })
   const missing = { ...lexicon.words }
   delete missing.HARMONY
   for (const incompatible of [
-    { ...latest, puzzleVersion: 12 },
-    { ...latest, gameVersion: 'letter-strike-8' },
-    { ...latest, puzzleId: '2026-09-26' },
-    altered({ refillQueue: latest.encounter.refillQueue + 'E' }),
+    { ...corrected, puzzleVersion: 12 },
+    { ...corrected, gameVersion: 'letter-strike-8' },
+    { ...corrected, puzzleId: '2026-09-26' },
+    altered({ refillQueue: corrected.encounter.refillQueue + 'E' }),
     altered({ startingResolve: 9 }),
     altered({ meaningLexicon: { ...lexicon, profileVersion: 'changed' } }),
     altered({ meaningLexicon: { ...lexicon, dictionaryVersion: 'unknown-version' } }),
@@ -82,54 +84,53 @@ test('only the exact reviewed v10 to v11 meaning correction qualifies for an act
       AND: { ...lexicon.words.AND, definition: '' },
     } } }),
   ]) assert.equal(canUpgradeMeaningVocabulary(archived, incompatible), false)
-  assert.equal(canUpgradeMeaningVocabulary(latest, latest), false)
+  assert.equal(canUpgradeMeaningVocabulary(corrected, corrected), false)
 })
 
-test('compact and former full v10 saves gain defined neutral words without changing progress or writing during load', () => {
+test('compact and former full v10 saves keep their scored publication after the model update', () => {
+  assert.equal(current.puzzleVersion, 12)
+  assert.equal(canUpgradeMeaningVocabulary(archived, current), false)
   for (const compact of [true, false]) {
     const storage = new MemoryStorage()
     const { game, raw } = historicalRun([[2, 1, 3]], compact, 1) // BAR
     storage.setItem(key, raw)
-    const loaded = loadDailySession(latest, storage)
+    const loaded = loadDailySession(current, storage)
     assert.equal(loaded.error, null)
-    assert.equal(loaded.game!.encounter, latest.encounter)
+    assert.equal(loaded.game!.encounter, archived.encounter)
     assert.deepEqual(position(loaded.game!), position(game))
     assert.equal(loaded.revision, 4)
     assert.equal(loaded.undosUsed, 1)
     assert.equal(loaded.undosRemaining, 2)
     assert.equal(storage.getItem(key), raw)
-    assert.equal(loaded.undoHistory[0].encounter, latest.encounter)
+    assert.equal(loaded.undoHistory[0].encounter, archived.encounter)
     assert.deepEqual(position(loaded.undoHistory[0]), position(createLetterStrikeGame(archived.encounter)))
     const andIds = [15, 12, 5]
     assert.ok(submitLetterStrike(game, andIds).error, 'The fixture must expose the former coverage hole.')
-    const next = submitLetterStrike(loaded.game!, andIds)
-    assert.equal(next.error, null)
-    assert.equal(next.playedWords.at(-1)!.word, 'AND')
-    assert.equal(next.playedWords.at(-1)!.semanticLabel, 'NEUTRAL')
-    const committed = saveDailyRun(latest, next, storage, at, 'normal', loaded.revision)
-    assert.equal(JSON.parse(storage.getItem(key)!).puzzleVersion, 11)
+    assert.ok(submitLetterStrike(loaded.game!, andIds).error, 'A frozen played publication cannot silently acquire different meanings.')
+    const committed = saveDailyRun(current, loaded.game!, storage, at, 'normal', loaded.revision)
+    assert.equal(JSON.parse(storage.getItem(key)!).puzzleVersion, 10)
     assert.equal(committed.undosUsed, 1)
-    assert.deepEqual(loadDailySession(latest, storage).game, next)
-    const undone = undoDailyRun(latest, storage, committed.revision)
-    assert.deepEqual(position(undone.game!), position(game))
-    assert.equal(undone.game!.encounter, latest.encounter)
+    assert.deepEqual(loadDailySession(current, storage).game, game)
+    const undone = undoDailyRun(current, storage, committed.revision)
+    assert.deepEqual(position(undone.game!), position(createLetterStrikeGame(archived.encounter)))
+    assert.equal(undone.game!.encounter, archived.encounter)
     assert.equal(undone.undosUsed, 2)
-    assert.equal(undone.game!.encounter.meaningLexicon!.words.AND.source, 'wiktionary-en')
-    assert.deepEqual(loadDailySession(latest, storage).game, undone.game)
+    assert.equal(undone.game!.encounter.meaningLexicon!.words.AND, undefined)
+    assert.deepEqual(loadDailySession(current, storage).game, undone.game)
   }
 })
 
-test('an undo immediately after a vocabulary upgrade writes v11 and retains the corrected dictionary at the start', () => {
+test('an undo after the model update retains v10 and its original dictionary at the start', () => {
   const storage = new MemoryStorage()
   const { raw } = historicalRun([[2, 1, 3]], true, 1)
   storage.setItem(key, raw)
-  const loaded = loadDailySession(latest, storage)
-  const undone = undoDailyRun(latest, storage, loaded.revision)
+  const loaded = loadDailySession(current, storage)
+  const undone = undoDailyRun(current, storage, loaded.revision)
   assert.equal(undone.game!.playedWords.length, 0)
   assert.equal(undone.undosUsed, 2)
-  assert.equal(undone.game!.encounter, latest.encounter)
-  assert.equal(JSON.parse(storage.getItem(key)!).puzzleVersion, 11)
-  assert.deepEqual(loadDailySession(latest, storage).game, undone.game)
+  assert.equal(undone.game!.encounter, archived.encounter)
+  assert.equal(JSON.parse(storage.getItem(key)!).puzzleVersion, 10)
+  assert.deepEqual(loadDailySession(current, storage).game, undone.game)
 })
 
 test('a previously scored CALM turn stays on v10 when corrected semantics would change its outcome', () => {
@@ -138,23 +139,23 @@ test('a previously scored CALM turn stays on v10 when corrected semantics would 
   const { game, raw } = historicalRun([ids])
   assert.equal(game.playedWords[0].word, 'CALM')
   assert.equal(game.playedWords[0].semanticLabel, 'NEUTRAL')
-  const corrected = submitLetterStrike(createLetterStrikeGame(latest.encounter), ids)
-  assert.equal(corrected.error, null)
-  assert.equal(corrected.playedWords[0].semanticLabel, 'COUNTER')
-  assert.notEqual(corrected.playedWords[0].strikes, game.playedWords[0].strikes)
+  const correctedTurn = submitLetterStrike(createLetterStrikeGame(corrected.encounter), ids)
+  assert.equal(correctedTurn.error, null)
+  assert.equal(correctedTurn.playedWords[0].semanticLabel, 'COUNTER')
+  assert.notEqual(correctedTurn.playedWords[0].strikes, game.playedWords[0].strikes)
   storage.setItem(key, raw)
-  const loaded = loadDailySession(latest, storage)
+  const loaded = loadDailySession(current, storage)
   assert.equal(loaded.error, null)
   assert.equal(loaded.game!.encounter, archived.encounter)
   assert.deepEqual(loaded.game, game)
   assert.equal(storage.getItem(key), raw)
-  const retained = saveDailyRun(latest, loaded.game!, storage, at, 'normal', loaded.revision)
+  const retained = saveDailyRun(current, loaded.game!, storage, at, 'normal', loaded.revision)
   assert.equal(retained.game!.encounter, archived.encounter)
   assert.equal(JSON.parse(storage.getItem(key)!).puzzleVersion, 10)
-  resetDailyPuzzle(latest.puzzleId, storage)
-  const restarted = loadDailySession(latest, storage)
-  assert.equal(restarted.game!.encounter, latest.encounter)
-  assert.equal(submitLetterStrike(restarted.game!, ids).playedWords[0].semanticLabel, 'COUNTER')
+  resetDailyPuzzle(corrected.puzzleId, storage)
+  const restarted = loadDailySession(current, storage)
+  assert.equal(restarted.game!.encounter, current.encounter)
+  assert.ok(restarted.game!.encounter.meaningLexicon!.assessment)
 })
 
 test('v10 wins, losses and terminal runs without separate results keep their exact publication and completion', () => {
@@ -183,32 +184,97 @@ test('v10 wins, losses and terminal runs without separate results keep their exa
     const storage = new MemoryStorage()
     storage.setItem(key, fixture.raw)
     const expected = buildDailyResult(archived, fixture.game, at)
-    const resultKey = getResultStorageKey(latest.puzzleId)
+    const resultKey = getResultStorageKey(corrected.puzzleId)
     const resultBytes = JSON.stringify({ saveVersion: SAVE_VERSION, result: expected })
     if (separateResult) storage.setItem(resultKey, resultBytes)
-    const loaded = loadDailySession(latest, storage)
+    const loaded = loadDailySession(current, storage)
     assert.equal(loaded.error, null)
     assert.equal(loaded.game!.encounter, archived.encounter)
     assert.deepEqual(loaded.result, expected)
     assert.equal(storage.getItem(key), fixture.raw)
     assert.equal(storage.getItem(resultKey), separateResult ? resultBytes : null)
-    const committed = saveDailyRun(latest, createLetterStrikeGame(latest.encounter), storage)
+    const committed = saveDailyRun(current, createLetterStrikeGame(corrected.encounter), storage)
     assert.deepEqual(committed.result, expected)
     assert.equal(storage.getItem(resultKey), resultBytes)
   }
 })
 
-test('vocabulary upgrades validate old evidence before replay and reject stale tabs without changing saved bytes', () => {
-  const { game, raw } = historicalRun([[2, 1, 3]])
+test('the model publication validates old evidence and rejects replacement from a stale tab without changing saved bytes', () => {
+  const { raw } = historicalRun([[2, 1, 3]])
   const storage = new MemoryStorage()
   storage.setItem(key, raw)
-  const loaded = loadDailySession(latest, storage)
-  assert.throws(() => saveDailyRun(latest, game, storage, at, 'normal', loaded.revision), /different encounter/)
+  const loaded = loadDailySession(current, storage)
+  assert.throws(() => saveDailyRun(current, createLetterStrikeGame(current.encounter), storage, at, 'normal', loaded.revision), /different encounter/)
   assert.equal(storage.getItem(key), raw)
   const corrupted = JSON.parse(raw)
   corrupted.playedWords[0].preview.strikes++
   const corruptBytes = JSON.stringify(corrupted)
   storage.setItem(key, corruptBytes)
-  assert.match(loadDailySession(latest, storage).error!, /does not match/)
+  assert.match(loadDailySession(current, storage).error!, /does not match/)
   assert.equal(storage.getItem(key), corruptBytes)
+})
+
+test('scored v11 runs and undo positions stay on v11 until an explicit reset', () => {
+  assert.equal(current.puzzleVersion, 12)
+  assert.equal(canUpgradeMeaningVocabulary(corrected, current), false)
+  for (const compact of [true, false]) {
+    const storage = new MemoryStorage()
+    const { game, raw } = historicalRun([[2, 1, 3]], compact, 0, corrected)
+    storage.setItem(key, raw)
+    const loaded = loadDailySession(current, storage)
+    assert.equal(loaded.error, null)
+    assert.deepEqual(loaded.game, game)
+    assert.equal(loaded.game!.encounter, corrected.encounter)
+    assert.equal(loaded.undoHistory[0].encounter, corrected.encounter)
+    assert.equal(storage.getItem(key), raw)
+    const saved = saveDailyRun(current, loaded.game!, storage, at, 'normal', loaded.revision)
+    assert.equal(JSON.parse(storage.getItem(key)!).puzzleVersion, 11)
+    const undone = undoDailyRun(current, storage, saved.revision)
+    assert.equal(undone.game!.encounter, corrected.encounter)
+    assert.equal(undone.game!.playedWords.length, 0)
+    assert.equal(undone.undosUsed, 1)
+    assert.equal(loadDailySession(current, storage).game!.encounter, corrected.encounter)
+    resetDailyPuzzle(current.puzzleId, storage)
+    assert.equal(loadDailySession(current, storage).game!.encounter, current.encounter)
+    assert.equal(storage.getItem(key), null)
+  }
+})
+
+test('v11 completions remain exact under the model publication, including a missing result record', () => {
+  const fixture = historicalRun(correctedWalkthroughs.routes[0].tileIds, true, 0, corrected)
+  assert.equal(fixture.game.status, 'won')
+  const expected = buildDailyResult(corrected, fixture.game, at)
+  const resultKey = getResultStorageKey(current.puzzleId)
+  const resultBytes = JSON.stringify({ saveVersion: SAVE_VERSION, result: expected })
+  for (const separateResult of [true, false]) {
+    const storage = new MemoryStorage()
+    storage.setItem(key, fixture.raw)
+    if (separateResult) storage.setItem(resultKey, resultBytes)
+    const loaded = loadDailySession(current, storage)
+    assert.equal(loaded.error, null)
+    assert.equal(loaded.game!.encounter, corrected.encounter)
+    assert.deepEqual(loaded.result, expected)
+    assert.equal(storage.getItem(key), fixture.raw)
+    assert.equal(storage.getItem(resultKey), separateResult ? resultBytes : null)
+    const committed = saveDailyRun(current, createLetterStrikeGame(current.encounter), storage)
+    assert.deepEqual(committed.result, expected)
+    assert.equal(storage.getItem(resultKey), resultBytes)
+  }
+})
+
+test('fresh sessions and untouched v11 Begin snapshots use the model-assessed publication without rewriting storage', () => {
+  assert.equal(current.puzzleVersion, 12)
+  for (const beginOnly of [false, true]) {
+    const storage = new MemoryStorage()
+    const raw = beginOnly ? historicalRun([], true, 0, corrected).raw : null
+    if (raw) storage.setItem(key, raw)
+    const loaded = loadDailySession(current, storage)
+    assert.equal(loaded.error, null)
+    assert.equal(loaded.game!.encounter, current.encounter)
+    assert.ok(loaded.game!.encounter.meaningLexicon!.assessment)
+    assert.equal(loaded.game!.playedWords.length, 0)
+    assert.equal(loaded.undosUsed, 0)
+    assert.equal(storage.getItem(key), raw)
+    assert.equal(storage.getItem(getResultStorageKey(current.puzzleId)), null)
+  }
 })

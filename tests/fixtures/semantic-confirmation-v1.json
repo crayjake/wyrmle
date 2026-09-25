@@ -1,0 +1,590 @@
+{
+  "version": "wyrmle-semantic-confirmation-v1",
+  "authoredAt": "2026-09-25",
+  "purpose": "Fresh 36-case confirmation set, with word identities withheld while model architecture is finalized; score once on the frozen final production output. None of these words appears in the main or development-extension fixtures. Thresholds unchanged from the main suite except no core-only subset.",
+  "gates": {
+    "minimumCoverage": 1,
+    "minimumAccuracy": 0.9,
+    "minimumPerEnemyAccuracy": 0.8,
+    "maximumNeutralFalsePositiveRate": 0.05,
+    "minimumConstrainedSenseAccuracy": 1,
+    "minimumNovelConceptRecall": 0.8
+  },
+  "cases": [
+    {
+      "id": "ANGER/GRATITUDE",
+      "enemy": "ANGER",
+      "word": "GRATITUDE",
+      "split": "confirmation",
+      "expected": "opposite",
+      "core": false,
+      "rationale": "Thankful appreciation counters angry displeasure under the game policy of positive feelings countering anger.",
+      "legacyRelation": null,
+      "allowedSenses": [
+        {
+          "senseId": "oewn-gratitude__1.12.00..",
+          "definition": "a feeling of thankfulness and appreciation"
+        }
+      ]
+    },
+    {
+      "id": "ANGER/SATISFIED",
+      "enemy": "ANGER",
+      "word": "SATISFIED",
+      "split": "confirmation",
+      "expected": "opposite",
+      "core": false,
+      "rationale": "Contentment or allayed feelings counter angry displeasure.",
+      "legacyRelation": null,
+      "allowedSenses": [
+        {
+          "senseId": "oewn-satisfied__5.00.00.contented.00",
+          "definition": "filled with satisfaction"
+        },
+        {
+          "senseId": "oewn-satisfied__5.00.00.mitigated.00",
+          "definition": "allayed"
+        },
+        {
+          "senseId": "oewn-satisfy__2.37.00..",
+          "definition": "make happy or satisfied"
+        }
+      ]
+    },
+    {
+      "id": "ANGER/FUME",
+      "enemy": "ANGER",
+      "word": "FUME",
+      "split": "confirmation",
+      "expected": "similar",
+      "core": false,
+      "rationale": "Being furious reinforces anger; emitting smoke does not.",
+      "legacyRelation": null,
+      "allowedSenses": [
+        {
+          "senseId": "oewn-fume__2.37.00..",
+          "definition": "be mad, angry, or furious"
+        }
+      ]
+    },
+    {
+      "id": "ANGER/CROSS",
+      "enemy": "ANGER",
+      "word": "CROSS",
+      "split": "confirmation",
+      "expected": "similar",
+      "core": false,
+      "rationale": "An annoyed and irritable disposition reinforces anger; a crossing or religious symbol does not.",
+      "legacyRelation": "related",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-cross__5.00.00.ill-natured.00",
+          "definition": "annoyed and irritable"
+        }
+      ]
+    },
+    {
+      "id": "ANGER/CUP",
+      "enemy": "ANGER",
+      "word": "CUP",
+      "split": "confirmation",
+      "expected": "neutral",
+      "core": false,
+      "rationale": "A vessel or its shape does not intrinsically express an emotional response to anger.",
+      "legacyRelation": null
+    },
+    {
+      "id": "ANGER/PLATE",
+      "enemy": "ANGER",
+      "word": "PLATE",
+      "split": "confirmation",
+      "expected": "neutral",
+      "core": false,
+      "rationale": "A dish, sheet, or surface is not intrinsically an emotional response to anger.",
+      "legacyRelation": null
+    },
+    {
+      "id": "DESPAIR/AUSPICIOUS",
+      "enemy": "DESPAIR",
+      "word": "AUSPICIOUS",
+      "split": "confirmation",
+      "expected": "opposite",
+      "core": false,
+      "rationale": "Favorable prospects give grounds for hope and counter despair.",
+      "legacyRelation": null,
+      "allowedSenses": [
+        {
+          "senseId": "oewn-auspicious__3.00.00..",
+          "definition": "auguring favorable circumstances and good luck"
+        }
+      ]
+    },
+    {
+      "id": "DESPAIR/TRUST",
+      "enemy": "DESPAIR",
+      "word": "TRUST",
+      "split": "confirmation",
+      "expected": "opposite",
+      "core": false,
+      "rationale": "Confidence and hopeful expectation counter despair; a financial trust does not.",
+      "legacyRelation": "opposite",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-trust__1.09.00..",
+          "definition": "certainty based on past experience"
+        },
+        {
+          "senseId": "oewn-trust__1.09.01..",
+          "definition": "complete confidence in a person or plan etc"
+        },
+        {
+          "senseId": "oewn-trust__2.31.00..",
+          "definition": "have confidence or faith in"
+        },
+        {
+          "senseId": "oewn-trust__2.31.02..",
+          "definition": "be confident about something"
+        },
+        {
+          "senseId": "oewn-trust__2.37.00..",
+          "definition": "expect and wish"
+        }
+      ]
+    },
+    {
+      "id": "DESPAIR/DOWNHEARTED",
+      "enemy": "DESPAIR",
+      "word": "DOWNHEARTED",
+      "split": "confirmation",
+      "expected": "similar",
+      "core": false,
+      "rationale": "The expressly despondent sense reinforces despair.",
+      "legacyRelation": "related",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-downhearted__5.00.00.dejected.00",
+          "definition": "filled with melancholy and despondency"
+        }
+      ]
+    },
+    {
+      "id": "DESPAIR/DESPONDENCE",
+      "enemy": "DESPAIR",
+      "word": "DESPONDENCE",
+      "split": "confirmation",
+      "expected": "similar",
+      "core": false,
+      "rationale": "A hopeless and disheartened feeling reinforces despair.",
+      "legacyRelation": "similar",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-despondence__1.12.00..",
+          "definition": "feeling downcast and disheartened and hopeless"
+        }
+      ]
+    },
+    {
+      "id": "DESPAIR/BECAUSE",
+      "enemy": "DESPAIR",
+      "word": "BECAUSE",
+      "split": "confirmation",
+      "expected": "neutral",
+      "core": false,
+      "rationale": "A grammatical cause marker has no intrinsic hopeful or hopeless content.",
+      "legacyRelation": null
+    },
+    {
+      "id": "DESPAIR/CALENDAR",
+      "enemy": "DESPAIR",
+      "word": "CALENDAR",
+      "split": "confirmation",
+      "expected": "neutral",
+      "core": false,
+      "rationale": "A system or list of dates is not intrinsically hopeful or hopeless.",
+      "legacyRelation": null
+    },
+    {
+      "id": "FEAR/GUTSY",
+      "enemy": "FEAR",
+      "word": "GUTSY",
+      "split": "confirmation",
+      "expected": "opposite",
+      "core": false,
+      "rationale": "Courage in the face of danger counters fear.",
+      "legacyRelation": null,
+      "allowedSenses": [
+        {
+          "senseId": "oewn-gutsy__3.00.00..",
+          "definition": "marked by courage and determination in the face of difficulties or danger; robust and uninhibited"
+        }
+      ]
+    },
+    {
+      "id": "FEAR/DAUNTLESS",
+      "enemy": "FEAR",
+      "word": "DAUNTLESS",
+      "split": "confirmation",
+      "expected": "opposite",
+      "core": false,
+      "rationale": "Freedom from fear or intimidation counters fear.",
+      "legacyRelation": "opposite",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-dauntless__5.00.00.bold.00",
+          "definition": "invulnerable to fear or intimidation"
+        }
+      ]
+    },
+    {
+      "id": "FEAR/DAUNT",
+      "enemy": "FEAR",
+      "word": "DAUNT",
+      "split": "confirmation",
+      "expected": "similar",
+      "core": false,
+      "rationale": "Scaring someone away or causing loss of courage reinforces fear.",
+      "legacyRelation": null,
+      "allowedSenses": [
+        {
+          "senseId": "oewn-daunt__2.37.00..",
+          "definition": "cause to lose courage; to be daunted; to be scared away"
+        }
+      ]
+    },
+    {
+      "id": "FEAR/FRIGHT",
+      "enemy": "FEAR",
+      "word": "FRIGHT",
+      "split": "confirmation",
+      "expected": "similar",
+      "core": false,
+      "rationale": "Fearful emotion or the causing of fear reinforces fear.",
+      "legacyRelation": "similar",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-fright__1.12.00..",
+          "definition": "an emotion experienced in anticipation of some specific pain or danger (usually accompanied by a desire to flee or fight)"
+        },
+        {
+          "senseId": "oewn-fright__2.37.00..",
+          "definition": "cause fear in"
+        }
+      ]
+    },
+    {
+      "id": "FEAR/SWORD",
+      "enemy": "FEAR",
+      "word": "SWORD",
+      "split": "confirmation",
+      "expected": "neutral",
+      "core": false,
+      "rationale": "A possible weapon is not intrinsically the emotion of fear.",
+      "legacyRelation": null
+    },
+    {
+      "id": "FEAR/LIZARD",
+      "enemy": "FEAR",
+      "word": "LIZARD",
+      "split": "confirmation",
+      "expected": "neutral",
+      "core": false,
+      "rationale": "An animal or a figurative idler is not intrinsically the emotion of fear.",
+      "legacyRelation": null
+    },
+    {
+      "id": "MELANCHOLY/HUMOR",
+      "enemy": "MELANCHOLY",
+      "word": "HUMOR",
+      "split": "confirmation",
+      "expected": "opposite",
+      "core": false,
+      "rationale": "Wit, funniness, or improving a mood counters melancholy; body fluids do not.",
+      "legacyRelation": null,
+      "allowedSenses": [
+        {
+          "senseId": "oewn-humor__1.10.00..",
+          "definition": "a message whose ingenuity or verbal skill or incongruity has the power to evoke laughter"
+        },
+        {
+          "senseId": "oewn-humor__1.07.01..",
+          "definition": "the trait of appreciating (and being able to express) the humorous"
+        },
+        {
+          "senseId": "oewn-humor__1.07.00..",
+          "definition": "the quality of being funny"
+        },
+        {
+          "senseId": "oewn-humor__2.32.00..",
+          "definition": "put into a good mood"
+        }
+      ]
+    },
+    {
+      "id": "MELANCHOLY/JOCULAR",
+      "enemy": "MELANCHOLY",
+      "word": "JOCULAR",
+      "split": "confirmation",
+      "expected": "opposite",
+      "core": false,
+      "rationale": "Good humor and joking counter low spirits.",
+      "legacyRelation": null,
+      "allowedSenses": [
+        {
+          "senseId": "oewn-jocular__5.00.00.humorous.00",
+          "definition": "characterized by jokes and good humor"
+        },
+        {
+          "senseId": "oewn-jocular__4.02.00..",
+          "definition": "with humor"
+        }
+      ]
+    },
+    {
+      "id": "MELANCHOLY/DEPRESS",
+      "enemy": "MELANCHOLY",
+      "word": "DEPRESS",
+      "split": "confirmation",
+      "expected": "similar",
+      "core": false,
+      "rationale": "Lowering spirits reinforces melancholy; pressing a surface down does not.",
+      "legacyRelation": null,
+      "allowedSenses": [
+        {
+          "senseId": "oewn-depress__2.37.00..",
+          "definition": "lower someone's spirits; make downhearted"
+        }
+      ]
+    },
+    {
+      "id": "MELANCHOLY/DISMAL",
+      "enemy": "MELANCHOLY",
+      "word": "DISMAL",
+      "split": "confirmation",
+      "expected": "similar",
+      "core": false,
+      "rationale": "Causing dejection reinforces melancholy.",
+      "legacyRelation": null,
+      "allowedSenses": [
+        {
+          "senseId": "oewn-dismal__5.00.00.depressing.00",
+          "definition": "causing dejection"
+        }
+      ]
+    },
+    {
+      "id": "MELANCHOLY/UMBRELLA",
+      "enemy": "MELANCHOLY",
+      "word": "UMBRELLA",
+      "split": "confirmation",
+      "expected": "neutral",
+      "core": false,
+      "rationale": "A canopy, protection formation, or organizational grouping is not intrinsically sad or happy.",
+      "legacyRelation": null
+    },
+    {
+      "id": "MELANCHOLY/FLUTE",
+      "enemy": "MELANCHOLY",
+      "word": "FLUTE",
+      "split": "confirmation",
+      "expected": "neutral",
+      "core": false,
+      "rationale": "An instrument can express many moods and is not intrinsically sadness or joy.",
+      "legacyRelation": null
+    },
+    {
+      "id": "CRUELTY/CHERISH",
+      "enemy": "CRUELTY",
+      "word": "CHERISH",
+      "split": "confirmation",
+      "expected": "opposite",
+      "core": false,
+      "rationale": "Affectionate attachment counters cruel treatment under the game care policy.",
+      "legacyRelation": null,
+      "allowedSenses": [
+        {
+          "senseId": "oewn-cherish__2.37.00..",
+          "definition": "be fond of; be attached to"
+        }
+      ]
+    },
+    {
+      "id": "CRUELTY/CLEMENCY",
+      "enemy": "CRUELTY",
+      "word": "CLEMENCY",
+      "split": "confirmation",
+      "expected": "opposite",
+      "core": false,
+      "rationale": "Leniency and compassion counter cruelty; mild weather is not the relevant sense.",
+      "legacyRelation": "opposite",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-clemency__1.04.01..",
+          "definition": "leniency and compassion shown toward offenders by a person or agency charged with administering justice"
+        }
+      ]
+    },
+    {
+      "id": "CRUELTY/PERSECUTE",
+      "enemy": "CRUELTY",
+      "word": "PERSECUTE",
+      "split": "confirmation",
+      "expected": "similar",
+      "core": false,
+      "rationale": "Causing someone to suffer reinforces cruelty.",
+      "legacyRelation": null,
+      "allowedSenses": [
+        {
+          "senseId": "oewn-persecute__2.41.00..",
+          "definition": "cause to suffer"
+        }
+      ]
+    },
+    {
+      "id": "CRUELTY/SPITEFUL",
+      "enemy": "CRUELTY",
+      "word": "SPITEFUL",
+      "split": "confirmation",
+      "expected": "similar",
+      "core": false,
+      "rationale": "Malicious ill will and desire to hurt reinforce cruelty.",
+      "legacyRelation": "related",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-spiteful__5.00.00.malicious.00",
+          "definition": "showing malicious ill will and a desire to hurt; motivated by spite"
+        }
+      ]
+    },
+    {
+      "id": "CRUELTY/CAGE",
+      "enemy": "CRUELTY",
+      "word": "CAGE",
+      "split": "confirmation",
+      "expected": "neutral",
+      "core": false,
+      "rationale": "Confinement need not be cruel; the object or restriction alone has no intrinsic cruelty direction.",
+      "legacyRelation": null
+    },
+    {
+      "id": "CRUELTY/SCALPEL",
+      "enemy": "CRUELTY",
+      "word": "SCALPEL",
+      "split": "confirmation",
+      "expected": "neutral",
+      "core": false,
+      "rationale": "A surgical implement is not intrinsically cruel.",
+      "legacyRelation": null
+    },
+    {
+      "id": "CHAOS/CODIFY",
+      "enemy": "CHAOS",
+      "word": "CODIFY",
+      "split": "confirmation",
+      "expected": "opposite",
+      "core": false,
+      "rationale": "Organizing into a system counters disorder.",
+      "legacyRelation": null,
+      "allowedSenses": [
+        {
+          "senseId": "oewn-codify__2.30.01..",
+          "definition": "organize into a code or system, such as a body of law"
+        }
+      ]
+    },
+    {
+      "id": "CHAOS/SEQUENCE",
+      "enemy": "CHAOS",
+      "word": "SEQUENCE",
+      "split": "confirmation",
+      "expected": "opposite",
+      "core": false,
+      "rationale": "Logical order or the act of ordering counters chaos.",
+      "legacyRelation": null,
+      "allowedSenses": [
+        {
+          "senseId": "oewn-sequence__1.14.00..",
+          "definition": "serial arrangement in which things follow in logical order or a recurrent pattern"
+        },
+        {
+          "senseId": "oewn-sequence__1.04.00..",
+          "definition": "the action of following in order"
+        },
+        {
+          "senseId": "oewn-sequence__2.31.00..",
+          "definition": "arrange in a sequence"
+        },
+        {
+          "senseId": "oewn-sequence__2.32.00..",
+          "definition": "determine the order of constituents in"
+        }
+      ]
+    },
+    {
+      "id": "CHAOS/CLUTTER",
+      "enemy": "CHAOS",
+      "word": "CLUTTER",
+      "split": "confirmation",
+      "expected": "similar",
+      "core": false,
+      "rationale": "A confused multitude or disorderly arrangement reinforces chaos.",
+      "legacyRelation": null,
+      "allowedSenses": [
+        {
+          "senseId": "oewn-clutter__1.26.00..",
+          "definition": "a confused multitude of things"
+        },
+        {
+          "senseId": "oewn-clutter__2.30.00..",
+          "definition": "fill a space in a disorderly way"
+        }
+      ]
+    },
+    {
+      "id": "CHAOS/CHAOTIC",
+      "enemy": "CHAOS",
+      "word": "CHAOTIC",
+      "split": "confirmation",
+      "expected": "similar",
+      "core": false,
+      "rationale": "Disorder and unpredictable confusion reinforce chaos; a mathematical adjective alone is not the selected sense.",
+      "legacyRelation": "similar",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-chaotic__5.00.00.disorganized.00",
+          "definition": "lacking a visible order or organization"
+        },
+        {
+          "senseId": "oewn-chaotic__5.00.00.wild.02",
+          "definition": "completely unordered and unpredictable and confusing"
+        }
+      ]
+    },
+    {
+      "id": "CHAOS/QUANTUM",
+      "enemy": "CHAOS",
+      "word": "QUANTUM",
+      "split": "confirmation",
+      "expected": "neutral",
+      "core": false,
+      "rationale": "A discrete physical quantity does not intrinsically mean disorder.",
+      "legacyRelation": null
+    },
+    {
+      "id": "CHAOS/WEATHER",
+      "enemy": "CHAOS",
+      "word": "WEATHER",
+      "split": "confirmation",
+      "expected": "neutral",
+      "core": false,
+      "rationale": "Atmospheric conditions or enduring adversity do not intrinsically mean order or disorder.",
+      "legacyRelation": null
+    }
+  ],
+  "sourceClarifications": [
+    {
+      "id": "ANGER/SATISFIED",
+      "reason": "SATISFIED is also an explicitly admitted form of SATISFY; making someone happy or satisfied preserves the counter meaning. The original source constraint accidentally admitted only adjective senses."
+    }
+  ],
+  "originalFrozenSha256": "d80825ceb816cb613eacac83cfd387d8c1e93a2e79319355a44ded367c9744ff"
+}

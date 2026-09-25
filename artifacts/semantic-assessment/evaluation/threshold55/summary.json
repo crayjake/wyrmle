@@ -1,0 +1,281 @@
+{
+  "source": "actual-complete-inference-outputs",
+  "modelId": "sentence-transformers/all-MiniLM-L6-v2 + cross-encoder/nli-deberta-v3-xsmall",
+  "configurationHash": "a1f2dbcf90d6b16f365dd686c93b0aeb65246aece93568ddc3b869b2618432c9",
+  "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+  "modelLockDigest": "9fdf121a3c557c2d479e22ff38fc472dfa80fa83a1772344b9b9d6508b6ce1c7",
+  "confirmationDigest": "366311ed062e09984b68b5291fc1a3fbaccdb9550dd3eb298f715899861f33d6",
+  "rawCaches": {
+    "ANGER": {
+      "sha256": "e862d1db9df0c71288c56d30b74f64c780a1083542c22dd4771b0f1d8da204fe",
+      "wordsAssessed": 116395,
+      "sensesAssessed": 112646
+    },
+    "DESPAIR": {
+      "sha256": "529004fc6311368f320a9fcf0ac8e79715a26cce329e9b2a7908164c75bb4a02",
+      "wordsAssessed": 116395,
+      "sensesAssessed": 112646
+    },
+    "FEAR": {
+      "sha256": "83df9704b00017f245a793b185546a085a45660a85b814206d3012168d6aafd2",
+      "wordsAssessed": 116395,
+      "sensesAssessed": 112646
+    },
+    "MELANCHOLY": {
+      "sha256": "8554f931a10f1dee1305bdc212b3afc51e25dc7f0d769e027590f17ab66bb4d1",
+      "wordsAssessed": 116395,
+      "sensesAssessed": 112646
+    },
+    "CRUELTY": {
+      "sha256": "1c646655fe7f06d309faa5a9c312ff3d5befb71706a7cc0a2745e6aa93cd2779",
+      "wordsAssessed": 116395,
+      "sensesAssessed": 112646
+    },
+    "CHAOS": {
+      "sha256": "02922cebf39092d40df271c85174367c873a7e034025404ece2e930cab94ba10",
+      "wordsAssessed": 116395,
+      "sensesAssessed": 112646
+    }
+  },
+  "passed": false,
+  "primary": {
+    "passed": true,
+    "failures": [],
+    "metrics": {
+      "coverage": {
+        "correct": 144,
+        "total": 144,
+        "rate": 1
+      },
+      "accuracy": {
+        "correct": 140,
+        "total": 144,
+        "rate": 0.9722222222222222
+      },
+      "coreAccuracy": {
+        "correct": 15,
+        "total": 15,
+        "rate": 1
+      },
+      "holdoutAccuracy": {
+        "correct": 68,
+        "total": 72,
+        "rate": 0.9444444444444444
+      },
+      "byEnemy": {
+        "ANGER": {
+          "correct": 23,
+          "total": 24,
+          "rate": 0.9583333333333334
+        },
+        "DESPAIR": {
+          "correct": 23,
+          "total": 24,
+          "rate": 0.9583333333333334
+        },
+        "FEAR": {
+          "correct": 24,
+          "total": 24,
+          "rate": 1
+        },
+        "MELANCHOLY": {
+          "correct": 24,
+          "total": 24,
+          "rate": 1
+        },
+        "CRUELTY": {
+          "correct": 23,
+          "total": 24,
+          "rate": 0.9583333333333334
+        },
+        "CHAOS": {
+          "correct": 23,
+          "total": 24,
+          "rate": 0.9583333333333334
+        }
+      },
+      "sourceSenseAccuracy": {
+        "correct": 144,
+        "total": 144,
+        "rate": 1
+      },
+      "constrainedSenseAccuracy": {
+        "correct": 30,
+        "total": 30,
+        "rate": 1
+      },
+      "neutralFalsePositives": {
+        "correct": 0,
+        "total": 46,
+        "rate": 0
+      },
+      "novelConceptRecall": {
+        "correct": 17,
+        "total": 21,
+        "rate": 0.8095238095238095
+      }
+    },
+    "fixtureDigest": "126302ce4db40029f9a7922040756b65ffba21ef3ba065c1e0ce16e02e6f8bef"
+  },
+  "development": {
+    "passed": true,
+    "failures": [],
+    "metrics": {
+      "coverage": {
+        "correct": 13,
+        "total": 13,
+        "rate": 1
+      },
+      "accuracy": {
+        "correct": 13,
+        "total": 13,
+        "rate": 1
+      },
+      "coreAccuracy": {
+        "correct": 0,
+        "total": 0,
+        "rate": null
+      },
+      "holdoutAccuracy": {
+        "correct": 0,
+        "total": 0,
+        "rate": null
+      },
+      "byEnemy": {
+        "ANGER": {
+          "correct": 3,
+          "total": 3,
+          "rate": 1
+        },
+        "DESPAIR": {
+          "correct": 2,
+          "total": 2,
+          "rate": 1
+        },
+        "FEAR": {
+          "correct": 2,
+          "total": 2,
+          "rate": 1
+        },
+        "MELANCHOLY": {
+          "correct": 2,
+          "total": 2,
+          "rate": 1
+        },
+        "CRUELTY": {
+          "correct": 2,
+          "total": 2,
+          "rate": 1
+        },
+        "CHAOS": {
+          "correct": 2,
+          "total": 2,
+          "rate": 1
+        }
+      },
+      "sourceSenseAccuracy": {
+        "correct": 13,
+        "total": 13,
+        "rate": 1
+      },
+      "constrainedSenseAccuracy": {
+        "correct": 13,
+        "total": 13,
+        "rate": 1
+      },
+      "neutralFalsePositives": {
+        "correct": 0,
+        "total": 0,
+        "rate": null
+      },
+      "novelConceptRecall": {
+        "correct": 12,
+        "total": 12,
+        "rate": 1
+      }
+    }
+  },
+  "confirmation": {
+    "passed": false,
+    "failures": [
+      "accuracy: 0.8889 < 0.9",
+      "previously unprofiled scoring-concept recall: 0.7333 < 0.8",
+      "CRUELTY accuracy: 0.6667 < 0.8"
+    ],
+    "metrics": {
+      "coverage": {
+        "correct": 36,
+        "total": 36,
+        "rate": 1
+      },
+      "accuracy": {
+        "correct": 32,
+        "total": 36,
+        "rate": 0.8888888888888888
+      },
+      "coreAccuracy": {
+        "correct": 0,
+        "total": 0,
+        "rate": null
+      },
+      "holdoutAccuracy": {
+        "correct": 0,
+        "total": 0,
+        "rate": null
+      },
+      "byEnemy": {
+        "ANGER": {
+          "correct": 6,
+          "total": 6,
+          "rate": 1
+        },
+        "DESPAIR": {
+          "correct": 6,
+          "total": 6,
+          "rate": 1
+        },
+        "FEAR": {
+          "correct": 5,
+          "total": 6,
+          "rate": 0.8333333333333334
+        },
+        "MELANCHOLY": {
+          "correct": 5,
+          "total": 6,
+          "rate": 0.8333333333333334
+        },
+        "CRUELTY": {
+          "correct": 4,
+          "total": 6,
+          "rate": 0.6666666666666666
+        },
+        "CHAOS": {
+          "correct": 6,
+          "total": 6,
+          "rate": 1
+        }
+      },
+      "sourceSenseAccuracy": {
+        "correct": 36,
+        "total": 36,
+        "rate": 1
+      },
+      "constrainedSenseAccuracy": {
+        "correct": 24,
+        "total": 24,
+        "rate": 1
+      },
+      "neutralFalsePositives": {
+        "correct": 0,
+        "total": 12,
+        "rate": 0
+      },
+      "novelConceptRecall": {
+        "correct": 11,
+        "total": 15,
+        "rate": 0.7333333333333333
+      }
+    },
+    "fixtureDigest": "1f9603ec0ab74287df2878d9d483eeb5e2a13b0671027aa58ecfd2fc85f5c7da"
+  }
+}

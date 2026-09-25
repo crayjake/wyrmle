@@ -1,0 +1,13 @@
+{
+  "package": "wordfreq",
+  "version": "3.1.1",
+  "language": "en",
+  "wordlist": "large",
+  "packageUrl": "https://files.pythonhosted.org/packages/24/61/62835c475d69872d30689f284497853fe33fe1d6dd18f57346d13305861d/wordfreq-3.1.1-py3-none-any.whl",
+  "packageSha256": "4b1c6ecffc6198be3396d5cf871c4423ca71c907c231348d352dd54d62b97473",
+  "dataFile": "wordfreq/data/large_en.msgpack.gz",
+  "dataSha256": "dffae8066b78dce0a6667cf5f58e567054f902674667090a7ac8a8a44628b05c",
+  "dataLicense": "CC-BY-SA-4.0",
+  "codeLicense": "Apache-2.0",
+  "attribution": "Robyn Speer, wordfreq 3.1.1; source attribution in docs/wordfreq-notice.md"
+}

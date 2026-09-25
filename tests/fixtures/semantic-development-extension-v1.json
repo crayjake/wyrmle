@@ -1,0 +1,244 @@
+{
+  "version": "wyrmle-semantic-development-extension-v1",
+  "purpose": "Development-only examples of concepts missed by the legacy profiles. Authored after aggregate first-model evaluation, without using held-out words or their inflections. Not an unseen quality claim.",
+  "cases": [
+    {
+      "id": "ANGER/CONTENTMENT",
+      "enemy": "ANGER",
+      "word": "CONTENTMENT",
+      "split": "development",
+      "expected": "opposite",
+      "core": false,
+      "rationale": "Satisfaction and happiness with life counter angry displeasure.",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-contentment__1.12.00..",
+          "definition": "happiness with one's situation in life"
+        }
+      ],
+      "legacyRelation": null
+    },
+    {
+      "id": "ANGER/ENRAGE",
+      "enemy": "ANGER",
+      "word": "ENRAGE",
+      "split": "development",
+      "expected": "similar",
+      "core": false,
+      "rationale": "Making someone violently angry directly reinforces anger.",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-enrage__2.37.00..",
+          "definition": "put into a rage; make violently angry"
+        }
+      ],
+      "legacyRelation": null
+    },
+    {
+      "id": "ANGER/IRRITATION",
+      "enemy": "ANGER",
+      "word": "IRRITATION",
+      "split": "development",
+      "expected": "similar",
+      "core": false,
+      "rationale": "An outburst of anger, an irritated emotional state, or behavior defined as causing anger reinforces anger; physical irritation is a distinct sense.",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-irritation__1.12.01..",
+          "definition": "a sudden outburst of anger"
+        },
+        {
+          "senseId": "oewn-irritation__1.26.00..",
+          "definition": "the psychological state of being irritated or annoyed"
+        },
+        {
+          "senseId": "oewn-irritation__1.04.00..",
+          "definition": "unfriendly behavior that causes anger or resentment"
+        }
+      ],
+      "legacyRelation": "related"
+    },
+    {
+      "id": "DESPAIR/FAITH",
+      "enemy": "DESPAIR",
+      "word": "FAITH",
+      "split": "development",
+      "expected": "opposite",
+      "core": false,
+      "rationale": "Complete confidence in a person or plan counters hopelessness; institutional religion alone is not the relevant sense.",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-faith__1.09.01..",
+          "definition": "complete confidence in a person or plan etc"
+        }
+      ],
+      "legacyRelation": null
+    },
+    {
+      "id": "DESPAIR/DISCOURAGE",
+      "enemy": "DESPAIR",
+      "word": "DISCOURAGE",
+      "split": "development",
+      "expected": "similar",
+      "core": false,
+      "rationale": "Taking away hope directly reinforces despair.",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-discourage__2.37.00..",
+          "definition": "deprive of courage or hope; take away hope from; cause to feel discouraged"
+        }
+      ],
+      "legacyRelation": null
+    },
+    {
+      "id": "FEAR/PROTECT",
+      "enemy": "FEAR",
+      "word": "PROTECT",
+      "split": "development",
+      "expected": "opposite",
+      "core": false,
+      "rationale": "Shielding someone from danger counters fear under the game safety policy.",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-protect__2.33.00..",
+          "definition": "shield from danger, injury, destruction, or damage"
+        }
+      ],
+      "legacyRelation": null
+    },
+    {
+      "id": "FEAR/TREPIDATION",
+      "enemy": "FEAR",
+      "word": "TREPIDATION",
+      "split": "development",
+      "expected": "similar",
+      "core": false,
+      "rationale": "Alarm and dread directly reinforce fear.",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-trepidation__1.12.00..",
+          "definition": "a feeling of alarm or dread"
+        }
+      ],
+      "legacyRelation": null
+    },
+    {
+      "id": "MELANCHOLY/HILARIOUS",
+      "enemy": "MELANCHOLY",
+      "word": "HILARIOUS",
+      "split": "development",
+      "expected": "opposite",
+      "core": false,
+      "rationale": "Causing merriment and laughter counters low spirits.",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-hilarious__5.00.00.humorous.00",
+          "definition": "marked by or causing boisterous merriment or convulsive laughter"
+        }
+      ],
+      "legacyRelation": null
+    },
+    {
+      "id": "MELANCHOLY/DEJECTED",
+      "enemy": "MELANCHOLY",
+      "word": "DEJECTED",
+      "split": "development",
+      "expected": "similar",
+      "core": false,
+      "rationale": "Low spirits directly reinforce melancholy.",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-dejected__3.00.00..",
+          "definition": "affected or marked by low spirits"
+        }
+      ],
+      "legacyRelation": null
+    },
+    {
+      "id": "CRUELTY/ALTRUISM",
+      "enemy": "CRUELTY",
+      "word": "ALTRUISM",
+      "split": "development",
+      "expected": "opposite",
+      "core": false,
+      "rationale": "Unselfish concern for others welfare counters cruelty.",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-altruism__1.07.00..",
+          "definition": "the quality of unselfish concern for the welfare of others"
+        }
+      ],
+      "legacyRelation": null
+    },
+    {
+      "id": "CRUELTY/OPPRESSION",
+      "enemy": "CRUELTY",
+      "word": "OPPRESSION",
+      "split": "development",
+      "expected": "similar",
+      "core": false,
+      "rationale": "Subjugating people through cruelty or unjust force reinforces cruelty.",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-oppression__1.04.00..",
+          "definition": "the act of subjugating by cruelty"
+        },
+        {
+          "senseId": "oewn-oppression__1.26.00..",
+          "definition": "the state of being kept down by unjust use of force or authority:"
+        }
+      ],
+      "legacyRelation": null
+    },
+    {
+      "id": "CHAOS/ARRANGEMENT",
+      "enemy": "CHAOS",
+      "word": "ARRANGEMENT",
+      "split": "development",
+      "expected": "opposite",
+      "core": false,
+      "rationale": "An orderly grouping or organized structure counters disorder.",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-arrangement__1.14.00..",
+          "definition": "an orderly grouping (of things or persons) considered as a unit; the result of arranging"
+        },
+        {
+          "senseId": "oewn-arrangement__1.09.00..",
+          "definition": "an organized structure for arranging or classifying"
+        }
+      ],
+      "legacyRelation": null
+    },
+    {
+      "id": "CHAOS/DISORGANIZED",
+      "enemy": "CHAOS",
+      "word": "DISORGANIZED",
+      "split": "development",
+      "expected": "similar",
+      "core": false,
+      "rationale": "Lacking order or methodical arrangement reinforces chaos.",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-disorganized__3.00.00..",
+          "definition": "lacking order or methodical arrangement or function"
+        },
+        {
+          "senseId": "oewn-disorganize__2.41.00..",
+          "definition": "remove the organization from"
+        }
+      ],
+      "legacyRelation": null
+    }
+  ],
+  "sourceClarifications": [
+    {
+      "id": "ANGER/IRRITATION",
+      "reason": "Explicitly causing anger is reinforcement, consistent with ENRAGE and DISCOURAGE; the source constraint originally omitted this valid sense."
+    },
+    {
+      "id": "CHAOS/DISORGANIZED",
+      "reason": "DISORGANIZED is also an admitted inflection of DISORGANIZE; removing organization and lacking organization both reinforce CHAOS."
+    }
+  ]
+}

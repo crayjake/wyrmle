@@ -27,8 +27,8 @@ class MemoryStorage implements StorageLike {
 }
 
 // Keep these authored v4 mechanic fixtures independent of scheduled replacements.
-const puzzle = getDailyPuzzle('2026-09-26')
-const at = '2026-09-26T12:00:00.000Z'
+const puzzle = getDailyPuzzle('2026-09-27')
+const at = '2026-09-27T12:00:00.000Z'
 
 function play(game: LetterStrikeState, word: string): LetterStrikeState {
   const ids: number[] = []

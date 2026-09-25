@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs'
 import { gunzipSync } from 'node:zlib'
 import { test } from 'node:test'
 import { isDeepStrictEqual } from 'node:util'
-import { getDailyPuzzle, getDailyPuzzleForVersion } from '../src/daily/puzzle.ts'
+import { getDailyPuzzleForVersion } from '../src/daily/puzzle.ts'
 import { createLetterStrikeGame, submitLetterStrike } from '../src/game/letterStrike.ts'
 import { discoverValidMoves } from '../src/generator/findMoves.ts'
 import type { RankedCandidate } from '../src/generator/generate.ts'
@@ -13,10 +13,10 @@ import { isOpeningSafetyCertificateCurrent } from '../src/generator/openingSafet
 
 const selected = JSON.parse(gunzipSync(readFileSync(new URL('../artifacts/meaning-v2/selected.json.gz', import.meta.url))).toString()) as RankedCandidate
 const original = JSON.parse(gunzipSync(readFileSync(new URL('../artifacts/meaning-v1/selected.json.gz', import.meta.url))).toString()) as RankedCandidate
-const puzzle = getDailyPuzzle('2026-09-25')
+const puzzle = getDailyPuzzleForVersion('2026-09-25', 'letter-strike-7', 11)
 const archived = getDailyPuzzleForVersion(puzzle.puzzleId, 'letter-strike-7', 10)
 
-test('today publishes certified CHAOS v11 with the corrected complete dictionary and unchanged physical puzzle', () => {
+test('archived CHAOS v11 retains its corrected complete dictionary and unchanged physical puzzle', () => {
   assert.equal(puzzle.puzzleVersion, 11)
   assert.equal(puzzle.gameVersion, 'letter-strike-7')
   assert.equal(puzzle.encounter.id, 'daily-chaos-2026-09-25-v11')
@@ -51,7 +51,7 @@ test('today publishes certified CHAOS v11 with the corrected complete dictionary
     assert.equal(meanings.words[word].relation, 'unrelated')
     assert.ok(meanings.words[word].definition.trim())
   }
-  assert.ok(isMeaningCompilationCurrent(puzzle.encounter))
+  assert.equal(isMeaningCompilationCurrent(puzzle.encounter), false, 'The archived sparse profile must not masquerade as a model assessment.')
   assert.ok(Object.isFrozen(meanings.words))
   assert.equal(selected.validation.accepted, true)
   assert.equal(puzzle.difficulty, selected.difficulty!.label)
