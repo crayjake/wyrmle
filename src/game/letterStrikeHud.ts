@@ -11,13 +11,13 @@ export type LetterStrikeTileSummary = {
 
 const gemPresentation: Record<LetterStrikeGem, { label: string; symbol: string }> = {
   strike: { label: 'HIT', symbol: '◆' },
-  ward: { label: 'HEART', symbol: '♥' },
+  ward: { label: 'LIFE', symbol: '▪' },
   regen: { label: 'REVIVE', symbol: '+' },
 }
 
 /** Translate recorded effect codes at the display boundary; saves stay exact. */
 export function getDisplayEffectLabel(label: string): string {
-  return label === 'STRIKE' ? 'HIT TILE' : label === 'WARD' ? 'HEART' : label === 'REGEN' ? 'REVIVE' : label
+  return label === 'STRIKE' ? 'HIT TILE' : label === 'WARD' || label === 'HEART' ? 'LIFE' : label === 'REGEN' ? 'REVIVE' : label
 }
 
 export function getLetterStrikeGrammarModifiers(state: Pick<LetterStrikeState, 'encounter'>): GrammarModifier[] {

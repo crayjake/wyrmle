@@ -61,22 +61,35 @@ function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onMatchHin
   const containerRef = useRef<HTMLElement>(null)
   const enemyElements = useRef<(HTMLDivElement | null)[]>([])
   const tileElements = useRef<(HTMLButtonElement | null)[]>([])
+  const refillElements = useRef<(HTMLSpanElement | null)[]>([])
   const wyrmDockRef = useRef<HTMLSpanElement>(null)
   const wyrmLifeRef = useRef<HTMLSpanElement>(null)
   const wyrmTitleRef = useRef<HTMLDivElement>(null)
   const [revealedEnemyIndices, setRevealedEnemyIndices] = useState<number[]>([])
   const [revealedTileIndices, setRevealedTileIndices] = useState<number[]>([])
+  const [revealedRefills, setRevealedRefills] = useState<boolean[]>([])
   const registerLetter = useCallback((index: number, element: HTMLDivElement | null) => {
     enemyElements.current[index] = element
   }, [])
   const registerTile = useCallback((index: number, element: HTMLButtonElement | null) => {
     tileElements.current[index] = element
   }, [])
+  const registerRefill = useCallback((index: number, element: HTMLSpanElement | null) => {
+    refillElements.current[index] = element
+  }, [])
   const revealEnemyLetter = useCallback((index: number) => {
     setRevealedEnemyIndices(current => current.includes(index) ? current : [...current, index])
   }, [])
   const revealTile = useCallback((index: number) => {
     setRevealedTileIndices(current => current.includes(index) ? current : [...current, index])
+  }, [])
+  const revealRefill = useCallback((index: number) => {
+    setRevealedRefills(current => {
+      if (current[index]) return current
+      const next = [...current]
+      next[index] = true
+      return next
+    })
   }, [])
   const enemyDecoded = useCallback(() => setPhase('tiles'), [])
   const tilesDecoded = useCallback(() => setPhase('ready'), [])
@@ -145,7 +158,7 @@ function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onMatchHin
     <div className="battle-info">
       <MyInfo name={letterGame ? 'LIVES' : 'YOU'} health={game.playerResolve} maxHealth={game.encounter.startingResolve} wyrm={Boolean(letterGame)}
         wyrmRef={wyrmLifeRef} decoding={phase === 'enemy' || phase === 'tiles'} />
-      {letterGame && <RefillSupply game={letterGame} decoded={phase === 'ready'} />}
+      {letterGame && <RefillSupply game={letterGame} decoded={phase === 'ready'} revealed={revealedRefills} registerTile={registerRefill} />}
       {run.mode === 'damage'
         ? <EnemyInfo name={enemy.word} health={run.game.enemyHp} maxHealth={run.game.encounter.enemy.maxHealth} />
         : null}
@@ -181,10 +194,10 @@ function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onMatchHin
       </div>
     </div>
     <WyrmDecoder phase={phase} containerRef={containerRef} enemyLetters={enemyElements}
-      tileElements={tileElements} dockRef={letterGame ? wyrmLifeRef : wyrmDockRef} titleRef={wyrmTitleRef}
+      tileElements={tileElements} refillElements={refillElements} dockRef={letterGame ? wyrmLifeRef : wyrmDockRef}
       lifeSegments={letterGame ? game.encounter.startingResolve : undefined}
       enemyCount={enemy.word.length} tileCount={game.tiles.length}
-      onEnemyReveal={revealEnemyLetter} onTileReveal={revealTile}
+      onEnemyReveal={revealEnemyLetter} onTileReveal={revealTile} onRefillReveal={revealRefill}
       onEnemyDecoded={enemyDecoded} onTilesDecoded={tilesDecoded} />
 
     {panel === 'modes' && <PlaytestPanel title="Combat playtest" onClose={() => setPanel(null)}>

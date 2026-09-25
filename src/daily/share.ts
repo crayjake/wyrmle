@@ -20,7 +20,7 @@ export function buildShareText(result: DailyResult): string {
       if (outcome.armourBroken) return '◐'
       return '·'
     }).join('')
-    const effects = (turn.resolveProtected ? '♥' : '') + (turn.strikeActivations > 0 ? '◆' : '')
+    const effects = (turn.resolveProtected ? '▪' : '') + (turn.strikeActivations > 0 ? '◆' : '')
       + ((turn.recoveries?.length ?? 0) > 0 ? '↺' : '')
     return `${semanticPrefix[turn.semanticLabel]}  ${positions}${effects ? ` ${effects}` : ''}`
   })

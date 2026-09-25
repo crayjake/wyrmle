@@ -57,7 +57,7 @@ test('special summary counts actual gems and removes types as they are consumed 
       bonusDamage: 3, preventsResolveLoss: false, detail: '+3',
     },
     {
-      id: 'ward', label: 'HEART', symbol: '♥', count: 1,
+      id: 'ward', label: 'LIFE', symbol: '▪', count: 1,
       bonusDamage: 0, preventsResolveLoss: true, detail: 'SAVES A LIFE THIS TURN',
     },
   ])

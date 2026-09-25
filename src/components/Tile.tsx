@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion"
-import { Heart } from 'lucide-react'
+import { Square } from 'lucide-react'
 import type { Ref } from "react"
 import { introTimings } from "../intro/config"
 import type { MatchHintMode } from './tileMatchHints'
@@ -90,7 +90,7 @@ export default function Tile({
       {!empty && revealed && special && (
         <span className="tile-special">
           <span className="tile-special-symbol" aria-hidden="true">
-            {special.symbol === '♥' ? <Heart size={12} fill="currentColor" strokeWidth={1.5} aria-hidden="true" /> : special.symbol === '◆' || special.symbol === '◇' ? (
+            {special.symbol === '▪' ? <Square size={12} fill="currentColor" strokeWidth={1.5} aria-hidden="true" /> : special.symbol === '◆' || special.symbol === '◇' ? (
               <svg viewBox="0 0 12 12" focusable="false">
                 <path
                   d="M6 1.5 10.5 6 6 10.5 1.5 6Z"

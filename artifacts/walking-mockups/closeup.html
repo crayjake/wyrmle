@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WYRMLE · Walking close-up</title>
+  <style>
+    :root { color-scheme: dark; --bg:#25281f; --green:#93bd74; --red:#c77e6c; --fg:#ded9bf; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.5 'Share Tech Mono',monospace; }
+    main { width:min(100%,620px); margin:0 auto; padding:22px 18px; }
+    h1 { margin:0 0 8px; color:#e3bd74; font:24px/1.2 'Cutive Mono',monospace; font-weight:400; }
+    p { margin:0 0 18px; }
+    .intro { color:#c4c4ad; max-width:500px; }
+    .tabs { display:flex; flex-wrap:wrap; gap:8px; }
+    button,a { font:inherit; color:var(--fg); }
+    button { min-height:42px; padding:8px 12px; border:1px solid #566044; border-radius:2px; background:transparent; cursor:pointer; }
+    button[aria-pressed=true] { color:var(--green); border-color:var(--green); background:#93bd7410; }
+    button:focus-visible,a:focus-visible { outline:2px solid #e3bd74; outline-offset:4px; }
+    .viewport { position:relative; height:250px; margin:18px 0; border:1px solid #566044; overflow:hidden; }
+    .size-label { position:absolute; left:12px; top:10px; color:#a8b698; font-size:12px; letter-spacing:.04em; }
+    .lane { position:absolute; left:50%; top:50%; width:84px; height:40px; transform:translate(-50%,-50%) scale(4); transform-origin:center; }
+    .piece,.foot { position:absolute; left:0; top:0; will-change:transform; }
+    .piece { width:0; height:0; color:var(--green); z-index:1; }
+    .square { position:absolute; display:block; width:11px; height:12px; border:1px solid currentColor; border-radius:1px; background:currentColor; transform:translate(-50%,-50%); }
+    .tail { width:8px; height:8px; }
+    .head { width:15px; height:15px; border-radius:2px; }
+    .head::before,.head::after { content:''; position:absolute; right:2px; width:3px; height:3px; background:var(--bg); }
+    .head::before { top:1px; }
+    .head::after { bottom:1px; }
+    .tongue { position:absolute; left:100%; top:5px; width:5px; height:4px; background:var(--red); clip-path:polygon(0 33%,60% 33%,100% 0,100% 33%,75% 50%,100% 66%,100% 100%,60% 66%,0 66%); }
+    .foot { width:4px; height:2px; border-radius:.5px; background:var(--green); transform-origin:center; z-index:2; }
+    .caption { min-height:48px; }
+    .controls { display:flex; align-items:center; flex-wrap:wrap; gap:10px; }
+    .controls a { margin-left:auto; text-underline-offset:4px; color:#b6c8ce; }
+    .note { font-size:12px; color:#acb19a; margin-top:20px; }
+    @media(max-width:350px) { main { padding-inline:10px; } .lane { transform:translate(-50%,-50%) scale(3.5); } .tabs { gap:5px; } .tabs button { padding-inline:8px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Walking close-up</h1>
+    <p class="intro">Compare the body motion while the wyrm stays in one place. The full animation shows him leaving the lives and returning.</p>
+    <div class="tabs" aria-label="Walking options">
+      <button data-mode="feet" aria-pressed="false">A · Crawl</button>
+      <button data-mode="inch" aria-pressed="false">B · Inchworm</button>
+      <button data-mode="guide" aria-pressed="false">C · Row guide</button>
+    </div>
+    <div class="viewport" role="img" aria-label="Enlarged walking animation">
+      <span class="size-label">4× CLOSE-UP</span>
+      <div class="lane" aria-hidden="true"></div>
+    </div>
+    <p class="caption"></p>
+    <div class="controls">
+      <button id="pause">Pause</button>
+      <button id="rest" aria-pressed="false">Show resting pose</button>
+      <a href="index.html">Full comparison</a>
+    </div>
+    <p class="note">A continuous walking cycle, with the same five squares used for lives.</p>
+  </main>
+  <script src="board-data.js"></script>
+  <script src="gaits.js"></script>
+  <script>
+    (function () {
+      'use strict';
+      // Reuse only the embedded font faces. The preview has no game DOM,
+      // camera-follow transform, seek loop or repeated route boundary.
+      const fonts=document.createElement('style');
+      fonts.textContent=(window.WyrmBoard.css.match(/@font-face\s*\{[^}]*\}/g)||[]).join('\n');
+      document.head.append(fonts);
+      const query=new URLSearchParams(location.search);
+      let mode=Object.hasOwn(window.WyrmGaits.metadata,query.get('mode'))?query.get('mode'):'feet';
+      let elapsed=0,lastFrame=null,playing=true,strength=1,targetStrength=1;
+      const offsets=[56.5,44,30,16,0];
+      const lane=document.querySelector('.lane');
+      const pieces=offsets.map((offset,index)=>{
+        const piece=document.createElement('span');piece.className='piece';
+        piece.innerHTML=index===4?'<span class="square head"><span class="tongue"></span></span>':`<span class="square${index===0?' tail':''}"></span>`;
+        lane.append(piece);return piece;
+      });
+      const feet=Array.from({length:6},()=>{
+        const foot=document.createElement('span');foot.className='foot';lane.append(foot);return foot;
+      });
+      function render(){
+        const gait=window.WyrmGaits.sample(mode,elapsed,strength);
+        const poses=gait.parts.map((part,index)=>{
+          const x=68-offsets[index]+part.forward,y=20+part.side;
+          pieces[index].style.transform=`translate3d(${x}px,${y}px,0) scale(${part.scaleX},${part.scaleY})`;
+          return{x,y};
+        });
+        feet.forEach((node,index)=>{
+          const foot=gait.feet[index];
+          if(!foot){node.style.opacity='0';return;}
+          const pose=poses[foot.part];
+          node.style.transform=`translate3d(${pose.x+foot.forward-2}px,${pose.y+foot.side-1}px,0) rotate(${foot.angle}deg)`;
+          node.style.opacity=String(foot.opacity);
+        });
+      }
+      function select(next){
+        mode=next;
+        document.querySelectorAll('[data-mode]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.mode===mode)));
+        const info=window.WyrmGaits.metadata[mode];
+        document.querySelector('.caption').textContent=info.title+' — '+info.description;
+        document.querySelector('.viewport').setAttribute('aria-label',info.title+', enlarged walking animation');
+        const url=new URL(location.href);url.searchParams.set('mode',mode);history.replaceState(null,'',url);
+        render();
+      }
+      document.querySelectorAll('[data-mode]').forEach(button=>button.addEventListener('click',()=>select(button.dataset.mode)));
+      document.getElementById('pause').addEventListener('click',event=>{
+        playing=!playing;event.currentTarget.textContent=playing?'Pause':'Play';lastFrame=null;
+      });
+      document.getElementById('rest').addEventListener('click',event=>{
+        targetStrength=targetStrength===1?0:1;
+        event.currentTarget.setAttribute('aria-pressed',String(targetStrength===0));
+        event.currentTarget.textContent=targetStrength===0?'Show walking pose':'Show resting pose';
+      });
+      document.addEventListener('visibilitychange',()=>{lastFrame=null;});
+      function tick(now){
+        const delta=lastFrame===null?0:Math.min((now-lastFrame)/1000,.05);lastFrame=now;
+        if(playing)elapsed+=delta;
+        strength+=(targetStrength-strength)*(1-Math.exp(-delta*10));
+        if(Math.abs(targetStrength-strength)<.0001)strength=targetStrength;
+        render();requestAnimationFrame(tick);
+      }
+      window.closeup={select,render,snapshot:()=>({mode,elapsed,strength,playing})};
+      select(mode);requestAnimationFrame(tick);
+    }());
+  </script>
+</body>
+</html>

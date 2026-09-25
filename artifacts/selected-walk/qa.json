@@ -1,0 +1,610 @@
+[
+  {
+    "width": 375,
+    "height": 629,
+    "mode": "full",
+    "errors": [],
+    "frames": 636,
+    "hiddenFrames": 0,
+    "events": [
+      {
+        "event": "enemy:0",
+        "time": 3881.2
+      },
+      {
+        "event": "enemy:1",
+        "time": 4047.8
+      },
+      {
+        "event": "enemy:2",
+        "time": 4197.9
+      },
+      {
+        "event": "enemy:3",
+        "time": 4364.5
+      },
+      {
+        "event": "enemy:4",
+        "time": 4514.4
+      },
+      {
+        "event": "refills:5",
+        "time": 4964.5
+      },
+      {
+        "event": "refills:4",
+        "time": 5047.8
+      },
+      {
+        "event": "refills:3",
+        "time": 5114.4
+      },
+      {
+        "event": "refills:2",
+        "time": 5197.8
+      },
+      {
+        "event": "refills:1",
+        "time": 5281.1
+      },
+      {
+        "event": "refills:0",
+        "time": 5347.8
+      },
+      {
+        "event": "tiles:0",
+        "time": 6847.7
+      },
+      {
+        "event": "tiles:1",
+        "time": 7097.7
+      },
+      {
+        "event": "tiles:2",
+        "time": 7331
+      },
+      {
+        "event": "tiles:3",
+        "time": 7581.1
+      },
+      {
+        "event": "tiles:7",
+        "time": 8064.4
+      },
+      {
+        "event": "tiles:6",
+        "time": 8314.4
+      },
+      {
+        "event": "tiles:5",
+        "time": 8564.3
+      },
+      {
+        "event": "tiles:4",
+        "time": 8814.4
+      },
+      {
+        "event": "tiles:8",
+        "time": 9297.6
+      },
+      {
+        "event": "tiles:9",
+        "time": 9531
+      },
+      {
+        "event": "tiles:10",
+        "time": 9780.9
+      },
+      {
+        "event": "tiles:11",
+        "time": 10031
+      },
+      {
+        "event": "tiles:15",
+        "time": 10514.3
+      },
+      {
+        "event": "tiles:14",
+        "time": 10764.3
+      },
+      {
+        "event": "tiles:13",
+        "time": 11014.3
+      },
+      {
+        "event": "tiles:12",
+        "time": 11264.2
+      }
+    ],
+    "refills": [
+      "9",
+      "2",
+      "2",
+      "1",
+      "4",
+      "1"
+    ],
+    "decoded": [
+      5,
+      16
+    ],
+    "specials": [
+      {
+        "classes": "tile   special strike",
+        "border": "color(srgb 0.435294 0.647059 0.592157 / 0.65)",
+        "label": "rgb(111, 165, 151)"
+      },
+      {
+        "classes": "tile   special ward",
+        "border": "color(srgb 0.576471 0.741177 0.454902 / 0.65)",
+        "label": "rgb(147, 189, 116)"
+      },
+      {
+        "classes": "tile   special regen",
+        "border": "color(srgb 0.780392 0.494118 0.423529 / 0.65)",
+        "label": "rgb(199, 126, 108)"
+      }
+    ],
+    "selectedStrike": {
+      "selected": true,
+      "border": "rgb(111, 165, 151)"
+    },
+    "selectedLife": {
+      "selected": true,
+      "border": "rgb(147, 189, 116)"
+    },
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "mode": "full",
+    "errors": [],
+    "frames": 636,
+    "hiddenFrames": 0,
+    "events": [
+      {
+        "event": "enemy:0",
+        "time": 3963.6
+      },
+      {
+        "event": "enemy:1",
+        "time": 4130.2
+      },
+      {
+        "event": "enemy:2",
+        "time": 4297
+      },
+      {
+        "event": "enemy:3",
+        "time": 4446.9
+      },
+      {
+        "event": "enemy:4",
+        "time": 4613.6
+      },
+      {
+        "event": "refills:5",
+        "time": 5030.2
+      },
+      {
+        "event": "refills:4",
+        "time": 5130.3
+      },
+      {
+        "event": "refills:3",
+        "time": 5213.6
+      },
+      {
+        "event": "refills:2",
+        "time": 5296.9
+      },
+      {
+        "event": "refills:1",
+        "time": 5396.9
+      },
+      {
+        "event": "refills:0",
+        "time": 5480.2
+      },
+      {
+        "event": "tiles:0",
+        "time": 6863.5
+      },
+      {
+        "event": "tiles:1",
+        "time": 7113.4
+      },
+      {
+        "event": "tiles:2",
+        "time": 7363.5
+      },
+      {
+        "event": "tiles:3",
+        "time": 7630.1
+      },
+      {
+        "event": "tiles:7",
+        "time": 8046.8
+      },
+      {
+        "event": "tiles:6",
+        "time": 8296.7
+      },
+      {
+        "event": "tiles:5",
+        "time": 8563.4
+      },
+      {
+        "event": "tiles:4",
+        "time": 8813.4
+      },
+      {
+        "event": "tiles:8",
+        "time": 9230.1
+      },
+      {
+        "event": "tiles:9",
+        "time": 9496.7
+      },
+      {
+        "event": "tiles:10",
+        "time": 9746.7
+      },
+      {
+        "event": "tiles:11",
+        "time": 9996.7
+      },
+      {
+        "event": "tiles:15",
+        "time": 10430
+      },
+      {
+        "event": "tiles:14",
+        "time": 10680
+      },
+      {
+        "event": "tiles:13",
+        "time": 10946.7
+      },
+      {
+        "event": "tiles:12",
+        "time": 11196.6
+      }
+    ],
+    "refills": [
+      "9",
+      "2",
+      "2",
+      "1",
+      "4",
+      "1"
+    ],
+    "decoded": [
+      5,
+      16
+    ],
+    "specials": [
+      {
+        "classes": "tile   special strike",
+        "border": "color(srgb 0.435294 0.647059 0.592157 / 0.65)",
+        "label": "rgb(111, 165, 151)"
+      },
+      {
+        "classes": "tile   special ward",
+        "border": "color(srgb 0.576471 0.741177 0.454902 / 0.65)",
+        "label": "rgb(147, 189, 116)"
+      },
+      {
+        "classes": "tile   special regen",
+        "border": "color(srgb 0.780392 0.494118 0.423529 / 0.65)",
+        "label": "rgb(199, 126, 108)"
+      }
+    ],
+    "selectedStrike": {
+      "selected": true,
+      "border": "rgb(111, 165, 151)"
+    },
+    "selectedLife": {
+      "selected": true,
+      "border": "rgb(147, 189, 116)"
+    },
+    "overflow": false
+  },
+  {
+    "width": 375,
+    "height": 629,
+    "mode": "reduced",
+    "errors": [],
+    "frames": 0,
+    "hiddenFrames": 0,
+    "events": [
+      {
+        "event": "enemy:0",
+        "time": 3396.1
+      },
+      {
+        "event": "enemy:1",
+        "time": 3396.1
+      },
+      {
+        "event": "enemy:2",
+        "time": 3396.1
+      },
+      {
+        "event": "enemy:3",
+        "time": 3396.1
+      },
+      {
+        "event": "enemy:4",
+        "time": 3396.1
+      },
+      {
+        "event": "refills:0",
+        "time": 3396.1
+      },
+      {
+        "event": "refills:1",
+        "time": 3396.1
+      },
+      {
+        "event": "refills:2",
+        "time": 3396.1
+      },
+      {
+        "event": "refills:3",
+        "time": 3396.1
+      },
+      {
+        "event": "refills:4",
+        "time": 3396.1
+      },
+      {
+        "event": "refills:5",
+        "time": 3396.1
+      },
+      {
+        "event": "tiles:0",
+        "time": 3396.1
+      },
+      {
+        "event": "tiles:1",
+        "time": 3396.1
+      },
+      {
+        "event": "tiles:2",
+        "time": 3396.1
+      },
+      {
+        "event": "tiles:3",
+        "time": 3396.1
+      },
+      {
+        "event": "tiles:4",
+        "time": 3396.1
+      },
+      {
+        "event": "tiles:5",
+        "time": 3396.1
+      },
+      {
+        "event": "tiles:6",
+        "time": 3396.1
+      },
+      {
+        "event": "tiles:7",
+        "time": 3396.1
+      },
+      {
+        "event": "tiles:8",
+        "time": 3396.1
+      },
+      {
+        "event": "tiles:9",
+        "time": 3396.1
+      },
+      {
+        "event": "tiles:10",
+        "time": 3396.1
+      },
+      {
+        "event": "tiles:11",
+        "time": 3396.1
+      },
+      {
+        "event": "tiles:12",
+        "time": 3396.1
+      },
+      {
+        "event": "tiles:13",
+        "time": 3396.1
+      },
+      {
+        "event": "tiles:14",
+        "time": 3396.1
+      },
+      {
+        "event": "tiles:15",
+        "time": 3396.1
+      }
+    ],
+    "refills": [
+      "9",
+      "2",
+      "2",
+      "1",
+      "4",
+      "1"
+    ],
+    "decoded": [
+      5,
+      16
+    ],
+    "specials": [
+      {
+        "classes": "tile   special strike",
+        "border": "color(srgb 0.435294 0.647059 0.592157 / 0.65)",
+        "label": "rgb(111, 165, 151)"
+      },
+      {
+        "classes": "tile   special ward",
+        "border": "color(srgb 0.576471 0.741177 0.454902 / 0.65)",
+        "label": "rgb(147, 189, 116)"
+      },
+      {
+        "classes": "tile   special regen",
+        "border": "color(srgb 0.780392 0.494118 0.423529 / 0.65)",
+        "label": "rgb(199, 126, 108)"
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 375,
+    "height": 629,
+    "mode": "resize",
+    "errors": [],
+    "frames": 64,
+    "hiddenFrames": 0,
+    "events": [
+      {
+        "event": "enemy:0",
+        "time": 3895.4
+      },
+      {
+        "event": "enemy:1",
+        "time": 4062
+      },
+      {
+        "event": "enemy:2",
+        "time": 4212
+      },
+      {
+        "event": "enemy:3",
+        "time": 4378.6
+      },
+      {
+        "event": "enemy:4",
+        "time": 4378.6
+      },
+      {
+        "event": "refills:0",
+        "time": 4378.6
+      },
+      {
+        "event": "refills:1",
+        "time": 4378.6
+      },
+      {
+        "event": "refills:2",
+        "time": 4378.6
+      },
+      {
+        "event": "refills:3",
+        "time": 4378.6
+      },
+      {
+        "event": "refills:4",
+        "time": 4378.6
+      },
+      {
+        "event": "refills:5",
+        "time": 4378.6
+      },
+      {
+        "event": "tiles:0",
+        "time": 4378.6
+      },
+      {
+        "event": "tiles:1",
+        "time": 4378.6
+      },
+      {
+        "event": "tiles:2",
+        "time": 4378.6
+      },
+      {
+        "event": "tiles:3",
+        "time": 4378.6
+      },
+      {
+        "event": "tiles:4",
+        "time": 4378.6
+      },
+      {
+        "event": "tiles:5",
+        "time": 4378.6
+      },
+      {
+        "event": "tiles:6",
+        "time": 4378.6
+      },
+      {
+        "event": "tiles:7",
+        "time": 4378.6
+      },
+      {
+        "event": "tiles:8",
+        "time": 4378.6
+      },
+      {
+        "event": "tiles:9",
+        "time": 4378.6
+      },
+      {
+        "event": "tiles:10",
+        "time": 4378.6
+      },
+      {
+        "event": "tiles:11",
+        "time": 4378.6
+      },
+      {
+        "event": "tiles:12",
+        "time": 4378.6
+      },
+      {
+        "event": "tiles:13",
+        "time": 4378.6
+      },
+      {
+        "event": "tiles:14",
+        "time": 4378.6
+      },
+      {
+        "event": "tiles:15",
+        "time": 4378.6
+      }
+    ],
+    "refills": [
+      "9",
+      "2",
+      "2",
+      "1",
+      "4",
+      "1"
+    ],
+    "decoded": [
+      5,
+      16
+    ],
+    "specials": [
+      {
+        "classes": "tile   special strike",
+        "border": "color(srgb 0.435294 0.647059 0.592157 / 0.65)",
+        "label": "rgb(111, 165, 151)"
+      },
+      {
+        "classes": "tile   special ward",
+        "border": "color(srgb 0.576471 0.741177 0.454902 / 0.65)",
+        "label": "rgb(147, 189, 116)"
+      },
+      {
+        "classes": "tile   special regen",
+        "border": "color(srgb 0.780392 0.494118 0.423529 / 0.65)",
+        "label": "rgb(199, 126, 108)"
+      }
+    ],
+    "overflow": false
+  }
+]

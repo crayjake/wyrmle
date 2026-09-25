@@ -121,7 +121,7 @@ test('resistance has a safe zero-hit inspection before a hit tile overrides it',
   assert.equal(state.game.playerResolve, 4)
 })
 
-test('heart tile fixture reaches 3/5 lives via real preparation, then preserves 3/5 through its move', () => {
+test('life tile fixture reaches 3/5 lives via real preparation, then preserves 3/5 through its move', () => {
   const prepared = createTutorial('ward')
   let replay = createLetterStrikeGame(tutorialFixtures.ward)
   for (const move of prepared.game.playedWords) {

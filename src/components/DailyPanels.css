@@ -340,6 +340,11 @@
   white-space: nowrap;
 }
 
+.daily-help-life {
+  color: var(--green);
+  white-space: nowrap;
+}
+
 .daily-help-regen {
   color: var(--red);
 }

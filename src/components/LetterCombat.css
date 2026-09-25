@@ -116,12 +116,10 @@
 
 .letter-combat .strike-bonus[data-kind="regen"],
 .letter-combat .strike-bonus[data-kind="revive"],
-.regen-warning,
-.letter-combat .tile.regen .tile-special {
+.regen-warning {
   color: var(--red);
 }
 
-.letter-combat .tile.regen { border-color: color-mix(in srgb, var(--red) 65%, transparent); }
 .letter-combat .enemy-letter[data-regenerated="true"] { color: var(--red); border-color: var(--red); outline-color: var(--red); }
 .letter-combat .enemy-letter[data-recovery] { color: var(--red); border-color: var(--red); }
 .enemy-recovery-marker {
@@ -146,10 +144,13 @@
 }
 
 .letter-combat .strike-bonus[data-kind="strike"],
-.letter-combat .strike-bonus[data-kind="ward"],
-.letter-combat .strike-bonus[data-kind="hit tile"],
-.letter-combat .strike-bonus[data-kind="heart"] {
+.letter-combat .strike-bonus[data-kind="hit tile"] {
   color: var(--blue);
+}
+
+.letter-combat .strike-bonus[data-kind="ward"],
+.letter-combat .strike-bonus[data-kind="life"] {
+  color: var(--green);
 }
 
 .letter-combat .strike-bonus-divider,

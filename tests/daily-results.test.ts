@@ -188,7 +188,7 @@ test('separate armour-break and removal turns stay distinct even after the lette
   assert.equal(completed.turns[0].letterOutcomes[0].removed, false)
   assert.equal(completed.turns[1].letterOutcomes[0].armourBroken, false)
   assert.equal(completed.turns[1].letterOutcomes[0].removed, true)
-  assert.match(buildShareText(completed), /C  ◐ ♥\nC  ■$/)
+  assert.match(buildShareText(completed), /C  ◐ ▪\nC  ■$/)
 })
 
 test('multiple Ward tiles protect one turn and count as one Ward save', () => {
@@ -372,7 +372,7 @@ test('share text encodes outcomes and turn effects but never words or enemy info
   const share = buildShareText(completed)
   assert.equal(share, [
     'WYRMLE 2026-09-24 · NORMAL · VICTORY', '', 'LIVES', '□□□□□ 0/5', '',
-    'C  ·······■·◐ ♥', 'C  ◐■·······■', 'C  ·····■■···',
+    'C  ·······■·◐ ▪', 'C  ◐■·······■', 'C  ·····■■···',
     'C  ··■■······', 'N  ■·······■· ◆', 'N  ····■·····',
   ].join('\n'))
   for (const secret of [...completed.wordsPlayed, completed.enemyWord]) {

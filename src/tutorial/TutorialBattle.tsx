@@ -156,8 +156,8 @@ function TutorialPrompt({ state, selected }: { state: TutorialState; selected: b
     case 'resisted': return <p>Build SAD: similar meaning gives 0 hits. CONTINUE to try a HIT tile.</p>
     case 'strike': return <p>Build SAD using HIT S. It hits its match even though SAD is resisted.</p>
     case 'strike-result': return <p>The HIT tile removed S through resistance. A and D stayed.</p>
-    case 'ward': return <p>Build DIG with heart D. D disappears; you keep all 3 lives.</p>
-    case 'ward-result': return <p>The heart tile saved a life this turn. D is gone; you still have 3 lives.</p>
+    case 'ward': return <p>Build DIG with the green LIFE tile D. D disappears; you keep all 3 lives.</p>
+    case 'ward-result': return <p>The LIFE tile saved a life this turn. D is gone; you still have 3 lives.</p>
     case 'regen-dead': return <p>Build RED: REVIVE E revives E after R is hit. CONTINUE to compare.</p>
     case 'regen-alive': return <p>Build RED: REVIVE E adds armour after R is hit. CONTINUE for a safe choice.</p>
     case 'regen-safe': return <p>Build RED with the plain E. R disappears and E gains no armour.</p>

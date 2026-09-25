@@ -12,6 +12,30 @@
   border-color: var(--emph);
 }
 
+.letter-combat .tile.strike {
+  --special-colour: var(--blue);
+}
+
+.letter-combat .tile.ward {
+  --special-colour: var(--green);
+}
+
+.letter-combat .tile.regen {
+  --special-colour: var(--red);
+}
+
+.letter-combat .tile.special {
+  border-color: color-mix(in srgb, var(--special-colour) 65%, transparent);
+}
+
+.letter-combat .tile.special.selected {
+  border-color: var(--special-colour);
+}
+
+.letter-combat .tile.special .tile-special {
+  color: var(--special-colour);
+}
+
 .letter-combat .tile-special {
   font-size: 0.43rem;
   opacity: 0.8;

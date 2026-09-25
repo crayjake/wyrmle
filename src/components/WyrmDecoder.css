@@ -28,6 +28,7 @@
   left: 0;
   width: 0;
   height: 0;
+  will-change: transform;
 }
 
 /* Every part uses the resting meter's authored dimensions, but follows the

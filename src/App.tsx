@@ -195,11 +195,13 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, match
   const containerRef = useRef<HTMLElement>(null)
   const enemyLetters = useRef<(HTMLDivElement | null)[]>([])
   const tileElements = useRef<(HTMLButtonElement | null)[]>([])
+  const refillElements = useRef<(HTMLSpanElement | null)[]>([])
   const wyrmDockRef = useRef<HTMLSpanElement>(null)
   const wyrmLifeRef = useRef<HTMLSpanElement>(null)
   const wyrmTitleRef = useRef<HTMLDivElement>(null)
   const [revealedEnemyIndices, setRevealedEnemyIndices] = useState<number[]>([])
   const [revealedTileIndices, setRevealedTileIndices] = useState<number[]>([])
+  const [revealedRefills, setRevealedRefills] = useState<boolean[]>([])
   const enemy = game.encounter.enemy
   const interactive = visiblePhase === "ready" && game.status === "playing" && !daily.error && !result && !resolving
   const preview = previewLetterStrike(game)
@@ -235,11 +237,22 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, match
   const registerTile = useCallback((index: number, element: HTMLButtonElement | null) => {
     tileElements.current[index] = element
   }, [])
+  const registerRefill = useCallback((index: number, element: HTMLSpanElement | null) => {
+    refillElements.current[index] = element
+  }, [])
   const revealEnemyLetter = useCallback((index: number) => {
     setRevealedEnemyIndices(current => current.includes(index) ? current : [...current, index])
   }, [])
   const revealTile = useCallback((index: number) => {
     setRevealedTileIndices(current => current.includes(index) ? current : [...current, index])
+  }, [])
+  const revealRefill = useCallback((index: number) => {
+    setRevealedRefills(current => {
+      if (current[index]) return current
+      const next = [...current]
+      next[index] = true
+      return next
+    })
   }, [])
 
   const message = resolving ? undefined
@@ -285,7 +298,7 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, match
           wyrmRef={wyrmLifeRef}
           decoding={visiblePhase === 'enemy' || visiblePhase === 'tiles'}
         />
-        <RefillSupply game={game} decoded={visiblePhase === 'ready'} />
+        <RefillSupply game={game} decoded={visiblePhase === 'ready'} revealed={revealedRefills} registerTile={registerRefill} />
         {!daily.started && puzzle.difficulty && <span className="daily-puzzle-difficulty">TODAY · DIFFICULTY: {puzzle.difficulty}</span>}
       </div>
 
@@ -365,13 +378,14 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, match
         containerRef={containerRef}
         enemyLetters={enemyLetters}
         tileElements={tileElements}
+        refillElements={refillElements}
         dockRef={wyrmLifeRef}
         lifeSegments={game.encounter.startingResolve}
-        titleRef={wyrmTitleRef}
         enemyCount={enemy.word.length}
         tileCount={game.tiles.length}
         onEnemyReveal={revealEnemyLetter}
         onTileReveal={revealTile}
+        onRefillReveal={revealRefill}
         onEnemyDecoded={enemyDecoded}
         onTilesDecoded={tilesDecoded}
       />}

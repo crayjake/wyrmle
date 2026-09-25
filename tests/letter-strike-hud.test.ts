@@ -3,7 +3,7 @@ import { test } from 'node:test'
 import { previewLetterStrike, submitLetterStrike } from '../src/game/letterStrike.ts'
 import { createHistoricalBoardGame as createLetterStrikeGame } from './letter-strike-fixture.ts'
 import type { LetterStrikeState } from '../src/game/letterStrike.ts'
-import { getLetterStrikeBattleEvents, getLetterStrikeBonuses, getLetterStrikeGrammarModifiers, getLetterStrikeTileSummary } from '../src/game/letterStrikeHud.ts'
+import { getDisplayEffectLabel, getLetterStrikeBattleEvents, getLetterStrikeBonuses, getLetterStrikeGrammarModifiers, getLetterStrikeTileSummary } from '../src/game/letterStrikeHud.ts'
 
 function wordIds(state: LetterStrikeState, word: string): number[] {
   const ids: number[] = []
@@ -19,7 +19,7 @@ test('tile summaries describe only remaining special tile identities and active 
   const state = createLetterStrikeGame()
   assert.deepEqual(getLetterStrikeTileSummary(state), [
     { id: 'strike', label: 'HIT', symbol: '◆', detail: 'HITS MATCHING LETTER' },
-    { id: 'ward', label: 'HEART', symbol: '♥', detail: 'SAVES A LIFE THIS TURN' },
+    { id: 'ward', label: 'LIFE', symbol: '▪', detail: 'SAVES A LIFE THIS TURN' },
   ])
   const withoutWard = submitLetterStrike(state, wordIds(state, 'JOY'))
   assert.deepEqual(getLetterStrikeTileSummary(withoutWard).map(summary => summary.id), ['strike'])
@@ -38,7 +38,7 @@ test('tile detail follows configured effects rather than hardcoded special names
   } }
   assert.deepEqual(getLetterStrikeTileSummary(state), [
     { id: 'strike', label: 'HIT', symbol: '◆', detail: 'SAVES A LIFE THIS TURN' },
-    { id: 'ward', label: 'HEART', symbol: '♥', detail: 'HITS MATCHING LETTER · SAVES A LIFE THIS TURN' },
+    { id: 'ward', label: 'LIFE', symbol: '▪', detail: 'HITS MATCHING LETTER · SAVES A LIFE THIS TURN' },
   ])
   const inactive = { ...state, encounter: { ...state.encounter, tileEffects: {
     strike: { strike: false, preventResolveLoss: false },
@@ -99,12 +99,15 @@ test('current move bonuses show applied grammar between semantics and actual eff
     { label: 'RESISTED' }, { label: '1 HIT' }, { label: 'ADJECTIVE', value: 1 },
   ])
   assert.deepEqual(getLetterStrikeBonuses(previewLetterStrike(state, wordIds(state, 'JOY'))), [
-    { label: 'COUNTER' }, { label: '2 HITS' }, { label: 'HEART' },
+    { label: 'COUNTER' }, { label: '2 HITS' }, { label: 'LIFE' },
   ])
   assert.deepEqual(getLetterStrikeBonuses(previewLetterStrike(state, wordIds(state, 'GLOOM'))), [
     { label: 'RESISTED' }, { label: '1 HIT' }, { label: 'HIT TILE' },
   ])
   assert.deepEqual(getLetterStrikeBonuses(previewLetterStrike(state, [])), [])
+  assert.equal(getDisplayEffectLabel('WARD'), 'LIFE')
+  assert.equal(getDisplayEffectLabel('HEART'), 'LIFE')
+  assert.equal(getDisplayEffectLabel('LIFE'), 'LIFE')
 })
 
 test('history includes recorded grammar even when current encounter weaknesses change', () => {

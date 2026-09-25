@@ -141,7 +141,7 @@ export function ResultPanel({ result, onClose, onShowStats }: PanelProps & {
         <Stat label="Letters removed">{result.lettersDestroyed}</Stat>
         <Stat label="Armour breaks">{result.armourBroken}</Stat>
         <Stat label="Hit tiles used">{result.strikeActivations}</Stat>
-        <Stat label="Lives saved by hearts">{result.wardSaves}</Stat>
+        <Stat label="Lives saved">{result.wardSaves}</Stat>
         {result.regenRecoveries !== undefined && <Stat label="Enemy recoveries">{result.regenRecoveries}</Stat>}
         <Stat label="Most removed in one word">{result.largestRemoval}</Stat>
       </dl>
@@ -156,7 +156,7 @@ export function ResultPanel({ result, onClose, onShowStats }: PanelProps & {
         <p className="daily-share-legend" aria-label="Share symbols">
           <span>C Counter</span><span>N Neutral</span><span>R Resisted</span>
           <span>· Untouched</span><span>◐ Armour broken</span><span>■ Removed</span>
-          <span>▣ Armour broken + removed</span><span>♥ Heart</span><span>◆ Hit tile</span>
+          <span>▣ Armour broken + removed</span><span>▪ Life tile</span><span>◆ Hit tile</span>
           {result.regenRecoveries !== undefined && <span>↺ Enemy recovery</span>}
         </p>
       </details>
@@ -211,7 +211,7 @@ export function StatsPanel({ results, todayId, inProgressIds = [], onResume, onC
         <Stat label="Neutral moves">{stats.totalNeutral}</Stat>
         <Stat label="Resisted moves">{stats.totalResisted}</Stat>
         <Stat label="Hit tiles used">{stats.totalStrikeActivations}</Stat>
-        <Stat label="Lives saved by hearts">{stats.totalWardSaves}</Stat>
+        <Stat label="Lives saved">{stats.totalWardSaves}</Stat>
         <Stat label="Armour broken">{stats.totalArmourBroken}</Stat>
         <Stat label="Most lives remaining">{stats.gamesPlayed > 0 ? stats.bestResolveRemaining : '—'}</Stat>
         <Stat label="Most hits in one word">{stats.largestSingleTurnStrikes}</Stat>
@@ -273,7 +273,7 @@ export function HelpPanel({ onClose, strikeConsumesAllowance = false, longWordRu
         <p>Highlighted enemy cells show exactly what your word will do: blue <strong>−</strong> breaks armour; red <strong>×</strong> removes a letter. Armour loses its second outline on the first hit; defeated letters become centred <strong>·</strong> dots with no outline. Matching tiles hit in your spelling order, so two hits can break and remove the same armoured letter in one word.</p>
         <p>Grammar labels under the enemy are green for weaknesses and red for resistances. For example, an <strong>ADJECTIVE +1 HIT</strong> weakness lets a recognized adjective hit one extra matching tile. {anyRecognizedGrammar ? 'Any recognized word type can qualify; a word with several types receives its best applicable modifier once. Unknown word types receive no grammar bonus.' : 'This saved puzzle uses the original rules: unknown or multiple word types receive no grammar bonus.'} Check the live preview to see what applies. Counters already use every matching tile. Grammar never creates a hit without a matching letter.</p>
         <p>Meaning labels use reviewed enemy meanings and dictionary relations. Related does not mean similar: WORRY is related to DESPAIR, so it is neutral. A word with no listed relationship also plays as neutral; that is a fallback, not a claim that its meaning is unrelated.</p>
-        <p>Each valid word normally costs one life. A <span className="daily-help-gem">♥ Heart tile</span> saves that life for its turn, so your lives stay the same. {finiteRefills ? 'Used tiles are replaced while refills remain.' : 'Used tiles are replaced.'} Removing the final enemy letter wins even when it spends your final life.</p>
+        <p>Each valid word normally costs one life. A <span className="daily-help-life">▪ LIFE tile</span> saves that life for its turn, so your lives stay the same. {finiteRefills ? 'Used tiles are replaced while refills remain.' : 'Used tiles are replaced.'} Removing the final enemy letter wins even when it spends your final life.</p>
         {finiteRefills && <p><strong>REFILLS</strong> shows the finite reserve: letter tiles count copies of surviving enemy letters; the blank tile groups all other letters. These are counts, not the next letters in order. When the reserve runs out, used slots stay empty. Keep spelling with the tiles left on the board. An empty reserve alone does not end your run; you lose when no playable words remain or your lives run out.</p>}
         <p>Normal shows the definition and allows <strong>3 undos</strong>; Hard hides the definition and allows <strong>1 undo</strong>; Hardcore hides it and has <strong>no undos</strong>. The puzzle is identical. Your mode stays fixed when you begin. Use Undo in the turn log to restore the complete state before your last word. A saved result cannot be undone.</p>
         <p>The difficulty label rates the puzzle itself and is the same in every mode. The day changes at <strong>midnight UTC</strong>. During beta, use <strong>Settings → Reset puzzle</strong> to start the current day again, including after a win or loss. This clears that day’s saved progress and result. <strong>Reset tutorial</strong> restarts the lessons without changing your puzzle.</p>
