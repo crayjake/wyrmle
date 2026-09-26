@@ -122,9 +122,12 @@ function PreviewPuzzle({ entry, request }: { entry?: BingoPreviewEntry; request:
     <a href={bingoPreviewHref('bingos', request.lives)}>Choose a puzzle</a>
   </PreviewFrame>
 
+  const collection = bingoPreviews.filter(candidate => candidate.collection === entry?.collection)
+  const next = collection[collection.findIndex(candidate => candidate.id === request.id) + 1]
   return <PlaytestBattle key={attempt} mode="letter-strike" encounter={loaded.encounter} bingoPreview freshBingoAttempt={attempt > 0}
     previewName={title} bingoGuide={getBingoGuide(request.id)} bingoProgressKey={bingoProgressKey(entry)} onChoosePreview={() => window.location.assign(
       `${bingoPreviewHref('bingos', request.lives)}${entry?.collection === 'new' ? '' : '&set=earlier'}`)}
+    onNextPreview={next ? () => window.location.assign(bingoPreviewHref(next.id, request.lives)) : undefined}
     onMode={() => { restartBingoAttempt(bingoProgressKey(entry), request.lives); setAttempt(current => current + 1) }} onExit={exit}
     matchHint="off" onMatchHintChange={() => {}} enemyGrid={false} onEnemyGridChange={() => {}} />
 }

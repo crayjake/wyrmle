@@ -1,72 +1,39 @@
 import {
-  clearLetterStrikeSelection,
-  createLetterStrikeGame,
-  previewLetterStrike,
-  submitLetterStrike,
-  toggleLetterStrikeTile,
+  clearLetterStrikeSelection, createLetterStrikeGame, previewLetterStrike,
+  submitLetterStrike, toggleLetterStrikeTile,
 } from '../game/letterStrike.ts'
-import type { LetterStrikeEncounter, LetterStrikeGem, LetterStrikeState } from '../game/letterStrike.ts'
+import type { LetterStrikeEncounter, LetterStrikeState } from '../game/letterStrike.ts'
 
-// Small, isolated examples use the actual engine. No tutorial action reads or
-// writes Daily storage, and even prepared examples are created by real moves.
-function encounter(id: string, word: string, board: string, options: {
-  definition?: string
-  armour?: number[]
-  specials?: Record<number, LetterStrikeGem>
-  opposite?: string[]
-  similar?: string[]
-  grammar?: boolean
-  long?: boolean
-  refill?: string
+// Each lesson uses the real rules and a finite supply. Daily saves are untouched.
+function encounter(id: string, board: string, options: {
+  armour?: number[]; opposite?: string[]; similar?: string[]; refill?: string
 } = {}): LetterStrikeEncounter {
   if (board.length !== 16) throw new Error(`Tutorial board ${id} needs 16 letters.`)
   return {
     id: `tutorial-${id}`,
-    enemy: {
-      word, definition: options.definition ?? 'feeling unhappy',
-      partOfSpeech: word === 'FEAR' || word === 'STORM' ? 'noun' : 'adjective',
-      semanticRelations: { opposite: options.opposite ?? [], similar: options.similar ?? [], related: [] },
-    },
-    enemyLetters: [...word].map((letter, index) => ({
+    enemy: { word: 'SAD', definition: 'feeling unhappy', partOfSpeech: 'adjective',
+      semanticRelations: { opposite: options.opposite ?? [], similar: options.similar ?? [], related: [] } },
+    enemyLetters: [...'SAD'].map((letter, index) => ({
       id: `${id}-enemy-${index}`, letter,
       hitsRemaining: options.armour?.includes(index) ? 2 : 1,
       initialHits: options.armour?.includes(index) ? 2 : 1,
     })),
-    startingResolve: 5,
-    startingTiles: [...board].map((letter, id) => ({
-      id, letter, type: options.specials?.[id] ? 'gem' : 'normal',
-      ...(options.specials?.[id] ? { gem: options.specials[id] } : {}),
-    })),
-    refillQueue: (options.refill ?? 'SUNGLADREDSTREAM').repeat(64),
+    startingResolve: 3,
+    startingTiles: [...board].map((letter, id) => ({ id, letter, type: 'normal' })),
+    refillQueue: options.refill ?? 'SUNGLAD', finiteRefills: true,
     minimumWordLength: 3,
-    ...(options.grammar ? { grammarModifiers: { adjective: 1 }, wordPartsOfSpeech: { DAMP: ['adjective'] } } : {}),
-    ...(options.long ? { longWordRule: { minimumLength: 6, bonusStrikes: 1 } } : {}),
-    tileEffects: {
-      strike: { strike: true, preventResolveLoss: false },
-      ward: { strike: false, preventResolveLoss: true },
-      regen: { strike: false, preventResolveLoss: false, regenerate: true },
-    },
+    tileEffects: { strike: { strike: false, preventResolveLoss: false }, ward: { strike: false, preventResolveLoss: false } },
   }
 }
 
-export const tutorialEncounter = encounter('sad-basics', 'SAD', 'GSUNOLERTAHIMPCD', { opposite: ['GLAD'] })
+export const tutorialEncounter = encounter('sad-basics', 'GSUNOLERTAHIMPCD', { opposite: ['GLAD'] })
 export const tutorialFixtures = {
   basic: tutorialEncounter,
-  armour: encounter('armour', 'SAD', 'SUNACTDIGOEPRLXY', { armour: [0], refill: 'SUN' }),
-  resisted: encounter('resisted', 'SAD', 'SADXLUNERTIOGPMC', { similar: ['SAD'] }),
-  strike: encounter('strike', 'SAD', 'SADXLUNERTIOGPMC', { similar: ['SAD'], specials: { 0: 'strike' } }),
-  ward: encounter('ward', 'SAD', 'SUNCATDIGOEPRLXY', { specials: { 6: 'ward' }, refill: 'XXX' }),
-  regen: encounter('regen', 'FEAR', 'REDXELFGHIJKMNOP', {
-    definition: 'an unpleasant feeling of danger', specials: { 1: 'regen' }, refill: 'ELF',
-  }),
-  grammar: encounter('grammar', 'SAD', 'DAMPSUNROEILGCTX', { grammar: true }),
-  long: encounter('long', 'STORM', 'STREAMDUNOPILGCY', {
-    definition: 'violent weather with wind and rain', long: true,
-  }),
+  armour: encounter('armour', 'SUNACTDIGOEPRLXY', { armour: [0], refill: 'SUN' }),
+  resisted: encounter('resisted', 'SADXLUNERTIOGPMC', { similar: ['SAD'] }),
+  bingo: encounter('bingo', 'GLADDENSCOURITMP', { armour: [2], opposite: ['GLADDENS'] }),
 } satisfies Record<string, LetterStrikeEncounter>
 
-// Only the first four states form onboarding. The remaining routes are optional
-// practice examples, also available directly from the development tools.
 export const tutorialSteps = [
   { id: 'goal', label: 'Brief introduction' },
   { id: 'counter', label: 'Demo · GLAD' },
@@ -76,18 +43,9 @@ export const tutorialSteps = [
   { id: 'armour-finish', label: 'Armour · second hit' },
   { id: 'armour-complete', label: 'Armour · result' },
   { id: 'resisted', label: 'Optional · Resistance' },
-  { id: 'strike', label: 'Optional · HIT tile' },
-  { id: 'strike-result', label: 'HIT tile · result' },
-  { id: 'ward', label: 'Optional · LIFE tile' },
-  { id: 'ward-result', label: 'LIFE tile · result' },
-  { id: 'regen-dead', label: 'Optional · REVIVE revival' },
-  { id: 'regen-alive', label: 'REVIVE · armour' },
-  { id: 'regen-safe', label: 'REVIVE · safe choice' },
-  { id: 'regen-result', label: 'REVIVE · result' },
-  { id: 'grammar', label: 'Optional · Word types' },
-  { id: 'grammar-result', label: 'Word types · result' },
-  { id: 'long', label: 'Optional · Long words' },
-  { id: 'long-result', label: 'Long words · result' },
+  { id: 'resisted-result', label: 'Resistance · result' },
+  { id: 'bingo', label: 'Optional · Bingo' },
+  { id: 'bingo-result', label: 'Bingo · result' },
 ] as const
 export type TutorialStep = typeof tutorialSteps[number]['id']
 export type TutorialState = { step: TutorialStep; game: LetterStrikeState }
@@ -96,74 +54,36 @@ export type TutorialAction = { type: 'continue' } | { type: 'select'; tileId: nu
   | { type: 'clear' } | { type: 'attack' } | { type: 'jump'; step: TutorialStep }
 
 export const tutorialExamples = [
-  { step: 'armour', label: 'Armour', description: 'Double border: two hits to remove a letter.' },
-  { step: 'resisted', label: 'Resistance + HIT tiles', description: 'Similar meaning blocks normal hits. A HIT tile still hits its match.' },
-  { step: 'ward', label: 'LIFE tiles', description: 'A green LIFE tile saves the life this turn would cost.' },
-  { step: 'regen-dead', label: 'REVIVE', description: 'Red tiles help the enemy: matching letters return or gain armour.' },
+  { step: 'armour', label: 'Armour', description: 'A double border takes two hits.' },
+  { step: 'resisted', label: 'Resistance', description: 'Similar meaning uses a life but hits nothing.' },
+  { step: 'bingo', label: 'Bingo', description: 'One counter can remove the whole enemy.' },
 ] as const satisfies readonly { step: TutorialStep; label: string; description: string }[]
 
 const routes: readonly (readonly TutorialStep[])[] = [
   ['goal', 'counter', 'neutral', 'complete'],
   ['armour', 'armour-finish', 'armour-complete'],
-  ['resisted', 'strike', 'strike-result'],
-  ['ward', 'ward-result'],
-  ['regen-dead', 'regen-alive', 'regen-safe', 'regen-result'],
-  ['grammar', 'grammar-result'],
-  ['long', 'long-result'],
+  ['resisted', 'resisted-result'],
+  ['bingo', 'bingo-result'],
 ]
-
-type GuidedMove = { word: string; action: 'continue' | 'attack'; special?: LetterStrikeGem }
+type GuidedMove = { word: string; action: 'attack' }
 const moves: Partial<Record<TutorialStep, GuidedMove>> = {
   counter: { word: 'GLAD', action: 'attack' },
   neutral: { word: 'SUN', action: 'attack' },
   armour: { word: 'SUN', action: 'attack' },
   'armour-finish': { word: 'SUN', action: 'attack' },
-  resisted: { word: 'SAD', action: 'continue' },
-  strike: { word: 'SAD', action: 'attack', special: 'strike' },
-  ward: { word: 'DIG', action: 'attack', special: 'ward' },
-  'regen-dead': { word: 'RED', action: 'continue', special: 'regen' },
-  'regen-alive': { word: 'RED', action: 'continue', special: 'regen' },
-  'regen-safe': { word: 'RED', action: 'attack' },
-  grammar: { word: 'DAMP', action: 'attack' },
-  long: { word: 'STREAM', action: 'attack' },
+  resisted: { word: 'SAD', action: 'attack' },
+  bingo: { word: 'GLADDENS', action: 'attack' },
 }
-
-function playPreparedWord(game: LetterStrikeState, word: string): LetterStrikeState {
-  const selectedTileIds: number[] = []
-  for (const letter of word) {
-    const tile = game.tiles.find(tile => tile.letter === letter && tile.type === 'normal' && !selectedTileIds.includes(tile.id))
-    if (!tile) throw new Error(`Missing prepared tutorial letter ${letter}.`)
-    selectedTileIds.push(tile.id)
-  }
-  const result = submitLetterStrike({ ...game, selectedTileIds })
-  if (result.error) throw new Error(result.error)
-  return result
-}
-
 function enterStep(state: TutorialState, step: TutorialStep): TutorialState {
-  let game = state.game
-  if (step === 'armour') game = createLetterStrikeGame(tutorialFixtures.armour)
-  if (step === 'resisted') game = createLetterStrikeGame(tutorialFixtures.resisted)
-  if (step === 'strike') game = createLetterStrikeGame(tutorialFixtures.strike)
-  if (step === 'ward') {
-    game = playPreparedWord(playPreparedWord(createLetterStrikeGame(tutorialFixtures.ward), 'SUN'), 'CAT')
-  }
-  if (step === 'regen-dead') game = playPreparedWord(createLetterStrikeGame(tutorialFixtures.regen), 'ELF')
-  if (step === 'regen-alive') game = createLetterStrikeGame(tutorialFixtures.regen)
-  if (step === 'regen-safe') game = clearLetterStrikeSelection(game)
-  if (step === 'grammar') game = createLetterStrikeGame(tutorialFixtures.grammar)
-  if (step === 'long') game = createLetterStrikeGame(tutorialFixtures.long)
-  return { step, game }
+  const fixture = step === 'armour' || step === 'resisted' || step === 'bingo' ? tutorialFixtures[step] : undefined
+  return { step, game: fixture ? createLetterStrikeGame(fixture) : state.game }
 }
-
 export function getTutorialMove(state: TutorialState) {
   const move = moves[state.step]
   if (!move) return null
   const tileIds: number[] = []
   for (const letter of move.word) {
-    const candidates = state.game.tiles.filter(tile => tile.letter === letter && !tileIds.includes(tile.id))
-    const tile = candidates.find(tile => move.special && tile.gem === move.special)
-      ?? candidates.find(tile => tile.type === 'normal')
+    const tile = state.game.tiles.find(tile => tile.letter === letter && !tileIds.includes(tile.id))
     if (!tile) throw new Error(`The tutorial needs an available ${letter} for ${move.word}.`)
     tileIds.push(tile.id)
   }
@@ -183,7 +103,7 @@ export function canAttackInTutorial(state: TutorialState): boolean {
 
 export function canContinueInTutorial(state: TutorialState): boolean {
   const move = moves[state.step]
-  return !move || move.action === 'continue' && isGuidedWordSelected(state)
+  return !move
 }
 
 export function getAllowedTutorialTileIds(state: TutorialState): number[] {

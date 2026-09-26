@@ -1,3 +1,4 @@
+import { seedArchivedRun } from './fixtures/archivedRun.ts'
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { undoLimit } from '../src/daily/modes.ts'
@@ -5,7 +6,7 @@ import {
   getResultStorageKey, getRunStorageKey, loadDailySession, loadResults,
   saveDailyRun, setDailyUndosUsed, undoDailyRun,
 } from '../src/daily/persistence.ts'
-import { getDailyPuzzle } from '../src/daily/puzzle.ts'
+import { getDailyPuzzle, getDailyPuzzleForVersion } from '../src/daily/puzzle.ts'
 import { buildDailyResult } from '../src/daily/results.ts'
 import { buildDailyScoreSubmission } from '../src/daily/submission.ts'
 import { captureUndoSnapshot, restoreUndoSnapshot } from '../src/daily/undo.ts'
@@ -26,8 +27,8 @@ class MemoryStorage implements StorageLike {
   key(index: number) { return [...this.data.keys()][index] ?? null }
 }
 
-// Keep these authored v4 mechanic fixtures independent of scheduled replacements.
 const puzzle = getDailyPuzzle('2026-09-28')
+const archivedPuzzle = getDailyPuzzleForVersion('2026-09-28', 'letter-strike-4', 4)
 const at = '2026-09-28T12:00:00.000Z'
 
 function play(game: LetterStrikeState, word: string): LetterStrikeState {
@@ -64,15 +65,15 @@ test('Normal begins with three undos, Hard one and Hardcore zero without changin
   assert.deepEqual(states[0], states[2])
 })
 
-test('undo restores the complete prior state, tile identities, Ward, armour, refill and Resolve after reload', () => {
+test('undo restores the complete prior state, tile identities, armour, refill and Resolve after reload', () => {
   const storage = new MemoryStorage()
   const started = begin(storage)
   const before = structuredClone(started.game!)
-  const advanced = saveDailyRun(puzzle, play(started.game!, 'CHEER'), storage, at, 'normal', started.revision)
+  const advanced = saveDailyRun(puzzle, play(started.game!, 'CALMS'), storage, at, 'normal', started.revision)
   assert.notDeepEqual(advanced.game!.enemyLetters, before.enemyLetters)
   assert.notDeepEqual(advanced.game!.tiles, before.tiles)
   assert.notEqual(advanced.game!.refillIndex, before.refillIndex)
-  assert.equal(advanced.game!.playedWords[0].preview.resolveCost, 0)
+  assert.equal(advanced.game!.playedWords[0].preview.resolveCost, 1)
   const reloaded = loadDailySession(puzzle, storage, 'hardcore')
   assert.ok(Object.isFrozen(reloaded.undoHistory[0]))
   assert.ok(Object.isFrozen(reloaded.undoHistory[0].tiles[0]))
@@ -89,9 +90,9 @@ test('undo restores the complete prior state, tile identities, Ward, armour, ref
 
 test('snapshot restoration preserves REGEN, grammar, STRIKE and normal-cost consequences exactly', () => {
   const encounter = {
-    ...puzzle.encounter,
-    tileEffects: { ...puzzle.encounter.tileEffects, regen: { strike: false, preventResolveLoss: false, regenerate: true } },
-    startingTiles: puzzle.encounter.startingTiles.map(tile => tile.letter === 'E'
+    ...archivedPuzzle.encounter,
+    tileEffects: { ...archivedPuzzle.encounter.tileEffects, regen: { strike: false, preventResolveLoss: false, regenerate: true } },
+    startingTiles: archivedPuzzle.encounter.startingTiles.map(tile => tile.letter === 'E'
       ? { ...tile, type: 'gem' as const, gem: 'regen' as const } : tile),
   }
   const initial = createLetterStrikeGame(encounter)
@@ -121,12 +122,12 @@ test('all allowances are durable and cannot be replenished by replaying or reloa
     const storage = new MemoryStorage()
     let session = begin(storage, mode)
     for (let used = 0; used < undoLimit(mode); used++) {
-      session = saveDailyRun(puzzle, play(session.game!, 'JOY'), storage, at, mode, session.revision)
+      session = saveDailyRun(puzzle, play(session.game!, 'BAD'), storage, at, mode, session.revision)
       session = undoDailyRun(puzzle, storage, session.revision)
       assert.equal(session.undosUsed, used + 1)
       session = loadDailySession(puzzle, storage)
     }
-    session = saveDailyRun(puzzle, play(session.game!, 'JOY'), storage, at, mode, session.revision)
+    session = saveDailyRun(puzzle, play(session.game!, 'BAD'), storage, at, mode, session.revision)
     assert.equal(session.undosRemaining, 0)
     assert.throws(() => undoDailyRun(puzzle, storage, session.revision), /No undos/)
   }
@@ -136,15 +137,15 @@ test('multiple undo restores prior move history in stack order and supports a di
   const storage = new MemoryStorage()
   let session = begin(storage)
   const initial = structuredClone(session.game!)
-  session = saveDailyRun(puzzle, play(session.game!, 'JOY'), storage, at, 'normal', session.revision)
+  session = saveDailyRun(puzzle, play(session.game!, 'BAD'), storage, at, 'normal', session.revision)
   const first = structuredClone(session.game!)
-  session = saveDailyRun(puzzle, play(session.game!, 'CHEER'), storage, at, 'normal', session.revision)
+  session = saveDailyRun(puzzle, play(session.game!, 'CALMS'), storage, at, 'normal', session.revision)
   session = undoDailyRun(puzzle, storage, session.revision)
   assert.deepEqual(session.game, first)
   session = undoDailyRun(puzzle, storage, session.revision)
   assert.deepEqual(session.game, initial)
-  session = saveDailyRun(puzzle, play(session.game!, 'THREAD'), storage, at, 'normal', session.revision)
-  assert.deepEqual(session.game!.playedWords.map(turn => turn.word), ['THREAD'])
+  session = saveDailyRun(puzzle, play(session.game!, 'HAD'), storage, at, 'normal', session.revision)
+  assert.deepEqual(session.game!.playedWords.map(turn => turn.word), ['HAD'])
   assert.deepEqual(loadDailySession(puzzle, storage).game, session.game)
   assert.equal(session.undosUsed, 2)
 })
@@ -152,11 +153,11 @@ test('multiple undo restores prior move history in stack order and supports a di
 test('revision checks reject stale attacks and undos even after the board returns to an identical state', () => {
   const storage = new MemoryStorage()
   const old = begin(storage)
-  const advanced = saveDailyRun(puzzle, play(old.game!, 'JOY'), storage, at, 'normal', old.revision)
+  const advanced = saveDailyRun(puzzle, play(old.game!, 'BAD'), storage, at, 'normal', old.revision)
   assert.throws(() => undoDailyRun(puzzle, storage, old.revision), /another tab/)
   const undone = undoDailyRun(puzzle, storage, advanced.revision)
   assert.deepEqual(undone.game, old.game)
-  assert.throws(() => saveDailyRun(puzzle, play(old.game!, 'JOY'), storage, at, 'normal', old.revision), /another tab/)
+  assert.throws(() => saveDailyRun(puzzle, play(old.game!, 'BAD'), storage, at, 'normal', old.revision), /another tab/)
   assert.throws(() => undoDailyRun(puzzle, storage, advanced.revision), /another tab/)
   assert.throws(() => saveDailyRun(puzzle, advanced.game!, storage, at, 'normal'), /another tab/)
   assert.equal(loadDailySession(puzzle, storage).undosUsed, 1)
@@ -166,7 +167,7 @@ test('mode remains fixed after Begin and after undoing the very first move', () 
   const storage = new MemoryStorage()
   let session = begin(storage, 'hard')
   assert.throws(() => saveDailyRun(puzzle, session.game!, storage, at, 'normal', session.revision), /another mode/)
-  session = saveDailyRun(puzzle, play(session.game!, 'JOY'), storage, at, 'hard', session.revision)
+  session = saveDailyRun(puzzle, play(session.game!, 'BAD'), storage, at, 'hard', session.revision)
   session = undoDailyRun(puzzle, storage, session.revision)
   assert.equal(loadDailySession(puzzle, storage, 'normal').mode, 'hard')
   assert.throws(() => saveDailyRun(puzzle, session.game!, storage, at, 'normal', session.revision), /another mode/)
@@ -175,7 +176,7 @@ test('mode remains fixed after Begin and after undoing the very first move', () 
 test('a failed undo write leaves the prior board and allowance intact for an explicit retry', () => {
   const storage = new MemoryStorage()
   const started = begin(storage)
-  const advanced = saveDailyRun(puzzle, play(started.game!, 'JOY'), storage, at, 'normal', started.revision)
+  const advanced = saveDailyRun(puzzle, play(started.game!, 'BAD'), storage, at, 'normal', started.revision)
   storage.failWrites = true
   assert.throws(() => undoDailyRun(puzzle, storage, advanced.revision), /quota/)
   assert.equal(loadDailySession(puzzle, storage).undosUsed, 0)
@@ -189,9 +190,9 @@ test('a failed undo write leaves the prior board and allowance intact for an exp
 test('permanent results record mode, difficulty and used/remaining undo allowance and cannot be undone', () => {
   const storage = new MemoryStorage()
   let session = begin(storage)
-  session = saveDailyRun(puzzle, play(session.game!, 'JOY'), storage, at, 'normal', session.revision)
+  session = saveDailyRun(puzzle, play(session.game!, 'BAD'), storage, at, 'normal', session.revision)
   session = undoDailyRun(puzzle, storage, session.revision)
-  const turns = [[0, 1, 2], [4, 5, 15, 18, 16], [11, 20, 9, 10, 14, 17], [8, 21, 22, 27], [24, 30, 33, 26, 25, 19]]
+  const turns = [[2, 1, 10, 15, 12, 8, 11, 6], [14, 20, 17, 7, 0, 5], [23, 24, 26, 13, 21]]
   for (const ids of turns) session = saveDailyRun(puzzle, submitLetterStrike(session.game!, ids), storage, at, 'normal', session.revision)
   assert.equal(session.result!.won, true)
   assert.equal(session.result!.mode, 'normal')
@@ -209,11 +210,13 @@ test('permanent results record mode, difficulty and used/remaining undo allowanc
 })
 
 test('schema 4 Hard runs and results are migrated read-only with exact outcomes and full undo snapshots', () => {
+  const puzzle = archivedPuzzle
   for (const terminal of [false, true]) {
     const storage = new MemoryStorage()
     let game = createLetterStrikeGame(puzzle.encounter)
     const turns = [[0, 1, 2], [4, 5, 15, 18, 16], [11, 20, 9, 10, 14, 17], [8, 21, 22, 27], [24, 30, 33, 26, 25, 19]]
     for (const ids of terminal ? turns : turns.slice(0, 2)) game = submitLetterStrike(game, ids)
+    seedArchivedRun(storage, puzzle, game, 'hard', at)
     saveDailyRun(puzzle, game, storage, at, 'hard')
     const key = terminal ? getResultStorageKey(puzzle.puzzleId) : getRunStorageKey(puzzle.puzzleId)
     const historical = JSON.parse(storage.getItem(key)!)
@@ -243,7 +246,7 @@ test('tampered immutable snapshots or invalid allowance metadata block play and 
   for (const field of ['snapshot', 'undosUsed', 'revision']) {
     const storage = new MemoryStorage()
     const started = begin(storage)
-    saveDailyRun(puzzle, play(started.game!, 'JOY'), storage, at, 'normal', started.revision)
+    saveDailyRun(puzzle, play(started.game!, 'BAD'), storage, at, 'normal', started.revision)
     const key = getRunStorageKey(puzzle.puzzleId)
     const data = JSON.parse(storage.getItem(key)!)
     if (field === 'snapshot') data.undoHistory[0].refillIndex = 99
@@ -269,9 +272,9 @@ test('DEV undo count edits respect the mode and preserve full combat state', () 
 
 test('REGEN result and future submission retain exact recovery evidence without mutating it', () => {
   const encounter = {
-    ...puzzle.encounter, startingResolve: 1,
-    tileEffects: { ...puzzle.encounter.tileEffects, regen: { strike: false, preventResolveLoss: false, regenerate: true } },
-    startingTiles: puzzle.encounter.startingTiles.map(tile => tile.letter === 'E'
+    ...archivedPuzzle.encounter, startingResolve: 1,
+    tileEffects: { ...archivedPuzzle.encounter.tileEffects, regen: { strike: false, preventResolveLoss: false, regenerate: true } },
+    startingTiles: archivedPuzzle.encounter.startingTiles.map(tile => tile.letter === 'E'
       ? { ...tile, type: 'gem' as const, gem: 'regen' as const } : tile),
   }
   const game = play(createLetterStrikeGame(encounter), 'THREAD')

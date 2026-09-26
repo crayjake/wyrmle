@@ -60,29 +60,23 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
       <span className="tutorial-eyebrow">{step === 'goal' ? 'A daily word battle' : 'Practice complete'}</span>
       <h1 id="tutorial-title">{step === 'goal' ? 'Words are your weapons.' : 'You’re ready.'}</h1>
       {step === 'goal' ? <ul className="tutorial-summary">
-        <li>Remove every letter of the enemy word to win.</li>
-        <li>Tap or swipe across tiles to spell a word of 3+ letters. You can mix swipes and taps; tiles do not need to touch.</li>
-        <li>You have 5 lives. Each word normally costs 1 life.</li>
-        <li>Used tiles refill while supplies last; then they leave empty spaces.</li>
-        <li>Meaning drives your hits: words that counter the enemy use every matching tile; neutral words use one; similar words are resisted. Check the highlighted targets before playing.</li>
-      </ul> : <p className="tutorial-completion-note">Find a word, check its targets, then play it. The preview shows exactly what will happen. Your Daily puzzle is untouched.</p>}
+        <li>Spell words of 3+ letters. Tap or swipe; tiles can be anywhere.</li>
+        <li>Counter meanings hit every matching letter. Neutral words hit once; similar words hit nothing.</li>
+        <li>Remove the whole enemy before your lives run out. Each word costs one life.</li>
+      </ul> : <p className="tutorial-completion-note">Find a counter, check its targets, then play. Used tiles refill while supplies last; empty spaces stay when the reserve runs out.</p>}
       <div className="tutorial-intro-actions">
         <button type="button" className="daily-button tutorial-start" onClick={() => step === 'goal' ? jump('counter') : onComplete()}>
-          {step === 'goal' ? 'TRY THE 2-WORD DEMO' : 'PLAY TODAY'}
+          {step === 'goal' ? 'TRY THE DEMO' : 'PLAY TODAY'}
         </button>
-        {step === 'goal'
-          ? <button type="button" className="daily-button" onClick={onSkip}>Play without the demo</button>
-          : <button type="button" className="daily-button" onClick={() => jump('counter')}>Replay the demo</button>}
+        {step !== 'goal' && <button type="button" className="daily-button" onClick={() => jump('counter')}>Replay the demo</button>}
       </div>
-      <details className="tutorial-examples">
-        <summary>Optional: special tiles and armour</summary>
-        <p>Explore any example now, or replay the tutorial from Settings later.</p>
+      <div className="tutorial-examples">
+        <p>More practice</p>
         <div className="tutorial-example-list">
-          {tutorialExamples.map(example => <button type="button" className="tutorial-example" key={example.step} onClick={() => jump(example.step)}>
-            <strong>{example.label}</strong><span>{example.description}</span>
-          </button>)}
+          {tutorialExamples.map(example => <button type="button" className="daily-button tutorial-example" key={example.step}
+            title={example.description} onClick={() => jump(example.step)}>{example.label}</button>)}
         </div>
-      </details>
+      </div>
     </section>
   </main>
 
@@ -145,23 +139,14 @@ function TutorialPrompt({ state, selected }: { state: TutorialState; selected: b
       : 'Build GLAD using the highlighted letters. Letters can be anywhere.'}</p>
     case 'neutral': return <p>{selected
       ? 'SUN is neutral: only its first match, S, is hit. PLAY WORD to win.'
-      : 'A and D are gone. Build SUN to remove the last S.'}</p>
+      : 'Used tiles have refilled. Build SUN to remove the last S.'}</p>
     case 'armour': return <p>Build SUN. S has a double border: one hit breaks armour; a second removes S.</p>
     case 'armour-finish': return <p>S lost its armour. Build SUN again to remove it. Repeating words is allowed.</p>
     case 'armour-complete': return <p>Two hits removed S: double border → single border → dot.</p>
-    case 'resisted': return <p>Build SAD: similar meaning gives 0 hits. CONTINUE to try a HIT tile.</p>
-    case 'strike': return <p>Build SAD using HIT S. It hits its match even though SAD is resisted.</p>
-    case 'strike-result': return <p>The HIT tile removed S through resistance. A and D stayed.</p>
-    case 'ward': return <p>Build DIG with the green LIFE tile D. D disappears; you keep all 3 lives.</p>
-    case 'ward-result': return <p>The LIFE tile saved a life this turn. D is gone; you still have 3 lives.</p>
-    case 'regen-dead': return <p>Build RED: REVIVE E revives E after R is hit. CONTINUE to compare.</p>
-    case 'regen-alive': return <p>Build RED: REVIVE E adds armour after R is hit. CONTINUE for a safe choice.</p>
-    case 'regen-safe': return <p>Build RED with the plain E. R disappears and E gains no armour.</p>
-    case 'regen-result': return <p>Plain E avoided REVIVE. Red tiles help the enemy; check red recovery marks before playing.</p>
-    case 'grammar': return <p>Adjective bonus: DAMP hits D, then A.</p>
-    case 'grammar-result': return <p>DAMP’s adjective bonus removed D and A.</p>
-    case 'long': return <p>Build STREAM. Neutral words of 6+ letters gain a hit: S, then T, will be hit.</p>
-    case 'long-result': return <p>LONG added a second hit. S and T are gone; word-type bonuses can add more.</p>
+    case 'resisted': return <p>Build SAD. It means the same as the enemy: no hits, even though all three letters match.</p>
+    case 'resisted-result': return <p>SAD cost one life and hit nothing. Look for a counter instead.</p>
+    case 'bingo': return <p>Build GLADDENS: it means to make happy. Both D tiles are needed to break and remove the armoured D.</p>
+    case 'bingo-result': return <p>Bingo! One counter removed every letter, including the armour. Beta puzzles each hide a one-word win.</p>
     case 'complete': return <p>Every enemy letter is gone. You won!</p>
     case 'goal': return null
   }

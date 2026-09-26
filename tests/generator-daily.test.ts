@@ -53,7 +53,7 @@ function savedRun(puzzle: DailyPuzzleDefinition, game: LetterStrikeState): Omit<
 }
 
 test('Historical September 25 v7 retains the exact selected DESPAIR encounter as a frozen runtime-only snapshot', () => {
-  const selected = createCandidate('DESPAIR', 'enemy-variety-v1:DESPAIR:5', { lexicalMode: 'legacy' })
+  const selected = createCandidate('DESPAIR', 'enemy-variety-v1:DESPAIR:5', { lexicalMode: 'legacy', archivedSpecialTiles: true })
   const expected = withCurrentLexicalRules(selected.encounter)
   expected.id = 'daily-despair-lexical-v7'
   assert.equal(published.gameVersion, 'letter-strike-5')
@@ -67,7 +67,7 @@ test('Historical September 25 v7 retains the exact selected DESPAIR encounter as
   assert.equal('winningLines' in published.encounter, false)
   assert.equal('construction' in published.encounter, false)
   assert.equal(getDailyPuzzle('2026-09-23').puzzleVersion, 1)
-  assert.equal(getDailyPuzzle('2026-09-26').puzzleVersion, 13)
+  assert.equal(getDailyPuzzle('2026-09-26').puzzleVersion, 14)
   assert.equal(published.difficulty, 'MEDIUM')
   assert.deepEqual(published.encounter.startingTiles, archivedDespair.encounter.startingTiles)
   assert.equal(published.encounter.refillQueue, archivedDespair.encounter.refillQueue)

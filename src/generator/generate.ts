@@ -38,7 +38,9 @@ export type GenerationOptions = {
   refinementBeamWidth?: number
   allowResolveMutation?: boolean
   startingResolve?: number
-  /** Opt-in preserves historical seed output and published daily snapshots. */
+  /** Internal replay only; current authoring never places special tiles. */
+  archivedSpecialTiles?: true
+  /** Archived construction only. */
   includeRegenTile?: boolean
   /** Explicit 0–3 overrides the historical boolean. */
   regenTileCount?: number
@@ -80,6 +82,7 @@ export function createCandidate(enemyWord: string, seed: string | number, option
   const sustained = meaningOnly && options.design !== 'classic'
   const refillLimit = validateRefillLimit(options.refillLimit)
   const regenCount = validateRegenTileCount(options.regenTileCount) ?? Number(options.includeRegenTile === true)
+  if (regenCount && !options.archivedSpecialTiles) throw new Error('Special tiles have been removed from new puzzles.')
   const enemy = normalizeWord(enemyWord)
   const provider = options.provider ?? (meaningOnly ? meaningLexicalProvider : options.lexicalMode === 'legacy' ? localLexicalProvider : currentLexicalProvider)
   const suitability = analyseEnemySuitability(enemy, provider)
@@ -88,13 +91,13 @@ export function createCandidate(enemyWord: string, seed: string | number, option
   const pools = buildWordPools(enemy, provider, { grammarPolicy: options.lexicalMode === 'legacy' ? 'single' : 'any-recognized',
     ...(sustained ? { minimumCounterCommonness: 0.4 } : {}) })
   const random = createRandom(seed)
-  const goal = options.goal ?? chooseGenerationGoal(random)
+  const goal = options.goal ?? chooseGenerationGoal(random, options.archivedSpecialTiles)
   const currentGoal: GenerationGoal = sustained && !options.goal ? {
     archetypes: ['semantic-contrast', 'refill-planning', 'multiple-routes'],
     description: 'Familiar resisted words recur while several counter discoveries remain useful throughout the fight.',
   } : meaningOnly && goal.archetypes.includes('grammar-twist') ? {
     ...goal, archetypes: [...new Set(goal.archetypes.map(type => type === 'grammar-twist' ? 'semantic-contrast' as const : type))],
-    description: 'Meaning and Hit tiles offer different ways through resisted words.',
+    description: 'Counter meanings offer ways past tempting resisted words.',
   } : goal
   const anchors: AnchorWord[] = []
   function addAnchor(pool: readonly LexicalEntry[], role: WordRole, maxLength = 9) {
@@ -105,8 +108,9 @@ export function createCandidate(enemyWord: string, seed: string | number, option
     const selected = random.pick(compatible.slice(0, 16))
     const roles: WordRole[] = [role]
     if (!meaningOnly && pools.grammar.some(entry => entry.word === selected.word) && role !== 'grammar') roles.push('grammar')
-    if (role === 'resisted') roles.push('decoy', 'strike')
-    if (role === 'neutral') roles.push('ward')
+    if (role === 'resisted') roles.push('decoy')
+    if (role === 'resisted' && options.archivedSpecialTiles) roles.push('strike')
+    if (role === 'neutral' && options.archivedSpecialTiles) roles.push('ward')
     anchors.push({ word: selected.word, roles, expected: 'opening', commonness: selected.commonness })
   }
   const discoveryCounters = rankDiscoveryAnchors(pools.counters, enemy)
@@ -125,10 +129,10 @@ export function createCandidate(enemyWord: string, seed: string | number, option
   }
   const words = pools.all.map(entry => entry.word)
   const board = constructBoard(anchors.map(anchor => anchor.word), words, random)
-  const startingTiles = placeSpecialTiles(board, enemy, pools.counters.map(entry => entry.word),
-    anchors.filter(anchor => anchor.roles.includes('resisted')).map(anchor => anchor.word), random, options)
+  const startingTiles = options.archivedSpecialTiles ? placeSpecialTiles(board, enemy, pools.counters.map(entry => entry.word),
+    anchors.filter(anchor => anchor.roles.includes('resisted')).map(anchor => anchor.word), random, options) : board
   const armourCount = sustained ? Math.max(2, Math.min(enemy.length, 9 - enemy.length)) : goal.archetypes.includes('armour-break') ? 2 : 1
-  const id = `generated-${enemy.toLowerCase()}-${sustained ? 'meaning3-' : meaningOnly ? 'meaning2-' : options.lexicalMode === 'legacy' ? '' : 'lex2-'}${encodeURIComponent(String(seed))}${refillLimit === undefined ? '' : `-finite${refillLimit}`}${regenCount > 1 ? `-revives${regenCount}` : ''}`
+  const id = `generated-${enemy.toLowerCase()}-${options.archivedSpecialTiles ? '' : 'plain-'}${sustained ? 'meaning3-' : meaningOnly ? 'meaning2-' : options.lexicalMode === 'legacy' ? '' : 'lex2-'}${encodeURIComponent(String(seed))}${refillLimit === undefined ? '' : `-finite${refillLimit}`}${regenCount > 1 ? `-revives${regenCount}` : ''}`
   const startingResolve = options.startingResolve ?? 5
   let encounter: LetterStrikeEncounter = {
     id, enemy: { word: enemy, definition: entry.definition, partOfSpeech: entry.partsOfSpeech[0],
@@ -143,11 +147,11 @@ export function createCandidate(enemyWord: string, seed: string | number, option
     ...(meaningOnly ? {} : { wordPartsOfSpeech: pools.wordPartsOfSpeech }),
     ...(options.lexicalMode === 'legacy' ? {} : { lexicalRules: { ...currentLexicalRules } }),
     ...(meaningOnly ? {} : { longWordRule: { minimumLength: 6, bonusStrikes: 1 } }),
-    tileEffects: { strike: { strike: true, preventResolveLoss: false }, ward: { strike: false, preventResolveLoss: true },
+    tileEffects: { strike: { strike: !!options.archivedSpecialTiles, preventResolveLoss: false }, ward: { strike: false, preventResolveLoss: !!options.archivedSpecialTiles },
       ...(regenCount ? { regen: { strike: false, preventResolveLoss: false, regenerate: true } } : {}),
     },
   }
-  const targetTurns = goal.archetypes.includes('clutch-finish') ? startingResolve + 1 : startingResolve
+  const targetTurns = options.archivedSpecialTiles && goal.archetypes.includes('clutch-finish') ? startingResolve + 1 : startingResolve
   const refill = constructRefill(encounter, pools.all, random, targetTurns, refillLimit, sustained ? {
     counters: discoveryCounters.slice(0, 32).map(entry => entry.word), resisted: familiarResisted.slice(0, 32).map(entry => entry.word),
   } : undefined)
@@ -162,7 +166,7 @@ export function createCandidate(enemyWord: string, seed: string | number, option
     anchors.push({ word, roles, expected: 'refill', commonness: provider.getEntry(word)?.commonness ?? null })
   }
   return { id, seed: String(seed), enemyWord: enemy, encounter, goal: structuredClone(currentGoal), anchors,
-    construction: refill.construction, provenance: { generatorVersion: sustained ? 'letter-strike-generator-5' : meaningOnly ? 'letter-strike-generator-4' : options.lexicalMode === 'legacy' ? 'letter-strike-generator-1' : 'letter-strike-generator-2', lexicalProvider: provider.id } }
+    construction: refill.construction, provenance: { generatorVersion: !options.archivedSpecialTiles && meaningOnly ? 'letter-strike-generator-6' : sustained ? 'letter-strike-generator-5' : meaningOnly ? 'letter-strike-generator-4' : options.lexicalMode === 'legacy' ? 'letter-strike-generator-1' : 'letter-strike-generator-2', lexicalProvider: provider.id } }
 }
 
 function compareCandidates(a: RankedCandidate, b: RankedCandidate): number {

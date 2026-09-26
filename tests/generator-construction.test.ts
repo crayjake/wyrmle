@@ -17,8 +17,8 @@ test('seeded construction shares anchor letters, keeps 16 identities and guarant
     assert.deepEqual(candidate, createStructuralCandidate('MELANCHOLY', `construction-test:${seed}`))
     assert.equal(candidate.encounter.startingTiles.length, 16)
     assert.equal(new Set(candidate.encounter.startingTiles.map(tile => tile.id)).size, 16)
-    assert.equal(candidate.encounter.startingTiles.filter(tile => tile.gem === 'ward').length, 1)
-    assert.equal(candidate.encounter.startingTiles.filter(tile => tile.gem === 'strike').length, 1)
+    assert.equal(candidate.encounter.startingTiles.filter(tile => tile.gem === 'ward').length, 0)
+    assert.equal(candidate.encounter.startingTiles.filter(tile => tile.gem === 'strike').length, 0)
     for (const anchor of candidate.anchors.filter(anchor => anchor.expected === 'opening')) {
       assert.equal(canSpell(anchor.word, candidate.encounter.startingTiles.map(tile => tile.letter)), true, anchor.word)
     }
@@ -72,8 +72,9 @@ test('legacy-bonus serialized candidates retain their deterministic semantic and
 test('default serialized candidates carry the complete definition-backed meaning table without type or length bonuses', () => {
   const candidate = createCandidate('ANGER', 'serialized-meanings', { refillLimit: 12 })
   const restored = JSON.parse(JSON.stringify(candidate))
-  assert.equal(restored.provenance.generatorVersion, 'letter-strike-generator-5')
+  assert.equal(restored.provenance.generatorVersion, 'letter-strike-generator-6')
   assert.equal(restored.construction.design, 'sustained-discovery')
+  assert.ok(restored.encounter.startingTiles.every((tile: { type: string; gem?: string }) => tile.type === 'normal' && !tile.gem))
   assert.equal(restored.encounter.meaningLexicon.policy, 'defined-only')
   assert.ok(Object.keys(restored.encounter.meaningLexicon.words).length > 0)
   assert.deepEqual(restored.encounter.meaningLexicon, candidate.encounter.meaningLexicon)
@@ -94,7 +95,7 @@ test('every unlimited mutation primitive is deterministic, preserves encounter v
     return { ...letter, initialHits: hits, hitsRemaining: hits }
   })
   const before = structuredClone(source)
-  for (const kind of mutationKinds.filter(kind => kind !== 'refill-length')) {
+  for (const kind of mutationKinds.filter(kind => kind !== 'refill-length' && !kind.startsWith('move-'))) {
     const options = { kind, allowResolveMutation: true }
     const mutation = mutateCandidate(source, `primitive:${kind}`, options)
     assert.deepEqual(mutation, mutateCandidate(source, `primitive:${kind}`, options), kind)

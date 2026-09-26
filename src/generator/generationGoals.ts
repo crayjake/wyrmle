@@ -10,6 +10,7 @@ export const generationGoals: readonly GenerationGoal[] = [
   { archetypes: ['greedy-trap', 'semantic-contrast'], description: 'A strong immediate attack competes with preserving shared letters.' },
 ]
 
-export function chooseGenerationGoal(random: Random): GenerationGoal {
-  return structuredClone(random.pick(generationGoals))
+export function chooseGenerationGoal(random: Random, archivedSpecialTiles = false): GenerationGoal {
+  return structuredClone(random.pick(archivedSpecialTiles ? generationGoals : generationGoals.filter(goal =>
+    !goal.archetypes.includes('ward-timing') && !goal.archetypes.includes('strike-override'))))
 }

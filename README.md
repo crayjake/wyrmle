@@ -1,8 +1,8 @@
 # WYRMLE
 
-A deterministic daily word game where the enemy word's letters are its health. Tap or swipe across tiles in spelling order, preview the meaning match and exact enemy cells that will be hit, and remove every letter before your lives run out. New puzzles focus on meaning, with Life, Hit and Revive tiles adding tactical choices.
+A deterministic daily word game where the enemy word's letters are its health. Tap or swipe across tiles in spelling order, preview the meaning match and exact enemy cells that will be hit, and remove every letter before your lives run out. New games use ordinary letter tiles: meaning, armour and the changing letter supply determine your choices.
 
-The [current CHAOS review](docs/meaning-assessment-review.md) records the frozen dictionary, HALCYONS correction and publication proofs. The [generator guide](docs/generator.md#what-you-can-do-yourself) explains which enemies you can generate yourself and what still needs semantic review before publication. The [lexical and onboarding review](docs/lexical-onboarding-review.md) explains the earlier word-label pipeline, the short demo and the research behind it. The [gameplay review](docs/gameplay-onboarding-pass.md) preserves earlier player tests and records phone checks. The [ANGER review](docs/revive-candidate-notes.md) records the earlier bonus-based publication and its scoped rescue certificate; those proofs do not transfer to meaning-first puzzles.
+The [archived CHAOS v13 review](docs/meaning-assessment-review.md) records the frozen dictionary, HALCYONS correction and publication proofs. The [generator guide](docs/generator.md#what-you-can-do-yourself) explains which enemies you can generate yourself and what still needs semantic review before publication. The [lexical and onboarding review](docs/lexical-onboarding-review.md) explains the earlier word-label pipeline, the short demo and the research behind it. The [gameplay review](docs/gameplay-onboarding-pass.md) preserves earlier player tests and records phone checks. The [ANGER review](docs/revive-candidate-notes.md) records the earlier bonus-based publication and its scoped rescue certificate; those proofs do not transfer to meaning-first puzzles.
 
 ## Run and verify
 
@@ -35,23 +35,26 @@ Open **http://127.0.0.1:4173/wyrmle/**. Use the same base for build and preview.
 
 ## Game rules
 
-- A valid word normally costs one life. Invalid words spend nothing.
+- A valid word costs one life. Invalid words spend nothing.
 - **COUNTER:** every selected tile with an eligible same-letter target hits. Counters include direct opposites and reviewed ideas that overcome the enemy: CHEERFUL counters ANGER through good spirits.
 - **NEUTRAL:** one normal matching hit, in spelling order. Related meanings without a counter or reinforcing relationship are neutral.
 - **RESISTED:** no normal semantic hits.
-- **HIT:** that tile guarantees a matching strike, including on resisted words, without consuming the normal semantic allowance. `LAD` with Hit L hits L through Hit, then A through its neutral allowance. Each tile hits at most once, including on counters. Multiple Hit tiles can each hit once.
-- **LIFE:** including any green Life tile makes that valid turn cost zero lives; Life tiles do not stack or add a life.
-- **REVIVE:** after every strike resolves, each used Revive tile recovers one matching enemy letter by one step: dead → alive without armour → armoured. Two hits is the cap. Dead matching copies recover first, then living unarmoured copies, in stable left-to-right order. An already armoured or unrelated letter cannot benefit. Several Revive tiles resolve one at a time, so one can revive a letter and another can armour it.
 - **Armour:** a double-outlined cell needs two hits. Its first hit breaks armour; the next removes the letter.
 - **Finite refills:** each encounter stores its exact replacement reserve. Used tiles refill in board order until that reserve runs out; afterward, their slots stay empty. The 4×4 grid keeps its geometry and empty slots cannot be selected. Keep playing with the remaining letters. An empty reserve alone does not end the run: defeat occurs when lives run out or no word from that puzzle’s dictionary can be spelled. Removing the last enemy letter wins first.
 
 New meaning-first puzzles award **no word-type or length bonuses**. Every playable word has a frozen definition, selected sense, relation, reason and model assessment, compiled from the complete starting/refill letter supply before solving. A word with no stored definition is rejected before it spends a life. The [offline semantic pipeline](docs/offline-semantics.md) assesses all applicable dictionary senses using local embedding and entailment models; new generation fails if an assessment is missing. Neutral means the assessed evidence did not support a counter or reinforcing meaning under the versioned policy.
 
-Archived saves retain their configured grammar and LONG allowances, vocabulary and original outcomes. Their previews and help show those bonuses only when the saved encounter actually uses them.
+Publication v14 removes HIT, LIFE and REVIVE from fresh daily games. Bingo previews and current generators also use ordinary tiles. Archived saved games retain their original special-tile, grammar and LONG rules so their moves and results replay exactly.
 
-Each tile and enemy letter has its own identity. Hit targeting finishes wounded armoured copies first, otherwise proceeds left to right. Dead cells cannot be struck, but Revive can revive them. Two distinct selected tiles can each hit the same armoured cell once. Victory is checked after both damage and recovery: removing the last enemy letter wins even when the attack spends the final life, provided Revive does not bring a letter back.
+Each tile and enemy letter has its own identity. Hit targeting finishes wounded armoured copies first, otherwise proceeds left to right. Dead cells cannot be struck. Two distinct selected tiles can each hit the same armoured cell once. Victory is checked after the hits: removing the last enemy letter wins even when the attack spends the final life.
 
 The pure engine is `src/game/letterStrike.ts`: `createLetterStrikeGame`, `toggleLetterStrikeTile`, `clearLetterStrikeSelection`, `previewLetterStrike`, and `submitLetterStrike`. Preview and submission share an evaluator and ordered hit/recovery records. `selectEnemyTarget` and `selectEnemyRecoveryTarget` hold the deterministic targeting rules. Dictionary, semantic lookup, selected-ID lookup and deterministic board-order refill are reused. Refills receive fresh IDs and no special effect. Archived grammar rules change matching-tile allowances, never numeric damage. Revive is opt-in per encounter; published snapshots without it keep their exact historical outcomes.
+
+## Beta puzzles
+
+Open **Settings → Bingo previews** or [`?preview=bingos`](https://crayjake.github.io/wyrmle/?preview=bingos). The compact game header opens hints and a menu with restart, played words and refill details. Wins show stars: three for a bingo, two for two words, one for three or more. A normal win invites another attempt at the bingo without revealing its answer. Next puzzle preserves the chosen life count; the final puzzle returns to the picker. Progress and best results save separately from the daily game.
+
+The tutorial teaches counters, neutral words and life costs in a two-word demo, with optional armour, resistance and bingo lessons. It uses ordinary tiles and a finite refill supply.
 
 ## Battle presentation
 

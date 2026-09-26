@@ -87,7 +87,7 @@ test('beta word families keep their checked meanings and do not gain a publicati
   assert.equal(isMeaningPublicationReady(bingoEncounter), false)
   for (const date of ['2026-09-26', '2026-09-27']) {
     const daily = getDailyPuzzle(date)
-    assert.equal(daily.puzzleVersion, 13)
+    assert.equal(daily.puzzleVersion, 14)
     assert.equal(daily.encounter.startingResolve, 5)
     assert.notEqual(daily.encounter.id, bingoEncounter.id)
   }

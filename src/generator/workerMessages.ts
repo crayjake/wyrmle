@@ -22,7 +22,7 @@ export function validateGeneratorRequest(value: unknown): GeneratorRequest {
   if (!Number.isSafeInteger(input.candidateCount) || input.candidateCount! < 1 || input.candidateCount! > 100) {
     throw new Error('Choose between 1 and 100 initial candidates.')
   }
-  if (input.includeRegenTile !== undefined && typeof input.includeRegenTile !== 'boolean') throw new Error('REGEN choice must be a boolean.')
+  if (input.includeRegenTile || input.regenTileCount) throw new Error('Special tiles have been removed from new puzzles.')
   const refillLimit = validateRefillLimit(input.refillLimit)
   const regenTileCount = validateRegenTileCount(input.regenTileCount)
   return { id: input.id!, seed: input.seed, enemy: input.enemy?.trim().toUpperCase() ?? null, candidateCount: input.candidateCount!,

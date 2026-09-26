@@ -6,6 +6,7 @@ import { validatePuzzleId } from './date.ts'
 import difficultyLabels from './difficultyLabels.json' with { type: 'json' }
 import type { PuzzleDifficultyLabel } from '../generator/difficulty.ts'
 import type { DailyPuzzleDefinition } from './types.ts'
+import { dailyEncounter20260926V14 } from './catalog.ts'
 import {
   GAME_VERSION, GAME_VERSION_V2, GAME_VERSION_V3, GRAMMAR_RELEASE_DATE, LEGACY_GAME_VERSION,
   LEGACY_PUZZLE_VERSION, PUZZLE_VERSION, PUZZLE_VERSION_V2, PUZZLE_VERSION_V3,
@@ -17,6 +18,7 @@ import {
   MEANING_GAME_VERSION, MEANING_PUZZLE_VERSION, MEANING_COVERAGE_PUZZLE_VERSION,
   MODEL_ASSESSED_DATES, MODEL_ASSESSED_PUZZLE_VERSION,
   HALCYONS_CORRECTION_PUZZLE_VERSION,
+  PLAIN_TILES_RELEASE_DATE, PLAIN_TILES_PUZZLE_VERSION,
 } from './versions.ts'
 
 function deepFreeze<T>(value: T): T {
@@ -41,6 +43,7 @@ deepFreeze(dailyEncounter20260925V10)
 deepFreeze(dailyEncounter20260925V11)
 deepFreeze(dailyEncounter20260926V12)
 deepFreeze(dailyEncounter20260926V13)
+deepFreeze(dailyEncounter20260926V14)
 
 /** Old rules remain available only for dates on which those rules were published. */
 export function getSupportedDailyPuzzles(puzzleId: string): DailyPuzzleDefinition[] {
@@ -91,6 +94,10 @@ export function getSupportedDailyPuzzles(puzzleId: string): DailyPuzzleDefinitio
   if (MODEL_ASSESSED_DATES.includes(puzzleId)) definitions.push({
     gameVersion: MEANING_GAME_VERSION, puzzleVersion: HALCYONS_CORRECTION_PUZZLE_VERSION,
     encounter: dailyEncounter20260926V13,
+  })
+  if (puzzleId >= PLAIN_TILES_RELEASE_DATE) definitions.push({
+    gameVersion: MEANING_GAME_VERSION, puzzleVersion: PLAIN_TILES_PUZZLE_VERSION,
+    encounter: dailyEncounter20260926V14,
   })
   return definitions.map((definition) => deepFreeze({ puzzleId, date: puzzleId, ...definition,
     difficulty: (difficultyLabels as Record<string, PuzzleDifficultyLabel>)[definition.encounter.id],

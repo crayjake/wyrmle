@@ -391,7 +391,7 @@ function DailyBattle({ puzzleId, todayId, onLoad, onPlaytest, onGenerator, match
         onEnemyDecoded={enemyDecoded}
         onTilesDecoded={tilesDecoded}
       />}
-      {visiblePanel === 'help' && <HelpPanel strikeConsumesAllowance={game.encounter.strikeConsumesAllowance}
+      {visiblePanel === 'help' && <HelpPanel
         finiteRefills={game.encounter.finiteRefills}
         anyRecognizedGrammar={Boolean(game.encounter.lexicalRules)}
         hasGrammarModifiers={Object.values(game.encounter.grammarModifiers ?? {}).some(value => value !== 0)}

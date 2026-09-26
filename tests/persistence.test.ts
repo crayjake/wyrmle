@@ -1,3 +1,4 @@
+import { seedArchivedRun } from './fixtures/archivedRun.ts'
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import {
@@ -741,7 +742,7 @@ test('pre-LONG adapters reject injected modifiers and archived LONG saves requir
 })
 
 test('v4 authored win and loss routes persist exact LONG, special and positional outcomes', () => {
-  const definition = getDailyPuzzle('2026-09-28')
+  const definition = getDailyPuzzleForVersion('2026-09-28', 'letter-strike-4', 4)
   for (const won of [true, false]) {
     const storage = new MemoryStorage()
     const turns = won ? currentWinTileIds : [[13, 4, 6], [14, 18, 8], [20, 16, 7], [22, 19, 12], [0, 25, 3]]
@@ -752,6 +753,7 @@ test('v4 authored win and loss routes persist exact LONG, special and positional
       assert.deepEqual(game.playedWords.map((move) => move.word), ['JOY', 'CHEER', 'MELODY', 'GLAD', 'MOANER'])
       assert.deepEqual(game.playedWords.map((move) => move.preview.longWordModifier), [0, 0, 1, 0, 1])
     }
+    seedArchivedRun(storage, definition, game)
     const completed = saveDailyRun(definition, game, storage, '2026-09-25T12:00:00.000Z')
     assert.equal(completed.result!.gameVersion, 'letter-strike-4')
     assert.equal(completed.result!.won, won)
@@ -822,10 +824,11 @@ test('historical Begin snapshots default to Normal even when the preference is H
 })
 
 test('schema 3 runs and results gain Normal metadata read-only and reject injected difficulty', () => {
-  const definition = getDailyPuzzle('2026-09-28')
+  const definition = getDailyPuzzleForVersion('2026-09-28', 'letter-strike-4', 4)
   for (const completed of [false, true]) {
     const storage = new MemoryStorage()
     const game = playTurns(createGame(definition.encounter), completed ? currentWinTileIds : currentWinTileIds.slice(0, 1))
+    seedArchivedRun(storage, definition, game)
     saveDailyRun(definition, game, storage, finishedAt)
     const key = completed ? getResultStorageKey(definition.puzzleId) : getRunStorageKey(definition.puzzleId)
     const fixture = JSON.parse(storage.getItem(key)!)

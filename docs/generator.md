@@ -1,8 +1,10 @@
 # Generator, solver and review workflow
 
+Current authoring (generator v6) uses ordinary letter tiles only. The browser generator has no Revive control; `--regen`, `--revives` and new special-tile requests are rejected. Published v14 likewise removes specials while keeping v13 available for saved-game replay. Historical special-tile analysis below describes archived encounters, not new puzzles.
+
 This is a local **development review pipeline** for the letter-strike game. New generation defaults to meaning-first rules: a definition-backed word table is compiled before search; grammar and long-word bonuses are disabled. Generated encounters use the existing `createLetterStrikeGame`, `previewLetterStrike` and `submitLetterStrike` functions. Nothing is published automatically. Committed Daily attempts keep their frozen rules and meanings; **Reset puzzle** deliberately opens that date’s current publication.
 
-The September 26–27 publication is **CHAOS v13**, with twelve refills and 10,351 frozen, contextually reviewed word meanings. It corrects HALCYONS through its calming-bird noun sense. The [selected artifact](../artifacts/meaning-v4-halcyons/selected.json.gz) contains its complete review and opening certificate; the [publication review](meaning-assessment-review.md) records the semantic audit and three-word minimum proof. September 25 remains the archived v11 puzzle.
+The archived September 26–27 **CHAOS v13** publication has twelve refills and 10,351 frozen, contextually reviewed word meanings. It corrects HALCYONS through its calming-bird noun sense. The [selected artifact](../artifacts/meaning-v4-halcyons/selected.json.gz) contains its complete review and opening certificate; the [publication review](meaning-assessment-review.md) records the semantic audit and three-word minimum proof. Fresh games from September 26 use v14 with the same reviewed meanings and ordinary tiles. The v13 opening certificate and minimum proof do not certify the changed board. September 25 remains the archived v11 puzzle.
 
 ## What you can do yourself
 
@@ -22,15 +24,15 @@ The [earlier ANGER review](revive-candidate-notes.md) and September 25 v9 certif
 npm run dev
 ```
 
-Open `http://localhost:5173/?generator=1`, or **Settings → Development → GENERATOR / SOLVER**. The initial review is the packaged CHAOS v13 candidate. Its compact `meaning-review.json` omits the encounter and full opening certificate; the UI attaches the exact frozen catalog encounter, and the full certificate remains in the selected artifact. The DEV form starts with CHAOS, seed `meaning-review`, Revive enabled and an initial refill budget of 20; the underlying generator API still uses the original padded supply when no limit is provided. Each card shows the board, tile IDs and specials, armour, refill blocks, semantic anchors, acceptance reasons, metric uncertainty, score contributions and intrinsic puzzle difficulty. Meaning-first cards show the frozen vocabulary count, dictionary/profile versions and counter/neutral/resisted totals. A word lookup exposes the exact stored definition, source sense and classification reason; missing words are shown as unplayable. Archived cards label their original scoring and show grammar/LONG only when configured. Winning and rescue lines are behind expandable details. **Play** loads the encounter into the existing DEV battle, using the real game components and transitions. **Return to generator** preserves the review session. Playtests do not write daily history.
+Open `http://localhost:5173/?generator=1`, or **Settings → Development → GENERATOR / SOLVER**. The review queue starts empty so an archived special-tile puzzle cannot be mistaken for a new candidate. The form starts with CHAOS, seed `meaning-review`, and a finite refill budget of 20. Each generated card shows letters, armour, refill blocks, semantic anchors, quality measurements and uncertainty. Its word lookup shows the frozen definition and classification. **Play** uses the real battle engine; returning to the generator preserves the review queue. These playtests do not write daily history.
 
 Enter an enemy, seed and candidate count to make another batch. Automatic mode screens the provider's enemy concepts first. Generation runs in a cancellable worker so the page remains usable. Solver answers and the generator worker/data are excluded from production builds.
 
 ## Batch commands
 
 ```sh
-# A small discovery batch with later-turn checks and one enemy Revive.
-npm run generate -- --enemy CHAOS --count 8 --seed my-chaos --refills 24 --revives 1 --refine 1 --out artifacts/generated/my-chaos
+# A small discovery batch with later-turn checks and ordinary tiles.
+npm run generate -- --enemy CHAOS --count 8 --seed my-chaos --refills 24 --refine 1 --out artifacts/generated/my-chaos
 
 # 200 meaning-first MELANCHOLY candidates; JSON and report written locally.
 npm run generate -- --count 200 --enemy MELANCHOLY --seed meaning-review --out artifacts/melancholy
@@ -41,16 +43,13 @@ npm run generate -- --count 1000 --seed discovery --out artifacts/generated
 # Evaluate nearby mutations as well as each initial construction.
 npm run generate -- --count 40 --enemy MELANCHOLY --seed refine --refine 1 --mutations 2
 
-# Opt into a harmful REVIVE tile without changing existing published puzzles.
-npm run generate -- --count 20 --enemy DESPAIR --seed regen-review --regen
+# Explore finite replacement supplies; length may change in refinement.
+npm run generate -- --count 8 --enemy ANGER --seed finite-review --refills 18 --refine 1
 
-# Explore finite replacement supplies with Revive; length may change in refinement.
-npm run generate -- --count 8 --enemy ANGER --seed finite-review --regen --refills 18 --refine 1
-
-# Refresh the archived five-candidate MELANCHOLY review dataset.
+# Compare the earlier lexical mode using ordinary tiles.
 npm run generate -- --count 40 --enemy MELANCHOLY --seed melancholy-review-v1 --legacy --dev-top
 
-# Reproduce the later lexical/bonus generation mode explicitly.
+# Compare the earlier grammar/length scoring mode using ordinary tiles.
 npm run generate -- --count 8 --enemy ANGER --seed bonus-review --legacy-bonuses
 
 # Reanalyse an archived shortlist after tuning metrics, without changing its boards.
@@ -93,26 +92,25 @@ const rejected = generateForEnemy('XERO', 'review-42')
 const candidate = createCandidate('MELANCHOLY', 'review-42:0')
 const analysis = analysePuzzle(candidate)
 
-// Optional harmful special and finite supply, both with meaning-first scoring.
-const withRegen = createCandidate('DESPAIR', 'regen-review:0', { includeRegenTile: true })
-const finite = createCandidate('ANGER', 'meaning-review:0', { includeRegenTile: true, refillLimit: 18 })
+// Ordinary tiles with a finite supply and meaning-first scoring.
+const finite = createCandidate('ANGER', 'meaning-review:0', { refillLimit: 18 })
 
 // Preserve historical generation streams when reproducing old reviews.
-const lexicalBonus = createCandidate('ANGER', 'old-seed', { scoringMode: 'legacy-bonuses' })
-const original = createCandidate('MELANCHOLY', 'old-seed', { lexicalMode: 'legacy' })
+const lexicalBonus = createCandidate('ANGER', 'old-seed', { scoringMode: 'legacy-bonuses', archivedSpecialTiles: true })
+const original = createCandidate('MELANCHOLY', 'old-seed', { lexicalMode: 'legacy', archivedSpecialTiles: true })
 ```
 
 Both generation entry points return a `GenerationResult` containing the enemy suitability report, all ranked evaluated candidates, accepted candidates, rejection counts and provenance. All candidates use `CandidatePuzzle`. `accepted` can be empty; unsuitable enemies and unconvincing boards are never forced through. Load saved JSON for a mutated candidate, whose parent and mutation list are recorded.
 
 ## How construction works
 
-Meaning generation defaults to **v5 sustained discovery**: two thematic resisted anchors and two counter anchors, refills that support both families, additional armour on short enemies, and sampled later-turn checks for recurring themes, counter alternatives and actual meaning benefits. Ten simple chip-away strategies test whether at most one opening counter followed by neutral words wins too easily. `--classic-design` preserves the v4 constructor for comparisons; `--revives N` selects zero to three Revive tiles. These design checks supplement the semantic and publication gates described below.
+Meaning generation defaults to **v6 sustained discovery**: two thematic resisted anchors and two counter anchors, refills that support both families, additional armour on short enemies, and sampled later-turn checks for recurring themes, counter alternatives and actual meaning benefits. Ten simple chip-away strategies test whether at most one opening counter followed by neutral words wins too easily. `--classic-design` compares the earlier anchor strategy using ordinary tiles too. These design checks supplement the semantic and publication gates described below.
 
 1. **Enemy suitability.** Familiarity, definition quality, part-of-speech clarity, valid counter/resisted/related counts, counter letter coverage, ordinary English letter proportions, length and semantic confidence contribute explicit weighted scores. Hard gates reject missing senses, sparse semantic neighbourhoods and inappropriate lengths. `enemySuitability.ts` holds thresholds and weights. `selectEnemy` makes a seeded suitability-weighted choice; automatic generation can try another suitable concept when boards are rejected.
 2. **Definition-backed vocabulary and offline model assessments.** `meaningLexicalProvider` reads the same complete per-enemy assessment cache that the puzzle compiler uses. Model-era construction and continuation familiarity use pinned `wordfreq` corpus data; legacy generation retains its earlier editorial estimates. Source definitions come from Open English Wordnet 2025 senses and dictionary-filtered forms, plus the pinned Wiktionary grammatical-word supplement. Local embedding and entailment models assess all source senses against both counter and reinforcing references, extending beyond the sparse reviewed profiles. A counter can be an idea that overcomes the enemy rather than a strict antonym: good spirits counter ANGER. Missing or stale caches stop generation. Runtime uses only the frozen encounter table. See [offline model setup and reproduction](offline-semantics.md). `scoringMode: 'legacy-bonuses'` / `--legacy-bonuses` and `lexicalMode: 'legacy'` / `--legacy` preserve the earlier generators explicitly.
-3. **Roles and board.** Seeded archetypes select counters, resisted bait and ordinary alternatives. Meaning-first construction replaces grammar-twist goals with semantic contrast; it does not award adjective or length bonuses. Their letter **multiset union** shares physical tiles between words. Additional letters complete nearby real words; English-weighted filler is a fallback. The sixteen letters are shuffled. Life prefers a duplicated shared letter, offering preserve/spend choices. Hit prefers an enemy match within resisted bait. Optional Revive occupies an enemy-matching letter and creates a harmful use/preserve decision. Armour favours letters with several vocabulary routes.
+3. **Starting board and armour.** Shared letters from counter and resisted anchors fill sixteen ordinary tiles. Armour creates repeated-letter requirements. Current construction places no Hit, Life or Revive tiles.
 4. **Refills.** Forward planning evaluates actual selected IDs through the engine, preserves unused tiles, identifies missing letters for a later word, and places those letters in the next consumed-slot refill block. It targets several useful turns instead of maximising immediate hits. Clutch goals target the last available life. By default, the remaining queue cycles lexical support blocks and meets the engine's worst-case capacity requirement. An explicit `refillLimit` enables finite supply, truncates the planned queue, then replays its physical IDs under the final finite rules; only a legal trace prefix survives. After the final supply is known, `withCompiledMeanings` freezes every definition-backed spelling that fits its letter multiset, including words absent from the construction vocabulary. A construction trace is a hypothesis, not a winning proof or optimality claim.
-5. **Refinement.** A small deterministic beam retains high-scoring validated parents and evaluates nearby mutations. Primitives edit starting/refill letters, swap slots, move Life/Hit/Revive, alter armour or its duplicate copy, replace an anchor, and optionally adjust Lives. Finite encounters additionally support `refill-length`: add or remove 1–4 letters within 0–96. Lives mutations never pad a finite queue. Default unlimited mutation choices retain their historical random stream. Supply-changing meaning-first mutations recompile the stored table before analysis; stale letter-supply metadata is rejected. Every mutation is analysed afresh. No mutation inherits a parent's winning proof. `refinementRounds`, `mutationsPerRound` and `refinementBeamWidth` bound the work.
+5. **Refinement.** A small deterministic beam retains high-scoring validated parents and evaluates nearby mutations. Primitives edit starting/refill letters, swap slots, alter armour or its duplicate copy, replace an anchor, and optionally adjust Lives. Finite encounters additionally support `refill-length`: add or remove 1–4 letters within 0–96. Lives mutations never pad a finite queue. Special-tile movement exists only when replaying an archived candidate that contains those tiles. Supply-changing meaning-first mutations recompile the stored table before analysis; stale letter-supply metadata is rejected. Every mutation is analysed afresh. No mutation inherits a parent's winning proof. `refinementRounds`, `mutationsPerRound` and `refinementBeamWidth` bound the work.
 
 The CLI's `--refills N`, TypeScript's `refillLimit` and the DEV form's **Finite refill supply** all accept integers **0–96**. Zero means no replacement letters; omission preserves the original padded-supply rules. The form and worker validate the same range. The supplied number is the initial construction budget; refinement can change it, and every candidate shows its final count.
 
@@ -128,7 +126,7 @@ The practical default is bounded beam search over the full local dictionary, wit
 
 `hintLines` accepts several candidate routes with exact tile IDs; the single-route `hintLine` remains supported. Every hint is replayed through the real engine before it contributes evidence, with invalid and duplicate routes reported. New lexical encounters retain diversity across route prefixes, semantic patterns, special-tile timing and final-life finishes, so many similar endings cannot crowd out a distinct semantic or clutch route. Retention improves the sample; it does not make bounded searches exhaustive or turn a witness into a shortest-route proof.
 
-Normal hits in new puzzles depend only on meaning: counters may use every matching tile, neutral words one, resisted words none. Hit tiles independently guarantee their own matching hit. The engine retains grammar and LONG solely for explicitly archived or legacy-mode encounters. All hits resolve before Revive: each selected Revive tile restores one matching dead slot from 0 to 1 hit, or a living unarmoured slot from 1 to 2. Dead matches have priority, then living unarmoured matches, with left-to-right ties. Armoured slots stay capped at 2, unrelated letters never heal, and each physical tile heals at most once. Victory is checked after recovery, before exhausted lives cause a loss. Move ranking subtracts recoveries from immediate hits; that heuristic changes search preference, never move legality or proof.
+Normal hits in new puzzles depend only on meaning: counters may use every matching tile, neutral words one, resisted words none. Only archived encounters retain Hit tiles that independently guarantee a matching hit. The engine retains grammar and LONG solely for explicitly archived or legacy-mode encounters. All hits resolve before Revive: each selected Revive tile restores one matching dead slot from 0 to 1 hit, or a living unarmoured slot from 1 to 2. Dead matches have priority, then living unarmoured matches, with left-to-right ties. Armoured slots stay capped at 2, unrelated letters never heal, and each physical tile heals at most once. Victory is checked after recovery, before exhausted lives cause a loss. Move ranking subtracts recoveries from immediate hits; that heuristic changes search preference, never move legality or proof.
 
 Normal, Hard and Hardcore use exactly the same puzzle. Their definition visibility and 3/1/0 undo allowances are outside the solver's combat state. An undo restores the full previous immutable state; it is not a new combat transition or a different generated puzzle. Intrinsic difficulty is a separate analysis result.
 

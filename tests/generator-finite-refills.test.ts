@@ -9,11 +9,11 @@ import { withCompiledMeanings } from '../src/generator/meaningCompiler.ts'
 
 test('finite construction caps planned supply and keeps only legal engine-replayed trace prefixes', () => {
   const seed = 'finite-construction'
-  const ordinary = createCandidate('ANGER', seed, { includeRegenTile: true })
+  const ordinary = createCandidate('ANGER', seed, {  })
   assert.equal(Object.hasOwn(ordinary.encounter, 'finiteRefills'), false)
   for (const refillLimit of [0, 12, 18, 24, 96]) {
-    const candidate = createCandidate('ANGER', seed, { refillLimit, includeRegenTile: true })
-    assert.deepEqual(candidate, createCandidate('ANGER', seed, { refillLimit, includeRegenTile: true }))
+    const candidate = createCandidate('ANGER', seed, { refillLimit })
+    assert.deepEqual(candidate, createCandidate('ANGER', seed, { refillLimit }))
     assert.equal(candidate.encounter.finiteRefills, true)
     assert.equal(candidate.encounter.refillQueue.length, refillLimit)
     assert.equal(candidate.encounter.refillQueue, ordinary.encounter.refillQueue.slice(0, refillLimit))
@@ -40,7 +40,7 @@ test('finite generation rejects invalid budgets and handles zero without silentl
     assert.throws(() => createCandidate('ANGER', 'invalid-finite', { refillLimit }), /between 0 and 96/)
     assert.throws(() => generateForEnemy('XERO', 'invalid-finite', { refillLimit }), /between 0 and 96/)
   }
-  const candidate = createCandidate('ANGER', 'finite-empty', { refillLimit: 0, includeRegenTile: true })
+  const candidate = createCandidate('ANGER', 'finite-empty', { refillLimit: 0 })
   const resolve = mutateCandidate(candidate, 'finite-resolve', { kind: 'resolve', allowResolveMutation: true })
   assert.equal(resolve.encounter.refillQueue, '')
   assert.equal(resolve.encounter.finiteRefills, true)
@@ -51,7 +51,7 @@ test('finite generation rejects invalid budgets and handles zero without silentl
 test('finite-only supply mutations change a bounded queue, invalidate old IDs and leave parents untouched', () => {
   const ordinary = createCandidate('ANGER', 'finite-mutation')
   assert.throws(() => mutateCandidate(ordinary, 'unlimited-length', { kind: 'refill-length' }), /finite encounter/)
-  const candidate = createCandidate('ANGER', 'finite-mutation', { refillLimit: 18, includeRegenTile: true })
+  const candidate = createCandidate('ANGER', 'finite-mutation', { refillLimit: 18 })
   const before = structuredClone(candidate)
   const lengths = new Set<number>()
   for (let index = 0; index < 8; index++) {

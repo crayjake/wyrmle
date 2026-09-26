@@ -24,6 +24,8 @@ export function mutateCandidate(candidate: CandidatePuzzle, seed: string | numbe
   if (options.kind === 'refill-length' && !candidate.encounter.finiteRefills) throw new Error('Refill length mutation requires a finite encounter.')
   const kind = options.kind ?? random.pick(mutationKinds.filter(kind => (options.allowResolveMutation || kind !== 'resolve')
     && (kind !== 'refill-length' || candidate.encounter.finiteRefills)
+    && (kind !== 'move-ward' || candidate.encounter.startingTiles.some(tile => tile.gem === 'ward'))
+    && (kind !== 'move-strike' || candidate.encounter.startingTiles.some(tile => tile.gem === 'strike'))
     && (kind !== 'move-regen' || candidate.encounter.startingTiles.some(tile => tile.gem === 'regen'))))
   const tiles = result.encounter.startingTiles.map(tile => ({ ...tile }))
   const letters = [...new Set(result.enemyWord + result.anchors.map(anchor => anchor.word).join(''))]

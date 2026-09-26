@@ -31,3 +31,5 @@ export const MODEL_ASSESSED_DATES: readonly string[] = ['2026-09-26', '2026-09-2
 export const MODEL_ASSESSED_PUZZLE_VERSION = 12
 // Same physical challenge; the mythical HALCYONS calming sense is corrected.
 export const HALCYONS_CORRECTION_PUZZLE_VERSION = 13
+export const PLAIN_TILES_RELEASE_DATE = '2026-09-26'
+export const PLAIN_TILES_PUZZLE_VERSION = 14

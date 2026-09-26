@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 import { createLetterStrikeGame, previewLetterStrike } from '../src/game/letterStrike.ts'
 import { getStrikeSummary } from '../src/components/strikeSummary.ts'
-import { createTutorial, getTutorialMove } from '../src/tutorial/tutorial.ts'
+import { createTutorial, getTutorialMove } from './fixtures/archivedTutorial.ts'
 
 function preview(step: Parameters<typeof createTutorial>[0]) {
   const state = createTutorial(step)

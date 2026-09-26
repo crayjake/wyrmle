@@ -39,6 +39,18 @@ export const dailyEncounter20260926V13 = { ...correctedMeaningRules,
   meaningLexicon: unpackMeaningLexicon(correctedPackedMeanings),
 } as LetterStrikeEncounter
 
+// Retain the reviewed meanings, letters and refill sequence, with ordinary
+// tiles throughout. Archived attempts keep their exact v13 combat rules.
+export const dailyEncounter20260926V14: LetterStrikeEncounter = {
+  ...dailyEncounter20260926V13,
+  id: 'daily-chaos-plain-tiles-v14',
+  startingTiles: dailyEncounter20260926V13.startingTiles.map(({ id, letter }) => ({ id, letter, type: 'normal' })),
+  tileEffects: {
+    strike: { strike: false, preventResolveLoss: false },
+    ward: { strike: false, preventResolveLoss: false },
+  },
+}
+
 /**
  * Published letter-strike v1 catalog. Its one authored encounter repeats by
  * date; keep historical definitions independent of mutable prototype defaults.

@@ -83,8 +83,7 @@ export default function DevPanel({ puzzle, onLoad, onPlaytest, onGenerator, onCl
         </form>
         <div className="dev-controls" aria-label="Load tutorial fixtures">
           {([
-            ['goal', 'Basic'], ['armour', 'Armour'], ['strike', 'Hit tile'],
-            ['ward', 'LIFE tile'], ['regen-dead', 'Regen'], ['grammar', 'Grammar'], ['long', 'Long'],
+            ['goal', 'Basic'], ['armour', 'Armour'], ['resisted', 'Resistance'], ['bingo', 'Bingo'],
           ] as const).map(([step, label]) => <button className="daily-button" key={step}
             onClick={() => onTutorialStep(step)}>Load {label} fixture</button>)}
         </div>

@@ -27,7 +27,7 @@ test('generator worker reports malformed enemy, seed and message values before g
 })
 
 test('generator worker preserves finite zero and bounded refill choices without changing omitted defaults', () => {
-  const request = { id: 1, seed: 'finite-review', enemy: 'ANGER', candidateCount: 2, includeRegenTile: true }
+  const request = { id: 1, seed: 'finite-review', enemy: 'ANGER', candidateCount: 2 }
   assert.equal(Object.hasOwn(validateGeneratorRequest(request), 'refillLimit'), false)
   for (const refillLimit of [0, 12, 18, 24, 96]) {
     assert.deepEqual(validateGeneratorRequest({ ...request, refillLimit }), { ...request, refillLimit })
@@ -37,11 +37,8 @@ test('generator worker preserves finite zero and bounded refill choices without 
   }
 })
 
-test('generator worker preserves explicit Revive counts and rejects malformed values', () => {
-  const request = { id: 1, seed: 'revive-count', enemy: 'CHAOS', candidateCount: 2, includeRegenTile: true }
-  assert.equal(Object.hasOwn(validateGeneratorRequest(request), 'regenTileCount'), false)
-  for (const regenTileCount of [0, 1, 2, 3]) assert.equal(validateGeneratorRequest({ ...request, regenTileCount }).regenTileCount, regenTileCount)
-  for (const regenTileCount of [-1, 4, 1.5, Number.NaN, Number.POSITIVE_INFINITY, '2', null]) {
-    assert.throws(() => validateGeneratorRequest({ ...request, regenTileCount }), /between 0 and 3/)
-  }
+test('generator worker refuses removed special tile options', () => {
+  const request = { id: 1, seed: 'plain', enemy: 'CHAOS', candidateCount: 2 }
+  assert.throws(() => validateGeneratorRequest({ ...request, includeRegenTile: true }), /removed/)
+  for (const regenTileCount of [1, 2, 3]) assert.throws(() => validateGeneratorRequest({ ...request, regenTileCount }), /removed/)
 })

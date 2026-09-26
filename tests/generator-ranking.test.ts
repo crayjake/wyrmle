@@ -34,7 +34,7 @@ test('punctuation and long mutation seeds retain distinct reversible candidate i
   const colon = createStructuralCandidate('MELANCHOLY', 'same:seed')
   const dash = createStructuralCandidate('MELANCHOLY', 'same-seed')
   assert.notEqual(colon.id, dash.id)
-  assert.equal(decodeURIComponent(colon.id.slice('generated-melancholy-meaning2-'.length)), 'same:seed')
+  assert.equal(decodeURIComponent(colon.id.slice('generated-melancholy-plain-meaning3-'.length)), 'same:seed')
   const suffix = 'identical-suffix-that-is-longer-than-twenty-four-characters'
   const first = mutateCandidate(colon, `first:${suffix}`, { kind: 'tile-swap' })
   const second = mutateCandidate(colon, `second:${suffix}`, { kind: 'tile-swap' })

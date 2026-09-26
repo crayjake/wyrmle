@@ -278,7 +278,7 @@ test('recompilation detects removed/extra words, metadata drift and every altere
 
 test('new generation compiles meaning-only rules and every mutation refreshes their complete dictionary', () => {
   const source = createCandidate('ANGER', 'meaning-compiler-mutations', {
-    includeRegenTile: true, refillLimit: 12,
+    refillLimit: 12,
     goal: { archetypes: ['grammar-twist', 'refill-planning'], description: 'An old requested grammar goal.' },
   })
   assert.equal(source.provenance.lexicalProvider, meaningLexicalProvider.id)
@@ -315,8 +315,11 @@ test('validation rejects definition tampering even when solver rule keys correct
   assert.equal(encounterRuleKey(changed), encounterRuleKey(original))
   assert.ok(!validatePuzzle(candidate(original), analysis).reasons.some(reason => reason.code === 'stale-or-incomplete-meanings'))
   assert.ok(validatePuzzle(candidate(changed), analysis).reasons.some(reason => reason.code === 'stale-or-incomplete-meanings'))
+  const withSpecial = candidate({ ...original, startingTiles: original.startingTiles.map((tile, index) => index === 0 ? { ...tile, type: 'gem', gem: 'ward' } : tile) })
+  withSpecial.provenance.generatorVersion = 'letter-strike-generator-6'
+  assert.ok(validatePuzzle(withSpecial, analysis).reasons.some(reason => reason.code === 'removed-special-tiles'))
   const removedTable = candidate({ ...original, meaningLexicon: undefined })
-  for (const version of ['letter-strike-generator-3', 'letter-strike-generator-4', 'letter-strike-generator-5']) {
+  for (const version of ['letter-strike-generator-3', 'letter-strike-generator-4', 'letter-strike-generator-5', 'letter-strike-generator-6']) {
     removedTable.provenance.generatorVersion = version
     assert.ok(validatePuzzle(removedTable, analysis).reasons.some(reason => reason.code === 'missing-puzzle-meanings'))
   }

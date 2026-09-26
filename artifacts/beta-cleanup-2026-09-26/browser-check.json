@@ -1,0 +1,33 @@
+{
+  "checks": [
+    "waiting-phone",
+    "board-phone",
+    "menu-navigation",
+    "three-word-result-phone",
+    "terminal-save-resumes-result",
+    "reduced-motion-wyrm-rests",
+    "bingo-320x480",
+    "bingo-320x568",
+    "bingo-375x667",
+    "bingo-390x664",
+    "bingo-430x740",
+    "bingo-568x320",
+    "bingo-844x390",
+    "next-puzzle-navigation",
+    "three-hints-then-reveal",
+    "board-320x480",
+    "board-320x568",
+    "board-375x667",
+    "board-390x664",
+    "board-430x740",
+    "board-568x320",
+    "board-844x390",
+    "second-bingo",
+    "five-lives-result",
+    "next-preserves-lives",
+    "last-puzzle-returns-to-library",
+    "lost-result-phone",
+    "loss-hint-retry"
+  ],
+  "errors": []
+}

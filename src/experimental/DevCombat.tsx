@@ -1,6 +1,8 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useLayoutEffect, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
 import Header from '../components/Header'
+import { ChevronLeft, Ellipsis } from 'lucide-react'
+import BingoResult from './bingo/BingoResult'
 import { MyInfo, EnemyInfo } from '../components/HealthInfo'
 import RefillSupply from '../components/RefillSupply'
 import Enemy from '../components/Enemy'
@@ -16,7 +18,7 @@ import { melancholyEncounter } from '../game/encounters'
 import { getActiveGrammarModifiers, getCurrentTileSummary, getRecentBattleEvents } from '../game/hud'
 import type { GameState } from '../game/types'
 import {
-  createLetterStrikeGame, toggleLetterStrikeTile, clearLetterStrikeSelection,
+  createLetterStrikeGame, letterStrikeEncounter, toggleLetterStrikeTile, clearLetterStrikeSelection,
   previewLetterStrike, submitLetterStrike,
 } from '../game/letterStrike'
 import type { LetterStrikeEncounter, LetterStrikeState } from '../game/letterStrike'
@@ -50,7 +52,7 @@ export default function DevCombat({ initialMode, encounter, onExit, matchHint, o
     enemyGrid={enemyGrid} onEnemyGridChange={onEnemyGridChange} />
 }
 
-export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onMatchHintChange, enemyGrid, onEnemyGridChange, bingoPreview = false, previewName, onChoosePreview, bingoGuide, bingoProgressKey, freshBingoAttempt = false }: {
+export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onMatchHintChange, enemyGrid, onEnemyGridChange, bingoPreview = false, previewName, onChoosePreview, onNextPreview, bingoGuide, bingoProgressKey, freshBingoAttempt = false }: {
   mode: CombatMode; onMode: (mode: CombatMode) => void; onExit: () => void
   encounter?: LetterStrikeEncounter
   matchHint: MatchHintMode; onMatchHintChange: (mode: MatchHintMode) => void
@@ -58,6 +60,7 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
   bingoPreview?: boolean
   previewName?: string
   onChoosePreview?: () => void
+  onNextPreview?: () => void
   bingoGuide?: BingoGuide
   bingoProgressKey?: string
   freshBingoAttempt?: boolean
@@ -65,8 +68,8 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
   const [resumed] = useState(() => !freshBingoAttempt && bingoPreview && bingoProgressKey && encounter
     ? resumeBingoAttempt(bingoProgressKey, encounter) : null)
   const [run, setRun] = useState<Run>(() => mode === 'damage'
-    ? { mode, game: createGame(melancholyEncounter) }
-    : { mode, game: resumed?.game ?? createLetterStrikeGame(encounter) })
+    ? { mode, game: createGame({ ...melancholyEncounter, startingTiles: melancholyEncounter.startingTiles.map(({ id, letter }) => ({ id, letter, type: 'normal' })) }) }
+    : { mode, game: resumed?.game ?? createLetterStrikeGame(encounter ?? { ...letterStrikeEncounter, startingTiles: letterStrikeEncounter.startingTiles.map(({ id, letter }) => ({ id, letter, type: 'normal' })) }) })
   const [phase, setPhase] = useState<Phase>(resumed?.started ? 'ready' : 'waiting')
   const [panel, setPanel] = useState<Panel>(null)
   const [hintStep, setHintStep] = useState(resumed?.hintStep ?? 1)
@@ -113,6 +116,7 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
   const resolving = letterGame !== null && game.playedWords.length > resolvedTurnCount
   const resolutionComplete = useCallback(() => setResolvedTurnCount(game.playedWords.length), [game.playedWords.length])
   const enemy = game.encounter.enemy
+  const showResult = bingoPreview && game.status !== 'playing' && !resolving
   const interactive = phase === 'ready' && game.status === 'playing' && !resolving
   const preview = run.mode === 'damage' ? (() => {
     const attack = previewAttack(run.game)
@@ -131,7 +135,7 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
   const message = resolving ? undefined
     : game.status === 'won' ? bingoPreview && game.playedWords.length === 1 ? 'BINGO · ONE WORD!' : 'VICTORY'
     : game.status === 'lost' ? game.playerResolve > 0 ? 'NO PLAYABLE WORDS' : 'OUT OF LIVES'
-    : phase === 'waiting' ? 'CLICK TO BEGIN'
+    : phase === 'waiting' ? bingoPreview ? 'READY WHEN YOU ARE' : 'CLICK TO BEGIN'
     : phase !== 'ready' ? 'DECODING'
     : game.error ?? (game.selectedTileIds.length > 0 ? preview.error ?? undefined : undefined)
 
@@ -171,32 +175,36 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
     : game.encounter.startingResolve === 4 ? 'two, three or four' : 'two, three, four or five'
 
   return <main className={`container dev-combat${letterGame ? ' letter-combat' : ''}${bingoPreview ? ' bingo-preview' : ''}`} data-combat-mode={mode}
-    data-game-status={game.status} data-phase={phase} data-turns={game.playedWords.length}
+    data-game-status={game.status} data-result={showResult || undefined} data-phase={phase} data-turns={game.playedWords.length}
     data-enemy-grid={enemyGrid || undefined} ref={containerRef}
     onClick={event => {
       if ((event.target as HTMLElement).closest('button, a, input, dialog')) return
       if (phase === 'waiting') begin()
     }}>
-    <Header wyrmDockRef={wyrmDockRef} titleRef={wyrmTitleRef} showWyrm={!letterGame && phase === 'ready'}
-      onHelp={() => setPanel('help')} onHistory={() => setPanel('log')} onSettings={() => setPanel('modes')} />
-    <div className="daily-meta">
-      {bingoPreview ? <span className="beta-label">BETA · {game.encounter.startingResolve} LIVES</span> : <button type="button" onClick={() => setPanel('modes')} aria-label="Switch combat mode">
-          DEV · {modeLabels[mode]}
-        </button>}
-      {phase === 'waiting'
-        ? <button type="button" onClick={begin}>Begin</button>
-        : <button type="button" onClick={() => onMode(mode)}>Restart</button>}
-      {encounter && <button type="button" onClick={onExit}>{bingoPreview ? 'Back to daily' : 'Return to generator'}</button>}
-    </div>
-    {bingoPreview && <div className="beta-intro">
-      {onChoosePreview && <button type="button" onClick={onChoosePreview} aria-label="Choose a preview puzzle">{previewName} ▾</button>}
-      <span role={progressSaved ? undefined : 'status'}>{progressSaved ? 'Hidden one-word win' : 'Progress not saved'}</span>
-      {bingoGuide && <button type="button" className="beta-hints-button" onClick={() => setPanel('hints')}>Hints</button>}
-    </div>}
+    {bingoPreview ? <header className="beta-header">
+      <button type="button" className="beta-icon-button" onClick={onChoosePreview} aria-label="Choose a preview puzzle"><ChevronLeft size={22} /></button>
+      <div className="title" ref={wyrmTitleRef}>WYRMLE</div>
+      <nav aria-label="Puzzle controls">
+        {bingoGuide && <button type="button" onClick={() => setPanel('hints')}>Hints</button>}
+        <button type="button" className="beta-icon-button" onClick={() => setPanel('modes')} aria-label="Puzzle menu"><Ellipsis size={23} /></button>
+      </nav>
+    </header> : <>
+      <Header wyrmDockRef={wyrmDockRef} titleRef={wyrmTitleRef} showWyrm={!letterGame && phase === 'ready'}
+        onHelp={() => setPanel('help')} onHistory={() => setPanel('log')} onSettings={() => setPanel('modes')} />
+      <div className="daily-meta">
+        <button type="button" onClick={() => setPanel('modes')} aria-label="Switch combat mode">DEV · {modeLabels[mode]}</button>
+        {phase === 'waiting' ? <button type="button" onClick={begin}>Begin</button>
+          : <button type="button" onClick={() => onMode(mode)}>Restart</button>}
+        {encounter && <button type="button" onClick={onExit}>Return to generator</button>}
+      </div>
+    </>}
+    {!progressSaved && <p className="beta-save-warning" role="status">Progress could not be saved on this device.</p>}
+    {showResult ? <BingoResult game={game} onRetry={() => onMode(mode)} onNext={onNextPreview}
+      onChoose={onChoosePreview} onHints={bingoGuide ? () => setPanel('hints') : undefined} /> : <>
     <div className="battle-info">
       <MyInfo name={letterGame ? 'LIVES' : 'YOU'} health={displayedLives} maxHealth={game.encounter.startingResolve} wyrm={Boolean(letterGame)}
         wyrmRef={wyrmLifeRef} decoding={phase === 'enemy' || phase === 'tiles'} animateLives={bingoPreview} />
-      {letterGame && <RefillSupply game={letterGame} decoded={phase === 'ready'} revealed={revealedRefills} registerTile={registerRefill} />}
+      {letterGame && !bingoPreview && <RefillSupply game={letterGame} decoded={phase === 'ready'} revealed={revealedRefills} registerTile={registerRefill} />}
       {run.mode === 'damage'
         ? <EnemyInfo name={enemy.word} health={run.game.enemyHp} maxHealth={run.game.encounter.enemy.maxHealth} />
         : null}
@@ -226,8 +234,9 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
         <TileGrid revealedIndices={revealedTileIndices} registerTile={registerTile}
           ready={interactive} tiles={game.tiles} specialTiles={specialTiles}
           enemyLetters={letterGame?.enemyLetters} matchHint={letterGame ? matchHint : 'off'}
-          selectedTileIds={game.selectedTileIds} damage={run.mode === 'damage' ? preview.amount : undefined} canAttack={interactive && preview.valid}
-          onToggleTile={select} onClear={clear} onAttack={attack} />
+          selectedTileIds={game.selectedTileIds} damage={run.mode === 'damage' ? preview.amount : undefined} canAttack={bingoPreview && phase === 'waiting' || interactive && preview.valid}
+          primaryLabel={bingoPreview && phase === 'waiting' ? 'BEGIN' : 'ATTACK'}
+          onToggleTile={select} onClear={clear} onAttack={bingoPreview && phase === 'waiting' ? begin : attack} />
       </div>
     </div>
     <WyrmDecoder phase={phase} containerRef={containerRef} enemyLetters={enemyElements}
@@ -236,6 +245,7 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
       enemyCount={enemy.word.length} tileCount={game.tiles.length}
       onEnemyReveal={revealEnemyLetter} onTileReveal={revealTile} onRefillReveal={revealRefill}
       onEnemyDecoded={enemyDecoded} onTilesDecoded={tilesDecoded} />
+    </>}
 
     {panel === 'hints' && bingoPreview && bingoGuide && <PlaytestPanel title="Bingo hints" onClose={() => setPanel(null)}>
       <div className="bingo-hint-content" aria-live="polite" aria-atomic="true">
@@ -260,24 +270,32 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
         </>}
       </div>
     </PlaytestPanel>}
-    {panel === 'modes' && <PlaytestPanel title={bingoPreview ? `${game.encounter.startingResolve}-life beta` : 'Combat playtest'} onClose={() => setPanel(null)}>
-      <p>{bingoPreview ? `${game.encounter.startingResolve} lives, familiar rules, and a hidden one-word win. You can also win in ${alternativeTurns} words. Draft meanings are still under review. Retry as often as you like; this preview does not affect your daily puzzle or statistics.` : 'Each mode starts a fresh encounter. Playtests do not save to daily history.'}</p>
+    {panel === 'modes' && <PlaytestPanel title={bingoPreview ? previewName ?? 'Puzzle menu' : 'Combat playtest'} onClose={() => setPanel(null)}>
+      {!bingoPreview && <p>Each mode starts a fresh encounter. Playtests do not save to daily history.</p>}
       {!bingoPreview && letterGame && <MatchHintControls value={matchHint} onChange={onMatchHintChange} />}
       {!bingoPreview && <EnemyLayoutControls grid={enemyGrid} onChange={onEnemyGridChange} />}
       <div className="dev-controls">
-        {onChoosePreview && <button className="daily-button" onClick={onChoosePreview}>Choose puzzle / lives</button>}
-        {bingoPreview ? <button className="daily-button" onClick={() => onMode(mode)}>Try again</button> : (encounter ? ['letter-strike'] as const : ['damage', 'letter-strike'] as const).map(value =>
+        {onChoosePreview && <button className="daily-button" onClick={onChoosePreview}>All puzzles</button>}
+        {bingoPreview ? <>
+          <button className="daily-button" onClick={() => onMode(mode)}>Restart puzzle</button>
+          <button className="daily-button" onClick={() => setPanel('log')}>Played words</button>
+          <button className="daily-button" onClick={() => setPanel('help')}>How to play</button>
+        </> : (encounter ? ['letter-strike'] as const : ['damage', 'letter-strike'] as const).map(value =>
           <button className="daily-button" key={value} onClick={() => onMode(value)}>{modeLabels[value]}</button>)}
         <button className="daily-button" onClick={onExit}>{bingoPreview ? 'Back to daily' : encounter ? 'Return to generator' : 'Return to daily game'}</button>
       </div>
+      {bingoPreview && letterGame?.encounter.finiteRefills && <details className="beta-refill-details">
+        <summary>Remaining refills</summary>
+        <RefillSupply game={letterGame} decoded revealed={[]} registerTile={() => {}} />
+      </details>}
     </PlaytestPanel>}
-    {panel === 'log' && <PlaytestPanel title="Playtest log" onClose={() => setPanel(null)}>
+    {panel === 'log'  && <PlaytestPanel title={bingoPreview ? 'Played words' : 'Playtest log'} onClose={() => setPanel(null)}>
       {events.length > 0 ? <div className="dev-combat-log"><EncounterHud visible events={events} metric={metric} /></div>
         : <p>No submitted words in this attempt.</p>}
     </PlaytestPanel>}
     {panel === 'help' && (run.mode === 'damage'
       ? <PlaytestPanel title="Damage mode" onClose={() => setPanel(null)}>
-        <p>Select any tiles in word order to spell at least three letters. Longer words deal more damage; counters add a bonus. Power adds damage and Ward prevents Resolve loss.</p>
+        <p>Select any tiles in word order to spell at least three letters. Longer words deal more damage; counters add a bonus.</p>
         <p>Reduce enemy HP to zero before Resolve runs out. This DEV comparison does not save to daily history.</p>
       </PlaytestPanel>
       : <PlaytestPanel title={bingoPreview ? `${game.encounter.startingResolve} lives · one hidden bingo` : 'Letter-strike mode'} onClose={() => setPanel(null)}>
@@ -286,7 +304,6 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
           {bingoPreview && <div>One long counter can remove the whole enemy in a single word. You can also win in {alternativeTurns} words. Each played word uses one life; removing the final letter on your last life still wins.</div>}
           <div><strong>Meaning drives your hits.</strong> Counter words hit with every matching tile. Neutral words get one normal matching hit, in spelling order. Similar meanings are resisted and have no normal hits.</div>
           {letterGame?.encounter.longWordRule && <div><strong>LONG +{letterGame.encounter.longWordRule.bonusStrikes}</strong> adds a normal strike allowance for neutral words of {letterGame.encounter.longWordRule.minimumLength}+ letters. It stacks with grammar weaknesses, but does not boost resisted words or counters.</div>}
-          {!bingoPreview && <div>A blue <strong>HIT</strong> tile guarantees its matching hit, even on a resisted word. A green <strong>LIFE</strong> tile saves the life this turn would cost. A red <strong>REVIVE</strong> tile restores its enemy letter or its armour after your hits.</div>}
           <div>Double outlines need two hits. The first breaks armour; the next removes the letter. Matching tiles finish wounded copies first, then target from left to right.</div>
           <div>Blue − previews an armour break; red × previews removal. Defeated letters become centred dots with no outline. Repeated matching tiles can break and remove one armoured letter in the same word.</div>
           {Object.values(letterGame?.encounter.grammarModifiers ?? {}).some(value => value !== 0) && <div>This encounter also has word-type bonuses: an ADJECTIVE +1 weakness gives adjectives one extra normal matching hit. Counters already use all matching tiles.</div>}
@@ -300,7 +317,7 @@ function PlaytestPanel({ title, onClose, children }: {
   title: string; onClose: () => void; children: ReactNode
 }) {
   const dialog = useRef<HTMLDialogElement>(null)
-  useEffect(() => {
+  useLayoutEffect(() => {
     const element = dialog.current
     element?.showModal()
     return () => element?.close()

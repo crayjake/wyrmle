@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
-import savedMeaning from './data/meaning-review.json'
-import { dailyEncounter20260926V13 } from '../daily/catalog.ts'
 import type { GenerationResult, RankedCandidate } from './generate.ts'
 import type { GeneratorProgress, GeneratorRequest, GeneratorResponse } from './workerMessages.ts'
 import type { SolverMoveSummary } from './findMoves.ts'
@@ -12,23 +10,16 @@ import { inspectPuzzleMeaning } from './inspectMeaning.ts'
 
 type Props = { onPlay: (candidate: CandidatePuzzle) => void; onClose: () => void }
 type ResultFilter = 'accepted' | 'all' | 'rejected'
-// The review data omits the large meaning table: use the same frozen encounter
-// that gameplay publishes, without shipping another copy in the DEV bundle.
-const savedCandidates = [{ ...savedMeaning, candidate: {
-  ...savedMeaning.candidate, encounter: dailyEncounter20260926V13,
-} }] as unknown as RankedCandidate[]
 // A playtest temporarily unmounts the browser. Keep this session's review queue
 // and selection in module memory; daily/localStorage records are unrelated.
 let reviewCache: {
-  enemy: string; automatic: boolean; seed: string; count: number; includeRegenTile: boolean
-  regenTileCount: number
+  enemy: string; automatic: boolean; seed: string; count: number
   finiteRefills: boolean; refillLimit: number
   ranked: RankedCandidate[]; selectedId: string | null; filter: ResultFilter; result: GenerationResult | null
 } = {
-  enemy: 'CHAOS', automatic: false, seed: 'meaning-review', count: 8, includeRegenTile: true,
-  regenTileCount: 1,
+  enemy: 'CHAOS', automatic: false, seed: 'meaning-review', count: 8,
   finiteRefills: true, refillLimit: 20,
-  ranked: savedCandidates.slice(0, 5), selectedId: savedCandidates[0]?.candidate.id ?? null,
+  ranked: [], selectedId: null,
   filter: 'accepted', result: null,
 }
 const percent = (value: number | null) => value === null ? 'Unknown' : `${Math.round(value * 100)}%`
@@ -220,7 +211,7 @@ function CandidateReview({ ranked, onPlay }: { ranked: RankedCandidate; onPlay: 
         <tbody>{analysis.counterfactuals.map(item => <tr key={item.mechanic}><th>{mechanicLabels[item.mechanic]}</th><td>{decimal(item.importance)}</td>
           <td>{item.changedWinningOutcomes} / {item.replayedWinningLines}</td><td>{item.withoutBestWinDepth === null ? item.withoutStatus : `${item.withoutBestWinDepth} turns`}</td>
           <td>{item.evidence}{item.withoutSearchComplete ? ' (complete)' : ''}</td></tr>)}</tbody></table></div>
-      {analysis.specialTileDecisions && <details><summary>Special-tile preservation and timing</summary>
+      {encounter.startingTiles.some(tile => tile.type === 'gem') && analysis.specialTileDecisions && <details><summary>Special-tile preservation and timing</summary>
         {(['ward', 'strike'] as const).map(gem => {
           const decision = analysis.specialTileDecisions[gem]
           return <p key={gem}><strong>{gem === 'ward' ? 'LIFE' : 'HIT'}</strong>: {decision.reasonableOpeningWordsUsing} reasonable opening words use it;
@@ -287,8 +278,6 @@ export default function DevGenerator({ onPlay, onClose }: Props) {
   const [automatic, setAutomatic] = useState(reviewCache.automatic)
   const [seed, setSeed] = useState(reviewCache.seed)
   const [count, setCount] = useState(reviewCache.count)
-  const [includeRegenTile, setIncludeRegenTile] = useState(reviewCache.includeRegenTile)
-  const [regenTileCount, setRegenTileCount] = useState(reviewCache.regenTileCount)
   const [finiteRefills, setFiniteRefills] = useState(reviewCache.finiteRefills)
   const [refillLimit, setRefillLimit] = useState(reviewCache.refillLimit)
   const [ranked, setRanked] = useState<RankedCandidate[]>(reviewCache.ranked)
@@ -301,8 +290,8 @@ export default function DevGenerator({ onPlay, onClose }: Props) {
   const [error, setError] = useState<string | null>(null)
   const [notice, setNotice] = useState<string | null>(null)
   useEffect(() => {
-    reviewCache = { enemy, automatic, seed, count, includeRegenTile, regenTileCount, finiteRefills, refillLimit, ranked, selectedId, filter, result }
-  }, [enemy, automatic, seed, count, includeRegenTile, regenTileCount, finiteRefills, refillLimit, ranked, selectedId, filter, result])
+    reviewCache = { enemy, automatic, seed, count, finiteRefills, refillLimit, ranked, selectedId, filter, result }
+  }, [enemy, automatic, seed, count, finiteRefills, refillLimit, ranked, selectedId, filter, result])
   useEffect(() => {
     const element = dialog.current
     const previousFocus = document.activeElement
@@ -342,8 +331,7 @@ export default function DevGenerator({ onPlay, onClose }: Props) {
         instance.terminate(); worker.current = null; setBusy(false)
         setError(event.message || 'Generator worker failed. The previous results are still available.')
       }
-      const request: GeneratorRequest = { id, enemy: automatic ? null : enemy.trim().toUpperCase(), seed, candidateCount: count, includeRegenTile,
-        regenTileCount: includeRegenTile ? regenTileCount : 0,
+      const request: GeneratorRequest = { id, enemy: automatic ? null : enemy.trim().toUpperCase(), seed, candidateCount: count,
         ...(finiteRefills ? { refillLimit } : {}) }
       instance.postMessage(request)
     } catch (failure) {
@@ -368,8 +356,6 @@ export default function DevGenerator({ onPlay, onClose }: Props) {
       <label>Enemy word<input value={enemy} disabled={automatic || busy} onChange={event => setEnemy(event.target.value)} required={!automatic} pattern="[A-Za-z]+" maxLength={24} /></label>
       <label>Seed<input value={seed} disabled={busy} onChange={event => setSeed(event.target.value)} required maxLength={128} /></label>
       <label>Initial candidates<input type="number" min={1} max={100} value={count} disabled={busy} onChange={event => setCount(Number(event.target.value))} required /></label>
-      <label><input type="checkbox" checked={includeRegenTile} disabled={busy} onChange={event => setIncludeRegenTile(event.target.checked)} /> Include enemy Revive tile</label>
-      {includeRegenTile && <label>Enemy Revive tiles<input type="number" min={1} max={3} step={1} value={regenTileCount} disabled={busy} onChange={event => setRegenTileCount(Number(event.target.value))} required /></label>}
       <label><input type="checkbox" checked={finiteRefills} disabled={busy} onChange={event => setFiniteRefills(event.target.checked)} /> Finite refill supply</label>
       {finiteRefills && <label>Initial refill tiles<input type="number" min={0} max={96} step={1} value={refillLimit} disabled={busy} onChange={event => setRefillLimit(Number(event.target.value))} required />
         <small>Refinement may adjust this budget. Every candidate shows its final supply.</small></label>}

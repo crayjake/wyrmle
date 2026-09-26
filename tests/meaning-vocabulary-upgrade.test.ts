@@ -303,7 +303,7 @@ test('the HALCYONS correction preserves played v12 attempts and upgrades only fr
 })
 
 test('tomorrow shares the new encounter while played v4 runs and their undo history remain pinned', () => {
-  assert.equal(tomorrow.puzzleVersion, 13)
+  assert.equal(tomorrow.puzzleVersion, 14)
   assert.equal(tomorrow.encounter, modelPublication.encounter)
   for (const compact of [true, false]) {
     const storage = new MemoryStorage()

@@ -25,9 +25,13 @@ export function validatePuzzle(candidate: CandidatePuzzle, analysis: PuzzleAnaly
   const warnings: ValidationIssue[] = []
   const reject = (code: string, message: string) => reasons.push({ code, message })
   const warn = (code: string, message: string) => warnings.push({ code, message })
-  if (['letter-strike-generator-3', 'letter-strike-generator-4', 'letter-strike-generator-5'].includes(candidate.provenance.generatorVersion)
+  if (['letter-strike-generator-3', 'letter-strike-generator-4', 'letter-strike-generator-5', 'letter-strike-generator-6'].includes(candidate.provenance.generatorVersion)
     && !candidate.encounter.meaningLexicon) {
     reject('missing-puzzle-meanings', 'Meaning-era candidates must package their definition-backed dictionary; removing it cannot restore legacy word validity.')
+  }
+  if (candidate.provenance.generatorVersion === 'letter-strike-generator-6'
+    && candidate.encounter.startingTiles.some(tile => tile.type !== 'normal' || tile.gem)) {
+    reject('removed-special-tiles', 'Current puzzles use ordinary letter tiles only.')
   }
   if (candidate.encounter.meaningLexicon && !isMeaningCompilationCurrent(candidate.encounter)) {
     reject('stale-or-incomplete-meanings', 'Every allowed spelling needs current definition and semantic evidence compiled from the complete dictionary before solving.')

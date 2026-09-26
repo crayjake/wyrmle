@@ -31,12 +31,11 @@ const seed = argument('seed', 'melancholy-review-v1')
 const output = resolve(argument('out', 'artifacts/generated'))
 const refillLimit = argumentsList.includes('--refills') ? validateRefillLimit(integer('refills', Number.NaN)) : undefined
 await mkdir(output, { recursive: true })
+if (argumentsList.includes('--regen') || argumentsList.includes('--revives')) throw new Error('Special tiles have been removed; omit --regen and --revives.')
 const options: GenerationOptions = {
   design: argumentsList.includes('--classic-design') ? 'classic' : 'sustained-discovery',
   lexicalMode: argumentsList.includes('--legacy') ? 'legacy' : 'current',
   scoringMode: argumentsList.includes('--legacy-bonuses') ? 'legacy-bonuses' : 'meaning',
-  includeRegenTile: argumentsList.includes('--regen'),
-  ...(argumentsList.includes('--revives') ? { regenTileCount: integer('revives', Number.NaN) } : {}),
   ...(refillLimit === undefined ? {} : { refillLimit }),
   candidateCount: 1, keep: 100, refinementRounds: integer('refine', 0), mutationsPerRound: integer('mutations', 2),
   analysis: {

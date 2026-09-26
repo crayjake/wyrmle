@@ -1,7 +1,8 @@
+import { seedArchivedRun } from './fixtures/archivedRun.ts'
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { getRunStorageKey, loadDailySession, saveDailyRun, undoDailyRun } from '../src/daily/persistence.ts'
-import { getDailyPuzzle } from '../src/daily/puzzle.ts'
+import { getDailyPuzzle, getDailyPuzzleForVersion } from '../src/daily/puzzle.ts'
 import { captureUndoSnapshot, restoreUndoSnapshot } from '../src/daily/undo.ts'
 import type { DailySession, StorageLike } from '../src/daily/types.ts'
 import { createLetterStrikeGame, submitLetterStrike } from '../src/game/letterStrike.ts'
@@ -23,7 +24,7 @@ class MemoryStorage implements StorageLike {
 }
 
 const published = getDailyPuzzle('2026-09-25')
-const archived = getDailyPuzzle('2026-09-28')
+const archived = getDailyPuzzleForVersion('2026-09-28', 'letter-strike-4', 4)
 const at = '2026-09-25T15:00:00.000Z'
 
 function continuation(game: LetterStrikeState): LetterStrikeState {
@@ -122,8 +123,8 @@ test('compact undo snapshots remain exact evidence: altered positions and inject
 test('archived schema-5 runs keep their historical snapshot shape and restore the same canonical encounter', () => {
   const storage = new MemoryStorage()
   const game = createLetterStrikeGame(archived.encounter)
-  const started = saveDailyRun(archived, game, storage, at, 'normal', 0)
-  const first = saveDailyRun(archived, continuation(started.game!), storage, at, 'normal', started.revision)
+  seedArchivedRun(storage, archived, continuation(game))
+  const first = loadDailySession(archived, storage)
   const key = getRunStorageKey(archived.puzzleId)
   const bytes = storage.getItem(key)!
   assert.ok(JSON.parse(bytes).undoHistory[0].encounter, 'Old puzzle encoding is unchanged.')

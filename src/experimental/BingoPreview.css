@@ -1,33 +1,19 @@
-.bingo-preview .beta-label { color: var(--blue); }
 .bingo-preview .enemy-definition { width: min(94%, 24rem); }
-
-.bingo-preview .beta-intro {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 6px;
-  margin: 0;
-  font-size: max(11px, 0.65rem);
-  line-height: 1.4;
-  letter-spacing: 0;
-  text-transform: none;
-  color: var(--fg);
+.beta-header { position: relative; z-index: 1; display: flex; flex: none; align-items: center; gap: 4px; }
+.beta-header .title { margin-right: auto; font-size: 22px; }
+.beta-header nav { display: flex; align-items: center; gap: 8px; }
+.beta-header button, .bingo-result-link {
+  min-height: 44px; border: 0; background: transparent; color: var(--fg);
+  font: inherit; font-size: 14px; cursor: pointer; letter-spacing: 0; text-transform: none;
 }
-
-.bingo-preview .daily-meta button {
-  min-height: 32px;
-  padding: 0.2rem 0;
-}
-
-.bingo-preview .beta-intro button {
-  border: 0;
-  padding: 0;
-  background: transparent;
-  color: var(--blue);
-  font: inherit;
-  cursor: pointer;
-  min-height: 32px;
-}
+.beta-header .beta-icon-button { display: grid; place-items: center; width: 44px; padding: 0; }
+.beta-header button:focus-visible, .bingo-result-link:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }
+.beta-save-warning { margin: 0; font-size: 12px; letter-spacing: 0; text-transform: none; }
+.beta-refill-details { margin-top: 16px; font-size: 14px; }
+.beta-refill-details summary { cursor: pointer; padding-block: 10px; }
+.bingo-preview .daily-panel .dev-controls button { min-height: 44px; }
+.bingo-preview .battle-info { display: flex; justify-content: center; }
+.bingo-preview .battle-info .health-info { width: auto; align-items: center; }
 
 .bingo-hint-content { display: grid; gap: 12px; text-align: center; }
 .bingo-hint-step { font-size: 13px; color: var(--fg); }
@@ -181,14 +167,12 @@
   .container.letter-combat.bingo-preview {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    grid-template-rows: auto auto auto auto minmax(0, 1fr);
-    grid-template-areas: 'header player' 'meta player' 'intro player' 'supply player' 'enemy player';
+    grid-template-rows: auto auto minmax(0, 1fr);
+    grid-template-areas: 'header player' 'supply player' 'enemy player';
     padding: 6px 12px;
     gap: 4px 16px;
   }
-  .bingo-preview .header { grid-area: header; }
-  .bingo-preview .daily-meta { grid-area: meta; }
-  .bingo-preview .beta-intro { grid-area: intro; }
+  .bingo-preview .beta-header { grid-area: header; }
   .bingo-preview .battle-info { grid-area: supply; }
   .bingo-preview .enemy-zone { grid-area: enemy; align-self: center; }
   .bingo-preview .player-zone { grid-area: player; height: 100%; margin: 0; }
@@ -197,4 +181,53 @@
   .bingo-preview .attack-line { padding: 0; }
   .bingo-preview .enemy-section { gap: 2px; }
   .bingo-preview .enemy-definition { width: 100%; line-height: 1.3; }
+}
+
+/* Results replace the board only after its final hit animation finishes. */
+.bingo-result {
+  flex: 1; min-height: 0; width: min(100%, 26rem); margin-inline: auto;
+  display: flex; flex-direction: column; justify-content: center;
+  gap: clamp(12px, 4dvh, 36px); text-transform: none; letter-spacing: 0;
+}
+.bingo-result-story { display: flex; flex-direction: column; align-items: center; gap: clamp(8px, 1.6dvh, 16px); }
+.bingo-result p, .bingo-result h1 { margin: 0; }
+.bingo-result-enemy { font-size: 14px; letter-spacing: 0.18em; }
+.bingo-result-stars { position: relative; display: flex; gap: 12px; color: var(--emph); }
+.bingo-result[data-bingo] .bingo-result-stars { margin-top: 18px; }
+.bingo-result-wyrm {
+  position: absolute; top: -22px; left: calc(100% - 2rem); display: flex;
+  transform: scale(1.55); transform-origin: center;
+  animation: bingo-wyrm-victory 1800ms ease-in-out both;
+}
+.bingo-result-stars svg { width: clamp(30px, 6dvh, 46px); height: clamp(30px, 6dvh, 46px); stroke-width: 1.5; opacity: 0.3; }
+.bingo-result-stars svg[data-earned="true"] { fill: var(--emph); opacity: 1; animation: bingo-star-arrive 450ms ease-out both; }
+.bingo-result h1 { font-family: 'Cutive Mono', monospace; color: var(--emph); font-size: clamp(36px, 8dvh, 64px); font-weight: normal; line-height: 1; }
+.bingo-result h1:focus { outline: none; }
+.bingo-result-caption { font-size: 16px; }
+.bingo-result-word { max-width: 100%; overflow-wrap: anywhere; color: var(--emph); font-family: 'Cutive Mono', monospace; font-size: clamp(24px, 7vw, 36px); padding-block: 10px; }
+.bingo-result-words { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 14px; padding: 0; margin: 4px 0; list-style: none; font-size: 14px; }
+.bingo-result-nudge { font-size: 14px; line-height: 1.4; }
+.bingo-result-actions { display: grid; gap: 8px; width: min(100%, 19rem); align-self: center; }
+.bingo-result-actions .daily-button { min-height: 48px; font-size: 16px; text-transform: none; letter-spacing: 0; }
+.bingo-result-actions .bingo-result-primary { background: var(--emph); border-color: var(--emph); color: var(--bg); }
+.bingo-result-link { color: var(--blue); }
+@keyframes bingo-star-arrive { from { transform: translateY(8px) scale(0.7); opacity: 0; } to { transform: none; opacity: 1; } }
+/* The wyrm passes each star as it lights up, then rests above the last one. */
+@keyframes bingo-wyrm-victory {
+  0% { left: -20%; transform: translateY(10px) rotate(-15deg) scale(1.55); opacity: 0; }
+  15% { opacity: 1; }
+  25% { left: 4%; transform: translateY(-3px) rotate(-8deg) scale(1.55); }
+  50% { left: 38%; transform: translateY(3px) rotate(8deg) scale(1.55); }
+  75% { left: 75%; transform: translateY(-3px) rotate(-8deg) scale(1.55); }
+  100% { left: calc(100% - 2rem); transform: scale(1.55); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bingo-result-stars svg[data-earned="true"], .bingo-result-wyrm { animation: none; }
+}
+@media (orientation: landscape) and (max-height: 550px) {
+  .container.letter-combat.bingo-preview[data-result] { display: flex; }
+  .bingo-result { flex-direction: row; width: min(100%, 42rem); gap: 24px; align-items: center; }
+  .bingo-result-story { flex: 1; gap: 8px; min-width: 0; }
+  .bingo-result-actions { width: 35%; }
+  .bingo-result-word { font-size: 26px; padding: 0; }
 }

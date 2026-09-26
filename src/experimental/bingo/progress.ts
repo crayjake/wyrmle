@@ -95,10 +95,12 @@ export function resumeBingoAttempt(key: string, encounter: LetterStrikeEncounter
   return { game, started: saved.started, hintStep: saved.hintStep }
 }
 
+export const bingoStars = (words: number) => words === 1 ? 3 : words === 2 ? 2 : 1
+
 export function describeBingoProgress(progress: BingoProgress, lives: PreviewLives) {
   if (progress.bestWords !== null) {
     const words = progress.bestWords
-    const stars = words === 1 ? 3 : words === 2 ? 2 : 1
+    const stars = bingoStars(words)
     return { status: words === 1 ? 'bingo' : 'completed', stars,
       label: words === 1 ? 'Bingo' : `${words} words`,
       accessible: words === 1 ? 'Bingo, completed in one word, 3 stars' : `Completed, best ${words} words, ${stars} of 3 stars` }
