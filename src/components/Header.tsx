@@ -26,7 +26,7 @@ export default function Header({ wyrmDockRef, titleRef, showWyrm, onHelp, onHist
                     {showWyrm && <WyrmCharacter idle />}
                 </span>
             </div>
-            {puzzleDate && <time className="header-date" dateTime={puzzleDate}>
+            {puzzleDate && <time className="header-date resource-label" dateTime={puzzleDate}>
                 {new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' })
                     .format(new Date(`${puzzleDate}T00:00:00Z`))}
             </time>}

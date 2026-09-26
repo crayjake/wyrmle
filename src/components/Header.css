@@ -4,7 +4,6 @@
 
 .header { gap: 4px; }
 .header-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; flex: none; }
-.header-date { font-family: 'Share Tech Mono', monospace; font-size: 11px; line-height: 1.2; letter-spacing: 0; text-transform: none; }
 .header-best { display: flex; flex: 1; min-width: 56px; flex-direction: column; align-items: center; gap: 3px; }
 .header-actions { flex: none; }
 
