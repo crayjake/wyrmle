@@ -1,11 +1,8 @@
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { test } from 'node:test'
-import report from '../artifacts/bingo-feasibility-2026-09-26/candidates.json' with { type: 'json' }
 import { bingoPreviews, bingoPreviewHref, leaveBingoPreviewHref, readBingoPreviewRequest } from '../src/experimental/bingo/catalog.ts'
 import { decodeBingoPreview } from '../src/experimental/bingo/previewData.ts'
-import { createLetterStrikeGame, submitLetterStrike } from '../src/game/letterStrike.ts'
-import { selectWordIds } from '../src/generator/constructRefill.ts'
 
 test('production preview URLs preserve the legacy beta and constrain life counts', () => {
   assert.equal(readBingoPreviewRequest(''), null)
@@ -24,39 +21,10 @@ test('production preview URLs preserve the legacy beta and constrain life counts
     'https://example.com/wyrmle/?foo=bar')
 })
 
-test('all ten frozen previews reproduce the assessed boards and winning routes at every life count', () => {
-  const earlier = bingoPreviews.filter(entry => entry.collection !== 'new')
-  assert.equal(earlier.length, 10)
+test('the library contains only the five maintained bingo-first previews', () => {
+  assert.equal(bingoPreviews.length, 5)
+  assert.ok(bingoPreviews.every(entry => entry.collection === 'new'))
   assert.equal(new Set(bingoPreviews.map(entry => entry.id)).size, bingoPreviews.length)
-  for (const [index, entry] of earlier.entries()) {
-    const original = report[index]
-    const payload = JSON.parse(readFileSync(new URL(`../public/${entry.asset}`, import.meta.url), 'utf8'))
-    for (const lives of [3, 4, 5] as const) {
-      const encounter = decodeBingoPreview(payload, entry, lives)
-      assert.equal(encounter.startingTiles.map(tile => tile.letter).join(''), original.board)
-      assert.equal(encounter.refillQueue, original.refills)
-      assert.equal(Object.keys(encounter.meaningLexicon!.words).length, original.meaningWords)
-      const initial = createLetterStrikeGame(encounter)
-      const bingo = selectWordIds(initial.tiles, original.bingo)
-      assert.ok(bingo)
-      const win = submitLetterStrike(initial, bingo)
-      assert.equal(win.status, 'won', `${entry.id}/${lives} bingo`)
-      assert.equal(win.playerResolve, lives - 1)
-      for (const root of original.analysis.rootReports) {
-        const witness = root.witness
-        if (!witness || witness.words.length > lives) continue
-        let state = initial
-        for (const [turn, ids] of witness.tileIds.entries()) {
-          state = submitLetterStrike(state, ids)
-          assert.equal(state.error, null)
-          assert.equal(state.playedWords.at(-1)!.word, witness.words[turn])
-          assert.equal(state.playedWords.at(-1)!.semanticLabel, witness.labels[turn])
-          assert.equal(state.playedWords.at(-1)!.strikes, witness.hits[turn])
-        }
-        assert.equal(state.status, 'won', `${entry.id}/${lives} ${root.word}`)
-      }
-    }
-  }
 })
 
 test('preview decoding rejects missing, mismatched or stale assets', () => {

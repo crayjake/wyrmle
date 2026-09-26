@@ -1,3 +1,4 @@
+import { winStars } from '../../game/rating.ts'
 import { createLetterStrikeGame, submitLetterStrike } from '../../game/letterStrike.ts'
 import type { LetterStrikeEncounter, LetterStrikeState } from '../../game/letterStrike.ts'
 import type { BingoPreviewEntry, PreviewLives } from './catalog.ts'
@@ -95,7 +96,7 @@ export function resumeBingoAttempt(key: string, encounter: LetterStrikeEncounter
   return { game, started: saved.started, hintStep: saved.hintStep }
 }
 
-export const bingoStars = (words: number) => words === 1 ? 3 : words === 2 ? 2 : 1
+export const bingoStars = winStars
 
 export function describeBingoProgress(progress: BingoProgress, lives: PreviewLives) {
   if (progress.bestWords !== null) {

@@ -11,6 +11,7 @@ export function validateBingo(encounter: LetterStrikeEncounter, answer: string, 
   assert.equal(encounter.startingTiles.length, 16)
   assert.equal(encounter.refillQueue.length, 24)
   assert.equal(encounter.finiteRefills, true)
+  assert.ok(encounter.startingTiles.every(tile => tile.type === 'normal' && !tile.gem), 'Special tiles are retired')
   assert.deepEqual(encounter.enemyLetters, bingoArmour(encounter.enemy.word, answer))
   assert.ok(analysis.counterFamilies >= 4 && analysis.repeatedCounterRoutes >= 4
     && analysis.resistedFamilies >= 2 && analysis.sustainedPositions >= 2
@@ -24,6 +25,12 @@ export function validateBingo(encounter: LetterStrikeEncounter, answer: string, 
   // gigabytes building a diff of thousands of otherwise identical meanings.
   for (const word of Object.keys(originalWords)) assert.deepEqual(transportedWords[word], originalWords[word], word)
   const bingoLemmas = new Set(analysis.bingos.map(word => meaningLexicon.words[word].lemma))
+  for (const startingResolve of [1, 2]) {
+    const initial = createLetterStrikeGame({ ...encounter, meaningLexicon, startingResolve })
+    const ids = selectWordIds(initial.tiles, answer)
+    assert.ok(ids)
+    assert.equal(submitLetterStrike(initial, ids).status, 'won', `Bingo must win with ${startingResolve} life/lives`)
+  }
   for (const startingResolve of [3, 4, 5]) {
     const initial = createLetterStrikeGame({ ...encounter, meaningLexicon, startingResolve })
     const ids = selectWordIds(initial.tiles, answer)

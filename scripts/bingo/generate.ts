@@ -54,8 +54,8 @@ export function bingoArmour(enemy: string, bingo: string) {
   })
 }
 
-export function constructBingo(profile: BingoProfile, meanings: Meanings, index: number) {
-  const seed = `bingo-first-3:${profile.enemy}:${profile.bingo}:${index}`
+export function constructBingo(profile: BingoProfile, meanings: Meanings, index: number, plannedTurns: 2 | 3 = 3) {
+  const seed = `bingo-first-3:${profile.enemy}:${profile.bingo}:${index}${plannedTurns === 2 ? ':two-turn-route' : ''}`
   const random = createRandom(seed)
   const usable = (word: string) => word.length >= 3 && word.length <= 12 && frequency(word) >= 0.35
   const rank = (a: string, b: string) => frequency(b) - frequency(a) || a.length - b.length || a.localeCompare(b)
@@ -79,7 +79,7 @@ export function constructBingo(profile: BingoProfile, meanings: Meanings, index:
   // Never plan the ordinary route through any instant-win spelling.
   const planning = [...new Set([...counters, ...resisted])].filter(word => !canSpell(required, [...word]))
     .map(word => ({ word, commonness: frequency(word) }))
-  const refill = constructRefill(shell, planning, random, 3, 24, { counters, resisted })
+  const refill = constructRefill(shell, planning, random, plannedTurns, 24, { counters, resisted })
   const encounter = meanings.compile({ ...shell, refillQueue: refill.refillQueue })
   const initial = createLetterStrikeGame(encounter)
   const ids = selectWordIds(initial.tiles, profile.bingo)

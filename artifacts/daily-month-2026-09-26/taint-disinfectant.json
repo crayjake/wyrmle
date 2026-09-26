@@ -1,0 +1,1314 @@
+{
+  "id": "taint-disinfectant",
+  "enemy": "TAINT",
+  "answer": "DISINFECTANT",
+  "accepted": true,
+  "seed": "bingo-first-3:TAINT:DISINFECTANT:14",
+  "score": 405,
+  "analysis": {
+    "score": 405,
+    "bingos": [
+      "DISINFECTANT"
+    ],
+    "counterFamilies": 11,
+    "resistedFamilies": 3,
+    "winningOpenings": 10,
+    "repeatedCounterRoutes": 10,
+    "sustainedPositions": 11,
+    "sustainedFinalPositions": 5,
+    "neutralCleanupOpenings": 0,
+    "routes": [
+      {
+        "opening": "CAN",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "KEPT",
+            "SOUND",
+            "DIP",
+            "TIN"
+          ],
+          "resisted": [
+            "DROP",
+            "SOUR",
+            "SPOIL",
+            "ROTTEN",
+            "ROT"
+          ],
+          "neutral": 1146
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "KEPT",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "CAN",
+            "SOUND",
+            "CLEAN",
+            "SALT",
+            "CORN",
+            "TIN",
+            "MEND",
+            "SALTER",
+            "DISINFECT"
+          ],
+          "resisted": [
+            "SOUR",
+            "MOLD",
+            "ROT",
+            "MOULD",
+            "INFECT"
+          ],
+          "neutral": 2167
+        },
+        "thirdTurn": {
+          "counters": [
+            "MAINTAIN",
+            "SALT",
+            "TIN"
+          ],
+          "resisted": [
+            "SOUR",
+            "ROT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "KEPT",
+            "CANNED",
+            "MAINTAIN"
+          ],
+          "tileIds": [
+            [
+              1,
+              12,
+              11,
+              2
+            ],
+            [
+              14,
+              9,
+              3,
+              6,
+              16,
+              7
+            ],
+            [
+              19,
+              22,
+              0,
+              20,
+              4,
+              25,
+              5,
+              24
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "CLEAN",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "KEPT",
+            "SOUND",
+            "DIP",
+            "TIN",
+            "MEND"
+          ],
+          "resisted": [
+            "DROP",
+            "SOUR",
+            "ROTTEN",
+            "ROT"
+          ],
+          "neutral": 957
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "SALT",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "KEPT",
+            "CORN",
+            "DIP",
+            "TIN",
+            "MEND"
+          ],
+          "resisted": [
+            "DROP",
+            "INFECTED",
+            "ROT"
+          ],
+          "neutral": 735
+        },
+        "thirdTurn": {
+          "counters": [
+            "PICKLE"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SALT",
+            "TINNED",
+            "PICKLE"
+          ],
+          "tileIds": [
+            [
+              15,
+              9,
+              13,
+              2
+            ],
+            [
+              4,
+              0,
+              3,
+              6,
+              12,
+              7
+            ],
+            [
+              11,
+              5,
+              14,
+              1,
+              21,
+              16
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "DIP",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "CAN",
+            "CLEAN",
+            "SALT",
+            "CORN",
+            "TIN",
+            "SALTER"
+          ],
+          "resisted": [
+            "SOUR",
+            "ROTTEN",
+            "ROT",
+            "INFECT"
+          ],
+          "neutral": 1533
+        },
+        "thirdTurn": {
+          "counters": [
+            "CAN",
+            "CLEAN",
+            "SALT",
+            "CORN",
+            "SALTER"
+          ],
+          "resisted": [
+            "SOUR",
+            "ROT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DIP",
+            "TIN",
+            "CLEANEST"
+          ],
+          "tileIds": [
+            [
+              7,
+              0,
+              11
+            ],
+            [
+              2,
+              5,
+              3
+            ],
+            [
+              14,
+              13,
+              12,
+              9,
+              6,
+              16,
+              15,
+              4
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "TIN",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "CAN",
+            "KEPT",
+            "SOUND",
+            "CLEAN",
+            "SALT",
+            "CORN",
+            "DIP",
+            "TIN",
+            "SPICE",
+            "CRISP",
+            "PICKLES",
+            "SALTER"
+          ],
+          "resisted": [
+            "DROP",
+            "INFECTED",
+            "SOUR",
+            "SPOIL",
+            "ROT"
+          ],
+          "neutral": 2675
+        },
+        "thirdTurn": {
+          "counters": [
+            "DIP"
+          ],
+          "resisted": [
+            "DROP",
+            "MOLD",
+            "MOULD"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "TIN",
+            "CLEANEST",
+            "DIP"
+          ],
+          "tileIds": [
+            [
+              2,
+              0,
+              3
+            ],
+            [
+              14,
+              13,
+              12,
+              9,
+              6,
+              16,
+              15,
+              4
+            ],
+            [
+              7,
+              5,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SPICE",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "TIN",
+            "MEND"
+          ],
+          "resisted": [
+            "ROTTEN",
+            "MOLD",
+            "ROT",
+            "MOULD",
+            "TAINTED"
+          ],
+          "neutral": 921
+        },
+        "thirdTurn": {
+          "counters": [
+            "MAINTAIN",
+            "TIN"
+          ],
+          "resisted": [
+            "MOLD",
+            "ROT",
+            "MOULD"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SPICE",
+            "LET",
+            "MAINTAIN"
+          ],
+          "tileIds": [
+            [
+              15,
+              11,
+              0,
+              14,
+              12
+            ],
+            [
+              13,
+              16,
+              2
+            ],
+            [
+              19,
+              9,
+              5,
+              3,
+              4,
+              22,
+              23,
+              6
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            1,
+            5
+          ]
+        }
+      },
+      {
+        "opening": "CRISP",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "TIN",
+            "MEND"
+          ],
+          "resisted": [
+            "MOLD",
+            "MOULD",
+            "TAINTED"
+          ],
+          "neutral": 580
+        },
+        "thirdTurn": {
+          "counters": [
+            "MAINTAIN",
+            "TIN",
+            "MEND"
+          ],
+          "resisted": [
+            "MOLD",
+            "MOULD"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CRISP",
+            "LET",
+            "MAINTAIN"
+          ],
+          "tileIds": [
+            [
+              14,
+              10,
+              0,
+              15,
+              11
+            ],
+            [
+              13,
+              12,
+              2
+            ],
+            [
+              19,
+              9,
+              5,
+              3,
+              4,
+              22,
+              23,
+              6
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            1,
+            5
+          ]
+        }
+      },
+      {
+        "opening": "PICKLES",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "TIN",
+            "MEND"
+          ],
+          "resisted": [
+            "ROTTEN",
+            "MOLD",
+            "ROT",
+            "MOULD",
+            "TAINTED"
+          ],
+          "neutral": 892
+        },
+        "thirdTurn": {
+          "counters": [
+            "MAINTAIN",
+            "TIN"
+          ],
+          "resisted": [
+            "ROT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "PICKLES",
+            "LET",
+            "MAINTAIN"
+          ],
+          "tileIds": [
+            [
+              11,
+              0,
+              14,
+              1,
+              13,
+              12,
+              15
+            ],
+            [
+              21,
+              16,
+              2
+            ],
+            [
+              19,
+              9,
+              5,
+              3,
+              4,
+              22,
+              23,
+              6
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            1,
+            5
+          ]
+        }
+      },
+      {
+        "opening": "SALTER",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "KEPT",
+            "DIP",
+            "TIN",
+            "PICKLE",
+            "MEND"
+          ],
+          "resisted": [
+            "MOLD",
+            "MOULD",
+            "INFECT"
+          ],
+          "neutral": 500
+        },
+        "thirdTurn": {
+          "counters": [
+            "DIP"
+          ],
+          "resisted": [
+            "MOLD",
+            "MOULD"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SALTER",
+            "TINNED",
+            "DIP"
+          ],
+          "tileIds": [
+            [
+              15,
+              9,
+              13,
+              2,
+              12,
+              10
+            ],
+            [
+              4,
+              0,
+              3,
+              6,
+              16,
+              7
+            ],
+            [
+              26,
+              5,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "ANTISEPTIC",
+        "label": "COUNTER",
+        "hits": 6,
+        "later": {
+          "counters": [
+            "MEND"
+          ],
+          "resisted": [
+            "MOLD",
+            "MOULD"
+          ],
+          "neutral": 585
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ANTISEPTIC",
+            "MEND"
+          ],
+          "tileIds": [
+            [
+              9,
+              3,
+              2,
+              0,
+              15,
+              12,
+              11,
+              4,
+              5,
+              14
+            ],
+            [
+              19,
+              16,
+              6,
+              7
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            6,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "TAINTED",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "CAN",
+            "CLEAN",
+            "CORN",
+            "SPICE",
+            "CRISP",
+            "PICKLES"
+          ],
+          "resisted": [
+            "SOUR",
+            "SPOIL"
+          ],
+          "neutral": 1301
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "INFECT",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "KEPT",
+            "SOUND",
+            "SALT",
+            "DIP",
+            "TIN",
+            "MEND",
+            "SALTER"
+          ],
+          "resisted": [
+            "DROP",
+            "SOUR",
+            "SPOIL",
+            "MOLD",
+            "ROT",
+            "MOULD"
+          ],
+          "neutral": 1931
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "RANCID",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "KEPT",
+            "TIN"
+          ],
+          "resisted": [
+            "SPOIL"
+          ],
+          "neutral": 602
+        },
+        "thirdTurn": {
+          "counters": [
+            "MAINTAIN",
+            "SALT",
+            "TIN"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RANCID",
+            "KEPT",
+            "MAINTAIN"
+          ],
+          "tileIds": [
+            [
+              10,
+              9,
+              3,
+              14,
+              0,
+              7
+            ],
+            [
+              1,
+              12,
+              11,
+              2
+            ],
+            [
+              19,
+              22,
+              5,
+              6,
+              4,
+              25,
+              23,
+              20
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            1,
+            6
+          ]
+        }
+      },
+      {
+        "opening": "ACT",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "KEPT",
+            "SOUND",
+            "DIP",
+            "TIN"
+          ],
+          "resisted": [
+            "DROP",
+            "SOUR",
+            "SPOIL",
+            "ROT"
+          ],
+          "neutral": 1117
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "KEPT",
+            "SOUND",
+            "DIP",
+            "TIN",
+            "SPICE",
+            "PICKLES"
+          ],
+          "resisted": [
+            "INFECTED",
+            "SPOIL"
+          ],
+          "neutral": 962
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      }
+    ]
+  },
+  "roots": [
+    {
+      "word": "RESTORE",
+      "senseId": "oewn-restore__2.41.01..",
+      "definition": "return to its original or usable and functioning condition",
+      "relation": "opposite"
+    },
+    {
+      "word": "RESTORATION",
+      "senseId": "oewn-restoration__1.04.00..",
+      "definition": "the act of restoring something or someone to a satisfactory state",
+      "relation": "opposite"
+    },
+    {
+      "word": "REPAIR",
+      "senseId": "oewn-repair__2.30.00..",
+      "definition": "restore by replacing a part or putting together what is torn or broken",
+      "relation": "opposite"
+    },
+    {
+      "word": "MEND",
+      "senseId": "oewn-mend__2.30.00..",
+      "definition": "restore by replacing a part or putting together what is torn or broken",
+      "relation": "opposite"
+    },
+    {
+      "word": "PRESERVE",
+      "senseId": "oewn-preserve__2.40.00..",
+      "definition": "keep in safety and protect from harm, decay, loss, or destruction",
+      "relation": "opposite"
+    },
+    {
+      "word": "PRESERVATION",
+      "senseId": "oewn-preservation__1.22.00..",
+      "definition": "a process that saves organic substances from decay",
+      "relation": "opposite"
+    },
+    {
+      "word": "PRESERVATIVE",
+      "senseId": "oewn-preservative__1.27.00..",
+      "definition": "a chemical compound that is added to protect against decay or decomposition",
+      "relation": "opposite"
+    },
+    {
+      "word": "ANTISEPTIC",
+      "senseId": "oewn-antiseptic__3.00.00..",
+      "definition": "thoroughly clean and free of or destructive to disease-causing organisms",
+      "relation": "opposite"
+    },
+    {
+      "word": "DISINFECT",
+      "senseId": "oewn-disinfect__2.29.00..",
+      "definition": "destroy microorganisms or pathogens by cleansing",
+      "relation": "opposite"
+    },
+    {
+      "word": "DISINFECTION",
+      "senseId": "oewn-disinfection__1.04.00..",
+      "definition": "treatment to destroy harmful microorganisms",
+      "relation": "opposite"
+    },
+    {
+      "word": "SANITIZE",
+      "senseId": "oewn-sanitize__2.35.00..",
+      "definition": "make sanitary by cleaning or sterilizing",
+      "relation": "opposite"
+    },
+    {
+      "word": "SANITISE",
+      "senseId": "oewn-sanitise__2.35.00..",
+      "definition": "make sanitary by cleaning or sterilizing",
+      "relation": "opposite"
+    },
+    {
+      "word": "STERILISE",
+      "senseId": "oewn-sterilise__2.29.01..",
+      "definition": "make free from bacteria",
+      "relation": "opposite"
+    },
+    {
+      "word": "STERILIZE",
+      "senseId": "oewn-sterilize__2.29.01..",
+      "definition": "make free from bacteria",
+      "relation": "opposite"
+    },
+    {
+      "word": "CURE",
+      "senseId": "oewn-cure__2.30.00..",
+      "definition": "prepare by drying, salting, or chemical processing in order to preserve",
+      "relation": "opposite"
+    },
+    {
+      "word": "FRESH",
+      "senseId": "oewn-fresh__3.00.01..",
+      "definition": "recently made, produced, or harvested",
+      "relation": "opposite"
+    },
+    {
+      "word": "FRESHNESS",
+      "senseId": "oewn-freshness__1.07.01..",
+      "definition": "the property of being pure and fresh (as if newly made); not stale or deteriorated",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONSERVE",
+      "senseId": "oewn-conserve__2.40.02..",
+      "definition": "keep in safety and protect from harm, decay, loss, or destruction",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONSERVATION",
+      "senseId": "oewn-conservation__1.11.00..",
+      "definition": "an occurrence of improvement by virtue of preventing loss or injury or other change",
+      "relation": "opposite"
+    },
+    {
+      "word": "REFURBISH",
+      "senseId": "oewn-refurbish__2.30.00..",
+      "definition": "make brighter and prettier",
+      "relation": "opposite"
+    },
+    {
+      "word": "REJUVENATE",
+      "senseId": "oewn-rejuvenate__2.30.04..",
+      "definition": "get or give new life or energy; return to life, regain energy, recuperate",
+      "relation": "opposite"
+    },
+    {
+      "word": "RENEW",
+      "senseId": "oewn-renew__2.36.00..",
+      "definition": "reestablish on a new, usually improved, basis or make new or like new",
+      "relation": "opposite"
+    },
+    {
+      "word": "RENOVATE",
+      "senseId": "oewn-renovate__2.30.00..",
+      "definition": "restore to a previous or better condition",
+      "relation": "opposite"
+    },
+    {
+      "word": "RENOVATION",
+      "senseId": "oewn-renovation__1.04.00..",
+      "definition": "the act of improving by renewing and restoring",
+      "relation": "opposite"
+    },
+    {
+      "word": "FIX",
+      "senseId": "oewn-fix__2.30.01..",
+      "definition": "restore by replacing a part or putting together what is torn or broken",
+      "relation": "opposite"
+    },
+    {
+      "word": "SOUND",
+      "senseId": "oewn-sound__3.00.01..",
+      "definition": "in good condition; free from defect or damage or decay",
+      "relation": "opposite"
+    },
+    {
+      "word": "HEALTHY",
+      "senseId": "oewn-healthy__3.00.00..",
+      "definition": "having or indicating good health in body or mind; free from infirmity or disease",
+      "relation": "opposite"
+    },
+    {
+      "word": "ROT",
+      "senseId": "oewn-rot__1.26.00..",
+      "definition": "a state of decay usually accompanied by an offensive odor",
+      "relation": "similar"
+    },
+    {
+      "word": "DECAY",
+      "senseId": "oewn-decay__1.19.00..",
+      "definition": "the organic phenomenon of rotting",
+      "relation": "similar"
+    },
+    {
+      "word": "SPOIL",
+      "senseId": "oewn-spoil__2.30.00..",
+      "definition": "become unfit for consumption or use",
+      "relation": "similar"
+    },
+    {
+      "word": "SPOILAGE",
+      "senseId": "oewn-spoilage__1.22.00..",
+      "definition": "the process of becoming spoiled",
+      "relation": "similar"
+    },
+    {
+      "word": "CORRUPT",
+      "senseId": "oewn-corrupt__5.00.00.stale.00",
+      "definition": "touched by rot or decay",
+      "relation": "similar"
+    },
+    {
+      "word": "DISINTEGRATE",
+      "senseId": "oewn-disintegrate__2.30.00..",
+      "definition": "break into parts or components or lose cohesion or unity",
+      "relation": "similar"
+    },
+    {
+      "word": "CRUMBLE",
+      "senseId": "oewn-crumble__2.30.13..",
+      "definition": "fall into decay or ruin",
+      "relation": "similar"
+    },
+    {
+      "word": "PUTREFY",
+      "senseId": "oewn-putrefy__2.30.00..",
+      "definition": "become putrid; decay with an offensive smell",
+      "relation": "similar"
+    },
+    {
+      "word": "PUTREFACTION",
+      "senseId": "oewn-putrefaction__1.26.00..",
+      "definition": "a state of decay usually accompanied by an offensive odor",
+      "relation": "similar"
+    },
+    {
+      "word": "ROTTEN",
+      "senseId": "oewn-rotten__5.00.00.stale.00",
+      "definition": "having decayed or disintegrated; usually implies foulness",
+      "relation": "similar"
+    },
+    {
+      "word": "DECOMPOSE",
+      "senseId": "oewn-decompose__2.30.01..",
+      "definition": "break down",
+      "relation": "similar"
+    },
+    {
+      "word": "DECOMPOSITION",
+      "senseId": "oewn-decomposition__1.22.00..",
+      "definition": "(biology) the process of decay caused by bacterial or fungal action",
+      "relation": "similar"
+    },
+    {
+      "word": "MOULD",
+      "senseId": "oewn-mould__2.30.04..",
+      "definition": "become moldy; spoil due to humidity",
+      "relation": "similar"
+    },
+    {
+      "word": "MOLD",
+      "senseId": "oewn-mold__2.30.00..",
+      "definition": "become moldy; spoil due to humidity",
+      "relation": "similar"
+    },
+    {
+      "word": "MILDEW",
+      "senseId": "oewn-mildew__1.22.00..",
+      "definition": "the process of becoming mildewed",
+      "relation": "similar"
+    },
+    {
+      "word": "FESTER",
+      "senseId": "oewn-fester__1.26.00..",
+      "definition": "a sore that has become inflamed and formed pus",
+      "relation": "similar"
+    },
+    {
+      "word": "RANCID",
+      "senseId": "oewn-rancid__5.00.00.stale.00",
+      "definition": "(used of decomposing oils or fats) having a rank smell or taste usually due to a chemical change or decomposition",
+      "relation": "similar"
+    },
+    {
+      "word": "RANCIDITY",
+      "senseId": "oewn-rancidity__1.26.00..",
+      "definition": "the state of being rancid; having a rancid scent or flavor (as of old cooking oil)",
+      "relation": "similar"
+    },
+    {
+      "word": "PUTRID",
+      "senseId": "oewn-putrid__3.01.00..",
+      "definition": "of or relating to or attended by putrefaction",
+      "relation": "similar"
+    },
+    {
+      "word": "TAINT",
+      "senseId": "oewn-taint__2.29.00..",
+      "definition": "contaminate with a disease or microorganism",
+      "relation": "similar"
+    },
+    {
+      "word": "DETERIORATE",
+      "senseId": "oewn-deteriorate__2.30.00..",
+      "definition": "become worse or disintegrate",
+      "relation": "similar"
+    },
+    {
+      "word": "DETERIORATION",
+      "senseId": "oewn-deterioration__1.26.00..",
+      "definition": "a symptom of reduced quality or strength",
+      "relation": "similar"
+    },
+    {
+      "word": "ROT",
+      "senseId": "oewn-rot__2.30.00..",
+      "definition": "break down",
+      "relation": "similar"
+    },
+    {
+      "word": "RESTORE",
+      "senseId": "oewn-restore__2.30.01..",
+      "definition": "restore by replacing a part or putting together what is torn or broken",
+      "relation": "opposite"
+    },
+    {
+      "word": "PRESERVE",
+      "senseId": "oewn-preserve__2.30.00..",
+      "definition": "prevent (food) from rotting",
+      "relation": "opposite"
+    },
+    {
+      "word": "SALT",
+      "senseId": "oewn-salt__2.30.00..",
+      "definition": "preserve with salt",
+      "relation": "opposite"
+    },
+    {
+      "word": "SANITATION",
+      "senseId": "oewn-sanitation__1.04.00..",
+      "definition": "making something sanitary (free of germs) as by sterilizing",
+      "relation": "opposite"
+    },
+    {
+      "word": "SANITARY",
+      "senseId": "oewn-sanitary__3.00.00..",
+      "definition": "free from filth and pathogens",
+      "relation": "opposite"
+    },
+    {
+      "word": "ANTISEPSIS",
+      "senseId": "oewn-antisepsis__1.22.00..",
+      "definition": "the process of inhibiting the growth and multiplication of microorganisms",
+      "relation": "opposite"
+    },
+    {
+      "word": "DESICCATE",
+      "senseId": "oewn-desiccate__2.30.04..",
+      "definition": "preserve by removing all water and liquids from",
+      "relation": "opposite"
+    },
+    {
+      "word": "REFRIGERATE",
+      "senseId": "oewn-refrigerate__2.30.01..",
+      "definition": "preserve by chilling",
+      "relation": "opposite"
+    },
+    {
+      "word": "CAN",
+      "senseId": "oewn-can__2.30.00..",
+      "definition": "preserve in a can or tin",
+      "relation": "opposite"
+    },
+    {
+      "word": "PICKLE",
+      "senseId": "oewn-pickle__2.30.00..",
+      "definition": "preserve in a pickling liquid",
+      "relation": "opposite"
+    },
+    {
+      "word": "SUGAR",
+      "senseId": "oewn-sugar__1.13.00..",
+      "definition": "a white crystalline carbohydrate used as a sweetener and preservative",
+      "relation": "opposite"
+    },
+    {
+      "word": "CORN",
+      "senseId": "oewn-corn__2.30.00..",
+      "definition": "preserve with large-grained rock salt",
+      "relation": "opposite"
+    },
+    {
+      "word": "DIP",
+      "senseId": "oewn-dip__2.35.11..",
+      "definition": "immerse in a disinfectant solution",
+      "relation": "opposite"
+    },
+    {
+      "word": "DRIED",
+      "senseId": "oewn-dried__5.00.00.preserved.02",
+      "definition": "preserved by removing natural moisture",
+      "relation": "opposite"
+    },
+    {
+      "word": "SPICE",
+      "senseId": "oewn-spice__1.27.00..",
+      "definition": "aromatic substances of vegetable origin used as a preservative",
+      "relation": "opposite"
+    },
+    {
+      "word": "CRISP",
+      "senseId": "oewn-crisp__5.00.00.fresh.01",
+      "definition": "pleasingly firm and fresh",
+      "relation": "opposite"
+    },
+    {
+      "word": "VINEGAR",
+      "senseId": "oewn-vinegar__1.13.00..",
+      "definition": "sour-tasting liquid produced usually by oxidation of the alcohol in wine or cider and used as a condiment or food preservative",
+      "relation": "opposite"
+    }
+  ],
+  "semanticPolicy": "Pinned source senses and reviewed lexical families; unlabelled defined senses are neutral. Not a proof of exhaustive contextual semantic coverage.",
+  "asset": "puzzles/taint-disinfectant-f0d4d61249b3.json",
+  "twoWordWin": {
+    "words": [
+      "ANTISEPTIC",
+      "ADORN"
+    ],
+    "tileIds": [
+      [
+        9,
+        3,
+        2,
+        0,
+        15,
+        12,
+        11,
+        4,
+        5,
+        14
+      ],
+      [
+        22,
+        7,
+        17,
+        10,
+        6
+      ]
+    ],
+    "labels": [
+      "COUNTER",
+      "NEUTRAL"
+    ],
+    "hits": [
+      6,
+      1
+    ]
+  }
+}

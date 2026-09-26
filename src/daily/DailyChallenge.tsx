@@ -1,0 +1,148 @@
+import { lazy, Suspense, useEffect, useRef, useState } from 'react'
+import BattleScreen, { BattlePanel } from '../components/BattleScreen'
+import BattleResult from '../components/BattleResult'
+import type { LetterStrikeEncounter } from '../game/letterStrike'
+import { useUserPreferences } from '../useUserPreferences'
+import { getDailyPuzzleId } from './date'
+import { dailySchedule, decodeScheduledPuzzle, latestScheduledPuzzle, scheduledPuzzle } from './scheduledPuzzle'
+import type { ScheduledPuzzle } from './scheduledPuzzle'
+import { challengeHistory, challengeKey, challengeLives, challengeStars, openChallenge, readChallenge, restartChallenge, saveChallenge } from './challengeProgress'
+import type { ChallengeRecord } from './challengeProgress'
+import { shareResult } from './shareResult'
+import { getPublicSiteUrl } from '../lib/publicSiteUrl'
+import './DailyChallenge.css'
+
+const TutorialBattle = lazy(() => import('../tutorial/TutorialBattle'))
+const beta = () => window.location.assign('?preview=bingos')
+
+export default function DailyChallenge() {
+  const preferences = useUserPreferences()
+  const [tutorial, setTutorial] = useState(!preferences.preferences.hasCompletedOnboarding)
+  const [today, setToday] = useState(getDailyPuzzleId)
+  const requested = new URLSearchParams(window.location.search).get('daily')
+  const entry = requested && requested <= today ? scheduledPuzzle(requested) : latestScheduledPuzzle(today)
+  useEffect(() => {
+    const update = () => setToday(getDailyPuzzleId())
+    window.addEventListener('focus', update)
+    document.addEventListener('visibilitychange', update)
+    const timer = window.setInterval(update, 30_000)
+    return () => { window.clearInterval(timer); window.removeEventListener('focus', update); document.removeEventListener('visibilitychange', update) }
+  }, [])
+  function finishTutorial() {
+    preferences.update({ hasCompletedOnboarding: true, hasChosenMode: true })
+    setTutorial(false)
+  }
+  if (tutorial) return <Suspense fallback={<Loading />}><TutorialBattle onComplete={finishTutorial} onSkip={finishTutorial} /></Suspense>
+  if (!entry) return <main className="container"><h2>No puzzle scheduled yet</h2><button className="daily-button" onClick={beta}>Beta puzzles</button></main>
+  return <LoadDaily key={entry.asset} entry={entry} today={today} onTutorial={() => setTutorial(true)} />
+}
+
+function Loading() { return <main className="container"><p>Loading puzzle…</p></main> }
+function LoadDaily({ entry, today, onTutorial }: { entry: ScheduledPuzzle; today: string; onTutorial: () => void }) {
+  const [loaded, setLoaded] = useState<LetterStrikeEncounter | null>(null)
+  const [error, setError] = useState(false)
+  useEffect(() => {
+    const controller = new AbortController()
+    void fetch(`${import.meta.env.BASE_URL}${entry.asset}`, { signal: controller.signal })
+      .then(response => { if (!response.ok) throw new Error('Download failed'); return response.json() })
+      .then(data => { if (!controller.signal.aborted) setLoaded(decodeScheduledPuzzle(data, entry)) })
+      .catch(() => { if (!controller.signal.aborted) setError(true) })
+    return () => controller.abort()
+  }, [entry])
+  if (error) return <main className="container"><h2>Could not load today’s puzzle</h2><button className="daily-button" onClick={() => window.location.reload()}>Try again</button><button className="daily-button" onClick={beta}>Beta puzzles</button></main>
+  return loaded ? <DailyAttempt entry={entry} encounter={loaded} today={today} onTutorial={onTutorial} /> : <Loading />
+}
+
+function DailyAttempt({ entry, encounter, today, onTutorial }: {
+  entry: ScheduledPuzzle; encounter: LetterStrikeEncounter; today: string; onTutorial: () => void
+}) {
+  const [epoch, setEpoch] = useState(0)
+  const [stats, setStats] = useState(false)
+  const [error, setError] = useState('')
+  const [session, setSession] = useState(() => {
+    try { return openChallenge(entry.date, entry.asset, encounter, window.localStorage) }
+    catch { return openChallenge(entry.date, entry.asset, encounter, { getItem: () => null }) }
+  })
+  const current = useRef(session.record)
+  useEffect(() => {
+    const refresh = (event: StorageEvent) => {
+      if (event.key !== null && event.key !== challengeKey(entry.date)) return
+      reload()
+    }
+    window.addEventListener('storage', refresh)
+    return () => window.removeEventListener('storage', refresh)
+  })
+  function reload() {
+    try {
+      const next = openChallenge(entry.date, entry.asset, encounter, window.localStorage)
+      current.current = next.record; setSession(next); setEpoch(value => value + 1); setError('')
+    } catch (cause) { setError(cause instanceof Error ? cause.message : 'Saved progress is unavailable.') }
+  }
+  function restart() {
+    try {
+      const latest = readChallenge(entry.date, window.localStorage) ?? current.current
+      current.current = restartChallenge(latest, window.localStorage)
+      reload()
+    } catch (cause) { setError(cause instanceof Error ? cause.message : 'Progress could not be saved.') }
+  }
+  const record = session.record
+  const lives = challengeLives(record.bestWords)
+  const title = `${entry.date}${entry.date !== today ? ' · earlier daily' : ''}`
+  return <>
+    <BattleScreen key={epoch} encounter={session.game.encounter} initial={session} daily title={title}
+      onSave={(game, started) => {
+        try {
+          const next = saveChallenge(current.current, game, started, window.localStorage)
+          current.current = next; setSession({ record: next, game, started }); setError(''); return true
+        } catch (cause) { setError(cause instanceof Error ? cause.message : 'Progress could not be saved.'); return false }
+      }} onRestart={restart} onExit={beta}
+      menu={<>
+        <button className="daily-button" onClick={() => setStats(true)}>Statistics</button>
+        <button className="daily-button" onClick={onTutorial}>Tutorial</button>
+        <label className="daily-picker">Daily puzzle<select value={entry.date} onChange={event => window.location.assign(`?daily=${event.target.value}`)}>
+          {dailySchedule.filter(item => item.date <= today).slice().reverse().map(item => <option value={item.date} key={item.date}>{item.date} · {item.enemy}</option>)}
+        </select></label>
+      </>}
+      renderResult={game => <BattleResult game={game} onRetry={restart}
+        nudge={lives === 1 ? 'Next challenge: find the one-word win.' : 'Next challenge: solve it with 2 lives.'}
+        actions={<>
+          <button className="daily-button bingo-result-primary" onClick={restart}>
+            {game.status !== 'won' ? 'Try again' : record.bestWords === 1 ? 'Play again' : lives === 1 ? 'Try the bingo' : 'Try 2 lives'}
+          </button>
+          <DailyShare record={record} />
+          <button className="daily-button" onClick={() => setStats(true)}>Statistics</button>
+          <p className="daily-best">{record.bestWords ? `Best: ${'★'.repeat(challengeStars(record.bestWords))} · ${record.bestWords} ${record.bestWords === 1 ? 'word' : 'words'}` : 'Replay as often as you like.'}</p>
+        </>} />}
+    />
+    {error && <BattlePanel title="Progress could not be saved" onClose={() => setError('')}>
+      <p>{error}</p><div className="dev-controls"><button className="daily-button" onClick={reload}>Reload saved attempt</button><button className="daily-button" onClick={restart}>Restart puzzle</button></div>
+    </BattlePanel>}
+    {stats && <DailyStats onClose={() => setStats(false)} current={record} />}
+  </>
+}
+
+function DailyShare({ record }: { record: ChallengeRecord }) {
+  const [status, setStatus] = useState('')
+  const busy = useRef(false)
+  const words = record.bestWords
+  const text = [`WYRMLE ${record.date}`, words ? `${'★'.repeat(challengeStars(words))}${'☆'.repeat(3 - challengeStars(words))} · Best: ${words} ${words === 1 ? 'word' : 'words'}` : 'Still hunting for a win', getPublicSiteUrl()].join('\n')
+  return <><button className="daily-button" onClick={() => {
+    if (busy.current) return
+    busy.current = true
+    void shareResult(text, navigator).then(result => setStatus(result === 'copied' ? 'Copied' : result === 'manual' ? 'Sharing unavailable' : '')).finally(() => { busy.current = false })
+  }}>Share</button>{status && <p role="status">{status}</p>}</>
+}
+function DailyStats({ onClose, current }: { onClose: () => void; current: ChallengeRecord }) {
+  let history: ChallengeRecord[] = []
+  try { history = challengeHistory(window.localStorage) } catch { /* Keep this result usable if storage is blocked. */ }
+  const solved = history.filter(record => record.bestWords !== null)
+  return <BattlePanel title="Statistics" onClose={onClose}>
+    <p>{solved.length} solved · {history.length} played</p>
+    <div className="daily-star-totals">
+      {[3, 2, 1].map(stars => <div key={stars}><span aria-label={`${stars} stars`}>{'★'.repeat(stars)}{'☆'.repeat(3 - stars)}</span><strong>{solved.filter(record => challengeStars(record.bestWords) === stars).length}</strong></div>)}
+    </div>
+    <p className="daily-best">Your best result for each day. Replays improve it.</p>
+    <ul className="daily-recent">{history.slice(0, 7).map(record => <li key={record.date}><a href={`?daily=${record.date}`}>{record.date}</a><span>{record.bestWords ? '★'.repeat(challengeStars(record.bestWords)) : 'In progress'}</span></li>)}</ul>
+    <DailyShare record={current} />
+  </BattlePanel>
+}

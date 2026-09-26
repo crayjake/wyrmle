@@ -1,0 +1,1041 @@
+{
+  "id": "stint-contributions",
+  "enemy": "STINT",
+  "answer": "CONTRIBUTIONS",
+  "accepted": true,
+  "seed": "bingo-first-3:STINT:CONTRIBUTIONS:12",
+  "score": 300,
+  "analysis": {
+    "score": 300,
+    "bingos": [
+      "CONTRIBUTIONS"
+    ],
+    "counterFamilies": 7,
+    "resistedFamilies": 2,
+    "winningOpenings": 9,
+    "repeatedCounterRoutes": 9,
+    "sustainedPositions": 5,
+    "sustainedFinalPositions": 2,
+    "neutralCleanupOpenings": 1,
+    "routes": [
+      {
+        "opening": "BIG",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "AID",
+            "LOAN",
+            "DONATIONS",
+            "DONOR"
+          ],
+          "resisted": [
+            "STINT",
+            "SCANT"
+          ],
+          "neutral": 794
+        },
+        "thirdTurn": {
+          "counters": [
+            "TREAT"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "BIG",
+            "DONATIONS",
+            "TREAT"
+          ],
+          "tileIds": [
+            [
+              1,
+              6,
+              0
+            ],
+            [
+              14,
+              4,
+              5,
+              11,
+              2,
+              7,
+              15,
+              13,
+              9
+            ],
+            [
+              10,
+              12,
+              19,
+              18,
+              27
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            5,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "AID",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "BIG",
+            "GIFT",
+            "LOAN",
+            "GRANT",
+            "BUNG"
+          ],
+          "resisted": [
+            "STINT",
+            "SCANT"
+          ],
+          "neutral": 984
+        },
+        "thirdTurn": {
+          "counters": [
+            "BIG",
+            "BENEFITS",
+            "GIFT",
+            "LOAN",
+            "LENT",
+            "BUNG"
+          ],
+          "resisted": [
+            "CLOSE",
+            "SCANT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AID",
+            "GRANTS",
+            "BENEFITS"
+          ],
+          "tileIds": [
+            [
+              11,
+              6,
+              14
+            ],
+            [
+              0,
+              12,
+              18,
+              5,
+              2,
+              9
+            ],
+            [
+              1,
+              19,
+              13,
+              23,
+              17,
+              7,
+              10,
+              21
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "GRANT",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "BIG",
+            "GIFT",
+            "AID",
+            "LOAN",
+            "DEALING",
+            "DONATE",
+            "LEND",
+            "BUNG"
+          ],
+          "resisted": [
+            "CLOSE",
+            "SCANT"
+          ],
+          "neutral": 1453
+        },
+        "thirdTurn": {
+          "counters": [
+            "BIG",
+            "BENEFITS",
+            "GIFT",
+            "LOAN",
+            "LENT",
+            "BUNG"
+          ],
+          "resisted": [
+            "CLOSE",
+            "SCANT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "GRANT",
+            "AIDS",
+            "BENEFITS"
+          ],
+          "tileIds": [
+            [
+              0,
+              12,
+              11,
+              5,
+              2
+            ],
+            [
+              18,
+              6,
+              14,
+              9
+            ],
+            [
+              1,
+              19,
+              13,
+              23,
+              17,
+              7,
+              10,
+              21
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "DONATIONS",
+        "label": "COUNTER",
+        "hits": 5,
+        "later": {
+          "counters": [
+            "BIG",
+            "GIFT"
+          ],
+          "resisted": [],
+          "neutral": 947
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "DONATIONS",
+            "BIGGEST"
+          ],
+          "tileIds": [
+            [
+              14,
+              4,
+              5,
+              11,
+              2,
+              6,
+              15,
+              13,
+              9
+            ],
+            [
+              1,
+              7,
+              0,
+              20,
+              19,
+              21,
+              10
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            5,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "CONTRIBUTING",
+        "label": "COUNTER",
+        "hits": 6,
+        "later": {
+          "counters": [
+            "DEALS",
+            "FEES"
+          ],
+          "resisted": [],
+          "neutral": 536
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CONTRIBUTING",
+            "DEALS"
+          ],
+          "tileIds": [
+            [
+              8,
+              4,
+              5,
+              2,
+              12,
+              6,
+              1,
+              3,
+              10,
+              7,
+              13,
+              0
+            ],
+            [
+              14,
+              19,
+              11,
+              16,
+              9
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            6,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "DONOR",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "BIG",
+            "GIFT",
+            "LENT",
+            "BUNG"
+          ],
+          "resisted": [
+            "STINT",
+            "SCANT"
+          ],
+          "neutral": 722
+        },
+        "thirdTurn": {
+          "counters": [
+            "TREAT"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DONOR",
+            "GIFTING",
+            "TREATS"
+          ],
+          "tileIds": [
+            [
+              14,
+              4,
+              5,
+              15,
+              12
+            ],
+            [
+              0,
+              6,
+              17,
+              2,
+              7,
+              13,
+              20
+            ],
+            [
+              10,
+              26,
+              19,
+              11,
+              27,
+              9
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "DONATING",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "BIG",
+            "GIFT",
+            "FEES"
+          ],
+          "resisted": [
+            "CLOSE"
+          ],
+          "neutral": 1282
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DONATING",
+            "GIFTS"
+          ],
+          "tileIds": [
+            [
+              14,
+              4,
+              5,
+              11,
+              2,
+              6,
+              13,
+              0
+            ],
+            [
+              20,
+              7,
+              17,
+              10,
+              9
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "STINT",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "BIG",
+            "AID",
+            "LOAN",
+            "DEALING",
+            "LEND",
+            "DONOR",
+            "BUNG"
+          ],
+          "resisted": [
+            "NEAR"
+          ],
+          "neutral": 901
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "SCANT",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "BIG",
+            "GIFT",
+            "AID",
+            "LOAN",
+            "GRANT",
+            "DEALING",
+            "DONATE",
+            "LEND",
+            "DONOR",
+            "BUNG"
+          ],
+          "resisted": [
+            "NEAR"
+          ],
+          "neutral": 1114
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "ACT",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "BIG",
+            "GIFT",
+            "AID",
+            "LOAN",
+            "GRANT",
+            "DONATIONS",
+            "DONOR",
+            "DONATING",
+            "BUNG"
+          ],
+          "resisted": [],
+          "neutral": 996
+        },
+        "thirdTurn": {
+          "counters": [
+            "BIG",
+            "GIFT"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ACT",
+            "DONATIONS",
+            "BIG"
+          ],
+          "tileIds": [
+            [
+              11,
+              8,
+              2
+            ],
+            [
+              14,
+              4,
+              5,
+              18,
+              10,
+              6,
+              15,
+              13,
+              9
+            ],
+            [
+              1,
+              7,
+              0
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            5,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "BIG",
+            "GIFT",
+            "AID",
+            "LOAN",
+            "DONATIONS",
+            "DONATING",
+            "BUNG"
+          ],
+          "resisted": [
+            "STINT",
+            "SCANT"
+          ],
+          "neutral": 777
+        },
+        "thirdTurn": {
+          "counters": [
+            "TREAT"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AIR",
+            "DONATIONS",
+            "TREAT"
+          ],
+          "tileIds": [
+            [
+              11,
+              6,
+              12
+            ],
+            [
+              14,
+              4,
+              5,
+              18,
+              2,
+              7,
+              15,
+              13,
+              9
+            ],
+            [
+              10,
+              26,
+              19,
+              22,
+              27
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            5,
+            1
+          ]
+        }
+      }
+    ]
+  },
+  "roots": [
+    {
+      "word": "BIGHEARTEDNESS",
+      "senseId": "oewn-bigheartedness__1.07.00..",
+      "definition": "the quality of being kind and generous",
+      "relation": "opposite"
+    },
+    {
+      "word": "BIGHEARTED",
+      "senseId": "oewn-bighearted__5.00.00.generous.01",
+      "definition": "given or giving freely",
+      "relation": "opposite"
+    },
+    {
+      "word": "GENEROUS",
+      "senseId": "oewn-generous__3.00.01..",
+      "definition": "willing to give and share unstintingly",
+      "relation": "opposite"
+    },
+    {
+      "word": "GENEROSITY",
+      "senseId": "oewn-generosity__1.07.00..",
+      "definition": "the trait of being willing to give your money or time",
+      "relation": "opposite"
+    },
+    {
+      "word": "SHARE",
+      "senseId": "oewn-share__2.40.00..",
+      "definition": "give out as one's portion or share",
+      "relation": "opposite"
+    },
+    {
+      "word": "GIVE",
+      "senseId": "oewn-give__2.40.01..",
+      "definition": "give as a present; make a gift of",
+      "relation": "opposite"
+    },
+    {
+      "word": "GIVER",
+      "senseId": "oewn-giver__1.18.00..",
+      "definition": "person who makes a gift of property",
+      "relation": "opposite"
+    },
+    {
+      "word": "DONATE",
+      "senseId": "oewn-donate__2.40.00..",
+      "definition": "give to a charity or good cause",
+      "relation": "opposite"
+    },
+    {
+      "word": "DONATION",
+      "senseId": "oewn-donation__1.21.00..",
+      "definition": "a voluntary gift (as of money or service or ideas) made to some worthwhile cause",
+      "relation": "opposite"
+    },
+    {
+      "word": "DONOR",
+      "senseId": "oewn-donor__1.18.00..",
+      "definition": "person who makes a gift of property",
+      "relation": "opposite"
+    },
+    {
+      "word": "GRANT",
+      "senseId": "oewn-grant__1.21.00..",
+      "definition": "any monetary aid",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHARITY",
+      "senseId": "oewn-charity__1.04.00..",
+      "definition": "an activity or gift that benefits the public at large",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHARITABLE",
+      "senseId": "oewn-charitable__3.00.00..",
+      "definition": "full of love and generosity",
+      "relation": "opposite"
+    },
+    {
+      "word": "LARGESSE",
+      "senseId": "oewn-largesse__1.07.00..",
+      "definition": "liberality in bestowing gifts; extremely liberal and generous of spirit",
+      "relation": "opposite"
+    },
+    {
+      "word": "LIBERAL",
+      "senseId": "oewn-liberal__5.00.00.generous.01",
+      "definition": "given or giving freely",
+      "relation": "opposite"
+    },
+    {
+      "word": "LIBERALITY",
+      "senseId": "oewn-liberality__1.07.00..",
+      "definition": "the trait of being generous in behavior and temperament",
+      "relation": "opposite"
+    },
+    {
+      "word": "MUNIFICENT",
+      "senseId": "oewn-munificent__5.00.00.generous.01",
+      "definition": "very generous",
+      "relation": "opposite"
+    },
+    {
+      "word": "MUNIFICENCE",
+      "senseId": "oewn-munificence__1.07.00..",
+      "definition": "liberality in bestowing gifts; extremely liberal and generous of spirit",
+      "relation": "opposite"
+    },
+    {
+      "word": "ALTRUISTIC",
+      "senseId": "oewn-altruistic__3.00.00..",
+      "definition": "showing unselfish concern for the welfare of others",
+      "relation": "opposite"
+    },
+    {
+      "word": "ALTRUISM",
+      "senseId": "oewn-altruism__1.07.00..",
+      "definition": "the quality of unselfish concern for the welfare of others",
+      "relation": "opposite"
+    },
+    {
+      "word": "SELFLESS",
+      "senseId": "oewn-selfless__3.00.00..",
+      "definition": "showing unselfish concern for the welfare of others",
+      "relation": "opposite"
+    },
+    {
+      "word": "SELFLESSNESS",
+      "senseId": "oewn-selflessness__1.07.00..",
+      "definition": "the quality of unselfish concern for the welfare of others",
+      "relation": "opposite"
+    },
+    {
+      "word": "BENEVOLENT",
+      "senseId": "oewn-benevolent__5.00.00.generous.01",
+      "definition": "generous in providing aid to others",
+      "relation": "opposite"
+    },
+    {
+      "word": "BENEVOLENCE",
+      "senseId": "oewn-benevolence__1.07.00..",
+      "definition": "an inclination to do kind or charitable acts",
+      "relation": "opposite"
+    },
+    {
+      "word": "GIFT",
+      "senseId": "oewn-gift__2.40.00..",
+      "definition": "give as a present; make a gift of",
+      "relation": "opposite"
+    },
+    {
+      "word": "OFFER",
+      "senseId": "oewn-offer__2.40.02..",
+      "definition": "give something useful or necessary to",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONTRIBUTE",
+      "senseId": "oewn-contribute__2.40.00..",
+      "definition": "contribute to some cause",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONTRIBUTION",
+      "senseId": "oewn-contribution__1.21.00..",
+      "definition": "a voluntary gift (as of money or service or ideas) made to some worthwhile cause",
+      "relation": "opposite"
+    },
+    {
+      "word": "BOUNTIFUL",
+      "senseId": "oewn-bountiful__5.00.00.generous.01",
+      "definition": "given or giving freely",
+      "relation": "opposite"
+    },
+    {
+      "word": "MAGNANIMOUS",
+      "senseId": "oewn-magnanimous__5.00.00.noble.01",
+      "definition": "noble and generous in spirit",
+      "relation": "opposite"
+    },
+    {
+      "word": "LEND",
+      "senseId": "oewn-lend__2.40.00..",
+      "definition": "give temporarily; let have for a limited time",
+      "relation": "opposite"
+    },
+    {
+      "word": "SELFISH",
+      "senseId": "oewn-selfish__3.00.00..",
+      "definition": "concerned chiefly or only with yourself and your advantage to the exclusion of others",
+      "relation": "similar"
+    },
+    {
+      "word": "SELFISHNESS",
+      "senseId": "oewn-selfishness__1.07.00..",
+      "definition": "stinginess resulting from a concern for your own welfare and a disregard of others",
+      "relation": "similar"
+    },
+    {
+      "word": "HOARD",
+      "senseId": "oewn-hoard__1.21.00..",
+      "definition": "a secret store of valuables or money",
+      "relation": "similar"
+    },
+    {
+      "word": "HOARDER",
+      "senseId": "oewn-hoarder__1.18.00..",
+      "definition": "a person who accumulates things and hides them away for future use",
+      "relation": "similar"
+    },
+    {
+      "word": "HOARDING",
+      "senseId": "oewn-hoard__2.40.01..",
+      "definition": "save up as for future use",
+      "relation": "similar"
+    },
+    {
+      "word": "MISER",
+      "senseId": "oewn-miser__1.18.00..",
+      "definition": "a stingy hoarder of money and possessions (often living miserably)",
+      "relation": "similar"
+    },
+    {
+      "word": "MISERLY",
+      "senseId": "oewn-miserly__5.00.00.stingy.00",
+      "definition": "(used of persons or behavior) characterized by or indicative of lack of generosity",
+      "relation": "similar"
+    },
+    {
+      "word": "STINGY",
+      "senseId": "oewn-stingy__3.00.00..",
+      "definition": "unwilling to spend (money, time, resources, etc.)",
+      "relation": "similar"
+    },
+    {
+      "word": "STINGINESS",
+      "senseId": "oewn-stinginess__1.07.00..",
+      "definition": "a lack of generosity; a general unwillingness to part with money",
+      "relation": "similar"
+    },
+    {
+      "word": "GIVE",
+      "senseId": "oewn-give__2.40.00..",
+      "definition": "transfer possession of something concrete or abstract to somebody",
+      "relation": "opposite"
+    },
+    {
+      "word": "HOARD",
+      "senseId": "oewn-hoard__2.40.01..",
+      "definition": "save up as for future use",
+      "relation": "similar"
+    },
+    {
+      "word": "UNSTINTINGLY",
+      "senseId": "oewn-unstintingly__4.02.00..",
+      "definition": "in an unstinting manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNSTINTING",
+      "senseId": "oewn-unstinting__5.00.00.generous.01",
+      "definition": "very generous",
+      "relation": "opposite"
+    },
+    {
+      "word": "STINT",
+      "senseId": "oewn-stint__2.40.01..",
+      "definition": "supply sparingly and with restricted quantities",
+      "relation": "similar"
+    },
+    {
+      "word": "MEAN",
+      "senseId": "oewn-mean__5.00.02.stingy.00",
+      "definition": "(used of persons or behavior) characterized by or indicative of lack of generosity",
+      "relation": "similar"
+    },
+    {
+      "word": "NIGGARDLY",
+      "senseId": "oewn-niggardly__5.00.00.stingy.00",
+      "definition": "petty or reluctant in giving or spending",
+      "relation": "similar"
+    },
+    {
+      "word": "TIGHTFISTED",
+      "senseId": "oewn-tightfisted__5.00.00.stingy.00",
+      "definition": "unwilling to part with money",
+      "relation": "similar"
+    },
+    {
+      "word": "UNGENEROUS",
+      "senseId": "oewn-ungenerous__3.00.04..",
+      "definition": "unwilling to spend (money, time, resources, etc.)",
+      "relation": "similar"
+    },
+    {
+      "word": "MISERLINESS",
+      "senseId": "oewn-miserliness__1.07.00..",
+      "definition": "total lack of generosity with money",
+      "relation": "similar"
+    },
+    {
+      "word": "GRATUITY",
+      "senseId": "oewn-gratuity__1.21.00..",
+      "definition": "a relatively small amount of money given for services rendered (as by a waiter)",
+      "relation": "opposite"
+    },
+    {
+      "word": "TIP",
+      "senseId": "oewn-tip__2.40.00..",
+      "definition": "give a tip or gratuity to in return for a service, beyond the compensation agreed on",
+      "relation": "opposite"
+    },
+    {
+      "word": "BESTOW",
+      "senseId": "oewn-bestow__2.40.02..",
+      "definition": "give as a gift",
+      "relation": "opposite"
+    },
+    {
+      "word": "BENEFIT",
+      "senseId": "oewn-benefit__1.10.00..",
+      "definition": "a performance to raise money for a charitable cause",
+      "relation": "opposite"
+    },
+    {
+      "word": "AID",
+      "senseId": "oewn-aid__1.21.00..",
+      "definition": "gift of money or other material help to support a person or cause",
+      "relation": "opposite"
+    },
+    {
+      "word": "TREAT",
+      "senseId": "oewn-treat__2.40.00..",
+      "definition": "provide with a gift or entertainment",
+      "relation": "opposite"
+    },
+    {
+      "word": "DOLE",
+      "senseId": "oewn-dole__1.21.00..",
+      "definition": "a share of money or food or clothing that has been charitably given",
+      "relation": "opposite"
+    },
+    {
+      "word": "NEAR",
+      "senseId": "oewn-near__5.00.00.stingy.00",
+      "definition": "giving or spending with reluctance",
+      "relation": "similar"
+    }
+  ],
+  "semanticPolicy": "Pinned source senses and reviewed lexical families; unlabelled defined senses are neutral. Not a proof of exhaustive contextual semantic coverage.",
+  "asset": "puzzles/stint-contributions-212ec0113b3a.json",
+  "twoWordWin": {
+    "words": [
+      "ADS",
+      "CONTRIBUTING"
+    ],
+    "tileIds": [
+      [
+        11,
+        14,
+        9
+      ],
+      [
+        8,
+        4,
+        5,
+        2,
+        12,
+        6,
+        1,
+        3,
+        10,
+        7,
+        13,
+        0
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      6
+    ]
+  }
+}

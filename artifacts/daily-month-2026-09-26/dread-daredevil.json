@@ -1,0 +1,4169 @@
+{
+  "id": "dread-daredevil",
+  "enemy": "DREAD",
+  "answer": "DAREDEVIL",
+  "accepted": true,
+  "seed": "bingo-first-3:DREAD:DAREDEVIL:14",
+  "score": 642,
+  "analysis": {
+    "score": 642,
+    "bingos": [
+      "DAREDEVIL",
+      "DAREDEVILS"
+    ],
+    "counterFamilies": 12,
+    "resistedFamilies": 4,
+    "winningOpenings": 17,
+    "repeatedCounterRoutes": 17,
+    "sustainedPositions": 15,
+    "sustainedFinalPositions": 11,
+    "neutralCleanupOpenings": 1,
+    "routes": [
+      {
+        "opening": "HEAD",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "REST",
+            "SURE",
+            "SECURITY",
+            "SURELY",
+            "GRIT"
+          ],
+          "resisted": [
+            "DIRE",
+            "EDGY"
+          ],
+          "neutral": 820
+        },
+        "thirdTurn": {
+          "counters": [
+            "SAND",
+            "DARE",
+            "ASSURED",
+            "DARING",
+            "ASSUREDLY"
+          ],
+          "resisted": [
+            "CARE",
+            "FEAR",
+            "SCARED",
+            "SCARY",
+            "DIRE",
+            "FEARFUL",
+            "UNEASY",
+            "EDGY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "HEAD",
+            "REST",
+            "SAND"
+          ],
+          "tileIds": [
+            [
+              7,
+              0,
+              9,
+              1
+            ],
+            [
+              4,
+              6,
+              11,
+              14
+            ],
+            [
+              18,
+              23,
+              5,
+              3
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "REST",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "HEAD",
+            "SAFE",
+            "SURE",
+            "SURELY",
+            "SAND",
+            "DARE",
+            "HARDY",
+            "DARING",
+            "RASH",
+            "HEADY"
+          ],
+          "resisted": [
+            "CARE",
+            "FEAR",
+            "SCARED",
+            "SCARY",
+            "DIRE",
+            "DREADFUL",
+            "DREAD",
+            "UNEASY",
+            "EDGY",
+            "SHUDDER",
+            "SHIVER"
+          ],
+          "neutral": 1279
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "REST",
+            "DARED"
+          ],
+          "tileIds": [
+            [
+              4,
+              0,
+              11,
+              14
+            ],
+            [
+              1,
+              9,
+              17,
+              6,
+              3
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "SURE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "HEAD",
+            "REST",
+            "SAFE",
+            "HEART",
+            "CERTAIN",
+            "SAFETY",
+            "SAND",
+            "FIGHTER",
+            "DARE",
+            "HARDY",
+            "DARING",
+            "RASH",
+            "HEADY"
+          ],
+          "resisted": [
+            "CARE",
+            "FEAR",
+            "SCARED",
+            "SCARY",
+            "DIRE",
+            "DREAD",
+            "EDGY",
+            "FRIGHT",
+            "FRIGHTEN",
+            "SHIVER"
+          ],
+          "neutral": 1661
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SURE",
+            "DARED"
+          ],
+          "tileIds": [
+            [
+              11,
+              13,
+              4,
+              0
+            ],
+            [
+              1,
+              9,
+              17,
+              6,
+              3
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "HEART",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "SURE",
+            "SECURE",
+            "SURELY",
+            "NERVE",
+            "SECURELY"
+          ],
+          "resisted": [
+            "DIRE",
+            "EDGY"
+          ],
+          "neutral": 754
+        },
+        "thirdTurn": {
+          "counters": [
+            "SAND",
+            "DARE",
+            "DARING"
+          ],
+          "resisted": [
+            "FEAR",
+            "AFRAID",
+            "DIRE",
+            "DREAD",
+            "EDGY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "HEART",
+            "SECURE",
+            "DARED"
+          ],
+          "tileIds": [
+            [
+              7,
+              0,
+              9,
+              4,
+              14
+            ],
+            [
+              11,
+              6,
+              8,
+              13,
+              17,
+              20
+            ],
+            [
+              1,
+              23,
+              26,
+              25,
+              3
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "CERTAIN",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "SURE",
+            "SURELY"
+          ],
+          "resisted": [
+            "EDGY",
+            "SHUDDER"
+          ],
+          "neutral": 251
+        },
+        "thirdTurn": {
+          "counters": [
+            "HEAD",
+            "DARE",
+            "HARDY",
+            "HEADY"
+          ],
+          "resisted": [
+            "FEAR",
+            "DREAD",
+            "EDGY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CERTAIN",
+            "SURE",
+            "DARED"
+          ],
+          "tileIds": [
+            [
+              8,
+              0,
+              4,
+              14,
+              9,
+              2,
+              5
+            ],
+            [
+              11,
+              13,
+              17,
+              6
+            ],
+            [
+              1,
+              23,
+              26,
+              20,
+              3
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "SECURITY",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "HEAD",
+            "SAFE",
+            "SAND",
+            "EASE",
+            "DARE",
+            "NERVE",
+            "RASH",
+            "FEARLESS"
+          ],
+          "resisted": [
+            "FEAR",
+            "DREAD"
+          ],
+          "neutral": 531
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SECURITY",
+            "DARED"
+          ],
+          "tileIds": [
+            [
+              11,
+              0,
+              8,
+              13,
+              4,
+              2,
+              14,
+              12
+            ],
+            [
+              1,
+              9,
+              17,
+              6,
+              3
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "SECURE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "HEAD",
+            "SAFE",
+            "HEART",
+            "SAFETY",
+            "SAND",
+            "DARE",
+            "HARDY",
+            "DARING",
+            "RASH",
+            "HEADY",
+            "HARDINESS"
+          ],
+          "resisted": [
+            "FEAR",
+            "DIRE",
+            "DREAD",
+            "EDGY",
+            "FRIGHT",
+            "FRIGHTEN",
+            "SHIVER"
+          ],
+          "neutral": 1407
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SECURE",
+            "DARED"
+          ],
+          "tileIds": [
+            [
+              11,
+              0,
+              8,
+              13,
+              4,
+              6
+            ],
+            [
+              1,
+              9,
+              17,
+              20,
+              3
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "SURELY",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "HEAD",
+            "REST",
+            "SAFE",
+            "HEART",
+            "CERTAIN",
+            "SAND",
+            "EASE",
+            "FIGHTER",
+            "DARE",
+            "NERVE",
+            "DARING",
+            "RASH",
+            "SAFETIES",
+            "HARDINESS"
+          ],
+          "resisted": [
+            "CARE",
+            "FEAR",
+            "SCARED",
+            "FRIGHTENED",
+            "DIRE",
+            "DREAD",
+            "FRIGHT",
+            "SCARIEST",
+            "SHIVER"
+          ],
+          "neutral": 1492
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SURELY",
+            "DARED"
+          ],
+          "tileIds": [
+            [
+              11,
+              13,
+              4,
+              0,
+              15,
+              12
+            ],
+            [
+              1,
+              9,
+              17,
+              6,
+              3
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "SAND",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "REST",
+            "SURE",
+            "SECURITY",
+            "SECURE",
+            "SURELY",
+            "FIGHTER",
+            "GRIT",
+            "SECURELY"
+          ],
+          "resisted": [
+            "DIRE",
+            "EDGY",
+            "FRIGHT",
+            "SHIVER"
+          ],
+          "neutral": 811
+        },
+        "thirdTurn": {
+          "counters": [
+            "HEAD",
+            "DARE",
+            "HARDY",
+            "HEADY"
+          ],
+          "resisted": [
+            "FEAR",
+            "AFRAID",
+            "DIRE",
+            "EDGY",
+            "FRIGHT",
+            "SHIVER"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SAND",
+            "SECURE",
+            "HEAD"
+          ],
+          "tileIds": [
+            [
+              11,
+              9,
+              5,
+              1
+            ],
+            [
+              18,
+              0,
+              8,
+              13,
+              4,
+              6
+            ],
+            [
+              7,
+              20,
+              23,
+              3
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "EASE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "GRIT"
+          ],
+          "resisted": [
+            "FRIGHT"
+          ],
+          "neutral": 335
+        },
+        "thirdTurn": {
+          "counters": [
+            "HEAD",
+            "SAND",
+            "DARE",
+            "ASSURED",
+            "HARDY",
+            "HEADY",
+            "ASSUREDLY"
+          ],
+          "resisted": [
+            "CARE",
+            "FEAR",
+            "SCARED",
+            "SCARY",
+            "DREADFUL",
+            "DREAD",
+            "FEARFUL",
+            "UNEASY",
+            "SHUDDER"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "EASE",
+            "GRIT",
+            "DARED"
+          ],
+          "tileIds": [
+            [
+              0,
+              9,
+              11,
+              6
+            ],
+            [
+              16,
+              4,
+              2,
+              14
+            ],
+            [
+              1,
+              23,
+              17,
+              20,
+              3
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "DARE",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "REST",
+            "SURE",
+            "SECURITY",
+            "SURELY",
+            "FIGHTER"
+          ],
+          "resisted": [
+            "DIRE",
+            "HUNTED",
+            "EDGY",
+            "FRIGHT",
+            "FRIGHTEN",
+            "SHIVER"
+          ],
+          "neutral": 1018
+        },
+        "thirdTurn": {
+          "counters": [
+            "HEAD",
+            "SAND",
+            "HEADY"
+          ],
+          "resisted": [
+            "UNEASY",
+            "EDGY"
+          ]
+        },
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "DARE",
+            "REST",
+            "HEAD"
+          ],
+          "tileIds": [
+            [
+              1,
+              9,
+              4,
+              0
+            ],
+            [
+              17,
+              6,
+              11,
+              14
+            ],
+            [
+              7,
+              20,
+              23,
+              3
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "NERVE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "HEAD",
+            "SAFE",
+            "HEART",
+            "SAFETY",
+            "DARE",
+            "ASSURED",
+            "HARDY",
+            "RASH",
+            "HEADY",
+            "ASSUREDLY"
+          ],
+          "resisted": [
+            "CARE",
+            "FEAR",
+            "SCARED",
+            "SCARY",
+            "DIRE",
+            "DREADFUL",
+            "DREAD",
+            "EDGY",
+            "FRIGHT",
+            "SHUDDER"
+          ],
+          "neutral": 1342
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "NERVE",
+            "DARED"
+          ],
+          "tileIds": [
+            [
+              5,
+              0,
+              4,
+              10,
+              6
+            ],
+            [
+              1,
+              9,
+              17,
+              20,
+              3
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "CARE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "REST",
+            "SURE",
+            "SURELY",
+            "FIGHTER",
+            "GRIT"
+          ],
+          "resisted": [
+            "DIRE",
+            "HUNTED",
+            "EDGY",
+            "FRIGHT",
+            "SHUDDER",
+            "FRIGHTEN",
+            "SHIVER"
+          ],
+          "neutral": 850
+        },
+        "thirdTurn": {
+          "counters": [
+            "SAFE",
+            "SURE",
+            "SURELY",
+            "SAND",
+            "EASE",
+            "DARE",
+            "NERVE",
+            "ASSURED",
+            "FEARLESS",
+            "ASSUREDLY"
+          ],
+          "resisted": [
+            "FEAR",
+            "DREADFUL",
+            "DREAD",
+            "UNEASY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CARE",
+            "FIGHTER",
+            "DARED"
+          ],
+          "tileIds": [
+            [
+              8,
+              9,
+              4,
+              0
+            ],
+            [
+              19,
+              2,
+              16,
+              7,
+              14,
+              6,
+              17
+            ],
+            [
+              1,
+              23,
+              26,
+              20,
+              3
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            2,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "SCARED",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "REST",
+            "SURE",
+            "SURELY",
+            "FIGHTER",
+            "NERVE",
+            "GENTLE",
+            "GRIT",
+            "SERENITY"
+          ],
+          "resisted": [
+            "FRIGHTENED",
+            "DIRE",
+            "HUNTED",
+            "EDGY",
+            "FRIGHT",
+            "SHIVER"
+          ],
+          "neutral": 1130
+        },
+        "thirdTurn": {
+          "counters": [
+            "HEAD",
+            "SAFE",
+            "HEART",
+            "SAFETY",
+            "DARE",
+            "HARDY",
+            "RASH",
+            "HEADY"
+          ],
+          "resisted": [
+            "FEAR",
+            "AFRAID",
+            "DIRE",
+            "DREADFUL",
+            "DREAD",
+            "FEARFUL",
+            "EDGY",
+            "FRIGHT",
+            "SHUDDER"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SCARED",
+            "NERVES",
+            "DARED"
+          ],
+          "tileIds": [
+            [
+              11,
+              8,
+              9,
+              4,
+              0,
+              1
+            ],
+            [
+              5,
+              6,
+              17,
+              10,
+              20,
+              18
+            ],
+            [
+              3,
+              23,
+              26,
+              25,
+              27
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "SCARY",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "REST",
+            "SURE",
+            "FIGHTER",
+            "NERVE",
+            "GENTLE",
+            "GRIT",
+            "SERENE"
+          ],
+          "resisted": [
+            "FRIGHTENED",
+            "DIRE",
+            "HUNTED",
+            "FRIGHT",
+            "SHUDDER",
+            "SHIVER"
+          ],
+          "neutral": 955
+        },
+        "thirdTurn": {
+          "counters": [
+            "HEAD",
+            "SAFE",
+            "HEART",
+            "EASE",
+            "DARE",
+            "RASH"
+          ],
+          "resisted": [
+            "FEAR",
+            "AFRAID",
+            "DIRE",
+            "DREADFUL",
+            "DREAD",
+            "FEARFUL",
+            "FRIGHT",
+            "SHUDDER"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SCARY",
+            "NERVES",
+            "DARED"
+          ],
+          "tileIds": [
+            [
+              11,
+              8,
+              9,
+              4,
+              12
+            ],
+            [
+              5,
+              0,
+              17,
+              10,
+              6,
+              18
+            ],
+            [
+              1,
+              23,
+              26,
+              20,
+              3
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "DIRE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "HEAD",
+            "REST",
+            "SAFE",
+            "SURE",
+            "HEART",
+            "SAFETY",
+            "SURELY",
+            "SAND",
+            "DARE",
+            "ASSURED",
+            "HARDY",
+            "RASH",
+            "HEADY",
+            "ASSUREDLY",
+            "DAUNTLESS"
+          ],
+          "resisted": [
+            "CARE",
+            "FEAR",
+            "SCARED",
+            "SCARY",
+            "HUNTED",
+            "UNEASY",
+            "EDGY"
+          ],
+          "neutral": 1229
+        },
+        "thirdTurn": {
+          "counters": [
+            "HEAD",
+            "REST",
+            "SAFE",
+            "SURE",
+            "HEART",
+            "SECURE",
+            "SAND",
+            "EASE",
+            "DARE",
+            "NERVE"
+          ],
+          "resisted": [
+            "CARE",
+            "FEAR",
+            "SCARED",
+            "HUNTED"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DIRE",
+            "ASSUREDLY",
+            "HEAD"
+          ],
+          "tileIds": [
+            [
+              1,
+              2,
+              4,
+              0
+            ],
+            [
+              9,
+              11,
+              18,
+              13,
+              17,
+              6,
+              3,
+              15,
+              12
+            ],
+            [
+              7,
+              20,
+              23,
+              27
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            4,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "ACT",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SURE",
+            "SURELY",
+            "NERVE"
+          ],
+          "resisted": [
+            "DIRE",
+            "EDGY",
+            "SHUDDER",
+            "SHIVER"
+          ],
+          "neutral": 599
+        },
+        "thirdTurn": {
+          "counters": [
+            "HEAD",
+            "DARE",
+            "ASSURED",
+            "HARDY",
+            "HEADY",
+            "ASSUREDLY"
+          ],
+          "resisted": [
+            "FEAR",
+            "DIRE",
+            "DREADFUL",
+            "DREAD",
+            "FEARFUL",
+            "EDGY",
+            "SHUDDER"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ACT",
+            "NERVE",
+            "DARED"
+          ],
+          "tileIds": [
+            [
+              9,
+              8,
+              14
+            ],
+            [
+              5,
+              0,
+              4,
+              10,
+              6
+            ],
+            [
+              1,
+              23,
+              17,
+              20,
+              3
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "ADD",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "REST",
+            "SURE",
+            "SECURITY",
+            "SECURE",
+            "SURELY",
+            "NERVE",
+            "GENTLE",
+            "GRIT",
+            "SERENITY",
+            "SECURELY"
+          ],
+          "resisted": [
+            "SHIVER"
+          ],
+          "neutral": 857
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      }
+    ]
+  },
+  "roots": [
+    {
+      "word": "ACROPHOBIC",
+      "senseId": "oewn-acrophobic__5.00.00.afraid.00",
+      "definition": "suffering from acrophobia; abnormally afraid of high places",
+      "relation": "similar"
+    },
+    {
+      "word": "AFEARD",
+      "senseId": "oewn-afeard__5.00.00.afraid.00",
+      "definition": "a pronunciation of afraid",
+      "relation": "similar"
+    },
+    {
+      "word": "AFEARED",
+      "senseId": "oewn-afeared__5.00.00.afraid.00",
+      "definition": "a pronunciation of afraid",
+      "relation": "similar"
+    },
+    {
+      "word": "AFFRIGHT",
+      "senseId": "oewn-affright__1.12.00..",
+      "definition": "an overwhelming feeling of fear and anxiety",
+      "relation": "similar"
+    },
+    {
+      "word": "AFFRIGHTED",
+      "senseId": "oewn-affright__2.37.00..",
+      "definition": "cause fear in",
+      "relation": "similar"
+    },
+    {
+      "word": "AFFRIGHTING",
+      "senseId": "oewn-affright__2.37.00..",
+      "definition": "cause fear in",
+      "relation": "similar"
+    },
+    {
+      "word": "AFFRIGHTS",
+      "senseId": "oewn-affright__1.12.00..",
+      "definition": "an overwhelming feeling of fear and anxiety",
+      "relation": "similar"
+    },
+    {
+      "word": "AFRAID",
+      "senseId": "oewn-afraid__3.00.00..",
+      "definition": "filled with fear or apprehension",
+      "relation": "similar"
+    },
+    {
+      "word": "AGHAST",
+      "senseId": "oewn-aghast__5.00.00.afraid.00",
+      "definition": "struck with fear, dread, or consternation",
+      "relation": "similar"
+    },
+    {
+      "word": "AGORAPHOBIC",
+      "senseId": "oewn-agoraphobic__5.00.00.afraid.00",
+      "definition": "suffering from agoraphobia; abnormally afraid of open or public places",
+      "relation": "similar"
+    },
+    {
+      "word": "ALARM",
+      "senseId": "oewn-alarm__2.37.00..",
+      "definition": "fill with apprehension or alarm; cause to be unpleasantly surprised",
+      "relation": "similar"
+    },
+    {
+      "word": "ALARMED",
+      "senseId": "oewn-alarmed__5.00.00.afraid.00",
+      "definition": "experiencing a sudden sense of danger",
+      "relation": "similar"
+    },
+    {
+      "word": "ALARMING",
+      "senseId": "oewn-alarm__2.37.00..",
+      "definition": "fill with apprehension or alarm; cause to be unpleasantly surprised",
+      "relation": "similar"
+    },
+    {
+      "word": "ALARMS",
+      "senseId": "oewn-alarm__2.37.00..",
+      "definition": "fill with apprehension or alarm; cause to be unpleasantly surprised",
+      "relation": "similar"
+    },
+    {
+      "word": "ANXIETIES",
+      "senseId": "oewn-anxiety__1.12.00..",
+      "definition": "a vague unpleasant emotion that is experienced in anticipation of some (usually ill-defined) misfortune",
+      "relation": "similar"
+    },
+    {
+      "word": "ANXIETY",
+      "senseId": "oewn-anxiety__1.12.00..",
+      "definition": "a vague unpleasant emotion that is experienced in anticipation of some (usually ill-defined) misfortune",
+      "relation": "similar"
+    },
+    {
+      "word": "ANXIOUS",
+      "senseId": "oewn-anxious__5.00.00.troubled.00",
+      "definition": "causing or fraught with or showing anxiety",
+      "relation": "similar"
+    },
+    {
+      "word": "ANXIOUSLY",
+      "senseId": "oewn-anxiously__4.02.00..",
+      "definition": "with anxiety or apprehension",
+      "relation": "similar"
+    },
+    {
+      "word": "ANXIOUSNESS",
+      "senseId": "oewn-anxiousness__1.12.00..",
+      "definition": "a feeling of mild anxiety about possible developments",
+      "relation": "similar"
+    },
+    {
+      "word": "ANXIOUSNESSES",
+      "senseId": "oewn-anxiousness__1.12.00..",
+      "definition": "a feeling of mild anxiety about possible developments",
+      "relation": "similar"
+    },
+    {
+      "word": "APPAL",
+      "senseId": "oewn-appal__2.37.01..",
+      "definition": "fill with apprehension or alarm; cause to be unpleasantly surprised",
+      "relation": "similar"
+    },
+    {
+      "word": "APPALL",
+      "senseId": "oewn-appall__2.37.10..",
+      "definition": "fill with apprehension or alarm; cause to be unpleasantly surprised",
+      "relation": "similar"
+    },
+    {
+      "word": "APPALLED",
+      "senseId": "oewn-appalled__5.00.00.afraid.00",
+      "definition": "struck with fear, dread, or consternation",
+      "relation": "similar"
+    },
+    {
+      "word": "APPALLING",
+      "senseId": "oewn-appal__2.37.01..",
+      "definition": "fill with apprehension or alarm; cause to be unpleasantly surprised",
+      "relation": "similar"
+    },
+    {
+      "word": "APPALLS",
+      "senseId": "oewn-appall__2.37.10..",
+      "definition": "fill with apprehension or alarm; cause to be unpleasantly surprised",
+      "relation": "similar"
+    },
+    {
+      "word": "APPALS",
+      "senseId": "oewn-appal__2.37.01..",
+      "definition": "fill with apprehension or alarm; cause to be unpleasantly surprised",
+      "relation": "similar"
+    },
+    {
+      "word": "APPEASE",
+      "senseId": "oewn-appease__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "APPEASED",
+      "senseId": "oewn-appease__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "APPEASES",
+      "senseId": "oewn-appease__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "APPEASING",
+      "senseId": "oewn-appease__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "APPREHEND",
+      "senseId": "oewn-apprehend__2.37.00..",
+      "definition": "anticipate with dread or anxiety",
+      "relation": "similar"
+    },
+    {
+      "word": "APPREHENDED",
+      "senseId": "oewn-apprehend__2.37.00..",
+      "definition": "anticipate with dread or anxiety",
+      "relation": "similar"
+    },
+    {
+      "word": "APPREHENDING",
+      "senseId": "oewn-apprehend__2.37.00..",
+      "definition": "anticipate with dread or anxiety",
+      "relation": "similar"
+    },
+    {
+      "word": "APPREHENDS",
+      "senseId": "oewn-apprehend__2.37.00..",
+      "definition": "anticipate with dread or anxiety",
+      "relation": "similar"
+    },
+    {
+      "word": "APPREHENSION",
+      "senseId": "oewn-apprehension__1.12.00..",
+      "definition": "fearful expectation or anticipation",
+      "relation": "similar"
+    },
+    {
+      "word": "APPREHENSIONS",
+      "senseId": "oewn-apprehension__1.12.00..",
+      "definition": "fearful expectation or anticipation",
+      "relation": "similar"
+    },
+    {
+      "word": "APPREHENSIVE",
+      "senseId": "oewn-apprehensive__5.00.00.afraid.00",
+      "definition": "in fear or dread of possible evil or harm",
+      "relation": "similar"
+    },
+    {
+      "word": "APPREHENSIVELY",
+      "senseId": "oewn-apprehensively__4.02.00..",
+      "definition": "with anxiety or apprehension",
+      "relation": "similar"
+    },
+    {
+      "word": "APPREHENSIVENESS",
+      "senseId": "oewn-apprehensiveness__1.12.00..",
+      "definition": "fearful expectation or anticipation",
+      "relation": "similar"
+    },
+    {
+      "word": "APPREHENSIVENESSES",
+      "senseId": "oewn-apprehensiveness__1.12.00..",
+      "definition": "fearful expectation or anticipation",
+      "relation": "similar"
+    },
+    {
+      "word": "AQUAPHOBIC",
+      "senseId": "oewn-aquaphobic__5.00.00.afraid.00",
+      "definition": "abnormally afraid of water",
+      "relation": "similar"
+    },
+    {
+      "word": "ASSUAGE",
+      "senseId": "oewn-assuage__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "ASSUAGED",
+      "senseId": "oewn-assuage__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "ASSUAGES",
+      "senseId": "oewn-assuage__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "ASSUAGING",
+      "senseId": "oewn-assuage__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "ASSURANCE",
+      "senseId": "oewn-assurance__1.09.00..",
+      "definition": "freedom from doubt; belief in yourself and your abilities",
+      "relation": "opposite"
+    },
+    {
+      "word": "ASSURANCES",
+      "senseId": "oewn-assurance__1.09.00..",
+      "definition": "freedom from doubt; belief in yourself and your abilities",
+      "relation": "opposite"
+    },
+    {
+      "word": "ASSURED",
+      "senseId": "oewn-assured__5.00.00.confident.00",
+      "definition": "marked by assurance; exhibiting confidence",
+      "relation": "opposite"
+    },
+    {
+      "word": "ASSUREDLY",
+      "senseId": "oewn-assuredly__4.02.00..",
+      "definition": "without a doubt",
+      "relation": "opposite"
+    },
+    {
+      "word": "AUDACIOUS",
+      "senseId": "oewn-audacious__5.00.00.bold.00",
+      "definition": "invulnerable to fear or intimidation",
+      "relation": "opposite"
+    },
+    {
+      "word": "AUTHORITIES",
+      "senseId": "oewn-authority__1.09.00..",
+      "definition": "freedom from doubt; belief in yourself and your abilities",
+      "relation": "opposite"
+    },
+    {
+      "word": "AUTHORITY",
+      "senseId": "oewn-authority__1.09.00..",
+      "definition": "freedom from doubt; belief in yourself and your abilities",
+      "relation": "opposite"
+    },
+    {
+      "word": "AWFUL",
+      "senseId": "oewn-awful__5.00.00.alarming.00",
+      "definition": "causing fear or dread or terror",
+      "relation": "similar"
+    },
+    {
+      "word": "AWFULLY",
+      "senseId": "oewn-awfully__4.02.01..",
+      "definition": "of a dreadful kind",
+      "relation": "similar"
+    },
+    {
+      "word": "BOLD",
+      "senseId": "oewn-bold__3.00.00..",
+      "definition": "fearless and daring",
+      "relation": "opposite"
+    },
+    {
+      "word": "BOLDER",
+      "senseId": "oewn-bold__3.00.00..",
+      "definition": "fearless and daring",
+      "relation": "opposite"
+    },
+    {
+      "word": "BOLDEST",
+      "senseId": "oewn-bold__3.00.00..",
+      "definition": "fearless and daring",
+      "relation": "opposite"
+    },
+    {
+      "word": "BOLDLY",
+      "senseId": "oewn-boldly__4.02.00..",
+      "definition": "with boldness, in a bold manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "BOLDNESS",
+      "senseId": "oewn-boldness__1.07.00..",
+      "definition": "the trait of being willing to undertake things that involve risk or danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "BOLDNESSES",
+      "senseId": "oewn-boldness__1.07.00..",
+      "definition": "the trait of being willing to undertake things that involve risk or danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "BRAVE",
+      "senseId": "oewn-brave__5.00.00.bold.00",
+      "definition": "invulnerable to fear or intimidation",
+      "relation": "opposite"
+    },
+    {
+      "word": "BRAVELY",
+      "senseId": "oewn-bravely__4.02.00..",
+      "definition": "in a courageous manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "BRAVENESS",
+      "senseId": "oewn-braveness__1.07.00..",
+      "definition": "a quality of spirit that enables you to face danger or pain without showing fear",
+      "relation": "opposite"
+    },
+    {
+      "word": "BRAVENESSES",
+      "senseId": "oewn-braveness__1.07.00..",
+      "definition": "a quality of spirit that enables you to face danger or pain without showing fear",
+      "relation": "opposite"
+    },
+    {
+      "word": "BRAVER",
+      "senseId": "oewn-brave__5.00.00.bold.00",
+      "definition": "invulnerable to fear or intimidation",
+      "relation": "opposite"
+    },
+    {
+      "word": "BRAVERIES",
+      "senseId": "oewn-bravery__1.12.00..",
+      "definition": "feeling no fear",
+      "relation": "opposite"
+    },
+    {
+      "word": "BRAVERY",
+      "senseId": "oewn-bravery__1.12.00..",
+      "definition": "feeling no fear",
+      "relation": "opposite"
+    },
+    {
+      "word": "BRAVEST",
+      "senseId": "oewn-brave__5.00.00.bold.00",
+      "definition": "invulnerable to fear or intimidation",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALM",
+      "senseId": "oewn-calm__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALMED",
+      "senseId": "oewn-calm__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALMER",
+      "senseId": "oewn-calm__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALMEST",
+      "senseId": "oewn-calm__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALMING",
+      "senseId": "oewn-calm__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALMLY",
+      "senseId": "oewn-calmly__4.02.00..",
+      "definition": "with self-possession (especially in times of stress)",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALMNESS",
+      "senseId": "oewn-calmness__1.07.00..",
+      "definition": "steadiness of mind under stress",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALMNESSES",
+      "senseId": "oewn-calmness__1.07.00..",
+      "definition": "steadiness of mind under stress",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALMS",
+      "senseId": "oewn-calm__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "CARE",
+      "senseId": "oewn-care__1.12.01..",
+      "definition": "an anxious feeling",
+      "relation": "similar"
+    },
+    {
+      "word": "CARES",
+      "senseId": "oewn-care__1.12.01..",
+      "definition": "an anxious feeling",
+      "relation": "similar"
+    },
+    {
+      "word": "CARK",
+      "senseId": "oewn-cark__2.37.00..",
+      "definition": "disturb in mind or make uneasy or cause to be worried or alarmed",
+      "relation": "similar"
+    },
+    {
+      "word": "CARKED",
+      "senseId": "oewn-cark__2.37.00..",
+      "definition": "disturb in mind or make uneasy or cause to be worried or alarmed",
+      "relation": "similar"
+    },
+    {
+      "word": "CARKING",
+      "senseId": "oewn-cark__2.37.00..",
+      "definition": "disturb in mind or make uneasy or cause to be worried or alarmed",
+      "relation": "similar"
+    },
+    {
+      "word": "CARKS",
+      "senseId": "oewn-cark__2.37.00..",
+      "definition": "disturb in mind or make uneasy or cause to be worried or alarmed",
+      "relation": "similar"
+    },
+    {
+      "word": "CERTAIN",
+      "senseId": "oewn-certain__3.00.02..",
+      "definition": "having or feeling no doubt or uncertainty; confident and assured",
+      "relation": "opposite"
+    },
+    {
+      "word": "CERTAINER",
+      "senseId": "oewn-certain__3.00.02..",
+      "definition": "having or feeling no doubt or uncertainty; confident and assured",
+      "relation": "opposite"
+    },
+    {
+      "word": "CERTAINEST",
+      "senseId": "oewn-certain__3.00.02..",
+      "definition": "having or feeling no doubt or uncertainty; confident and assured",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHILL",
+      "senseId": "oewn-chill__1.12.02..",
+      "definition": "an almost pleasurable sensation of fright",
+      "relation": "similar"
+    },
+    {
+      "word": "CHILLING",
+      "senseId": "oewn-chilling__5.00.00.alarming.00",
+      "definition": "provoking fear or terror",
+      "relation": "similar"
+    },
+    {
+      "word": "CHILLS",
+      "senseId": "oewn-chill__1.12.02..",
+      "definition": "an almost pleasurable sensation of fright",
+      "relation": "similar"
+    },
+    {
+      "word": "CLAUSTROPHOBIC",
+      "senseId": "oewn-claustrophobic__5.00.00.afraid.00",
+      "definition": "suffering from claustrophobia; abnormally afraid of closed-in places",
+      "relation": "similar"
+    },
+    {
+      "word": "COCKSURE",
+      "senseId": "oewn-cocksure__5.00.00.confident.00",
+      "definition": "marked by excessive confidence",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPOSURE",
+      "senseId": "oewn-composure__1.07.00..",
+      "definition": "steadiness of mind under stress",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPOSURES",
+      "senseId": "oewn-composure__1.07.00..",
+      "definition": "steadiness of mind under stress",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONCERN",
+      "senseId": "oewn-concern__1.12.01..",
+      "definition": "an anxious feeling",
+      "relation": "similar"
+    },
+    {
+      "word": "CONCERNS",
+      "senseId": "oewn-concern__1.12.01..",
+      "definition": "an anxious feeling",
+      "relation": "similar"
+    },
+    {
+      "word": "CONCILIATE",
+      "senseId": "oewn-conciliate__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONCILIATED",
+      "senseId": "oewn-conciliate__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONCILIATES",
+      "senseId": "oewn-conciliate__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONCILIATING",
+      "senseId": "oewn-conciliate__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONFIDENCE",
+      "senseId": "oewn-confidence__1.09.00..",
+      "definition": "freedom from doubt; belief in yourself and your abilities",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONFIDENCES",
+      "senseId": "oewn-confidence__1.09.00..",
+      "definition": "freedom from doubt; belief in yourself and your abilities",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONFIDENT",
+      "senseId": "oewn-confident__3.00.00..",
+      "definition": "having or marked by confidence or assurance",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONFIDENTLY",
+      "senseId": "oewn-confidently__4.02.00..",
+      "definition": "with confidence; in a confident manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONVINCED",
+      "senseId": "oewn-convinced__5.00.00.certain.02",
+      "definition": "persuaded of; very sure",
+      "relation": "opposite"
+    },
+    {
+      "word": "COURAGE",
+      "senseId": "oewn-courage__1.07.00..",
+      "definition": "a quality of spirit that enables you to face danger or pain without showing fear",
+      "relation": "opposite"
+    },
+    {
+      "word": "COURAGEOUS",
+      "senseId": "oewn-courageous__3.00.04..",
+      "definition": "possessing or displaying courage; able to face and deal with danger or fear without flinching",
+      "relation": "opposite"
+    },
+    {
+      "word": "COURAGEOUSLY",
+      "senseId": "oewn-courageously__4.02.00..",
+      "definition": "in a courageous manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "COURAGEOUSNESS",
+      "senseId": "oewn-courageousness__1.07.00..",
+      "definition": "a quality of spirit that enables you to face danger or pain without showing fear",
+      "relation": "opposite"
+    },
+    {
+      "word": "COURAGEOUSNESSES",
+      "senseId": "oewn-courageousness__1.07.00..",
+      "definition": "a quality of spirit that enables you to face danger or pain without showing fear",
+      "relation": "opposite"
+    },
+    {
+      "word": "COURAGES",
+      "senseId": "oewn-courage__1.07.00..",
+      "definition": "a quality of spirit that enables you to face danger or pain without showing fear",
+      "relation": "opposite"
+    },
+    {
+      "word": "DAREDEVIL",
+      "senseId": "oewn-daredevil__5.00.00.bold.00",
+      "definition": "presumptuously daring",
+      "relation": "opposite"
+    },
+    {
+      "word": "DARING",
+      "senseId": "oewn-daring__1.07.00..",
+      "definition": "the trait of being willing to undertake things that involve risk or danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "DARINGS",
+      "senseId": "oewn-daring__1.07.00..",
+      "definition": "the trait of being willing to undertake things that involve risk or danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "DAUNTLESS",
+      "senseId": "oewn-dauntless__5.00.00.bold.00",
+      "definition": "invulnerable to fear or intimidation",
+      "relation": "opposite"
+    },
+    {
+      "word": "DAUNTLESSLY",
+      "senseId": "oewn-dauntlessly__4.02.00..",
+      "definition": "without fear",
+      "relation": "opposite"
+    },
+    {
+      "word": "DECOMPRESS",
+      "senseId": "oewn-decompress__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "DECOMPRESSED",
+      "senseId": "oewn-decompress__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "DECOMPRESSES",
+      "senseId": "oewn-decompress__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "DECOMPRESSING",
+      "senseId": "oewn-decompress__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "DEGAGE",
+      "senseId": "oewn-degage__5.00.00.relaxed.00",
+      "definition": "free and relaxed in manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "DIRE",
+      "senseId": "oewn-dire__5.00.01.alarming.00",
+      "definition": "causing fear or dread or terror",
+      "relation": "similar"
+    },
+    {
+      "word": "DIREFUL",
+      "senseId": "oewn-direful__5.00.01.alarming.00",
+      "definition": "causing fear or dread or terror",
+      "relation": "similar"
+    },
+    {
+      "word": "DIREFULLY",
+      "senseId": "oewn-direfully__4.02.00..",
+      "definition": "in a direful manner",
+      "relation": "similar"
+    },
+    {
+      "word": "DIRER",
+      "senseId": "oewn-dire__5.00.01.alarming.00",
+      "definition": "causing fear or dread or terror",
+      "relation": "similar"
+    },
+    {
+      "word": "DIREST",
+      "senseId": "oewn-dire__5.00.01.alarming.00",
+      "definition": "causing fear or dread or terror",
+      "relation": "similar"
+    },
+    {
+      "word": "DISMAY",
+      "senseId": "oewn-dismay__2.37.00..",
+      "definition": "fill with apprehension or alarm; cause to be unpleasantly surprised",
+      "relation": "similar"
+    },
+    {
+      "word": "DISMAYED",
+      "senseId": "oewn-dismayed__5.00.00.afraid.00",
+      "definition": "struck with fear, dread, or consternation",
+      "relation": "similar"
+    },
+    {
+      "word": "DISMAYING",
+      "senseId": "oewn-dismay__2.37.00..",
+      "definition": "fill with apprehension or alarm; cause to be unpleasantly surprised",
+      "relation": "similar"
+    },
+    {
+      "word": "DISMAYS",
+      "senseId": "oewn-dismay__2.37.00..",
+      "definition": "fill with apprehension or alarm; cause to be unpleasantly surprised",
+      "relation": "similar"
+    },
+    {
+      "word": "DISORDER",
+      "senseId": "oewn-disorder__2.37.00..",
+      "definition": "disturb in mind or make uneasy or cause to be worried or alarmed",
+      "relation": "similar"
+    },
+    {
+      "word": "DISORDERED",
+      "senseId": "oewn-disorder__2.37.00..",
+      "definition": "disturb in mind or make uneasy or cause to be worried or alarmed",
+      "relation": "similar"
+    },
+    {
+      "word": "DISORDERING",
+      "senseId": "oewn-disorder__2.37.00..",
+      "definition": "disturb in mind or make uneasy or cause to be worried or alarmed",
+      "relation": "similar"
+    },
+    {
+      "word": "DISORDERS",
+      "senseId": "oewn-disorder__2.37.00..",
+      "definition": "disturb in mind or make uneasy or cause to be worried or alarmed",
+      "relation": "similar"
+    },
+    {
+      "word": "DISQUIET",
+      "senseId": "oewn-disquiet__1.12.00..",
+      "definition": "a feeling of mild anxiety about possible developments",
+      "relation": "similar"
+    },
+    {
+      "word": "DISQUIETED",
+      "senseId": "oewn-disquieted__5.00.00.troubled.00",
+      "definition": "afflicted with or marked by anxious uneasiness or trouble or grief",
+      "relation": "similar"
+    },
+    {
+      "word": "DISQUIETING",
+      "senseId": "oewn-disquiet__2.37.00..",
+      "definition": "disturb in mind or make uneasy or cause to be worried or alarmed",
+      "relation": "similar"
+    },
+    {
+      "word": "DISQUIETS",
+      "senseId": "oewn-disquiet__1.12.00..",
+      "definition": "a feeling of mild anxiety about possible developments",
+      "relation": "similar"
+    },
+    {
+      "word": "DISTRACT",
+      "senseId": "oewn-distract__2.37.02..",
+      "definition": "disturb in mind or make uneasy or cause to be worried or alarmed",
+      "relation": "similar"
+    },
+    {
+      "word": "DISTRACTED",
+      "senseId": "oewn-distract__2.37.02..",
+      "definition": "disturb in mind or make uneasy or cause to be worried or alarmed",
+      "relation": "similar"
+    },
+    {
+      "word": "DISTRACTING",
+      "senseId": "oewn-distract__2.37.02..",
+      "definition": "disturb in mind or make uneasy or cause to be worried or alarmed",
+      "relation": "similar"
+    },
+    {
+      "word": "DISTRACTS",
+      "senseId": "oewn-distract__2.37.02..",
+      "definition": "disturb in mind or make uneasy or cause to be worried or alarmed",
+      "relation": "similar"
+    },
+    {
+      "word": "DISTRESSED",
+      "senseId": "oewn-distressed__5.00.01.troubled.00",
+      "definition": "afflicted with or marked by anxious uneasiness or trouble or grief",
+      "relation": "similar"
+    },
+    {
+      "word": "DISTURBED",
+      "senseId": "oewn-disturbed__5.00.00.troubled.00",
+      "definition": "afflicted with or marked by anxious uneasiness or trouble or grief",
+      "relation": "similar"
+    },
+    {
+      "word": "DREAD",
+      "senseId": "oewn-dread__1.12.00..",
+      "definition": "fearful expectation or anticipation",
+      "relation": "similar"
+    },
+    {
+      "word": "DREADED",
+      "senseId": "oewn-dread__2.37.00..",
+      "definition": "be afraid or scared of; be frightened of",
+      "relation": "similar"
+    },
+    {
+      "word": "DREADER",
+      "senseId": "oewn-dread__5.00.00.alarming.00",
+      "definition": "causing fear or dread or terror",
+      "relation": "similar"
+    },
+    {
+      "word": "DREADFUL",
+      "senseId": "oewn-dreadful__5.00.00.alarming.00",
+      "definition": "causing fear or dread or terror",
+      "relation": "similar"
+    },
+    {
+      "word": "DREADFULLY",
+      "senseId": "oewn-dreadfully__4.02.00..",
+      "definition": "of a dreadful kind",
+      "relation": "similar"
+    },
+    {
+      "word": "DREADING",
+      "senseId": "oewn-dread__2.37.00..",
+      "definition": "be afraid or scared of; be frightened of",
+      "relation": "similar"
+    },
+    {
+      "word": "DREADS",
+      "senseId": "oewn-dread__1.12.00..",
+      "definition": "fearful expectation or anticipation",
+      "relation": "similar"
+    },
+    {
+      "word": "EMBOLDENED",
+      "senseId": "oewn-emboldened__5.00.00.bold.00",
+      "definition": "made bold or courageous",
+      "relation": "opposite"
+    },
+    {
+      "word": "EQUANIMITIES",
+      "senseId": "oewn-equanimity__1.07.00..",
+      "definition": "steadiness of mind under stress",
+      "relation": "opposite"
+    },
+    {
+      "word": "EQUANIMITY",
+      "senseId": "oewn-equanimity__1.07.00..",
+      "definition": "steadiness of mind under stress",
+      "relation": "opposite"
+    },
+    {
+      "word": "FEAR",
+      "senseId": "oewn-fear__1.12.00..",
+      "definition": "an emotion experienced in anticipation of some specific pain or danger (usually accompanied by a desire to flee or fight)",
+      "relation": "similar"
+    },
+    {
+      "word": "FEARED",
+      "senseId": "oewn-fear__2.37.00..",
+      "definition": "be afraid or scared of; be frightened of",
+      "relation": "similar"
+    },
+    {
+      "word": "FEARFUL",
+      "senseId": "oewn-fearful__5.00.00.afraid.00",
+      "definition": "experiencing or showing fear",
+      "relation": "similar"
+    },
+    {
+      "word": "FEARFULLY",
+      "senseId": "oewn-fearfully__4.02.00..",
+      "definition": "in fear",
+      "relation": "similar"
+    },
+    {
+      "word": "FEARFULNESS",
+      "senseId": "oewn-fearfulness__1.12.00..",
+      "definition": "an emotion experienced in anticipation of some specific pain or danger (usually accompanied by a desire to flee or fight)",
+      "relation": "similar"
+    },
+    {
+      "word": "FEARFULNESSES",
+      "senseId": "oewn-fearfulness__1.12.00..",
+      "definition": "an emotion experienced in anticipation of some specific pain or danger (usually accompanied by a desire to flee or fight)",
+      "relation": "similar"
+    },
+    {
+      "word": "FEARING",
+      "senseId": "oewn-fear__2.37.00..",
+      "definition": "be afraid or scared of; be frightened of",
+      "relation": "similar"
+    },
+    {
+      "word": "FEARLESS",
+      "senseId": "oewn-fearless__5.00.00.bold.00",
+      "definition": "invulnerable to fear or intimidation",
+      "relation": "opposite"
+    },
+    {
+      "word": "FEARLESSLY",
+      "senseId": "oewn-fearlessly__4.02.00..",
+      "definition": "without fear",
+      "relation": "opposite"
+    },
+    {
+      "word": "FEARLESSNESS",
+      "senseId": "oewn-fearlessness__1.12.00..",
+      "definition": "feeling no fear",
+      "relation": "opposite"
+    },
+    {
+      "word": "FEARLESSNESSES",
+      "senseId": "oewn-fearlessness__1.12.00..",
+      "definition": "feeling no fear",
+      "relation": "opposite"
+    },
+    {
+      "word": "FEARS",
+      "senseId": "oewn-fear__1.12.00..",
+      "definition": "an emotion experienced in anticipation of some specific pain or danger (usually accompanied by a desire to flee or fight)",
+      "relation": "similar"
+    },
+    {
+      "word": "FEARSOME",
+      "senseId": "oewn-fearsome__5.00.00.alarming.00",
+      "definition": "causing fear or dread or terror",
+      "relation": "similar"
+    },
+    {
+      "word": "FEARSOMELY",
+      "senseId": "oewn-fearsomely__4.02.00..",
+      "definition": "in a fearsome manner",
+      "relation": "similar"
+    },
+    {
+      "word": "FOOLHARDIER",
+      "senseId": "oewn-foolhardy__5.00.00.bold.00",
+      "definition": "marked by defiant disregard for danger or consequences",
+      "relation": "opposite"
+    },
+    {
+      "word": "FOOLHARDIEST",
+      "senseId": "oewn-foolhardy__5.00.00.bold.00",
+      "definition": "marked by defiant disregard for danger or consequences",
+      "relation": "opposite"
+    },
+    {
+      "word": "FOOLHARDY",
+      "senseId": "oewn-foolhardy__5.00.00.bold.00",
+      "definition": "marked by defiant disregard for danger or consequences",
+      "relation": "opposite"
+    },
+    {
+      "word": "FRIGHT",
+      "senseId": "oewn-fright__1.12.00..",
+      "definition": "an emotion experienced in anticipation of some specific pain or danger (usually accompanied by a desire to flee or fight)",
+      "relation": "similar"
+    },
+    {
+      "word": "FRIGHTED",
+      "senseId": "oewn-fright__2.37.00..",
+      "definition": "cause fear in",
+      "relation": "similar"
+    },
+    {
+      "word": "FRIGHTEN",
+      "senseId": "oewn-frighten__2.37.00..",
+      "definition": "cause fear in",
+      "relation": "similar"
+    },
+    {
+      "word": "FRIGHTENED",
+      "senseId": "oewn-frightened__5.00.00.afraid.00",
+      "definition": "made afraid",
+      "relation": "similar"
+    },
+    {
+      "word": "FRIGHTENING",
+      "senseId": "oewn-frightening__5.00.00.alarming.00",
+      "definition": "causing fear or dread or terror",
+      "relation": "similar"
+    },
+    {
+      "word": "FRIGHTENINGLY",
+      "senseId": "oewn-frighteningly__4.02.00..",
+      "definition": "in a terrifying manner",
+      "relation": "similar"
+    },
+    {
+      "word": "FRIGHTENS",
+      "senseId": "oewn-frighten__2.37.00..",
+      "definition": "cause fear in",
+      "relation": "similar"
+    },
+    {
+      "word": "FRIGHTING",
+      "senseId": "oewn-fright__2.37.00..",
+      "definition": "cause fear in",
+      "relation": "similar"
+    },
+    {
+      "word": "FRIGHTS",
+      "senseId": "oewn-fright__1.12.00..",
+      "definition": "an emotion experienced in anticipation of some specific pain or danger (usually accompanied by a desire to flee or fight)",
+      "relation": "similar"
+    },
+    {
+      "word": "FRISSON",
+      "senseId": "oewn-frisson__1.12.00..",
+      "definition": "an almost pleasurable sensation of fright",
+      "relation": "similar"
+    },
+    {
+      "word": "FRISSONS",
+      "senseId": "oewn-frisson__1.12.00..",
+      "definition": "an almost pleasurable sensation of fright",
+      "relation": "similar"
+    },
+    {
+      "word": "GALLANT",
+      "senseId": "oewn-gallant__5.00.00.brave.00",
+      "definition": "unflinching in battle or action",
+      "relation": "opposite"
+    },
+    {
+      "word": "GALLANTER",
+      "senseId": "oewn-gallant__5.00.00.brave.00",
+      "definition": "unflinching in battle or action",
+      "relation": "opposite"
+    },
+    {
+      "word": "GALLANTEST",
+      "senseId": "oewn-gallant__5.00.00.brave.00",
+      "definition": "unflinching in battle or action",
+      "relation": "opposite"
+    },
+    {
+      "word": "GAME",
+      "senseId": "oewn-game__5.00.00.brave.00",
+      "definition": "willing to face danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "GAMELY",
+      "senseId": "oewn-gamely__4.02.00..",
+      "definition": "in an intrepid manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "GAMER",
+      "senseId": "oewn-game__5.00.00.brave.00",
+      "definition": "willing to face danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "GAMEST",
+      "senseId": "oewn-game__5.00.00.brave.00",
+      "definition": "willing to face danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "GAMEY",
+      "senseId": "oewn-gamey__5.00.00.brave.00",
+      "definition": "willing to face danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "GAMIER",
+      "senseId": "oewn-gamy__5.00.00.brave.00",
+      "definition": "willing to face danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "GAMIEST",
+      "senseId": "oewn-gamy__5.00.00.brave.00",
+      "definition": "willing to face danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "GAMY",
+      "senseId": "oewn-gamy__5.00.00.brave.00",
+      "definition": "willing to face danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "GENTLE",
+      "senseId": "oewn-gentle__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "GENTLED",
+      "senseId": "oewn-gentle__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "GENTLES",
+      "senseId": "oewn-gentle__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "GENTLING",
+      "senseId": "oewn-gentle__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "GRITTIER",
+      "senseId": "oewn-gritty__5.00.00.brave.00",
+      "definition": "willing to face danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "GRITTIEST",
+      "senseId": "oewn-gritty__5.00.00.brave.00",
+      "definition": "willing to face danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "GRITTY",
+      "senseId": "oewn-gritty__5.00.00.brave.00",
+      "definition": "willing to face danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "GRUNTLE",
+      "senseId": "oewn-gruntle__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "GRUNTLED",
+      "senseId": "oewn-gruntle__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "GRUNTLES",
+      "senseId": "oewn-gruntle__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "GRUNTLING",
+      "senseId": "oewn-gruntle__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "HANGDOG",
+      "senseId": "oewn-hangdog__5.00.00.afraid.00",
+      "definition": "frightened into submission or compliance",
+      "relation": "similar"
+    },
+    {
+      "word": "HARDIER",
+      "senseId": "oewn-hardy__5.00.00.bold.00",
+      "definition": "invulnerable to fear or intimidation",
+      "relation": "opposite"
+    },
+    {
+      "word": "HARDIEST",
+      "senseId": "oewn-hardy__5.00.00.bold.00",
+      "definition": "invulnerable to fear or intimidation",
+      "relation": "opposite"
+    },
+    {
+      "word": "HARDIHOOD",
+      "senseId": "oewn-hardihood__1.07.00..",
+      "definition": "the trait of being willing to undertake things that involve risk or danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "HARDIHOODS",
+      "senseId": "oewn-hardihood__1.07.00..",
+      "definition": "the trait of being willing to undertake things that involve risk or danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "HARDINESS",
+      "senseId": "oewn-hardiness__1.07.01..",
+      "definition": "the trait of being willing to undertake things that involve risk or danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "HARDINESSES",
+      "senseId": "oewn-hardiness__1.07.01..",
+      "definition": "the trait of being willing to undertake things that involve risk or danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "HARDY",
+      "senseId": "oewn-hardy__5.00.00.bold.00",
+      "definition": "invulnerable to fear or intimidation",
+      "relation": "opposite"
+    },
+    {
+      "word": "HEADIER",
+      "senseId": "oewn-heady__5.00.00.bold.00",
+      "definition": "marked by defiant disregard for danger or consequences",
+      "relation": "opposite"
+    },
+    {
+      "word": "HEADIEST",
+      "senseId": "oewn-heady__5.00.00.bold.00",
+      "definition": "marked by defiant disregard for danger or consequences",
+      "relation": "opposite"
+    },
+    {
+      "word": "HEADY",
+      "senseId": "oewn-heady__5.00.00.bold.00",
+      "definition": "marked by defiant disregard for danger or consequences",
+      "relation": "opposite"
+    },
+    {
+      "word": "HEARTSEASE",
+      "senseId": "oewn-heartsease__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "HEARTSEASES",
+      "senseId": "oewn-heartsease__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "HEROIC",
+      "senseId": "oewn-heroic__5.00.00.bold.00",
+      "definition": "having or displaying qualities appropriate for heroes",
+      "relation": "opposite"
+    },
+    {
+      "word": "HEROICAL",
+      "senseId": "oewn-heroical__5.00.00.bold.00",
+      "definition": "having or displaying qualities appropriate for heroes",
+      "relation": "opposite"
+    },
+    {
+      "word": "HEROICALLY",
+      "senseId": "oewn-heroically__4.02.00..",
+      "definition": "in a heroic manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "HORRENDOUS",
+      "senseId": "oewn-horrendous__5.00.00.alarming.00",
+      "definition": "causing fear or dread or terror",
+      "relation": "similar"
+    },
+    {
+      "word": "HORRIFIC",
+      "senseId": "oewn-horrific__5.00.00.alarming.00",
+      "definition": "causing fear or dread or terror",
+      "relation": "similar"
+    },
+    {
+      "word": "HORRIFIED",
+      "senseId": "oewn-horrify__2.37.01..",
+      "definition": "fill with apprehension or alarm; cause to be unpleasantly surprised",
+      "relation": "similar"
+    },
+    {
+      "word": "HORRIFIES",
+      "senseId": "oewn-horrify__2.37.01..",
+      "definition": "fill with apprehension or alarm; cause to be unpleasantly surprised",
+      "relation": "similar"
+    },
+    {
+      "word": "HORRIFY",
+      "senseId": "oewn-horrify__2.37.01..",
+      "definition": "fill with apprehension or alarm; cause to be unpleasantly surprised",
+      "relation": "similar"
+    },
+    {
+      "word": "HORRIFYING",
+      "senseId": "oewn-horrify__2.37.01..",
+      "definition": "fill with apprehension or alarm; cause to be unpleasantly surprised",
+      "relation": "similar"
+    },
+    {
+      "word": "HORROR",
+      "senseId": "oewn-horror__1.12.01..",
+      "definition": "intense and profound fear",
+      "relation": "similar"
+    },
+    {
+      "word": "HORRORS",
+      "senseId": "oewn-horror__1.12.01..",
+      "definition": "intense and profound fear",
+      "relation": "similar"
+    },
+    {
+      "word": "HUNTED",
+      "senseId": "oewn-hunted__5.00.00.afraid.00",
+      "definition": "reflecting the fear or terror of one who is hunted",
+      "relation": "similar"
+    },
+    {
+      "word": "HYDROPHOBIC",
+      "senseId": "oewn-hydrophobic__5.00.00.afraid.00",
+      "definition": "abnormally afraid of water",
+      "relation": "similar"
+    },
+    {
+      "word": "INTREPID",
+      "senseId": "oewn-intrepid__5.00.00.bold.00",
+      "definition": "invulnerable to fear or intimidation",
+      "relation": "opposite"
+    },
+    {
+      "word": "INTREPIDLY",
+      "senseId": "oewn-intrepidly__4.02.00..",
+      "definition": "without fear",
+      "relation": "opposite"
+    },
+    {
+      "word": "JITTERINESS",
+      "senseId": "oewn-jitteriness__1.12.00..",
+      "definition": "the anxious feeling you have when you have the jitters",
+      "relation": "similar"
+    },
+    {
+      "word": "JITTERINESSES",
+      "senseId": "oewn-jitteriness__1.12.00..",
+      "definition": "the anxious feeling you have when you have the jitters",
+      "relation": "similar"
+    },
+    {
+      "word": "JUMPINESS",
+      "senseId": "oewn-jumpiness__1.12.00..",
+      "definition": "the anxious feeling you have when you have the jitters",
+      "relation": "similar"
+    },
+    {
+      "word": "JUMPINESSES",
+      "senseId": "oewn-jumpiness__1.12.00..",
+      "definition": "the anxious feeling you have when you have the jitters",
+      "relation": "similar"
+    },
+    {
+      "word": "LENIFIED",
+      "senseId": "oewn-lenify__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "LENIFIES",
+      "senseId": "oewn-lenify__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "LENIFY",
+      "senseId": "oewn-lenify__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "LENIFYING",
+      "senseId": "oewn-lenify__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "LIONHEARTED",
+      "senseId": "oewn-lionhearted__5.00.00.brave.00",
+      "definition": "extraordinarily courageous",
+      "relation": "opposite"
+    },
+    {
+      "word": "LULL",
+      "senseId": "oewn-lull__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "LULLED",
+      "senseId": "oewn-lull__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "LULLING",
+      "senseId": "oewn-lull__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "LULLS",
+      "senseId": "oewn-lull__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "MELLOW",
+      "senseId": "oewn-mellow__5.00.00.relaxed.00",
+      "definition": "unhurried and relaxed",
+      "relation": "opposite"
+    },
+    {
+      "word": "MELLOWER",
+      "senseId": "oewn-mellow__5.00.00.relaxed.00",
+      "definition": "unhurried and relaxed",
+      "relation": "opposite"
+    },
+    {
+      "word": "MELLOWEST",
+      "senseId": "oewn-mellow__5.00.00.relaxed.00",
+      "definition": "unhurried and relaxed",
+      "relation": "opposite"
+    },
+    {
+      "word": "MELLOWLY",
+      "senseId": "oewn-mellowly__4.02.00..",
+      "definition": "in a mellow manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "METTLESOME",
+      "senseId": "oewn-mettlesome__5.00.00.brave.00",
+      "definition": "willing to face danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "MOLLIFIED",
+      "senseId": "oewn-mollify__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "MOLLIFIES",
+      "senseId": "oewn-mollify__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "MOLLIFY",
+      "senseId": "oewn-mollify__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "MOLLIFYING",
+      "senseId": "oewn-mollify__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "NERVES",
+      "senseId": "oewn-nerves__1.26.00..",
+      "definition": "an uneasy psychological state",
+      "relation": "similar"
+    },
+    {
+      "word": "NERVIER",
+      "senseId": "oewn-nervy__5.00.00.bold.00",
+      "definition": "showing or requiring courage and contempt of danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "NERVIEST",
+      "senseId": "oewn-nervy__5.00.00.bold.00",
+      "definition": "showing or requiring courage and contempt of danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "NERVOUS",
+      "senseId": "oewn-nervous__5.00.00.troubled.00",
+      "definition": "causing or fraught with or showing anxiety",
+      "relation": "similar"
+    },
+    {
+      "word": "NERVOUSNESS",
+      "senseId": "oewn-nervousness__1.12.00..",
+      "definition": "the anxious feeling you have when you have the jitters",
+      "relation": "similar"
+    },
+    {
+      "word": "NERVOUSNESSES",
+      "senseId": "oewn-nervousness__1.12.00..",
+      "definition": "the anxious feeling you have when you have the jitters",
+      "relation": "similar"
+    },
+    {
+      "word": "NERVY",
+      "senseId": "oewn-nervy__5.00.00.bold.00",
+      "definition": "showing or requiring courage and contempt of danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "NUMB",
+      "senseId": "oewn-numb__5.00.00.afraid.00",
+      "definition": "so frightened as to be unable to move; stunned or paralyzed with terror; petrified",
+      "relation": "similar"
+    },
+    {
+      "word": "NUMBER",
+      "senseId": "oewn-numb__5.00.00.afraid.00",
+      "definition": "so frightened as to be unable to move; stunned or paralyzed with terror; petrified",
+      "relation": "similar"
+    },
+    {
+      "word": "NUMBEST",
+      "senseId": "oewn-numb__5.00.00.afraid.00",
+      "definition": "so frightened as to be unable to move; stunned or paralyzed with terror; petrified",
+      "relation": "similar"
+    },
+    {
+      "word": "OVERCONFIDENT",
+      "senseId": "oewn-overconfident__5.00.00.confident.00",
+      "definition": "marked by excessive confidence",
+      "relation": "opposite"
+    },
+    {
+      "word": "OVERREACHING",
+      "senseId": "oewn-overreaching__5.00.00.bold.00",
+      "definition": "revealing excessive self-confidence; reaching for the heights",
+      "relation": "opposite"
+    },
+    {
+      "word": "PACIFIED",
+      "senseId": "oewn-pacify__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "PACIFIES",
+      "senseId": "oewn-pacify__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "PACIFY",
+      "senseId": "oewn-pacify__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "PACIFYING",
+      "senseId": "oewn-pacify__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "PANIC",
+      "senseId": "oewn-panic__1.12.00..",
+      "definition": "an overwhelming feeling of fear and anxiety",
+      "relation": "similar"
+    },
+    {
+      "word": "PANICKED",
+      "senseId": "oewn-panicked__5.00.00.afraid.00",
+      "definition": "thrown into a state of intense fear or desperation",
+      "relation": "similar"
+    },
+    {
+      "word": "PANICKIER",
+      "senseId": "oewn-panicky__5.00.00.afraid.00",
+      "definition": "thrown into a state of intense fear or desperation",
+      "relation": "similar"
+    },
+    {
+      "word": "PANICKIEST",
+      "senseId": "oewn-panicky__5.00.00.afraid.00",
+      "definition": "thrown into a state of intense fear or desperation",
+      "relation": "similar"
+    },
+    {
+      "word": "PANICKING",
+      "senseId": "oewn-panic__2.37.00..",
+      "definition": "be overcome by a sudden fear",
+      "relation": "similar"
+    },
+    {
+      "word": "PANICKY",
+      "senseId": "oewn-panicky__5.00.00.afraid.00",
+      "definition": "thrown into a state of intense fear or desperation",
+      "relation": "similar"
+    },
+    {
+      "word": "PANICS",
+      "senseId": "oewn-panic__1.12.00..",
+      "definition": "an overwhelming feeling of fear and anxiety",
+      "relation": "similar"
+    },
+    {
+      "word": "PEACE",
+      "senseId": "oewn-peace__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "PEACEFULNESS",
+      "senseId": "oewn-peacefulness__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "PEACEFULNESSES",
+      "senseId": "oewn-peacefulness__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "PEACES",
+      "senseId": "oewn-peace__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "PERTURB",
+      "senseId": "oewn-perturb__2.37.00..",
+      "definition": "disturb in mind or make uneasy or cause to be worried or alarmed",
+      "relation": "similar"
+    },
+    {
+      "word": "PERTURBED",
+      "senseId": "oewn-perturb__2.37.00..",
+      "definition": "disturb in mind or make uneasy or cause to be worried or alarmed",
+      "relation": "similar"
+    },
+    {
+      "word": "PERTURBING",
+      "senseId": "oewn-perturb__2.37.00..",
+      "definition": "disturb in mind or make uneasy or cause to be worried or alarmed",
+      "relation": "similar"
+    },
+    {
+      "word": "PERTURBS",
+      "senseId": "oewn-perturb__2.37.00..",
+      "definition": "disturb in mind or make uneasy or cause to be worried or alarmed",
+      "relation": "similar"
+    },
+    {
+      "word": "PLACATE",
+      "senseId": "oewn-placate__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLACATED",
+      "senseId": "oewn-placate__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLACATES",
+      "senseId": "oewn-placate__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLACATING",
+      "senseId": "oewn-placate__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "POSITIVE",
+      "senseId": "oewn-positive__5.00.00.confident.00",
+      "definition": "marked by excessive confidence",
+      "relation": "opposite"
+    },
+    {
+      "word": "POSITIVER",
+      "senseId": "oewn-positive__5.00.00.confident.00",
+      "definition": "marked by excessive confidence",
+      "relation": "opposite"
+    },
+    {
+      "word": "POSITIVEST",
+      "senseId": "oewn-positive__5.00.00.confident.00",
+      "definition": "marked by excessive confidence",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUEASIER",
+      "senseId": "oewn-queasy__5.00.00.troubled.00",
+      "definition": "causing or fraught with or showing anxiety",
+      "relation": "similar"
+    },
+    {
+      "word": "QUEASIEST",
+      "senseId": "oewn-queasy__5.00.00.troubled.00",
+      "definition": "causing or fraught with or showing anxiety",
+      "relation": "similar"
+    },
+    {
+      "word": "QUEASINESS",
+      "senseId": "oewn-queasiness__1.07.00..",
+      "definition": "inability to rest or relax or be still",
+      "relation": "similar"
+    },
+    {
+      "word": "QUEASINESSES",
+      "senseId": "oewn-queasiness__1.07.00..",
+      "definition": "inability to rest or relax or be still",
+      "relation": "similar"
+    },
+    {
+      "word": "QUEASY",
+      "senseId": "oewn-queasy__5.00.00.troubled.00",
+      "definition": "causing or fraught with or showing anxiety",
+      "relation": "similar"
+    },
+    {
+      "word": "QUIET",
+      "senseId": "oewn-quiet__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETED",
+      "senseId": "oewn-quiet__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETEN",
+      "senseId": "oewn-quieten__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETENED",
+      "senseId": "oewn-quieten__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETENING",
+      "senseId": "oewn-quieten__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETENS",
+      "senseId": "oewn-quieten__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETING",
+      "senseId": "oewn-quiet__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETS",
+      "senseId": "oewn-quiet__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIVER",
+      "senseId": "oewn-quiver__1.12.00..",
+      "definition": "an almost pleasurable sensation of fright",
+      "relation": "similar"
+    },
+    {
+      "word": "QUIVERS",
+      "senseId": "oewn-quiver__1.12.00..",
+      "definition": "an almost pleasurable sensation of fright",
+      "relation": "similar"
+    },
+    {
+      "word": "RASH",
+      "senseId": "oewn-rash__5.00.00.bold.00",
+      "definition": "marked by defiant disregard for danger or consequences",
+      "relation": "opposite"
+    },
+    {
+      "word": "RASHER",
+      "senseId": "oewn-rash__5.00.00.bold.00",
+      "definition": "marked by defiant disregard for danger or consequences",
+      "relation": "opposite"
+    },
+    {
+      "word": "RASHEST",
+      "senseId": "oewn-rash__5.00.00.bold.00",
+      "definition": "marked by defiant disregard for danger or consequences",
+      "relation": "opposite"
+    },
+    {
+      "word": "REASSURANCE",
+      "senseId": "oewn-reassurance__1.04.00..",
+      "definition": "the act of reassuring; restoring someone's confidence",
+      "relation": "opposite"
+    },
+    {
+      "word": "REASSURANCES",
+      "senseId": "oewn-reassurance__1.04.00..",
+      "definition": "the act of reassuring; restoring someone's confidence",
+      "relation": "opposite"
+    },
+    {
+      "word": "REASSURE",
+      "senseId": "oewn-reassure__2.32.00..",
+      "definition": "give reassurance to; give or restore confidence in; cause to feel sure or certain",
+      "relation": "opposite"
+    },
+    {
+      "word": "REASSURED",
+      "senseId": "oewn-reassure__2.32.00..",
+      "definition": "give reassurance to; give or restore confidence in; cause to feel sure or certain",
+      "relation": "opposite"
+    },
+    {
+      "word": "REASSURES",
+      "senseId": "oewn-reassure__2.32.00..",
+      "definition": "give reassurance to; give or restore confidence in; cause to feel sure or certain",
+      "relation": "opposite"
+    },
+    {
+      "word": "REASSURING",
+      "senseId": "oewn-reassure__2.32.00..",
+      "definition": "give reassurance to; give or restore confidence in; cause to feel sure or certain",
+      "relation": "opposite"
+    },
+    {
+      "word": "RECKLESS",
+      "senseId": "oewn-reckless__5.00.00.bold.00",
+      "definition": "marked by defiant disregard for danger or consequences",
+      "relation": "opposite"
+    },
+    {
+      "word": "RELAX",
+      "senseId": "oewn-relax__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "RELAXED",
+      "senseId": "oewn-relaxed__3.00.00..",
+      "definition": "without strain or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "RELAXES",
+      "senseId": "oewn-relax__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "RELAXING",
+      "senseId": "oewn-relax__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "REPOSE",
+      "senseId": "oewn-repose__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "REPOSES",
+      "senseId": "oewn-repose__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "RESTIVENESS",
+      "senseId": "oewn-restiveness__1.12.00..",
+      "definition": "the anxious feeling you have when you have the jitters",
+      "relation": "similar"
+    },
+    {
+      "word": "RESTIVENESSES",
+      "senseId": "oewn-restiveness__1.12.00..",
+      "definition": "the anxious feeling you have when you have the jitters",
+      "relation": "similar"
+    },
+    {
+      "word": "RESTLESSNESS",
+      "senseId": "oewn-restlessness__1.07.00..",
+      "definition": "inability to rest or relax or be still",
+      "relation": "similar"
+    },
+    {
+      "word": "RESTLESSNESSES",
+      "senseId": "oewn-restlessness__1.07.00..",
+      "definition": "inability to rest or relax or be still",
+      "relation": "similar"
+    },
+    {
+      "word": "RISKLESS",
+      "senseId": "oewn-riskless__5.00.00.safe.01",
+      "definition": "thought to be devoid of risk",
+      "relation": "opposite"
+    },
+    {
+      "word": "SAFE",
+      "senseId": "oewn-safe__3.00.01..",
+      "definition": "free from danger or the risk of harm",
+      "relation": "opposite"
+    },
+    {
+      "word": "SAFENESS",
+      "senseId": "oewn-safeness__1.07.00..",
+      "definition": "the quality of being safe",
+      "relation": "opposite"
+    },
+    {
+      "word": "SAFENESSES",
+      "senseId": "oewn-safeness__1.07.00..",
+      "definition": "the quality of being safe",
+      "relation": "opposite"
+    },
+    {
+      "word": "SAFER",
+      "senseId": "oewn-safe__3.00.01..",
+      "definition": "free from danger or the risk of harm",
+      "relation": "opposite"
+    },
+    {
+      "word": "SAFEST",
+      "senseId": "oewn-safe__3.00.01..",
+      "definition": "free from danger or the risk of harm",
+      "relation": "opposite"
+    },
+    {
+      "word": "SAFETIES",
+      "senseId": "oewn-safety__1.26.00..",
+      "definition": "the state of being certain that adverse effects will not be caused by some agent under defined conditions",
+      "relation": "opposite"
+    },
+    {
+      "word": "SAFETY",
+      "senseId": "oewn-safety__1.26.00..",
+      "definition": "the state of being certain that adverse effects will not be caused by some agent under defined conditions",
+      "relation": "opposite"
+    },
+    {
+      "word": "SCARE",
+      "senseId": "oewn-scare__1.12.00..",
+      "definition": "a sudden attack of fear",
+      "relation": "similar"
+    },
+    {
+      "word": "SCARED",
+      "senseId": "oewn-scared__5.00.00.afraid.00",
+      "definition": "made afraid",
+      "relation": "similar"
+    },
+    {
+      "word": "SCAREDER",
+      "senseId": "oewn-scared__5.00.00.afraid.00",
+      "definition": "made afraid",
+      "relation": "similar"
+    },
+    {
+      "word": "SCAREDEST",
+      "senseId": "oewn-scared__5.00.00.afraid.00",
+      "definition": "made afraid",
+      "relation": "similar"
+    },
+    {
+      "word": "SCARES",
+      "senseId": "oewn-scare__1.12.00..",
+      "definition": "a sudden attack of fear",
+      "relation": "similar"
+    },
+    {
+      "word": "SCARIER",
+      "senseId": "oewn-scary__5.00.00.alarming.00",
+      "definition": "provoking fear or terror",
+      "relation": "similar"
+    },
+    {
+      "word": "SCARIEST",
+      "senseId": "oewn-scary__5.00.00.alarming.00",
+      "definition": "provoking fear or terror",
+      "relation": "similar"
+    },
+    {
+      "word": "SCARILY",
+      "senseId": "oewn-scarily__4.02.00..",
+      "definition": "in a terrifying manner",
+      "relation": "similar"
+    },
+    {
+      "word": "SCARING",
+      "senseId": "oewn-scare__2.37.00..",
+      "definition": "cause fear in",
+      "relation": "similar"
+    },
+    {
+      "word": "SCARY",
+      "senseId": "oewn-scary__5.00.00.alarming.00",
+      "definition": "provoking fear or terror",
+      "relation": "similar"
+    },
+    {
+      "word": "SECURE",
+      "senseId": "oewn-secure__3.00.01..",
+      "definition": "free from fear or doubt; easy in mind",
+      "relation": "opposite"
+    },
+    {
+      "word": "SECURELY",
+      "senseId": "oewn-securely__4.02.03..",
+      "definition": "in a confident and unselfconscious manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "SECURER",
+      "senseId": "oewn-secure__3.00.01..",
+      "definition": "free from fear or doubt; easy in mind",
+      "relation": "opposite"
+    },
+    {
+      "word": "SECUREST",
+      "senseId": "oewn-secure__3.00.01..",
+      "definition": "free from fear or doubt; easy in mind",
+      "relation": "opposite"
+    },
+    {
+      "word": "SECURITIES",
+      "senseId": "oewn-security__1.12.00..",
+      "definition": "freedom from anxiety or fear",
+      "relation": "opposite"
+    },
+    {
+      "word": "SECURITY",
+      "senseId": "oewn-security__1.12.00..",
+      "definition": "freedom from anxiety or fear",
+      "relation": "opposite"
+    },
+    {
+      "word": "SERENE",
+      "senseId": "oewn-serene__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "SERENELY",
+      "senseId": "oewn-serenely__4.02.00..",
+      "definition": "in a peacefully serene manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "SERENER",
+      "senseId": "oewn-serene__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "SERENEST",
+      "senseId": "oewn-serene__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "SERENITIES",
+      "senseId": "oewn-serenity__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "SERENITY",
+      "senseId": "oewn-serenity__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "SHIVER",
+      "senseId": "oewn-shiver__1.12.00..",
+      "definition": "an almost pleasurable sensation of fright",
+      "relation": "similar"
+    },
+    {
+      "word": "SHIVERIER",
+      "senseId": "oewn-shivery__5.00.00.alarming.00",
+      "definition": "provoking fear or terror",
+      "relation": "similar"
+    },
+    {
+      "word": "SHIVERIEST",
+      "senseId": "oewn-shivery__5.00.00.alarming.00",
+      "definition": "provoking fear or terror",
+      "relation": "similar"
+    },
+    {
+      "word": "SHIVERS",
+      "senseId": "oewn-shiver__1.12.00..",
+      "definition": "an almost pleasurable sensation of fright",
+      "relation": "similar"
+    },
+    {
+      "word": "SHIVERY",
+      "senseId": "oewn-shivery__5.00.00.alarming.00",
+      "definition": "provoking fear or terror",
+      "relation": "similar"
+    },
+    {
+      "word": "SHOCKED",
+      "senseId": "oewn-shocked__5.00.00.afraid.00",
+      "definition": "struck with fear, dread, or consternation",
+      "relation": "similar"
+    },
+    {
+      "word": "SHUDDER",
+      "senseId": "oewn-shudder__1.12.00..",
+      "definition": "an almost pleasurable sensation of fright",
+      "relation": "similar"
+    },
+    {
+      "word": "SHUDDERS",
+      "senseId": "oewn-shudder__1.12.00..",
+      "definition": "an almost pleasurable sensation of fright",
+      "relation": "similar"
+    },
+    {
+      "word": "SHUDDERY",
+      "senseId": "oewn-shuddery__5.00.00.alarming.00",
+      "definition": "provoking fear or terror",
+      "relation": "similar"
+    },
+    {
+      "word": "SPIRITED",
+      "senseId": "oewn-spirited__5.00.00.brave.00",
+      "definition": "willing to face danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "SPUNKIER",
+      "senseId": "oewn-spunky__5.00.00.brave.00",
+      "definition": "willing to face danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "SPUNKIEST",
+      "senseId": "oewn-spunky__5.00.00.brave.00",
+      "definition": "willing to face danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "SPUNKY",
+      "senseId": "oewn-spunky__5.00.00.brave.00",
+      "definition": "willing to face danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "STALWART",
+      "senseId": "oewn-stalwart__5.00.00.brave.00",
+      "definition": "used especially of persons",
+      "relation": "opposite"
+    },
+    {
+      "word": "STILL",
+      "senseId": "oewn-still__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "STILLED",
+      "senseId": "oewn-still__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "STILLING",
+      "senseId": "oewn-still__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "STILLS",
+      "senseId": "oewn-still__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "STOUTHEARTED",
+      "senseId": "oewn-stouthearted__5.00.00.brave.00",
+      "definition": "used especially of persons",
+      "relation": "opposite"
+    },
+    {
+      "word": "SURE",
+      "senseId": "oewn-sure__3.00.00..",
+      "definition": "having or feeling no doubt or uncertainty; confident and assured",
+      "relation": "opposite"
+    },
+    {
+      "word": "SURENESS",
+      "senseId": "oewn-sureness__1.09.00..",
+      "definition": "freedom from doubt; belief in yourself and your abilities",
+      "relation": "opposite"
+    },
+    {
+      "word": "SURENESSES",
+      "senseId": "oewn-sureness__1.09.00..",
+      "definition": "freedom from doubt; belief in yourself and your abilities",
+      "relation": "opposite"
+    },
+    {
+      "word": "SURER",
+      "senseId": "oewn-sure__3.00.00..",
+      "definition": "having or feeling no doubt or uncertainty; confident and assured",
+      "relation": "opposite"
+    },
+    {
+      "word": "SUREST",
+      "senseId": "oewn-sure__3.00.00..",
+      "definition": "having or feeling no doubt or uncertainty; confident and assured",
+      "relation": "opposite"
+    },
+    {
+      "word": "TEMERARIOUS",
+      "senseId": "oewn-temerarious__5.00.00.bold.00",
+      "definition": "presumptuously daring",
+      "relation": "opposite"
+    },
+    {
+      "word": "TERRIBLE",
+      "senseId": "oewn-terrible__5.00.00.alarming.00",
+      "definition": "causing fear or dread or terror",
+      "relation": "similar"
+    },
+    {
+      "word": "TERRIFIED",
+      "senseId": "oewn-terrify__2.37.00..",
+      "definition": "fill with terror; frighten greatly",
+      "relation": "similar"
+    },
+    {
+      "word": "TERRIFIES",
+      "senseId": "oewn-terrify__2.37.00..",
+      "definition": "fill with terror; frighten greatly",
+      "relation": "similar"
+    },
+    {
+      "word": "TERRIFY",
+      "senseId": "oewn-terrify__2.37.00..",
+      "definition": "fill with terror; frighten greatly",
+      "relation": "similar"
+    },
+    {
+      "word": "TERRIFYING",
+      "senseId": "oewn-terrify__2.37.00..",
+      "definition": "fill with terror; frighten greatly",
+      "relation": "similar"
+    },
+    {
+      "word": "TERROR",
+      "senseId": "oewn-terror__1.12.00..",
+      "definition": "an overwhelming feeling of fear and anxiety",
+      "relation": "similar"
+    },
+    {
+      "word": "TERRORISE",
+      "senseId": "oewn-terrorise__2.37.00..",
+      "definition": "fill with terror; frighten greatly",
+      "relation": "similar"
+    },
+    {
+      "word": "TERRORISED",
+      "senseId": "oewn-terrorise__2.37.00..",
+      "definition": "fill with terror; frighten greatly",
+      "relation": "similar"
+    },
+    {
+      "word": "TERRORISES",
+      "senseId": "oewn-terrorise__2.37.00..",
+      "definition": "fill with terror; frighten greatly",
+      "relation": "similar"
+    },
+    {
+      "word": "TERRORISING",
+      "senseId": "oewn-terrorise__2.37.00..",
+      "definition": "fill with terror; frighten greatly",
+      "relation": "similar"
+    },
+    {
+      "word": "TERRORIST",
+      "senseId": "oewn-terrorist__1.18.00..",
+      "definition": "a radical who employs terror as a political weapon; usually organizes with other terrorists in small cells; often uses religion as a cover for terrorist activities",
+      "relation": "similar"
+    },
+    {
+      "word": "TERRORISTS",
+      "senseId": "oewn-terrorist__1.18.00..",
+      "definition": "a radical who employs terror as a political weapon; usually organizes with other terrorists in small cells; often uses religion as a cover for terrorist activities",
+      "relation": "similar"
+    },
+    {
+      "word": "TERRORIZE",
+      "senseId": "oewn-terrorize__2.37.00..",
+      "definition": "fill with terror; frighten greatly",
+      "relation": "similar"
+    },
+    {
+      "word": "TERRORIZED",
+      "senseId": "oewn-terrorize__2.37.00..",
+      "definition": "fill with terror; frighten greatly",
+      "relation": "similar"
+    },
+    {
+      "word": "TERRORIZES",
+      "senseId": "oewn-terrorize__2.37.00..",
+      "definition": "fill with terror; frighten greatly",
+      "relation": "similar"
+    },
+    {
+      "word": "TERRORIZING",
+      "senseId": "oewn-terrorize__2.37.00..",
+      "definition": "fill with terror; frighten greatly",
+      "relation": "similar"
+    },
+    {
+      "word": "TERRORS",
+      "senseId": "oewn-terror__1.12.00..",
+      "definition": "an overwhelming feeling of fear and anxiety",
+      "relation": "similar"
+    },
+    {
+      "word": "THRILL",
+      "senseId": "oewn-thrill__1.12.02..",
+      "definition": "an almost pleasurable sensation of fright",
+      "relation": "similar"
+    },
+    {
+      "word": "THRILLS",
+      "senseId": "oewn-thrill__1.12.02..",
+      "definition": "an almost pleasurable sensation of fright",
+      "relation": "similar"
+    },
+    {
+      "word": "TINGLE",
+      "senseId": "oewn-tingle__1.12.00..",
+      "definition": "an almost pleasurable sensation of fright",
+      "relation": "similar"
+    },
+    {
+      "word": "TINGLES",
+      "senseId": "oewn-tingle__1.12.00..",
+      "definition": "an almost pleasurable sensation of fright",
+      "relation": "similar"
+    },
+    {
+      "word": "TRANQUIL",
+      "senseId": "oewn-tranquil__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILER",
+      "senseId": "oewn-tranquil__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILEST",
+      "senseId": "oewn-tranquil__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILIZE",
+      "senseId": "oewn-tranquilize__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILIZED",
+      "senseId": "oewn-tranquilize__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILIZES",
+      "senseId": "oewn-tranquilize__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILIZING",
+      "senseId": "oewn-tranquilize__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLISE",
+      "senseId": "oewn-tranquillise__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLISED",
+      "senseId": "oewn-tranquillise__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLISES",
+      "senseId": "oewn-tranquillise__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLISING",
+      "senseId": "oewn-tranquillise__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLIZE",
+      "senseId": "oewn-tranquillize__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLIZED",
+      "senseId": "oewn-tranquillize__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLIZES",
+      "senseId": "oewn-tranquillize__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLIZING",
+      "senseId": "oewn-tranquillize__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLY",
+      "senseId": "oewn-tranquilly__4.02.01..",
+      "definition": "without emotional agitation",
+      "relation": "opposite"
+    },
+    {
+      "word": "TROUBLE",
+      "senseId": "oewn-trouble__1.12.03..",
+      "definition": "a strong feeling of anxiety",
+      "relation": "similar"
+    },
+    {
+      "word": "TROUBLED",
+      "senseId": "oewn-trouble__2.37.00..",
+      "definition": "disturb in mind or make uneasy or cause to be worried or alarmed",
+      "relation": "similar"
+    },
+    {
+      "word": "TROUBLES",
+      "senseId": "oewn-trouble__1.12.03..",
+      "definition": "a strong feeling of anxiety",
+      "relation": "similar"
+    },
+    {
+      "word": "TROUBLING",
+      "senseId": "oewn-trouble__2.37.00..",
+      "definition": "disturb in mind or make uneasy or cause to be worried or alarmed",
+      "relation": "similar"
+    },
+    {
+      "word": "UNAFRAID",
+      "senseId": "oewn-unafraid__3.00.00..",
+      "definition": "oblivious of dangers or perils or calmly resolute in facing them",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNAPPREHENSIVE",
+      "senseId": "oewn-unapprehensive__5.00.00.unafraid.00",
+      "definition": "not recognizing or slow to recognize danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNBEND",
+      "senseId": "oewn-unbend__2.29.01..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNBENDED",
+      "senseId": "oewn-unbend__2.29.01..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNBENDING",
+      "senseId": "oewn-unbend__2.29.01..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNBENDS",
+      "senseId": "oewn-unbend__2.29.01..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNBENT",
+      "senseId": "oewn-unbend__2.29.01..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNBLINKING",
+      "senseId": "oewn-unblinking__5.00.00.unafraid.00",
+      "definition": "not shrinking from danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNDAUNTED",
+      "senseId": "oewn-undaunted__5.00.00.brave.00",
+      "definition": "resolutely courageous",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNEASIER",
+      "senseId": "oewn-uneasy__5.00.00.troubled.00",
+      "definition": "causing or fraught with or showing anxiety",
+      "relation": "similar"
+    },
+    {
+      "word": "UNEASIEST",
+      "senseId": "oewn-uneasy__5.00.00.troubled.00",
+      "definition": "causing or fraught with or showing anxiety",
+      "relation": "similar"
+    },
+    {
+      "word": "UNEASINESS",
+      "senseId": "oewn-uneasiness__1.07.00..",
+      "definition": "inability to rest or relax or be still",
+      "relation": "similar"
+    },
+    {
+      "word": "UNEASINESSES",
+      "senseId": "oewn-uneasiness__1.07.00..",
+      "definition": "inability to rest or relax or be still",
+      "relation": "similar"
+    },
+    {
+      "word": "UNEASY",
+      "senseId": "oewn-uneasy__5.00.00.troubled.00",
+      "definition": "causing or fraught with or showing anxiety",
+      "relation": "similar"
+    },
+    {
+      "word": "UNFEARING",
+      "senseId": "oewn-unfearing__5.00.00.bold.00",
+      "definition": "invulnerable to fear or intimidation",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNFLINCHING",
+      "senseId": "oewn-unflinching__5.00.00.unafraid.00",
+      "definition": "not shrinking from danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNFRIGHTENED",
+      "senseId": "oewn-unfrightened__5.00.00.unafraid.00",
+      "definition": "not affected by fright",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNHAZARDOUS",
+      "senseId": "oewn-unhazardous__5.00.00.safe.01",
+      "definition": "thought to be devoid of risk",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNHINGE",
+      "senseId": "oewn-unhinge__2.37.00..",
+      "definition": "disturb in mind or make uneasy or cause to be worried or alarmed",
+      "relation": "similar"
+    },
+    {
+      "word": "UNHINGED",
+      "senseId": "oewn-unhinge__2.37.00..",
+      "definition": "disturb in mind or make uneasy or cause to be worried or alarmed",
+      "relation": "similar"
+    },
+    {
+      "word": "UNHINGES",
+      "senseId": "oewn-unhinge__2.37.00..",
+      "definition": "disturb in mind or make uneasy or cause to be worried or alarmed",
+      "relation": "similar"
+    },
+    {
+      "word": "UNHINGING",
+      "senseId": "oewn-unhinge__2.37.00..",
+      "definition": "disturb in mind or make uneasy or cause to be worried or alarmed",
+      "relation": "similar"
+    },
+    {
+      "word": "UNHURT",
+      "senseId": "oewn-unhurt__5.00.00.safe.01",
+      "definition": "free from danger or injury",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNINTIMIDATED",
+      "senseId": "oewn-unintimidated__5.00.00.unafraid.00",
+      "definition": "not shrinking from danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNNERVED",
+      "senseId": "oewn-unnerved__5.00.00.afraid.00",
+      "definition": "deprived of courage and strength",
+      "relation": "similar"
+    },
+    {
+      "word": "UNQUIET",
+      "senseId": "oewn-unquiet__5.00.00.troubled.00",
+      "definition": "causing or fraught with or showing anxiety",
+      "relation": "similar"
+    },
+    {
+      "word": "UNQUIETER",
+      "senseId": "oewn-unquiet__5.00.00.troubled.00",
+      "definition": "causing or fraught with or showing anxiety",
+      "relation": "similar"
+    },
+    {
+      "word": "UNQUIETEST",
+      "senseId": "oewn-unquiet__5.00.00.troubled.00",
+      "definition": "causing or fraught with or showing anxiety",
+      "relation": "similar"
+    },
+    {
+      "word": "UNSHRINKING",
+      "senseId": "oewn-unshrinking__5.00.00.unafraid.00",
+      "definition": "not shrinking from danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNSTRAINED",
+      "senseId": "oewn-unstrained__5.00.00.relaxed.00",
+      "definition": "not placed under psychological stress",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNTROUBLED",
+      "senseId": "oewn-untroubled__3.00.02..",
+      "definition": "free from fear or doubt; easy in mind",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNWIND",
+      "senseId": "oewn-unwind__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNWINDING",
+      "senseId": "oewn-unwind__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNWINDS",
+      "senseId": "oewn-unwind__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNWOUND",
+      "senseId": "oewn-unwind__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UPSET",
+      "senseId": "oewn-upset__5.00.00.troubled.00",
+      "definition": "afflicted with or marked by anxious uneasiness or trouble or grief",
+      "relation": "similar"
+    },
+    {
+      "word": "VALIANT",
+      "senseId": "oewn-valiant__5.00.00.brave.00",
+      "definition": "having or showing valor",
+      "relation": "opposite"
+    },
+    {
+      "word": "VALIANTLY",
+      "senseId": "oewn-valiantly__4.02.00..",
+      "definition": "with valor; in a valiant manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "VALOROUS",
+      "senseId": "oewn-valorous__5.00.00.brave.00",
+      "definition": "having or showing valor",
+      "relation": "opposite"
+    },
+    {
+      "word": "VALOROUSLY",
+      "senseId": "oewn-valorously__4.02.00..",
+      "definition": "with valor; in a valiant manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "VAULTING",
+      "senseId": "oewn-vaulting__5.00.00.bold.00",
+      "definition": "revealing excessive self-confidence; reaching for the heights",
+      "relation": "opposite"
+    },
+    {
+      "word": "WORRIED",
+      "senseId": "oewn-worried__5.00.00.troubled.00",
+      "definition": "afflicted with or marked by anxious uneasiness or trouble or grief",
+      "relation": "similar"
+    },
+    {
+      "word": "WORRIEDLY",
+      "senseId": "oewn-worriedly__4.02.00..",
+      "definition": "in a worried manner",
+      "relation": "similar"
+    },
+    {
+      "word": "WORRIES",
+      "senseId": "oewn-worry__1.12.00..",
+      "definition": "a strong feeling of anxiety",
+      "relation": "similar"
+    },
+    {
+      "word": "WORRY",
+      "senseId": "oewn-worry__1.12.00..",
+      "definition": "a strong feeling of anxiety",
+      "relation": "similar"
+    },
+    {
+      "word": "WORRYING",
+      "senseId": "oewn-worry__2.37.00..",
+      "definition": "be worried, concerned, anxious, troubled, or uneasy",
+      "relation": "similar"
+    },
+    {
+      "word": "XENOPHOBIC",
+      "senseId": "oewn-xenophobic__5.00.00.afraid.00",
+      "definition": "suffering from xenophobia; having abnormal fear or hatred of the strange or foreign",
+      "relation": "similar"
+    }
+  ],
+  "semanticPolicy": "Pinned source senses and reviewed lexical families; unlabelled defined senses are neutral. Not a proof of exhaustive contextual semantic coverage.",
+  "asset": "puzzles/dread-daredevil-8dbbdf564d38.json",
+  "twoWordWin": {
+    "words": [
+      "CELERY",
+      "DARED"
+    ],
+    "tileIds": [
+      [
+        8,
+        0,
+        15,
+        6,
+        4,
+        12
+      ],
+      [
+        1,
+        9,
+        17,
+        20,
+        3
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      5
+    ]
+  }
+}

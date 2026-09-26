@@ -1,0 +1,1879 @@
+{
+  "id": "arid-irrigated",
+  "enemy": "ARID",
+  "answer": "IRRIGATED",
+  "accepted": true,
+  "seed": "bingo-first-3:ARID:IRRIGATED:15",
+  "score": 716,
+  "analysis": {
+    "score": 716,
+    "bingos": [
+      "IRRIGATED"
+    ],
+    "counterFamilies": 12,
+    "resistedFamilies": 4,
+    "winningOpenings": 18,
+    "repeatedCounterRoutes": 18,
+    "sustainedPositions": 16,
+    "sustainedFinalPositions": 16,
+    "neutralCleanupOpenings": 0,
+    "routes": [
+      {
+        "opening": "WATER",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "RUN",
+            "SPRING",
+            "MUD",
+            "POUR",
+            "DIP",
+            "DUNK",
+            "HUMID",
+            "MIRED",
+            "DOUSE"
+          ],
+          "resisted": [
+            "SHRINK",
+            "DRIES"
+          ],
+          "neutral": 692
+        },
+        "thirdTurn": {
+          "counters": [
+            "SPRING",
+            "RAIN",
+            "DIP",
+            "POURING",
+            "HUMID",
+            "SOAKING"
+          ],
+          "resisted": [
+            "AIR",
+            "DRAIN",
+            "SHRINK",
+            "VAPOR",
+            "ARID",
+            "VAPOUR"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "WATER",
+            "MIRED",
+            "SPRING"
+          ],
+          "tileIds": [
+            [
+              14,
+              15,
+              6,
+              7,
+              5
+            ],
+            [
+              4,
+              10,
+              8,
+              16,
+              2
+            ],
+            [
+              11,
+              3,
+              20,
+              13,
+              1,
+              0
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "WHITE",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "RUN",
+            "SPRING",
+            "RAIN",
+            "MUD",
+            "POUR",
+            "DIP",
+            "SOAKED",
+            "DAMP",
+            "DUNK",
+            "DANK",
+            "MIRED",
+            "DAMPEN",
+            "DOUSE"
+          ],
+          "resisted": [
+            "AIR",
+            "DRAIN",
+            "ARID",
+            "DRIES"
+          ],
+          "neutral": 1001
+        },
+        "thirdTurn": {
+          "counters": [
+            "RUN",
+            "SPRING",
+            "POUR"
+          ],
+          "resisted": [
+            "AIR",
+            "DRAIN",
+            "VAPOR",
+            "ARID",
+            "VAPOUR"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "WHITE",
+            "RAINED",
+            "RUN"
+          ],
+          "tileIds": [
+            [
+              14,
+              12,
+              10,
+              6,
+              7
+            ],
+            [
+              5,
+              15,
+              13,
+              1,
+              16,
+              2
+            ],
+            [
+              8,
+              19,
+              26
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SPRING",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "WATER",
+            "WHITE",
+            "MUD",
+            "DEW",
+            "HUMID",
+            "MIRED"
+          ],
+          "resisted": [
+            "AIR",
+            "ARID",
+            "DRIER",
+            "WITHER"
+          ],
+          "neutral": 510
+        },
+        "thirdTurn": {
+          "counters": [
+            "RIVER",
+            "RAIN",
+            "RAINY",
+            "HUMID",
+            "MIRED"
+          ],
+          "resisted": [
+            "AIR",
+            "DRY",
+            "DRAIN",
+            "ARID"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SPRING",
+            "WATERED",
+            "RIVER"
+          ],
+          "tileIds": [
+            [
+              11,
+              3,
+              5,
+              10,
+              1,
+              0
+            ],
+            [
+              14,
+              15,
+              6,
+              7,
+              8,
+              16,
+              2
+            ],
+            [
+              20,
+              13,
+              22,
+              27,
+              24
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "RAIN",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "WHITE",
+            "STORM",
+            "SHOWER",
+            "MUD",
+            "POUR",
+            "DIP",
+            "MOISTURE",
+            "SPIT",
+            "MOIST",
+            "MIST",
+            "DEW",
+            "HUMID",
+            "MIRED",
+            "DOUSE"
+          ],
+          "resisted": [
+            "DUST",
+            "DESERT",
+            "DROUGHT",
+            "DRIES",
+            "WITHER"
+          ],
+          "neutral": 928
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RAIN",
+            "MIRED"
+          ],
+          "tileIds": [
+            [
+              5,
+              15,
+              10,
+              1
+            ],
+            [
+              4,
+              13,
+              8,
+              7,
+              2
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "STORM",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "RUN",
+            "RAIN",
+            "MUD",
+            "DIP",
+            "DAMP",
+            "DUNK",
+            "DEW",
+            "HUMID",
+            "DANK",
+            "RAINIER",
+            "MIRED",
+            "DAMPEN"
+          ],
+          "resisted": [
+            "AIR",
+            "DRAIN",
+            "ARID",
+            "DRIER"
+          ],
+          "neutral": 599
+        },
+        "thirdTurn": {
+          "counters": [
+            "RIVER",
+            "DIP",
+            "HUMID",
+            "RAINIER",
+            "MIRED"
+          ],
+          "resisted": [
+            "AIR",
+            "DRAIN",
+            "ARID",
+            "DRIER"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "STORM",
+            "RAINED",
+            "RIVER"
+          ],
+          "tileIds": [
+            [
+              11,
+              6,
+              9,
+              5,
+              4
+            ],
+            [
+              8,
+              15,
+              10,
+              1,
+              7,
+              2
+            ],
+            [
+              20,
+              13,
+              22,
+              16,
+              24
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "STREAM",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "RUN",
+            "RAIN",
+            "MUD",
+            "POUR",
+            "DIP",
+            "DAMP",
+            "DUNK",
+            "DEW",
+            "HUMID",
+            "DANK",
+            "RAINIER",
+            "MIRED",
+            "DAMPEN"
+          ],
+          "resisted": [
+            "AIR",
+            "DRAIN",
+            "ARID",
+            "DRIER"
+          ],
+          "neutral": 756
+        },
+        "thirdTurn": {
+          "counters": [
+            "RIVER",
+            "DIP",
+            "POURING",
+            "HUMID",
+            "MIRED"
+          ],
+          "resisted": [
+            "DRIER"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "STREAM",
+            "RAINED",
+            "RIVER"
+          ],
+          "tileIds": [
+            [
+              11,
+              6,
+              5,
+              7,
+              15,
+              4
+            ],
+            [
+              8,
+              21,
+              10,
+              1,
+              16,
+              2
+            ],
+            [
+              20,
+              13,
+              22,
+              27,
+              24
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SHOWER",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "RUN",
+            "RAIN",
+            "MUD",
+            "DIP",
+            "DAMP",
+            "DUNK",
+            "DANK",
+            "RAINIER",
+            "MIRED",
+            "DAMPEN"
+          ],
+          "resisted": [
+            "AIR",
+            "DRAIN",
+            "DRAINAGE",
+            "ARID",
+            "DRIER"
+          ],
+          "neutral": 683
+        },
+        "thirdTurn": {
+          "counters": [
+            "RIVER",
+            "DIP",
+            "RAINIER",
+            "MIRED"
+          ],
+          "resisted": [
+            "AIR",
+            "DRAIN",
+            "ARID",
+            "DRIER"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SHOWER",
+            "RAINED",
+            "RIVER"
+          ],
+          "tileIds": [
+            [
+              11,
+              12,
+              9,
+              14,
+              7,
+              5
+            ],
+            [
+              8,
+              15,
+              10,
+              1,
+              16,
+              2
+            ],
+            [
+              20,
+              13,
+              22,
+              27,
+              24
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "WASH",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "RUN",
+            "MUD",
+            "POUR",
+            "DIP",
+            "DUNK",
+            "MIRED"
+          ],
+          "resisted": [
+            "DRIER"
+          ],
+          "neutral": 566
+        },
+        "thirdTurn": {
+          "counters": [
+            "RUN",
+            "RIVER",
+            "RAIN",
+            "POUR",
+            "DIP",
+            "DAMPER"
+          ],
+          "resisted": [
+            "AIR",
+            "DRAIN",
+            "VAPOR",
+            "ARID",
+            "DRIER",
+            "VAPOUR"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "WASH",
+            "MIRED",
+            "RIVER"
+          ],
+          "tileIds": [
+            [
+              14,
+              15,
+              11,
+              12
+            ],
+            [
+              4,
+              10,
+              5,
+              7,
+              2
+            ],
+            [
+              8,
+              13,
+              22,
+              16,
+              20
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "DIP",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "WATER",
+            "WHITE",
+            "RAIN",
+            "STORM",
+            "STREAM",
+            "SHOWER",
+            "WASH",
+            "MOIST",
+            "MIST",
+            "SOAK",
+            "MIRE",
+            "RAINSTORM"
+          ],
+          "resisted": [
+            "AIR",
+            "SHRINK",
+            "WITHER"
+          ],
+          "neutral": 1268
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DIP",
+            "RAINSTORM"
+          ],
+          "tileIds": [
+            [
+              2,
+              10,
+              3
+            ],
+            [
+              5,
+              15,
+              13,
+              1,
+              11,
+              6,
+              9,
+              8,
+              4
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "SPIT",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "RUN",
+            "RAIN",
+            "MUD",
+            "DUNK",
+            "DEW",
+            "HUMID",
+            "DANK",
+            "MIRED"
+          ],
+          "resisted": [
+            "AIR",
+            "DRAIN",
+            "ARID",
+            "DRIER"
+          ],
+          "neutral": 671
+        },
+        "thirdTurn": {
+          "counters": [
+            "RIVER",
+            "MIRED"
+          ],
+          "resisted": [
+            "AIR",
+            "ARID",
+            "DRIER"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SPIT",
+            "RAINED",
+            "RIVER"
+          ],
+          "tileIds": [
+            [
+              11,
+              3,
+              10,
+              6
+            ],
+            [
+              5,
+              15,
+              13,
+              1,
+              7,
+              2
+            ],
+            [
+              8,
+              25,
+              22,
+              16,
+              20
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SWAMP",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "RUN",
+            "MUD",
+            "DUNK",
+            "HUMID",
+            "MIRED"
+          ],
+          "resisted": [
+            "DROUGHT",
+            "DRIER"
+          ],
+          "neutral": 517
+        },
+        "thirdTurn": {
+          "counters": [
+            "RUN",
+            "RIVER",
+            "RAIN",
+            "RAINIER"
+          ],
+          "resisted": [
+            "AIR",
+            "DRAIN",
+            "DROUGHT",
+            "ARID",
+            "DRIER"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SWAMP",
+            "MIRED",
+            "RIVER"
+          ],
+          "tileIds": [
+            [
+              11,
+              14,
+              15,
+              4,
+              3
+            ],
+            [
+              18,
+              10,
+              5,
+              7,
+              2
+            ],
+            [
+              8,
+              13,
+              22,
+              16,
+              20
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "MOIST",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "RUN",
+            "RAIN",
+            "MUD",
+            "DIP",
+            "DAMP",
+            "DUNK",
+            "DEW",
+            "HUMID",
+            "DANK",
+            "MIRED",
+            "DAMPEN"
+          ],
+          "resisted": [
+            "AIR",
+            "DRAIN",
+            "ARID",
+            "DRIER"
+          ],
+          "neutral": 578
+        },
+        "thirdTurn": {
+          "counters": [
+            "RUN",
+            "RIVER",
+            "DAMPER",
+            "MIRED"
+          ],
+          "resisted": [
+            "AIR",
+            "DRAIN",
+            "ARID",
+            "DRIER"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "MOIST",
+            "RAINED",
+            "RUN"
+          ],
+          "tileIds": [
+            [
+              4,
+              9,
+              10,
+              11,
+              6
+            ],
+            [
+              5,
+              15,
+              13,
+              1,
+              7,
+              2
+            ],
+            [
+              8,
+              19,
+              26
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "DRAIN",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "WHITE",
+            "STORM",
+            "SHOWER",
+            "POUR",
+            "MOISTURE",
+            "SPIT",
+            "MOIST",
+            "MIST",
+            "MIRE"
+          ],
+          "resisted": [
+            "WITHER"
+          ],
+          "neutral": 697
+        },
+        "thirdTurn": {
+          "counters": [
+            "RIVER",
+            "RAIN",
+            "DIP",
+            "RAINY",
+            "DAMP",
+            "DEW",
+            "DANK",
+            "MIRED",
+            "DAMPEN",
+            "DEWY"
+          ],
+          "resisted": [
+            "AIR",
+            "DRY",
+            "ARID"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DRAIN",
+            "MOISTURE",
+            "RAINED"
+          ],
+          "tileIds": [
+            [
+              2,
+              5,
+              15,
+              10,
+              1
+            ],
+            [
+              4,
+              9,
+              13,
+              11,
+              6,
+              19,
+              8,
+              7
+            ],
+            [
+              20,
+              21,
+              25,
+              26,
+              16,
+              23
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            2,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "AIRED",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "RUN",
+            "WHITE",
+            "SPRING",
+            "STORM",
+            "SHOWER",
+            "POUR",
+            "MOISTURE",
+            "SPIT",
+            "MOIST",
+            "MIST",
+            "MIRE"
+          ],
+          "resisted": [
+            "SHRINK",
+            "WITHER"
+          ],
+          "neutral": 1010
+        },
+        "thirdTurn": {
+          "counters": [
+            "RUN",
+            "RIVER",
+            "WATER",
+            "WHITE",
+            "RAIN",
+            "MUD",
+            "DUNK",
+            "DEW",
+            "HUMID",
+            "DANK",
+            "MIRED"
+          ],
+          "resisted": [
+            "DRAIN",
+            "ARID",
+            "DRIER",
+            "WITHER"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AIRED",
+            "SPRING",
+            "RAINED"
+          ],
+          "tileIds": [
+            [
+              15,
+              10,
+              5,
+              7,
+              2
+            ],
+            [
+              11,
+              3,
+              8,
+              13,
+              1,
+              0
+            ],
+            [
+              20,
+              21,
+              25,
+              26,
+              16,
+              23
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            2,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "ARID",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "RUN",
+            "WHITE",
+            "SPRING",
+            "STORM",
+            "SHOWER",
+            "POUR",
+            "MOISTURE",
+            "SPIT",
+            "MOIST",
+            "MIST",
+            "MIRE"
+          ],
+          "resisted": [
+            "SHRINK",
+            "WITHER"
+          ],
+          "neutral": 1128
+        },
+        "thirdTurn": {
+          "counters": [
+            "RIVER",
+            "RAIN",
+            "DIP",
+            "DAMP",
+            "DEW",
+            "DANK",
+            "MIRED",
+            "DAMPEN"
+          ],
+          "resisted": [
+            "AIR",
+            "DRAIN",
+            "DRIER"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ARID",
+            "MOISTURE",
+            "RAINED"
+          ],
+          "tileIds": [
+            [
+              15,
+              5,
+              10,
+              2
+            ],
+            [
+              4,
+              9,
+              13,
+              11,
+              6,
+              19,
+              8,
+              7
+            ],
+            [
+              20,
+              21,
+              25,
+              1,
+              16,
+              23
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            2,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "DRIES",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "RUN",
+            "WATER",
+            "WHITE",
+            "RAIN",
+            "POUR",
+            "MIRE"
+          ],
+          "resisted": [
+            "AIR",
+            "WITHER"
+          ],
+          "neutral": 853
+        },
+        "thirdTurn": {
+          "counters": [
+            "RUN",
+            "RIVER",
+            "RAIN",
+            "MUD",
+            "POUR",
+            "DIP",
+            "RAINY",
+            "DAMP",
+            "DUNK",
+            "HUMID",
+            "DANK",
+            "MIRED",
+            "DAMPEN"
+          ],
+          "resisted": [
+            "AIR",
+            "DRAIN",
+            "VAPOR",
+            "ARID",
+            "VAPOUR"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DRIES",
+            "WATERING",
+            "RAINED"
+          ],
+          "tileIds": [
+            [
+              2,
+              5,
+              10,
+              7,
+              11
+            ],
+            [
+              14,
+              15,
+              6,
+              16,
+              8,
+              13,
+              1,
+              0
+            ],
+            [
+              20,
+              21,
+              25,
+              26,
+              27,
+              23
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "AGE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "WHITE",
+            "STORM",
+            "SHOWER",
+            "DIP",
+            "SPIT",
+            "MOIST",
+            "MIST",
+            "DEW",
+            "SNOWED",
+            "MIRED"
+          ],
+          "resisted": [
+            "SHRINK",
+            "DRIES",
+            "WITHER"
+          ],
+          "neutral": 854
+        },
+        "thirdTurn": {
+          "counters": [
+            "RUN",
+            "RAIN",
+            "STORM",
+            "POUR",
+            "DIP",
+            "SPIT",
+            "MOIST",
+            "MIST",
+            "HUMID",
+            "RAINSTORM"
+          ],
+          "resisted": [
+            "AIR",
+            "DUST",
+            "DRAIN",
+            "SHRINK",
+            "VAPOR",
+            "ARID",
+            "VAPOUR"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AGE",
+            "MIRED",
+            "RAIN"
+          ],
+          "tileIds": [
+            [
+              15,
+              0,
+              7
+            ],
+            [
+              4,
+              10,
+              5,
+              16,
+              2
+            ],
+            [
+              8,
+              21,
+              13,
+              1
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "AGO",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "WHITE",
+            "DIP",
+            "SPIT",
+            "MIST",
+            "DEW",
+            "MIRED"
+          ],
+          "resisted": [
+            "DESERT",
+            "SHRINK",
+            "DRIES",
+            "WITHER"
+          ],
+          "neutral": 597
+        },
+        "thirdTurn": {
+          "counters": [
+            "RUN",
+            "RIVER",
+            "WATER",
+            "WHITE",
+            "RAIN",
+            "STREAM",
+            "DIP",
+            "SPIT",
+            "MIST",
+            "HUMID",
+            "DAMPER"
+          ],
+          "resisted": [
+            "AIR",
+            "DUST",
+            "DRAIN",
+            "SHRINK",
+            "ARID",
+            "DRIES",
+            "WITHER"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AGO",
+            "MIRED",
+            "RIVER"
+          ],
+          "tileIds": [
+            [
+              15,
+              0,
+              9
+            ],
+            [
+              4,
+              10,
+              5,
+              7,
+              2
+            ],
+            [
+              8,
+              13,
+              22,
+              16,
+              20
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            2
+          ]
+        }
+      }
+    ]
+  },
+  "roots": [
+    {
+      "word": "IRRIGATE",
+      "senseId": "oewn-irrigate__2.30.00..",
+      "definition": "supply with water, as with channels or ditches or streams",
+      "relation": "opposite"
+    },
+    {
+      "word": "IRRIGATION",
+      "senseId": "oewn-irrigation__1.04.00..",
+      "definition": "supplying dry land with water by means of ditches etc",
+      "relation": "opposite"
+    },
+    {
+      "word": "WATER",
+      "senseId": "oewn-water__2.30.00..",
+      "definition": "supply with water, as with channels or ditches or streams",
+      "relation": "opposite"
+    },
+    {
+      "word": "WET",
+      "senseId": "oewn-wet__3.00.01..",
+      "definition": "covered or soaked with a liquid such as water",
+      "relation": "opposite"
+    },
+    {
+      "word": "MOIST",
+      "senseId": "oewn-moist__5.00.00.wet.01",
+      "definition": "slightly wet",
+      "relation": "opposite"
+    },
+    {
+      "word": "DAMP",
+      "senseId": "oewn-damp__5.00.00.wet.01",
+      "definition": "slightly wet",
+      "relation": "opposite"
+    },
+    {
+      "word": "RAIN",
+      "senseId": "oewn-rain__1.19.00..",
+      "definition": "water falling in drops from vapor condensed in the atmosphere",
+      "relation": "opposite"
+    },
+    {
+      "word": "RAINFALL",
+      "senseId": "oewn-rainfall__1.19.00..",
+      "definition": "water falling in drops from vapor condensed in the atmosphere",
+      "relation": "opposite"
+    },
+    {
+      "word": "RAINSTORM",
+      "senseId": "oewn-rainstorm__1.19.00..",
+      "definition": "a storm with rain",
+      "relation": "opposite"
+    },
+    {
+      "word": "HYDRATE",
+      "senseId": "oewn-hydrate__2.30.00..",
+      "definition": "cause to be hydrated; add water or moisture to",
+      "relation": "opposite"
+    },
+    {
+      "word": "HYDRATION",
+      "senseId": "oewn-hydration__1.22.00..",
+      "definition": "the process of combining with water; usually reversible",
+      "relation": "opposite"
+    },
+    {
+      "word": "SATURATE",
+      "senseId": "oewn-saturate__2.30.04..",
+      "definition": "infuse or fill completely",
+      "relation": "opposite"
+    },
+    {
+      "word": "DRENCH",
+      "senseId": "oewn-drench__2.30.00..",
+      "definition": "cover with liquid; pour liquid onto",
+      "relation": "opposite"
+    },
+    {
+      "word": "SOAK",
+      "senseId": "oewn-soak__2.35.01..",
+      "definition": "submerge in a liquid",
+      "relation": "opposite"
+    },
+    {
+      "word": "MOISTEN",
+      "senseId": "oewn-moisten__2.30.00..",
+      "definition": "make moist",
+      "relation": "opposite"
+    },
+    {
+      "word": "WETNESS",
+      "senseId": "oewn-wetness__1.26.00..",
+      "definition": "the condition of containing or being covered by a liquid (especially water)",
+      "relation": "opposite"
+    },
+    {
+      "word": "HUMID",
+      "senseId": "oewn-humid__5.00.00.wet.01",
+      "definition": "containing or characterized by a great deal of water vapor",
+      "relation": "opposite"
+    },
+    {
+      "word": "HUMIDITY",
+      "senseId": "oewn-humidity__1.26.00..",
+      "definition": "wetness in the atmosphere",
+      "relation": "opposite"
+    },
+    {
+      "word": "HUMIDIFY",
+      "senseId": "oewn-humidify__2.30.00..",
+      "definition": "make (more) humid",
+      "relation": "opposite"
+    },
+    {
+      "word": "DAMPEN",
+      "senseId": "oewn-dampen__2.30.01..",
+      "definition": "make moist",
+      "relation": "opposite"
+    },
+    {
+      "word": "WATERY",
+      "senseId": "oewn-watery__5.00.02.wet.01",
+      "definition": "filled with water",
+      "relation": "opposite"
+    },
+    {
+      "word": "DEW",
+      "senseId": "oewn-dew__1.27.00..",
+      "definition": "water that has condensed on a cool surface overnight from water vapor in the air",
+      "relation": "opposite"
+    },
+    {
+      "word": "DEWY",
+      "senseId": "oewn-dewy__5.00.00.wet.01",
+      "definition": "wet with dew",
+      "relation": "opposite"
+    },
+    {
+      "word": "ARID",
+      "senseId": "oewn-arid__5.00.00.dry.01",
+      "definition": "lacking sufficient water or rainfall",
+      "relation": "similar"
+    },
+    {
+      "word": "DRY",
+      "senseId": "oewn-dry__3.00.01..",
+      "definition": "free from liquid or moisture; lacking natural or normal moisture or depleted of water; or no longer wet",
+      "relation": "similar"
+    },
+    {
+      "word": "DROUGHT",
+      "senseId": "oewn-drought__1.26.00..",
+      "definition": "a shortage of rainfall",
+      "relation": "similar"
+    },
+    {
+      "word": "DESICCATE",
+      "senseId": "oewn-desiccate__2.30.05..",
+      "definition": "remove water from",
+      "relation": "similar"
+    },
+    {
+      "word": "DESICCATION",
+      "senseId": "oewn-desiccation__1.26.00..",
+      "definition": "dryness resulting from the removal of water",
+      "relation": "similar"
+    },
+    {
+      "word": "DESICCANT",
+      "senseId": "oewn-desiccant__1.27.00..",
+      "definition": "a substance that promotes drying (e.g., calcium oxide absorbs water and is used to remove moisture)",
+      "relation": "similar"
+    },
+    {
+      "word": "PARCH",
+      "senseId": "oewn-parch__2.30.00..",
+      "definition": "cause to wither or parch from exposure to heat",
+      "relation": "similar"
+    },
+    {
+      "word": "PARCHED",
+      "senseId": "oewn-parch__2.30.00..",
+      "definition": "cause to wither or parch from exposure to heat",
+      "relation": "similar"
+    },
+    {
+      "word": "DEHYDRATE",
+      "senseId": "oewn-dehydrate__2.30.01..",
+      "definition": "remove water from",
+      "relation": "similar"
+    },
+    {
+      "word": "DEHYDRATION",
+      "senseId": "oewn-dehydration__1.26.00..",
+      "definition": "dryness resulting from the removal of water",
+      "relation": "similar"
+    },
+    {
+      "word": "THIRST",
+      "senseId": "oewn-thirst__1.26.00..",
+      "definition": "a physiological need to drink",
+      "relation": "similar"
+    },
+    {
+      "word": "THIRSTY",
+      "senseId": "oewn-thirsty__5.00.00.dry.01",
+      "definition": "needing moisture",
+      "relation": "similar"
+    },
+    {
+      "word": "WITHER",
+      "senseId": "oewn-wither__2.30.00..",
+      "definition": "wither, as with a loss of moisture",
+      "relation": "similar"
+    },
+    {
+      "word": "DRAIN",
+      "senseId": "oewn-drain__2.30.01..",
+      "definition": "empty of liquid; drain the liquid from",
+      "relation": "similar"
+    },
+    {
+      "word": "EVAPORATE",
+      "senseId": "oewn-evaporate__2.30.00..",
+      "definition": "lose or cause to lose liquid by vaporization leaving a more concentrated residue",
+      "relation": "similar"
+    },
+    {
+      "word": "EVAPORATION",
+      "senseId": "oewn-evaporation__1.22.01..",
+      "definition": "the process of extracting moisture",
+      "relation": "similar"
+    },
+    {
+      "word": "WET",
+      "senseId": "oewn-wet__2.30.00..",
+      "definition": "cause to become wet",
+      "relation": "opposite"
+    },
+    {
+      "word": "DRY",
+      "senseId": "oewn-dry__2.30.01..",
+      "definition": "remove the moisture from and make dry",
+      "relation": "similar"
+    },
+    {
+      "word": "DRIZZLE",
+      "senseId": "oewn-drizzle__1.19.00..",
+      "definition": "very light rain; stronger than mist but less than a shower",
+      "relation": "opposite"
+    },
+    {
+      "word": "MIST",
+      "senseId": "oewn-mist__2.35.00..",
+      "definition": "spray finely or cover with mist",
+      "relation": "opposite"
+    },
+    {
+      "word": "RIVER",
+      "senseId": "oewn-river__1.17.00..",
+      "definition": "a large natural stream of water (larger than a creek)",
+      "relation": "opposite"
+    },
+    {
+      "word": "STREAM",
+      "senseId": "oewn-stream__1.17.00..",
+      "definition": "a natural body of running water flowing on or under the earth",
+      "relation": "opposite"
+    },
+    {
+      "word": "FLOOD",
+      "senseId": "oewn-flood__2.30.00..",
+      "definition": "cover with liquid, usually water",
+      "relation": "opposite"
+    },
+    {
+      "word": "SHOWER",
+      "senseId": "oewn-shower__1.19.00..",
+      "definition": "a brief period of precipitation",
+      "relation": "opposite"
+    },
+    {
+      "word": "SPRING",
+      "senseId": "oewn-spring__1.17.00..",
+      "definition": "a natural flow of ground water",
+      "relation": "opposite"
+    },
+    {
+      "word": "SNOW",
+      "senseId": "oewn-snow__1.27.00..",
+      "definition": "a layer of snowflakes (white crystals of frozen water) covering the ground",
+      "relation": "opposite"
+    },
+    {
+      "word": "STORM",
+      "senseId": "oewn-storm__2.43.01..",
+      "definition": "rain, hail, or snow hard and be very windy, often with thunder or lightning",
+      "relation": "opposite"
+    },
+    {
+      "word": "SPRAY",
+      "senseId": "oewn-spray__1.27.00..",
+      "definition": "water in small drops in the atmosphere; blown from waves or thrown up by a waterfall",
+      "relation": "opposite"
+    },
+    {
+      "word": "MUD",
+      "senseId": "oewn-mud__1.27.00..",
+      "definition": "water soaked soil; soft wet earth",
+      "relation": "opposite"
+    },
+    {
+      "word": "POUR",
+      "senseId": "oewn-pour__2.43.00..",
+      "definition": "rain heavily",
+      "relation": "opposite"
+    },
+    {
+      "word": "DIP",
+      "senseId": "oewn-dip__2.35.00..",
+      "definition": "immerse briefly into a liquid so as to wet, coat, or saturate",
+      "relation": "opposite"
+    },
+    {
+      "word": "SWAMP",
+      "senseId": "oewn-swamp__2.43.00..",
+      "definition": "drench or submerge or be drenched or submerged",
+      "relation": "opposite"
+    },
+    {
+      "word": "SPONGE",
+      "senseId": "oewn-sponge__2.35.00..",
+      "definition": "wipe with a sponge, so as to clean or moisten",
+      "relation": "opposite"
+    },
+    {
+      "word": "SPIT",
+      "senseId": "oewn-spit__2.43.00..",
+      "definition": "rain gently",
+      "relation": "opposite"
+    },
+    {
+      "word": "DANK",
+      "senseId": "oewn-dank__5.00.00.wet.01",
+      "definition": "unpleasantly cool and humid",
+      "relation": "opposite"
+    },
+    {
+      "word": "AIR",
+      "senseId": "oewn-air__2.30.01..",
+      "definition": "expose to warm or heated air, so as to dry",
+      "relation": "similar"
+    },
+    {
+      "word": "DUST",
+      "senseId": "oewn-dust__1.27.00..",
+      "definition": "fine powdery material such as dry earth or pollen that can be blown about in the air",
+      "relation": "similar"
+    },
+    {
+      "word": "DESERT",
+      "senseId": "oewn-desert__1.15.00..",
+      "definition": "arid land with little or no vegetation",
+      "relation": "similar"
+    }
+  ],
+  "semanticPolicy": "Pinned source senses and reviewed lexical families; unlabelled defined senses are neutral. Not a proof of exhaustive contextual semantic coverage.",
+  "asset": "puzzles/arid-irrigated-7ca7058b541f.json",
+  "twoWordWin": {
+    "words": [
+      "DAMPER",
+      "RAINIER"
+    ],
+    "tileIds": [
+      [
+        2,
+        15,
+        4,
+        3,
+        7,
+        5
+      ],
+      [
+        8,
+        21,
+        10,
+        1,
+        13,
+        16,
+        20
+      ]
+    ],
+    "labels": [
+      "COUNTER",
+      "COUNTER"
+    ],
+    "hits": [
+      3,
+      3
+    ]
+  }
+}

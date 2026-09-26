@@ -1,0 +1,1935 @@
+{
+  "id": "spite-compassionate",
+  "enemy": "SPITE",
+  "answer": "COMPASSIONATE",
+  "accepted": true,
+  "seed": "bingo-first-3:SPITE:COMPASSIONATE:14",
+  "score": 259,
+  "analysis": {
+    "score": 259,
+    "bingos": [
+      "COMPASSIONATE",
+      "SYMPATHIES",
+      "SYMPATHISE",
+      "SYMPATHISED",
+      "COMPASSIONATED"
+    ],
+    "counterFamilies": 6,
+    "resistedFamilies": 2,
+    "winningOpenings": 8,
+    "repeatedCounterRoutes": 8,
+    "sustainedPositions": 7,
+    "sustainedFinalPositions": 2,
+    "neutralCleanupOpenings": 1,
+    "routes": [
+      {
+        "opening": "STAND",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "SUPPORT",
+            "BEAR",
+            "STOMACH",
+            "MERCY",
+            "PITY",
+            "EMPATHY",
+            "PATHOS",
+            "EMPATHIC"
+          ],
+          "resisted": [
+            "BEAST",
+            "SPITE",
+            "BRUTE",
+            "ATROCIOUS"
+          ],
+          "neutral": 1390
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "STAND",
+            "EMPATHIC",
+            "SON"
+          ],
+          "tileIds": [
+            [
+              0,
+              3,
+              13,
+              7,
+              8
+            ],
+            [
+              10,
+              15,
+              6,
+              14,
+              18,
+              9,
+              2,
+              4
+            ],
+            [
+              12,
+              1,
+              21
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            2,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "STOMACH",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "STAND",
+            "SUPPORT",
+            "UNDERSTAND",
+            "BEAR",
+            "PITY",
+            "ABIDE"
+          ],
+          "resisted": [
+            "BEAST",
+            "SPITE",
+            "BRUTE"
+          ],
+          "neutral": 1306
+        },
+        "thirdTurn": {
+          "counters": [
+            "STANDING",
+            "ABIDING"
+          ],
+          "resisted": [
+            "BRUTAL"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "STOMACH",
+            "SUPPORTED",
+            "STANDING"
+          ],
+          "tileIds": [
+            [
+              0,
+              3,
+              1,
+              15,
+              13,
+              4,
+              9
+            ],
+            [
+              12,
+              17,
+              6,
+              20,
+              5,
+              19,
+              18,
+              10,
+              8
+            ],
+            [
+              25,
+              30,
+              14,
+              7,
+              22,
+              2,
+              21,
+              26
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "PITY",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "STAND",
+            "BEAR",
+            "STOMACH",
+            "HUMANE",
+            "ABODE"
+          ],
+          "resisted": [
+            "BEAST",
+            "BRUTE",
+            "MONSTROUS"
+          ],
+          "neutral": 1512
+        },
+        "thirdTurn": {
+          "counters": [
+            "CLEAR",
+            "BEAR",
+            "HUMANE",
+            "ABODE"
+          ],
+          "resisted": [
+            "COLD",
+            "CRUEL"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "PITY",
+            "STANDS",
+            "CLEAR"
+          ],
+          "tileIds": [
+            [
+              6,
+              2,
+              3,
+              11
+            ],
+            [
+              0,
+              18,
+              13,
+              7,
+              8,
+              12
+            ],
+            [
+              4,
+              23,
+              10,
+              14,
+              19
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "COMPASSION",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "STAND",
+            "BEAR",
+            "RUTH"
+          ],
+          "resisted": [
+            "BEAST",
+            "BRUTAL",
+            "BRUTE"
+          ],
+          "neutral": 1024
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "BRUTE"
+          ]
+        },
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "COMPASSION",
+            "STAND",
+            "BED"
+          ],
+          "tileIds": [
+            [
+              4,
+              1,
+              15,
+              6,
+              13,
+              0,
+              12,
+              2,
+              5,
+              7
+            ],
+            [
+              25,
+              3,
+              14,
+              21,
+              8
+            ],
+            [
+              16,
+              10,
+              22
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            4,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "EMPATHY",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "STAND"
+          ],
+          "resisted": [
+            "POISON",
+            "ATROCIOUS"
+          ],
+          "neutral": 827
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "COLD",
+            "POISON"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "EMPATHY",
+            "STANDS",
+            "BIG"
+          ],
+          "tileIds": [
+            [
+              10,
+              15,
+              6,
+              13,
+              3,
+              9,
+              11
+            ],
+            [
+              0,
+              18,
+              14,
+              7,
+              8,
+              12
+            ],
+            [
+              16,
+              2,
+              26
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            3,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "PATHOS",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "STAND",
+            "BEAR",
+            "MERCY",
+            "PITY",
+            "ABIDE"
+          ],
+          "resisted": [
+            "BEAST",
+            "SPITE",
+            "BRUTE"
+          ],
+          "neutral": 2236
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "PATHOS",
+            "ABIDES"
+          ],
+          "tileIds": [
+            [
+              6,
+              13,
+              3,
+              9,
+              1,
+              0
+            ],
+            [
+              14,
+              16,
+              2,
+              8,
+              10,
+              12
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "POISON",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "STAND",
+            "BEAR",
+            "MERCY",
+            "RUTH",
+            "EMPATHY",
+            "HUMANE"
+          ],
+          "resisted": [
+            "BEAST",
+            "BRUTE"
+          ],
+          "neutral": 1254
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "SPITE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "STAND",
+            "STOMACH",
+            "RUTH",
+            "PATHOS"
+          ],
+          "resisted": [],
+          "neutral": 1004
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "ACT",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "STAND",
+            "PITY",
+            "EMPATHY",
+            "HUMANE",
+            "ABIDE",
+            "HUMANIST",
+            "PATHOS"
+          ],
+          "resisted": [
+            "BEAST",
+            "POISON",
+            "SPITE",
+            "HEINOUS"
+          ],
+          "neutral": 1275
+        },
+        "thirdTurn": {
+          "counters": [
+            "SUPPORT",
+            "STOOD"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ACT",
+            "ABIDES",
+            "SUPPORT"
+          ],
+          "tileIds": [
+            [
+              13,
+              4,
+              3
+            ],
+            [
+              14,
+              16,
+              2,
+              8,
+              10,
+              0
+            ],
+            [
+              12,
+              17,
+              6,
+              20,
+              1,
+              19,
+              18
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "ASS",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "PITY",
+            "EMPATHY",
+            "HUMANE",
+            "ABIDE",
+            "EMPATHIC"
+          ],
+          "resisted": [],
+          "neutral": 834
+        },
+        "thirdTurn": {
+          "counters": [
+            "STOOD"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ASS",
+            "EMPATHIC",
+            "STOOD"
+          ],
+          "tileIds": [
+            [
+              13,
+              0,
+              12
+            ],
+            [
+              10,
+              15,
+              6,
+              14,
+              3,
+              9,
+              2,
+              4
+            ],
+            [
+              25,
+              18,
+              1,
+              5,
+              8
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      }
+    ]
+  },
+  "roots": [
+    {
+      "word": "ATROCIOUSNESS",
+      "senseId": "oewn-atrociousness__1.07.00..",
+      "definition": "the quality of being shockingly cruel and inhumane",
+      "relation": "similar"
+    },
+    {
+      "word": "ATROCIOUSNESSES",
+      "senseId": "oewn-atrociousness__1.07.00..",
+      "definition": "the quality of being shockingly cruel and inhumane",
+      "relation": "similar"
+    },
+    {
+      "word": "ATROCITIES",
+      "senseId": "oewn-atrocity__1.07.00..",
+      "definition": "the quality of being shockingly cruel and inhumane",
+      "relation": "similar"
+    },
+    {
+      "word": "ATROCITY",
+      "senseId": "oewn-atrocity__1.07.00..",
+      "definition": "the quality of being shockingly cruel and inhumane",
+      "relation": "similar"
+    },
+    {
+      "word": "BARBARITIES",
+      "senseId": "oewn-barbarity__1.07.00..",
+      "definition": "the quality of being shockingly cruel and inhumane",
+      "relation": "similar"
+    },
+    {
+      "word": "BARBARITY",
+      "senseId": "oewn-barbarity__1.07.00..",
+      "definition": "the quality of being shockingly cruel and inhumane",
+      "relation": "similar"
+    },
+    {
+      "word": "BARBAROUS",
+      "senseId": "oewn-barbarous__5.00.00.inhumane.00",
+      "definition": "(of persons or their actions) able or disposed to inflict pain or suffering",
+      "relation": "similar"
+    },
+    {
+      "word": "BARBAROUSLY",
+      "senseId": "oewn-barbarously__4.02.00..",
+      "definition": "in a barbarous manner",
+      "relation": "similar"
+    },
+    {
+      "word": "BARBAROUSNESS",
+      "senseId": "oewn-barbarousness__1.07.00..",
+      "definition": "the quality of being shockingly cruel and inhumane",
+      "relation": "similar"
+    },
+    {
+      "word": "BARBAROUSNESSES",
+      "senseId": "oewn-barbarousness__1.07.00..",
+      "definition": "the quality of being shockingly cruel and inhumane",
+      "relation": "similar"
+    },
+    {
+      "word": "BEAST",
+      "senseId": "oewn-beast__1.18.00..",
+      "definition": "a cruelly rapacious person",
+      "relation": "similar"
+    },
+    {
+      "word": "BEASTLIER",
+      "senseId": "oewn-beastly__5.00.00.inhumane.00",
+      "definition": "resembling a beast; showing lack of human sensibility",
+      "relation": "similar"
+    },
+    {
+      "word": "BEASTLIEST",
+      "senseId": "oewn-beastly__5.00.00.inhumane.00",
+      "definition": "resembling a beast; showing lack of human sensibility",
+      "relation": "similar"
+    },
+    {
+      "word": "BEASTLY",
+      "senseId": "oewn-beastly__5.00.00.inhumane.00",
+      "definition": "resembling a beast; showing lack of human sensibility",
+      "relation": "similar"
+    },
+    {
+      "word": "BEASTS",
+      "senseId": "oewn-beast__1.18.00..",
+      "definition": "a cruelly rapacious person",
+      "relation": "similar"
+    },
+    {
+      "word": "BENEVOLENCE",
+      "senseId": "oewn-benevolence__1.07.00..",
+      "definition": "an inclination to do kind or charitable acts",
+      "relation": "opposite"
+    },
+    {
+      "word": "BENEVOLENCES",
+      "senseId": "oewn-benevolence__1.07.00..",
+      "definition": "an inclination to do kind or charitable acts",
+      "relation": "opposite"
+    },
+    {
+      "word": "BENEVOLENT",
+      "senseId": "oewn-benevolent__5.00.00.kind.00",
+      "definition": "showing or motivated by sympathy and understanding and generosity",
+      "relation": "opposite"
+    },
+    {
+      "word": "BENEVOLENTLY",
+      "senseId": "oewn-benevolently__4.02.00..",
+      "definition": "in a benevolent manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "BENIGN",
+      "senseId": "oewn-benign__5.00.00.kind.00",
+      "definition": "kindness of disposition or manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "BENIGNANT",
+      "senseId": "oewn-benignant__5.00.00.kind.00",
+      "definition": "characterized by kindness and warm courtesy especially of a king to his subjects",
+      "relation": "opposite"
+    },
+    {
+      "word": "BENIGNER",
+      "senseId": "oewn-benign__5.00.00.kind.00",
+      "definition": "kindness of disposition or manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "BENIGNEST",
+      "senseId": "oewn-benign__5.00.00.kind.00",
+      "definition": "kindness of disposition or manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "BESTIAL",
+      "senseId": "oewn-bestial__5.00.00.inhumane.00",
+      "definition": "resembling a beast; showing lack of human sensibility",
+      "relation": "similar"
+    },
+    {
+      "word": "BESTIALLY",
+      "senseId": "oewn-bestially__4.02.00..",
+      "definition": "in the manner of a beast",
+      "relation": "similar"
+    },
+    {
+      "word": "BOWELLESS",
+      "senseId": "oewn-bowelless__5.00.00.merciless.00",
+      "definition": "ruthless in competition",
+      "relation": "similar"
+    },
+    {
+      "word": "BRUTAL",
+      "senseId": "oewn-brutal__5.00.01.inhumane.00",
+      "definition": "(of persons or their actions) able or disposed to inflict pain or suffering",
+      "relation": "similar"
+    },
+    {
+      "word": "BRUTALITIES",
+      "senseId": "oewn-brutality__1.07.00..",
+      "definition": "the trait of extreme cruelty",
+      "relation": "similar"
+    },
+    {
+      "word": "BRUTALITY",
+      "senseId": "oewn-brutality__1.07.00..",
+      "definition": "the trait of extreme cruelty",
+      "relation": "similar"
+    },
+    {
+      "word": "BRUTE",
+      "senseId": "oewn-brute__1.18.00..",
+      "definition": "a cruelly rapacious person",
+      "relation": "similar"
+    },
+    {
+      "word": "BRUTER",
+      "senseId": "oewn-brute__5.00.00.inhumane.00",
+      "definition": "resembling a beast; showing lack of human sensibility",
+      "relation": "similar"
+    },
+    {
+      "word": "BRUTES",
+      "senseId": "oewn-brute__1.18.00..",
+      "definition": "a cruelly rapacious person",
+      "relation": "similar"
+    },
+    {
+      "word": "BRUTISH",
+      "senseId": "oewn-brutish__5.00.00.inhumane.00",
+      "definition": "resembling a beast; showing lack of human sensibility",
+      "relation": "similar"
+    },
+    {
+      "word": "BRUTISHLY",
+      "senseId": "oewn-brutishly__4.02.00..",
+      "definition": "in the manner of a beast",
+      "relation": "similar"
+    },
+    {
+      "word": "CARING",
+      "senseId": "oewn-caring__5.00.00.compassionate.00",
+      "definition": "feeling and exhibiting concern and empathy for others",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHARITABLE",
+      "senseId": "oewn-charitable__5.00.00.kind.00",
+      "definition": "showing or motivated by sympathy and understanding and generosity",
+      "relation": "opposite"
+    },
+    {
+      "word": "CLEMENCIES",
+      "senseId": "oewn-clemency__1.04.01..",
+      "definition": "leniency and compassion shown toward offenders by a person or agency charged with administering justice",
+      "relation": "opposite"
+    },
+    {
+      "word": "CLEMENCY",
+      "senseId": "oewn-clemency__1.04.01..",
+      "definition": "leniency and compassion shown toward offenders by a person or agency charged with administering justice",
+      "relation": "opposite"
+    },
+    {
+      "word": "CLEMENT",
+      "senseId": "oewn-clement__3.00.01..",
+      "definition": "(used of persons or behavior) inclined to show mercy",
+      "relation": "opposite"
+    },
+    {
+      "word": "COLD",
+      "senseId": "oewn-cold__5.00.00.inhumane.00",
+      "definition": "without compunction or human feeling",
+      "relation": "similar"
+    },
+    {
+      "word": "COLDER",
+      "senseId": "oewn-cold__5.00.00.inhumane.00",
+      "definition": "without compunction or human feeling",
+      "relation": "similar"
+    },
+    {
+      "word": "COLDEST",
+      "senseId": "oewn-cold__5.00.00.inhumane.00",
+      "definition": "without compunction or human feeling",
+      "relation": "similar"
+    },
+    {
+      "word": "COMPASSION",
+      "senseId": "oewn-compassion__1.12.00..",
+      "definition": "a deep awareness of and sympathy for another's suffering",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPASSIONATE",
+      "senseId": "oewn-compassionate__2.37.00..",
+      "definition": "share the suffering of",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPASSIONATED",
+      "senseId": "oewn-compassionate__2.37.00..",
+      "definition": "share the suffering of",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPASSIONATELY",
+      "senseId": "oewn-compassionately__4.02.00..",
+      "definition": "in a compassionate manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPASSIONATENESS",
+      "senseId": "oewn-compassionateness__1.12.00..",
+      "definition": "a deep awareness of and sympathy for another's suffering",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPASSIONATENESSES",
+      "senseId": "oewn-compassionateness__1.12.00..",
+      "definition": "a deep awareness of and sympathy for another's suffering",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPASSIONATES",
+      "senseId": "oewn-compassionate__2.37.00..",
+      "definition": "share the suffering of",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPASSIONATING",
+      "senseId": "oewn-compassionate__2.37.00..",
+      "definition": "share the suffering of",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPASSIONS",
+      "senseId": "oewn-compassion__1.12.00..",
+      "definition": "a deep awareness of and sympathy for another's suffering",
+      "relation": "opposite"
+    },
+    {
+      "word": "CRUEL",
+      "senseId": "oewn-cruel__5.00.01.inhumane.00",
+      "definition": "(of persons or their actions) able or disposed to inflict pain or suffering",
+      "relation": "similar"
+    },
+    {
+      "word": "CRUELER",
+      "senseId": "oewn-cruel__5.00.01.inhumane.00",
+      "definition": "(of persons or their actions) able or disposed to inflict pain or suffering",
+      "relation": "similar"
+    },
+    {
+      "word": "CRUELEST",
+      "senseId": "oewn-cruel__5.00.01.inhumane.00",
+      "definition": "(of persons or their actions) able or disposed to inflict pain or suffering",
+      "relation": "similar"
+    },
+    {
+      "word": "CRUELLY",
+      "senseId": "oewn-cruelly__4.02.01..",
+      "definition": "with cruelty",
+      "relation": "similar"
+    },
+    {
+      "word": "CRUELNESS",
+      "senseId": "oewn-cruelness__1.07.00..",
+      "definition": "the quality of being cruel and causing tension or annoyance",
+      "relation": "similar"
+    },
+    {
+      "word": "CRUELNESSES",
+      "senseId": "oewn-cruelness__1.07.00..",
+      "definition": "the quality of being cruel and causing tension or annoyance",
+      "relation": "similar"
+    },
+    {
+      "word": "CRUELTIES",
+      "senseId": "oewn-cruelty__1.04.00..",
+      "definition": "a cruel act; a deliberate infliction of pain and suffering",
+      "relation": "similar"
+    },
+    {
+      "word": "CRUELTY",
+      "senseId": "oewn-cruelty__1.04.00..",
+      "definition": "a cruel act; a deliberate infliction of pain and suffering",
+      "relation": "similar"
+    },
+    {
+      "word": "CUTTHROAT",
+      "senseId": "oewn-cutthroat__5.00.00.merciless.00",
+      "definition": "ruthless in competition",
+      "relation": "similar"
+    },
+    {
+      "word": "EMPATHETIC",
+      "senseId": "oewn-empathetic__5.00.00.sympathetic.00",
+      "definition": "showing empathy or ready comprehension of others' states",
+      "relation": "opposite"
+    },
+    {
+      "word": "EMPATHETICALLY",
+      "senseId": "oewn-empathetically__4.02.00..",
+      "definition": "in a sympathetic manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "EMPATHIC",
+      "senseId": "oewn-empathic__5.00.00.sympathetic.00",
+      "definition": "showing empathy or ready comprehension of others' states",
+      "relation": "opposite"
+    },
+    {
+      "word": "EMPATHIES",
+      "senseId": "oewn-empathy__1.12.00..",
+      "definition": "understanding and entering into another's feelings",
+      "relation": "opposite"
+    },
+    {
+      "word": "EMPATHISE",
+      "senseId": "oewn-empathise__2.31.00..",
+      "definition": "be understanding of",
+      "relation": "opposite"
+    },
+    {
+      "word": "EMPATHISED",
+      "senseId": "oewn-empathise__2.31.00..",
+      "definition": "be understanding of",
+      "relation": "opposite"
+    },
+    {
+      "word": "EMPATHISES",
+      "senseId": "oewn-empathise__2.31.00..",
+      "definition": "be understanding of",
+      "relation": "opposite"
+    },
+    {
+      "word": "EMPATHISING",
+      "senseId": "oewn-empathise__2.31.00..",
+      "definition": "be understanding of",
+      "relation": "opposite"
+    },
+    {
+      "word": "EMPATHIZE",
+      "senseId": "oewn-empathize__2.31.00..",
+      "definition": "be understanding of",
+      "relation": "opposite"
+    },
+    {
+      "word": "EMPATHIZED",
+      "senseId": "oewn-empathize__2.31.00..",
+      "definition": "be understanding of",
+      "relation": "opposite"
+    },
+    {
+      "word": "EMPATHIZES",
+      "senseId": "oewn-empathize__2.31.00..",
+      "definition": "be understanding of",
+      "relation": "opposite"
+    },
+    {
+      "word": "EMPATHIZING",
+      "senseId": "oewn-empathize__2.31.00..",
+      "definition": "be understanding of",
+      "relation": "opposite"
+    },
+    {
+      "word": "EMPATHY",
+      "senseId": "oewn-empathy__1.12.00..",
+      "definition": "understanding and entering into another's feelings",
+      "relation": "opposite"
+    },
+    {
+      "word": "EXCRUCIATE",
+      "senseId": "oewn-excruciate__2.29.00..",
+      "definition": "subject to torture",
+      "relation": "similar"
+    },
+    {
+      "word": "EXCRUCIATED",
+      "senseId": "oewn-excruciate__2.29.00..",
+      "definition": "subject to torture",
+      "relation": "similar"
+    },
+    {
+      "word": "EXCRUCIATES",
+      "senseId": "oewn-excruciate__2.29.00..",
+      "definition": "subject to torture",
+      "relation": "similar"
+    },
+    {
+      "word": "EXCRUCIATING",
+      "senseId": "oewn-excruciate__2.29.00..",
+      "definition": "subject to torture",
+      "relation": "similar"
+    },
+    {
+      "word": "EXONERATIVE",
+      "senseId": "oewn-exonerative__5.00.00.exculpatory.00",
+      "definition": "providing absolution",
+      "relation": "opposite"
+    },
+    {
+      "word": "FELL",
+      "senseId": "oewn-fell__5.00.00.inhumane.00",
+      "definition": "(of persons or their actions) able or disposed to inflict pain or suffering",
+      "relation": "similar"
+    },
+    {
+      "word": "FELLER",
+      "senseId": "oewn-fell__5.00.00.inhumane.00",
+      "definition": "(of persons or their actions) able or disposed to inflict pain or suffering",
+      "relation": "similar"
+    },
+    {
+      "word": "FELLEST",
+      "senseId": "oewn-fell__5.00.00.inhumane.00",
+      "definition": "(of persons or their actions) able or disposed to inflict pain or suffering",
+      "relation": "similar"
+    },
+    {
+      "word": "FEROCIOUSNESS",
+      "senseId": "oewn-ferociousness__1.07.00..",
+      "definition": "the trait of extreme cruelty",
+      "relation": "similar"
+    },
+    {
+      "word": "FEROCIOUSNESSES",
+      "senseId": "oewn-ferociousness__1.07.00..",
+      "definition": "the trait of extreme cruelty",
+      "relation": "similar"
+    },
+    {
+      "word": "FIERCE",
+      "senseId": "oewn-fierce__5.00.00.merciless.00",
+      "definition": "ruthless in competition",
+      "relation": "similar"
+    },
+    {
+      "word": "FIERCER",
+      "senseId": "oewn-fierce__5.00.00.merciless.00",
+      "definition": "ruthless in competition",
+      "relation": "similar"
+    },
+    {
+      "word": "FIERCEST",
+      "senseId": "oewn-fierce__5.00.00.merciless.00",
+      "definition": "ruthless in competition",
+      "relation": "similar"
+    },
+    {
+      "word": "FORGIVING",
+      "senseId": "oewn-forgiving__3.00.00..",
+      "definition": "inclined or able to forgive and show mercy",
+      "relation": "opposite"
+    },
+    {
+      "word": "FORGIVINGLY",
+      "senseId": "oewn-forgivingly__4.02.00..",
+      "definition": "with forgiveness; in a forgiving manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "FORGIVINGNESS",
+      "senseId": "oewn-forgivingness__1.07.00..",
+      "definition": "tendency to be kind and forgiving",
+      "relation": "opposite"
+    },
+    {
+      "word": "FORGIVINGNESSES",
+      "senseId": "oewn-forgivingness__1.07.00..",
+      "definition": "tendency to be kind and forgiving",
+      "relation": "opposite"
+    },
+    {
+      "word": "GENTLE",
+      "senseId": "oewn-gentle__5.00.00.mild.00",
+      "definition": "soft and mild; not harsh or stern or severe",
+      "relation": "opposite"
+    },
+    {
+      "word": "GENTLENESS",
+      "senseId": "oewn-gentleness__1.07.00..",
+      "definition": "acting in a manner that is gentle and mild and even-tempered",
+      "relation": "opposite"
+    },
+    {
+      "word": "GENTLENESSES",
+      "senseId": "oewn-gentleness__1.07.00..",
+      "definition": "acting in a manner that is gentle and mild and even-tempered",
+      "relation": "opposite"
+    },
+    {
+      "word": "GENTLER",
+      "senseId": "oewn-gentle__5.00.00.mild.00",
+      "definition": "soft and mild; not harsh or stern or severe",
+      "relation": "opposite"
+    },
+    {
+      "word": "GENTLEST",
+      "senseId": "oewn-gentle__5.00.00.mild.00",
+      "definition": "soft and mild; not harsh or stern or severe",
+      "relation": "opposite"
+    },
+    {
+      "word": "GENTLY",
+      "senseId": "oewn-gently__4.02.01..",
+      "definition": "in a gentle manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "GRACIOUS",
+      "senseId": "oewn-gracious__5.00.00.kind.00",
+      "definition": "characterized by kindness and warm courtesy especially of a king to his subjects",
+      "relation": "opposite"
+    },
+    {
+      "word": "HARSHNESS",
+      "senseId": "oewn-harshness__1.07.04..",
+      "definition": "the quality of being cruel and causing tension or annoyance",
+      "relation": "similar"
+    },
+    {
+      "word": "HARSHNESSES",
+      "senseId": "oewn-harshness__1.07.04..",
+      "definition": "the quality of being cruel and causing tension or annoyance",
+      "relation": "similar"
+    },
+    {
+      "word": "HEINOUSNESS",
+      "senseId": "oewn-heinousness__1.07.00..",
+      "definition": "the quality of being shockingly cruel and inhumane",
+      "relation": "similar"
+    },
+    {
+      "word": "HEINOUSNESSES",
+      "senseId": "oewn-heinousness__1.07.00..",
+      "definition": "the quality of being shockingly cruel and inhumane",
+      "relation": "similar"
+    },
+    {
+      "word": "HUMANE",
+      "senseId": "oewn-humane__3.00.00..",
+      "definition": "marked or motivated by concern with the alleviation of suffering",
+      "relation": "opposite"
+    },
+    {
+      "word": "HUMANELY",
+      "senseId": "oewn-humanely__4.02.00..",
+      "definition": "in a humane manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "HUMANENESS",
+      "senseId": "oewn-humaneness__1.07.00..",
+      "definition": "the quality of compassion or consideration for others (people or animals)",
+      "relation": "opposite"
+    },
+    {
+      "word": "HUMANENESSES",
+      "senseId": "oewn-humaneness__1.07.00..",
+      "definition": "the quality of compassion or consideration for others (people or animals)",
+      "relation": "opposite"
+    },
+    {
+      "word": "HUMANER",
+      "senseId": "oewn-humane__3.00.00..",
+      "definition": "marked or motivated by concern with the alleviation of suffering",
+      "relation": "opposite"
+    },
+    {
+      "word": "HUMANEST",
+      "senseId": "oewn-humane__3.00.00..",
+      "definition": "marked or motivated by concern with the alleviation of suffering",
+      "relation": "opposite"
+    },
+    {
+      "word": "HUMANIST",
+      "senseId": "oewn-humanist__5.00.00.humane.00",
+      "definition": "marked by humanistic values and devotion to human welfare",
+      "relation": "opposite"
+    },
+    {
+      "word": "HUMANISTIC",
+      "senseId": "oewn-humanistic__5.00.00.humane.00",
+      "definition": "marked by humanistic values and devotion to human welfare",
+      "relation": "opposite"
+    },
+    {
+      "word": "HUMANITARIAN",
+      "senseId": "oewn-humanitarian__5.00.00.humane.00",
+      "definition": "marked by humanistic values and devotion to human welfare",
+      "relation": "opposite"
+    },
+    {
+      "word": "INHUMAN",
+      "senseId": "oewn-inhuman__5.00.00.inhumane.00",
+      "definition": "without compunction or human feeling",
+      "relation": "similar"
+    },
+    {
+      "word": "INHUMANE",
+      "senseId": "oewn-inhumane__3.00.00..",
+      "definition": "lacking and reflecting lack of pity or compassion",
+      "relation": "similar"
+    },
+    {
+      "word": "INHUMANELY",
+      "senseId": "oewn-inhumanely__4.02.00..",
+      "definition": "in an inhumane manner",
+      "relation": "similar"
+    },
+    {
+      "word": "INHUMANITIES",
+      "senseId": "oewn-inhumanity__1.07.00..",
+      "definition": "the quality of lacking compassion or consideration for others",
+      "relation": "similar"
+    },
+    {
+      "word": "INHUMANITY",
+      "senseId": "oewn-inhumanity__1.07.00..",
+      "definition": "the quality of lacking compassion or consideration for others",
+      "relation": "similar"
+    },
+    {
+      "word": "INSENSATE",
+      "senseId": "oewn-insensate__5.00.00.inhumane.00",
+      "definition": "without compunction or human feeling",
+      "relation": "similar"
+    },
+    {
+      "word": "KIND",
+      "senseId": "oewn-kind__3.00.00..",
+      "definition": "having or showing a tender and considerate and helpful nature; used especially of persons and their behavior",
+      "relation": "opposite"
+    },
+    {
+      "word": "KINDER",
+      "senseId": "oewn-kind__3.00.00..",
+      "definition": "having or showing a tender and considerate and helpful nature; used especially of persons and their behavior",
+      "relation": "opposite"
+    },
+    {
+      "word": "KINDEST",
+      "senseId": "oewn-kind__3.00.00..",
+      "definition": "having or showing a tender and considerate and helpful nature; used especially of persons and their behavior",
+      "relation": "opposite"
+    },
+    {
+      "word": "KINDHEARTED",
+      "senseId": "oewn-kindhearted__5.00.00.kind.00",
+      "definition": "having or proceeding from an innately kind disposition",
+      "relation": "opposite"
+    },
+    {
+      "word": "KINDLIER",
+      "senseId": "oewn-kindly__5.00.00.kind.00",
+      "definition": "showing or motivated by sympathy and understanding and generosity",
+      "relation": "opposite"
+    },
+    {
+      "word": "KINDLIEST",
+      "senseId": "oewn-kindly__5.00.00.kind.00",
+      "definition": "showing or motivated by sympathy and understanding and generosity",
+      "relation": "opposite"
+    },
+    {
+      "word": "KINDLY",
+      "senseId": "oewn-kindly__4.02.00..",
+      "definition": "in a kind manner or out of kindness",
+      "relation": "opposite"
+    },
+    {
+      "word": "KINDNESS",
+      "senseId": "oewn-kindness__1.07.00..",
+      "definition": "the quality of being warmhearted and considerate and humane and sympathetic",
+      "relation": "opposite"
+    },
+    {
+      "word": "KINDNESSES",
+      "senseId": "oewn-kindness__1.07.00..",
+      "definition": "the quality of being warmhearted and considerate and humane and sympathetic",
+      "relation": "opposite"
+    },
+    {
+      "word": "LENIENT",
+      "senseId": "oewn-lenient__5.00.00.clement.01",
+      "definition": "characterized by tolerance and mercy",
+      "relation": "opposite"
+    },
+    {
+      "word": "MERCIES",
+      "senseId": "oewn-mercy__1.04.00..",
+      "definition": "leniency and compassion shown toward offenders by a person or agency charged with administering justice",
+      "relation": "opposite"
+    },
+    {
+      "word": "MERCIFUL",
+      "senseId": "oewn-merciful__3.00.00..",
+      "definition": "showing or giving mercy",
+      "relation": "opposite"
+    },
+    {
+      "word": "MERCIFULLY",
+      "senseId": "oewn-mercifully__4.02.01..",
+      "definition": "in a merciful manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "MERCIFULNESS",
+      "senseId": "oewn-mercifulness__1.04.00..",
+      "definition": "leniency and compassion shown toward offenders by a person or agency charged with administering justice",
+      "relation": "opposite"
+    },
+    {
+      "word": "MERCIFULNESSES",
+      "senseId": "oewn-mercifulness__1.04.00..",
+      "definition": "leniency and compassion shown toward offenders by a person or agency charged with administering justice",
+      "relation": "opposite"
+    },
+    {
+      "word": "MERCILESS",
+      "senseId": "oewn-merciless__3.00.00..",
+      "definition": "having or showing no mercy",
+      "relation": "similar"
+    },
+    {
+      "word": "MERCILESSLY",
+      "senseId": "oewn-mercilessly__4.02.00..",
+      "definition": "without pity; in a merciless manner",
+      "relation": "similar"
+    },
+    {
+      "word": "MERCILESSNESS",
+      "senseId": "oewn-mercilessness__1.07.00..",
+      "definition": "inhumaneness evidenced by an unwillingness to be kind or forgiving",
+      "relation": "similar"
+    },
+    {
+      "word": "MERCILESSNESSES",
+      "senseId": "oewn-mercilessness__1.07.00..",
+      "definition": "inhumaneness evidenced by an unwillingness to be kind or forgiving",
+      "relation": "similar"
+    },
+    {
+      "word": "MERCY",
+      "senseId": "oewn-mercy__1.04.00..",
+      "definition": "leniency and compassion shown toward offenders by a person or agency charged with administering justice",
+      "relation": "opposite"
+    },
+    {
+      "word": "MILDNESS",
+      "senseId": "oewn-mildness__1.07.01..",
+      "definition": "acting in a manner that is gentle and mild and even-tempered",
+      "relation": "opposite"
+    },
+    {
+      "word": "MILDNESSES",
+      "senseId": "oewn-mildness__1.07.01..",
+      "definition": "acting in a manner that is gentle and mild and even-tempered",
+      "relation": "opposite"
+    },
+    {
+      "word": "MORTAL",
+      "senseId": "oewn-mortal__5.00.00.merciless.00",
+      "definition": "unrelenting and deadly",
+      "relation": "similar"
+    },
+    {
+      "word": "NURTURANT",
+      "senseId": "oewn-nurturant__5.00.00.compassionate.00",
+      "definition": "providing physical and emotional care and nourishment",
+      "relation": "opposite"
+    },
+    {
+      "word": "OPENHEARTED",
+      "senseId": "oewn-openhearted__5.00.00.kind.00",
+      "definition": "showing or motivated by sympathy and understanding and generosity",
+      "relation": "opposite"
+    },
+    {
+      "word": "PITIED",
+      "senseId": "oewn-pity__2.37.00..",
+      "definition": "share the suffering of",
+      "relation": "opposite"
+    },
+    {
+      "word": "PITIES",
+      "senseId": "oewn-pity__1.07.00..",
+      "definition": "the humane quality of understanding the suffering of others and wanting to do something about it",
+      "relation": "opposite"
+    },
+    {
+      "word": "PITILESS",
+      "senseId": "oewn-pitiless__5.00.00.merciless.00",
+      "definition": "without mercy or pity",
+      "relation": "similar"
+    },
+    {
+      "word": "PITILESSLY",
+      "senseId": "oewn-pitilessly__4.02.00..",
+      "definition": "without pity; in a merciless manner",
+      "relation": "similar"
+    },
+    {
+      "word": "PITILESSNESS",
+      "senseId": "oewn-pitilessness__1.12.00..",
+      "definition": "feelings of extreme heartlessness",
+      "relation": "similar"
+    },
+    {
+      "word": "PITILESSNESSES",
+      "senseId": "oewn-pitilessness__1.12.00..",
+      "definition": "feelings of extreme heartlessness",
+      "relation": "similar"
+    },
+    {
+      "word": "PITY",
+      "senseId": "oewn-pity__1.07.00..",
+      "definition": "the humane quality of understanding the suffering of others and wanting to do something about it",
+      "relation": "opposite"
+    },
+    {
+      "word": "PITYING",
+      "senseId": "oewn-pity__2.37.00..",
+      "definition": "share the suffering of",
+      "relation": "opposite"
+    },
+    {
+      "word": "POISONOUS",
+      "senseId": "oewn-poisonous__5.00.00.malicious.00",
+      "definition": "marked by deep ill will; deliberately harmful",
+      "relation": "similar"
+    },
+    {
+      "word": "POISONOUSLY",
+      "senseId": "oewn-poisonously__4.02.00..",
+      "definition": "in a very malevolent manner",
+      "relation": "similar"
+    },
+    {
+      "word": "REMORSELESS",
+      "senseId": "oewn-remorseless__5.00.00.merciless.00",
+      "definition": "without mercy or pity",
+      "relation": "similar"
+    },
+    {
+      "word": "REMORSELESSLY",
+      "senseId": "oewn-remorselessly__4.02.00..",
+      "definition": "without pity; in a merciless manner",
+      "relation": "similar"
+    },
+    {
+      "word": "ROUGHSHOD",
+      "senseId": "oewn-roughshod__5.00.00.inhumane.00",
+      "definition": "(of persons or their actions) able or disposed to inflict pain or suffering",
+      "relation": "similar"
+    },
+    {
+      "word": "RUTHLESS",
+      "senseId": "oewn-ruthless__5.00.00.merciless.00",
+      "definition": "without mercy or pity",
+      "relation": "similar"
+    },
+    {
+      "word": "RUTHLESSLY",
+      "senseId": "oewn-ruthlessly__4.02.00..",
+      "definition": "in a ruthless manner",
+      "relation": "similar"
+    },
+    {
+      "word": "RUTHLESSNESS",
+      "senseId": "oewn-ruthlessness__1.12.00..",
+      "definition": "feelings of extreme heartlessness",
+      "relation": "similar"
+    },
+    {
+      "word": "RUTHLESSNESSES",
+      "senseId": "oewn-ruthlessness__1.12.00..",
+      "definition": "feelings of extreme heartlessness",
+      "relation": "similar"
+    },
+    {
+      "word": "SAVAGE",
+      "senseId": "oewn-savage__5.00.00.inhumane.00",
+      "definition": "(of persons or their actions) able or disposed to inflict pain or suffering",
+      "relation": "similar"
+    },
+    {
+      "word": "SAVAGELY",
+      "senseId": "oewn-savagely__4.02.00..",
+      "definition": "in a vicious manner",
+      "relation": "similar"
+    },
+    {
+      "word": "SAVAGER",
+      "senseId": "oewn-savage__5.00.00.inhumane.00",
+      "definition": "(of persons or their actions) able or disposed to inflict pain or suffering",
+      "relation": "similar"
+    },
+    {
+      "word": "SAVAGERIES",
+      "senseId": "oewn-savagery__1.07.00..",
+      "definition": "the trait of extreme cruelty",
+      "relation": "similar"
+    },
+    {
+      "word": "SAVAGERY",
+      "senseId": "oewn-savagery__1.07.00..",
+      "definition": "the trait of extreme cruelty",
+      "relation": "similar"
+    },
+    {
+      "word": "SAVAGES",
+      "senseId": "oewn-savage__1.18.01..",
+      "definition": "a cruelly rapacious person",
+      "relation": "similar"
+    },
+    {
+      "word": "SAVAGEST",
+      "senseId": "oewn-savage__5.00.00.inhumane.00",
+      "definition": "(of persons or their actions) able or disposed to inflict pain or suffering",
+      "relation": "similar"
+    },
+    {
+      "word": "SOFT",
+      "senseId": "oewn-soft__3.00.02..",
+      "definition": "compassionate and kind; conciliatory",
+      "relation": "opposite"
+    },
+    {
+      "word": "SOFTER",
+      "senseId": "oewn-soft__3.00.02..",
+      "definition": "compassionate and kind; conciliatory",
+      "relation": "opposite"
+    },
+    {
+      "word": "SOFTEST",
+      "senseId": "oewn-soft__3.00.02..",
+      "definition": "compassionate and kind; conciliatory",
+      "relation": "opposite"
+    },
+    {
+      "word": "SOFTNESS",
+      "senseId": "oewn-softness__1.07.03..",
+      "definition": "acting in a manner that is gentle and mild and even-tempered",
+      "relation": "opposite"
+    },
+    {
+      "word": "SOFTNESSES",
+      "senseId": "oewn-softness__1.07.03..",
+      "definition": "acting in a manner that is gentle and mild and even-tempered",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYMPATHETIC",
+      "senseId": "oewn-sympathetic__5.00.00.kind.00",
+      "definition": "showing or motivated by sympathy and understanding and generosity",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYMPATHISE",
+      "senseId": "oewn-sympathise__2.31.00..",
+      "definition": "be understanding of",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYMPATHISED",
+      "senseId": "oewn-sympathise__2.31.00..",
+      "definition": "be understanding of",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYMPATHISES",
+      "senseId": "oewn-sympathise__2.31.00..",
+      "definition": "be understanding of",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYMPATHISING",
+      "senseId": "oewn-sympathise__2.31.00..",
+      "definition": "be understanding of",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYMPATHIZE",
+      "senseId": "oewn-sympathize__2.31.00..",
+      "definition": "be understanding of",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYMPATHIZED",
+      "senseId": "oewn-sympathize__2.31.00..",
+      "definition": "be understanding of",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYMPATHIZES",
+      "senseId": "oewn-sympathize__2.31.00..",
+      "definition": "be understanding of",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYMPATHIZING",
+      "senseId": "oewn-sympathize__2.31.00..",
+      "definition": "be understanding of",
+      "relation": "opposite"
+    },
+    {
+      "word": "TENDERHEARTED",
+      "senseId": "oewn-tenderhearted__5.00.00.compassionate.00",
+      "definition": "easily moved by another's distress",
+      "relation": "opposite"
+    },
+    {
+      "word": "TIGERISH",
+      "senseId": "oewn-tigerish__5.00.00.merciless.00",
+      "definition": "resembling a tiger in fierceness and lack of mercy",
+      "relation": "similar"
+    },
+    {
+      "word": "TOLERANT",
+      "senseId": "oewn-tolerant__5.00.00.forgiving.00",
+      "definition": "tolerant and forgiving under provocation",
+      "relation": "opposite"
+    },
+    {
+      "word": "TORMENT",
+      "senseId": "oewn-torment__2.29.00..",
+      "definition": "subject to torture",
+      "relation": "similar"
+    },
+    {
+      "word": "TORMENTED",
+      "senseId": "oewn-torment__2.29.00..",
+      "definition": "subject to torture",
+      "relation": "similar"
+    },
+    {
+      "word": "TORMENTING",
+      "senseId": "oewn-torment__2.29.00..",
+      "definition": "subject to torture",
+      "relation": "similar"
+    },
+    {
+      "word": "TORMENTS",
+      "senseId": "oewn-torment__2.29.00..",
+      "definition": "subject to torture",
+      "relation": "similar"
+    },
+    {
+      "word": "TORTURE",
+      "senseId": "oewn-torture__1.04.00..",
+      "definition": "the deliberate, systematic, or wanton infliction of physical or mental suffering by one or more persons in an attempt to force another person to yield information or to make a confession or for any other reason",
+      "relation": "similar"
+    },
+    {
+      "word": "TORTURED",
+      "senseId": "oewn-torture__2.29.00..",
+      "definition": "subject to torture",
+      "relation": "similar"
+    },
+    {
+      "word": "TORTURES",
+      "senseId": "oewn-torture__1.04.00..",
+      "definition": "the deliberate, systematic, or wanton infliction of physical or mental suffering by one or more persons in an attempt to force another person to yield information or to make a confession or for any other reason",
+      "relation": "similar"
+    },
+    {
+      "word": "TORTURING",
+      "senseId": "oewn-torturing__1.04.00..",
+      "definition": "the deliberate, systematic, or wanton infliction of physical or mental suffering by one or more persons in an attempt to force another person to yield information or to make a confession or for any other reason",
+      "relation": "similar"
+    },
+    {
+      "word": "TORTURINGS",
+      "senseId": "oewn-torturing__1.04.00..",
+      "definition": "the deliberate, systematic, or wanton infliction of physical or mental suffering by one or more persons in an attempt to force another person to yield information or to make a confession or for any other reason",
+      "relation": "similar"
+    },
+    {
+      "word": "UNDERSTAND",
+      "senseId": "oewn-understand__2.31.04..",
+      "definition": "be understanding of",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNDERSTANDED",
+      "senseId": "oewn-understand__2.31.04..",
+      "definition": "be understanding of",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNDERSTANDING",
+      "senseId": "oewn-understand__2.31.04..",
+      "definition": "be understanding of",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNDERSTANDS",
+      "senseId": "oewn-understand__2.31.04..",
+      "definition": "be understanding of",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNDERSTOOD",
+      "senseId": "oewn-understand__2.31.04..",
+      "definition": "be understanding of",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNKIND",
+      "senseId": "oewn-unkind__5.00.00.inhumane.00",
+      "definition": "deficient in humane and kindly feelings",
+      "relation": "similar"
+    },
+    {
+      "word": "UNKINDER",
+      "senseId": "oewn-unkind__5.00.00.inhumane.00",
+      "definition": "deficient in humane and kindly feelings",
+      "relation": "similar"
+    },
+    {
+      "word": "UNKINDEST",
+      "senseId": "oewn-unkind__5.00.00.inhumane.00",
+      "definition": "deficient in humane and kindly feelings",
+      "relation": "similar"
+    },
+    {
+      "word": "UNMERCIFUL",
+      "senseId": "oewn-unmerciful__3.00.04..",
+      "definition": "having or showing no mercy",
+      "relation": "similar"
+    },
+    {
+      "word": "UNMERCIFULLY",
+      "senseId": "oewn-unmercifully__4.02.00..",
+      "definition": "without pity; in a merciless manner",
+      "relation": "similar"
+    },
+    {
+      "word": "UNMERCIFULNESS",
+      "senseId": "oewn-unmercifulness__1.07.00..",
+      "definition": "inhumaneness evidenced by an unwillingness to be kind or forgiving",
+      "relation": "similar"
+    },
+    {
+      "word": "UNPITYING",
+      "senseId": "oewn-unpitying__5.00.00.merciless.00",
+      "definition": "without mercy or pity",
+      "relation": "similar"
+    },
+    {
+      "word": "VENOMOUS",
+      "senseId": "oewn-venomous__5.00.00.malicious.00",
+      "definition": "marked by deep ill will; deliberately harmful",
+      "relation": "similar"
+    },
+    {
+      "word": "VENOMOUSLY",
+      "senseId": "oewn-venomously__4.02.00..",
+      "definition": "in a very malevolent manner",
+      "relation": "similar"
+    },
+    {
+      "word": "VICIOUS",
+      "senseId": "oewn-vicious__5.00.00.inhumane.00",
+      "definition": "(of persons or their actions) able or disposed to inflict pain or suffering",
+      "relation": "similar"
+    },
+    {
+      "word": "VICIOUSLY",
+      "senseId": "oewn-viciously__4.02.00..",
+      "definition": "in a vicious manner",
+      "relation": "similar"
+    },
+    {
+      "word": "VICIOUSNESS",
+      "senseId": "oewn-viciousness__1.07.00..",
+      "definition": "the trait of extreme cruelty",
+      "relation": "similar"
+    },
+    {
+      "word": "VICIOUSNESSES",
+      "senseId": "oewn-viciousness__1.07.00..",
+      "definition": "the trait of extreme cruelty",
+      "relation": "similar"
+    },
+    {
+      "word": "WILDCAT",
+      "senseId": "oewn-wildcat__1.18.00..",
+      "definition": "a cruelly rapacious person",
+      "relation": "similar"
+    },
+    {
+      "word": "WILDCATS",
+      "senseId": "oewn-wildcat__1.18.00..",
+      "definition": "a cruelly rapacious person",
+      "relation": "similar"
+    },
+    {
+      "word": "WOLF",
+      "senseId": "oewn-wolf__1.18.01..",
+      "definition": "a cruelly rapacious person",
+      "relation": "similar"
+    },
+    {
+      "word": "WOLFS",
+      "senseId": "oewn-wolf__1.18.01..",
+      "definition": "a cruelly rapacious person",
+      "relation": "similar"
+    },
+    {
+      "word": "WOLVES",
+      "senseId": "oewn-wolf__1.18.01..",
+      "definition": "a cruelly rapacious person",
+      "relation": "similar"
+    }
+  ],
+  "semanticPolicy": "Pinned source senses and reviewed lexical families; unlabelled defined senses are neutral. Not a proof of exhaustive contextual semantic coverage.",
+  "asset": "puzzles/spite-compassionate-f8b21b24dabd.json",
+  "twoWordWin": {
+    "words": [
+      "ADS",
+      "SYMPATHETIC"
+    ],
+    "tileIds": [
+      [
+        13,
+        8,
+        0
+      ],
+      [
+        12,
+        11,
+        15,
+        6,
+        14,
+        3,
+        9,
+        10,
+        18,
+        2,
+        4
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      5
+    ]
+  }
+}

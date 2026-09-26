@@ -26,3 +26,6 @@ artifacts/melancholy
 *.njsproj
 *.sln
 *.sw?
+
+# Regenerable authoring payloads; published puzzles live under public/puzzles.
+artifacts/daily-month-*/*.puzzle.json

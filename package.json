@@ -25,7 +25,8 @@
     "prove-daily-minimum": "node scripts/prove-daily-minimum.ts",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate:daily": "node scripts/generate-daily-month.ts"
   },
   "dependencies": {
     "an-array-of-english-words": "^2.0.0",

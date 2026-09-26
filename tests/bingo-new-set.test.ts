@@ -7,7 +7,6 @@ import { getMeaningSense, getWordMeanings } from '../scripts/lib/wordMeanings.ts
 import { bingoPreviews } from '../src/experimental/bingo/catalog.ts'
 import { getBingoGuide } from '../src/experimental/bingo/guides.ts'
 import { decodeBingoPreview } from '../src/experimental/bingo/previewData.ts'
-import { bingoEncounter } from '../src/experimental/bingo/puzzle.ts'
 import { canSpell } from '../src/generator/constructBoard.ts'
 import { selectWordIds } from '../src/generator/constructRefill.ts'
 import { createLetterStrikeGame, submitLetterStrike } from '../src/game/letterStrike.ts'
@@ -38,15 +37,14 @@ test('five distinct new bingo-first puzzles replay diverse ordinary routes at 3,
 })
 
 test('all preview guides provide three hints and an actual one-word winning answer', () => {
-  for (const entry of [...bingoPreviews, { id: 'bingo', asset: '' }]) {
+  for (const entry of bingoPreviews) {
     const guide = getBingoGuide(entry.id)
     assert.ok(guide, entry.id)
     assert.equal(guide.hints.length, 3)
     assert.equal(new Set(guide.hints).size, 3)
     assert.ok(guide.hints.every(hint => hint.trim().length > 10 && !hint.toUpperCase().includes(guide.answer)))
     assert.ok(guide.explanation.trim())
-    const encounter = entry.id === 'bingo' ? bingoEncounter
-      : decodeBingoPreview(read(`../public/${entry.asset}`), bingoPreviews.find(p => p.id === entry.id)!, 3)
+    const encounter = decodeBingoPreview(read(`../public/${entry.asset}`), bingoPreviews.find(p => p.id === entry.id)!, 3)
     const initial = createLetterStrikeGame(encounter)
     const ids = selectWordIds(initial.tiles, guide.answer)
     assert.ok(ids, `${entry.id}: cannot spell guide answer`)

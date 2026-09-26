@@ -1,0 +1,4444 @@
+{
+  "id": "mess-seamless",
+  "enemy": "MESS",
+  "answer": "SEAMLESS",
+  "accepted": true,
+  "seed": "bingo-first-3:MESS:SEAMLESS:16",
+  "score": 557,
+  "analysis": {
+    "score": 557,
+    "bingos": [
+      "SEAMLESS",
+      "CALMNESSES",
+      "TRIMNESSES"
+    ],
+    "counterFamilies": 12,
+    "resistedFamilies": 4,
+    "winningOpenings": 15,
+    "repeatedCounterRoutes": 15,
+    "sustainedPositions": 8,
+    "sustainedFinalPositions": 9,
+    "neutralCleanupOpenings": 0,
+    "routes": [
+      {
+        "opening": "REST",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "REST",
+            "SORT",
+            "CLASS",
+            "CLEAR",
+            "PLANS",
+            "DESIGN",
+            "DIRECT",
+            "CALM",
+            "COMPOSED",
+            "ORGANISED",
+            "NEAT",
+            "COOLER",
+            "TRIM",
+            "COORDINATE",
+            "POISED",
+            "ASSORTED",
+            "CONSORT",
+            "COOLNESS"
+          ],
+          "resisted": [
+            "LOST",
+            "RANDOM",
+            "MESS",
+            "NOISE"
+          ],
+          "neutral": 2656
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "REST",
+            "COMPOSES"
+          ],
+          "tileIds": [
+            [
+              9,
+              12,
+              3,
+              8
+            ],
+            [
+              1,
+              11,
+              4,
+              15,
+              19,
+              5,
+              13,
+              10
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "SORT",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "REST",
+            "SORT",
+            "CLASS",
+            "CLEAR",
+            "PEACE",
+            "PLANS",
+            "DESIGN",
+            "AGREE",
+            "DIRECT",
+            "EASIER",
+            "SLEEPING",
+            "CALM",
+            "EASE",
+            "CATEGORIES",
+            "GENTLE",
+            "ORGANISED",
+            "NEAT",
+            "TRIM",
+            "POISED",
+            "ASSORTED",
+            "REPOSE",
+            "DECOMPRESS"
+          ],
+          "resisted": [
+            "LOST",
+            "RANDOM",
+            "MESS",
+            "NOISE"
+          ],
+          "neutral": 3020
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SORT",
+            "DECOMPRESS"
+          ],
+          "tileIds": [
+            [
+              3,
+              11,
+              9,
+              8
+            ],
+            [
+              17,
+              12,
+              1,
+              19,
+              4,
+              15,
+              16,
+              13,
+              5,
+              10
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            5
+          ]
+        }
+      },
+      {
+        "opening": "CLASS",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "REST",
+            "SORT",
+            "ORDER",
+            "DESIGN",
+            "DIRECT",
+            "COMPOSED",
+            "TRIM",
+            "POISED",
+            "CONSORT",
+            "REPOSE"
+          ],
+          "resisted": [
+            "NOISE"
+          ],
+          "neutral": 1180
+        },
+        "thirdTurn": {
+          "counters": [
+            "REST"
+          ],
+          "resisted": [
+            "THROW",
+            "NOISE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CLASS",
+            "COMPOSED",
+            "REST"
+          ],
+          "tileIds": [
+            [
+              1,
+              14,
+              0,
+              3,
+              5
+            ],
+            [
+              20,
+              11,
+              4,
+              15,
+              19,
+              10,
+              12,
+              17
+            ],
+            [
+              9,
+              13,
+              27,
+              8
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "CLEAR",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "REST",
+            "SORT",
+            "DESIGN",
+            "DIRECT",
+            "COMPOSED",
+            "TRIM",
+            "POISED",
+            "CONSORT"
+          ],
+          "resisted": [
+            "MESS",
+            "NOISE"
+          ],
+          "neutral": 995
+        },
+        "thirdTurn": {
+          "counters": [
+            "REST",
+            "SORT",
+            "DESIGN",
+            "ORDERS",
+            "METHODS",
+            "TRIMS"
+          ],
+          "resisted": [
+            "THROW",
+            "MESS",
+            "NOISE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CLEAR",
+            "COMPOSES",
+            "REST"
+          ],
+          "tileIds": [
+            [
+              1,
+              14,
+              12,
+              0,
+              9
+            ],
+            [
+              20,
+              11,
+              4,
+              15,
+              19,
+              3,
+              13,
+              5
+            ],
+            [
+              16,
+              28,
+              10,
+              8
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "PEACE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "SORT",
+            "TRIM",
+            "CONSORT"
+          ],
+          "resisted": [
+            "LOST"
+          ],
+          "neutral": 359
+        },
+        "thirdTurn": {
+          "counters": [
+            "SMOOTH",
+            "TRIM",
+            "CONSORT"
+          ],
+          "resisted": [
+            "LOST"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "PEACE",
+            "SORTS",
+            "SMOOTH"
+          ],
+          "tileIds": [
+            [
+              15,
+              12,
+              0,
+              1,
+              13
+            ],
+            [
+              3,
+              11,
+              9,
+              8,
+              5
+            ],
+            [
+              10,
+              4,
+              19,
+              21,
+              18,
+              25
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "PLANS",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "REST",
+            "SORT",
+            "ORDER",
+            "DIRECT",
+            "TRIM"
+          ],
+          "resisted": [
+            "MESS"
+          ],
+          "neutral": 500
+        },
+        "thirdTurn": {
+          "counters": [
+            "ORDER",
+            "DIRECT",
+            "METHOD",
+            "TRIM"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "PLANS",
+            "RESTS",
+            "METHOD"
+          ],
+          "tileIds": [
+            [
+              15,
+              14,
+              0,
+              7,
+              3
+            ],
+            [
+              9,
+              12,
+              5,
+              8,
+              10
+            ],
+            [
+              4,
+              13,
+              18,
+              25,
+              11,
+              17
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "AGREE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "SORT",
+            "TRIM",
+            "CONSORT"
+          ],
+          "resisted": [
+            "LOST"
+          ],
+          "neutral": 417
+        },
+        "thirdTurn": {
+          "counters": [
+            "SMOOTH",
+            "TRIM",
+            "CONSORT"
+          ],
+          "resisted": [
+            "LOST"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AGREE",
+            "SORTS",
+            "SMOOTH"
+          ],
+          "tileIds": [
+            [
+              0,
+              6,
+              9,
+              12,
+              13
+            ],
+            [
+              3,
+              11,
+              16,
+              8,
+              5
+            ],
+            [
+              10,
+              4,
+              19,
+              21,
+              18,
+              25
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "EASIER",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "SORT",
+            "CONSORT"
+          ],
+          "resisted": [
+            "LOST"
+          ],
+          "neutral": 246
+        },
+        "thirdTurn": {
+          "counters": [
+            "TRIM"
+          ],
+          "resisted": [
+            "THROW"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "EASIER",
+            "SORTS",
+            "TRIM"
+          ],
+          "tileIds": [
+            [
+              12,
+              0,
+              3,
+              2,
+              13,
+              9
+            ],
+            [
+              5,
+              11,
+              16,
+              8,
+              10
+            ],
+            [
+              18,
+              22,
+              24,
+              4
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SLEEPING",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "SORT",
+            "ACCORDS"
+          ],
+          "resisted": [],
+          "neutral": 201
+        },
+        "thirdTurn": {
+          "counters": [
+            "METHOD",
+            "SMOOTH",
+            "TRIM"
+          ],
+          "resisted": [
+            "THROW",
+            "CHAOS",
+            "CHAOTIC"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SLEEPING",
+            "SORTS",
+            "METHOD"
+          ],
+          "tileIds": [
+            [
+              3,
+              14,
+              12,
+              13,
+              15,
+              2,
+              7,
+              6
+            ],
+            [
+              5,
+              11,
+              9,
+              8,
+              10
+            ],
+            [
+              4,
+              28,
+              18,
+              25,
+              19,
+              17
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "CALM",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "REST",
+            "SORT",
+            "ORDER",
+            "DESIGN",
+            "POISED",
+            "REPOSE"
+          ],
+          "resisted": [
+            "NOISE"
+          ],
+          "neutral": 794
+        },
+        "thirdTurn": {
+          "counters": [
+            "REST",
+            "SORT",
+            "SMOOTH",
+            "COMPOSE",
+            "TRIMS"
+          ],
+          "resisted": [
+            "THROW"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CALM",
+            "DESIGNS",
+            "REST"
+          ],
+          "tileIds": [
+            [
+              1,
+              0,
+              14,
+              4
+            ],
+            [
+              17,
+              12,
+              3,
+              2,
+              6,
+              7,
+              5
+            ],
+            [
+              9,
+              13,
+              10,
+              8
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "EASE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "SORT",
+            "TRIM",
+            "COMPOSING",
+            "CONSORT"
+          ],
+          "resisted": [
+            "LOST"
+          ],
+          "neutral": 525
+        },
+        "thirdTurn": {
+          "counters": [
+            "TRIM"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "EASE",
+            "SORTS",
+            "TRIM"
+          ],
+          "tileIds": [
+            [
+              12,
+              0,
+              3,
+              13
+            ],
+            [
+              5,
+              11,
+              9,
+              8,
+              10
+            ],
+            [
+              18,
+              16,
+              2,
+              4
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "CATEGORIES",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "SORT",
+            "SMOOTH",
+            "TRIM",
+            "CONSORT"
+          ],
+          "resisted": [
+            "LOST"
+          ],
+          "neutral": 510
+        },
+        "thirdTurn": {
+          "counters": [
+            "REST",
+            "DESIGN",
+            "DIRECTS",
+            "TRIMS"
+          ],
+          "resisted": [
+            "MESS"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CATEGORIES",
+            "SMOOTH",
+            "REST"
+          ],
+          "tileIds": [
+            [
+              1,
+              0,
+              8,
+              12,
+              6,
+              11,
+              9,
+              2,
+              13,
+              3
+            ],
+            [
+              5,
+              4,
+              19,
+              21,
+              18,
+              25
+            ],
+            [
+              16,
+              28,
+              10,
+              30
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "LOST",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "REST",
+            "SORT",
+            "ORDER",
+            "PEACE",
+            "DESIGN",
+            "PROGRAM",
+            "AGREE",
+            "DIRECT",
+            "EASIER",
+            "EASE",
+            "CATEGORIES",
+            "ORGANISED",
+            "NEAT",
+            "TRIM",
+            "POISED",
+            "ASSORTED",
+            "ORGANISERS",
+            "REPOSE",
+            "DECOMPRESS"
+          ],
+          "resisted": [
+            "RANDOM",
+            "MESS",
+            "NOISE"
+          ],
+          "neutral": 2283
+        },
+        "thirdTurn": {
+          "counters": [
+            "REST",
+            "SORT",
+            "ORGANISE",
+            "HARMONIES",
+            "ORGANISER",
+            "TRIMS"
+          ],
+          "resisted": [
+            "THROW",
+            "NOISE",
+            "CHAOS"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "LOST",
+            "DECOMPRESS",
+            "REST"
+          ],
+          "tileIds": [
+            [
+              14,
+              11,
+              3,
+              8
+            ],
+            [
+              17,
+              12,
+              1,
+              19,
+              4,
+              15,
+              9,
+              13,
+              5,
+              10
+            ],
+            [
+              16,
+              28,
+              27,
+              18
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            5,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "MESS",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "REST",
+            "SORT",
+            "CLEAR",
+            "ORDER",
+            "PLANS",
+            "DESIGN",
+            "DIRECT",
+            "ORGANISED",
+            "NEAT",
+            "COOLER",
+            "COORDINATE",
+            "POISED",
+            "CONSORT",
+            "ORGANISER"
+          ],
+          "resisted": [
+            "LOST",
+            "NOISE"
+          ],
+          "neutral": 2064
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "NOISE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "REST",
+            "SORT",
+            "CLASS",
+            "CLEAR",
+            "ORDER",
+            "PROGRAM",
+            "CALM",
+            "ASSORTED",
+            "ACCORDS"
+          ],
+          "resisted": [
+            "LOST",
+            "MESS"
+          ],
+          "neutral": 1088
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "MESSIER",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "SORT",
+            "PLANS",
+            "CONSORT",
+            "ACCORDS"
+          ],
+          "resisted": [
+            "LOST"
+          ],
+          "neutral": 457
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "AGE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "REST",
+            "SORT",
+            "ORDER",
+            "DIRECT",
+            "TRIM",
+            "POISED"
+          ],
+          "resisted": [
+            "LOST",
+            "MESS",
+            "NOISE"
+          ],
+          "neutral": 1016
+        },
+        "thirdTurn": {
+          "counters": [
+            "SORT",
+            "TRIM",
+            "CONSORT"
+          ],
+          "resisted": [
+            "LOST"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AGE",
+            "RESTS",
+            "TRIMS"
+          ],
+          "tileIds": [
+            [
+              0,
+              6,
+              12
+            ],
+            [
+              9,
+              13,
+              3,
+              8,
+              5
+            ],
+            [
+              18,
+              16,
+              2,
+              4,
+              10
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "ARE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "REST",
+            "SORT",
+            "DESIGN",
+            "DIRECT",
+            "TRIM",
+            "POISED"
+          ],
+          "resisted": [
+            "LOST",
+            "MESS",
+            "NOISE"
+          ],
+          "neutral": 1157
+        },
+        "thirdTurn": {
+          "counters": [
+            "SORT",
+            "SMOOTH",
+            "TRIM"
+          ],
+          "resisted": [
+            "LOST"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ARE",
+            "DESIGNS",
+            "SMOOTH"
+          ],
+          "tileIds": [
+            [
+              0,
+              9,
+              12
+            ],
+            [
+              17,
+              13,
+              3,
+              2,
+              6,
+              7,
+              5
+            ],
+            [
+              10,
+              4,
+              11,
+              19,
+              8,
+              25
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            2
+          ]
+        }
+      }
+    ]
+  },
+  "roots": [
+    {
+      "word": "ACCORD",
+      "senseId": "oewn-accord__2.42.00..",
+      "definition": "go together",
+      "relation": "opposite"
+    },
+    {
+      "word": "ACCORDED",
+      "senseId": "oewn-accord__2.42.00..",
+      "definition": "go together",
+      "relation": "opposite"
+    },
+    {
+      "word": "ACCORDING",
+      "senseId": "oewn-accord__2.42.00..",
+      "definition": "go together",
+      "relation": "opposite"
+    },
+    {
+      "word": "ACCORDS",
+      "senseId": "oewn-accord__2.42.00..",
+      "definition": "go together",
+      "relation": "opposite"
+    },
+    {
+      "word": "ADDLED",
+      "senseId": "oewn-addled__5.00.00.confused.00",
+      "definition": "confused and vague; used especially of thinking",
+      "relation": "similar"
+    },
+    {
+      "word": "ADDLEPATED",
+      "senseId": "oewn-addlepated__5.00.00.confused.00",
+      "definition": "stupid and confused",
+      "relation": "similar"
+    },
+    {
+      "word": "AGREE",
+      "senseId": "oewn-agree__2.42.01..",
+      "definition": "go together",
+      "relation": "opposite"
+    },
+    {
+      "word": "AGREED",
+      "senseId": "oewn-agree__2.42.01..",
+      "definition": "go together",
+      "relation": "opposite"
+    },
+    {
+      "word": "AGREEING",
+      "senseId": "oewn-agree__2.42.01..",
+      "definition": "go together",
+      "relation": "opposite"
+    },
+    {
+      "word": "AGREES",
+      "senseId": "oewn-agree__2.42.01..",
+      "definition": "go together",
+      "relation": "opposite"
+    },
+    {
+      "word": "ANARCHIC",
+      "senseId": "oewn-anarchic__5.00.00.uncontrolled.00",
+      "definition": "without law or control",
+      "relation": "similar"
+    },
+    {
+      "word": "ANARCHICAL",
+      "senseId": "oewn-anarchical__5.00.00.uncontrolled.00",
+      "definition": "without law or control",
+      "relation": "similar"
+    },
+    {
+      "word": "ANARCHICALLY",
+      "senseId": "oewn-anarchically__4.02.00..",
+      "definition": "in a lawless rebellious manner",
+      "relation": "similar"
+    },
+    {
+      "word": "ANARCHIES",
+      "senseId": "oewn-anarchy__1.26.00..",
+      "definition": "a state of lawlessness and disorder (usually resulting from a failure of government)",
+      "relation": "similar"
+    },
+    {
+      "word": "ANARCHY",
+      "senseId": "oewn-anarchy__1.26.00..",
+      "definition": "a state of lawlessness and disorder (usually resulting from a failure of government)",
+      "relation": "similar"
+    },
+    {
+      "word": "ARRANGE",
+      "senseId": "oewn-arrange__2.31.00..",
+      "definition": "arrange thoughts, ideas, temporal events",
+      "relation": "opposite"
+    },
+    {
+      "word": "ARRANGED",
+      "senseId": "oewn-arrange__2.31.00..",
+      "definition": "arrange thoughts, ideas, temporal events",
+      "relation": "opposite"
+    },
+    {
+      "word": "ARRANGES",
+      "senseId": "oewn-arrange__2.31.00..",
+      "definition": "arrange thoughts, ideas, temporal events",
+      "relation": "opposite"
+    },
+    {
+      "word": "ARRANGING",
+      "senseId": "oewn-arrange__2.31.00..",
+      "definition": "arrange thoughts, ideas, temporal events",
+      "relation": "opposite"
+    },
+    {
+      "word": "ASSORT",
+      "senseId": "oewn-assort__2.31.00..",
+      "definition": "arrange or order by classes or categories",
+      "relation": "opposite"
+    },
+    {
+      "word": "ASSORTED",
+      "senseId": "oewn-assort__2.31.00..",
+      "definition": "arrange or order by classes or categories",
+      "relation": "opposite"
+    },
+    {
+      "word": "ASSORTING",
+      "senseId": "oewn-assort__2.31.00..",
+      "definition": "arrange or order by classes or categories",
+      "relation": "opposite"
+    },
+    {
+      "word": "ASSORTS",
+      "senseId": "oewn-assort__2.31.00..",
+      "definition": "arrange or order by classes or categories",
+      "relation": "opposite"
+    },
+    {
+      "word": "BAFFLED",
+      "senseId": "oewn-baffled__5.00.00.perplexed.00",
+      "definition": "perplexed by many conflicting situations or statements; filled with bewilderment",
+      "relation": "similar"
+    },
+    {
+      "word": "BALANCE",
+      "senseId": "oewn-balance__1.07.00..",
+      "definition": "harmonious arrangement or relation of parts or elements within a whole (as in a design)",
+      "relation": "opposite"
+    },
+    {
+      "word": "BALANCES",
+      "senseId": "oewn-balance__1.07.00..",
+      "definition": "harmonious arrangement or relation of parts or elements within a whole (as in a design)",
+      "relation": "opposite"
+    },
+    {
+      "word": "BEDEVIL",
+      "senseId": "oewn-bedevil__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "BEDEVILED",
+      "senseId": "oewn-bedevil__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "BEDEVILING",
+      "senseId": "oewn-bedevil__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "BEDEVILLED",
+      "senseId": "oewn-bedevil__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "BEDEVILLING",
+      "senseId": "oewn-bedevil__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "BEDEVILS",
+      "senseId": "oewn-bedevil__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "BEDLAM",
+      "senseId": "oewn-bedlam__1.26.00..",
+      "definition": "a state of extreme confusion and disorder",
+      "relation": "similar"
+    },
+    {
+      "word": "BEDLAMS",
+      "senseId": "oewn-bedlam__1.26.00..",
+      "definition": "a state of extreme confusion and disorder",
+      "relation": "similar"
+    },
+    {
+      "word": "BEFOGGED",
+      "senseId": "oewn-befogged__5.00.00.confused.00",
+      "definition": "stupefied by alcoholic drink",
+      "relation": "similar"
+    },
+    {
+      "word": "BEFUDDLE",
+      "senseId": "oewn-befuddle__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "BEFUDDLED",
+      "senseId": "oewn-befuddle__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "BEFUDDLES",
+      "senseId": "oewn-befuddle__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "BEFUDDLING",
+      "senseId": "oewn-befuddle__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "BEMUSED",
+      "senseId": "oewn-bemused__5.00.00.perplexed.00",
+      "definition": "perplexed by many conflicting situations or statements; filled with bewilderment",
+      "relation": "similar"
+    },
+    {
+      "word": "BEWILDERED",
+      "senseId": "oewn-bewildered__5.00.00.perplexed.00",
+      "definition": "perplexed by many conflicting situations or statements; filled with bewilderment",
+      "relation": "similar"
+    },
+    {
+      "word": "BEWILDEREDLY",
+      "senseId": "oewn-bewilderedly__4.02.00..",
+      "definition": "in a bewildered manner",
+      "relation": "similar"
+    },
+    {
+      "word": "BOISTEROUS",
+      "senseId": "oewn-boisterous__5.00.00.disorderly.00",
+      "definition": "noisy and lacking in restraint or discipline",
+      "relation": "similar"
+    },
+    {
+      "word": "BOISTEROUSNESS",
+      "senseId": "oewn-boisterousness__1.07.00..",
+      "definition": "the property of being noisy and lively and unrestrained",
+      "relation": "similar"
+    },
+    {
+      "word": "BOISTEROUSNESSES",
+      "senseId": "oewn-boisterousness__1.07.00..",
+      "definition": "the property of being noisy and lively and unrestrained",
+      "relation": "similar"
+    },
+    {
+      "word": "CALM",
+      "senseId": "oewn-calm__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALMED",
+      "senseId": "oewn-calm__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALMER",
+      "senseId": "oewn-calm__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALMEST",
+      "senseId": "oewn-calm__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALMING",
+      "senseId": "oewn-calm__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALMLY",
+      "senseId": "oewn-calmly__4.02.00..",
+      "definition": "with self-possession (especially in times of stress)",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALMNESS",
+      "senseId": "oewn-calmness__1.07.00..",
+      "definition": "steadiness of mind under stress",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALMNESSES",
+      "senseId": "oewn-calmness__1.07.00..",
+      "definition": "steadiness of mind under stress",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALMS",
+      "senseId": "oewn-calm__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHAOS",
+      "senseId": "oewn-chaos__1.26.00..",
+      "definition": "a state of extreme confusion and disorder",
+      "relation": "similar"
+    },
+    {
+      "word": "CHAOSES",
+      "senseId": "oewn-chaos__1.26.00..",
+      "definition": "a state of extreme confusion and disorder",
+      "relation": "similar"
+    },
+    {
+      "word": "CHAOTIC",
+      "senseId": "oewn-chaotic__5.00.00.wild.02",
+      "definition": "completely unordered and unpredictable and confusing",
+      "relation": "similar"
+    },
+    {
+      "word": "CHAOTICALLY",
+      "senseId": "oewn-chaotically__4.02.01..",
+      "definition": "in a wild and confused manner",
+      "relation": "similar"
+    },
+    {
+      "word": "CLARITIES",
+      "senseId": "oewn-clarity__1.07.01..",
+      "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+      "relation": "opposite"
+    },
+    {
+      "word": "CLARITY",
+      "senseId": "oewn-clarity__1.07.01..",
+      "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+      "relation": "opposite"
+    },
+    {
+      "word": "CLASS",
+      "senseId": "oewn-class__2.31.00..",
+      "definition": "arrange or order by classes or categories",
+      "relation": "opposite"
+    },
+    {
+      "word": "CLASSED",
+      "senseId": "oewn-class__2.31.00..",
+      "definition": "arrange or order by classes or categories",
+      "relation": "opposite"
+    },
+    {
+      "word": "CLASSES",
+      "senseId": "oewn-class__2.31.00..",
+      "definition": "arrange or order by classes or categories",
+      "relation": "opposite"
+    },
+    {
+      "word": "CLASSIFIED",
+      "senseId": "oewn-classify__2.31.00..",
+      "definition": "arrange or order by classes or categories",
+      "relation": "opposite"
+    },
+    {
+      "word": "CLASSIFIES",
+      "senseId": "oewn-classify__2.31.00..",
+      "definition": "arrange or order by classes or categories",
+      "relation": "opposite"
+    },
+    {
+      "word": "CLASSIFY",
+      "senseId": "oewn-classify__2.31.00..",
+      "definition": "arrange or order by classes or categories",
+      "relation": "opposite"
+    },
+    {
+      "word": "CLASSIFYING",
+      "senseId": "oewn-classify__2.31.00..",
+      "definition": "arrange or order by classes or categories",
+      "relation": "opposite"
+    },
+    {
+      "word": "CLASSING",
+      "senseId": "oewn-class__2.31.00..",
+      "definition": "arrange or order by classes or categories",
+      "relation": "opposite"
+    },
+    {
+      "word": "CLEAR",
+      "senseId": "oewn-clear__5.00.00.clearheaded.00",
+      "definition": "free from confusion or doubt",
+      "relation": "opposite"
+    },
+    {
+      "word": "CLEARER",
+      "senseId": "oewn-clear__5.00.00.clearheaded.00",
+      "definition": "free from confusion or doubt",
+      "relation": "opposite"
+    },
+    {
+      "word": "CLEAREST",
+      "senseId": "oewn-clear__5.00.00.clearheaded.00",
+      "definition": "free from confusion or doubt",
+      "relation": "opposite"
+    },
+    {
+      "word": "CLEARNESS",
+      "senseId": "oewn-clearness__1.07.01..",
+      "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+      "relation": "opposite"
+    },
+    {
+      "word": "CLEARNESSES",
+      "senseId": "oewn-clearness__1.07.01..",
+      "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+      "relation": "opposite"
+    },
+    {
+      "word": "CLOUDED",
+      "senseId": "oewn-clouded__5.00.00.confused.00",
+      "definition": "mentally disordered",
+      "relation": "similar"
+    },
+    {
+      "word": "COHERENCE",
+      "senseId": "oewn-coherence__1.07.00..",
+      "definition": "logical and orderly and consistent relation of parts",
+      "relation": "opposite"
+    },
+    {
+      "word": "COHERENCES",
+      "senseId": "oewn-coherence__1.07.00..",
+      "definition": "logical and orderly and consistent relation of parts",
+      "relation": "opposite"
+    },
+    {
+      "word": "COHERENCIES",
+      "senseId": "oewn-coherency__1.07.00..",
+      "definition": "logical and orderly and consistent relation of parts",
+      "relation": "opposite"
+    },
+    {
+      "word": "COHERENCY",
+      "senseId": "oewn-coherency__1.07.00..",
+      "definition": "logical and orderly and consistent relation of parts",
+      "relation": "opposite"
+    },
+    {
+      "word": "COHERENT",
+      "senseId": "oewn-coherent__3.00.00..",
+      "definition": "marked by an orderly, logical, and aesthetically consistent relation of parts",
+      "relation": "opposite"
+    },
+    {
+      "word": "COHERENTLY",
+      "senseId": "oewn-coherently__4.02.00..",
+      "definition": "in a coherent manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "COLLECTED",
+      "senseId": "oewn-collected__5.00.00.composed.00",
+      "definition": "in full control of your faculties",
+      "relation": "opposite"
+    },
+    {
+      "word": "COLLECTEDLY",
+      "senseId": "oewn-collectedly__4.02.00..",
+      "definition": "in a self-collected or self-possessed manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPOSE",
+      "senseId": "oewn-compose__2.37.00..",
+      "definition": "calm (someone, especially oneself); make quiet",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPOSED",
+      "senseId": "oewn-composed__3.00.00..",
+      "definition": "serenely self-possessed and free from agitation especially in times of stress",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPOSEDLY",
+      "senseId": "oewn-composedly__4.02.00..",
+      "definition": "in a self-collected or self-possessed manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPOSES",
+      "senseId": "oewn-compose__2.37.00..",
+      "definition": "calm (someone, especially oneself); make quiet",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPOSING",
+      "senseId": "oewn-compose__2.37.00..",
+      "definition": "calm (someone, especially oneself); make quiet",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPOSURE",
+      "senseId": "oewn-composure__1.07.00..",
+      "definition": "steadiness of mind under stress",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPOSURES",
+      "senseId": "oewn-composure__1.07.00..",
+      "definition": "steadiness of mind under stress",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONCORD",
+      "senseId": "oewn-concord__1.26.00..",
+      "definition": "a harmonious state of things in general and of their properties (as of colors and sounds); congruity of parts with one another and with the whole",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONCORDANCE",
+      "senseId": "oewn-concordance__1.26.00..",
+      "definition": "a harmonious state of things in general and of their properties (as of colors and sounds); congruity of parts with one another and with the whole",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONCORDANCES",
+      "senseId": "oewn-concordance__1.26.00..",
+      "definition": "a harmonious state of things in general and of their properties (as of colors and sounds); congruity of parts with one another and with the whole",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONCORDED",
+      "senseId": "oewn-concord__2.42.00..",
+      "definition": "go together",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONCORDING",
+      "senseId": "oewn-concord__2.42.00..",
+      "definition": "go together",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONCORDS",
+      "senseId": "oewn-concord__1.26.00..",
+      "definition": "a harmonious state of things in general and of their properties (as of colors and sounds); congruity of parts with one another and with the whole",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONFOUND",
+      "senseId": "oewn-confound__2.31.02..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "CONFOUNDED",
+      "senseId": "oewn-confound__2.31.02..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "CONFOUNDEDLY",
+      "senseId": "oewn-confoundedly__4.02.00..",
+      "definition": "in a perplexed manner",
+      "relation": "similar"
+    },
+    {
+      "word": "CONFOUNDING",
+      "senseId": "oewn-confound__2.31.02..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "CONFOUNDS",
+      "senseId": "oewn-confound__2.31.02..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "CONFUSE",
+      "senseId": "oewn-confuse__2.31.03..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "CONFUSED",
+      "senseId": "oewn-confuse__2.31.03..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "CONFUSEDNESS",
+      "senseId": "oewn-confusedness__1.09.00..",
+      "definition": "a mental state characterized by a lack of clear and orderly thought and behavior",
+      "relation": "similar"
+    },
+    {
+      "word": "CONFUSEDNESSES",
+      "senseId": "oewn-confusedness__1.09.00..",
+      "definition": "a mental state characterized by a lack of clear and orderly thought and behavior",
+      "relation": "similar"
+    },
+    {
+      "word": "CONFUSES",
+      "senseId": "oewn-confuse__2.31.03..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "CONFUSING",
+      "senseId": "oewn-confuse__2.31.03..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "CONFUSION",
+      "senseId": "oewn-confusion__1.26.01..",
+      "definition": "disorder resulting from a failure to behave predictably",
+      "relation": "similar"
+    },
+    {
+      "word": "CONFUSIONS",
+      "senseId": "oewn-confusion__1.26.01..",
+      "definition": "disorder resulting from a failure to behave predictably",
+      "relation": "similar"
+    },
+    {
+      "word": "CONSISTENT",
+      "senseId": "oewn-consistent__3.00.01..",
+      "definition": "marked by an orderly, logical, and aesthetically consistent relation of parts",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONSONANT",
+      "senseId": "oewn-consonant__5.00.00.harmonious.00",
+      "definition": "involving or characterized by harmony",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONSORT",
+      "senseId": "oewn-consort__2.42.00..",
+      "definition": "go together",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONSORTED",
+      "senseId": "oewn-consort__2.42.00..",
+      "definition": "go together",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONSORTING",
+      "senseId": "oewn-consort__2.42.00..",
+      "definition": "go together",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONSORTS",
+      "senseId": "oewn-consort__2.42.00..",
+      "definition": "go together",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONTRIVE",
+      "senseId": "oewn-contrive__2.36.01..",
+      "definition": "make or work out a plan for; devise",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONTRIVED",
+      "senseId": "oewn-contrive__2.36.01..",
+      "definition": "make or work out a plan for; devise",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONTRIVES",
+      "senseId": "oewn-contrive__2.36.01..",
+      "definition": "make or work out a plan for; devise",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONTRIVING",
+      "senseId": "oewn-contrive__2.36.01..",
+      "definition": "make or work out a plan for; devise",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONVULSION",
+      "senseId": "oewn-convulsion__1.26.02..",
+      "definition": "a violent disturbance",
+      "relation": "similar"
+    },
+    {
+      "word": "CONVULSIONS",
+      "senseId": "oewn-convulsion__1.26.02..",
+      "definition": "a violent disturbance",
+      "relation": "similar"
+    },
+    {
+      "word": "COOL",
+      "senseId": "oewn-cool__5.00.00.composed.00",
+      "definition": "marked by calm self-control (especially in trying circumstances); unemotional",
+      "relation": "opposite"
+    },
+    {
+      "word": "COOLER",
+      "senseId": "oewn-cool__5.00.00.composed.00",
+      "definition": "marked by calm self-control (especially in trying circumstances); unemotional",
+      "relation": "opposite"
+    },
+    {
+      "word": "COOLEST",
+      "senseId": "oewn-cool__5.00.00.composed.00",
+      "definition": "marked by calm self-control (especially in trying circumstances); unemotional",
+      "relation": "opposite"
+    },
+    {
+      "word": "COOLHEADED",
+      "senseId": "oewn-coolheaded__5.00.00.composed.00",
+      "definition": "marked by calm self-control (especially in trying circumstances); unemotional",
+      "relation": "opposite"
+    },
+    {
+      "word": "COOLLY",
+      "senseId": "oewn-coolly__4.02.00..",
+      "definition": "in a composed and unconcerned manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "COORDINATE",
+      "senseId": "oewn-coordinate__2.30.00..",
+      "definition": "bring order and organization to",
+      "relation": "opposite"
+    },
+    {
+      "word": "COORDINATED",
+      "senseId": "oewn-coordinate__2.30.00..",
+      "definition": "bring order and organization to",
+      "relation": "opposite"
+    },
+    {
+      "word": "COORDINATES",
+      "senseId": "oewn-coordinate__2.30.00..",
+      "definition": "bring order and organization to",
+      "relation": "opposite"
+    },
+    {
+      "word": "COORDINATING",
+      "senseId": "oewn-coordinate__2.30.00..",
+      "definition": "bring order and organization to",
+      "relation": "opposite"
+    },
+    {
+      "word": "DAZED",
+      "senseId": "oewn-dazed__5.00.00.confused.00",
+      "definition": "in a state of mental numbness especially as resulting from shock",
+      "relation": "similar"
+    },
+    {
+      "word": "DAZZLED",
+      "senseId": "oewn-dazzled__5.00.00.confused.00",
+      "definition": "stupefied or dizzied by something overpowering",
+      "relation": "similar"
+    },
+    {
+      "word": "DECOMPRESS",
+      "senseId": "oewn-decompress__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "DECOMPRESSED",
+      "senseId": "oewn-decompress__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "DECOMPRESSES",
+      "senseId": "oewn-decompress__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "DECOMPRESSING",
+      "senseId": "oewn-decompress__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "DEGAGE",
+      "senseId": "oewn-degage__5.00.00.relaxed.00",
+      "definition": "free and relaxed in manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "DERANGE",
+      "senseId": "oewn-derange__2.30.00..",
+      "definition": "throw into great confusion or disorder",
+      "relation": "similar"
+    },
+    {
+      "word": "DERANGED",
+      "senseId": "oewn-derange__2.30.00..",
+      "definition": "throw into great confusion or disorder",
+      "relation": "similar"
+    },
+    {
+      "word": "DERANGES",
+      "senseId": "oewn-derange__2.30.00..",
+      "definition": "throw into great confusion or disorder",
+      "relation": "similar"
+    },
+    {
+      "word": "DERANGING",
+      "senseId": "oewn-derange__2.30.00..",
+      "definition": "throw into great confusion or disorder",
+      "relation": "similar"
+    },
+    {
+      "word": "DESIGN",
+      "senseId": "oewn-design__1.09.01..",
+      "definition": "an arrangement scheme",
+      "relation": "opposite"
+    },
+    {
+      "word": "DESIGNED",
+      "senseId": "oewn-design__2.31.00..",
+      "definition": "plan something for a specific role or purpose or effect",
+      "relation": "opposite"
+    },
+    {
+      "word": "DESIGNING",
+      "senseId": "oewn-design__2.31.00..",
+      "definition": "plan something for a specific role or purpose or effect",
+      "relation": "opposite"
+    },
+    {
+      "word": "DESIGNS",
+      "senseId": "oewn-design__1.09.01..",
+      "definition": "an arrangement scheme",
+      "relation": "opposite"
+    },
+    {
+      "word": "DIRECT",
+      "senseId": "oewn-direct__2.31.00..",
+      "definition": "plan and direct (a complex undertaking)",
+      "relation": "opposite"
+    },
+    {
+      "word": "DIRECTED",
+      "senseId": "oewn-direct__2.31.00..",
+      "definition": "plan and direct (a complex undertaking)",
+      "relation": "opposite"
+    },
+    {
+      "word": "DIRECTING",
+      "senseId": "oewn-direct__2.31.00..",
+      "definition": "plan and direct (a complex undertaking)",
+      "relation": "opposite"
+    },
+    {
+      "word": "DIRECTS",
+      "senseId": "oewn-direct__2.31.00..",
+      "definition": "plan and direct (a complex undertaking)",
+      "relation": "opposite"
+    },
+    {
+      "word": "DISARRAY",
+      "senseId": "oewn-disarray__1.07.00..",
+      "definition": "untidiness (especially of clothing and appearance)",
+      "relation": "similar"
+    },
+    {
+      "word": "DISARRAYED",
+      "senseId": "oewn-disarray__2.30.00..",
+      "definition": "bring disorder to",
+      "relation": "similar"
+    },
+    {
+      "word": "DISARRAYING",
+      "senseId": "oewn-disarray__2.30.00..",
+      "definition": "bring disorder to",
+      "relation": "similar"
+    },
+    {
+      "word": "DISARRAYS",
+      "senseId": "oewn-disarray__1.07.00..",
+      "definition": "untidiness (especially of clothing and appearance)",
+      "relation": "similar"
+    },
+    {
+      "word": "DISCOMBOBULATE",
+      "senseId": "oewn-discombobulate__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "DISCOMBOBULATED",
+      "senseId": "oewn-discombobulate__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "DISCOMBOBULATES",
+      "senseId": "oewn-discombobulate__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "DISCOMBOBULATING",
+      "senseId": "oewn-discombobulate__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "DISORDER",
+      "senseId": "oewn-disorder__1.26.02..",
+      "definition": "a condition in which things are not in their expected places",
+      "relation": "similar"
+    },
+    {
+      "word": "DISORDERED",
+      "senseId": "oewn-disorder__2.30.00..",
+      "definition": "bring disorder to",
+      "relation": "similar"
+    },
+    {
+      "word": "DISORDERING",
+      "senseId": "oewn-disorder__2.30.00..",
+      "definition": "bring disorder to",
+      "relation": "similar"
+    },
+    {
+      "word": "DISORDERLINESS",
+      "senseId": "oewn-disorderliness__1.26.00..",
+      "definition": "a condition in which things are not in their expected places",
+      "relation": "similar"
+    },
+    {
+      "word": "DISORDERLINESSES",
+      "senseId": "oewn-disorderliness__1.26.00..",
+      "definition": "a condition in which things are not in their expected places",
+      "relation": "similar"
+    },
+    {
+      "word": "DISORDERLY",
+      "senseId": "oewn-disorderly__5.00.00.wild.02",
+      "definition": "completely unordered and unpredictable and confusing",
+      "relation": "similar"
+    },
+    {
+      "word": "DISORDERS",
+      "senseId": "oewn-disorder__1.26.02..",
+      "definition": "a condition in which things are not in their expected places",
+      "relation": "similar"
+    },
+    {
+      "word": "DISORIENTED",
+      "senseId": "oewn-disoriented__5.00.00.unoriented.00",
+      "definition": "having lost your bearings; confused as to time or place or personal identity",
+      "relation": "similar"
+    },
+    {
+      "word": "DISRUPT",
+      "senseId": "oewn-disrupt__2.30.01..",
+      "definition": "throw into disorder",
+      "relation": "similar"
+    },
+    {
+      "word": "DISRUPTED",
+      "senseId": "oewn-disrupt__2.30.01..",
+      "definition": "throw into disorder",
+      "relation": "similar"
+    },
+    {
+      "word": "DISRUPTING",
+      "senseId": "oewn-disrupt__2.30.01..",
+      "definition": "throw into disorder",
+      "relation": "similar"
+    },
+    {
+      "word": "DISRUPTION",
+      "senseId": "oewn-disruption__1.04.00..",
+      "definition": "the act of causing disorder",
+      "relation": "similar"
+    },
+    {
+      "word": "DISRUPTIONS",
+      "senseId": "oewn-disruption__1.04.00..",
+      "definition": "the act of causing disorder",
+      "relation": "similar"
+    },
+    {
+      "word": "DISRUPTS",
+      "senseId": "oewn-disrupt__2.30.01..",
+      "definition": "throw into disorder",
+      "relation": "similar"
+    },
+    {
+      "word": "EASINESS",
+      "senseId": "oewn-easiness__1.12.00..",
+      "definition": "a feeling of refreshing tranquility and an absence of tension or worry",
+      "relation": "opposite"
+    },
+    {
+      "word": "EASINESSES",
+      "senseId": "oewn-easiness__1.12.00..",
+      "definition": "a feeling of refreshing tranquility and an absence of tension or worry",
+      "relation": "opposite"
+    },
+    {
+      "word": "ENGINEER",
+      "senseId": "oewn-engineer__2.31.00..",
+      "definition": "plan and direct (a complex undertaking)",
+      "relation": "opposite"
+    },
+    {
+      "word": "ENGINEERED",
+      "senseId": "oewn-engineer__2.31.00..",
+      "definition": "plan and direct (a complex undertaking)",
+      "relation": "opposite"
+    },
+    {
+      "word": "ENGINEERING",
+      "senseId": "oewn-engineer__2.31.00..",
+      "definition": "plan and direct (a complex undertaking)",
+      "relation": "opposite"
+    },
+    {
+      "word": "ENGINEERS",
+      "senseId": "oewn-engineer__2.31.00..",
+      "definition": "plan and direct (a complex undertaking)",
+      "relation": "opposite"
+    },
+    {
+      "word": "EQUABLE",
+      "senseId": "oewn-equable__5.00.00.good-natured.00",
+      "definition": "not easily irritated",
+      "relation": "opposite"
+    },
+    {
+      "word": "EQUABLY",
+      "senseId": "oewn-equably__4.02.00..",
+      "definition": "in an equable manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "EQUANIMITIES",
+      "senseId": "oewn-equanimity__1.07.00..",
+      "definition": "steadiness of mind under stress",
+      "relation": "opposite"
+    },
+    {
+      "word": "EQUANIMITY",
+      "senseId": "oewn-equanimity__1.07.00..",
+      "definition": "steadiness of mind under stress",
+      "relation": "opposite"
+    },
+    {
+      "word": "EQUANIMOUS",
+      "senseId": "oewn-equanimous__5.00.00.composed.00",
+      "definition": "in full control of your faculties",
+      "relation": "opposite"
+    },
+    {
+      "word": "ERGODIC",
+      "senseId": "oewn-ergodic__5.00.00.random.00",
+      "definition": "positive recurrent aperiodic state of stochastic systems; tending in probability to a limiting form that is independent of the initial conditions",
+      "relation": "similar"
+    },
+    {
+      "word": "FOX",
+      "senseId": "oewn-fox__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "FOXED",
+      "senseId": "oewn-fox__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "FOXES",
+      "senseId": "oewn-fox__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "FOXING",
+      "senseId": "oewn-fox__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "FRACTIOUSNESS",
+      "senseId": "oewn-fractiousness__1.07.00..",
+      "definition": "the trait of being prone to disobedience and lack of discipline",
+      "relation": "similar"
+    },
+    {
+      "word": "FRACTIOUSNESSES",
+      "senseId": "oewn-fractiousness__1.07.00..",
+      "definition": "the trait of being prone to disobedience and lack of discipline",
+      "relation": "similar"
+    },
+    {
+      "word": "FUDDLE",
+      "senseId": "oewn-fuddle__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "FUDDLED",
+      "senseId": "oewn-fuddle__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "FUDDLES",
+      "senseId": "oewn-fuddle__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "FUDDLING",
+      "senseId": "oewn-fuddle__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "HAPHAZARD",
+      "senseId": "oewn-haphazard__5.00.00.random.00",
+      "definition": "dependent upon or characterized by chance",
+      "relation": "similar"
+    },
+    {
+      "word": "HAPHAZARDLY",
+      "senseId": "oewn-haphazardly__4.02.00..",
+      "definition": "in a random manner",
+      "relation": "similar"
+    },
+    {
+      "word": "HAPHAZARDNESS",
+      "senseId": "oewn-haphazardness__1.07.00..",
+      "definition": "the quality of lacking any predictable order or plan",
+      "relation": "similar"
+    },
+    {
+      "word": "HAPHAZARDNESSES",
+      "senseId": "oewn-haphazardness__1.07.00..",
+      "definition": "the quality of lacking any predictable order or plan",
+      "relation": "similar"
+    },
+    {
+      "word": "HARMONIC",
+      "senseId": "oewn-harmonic__5.00.01.harmonious.00",
+      "definition": "involving or characterized by harmony",
+      "relation": "opposite"
+    },
+    {
+      "word": "HARMONICAL",
+      "senseId": "oewn-harmonical__5.00.00.harmonious.00",
+      "definition": "involving or characterized by harmony",
+      "relation": "opposite"
+    },
+    {
+      "word": "HARMONIES",
+      "senseId": "oewn-harmony__1.26.00..",
+      "definition": "a harmonious state of things in general and of their properties (as of colors and sounds); congruity of parts with one another and with the whole",
+      "relation": "opposite"
+    },
+    {
+      "word": "HARMONIOUS",
+      "senseId": "oewn-harmonious__5.00.00.balanced.00",
+      "definition": "exhibiting equivalence or correspondence among constituents of an entity or between different entities",
+      "relation": "opposite"
+    },
+    {
+      "word": "HARMONIOUSLY",
+      "senseId": "oewn-harmoniously__4.02.00..",
+      "definition": "in a harmonious manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "HARMONISE",
+      "senseId": "oewn-harmonise__2.30.02..",
+      "definition": "bring into consonance or accord",
+      "relation": "opposite"
+    },
+    {
+      "word": "HARMONISED",
+      "senseId": "oewn-harmonise__2.30.02..",
+      "definition": "bring into consonance or accord",
+      "relation": "opposite"
+    },
+    {
+      "word": "HARMONISES",
+      "senseId": "oewn-harmonise__2.30.02..",
+      "definition": "bring into consonance or accord",
+      "relation": "opposite"
+    },
+    {
+      "word": "HARMONISING",
+      "senseId": "oewn-harmonise__2.30.02..",
+      "definition": "bring into consonance or accord",
+      "relation": "opposite"
+    },
+    {
+      "word": "HARMONIZE",
+      "senseId": "oewn-harmonize__2.30.02..",
+      "definition": "bring into consonance or accord",
+      "relation": "opposite"
+    },
+    {
+      "word": "HARMONIZED",
+      "senseId": "oewn-harmonize__2.30.02..",
+      "definition": "bring into consonance or accord",
+      "relation": "opposite"
+    },
+    {
+      "word": "HARMONIZES",
+      "senseId": "oewn-harmonize__2.30.02..",
+      "definition": "bring into consonance or accord",
+      "relation": "opposite"
+    },
+    {
+      "word": "HARMONIZING",
+      "senseId": "oewn-harmonize__2.30.02..",
+      "definition": "bring into consonance or accord",
+      "relation": "opposite"
+    },
+    {
+      "word": "HARMONY",
+      "senseId": "oewn-harmony__1.26.00..",
+      "definition": "a harmonious state of things in general and of their properties (as of colors and sounds); congruity of parts with one another and with the whole",
+      "relation": "opposite"
+    },
+    {
+      "word": "HEARTSEASE",
+      "senseId": "oewn-heartsease__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "HEARTSEASES",
+      "senseId": "oewn-heartsease__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "IMPERTURBABLE",
+      "senseId": "oewn-imperturbable__5.00.00.composed.00",
+      "definition": "not easily perturbed or excited or upset; marked by extreme calm and composure",
+      "relation": "opposite"
+    },
+    {
+      "word": "JUMBLED",
+      "senseId": "oewn-jumbled__5.00.00.untidy.00",
+      "definition": "in utter disorder",
+      "relation": "similar"
+    },
+    {
+      "word": "LAWLESS",
+      "senseId": "oewn-lawless__5.00.00.uncontrolled.00",
+      "definition": "without law or control",
+      "relation": "similar"
+    },
+    {
+      "word": "LAWLESSNESS",
+      "senseId": "oewn-lawlessness__1.26.00..",
+      "definition": "a state of lawlessness and disorder (usually resulting from a failure of government)",
+      "relation": "similar"
+    },
+    {
+      "word": "LAWLESSNESSES",
+      "senseId": "oewn-lawlessness__1.26.00..",
+      "definition": "a state of lawlessness and disorder (usually resulting from a failure of government)",
+      "relation": "similar"
+    },
+    {
+      "word": "LIMPIDITIES",
+      "senseId": "oewn-limpidity__1.07.01..",
+      "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+      "relation": "opposite"
+    },
+    {
+      "word": "LIMPIDITY",
+      "senseId": "oewn-limpidity__1.07.01..",
+      "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+      "relation": "opposite"
+    },
+    {
+      "word": "LOGICAL",
+      "senseId": "oewn-logical__3.00.05..",
+      "definition": "marked by an orderly, logical, and aesthetically consistent relation of parts",
+      "relation": "opposite"
+    },
+    {
+      "word": "LOST",
+      "senseId": "oewn-lost__5.00.00.perplexed.00",
+      "definition": "perplexed by many conflicting situations or statements; filled with bewilderment",
+      "relation": "similar"
+    },
+    {
+      "word": "LUCID",
+      "senseId": "oewn-lucid__5.00.00.rational.00",
+      "definition": "capable of thinking and expressing yourself in a clear and consistent manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "LUCIDER",
+      "senseId": "oewn-lucid__5.00.00.rational.00",
+      "definition": "capable of thinking and expressing yourself in a clear and consistent manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "LUCIDEST",
+      "senseId": "oewn-lucid__5.00.00.rational.00",
+      "definition": "capable of thinking and expressing yourself in a clear and consistent manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "LUCIDITIES",
+      "senseId": "oewn-lucidity__1.07.00..",
+      "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+      "relation": "opposite"
+    },
+    {
+      "word": "LUCIDITY",
+      "senseId": "oewn-lucidity__1.07.00..",
+      "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+      "relation": "opposite"
+    },
+    {
+      "word": "LUCIDLY",
+      "senseId": "oewn-lucidly__4.02.00..",
+      "definition": "in a clear and lucid manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "LUCIDNESS",
+      "senseId": "oewn-lucidness__1.07.00..",
+      "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+      "relation": "opposite"
+    },
+    {
+      "word": "LUCIDNESSES",
+      "senseId": "oewn-lucidness__1.07.00..",
+      "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+      "relation": "opposite"
+    },
+    {
+      "word": "LULL",
+      "senseId": "oewn-lull__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "LULLED",
+      "senseId": "oewn-lull__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "LULLING",
+      "senseId": "oewn-lull__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "LULLS",
+      "senseId": "oewn-lull__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "MASTERMIND",
+      "senseId": "oewn-mastermind__2.31.00..",
+      "definition": "plan and direct (a complex undertaking)",
+      "relation": "opposite"
+    },
+    {
+      "word": "MASTERMINDED",
+      "senseId": "oewn-mastermind__2.31.00..",
+      "definition": "plan and direct (a complex undertaking)",
+      "relation": "opposite"
+    },
+    {
+      "word": "MASTERMINDING",
+      "senseId": "oewn-mastermind__2.31.00..",
+      "definition": "plan and direct (a complex undertaking)",
+      "relation": "opposite"
+    },
+    {
+      "word": "MASTERMINDS",
+      "senseId": "oewn-mastermind__2.31.00..",
+      "definition": "plan and direct (a complex undertaking)",
+      "relation": "opposite"
+    },
+    {
+      "word": "MAZED",
+      "senseId": "oewn-mazed__5.00.00.perplexed.00",
+      "definition": "perplexed by many conflicting situations or statements; filled with bewilderment",
+      "relation": "similar"
+    },
+    {
+      "word": "MELLOW",
+      "senseId": "oewn-mellow__5.00.00.relaxed.00",
+      "definition": "unhurried and relaxed",
+      "relation": "opposite"
+    },
+    {
+      "word": "MELLOWER",
+      "senseId": "oewn-mellow__5.00.00.relaxed.00",
+      "definition": "unhurried and relaxed",
+      "relation": "opposite"
+    },
+    {
+      "word": "MELLOWEST",
+      "senseId": "oewn-mellow__5.00.00.relaxed.00",
+      "definition": "unhurried and relaxed",
+      "relation": "opposite"
+    },
+    {
+      "word": "MELLOWLY",
+      "senseId": "oewn-mellowly__4.02.00..",
+      "definition": "in a mellow manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "MESS",
+      "senseId": "oewn-mess__1.26.00..",
+      "definition": "a state of confusion and disorderliness",
+      "relation": "similar"
+    },
+    {
+      "word": "MESSED",
+      "senseId": "oewn-mess__2.30.00..",
+      "definition": "make a mess of or create disorder in",
+      "relation": "similar"
+    },
+    {
+      "word": "MESSES",
+      "senseId": "oewn-mess__1.26.00..",
+      "definition": "a state of confusion and disorderliness",
+      "relation": "similar"
+    },
+    {
+      "word": "MESSIER",
+      "senseId": "oewn-messy__5.00.00.untidy.00",
+      "definition": "dirty and disorderly",
+      "relation": "similar"
+    },
+    {
+      "word": "MESSIEST",
+      "senseId": "oewn-messy__5.00.00.untidy.00",
+      "definition": "dirty and disorderly",
+      "relation": "similar"
+    },
+    {
+      "word": "MESSILY",
+      "senseId": "oewn-messily__4.02.00..",
+      "definition": "in a messy, untidy manner",
+      "relation": "similar"
+    },
+    {
+      "word": "MESSINESS",
+      "senseId": "oewn-messiness__1.26.01..",
+      "definition": "a state of confusion and disorderliness",
+      "relation": "similar"
+    },
+    {
+      "word": "MESSINESSES",
+      "senseId": "oewn-messiness__1.26.01..",
+      "definition": "a state of confusion and disorderliness",
+      "relation": "similar"
+    },
+    {
+      "word": "MESSING",
+      "senseId": "oewn-mess__2.30.00..",
+      "definition": "make a mess of or create disorder in",
+      "relation": "similar"
+    },
+    {
+      "word": "MESSY",
+      "senseId": "oewn-messy__5.00.00.untidy.00",
+      "definition": "dirty and disorderly",
+      "relation": "similar"
+    },
+    {
+      "word": "METHOD",
+      "senseId": "oewn-method__1.09.00..",
+      "definition": "a way of doing something, especially a systematic way; implies an orderly logical arrangement (usually in steps)",
+      "relation": "opposite"
+    },
+    {
+      "word": "METHODICAL",
+      "senseId": "oewn-methodical__5.00.00.organized.01",
+      "definition": "characterized by method and orderliness",
+      "relation": "opposite"
+    },
+    {
+      "word": "METHODICALLY",
+      "senseId": "oewn-methodically__4.02.00..",
+      "definition": "in a methodical manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "METHODICALNESS",
+      "senseId": "oewn-methodicalness__1.07.00..",
+      "definition": "the quality of appreciating method and system",
+      "relation": "opposite"
+    },
+    {
+      "word": "METHODICALNESSES",
+      "senseId": "oewn-methodicalness__1.07.00..",
+      "definition": "the quality of appreciating method and system",
+      "relation": "opposite"
+    },
+    {
+      "word": "METHODS",
+      "senseId": "oewn-method__1.09.00..",
+      "definition": "a way of doing something, especially a systematic way; implies an orderly logical arrangement (usually in steps)",
+      "relation": "opposite"
+    },
+    {
+      "word": "MUDDINESS",
+      "senseId": "oewn-muddiness__1.09.00..",
+      "definition": "a mental state characterized by a lack of clear and orderly thought and behavior",
+      "relation": "similar"
+    },
+    {
+      "word": "MUDDINESSES",
+      "senseId": "oewn-muddiness__1.09.00..",
+      "definition": "a mental state characterized by a lack of clear and orderly thought and behavior",
+      "relation": "similar"
+    },
+    {
+      "word": "MUDDLED",
+      "senseId": "oewn-muddled__5.00.00.confused.00",
+      "definition": "confused and vague; used especially of thinking",
+      "relation": "similar"
+    },
+    {
+      "word": "MUDDLEHEADED",
+      "senseId": "oewn-muddleheaded__5.00.00.confused.00",
+      "definition": "stupid and confused",
+      "relation": "similar"
+    },
+    {
+      "word": "MUSS",
+      "senseId": "oewn-muss__1.26.00..",
+      "definition": "a state of confusion and disorderliness",
+      "relation": "similar"
+    },
+    {
+      "word": "MUSSED",
+      "senseId": "oewn-muss__2.35.00..",
+      "definition": "make messy or untidy",
+      "relation": "similar"
+    },
+    {
+      "word": "MUSSES",
+      "senseId": "oewn-muss__1.26.00..",
+      "definition": "a state of confusion and disorderliness",
+      "relation": "similar"
+    },
+    {
+      "word": "MUSSIER",
+      "senseId": "oewn-mussy__5.00.00.untidy.00",
+      "definition": "dirty and disorderly",
+      "relation": "similar"
+    },
+    {
+      "word": "MUSSIEST",
+      "senseId": "oewn-mussy__5.00.00.untidy.00",
+      "definition": "dirty and disorderly",
+      "relation": "similar"
+    },
+    {
+      "word": "MUSSINESS",
+      "senseId": "oewn-mussiness__1.26.00..",
+      "definition": "a state of confusion and disorderliness",
+      "relation": "similar"
+    },
+    {
+      "word": "MUSSINESSES",
+      "senseId": "oewn-mussiness__1.26.00..",
+      "definition": "a state of confusion and disorderliness",
+      "relation": "similar"
+    },
+    {
+      "word": "MUSSING",
+      "senseId": "oewn-muss__2.35.00..",
+      "definition": "make messy or untidy",
+      "relation": "similar"
+    },
+    {
+      "word": "MUSSY",
+      "senseId": "oewn-mussy__5.00.00.untidy.00",
+      "definition": "dirty and disorderly",
+      "relation": "similar"
+    },
+    {
+      "word": "MUZZIER",
+      "senseId": "oewn-muzzy__5.00.00.confused.00",
+      "definition": "confused and vague; used especially of thinking",
+      "relation": "similar"
+    },
+    {
+      "word": "MUZZIEST",
+      "senseId": "oewn-muzzy__5.00.00.confused.00",
+      "definition": "confused and vague; used especially of thinking",
+      "relation": "similar"
+    },
+    {
+      "word": "MUZZY",
+      "senseId": "oewn-muzzy__5.00.00.confused.00",
+      "definition": "confused and vague; used especially of thinking",
+      "relation": "similar"
+    },
+    {
+      "word": "NEAT",
+      "senseId": "oewn-neat__5.00.00.tidy.00",
+      "definition": "clean or organized",
+      "relation": "opposite"
+    },
+    {
+      "word": "NEATER",
+      "senseId": "oewn-neat__5.00.00.tidy.00",
+      "definition": "clean or organized",
+      "relation": "opposite"
+    },
+    {
+      "word": "NEATEST",
+      "senseId": "oewn-neat__5.00.00.tidy.00",
+      "definition": "clean or organized",
+      "relation": "opposite"
+    },
+    {
+      "word": "NEATLY",
+      "senseId": "oewn-neatly__4.02.00..",
+      "definition": "with neatness",
+      "relation": "opposite"
+    },
+    {
+      "word": "NEATNESS",
+      "senseId": "oewn-neatness__1.07.00..",
+      "definition": "the trait of being neat and orderly",
+      "relation": "opposite"
+    },
+    {
+      "word": "NEATNESSES",
+      "senseId": "oewn-neatness__1.07.00..",
+      "definition": "the trait of being neat and orderly",
+      "relation": "opposite"
+    },
+    {
+      "word": "NERVELESS",
+      "senseId": "oewn-nerveless__5.00.00.composed.00",
+      "definition": "marked by calm self-control (especially in trying circumstances); unemotional",
+      "relation": "opposite"
+    },
+    {
+      "word": "NERVELESSLY",
+      "senseId": "oewn-nervelessly__4.02.00..",
+      "definition": "in a composed and unconcerned manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "NOISE",
+      "senseId": "oewn-noise__1.07.00..",
+      "definition": "the quality of lacking any predictable order or plan",
+      "relation": "similar"
+    },
+    {
+      "word": "NOISES",
+      "senseId": "oewn-noise__1.07.00..",
+      "definition": "the quality of lacking any predictable order or plan",
+      "relation": "similar"
+    },
+    {
+      "word": "ORCHESTRATE",
+      "senseId": "oewn-orchestrate__2.31.00..",
+      "definition": "plan and direct (a complex undertaking)",
+      "relation": "opposite"
+    },
+    {
+      "word": "ORCHESTRATED",
+      "senseId": "oewn-orchestrate__2.31.00..",
+      "definition": "plan and direct (a complex undertaking)",
+      "relation": "opposite"
+    },
+    {
+      "word": "ORCHESTRATES",
+      "senseId": "oewn-orchestrate__2.31.00..",
+      "definition": "plan and direct (a complex undertaking)",
+      "relation": "opposite"
+    },
+    {
+      "word": "ORCHESTRATING",
+      "senseId": "oewn-orchestrate__2.31.00..",
+      "definition": "plan and direct (a complex undertaking)",
+      "relation": "opposite"
+    },
+    {
+      "word": "ORDER",
+      "senseId": "oewn-order__1.14.00..",
+      "definition": "logical or comprehensible arrangement of separate elements",
+      "relation": "opposite"
+    },
+    {
+      "word": "ORDERED",
+      "senseId": "oewn-order__2.30.00..",
+      "definition": "bring order to or into",
+      "relation": "opposite"
+    },
+    {
+      "word": "ORDERING",
+      "senseId": "oewn-ordering__1.14.00..",
+      "definition": "logical or comprehensible arrangement of separate elements",
+      "relation": "opposite"
+    },
+    {
+      "word": "ORDERINGS",
+      "senseId": "oewn-ordering__1.14.00..",
+      "definition": "logical or comprehensible arrangement of separate elements",
+      "relation": "opposite"
+    },
+    {
+      "word": "ORDERLINESS",
+      "senseId": "oewn-orderliness__1.26.00..",
+      "definition": "a condition of regular or proper arrangement",
+      "relation": "opposite"
+    },
+    {
+      "word": "ORDERLINESSES",
+      "senseId": "oewn-orderliness__1.26.00..",
+      "definition": "a condition of regular or proper arrangement",
+      "relation": "opposite"
+    },
+    {
+      "word": "ORDERLY",
+      "senseId": "oewn-orderly__3.00.00..",
+      "definition": "devoid of violence or disruption",
+      "relation": "opposite"
+    },
+    {
+      "word": "ORDERS",
+      "senseId": "oewn-order__1.14.00..",
+      "definition": "logical or comprehensible arrangement of separate elements",
+      "relation": "opposite"
+    },
+    {
+      "word": "ORDINATION",
+      "senseId": "oewn-ordination__1.14.00..",
+      "definition": "logical or comprehensible arrangement of separate elements",
+      "relation": "opposite"
+    },
+    {
+      "word": "ORDINATIONS",
+      "senseId": "oewn-ordination__1.14.00..",
+      "definition": "logical or comprehensible arrangement of separate elements",
+      "relation": "opposite"
+    },
+    {
+      "word": "ORGANISATION",
+      "senseId": "oewn-organisation__1.07.00..",
+      "definition": "an ordered manner; orderliness by virtue of being methodical and well organized",
+      "relation": "opposite"
+    },
+    {
+      "word": "ORGANISATIONS",
+      "senseId": "oewn-organisation__1.07.00..",
+      "definition": "an ordered manner; orderliness by virtue of being methodical and well organized",
+      "relation": "opposite"
+    },
+    {
+      "word": "ORGANISE",
+      "senseId": "oewn-organise__2.30.00..",
+      "definition": "bring order and organization to",
+      "relation": "opposite"
+    },
+    {
+      "word": "ORGANISED",
+      "senseId": "oewn-organise__2.30.00..",
+      "definition": "bring order and organization to",
+      "relation": "opposite"
+    },
+    {
+      "word": "ORGANISES",
+      "senseId": "oewn-organise__2.30.00..",
+      "definition": "bring order and organization to",
+      "relation": "opposite"
+    },
+    {
+      "word": "ORGANISING",
+      "senseId": "oewn-organise__2.30.00..",
+      "definition": "bring order and organization to",
+      "relation": "opposite"
+    },
+    {
+      "word": "ORGANIZATION",
+      "senseId": "oewn-organization__1.07.00..",
+      "definition": "an ordered manner; orderliness by virtue of being methodical and well organized",
+      "relation": "opposite"
+    },
+    {
+      "word": "ORGANIZATIONS",
+      "senseId": "oewn-organization__1.07.00..",
+      "definition": "an ordered manner; orderliness by virtue of being methodical and well organized",
+      "relation": "opposite"
+    },
+    {
+      "word": "ORGANIZE",
+      "senseId": "oewn-organize__2.30.00..",
+      "definition": "bring order and organization to",
+      "relation": "opposite"
+    },
+    {
+      "word": "ORGANIZED",
+      "senseId": "oewn-organized__3.00.01..",
+      "definition": "methodical and efficient in arrangement or function",
+      "relation": "opposite"
+    },
+    {
+      "word": "ORGANIZES",
+      "senseId": "oewn-organize__2.30.00..",
+      "definition": "bring order and organization to",
+      "relation": "opposite"
+    },
+    {
+      "word": "ORGANIZING",
+      "senseId": "oewn-organize__2.30.00..",
+      "definition": "bring order and organization to",
+      "relation": "opposite"
+    },
+    {
+      "word": "PANDEMONIUM",
+      "senseId": "oewn-pandemonium__1.26.00..",
+      "definition": "a state of extreme confusion and disorder",
+      "relation": "similar"
+    },
+    {
+      "word": "PANDEMONIUMS",
+      "senseId": "oewn-pandemonium__1.26.00..",
+      "definition": "a state of extreme confusion and disorder",
+      "relation": "similar"
+    },
+    {
+      "word": "PEACE",
+      "senseId": "oewn-peace__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "PEACEABLE",
+      "senseId": "oewn-peaceable__3.00.00..",
+      "definition": "not disturbed by strife or turmoil or war",
+      "relation": "opposite"
+    },
+    {
+      "word": "PEACEFUL",
+      "senseId": "oewn-peaceful__3.00.00..",
+      "definition": "not disturbed by strife or turmoil or war",
+      "relation": "opposite"
+    },
+    {
+      "word": "PEACEFULLY",
+      "senseId": "oewn-peacefully__4.02.00..",
+      "definition": "in a peaceful manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "PEACEFULNESS",
+      "senseId": "oewn-peacefulness__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "PEACEFULNESSES",
+      "senseId": "oewn-peacefulness__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "PEACES",
+      "senseId": "oewn-peace__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "PELLUCIDITIES",
+      "senseId": "oewn-pellucidity__1.07.01..",
+      "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+      "relation": "opposite"
+    },
+    {
+      "word": "PELLUCIDITY",
+      "senseId": "oewn-pellucidity__1.07.01..",
+      "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+      "relation": "opposite"
+    },
+    {
+      "word": "PERTURB",
+      "senseId": "oewn-perturb__2.30.00..",
+      "definition": "throw into great confusion or disorder",
+      "relation": "similar"
+    },
+    {
+      "word": "PERTURBATION",
+      "senseId": "oewn-perturbation__1.04.00..",
+      "definition": "the act of causing disorder",
+      "relation": "similar"
+    },
+    {
+      "word": "PERTURBATIONS",
+      "senseId": "oewn-perturbation__1.04.00..",
+      "definition": "the act of causing disorder",
+      "relation": "similar"
+    },
+    {
+      "word": "PERTURBED",
+      "senseId": "oewn-perturb__2.30.00..",
+      "definition": "throw into great confusion or disorder",
+      "relation": "similar"
+    },
+    {
+      "word": "PERTURBING",
+      "senseId": "oewn-perturb__2.30.00..",
+      "definition": "throw into great confusion or disorder",
+      "relation": "similar"
+    },
+    {
+      "word": "PERTURBS",
+      "senseId": "oewn-perturb__2.30.00..",
+      "definition": "throw into great confusion or disorder",
+      "relation": "similar"
+    },
+    {
+      "word": "PLACID",
+      "senseId": "oewn-placid__5.00.00.good-natured.00",
+      "definition": "not easily irritated",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLACIDER",
+      "senseId": "oewn-placid__5.00.00.good-natured.00",
+      "definition": "not easily irritated",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLACIDEST",
+      "senseId": "oewn-placid__5.00.00.good-natured.00",
+      "definition": "not easily irritated",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLACIDITIES",
+      "senseId": "oewn-placidity__1.07.00..",
+      "definition": "a disposition free from stress or emotion",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLACIDITY",
+      "senseId": "oewn-placidity__1.07.00..",
+      "definition": "a disposition free from stress or emotion",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLACIDLY",
+      "senseId": "oewn-placidly__4.02.00..",
+      "definition": "in a placid and good-natured manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLACIDNESS",
+      "senseId": "oewn-placidness__1.12.00..",
+      "definition": "a feeling of calmness; a quiet and undisturbed feeling",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLACIDNESSES",
+      "senseId": "oewn-placidness__1.12.00..",
+      "definition": "a feeling of calmness; a quiet and undisturbed feeling",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLAN",
+      "senseId": "oewn-plan__1.09.01..",
+      "definition": "an arrangement scheme",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLANED",
+      "senseId": "oewn-plan__2.31.00..",
+      "definition": "make plans for something",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLANING",
+      "senseId": "oewn-plan__2.31.00..",
+      "definition": "make plans for something",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLANNED",
+      "senseId": "oewn-plan__2.31.00..",
+      "definition": "make plans for something",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLANNING",
+      "senseId": "oewn-plan__2.31.00..",
+      "definition": "make plans for something",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLANS",
+      "senseId": "oewn-plan__1.09.01..",
+      "definition": "an arrangement scheme",
+      "relation": "opposite"
+    },
+    {
+      "word": "POISED",
+      "senseId": "oewn-poised__5.00.00.composed.00",
+      "definition": "in full control of your faculties",
+      "relation": "opposite"
+    },
+    {
+      "word": "PROJECT",
+      "senseId": "oewn-project__2.36.01..",
+      "definition": "make or work out a plan for; devise",
+      "relation": "opposite"
+    },
+    {
+      "word": "PROJECTED",
+      "senseId": "oewn-project__2.36.01..",
+      "definition": "make or work out a plan for; devise",
+      "relation": "opposite"
+    },
+    {
+      "word": "PROJECTING",
+      "senseId": "oewn-project__2.36.01..",
+      "definition": "make or work out a plan for; devise",
+      "relation": "opposite"
+    },
+    {
+      "word": "PROJECTS",
+      "senseId": "oewn-project__2.36.01..",
+      "definition": "make or work out a plan for; devise",
+      "relation": "opposite"
+    },
+    {
+      "word": "PROPORTION",
+      "senseId": "oewn-proportion__1.07.01..",
+      "definition": "harmonious arrangement or relation of parts or elements within a whole (as in a design)",
+      "relation": "opposite"
+    },
+    {
+      "word": "PROPORTIONALITIES",
+      "senseId": "oewn-proportionality__1.07.00..",
+      "definition": "harmonious arrangement or relation of parts or elements within a whole (as in a design)",
+      "relation": "opposite"
+    },
+    {
+      "word": "PROPORTIONALITY",
+      "senseId": "oewn-proportionality__1.07.00..",
+      "definition": "harmonious arrangement or relation of parts or elements within a whole (as in a design)",
+      "relation": "opposite"
+    },
+    {
+      "word": "PROPORTIONATE",
+      "senseId": "oewn-proportionate__5.00.00.balanced.00",
+      "definition": "exhibiting equivalence or correspondence among constituents of an entity or between different entities",
+      "relation": "opposite"
+    },
+    {
+      "word": "PROPORTIONATELY",
+      "senseId": "oewn-proportionately__4.02.01..",
+      "definition": "in a way that is in correspondence among the constituents of another entity",
+      "relation": "opposite"
+    },
+    {
+      "word": "PROPORTIONS",
+      "senseId": "oewn-proportion__1.07.01..",
+      "definition": "harmonious arrangement or relation of parts or elements within a whole (as in a design)",
+      "relation": "opposite"
+    },
+    {
+      "word": "PUT",
+      "senseId": "oewn-put__2.31.00..",
+      "definition": "arrange thoughts, ideas, temporal events",
+      "relation": "opposite"
+    },
+    {
+      "word": "PUTS",
+      "senseId": "oewn-put__2.31.00..",
+      "definition": "arrange thoughts, ideas, temporal events",
+      "relation": "opposite"
+    },
+    {
+      "word": "PUTTED",
+      "senseId": "oewn-put__2.31.00..",
+      "definition": "arrange thoughts, ideas, temporal events",
+      "relation": "opposite"
+    },
+    {
+      "word": "PUTTING",
+      "senseId": "oewn-put__2.31.00..",
+      "definition": "arrange thoughts, ideas, temporal events",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIESCENT",
+      "senseId": "oewn-quiescent__5.00.00.quiet.02",
+      "definition": "marked by a state of tranquil repose",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIET",
+      "senseId": "oewn-quiet__3.00.02..",
+      "definition": "characterized by an absence or near absence of agitation or activity",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETED",
+      "senseId": "oewn-quiet__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETEN",
+      "senseId": "oewn-quieten__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETENED",
+      "senseId": "oewn-quieten__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETENING",
+      "senseId": "oewn-quieten__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETENS",
+      "senseId": "oewn-quieten__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETER",
+      "senseId": "oewn-quiet__3.00.02..",
+      "definition": "characterized by an absence or near absence of agitation or activity",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETEST",
+      "senseId": "oewn-quiet__3.00.02..",
+      "definition": "characterized by an absence or near absence of agitation or activity",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETING",
+      "senseId": "oewn-quiet__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETLY",
+      "senseId": "oewn-quietly__4.02.02..",
+      "definition": "with little or no activity or no agitation (‘quiet’ is a nonstandard variant for ‘quietly’)",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETNESS",
+      "senseId": "oewn-quietness__1.12.00..",
+      "definition": "a state of peace and quiet",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETNESSES",
+      "senseId": "oewn-quietness__1.12.00..",
+      "definition": "a state of peace and quiet",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETS",
+      "senseId": "oewn-quiet__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETUDE",
+      "senseId": "oewn-quietude__1.12.00..",
+      "definition": "a state of peace and quiet",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETUDES",
+      "senseId": "oewn-quietude__1.12.00..",
+      "definition": "a state of peace and quiet",
+      "relation": "opposite"
+    },
+    {
+      "word": "RAMBUNCTIOUS",
+      "senseId": "oewn-rambunctious__5.00.00.disorderly.00",
+      "definition": "noisy and lacking in restraint or discipline",
+      "relation": "similar"
+    },
+    {
+      "word": "RANDOM",
+      "senseId": "oewn-random__3.00.00..",
+      "definition": "lacking any definite plan or order or purpose; governed by or depending on chance",
+      "relation": "similar"
+    },
+    {
+      "word": "RANDOMLY",
+      "senseId": "oewn-randomly__4.02.00..",
+      "definition": "in a random manner",
+      "relation": "similar"
+    },
+    {
+      "word": "RANDOMNESS",
+      "senseId": "oewn-randomness__1.07.00..",
+      "definition": "the quality of lacking any predictable order or plan",
+      "relation": "similar"
+    },
+    {
+      "word": "RANDOMNESSES",
+      "senseId": "oewn-randomness__1.07.00..",
+      "definition": "the quality of lacking any predictable order or plan",
+      "relation": "similar"
+    },
+    {
+      "word": "RECONCILE",
+      "senseId": "oewn-reconcile__2.30.00..",
+      "definition": "bring into consonance or accord",
+      "relation": "opposite"
+    },
+    {
+      "word": "RECONCILED",
+      "senseId": "oewn-reconcile__2.30.00..",
+      "definition": "bring into consonance or accord",
+      "relation": "opposite"
+    },
+    {
+      "word": "RECONCILES",
+      "senseId": "oewn-reconcile__2.30.00..",
+      "definition": "bring into consonance or accord",
+      "relation": "opposite"
+    },
+    {
+      "word": "RECONCILING",
+      "senseId": "oewn-reconcile__2.30.00..",
+      "definition": "bring into consonance or accord",
+      "relation": "opposite"
+    },
+    {
+      "word": "RELAX",
+      "senseId": "oewn-relax__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "RELAXATION",
+      "senseId": "oewn-relaxation__1.12.00..",
+      "definition": "a feeling of refreshing tranquility and an absence of tension or worry",
+      "relation": "opposite"
+    },
+    {
+      "word": "RELAXATIONS",
+      "senseId": "oewn-relaxation__1.12.00..",
+      "definition": "a feeling of refreshing tranquility and an absence of tension or worry",
+      "relation": "opposite"
+    },
+    {
+      "word": "RELAXED",
+      "senseId": "oewn-relaxed__3.00.00..",
+      "definition": "without strain or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "RELAXES",
+      "senseId": "oewn-relax__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "RELAXING",
+      "senseId": "oewn-relax__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "REPOSE",
+      "senseId": "oewn-repose__1.07.00..",
+      "definition": "a disposition free from stress or emotion",
+      "relation": "opposite"
+    },
+    {
+      "word": "REPOSES",
+      "senseId": "oewn-repose__1.07.00..",
+      "definition": "a disposition free from stress or emotion",
+      "relation": "opposite"
+    },
+    {
+      "word": "ROBUSTIOUS",
+      "senseId": "oewn-robustious__5.00.00.disorderly.00",
+      "definition": "noisy and lacking in restraint or discipline",
+      "relation": "similar"
+    },
+    {
+      "word": "RULIER",
+      "senseId": "oewn-ruly__5.00.00.tidy.00",
+      "definition": "neat and tidy",
+      "relation": "opposite"
+    },
+    {
+      "word": "RULIEST",
+      "senseId": "oewn-ruly__5.00.00.tidy.00",
+      "definition": "neat and tidy",
+      "relation": "opposite"
+    },
+    {
+      "word": "RULY",
+      "senseId": "oewn-ruly__5.00.00.tidy.00",
+      "definition": "neat and tidy",
+      "relation": "opposite"
+    },
+    {
+      "word": "RUMBUSTIOUS",
+      "senseId": "oewn-rumbustious__5.00.00.disorderly.00",
+      "definition": "noisy and lacking in restraint or discipline",
+      "relation": "similar"
+    },
+    {
+      "word": "SEAMLESS",
+      "senseId": "oewn-seamless__5.00.00.coherent.00",
+      "definition": "perfectly consistent and coherent",
+      "relation": "opposite"
+    },
+    {
+      "word": "SEPARATE",
+      "senseId": "oewn-separate__2.31.00..",
+      "definition": "arrange or order by classes or categories",
+      "relation": "opposite"
+    },
+    {
+      "word": "SEPARATED",
+      "senseId": "oewn-separate__2.31.00..",
+      "definition": "arrange or order by classes or categories",
+      "relation": "opposite"
+    },
+    {
+      "word": "SEPARATES",
+      "senseId": "oewn-separate__2.31.00..",
+      "definition": "arrange or order by classes or categories",
+      "relation": "opposite"
+    },
+    {
+      "word": "SEPARATING",
+      "senseId": "oewn-separate__2.31.00..",
+      "definition": "arrange or order by classes or categories",
+      "relation": "opposite"
+    },
+    {
+      "word": "SERENE",
+      "senseId": "oewn-serene__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "SERENELY",
+      "senseId": "oewn-serenely__4.02.00..",
+      "definition": "in a peacefully serene manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "SERENER",
+      "senseId": "oewn-serene__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "SERENEST",
+      "senseId": "oewn-serene__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "SERENITIES",
+      "senseId": "oewn-serenity__1.07.00..",
+      "definition": "a disposition free from stress or emotion",
+      "relation": "opposite"
+    },
+    {
+      "word": "SERENITY",
+      "senseId": "oewn-serenity__1.07.00..",
+      "definition": "a disposition free from stress or emotion",
+      "relation": "opposite"
+    },
+    {
+      "word": "SHIPSHAPE",
+      "senseId": "oewn-shipshape__5.00.00.tidy.00",
+      "definition": "characterized by order and neatness; free from disorder",
+      "relation": "opposite"
+    },
+    {
+      "word": "SILLIER",
+      "senseId": "oewn-silly__5.00.00.confused.00",
+      "definition": "dazed from or as if from repeated blows",
+      "relation": "similar"
+    },
+    {
+      "word": "SILLIEST",
+      "senseId": "oewn-silly__5.00.00.confused.00",
+      "definition": "dazed from or as if from repeated blows",
+      "relation": "similar"
+    },
+    {
+      "word": "SILLY",
+      "senseId": "oewn-silly__5.00.00.confused.00",
+      "definition": "dazed from or as if from repeated blows",
+      "relation": "similar"
+    },
+    {
+      "word": "SLAPHAPPIER",
+      "senseId": "oewn-slaphappy__5.00.00.confused.00",
+      "definition": "dazed from or as if from repeated blows",
+      "relation": "similar"
+    },
+    {
+      "word": "SLAPHAPPIEST",
+      "senseId": "oewn-slaphappy__5.00.00.confused.00",
+      "definition": "dazed from or as if from repeated blows",
+      "relation": "similar"
+    },
+    {
+      "word": "SLAPHAPPY",
+      "senseId": "oewn-slaphappy__5.00.00.confused.00",
+      "definition": "dazed from or as if from repeated blows",
+      "relation": "similar"
+    },
+    {
+      "word": "SORT",
+      "senseId": "oewn-sort__2.31.00..",
+      "definition": "arrange or order by classes or categories",
+      "relation": "opposite"
+    },
+    {
+      "word": "SORTED",
+      "senseId": "oewn-sort__2.31.00..",
+      "definition": "arrange or order by classes or categories",
+      "relation": "opposite"
+    },
+    {
+      "word": "SORTING",
+      "senseId": "oewn-sort__2.31.00..",
+      "definition": "arrange or order by classes or categories",
+      "relation": "opposite"
+    },
+    {
+      "word": "SORTS",
+      "senseId": "oewn-sort__2.31.00..",
+      "definition": "arrange or order by classes or categories",
+      "relation": "opposite"
+    },
+    {
+      "word": "STABILITIES",
+      "senseId": "oewn-stability__1.26.00..",
+      "definition": "a stable order (especially of society)",
+      "relation": "opposite"
+    },
+    {
+      "word": "STABILITY",
+      "senseId": "oewn-stability__1.26.00..",
+      "definition": "a stable order (especially of society)",
+      "relation": "opposite"
+    },
+    {
+      "word": "STILL",
+      "senseId": "oewn-still__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "STILLED",
+      "senseId": "oewn-still__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "STILLING",
+      "senseId": "oewn-still__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "STILLS",
+      "senseId": "oewn-still__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "STOCHASTIC",
+      "senseId": "oewn-stochastic__5.00.00.random.00",
+      "definition": "being or having a random variable",
+      "relation": "similar"
+    },
+    {
+      "word": "STOCHASTICALLY",
+      "senseId": "oewn-stochastically__4.02.00..",
+      "definition": "by stochastic means",
+      "relation": "similar"
+    },
+    {
+      "word": "STRAIGHT",
+      "senseId": "oewn-straight__5.00.00.tidy.00",
+      "definition": "neatly arranged; not disorderly",
+      "relation": "opposite"
+    },
+    {
+      "word": "STRAIGHTER",
+      "senseId": "oewn-straight__5.00.00.tidy.00",
+      "definition": "neatly arranged; not disorderly",
+      "relation": "opposite"
+    },
+    {
+      "word": "STRAIGHTEST",
+      "senseId": "oewn-straight__5.00.00.tidy.00",
+      "definition": "neatly arranged; not disorderly",
+      "relation": "opposite"
+    },
+    {
+      "word": "STRUCTURE",
+      "senseId": "oewn-structure__1.07.00..",
+      "definition": "the manner of construction of something and the arrangement of its parts",
+      "relation": "opposite"
+    },
+    {
+      "word": "STRUCTURED",
+      "senseId": "oewn-structure__2.30.00..",
+      "definition": "give a structure to",
+      "relation": "opposite"
+    },
+    {
+      "word": "STRUCTURES",
+      "senseId": "oewn-structure__1.07.00..",
+      "definition": "the manner of construction of something and the arrangement of its parts",
+      "relation": "opposite"
+    },
+    {
+      "word": "STRUCTURING",
+      "senseId": "oewn-structure__2.30.00..",
+      "definition": "give a structure to",
+      "relation": "opposite"
+    },
+    {
+      "word": "STUNNED",
+      "senseId": "oewn-stunned__5.00.00.confused.00",
+      "definition": "in a state of mental numbness especially as resulting from shock",
+      "relation": "similar"
+    },
+    {
+      "word": "STUPEFIED",
+      "senseId": "oewn-stupefied__5.00.00.confused.00",
+      "definition": "in a state of mental numbness especially as resulting from shock",
+      "relation": "similar"
+    },
+    {
+      "word": "STUPID",
+      "senseId": "oewn-stupid__5.00.00.confused.00",
+      "definition": "in a state of mental numbness especially as resulting from shock",
+      "relation": "similar"
+    },
+    {
+      "word": "STUPIDER",
+      "senseId": "oewn-stupid__5.00.00.confused.00",
+      "definition": "in a state of mental numbness especially as resulting from shock",
+      "relation": "similar"
+    },
+    {
+      "word": "STUPIDEST",
+      "senseId": "oewn-stupid__5.00.00.confused.00",
+      "definition": "in a state of mental numbness especially as resulting from shock",
+      "relation": "similar"
+    },
+    {
+      "word": "SYMMETRICAL",
+      "senseId": "oewn-symmetrical__5.00.00.balanced.00",
+      "definition": "exhibiting equivalence or correspondence among constituents of an entity or between different entities",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYSTEM",
+      "senseId": "oewn-system__1.07.00..",
+      "definition": "an ordered manner; orderliness by virtue of being methodical and well organized",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYSTEMATIC",
+      "senseId": "oewn-systematic__3.00.00..",
+      "definition": "characterized by order and planning",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYSTEMATICALLY",
+      "senseId": "oewn-systematically__4.02.00..",
+      "definition": "in a systematic or consistent manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYSTEMATISE",
+      "senseId": "oewn-systematise__2.30.00..",
+      "definition": "arrange according to a system or reduce to a system",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYSTEMATISED",
+      "senseId": "oewn-systematise__2.30.00..",
+      "definition": "arrange according to a system or reduce to a system",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYSTEMATISES",
+      "senseId": "oewn-systematise__2.30.00..",
+      "definition": "arrange according to a system or reduce to a system",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYSTEMATISING",
+      "senseId": "oewn-systematise__2.30.00..",
+      "definition": "arrange according to a system or reduce to a system",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYSTEMATIZE",
+      "senseId": "oewn-systematize__2.30.00..",
+      "definition": "arrange according to a system or reduce to a system",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYSTEMATIZED",
+      "senseId": "oewn-systematize__2.30.00..",
+      "definition": "arrange according to a system or reduce to a system",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYSTEMATIZES",
+      "senseId": "oewn-systematize__2.30.00..",
+      "definition": "arrange according to a system or reduce to a system",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYSTEMATIZING",
+      "senseId": "oewn-systematize__2.30.00..",
+      "definition": "arrange according to a system or reduce to a system",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYSTEMISE",
+      "senseId": "oewn-systemise__2.30.00..",
+      "definition": "arrange according to a system or reduce to a system",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYSTEMISED",
+      "senseId": "oewn-systemise__2.30.00..",
+      "definition": "arrange according to a system or reduce to a system",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYSTEMISES",
+      "senseId": "oewn-systemise__2.30.00..",
+      "definition": "arrange according to a system or reduce to a system",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYSTEMISING",
+      "senseId": "oewn-systemise__2.30.00..",
+      "definition": "arrange according to a system or reduce to a system",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYSTEMIZE",
+      "senseId": "oewn-systemize__2.30.00..",
+      "definition": "arrange according to a system or reduce to a system",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYSTEMIZED",
+      "senseId": "oewn-systemize__2.30.00..",
+      "definition": "arrange according to a system or reduce to a system",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYSTEMIZES",
+      "senseId": "oewn-systemize__2.30.00..",
+      "definition": "arrange according to a system or reduce to a system",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYSTEMIZING",
+      "senseId": "oewn-systemize__2.30.00..",
+      "definition": "arrange according to a system or reduce to a system",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYSTEMS",
+      "senseId": "oewn-system__1.07.00..",
+      "definition": "an ordered manner; orderliness by virtue of being methodical and well organized",
+      "relation": "opposite"
+    },
+    {
+      "word": "THREW",
+      "senseId": "oewn-throw__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "THROW",
+      "senseId": "oewn-throw__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "THROWING",
+      "senseId": "oewn-throw__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "THROWN",
+      "senseId": "oewn-throw__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "THROWS",
+      "senseId": "oewn-throw__2.31.00..",
+      "definition": "be confusing or perplexing to; cause to be unable to think clearly",
+      "relation": "similar"
+    },
+    {
+      "word": "TIDIER",
+      "senseId": "oewn-tidy__3.00.00..",
+      "definition": "marked by order and cleanliness in appearance or habits",
+      "relation": "opposite"
+    },
+    {
+      "word": "TIDIEST",
+      "senseId": "oewn-tidy__3.00.00..",
+      "definition": "marked by order and cleanliness in appearance or habits",
+      "relation": "opposite"
+    },
+    {
+      "word": "TIDILY",
+      "senseId": "oewn-tidily__4.02.00..",
+      "definition": "in a tidy manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "TIDINESS",
+      "senseId": "oewn-tidiness__1.07.00..",
+      "definition": "the trait of being neat and orderly",
+      "relation": "opposite"
+    },
+    {
+      "word": "TIDINESSES",
+      "senseId": "oewn-tidiness__1.07.00..",
+      "definition": "the trait of being neat and orderly",
+      "relation": "opposite"
+    },
+    {
+      "word": "TIDY",
+      "senseId": "oewn-tidy__3.00.00..",
+      "definition": "marked by order and cleanliness in appearance or habits",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANCELIKE",
+      "senseId": "oewn-trancelike__5.00.00.confused.00",
+      "definition": "as if in a trance",
+      "relation": "similar"
+    },
+    {
+      "word": "TRANQUIL",
+      "senseId": "oewn-tranquil__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILER",
+      "senseId": "oewn-tranquil__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILEST",
+      "senseId": "oewn-tranquil__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILITIES",
+      "senseId": "oewn-tranquility__1.26.00..",
+      "definition": "an untroubled state; free from disturbances",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILITY",
+      "senseId": "oewn-tranquility__1.26.00..",
+      "definition": "an untroubled state; free from disturbances",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILIZE",
+      "senseId": "oewn-tranquilize__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILIZED",
+      "senseId": "oewn-tranquilize__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILIZES",
+      "senseId": "oewn-tranquilize__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILIZING",
+      "senseId": "oewn-tranquilize__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLISE",
+      "senseId": "oewn-tranquillise__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLISED",
+      "senseId": "oewn-tranquillise__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLISES",
+      "senseId": "oewn-tranquillise__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLISING",
+      "senseId": "oewn-tranquillise__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLITIES",
+      "senseId": "oewn-tranquillity__1.26.00..",
+      "definition": "an untroubled state; free from disturbances",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLITY",
+      "senseId": "oewn-tranquillity__1.26.00..",
+      "definition": "an untroubled state; free from disturbances",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLIZE",
+      "senseId": "oewn-tranquillize__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLIZED",
+      "senseId": "oewn-tranquillize__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLIZES",
+      "senseId": "oewn-tranquillize__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLIZING",
+      "senseId": "oewn-tranquillize__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLY",
+      "senseId": "oewn-tranquilly__4.02.01..",
+      "definition": "without emotional agitation",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRIG",
+      "senseId": "oewn-trig__5.00.00.tidy.00",
+      "definition": "neat and smart in appearance",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRIGGER",
+      "senseId": "oewn-trig__5.00.00.tidy.00",
+      "definition": "neat and smart in appearance",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRIGGEST",
+      "senseId": "oewn-trig__5.00.00.tidy.00",
+      "definition": "neat and smart in appearance",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRIM",
+      "senseId": "oewn-trim__5.00.02.tidy.00",
+      "definition": "neat and smart in appearance",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRIMLY",
+      "senseId": "oewn-trimly__4.02.00..",
+      "definition": "in a trim manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRIMMER",
+      "senseId": "oewn-trim__5.00.02.tidy.00",
+      "definition": "neat and smart in appearance",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRIMMEST",
+      "senseId": "oewn-trim__5.00.02.tidy.00",
+      "definition": "neat and smart in appearance",
+      "relation": "opposite"
+    },
+    {
+      "word": "TURMOIL",
+      "senseId": "oewn-turmoil__1.26.00..",
+      "definition": "a violent disturbance",
+      "relation": "similar"
+    },
+    {
+      "word": "TURMOILS",
+      "senseId": "oewn-turmoil__1.26.00..",
+      "definition": "a violent disturbance",
+      "relation": "similar"
+    },
+    {
+      "word": "TUSSLE",
+      "senseId": "oewn-tussle__2.35.00..",
+      "definition": "make messy or untidy",
+      "relation": "similar"
+    },
+    {
+      "word": "TUSSLED",
+      "senseId": "oewn-tussle__2.35.00..",
+      "definition": "make messy or untidy",
+      "relation": "similar"
+    },
+    {
+      "word": "TUSSLES",
+      "senseId": "oewn-tussle__2.35.00..",
+      "definition": "make messy or untidy",
+      "relation": "similar"
+    },
+    {
+      "word": "TUSSLING",
+      "senseId": "oewn-tussle__2.35.00..",
+      "definition": "make messy or untidy",
+      "relation": "similar"
+    },
+    {
+      "word": "UNBEND",
+      "senseId": "oewn-unbend__2.29.01..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNBENDED",
+      "senseId": "oewn-unbend__2.29.01..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNBENDING",
+      "senseId": "oewn-unbend__2.29.01..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNBENDS",
+      "senseId": "oewn-unbend__2.29.01..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNBENT",
+      "senseId": "oewn-unbend__2.29.01..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNCLUTTERED",
+      "senseId": "oewn-uncluttered__5.00.00.tidy.00",
+      "definition": "having nothing extraneous",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNFLAPPABLE",
+      "senseId": "oewn-unflappable__5.00.00.composed.00",
+      "definition": "not easily perturbed or excited or upset; marked by extreme calm and composure",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNFLUSTERED",
+      "senseId": "oewn-unflustered__5.00.00.composed.00",
+      "definition": "free from emotional agitation or nervous tension",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNPERTURBED",
+      "senseId": "oewn-unperturbed__5.00.00.composed.00",
+      "definition": "free from emotional agitation or nervous tension",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNRUFFLED",
+      "senseId": "oewn-unruffled__5.00.00.composed.00",
+      "definition": "free from emotional agitation or nervous tension",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNRULIER",
+      "senseId": "oewn-unruly__5.00.00.disorderly.00",
+      "definition": "noisy and lacking in restraint or discipline",
+      "relation": "similar"
+    },
+    {
+      "word": "UNRULIEST",
+      "senseId": "oewn-unruly__5.00.00.disorderly.00",
+      "definition": "noisy and lacking in restraint or discipline",
+      "relation": "similar"
+    },
+    {
+      "word": "UNRULINESS",
+      "senseId": "oewn-unruliness__1.07.00..",
+      "definition": "the trait of being prone to disobedience and lack of discipline",
+      "relation": "similar"
+    },
+    {
+      "word": "UNRULINESSES",
+      "senseId": "oewn-unruliness__1.07.00..",
+      "definition": "the trait of being prone to disobedience and lack of discipline",
+      "relation": "similar"
+    },
+    {
+      "word": "UNRULY",
+      "senseId": "oewn-unruly__5.00.00.disorderly.00",
+      "definition": "noisy and lacking in restraint or discipline",
+      "relation": "similar"
+    },
+    {
+      "word": "UNSTRAINED",
+      "senseId": "oewn-unstrained__5.00.00.relaxed.00",
+      "definition": "not placed under psychological stress",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNTIDINESS",
+      "senseId": "oewn-untidiness__1.07.00..",
+      "definition": "the trait of being untidy and messy",
+      "relation": "similar"
+    },
+    {
+      "word": "UNTIDINESSES",
+      "senseId": "oewn-untidiness__1.07.00..",
+      "definition": "the trait of being untidy and messy",
+      "relation": "similar"
+    },
+    {
+      "word": "UNTROUBLED",
+      "senseId": "oewn-untroubled__5.00.00.quiet.02",
+      "definition": "free from turmoil or worries",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNWIND",
+      "senseId": "oewn-unwind__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNWINDING",
+      "senseId": "oewn-unwind__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNWINDS",
+      "senseId": "oewn-unwind__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNWOUND",
+      "senseId": "oewn-unwind__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UPHEAVAL",
+      "senseId": "oewn-upheaval__1.26.01..",
+      "definition": "a violent disturbance",
+      "relation": "similar"
+    },
+    {
+      "word": "UPHEAVALS",
+      "senseId": "oewn-upheaval__1.26.01..",
+      "definition": "a violent disturbance",
+      "relation": "similar"
+    },
+    {
+      "word": "WILFULNESS",
+      "senseId": "oewn-wilfulness__1.07.00..",
+      "definition": "the trait of being prone to disobedience and lack of discipline",
+      "relation": "similar"
+    },
+    {
+      "word": "WILFULNESSES",
+      "senseId": "oewn-wilfulness__1.07.00..",
+      "definition": "the trait of being prone to disobedience and lack of discipline",
+      "relation": "similar"
+    },
+    {
+      "word": "WILLFULNESS",
+      "senseId": "oewn-willfulness__1.07.00..",
+      "definition": "the trait of being prone to disobedience and lack of discipline",
+      "relation": "similar"
+    },
+    {
+      "word": "WILLFULNESSES",
+      "senseId": "oewn-willfulness__1.07.00..",
+      "definition": "the trait of being prone to disobedience and lack of discipline",
+      "relation": "similar"
+    },
+    {
+      "word": "WOOLIER",
+      "senseId": "oewn-wooly__5.00.00.confused.00",
+      "definition": "confused and vague; used especially of thinking",
+      "relation": "similar"
+    },
+    {
+      "word": "WOOLIEST",
+      "senseId": "oewn-wooly__5.00.00.confused.00",
+      "definition": "confused and vague; used especially of thinking",
+      "relation": "similar"
+    },
+    {
+      "word": "WOOLLIER",
+      "senseId": "oewn-woolly__5.00.00.confused.00",
+      "definition": "confused and vague; used especially of thinking",
+      "relation": "similar"
+    },
+    {
+      "word": "WOOLLIEST",
+      "senseId": "oewn-woolly__5.00.00.confused.00",
+      "definition": "confused and vague; used especially of thinking",
+      "relation": "similar"
+    },
+    {
+      "word": "WOOLLY",
+      "senseId": "oewn-woolly__5.00.00.confused.00",
+      "definition": "confused and vague; used especially of thinking",
+      "relation": "similar"
+    },
+    {
+      "word": "WOOLY",
+      "senseId": "oewn-wooly__5.00.00.confused.00",
+      "definition": "confused and vague; used especially of thinking",
+      "relation": "similar"
+    }
+  ],
+  "semanticPolicy": "Pinned source senses and reviewed lexical families; unlabelled defined senses are neutral. Not a proof of exhaustive contextual semantic coverage.",
+  "asset": "puzzles/mess-seamless-46fe328a049d.json",
+  "twoWordWin": {
+    "words": [
+      "ACORNS",
+      "DECOMPRESS"
+    ],
+    "tileIds": [
+      [
+        0,
+        1,
+        11,
+        9,
+        7,
+        3
+      ],
+      [
+        17,
+        12,
+        20,
+        19,
+        4,
+        15,
+        16,
+        13,
+        5,
+        10
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      5
+    ]
+  }
+}

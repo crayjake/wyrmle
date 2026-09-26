@@ -1,0 +1,1887 @@
+{
+  "id": "tire-stirred",
+  "enemy": "TIRE",
+  "answer": "STIRRED",
+  "accepted": true,
+  "seed": "bingo-first-3:TIRE:STIRRED:15",
+  "score": 605,
+  "analysis": {
+    "score": 605,
+    "bingos": [
+      "STIRRED"
+    ],
+    "counterFamilies": 12,
+    "resistedFamilies": 4,
+    "winningOpenings": 18,
+    "repeatedCounterRoutes": 18,
+    "sustainedPositions": 17,
+    "sustainedFinalPositions": 12,
+    "neutralCleanupOpenings": 6,
+    "routes": [
+      {
+        "opening": "ACT",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "LIVE",
+            "LIVES",
+            "INSPIRED",
+            "WOKE",
+            "INVOKE",
+            "VIGOR",
+            "EVOKING",
+            "LIVEN"
+          ],
+          "resisted": [
+            "GONE",
+            "WORE",
+            "PIN",
+            "IDLE",
+            "KIP"
+          ],
+          "neutral": 660
+        },
+        "thirdTurn": {
+          "counters": [
+            "TRIP",
+            "SPIRIT",
+            "LIVER",
+            "STRIVE",
+            "PROPEL",
+            "VIGOR"
+          ],
+          "resisted": [
+            "REST",
+            "WORE",
+            "SLEPT",
+            "TIRES",
+            "KIP"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ACT",
+            "INSPIRED",
+            "TRIP"
+          ],
+          "tileIds": [
+            [
+              7,
+              6,
+              14
+            ],
+            [
+              1,
+              10,
+              0,
+              3,
+              11,
+              4,
+              2,
+              9
+            ],
+            [
+              23,
+              8,
+              18,
+              20
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "LIVE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "ACT",
+            "ACTION",
+            "TRIP",
+            "RAISED",
+            "SPIRIT",
+            "INSPIRED",
+            "REPAIR",
+            "STRAIN",
+            "SPARK",
+            "SPIRITED",
+            "TONIC",
+            "INCITE"
+          ],
+          "resisted": [
+            "GONE",
+            "REST",
+            "SPENT",
+            "WEAR",
+            "WASTE",
+            "TIRED",
+            "TRAP",
+            "PIN",
+            "INERTIA",
+            "INERT",
+            "KIP"
+          ],
+          "neutral": 1765
+        },
+        "thirdTurn": {
+          "counters": [
+            "RAISED",
+            "SPIRIT",
+            "INSPIRED",
+            "STRAIN",
+            "SPARK",
+            "SPIRITED"
+          ],
+          "resisted": [
+            "GONE",
+            "REST",
+            "SPENT",
+            "WEAR",
+            "WASTE",
+            "TIRED",
+            "TRAP",
+            "PIN",
+            "INERTIA",
+            "INERT",
+            "KIP"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "LIVE",
+            "TRIP",
+            "RAISED"
+          ],
+          "tileIds": [
+            [
+              15,
+              1,
+              12,
+              2
+            ],
+            [
+              14,
+              4,
+              11,
+              3
+            ],
+            [
+              8,
+              7,
+              18,
+              0,
+              19,
+              9
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "LIVES",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "ACT",
+            "ACTION",
+            "TRIP",
+            "REPAIR",
+            "TONIC",
+            "INCITE"
+          ],
+          "resisted": [
+            "GONE",
+            "WEAR",
+            "TIRED",
+            "TRAP",
+            "PIN",
+            "INERTIA",
+            "INERT",
+            "KIP"
+          ],
+          "neutral": 906
+        },
+        "thirdTurn": {
+          "counters": [
+            "RAISED",
+            "SPIRIT",
+            "INSPIRED",
+            "REPAIR",
+            "STRAIN",
+            "SPARK",
+            "SPIRITED"
+          ],
+          "resisted": [
+            "GONE",
+            "REST",
+            "SPENT",
+            "WEAR",
+            "WASTE",
+            "TIRED",
+            "TRAP",
+            "PIN",
+            "INERTIA",
+            "INERT",
+            "KIP"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "LIVES",
+            "TRIP",
+            "RAISED"
+          ],
+          "tileIds": [
+            [
+              15,
+              1,
+              12,
+              2,
+              0
+            ],
+            [
+              14,
+              4,
+              11,
+              3
+            ],
+            [
+              8,
+              7,
+              18,
+              22,
+              19,
+              9
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "ACTION",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "LIVE",
+            "LIVES",
+            "PEP"
+          ],
+          "resisted": [
+            "SLEEP",
+            "IDLE",
+            "KIP"
+          ],
+          "neutral": 306
+        },
+        "thirdTurn": {
+          "counters": [
+            "TRIP",
+            "SPIRIT",
+            "SPIRITED"
+          ],
+          "resisted": [
+            "REST",
+            "TIRED",
+            "KIP"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ACTION",
+            "LIVER",
+            "TRIP"
+          ],
+          "tileIds": [
+            [
+              7,
+              6,
+              14,
+              1,
+              5,
+              10
+            ],
+            [
+              15,
+              11,
+              12,
+              2,
+              4
+            ],
+            [
+              23,
+              8,
+              18,
+              3
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "ACTIVE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "INSPIRED",
+            "PROPEL"
+          ],
+          "resisted": [
+            "GONE",
+            "WORE",
+            "PIN",
+            "IDLE",
+            "KIP"
+          ],
+          "neutral": 580
+        },
+        "thirdTurn": {
+          "counters": [
+            "TRIP",
+            "SPIRIT",
+            "VIGOR"
+          ],
+          "resisted": [
+            "STILL",
+            "KIP"
+          ]
+        },
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "ACTIVE",
+            "INSPIRED",
+            "TRIP"
+          ],
+          "tileIds": [
+            [
+              7,
+              6,
+              14,
+              1,
+              12,
+              2
+            ],
+            [
+              11,
+              10,
+              0,
+              3,
+              18,
+              4,
+              19,
+              9
+            ],
+            [
+              23,
+              8,
+              21,
+              20
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "TRIP",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "LIVE",
+            "NEED",
+            "LIVES",
+            "RAISED",
+            "WAKE",
+            "AGILE",
+            "INVOKE",
+            "EVOKE",
+            "VIGOR",
+            "LIVEN"
+          ],
+          "resisted": [
+            "GONE",
+            "WEAR",
+            "EASE",
+            "SLACK",
+            "IDLE"
+          ],
+          "neutral": 1537
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "TRIP",
+            "RAISED"
+          ],
+          "tileIds": [
+            [
+              14,
+              4,
+              1,
+              3
+            ],
+            [
+              8,
+              7,
+              11,
+              0,
+              2,
+              9
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "RAISED",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "TRIP",
+            "LIVER",
+            "TONIC",
+            "TWINKLE",
+            "PROPEL",
+            "INCITE",
+            "VIGOR"
+          ],
+          "resisted": [
+            "GONE",
+            "WORE",
+            "PIN",
+            "TIRE",
+            "INERT",
+            "KIP"
+          ],
+          "neutral": 442
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "RAISED",
+            "TRIP"
+          ],
+          "tileIds": [
+            [
+              4,
+              7,
+              1,
+              0,
+              2,
+              9
+            ],
+            [
+              14,
+              8,
+              11,
+              3
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "SPIRIT",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "LIVE",
+            "NEED",
+            "WAKE",
+            "AGILE",
+            "INVOKE",
+            "EVOKE",
+            "VIGOR",
+            "LIVEN"
+          ],
+          "resisted": [
+            "GONE",
+            "WEAR",
+            "PIN",
+            "IDLE",
+            "KIP"
+          ],
+          "neutral": 1048
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "SPIRIT",
+            "LIVER"
+          ],
+          "tileIds": [
+            [
+              0,
+              3,
+              1,
+              4,
+              11,
+              14
+            ],
+            [
+              15,
+              18,
+              12,
+              2,
+              8
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "INSPIRED",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "ACT",
+            "ACTIVE",
+            "TRIP",
+            "SPIRIT",
+            "RAISE",
+            "VITAL",
+            "ALERT",
+            "LIVER",
+            "SPARK",
+            "STRIVE",
+            "SPARKLE",
+            "VIGOR"
+          ],
+          "resisted": [
+            "REST",
+            "WEAR",
+            "WASTE",
+            "TRAP",
+            "SLEPT",
+            "STATIC",
+            "TIRES",
+            "SLACK",
+            "KIP"
+          ],
+          "neutral": 1148
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "INSPIRED",
+            "TRIP"
+          ],
+          "tileIds": [
+            [
+              1,
+              10,
+              0,
+              3,
+              11,
+              4,
+              2,
+              9
+            ],
+            [
+              14,
+              8,
+              18,
+              20
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "REPAIR",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "TONIC",
+            "TWINKLE",
+            "INCITE"
+          ],
+          "resisted": [
+            "GONE",
+            "SPENT",
+            "PIN",
+            "SLEPT",
+            "IDLE",
+            "KIP"
+          ],
+          "neutral": 810
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "REPAIR",
+            "TONIC"
+          ],
+          "tileIds": [
+            [
+              4,
+              2,
+              3,
+              7,
+              1,
+              8
+            ],
+            [
+              14,
+              5,
+              10,
+              11,
+              6
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "VITAL",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "NEED",
+            "INSPIRED",
+            "WOKE",
+            "PEP"
+          ],
+          "resisted": [
+            "GONE",
+            "WORE",
+            "PIN",
+            "KIP"
+          ],
+          "neutral": 703
+        },
+        "thirdTurn": {
+          "counters": [
+            "TRIP",
+            "SPIRIT",
+            "STRIVE",
+            "VIGOR"
+          ],
+          "resisted": [
+            "REST",
+            "WORE",
+            "TIRES",
+            "KIP"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "VITAL",
+            "INSPIRED",
+            "TRIP"
+          ],
+          "tileIds": [
+            [
+              12,
+              1,
+              14,
+              7,
+              15
+            ],
+            [
+              11,
+              10,
+              0,
+              3,
+              18,
+              4,
+              2,
+              9
+            ],
+            [
+              23,
+              8,
+              21,
+              20
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "ALERT",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "INSPIRED",
+            "INVOKE",
+            "VIGOR",
+            "EVOKING"
+          ],
+          "resisted": [
+            "GONE",
+            "WORE",
+            "PIN",
+            "KIP"
+          ],
+          "neutral": 622
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "ALERT",
+            "INSPIRED"
+          ],
+          "tileIds": [
+            [
+              7,
+              15,
+              2,
+              4,
+              14
+            ],
+            [
+              1,
+              10,
+              0,
+              3,
+              11,
+              8,
+              19,
+              9
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "REST",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "LIVE",
+            "WAKE",
+            "AGILE",
+            "INVOKE",
+            "VIGOR",
+            "EVOKING",
+            "LIVEN"
+          ],
+          "resisted": [
+            "GONE",
+            "WEAR",
+            "PIN",
+            "IDLE",
+            "KIP"
+          ],
+          "neutral": 865
+        },
+        "thirdTurn": {
+          "counters": [
+            "ACT",
+            "ACTION",
+            "TRIP",
+            "SPIRIT",
+            "RAISING",
+            "STRAIN",
+            "SPARK",
+            "TONIC"
+          ],
+          "resisted": [
+            "TRAP",
+            "PIN",
+            "WORN",
+            "WASTING",
+            "TIRING",
+            "KIP"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "REST",
+            "LIVER",
+            "TRIP"
+          ],
+          "tileIds": [
+            [
+              4,
+              2,
+              0,
+              14
+            ],
+            [
+              15,
+              1,
+              12,
+              19,
+              8
+            ],
+            [
+              23,
+              24,
+              11,
+              3
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "SPENT",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "LIVE",
+            "WAKE",
+            "REPAIR",
+            "AGILE",
+            "VIGOR"
+          ],
+          "resisted": [
+            "WEAR",
+            "IDLE",
+            "KIP"
+          ],
+          "neutral": 527
+        },
+        "thirdTurn": {
+          "counters": [
+            "TRIP",
+            "SPIRIT"
+          ],
+          "resisted": [
+            "KIP"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SPENT",
+            "REPAIR",
+            "TRIP"
+          ],
+          "tileIds": [
+            [
+              0,
+              3,
+              2,
+              10,
+              14
+            ],
+            [
+              4,
+              19,
+              20,
+              7,
+              1,
+              8
+            ],
+            [
+              23,
+              24,
+              11,
+              26
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "TIRED",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "LIVE",
+            "LIVES",
+            "WAKE",
+            "RAISE",
+            "INSPIRE",
+            "SPARK",
+            "SPARKLING",
+            "PEP",
+            "AGILE",
+            "INVOKE",
+            "PROPEL",
+            "VIGOR",
+            "EVOKING",
+            "LIVEN"
+          ],
+          "resisted": [
+            "GONE",
+            "WEAR",
+            "PIN",
+            "SLACK",
+            "KIP"
+          ],
+          "neutral": 1172
+        },
+        "thirdTurn": {
+          "counters": [
+            "TRIP",
+            "SPIRIT",
+            "STRIVING",
+            "TONIC",
+            "VIGOR"
+          ],
+          "resisted": [
+            "PIN",
+            "WORN",
+            "KIP"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "TIRED",
+            "RAISE",
+            "TRIP"
+          ],
+          "tileIds": [
+            [
+              14,
+              1,
+              4,
+              2,
+              9
+            ],
+            [
+              8,
+              7,
+              11,
+              0,
+              19
+            ],
+            [
+              23,
+              24,
+              18,
+              3
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "TRAP",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "LIVE",
+            "NEED",
+            "LIVES",
+            "WOKE",
+            "INVOKE",
+            "EVOKE",
+            "VIGOR",
+            "LIVEN"
+          ],
+          "resisted": [
+            "GONE",
+            "WORE",
+            "IDLE"
+          ],
+          "neutral": 838
+        },
+        "thirdTurn": {
+          "counters": [
+            "TRIP",
+            "SPIRIT",
+            "INSPIRED",
+            "SPIRITED",
+            "TONIC",
+            "INCITE"
+          ],
+          "resisted": [
+            "GONE",
+            "REST",
+            "SPENT",
+            "TIRED",
+            "WORE",
+            "PIN",
+            "INERT",
+            "KIP"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "TRAP",
+            "LIVER",
+            "TRIP"
+          ],
+          "tileIds": [
+            [
+              14,
+              4,
+              7,
+              3
+            ],
+            [
+              15,
+              1,
+              12,
+              2,
+              8
+            ],
+            [
+              23,
+              24,
+              11,
+              20
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "LIVE",
+            "LIVES",
+            "TRIP",
+            "SPIRIT",
+            "INSPIRED",
+            "WOKE",
+            "STRIVE",
+            "SPIRITED",
+            "TONIC",
+            "INVOKE",
+            "TWINKLE",
+            "INCITE",
+            "VIGOR",
+            "EVOKING",
+            "LIVEN"
+          ],
+          "resisted": [
+            "GONE",
+            "REST",
+            "SPENT",
+            "TIRED",
+            "WORE",
+            "PIN",
+            "SLEPT",
+            "IDLE",
+            "INERT",
+            "KIP"
+          ],
+          "neutral": 1312
+        },
+        "thirdTurn": {
+          "counters": [
+            "TRIP",
+            "SPIRIT",
+            "INSPIRED",
+            "SPIRITED",
+            "PROPEL"
+          ],
+          "resisted": [
+            "GONE",
+            "REST",
+            "SPENT",
+            "TIRED",
+            "WORE",
+            "PIN",
+            "SLEPT",
+            "IDLE",
+            "INERT",
+            "KIP"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AIR",
+            "STRIVE",
+            "TRIP"
+          ],
+          "tileIds": [
+            [
+              7,
+              1,
+              4
+            ],
+            [
+              0,
+              14,
+              8,
+              11,
+              12,
+              2
+            ],
+            [
+              23,
+              24,
+              18,
+              3
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "ARE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "TRIP",
+            "SPIRIT",
+            "STRIVING",
+            "TONIC",
+            "VIGOR"
+          ],
+          "resisted": [
+            "PIN",
+            "WORN",
+            "TIRING",
+            "KIP"
+          ],
+          "neutral": 496
+        },
+        "thirdTurn": {
+          "counters": [
+            "LIVE",
+            "LIVES",
+            "WOKE",
+            "INVOKE",
+            "EVOKING",
+            "LIVEN"
+          ],
+          "resisted": [
+            "GONE",
+            "PIN",
+            "IDLE",
+            "KIP"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ARE",
+            "TRIP",
+            "LIVE"
+          ],
+          "tileIds": [
+            [
+              7,
+              4,
+              2
+            ],
+            [
+              14,
+              8,
+              1,
+              3
+            ],
+            [
+              15,
+              11,
+              12,
+              19
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      }
+    ]
+  },
+  "roots": [
+    {
+      "word": "REINVIGORATE",
+      "senseId": "oewn-reinvigorate__2.29.00..",
+      "definition": "impart vigor, strength, or vitality to",
+      "relation": "opposite"
+    },
+    {
+      "word": "INVIGORATE",
+      "senseId": "oewn-invigorate__2.30.01..",
+      "definition": "give life or energy to",
+      "relation": "opposite"
+    },
+    {
+      "word": "ANIMATE",
+      "senseId": "oewn-animate__2.29.00..",
+      "definition": "give new life or energy to",
+      "relation": "opposite"
+    },
+    {
+      "word": "ANIMATION",
+      "senseId": "oewn-animation__1.07.01..",
+      "definition": "quality of being active or spirited or alive and vigorous",
+      "relation": "opposite"
+    },
+    {
+      "word": "REANIMATE",
+      "senseId": "oewn-reanimate__2.29.00..",
+      "definition": "give new life or energy to",
+      "relation": "opposite"
+    },
+    {
+      "word": "VITALISE",
+      "senseId": "oewn-vitalise__2.30.00..",
+      "definition": "make more lively or vigorous",
+      "relation": "opposite"
+    },
+    {
+      "word": "VITALIZE",
+      "senseId": "oewn-vitalize__2.30.00..",
+      "definition": "make more lively or vigorous",
+      "relation": "opposite"
+    },
+    {
+      "word": "REVITALISE",
+      "senseId": "oewn-revitalise__2.30.00..",
+      "definition": "give new life or vigor to",
+      "relation": "opposite"
+    },
+    {
+      "word": "REVITALIZE",
+      "senseId": "oewn-revitalize__2.29.00..",
+      "definition": "restore strength",
+      "relation": "opposite"
+    },
+    {
+      "word": "ACTIVATE",
+      "senseId": "oewn-activate__2.36.00..",
+      "definition": "put in motion or move to act",
+      "relation": "opposite"
+    },
+    {
+      "word": "ACTIVE",
+      "senseId": "oewn-active__3.00.01..",
+      "definition": "characterized by energetic activity",
+      "relation": "opposite"
+    },
+    {
+      "word": "LIVELY",
+      "senseId": "oewn-lively__3.00.00..",
+      "definition": "full of life and energy",
+      "relation": "opposite"
+    },
+    {
+      "word": "ENERGETIC",
+      "senseId": "oewn-energetic__3.00.00..",
+      "definition": "possessing or exerting or displaying energy",
+      "relation": "opposite"
+    },
+    {
+      "word": "VIGOUR",
+      "senseId": "oewn-vigour__1.07.00..",
+      "definition": "active strength of body or mind",
+      "relation": "opposite"
+    },
+    {
+      "word": "VIGOR",
+      "senseId": "oewn-vigor__1.07.00..",
+      "definition": "active strength of body or mind",
+      "relation": "opposite"
+    },
+    {
+      "word": "ENERGY",
+      "senseId": "oewn-energy__1.26.00..",
+      "definition": "a healthy capacity for vigorous activity",
+      "relation": "opposite"
+    },
+    {
+      "word": "SPRY",
+      "senseId": "oewn-spry__5.00.00.active.01",
+      "definition": "moving quickly and lightly",
+      "relation": "opposite"
+    },
+    {
+      "word": "AGILITY",
+      "senseId": "oewn-agility__1.07.00..",
+      "definition": "the gracefulness of a person or animal that is quick and nimble",
+      "relation": "opposite"
+    },
+    {
+      "word": "AGILE",
+      "senseId": "oewn-agile__5.00.00.active.01",
+      "definition": "moving quickly and lightly",
+      "relation": "opposite"
+    },
+    {
+      "word": "ALERT",
+      "senseId": "oewn-alert__5.00.00.energetic.00",
+      "definition": "quick and energetic",
+      "relation": "opposite"
+    },
+    {
+      "word": "MOTIVATE",
+      "senseId": "oewn-motivate__2.36.00..",
+      "definition": "give an incentive for action",
+      "relation": "opposite"
+    },
+    {
+      "word": "MOVE",
+      "senseId": "oewn-move__2.29.06..",
+      "definition": "be in a state of action",
+      "relation": "opposite"
+    },
+    {
+      "word": "MOVEMENT",
+      "senseId": "oewn-movement__1.04.00..",
+      "definition": "a change of position that does not entail a change of location",
+      "relation": "opposite"
+    },
+    {
+      "word": "MOTION",
+      "senseId": "oewn-motion__1.11.00..",
+      "definition": "a natural event that involves a change in the position or location of something",
+      "relation": "opposite"
+    },
+    {
+      "word": "ACT",
+      "senseId": "oewn-act__2.41.00..",
+      "definition": "perform an action, or work out or perform (an action)",
+      "relation": "opposite"
+    },
+    {
+      "word": "INSPIRE",
+      "senseId": "oewn-inspire__2.32.01..",
+      "definition": "spur on or encourage especially by cheers and shouts",
+      "relation": "opposite"
+    },
+    {
+      "word": "VITAL",
+      "senseId": "oewn-vital__5.00.00.animated.00",
+      "definition": "full of spirit; full of life",
+      "relation": "opposite"
+    },
+    {
+      "word": "REVIVE",
+      "senseId": "oewn-revive__2.29.00..",
+      "definition": "give new life or energy to",
+      "relation": "opposite"
+    },
+    {
+      "word": "AWAKEN",
+      "senseId": "oewn-awaken__2.29.00..",
+      "definition": "cause to become awake or conscious",
+      "relation": "opposite"
+    },
+    {
+      "word": "STIMULATE",
+      "senseId": "oewn-stimulate__2.29.00..",
+      "definition": "cause to be alert and energetic",
+      "relation": "opposite"
+    },
+    {
+      "word": "ROUSE",
+      "senseId": "oewn-rouse__2.38.01..",
+      "definition": "become active",
+      "relation": "opposite"
+    },
+    {
+      "word": "AROUSE",
+      "senseId": "oewn-arouse__2.29.00..",
+      "definition": "cause to be alert and energetic",
+      "relation": "opposite"
+    },
+    {
+      "word": "STIR",
+      "senseId": "oewn-stir__2.36.00..",
+      "definition": "summon into action or bring into existence, often as if by magic",
+      "relation": "opposite"
+    },
+    {
+      "word": "ENLIVEN",
+      "senseId": "oewn-enliven__2.30.00..",
+      "definition": "make lively",
+      "relation": "opposite"
+    },
+    {
+      "word": "ACTIVITY",
+      "senseId": "oewn-activity__1.26.00..",
+      "definition": "the state of being active",
+      "relation": "opposite"
+    },
+    {
+      "word": "DYNAMIC",
+      "senseId": "oewn-dynamic__3.00.00..",
+      "definition": "characterized by action or forcefulness or force of personality",
+      "relation": "opposite"
+    },
+    {
+      "word": "DYNAMISM",
+      "senseId": "oewn-dynamism__1.07.00..",
+      "definition": "the activeness of an energetic personality",
+      "relation": "opposite"
+    },
+    {
+      "word": "VITALITY",
+      "senseId": "oewn-vitality__1.26.00..",
+      "definition": "a healthy capacity for vigorous activity",
+      "relation": "opposite"
+    },
+    {
+      "word": "INERT",
+      "senseId": "oewn-inert__5.00.00.inactive.01",
+      "definition": "slow and apathetic",
+      "relation": "similar"
+    },
+    {
+      "word": "APATHETIC",
+      "senseId": "oewn-apathetic__5.00.00.spiritless.00",
+      "definition": "showing little or no emotion or animation",
+      "relation": "similar"
+    },
+    {
+      "word": "APATHY",
+      "senseId": "oewn-apathy__1.12.00..",
+      "definition": "an absence of emotion or enthusiasm",
+      "relation": "similar"
+    },
+    {
+      "word": "LETHARGIC",
+      "senseId": "oewn-lethargic__3.00.00..",
+      "definition": "deficient in alertness or activity",
+      "relation": "similar"
+    },
+    {
+      "word": "LETHARGY",
+      "senseId": "oewn-lethargy__1.07.01..",
+      "definition": "inactivity; showing an unusual lack of energy",
+      "relation": "similar"
+    },
+    {
+      "word": "SLUGGISH",
+      "senseId": "oewn-sluggish__5.00.01.slow.01",
+      "definition": "slow or slothful",
+      "relation": "similar"
+    },
+    {
+      "word": "PASSIVE",
+      "senseId": "oewn-passive__3.00.01..",
+      "definition": "lacking in energy or will",
+      "relation": "similar"
+    },
+    {
+      "word": "IDLE",
+      "senseId": "oewn-idle__3.00.00..",
+      "definition": "not in action or at work",
+      "relation": "similar"
+    },
+    {
+      "word": "INACTIVE",
+      "senseId": "oewn-inactive__3.00.01..",
+      "definition": "not active physically or mentally",
+      "relation": "similar"
+    },
+    {
+      "word": "LISTLESS",
+      "senseId": "oewn-listless__5.00.00.lethargic.00",
+      "definition": "lacking zest or vivacity",
+      "relation": "similar"
+    },
+    {
+      "word": "STILL",
+      "senseId": "oewn-still__5.00.01.nonmoving.00",
+      "definition": "not in physical motion",
+      "relation": "similar"
+    },
+    {
+      "word": "LANGUID",
+      "senseId": "oewn-languid__5.00.00.lethargic.00",
+      "definition": "lacking spirit or liveliness",
+      "relation": "similar"
+    },
+    {
+      "word": "LAZINESS",
+      "senseId": "oewn-laziness__1.07.00..",
+      "definition": "inactivity resulting from a dislike of work",
+      "relation": "similar"
+    },
+    {
+      "word": "INDOLENT",
+      "senseId": "oewn-indolent__5.00.00.idle.00",
+      "definition": "disinclined to work or exertion",
+      "relation": "similar"
+    },
+    {
+      "word": "TORPID",
+      "senseId": "oewn-torpid__5.00.00.inactive.01",
+      "definition": "slow and apathetic",
+      "relation": "similar"
+    },
+    {
+      "word": "TORPOR",
+      "senseId": "oewn-torpor__1.07.00..",
+      "definition": "inactivity resulting from lethargy and lack of vigor or energy",
+      "relation": "similar"
+    },
+    {
+      "word": "INERTIA",
+      "senseId": "oewn-inertia__1.07.01..",
+      "definition": "a disposition to remain inactive or inert",
+      "relation": "similar"
+    },
+    {
+      "word": "SLOTH",
+      "senseId": "oewn-sloth__1.07.01..",
+      "definition": "a disinclination to work or exert yourself",
+      "relation": "similar"
+    },
+    {
+      "word": "DORMANT",
+      "senseId": "oewn-dormant__5.00.00.inactive.01",
+      "definition": "inactive but capable of becoming active",
+      "relation": "similar"
+    },
+    {
+      "word": "STAGNATE",
+      "senseId": "oewn-stagnate__2.42.01..",
+      "definition": "stand still",
+      "relation": "similar"
+    },
+    {
+      "word": "STAGNATION",
+      "senseId": "oewn-stagnation__1.26.00..",
+      "definition": "a state of inactivity (in business or art etc.)",
+      "relation": "similar"
+    },
+    {
+      "word": "IMMOBILE",
+      "senseId": "oewn-immobile__3.00.00..",
+      "definition": "not capable of movement or of being moved",
+      "relation": "similar"
+    },
+    {
+      "word": "LANGUISH",
+      "senseId": "oewn-languish__2.30.00..",
+      "definition": "lose vigor, health, or flesh, as through grief",
+      "relation": "similar"
+    },
+    {
+      "word": "LAZY",
+      "senseId": "oewn-lazy__5.00.00.idle.00",
+      "definition": "disinclined to work or exertion",
+      "relation": "similar"
+    },
+    {
+      "word": "SLEEP",
+      "senseId": "oewn-sleep__1.26.00..",
+      "definition": "a natural and periodic state of rest during which consciousness of the world is suspended",
+      "relation": "similar"
+    },
+    {
+      "word": "DROWSY",
+      "senseId": "oewn-drowsy__5.00.00.asleep.00",
+      "definition": "half asleep",
+      "relation": "similar"
+    },
+    {
+      "word": "WEARY",
+      "senseId": "oewn-weary__5.00.00.tired.00",
+      "definition": "physically and mentally fatigued",
+      "relation": "similar"
+    },
+    {
+      "word": "TIRE",
+      "senseId": "oewn-tire__2.29.01..",
+      "definition": "exhaust or get tired through overuse or great strain or stress",
+      "relation": "similar"
+    },
+    {
+      "word": "ANIMATE",
+      "senseId": "oewn-animate__2.30.00..",
+      "definition": "make lively",
+      "relation": "opposite"
+    },
+    {
+      "word": "INTEREST",
+      "senseId": "oewn-interest__2.37.00..",
+      "definition": "excite the curiosity of; engage the interest of",
+      "relation": "opposite"
+    },
+    {
+      "word": "ATTACK",
+      "senseId": "oewn-attack__2.30.00..",
+      "definition": "set to work upon; turn one's energies vigorously to a task",
+      "relation": "opposite"
+    },
+    {
+      "word": "LIFE",
+      "senseId": "oewn-life__1.07.01..",
+      "definition": "animation and energy in action or expression",
+      "relation": "opposite"
+    },
+    {
+      "word": "LIVE",
+      "senseId": "oewn-live__5.00.00.lively.00",
+      "definition": "abounding with life and energy",
+      "relation": "opposite"
+    },
+    {
+      "word": "STRIVE",
+      "senseId": "oewn-strive__2.33.00..",
+      "definition": "to exert much effort or energy",
+      "relation": "opposite"
+    },
+    {
+      "word": "PEP",
+      "senseId": "oewn-pep__1.07.00..",
+      "definition": "liveliness and energy",
+      "relation": "opposite"
+    },
+    {
+      "word": "STAMINA",
+      "senseId": "oewn-stamina__1.07.00..",
+      "definition": "enduring strength and energy",
+      "relation": "opposite"
+    },
+    {
+      "word": "TONIC",
+      "senseId": "oewn-tonic__5.00.00.invigorating.00",
+      "definition": "imparting vitality and energy",
+      "relation": "opposite"
+    },
+    {
+      "word": "SPARKLE",
+      "senseId": "oewn-sparkle__2.30.01..",
+      "definition": "be lively or brilliant or exhibit virtuosity",
+      "relation": "opposite"
+    },
+    {
+      "word": "GONE",
+      "senseId": "oewn-gone__5.00.00.tired.00",
+      "definition": "drained of energy or effectiveness; extremely tired; completely exhausted",
+      "relation": "similar"
+    },
+    {
+      "word": "REST",
+      "senseId": "oewn-rest__2.41.00..",
+      "definition": "be inactive, refrain from acting",
+      "relation": "similar"
+    },
+    {
+      "word": "SPENT",
+      "senseId": "oewn-spent__3.00.00..",
+      "definition": "depleted of energy, force, or strength",
+      "relation": "similar"
+    },
+    {
+      "word": "SLACK",
+      "senseId": "oewn-slack__2.41.00..",
+      "definition": "avoid responsibilities and work, be idle",
+      "relation": "similar"
+    },
+    {
+      "word": "LOAF",
+      "senseId": "oewn-loaf__2.42.01..",
+      "definition": "be lazy or idle",
+      "relation": "similar"
+    },
+    {
+      "word": "LIMP",
+      "senseId": "oewn-limp__5.00.00.weak.00",
+      "definition": "without energy or will",
+      "relation": "similar"
+    }
+  ],
+  "semanticPolicy": "Pinned source senses and reviewed lexical families; unlabelled defined senses are neutral. Not a proof of exhaustive contextual semantic coverage.",
+  "asset": "puzzles/tire-stirred-8e925324a912.json",
+  "twoWordWin": {
+    "words": [
+      "ACORN",
+      "SPIRITED"
+    ],
+    "tileIds": [
+      [
+        7,
+        6,
+        5,
+        4,
+        10
+      ],
+      [
+        0,
+        3,
+        1,
+        8,
+        11,
+        14,
+        2,
+        9
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      4
+    ]
+  }
+}

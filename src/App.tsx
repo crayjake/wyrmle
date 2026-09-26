@@ -4,7 +4,7 @@ import PuzzleErrorBoundary from './components/PuzzleErrorBoundary'
 import './App.css'
 import './components/DailyPanels.css'
 
-const DailyApp = lazy(() => import('./LegacyDailyApp'))
+const DailyApp = lazy(() => import('./daily/DailyChallenge'))
 const BingoPreview = lazy(() => import('./experimental/BingoPreview'))
 
 export default function App() {

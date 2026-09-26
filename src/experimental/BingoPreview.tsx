@@ -1,24 +1,23 @@
 import { useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
-import { PlaytestBattle } from './DevCombat'
+import BattleScreen from '../components/BattleScreen'
 import type { LetterStrikeEncounter } from '../game/letterStrike'
 import { bingoPreviews, bingoPreviewHref, leaveBingoPreviewHref } from './bingo/catalog'
-import type { BingoPreviewEntry, BingoPreviewRequest, PreviewLives } from './bingo/catalog'
+import type { BingoPreviewEntry, BingoPreviewRequest } from './bingo/catalog'
 import { decodeBingoPreview } from './bingo/previewData'
 import { getBingoGuide } from './bingo/guides'
-import { BINGO_PROGRESS_PREFIX, bingoProgressKey, describeBingoProgress, readBingoProgress, restartBingoAttempt } from './bingo/progress'
+import { BINGO_PROGRESS_PREFIX, bingoProgressKey, describeBingoProgress, readBingoProgress, restartBingoAttempt, resumeBingoAttempt, saveBingoAttempt } from './bingo/progress'
 import './BingoPreview.css'
 
 const exit = () => window.location.assign(leaveBingoPreviewHref(window.location.href))
 const readProgress = () => Object.fromEntries([
   ...bingoPreviews.map(entry => [entry.id, readBingoProgress(bingoProgressKey(entry))]),
-  ['bingo', readBingoProgress(bingoProgressKey())],
 ])
 
 export default function BingoPreview({ request }: { request: BingoPreviewRequest }) {
-  if (request.id === 'bingos') return <PreviewLibrary lives={request.lives} />
+  if (request.id === 'bingos') return <PreviewLibrary />
   const entry = bingoPreviews.find(entry => entry.id === request.id)
-  if (request.id !== 'bingo' && !entry) return <PreviewLibrary lives={request.lives} missing />
+  if (!entry) return <PreviewLibrary missing />
   return <PreviewPuzzle key={`${request.id}:${request.lives}`} entry={entry} request={request} />
 }
 
@@ -33,9 +32,7 @@ function PreviewFrame({ title, children, footer }: { title: string; children: Re
   </main>
 }
 
-function PreviewLibrary({ lives, missing = false }: { lives: PreviewLives; missing?: boolean }) {
-  const [selectedLives, setSelectedLives] = useState(lives)
-  const [collection, setCollection] = useState(() => new URLSearchParams(window.location.search).get('set') === 'earlier' ? 'earlier' : 'new')
+function PreviewLibrary({ missing = false }: { missing?: boolean }) {
   const [progress, setProgress] = useState(readProgress)
   useEffect(() => {
     const refresh = (event: StorageEvent) => {
@@ -44,40 +41,15 @@ function PreviewLibrary({ lives, missing = false }: { lives: PreviewLives; missi
     window.addEventListener('storage', refresh)
     return () => window.removeEventListener('storage', refresh)
   }, [])
-  const hasNew = bingoPreviews.some(entry => entry.collection === 'new')
-  const entries = hasNew ? bingoPreviews.filter(entry => (entry.collection === 'new') === (collection === 'new')) : bingoPreviews
-  function libraryHref(nextLives: PreviewLives, nextCollection: string) {
-    return `${bingoPreviewHref('bingos', nextLives)}${nextCollection === 'earlier' ? '&set=earlier' : ''}`
-  }
-  return <PreviewFrame title="Bingo previews" footer={
-    <a className="daily-button bingo-original" href={bingoPreviewHref('bingo', selectedLives)}
-      aria-label={`Original CHAOS, ${describeBingoProgress(progress.bingo, selectedLives).accessible}`}>
-      Original CHAOS <ProgressBadge progress={describeBingoProgress(progress.bingo, selectedLives)} />
-    </a>
-  }>
+  return <PreviewFrame title="Bingo previews">
     <p role={missing ? 'status' : undefined}>{missing
       ? 'Preview not found. Choose a draft puzzle below.'
-      : 'Best win: ★★★ bingo · ★★ 2 · ★ 3+ words'}</p>
-    <label className="bingo-lives-select">Starting lives
-      <select value={selectedLives} onChange={event => {
-        const next = Number(event.target.value) as PreviewLives
-        setSelectedLives(next)
-        window.history.replaceState(null, '', libraryHref(next, collection))
-      }}>
-        {[3, 4, 5].map(value => <option key={value} value={value}>{value} lives</option>)}
-      </select>
-    </label>
-    {hasNew && <div className="bingo-collections" aria-label="Puzzle collection">
-      {(['new', 'earlier'] as const).map(value => <button className="daily-button" key={value} aria-pressed={collection === value}
-        onClick={() => { setCollection(value); window.history.replaceState(null, '', libraryHref(selectedLives, value)) }}>
-        {value === 'new' ? 'Five new puzzles' : 'Earlier variants'}
-      </button>)}
-    </div>}
+      : 'Best win: ★★★ bingo · ★★ 2 words · ★ 3 words'}</p>
     <ul className="bingo-preview-list">
-      {entries.map(entry => {
-        const summary = describeBingoProgress(progress[entry.id], selectedLives)
+      {bingoPreviews.map(entry => {
+        const summary = describeBingoProgress(progress[entry.id], 3)
         return <li key={entry.id}>
-          <a href={bingoPreviewHref(entry.id, selectedLives)} data-progress={summary.status} aria-label={`${entry.title}, ${summary.accessible}`}>
+          <a href={bingoPreviewHref(entry.id)} data-progress={summary.status} aria-label={`${entry.title}, ${summary.accessible}`}>
             <strong>{entry.title}</strong><ProgressBadge progress={summary} />
           </a>
         </li>
@@ -93,17 +65,13 @@ function ProgressBadge({ progress }: { progress: ReturnType<typeof describeBingo
   </span>
 }
 
-function PreviewPuzzle({ entry, request }: { entry?: BingoPreviewEntry; request: BingoPreviewRequest }) {
+function PreviewPuzzle({ entry, request }: { entry: BingoPreviewEntry; request: BingoPreviewRequest }) {
   const [loaded, setLoaded] = useState<{ encounter: LetterStrikeEncounter } | { error: true } | null>(null)
   const [attempt, setAttempt] = useState(0)
-  const title = entry?.title ?? 'Original CHAOS'
+  const title = entry.title
   useEffect(() => {
     const controller = new AbortController()
     async function load() {
-      if (!entry) {
-        const { bingoEncounter } = await import('./bingo/puzzle')
-        return { ...bingoEncounter, startingResolve: request.lives }
-      }
       const response = await fetch(`${import.meta.env.BASE_URL}${entry.asset}`, { signal: controller.signal })
       if (!response.ok) throw new Error('Preview download failed.')
       return decodeBingoPreview(await response.json(), entry, request.lives)
@@ -122,12 +90,13 @@ function PreviewPuzzle({ entry, request }: { entry?: BingoPreviewEntry; request:
     <a href={bingoPreviewHref('bingos', request.lives)}>Choose a puzzle</a>
   </PreviewFrame>
 
-  const collection = bingoPreviews.filter(candidate => candidate.collection === entry?.collection)
-  const next = collection[collection.findIndex(candidate => candidate.id === request.id) + 1]
-  return <PlaytestBattle key={attempt} mode="letter-strike" encounter={loaded.encounter} bingoPreview freshBingoAttempt={attempt > 0}
-    previewName={title} bingoGuide={getBingoGuide(request.id)} bingoProgressKey={bingoProgressKey(entry)} onChoosePreview={() => window.location.assign(
-      `${bingoPreviewHref('bingos', request.lives)}${entry?.collection === 'new' ? '' : '&set=earlier'}`)}
-    onNextPreview={next ? () => window.location.assign(bingoPreviewHref(next.id, request.lives)) : undefined}
-    onMode={() => { restartBingoAttempt(bingoProgressKey(entry), request.lives); setAttempt(current => current + 1) }} onExit={exit}
-    matchHint="underline" onMatchHintChange={() => {}} enemyGrid={false} onEnemyGridChange={() => {}} />
+  const next = bingoPreviews[bingoPreviews.findIndex(candidate => candidate.id === request.id) + 1]
+  const progressKey = bingoProgressKey(entry)
+  return <BattleScreen key={attempt} encounter={loaded.encounter}
+    initial={attempt === 0 ? resumeBingoAttempt(progressKey, loaded.encounter) : undefined}
+    onSave={(game, started, step) => saveBingoAttempt(progressKey, game, started, step)}
+    title={title} guide={getBingoGuide(request.id)} onChoose={() => window.location.assign(
+      bingoPreviewHref('bingos', request.lives))}
+    onNext={next ? () => window.location.assign(bingoPreviewHref(next.id, request.lives)) : undefined}
+    onRestart={() => { restartBingoAttempt(progressKey, request.lives); setAttempt(current => current + 1) }} onExit={exit} />
 }

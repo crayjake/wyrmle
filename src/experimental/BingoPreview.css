@@ -25,19 +25,6 @@
 .bingo-library h1 { flex: none; margin: 0; font-size: clamp(20px, 1.25rem, 24px); }
 .bingo-library p { flex: none; margin: 0; font-size: 13px; line-height: 1.4; }
 .bingo-library a { color: var(--blue); }
-.bingo-collections { display: flex; flex: none; gap: 8px; }
-.bingo-collections button { flex: 1; min-height: 44px; padding: 4px; font-size: 13px; }
-.bingo-collections button[aria-pressed="true"] { border-color: var(--emph); color: var(--emph); background: #4b3b1f; }
-.bingo-lives-select { display: flex; flex: none; align-items: center; justify-content: space-between; gap: 12px; font-size: 14px; }
-.bingo-lives-select select {
-  background: var(--bg);
-  color: var(--fg);
-  border: 1px solid color-mix(in srgb, var(--fg) 45%, transparent);
-  border-radius: 4px;
-  padding: 8px;
-  font: inherit;
-  min-height: 44px;
-}
 .bingo-preview-list {
   display: grid;
   flex: 1;
@@ -160,3 +147,9 @@
 
 .bingo-result-link { min-height: 44px; border: 0; background: transparent; font: inherit; font-size: 14px; cursor: pointer; }
 .bingo-result-link:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }
+
+.battle-difficulty { margin: 0; padding: 12px; border: 1px solid color-mix(in srgb, var(--fg) 40%, transparent); }
+.battle-difficulty > div { display: flex; gap: 8px; }
+.battle-difficulty button { flex: 1; min-height: 44px; }
+.battle-difficulty button[aria-pressed="true"] { color: var(--bg); background: var(--emph); border-color: var(--emph); }
+.battle-difficulty p { margin-top: 8px; font-size: 13px; }
