@@ -1,0 +1,31 @@
+{
+  "base": "http://127.0.0.1:4174/wyrmle/",
+  "browser": "Chromium",
+  "checks": [
+    "visiting-alone-does-not-start",
+    "return-restores-board-armour-lives-and-moves",
+    "reload-restores-game-and-hint",
+    "three-word-win-one-star",
+    "two-word-win-improves-best",
+    "one-word-win-earns-bingo",
+    "retry-does-not-erase-best",
+    "life-budgets-resume-separately",
+    "reveal-alone-grants-no-stars",
+    "new-picker-320x480",
+    "earlier-picker-320x480",
+    "new-picker-320x568",
+    "earlier-picker-320x568",
+    "new-picker-375x667",
+    "earlier-picker-375x667",
+    "new-picker-390x664",
+    "earlier-picker-390x664",
+    "new-picker-430x740",
+    "earlier-picker-430x740",
+    "new-picker-568x320",
+    "earlier-picker-568x320",
+    "cross-tab-picker-update",
+    "daily-progress-and-stats-untouched",
+    "blocked-storage-still-allows-play-and-restart"
+  ],
+  "errors": []
+}

@@ -92,6 +92,11 @@
   font-size: 14px;
 }
 .bingo-preview-list span { color: var(--fg); font-size: 11px; line-height: 1.2; }
+.bingo-progress { display: flex; align-items: center; justify-content: center; gap: 4px; white-space: nowrap; font-size: 11px; }
+.bingo-preview-list .bingo-progress-stars,
+.bingo-progress-stars { font-family: monospace; color: var(--emph); letter-spacing: -1px; }
+.bingo-preview-list a[data-progress="bingo"] { border-color: var(--emph); background: color-mix(in srgb, var(--emph) 8%, var(--bg)); }
+.bingo-preview-list a[data-progress="completed"] { border-color: var(--green); }
 .bingo-library-footer { display: flex; flex: none; gap: 8px; margin-top: auto; }
 .bingo-library-footer > * {
   display: flex;
@@ -104,6 +109,7 @@
   font-size: 13px;
   text-decoration: none;
 }
+.bingo-library-footer .bingo-original { flex-direction: column; gap: 2px; padding: 4px; }
 
 @media (orientation: portrait) and (max-height: 550px) {
   .bingo-preview-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }

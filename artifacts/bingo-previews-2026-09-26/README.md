@@ -21,7 +21,7 @@ Three lives is the default. Append `&lives=4` or `&lives=5` for the same board, 
 
 The earlier collection contains ten draft boards from the [feasibility study](../bingo-feasibility-2026-09-26/README.md), alongside five new bingo-first boards and the original preview. Their meanings retain the respective studies' limitations and are labelled as drafts. They have not acquired semantic publication certificates.
 
-The preview router mounts before the daily hooks. Playing, winning, losing, restarting and switching previews write no daily progress, preferences or stats. Refresh restarts a practice attempt. Returning to the daily removes both preview parameters. The daily catalog and ordinary generator are unchanged.
+The preview router mounts before the daily hooks. Beta progress has its own browser-storage namespace and writes no daily progress, preferences or stats. Refresh and returning to a puzzle restore its accepted moves and hint position; **Restart** starts a fresh attempt while preserving the best win. The picker shows **In progress**, **Try again**, or a best result: **★★★ bingo**, **★★ two words**, **★ three or more words**. Attempts are separate for each life budget; the best result belongs to the shared board. See the [progress notes](../bingo-progress-2026-09-26/README.md). Returning to the daily removes the preview parameters. The daily catalog and ordinary generator are unchanged.
 
 Only the selected puzzle's frozen data is fetched. The fifteen packed JSON assets live in `public/previews/bingo/` with content-hashed filenames; a small catalog lives in `src/experimental/bingo/catalog.json`. The browser does not run the authoring models or generator. The loader respects Vite's deployment base path, validates the payload, and offers retry/puzzle selection on a failed download. An unknown bingo preview stays in the isolated picker.
 
@@ -38,11 +38,11 @@ npm run export:bingo-previews
 npm run generate:bingo -- --seeds 12 --export
 
 # Normal verification/build/deployment inputs.
-node --test --test-isolation=none tests/bingo-preview.test.ts tests/bingo-catalog.test.ts tests/bingo-new-set.test.ts
+node --test --test-isolation=none tests/bingo-preview.test.ts tests/bingo-catalog.test.ts tests/bingo-new-set.test.ts tests/bingo-progress.test.ts
 npm run lint
 npm run build
 ```
 
 The export preserves the packed model evidence, verifies every intended bingo and replays the study's winning witnesses at every supported life budget before writing files. It does not claim that those semantics are fully reviewed.
 
-The eleven focused tests check URL handling, all fifteen boards and their stored routes at 3/4/5 lives, every hint answer, source-profile regressions, corrupted/stale payload rejection, the original preview, and separation from daily publication. The original production browser checks use the `/wyrmle/` base path and phone/desktop viewports; see [browser-check.json](browser-check.json) for those flows and the [new set's checks](../bingo-first-new-enemies-2026-09-26/browser-check.json) for the updated picker and hint panels. Screenshots in this directory show the earlier picker, public Settings entry, boards and five-life animation.
+The sixteen focused tests check URL handling, all fifteen boards and their stored routes at 3/4/5 lives, every hint answer, source-profile regressions, corrupted/stale payload rejection, saved beta progress, the original preview, and separation from daily publication. The original production browser checks use the `/wyrmle/` base path and phone/desktop viewports; see [browser-check.json](browser-check.json) for those flows, the [new set's checks](../bingo-first-new-enemies-2026-09-26/browser-check.json) for the hint panels, and the [progress checks](../bingo-progress-2026-09-26/browser-check.json) for saved attempts and stars. Screenshots in this directory show the earlier picker, public Settings entry, boards and five-life animation.

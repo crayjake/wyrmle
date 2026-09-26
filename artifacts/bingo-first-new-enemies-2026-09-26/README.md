@@ -6,6 +6,8 @@ After deployment: [beta picker](https://crayjake.github.io/wyrmle/?preview=bingo
 
 Every preview, including the original and earlier variants, has **Hints** above the board. It shows one clue at a time, from an indirect meaning clue to a more specific third clue. Only after the third clue does **Reveal answer** appear. Closing the panel preserves the current clue; restarting resets it. Revealing does not play the answer or affect daily progress.
 
+The picker now saves [beta progress and best-win stars](../bingo-progress-2026-09-26/README.md) on this browser. Unfinished attempts resume on return or refresh. Three stars marks a bingo; two means a two-word win; one means three or more words. Previous beta plays were not stored and cannot be backfilled.
+
 ## Built-in generation
 
 This is a reproducible implementation of the proposed bingo-first method, not five hand-written boards:

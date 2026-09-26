@@ -6,9 +6,14 @@ import { bingoPreviews, bingoPreviewHref, leaveBingoPreviewHref } from './bingo/
 import type { BingoPreviewEntry, BingoPreviewRequest, PreviewLives } from './bingo/catalog'
 import { decodeBingoPreview } from './bingo/previewData'
 import { getBingoGuide } from './bingo/guides'
+import { BINGO_PROGRESS_PREFIX, bingoProgressKey, describeBingoProgress, readBingoProgress, restartBingoAttempt } from './bingo/progress'
 import './BingoPreview.css'
 
 const exit = () => window.location.assign(leaveBingoPreviewHref(window.location.href))
+const readProgress = () => Object.fromEntries([
+  ...bingoPreviews.map(entry => [entry.id, readBingoProgress(bingoProgressKey(entry))]),
+  ['bingo', readBingoProgress(bingoProgressKey())],
+])
 
 export default function BingoPreview({ request }: { request: BingoPreviewRequest }) {
   if (request.id === 'bingos') return <PreviewLibrary lives={request.lives} />
@@ -31,17 +36,28 @@ function PreviewFrame({ title, children, footer }: { title: string; children: Re
 function PreviewLibrary({ lives, missing = false }: { lives: PreviewLives; missing?: boolean }) {
   const [selectedLives, setSelectedLives] = useState(lives)
   const [collection, setCollection] = useState(() => new URLSearchParams(window.location.search).get('set') === 'earlier' ? 'earlier' : 'new')
+  const [progress, setProgress] = useState(readProgress)
+  useEffect(() => {
+    const refresh = (event: StorageEvent) => {
+      if (event.key === null || event.key.startsWith(BINGO_PROGRESS_PREFIX)) setProgress(readProgress())
+    }
+    window.addEventListener('storage', refresh)
+    return () => window.removeEventListener('storage', refresh)
+  }, [])
   const hasNew = bingoPreviews.some(entry => entry.collection === 'new')
   const entries = hasNew ? bingoPreviews.filter(entry => (entry.collection === 'new') === (collection === 'new')) : bingoPreviews
   function libraryHref(nextLives: PreviewLives, nextCollection: string) {
     return `${bingoPreviewHref('bingos', nextLives)}${nextCollection === 'earlier' ? '&set=earlier' : ''}`
   }
   return <PreviewFrame title="Bingo previews" footer={
-    <a className="daily-button" href={bingoPreviewHref('bingo', selectedLives)} aria-label="Original CHAOS preview">Original CHAOS</a>
+    <a className="daily-button bingo-original" href={bingoPreviewHref('bingo', selectedLives)}
+      aria-label={`Original CHAOS, ${describeBingoProgress(progress.bingo, selectedLives).accessible}`}>
+      Original CHAOS <ProgressBadge progress={describeBingoProgress(progress.bingo, selectedLives)} />
+    </a>
   }>
     <p role={missing ? 'status' : undefined}>{missing
       ? 'Preview not found. Choose a draft puzzle below.'
-      : 'Draft meanings. Daily progress stays saved.'}</p>
+      : 'Best win: ★★★ bingo · ★★ 2 · ★ 3+ words'}</p>
     <label className="bingo-lives-select">Starting lives
       <select value={selectedLives} onChange={event => {
         const next = Number(event.target.value) as PreviewLives
@@ -58,13 +74,23 @@ function PreviewLibrary({ lives, missing = false }: { lives: PreviewLives; missi
       </button>)}
     </div>}
     <ul className="bingo-preview-list">
-      {entries.map(entry => <li key={entry.id}>
-        <a href={bingoPreviewHref(entry.id, selectedLives)}>
-          <strong>{entry.title}</strong><span>{entry.enemyHP} enemy hits</span>
-        </a>
-      </li>)}
+      {entries.map(entry => {
+        const summary = describeBingoProgress(progress[entry.id], selectedLives)
+        return <li key={entry.id}>
+          <a href={bingoPreviewHref(entry.id, selectedLives)} data-progress={summary.status} aria-label={`${entry.title}, ${summary.accessible}`}>
+            <strong>{entry.title}</strong><ProgressBadge progress={summary} />
+          </a>
+        </li>
+      })}
     </ul>
   </PreviewFrame>
+}
+
+function ProgressBadge({ progress }: { progress: ReturnType<typeof describeBingoProgress> }) {
+  return <span className="bingo-progress" aria-hidden="true">
+    {progress.stars > 0 && <span className="bingo-progress-stars" aria-hidden="true">{'★'.repeat(progress.stars)}{'☆'.repeat(3 - progress.stars)}</span>}
+    <span aria-hidden="true">{progress.label}</span>
+  </span>
 }
 
 function PreviewPuzzle({ entry, request }: { entry?: BingoPreviewEntry; request: BingoPreviewRequest }) {
@@ -96,9 +122,9 @@ function PreviewPuzzle({ entry, request }: { entry?: BingoPreviewEntry; request:
     <a href={bingoPreviewHref('bingos', request.lives)}>Choose a puzzle</a>
   </PreviewFrame>
 
-  return <PlaytestBattle key={attempt} mode="letter-strike" encounter={loaded.encounter} bingoPreview
-    previewName={title} bingoGuide={getBingoGuide(request.id)} onChoosePreview={() => window.location.assign(
+  return <PlaytestBattle key={attempt} mode="letter-strike" encounter={loaded.encounter} bingoPreview freshBingoAttempt={attempt > 0}
+    previewName={title} bingoGuide={getBingoGuide(request.id)} bingoProgressKey={bingoProgressKey(entry)} onChoosePreview={() => window.location.assign(
       `${bingoPreviewHref('bingos', request.lives)}${entry?.collection === 'new' ? '' : '&set=earlier'}`)}
-    onMode={() => setAttempt(current => current + 1)} onExit={exit}
+    onMode={() => { restartBingoAttempt(bingoProgressKey(entry), request.lives); setAttempt(current => current + 1) }} onExit={exit}
     matchHint="off" onMatchHintChange={() => {}} enemyGrid={false} onEnemyGridChange={() => {}} />
 }

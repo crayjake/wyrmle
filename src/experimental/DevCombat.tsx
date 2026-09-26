@@ -23,6 +23,7 @@ import type { LetterStrikeEncounter, LetterStrikeState } from '../game/letterStr
 import { getLetterStrikeBattleEvents, getLetterStrikeBonuses, getLetterStrikeGrammarModifiers, getLetterStrikeTileSummary } from '../game/letterStrikeHud'
 import './DevCombat.css'
 import type { BingoGuide } from './bingo/guides'
+import { resumeBingoAttempt, saveBingoAttempt } from './bingo/progress'
 
 type CombatMode = 'damage' | 'letter-strike'
 type Run = { mode: 'damage'; game: GameState } | { mode: 'letter-strike'; game: LetterStrikeState }
@@ -32,8 +33,8 @@ type Panel = 'help' | 'log' | 'modes' | 'hints' | null
 const modeLabels = { damage: 'DAMAGE MODE', 'letter-strike': 'LETTER-STRIKE MODE' }
 
 // The development chooser is DEV-only. The named battle renderer also powers
-// isolated beta previews. Neither calls daily hooks or storage; a keyed remount
-// discards the practice state on restart or mode change.
+// isolated beta previews. Beta attempts use their own small replay logs; daily
+// hooks and storage are never involved. A keyed remount handles explicit restarts.
 export default function DevCombat({ initialMode, encounter, onExit, matchHint, onMatchHintChange, enemyGrid, onEnemyGridChange }: {
   initialMode: CombatMode; onExit: () => void
   encounter?: LetterStrikeEncounter
@@ -49,7 +50,7 @@ export default function DevCombat({ initialMode, encounter, onExit, matchHint, o
     enemyGrid={enemyGrid} onEnemyGridChange={onEnemyGridChange} />
 }
 
-export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onMatchHintChange, enemyGrid, onEnemyGridChange, bingoPreview = false, previewName, onChoosePreview, bingoGuide }: {
+export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onMatchHintChange, enemyGrid, onEnemyGridChange, bingoPreview = false, previewName, onChoosePreview, bingoGuide, bingoProgressKey, freshBingoAttempt = false }: {
   mode: CombatMode; onMode: (mode: CombatMode) => void; onExit: () => void
   encounter?: LetterStrikeEncounter
   matchHint: MatchHintMode; onMatchHintChange: (mode: MatchHintMode) => void
@@ -58,13 +59,18 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
   previewName?: string
   onChoosePreview?: () => void
   bingoGuide?: BingoGuide
+  bingoProgressKey?: string
+  freshBingoAttempt?: boolean
 }) {
+  const [resumed] = useState(() => !freshBingoAttempt && bingoPreview && bingoProgressKey && encounter
+    ? resumeBingoAttempt(bingoProgressKey, encounter) : null)
   const [run, setRun] = useState<Run>(() => mode === 'damage'
     ? { mode, game: createGame(melancholyEncounter) }
-    : { mode, game: createLetterStrikeGame(encounter) })
-  const [phase, setPhase] = useState<Phase>('waiting')
+    : { mode, game: resumed?.game ?? createLetterStrikeGame(encounter) })
+  const [phase, setPhase] = useState<Phase>(resumed?.started ? 'ready' : 'waiting')
   const [panel, setPanel] = useState<Panel>(null)
-  const [hintStep, setHintStep] = useState(1)
+  const [hintStep, setHintStep] = useState(resumed?.hintStep ?? 1)
+  const [progressSaved, setProgressSaved] = useState(true)
   const containerRef = useRef<HTMLElement>(null)
   const enemyElements = useRef<(HTMLDivElement | null)[]>([])
   const tileElements = useRef<(HTMLButtonElement | null)[]>([])
@@ -72,8 +78,8 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
   const wyrmDockRef = useRef<HTMLSpanElement>(null)
   const wyrmLifeRef = useRef<HTMLSpanElement>(null)
   const wyrmTitleRef = useRef<HTMLDivElement>(null)
-  const [revealedEnemyIndices, setRevealedEnemyIndices] = useState<number[]>([])
-  const [revealedTileIndices, setRevealedTileIndices] = useState<number[]>([])
+  const [revealedEnemyIndices, setRevealedEnemyIndices] = useState<number[]>(() => resumed?.started ? [...run.game.encounter.enemy.word].map((_, index) => index) : [])
+  const [revealedTileIndices, setRevealedTileIndices] = useState<number[]>(() => resumed?.started ? run.game.tiles.map((_, index) => index) : [])
   const [revealedRefills, setRevealedRefills] = useState<boolean[]>([])
   const registerLetter = useCallback((index: number, element: HTMLDivElement | null) => {
     enemyElements.current[index] = element
@@ -140,9 +146,23 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
       : { ...current, game: clearLetterStrikeSelection(current.game) })
   }
   function attack() {
-    if (interactive) setRun(current => current.mode === 'damage'
-      ? { ...current, game: submitWord(current.game) }
-      : { ...current, game: submitLetterStrike(current.game) })
+    if (!interactive) return
+    const next: Run = run.mode === 'damage'
+      ? { ...run, game: submitWord(run.game) }
+      : { ...run, game: submitLetterStrike(run.game) }
+    if (next.mode === 'letter-strike' && next.game.playedWords.length > game.playedWords.length) persist(next.game, true)
+    setRun(next)
+  }
+  function persist(next: LetterStrikeState | null, started: boolean, step = hintStep) {
+    if (bingoPreview && bingoProgressKey && next) setProgressSaved(saveBingoAttempt(bingoProgressKey, next, started, step))
+  }
+  function begin() {
+    persist(letterGame, true)
+    setPhase('enemy')
+  }
+  function showHint(step: number) {
+    persist(letterGame, phase !== 'waiting', step)
+    setHintStep(step)
   }
 
   const displayedLives = bingoPreview && resolving
@@ -155,7 +175,7 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
     data-enemy-grid={enemyGrid || undefined} ref={containerRef}
     onClick={event => {
       if ((event.target as HTMLElement).closest('button, a, input, dialog')) return
-      if (phase === 'waiting') setPhase('enemy')
+      if (phase === 'waiting') begin()
     }}>
     <Header wyrmDockRef={wyrmDockRef} titleRef={wyrmTitleRef} showWyrm={!letterGame && phase === 'ready'}
       onHelp={() => setPanel('help')} onHistory={() => setPanel('log')} onSettings={() => setPanel('modes')} />
@@ -164,13 +184,13 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
           DEV · {modeLabels[mode]}
         </button>}
       {phase === 'waiting'
-        ? <button type="button" onClick={() => setPhase('enemy')}>Begin</button>
+        ? <button type="button" onClick={begin}>Begin</button>
         : <button type="button" onClick={() => onMode(mode)}>Restart</button>}
       {encounter && <button type="button" onClick={onExit}>{bingoPreview ? 'Back to daily' : 'Return to generator'}</button>}
     </div>
     {bingoPreview && <div className="beta-intro">
       {onChoosePreview && <button type="button" onClick={onChoosePreview} aria-label="Choose a preview puzzle">{previewName} ▾</button>}
-      <span>Hidden one-word win</span>
+      <span role={progressSaved ? undefined : 'status'}>{progressSaved ? 'Hidden one-word win' : 'Progress not saved'}</span>
       {bingoGuide && <button type="button" className="beta-hints-button" onClick={() => setPanel('hints')}>Hints</button>}
     </div>}
     <div className="battle-info">
@@ -230,12 +250,12 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
       </div>
       <div className="bingo-hint-actions">
         {hintStep <= 3 ? <>
-          <button className="daily-button" disabled={hintStep === 1} onClick={() => setHintStep(step => step - 1)}>Previous hint</button>
-          <button className="daily-button" onClick={() => setHintStep(step => step + 1)}>
+          <button className="daily-button" disabled={hintStep === 1} onClick={() => showHint(hintStep - 1)}>Previous hint</button>
+          <button className="daily-button" onClick={() => showHint(hintStep + 1)}>
             {hintStep === 3 ? 'Reveal answer' : `Next hint (${hintStep + 1}/3)`}
           </button>
         </> : <>
-          <button className="daily-button" onClick={() => setHintStep(3)}>Back to hints</button>
+          <button className="daily-button" onClick={() => showHint(3)}>Back to hints</button>
           <button className="daily-button" onClick={() => onMode(mode)}>Restart puzzle</button>
         </>}
       </div>
