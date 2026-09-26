@@ -1,6 +1,12 @@
 .daily-panel {
+  position: fixed;
+  inset-inline: 0;
+  top: calc((var(--app-height, 100dvh) + env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)) / 2);
+  bottom: auto;
+  margin: 0 auto;
+  transform: translateY(-50%);
   width: min(27rem, calc(100vw - 2rem));
-  max-height: calc(100dvh - 2rem);
+  max-height: calc(var(--app-height, 100dvh) - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 2rem);
   box-sizing: border-box;
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -413,27 +419,7 @@
   color: var(--red);
 }
 
-.daily-undo-control {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.35rem 0.75rem;
-  margin: 0 0 1rem;
-  padding-bottom: 0.8rem;
-  border-bottom: 1px solid color-mix(in srgb, var(--fg) 20%, transparent);
-  font-size: 0.65rem;
-}
 
-.daily-undo-control p {
-  flex-basis: 100%;
-  margin: 0.15rem 0 0;
-  font-size: 0.6rem;
-}
-
-.daily-undo-control button:disabled {
-  opacity: 0.45;
-  cursor: default;
-}
 
 .daily-turn-log {
   display: grid;

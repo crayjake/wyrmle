@@ -45,7 +45,7 @@ body {
 
 /* The app owns its viewport; dialogs own any overflow. Prevent a second root
    scroll area from leaving a blank strip beneath the Home Screen app. */
-html, body { height: 100%; overflow: hidden; }
+html, body { height: var(--app-height, 100dvh); overflow: hidden; }
 #root { height: var(--app-height, 100dvh); min-height: 0; }
 
 h1,
