@@ -26,7 +26,8 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "generate:daily": "node scripts/generate-daily-month.ts"
+    "generate:daily": "node scripts/generate-daily-month.ts",
+    "archive:bingo": "node scripts/archive-bingo-puzzles.ts"
   },
   "dependencies": {
     "an-array-of-english-words": "^2.0.0",

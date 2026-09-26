@@ -1,0 +1,28 @@
+{
+  "checks": [
+    "calendar 320x480",
+    "calendar 375x667",
+    "calendar 390x844",
+    "calendar 430x740",
+    "calendar 568x320",
+    "migrated ARID ongoing",
+    "legacy deep link, saved move, saved hint, Easy/Normal/Hard",
+    "IRE gameplay",
+    "IRE bingo and calendar stars",
+    "SCARE gameplay",
+    "SCARE bingo and calendar stars",
+    "MESS gameplay",
+    "MESS bingo and calendar stars",
+    "SPITE gameplay",
+    "SPITE bingo and calendar stars",
+    "TAINT gameplay",
+    "TAINT bingo and calendar stars",
+    "month navigation"
+  ],
+  "errors": [],
+  "unitTests": {
+    "passed": 600,
+    "failed": 0
+  },
+  "viewportCheck": "Chromium emulation: stale installed iPhone visualViewport, full wrapper height, visible controls and centred settings. Physical iOS verification remains external."
+}

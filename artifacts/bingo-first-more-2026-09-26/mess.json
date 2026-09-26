@@ -1,0 +1,2370 @@
+{
+  "enemy": "MESS",
+  "bingo": "MASTERMINDS",
+  "method": "bingo-first",
+  "semanticStatus": "draft-source-profile",
+  "accepted": true,
+  "seed": "bingo-first-3:MESS:MASTERMINDS:28",
+  "anchors": [
+    "MASTERMINDS",
+    "CLEARLY",
+    "SORT"
+  ],
+  "plannedWords": [
+    "REST",
+    "FORMS",
+    "SYSTEM"
+  ],
+  "analysis": {
+    "score": 661,
+    "bingos": [
+      "MASTERMINDS"
+    ],
+    "counterFamilies": 12,
+    "resistedFamilies": 4,
+    "winningOpenings": 18,
+    "repeatedCounterRoutes": 18,
+    "sustainedPositions": 13,
+    "sustainedFinalPositions": 8,
+    "neutralCleanupOpenings": 0,
+    "routes": [
+      {
+        "opening": "EASY",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "FORM",
+            "REST",
+            "SORT",
+            "STILL",
+            "ORDERS",
+            "TRIM",
+            "DIRECTS"
+          ],
+          "resisted": [
+            "LOST",
+            "NOISE"
+          ],
+          "neutral": 766
+        },
+        "thirdTurn": {
+          "counters": [
+            "TRIM"
+          ],
+          "resisted": [
+            "STUPID",
+            "UPSET",
+            "MESS",
+            "DISRUPT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "EASY",
+            "FORMS",
+            "TRIM"
+          ],
+          "tileIds": [
+            [
+              12,
+              14,
+              4,
+              9
+            ],
+            [
+              17,
+              2,
+              10,
+              0,
+              15
+            ],
+            [
+              3,
+              18,
+              5,
+              7
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "REST",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "EASY",
+            "FORM",
+            "REST",
+            "SORT",
+            "STILL",
+            "FAMILY",
+            "CALM",
+            "TRIM",
+            "DIRECTS",
+            "CALMLY",
+            "CLEARS",
+            "SYMMETRICAL",
+            "DORMANCY"
+          ],
+          "resisted": [
+            "LOST",
+            "RANDOM",
+            "NOISE",
+            "SILLY",
+            "RANDOMLY"
+          ],
+          "neutral": 1854
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "REST",
+            "SYMMETRICAL"
+          ],
+          "tileIds": [
+            [
+              10,
+              12,
+              4,
+              3
+            ],
+            [
+              15,
+              9,
+              0,
+              7,
+              16,
+              19,
+              18,
+              5,
+              8,
+              14,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "SORT",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "EASY",
+            "REST",
+            "CLEAR",
+            "STILL",
+            "FAMILY",
+            "CLEARLY",
+            "DIRECT",
+            "CALM",
+            "EASE",
+            "NEAT",
+            "TRIM",
+            "CALMLY",
+            "NEATLY",
+            "SERENITY",
+            "SYMMETRICAL"
+          ],
+          "resisted": [
+            "SILLY"
+          ],
+          "neutral": 1511
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SORT",
+            "SYMMETRICAL"
+          ],
+          "tileIds": [
+            [
+              4,
+              2,
+              10,
+              3
+            ],
+            [
+              15,
+              9,
+              0,
+              7,
+              12,
+              19,
+              18,
+              5,
+              8,
+              14,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "CLASS",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "FORM",
+            "ORDER",
+            "TRIM",
+            "ORDERLY"
+          ],
+          "resisted": [
+            "TURMOIL"
+          ],
+          "neutral": 605
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CLASS",
+            "TRIMMER"
+          ],
+          "tileIds": [
+            [
+              8,
+              11,
+              14,
+              4,
+              15
+            ],
+            [
+              3,
+              10,
+              5,
+              0,
+              7,
+              12,
+              18
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "CLEAR",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "FORM",
+            "REST",
+            "SORT",
+            "SYSTEM",
+            "TRIM"
+          ],
+          "resisted": [
+            "LOST",
+            "MESS",
+            "NOISE",
+            "MESSY",
+            "TURMOIL"
+          ],
+          "neutral": 1041
+        },
+        "thirdTurn": {
+          "counters": [
+            "FORM",
+            "TRIM"
+          ],
+          "resisted": [
+            "LOST",
+            "STUPID",
+            "DISRUPT",
+            "TURMOIL"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CLEAR",
+            "SYSTEM",
+            "FORM"
+          ],
+          "tileIds": [
+            [
+              8,
+              11,
+              12,
+              14,
+              10
+            ],
+            [
+              4,
+              9,
+              15,
+              3,
+              16,
+              0
+            ],
+            [
+              17,
+              2,
+              18,
+              7
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "STILL",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "EASY",
+            "FORM",
+            "REST",
+            "SORT",
+            "ORDER",
+            "EASE",
+            "NEAT",
+            "DORMANCY"
+          ],
+          "resisted": [
+            "RANDOM",
+            "CONFUSED"
+          ],
+          "neutral": 1317
+        },
+        "thirdTurn": {
+          "counters": [
+            "EASY",
+            "REST",
+            "PEACE",
+            "SYSTEM",
+            "EASE",
+            "NEAT"
+          ],
+          "resisted": [
+            "UPSET",
+            "MESS",
+            "MESSY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "STILL",
+            "FORMS",
+            "SYSTEM"
+          ],
+          "tileIds": [
+            [
+              4,
+              3,
+              5,
+              11,
+              13
+            ],
+            [
+              17,
+              2,
+              10,
+              0,
+              15
+            ],
+            [
+              22,
+              9,
+              23,
+              19,
+              12,
+              7
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "SYSTEM",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "FORM",
+            "CALM",
+            "TRIM"
+          ],
+          "resisted": [
+            "RANDOM",
+            "TURMOIL"
+          ],
+          "neutral": 1453
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SYSTEM",
+            "FORM"
+          ],
+          "tileIds": [
+            [
+              4,
+              9,
+              15,
+              3,
+              12,
+              0
+            ],
+            [
+              17,
+              2,
+              10,
+              7
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "CLEARLY",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "FORM",
+            "REST",
+            "SORT",
+            "PUTS",
+            "TRIM",
+            "POISED"
+          ],
+          "resisted": [
+            "STUPID",
+            "UPSET",
+            "MESS",
+            "NOISE",
+            "DISRUPT"
+          ],
+          "neutral": 937
+        },
+        "thirdTurn": {
+          "counters": [
+            "REST",
+            "SYSTEM",
+            "PUTS",
+            "TRIM"
+          ],
+          "resisted": [
+            "STUPID",
+            "UPSET",
+            "MESS",
+            "MESSY",
+            "DISRUPT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CLEARLY",
+            "FORMS",
+            "SYSTEM"
+          ],
+          "tileIds": [
+            [
+              8,
+              11,
+              12,
+              14,
+              10,
+              13,
+              9
+            ],
+            [
+              17,
+              2,
+              18,
+              0,
+              4
+            ],
+            [
+              15,
+              27,
+              22,
+              3,
+              16,
+              7
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "DIRECT",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "EASY",
+            "FORM",
+            "REST",
+            "SORT",
+            "PLANS",
+            "SYSTEM",
+            "PUTS"
+          ],
+          "resisted": [
+            "LOST",
+            "UPSET",
+            "MESS",
+            "MESSY"
+          ],
+          "neutral": 1181
+        },
+        "thirdTurn": {
+          "counters": [
+            "FORM"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DIRECT",
+            "SYSTEM",
+            "FORM"
+          ],
+          "tileIds": [
+            [
+              6,
+              5,
+              10,
+              12,
+              8,
+              3
+            ],
+            [
+              4,
+              9,
+              15,
+              19,
+              16,
+              0
+            ],
+            [
+              17,
+              2,
+              18,
+              7
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "CALM",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "FORM",
+            "REST",
+            "SORT",
+            "ORDER",
+            "SYSTEM",
+            "TRIM",
+            "ORDERLY",
+            "SERENITY"
+          ],
+          "resisted": [
+            "LOST",
+            "MESS",
+            "NOISE",
+            "MESSY"
+          ],
+          "neutral": 948
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CALM",
+            "SYSTEM"
+          ],
+          "tileIds": [
+            [
+              8,
+              14,
+              11,
+              0
+            ],
+            [
+              4,
+              9,
+              15,
+              3,
+              12,
+              7
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "NEAT",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "FORM",
+            "REST",
+            "SORT",
+            "STILL",
+            "SYSTEM",
+            "ORDERS",
+            "TRIM",
+            "DIRECTS"
+          ],
+          "resisted": [
+            "LOST",
+            "MESS",
+            "SILLY",
+            "MESSY"
+          ],
+          "neutral": 662
+        },
+        "thirdTurn": {
+          "counters": [
+            "FORM"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "NEAT",
+            "SYSTEM",
+            "FORM"
+          ],
+          "tileIds": [
+            [
+              1,
+              12,
+              14,
+              3
+            ],
+            [
+              4,
+              9,
+              15,
+              19,
+              16,
+              0
+            ],
+            [
+              17,
+              2,
+              10,
+              7
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "TRIM",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "EASY",
+            "FORM",
+            "REST",
+            "SORT",
+            "CLASS",
+            "CLEAR",
+            "SYSTEM",
+            "CLEARLY",
+            "CALM",
+            "EASE",
+            "NEAT",
+            "CALMLY",
+            "NEATLY",
+            "ASSORTED",
+            "CALMNESS",
+            "DORMANCY"
+          ],
+          "resisted": [
+            "LOST",
+            "RANDOM",
+            "MESS",
+            "RANDOMLY",
+            "MESSY"
+          ],
+          "neutral": 1492
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "TRIM",
+            "SYSTEM"
+          ],
+          "tileIds": [
+            [
+              3,
+              10,
+              5,
+              0
+            ],
+            [
+              4,
+              9,
+              15,
+              19,
+              12,
+              7
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "LOST",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "EASY",
+            "REST",
+            "CLEAR",
+            "FAMILY",
+            "DIRECT",
+            "CALM",
+            "EASE",
+            "NEAT",
+            "TRIM",
+            "NEATLY",
+            "SERENITY",
+            "SYMMETRICAL"
+          ],
+          "resisted": [],
+          "neutral": 1517
+        },
+        "thirdTurn": {
+          "counters": [
+            "REST",
+            "SYSTEM",
+            "PUTS"
+          ],
+          "resisted": [
+            "UPSET",
+            "MESS",
+            "MESSY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "LOST",
+            "SYMMETRICAL",
+            "REST"
+          ],
+          "tileIds": [
+            [
+              11,
+              2,
+              4,
+              3
+            ],
+            [
+              15,
+              9,
+              0,
+              7,
+              12,
+              19,
+              10,
+              5,
+              8,
+              14,
+              13
+            ],
+            [
+              18,
+              16,
+              22,
+              30
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "RANDOM",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "REST",
+            "STILL",
+            "SYSTEM",
+            "PUTS",
+            "TRIM"
+          ],
+          "resisted": [
+            "UPSET",
+            "MESS",
+            "SILLY",
+            "MESSY"
+          ],
+          "neutral": 733
+        },
+        "thirdTurn": {
+          "counters": [
+            "TRIM"
+          ],
+          "resisted": [
+            "UPSET",
+            "MESS",
+            "SILLY",
+            "MESSY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RANDOM",
+            "SYSTEM",
+            "TRIM"
+          ],
+          "tileIds": [
+            [
+              10,
+              14,
+              1,
+              6,
+              2,
+              0
+            ],
+            [
+              4,
+              9,
+              15,
+              3,
+              12,
+              7
+            ],
+            [
+              19,
+              18,
+              5,
+              26
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "MESS",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "FORM",
+            "CLEAR",
+            "ORDER",
+            "FAMILY",
+            "CLEARLY",
+            "DIRECT",
+            "CALM",
+            "NEAT",
+            "TRIM",
+            "CALMLY",
+            "NEATLY",
+            "ORDERLY",
+            "DORMANCY"
+          ],
+          "resisted": [
+            "RANDOM",
+            "RANDOMLY"
+          ],
+          "neutral": 1128
+        },
+        "thirdTurn": {
+          "counters": [
+            "REST",
+            "STILL",
+            "SYSTEM",
+            "PUTS",
+            "TRIM"
+          ],
+          "resisted": [
+            "UPSET",
+            "SILLY",
+            "MESSY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "MESS",
+            "DORMANCY",
+            "SYSTEM"
+          ],
+          "tileIds": [
+            [
+              0,
+              12,
+              4,
+              15
+            ],
+            [
+              6,
+              2,
+              10,
+              7,
+              14,
+              1,
+              8,
+              9
+            ],
+            [
+              22,
+              27,
+              23,
+              3,
+              16,
+              26
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            1,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "NOISE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "EASY",
+            "REST",
+            "CLEAR",
+            "CLEARLY",
+            "CALM",
+            "CALMLY",
+            "STRATUM"
+          ],
+          "resisted": [],
+          "neutral": 756
+        },
+        "thirdTurn": {
+          "counters": [
+            "REST",
+            "SYSTEM",
+            "PUTS"
+          ],
+          "resisted": [
+            "UPSET",
+            "MESS",
+            "MESSY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "NOISE",
+            "CALMS",
+            "SYSTEM"
+          ],
+          "tileIds": [
+            [
+              1,
+              2,
+              5,
+              4,
+              12
+            ],
+            [
+              8,
+              14,
+              11,
+              0,
+              15
+            ],
+            [
+              22,
+              9,
+              23,
+              3,
+              16,
+              7
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "ARE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "FORM",
+            "REST",
+            "SORT",
+            "STILL",
+            "SYSTEM",
+            "TRIM",
+            "DIRECTS"
+          ],
+          "resisted": [
+            "LOST",
+            "MESS",
+            "NOISE",
+            "SILLY",
+            "MESSY"
+          ],
+          "neutral": 929
+        },
+        "thirdTurn": {
+          "counters": [
+            "FORM",
+            "TRIM"
+          ],
+          "resisted": [
+            "LOST",
+            "STUPID",
+            "DISRUPT",
+            "TURMOIL"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ARE",
+            "SYSTEM",
+            "FORM"
+          ],
+          "tileIds": [
+            [
+              14,
+              10,
+              12
+            ],
+            [
+              4,
+              9,
+              15,
+              3,
+              16,
+              0
+            ],
+            [
+              17,
+              2,
+              18,
+              7
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "ASS",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "FORM",
+            "ORDER",
+            "DIRECT",
+            "TRIM",
+            "ORDERLY"
+          ],
+          "resisted": [],
+          "neutral": 587
+        },
+        "thirdTurn": {
+          "counters": [
+            "REST",
+            "SORT",
+            "PUTS"
+          ],
+          "resisted": [
+            "LOST",
+            "UPSET",
+            "CONFUSED"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ASS",
+            "TRIMMER",
+            "REST"
+          ],
+          "tileIds": [
+            [
+              14,
+              4,
+              15
+            ],
+            [
+              3,
+              10,
+              5,
+              0,
+              7,
+              12,
+              18
+            ],
+            [
+              24,
+              16,
+              22,
+              19
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "ACME",
+      "SYSTEM"
+    ],
+    "tileIds": [
+      [
+        14,
+        8,
+        0,
+        12
+      ],
+      [
+        4,
+        9,
+        15,
+        3,
+        16,
+        7
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      4
+    ]
+  },
+  "board": "MNOTSIDMCYRLELAS",
+  "refills": "EFRTUPSSRSMYSETUPHEAVALB",
+  "inventory": [
+    {
+      "word": "ASSORTMENT",
+      "armour": [],
+      "definition": "the act of distributing things into classes or categories of the same type"
+    },
+    {
+      "word": "ASSORTMENTS",
+      "armour": [
+        "S"
+      ],
+      "definition": "the act of distributing things into classes or categories of the same type"
+    },
+    {
+      "word": "CALMNESS",
+      "armour": [],
+      "definition": "steadiness of mind under stress"
+    },
+    {
+      "word": "CALMNESSES",
+      "armour": [
+        "E",
+        "S"
+      ],
+      "definition": "steadiness of mind under stress"
+    },
+    {
+      "word": "COMPOSES",
+      "armour": [],
+      "definition": "calm (someone, especially oneself); make quiet"
+    },
+    {
+      "word": "COMPOSURES",
+      "armour": [],
+      "definition": "steadiness of mind under stress"
+    },
+    {
+      "word": "DECOMPRESS",
+      "armour": [
+        "E"
+      ],
+      "definition": "become less tense, rest, or take one's ease"
+    },
+    {
+      "word": "DECOMPRESSED",
+      "armour": [
+        "E"
+      ],
+      "definition": "become less tense, rest, or take one's ease"
+    },
+    {
+      "word": "DECOMPRESSES",
+      "armour": [
+        "E",
+        "S"
+      ],
+      "definition": "become less tense, rest, or take one's ease"
+    },
+    {
+      "word": "DECOMPRESSING",
+      "armour": [
+        "E"
+      ],
+      "definition": "become less tense, rest, or take one's ease"
+    },
+    {
+      "word": "ESTABLISHMENT",
+      "armour": [
+        "E"
+      ],
+      "definition": "the act of forming or establishing something"
+    },
+    {
+      "word": "ESTABLISHMENTS",
+      "armour": [
+        "E",
+        "S"
+      ],
+      "definition": "the act of forming or establishing something"
+    },
+    {
+      "word": "HARMONIOUSNESS",
+      "armour": [
+        "S"
+      ],
+      "definition": "the property of sounding harmonious"
+    },
+    {
+      "word": "HARMONIOUSNESSES",
+      "armour": [
+        "E",
+        "S",
+        "S"
+      ],
+      "definition": "the property of sounding harmonious"
+    },
+    {
+      "word": "HARMONISERS",
+      "armour": [],
+      "definition": "a mediator who brings one thing into harmonious agreement with another"
+    },
+    {
+      "word": "HARMONISES",
+      "armour": [],
+      "definition": "bring into consonance or accord"
+    },
+    {
+      "word": "MASTERMINDS",
+      "armour": [
+        "M"
+      ],
+      "definition": "plan and direct (a complex undertaking)"
+    },
+    {
+      "word": "MELLOWNESS",
+      "armour": [
+        "E"
+      ],
+      "definition": "geniality, as through the effects of alcohol or marijuana"
+    },
+    {
+      "word": "MELLOWNESSES",
+      "armour": [
+        "E",
+        "S"
+      ],
+      "definition": "geniality, as through the effects of alcohol or marijuana"
+    },
+    {
+      "word": "METHODICALNESS",
+      "armour": [
+        "E"
+      ],
+      "definition": "the quality of appreciating method and system"
+    },
+    {
+      "word": "METHODICALNESSES",
+      "armour": [
+        "E",
+        "S"
+      ],
+      "definition": "the quality of appreciating method and system"
+    },
+    {
+      "word": "SEAMLESS",
+      "armour": [
+        "E",
+        "S"
+      ],
+      "definition": "perfectly consistent and coherent"
+    },
+    {
+      "word": "SMOOTHEST",
+      "armour": [],
+      "definition": "(of a body of water) free from disturbance by heavy waves"
+    },
+    {
+      "word": "SYSTEM",
+      "armour": [],
+      "definition": "an ordered manner; orderliness by virtue of being methodical and well organized"
+    },
+    {
+      "word": "SYSTEMATIC",
+      "armour": [],
+      "definition": "characterized by order and planning"
+    },
+    {
+      "word": "SYSTEMATICALLY",
+      "armour": [],
+      "definition": "in a systematic or consistent manner"
+    },
+    {
+      "word": "SYSTEMATISATION",
+      "armour": [
+        "S"
+      ],
+      "definition": "systematic organization; the act of organizing something according to a system or a rationale"
+    },
+    {
+      "word": "SYSTEMATISE",
+      "armour": [
+        "E",
+        "S"
+      ],
+      "definition": "arrange according to a system or reduce to a system"
+    },
+    {
+      "word": "SYSTEMATISED",
+      "armour": [
+        "E",
+        "S"
+      ],
+      "definition": "arrange according to a system or reduce to a system"
+    },
+    {
+      "word": "SYSTEMATISER",
+      "armour": [
+        "E",
+        "S"
+      ],
+      "definition": "an organizer who puts things in order"
+    },
+    {
+      "word": "SYSTEMATISERS",
+      "armour": [
+        "E",
+        "S",
+        "S"
+      ],
+      "definition": "an organizer who puts things in order"
+    },
+    {
+      "word": "SYSTEMATISES",
+      "armour": [
+        "E",
+        "S",
+        "S"
+      ],
+      "definition": "arrange according to a system or reduce to a system"
+    },
+    {
+      "word": "SYSTEMATISING",
+      "armour": [
+        "S"
+      ],
+      "definition": "arrange according to a system or reduce to a system"
+    },
+    {
+      "word": "SYSTEMATIST",
+      "armour": [
+        "S"
+      ],
+      "definition": "an organizer who puts things in order"
+    },
+    {
+      "word": "SYSTEMATISTS",
+      "armour": [
+        "S",
+        "S"
+      ],
+      "definition": "an organizer who puts things in order"
+    },
+    {
+      "word": "SYSTEMATIZATION",
+      "armour": [],
+      "definition": "systematic organization; the act of organizing something according to a system or a rationale"
+    },
+    {
+      "word": "SYSTEMATIZATIONS",
+      "armour": [
+        "S"
+      ],
+      "definition": "systematic organization; the act of organizing something according to a system or a rationale"
+    },
+    {
+      "word": "SYSTEMATIZE",
+      "armour": [
+        "E"
+      ],
+      "definition": "arrange according to a system or reduce to a system"
+    },
+    {
+      "word": "SYSTEMATIZED",
+      "armour": [
+        "E"
+      ],
+      "definition": "arrange according to a system or reduce to a system"
+    },
+    {
+      "word": "SYSTEMATIZER",
+      "armour": [
+        "E"
+      ],
+      "definition": "an organizer who puts things in order"
+    },
+    {
+      "word": "SYSTEMATIZERS",
+      "armour": [
+        "E",
+        "S"
+      ],
+      "definition": "an organizer who puts things in order"
+    },
+    {
+      "word": "SYSTEMATIZES",
+      "armour": [
+        "E",
+        "S"
+      ],
+      "definition": "arrange according to a system or reduce to a system"
+    },
+    {
+      "word": "SYSTEMATIZING",
+      "armour": [],
+      "definition": "arrange according to a system or reduce to a system"
+    },
+    {
+      "word": "SYSTEMISE",
+      "armour": [
+        "E",
+        "S"
+      ],
+      "definition": "arrange according to a system or reduce to a system"
+    },
+    {
+      "word": "SYSTEMISED",
+      "armour": [
+        "E",
+        "S"
+      ],
+      "definition": "arrange according to a system or reduce to a system"
+    },
+    {
+      "word": "SYSTEMISER",
+      "armour": [
+        "E",
+        "S"
+      ],
+      "definition": "an organizer who puts things in order"
+    },
+    {
+      "word": "SYSTEMISERS",
+      "armour": [
+        "E",
+        "S",
+        "S"
+      ],
+      "definition": "an organizer who puts things in order"
+    },
+    {
+      "word": "SYSTEMISES",
+      "armour": [
+        "E",
+        "S",
+        "S"
+      ],
+      "definition": "arrange according to a system or reduce to a system"
+    },
+    {
+      "word": "SYSTEMISING",
+      "armour": [
+        "S"
+      ],
+      "definition": "arrange according to a system or reduce to a system"
+    },
+    {
+      "word": "SYSTEMIZE",
+      "armour": [
+        "E"
+      ],
+      "definition": "arrange according to a system or reduce to a system"
+    },
+    {
+      "word": "SYSTEMIZED",
+      "armour": [
+        "E"
+      ],
+      "definition": "arrange according to a system or reduce to a system"
+    },
+    {
+      "word": "SYSTEMIZER",
+      "armour": [
+        "E"
+      ],
+      "definition": "an organizer who puts things in order"
+    },
+    {
+      "word": "SYSTEMIZERS",
+      "armour": [
+        "E",
+        "S"
+      ],
+      "definition": "an organizer who puts things in order"
+    },
+    {
+      "word": "SYSTEMIZES",
+      "armour": [
+        "E",
+        "S"
+      ],
+      "definition": "arrange according to a system or reduce to a system"
+    },
+    {
+      "word": "SYSTEMIZING",
+      "armour": [],
+      "definition": "arrange according to a system or reduce to a system"
+    },
+    {
+      "word": "SYSTEMS",
+      "armour": [
+        "S"
+      ],
+      "definition": "an ordered manner; orderliness by virtue of being methodical and well organized"
+    },
+    {
+      "word": "TRIMNESS",
+      "armour": [],
+      "definition": "a state of arrangement or appearance"
+    },
+    {
+      "word": "TRIMNESSES",
+      "armour": [
+        "E",
+        "S"
+      ],
+      "definition": "a state of arrangement or appearance"
+    }
+  ],
+  "seeds": [
+    {
+      "seed": "bingo-first-3:MESS:MASTERMINDS:28",
+      "score": 661
+    },
+    {
+      "seed": "bingo-first-3:MESS:MASTERMINDS:24",
+      "score": 592
+    },
+    {
+      "seed": "bingo-first-3:MESS:MASTERMINDS:25",
+      "score": 590
+    },
+    {
+      "seed": "bingo-first-3:MESS:MASTERMINDS:29",
+      "score": 562
+    },
+    {
+      "seed": "bingo-first-3:MESS:MASTERMINDS:26",
+      "score": 559
+    },
+    {
+      "seed": "bingo-first-3:MESS:MASTERMINDS:27",
+      "score": 514
+    }
+  ],
+  "derivations": [
+    {
+      "from": "oewn-accord__2.42.00..",
+      "to": "oewn-accord__1.07.00..",
+      "definition": "sympathetic compatibility",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-accord__2.42.00..",
+      "to": "oewn-accordant__3.00.00..",
+      "definition": "being in agreement or harmony; often followed by ‘with’",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-agree__2.42.01..",
+      "to": "oewn-agreeable__5.00.00.consistent.00",
+      "definition": "in keeping",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-anarchy__1.26.00..",
+      "to": "oewn-anarchist__1.18.00..",
+      "definition": "an advocate of anarchism",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-assort__2.31.00..",
+      "to": "oewn-assortment__1.04.00..",
+      "definition": "the act of distributing things into classes or categories of the same type",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-befuddle__2.31.00..",
+      "to": "oewn-befuddlement__1.09.00..",
+      "definition": "confusion resulting from failure to understand",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-calm__5.00.00.composed.00",
+      "to": "oewn-calmness__1.12.00..",
+      "definition": "a feeling of calm; an absence of agitation or excitement",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-clarity__1.07.01..",
+      "to": "oewn-clear__3.00.00..",
+      "definition": "readily apparent to the mind",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-clarity__1.07.01..",
+      "to": "oewn-clear__3.00.04..",
+      "definition": "accurately stated or described",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-clarity__1.07.01..",
+      "to": "oewn-clear__5.00.00.legible.00",
+      "definition": "easily deciphered",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-class__2.31.00..",
+      "to": "oewn-class__1.14.00..",
+      "definition": "a collection of things sharing a common attribute",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-classify__2.31.00..",
+      "to": "oewn-class__1.14.01..",
+      "definition": "people having the same social, economic, or educational status",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-classify__2.31.00..",
+      "to": "oewn-class__1.14.02..",
+      "definition": "(biology) a taxonomic group containing one or more orders",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-classify__2.31.00..",
+      "to": "oewn-class__1.14.05..",
+      "definition": "a league ranked by quality",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-classify__2.31.00..",
+      "to": "oewn-classification__1.09.00..",
+      "definition": "the basic cognitive process of arranging into classes or categories",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-classify__2.31.00..",
+      "to": "oewn-classification__1.14.00..",
+      "definition": "a group of people or things arranged by class or category",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-classify__2.31.00..",
+      "to": "oewn-classificatory__3.01.00..",
+      "definition": "relating to or involving classification",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-classify__2.31.00..",
+      "to": "oewn-classifier__1.18.00..",
+      "definition": "a person who creates classifications",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-clearness__1.07.01..",
+      "to": "oewn-clear__5.00.00.discerning.00",
+      "definition": "characterized by ease and quickness in perceiving",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-clearness__1.07.01..",
+      "to": "oewn-clear__5.00.00.distinct.00",
+      "definition": "clear and distinct to the senses; easily perceptible",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-clearness__1.07.01..",
+      "to": "oewn-clear__5.00.00.innocent.00",
+      "definition": "freed from any question of guilt",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-coherent__3.00.00..",
+      "to": "oewn-cohere__2.42.00..",
+      "definition": "have internal elements or parts logically connected so that aesthetic consistency results",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-coherent__3.00.00..",
+      "to": "oewn-cohere__2.42.01..",
+      "definition": "cause to form a united, orderly, and aesthetically consistent whole",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-confusedness__1.09.00..",
+      "to": "oewn-confused__3.00.00..",
+      "definition": "mentally confused; unable to think with clarity or act intelligently",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-consistent__3.00.01..",
+      "to": "oewn-consistence__1.07.02..",
+      "definition": "a harmonious uniformity or agreement among things or parts",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-consonant__5.00.00.harmonious.00",
+      "to": "oewn-consonance__1.07.00..",
+      "definition": "the property of sounding harmonious",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-contrive__2.36.01..",
+      "to": "oewn-contriver__1.18.00..",
+      "definition": "a person who makes plans",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-cool__5.00.00.composed.00",
+      "to": "oewn-coolness__1.07.02..",
+      "definition": "fearless self-possession in the face of danger",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-coordinate__2.30.00..",
+      "to": "oewn-co--ordinator__1.18.00..",
+      "definition": "someone whose task is to see that work goes harmoniously",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-derange__2.30.00..",
+      "to": "oewn-derangement__1.04.00..",
+      "definition": "the act of disturbing the mind or body",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-design__2.31.00..",
+      "to": "oewn-design__1.04.00..",
+      "definition": "the act of working out the form of something (as by making a sketch or outline or plan)",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-design__2.31.00..",
+      "to": "oewn-design__1.06.01..",
+      "definition": "a preliminary sketch indicating the plan for something",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-direct__2.31.00..",
+      "to": "oewn-directive__5.00.00.leading.00",
+      "definition": "showing the way by conducting or leading; imposing direction on",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-discombobulate__2.31.00..",
+      "to": "oewn-discombobulation__1.12.00..",
+      "definition": "a feeling of embarrassment that leaves you confused",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-disrupt__2.30.01..",
+      "to": "oewn-disruptive__5.00.00.unquiet.00",
+      "definition": "characterized by unrest or disorder or insubordination",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-easiness__1.12.00..",
+      "to": "oewn-easy__3.00.02..",
+      "definition": "free from worry or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-engineer__2.31.00..",
+      "to": "oewn-engineer__1.18.00..",
+      "definition": "a person who uses scientific knowledge to solve practical problems",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-fractiousness__1.07.00..",
+      "to": "oewn-fractious__5.00.00.disobedient.00",
+      "definition": "stubbornly resistant to authority or control",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-fractiousness__1.07.00..",
+      "to": "oewn-fractious__5.00.00.ill-natured.00",
+      "definition": "easily irritated or annoyed",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-harmonical__5.00.00.harmonious.00",
+      "to": "oewn-harmony__1.07.00..",
+      "definition": "an agreeable sound property",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-harmonical__5.00.00.harmonious.00",
+      "to": "oewn-harmony__1.07.01..",
+      "definition": "compatibility in opinion and action",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-harmonical__5.00.00.harmonious.00",
+      "to": "oewn-harmony__1.10.00..",
+      "definition": "agreement of opinions",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-harmonical__5.00.00.harmonious.00",
+      "to": "oewn-harmony__1.10.01..",
+      "definition": "the structure of music with respect to the composition and progression of chords",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-harmony__1.26.00..",
+      "to": "oewn-harmonious__5.00.00.compatible.01",
+      "definition": "existing together in harmony",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-harmony__1.26.00..",
+      "to": "oewn-harmonise__2.30.03..",
+      "definition": "bring (several things) into consonance or relate harmoniously",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-harmonise__2.30.02..",
+      "to": "oewn-harmoniser__1.18.00..",
+      "definition": "a mediator who brings one thing into harmonious agreement with another",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-imperturbable__5.00.00.composed.00",
+      "to": "oewn-imperturbability__1.12.00..",
+      "definition": "calm and unruffled self-assurance",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-lawlessness__1.26.00..",
+      "to": "oewn-lawless__5.00.02.unlawful.00",
+      "definition": "lax in enforcing laws",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-limpidity__1.07.01..",
+      "to": "oewn-limpid__5.00.00.clear.00",
+      "definition": "(of language) transparently clear; easily understandable",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-lucidity__1.07.00..",
+      "to": "oewn-elucidate__2.31.00..",
+      "definition": "make free from confusion or ambiguity; make clear",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-lucidity__1.07.00..",
+      "to": "oewn-elucidate__2.32.00..",
+      "definition": "make clear and (more) comprehensible",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-lull__2.37.00..",
+      "to": "oewn-lull__1.28.00..",
+      "definition": "a pause during which things are calm or activities are diminished",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-mastermind__2.31.00..",
+      "to": "oewn-mastermind__1.18.00..",
+      "definition": "someone who creates new things",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-mellow__5.00.00.relaxed.00",
+      "to": "oewn-mellowness__1.07.02..",
+      "definition": "geniality, as through the effects of alcohol or marijuana",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-neatness__1.07.00..",
+      "to": "oewn-neat__5.00.03.tidy.00",
+      "definition": "showing care in execution",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-orchestrate__2.31.00..",
+      "to": "oewn-orchestration__1.04.02..",
+      "definition": "an arrangement of events that attempts to achieve a maximum effect",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-order__1.14.00..",
+      "to": "oewn-order__2.30.01..",
+      "definition": "place in a certain order",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-order__2.30.00..",
+      "to": "oewn-order__1.04.00..",
+      "definition": "the act of putting things in a sequential arrangement",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-order__2.30.00..",
+      "to": "oewn-orderer__1.18.00..",
+      "definition": "an organizer who puts things in order",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-organisation__1.07.00..",
+      "to": "oewn-organise__2.41.00..",
+      "definition": "cause to be structured or ordered or operating according to some principle or idea",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-organise__2.30.00..",
+      "to": "oewn-organisation__1.04.00..",
+      "definition": "the act of organizing a business or an activity related to a business",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-organise__2.30.00..",
+      "to": "oewn-organisation__1.04.01..",
+      "definition": "the activity or result of distributing or disposing persons or things properly or methodically",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-organise__2.30.00..",
+      "to": "oewn-organisation__1.09.00..",
+      "definition": "an organized structure for arranging or classifying",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-organize__2.30.00..",
+      "to": "oewn-organization__1.04.02..",
+      "definition": "the act of forming or establishing something",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-organize__2.30.00..",
+      "to": "oewn-organization__1.14.01..",
+      "definition": "the persons (or committees or departments etc.) who make up a body for the purpose of administering something",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-organize__2.30.00..",
+      "to": "oewn-organizer__1.06.00..",
+      "definition": "a lightweight consumer electronic device that looks like a hand-held computer but instead performs specific tasks; can serve as a diary or a personal database or a telephone or an alarm clock etc.",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-organize__2.30.00..",
+      "to": "oewn-organizer__1.18.00..",
+      "definition": "a person who brings order and organization to an enterprise",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-peace__1.12.00..",
+      "to": "oewn-pacify__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-perturb__2.30.00..",
+      "to": "oewn-perturbation__1.07.00..",
+      "definition": "a disposition that is confused or nervous and upset",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-perturbation__1.04.00..",
+      "to": "oewn-perturb__2.38.01..",
+      "definition": "disturb or interfere with the usual path of an electron or atom",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-placidness__1.12.00..",
+      "to": "oewn-placid__5.00.00.calm.00",
+      "definition": "(of a body of water) free from disturbance by heavy waves",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-plan__2.31.00..",
+      "to": "oewn-plan__1.09.00..",
+      "definition": "a series of steps to be carried out or goals to be accomplished",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-plan__2.31.00..",
+      "to": "oewn-planner__1.06.00..",
+      "definition": "a notebook for recording appointments and things to be done, etc.",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-plan__2.31.00..",
+      "to": "oewn-planning__1.04.00..",
+      "definition": "an act of formulating a program for a definite course of action",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-project__2.36.01..",
+      "to": "oewn-project__1.04.00..",
+      "definition": "any piece of work that is undertaken or attempted",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-project__2.36.01..",
+      "to": "oewn-project__1.09.00..",
+      "definition": "a planned undertaking",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-proportion__1.07.01..",
+      "to": "oewn-proportion__2.30.01..",
+      "definition": "give pleasant proportions to",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-proportionate__5.00.00.balanced.00",
+      "to": "oewn-proportionateness__1.24.00..",
+      "definition": "the relation of corresponding in degree or size or amount",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-quiescent__5.00.00.quiet.02",
+      "to": "oewn-quiescence__1.04.00..",
+      "definition": "quiet and inactive restfulness",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-reconcile__2.30.00..",
+      "to": "oewn-reconciler__1.18.00..",
+      "definition": "someone who tries to bring peace",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-reconcile__2.30.00..",
+      "to": "oewn-reconciliation__1.04.00..",
+      "definition": "getting two things to correspond",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-relax__2.29.00..",
+      "to": "oewn-relaxant__5.00.00.depressant.00",
+      "definition": "tending to relax or relieve muscular or nervous tension",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-relax__2.29.00..",
+      "to": "oewn-relaxation__1.04.00..",
+      "definition": "freedom from activity (work or strain or responsibility)",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-relax__2.29.00..",
+      "to": "oewn-relaxation__1.22.01..",
+      "definition": "(physiology) the gradual lengthening of inactive muscle or muscle fibers",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-relaxation__1.12.00..",
+      "to": "oewn-relax__2.29.01..",
+      "definition": "cause to feel relaxed",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-relaxation__1.12.00..",
+      "to": "oewn-relax__2.41.02..",
+      "definition": "become less tense, less formal, or less restrained, and assume a friendlier manner",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-sort__2.31.00..",
+      "to": "oewn-sort__1.09.00..",
+      "definition": "a category of things distinguished by some common characteristic or quality",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-sort__2.31.00..",
+      "to": "oewn-sort__1.22.00..",
+      "definition": "an operation that segregates items into groups according to a specified criterion",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-sort__2.31.00..",
+      "to": "oewn-sorter__1.06.00..",
+      "definition": "a machine for sorting things (such as punched cards or letters) into classes",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-sort__2.31.00..",
+      "to": "oewn-sorter__1.18.00..",
+      "definition": "a clerk who sorts things (as letters at the post office)",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-sort__2.31.00..",
+      "to": "oewn-sorting__1.04.00..",
+      "definition": "grouping by class or kind or size",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-still__2.37.00..",
+      "to": "oewn-still__1.07.00..",
+      "definition": "(poetic) tranquil silence",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-structure__2.30.00..",
+      "to": "oewn-structure__1.09.00..",
+      "definition": "the complex composition of knowledge as elements and their combinations",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-systematise__2.30.00..",
+      "to": "oewn-systematisation__1.04.00..",
+      "definition": "systematic organization; the act of organizing something according to a system or a rationale",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-tidy__3.00.00..",
+      "to": "oewn-tidiness__1.26.00..",
+      "definition": "the habit of being tidy",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-tidiness__1.07.00..",
+      "to": "oewn-tidy__5.00.00.groomed.00",
+      "definition": "(of hair) neat and tidy",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-tranquilize__2.37.00..",
+      "to": "oewn-tranquilizer__1.06.00..",
+      "definition": "a drug used to reduce stress or tension without reducing mental clarity",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-trim__5.00.02.tidy.00",
+      "to": "oewn-trimness__1.26.00..",
+      "definition": "a state of arrangement or appearance",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-unruliness__1.07.00..",
+      "to": "oewn-unruly__5.00.00.insubordinate.00",
+      "definition": "unwilling to submit to authority",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-unruliness__1.07.00..",
+      "to": "oewn-unruly__5.00.00.unmanageable.00",
+      "definition": "incapable of being controlled",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-untidiness__1.07.00..",
+      "to": "oewn-untidy__3.00.00..",
+      "definition": "not neat and tidy",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-wilfulness__1.07.00..",
+      "to": "oewn-wilful__5.00.00.disobedient.00",
+      "definition": "habitually disposed to disobedience and opposition",
+      "relation": "similar"
+    }
+  ],
+  "meaningWords": 41581,
+  "limitation": "Source-pinned roots, all-sense exact-synset expansion, one direct derivation, and explicit adjective/adverb links. Other defined words are neutral under this beta policy; complete contextual review and daily certification are outstanding."
+}

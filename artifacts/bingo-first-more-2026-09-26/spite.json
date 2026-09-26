@@ -1,0 +1,1341 @@
+{
+  "enemy": "SPITE",
+  "bingo": "EMPATHISES",
+  "method": "bingo-first",
+  "semanticStatus": "draft-source-profile",
+  "accepted": true,
+  "seed": "bingo-first-3:SPITE:EMPATHISES:24",
+  "anchors": [
+    "EMPATHISES",
+    "CRUELTY",
+    "HUMANE"
+  ],
+  "plannedWords": [
+    "HUMANIST",
+    "SYMPATHY",
+    "CLEARED"
+  ],
+  "analysis": {
+    "score": 399,
+    "bingos": [
+      "EMPATHISES"
+    ],
+    "counterFamilies": 11,
+    "resistedFamilies": 4,
+    "winningOpenings": 10,
+    "repeatedCounterRoutes": 10,
+    "sustainedPositions": 9,
+    "sustainedFinalPositions": 5,
+    "neutralCleanupOpenings": 0,
+    "routes": [
+      {
+        "opening": "CLEAR",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "PITY"
+          ],
+          "resisted": [
+            "SPITE"
+          ],
+          "neutral": 319
+        },
+        "thirdTurn": {
+          "counters": [
+            "SYMPATHY",
+            "PITY",
+            "EMPATHY",
+            "HUMANE",
+            "HUMANIST",
+            "HUMANISM",
+            "SYMPATHISE"
+          ],
+          "resisted": [
+            "SPITE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CLEAR",
+            "BIT",
+            "SYMPATHIES"
+          ],
+          "tileIds": [
+            [
+              10,
+              9,
+              1,
+              15,
+              14
+            ],
+            [
+              20,
+              0,
+              4
+            ],
+            [
+              2,
+              13,
+              11,
+              8,
+              22,
+              16,
+              7,
+              21,
+              3,
+              12
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            1,
+            5
+          ]
+        }
+      },
+      {
+        "opening": "MERCY",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "PITY"
+          ],
+          "resisted": [
+            "BEAST",
+            "SPITE"
+          ],
+          "neutral": 710
+        },
+        "thirdTurn": {
+          "counters": [
+            "PITY",
+            "EMPATHY",
+            "HUMANE",
+            "SYMPATHIES",
+            "HUMANIST",
+            "SYMPATHISE",
+            "HUMANELY"
+          ],
+          "resisted": [
+            "ANIMALS",
+            "SPITE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "MERCY",
+            "BIT",
+            "SYMPATHIES"
+          ],
+          "tileIds": [
+            [
+              11,
+              1,
+              14,
+              10,
+              13
+            ],
+            [
+              20,
+              0,
+              4
+            ],
+            [
+              2,
+              19,
+              23,
+              8,
+              15,
+              16,
+              7,
+              21,
+              3,
+              12
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            1,
+            5
+          ]
+        }
+      },
+      {
+        "opening": "RUTH",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SYMPATHY",
+            "PITY",
+            "EMPATHY",
+            "HUMANE",
+            "CLEMENT",
+            "HUMANIST",
+            "SYMPATHISE",
+            "HUMANELY",
+            "EMPATHIC"
+          ],
+          "resisted": [
+            "SPITE",
+            "MALICE"
+          ],
+          "neutral": 1155
+        },
+        "thirdTurn": {
+          "counters": [
+            "CLEAR",
+            "BEAR",
+            "MERCY",
+            "ABIDE"
+          ],
+          "resisted": [
+            "COLD",
+            "ANIMAL",
+            "EVIL",
+            "CRUEL",
+            "VENOM",
+            "MALICE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RUTH",
+            "SYMPATHIES",
+            "CLEAR"
+          ],
+          "tileIds": [
+            [
+              14,
+              6,
+              4,
+              7
+            ],
+            [
+              2,
+              13,
+              11,
+              8,
+              15,
+              16,
+              17,
+              0,
+              1,
+              12
+            ],
+            [
+              10,
+              9,
+              3,
+              22,
+              25
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            5,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "PITY",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "CLEAR",
+            "MERCY",
+            "HUMANE",
+            "CLEMENT",
+            "HUMANELY"
+          ],
+          "resisted": [
+            "HARSH",
+            "CRUEL",
+            "CRUELTY",
+            "RUTHLESS",
+            "HARSHLY"
+          ],
+          "neutral": 941
+        },
+        "thirdTurn": {
+          "counters": [
+            "STAND",
+            "BEAR",
+            "HUMANE",
+            "ABIDE",
+            "HUMANIST",
+            "HUMANISM"
+          ],
+          "resisted": [
+            "BEAST",
+            "HARSH",
+            "BRUTE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "PITY",
+            "CLEARS",
+            "BEARS"
+          ],
+          "tileIds": [
+            [
+              8,
+              0,
+              4,
+              13
+            ],
+            [
+              10,
+              9,
+              1,
+              15,
+              14,
+              2
+            ],
+            [
+              20,
+              3,
+              22,
+              25,
+              12
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "EMPATHY",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "CLEAR",
+            "BEAR"
+          ],
+          "resisted": [
+            "BEAST",
+            "CRUEL",
+            "BRUTAL",
+            "CRUELTY",
+            "RUTHLESS",
+            "BRUTE"
+          ],
+          "neutral": 1154
+        },
+        "thirdTurn": {
+          "counters": [
+            "STAND",
+            "HUMANIST",
+            "HUMANISTIC"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "EMPATHY",
+            "BEARS",
+            "HUMANIST"
+          ],
+          "tileIds": [
+            [
+              1,
+              11,
+              8,
+              15,
+              4,
+              7,
+              13
+            ],
+            [
+              20,
+              3,
+              22,
+              14,
+              2
+            ],
+            [
+              17,
+              6,
+              23,
+              26,
+              5,
+              0,
+              12,
+              16
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "HUMANE",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "RUTH",
+            "PITY"
+          ],
+          "resisted": [
+            "CRUEL",
+            "SPITE",
+            "CRUELTY",
+            "RUTHLESS",
+            "BRUTE"
+          ],
+          "neutral": 562
+        },
+        "thirdTurn": {
+          "counters": [
+            "CLEAR",
+            "MERCY",
+            "RUTH",
+            "SYMPATHY",
+            "PITY",
+            "EMPATHY",
+            "SYMPATHISE",
+            "EMPATHIC"
+          ],
+          "resisted": [
+            "CRUEL",
+            "SPITE",
+            "CRUELTY",
+            "RUTHLESS",
+            "MALICE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "HUMANE",
+            "BIT",
+            "SYMPATHIES"
+          ],
+          "tileIds": [
+            [
+              7,
+              6,
+              11,
+              15,
+              5,
+              1
+            ],
+            [
+              20,
+              0,
+              4
+            ],
+            [
+              2,
+              13,
+              23,
+              8,
+              22,
+              16,
+              17,
+              21,
+              3,
+              12
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            1,
+            5
+          ]
+        }
+      },
+      {
+        "opening": "CLEMENT",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "PITY"
+          ],
+          "resisted": [
+            "HARSH"
+          ],
+          "neutral": 259
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "SYMPATHIES",
+        "label": "COUNTER",
+        "hits": 6,
+        "later": {
+          "counters": [
+            "CLEAR",
+            "BEAR",
+            "MERCY",
+            "HUMANE",
+            "ABIDE",
+            "HUMANELY"
+          ],
+          "resisted": [
+            "CRUEL",
+            "BRUTAL",
+            "CRUELTY",
+            "BRUTE",
+            "MALICE"
+          ],
+          "neutral": 1091
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SYMPATHIES",
+            "CLEAR"
+          ],
+          "tileIds": [
+            [
+              2,
+              13,
+              11,
+              8,
+              15,
+              4,
+              7,
+              0,
+              1,
+              12
+            ],
+            [
+              10,
+              9,
+              3,
+              22,
+              14
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            6,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "HUMANIST",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "CLEAR",
+            "BEAR",
+            "MERCY",
+            "SYMPATHY",
+            "PITY",
+            "EMPATHY",
+            "EMPATHIC"
+          ],
+          "resisted": [
+            "BEAST",
+            "CRUEL",
+            "BRUTAL",
+            "SPITE",
+            "CRUELTY",
+            "BRUTE",
+            "MALICE"
+          ],
+          "neutral": 1516
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "ROUGH",
+            "BRUTAL",
+            "AGONY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "HUMANIST",
+            "MERCIES",
+            "PAY"
+          ],
+          "tileIds": [
+            [
+              7,
+              6,
+              11,
+              15,
+              5,
+              0,
+              2,
+              4
+            ],
+            [
+              23,
+              1,
+              14,
+              10,
+              21,
+              3,
+              12
+            ],
+            [
+              8,
+              22,
+              13
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            3,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SYMPATHISE",
+        "label": "COUNTER",
+        "hits": 6,
+        "later": {
+          "counters": [
+            "CLEAR",
+            "BEAR",
+            "MERCY",
+            "HUMANE",
+            "ABIDE",
+            "HUMANELY"
+          ],
+          "resisted": [
+            "CRUEL",
+            "BRUTAL",
+            "CRUELTY",
+            "BRUTE",
+            "MALICE"
+          ],
+          "neutral": 1091
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SYMPATHISE",
+            "CLEAR"
+          ],
+          "tileIds": [
+            [
+              2,
+              13,
+              11,
+              8,
+              15,
+              4,
+              7,
+              0,
+              12,
+              1
+            ],
+            [
+              10,
+              9,
+              3,
+              22,
+              14
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            6,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "HUMANELY",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "BEAR",
+            "MERCY",
+            "RUTH",
+            "PITY",
+            "SYMPATHETIC",
+            "EMPATHY",
+            "SYMPATHIES",
+            "SYMPATHISE",
+            "EMPATHIC"
+          ],
+          "resisted": [
+            "BEAST",
+            "SPITE",
+            "BRUTE"
+          ],
+          "neutral": 1162
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "HUMANELY",
+            "SYMPATHIES"
+          ],
+          "tileIds": [
+            [
+              7,
+              6,
+              11,
+              15,
+              5,
+              1,
+              9,
+              13
+            ],
+            [
+              2,
+              19,
+              23,
+              8,
+              22,
+              4,
+              17,
+              0,
+              3,
+              12
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            6
+          ]
+        }
+      },
+      {
+        "opening": "CRUEL",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "SYMPATHY",
+            "PITY",
+            "EMPATHY",
+            "HUMANE",
+            "HUMANIST",
+            "SYMPATHISE"
+          ],
+          "resisted": [
+            "BEAST",
+            "SPITE"
+          ],
+          "neutral": 624
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "SPITE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "CLEAR",
+            "BEAR",
+            "MERCY",
+            "RUTH",
+            "HUMANE",
+            "HUMANELY"
+          ],
+          "resisted": [
+            "BEAST",
+            "HARSH",
+            "CRUEL",
+            "BRUTAL",
+            "CRUELTY",
+            "BRUTE",
+            "HARSHLY"
+          ],
+          "neutral": 860
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "CRUELTY",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "PITY",
+            "EMPATHY",
+            "HUMANE",
+            "SYMPATHIES",
+            "HUMANIST",
+            "SYMPATHISE"
+          ],
+          "resisted": [
+            "BEAST",
+            "SPITE"
+          ],
+          "neutral": 604
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "RUTHLESS",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "PITY",
+            "EMPATHY",
+            "HUMANE",
+            "EMPATHIC"
+          ],
+          "resisted": [],
+          "neutral": 342
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "ACT",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "PITY"
+          ],
+          "resisted": [
+            "SPITE",
+            "RUTHLESS"
+          ],
+          "neutral": 702
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "CLEMENT"
+          ],
+          "resisted": [],
+          "neutral": 309
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "CENT",
+      "SYMPATHIES"
+    ],
+    "tileIds": [
+      [
+        10,
+        1,
+        5,
+        4
+      ],
+      [
+        2,
+        13,
+        11,
+        8,
+        15,
+        16,
+        7,
+        0,
+        3,
+        12
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      6
+    ]
+  },
+  "board": "IESETNUHPLCMSYRA",
+  "refills": "THUYBIAMDRAVNOGNAHTDESMC",
+  "inventory": [
+    {
+      "word": "COMPASSIONATE",
+      "armour": [
+        "S"
+      ],
+      "definition": "share the suffering of"
+    },
+    {
+      "word": "COMPASSIONATED",
+      "armour": [
+        "S"
+      ],
+      "definition": "share the suffering of"
+    },
+    {
+      "word": "COMPASSIONATELY",
+      "armour": [
+        "S"
+      ],
+      "definition": "in a compassionate manner"
+    },
+    {
+      "word": "COMPASSIONATES",
+      "armour": [
+        "S"
+      ],
+      "definition": "share the suffering of"
+    },
+    {
+      "word": "EMPATHIES",
+      "armour": [
+        "E"
+      ],
+      "definition": "understanding and entering into another's feelings"
+    },
+    {
+      "word": "EMPATHISE",
+      "armour": [
+        "E"
+      ],
+      "definition": "be understanding of"
+    },
+    {
+      "word": "EMPATHISED",
+      "armour": [
+        "E"
+      ],
+      "definition": "be understanding of"
+    },
+    {
+      "word": "EMPATHISES",
+      "armour": [
+        "S",
+        "E"
+      ],
+      "definition": "be understanding of"
+    },
+    {
+      "word": "EMPATHISING",
+      "armour": [
+        "I"
+      ],
+      "definition": "be understanding of"
+    },
+    {
+      "word": "EMPATHIZES",
+      "armour": [
+        "E"
+      ],
+      "definition": "be understanding of"
+    },
+    {
+      "word": "PITIES",
+      "armour": [
+        "I"
+      ],
+      "definition": "the humane quality of understanding the suffering of others and wanting to do something about it"
+    },
+    {
+      "word": "SYMPATHETIC",
+      "armour": [
+        "T"
+      ],
+      "definition": "showing or motivated by sympathy and understanding and generosity"
+    },
+    {
+      "word": "SYMPATHETICALLY",
+      "armour": [
+        "T"
+      ],
+      "definition": "in a sympathetic manner"
+    },
+    {
+      "word": "SYMPATHIES",
+      "armour": [
+        "S"
+      ],
+      "definition": "an inclination to support or be loyal to or to agree with an opinion"
+    },
+    {
+      "word": "SYMPATHISE",
+      "armour": [
+        "S"
+      ],
+      "definition": "be understanding of"
+    },
+    {
+      "word": "SYMPATHISED",
+      "armour": [
+        "S"
+      ],
+      "definition": "be understanding of"
+    },
+    {
+      "word": "SYMPATHISES",
+      "armour": [
+        "S"
+      ],
+      "definition": "be understanding of"
+    },
+    {
+      "word": "SYMPATHIZE",
+      "armour": [],
+      "definition": "be understanding of"
+    },
+    {
+      "word": "SYMPATHIZED",
+      "armour": [],
+      "definition": "be understanding of"
+    },
+    {
+      "word": "SYMPATHIZES",
+      "armour": [
+        "S"
+      ],
+      "definition": "be understanding of"
+    }
+  ],
+  "seeds": [
+    {
+      "seed": "bingo-first-3:SPITE:EMPATHISES:24",
+      "score": 399
+    },
+    {
+      "seed": "bingo-first-3:SPITE:EMPATHISES:28",
+      "score": 375
+    },
+    {
+      "seed": "bingo-first-3:SPITE:EMPATHISES:25",
+      "score": 362
+    },
+    {
+      "seed": "bingo-first-3:SPITE:EMPATHISES:27",
+      "score": 358
+    },
+    {
+      "seed": "bingo-first-3:SPITE:EMPATHISES:26",
+      "score": 334
+    },
+    {
+      "seed": "bingo-first-3:SPITE:EMPATHISES:29",
+      "score": 252
+    }
+  ],
+  "derivations": [
+    {
+      "from": "oewn-atrociousness__1.07.00..",
+      "to": "oewn-atrocious__5.00.00.evil.00",
+      "definition": "shockingly brutal or cruel",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-beastly__5.00.00.inhumane.00",
+      "to": "oewn-beast__1.03.00..",
+      "definition": "a living organism characterized by voluntary movement",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-beastly__5.00.00.inhumane.00",
+      "to": "oewn-beastliness__1.07.02..",
+      "definition": "the quality of being deliberately mean",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-benign__5.00.00.kind.00",
+      "to": "oewn-benignancy__1.07.00..",
+      "definition": "the quality of being kind and gentle",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-bestial__5.00.00.inhumane.00",
+      "to": "oewn-bestiality__1.07.00..",
+      "definition": "the stupid brutal quality of a beast",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-bestial__5.00.00.inhumane.00",
+      "to": "oewn-bestialize__2.30.00..",
+      "definition": "make brutal and depraved; give animal-like qualities to",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-caring__5.00.00.compassionate.00",
+      "to": "oewn-caring__1.12.01..",
+      "definition": "a loving feeling",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-charitable__5.00.00.kind.00",
+      "to": "oewn-charitableness__1.07.00..",
+      "definition": "generosity as manifested by practicing charity (as for the poor or unfortunate)",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-compassion__1.12.00..",
+      "to": "oewn-compassionate__3.00.00..",
+      "definition": "showing or having compassion",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-excruciate__2.29.00..",
+      "to": "oewn-excruciation__1.04.00..",
+      "definition": "the infliction of extremely painful punishment or suffering",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-excruciate__2.29.00..",
+      "to": "oewn-excruciation__1.26.00..",
+      "definition": "a state of acute pain",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-exonerative__5.00.00.exculpatory.00",
+      "to": "oewn-exonerate__2.32.00..",
+      "definition": "pronounce not guilty of criminal charges",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-fierce__5.00.00.merciless.00",
+      "to": "oewn-fierceness__1.07.00..",
+      "definition": "the property of being wild or turbulent",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-gentleness__1.07.00..",
+      "to": "oewn-gentle__5.00.00.soft.04",
+      "definition": "quiet and soothing",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-gentleness__1.07.00..",
+      "to": "oewn-gentle__5.00.01.kind.00",
+      "definition": "having or showing a kindly or tender nature",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-gracious__5.00.00.kind.00",
+      "to": "oewn-grace__1.07.03..",
+      "definition": "a disposition to kindness and compassion",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-harshness__1.07.04..",
+      "to": "oewn-harsh__5.00.00.unkind.00",
+      "definition": "unkind or cruel or uncivil",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-heinousness__1.07.00..",
+      "to": "oewn-heinous__5.00.00.wicked.00",
+      "definition": "extremely wicked, deeply criminal",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-humanistic__5.00.00.humane.00",
+      "to": "oewn-humanism__1.09.01..",
+      "definition": "the doctrine that people's duty is to promote human welfare",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-kind__3.00.00..",
+      "to": "oewn-kindness__1.04.00..",
+      "definition": "a kind act",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-kindhearted__5.00.00.kind.00",
+      "to": "oewn-kindheartedness__1.12.00..",
+      "definition": "sympathy arising from a kind heart",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-kindly__5.00.00.kind.00",
+      "to": "oewn-kindliness__1.07.00..",
+      "definition": "friendliness evidence by a kindly and helpful disposition",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-lenient__5.00.00.clement.01",
+      "to": "oewn-leniency__1.07.00..",
+      "definition": "mercifulness as a consequence of being lenient or tolerant",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-merciful__3.00.00..",
+      "to": "oewn-mercifulness__1.12.00..",
+      "definition": "the feeling that motivates compassion",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-pity__2.37.00..",
+      "to": "oewn-pity__1.12.00..",
+      "definition": "a feeling of sympathy and sorrow for the misfortunes of others",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-pitiless__5.00.00.merciless.00",
+      "to": "oewn-pitilessness__1.07.00..",
+      "definition": "mercilessness characterized by a lack of pity",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-poisonous__5.00.00.malicious.00",
+      "to": "oewn-poison__1.07.00..",
+      "definition": "anything that harms or destroys",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-savage__1.18.01..",
+      "to": "oewn-savage__2.33.00..",
+      "definition": "attack brutally and fiercely",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-softness__1.07.03..",
+      "to": "oewn-soft__5.00.00.conciliatory.00",
+      "definition": "willing to negotiate and compromise",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-sympathise__2.31.00..",
+      "to": "oewn-sympathy__1.09.00..",
+      "definition": "an inclination to support or be loyal to or to agree with an opinion",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-tenderhearted__5.00.00.compassionate.00",
+      "to": "oewn-tenderheartedness__1.12.00..",
+      "definition": "warm compassionate feelings",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-tolerant__5.00.00.forgiving.00",
+      "to": "oewn-tolerate__2.31.00..",
+      "definition": "put up with something or somebody unpleasant",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-torment__2.29.00..",
+      "to": "oewn-torment__1.26.00..",
+      "definition": "unbearable physical pain",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-torment__2.29.00..",
+      "to": "oewn-tormenter__1.18.00..",
+      "definition": "someone who torments",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-torture__2.29.00..",
+      "to": "oewn-torturer__1.18.00..",
+      "definition": "someone who inflicts severe physical pain (usually for punishment or coercion)",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-understand__2.31.04..",
+      "to": "oewn-understandable__5.00.00.comprehensible.00",
+      "definition": "capable of being apprehended or understood",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-unkind__5.00.00.inhumane.00",
+      "to": "oewn-unkindness__1.07.00..",
+      "definition": "lack of sympathy",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-venomous__5.00.00.malicious.00",
+      "to": "oewn-venom__1.12.00..",
+      "definition": "feeling a need to see others suffer",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-viciousness__1.07.00..",
+      "to": "oewn-vicious__5.00.00.wicked.00",
+      "definition": "having the nature of vice",
+      "relation": "similar"
+    }
+  ],
+  "meaningWords": 58101,
+  "limitation": "Source-pinned roots, all-sense exact-synset expansion, one direct derivation, and explicit adjective/adverb links. Other defined words are neutral under this beta policy; complete contextual review and daily certification are outstanding."
+}

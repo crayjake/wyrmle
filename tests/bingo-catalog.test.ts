@@ -21,9 +21,9 @@ test('production preview URLs preserve the legacy beta and constrain life counts
     'https://example.com/wyrmle/?foo=bar')
 })
 
-test('the library contains only the five maintained bingo-first previews', () => {
-  assert.equal(bingoPreviews.length, 5)
-  assert.ok(bingoPreviews.every(entry => entry.collection === 'new'))
+test('the retired beta manifest retains ten bingo-first assets for archive migration', () => {
+  assert.equal(bingoPreviews.length, 10)
+  assert.ok(bingoPreviews.every(entry => entry.collection === 'new' || entry.collection === 'more'))
   assert.equal(new Set(bingoPreviews.map(entry => entry.id)).size, bingoPreviews.length)
 })
 

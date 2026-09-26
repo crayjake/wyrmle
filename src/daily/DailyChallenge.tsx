@@ -4,23 +4,29 @@ import BattleResult from '../components/BattleResult'
 import type { LetterStrikeEncounter } from '../game/letterStrike'
 import { useUserPreferences } from '../useUserPreferences'
 import { getDailyPuzzleId } from './date'
-import { dailySchedule, decodeScheduledPuzzle, latestScheduledPuzzle, scheduledPuzzle } from './scheduledPuzzle'
+import { decodeScheduledPuzzle, latestScheduledPuzzle, scheduledPuzzle } from './scheduledPuzzle'
 import type { ScheduledPuzzle } from './scheduledPuzzle'
 import { challengeHistory, challengeKey, challengeLives, challengeStars, openChallenge, readChallenge, restartChallenge, saveChallenge } from './challengeProgress'
 import type { ChallengeRecord } from './challengeProgress'
 import { shareResult } from './shareResult'
 import { getPublicSiteUrl } from '../lib/publicSiteUrl'
+import { puzzleLocation } from './calendar'
+import { getPuzzleGuide } from './guides'
 import './DailyChallenge.css'
 
 const TutorialBattle = lazy(() => import('../tutorial/TutorialBattle'))
-const beta = () => window.location.assign('?preview=bingos')
+const PuzzleCalendar = lazy(() => import('./PuzzleCalendar'))
+const calendar = () => window.location.assign('?calendar')
 
 export default function DailyChallenge() {
   const preferences = useUserPreferences()
   const [tutorial, setTutorial] = useState(!preferences.preferences.hasCompletedOnboarding)
   const [today, setToday] = useState(getDailyPuzzleId)
-  const requested = new URLSearchParams(window.location.search).get('daily')
-  const entry = requested && requested <= today ? scheduledPuzzle(requested) : latestScheduledPuzzle(today)
+  const [location] = useState(() => puzzleLocation(window.location.search))
+  const entry = location.date && location.date <= today ? scheduledPuzzle(location.date) : latestScheduledPuzzle(today)
+  useEffect(() => {
+    if (location.replacement) window.history.replaceState(null, '', location.replacement)
+  }, [location])
   useEffect(() => {
     const update = () => setToday(getDailyPuzzleId())
     window.addEventListener('focus', update)
@@ -32,8 +38,9 @@ export default function DailyChallenge() {
     preferences.update({ hasCompletedOnboarding: true, hasChosenMode: true })
     setTutorial(false)
   }
+  if (location.calendar) return <Suspense fallback={<Loading />}><PuzzleCalendar today={today} requestedMonth={location.month} /></Suspense>
   if (tutorial) return <Suspense fallback={<Loading />}><TutorialBattle onComplete={finishTutorial} onSkip={finishTutorial} /></Suspense>
-  if (!entry) return <main className="container"><h2>No puzzle scheduled yet</h2><button className="daily-button" onClick={beta}>Beta puzzles</button></main>
+  if (!entry) return <main className="container"><h2>No puzzle scheduled for this date</h2><button className="daily-button" onClick={calendar}>Puzzle calendar</button></main>
   return <LoadDaily key={entry.asset} entry={entry} today={today} onTutorial={() => setTutorial(true)} />
 }
 
@@ -49,7 +56,7 @@ function LoadDaily({ entry, today, onTutorial }: { entry: ScheduledPuzzle; today
       .catch(() => { if (!controller.signal.aborted) setError(true) })
     return () => controller.abort()
   }, [entry])
-  if (error) return <main className="container"><h2>Could not load today’s puzzle</h2><button className="daily-button" onClick={() => window.location.reload()}>Try again</button><button className="daily-button" onClick={beta}>Beta puzzles</button></main>
+  if (error) return <main className="container"><h2>Could not load this puzzle</h2><button className="daily-button" onClick={() => window.location.reload()}>Try again</button><button className="daily-button" onClick={calendar}>Puzzle calendar</button></main>
   return loaded ? <DailyAttempt entry={entry} encounter={loaded} today={today} onTutorial={onTutorial} /> : <Loading />
 }
 
@@ -89,19 +96,17 @@ function DailyAttempt({ entry, encounter, today, onTutorial }: {
   const lives = challengeLives(record.bestWords)
   const title = `${entry.date}${entry.date !== today ? ' · earlier daily' : ''}`
   return <>
-    <BattleScreen key={epoch} encounter={session.game.encounter} initial={session} daily title={title}
-      onSave={(game, started) => {
+    <BattleScreen key={epoch} encounter={session.game.encounter} initial={session} daily title={title} guide={getPuzzleGuide(entry.id)}
+      onSave={(game, started, hintStep) => {
         try {
-          const next = saveChallenge(current.current, game, started, window.localStorage)
-          current.current = next; setSession({ record: next, game, started }); setError(''); return true
+          const next = saveChallenge(current.current, game, started, window.localStorage, hintStep)
+          current.current = next; setSession({ record: next, game, started, hintStep }); setError(''); return true
         } catch (cause) { setError(cause instanceof Error ? cause.message : 'Progress could not be saved.'); return false }
-      }} onRestart={restart} onExit={beta}
+      }} onRestart={restart} onExit={() => window.location.assign(`?calendar=${entry.date.slice(0, 7)}`)}
       menu={<>
         <button className="daily-button" onClick={() => setStats(true)}>Statistics</button>
         <button className="daily-button" onClick={onTutorial}>Tutorial</button>
-        <label className="daily-picker">Daily puzzle<select value={entry.date} onChange={event => window.location.assign(`?daily=${event.target.value}`)}>
-          {dailySchedule.filter(item => item.date <= today).slice().reverse().map(item => <option value={item.date} key={item.date}>{item.date} · {item.enemy}</option>)}
-        </select></label>
+        {entry.date !== today && <a className="daily-button" href={import.meta.env.BASE_URL}>Back to daily</a>}
       </>}
       renderResult={game => <BattleResult game={game} onRetry={restart}
         nudge={lives === 1 ? 'Next challenge: find the one-word win.' : 'Next challenge: solve it with 2 lives.'}

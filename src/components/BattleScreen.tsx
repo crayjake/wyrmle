@@ -15,13 +15,13 @@ import type { LetterStrikeEncounter, LetterStrikeState } from '../game/letterStr
 import { getLetterStrikeBattleEvents, getLetterStrikeBonuses, getLetterStrikeGrammarModifiers, getLetterStrikeTileSummary } from '../game/letterStrikeHud'
 import BattleResult from './BattleResult'
 import type { BingoGuide } from '../experimental/bingo/guides'
-import '../experimental/BingoPreview.css'
+import './BattleScreen.css'
 
 type Phase = 'waiting' | 'enemy' | 'tiles' | 'ready'
 type Panel = 'help' | 'log' | 'modes' | 'hints' | null
 export type BattleAttempt = { game: LetterStrikeState; started: boolean; hintStep?: number }
 
-/** Daily and beta share one battle UI; their parents own saving and navigation. */
+/** Daily and archived puzzles share one battle UI and the same difficulty rules. */
 export default function BattleScreen({ encounter, initial, onSave, onRestart, onExit, title, onChoose, onNext,
   guide, menu, renderResult, daily = false }: {
   encounter: LetterStrikeEncounter
@@ -38,7 +38,9 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
   daily?: boolean
 }) {
   const preferences = useUserPreferences()
-  const hard = preferences.preferences.preferredMode !== 'normal'
+  const easy = preferences.preferences.preferredMode === 'easy'
+  const hard = preferences.preferences.preferredMode === 'hard' || preferences.preferences.preferredMode === 'hardcore'
+  const hintsAvailable = easy && Boolean(guide)
   const [game, setGame] = useState(() => initial?.game ?? createLetterStrikeGame(encounter))
   const [phase, setPhase] = useState<Phase>(initial?.started ? 'ready' : 'waiting')
   const [panel, setPanel] = useState<Panel>(null)
@@ -134,7 +136,7 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
       onHelp={() => setPanel('help')} onHistory={() => setPanel('log')} onSettings={() => setPanel('modes')} />
     {!progressSaved && <div className="daily-notice" role="alert"><span>Progress could not be saved.</span><button className="daily-button" onClick={() => persist(game, phase !== 'waiting')}>Retry save</button></div>}
     {showResult ? renderResult?.(game) ?? <BattleResult game={game} onRetry={onRestart} onNext={onNext}
-      onChoose={onChoose} onHints={guide ? () => setPanel('hints') : undefined} /> : <>
+      onChoose={onChoose} onHints={hintsAvailable ? () => setPanel('hints') : undefined} /> : <>
     <div className="battle-info">
       <MyInfo name="LIVES" health={displayedLives} maxHealth={game.encounter.startingResolve} wyrm
         wyrmRef={wyrmLifeRef} decoding={phase === 'enemy' || phase === 'tiles'} animateLives />
@@ -178,7 +180,7 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
       onEnemyDecoded={enemyDecoded} onTilesDecoded={tilesDecoded} />
     </>}
 
-    {panel === 'hints' && guide && <BattlePanel title="Bingo hints" onClose={() => setPanel(null)}>
+    {panel === 'hints' && hintsAvailable && guide && <BattlePanel title="Bingo hints" onClose={() => setPanel(null)}>
       <div className="bingo-hint-content" aria-live="polite" aria-atomic="true">
         {hintStep <= 3 ? <>
           <p className="bingo-hint-step">Hint {hintStep} of 3</p>
@@ -205,17 +207,18 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
       <fieldset className="battle-difficulty">
         <legend>Difficulty</legend>
         <div>
-          <button className="daily-button" aria-pressed={!hard} onClick={() => preferences.update({ preferredMode: 'normal' })}>Easy</button>
+          <button className="daily-button" aria-pressed={easy} onClick={() => preferences.update({ preferredMode: 'easy' })}>Easy</button>
+          <button className="daily-button" aria-pressed={!easy && !hard} onClick={() => preferences.update({ preferredMode: 'normal' })}>Normal</button>
           <button className="daily-button" aria-pressed={hard} onClick={() => preferences.update({ preferredMode: 'hard' })}>Hard</button>
         </div>
-        <p>{hard ? 'Enemy definition hidden.' : 'Enemy definition shown.'}</p>
+        <p>{hard ? 'Enemy definition hidden. No hints.' : easy ? 'Enemy definition shown. Three hints and an answer reveal.' : 'Enemy definition shown. No hints.'}</p>
       </fieldset>
       <div className="dev-controls">
         {menu}
         <button className="daily-button" onClick={onRestart}>Restart puzzle</button>
-        {guide && <button className="daily-button" onClick={() => setPanel('hints')}>Hints</button>}
+        {hintsAvailable && <button className="daily-button" onClick={() => setPanel('hints')}>Hints</button>}
         {onChoose && <button className="daily-button" onClick={onChoose}>All puzzles</button>}
-        <button className="daily-button" onClick={onExit}>{daily ? 'Beta puzzles' : 'Back to daily'}</button>
+        <button className="daily-button" onClick={onExit}>{daily ? 'Puzzle calendar' : 'Back to daily'}</button>
       </div>
     </BattlePanel>}
     {panel === 'log'  && <BattlePanel title="Played words" onClose={() => setPanel(null)}>
@@ -230,7 +233,7 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
           <div><strong>Meaning drives your hits.</strong> Counter words hit with every matching tile. Neutral words get one normal matching hit, in spelling order. Similar meanings are resisted and have no normal hits.</div>
           <div>Double outlines need two hits. The first breaks armour; the next removes the letter. Matching tiles finish wounded copies first, then target from left to right.</div>
           <div>Blue − previews an armour break; red × previews removal. Defeated letters become centred dots with no outline. Repeated matching tiles can break and remove one armoured letter in the same word.</div>
-          {guide && <button className="daily-button" onClick={() => setPanel('hints')}>Hints</button>}
+          {hintsAvailable && <button className="daily-button" onClick={() => setPanel('hints')}>Hints</button>}
           <div>Replay freely. Best win: ★★★ in one word, ★★ in two, ★ in three or more.</div>
         </div>
       </BattlePanel>}

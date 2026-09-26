@@ -3,7 +3,7 @@ import type { DifficultyMode, StorageLike } from './daily/types.ts'
 export const PREFERENCES_KEY = 'wyrmle:preferences:v1'
 
 export type UserPreferences = {
-  preferredMode: DifficultyMode
+  preferredMode: DifficultyMode | 'easy'
   hasCompletedOnboarding: boolean
   hasChosenMode: boolean
 }
@@ -34,7 +34,7 @@ export function loadPreferences(storage: StorageLike): UserPreferences {
         const complete = typeof data.hasCompletedOnboarding === 'boolean'
           ? data.hasCompletedOnboarding : returning
         return {
-          preferredMode: data.preferredMode === 'hard' || data.preferredMode === 'hardcore' ? data.preferredMode : 'normal',
+          preferredMode: data.preferredMode === 'easy' || data.preferredMode === 'hard' || data.preferredMode === 'hardcore' ? data.preferredMode : 'normal',
           hasCompletedOnboarding: complete,
           // Older preference records may predate the interrupted-choice flag.
           hasChosenMode: typeof data.hasChosenMode === 'boolean' ? data.hasChosenMode : complete,

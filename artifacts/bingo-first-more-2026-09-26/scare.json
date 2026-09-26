@@ -1,0 +1,2005 @@
+{
+  "enemy": "SCARE",
+  "bingo": "REASSURANCE",
+  "method": "bingo-first",
+  "semanticStatus": "draft-source-profile",
+  "accepted": true,
+  "seed": "bingo-first-3:SCARE:REASSURANCE:24",
+  "anchors": [
+    "REASSURANCE",
+    "AUDACITY",
+    "HEAD"
+  ],
+  "plannedWords": [
+    "REST",
+    "RELAX",
+    "ASSURANCE"
+  ],
+  "analysis": {
+    "score": 584,
+    "bingos": [
+      "REASSURANCE"
+    ],
+    "counterFamilies": 12,
+    "resistedFamilies": 4,
+    "winningOpenings": 14,
+    "repeatedCounterRoutes": 14,
+    "sustainedPositions": 17,
+    "sustainedFinalPositions": 11,
+    "neutralCleanupOpenings": 0,
+    "routes": [
+      {
+        "opening": "HEAD",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "REST",
+            "SURE",
+            "CERTAIN",
+            "SECURITY",
+            "SURELY",
+            "RELAX",
+            "GUTS",
+            "GRIT",
+            "LUNATIC",
+            "REASSURING",
+            "GRITTY"
+          ],
+          "resisted": [
+            "CARE",
+            "ANXIETY",
+            "SCARY",
+            "SCARE",
+            "UNEASY"
+          ],
+          "neutral": 1128
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "CARE",
+            "FEAR",
+            "SCARY",
+            "SCARE",
+            "UNEASY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "HEAD",
+            "REASSURING",
+            "ACT"
+          ],
+          "tileIds": [
+            [
+              15,
+              0,
+              3,
+              14
+            ],
+            [
+              2,
+              10,
+              7,
+              1,
+              12,
+              8,
+              5,
+              6,
+              9,
+              16
+            ],
+            [
+              22,
+              11,
+              4
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            2,
+            6,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "REST",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "HEAD",
+            "REST",
+            "SURE",
+            "HEART",
+            "CERTAIN",
+            "SECURITY",
+            "SURELY",
+            "SAND",
+            "DARE",
+            "RELAX",
+            "HARDY",
+            "GUTS",
+            "DARING",
+            "RASH",
+            "GRIT",
+            "LUNATIC",
+            "AUDACITY",
+            "HEADY"
+          ],
+          "resisted": [
+            "CARE",
+            "SCARED",
+            "ANXIETY",
+            "SCARY",
+            "DIRE",
+            "HUNTED",
+            "UNEASY",
+            "EDGY"
+          ],
+          "neutral": 1659
+        },
+        "thirdTurn": {
+          "counters": [
+            "HEAD",
+            "SAFE",
+            "SURE",
+            "SURELY",
+            "DARE",
+            "RELAX",
+            "ASSURED",
+            "HARDY",
+            "RASH",
+            "HEADY",
+            "ASSUREDLY",
+            "ASSUAGE"
+          ],
+          "resisted": [
+            "FEAR",
+            "EDGY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "REST",
+            "CERTAIN",
+            "SAFE"
+          ],
+          "tileIds": [
+            [
+              2,
+              0,
+              1,
+              4
+            ],
+            [
+              11,
+              10,
+              5,
+              17,
+              3,
+              6,
+              9
+            ],
+            [
+              12,
+              7,
+              21,
+              24
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            4,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "SURE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "HEAD",
+            "REST",
+            "HEART",
+            "CERTAIN",
+            "SAND",
+            "DARE",
+            "RELAX",
+            "HARDY",
+            "DARING",
+            "RASH",
+            "GRIT",
+            "GRITTY",
+            "HEADY"
+          ],
+          "resisted": [
+            "CARE",
+            "SCARED",
+            "THREAT",
+            "ANXIETY",
+            "SCARY",
+            "DISTRACT",
+            "DIRE",
+            "EDGY"
+          ],
+          "neutral": 1431
+        },
+        "thirdTurn": {
+          "counters": [
+            "BEST",
+            "HEAD",
+            "REST",
+            "SAFE",
+            "HEART",
+            "SAFETY",
+            "DARE",
+            "RELAX",
+            "HARDY",
+            "RASH",
+            "HEADY"
+          ],
+          "resisted": [
+            "FEAR",
+            "EDGY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SURE",
+            "CERTAIN",
+            "SAFE"
+          ],
+          "tileIds": [
+            [
+              1,
+              8,
+              2,
+              0
+            ],
+            [
+              11,
+              10,
+              5,
+              4,
+              3,
+              6,
+              9
+            ],
+            [
+              12,
+              7,
+              21,
+              24
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            4,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "HEART",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "REST",
+            "SURE",
+            "CERTAIN",
+            "SECURITY",
+            "SURELY",
+            "SAND",
+            "DARE",
+            "RELAX",
+            "ASSURED",
+            "GUTS",
+            "DARING",
+            "GRIT",
+            "LUNATIC",
+            "ASSUREDLY",
+            "DAUNTLESS"
+          ],
+          "resisted": [
+            "CARE",
+            "SCARED",
+            "ANXIETY",
+            "SCARY",
+            "DIRE",
+            "UNEASY",
+            "EDGY"
+          ],
+          "neutral": 1357
+        },
+        "thirdTurn": {
+          "counters": [
+            "CERTAIN",
+            "SECURITY",
+            "LUNATIC"
+          ],
+          "resisted": [
+            "CARE",
+            "FEAR",
+            "ANXIETY",
+            "SCARY",
+            "SCARE",
+            "UNEASY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "HEART",
+            "ASSURED",
+            "CERTAIN"
+          ],
+          "tileIds": [
+            [
+              15,
+              0,
+              3,
+              2,
+              4
+            ],
+            [
+              7,
+              1,
+              12,
+              8,
+              5,
+              10,
+              14
+            ],
+            [
+              11,
+              24,
+              23,
+              17,
+              22,
+              6,
+              9
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            5,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "CERTAIN",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "HEAD",
+            "REST",
+            "SAFE",
+            "SURE",
+            "HEART",
+            "SAFETY",
+            "SURELY",
+            "DARE",
+            "RELAX",
+            "ASSURED",
+            "HARDY",
+            "GUTS",
+            "RASH",
+            "HEADY",
+            "ASSUREDLY",
+            "ASSUAGE"
+          ],
+          "resisted": [
+            "FEAR",
+            "EDGY"
+          ],
+          "neutral": 651
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CERTAIN",
+            "ASSURED"
+          ],
+          "tileIds": [
+            [
+              11,
+              0,
+              2,
+              4,
+              3,
+              6,
+              9
+            ],
+            [
+              7,
+              1,
+              12,
+              8,
+              5,
+              10,
+              14
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            5
+          ]
+        }
+      },
+      {
+        "opening": "SECURITY",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "HEAD",
+            "REST",
+            "SAFE",
+            "HEART",
+            "SAND",
+            "DARE",
+            "RELAX",
+            "RASH"
+          ],
+          "resisted": [
+            "FEAR"
+          ],
+          "neutral": 559
+        },
+        "thirdTurn": {
+          "counters": [
+            "SAFE",
+            "SAND",
+            "DARE",
+            "RELAX",
+            "ASSURED",
+            "ASSUAGE"
+          ],
+          "resisted": [
+            "FEAR"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SECURITY",
+            "HEARTS",
+            "SAFE"
+          ],
+          "tileIds": [
+            [
+              1,
+              0,
+              11,
+              8,
+              2,
+              6,
+              4,
+              13
+            ],
+            [
+              15,
+              10,
+              3,
+              5,
+              17,
+              12
+            ],
+            [
+              20,
+              7,
+              21,
+              24
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SECURE",
+        "label": "COUNTER",
+        "hits": 5,
+        "later": {
+          "counters": [
+            "SAND",
+            "HARDY",
+            "DARING",
+            "RASH",
+            "GRIT",
+            "GRITTY"
+          ],
+          "resisted": [
+            "AFRAID",
+            "FRIGHT"
+          ],
+          "neutral": 576
+        },
+        "thirdTurn": {
+          "counters": [
+            "SAFE",
+            "SAFETY",
+            "SAND",
+            "DARE",
+            "RELAX",
+            "DARING"
+          ],
+          "resisted": [
+            "FEAR",
+            "AFRAID",
+            "ANXIETY",
+            "DIRE",
+            "EDGY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SECURE",
+            "RASH",
+            "SAFE"
+          ],
+          "tileIds": [
+            [
+              1,
+              0,
+              11,
+              8,
+              2,
+              10
+            ],
+            [
+              5,
+              3,
+              12,
+              15
+            ],
+            [
+              20,
+              7,
+              21,
+              24
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            5,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SAND",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "REST",
+            "SURE",
+            "HEART",
+            "SECURITY",
+            "SECURE",
+            "SURELY",
+            "EASE",
+            "RELAX",
+            "GUTS",
+            "RASH",
+            "GRIT",
+            "GRITTY",
+            "SECURELY"
+          ],
+          "resisted": [
+            "CARE",
+            "THREAT",
+            "SCARY",
+            "SCARE"
+          ],
+          "neutral": 954
+        },
+        "thirdTurn": {
+          "counters": [
+            "REST",
+            "SAFE",
+            "HEART",
+            "SAFETY",
+            "FIGHTER",
+            "RELAX",
+            "RASH",
+            "GRIT",
+            "GRITTY"
+          ],
+          "resisted": [
+            "FEAR",
+            "THREAT",
+            "FRIGHT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SAND",
+            "SECURE",
+            "HEART"
+          ],
+          "tileIds": [
+            [
+              1,
+              3,
+              9,
+              14
+            ],
+            [
+              12,
+              0,
+              11,
+              8,
+              2,
+              10
+            ],
+            [
+              15,
+              24,
+              7,
+              5,
+              4
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            5,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "EASE",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "SAND",
+            "HARDY",
+            "GUTS",
+            "DARING",
+            "RASH",
+            "GRIT",
+            "LUNATIC",
+            "GRITTY"
+          ],
+          "resisted": [
+            "SCARY",
+            "CARING",
+            "DISTRACT",
+            "SCARING"
+          ],
+          "neutral": 708
+        },
+        "thirdTurn": {
+          "counters": [
+            "HEAD",
+            "SAFE",
+            "SURE",
+            "SAND",
+            "DARE",
+            "RELAX",
+            "ASSURED",
+            "ASSURANCE",
+            "RASH"
+          ],
+          "resisted": [
+            "CARE",
+            "FEAR",
+            "SCARED"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "EASE",
+            "GRITTY",
+            "ASSURANCE"
+          ],
+          "tileIds": [
+            [
+              0,
+              3,
+              1,
+              10
+            ],
+            [
+              16,
+              2,
+              6,
+              4,
+              17,
+              13
+            ],
+            [
+              7,
+              12,
+              20,
+              8,
+              5,
+              22,
+              9,
+              11,
+              24
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            1,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "DARE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "REST",
+            "SURE",
+            "HEART",
+            "CERTAIN",
+            "SECURITY",
+            "SURELY",
+            "RELAX",
+            "GUTS",
+            "RASH",
+            "GRIT",
+            "LUNATIC",
+            "GRITTY"
+          ],
+          "resisted": [
+            "CARE",
+            "THREAT",
+            "ANXIETY",
+            "SCARY",
+            "SCARE",
+            "UNEASY"
+          ],
+          "neutral": 1408
+        },
+        "thirdTurn": {
+          "counters": [
+            "BEST",
+            "REST",
+            "SAFE",
+            "SURE",
+            "SAFETY",
+            "SURELY",
+            "HEARTS",
+            "GUTS",
+            "RASH"
+          ],
+          "resisted": [
+            "FEAR"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DARE",
+            "CERTAIN",
+            "RESTS"
+          ],
+          "tileIds": [
+            [
+              14,
+              3,
+              2,
+              0
+            ],
+            [
+              11,
+              10,
+              5,
+              4,
+              7,
+              6,
+              9
+            ],
+            [
+              23,
+              24,
+              1,
+              17,
+              12
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            4,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "ASSURED",
+        "label": "COUNTER",
+        "hits": 5,
+        "later": {
+          "counters": [
+            "REST",
+            "SAFE",
+            "HEART",
+            "CERTAIN",
+            "SAFETY",
+            "FIGHTER",
+            "RELAX",
+            "RASH",
+            "GRIT",
+            "GRITTY"
+          ],
+          "resisted": [
+            "CARE",
+            "FEAR",
+            "THREAT",
+            "ANXIETY",
+            "SCARY",
+            "SCARE",
+            "FRIGHT",
+            "FRIGHTEN"
+          ],
+          "neutral": 1231
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ASSURED",
+            "CERTAIN"
+          ],
+          "tileIds": [
+            [
+              3,
+              1,
+              12,
+              8,
+              2,
+              0,
+              14
+            ],
+            [
+              11,
+              10,
+              5,
+              4,
+              7,
+              6,
+              9
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            5,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "HARDY",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "REST",
+            "SURE",
+            "CERTAIN",
+            "SECURE",
+            "EASE",
+            "RELAX",
+            "GENTLE",
+            "GUTS",
+            "GRIT",
+            "LUNATIC"
+          ],
+          "resisted": [
+            "CARE",
+            "INTEREST",
+            "SCARE",
+            "RESTLESS",
+            "SCARIEST"
+          ],
+          "neutral": 1158
+        },
+        "thirdTurn": {
+          "counters": [
+            "BEST",
+            "REST",
+            "SAFE",
+            "RELAX",
+            "GRITS"
+          ],
+          "resisted": [
+            "FEAR"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "HARDY",
+            "SECURE",
+            "SAFE"
+          ],
+          "tileIds": [
+            [
+              15,
+              3,
+              2,
+              14,
+              13
+            ],
+            [
+              1,
+              0,
+              11,
+              8,
+              5,
+              10
+            ],
+            [
+              12,
+              7,
+              21,
+              24
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            5,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "CARE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "HEAD",
+            "REST",
+            "SURE",
+            "HEART",
+            "SURELY",
+            "SAND",
+            "DARE",
+            "RELAX",
+            "ASSURED",
+            "HARDY",
+            "GUTS",
+            "DARING",
+            "RASH",
+            "GRIT",
+            "GRITTY",
+            "HEADY",
+            "ASSUREDLY",
+            "DAUNTLESS",
+            "HARDINESS"
+          ],
+          "resisted": [
+            "THREAT",
+            "ANXIETY",
+            "DIRE",
+            "HUNTED",
+            "UNEASY",
+            "EDGY"
+          ],
+          "neutral": 1458
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "SCARED",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "REST",
+            "SAFE",
+            "SURE",
+            "HEART",
+            "SAFETY",
+            "SURELY",
+            "FIGHTER",
+            "RELAX",
+            "GUTS",
+            "RASH",
+            "GRIT",
+            "GRITTY"
+          ],
+          "resisted": [
+            "FEAR",
+            "THREAT",
+            "ANXIETY",
+            "UNEASY",
+            "FRIGHT",
+            "FRIGHTEN"
+          ],
+          "neutral": 1264
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "SCARY",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "HEAD",
+            "REST",
+            "SURE",
+            "HEART",
+            "SAND",
+            "EASE",
+            "DARE",
+            "RELAX",
+            "GENTLE",
+            "ASSURED",
+            "GUTS",
+            "DARING",
+            "RASH",
+            "GRIT",
+            "DAUNTLESS",
+            "HARDINESS"
+          ],
+          "resisted": [
+            "INTEREST",
+            "THREAT",
+            "DIRE",
+            "HUNTED",
+            "EXALTED"
+          ],
+          "neutral": 1613
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "DIRE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "REST",
+            "SURE",
+            "HEART",
+            "SURELY",
+            "RELAX",
+            "ASSURANCE",
+            "GUTS",
+            "RASH",
+            "ASSUAGE"
+          ],
+          "resisted": [
+            "CARE",
+            "THREAT",
+            "SCARY",
+            "SCARE",
+            "UNEASY"
+          ],
+          "neutral": 859
+        },
+        "thirdTurn": {
+          "counters": [
+            "BEST",
+            "REST",
+            "SAFE",
+            "SURE",
+            "HEART",
+            "SAFETY",
+            "SURELY",
+            "RELAX",
+            "RASH"
+          ],
+          "resisted": [
+            "FEAR",
+            "THREAT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DIRE",
+            "ASSURANCE",
+            "REST"
+          ],
+          "tileIds": [
+            [
+              14,
+              6,
+              2,
+              0
+            ],
+            [
+              3,
+              1,
+              12,
+              8,
+              5,
+              7,
+              9,
+              11,
+              10
+            ],
+            [
+              23,
+              24,
+              20,
+              4
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            7,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "ACT",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "HEAD",
+            "REST",
+            "SURE",
+            "HEART",
+            "SURELY",
+            "SAND",
+            "EASE",
+            "DARE",
+            "GENTLE",
+            "ASSURED",
+            "HARDY",
+            "GUTS",
+            "DARING",
+            "RASH",
+            "GRIT",
+            "REASSURING",
+            "SERENITY",
+            "HEADY",
+            "ASSUREDLY",
+            "DAUNTLESS",
+            "HARDINESS"
+          ],
+          "resisted": [
+            "DIRE",
+            "HUNTED",
+            "UNEASY",
+            "EDGY"
+          ],
+          "neutral": 1681
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "HEAD",
+            "REST",
+            "SURE",
+            "HEART",
+            "SECURE",
+            "SURELY",
+            "SAND",
+            "EASE",
+            "DARE",
+            "GENTLE",
+            "ASSURED",
+            "HARDY",
+            "GUTS",
+            "RASH",
+            "SECURELY",
+            "HEADY",
+            "ASSUREDLY",
+            "DAUNTLESS"
+          ],
+          "resisted": [
+            "CARE",
+            "SCARED",
+            "THREAT",
+            "SCARY",
+            "HUNTED",
+            "UNEASY",
+            "EDGY"
+          ],
+          "neutral": 1409
+        },
+        "thirdTurn": {
+          "counters": [
+            "HEAD",
+            "REST",
+            "SAFE",
+            "HEART",
+            "SAFETY",
+            "SAND",
+            "DARE",
+            "RELAX",
+            "HARDY",
+            "RASH",
+            "HEADY"
+          ],
+          "resisted": [
+            "FEAR",
+            "THREAT",
+            "EDGY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AIR",
+            "SECURE",
+            "HEARTS"
+          ],
+          "tileIds": [
+            [
+              3,
+              6,
+              2
+            ],
+            [
+              1,
+              0,
+              11,
+              8,
+              5,
+              10
+            ],
+            [
+              15,
+              24,
+              7,
+              23,
+              4,
+              12
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            5,
+            3
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "ASSURANCE",
+      "DARE"
+    ],
+    "tileIds": [
+      [
+        3,
+        1,
+        12,
+        8,
+        2,
+        7,
+        9,
+        11,
+        0
+      ],
+      [
+        14,
+        22,
+        5,
+        10
+      ]
+    ],
+    "labels": [
+      "COUNTER",
+      "COUNTER"
+    ],
+    "hits": [
+      7,
+      2
+    ]
+  },
+  "board": "ESRATRIAUNECSYDH",
+  "refills": "GTLXSFAREBRUSNCAESSCOURG",
+  "inventory": [
+    {
+      "word": "ASSURANCE",
+      "armour": [
+        "S",
+        "A"
+      ],
+      "definition": "freedom from doubt; belief in yourself and your abilities"
+    },
+    {
+      "word": "ASSURANCES",
+      "armour": [
+        "S",
+        "A"
+      ],
+      "definition": "freedom from doubt; belief in yourself and your abilities"
+    },
+    {
+      "word": "CERTAINEST",
+      "armour": [
+        "E"
+      ],
+      "definition": "having or feeling no doubt or uncertainty; confident and assured"
+    },
+    {
+      "word": "COURAGEOUS",
+      "armour": [],
+      "definition": "possessing or displaying courage; able to face and deal with danger or fear without flinching"
+    },
+    {
+      "word": "COURAGEOUSLY",
+      "armour": [],
+      "definition": "in a courageous manner"
+    },
+    {
+      "word": "COURAGEOUSNESS",
+      "armour": [
+        "S",
+        "E"
+      ],
+      "definition": "a quality of spirit that enables you to face danger or pain without showing fear"
+    },
+    {
+      "word": "COURAGEOUSNESSES",
+      "armour": [
+        "S",
+        "E"
+      ],
+      "definition": "a quality of spirit that enables you to face danger or pain without showing fear"
+    },
+    {
+      "word": "COURAGES",
+      "armour": [],
+      "definition": "a quality of spirit that enables you to face danger or pain without showing fear"
+    },
+    {
+      "word": "PACIFIERS",
+      "armour": [],
+      "definition": "someone who tries to bring peace"
+    },
+    {
+      "word": "PEACEMAKERS",
+      "armour": [
+        "A",
+        "E"
+      ],
+      "definition": "someone who tries to bring peace"
+    },
+    {
+      "word": "REASSURANCE",
+      "armour": [
+        "S",
+        "A",
+        "R",
+        "E"
+      ],
+      "definition": "the act of reassuring; restoring someone's confidence"
+    },
+    {
+      "word": "REASSURANCES",
+      "armour": [
+        "S",
+        "A",
+        "R",
+        "E"
+      ],
+      "definition": "the act of reassuring; restoring someone's confidence"
+    },
+    {
+      "word": "SWASHBUCKLER",
+      "armour": [
+        "S"
+      ],
+      "definition": "a reckless impetuous irresponsible person"
+    },
+    {
+      "word": "SWASHBUCKLERS",
+      "armour": [
+        "S"
+      ],
+      "definition": "a reckless impetuous irresponsible person"
+    }
+  ],
+  "seeds": [
+    {
+      "seed": "bingo-first-3:SCARE:REASSURANCE:24",
+      "score": 584
+    },
+    {
+      "seed": "bingo-first-3:SCARE:REASSURANCE:26",
+      "score": 543
+    },
+    {
+      "seed": "bingo-first-3:SCARE:REASSURANCE:29",
+      "score": 528
+    },
+    {
+      "seed": "bingo-first-3:SCARE:REASSURANCE:28",
+      "score": 487
+    },
+    {
+      "seed": "bingo-first-3:SCARE:REASSURANCE:27",
+      "score": 485
+    },
+    {
+      "seed": "bingo-first-3:SCARE:REASSURANCE:25",
+      "score": 419
+    }
+  ],
+  "derivations": [
+    {
+      "from": "oewn-acrophobic__5.00.00.afraid.00",
+      "to": "oewn-acrophobia__1.26.00..",
+      "definition": "a morbid fear of great heights",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-agoraphobic__5.00.00.afraid.00",
+      "to": "oewn-agoraphobia__1.26.00..",
+      "definition": "a morbid fear of open spaces (as fear of being caught alone in some public place)",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-alarm__2.37.00..",
+      "to": "oewn-alarm__1.12.00..",
+      "definition": "fear resulting from the awareness of danger",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-alarm__2.37.00..",
+      "to": "oewn-alarmist__1.18.00..",
+      "definition": "a person who alarms others needlessly",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-appease__2.37.00..",
+      "to": "oewn-appeasable__5.00.00.placable.00",
+      "definition": "capable of being pacified",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-apprehend__2.37.00..",
+      "to": "oewn-apprehender__1.18.01..",
+      "definition": "a person who knows or apprehends",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-apprehend__2.37.00..",
+      "to": "oewn-apprehension__1.09.01..",
+      "definition": "painful expectation",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-apprehend__2.37.00..",
+      "to": "oewn-apprehensive__5.00.00.uneasy.00",
+      "definition": "mentally upset over possible misfortune or danger etc",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-aquaphobic__5.00.00.afraid.00",
+      "to": "oewn-aquaphobia__1.26.00..",
+      "definition": "a morbid fear of drowning",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-audacious__5.00.00.bold.00",
+      "to": "oewn-audaciousness__1.07.00..",
+      "definition": "fearless daring",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-awful__5.00.00.alarming.00",
+      "to": "oewn-awfulness__1.07.00..",
+      "definition": "a quality of extreme unpleasantness",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-calm__5.00.00.composed.00",
+      "to": "oewn-calmness__1.12.00..",
+      "definition": "a feeling of calm; an absence of agitation or excitement",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-care__1.12.01..",
+      "to": "oewn-care__2.37.12..",
+      "definition": "be concerned with",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-cocksure__5.00.00.confident.00",
+      "to": "oewn-cocksureness__1.09.00..",
+      "definition": "total certainty or greater certainty than circumstances warrant",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-composure__1.07.00..",
+      "to": "oewn-compose__2.37.00..",
+      "definition": "calm (someone, especially oneself); make quiet",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-concern__1.12.01..",
+      "to": "oewn-concern__2.42.01..",
+      "definition": "be on the mind of",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-conciliate__2.37.00..",
+      "to": "oewn-conciliation__1.04.00..",
+      "definition": "the act of placating and overcoming distrust and animosity",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-conciliate__2.37.00..",
+      "to": "oewn-conciliation__1.26.00..",
+      "definition": "the state of manifesting goodwill and cooperation after being reconciled",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-conciliate__2.37.00..",
+      "to": "oewn-conciliative__3.00.00..",
+      "definition": "intended to placate",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-conciliate__2.37.00..",
+      "to": "oewn-conciliator__1.18.00..",
+      "definition": "someone who tries to bring peace",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-confident__3.00.00..",
+      "to": "oewn-confidence__1.26.02..",
+      "definition": "a state of confident hopefulness that events will be favorable",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-daredevil__5.00.00.bold.00",
+      "to": "oewn-daredevil__1.18.00..",
+      "definition": "a reckless impetuous irresponsible person",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-daring__1.07.00..",
+      "to": "oewn-dare__2.41.01..",
+      "definition": "to be courageous enough to try or do something",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-dauntless__5.00.00.bold.00",
+      "to": "oewn-dauntlessness__1.07.00..",
+      "definition": "resolute courageousness",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-disquiet__2.37.00..",
+      "to": "oewn-disquiet__1.07.00..",
+      "definition": "the trait of seeming ill at ease",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-distract__2.37.02..",
+      "to": "oewn-distraction__1.09.00..",
+      "definition": "mental turmoil",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-equanimity__1.07.00..",
+      "to": "oewn-equanimous__5.00.00.composed.00",
+      "definition": "in full control of your faculties",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-fearless__5.00.00.bold.00",
+      "to": "oewn-fearlessness__1.07.00..",
+      "definition": "the trait of feeling no fear",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-foolhardy__5.00.00.bold.00",
+      "to": "oewn-foolhardiness__1.07.00..",
+      "definition": "the trait of giving little thought to danger",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-frighten__2.37.00..",
+      "to": "oewn-frightening__1.04.00..",
+      "definition": "the act of inspiring with fear",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-gritty__5.00.00.brave.00",
+      "to": "oewn-grit__1.07.00..",
+      "definition": "fortitude and determination",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-heady__5.00.00.bold.00",
+      "to": "oewn-head__1.14.00..",
+      "definition": "the front of a military formation or procession",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-heroical__5.00.00.bold.00",
+      "to": "oewn-hero__1.18.00..",
+      "definition": "a person distinguished by exceptional courage and nobility and strength",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-heroical__5.00.00.bold.00",
+      "to": "oewn-hero__1.18.01..",
+      "definition": "someone who fights for a cause",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-heroical__5.00.00.bold.00",
+      "to": "oewn-hero__1.18.04..",
+      "definition": "(classical mythology) a being of great strength and courage celebrated for bold exploits; often the offspring of a mortal and a god",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-jitteriness__1.12.00..",
+      "to": "oewn-jittery__5.00.00.tense.03",
+      "definition": "being in a tense state",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-lull__2.37.00..",
+      "to": "oewn-lull__1.28.00..",
+      "definition": "a pause during which things are calm or activities are diminished",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-mellow__5.00.00.relaxed.00",
+      "to": "oewn-mellowness__1.07.02..",
+      "definition": "geniality, as through the effects of alcohol or marijuana",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-mettlesome__5.00.00.brave.00",
+      "to": "oewn-mettlesomeness__1.07.00..",
+      "definition": "courageous high-spiritedness",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-mollify__2.37.00..",
+      "to": "oewn-mollification__1.04.00..",
+      "definition": "the act of appeasing someone or causing someone to be more favorably inclined",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-mollify__2.37.00..",
+      "to": "oewn-mollification__1.26.00..",
+      "definition": "a state of being appeased or ameliorated or tempered",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-nervy__5.00.00.bold.00",
+      "to": "oewn-nerve__1.07.00..",
+      "definition": "the courage to carry on",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-nervousness__1.12.00..",
+      "to": "oewn-nervous__5.00.00.excited.00",
+      "definition": "excited in anticipation",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-pacify__2.37.00..",
+      "to": "oewn-pacifier__1.06.00..",
+      "definition": "device used for an infant to suck or bite on",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-pacify__2.37.00..",
+      "to": "oewn-peace__1.26.01..",
+      "definition": "harmonious relations; freedom from disputes",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-panic__1.12.00..",
+      "to": "oewn-panic__2.37.01..",
+      "definition": "cause sudden fear in or fill with sudden panic",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-perturb__2.37.00..",
+      "to": "oewn-perturbation__1.07.00..",
+      "definition": "a disposition that is confused or nervous and upset",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-perturb__2.37.00..",
+      "to": "oewn-perturbation__1.26.00..",
+      "definition": "an unhappy and worried mental state",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-placate__2.37.00..",
+      "to": "oewn-placative__5.00.00.conciliatory.00",
+      "definition": "intended to pacify by acceding to demands or granting concessions",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-positive__5.00.00.confident.00",
+      "to": "oewn-positiveness__1.07.00..",
+      "definition": "a quality or state characterized by certainty or acceptance or affirmation and dogmatic assertiveness",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-quiet__2.37.00..",
+      "to": "oewn-quiet__1.07.00..",
+      "definition": "a disposition free from stress or emotion",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-relax__2.29.00..",
+      "to": "oewn-relaxant__5.00.00.depressant.00",
+      "definition": "tending to relax or relieve muscular or nervous tension",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-relax__2.29.00..",
+      "to": "oewn-relaxation__1.04.00..",
+      "definition": "freedom from activity (work or strain or responsibility)",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-relax__2.29.00..",
+      "to": "oewn-relaxation__1.22.01..",
+      "definition": "(physiology) the gradual lengthening of inactive muscle or muscle fibers",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-restlessness__1.07.00..",
+      "to": "oewn-restless__3.00.00..",
+      "definition": "lacking or not affording physical or mental rest",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-restlessness__1.07.00..",
+      "to": "oewn-restless__5.00.00.discontented.00",
+      "definition": "worried and uneasy",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-riskless__5.00.00.safe.01",
+      "to": "oewn-risklessness__1.26.00..",
+      "definition": "safety as a consequence of entailing no risk",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-safeness__1.07.00..",
+      "to": "oewn-safe__5.00.00.sound.00",
+      "definition": "financially safe",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-safeness__1.07.00..",
+      "to": "oewn-safe__5.00.00.unadventurous.00",
+      "definition": "(of an undertaking) secure from risk",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-scary__5.00.00.alarming.00",
+      "to": "oewn-scare__1.26.00..",
+      "definition": "sudden mass fear and anxiety over anticipated events",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-scare__2.37.00..",
+      "to": "oewn-scarer__1.06.00..",
+      "definition": "an effigy in the shape of a man to frighten birds away from seeds",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-shiver__1.12.00..",
+      "to": "oewn-shiver__2.38.00..",
+      "definition": "tremble convulsively, as from fear or excitement",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-still__2.37.00..",
+      "to": "oewn-still__1.07.00..",
+      "definition": "(poetic) tranquil silence",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-stouthearted__5.00.00.brave.00",
+      "to": "oewn-stoutheartedness__1.07.00..",
+      "definition": "the trait of having a courageous spirit",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-sureness__1.09.00..",
+      "to": "oewn-sure__5.00.00.true.00",
+      "definition": "infallible or unfailing",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-terror__1.12.00..",
+      "to": "oewn-terrorise__2.41.00..",
+      "definition": "coerce by violence or with threats",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-terrorist__1.18.00..",
+      "to": "oewn-terror__1.18.01..",
+      "definition": "a person who inspires fear or dread",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-terrorist__1.18.00..",
+      "to": "oewn-terrorism__1.04.00..",
+      "definition": "the calculated use of violence (or the threat of violence) against civilians in order to attain goals that are political or religious or ideological in nature; this is done through intimidation or coercion or instilling fear",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-thrill__1.12.02..",
+      "to": "oewn-thrill__2.37.01..",
+      "definition": "fill with sublime emotion",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-thrill__1.12.02..",
+      "to": "oewn-thrill__2.37.02..",
+      "definition": "feel sudden intense sensation or emotion",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-tingle__1.12.00..",
+      "to": "oewn-tingle__2.39.00..",
+      "definition": "cause a stinging or tingling sensation",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-tranquilize__2.37.00..",
+      "to": "oewn-tranquilizer__1.06.00..",
+      "definition": "a drug used to reduce stress or tension without reducing mental clarity",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-trouble__1.12.03..",
+      "to": "oewn-trouble__2.37.01..",
+      "definition": "move deeply",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-trouble__2.37.00..",
+      "to": "oewn-trouble__1.11.00..",
+      "definition": "an event causing distress or pain",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-valiant__5.00.00.brave.00",
+      "to": "oewn-valiancy__1.07.00..",
+      "definition": "the qualities of a hero or heroine; exceptional or heroic courage when facing danger (especially in battle)",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-worry__2.37.00..",
+      "to": "oewn-worrier__1.18.00..",
+      "definition": "thinks about unfortunate things that might happen",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-worry__2.37.00..",
+      "to": "oewn-worriment__1.07.00..",
+      "definition": "a difficulty that causes anxiety",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-worry__2.37.00..",
+      "to": "oewn-worry__1.09.00..",
+      "definition": "something or someone that causes anxiety; a source of unhappiness",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-xenophobic__5.00.00.afraid.00",
+      "to": "oewn-xenophobia__1.26.00..",
+      "definition": "a fear of foreigners or strangers",
+      "relation": "similar"
+    }
+  ],
+  "meaningWords": 28811,
+  "limitation": "Source-pinned roots, all-sense exact-synset expansion, one direct derivation, and explicit adjective/adverb links. Other defined words are neutral under this beta policy; complete contextual review and daily certification are outstanding."
+}

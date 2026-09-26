@@ -1,82 +1,82 @@
 [
   {
+    "date": "2026-09-16",
     "id": "bingo-arid-1",
-    "title": "ARID",
     "enemy": "ARID",
-    "enemyHP": 6,
     "asset": "previews/bingo/arid-1-4c25a59add03.json",
-    "collection": "new"
+    "method": "bingo-first",
+    "legacyBetaId": "bingo-arid-1"
   },
   {
+    "date": "2026-09-17",
     "id": "bingo-rot-1",
-    "title": "ROT",
     "enemy": "ROT",
-    "enemyHP": 6,
     "asset": "previews/bingo/rot-1-90da653aa82f.json",
-    "collection": "new"
+    "method": "bingo-first",
+    "legacyBetaId": "bingo-rot-1"
   },
   {
+    "date": "2026-09-18",
     "id": "bingo-inert-1",
-    "title": "INERT",
     "enemy": "INERT",
-    "enemyHP": 8,
     "asset": "previews/bingo/inert-1-791949f1a890.json",
-    "collection": "new"
+    "method": "bingo-first",
+    "legacyBetaId": "bingo-inert-1"
   },
   {
+    "date": "2026-09-19",
     "id": "bingo-stingy-1",
-    "title": "STINGY",
     "enemy": "STINGY",
-    "enemyHP": 9,
     "asset": "previews/bingo/stingy-1-f3a3973544d0.json",
-    "collection": "new"
+    "method": "bingo-first",
+    "legacyBetaId": "bingo-stingy-1"
   },
   {
+    "date": "2026-09-20",
     "id": "bingo-false-1",
-    "title": "FALSE",
     "enemy": "FALSE",
-    "enemyHP": 7,
     "asset": "previews/bingo/false-1-287aac5b7875.json",
-    "collection": "new"
+    "method": "bingo-first",
+    "legacyBetaId": "bingo-false-1"
   },
   {
+    "date": "2026-09-21",
     "id": "bingo-ire-1",
-    "title": "IRE",
     "enemy": "IRE",
-    "enemyHP": 5,
     "asset": "previews/bingo/ire-1-1e62b1ca2fe1.json",
-    "collection": "more"
+    "method": "bingo-first",
+    "legacyBetaId": "bingo-ire-1"
   },
   {
+    "date": "2026-09-22",
     "id": "bingo-scare-1",
-    "title": "SCARE",
     "enemy": "SCARE",
-    "enemyHP": 9,
     "asset": "previews/bingo/scare-1-a4d8f76a19de.json",
-    "collection": "more"
+    "method": "bingo-first",
+    "legacyBetaId": "bingo-scare-1"
   },
   {
+    "date": "2026-09-23",
     "id": "bingo-mess-1",
-    "title": "MESS",
     "enemy": "MESS",
-    "enemyHP": 5,
     "asset": "previews/bingo/mess-1-93e9d473bf66.json",
-    "collection": "more"
+    "method": "bingo-first",
+    "legacyBetaId": "bingo-mess-1"
   },
   {
+    "date": "2026-09-24",
     "id": "bingo-spite-1",
-    "title": "SPITE",
     "enemy": "SPITE",
-    "enemyHP": 7,
     "asset": "previews/bingo/spite-1-4f2ce3e4d8e3.json",
-    "collection": "more"
+    "method": "bingo-first",
+    "legacyBetaId": "bingo-spite-1"
   },
   {
+    "date": "2026-09-25",
     "id": "bingo-taint-1",
-    "title": "TAINT",
     "enemy": "TAINT",
-    "enemyHP": 8,
     "asset": "previews/bingo/taint-1-380f9f79ca59.json",
-    "collection": "more"
+    "method": "bingo-first",
+    "legacyBetaId": "bingo-taint-1"
   }
 ]

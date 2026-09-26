@@ -9,7 +9,8 @@ export type ChallengeMove = { word: string; ids: number[] }
 export type ChallengeRecord = {
   version: 1; date: string; asset: string; revision: number; attempts: number
   bestWords: number | null
-  run: { lives: DailyLives; started: boolean; status: LetterStrikeState['status']; moves: ChallengeMove[] }
+  // Four/five lives are accepted only to finish a migrated historical attempt.
+  run: { lives: DailyLives | 4 | 5; started: boolean; status: LetterStrikeState['status']; moves: ChallengeMove[]; hintStep?: number }
 }
 export const challengeKey = (date: string) => CHALLENGE_PREFIX + date
 export const challengeLives = (bestWords: number | null): DailyLives => bestWords === null ? 3 : bestWords <= 2 ? 1 : 2
@@ -24,9 +25,10 @@ export function readChallenge(date: string, storage: Pick<StorageLike, 'getItem'
     const v: unknown = JSON.parse(raw)
     if (!object(v) || v.version !== 1 || v.date !== date || typeof v.asset !== 'string'
       || !integer(v.revision, 0, Number.MAX_SAFE_INTEGER) || !integer(v.attempts, 0, Number.MAX_SAFE_INTEGER)
-      || !(v.bestWords === null || integer(v.bestWords, 1, 3)) || !object(v.run)) return null
+      || !(v.bestWords === null || integer(v.bestWords, 1, 32)) || !object(v.run)) return null
     const r = v.run
-    if (!integer(r.lives, 1, 3) || typeof r.started !== 'boolean' || !['playing', 'won', 'lost'].includes(String(r.status))
+    if (!integer(r.lives, 1, 5) || typeof r.started !== 'boolean' || !['playing', 'won', 'lost'].includes(String(r.status))
+      || (r.hintStep !== undefined && !integer(r.hintStep, 1, 4))
       || !Array.isArray(r.moves) || r.moves.length > r.lives || (!r.started && r.moves.length > 0)
       || (r.status === 'won' && r.moves.length === 0)) return null
     if (!r.moves.every(m => object(m) && typeof m.word === 'string' && /^[A-Z]{3,16}$/.test(m.word)
@@ -50,7 +52,7 @@ export function openChallenge(date: string, asset: string, encounter: LetterStri
     game = next
   }
   if (game.status !== record.run.status) throw new Error('This saved attempt is incomplete. Restart this puzzle to try again.')
-  return { record, game, started: record.run.started }
+  return { record, game, started: record.run.started, hintStep: record.run.hintStep ?? 1 }
 }
 
 function write(record: ChallengeRecord, expectedRevision: number, storage: Pick<StorageLike, 'getItem' | 'setItem'>) {
@@ -62,12 +64,12 @@ function write(record: ChallengeRecord, expectedRevision: number, storage: Pick<
 }
 
 export function saveChallenge(record: ChallengeRecord, game: LetterStrikeState, started: boolean,
-  storage: Pick<StorageLike, 'getItem' | 'setItem'>): ChallengeRecord {
+  storage: Pick<StorageLike, 'getItem' | 'setItem'>, hintStep = record.run.hintStep ?? 1): ChallengeRecord {
   if (game.encounter.startingResolve !== record.run.lives) throw new Error('Attempt lives changed.')
   const moves = game.playedWords.map(move => ({ word: move.word, ids: move.tiles.map(tile => tile.id) }))
   return write({ ...record, attempts: record.attempts + Number(started && !record.run.started),
     bestWords: game.status === 'won' ? Math.min(record.bestWords ?? Infinity, moves.length) : record.bestWords,
-    run: { lives: record.run.lives, started, status: game.status, moves } }, record.revision, storage)
+    run: { lives: record.run.lives, started, status: game.status, moves, hintStep } }, record.revision, storage)
 }
 
 export function restartChallenge(record: ChallengeRecord, storage: Pick<StorageLike, 'getItem' | 'setItem'>): ChallengeRecord {

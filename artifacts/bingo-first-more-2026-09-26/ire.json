@@ -1,0 +1,3236 @@
+{
+  "enemy": "IRE",
+  "bingo": "MERRIER",
+  "method": "bingo-first",
+  "semanticStatus": "draft-source-profile",
+  "accepted": true,
+  "seed": "bingo-first-3:IRE:MERRIER:28",
+  "anchors": [
+    "MERRIER",
+    "PLEASING",
+    "GENTLY",
+    "PLEASURE"
+  ],
+  "plannedWords": [
+    "PLEASE",
+    "FRIENDS",
+    "CLEAR"
+  ],
+  "analysis": {
+    "score": 645,
+    "bingos": [
+      "MERRIER",
+      "MERRIEST"
+    ],
+    "counterFamilies": 12,
+    "resistedFamilies": 4,
+    "winningOpenings": 18,
+    "repeatedCounterRoutes": 17,
+    "sustainedPositions": 16,
+    "sustainedFinalPositions": 9,
+    "neutralCleanupOpenings": 1,
+    "routes": [
+      {
+        "opening": "REST",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "FRIEND",
+            "FRIENDLY",
+            "ENDURE",
+            "GRIN",
+            "GLEE",
+            "MERRILY",
+            "GENIAL"
+          ],
+          "resisted": [
+            "MAD",
+            "ANGRY",
+            "ANGER",
+            "RAGE",
+            "FURY",
+            "RAMP",
+            "RAMPAGE",
+            "ANGRILY",
+            "ENRAGED",
+            "IRE"
+          ],
+          "neutral": 867
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "REST",
+            "FRIEND"
+          ],
+          "tileIds": [
+            [
+              1,
+              4,
+              8,
+              9
+            ],
+            [
+              19,
+              6,
+              7,
+              11,
+              13,
+              16
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "PLEASE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "REST",
+            "FRIEND",
+            "SMILE",
+            "FRIENDLY",
+            "AMUSING",
+            "DIGEST",
+            "GRIN",
+            "AMITY",
+            "MERRILY",
+            "GENIAL"
+          ],
+          "resisted": [
+            "MAD",
+            "ANGRY",
+            "ANGER",
+            "RAGE",
+            "FURY",
+            "ANGRILY",
+            "STUNG",
+            "IRE"
+          ],
+          "neutral": 1543
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "PLEASE",
+            "MERRILY"
+          ],
+          "tileIds": [
+            [
+              10,
+              5,
+              4,
+              2,
+              8,
+              11
+            ],
+            [
+              15,
+              17,
+              1,
+              6,
+              7,
+              20,
+              0
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "SMILE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "GENTLE",
+            "GENTLY",
+            "ENDURE",
+            "GLEE",
+            "RAPTURE",
+            "ELATED",
+            "RAPT"
+          ],
+          "resisted": [
+            "ANGRY",
+            "ANGER",
+            "RAGE",
+            "FURY",
+            "ENRAGED"
+          ],
+          "neutral": 630
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SMILE",
+            "RAPTURE"
+          ],
+          "tileIds": [
+            [
+              8,
+              15,
+              7,
+              5,
+              4
+            ],
+            [
+              1,
+              2,
+              10,
+              9,
+              3,
+              6,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "PLEASURE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "REST",
+            "FRIEND",
+            "SMILE",
+            "FRIENDLY",
+            "DIGEST",
+            "GRIN",
+            "SERENITY",
+            "AMITY",
+            "GENTLER",
+            "MERRILY",
+            "GENIAL"
+          ],
+          "resisted": [
+            "MAD",
+            "ANGRY",
+            "ANGER",
+            "RAGE",
+            "MADNESS",
+            "RESENT",
+            "ANGRILY",
+            "STEAMED",
+            "ENRAGED",
+            "IRE"
+          ],
+          "neutral": 1683
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "PLEASURE",
+            "FRIEND"
+          ],
+          "tileIds": [
+            [
+              10,
+              5,
+              4,
+              2,
+              8,
+              3,
+              1,
+              11
+            ],
+            [
+              19,
+              6,
+              7,
+              17,
+              13,
+              16
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "MATE",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "FRIEND",
+            "PLEASE",
+            "FRIENDLY",
+            "PLEASURE",
+            "EASE",
+            "ENDURE",
+            "GRIN",
+            "GLEE",
+            "GENIAL",
+            "PLEASER"
+          ],
+          "resisted": [
+            "ANGRY",
+            "ANGER",
+            "RAGE",
+            "FURY",
+            "ANGRILY",
+            "ENRAGED",
+            "IRE",
+            "SPLEEN"
+          ],
+          "neutral": 1129
+        },
+        "thirdTurn": {
+          "counters": [
+            "PLEASURE",
+            "PLEASER"
+          ],
+          "resisted": [
+            "RAGE",
+            "GALL",
+            "IRE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "MATE",
+            "FRIEND",
+            "PLEASURE"
+          ],
+          "tileIds": [
+            [
+              15,
+              2,
+              9,
+              4
+            ],
+            [
+              19,
+              1,
+              7,
+              11,
+              13,
+              16
+            ],
+            [
+              10,
+              5,
+              17,
+              18,
+              8,
+              3,
+              6,
+              23
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "EASE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "FRIEND",
+            "FRIENDLY",
+            "PITY",
+            "GRIN",
+            "RAPTURE",
+            "AMITY",
+            "MERRILY",
+            "GENIAL",
+            "RAPT"
+          ],
+          "resisted": [
+            "MAD",
+            "ANGRY",
+            "ANGER",
+            "RAGE",
+            "FURY",
+            "RAMP",
+            "ANGRILY",
+            "IRE"
+          ],
+          "neutral": 1074
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "EASE",
+            "MERRILY"
+          ],
+          "tileIds": [
+            [
+              4,
+              2,
+              8,
+              11
+            ],
+            [
+              15,
+              17,
+              1,
+              6,
+              7,
+              5,
+              0
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "GENTLE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "SMILE",
+            "MERRILY"
+          ],
+          "resisted": [
+            "MAD",
+            "PISSED",
+            "FURY",
+            "RAMP",
+            "IRE"
+          ],
+          "neutral": 749
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "GENTLE",
+            "MERRILY"
+          ],
+          "tileIds": [
+            [
+              12,
+              4,
+              13,
+              9,
+              5,
+              11
+            ],
+            [
+              15,
+              17,
+              1,
+              6,
+              7,
+              20,
+              0
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "GENTLY",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "PLEASE",
+            "SMILE",
+            "PLEASURE",
+            "EASE",
+            "PLEASER"
+          ],
+          "resisted": [
+            "MAD",
+            "PISSED",
+            "RAMP",
+            "IRE"
+          ],
+          "neutral": 773
+        },
+        "thirdTurn": {
+          "counters": [
+            "CLEAR",
+            "FRIEND",
+            "SMILE",
+            "FAMILIAR",
+            "CALMER",
+            "PACIFISM",
+            "PACIFIER",
+            "PACIFIED"
+          ],
+          "resisted": [
+            "MAD",
+            "PISSED",
+            "MADNESS",
+            "RAMP",
+            "IRE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "GENTLY",
+            "PLEASURE",
+            "FRIEND"
+          ],
+          "tileIds": [
+            [
+              12,
+              4,
+              13,
+              9,
+              5,
+              0
+            ],
+            [
+              10,
+              20,
+              11,
+              2,
+              8,
+              3,
+              1,
+              17
+            ],
+            [
+              19,
+              6,
+              7,
+              23,
+              27,
+              16
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "PITY",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "EASE",
+            "ENDURE",
+            "GLEE",
+            "SERENE"
+          ],
+          "resisted": [
+            "MAD",
+            "ANGER",
+            "RAGE",
+            "ENRAGED"
+          ],
+          "neutral": 634
+        },
+        "thirdTurn": {
+          "counters": [
+            "PLEASER"
+          ],
+          "resisted": [
+            "RAGE",
+            "RAMP",
+            "RAMPAGE",
+            "GALL",
+            "IRE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "PITY",
+            "ENDURE",
+            "PLEASER"
+          ],
+          "tileIds": [
+            [
+              10,
+              7,
+              9,
+              0
+            ],
+            [
+              4,
+              13,
+              16,
+              3,
+              1,
+              11
+            ],
+            [
+              25,
+              5,
+              17,
+              2,
+              8,
+              23,
+              6
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "AMUSING",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "REST",
+            "PLEASE",
+            "EASE",
+            "ELATED",
+            "PLEASER",
+            "RAPT"
+          ],
+          "resisted": [],
+          "neutral": 610
+        },
+        "thirdTurn": {
+          "counters": [
+            "REST",
+            "CLEAR",
+            "FRIEND",
+            "FRIENDLY",
+            "SERENITY",
+            "RAPT"
+          ],
+          "resisted": [
+            "RESENT",
+            "IRE",
+            "SPLEEN"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AMUSING",
+            "PLEASER",
+            "REST"
+          ],
+          "tileIds": [
+            [
+              2,
+              15,
+              3,
+              8,
+              7,
+              13,
+              12
+            ],
+            [
+              10,
+              5,
+              4,
+              18,
+              21,
+              11,
+              1
+            ],
+            [
+              6,
+              17,
+              22,
+              9
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "GRIN",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "REST",
+            "PLEASE",
+            "PLEASURE",
+            "MATE",
+            "EASE",
+            "RAPTURE",
+            "ELATED",
+            "PLEASER",
+            "RAPT",
+            "MATEY"
+          ],
+          "resisted": [
+            "MAD",
+            "FURY",
+            "RAMP",
+            "STEAMED"
+          ],
+          "neutral": 899
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "GRIN",
+            "PLEASURE"
+          ],
+          "tileIds": [
+            [
+              12,
+              1,
+              7,
+              13
+            ],
+            [
+              10,
+              5,
+              4,
+              2,
+              8,
+              3,
+              6,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "GLEE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "REST",
+            "FRIEND",
+            "PITY",
+            "RAPTURE",
+            "AMITY",
+            "RAPT"
+          ],
+          "resisted": [
+            "MAD",
+            "FURY",
+            "RAMP",
+            "RAMPANT",
+            "IRE"
+          ],
+          "neutral": 1084
+        },
+        "thirdTurn": {
+          "counters": [
+            "REST",
+            "RAPTURE",
+            "MERRILY",
+            "RAPT"
+          ],
+          "resisted": [
+            "RAMP",
+            "IRE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "GLEE",
+            "FRIEND",
+            "REST"
+          ],
+          "tileIds": [
+            [
+              12,
+              5,
+              4,
+              11
+            ],
+            [
+              19,
+              1,
+              7,
+              17,
+              13,
+              16
+            ],
+            [
+              6,
+              23,
+              8,
+              9
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "ANGRY",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "REST",
+            "STILL",
+            "PLEASE",
+            "SMILE",
+            "PLEASURE",
+            "MATE",
+            "EASE",
+            "RAPTURE",
+            "ELATED",
+            "PLEASER",
+            "RAPT"
+          ],
+          "resisted": [
+            "MAD",
+            "RAMP",
+            "STEAMED",
+            "IRE"
+          ],
+          "neutral": 1195
+        },
+        "thirdTurn": {
+          "counters": [
+            "REST",
+            "STILL",
+            "FRIEND",
+            "SMILE",
+            "FRIENDLIEST",
+            "PITIED"
+          ],
+          "resisted": [
+            "PISSED",
+            "RESENT",
+            "IRE",
+            "SPLEEN"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ANGRY",
+            "PLEASURE",
+            "FRIEND"
+          ],
+          "tileIds": [
+            [
+              2,
+              13,
+              12,
+              1,
+              0
+            ],
+            [
+              10,
+              5,
+              4,
+              18,
+              8,
+              3,
+              6,
+              11
+            ],
+            [
+              19,
+              14,
+              7,
+              17,
+              27,
+              16
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "ANGER",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "REST",
+            "STILL",
+            "PLEASE",
+            "SMILE",
+            "PLEASURE",
+            "MATE",
+            "EASE",
+            "PITY",
+            "MILDLY",
+            "RAPTURE",
+            "ELATED",
+            "AMITY",
+            "MERRILY",
+            "PLEASER",
+            "RAPT",
+            "MATEY"
+          ],
+          "resisted": [
+            "MAD",
+            "FURY",
+            "RAMP",
+            "STEAMED",
+            "IRE"
+          ],
+          "neutral": 1407
+        },
+        "thirdTurn": {
+          "counters": [
+            "PEACE",
+            "PLEASE",
+            "EASE",
+            "PEACEFUL",
+            "PATIENCE",
+            "ELATED"
+          ],
+          "resisted": [
+            "PISSED",
+            "SPLEEN"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ANGER",
+            "MERRILY",
+            "PEACE"
+          ],
+          "tileIds": [
+            [
+              2,
+              13,
+              12,
+              4,
+              1
+            ],
+            [
+              15,
+              11,
+              6,
+              14,
+              7,
+              5,
+              0
+            ],
+            [
+              10,
+              17,
+              18,
+              26,
+              23
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "RAGE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "REST",
+            "FRIEND",
+            "PLEASE",
+            "SMILE",
+            "FRIENDLY",
+            "PLEASURE",
+            "MATE",
+            "EASE",
+            "PITY",
+            "ENDURE",
+            "SERENITY",
+            "RAPTURE",
+            "ELATED",
+            "AMITY",
+            "MERRILY",
+            "PLEASER",
+            "RAPT",
+            "MATEY"
+          ],
+          "resisted": [
+            "MAD",
+            "FURY",
+            "RAMP",
+            "RESENT",
+            "STEAMED",
+            "IRE",
+            "SPLEEN"
+          ],
+          "neutral": 1882
+        },
+        "thirdTurn": {
+          "counters": [
+            "CLEAR",
+            "FRIEND",
+            "CALMER"
+          ],
+          "resisted": [
+            "MAD",
+            "PISSED",
+            "MADNESS",
+            "RAMP",
+            "IRE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RAGE",
+            "SERENITY",
+            "CLEAR"
+          ],
+          "tileIds": [
+            [
+              1,
+              2,
+              12,
+              4
+            ],
+            [
+              8,
+              11,
+              6,
+              17,
+              13,
+              7,
+              9,
+              0
+            ],
+            [
+              26,
+              5,
+              23,
+              18,
+              14
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "RAMP",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "REST",
+            "FRIEND",
+            "FRIENDLY",
+            "EASE",
+            "GENTLE",
+            "GENTLY",
+            "ENDURE",
+            "DIGEST",
+            "GRIN",
+            "GLEE",
+            "SERENITY",
+            "SERENE",
+            "ELATED",
+            "GENIAL",
+            "GAYEST"
+          ],
+          "resisted": [
+            "ANGRY",
+            "ANGER",
+            "RAGE",
+            "FURY",
+            "RESENT",
+            "ANGRILY",
+            "ENRAGED",
+            "STUNG",
+            "IRE"
+          ],
+          "neutral": 1503
+        },
+        "thirdTurn": {
+          "counters": [
+            "CLEAR",
+            "FRIEND",
+            "PLEASURE",
+            "GRACE",
+            "CARING",
+            "ENDURE",
+            "GRIN",
+            "PLEASER"
+          ],
+          "resisted": [
+            "ANGER",
+            "PISSED",
+            "RAGE",
+            "ENRAGED",
+            "GALL",
+            "IRE",
+            "SPLEEN"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RAMP",
+            "SERENITY",
+            "CLEAR"
+          ],
+          "tileIds": [
+            [
+              1,
+              2,
+              15,
+              10
+            ],
+            [
+              8,
+              4,
+              6,
+              11,
+              13,
+              7,
+              9,
+              0
+            ],
+            [
+              26,
+              5,
+              17,
+              18,
+              14
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "AGE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "REST",
+            "PLEASE",
+            "SMILE",
+            "PLEASURE",
+            "MATE",
+            "EASE",
+            "PITY",
+            "ENDURE",
+            "SERENITY",
+            "RAPTURE",
+            "ELATED",
+            "AMITY",
+            "MERRILY",
+            "PLEASER",
+            "RAPT",
+            "MATEY"
+          ],
+          "resisted": [
+            "MAD",
+            "RAMP",
+            "RESENT",
+            "STEAMED",
+            "IRE",
+            "SPLEEN"
+          ],
+          "neutral": 1589
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AGE",
+            "MERRILY"
+          ],
+          "tileIds": [
+            [
+              2,
+              12,
+              4
+            ],
+            [
+              15,
+              11,
+              1,
+              6,
+              7,
+              5,
+              0
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "REST",
+            "PLEASE",
+            "PLEASURE",
+            "MATE",
+            "EASE",
+            "GENTLE",
+            "GENTLY",
+            "ENDURE",
+            "GLEE",
+            "SERENE",
+            "RAPTURE",
+            "ELATED",
+            "PLEASER",
+            "RAPT",
+            "MATEY",
+            "GAYEST"
+          ],
+          "resisted": [
+            "MAD",
+            "ANGRY",
+            "ANGER",
+            "RAGE",
+            "RAMP",
+            "RESENT",
+            "STEAMED",
+            "ENRAGED",
+            "STUNG",
+            "SPLEEN"
+          ],
+          "neutral": 1276
+        },
+        "thirdTurn": {
+          "counters": [
+            "REST",
+            "FRIEND",
+            "FRIENDLY",
+            "GRIN",
+            "SERENITY",
+            "GENTLER"
+          ],
+          "resisted": [
+            "PISSED",
+            "RESENT",
+            "IRE",
+            "SPLEEN"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AIR",
+            "PLEASURE",
+            "REST"
+          ],
+          "tileIds": [
+            [
+              2,
+              7,
+              1
+            ],
+            [
+              10,
+              5,
+              4,
+              18,
+              8,
+              3,
+              6,
+              11
+            ],
+            [
+              14,
+              17,
+              21,
+              9
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "AGE",
+      "MERRILY"
+    ],
+    "tileIds": [
+      [
+        2,
+        12,
+        4
+      ],
+      [
+        15,
+        11,
+        1,
+        6,
+        7,
+        5,
+        0
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      4
+    ]
+  },
+  "board": "YRAUELRISTPEGNRM",
+  "refills": "DEAFLSSEIPCNLAEDBERAGING",
+  "inventory": [
+    {
+      "word": "BEARING",
+      "armour": [],
+      "definition": "put up with something or somebody unpleasant"
+    },
+    {
+      "word": "BENIGNER",
+      "armour": [
+        "E"
+      ],
+      "definition": "kindness of disposition or manner"
+    },
+    {
+      "word": "BLITHER",
+      "armour": [],
+      "definition": "carefree and happy and lighthearted"
+    },
+    {
+      "word": "BREEZINESS",
+      "armour": [
+        "E"
+      ],
+      "definition": "a breezy liveliness"
+    },
+    {
+      "word": "BREEZINESSES",
+      "armour": [
+        "E"
+      ],
+      "definition": "a breezy liveliness"
+    },
+    {
+      "word": "BRIGHTER",
+      "armour": [
+        "R"
+      ],
+      "definition": "characterized by happiness or gladness"
+    },
+    {
+      "word": "BRIGHTEST",
+      "armour": [],
+      "definition": "characterized by happiness or gladness"
+    },
+    {
+      "word": "CAMARADERIE",
+      "armour": [
+        "R",
+        "E"
+      ],
+      "definition": "the quality of affording easy familiarity and sociability"
+    },
+    {
+      "word": "CAMARADERIES",
+      "armour": [
+        "R",
+        "E"
+      ],
+      "definition": "the quality of affording easy familiarity and sociability"
+    },
+    {
+      "word": "CELEBRATION",
+      "armour": [
+        "E"
+      ],
+      "definition": "any joyous diversion"
+    },
+    {
+      "word": "CELEBRATIONS",
+      "armour": [
+        "E"
+      ],
+      "definition": "any joyous diversion"
+    },
+    {
+      "word": "CHARITABLE",
+      "armour": [],
+      "definition": "showing or motivated by sympathy and understanding and generosity"
+    },
+    {
+      "word": "CHARITABLENESS",
+      "armour": [
+        "E"
+      ],
+      "definition": "generosity as manifested by practicing charity (as for the poor or unfortunate)"
+    },
+    {
+      "word": "CHARITABLENESSES",
+      "armour": [
+        "E"
+      ],
+      "definition": "generosity as manifested by practicing charity (as for the poor or unfortunate)"
+    },
+    {
+      "word": "CHEERIER",
+      "armour": [
+        "R",
+        "E"
+      ],
+      "definition": "bright and pleasant; promoting a feeling of cheer"
+    },
+    {
+      "word": "CHEERIEST",
+      "armour": [
+        "E"
+      ],
+      "definition": "bright and pleasant; promoting a feeling of cheer"
+    },
+    {
+      "word": "CHEERILY",
+      "armour": [
+        "E"
+      ],
+      "definition": "in a good-humoured manner"
+    },
+    {
+      "word": "CHEERING",
+      "armour": [
+        "E"
+      ],
+      "definition": "become cheerful"
+    },
+    {
+      "word": "CHIPPER",
+      "armour": [],
+      "definition": "having a cheerful, lively, and self-confident air"
+    },
+    {
+      "word": "CHIRPIER",
+      "armour": [
+        "I",
+        "R"
+      ],
+      "definition": "characterized by liveliness and lightheartedness"
+    },
+    {
+      "word": "CHIRPIEST",
+      "armour": [
+        "I"
+      ],
+      "definition": "characterized by liveliness and lightheartedness"
+    },
+    {
+      "word": "CHIRPINESS",
+      "armour": [
+        "I"
+      ],
+      "definition": "cheerful and lively"
+    },
+    {
+      "word": "CHIRPINESSES",
+      "armour": [
+        "I",
+        "E"
+      ],
+      "definition": "cheerful and lively"
+    },
+    {
+      "word": "CHUMMIER",
+      "armour": [],
+      "definition": "(used colloquially) having the relationship of friends or pals"
+    },
+    {
+      "word": "CLEARING",
+      "armour": [],
+      "definition": "pronounce not guilty of criminal charges"
+    },
+    {
+      "word": "COMMISERATION",
+      "armour": [
+        "I"
+      ],
+      "definition": "a feeling of sympathy and sorrow for the misfortunes of others"
+    },
+    {
+      "word": "COMMISERATIONS",
+      "armour": [
+        "I"
+      ],
+      "definition": "a feeling of sympathy and sorrow for the misfortunes of others"
+    },
+    {
+      "word": "COMRADELINESS",
+      "armour": [
+        "E"
+      ],
+      "definition": "the quality of affording easy familiarity and sociability"
+    },
+    {
+      "word": "COMRADELINESSES",
+      "armour": [
+        "E"
+      ],
+      "definition": "the quality of affording easy familiarity and sociability"
+    },
+    {
+      "word": "COMRADERIES",
+      "armour": [
+        "R",
+        "E"
+      ],
+      "definition": "the quality of affording easy familiarity and sociability"
+    },
+    {
+      "word": "COMRADESHIP",
+      "armour": [],
+      "definition": "the quality of affording easy familiarity and sociability"
+    },
+    {
+      "word": "COMRADESHIPS",
+      "armour": [],
+      "definition": "the quality of affording easy familiarity and sociability"
+    },
+    {
+      "word": "CORDIALITIES",
+      "armour": [
+        "I"
+      ],
+      "definition": "a cordial disposition"
+    },
+    {
+      "word": "COSIER",
+      "armour": [],
+      "definition": "having or fostering a warm or friendly and informal atmosphere"
+    },
+    {
+      "word": "COUTHIER",
+      "armour": [],
+      "definition": "(chiefly Scottish) agreeable and genial"
+    },
+    {
+      "word": "COZIER",
+      "armour": [],
+      "definition": "having or fostering a warm or friendly and informal atmosphere"
+    },
+    {
+      "word": "CRONIES",
+      "armour": [],
+      "definition": "a close friend who accompanies their buddies in their activities"
+    },
+    {
+      "word": "DEBONAIR",
+      "armour": [],
+      "definition": "having a cheerful, lively, and self-confident air"
+    },
+    {
+      "word": "DEBONAIRE",
+      "armour": [
+        "E"
+      ],
+      "definition": "having a cheerful, lively, and self-confident air"
+    },
+    {
+      "word": "DECOMPRESSING",
+      "armour": [
+        "E"
+      ],
+      "definition": "become less tense, rest, or take one's ease"
+    },
+    {
+      "word": "DELIBERATENESS",
+      "armour": [
+        "E"
+      ],
+      "definition": "a rate demonstrating an absence of haste or hurry"
+    },
+    {
+      "word": "DELIBERATENESSES",
+      "armour": [
+        "E"
+      ],
+      "definition": "a rate demonstrating an absence of haste or hurry"
+    },
+    {
+      "word": "DELIBERATION",
+      "armour": [
+        "I",
+        "E"
+      ],
+      "definition": "a rate demonstrating an absence of haste or hurry"
+    },
+    {
+      "word": "DELIBERATIONS",
+      "armour": [
+        "I",
+        "E"
+      ],
+      "definition": "a rate demonstrating an absence of haste or hurry"
+    },
+    {
+      "word": "DISARMER",
+      "armour": [
+        "R"
+      ],
+      "definition": "someone opposed to violence as a means of settling disputes"
+    },
+    {
+      "word": "DISARMERS",
+      "armour": [
+        "R"
+      ],
+      "definition": "someone opposed to violence as a means of settling disputes"
+    },
+    {
+      "word": "DISCHARGE",
+      "armour": [],
+      "definition": "pronounce not guilty of criminal charges"
+    },
+    {
+      "word": "DISCHARGED",
+      "armour": [],
+      "definition": "pronounce not guilty of criminal charges"
+    },
+    {
+      "word": "DISCHARGES",
+      "armour": [],
+      "definition": "pronounce not guilty of criminal charges"
+    },
+    {
+      "word": "ENDURING",
+      "armour": [],
+      "definition": "patiently bearing continual wrongs or trouble"
+    },
+    {
+      "word": "EXONERATING",
+      "armour": [
+        "E"
+      ],
+      "definition": "pronounce not guilty of criminal charges"
+    },
+    {
+      "word": "EXONERATIVE",
+      "armour": [
+        "E"
+      ],
+      "definition": "providing absolution"
+    },
+    {
+      "word": "EXUBERATING",
+      "armour": [
+        "E"
+      ],
+      "definition": "to express great joy"
+    },
+    {
+      "word": "FORBEARING",
+      "armour": [
+        "R"
+      ],
+      "definition": "showing patient and unruffled self-control and restraint under adversity; slow to retaliate or express resentment"
+    },
+    {
+      "word": "FORGIVE",
+      "armour": [],
+      "definition": "stop blaming or grant forgiveness"
+    },
+    {
+      "word": "FORGIVEN",
+      "armour": [],
+      "definition": "stop blaming or grant forgiveness"
+    },
+    {
+      "word": "FORGIVENESS",
+      "armour": [
+        "E"
+      ],
+      "definition": "compassionate feelings that support a willingness to forgive"
+    },
+    {
+      "word": "FORGIVENESSES",
+      "armour": [
+        "E"
+      ],
+      "definition": "compassionate feelings that support a willingness to forgive"
+    },
+    {
+      "word": "FORGIVER",
+      "armour": [
+        "R"
+      ],
+      "definition": "a person who pardons or forgives or excuses a fault or offense"
+    },
+    {
+      "word": "FORGIVERS",
+      "armour": [
+        "R"
+      ],
+      "definition": "a person who pardons or forgives or excuses a fault or offense"
+    },
+    {
+      "word": "FORGIVES",
+      "armour": [],
+      "definition": "stop blaming or grant forgiveness"
+    },
+    {
+      "word": "FORGIVINGNESS",
+      "armour": [
+        "I"
+      ],
+      "definition": "tendency to be kind and forgiving"
+    },
+    {
+      "word": "FORGIVINGNESSES",
+      "armour": [
+        "I",
+        "E"
+      ],
+      "definition": "tendency to be kind and forgiving"
+    },
+    {
+      "word": "FRIEND",
+      "armour": [],
+      "definition": "a person you know well and regard with affection and trust"
+    },
+    {
+      "word": "FRIENDLIER",
+      "armour": [
+        "I",
+        "R",
+        "E"
+      ],
+      "definition": "characteristic of or befitting a friend"
+    },
+    {
+      "word": "FRIENDLIEST",
+      "armour": [
+        "I",
+        "E"
+      ],
+      "definition": "characteristic of or befitting a friend"
+    },
+    {
+      "word": "FRIENDLINESS",
+      "armour": [
+        "I",
+        "E"
+      ],
+      "definition": "a friendly disposition"
+    },
+    {
+      "word": "FRIENDLINESSES",
+      "armour": [
+        "I",
+        "E"
+      ],
+      "definition": "a friendly disposition"
+    },
+    {
+      "word": "FRIENDLY",
+      "armour": [],
+      "definition": "characteristic of or befitting a friend"
+    },
+    {
+      "word": "FRIENDS",
+      "armour": [],
+      "definition": "a person you know well and regard with affection and trust"
+    },
+    {
+      "word": "FUNNIER",
+      "armour": [],
+      "definition": "arousing or provoking laughter"
+    },
+    {
+      "word": "GRACIOUSNESS",
+      "armour": [],
+      "definition": "the quality of being kind and gentle"
+    },
+    {
+      "word": "GRACIOUSNESSES",
+      "armour": [
+        "E"
+      ],
+      "definition": "the quality of being kind and gentle"
+    },
+    {
+      "word": "GRINNED",
+      "armour": [],
+      "definition": "to draw back the lips and reveal the teeth, in a smile, grimace, or snarl"
+    },
+    {
+      "word": "GRINNER",
+      "armour": [
+        "R"
+      ],
+      "definition": "a person who grins"
+    },
+    {
+      "word": "GRINNERS",
+      "armour": [
+        "R"
+      ],
+      "definition": "a person who grins"
+    },
+    {
+      "word": "HAPPIER",
+      "armour": [],
+      "definition": "enjoying or showing or marked by joy or pleasure"
+    },
+    {
+      "word": "HILARITIES",
+      "armour": [
+        "I"
+      ],
+      "definition": "great merriment"
+    },
+    {
+      "word": "INFORMALITIES",
+      "armour": [
+        "I"
+      ],
+      "definition": "a manner that does not take forms and ceremonies seriously"
+    },
+    {
+      "word": "INTIMATER",
+      "armour": [
+        "I"
+      ],
+      "definition": "having or fostering a warm or friendly and informal atmosphere"
+    },
+    {
+      "word": "IRENIC",
+      "armour": [
+        "I"
+      ],
+      "definition": "conducive to peace"
+    },
+    {
+      "word": "IRREPRESSIBILITY",
+      "armour": [
+        "I",
+        "R",
+        "E"
+      ],
+      "definition": "irrepressible liveliness and good spirit"
+    },
+    {
+      "word": "JAUNTIER",
+      "armour": [],
+      "definition": "having a cheerful, lively, and self-confident air"
+    },
+    {
+      "word": "JOCULARITIES",
+      "armour": [
+        "I"
+      ],
+      "definition": "a feeling of facetious merriment"
+    },
+    {
+      "word": "JOLLIER",
+      "armour": [],
+      "definition": "full of or showing high-spirited merriment"
+    },
+    {
+      "word": "KINDER",
+      "armour": [],
+      "definition": "having or showing a tender and considerate and helpful nature; used especially of persons and their behavior"
+    },
+    {
+      "word": "KINDHEARTED",
+      "armour": [
+        "E"
+      ],
+      "definition": "having or proceeding from an innately kind disposition"
+    },
+    {
+      "word": "KINDHEARTEDNESS",
+      "armour": [
+        "E"
+      ],
+      "definition": "sympathy arising from a kind heart"
+    },
+    {
+      "word": "KINDLIER",
+      "armour": [
+        "I"
+      ],
+      "definition": "showing or motivated by sympathy and understanding and generosity"
+    },
+    {
+      "word": "KISSER",
+      "armour": [],
+      "definition": "the human face (‘kisser’ and ‘smiler’ and ‘mug’ are informal terms for ‘face’ and ‘phiz’ is British)"
+    },
+    {
+      "word": "KISSERS",
+      "armour": [],
+      "definition": "the human face (‘kisser’ and ‘smiler’ and ‘mug’ are informal terms for ‘face’ and ‘phiz’ is British)"
+    },
+    {
+      "word": "LIGHTHEARTED",
+      "armour": [
+        "E"
+      ],
+      "definition": "carefree and happy and lighthearted"
+    },
+    {
+      "word": "LIGHTHEARTEDNESS",
+      "armour": [
+        "E"
+      ],
+      "definition": "the cheerful feeling you have when nothing is troubling you"
+    },
+    {
+      "word": "MERRIER",
+      "armour": [
+        "R",
+        "E"
+      ],
+      "definition": "offering fun and gaiety"
+    },
+    {
+      "word": "MERRIEST",
+      "armour": [
+        "R",
+        "E"
+      ],
+      "definition": "offering fun and gaiety"
+    },
+    {
+      "word": "MERRILY",
+      "armour": [
+        "R"
+      ],
+      "definition": "in a joyous manner"
+    },
+    {
+      "word": "MERRINESS",
+      "armour": [
+        "R",
+        "E"
+      ],
+      "definition": "the trait of merry joking"
+    },
+    {
+      "word": "MERRINESSES",
+      "armour": [
+        "R",
+        "E"
+      ],
+      "definition": "the trait of merry joking"
+    },
+    {
+      "word": "MIRTHFULNESS",
+      "armour": [],
+      "definition": "great merriment"
+    },
+    {
+      "word": "MIRTHFULNESSES",
+      "armour": [
+        "E"
+      ],
+      "definition": "great merriment"
+    },
+    {
+      "word": "MIXER",
+      "armour": [],
+      "definition": "a party of people assembled to promote sociability and communal activity"
+    },
+    {
+      "word": "MIXERS",
+      "armour": [],
+      "definition": "a party of people assembled to promote sociability and communal activity"
+    },
+    {
+      "word": "NEIGHBOR",
+      "armour": [],
+      "definition": "a person who lives (or is located) near another"
+    },
+    {
+      "word": "NEIGHBORLINESS",
+      "armour": [
+        "I",
+        "E"
+      ],
+      "definition": "a disposition to be friendly and helpful to neighbors"
+    },
+    {
+      "word": "NEIGHBORLINESSES",
+      "armour": [
+        "I",
+        "E"
+      ],
+      "definition": "a disposition to be friendly and helpful to neighbors"
+    },
+    {
+      "word": "NEIGHBORLY",
+      "armour": [],
+      "definition": "exhibiting the qualities expected in a friendly neighbor"
+    },
+    {
+      "word": "NEIGHBORS",
+      "armour": [],
+      "definition": "a person who lives (or is located) near another"
+    },
+    {
+      "word": "NEIGHBOUR",
+      "armour": [],
+      "definition": "a person who lives (or is located) near another"
+    },
+    {
+      "word": "NEIGHBOURLINESS",
+      "armour": [
+        "I",
+        "E"
+      ],
+      "definition": "a disposition to be friendly and helpful to neighbors"
+    },
+    {
+      "word": "NEIGHBOURLY",
+      "armour": [],
+      "definition": "exhibiting the qualities expected in a friendly neighbor"
+    },
+    {
+      "word": "NEIGHBOURS",
+      "armour": [],
+      "definition": "a person who lives (or is located) near another"
+    },
+    {
+      "word": "NONBELLIGERENT",
+      "armour": [
+        "E"
+      ],
+      "definition": "not directly at war"
+    },
+    {
+      "word": "PACIFIER",
+      "armour": [
+        "I"
+      ],
+      "definition": "someone who tries to bring peace"
+    },
+    {
+      "word": "PACIFIERS",
+      "armour": [
+        "I"
+      ],
+      "definition": "someone who tries to bring peace"
+    },
+    {
+      "word": "PALLIER",
+      "armour": [],
+      "definition": "(used colloquially) having the relationship of friends or pals"
+    },
+    {
+      "word": "PATIENTER",
+      "armour": [
+        "E"
+      ],
+      "definition": "enduring trying circumstances with even temper or characterized by such endurance"
+    },
+    {
+      "word": "PERKIER",
+      "armour": [
+        "R",
+        "E"
+      ],
+      "definition": "characterized by liveliness and lightheartedness"
+    },
+    {
+      "word": "PERKIEST",
+      "armour": [
+        "E"
+      ],
+      "definition": "characterized by liveliness and lightheartedness"
+    },
+    {
+      "word": "PERKILY",
+      "armour": [],
+      "definition": "in a perky manner"
+    },
+    {
+      "word": "PERKINESS",
+      "armour": [
+        "E"
+      ],
+      "definition": "cheerfulness that bubbles to the surface"
+    },
+    {
+      "word": "PERKINESSES",
+      "armour": [
+        "E"
+      ],
+      "definition": "cheerfulness that bubbles to the surface"
+    },
+    {
+      "word": "RECONCILER",
+      "armour": [
+        "R",
+        "E"
+      ],
+      "definition": "someone who tries to bring peace"
+    },
+    {
+      "word": "RECONCILERS",
+      "armour": [
+        "R",
+        "E"
+      ],
+      "definition": "someone who tries to bring peace"
+    },
+    {
+      "word": "REJOICE",
+      "armour": [
+        "E"
+      ],
+      "definition": "feel happiness or joy"
+    },
+    {
+      "word": "REJOICED",
+      "armour": [
+        "E"
+      ],
+      "definition": "feel happiness or joy"
+    },
+    {
+      "word": "REJOICES",
+      "armour": [
+        "E"
+      ],
+      "definition": "feel happiness or joy"
+    },
+    {
+      "word": "REJOICING",
+      "armour": [
+        "I"
+      ],
+      "definition": "feel happiness or joy"
+    },
+    {
+      "word": "REJOICINGS",
+      "armour": [
+        "I"
+      ],
+      "definition": "a feeling of great happiness"
+    },
+    {
+      "word": "RELAXATION",
+      "armour": [],
+      "definition": "(physiology) the gradual lengthening of inactive muscle or muscle fibers"
+    },
+    {
+      "word": "RELAXATIONS",
+      "armour": [],
+      "definition": "(physiology) the gradual lengthening of inactive muscle or muscle fibers"
+    },
+    {
+      "word": "RELAXING",
+      "armour": [],
+      "definition": "become less tense, rest, or take one's ease"
+    },
+    {
+      "word": "REVELING",
+      "armour": [
+        "E"
+      ],
+      "definition": "take delight in"
+    },
+    {
+      "word": "REVELLING",
+      "armour": [
+        "E"
+      ],
+      "definition": "take delight in"
+    },
+    {
+      "word": "RISIBLE",
+      "armour": [
+        "I"
+      ],
+      "definition": "arousing or provoking laughter"
+    },
+    {
+      "word": "SERENITIES",
+      "armour": [
+        "I",
+        "E"
+      ],
+      "definition": "the absence of mental stress or anxiety"
+    },
+    {
+      "word": "SERENITY",
+      "armour": [
+        "E"
+      ],
+      "definition": "the absence of mental stress or anxiety"
+    },
+    {
+      "word": "SMILER",
+      "armour": [],
+      "definition": "a person who smiles"
+    },
+    {
+      "word": "SMILERS",
+      "armour": [],
+      "definition": "a person who smiles"
+    },
+    {
+      "word": "SUFFERING",
+      "armour": [],
+      "definition": "put up with something or somebody unpleasant"
+    },
+    {
+      "word": "SUNNIER",
+      "armour": [],
+      "definition": "bright and pleasant; promoting a feeling of cheer"
+    },
+    {
+      "word": "TOLERATING",
+      "armour": [],
+      "definition": "put up with something or somebody unpleasant"
+    },
+    {
+      "word": "TRANQUILER",
+      "armour": [
+        "R"
+      ],
+      "definition": "not agitated; without losing self-possession"
+    },
+    {
+      "word": "TRANQUILEST",
+      "armour": [],
+      "definition": "not agitated; without losing self-possession"
+    },
+    {
+      "word": "TRANQUILITIES",
+      "armour": [
+        "I"
+      ],
+      "definition": "a disposition free from stress or emotion"
+    },
+    {
+      "word": "TRANQUILIZE",
+      "armour": [
+        "I"
+      ],
+      "definition": "make calm or still"
+    },
+    {
+      "word": "TRANQUILIZED",
+      "armour": [
+        "I"
+      ],
+      "definition": "make calm or still"
+    },
+    {
+      "word": "TRANQUILIZER",
+      "armour": [
+        "I",
+        "R"
+      ],
+      "definition": "a drug used to reduce stress or tension without reducing mental clarity"
+    },
+    {
+      "word": "TRANQUILIZERS",
+      "armour": [
+        "I",
+        "R"
+      ],
+      "definition": "a drug used to reduce stress or tension without reducing mental clarity"
+    },
+    {
+      "word": "TRANQUILIZES",
+      "armour": [
+        "I"
+      ],
+      "definition": "make calm or still"
+    },
+    {
+      "word": "TRANQUILLISE",
+      "armour": [
+        "I"
+      ],
+      "definition": "make calm or still"
+    },
+    {
+      "word": "TRANQUILLISED",
+      "armour": [
+        "I"
+      ],
+      "definition": "make calm or still"
+    },
+    {
+      "word": "TRANQUILLISER",
+      "armour": [
+        "I",
+        "R"
+      ],
+      "definition": "a drug used to reduce stress or tension without reducing mental clarity"
+    },
+    {
+      "word": "TRANQUILLISERS",
+      "armour": [
+        "I",
+        "R"
+      ],
+      "definition": "a drug used to reduce stress or tension without reducing mental clarity"
+    },
+    {
+      "word": "TRANQUILLISES",
+      "armour": [
+        "I"
+      ],
+      "definition": "make calm or still"
+    },
+    {
+      "word": "TRANQUILLITIES",
+      "armour": [
+        "I"
+      ],
+      "definition": "a disposition free from stress or emotion"
+    },
+    {
+      "word": "TRANQUILLIZE",
+      "armour": [
+        "I"
+      ],
+      "definition": "make calm or still"
+    },
+    {
+      "word": "TRANQUILLIZED",
+      "armour": [
+        "I"
+      ],
+      "definition": "make calm or still"
+    },
+    {
+      "word": "TRANQUILLIZER",
+      "armour": [
+        "I",
+        "R"
+      ],
+      "definition": "a drug used to reduce stress or tension without reducing mental clarity"
+    },
+    {
+      "word": "TRANQUILLIZERS",
+      "armour": [
+        "I",
+        "R"
+      ],
+      "definition": "a drug used to reduce stress or tension without reducing mental clarity"
+    },
+    {
+      "word": "TRANQUILLIZES",
+      "armour": [
+        "I"
+      ],
+      "definition": "make calm or still"
+    },
+    {
+      "word": "TRIUMPHED",
+      "armour": [],
+      "definition": "to express great joy"
+    },
+    {
+      "word": "UNHURRIED",
+      "armour": [
+        "R"
+      ],
+      "definition": "capable of accepting delay with equanimity"
+    },
+    {
+      "word": "UNSTRAINED",
+      "armour": [],
+      "definition": "not placed under psychological stress"
+    }
+  ],
+  "seeds": [
+    {
+      "seed": "bingo-first-3:IRE:MERRIER:28",
+      "score": 645
+    },
+    {
+      "seed": "bingo-first-3:IRE:MERRIER:26",
+      "score": 636
+    },
+    {
+      "seed": "bingo-first-3:IRE:MERRIER:27",
+      "score": 631
+    },
+    {
+      "seed": "bingo-first-3:IRE:MERRIER:25",
+      "score": 619
+    },
+    {
+      "seed": "bingo-first-3:IRE:MERRIER:24",
+      "score": 584
+    },
+    {
+      "seed": "bingo-first-3:IRE:MERRIER:29",
+      "score": 551
+    }
+  ],
+  "derivations": [
+    {
+      "from": "oewn-acrimonious__5.00.00.resentful.00",
+      "to": "oewn-acrimony__1.07.00..",
+      "definition": "a rough and bitter manner",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-affable__5.00.00.friendly.01",
+      "to": "oewn-affability__1.07.00..",
+      "definition": "a disposition to be friendly and approachable (easy to talk to)",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-amiable__5.00.00.friendly.01",
+      "to": "oewn-amiability__1.12.00..",
+      "definition": "a cheerful and agreeable mood",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-amiable__5.00.00.friendly.01",
+      "to": "oewn-amity__1.26.00..",
+      "definition": "a state of friendship and cordiality",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-anger__1.12.00..",
+      "to": "oewn-anger__2.37.01..",
+      "definition": "become angry",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-anger__2.37.00..",
+      "to": "oewn-anger__1.04.00..",
+      "definition": "belligerence aroused by a real or supposed wrong (personified as one of the deadly sins)",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-angriness__1.26.00..",
+      "to": "oewn-angry__5.00.00.stormy.00",
+      "definition": "(of the elements) as if showing violent anger",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-appease__2.37.00..",
+      "to": "oewn-appeasable__5.00.00.placable.00",
+      "definition": "capable of being pacified",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-benign__5.00.00.kind.00",
+      "to": "oewn-benignancy__1.07.00..",
+      "definition": "the quality of being kind and gentle",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-bitterness__1.12.00..",
+      "to": "oewn-bitter__5.00.00.hostile.01",
+      "definition": "proceeding from or exhibiting great hostility or animosity",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-blessed__5.00.00.happy.00",
+      "to": "oewn-blessedness__1.26.00..",
+      "definition": "a state of supreme happiness",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-blissful__5.00.00.happy.00",
+      "to": "oewn-blissfulness__1.26.00..",
+      "definition": "a state of extreme happiness",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-buoyant__5.00.00.cheerful.00",
+      "to": "oewn-buoyancy__1.07.01..",
+      "definition": "irrepressible liveliness and good spirit",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-buoyant__5.00.00.cheerful.00",
+      "to": "oewn-buoyancy__1.12.00..",
+      "definition": "cheerfulness that bubbles to the surface",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-calm__5.00.00.composed.00",
+      "to": "oewn-calmness__1.12.00..",
+      "definition": "a feeling of calm; an absence of agitation or excitement",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-caring__5.00.00.compassionate.00",
+      "to": "oewn-caring__1.12.01..",
+      "definition": "a loving feeling",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-charitable__5.00.00.kind.00",
+      "to": "oewn-charitableness__1.07.00..",
+      "definition": "generosity as manifested by practicing charity (as for the poor or unfortunate)",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-cheer__1.07.00..",
+      "to": "oewn-cheer__2.32.03..",
+      "definition": "cause (somebody) to feel happier or more cheerful",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-chirpy__5.00.00.cheerful.00",
+      "to": "oewn-chirpiness__1.07.00..",
+      "definition": "cheerful and lively",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-choler__1.12.01..",
+      "to": "oewn-choleric__5.00.00.passionate.00",
+      "definition": "easily moved to anger",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-chummy__5.00.00.friendly.01",
+      "to": "oewn-chum__1.18.00..",
+      "definition": "a close friend who accompanies their buddies in their activities",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-chummy__5.00.00.friendly.01",
+      "to": "oewn-chumminess__1.07.00..",
+      "definition": "the quality of affording easy familiarity and sociability",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-compassion__1.12.00..",
+      "to": "oewn-compassionate__3.00.00..",
+      "definition": "showing or having compassion",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-composure__1.07.00..",
+      "to": "oewn-compose__2.37.00..",
+      "definition": "calm (someone, especially oneself); make quiet",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-comradely__5.00.00.friendly.01",
+      "to": "oewn-comrade__1.18.00..",
+      "definition": "a friend who is frequently in the company of another",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-conciliate__2.37.00..",
+      "to": "oewn-conciliation__1.04.00..",
+      "definition": "the act of placating and overcoming distrust and animosity",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-conciliate__2.37.00..",
+      "to": "oewn-conciliation__1.26.00..",
+      "definition": "the state of manifesting goodwill and cooperation after being reconciled",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-conciliate__2.37.00..",
+      "to": "oewn-conciliative__3.00.00..",
+      "definition": "intended to placate",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-conciliate__2.37.00..",
+      "to": "oewn-conciliator__1.18.00..",
+      "definition": "someone who tries to bring peace",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-cordial__5.00.00.friendly.01",
+      "to": "oewn-cordiality__1.07.00..",
+      "definition": "a cordial disposition",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-cozy__5.00.00.friendly.01",
+      "to": "oewn-coziness__1.26.00..",
+      "definition": "a state of warm snug comfort",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-delight__2.34.00..",
+      "to": "oewn-delight__1.09.00..",
+      "definition": "something or someone that provides a source of happiness",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-dovish__5.00.00.peaceful.00",
+      "to": "oewn-dovishness__1.09.00..",
+      "definition": "any political orientation favoring compromise to avoid conflict",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-ecstatic__5.00.00.joyous.00",
+      "to": "oewn-ecstasy__1.26.00..",
+      "definition": "a state of being carried away by overwhelming emotion",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-ecstatic__5.00.00.joyous.00",
+      "to": "oewn-ecstasy__1.26.02..",
+      "definition": "a state of elated bliss",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-enjoy__2.34.00..",
+      "to": "oewn-enjoyer__1.18.00..",
+      "definition": "a person who delights in having or using or experiencing something",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-enjoy__2.34.00..",
+      "to": "oewn-enjoyment__1.04.00..",
+      "definition": "act of receiving pleasure from something",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-enjoy__2.34.00..",
+      "to": "oewn-enjoyment__1.12.00..",
+      "definition": "the pleasure felt when having a good time",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-equanimity__1.07.00..",
+      "to": "oewn-equanimous__5.00.00.composed.00",
+      "definition": "in full control of your faculties",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-exasperate__2.37.01..",
+      "to": "oewn-exasperation__1.04.00..",
+      "definition": "actions that cause great irritation (or even anger)",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-exasperate__2.37.01..",
+      "to": "oewn-exasperation__1.12.00..",
+      "definition": "an exasperated feeling of annoyance",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-exonerative__5.00.00.exculpatory.00",
+      "to": "oewn-exonerate__2.32.00..",
+      "definition": "pronounce not guilty of criminal charges",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-festive__5.00.00.joyous.00",
+      "to": "oewn-festivity__1.04.00..",
+      "definition": "any joyous diversion",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-forgive__2.32.00..",
+      "to": "oewn-forgiver__1.18.00..",
+      "definition": "a person who pardons or forgives or excuses a fault or offense",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-forgivingness__1.07.00..",
+      "to": "oewn-forgiving__3.00.00..",
+      "definition": "inclined or able to forgive and show mercy",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-friendly__3.00.01..",
+      "to": "oewn-friend__1.18.00..",
+      "definition": "a person you know well and regard with affection and trust",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-furious__5.00.00.angry.00",
+      "to": "oewn-furiousness__1.07.00..",
+      "definition": "the property of being wild or turbulent",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-gentleness__1.07.00..",
+      "to": "oewn-gentle__5.00.00.soft.04",
+      "definition": "quiet and soothing",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-gentleness__1.07.00..",
+      "to": "oewn-gentle__5.00.01.kind.00",
+      "definition": "having or showing a kindly or tender nature",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-glad__5.00.00.cheerful.00",
+      "to": "oewn-gladness__1.12.00..",
+      "definition": "experiencing joy and pleasure",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-gleeful__5.00.00.joyous.00",
+      "to": "oewn-gleefulness__1.12.00..",
+      "definition": "great merriment",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-gracious__5.00.00.kind.00",
+      "to": "oewn-grace__1.07.03..",
+      "definition": "a disposition to kindness and compassion",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-grin__2.29.00..",
+      "to": "oewn-grinner__1.18.00..",
+      "definition": "a person who grins",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-happy__3.00.00..",
+      "to": "oewn-happiness__1.26.00..",
+      "definition": "state of well-being characterized by emotions ranging from contentment to intense joy",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-huffy__5.00.00.angry.00",
+      "to": "oewn-huff__1.26.00..",
+      "definition": "a state of irritation or annoyance",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-huffy__5.00.00.angry.00",
+      "to": "oewn-huffiness__1.12.00..",
+      "definition": "a passing state of anger and resentment",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-informal__5.00.00.friendly.01",
+      "to": "oewn-informality__1.07.00..",
+      "definition": "a manner that does not take forms and ceremonies seriously",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-infuriate__2.37.00..",
+      "to": "oewn-fury__1.26.00..",
+      "definition": "state of violent mental agitation",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-infuriate__2.37.00..",
+      "to": "oewn-infuriation__1.12.00..",
+      "definition": "a feeling of intense anger and impatience",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-irascible__5.00.00.angry.00",
+      "to": "oewn-irascibility__1.12.00..",
+      "definition": "a feeling of resentful anger",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-jaunty__5.00.00.cheerful.00",
+      "to": "oewn-jauntiness__1.07.02..",
+      "definition": "a breezy liveliness",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-jocund__5.00.00.joyous.00",
+      "to": "oewn-jocundity__1.12.00..",
+      "definition": "a feeling of facetious merriment",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-jolly__5.00.00.joyous.00",
+      "to": "oewn-jolliness__1.12.00..",
+      "definition": "feeling jolly and jovial and full of good humor",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-jolly__5.00.00.joyous.00",
+      "to": "oewn-jolly__1.11.00..",
+      "definition": "a happy party",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-jovial__5.00.00.joyous.00",
+      "to": "oewn-joviality__1.07.00..",
+      "definition": "a jovial nature",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-jubilant__5.00.00.joyous.00",
+      "to": "oewn-jubilance__1.12.00..",
+      "definition": "a feeling of extreme joy",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-jubilant__5.00.00.joyous.00",
+      "to": "oewn-jubilate__2.32.00..",
+      "definition": "to express great joy",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-kind__3.00.00..",
+      "to": "oewn-kindness__1.04.00..",
+      "definition": "a kind act",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-kindhearted__5.00.00.kind.00",
+      "to": "oewn-kindheartedness__1.12.00..",
+      "definition": "sympathy arising from a kind heart",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-kindly__5.00.00.kind.00",
+      "to": "oewn-kindliness__1.07.00..",
+      "definition": "friendliness evidence by a kindly and helpful disposition",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-laugh__2.29.00..",
+      "to": "oewn-laugh__1.10.01..",
+      "definition": "a humorous anecdote or remark intended to provoke laughter",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-laugh__2.29.00..",
+      "to": "oewn-laugh__1.10.02..",
+      "definition": "a facial expression characteristic of a person laughing",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-laugh__2.29.00..",
+      "to": "oewn-laughable__5.00.00.humorous.00",
+      "definition": "arousing or provoking laughter",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-laugh__2.29.00..",
+      "to": "oewn-laugher__1.18.00..",
+      "definition": "a person who is laughing or who laughs easily",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-lighthearted__5.00.00.cheerful.00",
+      "to": "oewn-lightheartedness__1.12.00..",
+      "definition": "the cheerful feeling you have when nothing is troubling you",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-livid__5.00.00.angry.00",
+      "to": "oewn-lividity__1.12.00..",
+      "definition": "a state of fury so great the face becomes discolored",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-lull__2.37.00..",
+      "to": "oewn-lull__1.28.00..",
+      "definition": "a pause during which things are calm or activities are diminished",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-matey__5.00.00.friendly.01",
+      "to": "oewn-mate__1.18.03..",
+      "definition": "informal term for a friend of the same sex",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-mellow__5.00.00.relaxed.00",
+      "to": "oewn-mellowness__1.07.02..",
+      "definition": "geniality, as through the effects of alcohol or marijuana",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-merry__5.00.01.joyous.00",
+      "to": "oewn-merriness__1.07.00..",
+      "definition": "the trait of merry joking",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-mollify__2.37.00..",
+      "to": "oewn-mollification__1.04.00..",
+      "definition": "the act of appeasing someone or causing someone to be more favorably inclined",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-mollify__2.37.00..",
+      "to": "oewn-mollification__1.26.00..",
+      "definition": "a state of being appeased or ameliorated or tempered",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-neighborly__5.00.00.friendly.01",
+      "to": "oewn-neighbor__1.18.00..",
+      "definition": "a person who lives (or is located) near another",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-neighborly__5.00.00.friendly.01",
+      "to": "oewn-neighborliness__1.07.00..",
+      "definition": "a disposition to be friendly and helpful to neighbors",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-pacify__2.37.00..",
+      "to": "oewn-pacifier__1.06.00..",
+      "definition": "device used for an infant to suck or bite on",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-pacify__2.37.00..",
+      "to": "oewn-peace__1.26.01..",
+      "definition": "harmonious relations; freedom from disputes",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-pacifist__5.00.00.peaceful.00",
+      "to": "oewn-pacifist__1.18.00..",
+      "definition": "someone opposed to violence as a means of settling disputes",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-pacifistic__5.00.00.peaceful.00",
+      "to": "oewn-pacifism__1.09.00..",
+      "definition": "the doctrine that all violence is unjustifiable",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-pacifistic__5.00.00.peaceful.00",
+      "to": "oewn-pacifism__1.09.01..",
+      "definition": "the belief that all international disputes can be settled by arbitration",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-pity__2.37.00..",
+      "to": "oewn-pity__1.12.00..",
+      "definition": "a feeling of sympathy and sorrow for the misfortunes of others",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-placate__2.37.00..",
+      "to": "oewn-placative__5.00.00.conciliatory.00",
+      "definition": "intended to pacify by acceding to demands or granting concessions",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-please__2.37.00..",
+      "to": "oewn-pleasant__3.00.00..",
+      "definition": "affording pleasure; being in harmony with your taste or likings",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-please__2.37.00..",
+      "to": "oewn-pleaser__1.18.00..",
+      "definition": "a pleasing entertainer",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-please__2.37.00..",
+      "to": "oewn-pleasing__1.04.00..",
+      "definition": "the act of one who pleases",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-please__2.37.00..",
+      "to": "oewn-pleasure__1.04.02..",
+      "definition": "an activity that affords enjoyment",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-please__2.37.00..",
+      "to": "oewn-pleasure__1.12.00..",
+      "definition": "a fundamental feeling that is hard to define but that people desire to experience",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-quiet__2.37.00..",
+      "to": "oewn-quiet__1.07.00..",
+      "definition": "a disposition free from stress or emotion",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-rage__2.37.00..",
+      "to": "oewn-rage__1.26.00..",
+      "definition": "a state of extreme anger",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-ramp__2.42.00..",
+      "to": "oewn-rampage__1.04.00..",
+      "definition": "violently angry and destructive behavior",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-ramp__2.42.00..",
+      "to": "oewn-rampant__5.00.00.uncontrolled.00",
+      "definition": "unrestrained and violent",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-rejoice__2.37.00..",
+      "to": "oewn-rejoicing__1.12.00..",
+      "definition": "a feeling of great happiness",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-relax__2.29.00..",
+      "to": "oewn-relaxant__5.00.00.depressant.00",
+      "definition": "tending to relax or relieve muscular or nervous tension",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-relax__2.29.00..",
+      "to": "oewn-relaxation__1.04.00..",
+      "definition": "freedom from activity (work or strain or responsibility)",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-relax__2.29.00..",
+      "to": "oewn-relaxation__1.22.01..",
+      "definition": "(physiology) the gradual lengthening of inactive muscle or muscle fibers",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-smile__1.10.00..",
+      "to": "oewn-smile__2.32.00..",
+      "definition": "express with a smile",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-smile__2.29.00..",
+      "to": "oewn-smiler__1.08.00..",
+      "definition": "the human face (‘kisser’ and ‘smiler’ and ‘mug’ are informal terms for ‘face’ and ‘phiz’ is British)",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-smile__2.29.00..",
+      "to": "oewn-smiler__1.18.00..",
+      "definition": "a person who smiles",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-social__5.00.00.friendly.01",
+      "to": "oewn-social__1.14.00..",
+      "definition": "a party of people assembled to promote sociability and communal activity",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-social__5.00.00.friendly.01",
+      "to": "oewn-sociality__1.07.00..",
+      "definition": "the tendency to associate with others and to form social groups",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-softness__1.07.03..",
+      "to": "oewn-soft__5.00.00.conciliatory.00",
+      "definition": "willing to negotiate and compromise",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-sore__5.00.00.angry.00",
+      "to": "oewn-soreness__1.12.00..",
+      "definition": "an uncomfortable feeling of mental painfulness or distress",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-still__2.37.00..",
+      "to": "oewn-still__1.07.00..",
+      "definition": "(poetic) tranquil silence",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-storm__2.42.00..",
+      "to": "oewn-storm__1.26.00..",
+      "definition": "a violent commotion or disturbance",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-tenderhearted__5.00.00.compassionate.00",
+      "to": "oewn-tenderheartedness__1.12.00..",
+      "definition": "warm compassionate feelings",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-tolerant__5.00.00.forgiving.00",
+      "to": "oewn-tolerate__2.31.00..",
+      "definition": "put up with something or somebody unpleasant",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-tranquilize__2.37.00..",
+      "to": "oewn-tranquilizer__1.06.00..",
+      "definition": "a drug used to reduce stress or tension without reducing mental clarity",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-twinkly__5.00.00.cheerful.00",
+      "to": "oewn-twinkle__1.07.00..",
+      "definition": "merriment expressed by a brightness or gleam or animation of countenance",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-umbrageous__5.00.00.angry.00",
+      "to": "oewn-umbrage__1.12.00..",
+      "definition": "a feeling of anger caused by being offended",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-unhurried__5.00.00.patient.00",
+      "to": "oewn-unhurriedness__1.07.00..",
+      "definition": "a rate demonstrating an absence of haste or hurry",
+      "relation": "opposite"
+    }
+  ],
+  "meaningWords": 27932,
+  "limitation": "Source-pinned roots, all-sense exact-synset expansion, one direct derivation, and explicit adjective/adverb links. Other defined words are neutral under this beta policy; complete contextual review and daily certification are outstanding."
+}
