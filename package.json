@@ -7,6 +7,7 @@
     "dev": "vite",
     "typecheck": "tsc -b",
     "test": "node --test --test-isolation=none tests/*.test.ts",
+    "test:ci": "node --test --test-isolation=none",
     "generate": "node scripts/generate.ts",
     "audit-lexicon": "node scripts/audit-lexicon.ts",
     "export-semantic-source": "node scripts/export-semantic-source.ts",

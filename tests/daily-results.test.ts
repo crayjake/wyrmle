@@ -3,8 +3,8 @@ import { test } from 'node:test'
 import { getDailyHistory } from '../src/daily/history.ts'
 import { getDailyPuzzleForVersion } from '../src/daily/puzzle.ts'
 import { buildDailyResult, getCompletedResults } from '../src/daily/results.ts'
-import { buildShareText } from '../src/daily/share.ts'
-import { calculateStats } from '../src/daily/stats.ts'
+import { buildShareRows, buildShareText } from '../src/daily/share.ts'
+import { calculateStats, winWordDistribution } from '../src/daily/stats.ts'
 import { buildDailyScoreSubmission } from '../src/daily/submission.ts'
 import type { DailyPuzzleDefinition, DailyResult } from '../src/daily/types.ts'
 import { createLetterStrikeGame, submitLetterStrike } from '../src/game/letterStrike.ts'
@@ -107,7 +107,7 @@ test('selected Strike tiles with no living matching target are not counted as ac
   assert.deepEqual(completed.turns[0].specialTiles, [])
 })
 
-test('additive Strike in LAD records both removals and one tile activation in its share row', () => {
+test('additive Strike in LAD records both removals and preserves its tile activation evidence', () => {
   const base = puzzle('2026-09-25')
   const definition = { ...base, encounter: { ...base.encounter, strikeConsumesAllowance: false, startingResolve: 1 } }
   const game = playWord(createLetterStrikeGame(definition.encounter), 'LAD')
@@ -117,7 +117,7 @@ test('additive Strike in LAD records both removals and one tile activation in it
   assert.equal(completed.neutral, 1)
   assert.equal(completed.strikeActivations, 1)
   assert.deepEqual(completed.turns[0].letterOutcomes.filter(event => event.removed).map(event => event.position), [2, 3])
-  assert.match(buildShareText(completed), /^N  ··■■······ ◆$/m)
+  assert.match(buildShareText(completed), /^⬜⬜🟩🟩⬜⬜⬜⬜⬜⬜$/mu)
 })
 
 test('a v4 LONG neutral move records both actual removals in result and positional share data', () => {
@@ -133,7 +133,7 @@ test('a v4 LONG neutral move records both actual removals in result and position
   assert.equal(completed.lettersDestroyed, 2)
   assert.equal(completed.largestRemoval, 2)
   assert.deepEqual(completed.turns[0].letterOutcomes.filter((event) => event.removed).map((event) => event.position), [1, 6])
-  assert.match(buildShareText(completed), /^N  ·■····■···$/m)
+  assert.match(buildShareText(completed), /^⬜🟩⬜⬜⬜⬜🟩⬜⬜⬜$/mu)
 })
 
 test('a Strike and neutral hit on one armoured letter share as a single break-and-remove event', () => {
@@ -150,7 +150,7 @@ test('a Strike and neutral hit on one armoured letter share as a single break-an
   assert.equal(completed.strikeActivations, 1)
   assert.equal(completed.armourBroken, 1)
   assert.equal(completed.lettersDestroyed, 1)
-  assert.match(buildShareText(completed), /^N  ▣ ◆$/m)
+  assert.match(buildShareText(completed), /^🟩$/mu)
 })
 
 test('two hits to one armoured letter in a turn count one break and one destroyed letter', () => {
@@ -169,7 +169,7 @@ test('two hits to one armoured letter in a turn count one break and one destroye
   assert.deepEqual(completed.turns[0].letterOutcomes, [{
     enemyLetterId: 'e', position: 0, hitsBefore: 2, hitsAfter: 0, armourBroken: true, removed: true,
   }])
-  assert.match(buildShareText(completed), /^C  ▣$/m)
+  assert.match(buildShareText(completed), /^🟩$/mu)
 })
 
 test('separate armour-break and removal turns stay distinct even after the letter is dead', () => {
@@ -188,7 +188,7 @@ test('separate armour-break and removal turns stay distinct even after the lette
   assert.equal(completed.turns[0].letterOutcomes[0].removed, false)
   assert.equal(completed.turns[1].letterOutcomes[0].armourBroken, false)
   assert.equal(completed.turns[1].letterOutcomes[0].removed, true)
-  assert.match(buildShareText(completed), /^C  ◐ ▪\nC  ■$/m)
+  assert.match(buildShareText(completed), /^🟨\n🟩$/mu)
 })
 
 test('multiple Ward tiles protect one turn and count as one Ward save', () => {
@@ -371,10 +371,10 @@ test('share text includes the public game URL and outcomes without words or enem
   const completed = result()
   const share = buildShareText(completed)
   assert.equal(share, [
-    'WYRMLE 2026-09-24 · NORMAL · VICTORY', '', 'LIVES', '□□□□□ 0/5', '',
-    'C  ·······■·◐ ▪', 'C  ◐■·······■', 'C  ·····■■···',
-    'C  ··■■······', 'N  ■·······■· ◆', 'N  ····■·····',
-    '', 'https://crayjake.github.io/wyrmle/',
+    'WYRMLE 2026-09-24 · NORMAL', 'Won in 6 words', '',
+    '⬜⬜⬜⬜⬜⬜⬜🟩⬜🟨', '🟨🟩⬜⬜⬜⬜⬜🟩⬜🟩', '🟨🟩⬜⬜⬜🟩🟩🟩⬜🟩',
+    '🟨🟩🟩🟩⬜🟩🟩🟩⬜🟩', '🟩🟩🟩🟩⬜🟩🟩🟩🟩🟩', '🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩',
+    '', '0/5 lives · 0 undos', 'https://crayjake.github.io/wyrmle/',
   ].join('\n'))
   for (const secret of [...completed.wordsPlayed, completed.enemyWord]) {
     assert.equal(share.toUpperCase().includes(secret.toUpperCase()), false)
@@ -387,18 +387,18 @@ test('share text includes the public game URL and outcomes without words or enem
   }
   assert.equal(buildShareText(abstractOnly), share)
   assert.equal(share.includes('983746'), false)
-  assert.match(buildShareText({ ...completed, won: false }), /DEFEAT/)
-  const rows = share.split('\n').filter((line) => /^[CNR]  /.test(line))
+  assert.match(buildShareText({ ...completed, won: false }), /Lost after 6 words/)
+  const rows = buildShareRows(completed)
   assert.equal(rows.length, completed.attacks)
-  assert.ok(rows.every((row) => row.split('  ')[1].split(' ')[0].length === completed.enemyLetterCount))
-  assert.doesNotMatch(share, /words|attacks/i)
+  assert.ok(rows.every(row => [...row].length === completed.enemyLetterCount && /^[⬜🟩🟨🟥]+$/u.test(row)))
+  assert.equal(rows.at(-1), '🟩'.repeat(completed.enemyLetterCount))
 })
 
-test('Resolve share segments match the canonical resource and missing positional evidence is rejected', () => {
+test('share life counts match the canonical resource and missing positional evidence is rejected', () => {
   const completed = result()
   for (let remaining = 0; remaining <= 5; remaining += 1) {
     const text = buildShareText({ ...completed, resolveRemaining: remaining })
-    assert.equal(text.split('\n')[3], `${'■'.repeat(remaining)}${'□'.repeat(5 - remaining)} ${remaining}/5`)
+    assert.ok(text.includes(`${remaining}/5 lives · 0 undos`))
   }
   const malformed = structuredClone(completed)
   malformed.turns[0].letterOutcomes.pop()
@@ -455,9 +455,39 @@ test('mode is explicit in completed results, sharing and future submissions with
   assert.equal(hard.mode, 'hard')
   const [normalHeader, ...normalBody] = buildShareText(normal).split('\n')
   const [hardHeader, ...hardBody] = buildShareText(hard).split('\n')
-  assert.equal(normalHeader, 'WYRMLE 2026-09-24 · NORMAL · VICTORY')
-  assert.equal(hardHeader, 'WYRMLE 2026-09-24 · HARD · VICTORY')
+  assert.equal(normalHeader, 'WYRMLE 2026-09-24 · NORMAL')
+  assert.equal(hardHeader, 'WYRMLE 2026-09-24 · HARD')
   assert.deepEqual(hardBody, normalBody)
   assert.deepEqual(buildDailyScoreSubmission(hard), { ...buildDailyScoreSubmission(normal), mode: 'hard', undosRemaining: 1 })
   assert.deepEqual(hard.turns, normal.turns)
+})
+
+
+test('words-to-win distribution groups long wins and excludes losses, duplicates and future dates', () => {
+  const first = result('2026-09-20', { attacks: 2 })
+  const history = [first, result('2026-09-20', { attacks: 1, completedAt: '2026-09-20T14:00:00Z' }),
+    result('2026-09-21', { attacks: 6 }), result('2026-09-22', { attacks: 8 }),
+    result('2026-09-23', { attacks: 3, won: false }), result('2026-09-24', { attacks: 3 }),
+    result('2026-09-25', { attacks: 1 })]
+  const before = structuredClone(history)
+  assert.deepEqual(winWordDistribution(history, '2026-09-24'), [0, 1, 1, 0, 0, 2])
+  assert.deepEqual(winWordDistribution([], '2026-09-24'), [0, 0, 0, 0, 0, 0])
+  assert.deepEqual(history, before)
+})
+
+test('share rows retain removals and weakened armour while showing actual revival turns', () => {
+  const completed = result()
+  const turn = completed.turns[0]
+  const evidence = (hitsBefore: number, hitsAfter: number, regenerated = false) => ({
+    enemyLetterId: 'one', position: 0, hitsBefore, hitsAfter,
+    armourBroken: hitsBefore === 2 && hitsAfter < 2, removed: hitsBefore > 0 && hitsAfter === 0,
+    ...(regenerated ? { regenerated: true as const } : {}),
+  })
+  const sample = { ...completed, enemyLetterCount: 1, turns: [
+    evidence(2, 1), evidence(1, 1), evidence(1, 0), evidence(0, 0),
+    evidence(0, 1, true), evidence(1, 1), evidence(1, 2, true), evidence(2, 2), evidence(2, 0),
+  ].map(outcome => ({ ...turn, letterOutcomes: [outcome] })) }
+  assert.deepEqual(buildShareRows(sample), ['🟨', '🟨', '🟩', '🟩', '🟥', '🟨', '🟥', '⬜', '🟩'])
+  assert.match(buildShareText({ ...completed, attacks: 1, undosUsed: 1 }), /Won in 1 word\n/)
+  assert.match(buildShareText({ ...completed, undosUsed: 1 }), /1 undo\n/)
 })

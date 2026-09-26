@@ -1,0 +1,179 @@
+{
+  "environment": {
+    "build": "production",
+    "browser": "Playwright Chromium",
+    "nativeShare": "stubbed; physical iPhone not tested"
+  },
+  "automatedChecks": {
+    "node": "24.21.0",
+    "tests": 569,
+    "passed": 569,
+    "failed": 0,
+    "durationMs": 104341.930413,
+    "lint": "passed",
+    "productionBuild": "passed"
+  },
+  "checks": [
+    {
+      "name": "result-375",
+      "width": 375,
+      "scrollWidth": 375,
+      "panelWidth": 336,
+      "panelScrollWidth": 336,
+      "panelHeight": 599,
+      "panelScrollHeight": 599,
+      "previewWidth": 262,
+      "previewScrollWidth": 262,
+      "monospace": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+    },
+    {
+      "name": "share-native",
+      "nativeCalls": 1,
+      "clipboardCalls": 0,
+      "activeGesture": [
+        true
+      ]
+    },
+    {
+      "name": "share-cancel",
+      "nativeCalls": 1,
+      "clipboardCalls": 0,
+      "activeGesture": [
+        true
+      ]
+    },
+    {
+      "name": "share-copy",
+      "nativeCalls": 0,
+      "clipboardCalls": 1,
+      "activeGesture": []
+    },
+    {
+      "name": "share-error",
+      "nativeCalls": 1,
+      "clipboardCalls": 1,
+      "activeGesture": [
+        true
+      ]
+    },
+    {
+      "name": "manual-copy-375",
+      "width": 375,
+      "scrollWidth": 375,
+      "panelWidth": 336,
+      "panelScrollWidth": 336,
+      "panelHeight": 628,
+      "panelScrollHeight": 889,
+      "previewWidth": 262,
+      "previewScrollWidth": 262,
+      "monospace": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+    },
+    {
+      "name": "share-manual",
+      "nativeCalls": 0,
+      "clipboardCalls": 0,
+      "activeGesture": []
+    },
+    {
+      "name": "share-pending",
+      "nativeCalls": 1,
+      "clipboardCalls": 0,
+      "activeGesture": [
+        true
+      ]
+    },
+    {
+      "name": "stats-375",
+      "width": 375,
+      "scrollWidth": 375,
+      "panelWidth": 336,
+      "panelScrollWidth": 336,
+      "panelHeight": 621,
+      "panelScrollHeight": 621,
+      "monospace": null
+    },
+    {
+      "name": "unfinished-history-resume",
+      "passed": true
+    },
+    {
+      "name": "result-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "panelWidth": 286,
+      "panelScrollWidth": 286,
+      "panelHeight": 509,
+      "panelScrollHeight": 509,
+      "previewWidth": 233,
+      "previewScrollWidth": 233,
+      "monospace": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+    },
+    {
+      "name": "stats-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "panelWidth": 286,
+      "panelScrollWidth": 286,
+      "panelHeight": 520,
+      "panelScrollHeight": 520,
+      "monospace": null
+    },
+    {
+      "name": "result-900",
+      "width": 900,
+      "scrollWidth": 900,
+      "panelWidth": 430,
+      "panelScrollWidth": 430,
+      "panelHeight": 518,
+      "panelScrollHeight": 518,
+      "previewWidth": 367,
+      "previewScrollWidth": 367,
+      "monospace": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+    },
+    {
+      "name": "stats-900",
+      "width": 900,
+      "scrollWidth": 900,
+      "panelWidth": 430,
+      "panelScrollWidth": 430,
+      "panelHeight": 529,
+      "panelScrollHeight": 529,
+      "monospace": null
+    },
+    {
+      "name": "archived-victory",
+      "width": 320,
+      "scrollWidth": 320,
+      "panelWidth": 286,
+      "panelScrollWidth": 286,
+      "panelHeight": 534,
+      "panelScrollHeight": 543,
+      "previewWidth": 233,
+      "previewScrollWidth": 233,
+      "monospace": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+    },
+    {
+      "name": "archived-defeat",
+      "width": 320,
+      "scrollWidth": 320,
+      "panelWidth": 286,
+      "panelScrollWidth": 286,
+      "panelHeight": 534,
+      "panelScrollHeight": 544,
+      "previewWidth": 233,
+      "previewScrollWidth": 233,
+      "monospace": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+    },
+    {
+      "name": "stats-empty-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "panelWidth": 286,
+      "panelScrollWidth": 286,
+      "panelHeight": 337,
+      "panelScrollHeight": 337,
+      "monospace": null
+    }
+  ],
+  "errors": []
+}

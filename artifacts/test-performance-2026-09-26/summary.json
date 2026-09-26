@@ -1,0 +1,86 @@
+{
+  "date": "2026-09-26",
+  "baselineCommit": "ee042f6",
+  "runtime": "Node v24.21.0 Linux x64",
+  "githubBaseline": {
+    "runUrl": "https://github.com/crayjake/wyrmle/actions/runs/36223141029",
+    "testSeconds": 235,
+    "buildSeconds": 25,
+    "workflowSeconds": 297
+  },
+  "localSerialBefore": {
+    "tests": 562,
+    "pass": 562,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "duration_ms": 167757.947727
+  },
+  "localSerialAfter": {
+    "tests": 563,
+    "pass": 563,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "duration_ms": 103595.1002
+  },
+  "localSerialReductionPercent": 38.2,
+  "localConcurrentShards": [
+    {
+      "shard": 1,
+      "tests": 210,
+      "pass": 210,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "duration_ms": 69451.022747
+    },
+    {
+      "shard": 2,
+      "tests": 188,
+      "pass": 188,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "duration_ms": 57185.021366
+    },
+    {
+      "shard": 3,
+      "tests": 165,
+      "pass": 165,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "duration_ms": 40681.518461
+    }
+  ],
+  "longestLocalShardSeconds": 69.45,
+  "coverage": {
+    "allOriginalTestsRetained": true,
+    "combinedShardsMatchFullSuiteExactly": true,
+    "allTestsPassed": 563,
+    "newTests": [
+      "SHA-256 selects the portable implementation when Node globals are absent"
+    ],
+    "testNamesSha256": "321d4435742d506604bffdb12c843ca933fd8879901764420e84b6b924c67c6b"
+  },
+  "otherChecks": {
+    "lint": "passed",
+    "typecheck": "passed",
+    "productionBuild": "passed",
+    "browserHashWithoutNodeGlobals": "passed",
+    "workflowYaml": "parsed; deploy requires test matrix and build",
+    "gitDiffCheck": "passed"
+  },
+  "changes": [
+    "Use native SHA-256 in Node, retaining tested browser fallback and identical digests.",
+    "Avoid cloning compiled meanings that mutation recompiles and replaces.",
+    "Split original construction/ranking tests into separately schedulable files.",
+    "Run three built-in Node test shards; lint and build run in parallel; deployment waits for every check."
+  ],
+  "limitations": [
+    "Local concurrent shards shared one machine; CI shards use separate runners.",
+    "GitHub Actions with these uncommitted changes has not run; no new remote timing or deployment is claimed.",
+    "One measurement per configuration; routine timing variance and job startup are not controlled."
+  ]
+}

@@ -13,8 +13,23 @@ const roundConstants = new Uint32Array([
 
 const rotateRight = (word: number, count: number) => (word >>> count) | (word << (32 - count))
 
-/** UTF-8 text to a lowercase, 64-character SHA-256 digest; no platform imports. */
+// Node authoring and CI hash large semantic inventories repeatedly. Load its
+// synchronous native implementation without introducing a browser import or
+// requiring an asynchronous API in the solver. Browsers keep the same digest.
+const runtime = globalThis as typeof globalThis & {
+  process?: { getBuiltinModule?: (id: 'node:crypto') => {
+    hash?: (algorithm: string, data: string, encoding: 'hex') => string
+  } | undefined }
+}
+const nativeHash = runtime.process?.getBuiltinModule?.('node:crypto')?.hash
+
+/** UTF-8 text to a lowercase, 64-character SHA-256 digest on either runtime. */
 export function sha256(text: string): string {
+  return nativeHash ? nativeHash('sha256', text, 'hex') : portableSha256(text)
+}
+
+/** The synchronous browser implementation, also exercised directly in CI. */
+export function portableSha256(text: string): string {
   const input = new TextEncoder().encode(text)
   const bytes = new Uint8Array(Math.ceil((input.length + 9) / 64) * 64)
   bytes.set(input)

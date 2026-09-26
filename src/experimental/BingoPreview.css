@@ -1,0 +1,49 @@
+.bingo-preview .beta-label { color: var(--blue); }
+
+.bingo-preview .beta-intro {
+  margin: 0;
+  font-size: max(11px, 0.65rem);
+  line-height: 1.4;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--fg);
+}
+
+.bingo-preview .daily-meta button {
+  min-height: 32px;
+  padding: 0.2rem 0;
+}
+
+/* Tail, body, head: both the travelling wyrm and the resting life meter use
+   the same three larger pieces. The decoder measures their actual dock centres. */
+.bingo-preview .wyrm-life-meter { gap: 4px; }
+.bingo-preview .wyrm-life-segment { width: 15px; height: 16px; }
+.bingo-preview .wyrm-life-tail { width: 11px; height: 11px; }
+.bingo-preview .wyrm-life-head { width: 19px; height: 19px; }
+.bingo-preview .wyrm-life-head::before { top: 3px; right: 3px; }
+.bingo-preview .wyrm-life-head::after { bottom: 3px; right: 3px; }
+.bingo-preview .wyrm-life-tongue { top: 7px; }
+
+/* Class changes happen after the enemy's hit animation resolves. Selection
+   changes do not replay this animation, and ordinary dailies never opt in. */
+.wyrm-life-meter[data-animate-lives] > :not(.is-filled) {
+  animation: beta-life-lost 440ms ease-out;
+}
+
+@keyframes beta-life-lost {
+  0% { background: var(--green); opacity: 1; transform: scale(1); }
+  35% { background: var(--red); color: var(--red); opacity: 1; transform: scale(1.2); }
+  70% { transform: scale(0.85); }
+  100% { background: transparent; opacity: 0.38; transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wyrm-life-meter[data-animate-lives] > :not(.is-filled) { animation: none; }
+}
+
+@media (max-width: 600px) and (orientation: portrait) {
+  /* Reserve room for the preview label and prompt without clipping Play. */
+  .container.letter-combat.bingo-preview {
+    --board-size: clamp(12rem, calc(100dvh - 19.75rem), 18rem);
+  }
+}

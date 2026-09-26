@@ -13,7 +13,14 @@ export function mutateCandidate(candidate: CandidatePuzzle, seed: string | numbe
   kind?: MutationKind; allowResolveMutation?: boolean
 } = {}): CandidatePuzzle {
   const random = createRandom(seed)
-  const result = structuredClone(candidate)
+  // The old compiled inventory is replaced below after every mutation. Avoid
+  // cloning tens of thousands of word records only to discard them. All mutable
+  // construction/rule data still belongs to the child, and its meanings are
+  // freshly compiled against its final supply, including for unchanged supplies.
+  const result = structuredClone(candidate.encounter.meaningLexicon
+    ? { ...candidate, encounter: { ...candidate.encounter, meaningLexicon: undefined } } : candidate)
+  // Keep the source table available for read-only decisions until replacement.
+  if (candidate.encounter.meaningLexicon) result.encounter.meaningLexicon = candidate.encounter.meaningLexicon
   if (options.kind === 'refill-length' && !candidate.encounter.finiteRefills) throw new Error('Refill length mutation requires a finite encounter.')
   const kind = options.kind ?? random.pick(mutationKinds.filter(kind => (options.allowResolveMutation || kind !== 'resolve')
     && (kind !== 'refill-length' || candidate.encounter.finiteRefills)

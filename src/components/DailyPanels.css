@@ -53,8 +53,8 @@
   flex: none;
   display: grid;
   place-items: center;
-  width: 2rem;
-  height: 2rem;
+  width: 2.75rem;
+  height: 2.75rem;
   padding: 0;
   border: 0;
   background: transparent;
@@ -71,29 +71,20 @@
   margin: 0 0 0.8rem;
 }
 
-.daily-result-resolve {
-  margin-bottom: 1rem;
-}
-
-.daily-result-resolve .health {
-  font-size: 1.45rem;
-  margin-top: 0.2rem;
-}
-
-.daily-share-details {
-  font-size: 0.7rem;
-}
-
-.daily-share-details summary {
-  cursor: pointer;
-  color: var(--blue);
+.daily-share-card {
+  padding: 0.8rem;
+  border: 1px solid color-mix(in srgb, var(--fg) 20%, transparent);
+  background: color-mix(in srgb, var(--fg) 3%, var(--bg));
 }
 
 .daily-share-preview {
-  margin: 0.6rem 0;
+  margin: 0;
   overflow-x: auto;
   color: var(--emph);
-  font: inherit;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.68rem;
+  font-variant-ligatures: none;
+  letter-spacing: 0;
   line-height: 1.6;
   white-space: pre;
 }
@@ -134,6 +125,89 @@
   line-height: 1.2;
 }
 
+.daily-stats-headline {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  text-align: center;
+  margin: 0.5rem 0 1rem;
+}
+
+.daily-stats-headline .daily-stat,
+.daily-result-summary .daily-stat {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  gap: 0.25rem;
+}
+
+.daily-stats-headline dd {
+  font-size: 1.9rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.daily-result-summary { text-align: center; }
+
+.daily-distribution h3 {
+  margin: 0 0 0.7rem;
+  font: inherit;
+  color: var(--emph);
+}
+
+.daily-distribution ol {
+  display: grid;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.daily-distribution li {
+  display: grid;
+  grid-template-columns: 1.4rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.daily-distribution-label { text-align: right; }
+
+.daily-distribution-track {
+  position: relative;
+  height: 1.35rem;
+  background: color-mix(in srgb, var(--fg) 6%, transparent);
+}
+
+.daily-distribution-bar {
+  display: block;
+  height: 100%;
+  background: color-mix(in srgb, var(--fg) 30%, var(--bg));
+}
+
+.daily-distribution-bar.is-today { background: color-mix(in srgb, var(--green) 60%, var(--bg)); }
+
+.daily-distribution-count {
+  position: absolute;
+  right: 0.5rem;
+  top: 0;
+  color: var(--emph);
+  line-height: 1.35rem;
+}
+
+.daily-disclosure {
+  margin-top: 0.45rem;
+  border-top: 1px solid color-mix(in srgb, var(--fg) 20%, transparent);
+}
+
+.daily-disclosure > summary {
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 0.55rem 0;
+  cursor: pointer;
+  color: var(--fg);
+}
+
+.daily-disclosure .daily-stats-list { border: 0; margin: 0 0 0.5rem; padding: 0; }
+.daily-word-recap { margin: 0 0 0.8rem; overflow-wrap: anywhere; }
+.daily-stats-footnote { margin-bottom: 0; }
+
 .daily-stat-unit {
   font-size: 0.65rem;
   color: var(--fg);
@@ -157,22 +231,6 @@
 .daily-stats-list dd {
   max-width: 11rem;
   text-align: right;
-}
-
-.daily-words {
-  margin: 0 0 0.9rem;
-  font-size: 0.7rem;
-}
-
-.daily-words summary {
-  width: fit-content;
-  cursor: pointer;
-  color: var(--blue);
-}
-
-.daily-words p {
-  margin-top: 0.4rem;
-  overflow-wrap: anywhere;
 }
 
 .daily-panel-note,
@@ -219,20 +277,30 @@
 }
 
 .daily-share-status {
-  margin-top: 0.6rem;
+  margin: 0.5rem 0 0;
 }
 
-.daily-share-legend {
+.daily-share-status:empty { margin: 0; }
+
+.daily-share-actions button {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.15rem 0.7rem;
-  margin-top: 0.5rem;
-  color: color-mix(in srgb, var(--fg) 80%, var(--bg));
-  font-size: 0.6rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  white-space: nowrap;
 }
 
-.daily-share-legend span {
-  white-space: nowrap;
+.daily-share-actions svg { flex-shrink: 0; }
+
+.daily-share-actions .daily-panel-primary {
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--bg);
+}
+
+.daily-share-actions .daily-panel-primary:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--green) 85%, var(--emph));
 }
 
 .daily-share-fallback {
@@ -256,7 +324,8 @@
   border-radius: 0.1rem;
   background: transparent;
   color: var(--fg);
-  font: inherit;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: 0;
   font-size: 0.7rem;
   line-height: 1.5;
   resize: vertical;
@@ -300,11 +369,6 @@
 
 .daily-history-resume-row {
   align-items: center;
-}
-
-.daily-history-detail-short {
-  grid-column: 1;
-  align-self: center;
 }
 
 .daily-resume-button {
@@ -413,6 +477,9 @@
   .daily-stats-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .daily-stats-headline { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .daily-result-summary { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 .dev-match-hints {
   margin: 0.75rem 0;

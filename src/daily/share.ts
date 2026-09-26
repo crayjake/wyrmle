@@ -1,39 +1,32 @@
-import type { DailyResult, ResultTurn } from './types.ts'
+import type { DailyResult } from './types.ts'
 import { getPublicSiteUrl } from '../lib/publicSiteUrl.ts'
 
-const semanticPrefix: Record<ResultTurn['semanticLabel'], string> = {
-  COUNTER: 'C',
-  NEUTRAL: 'N',
-  RESISTED: 'R',
-}
-
-/** Each row tells that turn's positional story, never reconstructed from final state. */
-export function buildShareText(result: DailyResult): string {
-  const rows = result.turns.map((turn) => {
+/** Equal-width emoji cells show the enemy after each word, from saved evidence. */
+export function buildShareRows(result: DailyResult): string[] {
+  const maximumHits: number[] = []
+  return result.turns.map((turn) => {
     if (turn.letterOutcomes.length !== result.enemyLetterCount
       || turn.letterOutcomes.some((outcome, position) => outcome.position !== position)) {
       throw new Error('Share rows require an outcome for every original enemy position.')
     }
-    const positions = turn.letterOutcomes.map((outcome) => {
-      if (outcome.regenerated) return '↺'
-      if (outcome.armourBroken && outcome.removed) return '▣'
-      if (outcome.removed) return '■'
-      if (outcome.armourBroken) return '◐'
-      return '·'
+    return turn.letterOutcomes.map((outcome, position) => {
+      maximumHits[position] = Math.max(maximumHits[position] ?? 0, outcome.hitsBefore, outcome.hitsAfter)
+      if (outcome.regenerated) return '🟥'
+      if (outcome.hitsAfter === 0) return '🟩'
+      if (outcome.hitsAfter < maximumHits[position]) return '🟨'
+      return '⬜'
     }).join('')
-    const effects = (turn.resolveProtected ? '▪' : '') + (turn.strikeActivations > 0 ? '◆' : '')
-      + ((turn.recoveries?.length ?? 0) > 0 ? '↺' : '')
-    return `${semanticPrefix[turn.semanticLabel]}  ${positions}${effects ? ` ${effects}` : ''}`
   })
-  const resolve = '■'.repeat(result.resolveRemaining) + '□'.repeat(result.startingResolve - result.resolveRemaining)
+}
+
+export function buildShareText(result: DailyResult): string {
   return [
-    `WYRMLE ${result.date} · ${result.mode.toUpperCase()} · ${result.won ? 'VICTORY' : 'DEFEAT'}`,
+    `WYRMLE ${result.date} · ${result.mode.toUpperCase()}`,
+    `${result.won ? 'Won in' : 'Lost after'} ${result.attacks} ${result.attacks === 1 ? 'word' : 'words'}`,
     '',
-    'LIVES',
-    `${resolve} ${result.resolveRemaining}/${result.startingResolve}`,
+    ...buildShareRows(result),
     '',
-    ...rows,
-    '',
+    `${result.resolveRemaining}/${result.startingResolve} lives · ${result.undosUsed} ${result.undosUsed === 1 ? 'undo' : 'undos'}`,
     getPublicSiteUrl(),
   ].join('\n')
 }

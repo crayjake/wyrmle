@@ -9,3 +9,7 @@ It would be nice if you could drag to select multiple tiles, say initially I cou
 If I type in CAREFUL the info below is quite a lot. says neutral . 3 hits. long +1 (in green?) . adjective +1 (not in green even tho its green below anger), then a blue heart on new line. then below it shows lives 5-> 5 no listed meaning bonus. This could be reworked. 
 
 I think we need a tad more spacing below the header, and then also to add a small amount of padding to the bottom if we are on an installed webapp, as currently the rounded corners of my iphone mean the clear and play words are (extremely ever so slightly ) cut off.
+
+
+
+I have anew idea for a potentially clever way to think about generating puzzles. We have a few enemy candidates C_i. For each say try find 5 words with opposite meaning and use all the letters within C_i at least once, ideally with at least 2 repeated letters. Then we have found our enemy and our bingo. That makes up the starting pool of letters, so you have n remaining free letters. 

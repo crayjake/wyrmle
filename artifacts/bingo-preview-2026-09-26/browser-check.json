@@ -1,0 +1,205 @@
+{
+  "build": "production",
+  "checks": [
+    {
+      "name": "intro-three-pieces-375",
+      "layout": {
+        "viewport": 375,
+        "page": 375,
+        "main": 375,
+        "content": 375,
+        "height": 667,
+        "mainHeight": 667,
+        "scrollHeight": 667
+      }
+    },
+    {
+      "name": "opening-375",
+      "layout": {
+        "viewport": 375,
+        "page": 375,
+        "main": 375,
+        "content": 375,
+        "height": 667,
+        "mainHeight": 667,
+        "scrollHeight": 667
+      }
+    },
+    {
+      "name": "bingo-selected-375",
+      "layout": {
+        "viewport": 375,
+        "page": 375,
+        "main": 375,
+        "content": 375,
+        "height": 667,
+        "mainHeight": 667,
+        "scrollHeight": 667
+      }
+    },
+    {
+      "name": "bingo-win-375",
+      "layout": {
+        "viewport": 375,
+        "page": 375,
+        "main": 375,
+        "content": 375,
+        "height": 667,
+        "mainHeight": 667,
+        "scrollHeight": 667
+      }
+    },
+    {
+      "name": "normal-motion-three-part-intro-and-life-loss",
+      "animation": "beta-life-lost"
+    },
+    {
+      "name": "storm-finish-375",
+      "layout": {
+        "viewport": 375,
+        "page": 375,
+        "main": 375,
+        "content": 375,
+        "height": 667,
+        "mainHeight": 667,
+        "scrollHeight": 667
+      }
+    },
+    {
+      "name": "actual-browser-route-STORM",
+      "words": [
+        "STORM",
+        "CHARTS",
+        "REASON"
+      ]
+    },
+    {
+      "name": "calmness-finish-375",
+      "layout": {
+        "viewport": 375,
+        "page": 375,
+        "main": 375,
+        "content": 375,
+        "height": 667,
+        "mainHeight": 667,
+        "scrollHeight": 667
+      }
+    },
+    {
+      "name": "actual-browser-route-CALMNESS",
+      "words": [
+        "CALMNESS",
+        "COHERENT"
+      ]
+    },
+    {
+      "name": "loss-finish-375",
+      "layout": {
+        "viewport": 375,
+        "page": 375,
+        "main": 375,
+        "content": 375,
+        "height": 667,
+        "mainHeight": 667,
+        "scrollHeight": 667
+      }
+    },
+    {
+      "name": "actual-browser-route-loss",
+      "words": [
+        "CALMS",
+        "HEN",
+        "OAR"
+      ]
+    },
+    {
+      "name": "stored-daily-preferences-and-unrelated-data-preserved",
+      "keys": 3
+    },
+    {
+      "name": "return-to-daily-still-five-lives"
+    },
+    {
+      "name": "opening-320",
+      "layout": {
+        "viewport": 320,
+        "page": 320,
+        "main": 320,
+        "content": 320,
+        "height": 568,
+        "mainHeight": 568,
+        "scrollHeight": 568
+      }
+    },
+    {
+      "name": "bingo-selected-320",
+      "layout": {
+        "viewport": 320,
+        "page": 320,
+        "main": 320,
+        "content": 320,
+        "height": 568,
+        "mainHeight": 568,
+        "scrollHeight": 568
+      }
+    },
+    {
+      "name": "help-320",
+      "layout": {
+        "viewport": 320,
+        "page": 320,
+        "main": 320,
+        "content": 320,
+        "height": 568,
+        "mainHeight": 568,
+        "scrollHeight": 568
+      }
+    },
+    {
+      "name": "opening-900",
+      "layout": {
+        "viewport": 900,
+        "page": 900,
+        "main": 900,
+        "content": 900,
+        "height": 900,
+        "mainHeight": 900,
+        "scrollHeight": 900
+      }
+    },
+    {
+      "name": "bingo-selected-900",
+      "layout": {
+        "viewport": 900,
+        "page": 900,
+        "main": 900,
+        "content": 900,
+        "height": 900,
+        "mainHeight": 900,
+        "scrollHeight": 900
+      }
+    },
+    {
+      "name": "help-900",
+      "layout": {
+        "viewport": 900,
+        "page": 900,
+        "main": 900,
+        "content": 900,
+        "height": 900,
+        "mainHeight": 900,
+        "scrollHeight": 900
+      }
+    }
+  ],
+  "errors": [],
+  "automatedChecks": {
+    "node": "24.21.0",
+    "tests": 574,
+    "passed": 574,
+    "failed": 0,
+    "durationMs": 107473.314754,
+    "lint": "passed",
+    "productionBuild": "passed"
+  }
+}

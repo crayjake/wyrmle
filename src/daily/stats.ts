@@ -28,6 +28,16 @@ export type PlayerStats = {
 
 const millisecondsPerDay = 86_400_000
 
+/** Six compact buckets, with six or more words grouped in the final bar. */
+export function winWordDistribution(results: readonly DailyResult[], todayId: string): number[] {
+  validatePuzzleId(todayId)
+  const counts = [0, 0, 0, 0, 0, 0]
+  for (const result of getCompletedResults(results)) {
+    if (result.won && result.date <= todayId && result.attacks > 0) counts[Math.min(result.attacks, 6) - 1]++
+  }
+  return counts
+}
+
 function dayNumber(id: string): number {
   validatePuzzleId(id)
   return new Date(`${id}T00:00:00.000Z`).getTime() / millisecondsPerDay

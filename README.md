@@ -2,7 +2,7 @@
 
 A deterministic daily word game where the enemy word's letters are its health. Tap or swipe across tiles in spelling order, preview the meaning match and exact enemy cells that will be hit, and remove every letter before your lives run out. New puzzles focus on meaning, with Life, Hit and Revive tiles adding tactical choices.
 
-The [meaning-first review](docs/meaning-coverage-review.md) records the current rules, frozen dictionary and CHAOS publication. The [lexical and onboarding review](docs/lexical-onboarding-review.md) explains the earlier word-label pipeline, the short demo and the research behind it. The [gameplay review](docs/gameplay-onboarding-pass.md) preserves earlier player tests and records phone checks. The [ANGER review](docs/revive-candidate-notes.md) records the earlier bonus-based publication and its scoped rescue certificate; those proofs do not transfer to meaning-first puzzles.
+The [current CHAOS review](docs/meaning-assessment-review.md) records the frozen dictionary, HALCYONS correction and publication proofs. The [generator guide](docs/generator.md#what-you-can-do-yourself) explains which enemies you can generate yourself and what still needs semantic review before publication. The [lexical and onboarding review](docs/lexical-onboarding-review.md) explains the earlier word-label pipeline, the short demo and the research behind it. The [gameplay review](docs/gameplay-onboarding-pass.md) preserves earlier player tests and records phone checks. The [ANGER review](docs/revive-candidate-notes.md) records the earlier bonus-based publication and its scoped rescue certificate; those proofs do not transfer to meaning-first puzzles.
 
 ## Run and verify
 
@@ -18,7 +18,7 @@ Tests use Node's built-in TypeScript support; use Node 22.18+ or a newer support
 
 ## GitHub Pages
 
-In [repository Settings → Pages](https://github.com/crayjake/wyrmle/settings/pages), set **Build and deployment → Source → GitHub Actions**. Push this project, including `.github/workflows/pages.yml`, to `main`. The workflow installs locked dependencies on Node 24, runs tests and lint, typechecks/builds, then deploys `dist`. It can also be run manually from **Actions → Deploy to GitHub Pages → Run workflow** on `main`.
+In [repository Settings → Pages](https://github.com/crayjake/wyrmle/settings/pages), set **Build and deployment → Source → GitHub Actions**. Push this project, including `.github/workflows/pages.yml`, to `main`. The workflow installs locked dependencies on Node 24, runs all tests in three parallel shards, and runs lint/typecheck/build in a separate job. Deployment of `dist` waits for all test shards and the build to succeed. It can also be run manually from **Actions → Deploy to GitHub Pages → Run workflow** on `main`. See [test commands and timing](docs/testing.md) for local reproduction.
 
 The project site will be **https://crayjake.github.io/wyrmle/** after its first successful deployment. The workflow takes the base path from GitHub Pages, so scripts, lazy-loaded chunks, styles and the favicon work below `/wyrmle/`; a configured custom domain is supported too. Local `npm run dev` and ordinary builds keep `/` as their base. No `gh-pages` branch, deployment dependency or personal access token is needed. Onboarding, modes and Daily saves remain local to each browser and site origin.
 
@@ -135,32 +135,36 @@ Selections, errors and intro progress are transient. Refresh restores committed 
 
 ## Results and statistics
 
-`buildDailyResult(puzzle, game, completedAt, mode, undosUsed)` is pure. It records mode, intrinsic puzzle difficulty, undos used/remaining, outcome/enemy, remaining Lives, words used, total hits, letters removed, armour broken, largest single-turn removal, strongest strike count, Counter/Neutral/Resisted counts, actual Hit activations, Life-tile saves and Revive recovery evidence. The result presents Victory/Defeat with mode, difficulty and undo usage, numeric Lives plus one segment per starting Lives, semantic breakdown and letter/effect totals. Word count is secondary in the optional history. Hit counts only when its tile hits. Life protection counts once per protected turn. Each turn's removal/armour outcomes reflect the final state after recovery; ordered damage and recovery events remain separate. No player score, stars or rankings are invented.
+A separate **[three-life bingo preview](artifacts/bingo-preview-2026-09-26/README.md)** is available at `?preview=bingo`. It uses a shorter wyrm, three-life animations and a generated CHAOS board with a hidden one-word win and alternative routes. It never writes daily progress or statistics, and does not replace a published puzzle. Its new vocabulary still requires full contextual review before daily publication.
+
+`buildDailyResult(puzzle, game, completedAt, mode, undosUsed)` is pure. It records mode, intrinsic puzzle difficulty, undos used/remaining, outcome/enemy, remaining Lives, words used, total hits, letters removed, armour broken, largest single-turn removal, strongest strike count, Counter/Neutral/Resisted counts, actual Hit activations, Life-tile saves and Revive recovery evidence. The result screen shows Victory/Defeat, words, lives remaining, undos, a share preview and the Share action. **Run details** holds the submitted words, semantic breakdown and letter/effect totals. Hit counts only when its tile hits. Life protection counts once per protected turn. Each turn's removal/armour outcomes reflect the final state after recovery; ordered damage and recovery events remain separate. No player score, stars or rankings are invented.
 
 `calculateStats(results, todayId)` derives played, wins, win rate, current/longest winning streaks, average Lives on wins, best Lives, largest turn by hits, total removed letters, Counter/Neutral/Resisted moves, Hit activations, Life-tile saves and armour breaks, plus word-length and different-enemy statistics. Aggregates are not stored. Only the first completion per puzzle counts; future DEV dates are excluded. Streaks follow consecutive UTC dates. Yesterday can sustain a streak while today is unplayed. Completing an earlier run after midnight still belongs to its puzzle date.
 
-The current statistics screen stays combined. Stored modes, intrinsic difficulty and undo usage allow future comparisons across Normal, Hard and Hardcore without changing combat or permitting a second attempt at the same Daily.
+Statistics leads with Played, Win %, Streak and Best streak, followed by a **Words to win** chart (1–5 and 6+). `winWordDistribution` uses the same first-completion and date rules as the aggregates, and counts wins only. Today's winning bucket is highlighted. **Recent days** and **More statistics** are collapsed; earlier unfinished puzzles can still be resumed from Recent days. Today's completed result can be shared directly from Statistics. Modes remain combined; stored modes, difficulty and undo usage allow future comparisons without changing combat or permitting a second attempt at the same Daily.
 
 ## Spoiler-safe sharing
 
-`buildShareText(result)` in `src/daily/share.ts` is pure and independent of the UI. It returns date, mode, outcome, a lives bar and one positional row per submitted word:
+`buildShareText(result)` in `src/daily/share.ts` is pure and independent of the UI. It returns date, mode, outcome and word count, one row of square emoji per submitted word, numeric lives/undos and the game URL:
 
 ```text
-WYRMLE 2026-09-25 · NORMAL · VICTORY
+WYRMLE 2026-09-26 · NORMAL
+Won in 4 words
 
-LIVES
-■□□□□ 1/5
+🟩⬜🟨⬜⬜
+🟩⬜🟨🟨🟩
+🟩🟩🟩🟨🟩
+🟩🟩🟩🟩🟩
 
-C  ·······■·◐
-C  ·■···■■··· ▪
-N  ◐·■······■ ◆
-C  ···■····■·
-N  ■···■·····
+2/5 lives · 0 undos
+https://crayjake.github.io/wyrmle/
 ```
 
-C/N/R mean Counter/Neutral/Resisted. Each slot is `·` untouched that turn, `◐` armour broken but surviving, `■` removed, `▣` armour broken and removed in the same word, or `↺` recovered by Revive. ▪ means Life and ◆ means Hit triggered. Recovery takes precedence when the same slot is damaged and then healed. A previously broken letter removed on a later turn uses `■`, not `▣`. There is no redundant word count. The result's expandable share preview explains the notation; the copied text omits the legend and all enemy/submitted words, board letters and tile IDs. Clipboard denial provides a selectable fallback.
+Each row shows the enemy's state **after that word**: 🟩 removed, 🟨 weakened armour, ⬜ standing at full health, 🟥 recovered by Revive on that turn. Removed positions stay green on later rows until revived. Recovery takes precedence when the same position is damaged and then healed. The preview uses a system monospace font; the shared grid uses only square emoji, without letter prefixes, mixed symbols or space-based columns, so it also works in proportional-font messaging apps. Enemy/submitted words, board letters and tile IDs are omitted. The short legend is under Run details.
 
-The engine emits `letterOutcomes` for every original slot on every turn, including before/after hits, armour-break/removal flags and any recovery, from that turn's ordered hit/recovery records. Result turns copy these events. Sharing never guesses the turn history from the final enemy state, and a same-word double hit correctly produces `▣` unless subsequent recovery changes the final outcome.
+The engine emits `letterOutcomes` for every original slot on every turn, including before/after hits, armour-break/removal flags and any recovery, from that turn's ordered hit/recovery records. `buildShareRows` uses these saved outcomes, never reconstructs history from the final board, and rejects missing or misordered positional evidence. Maximum health is tracked per position to handle armour granted by Revive as well as starting armour.
+
+Both Share buttons call `navigator.share` directly from the click, opening the native share sheet on supported browsers including iOS Safari. The complete result and URL travel as one text payload. Cancelling leaves the clipboard untouched. If sharing is unavailable or fails, the action copies instead; if clipboard access fails too, a selected textarea allows manual copying. A pending share disables repeat taps. No save format or stored result changes are needed. See [mobile screenshots and verification](artifacts/stats-share-2026-09-26/README.md).
 
 ## Future global ranking boundary
 

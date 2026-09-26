@@ -28,12 +28,24 @@ const DevPanel = import.meta.env.DEV ? lazy(() => import('./components/DevPanel'
 const DevCombat = import.meta.env.DEV ? lazy(() => import('./experimental/DevCombat')) : null
 const DevGenerator = import.meta.env.DEV ? lazy(() => import('./generator/DevGenerator')) : null
 const TutorialBattle = lazy(() => import('./tutorial/TutorialBattle'))
+const BingoPreview = lazy(() => import('./experimental/BingoPreview'))
 
 type Phase = "waiting" | "enemy" | "tiles" | "ready"
 type Panel = 'help' | 'log' | 'stats' | 'result' | 'settings' | 'dev' | null
 type OnboardingAction = 'replay' | 'tutorial' | 'reset' | 'preview'
 
 export default function App() {
+  // The preview mounts before preferences or daily hooks: it cannot start,
+  // overwrite or complete a daily attempt, even in a returning player's tab.
+  if (new URLSearchParams(window.location.search).get('preview') === 'bingo') {
+    return <Suspense fallback={<main className="container"><p>Loading beta puzzle…</p></main>}>
+      <BingoPreview />
+    </Suspense>
+  }
+  return <DailyApp />
+}
+
+function DailyApp() {
   const user = useUserPreferences()
   const [onboarding, setOnboarding] = useState(() => getOnboardingStage(user.preferences))
   const [tutorialCompleted, setTutorialCompleted] = useState(false)

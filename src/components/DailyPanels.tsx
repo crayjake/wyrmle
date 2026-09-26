@@ -1,12 +1,13 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react'
-import { X } from 'lucide-react'
+import { Share, X } from 'lucide-react'
 import { getCompletedResults } from '../daily/results.ts'
 import { buildShareText } from '../daily/share.ts'
-import { calculateStats } from '../daily/stats.ts'
+import { shareResult } from '../daily/shareResult.ts'
+import type { ShareResultStatus } from '../daily/shareResult.ts'
+import { calculateStats, winWordDistribution } from '../daily/stats.ts'
 import type { DailyResult, DifficultyMode } from '../daily/types.ts'
 import type { LetterStrikeState } from '../game/letterStrike.ts'
 import { getDisplayEffectLabel, getLetterStrikeBattleEvents } from '../game/letterStrikeHud.ts'
-import { MyInfo } from './HealthInfo'
 import { ModeChoices } from './ModeSelection'
 import './DailyPanels.css'
 
@@ -92,89 +93,84 @@ export function SettingsPanel({ preferredMode, runMode, started, error, onChange
   </DailyDialog>
 }
 
-export function ResultPanel({ result, onClose, onShowStats }: PanelProps & {
-  result: DailyResult
-  onShowStats: () => void
-}) {
-  const [copyStatus, setCopyStatus] = useState<'idle' | 'copying' | 'copied' | 'manual'>('idle')
+function ShareActions({ result, children }: { result: DailyResult; children?: ReactNode }) {
+  const [status, setStatus] = useState<ShareResultStatus | 'idle' | 'sharing'>('idle')
+  const pending = useRef(false)
   const shareText = buildShareText(result)
   const shareId = useId()
   const shareRef = useRef<HTMLTextAreaElement>(null)
 
   useEffect(() => {
-    if (copyStatus === 'manual') {
+    if (status === 'manual') {
       shareRef.current?.focus()
       shareRef.current?.select()
     }
-  }, [copyStatus])
+  }, [status])
 
-  async function copyResult() {
-    setCopyStatus('copying')
-    try {
-      if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable')
-      await navigator.clipboard.writeText(shareText)
-      setCopyStatus('copied')
-    } catch {
-      setCopyStatus('manual')
-    }
+  function share() {
+    if (pending.current) return
+    pending.current = true
+    setStatus('sharing')
+    // No work is awaited before invoking the native sheet from this gesture.
+    void shareResult(shareText, navigator).then(setStatus).finally(() => { pending.current = false })
   }
 
+  return <>
+    <div className="daily-panel-actions daily-share-actions">
+      <button type="button" className="daily-panel-primary" onClick={share} disabled={status === 'sharing'}>
+        <Share size={16} aria-hidden="true" />
+        {status === 'sharing' ? 'Sharing…' : status === 'copied' ? 'Copied!' : 'Share result'}
+      </button>
+      {children}
+    </div>
+    <p className="daily-share-status" role="status">
+      {status === 'copied' ? 'Copied to clipboard.' : status === 'manual' ? 'Select and copy your result below.' : ''}
+    </p>
+    {status === 'manual' && <div className="daily-share-fallback">
+      <label htmlFor={shareId}>Your share result</label>
+      <textarea id={shareId} ref={shareRef} readOnly value={shareText} rows={Math.min(10, shareText.split('\n').length + 1)} onFocus={event => event.currentTarget.select()} />
+    </div>}
+  </>
+}
+
+export function ResultPanel({ result, onClose, onShowStats }: PanelProps & {
+  result: DailyResult
+  onShowStats: () => void
+}) {
   return (
-    <DailyDialog title={result.won ? 'Victory' : 'Defeat'} subtitle={`Daily · ${result.date} · ${result.mode.toUpperCase()} · UTC`} onClose={onClose}>
+    <DailyDialog title={result.won ? 'Victory' : 'Defeat'} subtitle={`Daily · ${result.date} · ${result.mode.toUpperCase()}`} onClose={onClose}>
       <p className={`daily-result-outcome ${result.won ? 'is-won' : 'is-lost'}`}>
         {result.won ? `${result.enemyWord} has fallen.` : result.resolveRemaining > 0
-          ? `${result.enemyWord} remains. No playable words remain on the board.`
-          : `${result.enemyWord} remains. You are out of lives.`}
+          ? 'No playable words remain.' : 'No lives left. A new puzzle awaits tomorrow.'}
       </p>
-      <div className="daily-result-resolve">
-        <MyInfo name="LIVES" health={result.resolveRemaining} maxHealth={result.startingResolve} />
+      <dl className="daily-stats-grid daily-result-summary">
+        <Stat label="Words">{result.attacks}</Stat>
+        <Stat label="Lives left">{result.resolveRemaining}<span className="daily-stat-unit">/{result.startingResolve}</span></Stat>
+        <Stat label="Undos">{result.undosUsed}</Stat>
+      </dl>
+      <div className="daily-share-card">
+        <pre className="daily-share-preview" aria-label="Spoiler-free share preview">{buildShareText(result)}</pre>
       </div>
-      <dl className="daily-stats-grid">
-        <Stat label="Counter">{result.counters}</Stat>
-        <Stat label="Neutral">{result.neutral}</Stat>
-        <Stat label="Resisted">{result.resisted}</Stat>
-      </dl>
-      <dl className="daily-stats-list">
-        <Stat label="Puzzle difficulty">{result.puzzleDifficulty ?? 'Unrated'}</Stat>
-        <Stat label="Undos used">{result.undosUsed}</Stat>
-        <Stat label="Undos remaining">{result.undosRemaining}</Stat>
-        <Stat label="Letters removed">{result.lettersDestroyed}</Stat>
-        <Stat label="Armour breaks">{result.armourBroken}</Stat>
-        <Stat label="Hit tiles used">{result.strikeActivations}</Stat>
-        <Stat label="Lives saved">{result.wardSaves}</Stat>
-        {result.regenRecoveries !== undefined && <Stat label="Enemy recoveries">{result.regenRecoveries}</Stat>}
-        <Stat label="Most removed in one word">{result.largestRemoval}</Stat>
-      </dl>
-      <details className="daily-words">
-        <summary>Words played ({result.wordsPlayed.length})</summary>
-        <p>{result.wordsPlayed.length > 0 ? result.wordsPlayed.join(' · ') : 'No words played.'}</p>
-      </details>
-      <p className="daily-panel-note">Result saved. During beta, Settings → Reset puzzle lets you play again. Daily puzzles begin at midnight UTC.</p>
-      <details className="daily-share-details">
-        <summary>Share preview &amp; symbols</summary>
-        <pre className="daily-share-preview" aria-label="Spoiler-free share preview">{shareText}</pre>
-        <p className="daily-share-legend" aria-label="Share symbols">
-          <span>C Counter</span><span>N Neutral</span><span>R Resisted</span>
-          <span>· Untouched</span><span>◐ Armour broken</span><span>■ Removed</span>
-          <span>▣ Armour broken + removed</span><span>▪ Life tile</span><span>◆ Hit tile</span>
-          {result.regenRecoveries !== undefined && <span>↺ Enemy recovery</span>}
-        </p>
-      </details>
-      <div className="daily-panel-actions">
-        <button type="button" className="daily-panel-primary" onClick={copyResult} disabled={copyStatus === 'copying'}>
-          {copyStatus === 'copying' ? 'Copying…' : copyStatus === 'copied' ? 'Copied!' : 'Share result'}
-        </button>
+      <ShareActions result={result}>
         <button type="button" onClick={onShowStats}>Statistics</button>
-      </div>
-      <p className="daily-share-status" role="status">
-        {copyStatus === 'copied' ? 'Copied to clipboard. No words or enemy spoilers.' : copyStatus === 'manual' ? 'Clipboard unavailable. Select and copy your result below.' : 'Share a spoiler-free summary of your run.'}
-      </p>
-      {copyStatus === 'manual' && (
-        <div className="daily-share-fallback">
-          <label htmlFor={shareId}>Your share result</label>
-          <textarea id={shareId} ref={shareRef} readOnly value={shareText} rows={Math.min(10, shareText.split('\n').length + 1)} onFocus={(event) => event.currentTarget.select()} />
-        </div>
-      )}
+      </ShareActions>
+      <details className="daily-disclosure daily-run-details">
+        <summary>Run details</summary>
+        <p className="daily-word-recap"><strong>Words played</strong><br />{result.wordsPlayed.join(' · ') || 'No words played.'}</p>
+        <dl className="daily-stats-list">
+          <Stat label="Counter words">{result.counters}</Stat>
+          <Stat label="Neutral words">{result.neutral}</Stat>
+          <Stat label="Resisted words">{result.resisted}</Stat>
+          {result.puzzleDifficulty && <Stat label="Puzzle difficulty">{result.puzzleDifficulty}</Stat>}
+          <Stat label="Letters removed">{result.lettersDestroyed}</Stat>
+          <Stat label="Armour breaks">{result.armourBroken}</Stat>
+          <Stat label="Hit tiles used">{result.strikeActivations}</Stat>
+          <Stat label="Lives saved">{result.wardSaves}</Stat>
+          {result.regenRecoveries !== undefined && <Stat label="Enemy recoveries">{result.regenRecoveries}</Stat>}
+          <Stat label="Most removed in one word">{result.largestRemoval}</Stat>
+        </dl>
+        <p className="daily-panel-note">Each share row shows the enemy after a word: 🟩 removed, 🟨 weakened armour, ⬜ still standing, 🟥 recovered that turn. No letters are revealed.</p>
+      </details>
     </DailyDialog>
   )
 }
@@ -186,71 +182,82 @@ export function StatsPanel({ results, todayId, inProgressIds = [], onResume, onC
   onResume?: (id: string) => void
 }) {
   const stats = calculateStats(results, todayId)
-  const recentResults = getCompletedResults(results).filter((result) => result.date <= todayId).slice(-7).reverse()
-  const todayResult = recentResults.find((result) => result.puzzleId === todayId)
+  const distribution = winWordDistribution(results, todayId)
+  const largestBucket = Math.max(1, ...distribution)
+  const recentResults = getCompletedResults(results).filter(result => result.date <= todayId).slice(-7).reverse()
+  const todayResult = recentResults.find(result => result.puzzleId === todayId)
   const todayInProgress = inProgressIds.includes(todayId)
   const unfinishedDays = [...new Set(inProgressIds)]
-    .filter((id) => id < todayId && !results.some((result) => result.puzzleId === id))
+    .filter(id => id < todayId && !results.some(result => result.puzzleId === id))
     .sort().reverse().slice(0, 3)
 
   return (
-    <DailyDialog title="Your statistics" subtitle="Daily history · This browser" onClose={onClose}>
-      <dl className="daily-stats-grid">
+    <DailyDialog title="Statistics" subtitle="Your daily puzzles" onClose={onClose}>
+      <dl className="daily-stats-grid daily-stats-headline">
         <Stat label="Played">{stats.gamesPlayed}</Stat>
-        <Stat label="Wins">{stats.wins}</Stat>
-        <Stat label="Win rate">{Math.round(stats.winRate)}<span className="daily-stat-unit">%</span></Stat>
-        <Stat label="Current streak">{stats.currentStreak}</Stat>
+        <Stat label="Win %">{Math.round(stats.winRate)}</Stat>
+        <Stat label="Streak">{stats.currentStreak}</Stat>
         <Stat label="Best streak">{stats.longestStreak}</Stat>
-        <Stat label="Avg. lives after a win">{stats.wins > 0 ? stats.averageResolveOnWins.toFixed(1) : '—'}</Stat>
       </dl>
-      <dl className="daily-stats-list">
-        <Stat label="Average word length">{stats.gamesPlayed > 0 ? stats.averageWordLength.toFixed(1) : '—'}</Stat>
-        <Stat label="Longest word">{stats.longestWord ?? '—'}</Stat>
-        <Stat label="Enemy letters removed">{stats.totalLettersDestroyed}</Stat>
-        <Stat label="Counter moves">{stats.totalCounters}</Stat>
-        <Stat label="Neutral moves">{stats.totalNeutral}</Stat>
-        <Stat label="Resisted moves">{stats.totalResisted}</Stat>
-        <Stat label="Hit tiles used">{stats.totalStrikeActivations}</Stat>
-        <Stat label="Lives saved">{stats.totalWardSaves}</Stat>
-        <Stat label="Armour broken">{stats.totalArmourBroken}</Stat>
-        <Stat label="Most lives remaining">{stats.gamesPlayed > 0 ? stats.bestResolveRemaining : '—'}</Stat>
-        <Stat label="Most hits in one word">{stats.largestSingleTurnStrikes}</Stat>
-        <Stat label="Different enemies defeated">{stats.uniqueEnemyDefeats}</Stat>
-      </dl>
-      {unfinishedDays.length > 0 && (
-        <section className="daily-history" aria-label="Unfinished daily puzzles">
-          <h3>Unfinished puzzles</h3>
-          <ul>
-            {unfinishedDays.map((id) => (
-              <li key={id} className="daily-history-row daily-history-resume-row">
-                <div><time dateTime={id}>{id}</time><span className="daily-history-detail"> · In progress</span></div>
-                {onResume && <button type="button" className="daily-resume-button" onClick={() => onResume(id)} aria-label={`Resume puzzle for ${id}`}>Resume</button>}
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-      <section className="daily-history" aria-label="Recent daily results">
-        <h3>Recent days</h3>
-        <ul>
-          {!todayResult && (
-            <li className="daily-history-row">
-              <time dateTime={todayId}>{todayId}</time>
-              <span className="daily-history-status">{todayInProgress ? 'In progress' : 'Unplayed'}</span>
-              <span className={`daily-history-detail ${onResume && todayInProgress ? 'daily-history-detail-short' : ''}`}>Today · UTC</span>
-              {onResume && todayInProgress && <button type="button" className="daily-resume-button" onClick={() => onResume(todayId)} aria-label={`Resume puzzle for ${todayId}`}>Resume</button>}
+      <section className="daily-distribution" aria-label="Words to win">
+        <h3>Words to win</h3>
+        {stats.wins === 0 ? <p className="daily-panel-note">Your first win will start the chart.</p> : <ol>
+          {distribution.map((count, index) => {
+            const label = index === 5 ? '6+' : String(index + 1)
+            const isToday = todayResult?.won && Math.min(todayResult.attacks, 6) === index + 1
+            return <li key={label} aria-label={`${label} words: ${count} ${count === 1 ? 'win' : 'wins'}${isToday ? ', today' : ''}`}>
+              <span className="daily-distribution-label" aria-hidden="true">{label}</span>
+              <div className="daily-distribution-track" aria-hidden="true">
+                <span className={`daily-distribution-bar ${isToday ? 'is-today' : ''}`} style={{ width: `${count / largestBucket * 100}%` }} />
+                <span className="daily-distribution-count">{count}</span>
+              </div>
             </li>
-          )}
-          {recentResults.map((result) => (
-            <li key={result.puzzleId} className="daily-history-row">
-              <time dateTime={result.date}>{result.date}</time>
-              <span className={`daily-history-status ${result.won ? 'is-won' : 'is-lost'}`}>{result.won ? 'Won' : 'Lost'}</span>
-              <span className="daily-history-detail">{result.enemyWord} · {result.resolveRemaining}/{result.startingResolve} lives · {result.attacks} words · {result.mode.toUpperCase()} · {result.undosUsed} {result.undosUsed === 1 ? 'undo' : 'undos'}{result.puzzleDifficulty ? ` · ${result.puzzleDifficulty} puzzle` : ''}</span>
-            </li>
-          ))}
-        </ul>
+          })}
+        </ol>}
       </section>
-      <p className="daily-panel-note">A streak counts wins on consecutive UTC days. Your history is stored locally in this browser.</p>
+      {todayResult && <ShareActions result={todayResult} />}
+      {!todayResult && <p className="daily-panel-note">{todayInProgress ? 'Today’s puzzle is in progress.' : 'Today’s puzzle is waiting.'}</p>}
+      {!todayResult && todayInProgress && onResume && <div className="daily-panel-actions">
+        <button type="button" onClick={() => onResume(todayId)}>Continue today’s puzzle</button>
+      </div>}
+      <details className="daily-disclosure">
+        <summary>Recent days</summary>
+        {unfinishedDays.length > 0 && <section className="daily-history" aria-label="Unfinished daily puzzles">
+          <h3>Unfinished puzzles</h3>
+          <ul>{unfinishedDays.map(id => <li key={id} className="daily-history-row daily-history-resume-row">
+            <time dateTime={id}>{id}</time>
+            {onResume && <button type="button" className="daily-resume-button" onClick={() => onResume(id)} aria-label={`Resume puzzle for ${id}`}>Resume</button>}
+          </li>)}</ul>
+        </section>}
+        <section className="daily-history" aria-label="Recent daily results">
+          {!recentResults.length && <p className="daily-panel-note">Completed puzzles will appear here.</p>}
+          <ul>{recentResults.map(result => <li key={result.puzzleId} className="daily-history-row">
+            <time dateTime={result.date}>{result.date}</time>
+            <span className={`daily-history-status ${result.won ? 'is-won' : 'is-lost'}`}>{result.won ? `${result.attacks} words` : 'Lost'}</span>
+            <span className="daily-history-detail">{result.enemyWord} · {result.mode.toUpperCase()} · {result.resolveRemaining}/{result.startingResolve} lives</span>
+          </li>)}</ul>
+        </section>
+      </details>
+      <details className="daily-disclosure">
+        <summary>More statistics</summary>
+        <dl className="daily-stats-list">
+          <Stat label="Wins">{stats.wins}</Stat>
+          <Stat label="Average lives after a win">{stats.wins ? stats.averageResolveOnWins.toFixed(1) : '—'}</Stat>
+          <Stat label="Average word length">{stats.gamesPlayed ? stats.averageWordLength.toFixed(1) : '—'}</Stat>
+          <Stat label="Longest word">{stats.longestWord ?? '—'}</Stat>
+          <Stat label="Enemy letters removed">{stats.totalLettersDestroyed}</Stat>
+          <Stat label="Counter words">{stats.totalCounters}</Stat>
+          <Stat label="Neutral words">{stats.totalNeutral}</Stat>
+          <Stat label="Resisted words">{stats.totalResisted}</Stat>
+          <Stat label="Hit tiles used">{stats.totalStrikeActivations}</Stat>
+          <Stat label="Lives saved">{stats.totalWardSaves}</Stat>
+          <Stat label="Armour broken">{stats.totalArmourBroken}</Stat>
+          <Stat label="Most lives remaining">{stats.gamesPlayed ? stats.bestResolveRemaining : '—'}</Stat>
+          <Stat label="Most hits in one word">{stats.largestSingleTurnStrikes}</Stat>
+          <Stat label="Different enemies defeated">{stats.uniqueEnemyDefeats}</Stat>
+        </dl>
+        <p className="daily-panel-note daily-stats-footnote">Saved on this browser · New puzzle at midnight UTC.</p>
+      </details>
     </DailyDialog>
   )
 }

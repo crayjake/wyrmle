@@ -52,17 +52,18 @@ export default function HealthInfo({
   )
 }
 
-export function MyInfo({ wyrm = true, wyrmRef, decoding = false, ...props }: BasicHealthInfoProps & {
+export function MyInfo({ wyrm = true, wyrmRef, decoding = false, animateLives = false, ...props }: BasicHealthInfoProps & {
   wyrm?: boolean
   wyrmRef?: Ref<HTMLSpanElement>
   decoding?: boolean
+  animateLives?: boolean
 }) {
   if (wyrm) return <div className="health-info left health-info-compact wyrm-life-info">
     <span className="resource-label" aria-hidden="true">{props.name}</span>
     <div className="health-segments wyrm-life-resource" role="meter" aria-label={props.name}
       aria-valuemin={0} aria-valuemax={props.maxHealth} aria-valuenow={props.health}
       aria-valuetext={`${props.health} of ${props.maxHealth}`}>
-      <WyrmLifeMeter lives={props.health} maximum={props.maxHealth} dockRef={wyrmRef} hidden={decoding} />
+      <WyrmLifeMeter lives={props.health} maximum={props.maxHealth} dockRef={wyrmRef} hidden={decoding} animateLives={animateLives} />
     </div>
   </div>
   return (
