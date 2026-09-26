@@ -1,0 +1,62 @@
+{
+  "verifiedAt": "2026-09-26T03:30:27.316984+00:00",
+  "nodeTests": {
+    "passed": 551,
+    "failed": 0
+  },
+  "pythonTests": {
+    "passed": 24,
+    "failed": 0
+  },
+  "semanticRegressionCases": {
+    "passed": 269,
+    "failed": 0
+  },
+  "typecheck": "passed",
+  "lint": "passed",
+  "productionBuild": "passed",
+  "productionBrowser": [
+    {
+      "date": "2026-09-26",
+      "archivedSave": false,
+      "errors": [],
+      "layout": {
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "result": "v12 four-word victory saved"
+    },
+    {
+      "date": "2026-09-27",
+      "archivedSave": false,
+      "errors": [],
+      "layout": {
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "result": "v12 four-word victory saved"
+    },
+    {
+      "date": "2026-09-27",
+      "archivedSave": true,
+      "errors": [],
+      "layout": {
+        "width": 375,
+        "scrollWidth": 375
+      },
+      "result": "original v4 save preserved"
+    }
+  ],
+  "browserGenerator": {
+    "errors": [],
+    "alerts": [],
+    "status": "7 evaluated \u00b7 6 witnessed solvable \u00b7 0 passed DEV gates \u00b7 58s"
+  },
+  "openingSelections": {
+    "safe": 8041,
+    "unsafe": 0,
+    "unknown": 0
+  },
+  "minimumWinningWords": 3,
+  "deployment": "Repository publication updated; no remote deployment performed."
+}

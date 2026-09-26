@@ -63,10 +63,14 @@ def main():
     parser.add_argument("--audits", type=Path, help="Reuse matching infer.py sense-audit NPZ arrays")
     parser.add_argument("--reuse-retrieval", type=Path, help="Frozen retrieval artifacts pin reusable vector hashes")
     parser.add_argument("--threads", type=int, default=8)
+    parser.add_argument("--threshold", type=float, default=-1,
+                        help="-1 reviews every source sense; positive values reproduce historical filtered runs")
     parser.add_argument("--download", action="store_true")
     args = parser.parse_args()
     if args.threads < 1:
         parser.error("--threads must be positive")
+    if args.threshold != -1 and not 0 < args.threshold <= 1:
+        parser.error("--threshold must be -1 (all senses), or greater than zero and at most one")
     source = json.loads(args.source.read_text())
     source_digest = source["sourceDigest"]
     body = {key: value for key, value in source.items() if key != "sourceDigest"}
@@ -130,18 +134,20 @@ def main():
             anchor_vectors = vectors[channel][[text_indices[channel][source["senses"][sid][channel]] for sid in anchor_ids]]
             maxima.append((aligned[channel] @ anchor_vectors.T).max(axis=1))
         maxima = np.stack(maxima, axis=1)
-        qualified = maxima.max(axis=1) >= 0.5
+        qualified = maxima.max(axis=1) >= args.threshold
         words = {}
         for word, sense_ids in source["words"].items():
             rows = [source_indices[sid] for sid in sense_ids]
             words[word] = {"maxima": [round(float(value), 8) for value in maxima[rows].max(axis=0)],
-                           "qualifiedSenseIds": [sid for sid in sense_ids if sid not in excluded and qualified[source_indices[sid]]]}
+                           "qualifiedSenseIds": [sid for sid in sense_ids if args.threshold == -1 or (sid not in excluded and qualified[source_indices[sid]])]}
         metadata = {"version": "wyrmle-semantic-retrieval-union-v1", "sourceDigest": source_digest,
                     "baseRawSha256": digest(base_raw), "baseConfigurationHash": base_metadata["configurationHash"],
                     "embeddingModelId": CONFIG["embedding"], "embeddingRevision": CONFIG["embeddingRevision"],
                     "modelLockDigest": base_metadata["modelLockDigest"],
-                    "channels": ["lemma-definition", "definition", "lemma"], "threshold": 0.5,
+                    "channels": ["lemma-definition", "definition", "lemma"], "threshold": args.threshold,
                     "wordsAssessed": len(words), "sensesAssessed": len(ids), "vectorDigests": vector_digests}
+        if args.threshold == -1:
+            metadata["reviewScope"] = "all-source-senses"
         raw = canonical({"metadata": metadata, "enemyWord": enemy, "words": words}).encode()
         target = args.output / f"{enemy.lower()}.json.gz"
         atomic_write(target, gzip.compress(raw, mtime=0))

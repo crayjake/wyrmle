@@ -8,12 +8,13 @@ import { getWordCommonness } from './lexicalProvider.ts'
 import { auditEncounterLexicon } from './lexicalAudit.ts'
 import type { LexicalAudit } from './lexicalAudit.ts'
 import type { OpeningSafetyReport } from './openingSafety.ts'
-import { selectDiverseWinningLines, solvePuzzle, winningStrategySignature } from './solve.ts'
+import { solvePuzzle, winningStrategySignature } from './solve.ts'
 import type { SolverOptions, SolverResult, WinningLine } from './solve.ts'
 import type { CandidatePuzzle } from './types.ts'
 import { encounterRuleKey, stateKey } from './stateKey.ts'
 import { analyseRefillPressure } from './refillPressure.ts'
 import type { RefillPressureAnalysis } from './refillPressure.ts'
+import type { SemanticChoices } from './semanticChoices.ts'
 
 export type MechanicName = 'semantic' | 'ward' | 'strike' | 'grammar' | 'armour' | 'regen'
 export type ReviewLine = { moves: SolverMoveSummary[]; turns: number; resolveRemaining: number }
@@ -69,6 +70,8 @@ export type PuzzleAnalysis = {
   lexicalAudit?: LexicalAudit
   /** Optional separate opening certificate; exploratory analysis alone does not imply safety. */
   openingSafety?: OpeningSafetyReport
+  /** Complete opening and replayed strategy audit for a publication review. */
+  semanticChoices?: SemanticChoices
   refillPressure?: RefillPressureAnalysis
   solvable: boolean | null
   minimumTurnsToWin: number | null
@@ -221,7 +224,9 @@ function compareMechanic(encounter: LetterStrikeEncounter, baseline: SolverResul
   if (!present) return comparison
   const altered = counterfactualEncounter(encounter, mechanic)
   const impact: number[] = []
-  const replayLines = encounter.lexicalRules ? selectDiverseWinningLines(baseline.winningLines, 6) : baseline.winningLines.slice(0, 6)
+  // The solver already bounds the retained witnesses. Replay every retained
+  // strategy for every mechanic, so later special-tile choices are not omitted.
+  const replayLines = baseline.winningLines
   for (const line of replayLines) {
     let state = createLetterStrikeGame(altered)
     let turns = 0
@@ -513,7 +518,7 @@ export function analysePuzzle(input: CandidatePuzzle | LetterStrikeEncounter, op
   ]
   if (solution.searchLimitReached) notes.push(`Solver limits: ${solution.cutoffReasons.join(', ')}.`)
   if (hasRegen) notes.push('REGEN recovery is resolved after damage in every searched state. Its importance measures observed route changes; avoiding the harmful tile can itself be a valid strategy.')
-  if (encounter.lexicalRules) notes.push('Winning witnesses retain distinct opening, semantic-pattern and special-timing strategies. Counterfactuals replay the same diverse sample of at most six prefixes and finishes for every mechanic; final-word variants do not crowd out distinct strategies.')
+  if (encounter.lexicalRules) notes.push('Winning witnesses retain distinct opening, semantic-pattern and special-timing strategies. Counterfactuals replay every retained witness for every mechanic; final-word variants do not crowd out distinct strategies.')
   if (finalUnknown) notes.push(`${finalUnknown} sampled final-Resolve states have unknown one-move rescue status.`)
   return {
     ...(lexicalAudit ? { lexicalAudit } : {}),

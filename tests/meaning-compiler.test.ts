@@ -9,6 +9,7 @@ import { isDictionaryWord } from '../src/game/dictionary.ts'
 import { createLetterStrikeGame, previewLetterStrike, submitLetterStrike } from '../src/game/letterStrike.ts'
 import type { LetterStrikeEncounter } from '../src/game/letterStrike.ts'
 import type { PuzzleMeaningLexicon, PuzzleWordMeaning } from '../src/game/meaningLexicon.ts'
+import { validateMeaningLexicon } from '../src/game/meaningLexicon.ts'
 import { analysePuzzle } from '../src/generator/analyse.ts'
 import { createCandidate } from '../src/generator/generate.ts'
 import { compilePuzzleMeanings, isMeaningCompilationCurrent, meaningLexicalProvider, withCompiledMeanings } from '../src/generator/meaningCompiler.ts'
@@ -20,6 +21,13 @@ import { canSpellEncounterWord } from '../src/game/meaningLexicon.ts'
 import { packMeaningLexicon, unpackMeaningLexicon } from '../src/game/meaningPacking.ts'
 import type { CandidatePuzzle } from '../src/generator/types.ts'
 import { validatePuzzle } from '../src/generator/validate.ts'
+import refinementData from '../src/generator/data/semantic-refinements-v1.json' with { type: 'json' }
+import type { RefinementCache } from '../src/generator/semanticRefinement.ts'
+import { semanticRefinementProvider } from '../src/generator/semanticRefinement.ts'
+import { semanticAssessmentProvider } from '../src/generator/semanticAssessments.ts'
+import { isSemanticInventoryReviewed } from '../src/generator/semanticInventoryReview.ts'
+import type { SemanticInventoryReviews } from '../src/generator/semanticInventoryReview.ts'
+import { semanticRefinementDigest } from '../src/generator/semanticRefinement.ts'
 
 function fixture(board = 'CHEERFULANGRYCAT', refill = 'DIRTYWORRY'): LetterStrikeEncounter {
   assert.equal(board.length, 16)
@@ -41,6 +49,56 @@ function candidate(encounter: LetterStrikeEncounter): CandidatePuzzle {
     construction: { method: 'overlapping-multisets-and-lookahead', plannedWords: [], plannedTileIds: [], refillBlocks: [], mutations: [] },
     provenance: { generatorVersion: 'test', lexicalProvider: 'test' } }
 }
+
+test('audited source decisions survive publication packing and enforce their exact runtime coverage', () => {
+  const input = fixture('OABRYDSHCGLENRMA', '')
+  input.enemy = { ...input.enemy, word: 'CHAOS', definition: semanticAssessmentProvider.definition('CHAOS') }
+  input.enemyLetters = [...'CHAOS'].map((letter, index) => ({ id: `enemy-${index}`, letter, initialHits: 1, hitsRemaining: 1 }))
+  const encounter = withCompiledMeanings(input)
+  const meanings = encounter.meaningLexicon!
+  const reviewed = Object.values(meanings.words).filter(word => word.assessment?.decisionBasis === 'source-reviewed')
+  assert.ok(reviewed.length > 0)
+  assert.equal(meanings.assessment!.refinement!.sourceReviewedWords, reviewed.length)
+  assert.doesNotThrow(() => createLetterStrikeGame(encounter))
+  assert.equal(isSemanticInventoryReviewed(meanings), true, 'Any subset of the audited vocabulary remains covered.')
+  const roundTrip = unpackMeaningLexicon(packMeaningLexicon(meanings))
+  assert.deepEqual(roundTrip, meanings)
+  assert.doesNotThrow(() => validateMeaningLexicon({ ...encounter, meaningLexicon: roundTrip }))
+  const wrongCount = { ...meanings, assessment: { ...meanings.assessment!, refinement: {
+    ...meanings.assessment!.refinement!, sourceReviewedWords: reviewed.length + 1 } } }
+  assert.throws(() => validateMeaningLexicon({ ...encounter, meaningLexicon: wrongCount }), /Source review coverage/)
+  const missingDigest = { ...meanings, assessment: { ...meanings.assessment!, refinement: {
+    ...meanings.assessment!.refinement!, sourceReviewDigest: undefined } } }
+  assert.throws(() => validateMeaningLexicon({ ...encounter, meaningLexicon: missingDigest }), /source review coverage/)
+  const review: SemanticInventoryReviews = { version: 'wyrmle-semantic-inventory-review-1', reviews: [{
+    enemy: 'CHAOS', sourceDigest: meanings.assessment!.sourceDigest, baseCacheDigest: meanings.assessment!.cacheDigest,
+    modelPolicyDigest: meanings.assessment!.refinement!.eligibilityPolicyDigest, sourceReviewPolicyDigest: 'fixture-policy',
+    auditArtifact: 'fixture-audit.json', words: Object.fromEntries(Object.entries(meanings.words)
+      .map(([word, value]) => [word, semanticRefinementDigest(value)])) }] }
+  assert.equal(isSemanticInventoryReviewed(meanings, review, 'fixture-policy'), true)
+  assert.equal(isSemanticInventoryReviewed(meanings, review, 'changed-policy'), false)
+  const changed = { ...meanings, words: { ...meanings.words, CLEAN: { ...meanings.words.CLEAN, relation: 'unrelated' as const } } }
+  assert.equal(isSemanticInventoryReviewed(changed, review, 'fixture-policy'), false)
+  delete review.reviews[0].words.CLEAN
+  assert.equal(isSemanticInventoryReviewed(meanings, review, 'fixture-policy'), false, 'A new spelling requires its own audited final meaning.')
+})
+
+test('construction pools retain current contextual decisions, including removed and newly discovered counters', () => {
+  const cache = refinementData as unknown as RefinementCache
+  let changedCounters = 0
+  for (const [enemy, table] of Object.entries(cache.enemies)) {
+    const baseline = Object.fromEntries(Object.keys(table.records).map(word => [word, semanticAssessmentProvider.word(enemy, word)]))
+    const reviewed = semanticRefinementProvider.refine(enemy, baseline)
+    assert.ok(reviewed.ready)
+    const entry = meaningLexicalProvider.getEntry(enemy)!
+    for (const [word, meaning] of Object.entries(reviewed.words)) {
+      assert.equal(entry.counters.includes(word), meaning.relation === 'opposite', `${enemy}/${word}`)
+      assert.equal(entry.synonyms.includes(word), meaning.relation === 'similar', `${enemy}/${word}`)
+      if ((baseline[word].relation === 'opposite') !== (meaning.relation === 'opposite')) changedCounters++
+    }
+  }
+  assert.ok(changedCounters > 0, 'The real overlay must exercise construction changes, not only unchanged baseline decisions.')
+})
 
 // Independent oracle: take one physical character out of a string per use.
 // This does not call the compiler's count-array matcher or dictionary iterator.
@@ -228,6 +286,8 @@ test('new generation compiles meaning-only rules and every mutation refreshes th
   assert.ok(!source.goal.archetypes.includes('grammar-twist'))
   assert.deepEqual(source.encounter.grammarModifiers, {})
   assert.equal(source.encounter.longWordRule, undefined)
+  assert.equal(source.encounter.wordPartsOfSpeech, undefined,
+    'Frozen meanings supply grammar metadata without copying the whole authoring dictionary into search keys.')
   assert.equal(isMeaningCompilationCurrent(source.encounter), true)
   const before = JSON.stringify(source)
   for (const kind of mutationKinds) {
@@ -237,6 +297,7 @@ test('new generation compiles meaning-only rules and every mutation refreshes th
     assert.ok(Object.isFrozen(changed.encounter.meaningLexicon), kind)
     assert.deepEqual(changed.encounter.grammarModifiers, {}, kind)
     assert.equal(changed.encounter.longWordRule, undefined, kind)
+    assert.equal(changed.encounter.wordPartsOfSpeech, undefined, kind)
     assert.deepEqual(changed.construction.plannedTileIds, [], `${kind}: old construction is not a proof`)
     assert.doesNotThrow(() => createLetterStrikeGame(changed.encounter), kind)
   }

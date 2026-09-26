@@ -1,0 +1,2238 @@
+{
+  "source": "actual-frozen-hybrid-provider",
+  "modelId": "sentence-transformers/all-MiniLM-L6-v2 + cross-encoder/nli-deberta-v3-xsmall + Qwen/Qwen3.5-9B",
+  "configurationHash": "4477875fd21bc7109f95a6d7f87260e63666847b496051f25eda76a49b1bd1fb",
+  "refinementFileDigest": "365c16112d3a6550b1a09cdea6e7edd50f46002fdb7f74854bdd7904a2984562",
+  "confirmationDigest": "366311ed062e09984b68b5291fc1a3fbaccdb9550dd3eb298f715899861f33d6",
+  "baseCaches": {
+    "ANGER": {
+      "version": "wyrmle-vector-nli-v1",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2 + cross-encoder/nli-deberta-v3-xsmall",
+      "modelRevision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41 + a150876415327c80daeff35ca6f68f5ed8cf5c24",
+      "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+      "policyDigest": "808c633d59d3c481fb2029c533c6e1b87272bc93ede85f9bb8999f842e91e426",
+      "cacheDigest": "21485cf342dda5dda7eceff6683e610e8ddd18c663d0124e7fce26396ed71dbf",
+      "method": "embedding-nli",
+      "assessedWords": 116395,
+      "assessedSenses": 112646
+    },
+    "DESPAIR": {
+      "version": "wyrmle-vector-nli-v1",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2 + cross-encoder/nli-deberta-v3-xsmall",
+      "modelRevision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41 + a150876415327c80daeff35ca6f68f5ed8cf5c24",
+      "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+      "policyDigest": "808c633d59d3c481fb2029c533c6e1b87272bc93ede85f9bb8999f842e91e426",
+      "cacheDigest": "bf46cdb499d2c539b746f72467278c111bce2ddde5cd690d2c22d41b1cb5b73d",
+      "method": "embedding-nli",
+      "assessedWords": 116395,
+      "assessedSenses": 112646
+    },
+    "FEAR": {
+      "version": "wyrmle-vector-nli-v1",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2 + cross-encoder/nli-deberta-v3-xsmall",
+      "modelRevision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41 + a150876415327c80daeff35ca6f68f5ed8cf5c24",
+      "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+      "policyDigest": "808c633d59d3c481fb2029c533c6e1b87272bc93ede85f9bb8999f842e91e426",
+      "cacheDigest": "a823e2dcb77e61e1e2d2d93196cb437e3212baeb401824bc55afc111e9b8d51b",
+      "method": "embedding-nli",
+      "assessedWords": 116395,
+      "assessedSenses": 112646
+    },
+    "MELANCHOLY": {
+      "version": "wyrmle-vector-nli-v1",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2 + cross-encoder/nli-deberta-v3-xsmall",
+      "modelRevision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41 + a150876415327c80daeff35ca6f68f5ed8cf5c24",
+      "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+      "policyDigest": "808c633d59d3c481fb2029c533c6e1b87272bc93ede85f9bb8999f842e91e426",
+      "cacheDigest": "4d3363df874ce40a7d27b1eb4096e35f93311019fd0f62506d5c98b571c13aee",
+      "method": "embedding-nli",
+      "assessedWords": 116395,
+      "assessedSenses": 112646
+    },
+    "CRUELTY": {
+      "version": "wyrmle-vector-nli-v1",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2 + cross-encoder/nli-deberta-v3-xsmall",
+      "modelRevision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41 + a150876415327c80daeff35ca6f68f5ed8cf5c24",
+      "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+      "policyDigest": "808c633d59d3c481fb2029c533c6e1b87272bc93ede85f9bb8999f842e91e426",
+      "cacheDigest": "70de7e443ac0820464876655e61d97d63e3e830d9e14991c37f26f6f68f12e67",
+      "method": "embedding-nli",
+      "assessedWords": 116395,
+      "assessedSenses": 112646
+    },
+    "CHAOS": {
+      "version": "wyrmle-vector-nli-v1",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2 + cross-encoder/nli-deberta-v3-xsmall",
+      "modelRevision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41 + a150876415327c80daeff35ca6f68f5ed8cf5c24",
+      "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+      "policyDigest": "808c633d59d3c481fb2029c533c6e1b87272bc93ede85f9bb8999f842e91e426",
+      "cacheDigest": "079b87bdddcbf73638537487cabf14fe75c1e0df9cb5932b6e0bd6effde2695e",
+      "method": "embedding-nli",
+      "assessedWords": 116395,
+      "assessedSenses": 112646
+    }
+  },
+  "manifests": {
+    "ANGER": {
+      "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+      "modelId": "Qwen/Qwen3.5-9B",
+      "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "policyDigest": "a973cd010334e1241918c87b4401f10d5997c12848f73e17390bf0f595a44296",
+      "promptDigest": "8a1a7b6462cdfcc6cab69b2894c91dc8fa560d135ce92b1d0a5e4c38574d5465",
+      "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+      "threshold": -1,
+      "trustedDecisionBases": [],
+      "version": "wyrmle-semantic-refinement-1",
+      "reviewScope": "all-source-senses",
+      "baseCacheDigest": "21485cf342dda5dda7eceff6683e610e8ddd18c663d0124e7fce26396ed71dbf",
+      "retrievalDigest": "c7d0321e16f01458b58393a7f98208a6990bc53b77ea49d8526800c627af0b3e"
+    },
+    "DESPAIR": {
+      "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+      "modelId": "Qwen/Qwen3.5-9B",
+      "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "policyDigest": "a973cd010334e1241918c87b4401f10d5997c12848f73e17390bf0f595a44296",
+      "promptDigest": "8a1a7b6462cdfcc6cab69b2894c91dc8fa560d135ce92b1d0a5e4c38574d5465",
+      "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+      "threshold": -1,
+      "trustedDecisionBases": [],
+      "version": "wyrmle-semantic-refinement-1",
+      "reviewScope": "all-source-senses",
+      "baseCacheDigest": "bf46cdb499d2c539b746f72467278c111bce2ddde5cd690d2c22d41b1cb5b73d",
+      "retrievalDigest": "eb602444d0988fd420a0cb1070563328b0d852c40da718983eab55a3005582ea"
+    },
+    "FEAR": {
+      "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+      "modelId": "Qwen/Qwen3.5-9B",
+      "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "policyDigest": "a973cd010334e1241918c87b4401f10d5997c12848f73e17390bf0f595a44296",
+      "promptDigest": "8a1a7b6462cdfcc6cab69b2894c91dc8fa560d135ce92b1d0a5e4c38574d5465",
+      "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+      "threshold": -1,
+      "trustedDecisionBases": [],
+      "version": "wyrmle-semantic-refinement-1",
+      "reviewScope": "all-source-senses",
+      "baseCacheDigest": "a823e2dcb77e61e1e2d2d93196cb437e3212baeb401824bc55afc111e9b8d51b",
+      "retrievalDigest": "b74a9aa945a6a37a4104e19d5216be6260a6014e7b5de8debb15f39a9c398765"
+    },
+    "MELANCHOLY": {
+      "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+      "modelId": "Qwen/Qwen3.5-9B",
+      "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "policyDigest": "a973cd010334e1241918c87b4401f10d5997c12848f73e17390bf0f595a44296",
+      "promptDigest": "8a1a7b6462cdfcc6cab69b2894c91dc8fa560d135ce92b1d0a5e4c38574d5465",
+      "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+      "threshold": -1,
+      "trustedDecisionBases": [],
+      "version": "wyrmle-semantic-refinement-1",
+      "reviewScope": "all-source-senses",
+      "baseCacheDigest": "4d3363df874ce40a7d27b1eb4096e35f93311019fd0f62506d5c98b571c13aee",
+      "retrievalDigest": "265adb455fb3b70112b3857e799ddb235213b3af05f7d18e2a59c51a930f0b70"
+    },
+    "CRUELTY": {
+      "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+      "modelId": "Qwen/Qwen3.5-9B",
+      "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "policyDigest": "a973cd010334e1241918c87b4401f10d5997c12848f73e17390bf0f595a44296",
+      "promptDigest": "8a1a7b6462cdfcc6cab69b2894c91dc8fa560d135ce92b1d0a5e4c38574d5465",
+      "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+      "threshold": -1,
+      "trustedDecisionBases": [],
+      "version": "wyrmle-semantic-refinement-1",
+      "reviewScope": "all-source-senses",
+      "baseCacheDigest": "70de7e443ac0820464876655e61d97d63e3e830d9e14991c37f26f6f68f12e67",
+      "retrievalDigest": "4ebc97d8fb9ecda707889c69423797535c198d14743a5481ab251fb73aa60005"
+    },
+    "CHAOS": {
+      "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+      "modelId": "Qwen/Qwen3.5-9B",
+      "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "policyDigest": "a973cd010334e1241918c87b4401f10d5997c12848f73e17390bf0f595a44296",
+      "promptDigest": "8a1a7b6462cdfcc6cab69b2894c91dc8fa560d135ce92b1d0a5e4c38574d5465",
+      "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+      "threshold": -1,
+      "trustedDecisionBases": [],
+      "version": "wyrmle-semantic-refinement-1",
+      "reviewScope": "all-source-senses",
+      "baseCacheDigest": "079b87bdddcbf73638537487cabf14fe75c1e0df9cb5932b6e0bd6effde2695e",
+      "retrievalDigest": "2b5c262bd486ac334b74042a3df867f7402000aef646457cd129d8dff2af9995"
+    }
+  },
+  "inventories": {
+    "ANGER": {
+      "ready": true,
+      "eligibleWords": 37,
+      "reviewedWords": 37,
+      "issues": [],
+      "metadata": {
+        "version": "wyrmle-semantic-refinement-1",
+        "modelId": "Qwen/Qwen3.5-9B",
+        "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+        "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+        "promptDigest": "8a1a7b6462cdfcc6cab69b2894c91dc8fa560d135ce92b1d0a5e4c38574d5465",
+        "eligibilityPolicyDigest": "a973cd010334e1241918c87b4401f10d5997c12848f73e17390bf0f595a44296",
+        "baseCacheDigest": "21485cf342dda5dda7eceff6683e610e8ddd18c663d0124e7fce26396ed71dbf",
+        "inventoryDigest": "715be5ac2e200e2a6c0b535e98303dd624c08cb45ac06807ce5778567ef8a40a",
+        "cacheDigest": "3abb0ea338196d6f685cf0af0f367ff59d41bc9da944e38cb2af76f4d63ba031",
+        "eligibleWords": 37,
+        "reviewedWords": 37,
+        "reviewScope": "all-source-senses"
+      }
+    },
+    "DESPAIR": {
+      "ready": true,
+      "eligibleWords": 36,
+      "reviewedWords": 36,
+      "issues": [],
+      "metadata": {
+        "version": "wyrmle-semantic-refinement-1",
+        "modelId": "Qwen/Qwen3.5-9B",
+        "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+        "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+        "promptDigest": "8a1a7b6462cdfcc6cab69b2894c91dc8fa560d135ce92b1d0a5e4c38574d5465",
+        "eligibilityPolicyDigest": "a973cd010334e1241918c87b4401f10d5997c12848f73e17390bf0f595a44296",
+        "baseCacheDigest": "bf46cdb499d2c539b746f72467278c111bce2ddde5cd690d2c22d41b1cb5b73d",
+        "inventoryDigest": "7dc233603056300021bbcb32f1644a69f89c5f4eb225b8d305904baffe34ae9f",
+        "cacheDigest": "e5197ca4d3e4620fbe84b75801588199315f3571c115c7b3867ed8959f5465a3",
+        "eligibleWords": 36,
+        "reviewedWords": 36,
+        "reviewScope": "all-source-senses"
+      }
+    },
+    "FEAR": {
+      "ready": true,
+      "eligibleWords": 36,
+      "reviewedWords": 36,
+      "issues": [],
+      "metadata": {
+        "version": "wyrmle-semantic-refinement-1",
+        "modelId": "Qwen/Qwen3.5-9B",
+        "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+        "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+        "promptDigest": "8a1a7b6462cdfcc6cab69b2894c91dc8fa560d135ce92b1d0a5e4c38574d5465",
+        "eligibilityPolicyDigest": "a973cd010334e1241918c87b4401f10d5997c12848f73e17390bf0f595a44296",
+        "baseCacheDigest": "a823e2dcb77e61e1e2d2d93196cb437e3212baeb401824bc55afc111e9b8d51b",
+        "inventoryDigest": "178fe749e61f7cd5f49d30db906f97c891650b7318d98e254f1e95888fcaf5d8",
+        "cacheDigest": "e6ce097c149ed8653fac890638f682857d0cf0180bdd88e286384b748c7a6bf1",
+        "eligibleWords": 36,
+        "reviewedWords": 36,
+        "reviewScope": "all-source-senses"
+      }
+    },
+    "MELANCHOLY": {
+      "ready": true,
+      "eligibleWords": 36,
+      "reviewedWords": 36,
+      "issues": [],
+      "metadata": {
+        "version": "wyrmle-semantic-refinement-1",
+        "modelId": "Qwen/Qwen3.5-9B",
+        "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+        "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+        "promptDigest": "8a1a7b6462cdfcc6cab69b2894c91dc8fa560d135ce92b1d0a5e4c38574d5465",
+        "eligibilityPolicyDigest": "a973cd010334e1241918c87b4401f10d5997c12848f73e17390bf0f595a44296",
+        "baseCacheDigest": "4d3363df874ce40a7d27b1eb4096e35f93311019fd0f62506d5c98b571c13aee",
+        "inventoryDigest": "4c5ebf4023c60c2d318aa05bcbaa7c4e42ee96e87de18642338cb83714012e1b",
+        "cacheDigest": "758b08e029c9a1b16bb08ec1ae50918d1f04e3a599d20329b6f6534e57c3f199",
+        "eligibleWords": 36,
+        "reviewedWords": 36,
+        "reviewScope": "all-source-senses"
+      }
+    },
+    "CRUELTY": {
+      "ready": true,
+      "eligibleWords": 36,
+      "reviewedWords": 36,
+      "issues": [],
+      "metadata": {
+        "version": "wyrmle-semantic-refinement-1",
+        "modelId": "Qwen/Qwen3.5-9B",
+        "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+        "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+        "promptDigest": "8a1a7b6462cdfcc6cab69b2894c91dc8fa560d135ce92b1d0a5e4c38574d5465",
+        "eligibilityPolicyDigest": "a973cd010334e1241918c87b4401f10d5997c12848f73e17390bf0f595a44296",
+        "baseCacheDigest": "70de7e443ac0820464876655e61d97d63e3e830d9e14991c37f26f6f68f12e67",
+        "inventoryDigest": "3f6ce6806554ab8f09337f8432f1ddb085dba3954a486e9d94eb80042c45b366",
+        "cacheDigest": "bfa0785e668ceabcfd4aa728757d72d42f467ee7a1021324f138f4ae03636b8b",
+        "eligibleWords": 36,
+        "reviewedWords": 36,
+        "reviewScope": "all-source-senses"
+      }
+    },
+    "CHAOS": {
+      "ready": true,
+      "eligibleWords": 36,
+      "reviewedWords": 36,
+      "issues": [],
+      "metadata": {
+        "version": "wyrmle-semantic-refinement-1",
+        "modelId": "Qwen/Qwen3.5-9B",
+        "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+        "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+        "promptDigest": "8a1a7b6462cdfcc6cab69b2894c91dc8fa560d135ce92b1d0a5e4c38574d5465",
+        "eligibilityPolicyDigest": "a973cd010334e1241918c87b4401f10d5997c12848f73e17390bf0f595a44296",
+        "baseCacheDigest": "079b87bdddcbf73638537487cabf14fe75c1e0df9cb5932b6e0bd6effde2695e",
+        "inventoryDigest": "9f76f78fdd6ac7a57c356812f058ad075f4e2177e965ecd4cc573f400ce768a5",
+        "cacheDigest": "8838565a073b84e1ea8be69075b64eaf33f3dd689ec70927873df7e8d45f2536",
+        "eligibleWords": 36,
+        "reviewedWords": 36,
+        "reviewScope": "all-source-senses"
+      }
+    }
+  },
+  "records": [
+    {
+      "enemy": "ANGER",
+      "word": "AGGRAVATE",
+      "relation": "similar",
+      "senseId": "oewn-aggravate__2.37.00..",
+      "baseWordDigest": "17ebb1b3cab9cf68621e193fd5a10972ba609e4715fabc14bd774440b2a3ec70",
+      "decisionBasis": "local-llm",
+      "memoDigest": "ce1ef4faa7998264450fefaf87687452a3856927fef86686a14ab7102b4e4aeb"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "AMICABLE",
+      "relation": "opposite",
+      "senseId": "oewn-amicable__3.00.00..",
+      "baseWordDigest": "394783c6e92de292895c8ea7651211666ff086ee0ccbb5e6daa8aab8a9f468c0",
+      "decisionBasis": "local-llm",
+      "memoDigest": "cf4c6c29dfbb197285b1b3cab1bb506feb92ae02b049123c58c78394d7357dee"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "ANGER",
+      "relation": "similar",
+      "senseId": "oewn-anger__1.12.00..",
+      "baseWordDigest": "506310c1e17a2cf6b01a660b9c5f46d1f2b7ef9298533175d86ab8c895b884a1",
+      "decisionBasis": "local-llm",
+      "memoDigest": "3b1945aa3e765e3274481f86de69278b58c78f8ac12bd00959e025497aad9809"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "ANGRY",
+      "relation": "similar",
+      "senseId": "oewn-angry__3.00.00..",
+      "baseWordDigest": "68a1dfe3e8b933be74ec5b37226dd319fd3d63486ed031780d82a57678167fc2",
+      "decisionBasis": "local-llm",
+      "memoDigest": "fb80201b169e22df8032a5a1c870272efe505139a27db03e5cd8c575552847ca"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "CALM",
+      "relation": "opposite",
+      "senseId": "oewn-calm__5.00.00.composed.00",
+      "baseWordDigest": "53cb7d1fdecb830707aa41896d4445e4b2bad22b833337b46dc5fbbabebbf1ac",
+      "decisionBasis": "local-llm",
+      "memoDigest": "27c86b047bf0f5d17ecdb643b348570d9e9f6421db941056957614b9c664ed71"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "CAREFUL",
+      "relation": "unrelated",
+      "senseId": "oewn-careful__5.00.00.troubled.00",
+      "baseWordDigest": "d9797b67405b113a213a53c8732518209fd4bd3065170a60bd92f80d59fec407",
+      "decisionBasis": "local-llm",
+      "memoDigest": "b702f268facdf732e2715edc3e407e8131bd80adcf0b1ecd64b43aaef6eca0ea"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "CHAIR",
+      "relation": "unrelated",
+      "senseId": "oewn-chair__1.04.00..",
+      "baseWordDigest": "ecb8ccc7e1ae5deb09083ba59fc036d42b352c4b514179254df9fe48398b6620",
+      "decisionBasis": "local-llm",
+      "memoDigest": "0670d8182a413b2665c5091526733255fe687261c7baa8700b790cda86962a3f"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "CHEERFUL",
+      "relation": "opposite",
+      "senseId": "oewn-cheerful__3.00.00..",
+      "baseWordDigest": "71d707ffb2d81e40feefbd04598d186d82618b3db91618ad36771c8ee68cca23",
+      "decisionBasis": "local-llm",
+      "memoDigest": "dd31b8c85afbb0fea789db2acc67ae26bcb19d1a77d88563631ebc1c3485af29"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "CONCILIATE",
+      "relation": "opposite",
+      "senseId": "oewn-conciliate__2.37.00..",
+      "baseWordDigest": "c1660a371372d8e5774039e2db07074a9090a8be5d36b74c7af4ce78941be758",
+      "decisionBasis": "local-llm",
+      "memoDigest": "9f6a682e5d8dba111ebd74e30c9a0d8d8a8c45b4b0ae80d5832a4e1e387e4109"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "CONTENTMENT",
+      "relation": "opposite",
+      "senseId": "oewn-contentment__1.12.00..",
+      "baseWordDigest": "fe448e493fb6028272bae0eaace2b4cb16fe12d86daeb5307e1022c784bb7a03",
+      "decisionBasis": "local-llm",
+      "memoDigest": "2f61164fb5c143df1a2d52bbb51f4aa6e9f7ec18b62811fdb364e4db95341f70"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "CROSS",
+      "relation": "similar",
+      "senseId": "oewn-cross__5.00.00.ill-natured.00",
+      "baseWordDigest": "d4b01388a0de7c1267d6adf34f7d1d0398ebaf149c0987e6fa49354fd40f31e7",
+      "decisionBasis": "local-llm",
+      "memoDigest": "cf82185869e578072eac0166b69153248367c0776e19a5e935d42df0b694486b"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "CUP",
+      "relation": "unrelated",
+      "senseId": "oewn-cup__1.06.00..",
+      "baseWordDigest": "6a6c9685f4d2cffcf92af01f683b100edb64c22a7000af2695e98d295b88280f",
+      "decisionBasis": "local-llm",
+      "memoDigest": "89f9d0a07b0cbe25e4e38233ebc92fbe22d0a5680b03a377c845760b2515605c"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "CUPBOARD",
+      "relation": "unrelated",
+      "senseId": "oewn-cupboard__1.06.00..",
+      "baseWordDigest": "a414dd1726b3224f55a3938fb780658a02d63af00f13c4209b7a33ae1464ea28",
+      "decisionBasis": "local-llm",
+      "memoDigest": "5ee8108e32702586a585c87dc8b7cb80fe7665d3dedf8ce1a283eae88f579c20"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "ENRAGE",
+      "relation": "similar",
+      "senseId": "oewn-enrage__2.37.00..",
+      "baseWordDigest": "dde554b80fd28339c5365c03a84b2f04cfd81bb3406f492734a514dbcd2b87a3",
+      "decisionBasis": "local-llm",
+      "memoDigest": "826e620310a6f788f431cf518a0649cfb449ecdd5beb1c94ab5f0cfbc8726818"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "FORGIVE",
+      "relation": "opposite",
+      "senseId": "oewn-forgive__2.32.00..",
+      "baseWordDigest": "a923b9490bf5769d6f0aeb993b919dc2129234cfdf4751108c531c27126a89e7",
+      "decisionBasis": "local-llm",
+      "memoDigest": "6142eae414d69257f55756a83da159641707ae299465363ff8f33932734d4cd6"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "FUME",
+      "relation": "similar",
+      "senseId": "oewn-fume__2.37.00..",
+      "baseWordDigest": "da4e50698e069c3d6f7ee70947cdfeba36bda0306fb6e31d78f2d0cc1ac21fdf",
+      "decisionBasis": "local-llm",
+      "memoDigest": "e577c512c1404bdd28754f5e80b87a2067c741d98190fc0625c4aba6b9163e3e"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "FURIOUS",
+      "relation": "similar",
+      "senseId": "oewn-furious__5.00.00.angry.00",
+      "baseWordDigest": "a9473a150508945b8f2c2665fd2beda017753baae3b83db143afd57813dfd4c2",
+      "decisionBasis": "local-llm",
+      "memoDigest": "cced9df2347f450da9bce1751166bf5448d5063aede241d2bd157c5b30f3f053"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "GENTLE",
+      "relation": "opposite",
+      "senseId": "oewn-gentle__5.00.01.kind.00",
+      "baseWordDigest": "d5e1f4c3ee2ebadb52f633ed33a97bc4e4596e128972d5c7fd45735cb7c0e379",
+      "decisionBasis": "local-llm",
+      "memoDigest": "abbe2a4313c52dd8f8574b2a996a522ac27eb908f8ad02f0a314366fbd8cd802"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "GRATITUDE",
+      "relation": "opposite",
+      "senseId": "oewn-gratitude__1.12.00..",
+      "baseWordDigest": "6504f1a2ce5b9d7263e2b51f4b2d1c4069dbbc5b320f91fd99f1d5fb385169c7",
+      "decisionBasis": "local-llm",
+      "memoDigest": "fd2d85b02adc0416b5cd5babf43e9dcd29e6b79025384d9ba192c72f4a964402"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "HAMMER",
+      "relation": "unrelated",
+      "senseId": "oewn-hammer__1.04.00..",
+      "baseWordDigest": "2f1d66bab3477ec879bbfecca1bb7cf60181e6d52860c3a609ab39493c558a83",
+      "decisionBasis": "local-llm",
+      "memoDigest": "399472fe2365194c00eba3a3fa4f9f2ce0fab64f63fd3fcfdde4708a52ac7c9d"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "HATRED",
+      "relation": "similar",
+      "senseId": "oewn-hatred__1.12.00..",
+      "baseWordDigest": "6cfc9e7a9906d0dd95a2734f933babee8526b763b67f70df0ea56d822f377957",
+      "decisionBasis": "local-llm",
+      "memoDigest": "6bc9e7d63d411464bac67dcd339184f7c76e6f13bbd1283039fc108e120a8533"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "IRATE",
+      "relation": "similar",
+      "senseId": "oewn-irate__5.00.00.angry.00",
+      "baseWordDigest": "848b8753a3bc7d5900bc5dcc6dbfb7b2caeab54c622d7c8a5ca7f7c1e18804ca",
+      "decisionBasis": "local-llm",
+      "memoDigest": "13f740a81372e65c80854015d0c31d9c84f5e129f02a457727f4baa2c8136126"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "IRRITATED",
+      "relation": "similar",
+      "senseId": "oewn-irritated__5.00.00.displeased.00",
+      "baseWordDigest": "80c727396fdf7f23015c6ec66741223d3d104a82b22dc0e645936727ebd1a6a3",
+      "decisionBasis": "local-llm",
+      "memoDigest": "e1e8af281b3092b4c0dda5280fd833f86d4ee7e01f3c3919aa6e913896f36192"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "IRRITATION",
+      "relation": "similar",
+      "senseId": "oewn-irritation__1.12.01..",
+      "baseWordDigest": "b08cb61bfaa89e9c0e173a577759111371deda347640bdb77bcccf5945da0625",
+      "decisionBasis": "local-llm",
+      "memoDigest": "4618b38f31edcd629a89a6fbf9142a24ce86dd0bf699de015d86a44e12293424"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "KIND",
+      "relation": "opposite",
+      "senseId": "oewn-kind__3.00.00..",
+      "baseWordDigest": "45e2921019534c042a1627d0e11ca0ce4fbedafaa028b3d8f18e1bf9981d809a",
+      "decisionBasis": "local-llm",
+      "memoDigest": "3f9b86c951881a25ec088667580fb67be44a547d79b37621ef7ecdc9781665bb"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "KNIFE",
+      "relation": "unrelated",
+      "senseId": "oewn-knife__1.06.00..",
+      "baseWordDigest": "b02b98c0a5504045d3883ce1b2910a30d01dd996adc3097248f41b7049294228",
+      "decisionBasis": "local-llm",
+      "memoDigest": "82c720747f3983f32b64f181afb75704948aeb0bc48c489a9cefad464f42c96b"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "LEMON",
+      "relation": "unrelated",
+      "senseId": "oewn-lemon__1.06.00..",
+      "baseWordDigest": "9fe00b851be8c525791527e14a27436abb74ac1f584c99f8661dc1f64eb60dc3",
+      "decisionBasis": "local-llm",
+      "memoDigest": "115b6eb3b5c942139d0b91a1e9e0ff12315054995a1c5aae8b4bed1b2dd59249"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "PACIFY",
+      "relation": "opposite",
+      "senseId": "oewn-pacify__2.37.00..",
+      "baseWordDigest": "7b2d94bdecc74d642f2c066d57d5528a246100c7e6362d9af5e2923863cca046",
+      "decisionBasis": "local-llm",
+      "memoDigest": "9bca4f20e0fd6f2560b9c755f1341aa286e6368a67681f86bb3279675ea0da63"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "PATIENT",
+      "relation": "opposite",
+      "senseId": "oewn-patient__3.00.00..",
+      "baseWordDigest": "1df16845937c679ecbf95aa81417866e66829f409ced5bbd62c82096aeaa9ed6",
+      "decisionBasis": "local-llm",
+      "memoDigest": "2952eb4b59f8badd285b4a1b4e768c21443faad8e0fe35896549c350bf5f0d57"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "PLACATE",
+      "relation": "opposite",
+      "senseId": "oewn-placate__2.37.00..",
+      "baseWordDigest": "fd4ed53271ede95a37a217caf49facbe48113d263ca5ae4a0bec528c1965368a",
+      "decisionBasis": "local-llm",
+      "memoDigest": "565e16664cf035ea9f6e52cd3aa2fdfa0fac3a143622ad3e5d13cb93d496bc35"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "PLATE",
+      "relation": "unrelated",
+      "senseId": "oewn-plate__1.06.00..",
+      "baseWordDigest": "829cef50e13cc0cf54cc11140084a46fded8fdf53d7dfe3adcbf5007dc6fe716",
+      "decisionBasis": "local-llm",
+      "memoDigest": "fc26effaa353a3a1523335a280c855e89d1a3fe055f2c2d5bd2d64782b944486"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "RAGE",
+      "relation": "similar",
+      "senseId": "oewn-rage__1.12.00..",
+      "baseWordDigest": "1387a88c9775bc28b2b527b1f7a252ef6136b0b8b1383caf3260f1081c777ddb",
+      "decisionBasis": "local-llm",
+      "memoDigest": "380e822e5fb810351df4110a9f4e491bb2fdf36fd270e1d1e12e0bcd539a7ce4"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "RED",
+      "relation": "unrelated",
+      "senseId": "oewn-red__1.07.00..",
+      "baseWordDigest": "c4abb8edc9f52637a6e4d712af597f7f591ac21060d03303876ccde0b29d76fe",
+      "decisionBasis": "local-llm",
+      "memoDigest": "63c1df0f56f2559efae9a6b9b794536d26e5469b08942928d6f729994ee6af99"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "SATISFIED",
+      "relation": "unrelated",
+      "senseId": "oewn-satisfy__2.42.00..",
+      "baseWordDigest": "42a9a417eed5c7c26ad17ed4d29a1ff071dd0a45fa0b3ded286fa9fbfe10519a",
+      "decisionBasis": "local-llm",
+      "memoDigest": "0d0bbdb10e659e6858c696d012fe599cbadf8b46f839d396ee26d1751a27a3cb"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "SOOTHE",
+      "relation": "opposite",
+      "senseId": "oewn-soothe__2.29.00..",
+      "baseWordDigest": "aee22d1ae4fde2ac2c9aa4c2ab3ea46c04bd3a463ad13ee8d3b6bdf4b2e1531f",
+      "decisionBasis": "local-llm",
+      "memoDigest": "3baef35f317b161d65937d21aade9ad6ee162c06f0404339db976b62d02b34e0"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "TABLE",
+      "relation": "unrelated",
+      "senseId": "oewn-table__1.06.01..",
+      "baseWordDigest": "e565f508b4cf5921364a0498697680346468a7b76ee252f67d55524bf19e7f6d",
+      "decisionBasis": "local-llm",
+      "memoDigest": "a8a628578b787e84f85f7453107b9f6e166a9dd159b84f076544aa96482d30c6"
+    },
+    {
+      "enemy": "ANGER",
+      "word": "WHERE",
+      "relation": "unrelated",
+      "senseId": "wikt-en-5930cc0c101b52a5abd9",
+      "baseWordDigest": "18fd9d7ff18e6fe6bee40667a884f04fd427cef895460e1f8456fdc29bdbeefe",
+      "decisionBasis": "local-llm",
+      "memoDigest": "cceca6c2a34e6f10b96bd8b1fa9c6f1539603423966db86c4449ba69a28d53ac"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "AUSPICIOUS",
+      "relation": "opposite",
+      "senseId": "oewn-auspicious__3.00.00..",
+      "baseWordDigest": "93a3bf26d6cb2eb296a49cbf469337e848ca8749b33b7ba48fa976a36c767b81",
+      "decisionBasis": "local-llm",
+      "memoDigest": "23b399b2dbc5af13688707aacdcef31a6d9c4151b83b628a164903da340bffb6"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "BECAUSE",
+      "relation": "unrelated",
+      "senseId": "wikt-en-7a24846e6a190895ef48",
+      "baseWordDigest": "47329535b6afbbbb9c42f6e3931c3436f8080906f4dd03aae18a231200178310",
+      "decisionBasis": "local-llm",
+      "memoDigest": "893cbe51ee40f101638d3b790b07ff9a063c65c8cbf6199c497dd6e8cfa9a8e3"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "BICYCLE",
+      "relation": "unrelated",
+      "senseId": "oewn-bicycle__1.06.00..",
+      "baseWordDigest": "8f417c6abafd5dbbbdcb897bd8f4a392756d1eceebc44222ec2bcff2fbf71296",
+      "decisionBasis": "local-llm",
+      "memoDigest": "36e091182713fa9e0f1f103442fdc80f2ea6b76cbf75c2ff7658d70f81a234c6"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "BLEAK",
+      "relation": "similar",
+      "senseId": "oewn-bleak__5.00.00.hopeless.00",
+      "baseWordDigest": "8aa5b85b3ea3918b707a7cedc40ef793f597ec33e54010cb8bd6f390871c1991",
+      "decisionBasis": "local-llm",
+      "memoDigest": "c06fc94f6cc79e3121b9db707cb1c7ecc77d64848a6b09816c0cbefd52a2067d"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "CALENDAR",
+      "relation": "unrelated",
+      "senseId": "oewn-calendar__1.10.01..",
+      "baseWordDigest": "df4956e25d413f63ab5a511422ec0bc2203058294b1ea9f957f56a12bb2c74a0",
+      "decisionBasis": "local-llm",
+      "memoDigest": "11f961c45317cdb4158894a724dfa9487c95ff0ba96e9f5472370e2664054922"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "DESPAIR",
+      "relation": "similar",
+      "senseId": "oewn-despair__1.26.00..",
+      "baseWordDigest": "9dc192dd7576f1775251a5ac539ae1d7438e1f6438a7ecfc57625b7a826ec905",
+      "decisionBasis": "local-llm",
+      "memoDigest": "8f5c4e28ecda2ca59bf87c519dc2c20e2b6d9e0b0e934fa24b51774516cc211f"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "DESPAIRING",
+      "relation": "similar",
+      "senseId": "oewn-despair__2.37.00..",
+      "baseWordDigest": "3c89fb6422f8263adee9205b50e337bceb9544e0c9b707b59b80b30e228716a4",
+      "decisionBasis": "local-llm",
+      "memoDigest": "a8576fc64f959aa1f4a96afee95112b28bbe05b71433135e3cf990e97826d03b"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "DESPERATE",
+      "relation": "similar",
+      "senseId": "oewn-desperate__5.00.00.hopeless.00",
+      "baseWordDigest": "457db5dc406f097cef1d110d357eb526983e47980213afa50865320cb7b5b0e1",
+      "decisionBasis": "local-llm",
+      "memoDigest": "0808bdbb57b259670bbae4ffa84b9b2974dac9f7526a3e5916c618a296883e79"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "DESPONDENCE",
+      "relation": "similar",
+      "senseId": "oewn-despondence__1.12.00..",
+      "baseWordDigest": "16333654803d3c7c4d7f073fe980b9c71c3a7db3b14bc1043ba611d9c782b804",
+      "decisionBasis": "local-llm",
+      "memoDigest": "a10ecda34dd75261afa723cb0603a98d96a8c070e8d619fc08749981b93d96a2"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "DESPONDENT",
+      "relation": "similar",
+      "senseId": "oewn-despondent__5.00.00.hopeless.00",
+      "baseWordDigest": "cc21e11bbadcb1bdede83e7d1150eeed22d6ec010e861b026dbea927611f0620",
+      "decisionBasis": "local-llm",
+      "memoDigest": "94795e94ddbece12968c73c5d78393c72c5680e52db73eeda5a3f6d2093921dc"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "DISCOURAGE",
+      "relation": "similar",
+      "senseId": "oewn-discourage__2.37.00..",
+      "baseWordDigest": "ffdd0ae1166e337e8f0ef6bce5e0a13da71dbbcb66f5417b9fef1a62d0db54c4",
+      "decisionBasis": "local-llm",
+      "memoDigest": "d7e0e5f2a5cb14635eb669a43f5fd7cac0aa2a927ccf07f1678b293f8966cd16"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "DISHEARTENED",
+      "relation": "similar",
+      "senseId": "oewn-disheartened__5.00.00.pessimistic.00",
+      "baseWordDigest": "8ebbfdeef5368d0879ca72ba14cb51ff1e62c3bcb729492b2eed2199ec4952e6",
+      "decisionBasis": "local-llm",
+      "memoDigest": "a7df95113fb1e996abfaa1e0a6cc74ab9666425fac7896e437a906e83af14c0a"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "DOCTOR",
+      "relation": "unrelated",
+      "senseId": "oewn-doctor__1.04.00..",
+      "baseWordDigest": "21d19420793409b60706d6f2ef6a53396e6f38be64a44e487e382394ce5c2c1a",
+      "decisionBasis": "local-llm",
+      "memoDigest": "425742a5ad2cc250af421bff3a5ac6c1eda40ef530456d609969e7c5da329a83"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "DOWNHEARTED",
+      "relation": "similar",
+      "senseId": "oewn-downhearted__5.00.00.dejected.00",
+      "baseWordDigest": "5078440cc7e53e7f3a17ddf1e5034fe3a8f36463a12871f173b6c0d2ecca493e",
+      "decisionBasis": "local-llm",
+      "memoDigest": "88b4c0a6dfc73733160ddef8764faa970b2bc8f094eeb9d5f18b1cbdffb0468e"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "ENCOURAGE",
+      "relation": "opposite",
+      "senseId": "oewn-encourage__2.37.00..",
+      "baseWordDigest": "f17fa37311864f59b0079423ee5b364b363bd2e85918f1e9c6cd0a58a30a90e9",
+      "decisionBasis": "local-llm",
+      "memoDigest": "08e95797fccf9234bd77a5a7f04a0e5a62c9879a95a7ebade02c5ec1dfdd5ffe"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "ENCOURAGEMENT",
+      "relation": "opposite",
+      "senseId": "oewn-encouragement__1.04.00..",
+      "baseWordDigest": "d6b412a9da6a98006763eae3a1b04e68650d5d7d2aef4ea919cdb5d34267b161",
+      "decisionBasis": "local-llm",
+      "memoDigest": "5476f4cc2218359582b0f66b0d6a60aa97e665108c7873543264a4ef81d35053"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "FAITH",
+      "relation": "unrelated",
+      "senseId": "oewn-faith__1.09.01..",
+      "baseWordDigest": "b1b7ce1f6a15d571d07b8c8779ab940a243165285bddceb800ec388d0f258370",
+      "decisionBasis": "local-llm",
+      "memoDigest": "135b40686ee7a8eef583890a7ae4f92383d84a1844ef31bb7f0c0d8b45563a59"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "HEARTEN",
+      "relation": "opposite",
+      "senseId": "oewn-hearten__2.37.00..",
+      "baseWordDigest": "c92e0384d67ac1e40bdb5dad31b2d1c35be61c68ac6ca06abd2cc1d91f3969cb",
+      "decisionBasis": "local-llm",
+      "memoDigest": "cddba14863ef55a798ec15411e0b045408c3256198828b92606de87f29c74eb9"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "HOPE",
+      "relation": "opposite",
+      "senseId": "oewn-hope__2.37.00..",
+      "baseWordDigest": "2faa8d7c613363266d00e6acebc106bf36ef0a48279283ae5ce47d6dda8308c0",
+      "decisionBasis": "local-llm",
+      "memoDigest": "28d73b3548ad7872b597771113f3e8b7283a4a9d04ec3449cf729ed5ebead22e"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "HOPEFUL",
+      "relation": "opposite",
+      "senseId": "oewn-hopeful__5.00.00.auspicious.00",
+      "baseWordDigest": "1eabf60e074ffb8370694638d80e9557b5c5a90012f85739a1c264d14c711542",
+      "decisionBasis": "local-llm",
+      "memoDigest": "bd65e2d16760ad9c984dd3e17aeb2b49b64c21858ab1753a13413b6b459fcde1"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "HOPELESS",
+      "relation": "similar",
+      "senseId": "oewn-hopeless__3.00.00..",
+      "baseWordDigest": "1693be36b78095fb6147ffe86ce5e0b3e7a5d66c750ebcca90f86c9f2c05fdb8",
+      "decisionBasis": "local-llm",
+      "memoDigest": "809ee0407c603d9114b7eaad4b1404df212a31136195226588980121653f68b6"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "HOPELESSNESS",
+      "relation": "similar",
+      "senseId": "oewn-hopelessness__1.12.00..",
+      "baseWordDigest": "9875e315f84b80920177fdaac7a4a9d2745d649f4f75fabccbeb934f2dec73b6",
+      "decisionBasis": "local-llm",
+      "memoDigest": "839338ab0286c6feff61af7f62e0025071311fc60b9b06ee6f420e6510b64488"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "MONEY",
+      "relation": "unrelated",
+      "senseId": "oewn-money__1.21.00..",
+      "baseWordDigest": "3ab7dc3b523cd68c11301272dbfa677dac71355ebd55df3c71fcf828d18f0ab0",
+      "decisionBasis": "local-llm",
+      "memoDigest": "0fa632b039e439581fea043b42748c33517231b1cf2153ba86e49097ba81b808"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "OPTIMISM",
+      "relation": "opposite",
+      "senseId": "oewn-optimism__1.12.00..",
+      "baseWordDigest": "5d2b5369433f41472fb35e85a960b4afd53cdd6a52d1457c0fd7eeeb2b1bb067",
+      "decisionBasis": "local-llm",
+      "memoDigest": "a7919c88b881f5f597dce6ff0f37963f0772ce082b62a7059daad29f1a3feda8"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "OPTIMISTIC",
+      "relation": "opposite",
+      "senseId": "oewn-optimistic__3.00.00..",
+      "baseWordDigest": "843a222e74389704b71d59feb252b74e4e05d755bc3dc739c9a4d2c875e78c28",
+      "decisionBasis": "local-llm",
+      "memoDigest": "fb5c722cc794bedbece17545b37626a0231ac6720839f68bc5a81862fb788201"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "PENCIL",
+      "relation": "unrelated",
+      "senseId": "oewn-pencil__1.06.00..",
+      "baseWordDigest": "ea332fbdd8dd7cdfc51b07b98bf8181014781b4ba78d6770b1b3ddf4814d3d1f",
+      "decisionBasis": "local-llm",
+      "memoDigest": "1f94987d1d826c7b73059c7e3b6a7fe58ad4029713021df8568cf03756c93611"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "PROMISING",
+      "relation": "opposite",
+      "senseId": "oewn-promising__5.00.00.auspicious.00",
+      "baseWordDigest": "47fa157dcbabc81e7d977ef0a4e2636014aa3d020220cc4630bd423d494b27b7",
+      "decisionBasis": "local-llm",
+      "memoDigest": "b90019000af35cc74d4ff557e5bb38db1f4e4577d5c4377357a6581e2128c7cf"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "RAIN",
+      "relation": "unrelated",
+      "senseId": "oewn-rain__1.07.00..",
+      "baseWordDigest": "d0529770c911d850b8c8d25acea9aef0e067883db3067add0b9158c00c9f2a06",
+      "decisionBasis": "local-llm",
+      "memoDigest": "e148763c9906324bf5c733e607e962224c21188f95668a417fa00221e505d265"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "REASSURE",
+      "relation": "opposite",
+      "senseId": "oewn-reassure__2.32.00..",
+      "baseWordDigest": "54da3f0b00fdf720a80624094ae236da3c366a5f8beb44c2b1ecaed5f3ad295a",
+      "decisionBasis": "local-llm",
+      "memoDigest": "d23f6d19d5df01308aee1adab8c7e549de00c22cacdb3300b901f87020a7991a"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "RESILIENT",
+      "relation": "opposite",
+      "senseId": "oewn-resilient__5.00.00.spirited.00",
+      "baseWordDigest": "b0b7ee28cfc9ff9b49d523c560dee2100d28a10ea4fb7f22073c0ba90442ecb7",
+      "decisionBasis": "local-llm",
+      "memoDigest": "d26f766f8b04c0ff00ee5ed3e942c6a5ee4ba4bbfb88983c5368c6fa81ff94db"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "TABLE",
+      "relation": "unrelated",
+      "senseId": "oewn-table__1.06.01..",
+      "baseWordDigest": "809f9aeeccc59f8ab0e2c683664efc3e95472ae849997c86ee3966e94dd0d795",
+      "decisionBasis": "local-llm",
+      "memoDigest": "0506c3ee192b34da80397f3d256bb090d4a0809a0bed8a7a15ded2aa9111a657"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "TOMORROW",
+      "relation": "unrelated",
+      "senseId": "oewn-tomorrow__1.28.00..",
+      "baseWordDigest": "8c9f5be90662964f137b37008873b4ddb137e22d648a5868cef79ad30f3d5586",
+      "decisionBasis": "local-llm",
+      "memoDigest": "e6675cc247f9eca5fe476c16aa327af772bb5b772f76e1808d8e3313fd22816d"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "TRUST",
+      "relation": "opposite",
+      "senseId": "oewn-trust__2.37.00..",
+      "baseWordDigest": "1f8cebd99308e6d6a7ca4a043004541a18d39dd886dab4fc75665f2f56e973a0",
+      "decisionBasis": "local-llm",
+      "memoDigest": "31c22bade7d08838f6739001503e45c8410ad8028b97df62ffea9ef5d13c4ea1"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "UPLIFT",
+      "relation": "opposite",
+      "senseId": "oewn-uplift__2.37.00..",
+      "baseWordDigest": "30ece824c4dabe015b8caaebaf490b173a7909bdb19019ab1783a2143bddd123",
+      "decisionBasis": "local-llm",
+      "memoDigest": "6cf7adba45b8e0043265443c14726378edac9b9c7f29e169e3531058d2d37150"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "WHERE",
+      "relation": "unrelated",
+      "senseId": "wikt-en-5930cc0c101b52a5abd9",
+      "baseWordDigest": "e71f7fba46658305ccbe1014ee0d078eb0e62226b99e165748a22b04ec44089e",
+      "decisionBasis": "local-llm",
+      "memoDigest": "3507397b02488ab3a6c7d3f8a9cac0734f7e19bfcfb8808d9097c36d9bacb097"
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "WINDOW",
+      "relation": "unrelated",
+      "senseId": "oewn-window__1.28.00..",
+      "baseWordDigest": "e6040d0e5ccfe3aa906bea89cc192183da83b42405da16842e9122adf3a437fd",
+      "decisionBasis": "local-llm",
+      "memoDigest": "63e02042d61e2be9c2d026d12be75f07dd2a94625b82ba0c07fbf4abe63731e8"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "AFRAID",
+      "relation": "similar",
+      "senseId": "oewn-afraid__3.00.00..",
+      "baseWordDigest": "2d1bdd4170b9625e4c83bd81c0bfda6729d71608b53fc7d1190c9d5de6b7bb65",
+      "decisionBasis": "local-llm",
+      "memoDigest": "58f84349655498b5a3f92567cf6fb87cebb32d8daa6da8153edbbfaae7a16a46"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "AUDACITY",
+      "relation": "opposite",
+      "senseId": "oewn-audacity__1.07.00..",
+      "baseWordDigest": "bd471c8f896e64858c8c057807a9f790191d83359d454b33e6067dd4986ffcf1",
+      "decisionBasis": "local-llm",
+      "memoDigest": "180ab10a04a94c72dd8c4ee2765a06959b62745dfe8a66ab4ca0a9554f05ac1e"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "BRAVE",
+      "relation": "opposite",
+      "senseId": "oewn-brave__3.00.00..",
+      "baseWordDigest": "5fef72c7fd29656fa70a7eeceab37807157d1133f1801349185fd457dc33b61f",
+      "decisionBasis": "local-llm",
+      "memoDigest": "2bfbd78474bbaf0bcde77558787878ef41529d4dcc594ebc3f43a4e60c584a29"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "CALM",
+      "relation": "opposite",
+      "senseId": "oewn-calm__5.00.00.composed.00",
+      "baseWordDigest": "3f46e767ea47eb5c4fb13aa7f80f8d22087c819c530707bf5702bcff197da5d5",
+      "decisionBasis": "local-llm",
+      "memoDigest": "adaa9e3e6e8ef90ab2dabfbce1d4d47ffa391e068ff648989a32fc9a32646d69"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "CAREFUL",
+      "relation": "similar",
+      "senseId": "oewn-careful__5.00.00.troubled.00",
+      "baseWordDigest": "014afef0c6d70e3e87d9af6cf70aefa659ed2c4f2c8194cdb132bad5f2e1fc5a",
+      "decisionBasis": "local-llm",
+      "memoDigest": "17d6197355404445944d47c75d15ad5a6df129a8e16e92773e388a38fbd7491d"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "COMPOSED",
+      "relation": "opposite",
+      "senseId": "oewn-composed__3.00.00..",
+      "baseWordDigest": "088629052148695c176aae6e3b6908e0ad8a0b67711c1284e351c5f3e6341f3e",
+      "decisionBasis": "local-llm",
+      "memoDigest": "a185a5606c25b7861ce541a6781958abe29821c83093bb373ef5d725ea47429a"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "COURAGE",
+      "relation": "opposite",
+      "senseId": "oewn-courage__1.07.00..",
+      "baseWordDigest": "64932e82835e0514dec14da6ecc9e0e154197391e6359d2fc65c57d23fdcdcda",
+      "decisionBasis": "local-llm",
+      "memoDigest": "c12710184ff83e1b5d14c4139968a62a5fed117a390cf20e9b3e80f109d287d2"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "COWER",
+      "relation": "similar",
+      "senseId": "oewn-cower__2.38.00..",
+      "baseWordDigest": "98aeda833d7da131dc20f20c1251a7c5829ecb20ad7ebf4b5afa454af2820748",
+      "decisionBasis": "local-llm",
+      "memoDigest": "5ea59ca24f21d049bffadfc70cb5330191b7485e917d92c4f7828eba542bbc86"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "DANGER",
+      "relation": "unrelated",
+      "senseId": "oewn-danger__1.04.00..",
+      "baseWordDigest": "50d22dbb1e218d66e93a45c03eef89bdc124b633ba2e06c22eb0881de37232b5",
+      "decisionBasis": "local-llm",
+      "memoDigest": "0b3c5d18c3108811e49b0579f43cbefcbde303e66e21aae222e0d00f39b98f13"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "DARK",
+      "relation": "unrelated",
+      "senseId": "oewn-dark__1.09.00..",
+      "baseWordDigest": "232abd6c286971d4d12347c84daca1a0902f247959a4e6ed0fb9aa8346a70b55",
+      "decisionBasis": "local-llm",
+      "memoDigest": "66979fd69e33e8fada1eea1716f5fe3813960304c8e6da04bae244dd2deb9c5e"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "DAUNT",
+      "relation": "similar",
+      "senseId": "oewn-daunt__2.37.00..",
+      "baseWordDigest": "3e51c01a86cbf1757af9dff329856e2e5819d6889ba6582235b969be478ceb81",
+      "decisionBasis": "local-llm",
+      "memoDigest": "2822f2940fb2067a0f4b62f46d8096334b19175a0f1abcb939149bb55d16fb89"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "DAUNTLESS",
+      "relation": "opposite",
+      "senseId": "oewn-dauntless__5.00.00.bold.00",
+      "baseWordDigest": "ed8314a02558aaeff211f77a067c89fb7e0f3bcd8eeb5b4a11c5d2914922f4d0",
+      "decisionBasis": "local-llm",
+      "memoDigest": "363f29ca92246d54aba2237be5dd896a44863f9920faec18e96c1a19ace0daa1"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "DOOR",
+      "relation": "unrelated",
+      "senseId": "oewn-door__1.06.00..",
+      "baseWordDigest": "595a765e85973e7fae7daf6b301bd4ec16764a8437188abe11958c12666d503b",
+      "decisionBasis": "local-llm",
+      "memoDigest": "f3070bb8912360406dc45126f92a5fd7b7dc3560447289b45c45acd06e07b8fa"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "DREAD",
+      "relation": "similar",
+      "senseId": "oewn-dread__1.12.00..",
+      "baseWordDigest": "96d95d606a0d491da7db1199eafc1c86ef25ca16d492a7dd36fe40e792702450",
+      "decisionBasis": "local-llm",
+      "memoDigest": "f27ae8f35a9b4bcd7dff369bfcf333005b9540fb2d6b0fa0a1d2a152e29a910d"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "FEAR",
+      "relation": "similar",
+      "senseId": "oewn-fear__1.12.00..",
+      "baseWordDigest": "1464f91b9469fe6cc81f03265a2935325d85503e435f57dd8edc553f703dc2cd",
+      "decisionBasis": "local-llm",
+      "memoDigest": "0c74c730cf2e084016edb7a2fe883d9ce038f12377018f9ca45a7839a82a3360"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "FORTITUDE",
+      "relation": "opposite",
+      "senseId": "oewn-fortitude__1.07.00..",
+      "baseWordDigest": "6ab265327655a169d0bfc2ff9ccd5360b4eb1bc47bacc8b23a7cbd5a5186151a",
+      "decisionBasis": "local-llm",
+      "memoDigest": "820bd905d920d9d79fc6e439b8c4113ffed5898ce87179ac977ffff7c5227fd9"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "FRIGHT",
+      "relation": "similar",
+      "senseId": "oewn-fright__1.12.00..",
+      "baseWordDigest": "ad0039863e50af12c193eb67c88d35a5d43cf4d449e126df1b387b0a815b0a51",
+      "decisionBasis": "local-llm",
+      "memoDigest": "b84cc8604df94a9670aab92fe1136e0e316db4098130c4d4df2164857cf19094"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "GUTSY",
+      "relation": "opposite",
+      "senseId": "oewn-gutsy__3.00.00..",
+      "baseWordDigest": "c370478c36768849012103fb792660f1b2503fc9b0a0b724de318b81fab9965a",
+      "decisionBasis": "local-llm",
+      "memoDigest": "19949ea1fe0eb811693f5aef19114bc08876c7658e3b2528575711ebfb48548b"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "KNIFE",
+      "relation": "unrelated",
+      "senseId": "oewn-knife__1.06.00..",
+      "baseWordDigest": "01fdb5efc03df5f07291d490aeb76e5b4ed9f7ff8d51d03e227c3c4c4eb67562",
+      "decisionBasis": "local-llm",
+      "memoDigest": "1bf38147073a959a2a431f594dcb784ff514c00502b287f4ec2c1da98dd1a5a4"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "LIZARD",
+      "relation": "unrelated",
+      "senseId": "oewn-lizard__1.05.00..",
+      "baseWordDigest": "e6906d0bd37602015f8429957973e38d16a4443764bb9a32a680fa7248c504d0",
+      "decisionBasis": "local-llm",
+      "memoDigest": "eefeceaeb2044745f6e3502db08fe840836e9d3caf274cb504e26f1fb76e089a"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "NERVE",
+      "relation": "opposite",
+      "senseId": "oewn-nerve__1.07.00..",
+      "baseWordDigest": "bc9ecbf4acde2f5d224de00061dad9a6d24520aad82ee472b880680c11a2f27a",
+      "decisionBasis": "local-llm",
+      "memoDigest": "ebc3a3ac01a18fc505602cf37cb9f5eb924404fad9c921e8294df78528d0f25d"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "PANIC",
+      "relation": "similar",
+      "senseId": "oewn-panic__1.12.00..",
+      "baseWordDigest": "89caf1b593d927cd08307b756e4c25036006e6157f442b3de597d01460da8ae0",
+      "decisionBasis": "local-llm",
+      "memoDigest": "c2444f0f887412d28ade36496b1f3f87ecef66dce695e8f893c7d61dce20c82e"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "PLUCK",
+      "relation": "opposite",
+      "senseId": "oewn-pluck__1.07.00..",
+      "baseWordDigest": "92eb9600f8cffa0ccb7c18138f0e7cc43d999d39bdb9e77dbcb9e974e87af356",
+      "decisionBasis": "local-llm",
+      "memoDigest": "36c7703733a856a415c05df78ba704780e8a7697578f997e6baeb16d179a7a60"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "PROTECT",
+      "relation": "opposite",
+      "senseId": "oewn-protect__2.33.00..",
+      "baseWordDigest": "6efe31778df09f7f69cd57a02957ed1afcb862882d3ecc90f233939a35cc76b2",
+      "decisionBasis": "local-llm",
+      "memoDigest": "a3252b2605411fb90ae1aca4d3af75b455d31e9143a554df00c1af2aea65e415"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "REASSURE",
+      "relation": "opposite",
+      "senseId": "oewn-reassure__2.32.00..",
+      "baseWordDigest": "328e50f2df0956ee5c489085fb2c6aebc6f509755c0e56491f595270bfb742e3",
+      "decisionBasis": "local-llm",
+      "memoDigest": "7cb5a029ee62fb0ecbebf1722bb962b3e7d883784a0bcb38f9203e4e9bd884ea"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "SAFE",
+      "relation": "opposite",
+      "senseId": "oewn-safe__3.00.01..",
+      "baseWordDigest": "ecdc0723baf722a5ccd3648e42c537a4b85008890db2e38f173ce2bd5b842f28",
+      "decisionBasis": "local-llm",
+      "memoDigest": "ae363b83965112dcaaca1b0b153f5281a132ca82289ef52f54ed4fb5552d4a91"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "SHARK",
+      "relation": "unrelated",
+      "senseId": "oewn-shark__1.05.00..",
+      "baseWordDigest": "c316c10a24c333d5c8a97f7d936cc2c4b9b9f94593194f87e2ae71ce0026a800",
+      "decisionBasis": "local-llm",
+      "memoDigest": "6d265783ccd54d8dac01fb670a790f83ea85915295e6963cf175c7da7185ffcb"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "SPIDER",
+      "relation": "unrelated",
+      "senseId": "oewn-spider__1.05.00..",
+      "baseWordDigest": "3b44d16da48268d5e91aacb56c463059dcb059c13f6acbbeb6fb3de40cb3629a",
+      "decisionBasis": "local-llm",
+      "memoDigest": "208926b8deee145d43b10b7d007ccb2fedaa803787a561f3c4f8d2d1c8e0ef39"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "SWORD",
+      "relation": "unrelated",
+      "senseId": "oewn-sword__1.06.00..",
+      "baseWordDigest": "4d4b082dd93e9164fc15395b618f4b380fe985a34cb19fcf560514dd55cb9898",
+      "decisionBasis": "local-llm",
+      "memoDigest": "571b736791c531d3dff0294bdcb11a8fa23fdab85c2052355cfe4c09acb0651d"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "TABLE",
+      "relation": "unrelated",
+      "senseId": "oewn-table__1.06.01..",
+      "baseWordDigest": "6a11612fbfb8908c10e16de2ed38e8af74f004de5db8746c173f6a2cd11566cd",
+      "decisionBasis": "local-llm",
+      "memoDigest": "414c1988d8f03268e5606489e3f52b261dcb4ba3d5097c211a75eab9c61d7e61"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "TERROR",
+      "relation": "similar",
+      "senseId": "oewn-terror__1.12.00..",
+      "baseWordDigest": "07829a1cfb5b6a087212d968e2e377741dc109696ef9012e01644c40dd333501",
+      "decisionBasis": "local-llm",
+      "memoDigest": "fb67631ae579e2112d13717441ba8b52d3c595cf4fa455a965f7f279880aa7e6"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "TREPIDATION",
+      "relation": "similar",
+      "senseId": "oewn-trepidation__1.12.00..",
+      "baseWordDigest": "66d35f181157deb8665db61d834238b9f64b955f767c30f899ea082af128d3ae",
+      "decisionBasis": "local-llm",
+      "memoDigest": "22de8017c8f57333ebcc3d4a21e8b14e91c1f6317bb18102969fb4db971cdb42"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "TUNNEL",
+      "relation": "unrelated",
+      "senseId": "oewn-tunnel__1.06.00..",
+      "baseWordDigest": "624664481def329d78f9c82cef66600e90cf14931a26c742acef758e0f2a8a9f",
+      "decisionBasis": "local-llm",
+      "memoDigest": "e511dbf5a0c90a7869e9fdee862b1c789da9ca57b6dd907e8c55bdfd9c57a283"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "VALIANT",
+      "relation": "opposite",
+      "senseId": "oewn-valiant__5.00.00.brave.00",
+      "baseWordDigest": "901a36d7edbae0a66e91f16cf9412aa59580a295b6851b3d670ad1496da3122a",
+      "decisionBasis": "local-llm",
+      "memoDigest": "e26078ee3eac809dc04c0e7a1d5bd22e91a0f30d9b23b51161e1298eb165eeaf"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "WHERE",
+      "relation": "unrelated",
+      "senseId": "wikt-en-5930cc0c101b52a5abd9",
+      "baseWordDigest": "749db3c817c687286d245a271bc55d118f9753b1402b7f9d3c6dffaf852a04f7",
+      "decisionBasis": "local-llm",
+      "memoDigest": "d62d135591568319bf9f93942e28a5ec1a55cfbc9e58e978a9dc5b1b010156a4"
+    },
+    {
+      "enemy": "FEAR",
+      "word": "WORRY",
+      "relation": "similar",
+      "senseId": "oewn-worry__1.12.00..",
+      "baseWordDigest": "a158d587434c4431f1b0d4d57f01c63cffa4172cccdca41d5784838089a93705",
+      "decisionBasis": "local-llm",
+      "memoDigest": "1224829bab8cbee28e746b6cbfab6d6d961f737580c582ae95676408eab46e32"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "AMUSE",
+      "relation": "opposite",
+      "senseId": "oewn-amuse__2.32.00..",
+      "baseWordDigest": "18da64cbcadefaa9df862eb42cf0cbfcc1220679e789ff4a37bafb8f8f6b325a",
+      "decisionBasis": "local-llm",
+      "memoDigest": "087b0242a29883a4cb855167978d5e7a53936154e8e356eb57f217187d63f592"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "BASKET",
+      "relation": "unrelated",
+      "senseId": "oewn-basket__1.04.00..",
+      "baseWordDigest": "e9608bb6b5b574fd11203e51b9696f78e2e8f18ecb2228e4f378c282366a79e7",
+      "decisionBasis": "local-llm",
+      "memoDigest": "12154a20679a319f03d531a31375121321c0a0da5d9bf647e56efd484774ad65"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "BLITHE",
+      "relation": "opposite",
+      "senseId": "oewn-blithe__5.00.00.cheerful.00",
+      "baseWordDigest": "a0e50082def140db65bc39d74214f78e7f098fa33110aef7f2199cd2e54e6ec5",
+      "decisionBasis": "local-llm",
+      "memoDigest": "818e51e3c5d9bca28a6a3fda905bcae4f229105360201c43a52e811dc2af2c5e"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "CHEER",
+      "relation": "opposite",
+      "senseId": "oewn-cheer__1.07.00..",
+      "baseWordDigest": "1226e8f727317771521295ae3e73bdf3b71acf5dc4eaa5eb019fb8d16947c6f1",
+      "decisionBasis": "local-llm",
+      "memoDigest": "6c8fb4fec0c18ef3de27b35871aa0f1fb9411b926ab6244f35f5c5c665d8434c"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "CHEERFUL",
+      "relation": "opposite",
+      "senseId": "oewn-cheerful__3.00.00..",
+      "baseWordDigest": "8d8f29611521890780dfed05ab168c5d3a52ddaff9920bc9678ca59bbce25892",
+      "decisionBasis": "local-llm",
+      "memoDigest": "e231b4a12a0ae93db23c932773bee2fcf3fc40db89bffebf8ccdf71000fac99a"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "CLOUD",
+      "relation": "similar",
+      "senseId": "oewn-cloud__2.37.00..",
+      "baseWordDigest": "d3064543e2221d139de6e360fd6f2c3cebab26f88f81c6e0539e61b6310f54cb",
+      "decisionBasis": "local-llm",
+      "memoDigest": "d8cdbf1a961c720bdde7fc6ea75160e0e052b2f8e0bf249f6d481f0389887d87"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "DEJECTED",
+      "relation": "similar",
+      "senseId": "oewn-deject__2.37.00..",
+      "baseWordDigest": "a817f5834901677ebde6af340fb882ed7bd1b4ca46853487988533d25d1bffd9",
+      "decisionBasis": "local-llm",
+      "memoDigest": "3dcdf98743affc19eff8c64f7b1432fc4dec324ef6683e3c2abe006069b91144"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "DEPRESS",
+      "relation": "similar",
+      "senseId": "oewn-depress__2.37.00..",
+      "baseWordDigest": "97bb88c59f45ef934d0049c9e6d5b06bf7687bd9e4203d0723eb87827b50e40d",
+      "decisionBasis": "local-llm",
+      "memoDigest": "a998f5e5944e5c29ce2dfb10b2cf30c0e1dcabaf26bfeb9cc7a47c56b8d58ef0"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "DISMAL",
+      "relation": "similar",
+      "senseId": "oewn-dismal__5.00.00.depressing.00",
+      "baseWordDigest": "e79ca5def1b0340ac53a584c547d7ad487ea030bb9c70a724ed99e2f7309b45d",
+      "decisionBasis": "local-llm",
+      "memoDigest": "adbbc8bce990bc6155d25698f4e454feccfb9d3f65a3e19a9a5cd27308b3cace"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "DOLEFUL",
+      "relation": "similar",
+      "senseId": "oewn-doleful__5.00.00.sad.00",
+      "baseWordDigest": "81a7428c1c833b0603188cfd9b6c87b5a0f879515d7a73fe1b008ba8769f1190",
+      "decisionBasis": "local-llm",
+      "memoDigest": "ced8728d63890ef5ef93da25201d637ab346419cfd59bc9e4bb27731651b334c"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "EUPHORIC",
+      "relation": "opposite",
+      "senseId": "oewn-euphoric__3.00.00..",
+      "baseWordDigest": "957bcfaa2a9b50c341488004b58ec5dac5bbed6275e3cca8bb7de16c9eb063e0",
+      "decisionBasis": "local-llm",
+      "memoDigest": "e2fcea011a6f51079b2d30871e49d4bfb6bf22935c31ada20d26dfb3350027f4"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "EXHILARATE",
+      "relation": "opposite",
+      "senseId": "oewn-exhilarate__2.37.00..",
+      "baseWordDigest": "66d53793d32aee8290f9aaceb5ee62e0e9c40c83055a6a3cea2b9f59783fb207",
+      "decisionBasis": "local-llm",
+      "memoDigest": "68397db558e9445a1e951d9dfc1d7868b477df21c9735a5a3e9fa8705582d16c"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "FESTIVE",
+      "relation": "opposite",
+      "senseId": "oewn-festive__5.00.00.joyous.00",
+      "baseWordDigest": "ecbcad40ce6157ee78e8f4b35d63d8cef4ec085ad5cbdabde8b8f56409471fec",
+      "decisionBasis": "local-llm",
+      "memoDigest": "8b960a634560ec85eb02b769ad7b9036f150beb46bc36f417588eb8117720a59"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "FLUTE",
+      "relation": "unrelated",
+      "senseId": "oewn-flute__1.06.00..",
+      "baseWordDigest": "96740d667183db8ca7c62117d52e31b14724a5e006b92a1813af38f4d68e59e7",
+      "decisionBasis": "local-llm",
+      "memoDigest": "27f75aa29af9b6d6d194e6e6a69e4f6c74c4f5d94228baa1bdf99f882dfe938b"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "GLOOMY",
+      "relation": "similar",
+      "senseId": "oewn-gloomy__5.00.00.dejected.00",
+      "baseWordDigest": "636c3f79c75359111d40935ce8082e5dff84003b878b280336c6dd40c24ab405",
+      "decisionBasis": "local-llm",
+      "memoDigest": "8369f7758d19a58d2bc12b9064002d41d6a8025492317712610e0005d531385f"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "GRIEF",
+      "relation": "similar",
+      "senseId": "oewn-grief__1.12.00..",
+      "baseWordDigest": "37fe826188137842d54edad6c4cab7eba0fd83c776847b8512a9910f6cd2531d",
+      "decisionBasis": "local-llm",
+      "memoDigest": "ff589b447615b8dccaf7c55d9de586f375b93f9567a0a30e61ea0e41447c5d16"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "HAPPY",
+      "relation": "opposite",
+      "senseId": "oewn-happy__3.00.00..",
+      "baseWordDigest": "ba188948b368893a7859f14842913e81398ce6c65645d8c0975c2c8bfb27702e",
+      "decisionBasis": "local-llm",
+      "memoDigest": "06ead808fec80a1871102d80a7873e97a03ca328500c18f195d6e17372dd559c"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "HILARIOUS",
+      "relation": "opposite",
+      "senseId": "oewn-hilarious__5.00.00.humorous.00",
+      "baseWordDigest": "0f51348d3e06f9057ff1537fcfcd272bdfde74e29e9f858a6eaf7096aa405b6d",
+      "decisionBasis": "local-llm",
+      "memoDigest": "63f71982cb22fa1843c11be2b13132486f9191621525c9ee3d14a15f23e09db2"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "HUMOR",
+      "relation": "unrelated",
+      "senseId": "oewn-humor__1.12.00..",
+      "baseWordDigest": "69ec3d961ddd23c090e791f502e8991e89148dedee7e2168319e191283d4faea",
+      "decisionBasis": "local-llm",
+      "memoDigest": "b52283cf9b86b58cfa63b762546f27ab5994f8d0184eac434376b5fbdce4d246"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "JOCULAR",
+      "relation": "opposite",
+      "senseId": "oewn-jocular__5.00.00.humorous.00",
+      "baseWordDigest": "bc05488da532dd67d05a3fc29f20c7fcf0a01a4a337da239e79dc2666b240be8",
+      "decisionBasis": "local-llm",
+      "memoDigest": "f0a88e053aeabd141ac2a25dc33cb505222a6bbaad6f6a71941402c399426f3e"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "JOLLY",
+      "relation": "opposite",
+      "senseId": "oewn-jolly__5.00.00.joyous.00",
+      "baseWordDigest": "0ce5cdad3025577d9a3e34dac54792095fbe36d1b90b21dbd65bc91242fd55fc",
+      "decisionBasis": "local-llm",
+      "memoDigest": "a01414c322f4889220a622c61640907970e1dc5a38d13578f1fcc081c057852f"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "JOY",
+      "relation": "opposite",
+      "senseId": "oewn-joy__1.12.00..",
+      "baseWordDigest": "0cb823703f48da57ca9034566e047f533f1cfae181ce36102772872b34416ed2",
+      "decisionBasis": "local-llm",
+      "memoDigest": "b592678a4f005110b5fd9ad1c7f30c9804a883eb3f24a09b862afba8c84603c5"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "LAUGHTER",
+      "relation": "opposite",
+      "senseId": "oewn-laughter__1.04.00..",
+      "baseWordDigest": "dd48653dcc916ab5f107eb774e0f7aae603af94ec9a65d65a9b7a732bed67fa3",
+      "decisionBasis": "local-llm",
+      "memoDigest": "7cdaa0458570a4d98d63eac790b6f6a967cf9c2e8ce1b9eceb52d37d8233f51d"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "MELANCHOLY",
+      "relation": "similar",
+      "senseId": "oewn-melancholy__1.12.00..",
+      "baseWordDigest": "a8f65d6a1d13782319526187053c85dcf793a9307713a0d6d78d7348de0f01a0",
+      "decisionBasis": "local-llm",
+      "memoDigest": "5f0db15097fde253f67d215ecc604a76d717bbffa39cfce2bfb2e79e84629682"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "MOURNFUL",
+      "relation": "similar",
+      "senseId": "oewn-mournful__5.00.00.sad.00",
+      "baseWordDigest": "1d434eda0dab9696f528d2a96a0ebfbd3f74e972d3adeda71cdd18267ff1b613",
+      "decisionBasis": "local-llm",
+      "memoDigest": "07dd63ed31741a8ecd08892b7418fba7ba96ff7b2ad88160024797f271c41fc8"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "MUSIC",
+      "relation": "unrelated",
+      "senseId": "oewn-music__1.04.00..",
+      "baseWordDigest": "763ce35bc00d505ded5f7679abd17875ef42d68201f7aeb6cc7318e351961cf1",
+      "decisionBasis": "local-llm",
+      "memoDigest": "fbd53a0d79c11b19943bed27c51507d652728f2cd4b27ac0fefdeee5f72acee6"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "RAIN",
+      "relation": "unrelated",
+      "senseId": "oewn-rain__1.07.00..",
+      "baseWordDigest": "8448be51a490dfd576493d5dfa56494b5667a446e3d4a23e5a5c062b9028c4a5",
+      "decisionBasis": "local-llm",
+      "memoDigest": "15d182081e185d8f308aec78016b64b104f0402705a31b74b5d02b316963ca45"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "SAD",
+      "relation": "similar",
+      "senseId": "oewn-sad__3.00.00..",
+      "baseWordDigest": "a9386b9a61575b445f21f76c69a804b3c4cfe0e7f04c473817e1e9fd76a827d6",
+      "decisionBasis": "local-llm",
+      "memoDigest": "92e5df15fa6b3955fd1593c7d5047cd8ad5bbd82e9aa89139a5c41a769e7df89"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "SADNESS",
+      "relation": "similar",
+      "senseId": "oewn-sadness__1.07.00..",
+      "baseWordDigest": "2bf35fc12c9e963334de2ec1cbf23f3aba7fea0e8c1f38aecbce2e91c21afbb9",
+      "decisionBasis": "local-llm",
+      "memoDigest": "470860119c802e14d781b6ef2217dc79186c5627d950392c07c458986076f291"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "SHOE",
+      "relation": "unrelated",
+      "senseId": "oewn-shoe__1.06.00..",
+      "baseWordDigest": "7edf60d0c7d45610c68fba12796a70599210c964fa895748eddf71eae7a50f54",
+      "decisionBasis": "local-llm",
+      "memoDigest": "e9ff07d7fce2addf286982abc93ad174f6c9f1a6ee8356a533511bcb449ed43f"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "TABLE",
+      "relation": "unrelated",
+      "senseId": "oewn-table__1.06.01..",
+      "baseWordDigest": "67219d096af4796e91acd03fd2858c3a155d81fa11addd5532fd39e2fd18c96c",
+      "decisionBasis": "local-llm",
+      "memoDigest": "2c58a352b76e7acd8241258ba39477c01a285ab261b185e47a2d008db213d2d7"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "UMBRELLA",
+      "relation": "unrelated",
+      "senseId": "oewn-umbrella__1.04.00..",
+      "baseWordDigest": "00361700d2a1fa11e597b7bae1fea26fba658ae71eeea3275e84803246576281",
+      "decisionBasis": "local-llm",
+      "memoDigest": "bcdc69e5ae9f3df05a13a51de11169e77f2c54ce2880e4df7ddf37db7d4fe07e"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "UNHAPPY",
+      "relation": "similar",
+      "senseId": "oewn-unhappy__3.00.00..",
+      "baseWordDigest": "929721e078e07e3566c9ccfc52808be3f114a0fc486d23282c5615822d9eec0e",
+      "decisionBasis": "local-llm",
+      "memoDigest": "01fc06b7eaf5629c618cd4578f4cc47ad97cc266f6f811e7fe8baf6622b63f10"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "VIOLIN",
+      "relation": "unrelated",
+      "senseId": "oewn-violin__1.06.00..",
+      "baseWordDigest": "d038e59627194cf6d58e8519ef8695fc1297e6b65f3ef00c10404af9a9a86bea",
+      "decisionBasis": "local-llm",
+      "memoDigest": "2153b67ddcf8e17dca41f7d468d235412ae6d18d2949b64112fe75debfba5544"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "WHERE",
+      "relation": "unrelated",
+      "senseId": "wikt-en-5930cc0c101b52a5abd9",
+      "baseWordDigest": "c3fc862fd99b0a55e67566d4db4cb6d96abcb6feb8a4a29cc39d3a237efe13a7",
+      "decisionBasis": "local-llm",
+      "memoDigest": "21b5ef53f5d92bd2da8bea6d990298090b31486d10b8c797212f28fca3f95b0f"
+    },
+    {
+      "enemy": "MELANCHOLY",
+      "word": "WINTER",
+      "relation": "unrelated",
+      "senseId": "oewn-winter__1.28.00..",
+      "baseWordDigest": "5c7285bf5fa35d4050067732416872797d316a2ef0e95bc7f051da94ca9721c1",
+      "decisionBasis": "local-llm",
+      "memoDigest": "914913f5192de50ace66f2e885f1db129efb7362587fc9f2ab76453957d6071b"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "ABUSE",
+      "relation": "similar",
+      "senseId": "oewn-abuse__1.04.02..",
+      "baseWordDigest": "3b08e6af00e30d76532dc2b19b911feacb777d7ac0d1fd1799f52a43288f603b",
+      "decisionBasis": "local-llm",
+      "memoDigest": "cedbecaf290aa5da1cc9fa15689845e66cc3ce923a09b883ce5ca6638ce92f91"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "ALTRUISM",
+      "relation": "opposite",
+      "senseId": "oewn-altruism__1.07.00..",
+      "baseWordDigest": "d5fec44e17b512f3431f8cdbe2d73a9fa110bf78975af608eb7128eae25e2cb3",
+      "decisionBasis": "local-llm",
+      "memoDigest": "09e2478717ffd85988ed61748a299b1be472974657170fc959f13910f02a14a9"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "BENIGN",
+      "relation": "opposite",
+      "senseId": "oewn-benign__5.00.00.kind.00",
+      "baseWordDigest": "2766d09074dc72b4647fbe6606e5eeae3a8c97b1661854845f482c2f1d36873c",
+      "decisionBasis": "local-llm",
+      "memoDigest": "e354b5a31b311901e70d42b846368c20d4d7ac676432728c6717f8cd79279a47"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "BRUTAL",
+      "relation": "similar",
+      "senseId": "oewn-brutal__5.00.01.inhumane.00",
+      "baseWordDigest": "19d1387797f3706d4326472061e8757d1cdd40088afd0d99591fd08252484ac8",
+      "decisionBasis": "local-llm",
+      "memoDigest": "d3d8208c333cf4435119a8c91b90cd3ded61594e9925ff02f13ad35a16e8cdb7"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "CAGE",
+      "relation": "unrelated",
+      "senseId": "oewn-cage__1.06.00..",
+      "baseWordDigest": "4535feba29dbd6c63927002925b85f6dcb62a7f52bcc01f2c4cc0faaabd1e578",
+      "decisionBasis": "local-llm",
+      "memoDigest": "276d7ce0cd2e1e9c6bff5839fc5183ca6a1ad2a0a6048454fe484f39d24c7dc7"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "CHERISH",
+      "relation": "opposite",
+      "senseId": "oewn-cherish__2.37.00..",
+      "baseWordDigest": "7e7c6d9afecae5f5b97dd42a64f569793daa4a8420ff2df696bb3260e51f5549",
+      "decisionBasis": "local-llm",
+      "memoDigest": "a5f382b317967ade2d34fa5ee9a1e6cb9edc18c646e01c2d0d38a72943abc51f"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "CLEMENCY",
+      "relation": "opposite",
+      "senseId": "oewn-clemency__1.04.01..",
+      "baseWordDigest": "b791f7935637ff010fdd6782971062b8adb2c5b559a633909c11002234f6fda3",
+      "decisionBasis": "local-llm",
+      "memoDigest": "c6e4ade3f01b5912d5482db6781e67c7fea71fbf937cc787b5bef2df5d23b0e7"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "COMFORT",
+      "relation": "opposite",
+      "senseId": "oewn-comfort__2.29.00..",
+      "baseWordDigest": "06cdfe958d04acb4e38d1d9cc0b6136e719bc1b09ff75877d27e4c79a350694f",
+      "decisionBasis": "local-llm",
+      "memoDigest": "df43195b830db5dd3224c8103cb8c4b44a6e8aa99f246eedca07c1b15a019e83"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "COMPASSION",
+      "relation": "opposite",
+      "senseId": "oewn-compassion__1.07.00..",
+      "baseWordDigest": "0b70252f3734d6ad9cae25c4e61f5f21909bbfefd2ba5651b335c93635177469",
+      "decisionBasis": "local-llm",
+      "memoDigest": "c648fbec4ecdc16b67fc994247ed670813a244e6ba57154a3200648c397950b4"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "CRUEL",
+      "relation": "similar",
+      "senseId": "oewn-cruel__5.00.01.inhumane.00",
+      "baseWordDigest": "a0e4a23ea1223edae199f55dcd35f76c29a5024efec9e25c9efadf0263e80d96",
+      "decisionBasis": "local-llm",
+      "memoDigest": "8120394f27fc8845845c12579155f6e2f45842d9e0bdbc22ad0fddddd88515f4"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "CRUELTY",
+      "relation": "similar",
+      "senseId": "oewn-cruelty__1.04.00..",
+      "baseWordDigest": "50ef8b9974f407c63c1ddf8c7db881d2c4bb1de40118621cdab050d7558fa639",
+      "decisionBasis": "local-llm",
+      "memoDigest": "f80b5c736e4504d8ce2009766db913ecd2676271f695757be2f968621db3d772"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "GENTLE",
+      "relation": "opposite",
+      "senseId": "oewn-gentle__5.00.01.kind.00",
+      "baseWordDigest": "f802fbe45194a58463e611581422b7b68c1ffec9900dfd78d24859e88e6411bc",
+      "decisionBasis": "local-llm",
+      "memoDigest": "3a852eb248261e06918eaa6e7734e60e7956ad22840c22ab20d1a31e1a04c0a7"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "HUMANE",
+      "relation": "opposite",
+      "senseId": "oewn-humane__3.00.00..",
+      "baseWordDigest": "11db2c0a910ab74dbc9c6d8861885a83350b0bb4edf45e5935e3aedf5061a246",
+      "decisionBasis": "local-llm",
+      "memoDigest": "97b096ae5b543d72f5575f4765fce7b59658912ffe76baf96bf5998cc142ed78"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "JUDGE",
+      "relation": "unrelated",
+      "senseId": "oewn-judge__1.18.00..",
+      "baseWordDigest": "28cc5fe84045e80bb805b984c672f40243e80525b57a986ba55d17046870c390",
+      "decisionBasis": "local-llm",
+      "memoDigest": "719647f342b4c6e20de7b6335ae71d175075a6c57ceba261bd2bf92bbc7e83ae"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "KIND",
+      "relation": "opposite",
+      "senseId": "oewn-kind__3.00.00..",
+      "baseWordDigest": "2ce2dc02e8c44f59d086391a2b713ed64364c0515e9a00126c1a68b6fbb7fbb7",
+      "decisionBasis": "local-llm",
+      "memoDigest": "8db1ab8833c5edc5cde8314551eabde92d234b56d16e14708c72bdfb8161062f"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "KNIFE",
+      "relation": "unrelated",
+      "senseId": "oewn-knife__1.06.00..",
+      "baseWordDigest": "4ededc5e69ac65f29c22adb72cd7204df4c31dc314a09f11b5f0325fa4441fe7",
+      "decisionBasis": "local-llm",
+      "memoDigest": "85986820f820a1348879f303dbf02cdb10af067208ffe20816723bbe29cff743"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "MERCIFUL",
+      "relation": "opposite",
+      "senseId": "oewn-merciful__3.00.00..",
+      "baseWordDigest": "a69ec1fea5f4fcc81485a020b155e9a5fb5085397c8a2a3d22c19f7b22f27e57",
+      "decisionBasis": "local-llm",
+      "memoDigest": "954c4a60fcf7ef198da49a82731bdf1bbe2c6ac3a45ffceab9be159a1be01dfa"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "MERCY",
+      "relation": "opposite",
+      "senseId": "oewn-mercy__1.04.01..",
+      "baseWordDigest": "e8172cc21cbb6cfa7bf399334ebb6669473bb6ad92f825005cbb151cd98266e9",
+      "decisionBasis": "local-llm",
+      "memoDigest": "e048e37c45796b852bc453a57f9b9c628387389f307924a1e96aa45094c8ea12"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "OPPRESSION",
+      "relation": "similar",
+      "senseId": "oewn-oppression__1.04.00..",
+      "baseWordDigest": "96ae128284fc7375b2bc35d2934467b6c19e66316976564042a0bf469a83f63e",
+      "decisionBasis": "local-llm",
+      "memoDigest": "b9a1b9ebf0d521c41c7899f404336ede792dd854dad8417c4caf83684f73c7fd"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "PERSECUTE",
+      "relation": "similar",
+      "senseId": "oewn-persecute__2.41.00..",
+      "baseWordDigest": "5e955e29bf8748724ed709fefdcf8bc3533785f1467be16e3c78420437016bc1",
+      "decisionBasis": "local-llm",
+      "memoDigest": "ef24425711b39cc8758ff7269600e423620c646f4246455c07d84f7ecf956227"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "PRISON",
+      "relation": "unrelated",
+      "senseId": "oewn-prison__1.06.00..",
+      "baseWordDigest": "0666e23799c4ad42be8ffaf8736bb1edc87a7861ddcb406b015d91d07d665552",
+      "decisionBasis": "local-llm",
+      "memoDigest": "7f464d5c7b76b040cb07cce34899d91eea9e0737b1b5a9ce7ba96f8e97eb04bf"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "PUNISH",
+      "relation": "similar",
+      "senseId": "oewn-punish__2.41.00..",
+      "baseWordDigest": "79d4c4eaa349346a664096a1b744ae3383cf1f24eb2502140fb3c72e6120ab43",
+      "decisionBasis": "local-llm",
+      "memoDigest": "8deed622637c653644838309b81a219cad0b1fdc8758ddb4351de2a4154fcf56"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "RED",
+      "relation": "similar",
+      "senseId": "oewn-red__5.00.02.bloody.00",
+      "baseWordDigest": "b6ca22efb77b332a1cea48930738553ebf3bffdf971250fe98cb44d3de117c29",
+      "decisionBasis": "local-llm",
+      "memoDigest": "4edfde4cf41476d5f7b297d47e56e1108e46f07edb7061c059d54aa1e5a523c4"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "SADISTIC",
+      "relation": "similar",
+      "senseId": "oewn-sadistic__3.00.00..",
+      "baseWordDigest": "befc30de1adcec533194de76cab337d18867945dfa8384021d2c9e463501af43",
+      "decisionBasis": "local-llm",
+      "memoDigest": "eb87559b600a0203d22e19da18a442f02fc467ecab77f7039c42dbae8fb8f130"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "SCALPEL",
+      "relation": "unrelated",
+      "senseId": "oewn-scalpel__1.06.00..",
+      "baseWordDigest": "faf0c9667879298907a4998943fbb60dbdf3bc7f4259ed5e88db8b4d71138f5c",
+      "decisionBasis": "local-llm",
+      "memoDigest": "8d44de8e7edb7dc64316247eb01722fa9c4ffc219cc9399dd431f725cbb2c3c6"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "SPITEFUL",
+      "relation": "similar",
+      "senseId": "oewn-spiteful__5.00.00.malicious.00",
+      "baseWordDigest": "aac0c790fcfa176f4b30eeb60bd03feac0376e1cc3d96dcc09305a0a1fff5ea7",
+      "decisionBasis": "local-llm",
+      "memoDigest": "c81d8cfb2fc78f3ade0a2849342c92064e59f72f7ac27f07bc95bed66ee83cec"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "SPOON",
+      "relation": "unrelated",
+      "senseId": "oewn-spoon__1.06.00..",
+      "baseWordDigest": "eee36d43da10d983e0d70ae3bf3f55bb1241c33d67257a96f06304bc6cf98564",
+      "decisionBasis": "local-llm",
+      "memoDigest": "b615081f4cd60037f3fad8201cfb56aca7fc55a597bcd0cd81035805d99f5e2f"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "SURGEON",
+      "relation": "unrelated",
+      "senseId": "oewn-surgeon__1.18.00..",
+      "baseWordDigest": "63633fc38d23850e83a82ae46f02e827872827e14701fde3d8c4af34f1d5fbf0",
+      "decisionBasis": "local-llm",
+      "memoDigest": "377ac9a76b70ee7b87b61990269ee99d1438cd46bcf46f81aeb1dc8331500ab9"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "SYMPATHETIC",
+      "relation": "opposite",
+      "senseId": "oewn-sympathetic__5.00.00.kind.00",
+      "baseWordDigest": "d71a1ad935ea99779924c2c67ef57d02350aee0934360012a0f871992d8d99fd",
+      "decisionBasis": "local-llm",
+      "memoDigest": "4c17f823b38db2dc90bae0267fef0bcfac3e51fd450301da0a96d2d9130d34b9"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "TABLE",
+      "relation": "unrelated",
+      "senseId": "oewn-table__1.06.01..",
+      "baseWordDigest": "70c8935d189bfcee641dffd56a48707327db369befa972736de03bc5f8f6cff7",
+      "decisionBasis": "local-llm",
+      "memoDigest": "8c0ccfdcfed96b0a0405de539c7c147e99cc26541199c1d03a02bd15d0157aa6"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "TEAPOT",
+      "relation": "unrelated",
+      "senseId": "oewn-teapot__1.06.00..",
+      "baseWordDigest": "7f22ef561d1b3d76adb4054e7ec9fe8bbef09d1631f7e3f4968fc4c1927214a4",
+      "decisionBasis": "local-llm",
+      "memoDigest": "626ac0800696a73b9da7c64cab21861bb9fb1301f95f861b551a64dbc0979bef"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "TENDER",
+      "relation": "opposite",
+      "senseId": "oewn-tender__5.00.00.loving.00",
+      "baseWordDigest": "09b2f60a61a5d8b80e66af76e3a10a26ea116e1fbdec7c4137cd43edab676997",
+      "decisionBasis": "local-llm",
+      "memoDigest": "0cc4ae320b539be02c0ff393e3a6f63dc59949059216d95e38f2cdeb98639348"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "TENDERHEARTED",
+      "relation": "opposite",
+      "senseId": "oewn-tenderhearted__5.00.00.compassionate.00",
+      "baseWordDigest": "4875551e1a96d530b5ff779fd4a181412abd1bea3e52426faa050a0138e92b0f",
+      "decisionBasis": "local-llm",
+      "memoDigest": "f69bfa8f55438441e7a166233797532cd290d55f5bab7db86ca83c82066e07f4"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "TORMENT",
+      "relation": "similar",
+      "senseId": "oewn-torment__2.37.01..",
+      "baseWordDigest": "d5118878d2e869b66a073fcddae90152fdb08bf7e8bca181e2921e630c558bc9",
+      "decisionBasis": "local-llm",
+      "memoDigest": "1e7f3755e45e923d06ad8624dbc6183af72073e0c9186d0169a070e0bdba0336"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "TORTURE",
+      "relation": "similar",
+      "senseId": "oewn-torture__1.04.00..",
+      "baseWordDigest": "a5f2bd45d139681bb574db0bcad9f0c0132db976fba4f842605ee52bd0d7e197",
+      "decisionBasis": "local-llm",
+      "memoDigest": "c31744bb4069d1ce9e69be0e2d441fcde8ecbc7c118c9afe283f81ce66bb08f4"
+    },
+    {
+      "enemy": "CRUELTY",
+      "word": "WHERE",
+      "relation": "unrelated",
+      "senseId": "wikt-en-5930cc0c101b52a5abd9",
+      "baseWordDigest": "983378715d367041d380e11d22c60026c7d1b9cfce6cdb4a045c04e1aaf4844e",
+      "decisionBasis": "local-llm",
+      "memoDigest": "ef3c8d5f876cf4a4912c83f2d987cc6a8372a3633b2514de68f71945cd79c2a3"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "ADJECTIVE",
+      "relation": "unrelated",
+      "senseId": "oewn-adjective__1.10.00..",
+      "baseWordDigest": "7f29287267c86592886e6675f169b596892bc7ba5a961d74eafe4ef5d273c27c",
+      "decisionBasis": "local-llm",
+      "memoDigest": "61982b9a7a5257c2ddee18e591448070df13db19fd486b892e2c8647635ce85d"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "ANARCHIST",
+      "relation": "similar",
+      "senseId": "oewn-anarchist__1.18.00..",
+      "baseWordDigest": "cfb9b6a5f09ef49db672b8abf143749233a00eb6da691ab71230c3b6a1dfdc1d",
+      "decisionBasis": "local-llm",
+      "memoDigest": "7fb2068cb12a2505574515e568f23ed0df11e388ce38cd9ecc407e4dbfbac906"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "ARRANGEMENT",
+      "relation": "opposite",
+      "senseId": "oewn-arrangement__1.14.00..",
+      "baseWordDigest": "2f7b06f3e708b894b569313fe86c9d3b6b896c5a94e0d4e6035444c9dfd534d6",
+      "decisionBasis": "local-llm",
+      "memoDigest": "e4ddd7e8856b80d2318515dcaa0d225018277ecc03b7b75eb99fd7f734f91e08"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "ATOM",
+      "relation": "unrelated",
+      "senseId": "oewn-atom__1.27.00..",
+      "baseWordDigest": "13b79783c44ed3043db5624eca74614ebfbfc3f3cdfccac83dd898df1ef1093b",
+      "decisionBasis": "local-llm",
+      "memoDigest": "8326365473910a87786818c760236fd0f63a92da913e6d4b672f5e52786b6481"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "CALM",
+      "relation": "opposite",
+      "senseId": "oewn-calm__5.00.00.composed.00",
+      "baseWordDigest": "853c263559d936aa81a21a98479b1ab091280517a3c237f5e852f86b8af366a9",
+      "decisionBasis": "local-llm",
+      "memoDigest": "eab7dca344de277de31ca6e0acc97f1278c088fe109d5f67b148adf4b6cbeb8b"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "CHAOS",
+      "relation": "similar",
+      "senseId": "oewn-chaos__1.26.00..",
+      "baseWordDigest": "fb593d9d9565dc01cdce69e718354a4376c461cba0b4e7ba54f2fec9c962b5d7",
+      "decisionBasis": "local-llm",
+      "memoDigest": "b3e0e7864f578ba8a9a2b80bc370e3095785030b2a724c7132925e3e3d34e339"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "CHAOTIC",
+      "relation": "similar",
+      "senseId": "oewn-chaotic__5.00.00.wild.02",
+      "baseWordDigest": "c45c43654e7c4c231c7c298d933c4d9b8f25b83074680a159ddfd9d9c4001b36",
+      "decisionBasis": "local-llm",
+      "memoDigest": "ce3198831db19ab860b020ec489ce8dd881ce60f6ff0c643bfd2172132f55df1"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "CLUTTER",
+      "relation": "similar",
+      "senseId": "oewn-clutter__2.30.00..",
+      "baseWordDigest": "cfc251063d13104d592090a1092231b36869723355be7219373dd00f808c9d42",
+      "decisionBasis": "local-llm",
+      "memoDigest": "78c7325bae38a4ecbbb6a61dcfd88637bdb978764537836c0089511b65b5b5bb"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "CODIFY",
+      "relation": "opposite",
+      "senseId": "oewn-codify__2.30.01..",
+      "baseWordDigest": "9db84253cfcf68f9d2ba4ca893f69a29a6ba828e8b42724fda78ed60ea5bbab2",
+      "decisionBasis": "local-llm",
+      "memoDigest": "1f778b66376d49863dfeaae6b3711681e8113451e8d879de2d15c71cba53b47a"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "COORDINATE",
+      "relation": "opposite",
+      "senseId": "oewn-coordinate__2.30.01..",
+      "baseWordDigest": "e815f2a3375038317f5e8b5409c4dff6d1ef1b8fb2a10dd93935d6c085b9e2ec",
+      "decisionBasis": "local-llm",
+      "memoDigest": "cfb46f88b34b8d9d91a49d336992a061c8ef2e99040c4887d0671868edb333c9"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "DIRTY",
+      "relation": "unrelated",
+      "senseId": "oewn-dirty__2.35.00..",
+      "baseWordDigest": "a098dcfc8a8e3785a3528187c3cb6e4e041a75b4f3052245ec0994b4c30d764c",
+      "decisionBasis": "local-llm",
+      "memoDigest": "14e39955db8e652f8561098714d88e4cf938d71a69f7b468014bb9e259393464"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "DISORDER",
+      "relation": "similar",
+      "senseId": "oewn-disorder__1.26.00..",
+      "baseWordDigest": "452c66b3e212195abfc7f91872ee277b851f8810718dbd8af0c93db870d501cc",
+      "decisionBasis": "local-llm",
+      "memoDigest": "2eae464e54512a5a2a7bfdf02953cc7c6d5aca09286f1c3694f5fa18e55a989a"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "DISORGANIZED",
+      "relation": "similar",
+      "senseId": "oewn-disorganize__2.41.00..",
+      "baseWordDigest": "09e7b161e5e349ec635b6f8ae40fce0c7c7abe80d87670b66fc491b011000d26",
+      "decisionBasis": "local-llm",
+      "memoDigest": "6cdbe3254aa125aaefb0a780e088a368634a20876e6d40de04af1d9ef2031605"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "JUMBLE",
+      "relation": "similar",
+      "senseId": "oewn-jumble__1.26.00..",
+      "baseWordDigest": "6f2b529003cf75f55d1c0cce57ef13b46b826e88f48fb7c3fc55c24e10258ba1",
+      "decisionBasis": "local-llm",
+      "memoDigest": "a57ac936fde15aafd5f89c214a3084cddf1d53ee8886556e15f9481708239b83"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "MARSHAL",
+      "relation": "opposite",
+      "senseId": "oewn-marshal__2.35.00..",
+      "baseWordDigest": "71e34cdf2dea76e21bd0419af200a6f2670aa3238dd821c37fcc8d51542f04dd",
+      "decisionBasis": "local-llm",
+      "memoDigest": "0b1f2b26a1a0463e4cbbb2308f2370d69b2cb9a40a91335ef70a91978f747be6"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "MATHEMATICS",
+      "relation": "opposite",
+      "senseId": "oewn-mathematics__1.09.00..",
+      "baseWordDigest": "fa473d8d485ee85c620c8d26a3e8c9ca8ef5a154c6932357b7b91af2f94d96d0",
+      "decisionBasis": "local-llm",
+      "memoDigest": "e7b2367a0df1f512fc2b0cc4ae7ce5f06033dd8981174c56afccb10db070f08d"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "MESS",
+      "relation": "similar",
+      "senseId": "oewn-mess__1.26.00..",
+      "baseWordDigest": "9b0d0be693be2bfc8b7ef3ebcda5309acac4fea66f69563b7c0ebdbdfc138770",
+      "decisionBasis": "local-llm",
+      "memoDigest": "102ea999070fe16e67f3968ca322b869ba99b07edf181b9e5cd81825bfc38fa1"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "METHODICAL",
+      "relation": "opposite",
+      "senseId": "oewn-methodical__5.00.00.organized.01",
+      "baseWordDigest": "16e32206d87eae400e5d15b79a9f2684b06917c1b56b9b94ba8c176e29a5feb3",
+      "decisionBasis": "local-llm",
+      "memoDigest": "e8a9cacfc974d5375d5907219e9c02b010f9e6dbd732a8b1755fc308af613432"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "ORDER",
+      "relation": "opposite",
+      "senseId": "oewn-order__2.30.00..",
+      "baseWordDigest": "a342b6438307eb38592140507b5f972a321af7a0ad29d3d4876a249d3be104d8",
+      "decisionBasis": "local-llm",
+      "memoDigest": "e0cfbfb2a60e9af3bd04c46edea04e9e2acfa9a0edd9cba205134d0d83a95e0a"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "PEACEFUL",
+      "relation": "opposite",
+      "senseId": "oewn-peaceful__3.00.00..",
+      "baseWordDigest": "9d79a9c19a68fe4bf7d31bed38c11fef51d1fc80c1963deebf58f8f9ad3b9674",
+      "decisionBasis": "local-llm",
+      "memoDigest": "0f6a1c03ff44a4084225e66f8264384ee2c9549ad78e54751db87fc2df1fa204"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "QUANTUM",
+      "relation": "unrelated",
+      "senseId": "oewn-quantum__1.09.00..",
+      "baseWordDigest": "7d847cf7d8726759779f9922693dd38962376f7f62bd7b27d7ac482fdbf63253",
+      "decisionBasis": "local-llm",
+      "memoDigest": "16581e1e3fa2cec999a759bd2f1012a40af936fc30434d75fdcfb08015f2e4c2"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "RANDOM",
+      "relation": "similar",
+      "senseId": "oewn-random__3.00.00..",
+      "baseWordDigest": "a0f5a47ad4abb588286a0631e481a7ba778f81b4d2f47ad5c646cfb67589505e",
+      "decisionBasis": "local-llm",
+      "memoDigest": "e3c5a02da168e5a33751522f4748d27b0eaddccd0243846b26ec0980d84c2d23"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "REGULATE",
+      "relation": "opposite",
+      "senseId": "oewn-regulate__2.41.01..",
+      "baseWordDigest": "c693df41cb784d156506709da5dd4a6905ba3e01b8051d8f3ec5042c7a444875",
+      "decisionBasis": "local-llm",
+      "memoDigest": "3cddbbb5891c47ec3274b58517a410e6237200b8236c4aecd80e609c1980cfda"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "SCULPTURE",
+      "relation": "unrelated",
+      "senseId": "oewn-sculpture__1.04.00..",
+      "baseWordDigest": "862d5455569ca1bfd62bc07549f3f7e64d9fbbc6ac95b4eef9f881718ae998dd",
+      "decisionBasis": "local-llm",
+      "memoDigest": "c04b3afbb0dd4443499c959597af55037cc8997483a8f729ea7fd1b6d28061ab"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "SEQUENCE",
+      "relation": "opposite",
+      "senseId": "oewn-sequence__1.14.00..",
+      "baseWordDigest": "d5498d47227aaeb9f9209473b19dd71a87fdd7f31bb59197927d0a6138fd9900",
+      "decisionBasis": "local-llm",
+      "memoDigest": "0b15c05110bd1eacb707f47a4ec9d8ec729b8ce12dc2a17e4e532c8f432fc14e"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "SEVEN",
+      "relation": "unrelated",
+      "senseId": "oewn-seven__1.06.00..",
+      "baseWordDigest": "f221ccc9166930d5a94df26e30e208bc74fd983864607a9ae7c75fd8686214d6",
+      "decisionBasis": "local-llm",
+      "memoDigest": "424108931d4de50cf30696c2be281abba1b5eb544a4142bd3189946ea00e07d6"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "STABILITY",
+      "relation": "opposite",
+      "senseId": "oewn-stability__1.26.00..",
+      "baseWordDigest": "57271a29f1a072cde2b7ef5d0060148b7909f8e102828bbdbf82bd63c7bad757",
+      "decisionBasis": "local-llm",
+      "memoDigest": "7219f3ae4b2d88495cb8fcf53f1b68d2017d156afc590fa57d8d337f28be55cf"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "STRAIGHTEN",
+      "relation": "opposite",
+      "senseId": "oewn-straighten__2.30.00..",
+      "baseWordDigest": "f97743b818f2d27c99bc377a8a9b81e69da671274e7af0d40b06d4d7dfc57d28",
+      "decisionBasis": "local-llm",
+      "memoDigest": "69bd3d5eff10aad6f22e385d405fd4b30d9bcb094d7e2463a2d0396d5d88e237"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "SYSTEMATIC",
+      "relation": "opposite",
+      "senseId": "oewn-systematic__3.00.00..",
+      "baseWordDigest": "3d0b30305efcc17da948256f4c57407d9ade9176ad124b05a11428e867dc62b6",
+      "decisionBasis": "local-llm",
+      "memoDigest": "81bfabc1ca8f34597face11206d4702ad1b447e544bc94706f614bc458accaa5"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "TABLE",
+      "relation": "unrelated",
+      "senseId": "oewn-table__1.06.01..",
+      "baseWordDigest": "1008edabbadebd15db13fa91417995cc25b602c67082696024a7c7af8e09d917",
+      "decisionBasis": "local-llm",
+      "memoDigest": "89f62d593190184dc1a35164dd16bd4d683cb4cd5e0f38760767b1e4d2221134"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "TIDY",
+      "relation": "opposite",
+      "senseId": "oewn-tidy__2.30.00..",
+      "baseWordDigest": "d0424fa7065d0bdc23b4b3aed74a5eb7794ac4ddc41eacdace35dab0bc5bc8af",
+      "decisionBasis": "local-llm",
+      "memoDigest": "404702530a2bbfe4e208b7a1970146cb6f4aa97e68f8e3a67038724c8fc691a8"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "TUMULT",
+      "relation": "similar",
+      "senseId": "oewn-tumult__1.26.00..",
+      "baseWordDigest": "168ce1fb78bbf064151d4cb85e84ab9fd27d33b54c75511ff4f7772a4b57cdca",
+      "decisionBasis": "local-llm",
+      "memoDigest": "258bdaf9424757ac331ca2c3471d1651ccbfa33c7fa3bddc1c64ba80caea4507"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "TURMOIL",
+      "relation": "similar",
+      "senseId": "oewn-turmoil__1.26.00..",
+      "baseWordDigest": "065e59e884fd082449d3c0ce317e01876ae6633524274da7402243156f3a4c30",
+      "decisionBasis": "local-llm",
+      "memoDigest": "76e8bf334a7d99109991e927e016141def5e7d6b3fae6a31103161117b57cd8f"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "VOLCANO",
+      "relation": "unrelated",
+      "senseId": "oewn-volcano__1.17.00..",
+      "baseWordDigest": "5263e59e54ff655cfccdb0197c9d8b3a53271fcdecd3c98a3b16eae5a7b1eeb6",
+      "decisionBasis": "local-llm",
+      "memoDigest": "6843c59e77040e044710a83befcf5a8b346e727156c5c80230c2e33c587a6b3b"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "WEATHER",
+      "relation": "unrelated",
+      "senseId": "oewn-weather__2.42.00..",
+      "baseWordDigest": "b298539cb0c269a6ad54f60afcb3c606d5dad9def0c75b66cb139e91326d0f54",
+      "decisionBasis": "local-llm",
+      "memoDigest": "a5949124c0d302a30d64f77a3b8370fda2781a2b306fd65901be5399e6d61b50"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "WHERE",
+      "relation": "unrelated",
+      "senseId": "wikt-en-5930cc0c101b52a5abd9",
+      "baseWordDigest": "fc7fd408596540a9a40a7779cf2e1eb25c077320788dfd7591b6c919df00d3b1",
+      "decisionBasis": "local-llm",
+      "memoDigest": "e403886bf73a924ab7fd6b2255246652bf863e0d4489637e71182396900beaf3"
+    }
+  ]
+}

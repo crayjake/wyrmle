@@ -6,6 +6,8 @@ import { validatePuzzle } from '../src/generator/validate.ts'
 import { createLetterStrikeGame, submitLetterStrike } from '../src/game/letterStrike.ts'
 import type { LetterStrikeEncounter } from '../src/game/letterStrike.ts'
 import type { CandidatePuzzle } from '../src/generator/types.ts'
+import { analyseSemanticChoices } from '../src/generator/semanticChoices.ts'
+import { solvePuzzle } from '../src/generator/solve.ts'
 
 function encounter(resolve = 3, enemy = 'BY'): LetterStrikeEncounter {
   return {
@@ -34,6 +36,34 @@ const options = {
   wordCommonness: () => 0.8,
   maxReasonableStates: 40,
 }
+
+test('semantic choice publication gates reject absent, stale and insufficient counter evidence', () => {
+  const puzzle = candidate(encounter(2))
+  const analysis = analysePuzzle(puzzle, options)
+  const gates = { minimumCounterOpeningLemmas: 1 }
+  assert.ok(validatePuzzle(puzzle, analysis, gates).reasons.some(reason => reason.code === 'missing-semantic-choice-audit'))
+  analysis.semanticChoices = analyseSemanticChoices(puzzle.encounter, analysis.winningLines)
+  assert.equal(analysis.semanticChoices.openingEnumerationComplete, true)
+  assert.deepEqual(analysis.semanticChoices.familiarCounterOpenings, [])
+  assert.ok(validatePuzzle(puzzle, analysis, gates).reasons.some(reason => reason.code === 'few-familiarCounterOpeningLemmas'))
+  const changed = { ...puzzle, encounter: { ...puzzle.encounter, startingResolve: 1 } }
+  assert.ok(validatePuzzle(changed, analysis, gates).reasons.some(reason => reason.code === 'missing-semantic-choice-audit'))
+  const invalid = structuredClone(analysis.winningLines)
+  invalid[0].moves[0].tileIds = [99]
+  assert.throws(() => analyseSemanticChoices(puzzle.encounter, invalid), /replayable winning routes/)
+})
+
+test('counter-choice audit separates semantic extra hits from Hit-tile damage', () => {
+  const puzzle = encounter(2)
+  puzzle.enemy.semanticRelations.opposite = ['BAY']
+  const normal = analyseSemanticChoices(puzzle, [])
+  assert.ok(normal.meaningBoostedOpenings.includes('BAY'))
+  puzzle.startingTiles[0] = { ...puzzle.startingTiles[0], type: 'gem', gem: 'strike' }
+  const withHit = analyseSemanticChoices(puzzle, [])
+  assert.ok(withHit.multiHitCounterOpenings.includes('BAY'))
+  assert.equal(withHit.meaningBoostedOpenings.includes('BAY'), false,
+    'The same neutral selection already hits B through Hit and Y normally.')
+})
 
 test('analysis detects premature hopelessness after a reasonable matching word consumes the only future target', () => {
   const puzzle = encounter()
@@ -149,6 +179,22 @@ test('counterfactuals change only the intended rule and reuse actual route trans
   assert.ok((analysis.wardImportance ?? 0) > 0)
   assert.equal(analysis.counterfactuals.find(item => item.mechanic === 'ward')?.evidence, 'route-replay')
   assert.ok(analysis.counterfactuals.find(item => item.mechanic === 'ward')!.changedWinningOutcomes > 0)
+})
+
+test('mechanic analysis replays retained witnesses beyond the first six', () => {
+  const puzzle = encounter(2, 'BA')
+  puzzle.startingTiles[0] = { ...puzzle.startingTiles[0], type: 'gem', gem: 'strike' }
+  puzzle.enemy.semanticRelations.opposite = ['BAY']
+  const solution = solvePuzzle(puzzle, { maxStates: 0, hintLines: [[[0, 1, 2]], [[0, 1, 4]]] })
+  const counter = solution.winningLines.find(line => line.moves[0].word === 'BAY')!
+  const neutral = solution.winningLines.find(line => line.moves[0].word === 'BAD')!
+  assert.ok(counter && neutral)
+  solution.winningLines = [...Array(6).fill(counter), neutral]
+  const analysis = analysePuzzle(puzzle, { ...options, solution })
+  const strike = analysis.counterfactuals.find(item => item.mechanic === 'strike')!
+  assert.equal(strike.replayedWinningLines, 7)
+  assert.equal(strike.changedWinningOutcomes, 1)
+  assert.ok(strike.importance! > 0)
 })
 
 test('special decision analysis distinguishes proved automatic use from bounded missing alternatives', () => {

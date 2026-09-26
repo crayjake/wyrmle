@@ -1,0 +1,1592 @@
+{
+  "version": "wyrmle-semantic-source-review-1",
+  "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+  "modelPolicyDigest": "76e46b27acbb1122759d5ca3c4f46dfd14a7eba597b75da06b7de35ac5a8ad72",
+  "categoryRelations": {
+    "ANGER": {
+      "CALM": "opposite",
+      "JOY": "opposite",
+      "KINDNESS": "opposite",
+      "ANGER": "similar",
+      "COMFORT": "opposite"
+    },
+    "CHAOS": {
+      "CALM": "opposite",
+      "ORDER": "opposite",
+      "DISORDER": "similar"
+    },
+    "CRUELTY": {
+      "KINDNESS": "opposite",
+      "CRUELTY": "similar",
+      "COMFORT": "opposite"
+    },
+    "DESPAIR": {
+      "HOPE": "opposite",
+      "CONFIDENCE": "opposite",
+      "RESILIENCE": "opposite",
+      "HOPELESSNESS": "similar",
+      "COMFORT": "opposite"
+    },
+    "FEAR": {
+      "CALM": "opposite",
+      "COURAGE": "opposite",
+      "CONFIDENCE": "opposite",
+      "SAFETY": "opposite",
+      "FEAR": "similar",
+      "COMFORT": "opposite"
+    },
+    "MELANCHOLY": {
+      "JOY": "opposite",
+      "SADNESS": "similar",
+      "COMFORT": "opposite"
+    }
+  },
+  "categoryNames": {
+    "CALM": "calmness and composure",
+    "JOY": "happiness and good spirits",
+    "KINDNESS": "kindness and humane care",
+    "ORDER": "order, organization and clarity",
+    "HOPE": "hope and optimism",
+    "CONFIDENCE": "confidence and trust",
+    "RESILIENCE": "resilience and constructive perseverance",
+    "COURAGE": "courage and bravery",
+    "SAFETY": "safety and security",
+    "ANGER": "anger and resentment",
+    "FEAR": "fear and anxiety",
+    "SADNESS": "sadness and low spirits",
+    "HOPELESSNESS": "despair and hopelessness",
+    "CRUELTY": "cruelty and malicious harm",
+    "DISORDER": "disorder and confusion",
+    "ROLE": "an occupation or affiliation",
+    "OBJECT": "a physical object or substance",
+    "FIELD": "a field or belief system",
+    "PHYSICAL": "a physical property or action",
+    "OTHER": "another meaning",
+    "COMFORT": "emotional comfort and support"
+  },
+  "relationPriority": [
+    "similar",
+    "opposite"
+  ],
+  "lexnames": [
+    "adj.all",
+    "adj.pert",
+    "adv.all",
+    "noun.Tops",
+    "noun.act",
+    "noun.animal",
+    "noun.artifact",
+    "noun.attribute",
+    "noun.body",
+    "noun.cognition",
+    "noun.communication",
+    "noun.event",
+    "noun.feeling",
+    "noun.food",
+    "noun.group",
+    "noun.location",
+    "noun.motive",
+    "noun.object",
+    "noun.person",
+    "noun.phenomenon",
+    "noun.plant",
+    "noun.possession",
+    "noun.process",
+    "noun.quantity",
+    "noun.relation",
+    "noun.shape",
+    "noun.state",
+    "noun.substance",
+    "noun.time",
+    "verb.body",
+    "verb.change",
+    "verb.cognition",
+    "verb.communication",
+    "verb.competition",
+    "verb.consumption",
+    "verb.contact",
+    "verb.creation",
+    "verb.emotion",
+    "verb.motion",
+    "verb.perception",
+    "verb.possession",
+    "verb.social",
+    "verb.stative",
+    "verb.weather",
+    "adj.ppl"
+  ],
+  "sourceDomainPriority": {
+    "adj.all": 0,
+    "adj.pert": 0,
+    "adv.all": 0,
+    "noun.Tops": 5,
+    "noun.act": 3,
+    "noun.animal": 5,
+    "noun.artifact": 5,
+    "noun.attribute": 0,
+    "noun.body": 5,
+    "noun.cognition": 2,
+    "noun.communication": 2,
+    "noun.event": 5,
+    "noun.feeling": 0,
+    "noun.food": 5,
+    "noun.group": 4,
+    "noun.location": 5,
+    "noun.motive": 5,
+    "noun.object": 5,
+    "noun.person": 5,
+    "noun.phenomenon": 5,
+    "noun.plant": 5,
+    "noun.possession": 5,
+    "noun.process": 5,
+    "noun.quantity": 5,
+    "noun.relation": 2,
+    "noun.shape": 5,
+    "noun.state": 0,
+    "noun.substance": 5,
+    "noun.time": 5,
+    "verb.body": 1,
+    "verb.change": 1,
+    "verb.cognition": 1,
+    "verb.communication": 1,
+    "verb.competition": 1,
+    "verb.consumption": 1,
+    "verb.contact": 1,
+    "verb.creation": 1,
+    "verb.emotion": 1,
+    "verb.motion": 1,
+    "verb.perception": 1,
+    "verb.possession": 1,
+    "verb.social": 1,
+    "verb.stative": 1,
+    "verb.weather": 1,
+    "adj.ppl": 0
+  },
+  "reviews": [
+    {
+      "senseId": "oewn-adhere__2.35.01..",
+      "lemma": "adhere",
+      "definition": "come or be in close contact with; stick or hold together and resist separation",
+      "partOfSpeech": "verb",
+      "categories": [
+        "PHYSICAL"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-cohere__2.35.00..: Physical adhesion is not logical coherence; the separate logical and orderly senses remain available."
+    },
+    {
+      "senseId": "oewn-ado__1.04.00..",
+      "lemma": "ado",
+      "definition": "a rapid active commotion",
+      "partOfSpeech": "noun",
+      "categories": [
+        "DISORDER"
+      ],
+      "rationale": "The definition directly denotes commotion, which belongs to the established disorder category."
+    },
+    {
+      "senseId": "oewn-annals__1.10.00..",
+      "lemma": "annals",
+      "definition": "a chronological account of events in successive years",
+      "partOfSpeech": "noun",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "A chronological account explicitly orders events by successive years, matching the admitted chronological-record meaning."
+    },
+    {
+      "senseId": "oewn-ant__1.05.00..",
+      "lemma": "ant",
+      "definition": "social insect living in organized colonies; characteristically the males and fertile queen have wings during breeding season; wingless sterile females are the workers",
+      "partOfSpeech": "noun",
+      "categories": [
+        "OBJECT"
+      ],
+      "rationale": "The sense denotes an insect. Living in an organized colony is an incidental property, not the abstract quality of organization."
+    },
+    {
+      "senseId": "oewn-arrange__2.29.00..",
+      "lemma": "arrange",
+      "definition": "arrange attractively",
+      "partOfSpeech": "verb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-do__2.29.04..: This verb explicitly arranges attractively, the same organizing sense admitted for ARRANGE and SET."
+    },
+    {
+      "senseId": "oewn-arranger__1.18.00..",
+      "lemma": "arranger",
+      "definition": "a person who brings order and organization to an enterprise",
+      "partOfSpeech": "noun",
+      "categories": [
+        "ROLE"
+      ],
+      "rationale": "This sense defines a person by their organizational function. The policy distinguishes occupational roles from the organizing action itself."
+    },
+    {
+      "senseId": "oewn-ascendant__5.00.00.dominant.01",
+      "lemma": "ascendant",
+      "definition": "most powerful or important or influential",
+      "partOfSpeech": "adjective",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Power, importance and influence do not by themselves denote organization or clarity."
+    },
+    {
+      "senseId": "oewn-ascendent__5.00.00.dominant.01",
+      "lemma": "ascendent",
+      "definition": "most powerful or important or influential",
+      "partOfSpeech": "adjective",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-ascendant__5.00.00.dominant.01: Power, importance and influence do not by themselves denote organization or clarity."
+    },
+    {
+      "senseId": "oewn-assemble__2.41.03..",
+      "lemma": "assemble",
+      "definition": "get people together",
+      "partOfSpeech": "verb",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Merely gathering people does not assert an orderly arrangement; a gathered crowd can be disorderly."
+    },
+    {
+      "senseId": "oewn-base__1.09.00..",
+      "lemma": "base",
+      "definition": "the fundamental assumptions from which something is begun or developed or calculated or explained",
+      "partOfSpeech": "noun",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Foundational assumptions can support any account; having a foundation does not assert order or clear reasoning."
+    },
+    {
+      "senseId": "oewn-basis__1.09.00..",
+      "lemma": "basis",
+      "definition": "the fundamental assumptions from which something is begun or developed or calculated or explained",
+      "partOfSpeech": "noun",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-cornerstone__1.09.00..: Foundational assumptions are not necessarily orderly or clear; this shares the same distinction as the corresponding BASE sense."
+    },
+    {
+      "senseId": "oewn-beat__1.07.00..",
+      "lemma": "beat",
+      "definition": "a regular rate of repetition",
+      "partOfSpeech": "noun",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "A regular rate of repetition is a rhythmic pattern, not the unrelated striking or physical-injury action."
+    },
+    {
+      "senseId": "oewn-beat__2.31.00..",
+      "lemma": "beat",
+      "definition": "be a mystery or bewildering to",
+      "partOfSpeech": "verb",
+      "categories": [
+        "DISORDER"
+      ],
+      "rationale": "The cognitive verb explicitly bewilders; its confusion meaning is distinct from physical beating or musical rhythm."
+    },
+    {
+      "senseId": "oewn-begin__2.42.02..",
+      "lemma": "begin",
+      "definition": "be the first item or point, constitute the beginning or start, come first in a series",
+      "partOfSpeech": "verb",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Being first in a series is a relative position, explicitly excluded from the ORDER policy."
+    },
+    {
+      "senseId": "oewn-beseem__2.42.00..",
+      "lemma": "beseem",
+      "definition": "accord or comport with",
+      "partOfSpeech": "verb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "To accord or comport with directly expresses accordance and compatibility."
+    },
+    {
+      "senseId": "oewn-beta__5.00.00.important.00",
+      "lemma": "beta",
+      "definition": "second in order of importance",
+      "partOfSpeech": "adjective",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Second in importance is a relative ranking, not orderly arrangement."
+    },
+    {
+      "senseId": "oewn-blend__2.42.00..",
+      "lemma": "blend",
+      "definition": "blend or harmonize",
+      "partOfSpeech": "verb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-go__2.42.11..: The admitted verb explicitly means blend or harmonize. Apply the same harmony category as to BLEND rather than its unrelated motion or departure senses."
+    },
+    {
+      "senseId": "oewn-bother__2.37.02..",
+      "lemma": "bother",
+      "definition": "make confused or perplexed or puzzled",
+      "partOfSpeech": "verb",
+      "categories": [
+        "DISORDER"
+      ],
+      "rationale": "The verb explicitly causes confusion or perplexity, rather than merely annoyance."
+    },
+    {
+      "senseId": "oewn-care__1.04.00..",
+      "lemma": "care",
+      "definition": "activity involved in maintaining something in good working order",
+      "partOfSpeech": "noun",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Maintaining something in working order denotes upkeep or repair, not tidiness, orderly arrangement or clarity."
+    },
+    {
+      "senseId": "oewn-chord__2.30.00..",
+      "lemma": "chord",
+      "definition": "bring into consonance, harmony, or accord while making music or singing",
+      "partOfSpeech": "verb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "This verb explicitly brings music into consonance, harmony or accord; it directly produces the admitted harmonic relationship."
+    },
+    {
+      "senseId": "oewn-clean__2.35.01..",
+      "lemma": "clean",
+      "definition": "clean and tidy up the house",
+      "partOfSpeech": "verb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "The exact verb explicitly includes tidying. The game policy admits tidiness against CHAOS; this is stronger evidence than the model\u2019s neutral judgement. Hygiene-only senses are not changed."
+    },
+    {
+      "senseId": "oewn-clear__2.30.12..",
+      "lemma": "clear",
+      "definition": "rid of instructions or data",
+      "partOfSpeech": "verb",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Removing computer instructions or data does not itself organize or clarify their meaning."
+    },
+    {
+      "senseId": "oewn-cogency__1.24.00..",
+      "lemma": "cogency",
+      "definition": "persuasive relevance",
+      "partOfSpeech": "noun",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Persuasive relevance alone does not establish logical clarity. The distinct valid-and-rigorous quality remains a counter."
+    },
+    {
+      "senseId": "oewn-cohere__2.35.00..",
+      "lemma": "cohere",
+      "definition": "come or be in close contact with; stick or hold together and resist separation",
+      "partOfSpeech": "verb",
+      "categories": [
+        "PHYSICAL"
+      ],
+      "rationale": "Physical adhesion is not logical coherence; the separate logical and orderly senses remain available."
+    },
+    {
+      "senseId": "oewn-coherence__1.26.00..",
+      "lemma": "coherence",
+      "definition": "the state of cohering or sticking together",
+      "partOfSpeech": "noun",
+      "categories": [
+        "PHYSICAL"
+      ],
+      "rationale": "This sense denotes physical sticking together, not the separate logical-orderliness quality."
+    },
+    {
+      "senseId": "oewn-coherency__1.26.00..",
+      "lemma": "coherency",
+      "definition": "the state of cohering or sticking together",
+      "partOfSpeech": "noun",
+      "categories": [
+        "PHYSICAL"
+      ],
+      "rationale": "Physical cohesion is distinct from the logical-orderliness sense of this spelling."
+    },
+    {
+      "senseId": "oewn-comb__2.29.00..",
+      "lemma": "comb",
+      "definition": "smoothen and neaten with or as with a comb",
+      "partOfSpeech": "verb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "This verb explicitly neatens. It describes an ordering action, rather than the physical comb object. Apply the correction to every admitted inflection carrying this exact sense."
+    },
+    {
+      "senseId": "oewn-concert__2.32.00..",
+      "lemma": "concert",
+      "definition": "settle by agreement",
+      "partOfSpeech": "verb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "Settling by agreement directly establishes accord, an admitted harmony meaning."
+    },
+    {
+      "senseId": "oewn-concert__2.36.00..",
+      "lemma": "concert",
+      "definition": "contrive (a plan) by mutual agreement",
+      "partOfSpeech": "verb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "Jointly devising a plan explicitly combines planning and agreement."
+    },
+    {
+      "senseId": "oewn-connect__2.31.00..",
+      "lemma": "connect",
+      "definition": "make a logical or causal connection",
+      "partOfSpeech": "verb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "The verb explicitly makes a logical connection, giving ideas a logical relationship rather than merely physically joining objects."
+    },
+    {
+      "senseId": "oewn-control__2.31.00..",
+      "lemma": "control",
+      "definition": "have a firm understanding or knowledge of; be on top of",
+      "partOfSpeech": "verb",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Knowledge or mastery of a subject does not itself denote order or clarity; the regulating and self-discipline senses remain distinct."
+    },
+    {
+      "senseId": "oewn-control__2.41.01..",
+      "lemma": "control",
+      "definition": "lessen the intensity of; temper; hold in restraint; hold or keep within limits",
+      "partOfSpeech": "verb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-moderate__2.41.00..: Explicit tempering and holding within limits is the same regulation meaning admitted for CONTROL."
+    },
+    {
+      "senseId": "oewn-coordinate__5.00.00.equal.00",
+      "lemma": "coordinate",
+      "definition": "of equal importance, rank, or degree",
+      "partOfSpeech": "adjective",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Equal rank, importance or degree is a comparison, not coordinated arrangement."
+    },
+    {
+      "senseId": "oewn-core__1.10.00..",
+      "lemma": "core",
+      "definition": "the central meaning or theme of a speech or literary work",
+      "partOfSpeech": "noun",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "The central meaning of a message does not itself denote clarity, arrangement, or order. The model confused having a meaning with expressing an orderly quality."
+    },
+    {
+      "senseId": "oewn-cornerstone__1.09.00..",
+      "lemma": "cornerstone",
+      "definition": "the fundamental assumptions from which something is begun or developed or calculated or explained",
+      "partOfSpeech": "noun",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Foundational assumptions are not necessarily orderly or clear; this shares the same distinction as the corresponding BASE sense."
+    },
+    {
+      "senseId": "oewn-correlate__2.31.00..",
+      "lemma": "correlate",
+      "definition": "bring into a mutual, complementary, or reciprocal relation",
+      "partOfSpeech": "verb",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Establishing a mutual or reciprocal relationship does not itself establish harmony, logical clarity, or orderly arrangement."
+    },
+    {
+      "senseId": "oewn-correlate__5.00.00.related.02",
+      "lemma": "correlate",
+      "definition": "mutually related",
+      "partOfSpeech": "adjective",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Being mutually related does not establish coherence, harmony or orderly arrangement."
+    },
+    {
+      "senseId": "oewn-correlated__5.00.00.related.02",
+      "lemma": "correlated",
+      "definition": "mutually related",
+      "partOfSpeech": "adjective",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-correlate__5.00.00.related.02: Being mutually related does not establish coherence, harmony or orderly arrangement."
+    },
+    {
+      "senseId": "oewn-cram__2.35.00..",
+      "lemma": "cram",
+      "definition": "crowd or pack to capacity",
+      "partOfSpeech": "verb",
+      "categories": [
+        "PHYSICAL"
+      ],
+      "rationale": "Packing to capacity can be disordered; physical crowding does not itself organize the contents."
+    },
+    {
+      "senseId": "oewn-deal__1.04.01..",
+      "lemma": "deal",
+      "definition": "the act of apportioning or distributing something",
+      "partOfSpeech": "noun",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Distribution or apportionment alone does not entail an ordered arrangement or regulation."
+    },
+    {
+      "senseId": "oewn-debacle__1.11.02..",
+      "lemma": "debacle",
+      "definition": "a sudden and violent collapse",
+      "partOfSpeech": "noun",
+      "categories": [
+        "PHYSICAL"
+      ],
+      "rationale": "A violent collapse is an event; confusion or disarray is a possible consequence rather than the quality asserted by this definition."
+    },
+    {
+      "senseId": "oewn-debate__1.10.01..",
+      "lemma": "debate",
+      "definition": "a discussion in which reasons are advanced for and against some proposition or proposal",
+      "partOfSpeech": "noun",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "A discussion containing reasons does not necessarily have logical clarity or order; the definition does not assert either quality."
+    },
+    {
+      "senseId": "oewn-decree__1.10.00..",
+      "lemma": "decree",
+      "definition": "a legally binding command or decision entered on the court record (as if issued by a court or judge)",
+      "partOfSpeech": "noun",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-order__1.10.00..: A legally binding command is a communication object, not the abstract quality of social order."
+    },
+    {
+      "senseId": "oewn-demote__2.41.00..",
+      "lemma": "demote",
+      "definition": "assign to a lower position; reduce in rank",
+      "partOfSpeech": "verb",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Lowering a rank changes relative status, not the organization of things."
+    },
+    {
+      "senseId": "oewn-derangement__1.26.00..",
+      "lemma": "derangement",
+      "definition": "a state of mental disturbance and disorientation",
+      "partOfSpeech": "noun",
+      "categories": [
+        "DISORDER"
+      ],
+      "rationale": "This state explicitly includes mental disorientation; the label rests on confusion rather than the generic word disorder in a diagnosis."
+    },
+    {
+      "senseId": "oewn-do__2.29.04..",
+      "lemma": "do",
+      "definition": "arrange attractively",
+      "partOfSpeech": "verb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "This verb explicitly arranges attractively, the same organizing sense admitted for ARRANGE and SET."
+    },
+    {
+      "senseId": "oewn-dress__2.29.04..",
+      "lemma": "dress",
+      "definition": "arrange attractively",
+      "partOfSpeech": "verb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-do__2.29.04..: This verb explicitly arranges attractively, the same organizing sense admitted for ARRANGE and SET."
+    },
+    {
+      "senseId": "oewn-dress__2.29.06..",
+      "lemma": "dress",
+      "definition": "give a neat appearance to",
+      "partOfSpeech": "verb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-groom__2.29.03..: Giving a neat appearance explicitly neatens, matching the established tidying category."
+    },
+    {
+      "senseId": "oewn-echelon__1.26.00..",
+      "lemma": "echelon",
+      "definition": "status in a society or organization",
+      "partOfSpeech": "noun",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Status within an organization is a position, not the quality of orderly arrangement."
+    },
+    {
+      "senseId": "oewn-eldest__1.18.00..",
+      "lemma": "eldest",
+      "definition": "the offspring who came first in the order of birth",
+      "partOfSpeech": "noun",
+      "categories": [
+        "ROLE"
+      ],
+      "rationale": "The person first in birth order is a relative family position, not orderliness."
+    },
+    {
+      "senseId": "oewn-eldest__5.00.00.first.00",
+      "lemma": "eldest",
+      "definition": "first in order of birth",
+      "partOfSpeech": "adjective",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "First in birth order is a relative age ranking, explicitly outside the arrangement category."
+    },
+    {
+      "senseId": "oewn-elegance__1.07.01..",
+      "lemma": "elegance",
+      "definition": "a quality of neatness and ingenious simplicity in the solution of a problem (especially in science or mathematics)",
+      "partOfSpeech": "noun",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "The quality explicitly includes neatness in a problem solution, a clear and orderly arrangement of ideas."
+    },
+    {
+      "senseId": "oewn-embrangle__2.30.00..",
+      "lemma": "embrangle",
+      "definition": "make more complicated or confused through entanglements",
+      "partOfSpeech": "verb",
+      "categories": [
+        "DISORDER"
+      ],
+      "rationale": "The definition explicitly causes confusion through entanglement, matching the corresponding SNARL meaning."
+    },
+    {
+      "senseId": "oewn-enact__2.41.00..",
+      "lemma": "enact",
+      "definition": "order by virtue of superior authority; decree",
+      "partOfSpeech": "verb",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "An authoritative decree is not itself orderliness; the command may have any content."
+    },
+    {
+      "senseId": "oewn-encroachment__1.04.00..",
+      "lemma": "encroachment",
+      "definition": "entry to another's property without right or permission",
+      "partOfSpeech": "noun",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Unauthorized entry is a trespass; confusion or disorder is only a possible consequence, not the denoted meaning."
+    },
+    {
+      "senseId": "oewn-entangle__2.35.00..",
+      "lemma": "entangle",
+      "definition": "twist together or entwine into a confusing mass",
+      "partOfSpeech": "verb",
+      "categories": [
+        "DISORDER"
+      ],
+      "rationale": "Twisting into a confusing mass directly creates disarray, matching the same SNARL sense."
+    },
+    {
+      "senseId": "oewn-essence__1.10.00..",
+      "lemma": "essence",
+      "definition": "the central meaning or theme of a speech or literary work",
+      "partOfSpeech": "noun",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-core__1.10.00..: The central meaning of a message does not itself denote clarity, arrangement, or order. The model confused having a meaning with expressing an orderly quality."
+    },
+    {
+      "senseId": "oewn-garbled__5.00.00.incoherent.00",
+      "lemma": "garbled",
+      "definition": "lacking orderly continuity",
+      "partOfSpeech": "adjective",
+      "categories": [
+        "DISORDER"
+      ],
+      "rationale": "Lacking orderly continuity is a direct negation of order, not a counter to disorder."
+    },
+    {
+      "senseId": "oewn-gather__2.41.02..",
+      "lemma": "gather",
+      "definition": "get people together",
+      "partOfSpeech": "verb",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-assemble__2.41.03..: Merely gathering people does not assert an orderly arrangement; a gathered crowd can be disorderly."
+    },
+    {
+      "senseId": "oewn-genome__1.14.00..",
+      "lemma": "genome",
+      "definition": "the ordering of genes in a haploid set of chromosomes of a particular organism; the full DNA sequence of an organism",
+      "partOfSpeech": "noun",
+      "categories": [
+        "OBJECT"
+      ],
+      "rationale": "A physical DNA sequence is an object with a structure, not the quality or action of organization."
+    },
+    {
+      "senseId": "oewn-gentle__5.00.00.soft.04",
+      "lemma": "gentle",
+      "definition": "quiet and soothing",
+      "partOfSpeech": "adjective",
+      "categories": [
+        "CALM",
+        "PHYSICAL"
+      ],
+      "rationale": "Soothing directly calms; this definition includes soothing in addition to low sound volume, which alone would be insufficient."
+    },
+    {
+      "senseId": "oewn-gentleness__1.07.00..",
+      "lemma": "gentleness",
+      "definition": "acting in a manner that is gentle and mild and even-tempered",
+      "partOfSpeech": "noun",
+      "categories": [
+        "CALM"
+      ],
+      "rationale": "An even-tempered manner explicitly expresses composure, beyond merely low physical force."
+    },
+    {
+      "senseId": "oewn-gently__4.02.01..",
+      "lemma": "gently",
+      "definition": "in a gentle manner",
+      "partOfSpeech": "adverb",
+      "categories": [
+        "CALM"
+      ],
+      "rationale": "This is the gentle-manner reading. The separate gradual-motion and low-force senses do not justify a calm label."
+    },
+    {
+      "senseId": "oewn-get__2.31.10..",
+      "lemma": "get",
+      "definition": "be a mystery or bewildering to",
+      "partOfSpeech": "verb",
+      "categories": [
+        "DISORDER"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-beat__2.31.00..: The cognitive verb explicitly bewilders; its confusion meaning is distinct from physical beating or musical rhythm."
+    },
+    {
+      "senseId": "oewn-gloss__2.32.01..",
+      "lemma": "gloss",
+      "definition": "provide interlinear explanations for words or phrases",
+      "partOfSpeech": "verb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "Providing word explanations directly clarifies their meaning. Deceptive-excuse and surface-shine senses are unchanged."
+    },
+    {
+      "senseId": "oewn-go__2.42.11..",
+      "lemma": "go",
+      "definition": "blend or harmonize",
+      "partOfSpeech": "verb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "The admitted verb explicitly means blend or harmonize. Apply the same harmony category as to BLEND rather than its unrelated motion or departure senses."
+    },
+    {
+      "senseId": "oewn-golden__5.00.00.happy.00",
+      "lemma": "golden",
+      "definition": "marked by peace and prosperity",
+      "partOfSpeech": "adjective",
+      "categories": [
+        "CALM",
+        "JOY"
+      ],
+      "rationale": "The adjective explicitly denotes peace and prosperity, the same source meaning admitted for HALCYON."
+    },
+    {
+      "senseId": "oewn-grade__2.31.05..",
+      "lemma": "grade",
+      "definition": "assign a grade or rank to, according to one's evaluation",
+      "partOfSpeech": "verb",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Evaluating an item and assigning its rating is not itself arranging items in an orderly sequence."
+    },
+    {
+      "senseId": "oewn-groom__2.29.03..",
+      "lemma": "groom",
+      "definition": "give a neat appearance to",
+      "partOfSpeech": "verb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "Giving a neat appearance explicitly neatens, matching the established tidying category."
+    },
+    {
+      "senseId": "oewn-groomed__3.00.00..",
+      "lemma": "groomed",
+      "definition": "neat and smart in appearance; well cared for",
+      "partOfSpeech": "adjective",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "The adjective explicitly denotes a neat appearance, matching TIDY."
+    },
+    {
+      "senseId": "oewn-halcyon__5.00.00.happy.00",
+      "lemma": "halcyon",
+      "definition": "marked by peace and prosperity",
+      "partOfSpeech": "adjective",
+      "categories": [
+        "CALM",
+        "JOY"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-golden__5.00.00.happy.00: The adjective explicitly denotes peace and prosperity, the same source meaning admitted for HALCYON."
+    },
+    {
+      "senseId": "oewn-handle__2.35.01..",
+      "lemma": "handle",
+      "definition": "handle effectively",
+      "partOfSpeech": "verb",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-manage__2.35.03..: Generic effective handling does not itself assert organization, regulation, or clarity."
+    },
+    {
+      "senseId": "oewn-hold__2.41.15..",
+      "lemma": "hold",
+      "definition": "lessen the intensity of; temper; hold in restraint; hold or keep within limits",
+      "partOfSpeech": "verb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-moderate__2.41.00..: Explicit tempering and holding within limits is the same regulation meaning admitted for CONTROL."
+    },
+    {
+      "senseId": "oewn-homology__1.07.00..",
+      "lemma": "homology",
+      "definition": "the quality of being similar or corresponding in position or value or structure or function",
+      "partOfSpeech": "noun",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Similarity or correspondence in position or structure is not inherently harmony or order."
+    },
+    {
+      "senseId": "oewn-lead__1.04.01..",
+      "lemma": "lead",
+      "definition": "a position of being the initiator of something and an example that others will follow (especially in the phrase \u2018take the lead\u2019)",
+      "partOfSpeech": "noun",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Initiative or example-setting is not organized arrangement or clear expression; being ahead is explicitly excluded."
+    },
+    {
+      "senseId": "oewn-lodge__1.14.00..",
+      "lemma": "lodge",
+      "definition": "a formal association of people with similar interests",
+      "partOfSpeech": "noun",
+      "categories": [
+        "ROLE"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-order__1.14.02..: A formal association is an organization in the institutional sense, not the quality of being orderly."
+    },
+    {
+      "senseId": "oewn-logy__5.00.00.lethargic.00",
+      "lemma": "logy",
+      "definition": "stunned or confused and slow to react (as from blows or drunkenness or exhaustion)",
+      "partOfSpeech": "adjective",
+      "categories": [
+        "DISORDER",
+        "PHYSICAL"
+      ],
+      "rationale": "The adjective explicitly includes confused cognition as well as slow physical reaction; it is not merely the name of an illness."
+    },
+    {
+      "senseId": "oewn-long__5.00.00.provident.00",
+      "lemma": "long",
+      "definition": "planning prudently for the future",
+      "partOfSpeech": "adjective",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "This adjective explicitly describes prudent planning, rather than length, duration or a relative position."
+    },
+    {
+      "senseId": "oewn-loon__1.18.01..",
+      "lemma": "loon",
+      "definition": "a person with confused ideas; incapable of serious thought",
+      "partOfSpeech": "noun",
+      "categories": [
+        "DISORDER"
+      ],
+      "rationale": "This is a person defined by confused ideas, an explicit cognitive condition rather than an occupation merely associated with it."
+    },
+    {
+      "senseId": "oewn-loose__5.00.00.unpackaged.00",
+      "lemma": "loose",
+      "definition": "not carefully arranged in a package",
+      "partOfSpeech": "adjective",
+      "categories": [
+        "DISORDER"
+      ],
+      "rationale": "This exact adjective negates careful arrangement. Physical looseness and freedom by themselves remain insufficient."
+    },
+    {
+      "senseId": "oewn-loosen__2.35.03..",
+      "lemma": "loosen",
+      "definition": "disentangle and raise the fibers of",
+      "partOfSpeech": "verb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-tease__2.35.01..: Disentangling fibers removes their tangled arrangement; it is the ordering action opposite to entangling, not the teasing-person sense."
+    },
+    {
+      "senseId": "oewn-lost__5.00.00.perplexed.00",
+      "lemma": "lost",
+      "definition": "perplexed by many conflicting situations or statements; filled with bewilderment",
+      "partOfSpeech": "adjective",
+      "categories": [
+        "DISORDER"
+      ],
+      "rationale": "Perplexity and bewilderment from conflicting information directly express confusion."
+    },
+    {
+      "senseId": "oewn-lost__5.00.00.unoriented.00",
+      "lemma": "lost",
+      "definition": "having lost your bearings; confused as to time or place or personal identity",
+      "partOfSpeech": "adjective",
+      "categories": [
+        "DISORDER"
+      ],
+      "rationale": "This adjective explicitly denotes confusion and disorientation; it is not the separate missing-possession sense."
+    },
+    {
+      "senseId": "oewn-manage__2.35.03..",
+      "lemma": "manage",
+      "definition": "handle effectively",
+      "partOfSpeech": "verb",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Generic effective handling does not itself assert organization, regulation, or clarity."
+    },
+    {
+      "senseId": "oewn-master__2.31.00..",
+      "lemma": "master",
+      "definition": "have a firm understanding or knowledge of; be on top of",
+      "partOfSpeech": "verb",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-control__2.31.00..: Knowledge or mastery of a subject does not itself denote order or clarity; the regulating and self-discipline senses remain distinct."
+    },
+    {
+      "senseId": "oewn-mat__2.35.00..",
+      "lemma": "mat",
+      "definition": "twist together or entwine into a confusing mass",
+      "partOfSpeech": "verb",
+      "categories": [
+        "DISORDER"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-entangle__2.35.00..: Twisting into a confusing mass directly creates disarray, matching the same SNARL sense."
+    },
+    {
+      "senseId": "oewn-melee__1.04.00..",
+      "lemma": "melee",
+      "definition": "a noisy riotous fight",
+      "partOfSpeech": "noun",
+      "categories": [
+        "DISORDER"
+      ],
+      "rationale": "A noisy riotous fight directly denotes a disorderly disturbance, rather than generic physical violence."
+    },
+    {
+      "senseId": "oewn-melody__1.09.00..",
+      "lemma": "melody",
+      "definition": "the perception of pleasant arrangements of musical notes",
+      "partOfSpeech": "noun",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "The perceived pleasant arrangement of notes directly expresses musical pattern and harmony, rather than a field studying music."
+    },
+    {
+      "senseId": "oewn-moderate__2.41.00..",
+      "lemma": "moderate",
+      "definition": "lessen the intensity of; temper; hold in restraint; hold or keep within limits",
+      "partOfSpeech": "verb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "Explicit tempering and holding within limits is the same regulation meaning admitted for CONTROL."
+    },
+    {
+      "senseId": "oewn-motley__1.14.00..",
+      "lemma": "motley",
+      "definition": "a collection containing a variety of sorts of things",
+      "partOfSpeech": "noun",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-smorgasbord__1.14.00..: A varied collection has no asserted order, organization or harmony."
+    },
+    {
+      "senseId": "oewn-neatly__4.02.00..",
+      "lemma": "neatly",
+      "definition": "with neatness",
+      "partOfSpeech": "adverb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "The adverb directly expresses neatness; the quality does not disappear when applied to a manner of action."
+    },
+    {
+      "senseId": "oewn-order__1.10.00..",
+      "lemma": "order",
+      "definition": "a legally binding command or decision entered on the court record (as if issued by a court or judge)",
+      "partOfSpeech": "noun",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "A legally binding command is a communication object, not the abstract quality of social order."
+    },
+    {
+      "senseId": "oewn-order__1.14.02..",
+      "lemma": "order",
+      "definition": "a formal association of people with similar interests",
+      "partOfSpeech": "noun",
+      "categories": [
+        "ROLE"
+      ],
+      "rationale": "A formal association is an organization in the institutional sense, not the quality of being orderly."
+    },
+    {
+      "senseId": "oewn-order__2.32.01..",
+      "lemma": "order",
+      "definition": "give instructions to or direct somebody to do something with authority",
+      "partOfSpeech": "verb",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "This is the same generic authoritative-instruction sense as SAY. It does not itself assert orderly arrangement or regulation."
+    },
+    {
+      "senseId": "oewn-order__2.32.02..",
+      "lemma": "order",
+      "definition": "issue commands or orders for",
+      "partOfSpeech": "verb",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Issuing commands alone does not directly express orderly arrangement or regulation."
+    },
+    {
+      "senseId": "oewn-orderer__1.18.00..",
+      "lemma": "orderer",
+      "definition": "an organizer who puts things in order",
+      "partOfSpeech": "noun",
+      "categories": [
+        "ROLE"
+      ],
+      "rationale": "The person is defined by an organizational function, rather than an emotional or moral trait. This follows the frozen role policy."
+    },
+    {
+      "senseId": "oewn-ram__2.35.03..",
+      "lemma": "ram",
+      "definition": "crowd or pack to capacity",
+      "partOfSpeech": "verb",
+      "categories": [
+        "PHYSICAL"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-cram__2.35.00..: Packing to capacity can be disordered; physical crowding does not itself organize the contents."
+    },
+    {
+      "senseId": "oewn-rambler__1.18.01..",
+      "lemma": "rambler",
+      "definition": "a person whose speech or writing is not well organized",
+      "partOfSpeech": "noun",
+      "categories": [
+        "DISORDER"
+      ],
+      "rationale": "The defining trait is speech or writing that is not well organized, directly expressing disorder of thought or expression."
+    },
+    {
+      "senseId": "oewn-randomly__4.02.00..",
+      "lemma": "randomly",
+      "definition": "in a random manner",
+      "partOfSpeech": "adverb",
+      "categories": [
+        "DISORDER"
+      ],
+      "rationale": "The adverb preserves the admitted lack-of-order quality of a random manner."
+    },
+    {
+      "senseId": "oewn-readably__4.02.00..",
+      "lemma": "readably",
+      "definition": "in a legible manner",
+      "partOfSpeech": "adverb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "Legibility directly expresses clarity of written expression, matching the admitted legible sense of CLEAR."
+    },
+    {
+      "senseId": "oewn-rear__1.14.00..",
+      "lemma": "rear",
+      "definition": "the back of a military formation or procession",
+      "partOfSpeech": "noun",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "The back of a formation is a relative position, not the quality of orderly arrangement."
+    },
+    {
+      "senseId": "oewn-reasonable__3.00.00..",
+      "lemma": "reasonable",
+      "definition": "showing reason or sound judgment",
+      "partOfSpeech": "adjective",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "Reason and sound judgment directly express rational thinking, matching the admitted REASON state."
+    },
+    {
+      "senseId": "oewn-reasonable__5.00.00.rational.00",
+      "lemma": "reasonable",
+      "definition": "marked by sound judgment; having good reason",
+      "partOfSpeech": "adjective",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "This rational adjective explicitly denotes sound judgment and good reason."
+    },
+    {
+      "senseId": "oewn-reasonably__4.02.01..",
+      "lemma": "reasonably",
+      "definition": "with good sense or in a reasonable or intelligent manner",
+      "partOfSpeech": "adverb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "The adverb explicitly applies good sense and reasonable thinking, preserving the admitted rational quality."
+    },
+    {
+      "senseId": "oewn-reasoner__1.18.00..",
+      "lemma": "reasoner",
+      "definition": "someone who reasons logically",
+      "partOfSpeech": "noun",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "The defining characteristic is logical reasoning itself, rather than membership in an occupation that may be associated with reasoning."
+    },
+    {
+      "senseId": "oewn-reassemble__2.36.00..",
+      "lemma": "reassemble",
+      "definition": "assemble once again, after taking something apart",
+      "partOfSpeech": "verb",
+      "categories": [
+        "PHYSICAL"
+      ],
+      "rationale": "Putting physical components back together describes reconstruction, without an explicit claim of orderliness or clarity."
+    },
+    {
+      "senseId": "oewn-relate__2.31.00..",
+      "lemma": "relate",
+      "definition": "make a logical or causal connection",
+      "partOfSpeech": "verb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-connect__2.31.00..: The verb explicitly makes a logical connection, giving ideas a logical relationship rather than merely physically joining objects."
+    },
+    {
+      "senseId": "oewn-relegate__2.41.00..",
+      "lemma": "relegate",
+      "definition": "assign to a lower position; reduce in rank",
+      "partOfSpeech": "verb",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Lowering status is a relative rank change, not arranging or organizing things."
+    },
+    {
+      "senseId": "oewn-research__1.04.00..",
+      "lemma": "research",
+      "definition": "systematic investigation to establish facts",
+      "partOfSpeech": "noun",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "The activity is explicitly systematic investigation. This is a methodical activity, not merely a field of study."
+    },
+    {
+      "senseId": "oewn-research__2.32.00..",
+      "lemma": "research",
+      "definition": "attempt to find out in a systematically and scientific manner",
+      "partOfSpeech": "verb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "The verb expressly proceeds systematically. Classifying the action as a field of study loses its explicit methodical quality."
+    },
+    {
+      "senseId": "oewn-rise__2.30.09..",
+      "lemma": "rise",
+      "definition": "rise in rank or status",
+      "partOfSpeech": "verb",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Advancement in rank does not itself express organization or clarity."
+    },
+    {
+      "senseId": "oewn-sane__5.00.00.rational.00",
+      "lemma": "sane",
+      "definition": "marked by sound judgment; having good reason",
+      "partOfSpeech": "adjective",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-reasonable__5.00.00.rational.00: This rational adjective explicitly denotes sound judgment and good reason."
+    },
+    {
+      "senseId": "oewn-sanely__4.02.00..",
+      "lemma": "sanely",
+      "definition": "with good sense or in a reasonable or intelligent manner",
+      "partOfSpeech": "adverb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-reasonably__4.02.01..: The adverb explicitly applies good sense and reasonable thinking, preserving the admitted rational quality."
+    },
+    {
+      "senseId": "oewn-say__2.32.04..",
+      "lemma": "say",
+      "definition": "give instructions to or direct somebody to do something with authority",
+      "partOfSpeech": "verb",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Giving an authoritative instruction does not necessarily organize or regulate anything; commands can equally cause disorder."
+    },
+    {
+      "senseId": "oewn-scan__1.04.00..",
+      "lemma": "scan",
+      "definition": "the act of scanning; systematic examination of a prescribed region",
+      "partOfSpeech": "noun",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "Systematic examination is a directly methodical activity; the physical scanner object is not affected."
+    },
+    {
+      "senseId": "oewn-scan__2.42.00..",
+      "lemma": "scan",
+      "definition": "conform to a metrical pattern",
+      "partOfSpeech": "verb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "Conforming to a metrical pattern directly expresses rhythmic order; this is not the unrelated physical scanning-device sense."
+    },
+    {
+      "senseId": "oewn-scaremonger__1.18.00..",
+      "lemma": "scaremonger",
+      "definition": "a person who spreads frightening rumors and stirs up trouble",
+      "partOfSpeech": "noun",
+      "categories": [
+        "FEAR",
+        "ROLE"
+      ],
+      "rationale": "Spreading frightening rumors explicitly concerns fear; generic trouble does not establish confusion or disorder."
+    },
+    {
+      "senseId": "oewn-score__2.31.05..",
+      "lemma": "score",
+      "definition": "assign a grade or rank to, according to one's evaluation",
+      "partOfSpeech": "verb",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-grade__2.31.05..: Evaluating an item and assigning its rating is not itself arranging items in an orderly sequence."
+    },
+    {
+      "senseId": "oewn-seat__2.41.00..",
+      "lemma": "seat",
+      "definition": "place ceremoniously or formally in an office or position",
+      "partOfSpeech": "verb",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Installing someone in an office changes their role, not the orderliness of anything."
+    },
+    {
+      "senseId": "oewn-second__1.24.00..",
+      "lemma": "second",
+      "definition": "following the first in an ordering or series",
+      "partOfSpeech": "noun",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Following the first is a relative position within an ordering, not the quality or action of ordering."
+    },
+    {
+      "senseId": "oewn-seedy__5.00.00.worn.00",
+      "lemma": "seedy",
+      "definition": "shabby and untidy",
+      "partOfSpeech": "adjective",
+      "categories": [
+        "DISORDER"
+      ],
+      "rationale": "This exact adjective includes untidiness, directly expressing disorder. Its botanical and illness senses are unchanged."
+    },
+    {
+      "senseId": "oewn-set__2.29.05..",
+      "lemma": "set",
+      "definition": "arrange attractively",
+      "partOfSpeech": "verb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-do__2.29.04..: This verb explicitly arranges attractively, the same organizing sense admitted for ARRANGE and SET."
+    },
+    {
+      "senseId": "oewn-set__2.32.01..",
+      "lemma": "set",
+      "definition": "establish as the highest level or best performance",
+      "partOfSpeech": "verb",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "A highest performance or record is a relative comparison, not orderly arrangement."
+    },
+    {
+      "senseId": "oewn-set__2.35.15..",
+      "lemma": "set",
+      "definition": "put into a position that will restore a normal state",
+      "partOfSpeech": "verb",
+      "categories": [
+        "PHYSICAL"
+      ],
+      "rationale": "Restoring a physical position or normal state does not itself denote abstract order, regulation or tidiness."
+    },
+    {
+      "senseId": "oewn-slate__2.31.00..",
+      "lemma": "slate",
+      "definition": "designate or schedule",
+      "partOfSpeech": "verb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "Scheduling is explicit temporal planning and organization, separate from the slate object."
+    },
+    {
+      "senseId": "oewn-slot__1.26.00..",
+      "lemma": "slot",
+      "definition": "a position in a hierarchy or organization",
+      "partOfSpeech": "noun",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "A position within an organization is not organization as an abstract quality."
+    },
+    {
+      "senseId": "oewn-slot__2.31.00..",
+      "lemma": "slot",
+      "definition": "assign a time slot",
+      "partOfSpeech": "verb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "Assigning a time slot explicitly schedules an event. The noun meaning relative status in an organization remains neutral."
+    },
+    {
+      "senseId": "oewn-smoothly__4.02.01..",
+      "lemma": "smoothly",
+      "definition": "in a smooth and diplomatic manner",
+      "partOfSpeech": "adverb",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Diplomatic smoothness does not itself assert calmness, logical clarity, or organized arrangement."
+    },
+    {
+      "senseId": "oewn-smorgasbord__1.14.00..",
+      "lemma": "smorgasbord",
+      "definition": "a collection containing a variety of sorts of things",
+      "partOfSpeech": "noun",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "A varied collection has no asserted order, organization or harmony."
+    },
+    {
+      "senseId": "oewn-snarl__2.30.00..",
+      "lemma": "snarl",
+      "definition": "make more complicated or confused through entanglements",
+      "partOfSpeech": "verb",
+      "categories": [
+        "DISORDER"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-embrangle__2.30.00..: The definition explicitly causes confusion through entanglement, matching the corresponding SNARL meaning."
+    },
+    {
+      "senseId": "oewn-snarl__2.35.00..",
+      "lemma": "snarl",
+      "definition": "twist together or entwine into a confusing mass",
+      "partOfSpeech": "verb",
+      "categories": [
+        "DISORDER"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-entangle__2.35.00..: Twisting into a confusing mass directly creates disarray, matching the same SNARL sense."
+    },
+    {
+      "senseId": "oewn-stand__1.09.00..",
+      "lemma": "stand",
+      "definition": "a mental position from which things are viewed",
+      "partOfSpeech": "noun",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "A viewpoint can be confused or clear; having a mental position does not itself express clarity or order."
+    },
+    {
+      "senseId": "oewn-stay__1.10.00..",
+      "lemma": "stay",
+      "definition": "a judicial order forbidding some action until an event occurs or the order is lifted",
+      "partOfSpeech": "noun",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "A judicial prohibition is a command, not the quality of orderly arrangement or calm."
+    },
+    {
+      "senseId": "oewn-storm__1.26.00..",
+      "lemma": "storm",
+      "definition": "a violent commotion or disturbance",
+      "partOfSpeech": "noun",
+      "categories": [
+        "DISORDER"
+      ],
+      "rationale": "This state explicitly denotes violent commotion or disturbance. The weather senses are separate and remain insufficient."
+    },
+    {
+      "senseId": "oewn-stormy__5.00.00.unpeaceful.00",
+      "lemma": "stormy",
+      "definition": "characterized by violent emotions or behavior",
+      "partOfSpeech": "adjective",
+      "categories": [
+        "DISORDER"
+      ],
+      "rationale": "This figurative unpeaceful sense describes turbulent emotion or behavior, separate from the weather sense."
+    },
+    {
+      "senseId": "oewn-stray__2.32.00..",
+      "lemma": "stray",
+      "definition": "lose clarity or turn aside especially from the main subject of attention or course of argument in writing, thinking, or speaking",
+      "partOfSpeech": "verb",
+      "categories": [
+        "DISORDER"
+      ],
+      "rationale": "The verb explicitly loses clarity in thought or expression, a directly disordered line of thought rather than physical wandering."
+    },
+    {
+      "senseId": "oewn-tangle__2.35.00..",
+      "lemma": "tangle",
+      "definition": "twist together or entwine into a confusing mass",
+      "partOfSpeech": "verb",
+      "categories": [
+        "DISORDER"
+      ],
+      "rationale": "Same audited definition and part of speech as oewn-entangle__2.35.00..: Twisting into a confusing mass directly creates disarray, matching the same SNARL sense."
+    },
+    {
+      "senseId": "oewn-tease__2.35.01..",
+      "lemma": "tease",
+      "definition": "disentangle and raise the fibers of",
+      "partOfSpeech": "verb",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "Disentangling fibers removes their tangled arrangement; it is the ordering action opposite to entangling, not the teasing-person sense."
+    },
+    {
+      "senseId": "oewn-tell__2.32.02..",
+      "lemma": "tell",
+      "definition": "give instructions to or direct somebody to do something with authority",
+      "partOfSpeech": "verb",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "An authoritative instruction need not organize or clarify anything. Apply the same distinction as to SAY and the generic command senses of ORDER."
+    },
+    {
+      "senseId": "oewn-terms__1.26.00..",
+      "lemma": "terms",
+      "definition": "status with respect to the relations between people or groups",
+      "partOfSpeech": "noun",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "A relationship status does not specify harmony or agreement; the parties may be on bad terms."
+    },
+    {
+      "senseId": "oewn-tonal__3.00.00..",
+      "lemma": "tonal",
+      "definition": "having tonality; i.e. tones and chords organized in relation to one tone such as a keynote or tonic",
+      "partOfSpeech": "adjective",
+      "categories": [
+        "ORDER"
+      ],
+      "rationale": "This quality explicitly describes notes and chords organized around a tonic, an organized musical relationship rather than the study of music."
+    },
+    {
+      "senseId": "oewn-trenchancy__1.07.00..",
+      "lemma": "trenchancy",
+      "definition": "keenness and forcefulness of thought or expression or intellect",
+      "partOfSpeech": "noun",
+      "categories": [
+        "OTHER"
+      ],
+      "rationale": "Forcefulness and keenness alone do not assert logical organization or clarity."
+    }
+  ]
+}

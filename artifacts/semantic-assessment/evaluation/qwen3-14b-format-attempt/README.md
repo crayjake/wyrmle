@@ -1,0 +1,1 @@
+This intermediate prompt was stopped after an exhausted output-format error in its first batch. No quality-gate result is claimed. The format was then constrained for every input; valid semantic labels were not selectively retried.

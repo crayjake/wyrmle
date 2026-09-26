@@ -11,6 +11,9 @@ export type SemanticRefinementMetadata = Readonly<{
   cacheDigest: string
   eligibleWords: number
   reviewedWords: number
+  reviewScope?: 'all-source-senses'
+  sourceReviewDigest?: string
+  sourceReviewedWords?: number
 }>
 
 export type SemanticAssessmentMetadata = Readonly<{
@@ -51,17 +54,23 @@ const metadataKeys = new Set([
 ])
 const scoreKeys = new Set(['counterScore', 'resistedScore', 'margin', 'sensesEvaluated', 'selectedAnchor', 'decisionBasis'])
 const refinementKeys = new Set(['version', 'modelId', 'modelRevision', 'modelDigest', 'promptDigest',
-  'eligibilityPolicyDigest', 'baseCacheDigest', 'inventoryDigest', 'cacheDigest', 'eligibleWords', 'reviewedWords'])
+  'eligibilityPolicyDigest', 'baseCacheDigest', 'inventoryDigest', 'cacheDigest', 'eligibleWords', 'reviewedWords', 'reviewScope',
+  'sourceReviewDigest', 'sourceReviewedWords'])
 
 export function readSemanticRefinementMetadata(value: unknown): SemanticRefinementMetadata {
   if (!object(value) || Object.keys(value).some(key => !refinementKeys.has(key))) return fail('unsupported refinement metadata')
   for (const key of refinementKeys) {
-    if (key === 'eligibleWords' || key === 'reviewedWords') continue
+    if (['eligibleWords', 'reviewedWords', 'reviewScope', 'sourceReviewDigest', 'sourceReviewedWords'].includes(key)) continue
     if (!nonempty(value[key])) fail(`missing refinement ${key}`)
   }
+  if (Object.hasOwn(value, 'reviewScope') && value.reviewScope !== 'all-source-senses') return fail('unsupported contextual review scope')
   if (!Number.isSafeInteger(value.eligibleWords) || !Number.isSafeInteger(value.reviewedWords)
     || (value.eligibleWords as number) < 0 || (value.reviewedWords as number) < 0
     || (value.reviewedWords as number) > (value.eligibleWords as number)) return fail('invalid refinement coverage')
+  if (Object.hasOwn(value, 'sourceReviewDigest') || Object.hasOwn(value, 'sourceReviewedWords')) {
+    if (typeof value.sourceReviewDigest !== 'string' || !/^[a-f0-9]{64}$/.test(value.sourceReviewDigest)
+      || !positiveInteger(value.sourceReviewedWords) || value.sourceReviewedWords > (value.reviewedWords as number)) return fail('invalid source review coverage')
+  }
   return Object.freeze({ ...value }) as SemanticRefinementMetadata
 }
 

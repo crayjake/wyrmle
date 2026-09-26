@@ -1,0 +1,125 @@
+{
+  "version": "wyrmle-semantic-inventory-regressions-v1",
+  "fixtureDigest": "00a58ae93b6e94ad3a5d7a35a52ecb82c98963c50141d7875bdc13fc5b4cbc25",
+  "legacyCoverageDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "split": "all",
+  "modelId": "sentence-transformers/all-MiniLM-L6-v2 + cross-encoder/nli-deberta-v3-xsmall + Qwen/Qwen3.5-9B",
+  "configurationHash": "52fed51d1f574707f7e170abd21c3064382bef182be6c50b43c2cb15dd4e77b9",
+  "passed": false,
+  "failures": [
+    "accuracy: 0.5000 < 1",
+    "CHAOS accuracy: 0.5000 < 1",
+    "neutral false positives: 0.5000 > 0"
+  ],
+  "metrics": {
+    "coverage": {
+      "correct": 2,
+      "total": 2,
+      "rate": 1
+    },
+    "accuracy": {
+      "correct": 1,
+      "total": 2,
+      "rate": 0.5
+    },
+    "coreAccuracy": {
+      "correct": 0,
+      "total": 0,
+      "rate": null
+    },
+    "holdoutAccuracy": {
+      "correct": 0,
+      "total": 0,
+      "rate": null
+    },
+    "byEnemy": {
+      "ANGER": {
+        "correct": 0,
+        "total": 0,
+        "rate": null
+      },
+      "DESPAIR": {
+        "correct": 0,
+        "total": 0,
+        "rate": null
+      },
+      "FEAR": {
+        "correct": 0,
+        "total": 0,
+        "rate": null
+      },
+      "MELANCHOLY": {
+        "correct": 0,
+        "total": 0,
+        "rate": null
+      },
+      "CRUELTY": {
+        "correct": 0,
+        "total": 0,
+        "rate": null
+      },
+      "CHAOS": {
+        "correct": 1,
+        "total": 2,
+        "rate": 0.5
+      }
+    },
+    "sourceSenseAccuracy": {
+      "correct": 2,
+      "total": 2,
+      "rate": 1
+    },
+    "constrainedSenseAccuracy": {
+      "correct": 0,
+      "total": 0,
+      "rate": null
+    },
+    "neutralFalsePositives": {
+      "correct": 1,
+      "total": 2,
+      "rate": 0.5
+    },
+    "novelConceptRecall": {
+      "correct": 0,
+      "total": 0,
+      "rate": null
+    }
+  },
+  "results": [
+    {
+      "id": "CHAOS/AHEAD",
+      "enemy": "CHAOS",
+      "word": "AHEAD",
+      "split": "development",
+      "core": false,
+      "expected": "neutral",
+      "actual": "opposite",
+      "correct": false,
+      "covered": true,
+      "senseId": "oewn-ahead__5.00.00.up.00",
+      "sourceSenseValid": true,
+      "constrained": false,
+      "constrainedSenseCorrect": true,
+      "novelConcept": false,
+      "rationale": "A relative position, advantage, or leading score does not denote order, organization, calm, or disorder."
+    },
+    {
+      "id": "CHAOS/ENCOURAGE",
+      "enemy": "CHAOS",
+      "word": "ENCOURAGE",
+      "split": "development",
+      "core": false,
+      "expected": "neutral",
+      "actual": "neutral",
+      "correct": true,
+      "covered": true,
+      "senseId": "oewn-encourage__2.32.00..",
+      "sourceSenseValid": true,
+      "constrained": false,
+      "constrainedSenseCorrect": true,
+      "novelConcept": false,
+      "rationale": "Inspiring hope or courage has meaning against other enemies; generic progress or growth does not itself organize anything or denote order."
+    }
+  ],
+  "review": []
+}

@@ -8,6 +8,7 @@ import type { LexicalEntry, LexicalProvider } from './lexicalProvider.ts'
 import { GENERATION_COMMONNESS_SOURCE, getGenerationObservedVocabulary, getGenerationWordCommonness } from './familiarity.ts'
 import { semanticRefinementProvider } from './semanticRefinement.ts'
 import { readSemanticAssessmentMetadata } from '../game/semanticAssessment.ts'
+import { isSemanticInventoryReviewed } from './semanticInventoryReview.ts'
 
 let generationVocabulary: readonly LexicalEntry[] | undefined
 const generationEntries = new Map<string, LexicalEntry>()
@@ -25,7 +26,7 @@ export const meaningLexicalProvider: LexicalProvider = Object.freeze({
     if (!source) return undefined
     const isEnemy = generationEnemySet.has(normalized)
     const previous = isEnemy ? currentLexicalProvider.getEntry(normalized) : undefined
-    const relations = isEnemy ? semanticAssessmentProvider.relations(normalized) : undefined
+    const relations = isEnemy ? semanticRefinementProvider.relations(normalized) : undefined
     const entry: LexicalEntry = Object.freeze({
       word: normalized, partsOfSpeech: isEnemy ? previous?.partsOfSpeech ?? source.partsOfSpeech : source.partsOfSpeech,
       definition: isEnemy ? semanticAssessmentProvider.definition(normalized) : source.definition,
@@ -124,13 +125,15 @@ export function isMeaningCompilationCurrent(encounter: LetterStrikeEncounter): b
 /** Draft generation is allowed; publication additionally needs complete current LLM review. */
 export function isMeaningPublicationReady(encounter: LetterStrikeEncounter): boolean {
   if (!isMeaningCompilationCurrent(encounter)) return false
+  if (!isSemanticInventoryReviewed(encounter.meaningLexicon!)) return false
   const refinement = encounter.meaningLexicon?.assessment?.refinement
-  if (!refinement || refinement.eligibleWords !== refinement.reviewedWords) return false
+  if (!refinement || refinement.reviewScope !== 'all-source-senses' || refinement.eligibleWords !== refinement.reviewedWords
+    || refinement.reviewedWords !== Object.keys(encounter.meaningLexicon!.words).length) return false
   const baseline = Object.fromEntries(Object.keys(encounter.meaningLexicon!.words)
     .map(word => [word, semanticAssessmentProvider.word(encounter.enemy.word.toUpperCase(), word)]))
   return semanticRefinementProvider.refine(encounter.enemy.word.toUpperCase(), baseline).ready
 }
 
 export function assertMeaningPublicationReady(encounter: LetterStrikeEncounter): void {
-  if (!isMeaningPublicationReady(encounter)) throw new Error('Publication requires complete current offline LLM refinement of every eligible inventory word.')
+  if (!isMeaningPublicationReady(encounter)) throw new Error('Publication requires complete current offline LLM review of every inventory word and all its dictionary senses, plus an audited final meaning for every spelling.')
 }

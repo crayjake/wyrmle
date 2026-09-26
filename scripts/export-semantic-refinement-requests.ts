@@ -24,11 +24,11 @@ for (const word of words) {
   const meaning = semanticAssessmentProvider.word(enemy, word)
   const basis = meaning.assessment!.decisionBasis!
   if (table.manifest.trustedDecisionBases.includes(basis)) continue
-  assert.ok(['local-vector-nli', 'local-vector-nli-neutral'].includes(basis))
+  assert.ok(['lexical-expansion', 'reviewed-profile', 'source-direction-proof', 'local-vector-nli', 'local-vector-nli-neutral'].includes(basis))
   const qualified = table.retrieval[index!][3]
-  if (basis === 'local-vector-nli-neutral' && !qualified.length) continue
+  if (table.manifest.reviewScope !== 'all-source-senses' && basis === 'local-vector-nli-neutral' && !qualified.length) continue
   assert.ok(qualified.length, `${word}: a novel scoring decision has no source sense available for review`)
-  const input = semanticRefinementInput(table.manifest, enemy, semanticAssessmentProvider.definition(enemy), qualified.map(index => cache.senses[index]))
+  const input = semanticRefinementInput(table.manifest, enemy, semanticAssessmentProvider.definition(enemy), qualified.map(index => cache.senses[index]), meaning.senseId)
   requests.push({ word, baseWordDigest: semanticBaseWordDigest(meaning), baselineSenseId: meaning.senseId,
     inputDigest: semanticRefinementDigest(input), input })
 }

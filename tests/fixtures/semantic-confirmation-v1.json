@@ -148,6 +148,10 @@
         {
           "senseId": "oewn-trust__2.37.00..",
           "definition": "expect and wish"
+        },
+        {
+          "senseId": "oewn-trust__1.07.00..",
+          "definition": "the trait of believing in the honesty and reliability of others"
         }
       ]
     },
@@ -586,5 +590,13 @@
       "reason": "SATISFIED is also an explicitly admitted form of SATISFY; making someone happy or satisfied preserves the counter meaning. The original source constraint accidentally admitted only adjective senses."
     }
   ],
-  "originalFrozenSha256": "d80825ceb816cb613eacac83cfd387d8c1e93a2e79319355a44ded367c9744ff"
+  "originalFrozenSha256": "d80825ceb816cb613eacac83cfd387d8c1e93a2e79319355a44ded367c9744ff",
+  "errata": [
+    {
+      "case": "DESPAIR/TRUST",
+      "reviewedAt": "2026-09-26",
+      "change": "Include interpersonal trust in honesty and reliability alongside the already-admitted confidence/trust senses. This is the same direct confidence concept; financial and institutional senses remain excluded. Expected label and accuracy requirements are unchanged.",
+      "originalFileSha256": "366311ed062e09984b68b5291fc1a3fbaccdb9550dd3eb298f715899861f33d6"
+    }
+  ]
 }

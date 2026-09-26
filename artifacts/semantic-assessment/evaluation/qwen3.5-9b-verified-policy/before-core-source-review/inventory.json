@@ -1,0 +1,261 @@
+{
+  "version": "wyrmle-semantic-inventory-regressions-v1",
+  "fixtureDigest": "cf014d90f0d3a5e355c8a0f5c07ffd9d1e4c16bd034729b9e338352a20609ccc",
+  "legacyCoverageDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "split": "all",
+  "modelId": "sentence-transformers/all-MiniLM-L6-v2 + cross-encoder/nli-deberta-v3-xsmall + Qwen/Qwen3.5-9B",
+  "configurationHash": "33b82ed31274024d5389cc1c2fb3086d9aa552081504ed77bbf37c2e7d112d99",
+  "passed": false,
+  "failures": [
+    "accuracy: 0.9000 < 1",
+    "CHAOS accuracy: 0.9000 < 1",
+    "neutral false positives: 0.1429 > 0"
+  ],
+  "metrics": {
+    "coverage": {
+      "correct": 10,
+      "total": 10,
+      "rate": 1
+    },
+    "accuracy": {
+      "correct": 9,
+      "total": 10,
+      "rate": 0.9
+    },
+    "coreAccuracy": {
+      "correct": 0,
+      "total": 0,
+      "rate": null
+    },
+    "holdoutAccuracy": {
+      "correct": 0,
+      "total": 0,
+      "rate": null
+    },
+    "byEnemy": {
+      "ANGER": {
+        "correct": 0,
+        "total": 0,
+        "rate": null
+      },
+      "DESPAIR": {
+        "correct": 0,
+        "total": 0,
+        "rate": null
+      },
+      "FEAR": {
+        "correct": 0,
+        "total": 0,
+        "rate": null
+      },
+      "MELANCHOLY": {
+        "correct": 0,
+        "total": 0,
+        "rate": null
+      },
+      "CRUELTY": {
+        "correct": 0,
+        "total": 0,
+        "rate": null
+      },
+      "CHAOS": {
+        "correct": 9,
+        "total": 10,
+        "rate": 0.9
+      }
+    },
+    "sourceSenseAccuracy": {
+      "correct": 10,
+      "total": 10,
+      "rate": 1
+    },
+    "constrainedSenseAccuracy": {
+      "correct": 3,
+      "total": 3,
+      "rate": 1
+    },
+    "neutralFalsePositives": {
+      "correct": 1,
+      "total": 7,
+      "rate": 0.14285714285714285
+    },
+    "novelConceptRecall": {
+      "correct": 0,
+      "total": 0,
+      "rate": null
+    }
+  },
+  "results": [
+    {
+      "id": "CHAOS/AHEAD",
+      "enemy": "CHAOS",
+      "word": "AHEAD",
+      "split": "development",
+      "core": false,
+      "expected": "neutral",
+      "actual": "neutral",
+      "correct": true,
+      "covered": true,
+      "senseId": "oewn-ahead__4.02.02..",
+      "sourceSenseValid": true,
+      "constrained": false,
+      "constrainedSenseCorrect": true,
+      "novelConcept": false,
+      "rationale": "A relative position, advantage, or leading score does not denote order, organization, calm, or disorder."
+    },
+    {
+      "id": "CHAOS/ENCOURAGE",
+      "enemy": "CHAOS",
+      "word": "ENCOURAGE",
+      "split": "development",
+      "core": false,
+      "expected": "neutral",
+      "actual": "neutral",
+      "correct": true,
+      "covered": true,
+      "senseId": "oewn-encourage__2.32.00..",
+      "sourceSenseValid": true,
+      "constrained": false,
+      "constrainedSenseCorrect": true,
+      "novelConcept": false,
+      "rationale": "Inspiring hope or courage has meaning against other enemies; generic progress or growth does not itself organize anything or denote order."
+    },
+    {
+      "id": "CHAOS/CLEAN",
+      "enemy": "CHAOS",
+      "word": "CLEAN",
+      "split": "development",
+      "core": false,
+      "expected": "opposite",
+      "actual": "opposite",
+      "correct": true,
+      "covered": true,
+      "senseId": "oewn-clean__2.35.01..",
+      "sourceSenseValid": true,
+      "constrained": true,
+      "constrainedSenseCorrect": true,
+      "novelConcept": false,
+      "rationale": "The explicit house-tidying verb counters disorder; physical hygiene alone is insufficient."
+    },
+    {
+      "id": "CHAOS/COMB",
+      "enemy": "CHAOS",
+      "word": "COMB",
+      "split": "development",
+      "core": false,
+      "expected": "opposite",
+      "actual": "opposite",
+      "correct": true,
+      "covered": true,
+      "senseId": "oewn-comb__2.29.00..",
+      "sourceSenseValid": true,
+      "constrained": true,
+      "constrainedSenseCorrect": true,
+      "novelConcept": false,
+      "rationale": "The verb explicitly neatens; the associated physical tool is not the countering sense."
+    },
+    {
+      "id": "CHAOS/COMBED",
+      "enemy": "CHAOS",
+      "word": "COMBED",
+      "split": "development",
+      "core": false,
+      "expected": "opposite",
+      "actual": "opposite",
+      "correct": true,
+      "covered": true,
+      "senseId": "oewn-comb__2.29.00..",
+      "sourceSenseValid": true,
+      "constrained": true,
+      "constrainedSenseCorrect": true,
+      "novelConcept": false,
+      "rationale": "The inflected tidying verb retains its source-grounded counter meaning."
+    },
+    {
+      "id": "CHAOS/CORE",
+      "enemy": "CHAOS",
+      "word": "CORE",
+      "split": "development",
+      "core": false,
+      "expected": "neutral",
+      "actual": "opposite",
+      "correct": false,
+      "covered": true,
+      "senseId": "oewn-core__1.10.00..",
+      "sourceSenseValid": true,
+      "constrained": false,
+      "constrainedSenseCorrect": true,
+      "novelConcept": false,
+      "rationale": "A named organization, central part, or central meaning is not itself orderly arrangement."
+    },
+    {
+      "id": "CHAOS/ARMY",
+      "enemy": "CHAOS",
+      "word": "ARMY",
+      "split": "development",
+      "core": false,
+      "expected": "neutral",
+      "actual": "neutral",
+      "correct": true,
+      "covered": true,
+      "senseId": "oewn-army__1.14.00..",
+      "sourceSenseValid": true,
+      "constrained": false,
+      "constrainedSenseCorrect": true,
+      "novelConcept": false,
+      "rationale": "A military organization is a group with associated functions; it does not itself denote abstract order or calm."
+    },
+    {
+      "id": "CHAOS/AGENCY",
+      "enemy": "CHAOS",
+      "word": "AGENCY",
+      "split": "development",
+      "core": false,
+      "expected": "neutral",
+      "actual": "neutral",
+      "correct": true,
+      "covered": true,
+      "senseId": "oewn-agency__1.04.00..",
+      "sourceSenseValid": true,
+      "constrained": false,
+      "constrainedSenseCorrect": true,
+      "novelConcept": false,
+      "rationale": "An organization or a capacity to act does not itself denote order, calm, or disorder."
+    },
+    {
+      "id": "CHAOS/BERTH",
+      "enemy": "CHAOS",
+      "word": "BERTH",
+      "split": "development",
+      "core": false,
+      "expected": "neutral",
+      "actual": "neutral",
+      "correct": true,
+      "covered": true,
+      "senseId": "oewn-berth__1.04.00..",
+      "sourceSenseValid": true,
+      "constrained": false,
+      "constrainedSenseCorrect": true,
+      "novelConcept": false,
+      "rationale": "A job, sleeping place, or docking action does not denote abstract order or calm."
+    },
+    {
+      "id": "CHAOS/ARM",
+      "enemy": "CHAOS",
+      "word": "ARM",
+      "split": "development",
+      "core": false,
+      "expected": "neutral",
+      "actual": "neutral",
+      "correct": true,
+      "covered": true,
+      "senseId": "oewn-arm__1.14.00..",
+      "sourceSenseValid": true,
+      "constrained": false,
+      "constrainedSenseCorrect": true,
+      "novelConcept": false,
+      "rationale": "An organizational division, body part, or weapon is not the abstract quality of order or disorder."
+    }
+  ],
+  "review": []
+}

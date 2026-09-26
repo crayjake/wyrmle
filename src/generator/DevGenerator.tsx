@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
 import savedMeaning from './data/meaning-review.json'
-import { dailyEncounter20260925V11 } from '../daily/catalog.ts'
+import { dailyEncounter20260926V12 } from '../daily/catalog.ts'
 import type { GenerationResult, RankedCandidate } from './generate.ts'
 import type { GeneratorProgress, GeneratorRequest, GeneratorResponse } from './workerMessages.ts'
 import type { SolverMoveSummary } from './findMoves.ts'
@@ -15,7 +15,7 @@ type ResultFilter = 'accepted' | 'all' | 'rejected'
 // The review data omits the large meaning table: use the same frozen encounter
 // that gameplay publishes, without shipping another copy in the DEV bundle.
 const savedCandidates = [{ ...savedMeaning, candidate: {
-  ...savedMeaning.candidate, encounter: dailyEncounter20260925V11,
+  ...savedMeaning.candidate, encounter: dailyEncounter20260926V12,
 } }] as unknown as RankedCandidate[]
 // A playtest temporarily unmounts the browser. Keep this session's review queue
 // and selection in module memory; daily/localStorage records are unrelated.

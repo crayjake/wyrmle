@@ -6,6 +6,7 @@ import type { SemanticAssessmentMetadata } from '../src/game/semanticAssessment.
 import { createSemanticRefinementProvider, semanticBaseWordDigest, semanticRefinementDigest,
   semanticRefinementInput, semanticRetrievalDigest } from '../src/generator/semanticRefinement.ts'
 import type { RefinementCache, RefinementMemo } from '../src/generator/semanticRefinement.ts'
+import type { SourceReviewPolicy } from '../src/generator/semanticSourceReview.ts'
 
 const words = ['ALPHA', 'BETA', 'GAMMA', 'OMEGA']
 const header: SemanticAssessmentMetadata = { version: 'fixture-vector-1', modelId: 'vector', modelRevision: 'v1',
@@ -114,6 +115,9 @@ test('retrieval coverage, threshold, trusted-source policy and immutable artifac
     (cache: RefinementCache) => { cache.enemies.CHAOS.retrieval[0][3] = [999] },
     (cache: RefinementCache) => { cache.enemies.CHAOS.manifest.trustedDecisionBases.push('local-vector-nli') },
     (cache: RefinementCache) => { cache.enemies.CHAOS.manifest.retrievalDigest = 'other' },
+    (cache: RefinementCache) => { cache.enemies.CHAOS.manifest.threshold = Number.NaN },
+    (cache: RefinementCache) => { cache.enemies.CHAOS.manifest.threshold = 0 },
+    (cache: RefinementCache) => { cache.enemies.CHAOS.manifest.threshold = 1.1 },
   ]) {
     const { cache, provider } = fixture(); mutate(cache); assert.throws(provider)
   }
@@ -133,4 +137,106 @@ test('editing a mutable caller-supplied baseline cannot reuse its earlier word d
   const changed = active.refine('CHAOS', { ALPHA: inventory.ALPHA })
   assert.equal(changed.ready, false)
   assert.match(changed.issues[0], /stale LLM input/)
+})
+
+test('verified memo checksums detect changed labels, responses and deleted records when loading', () => {
+  for (const mutate of [
+    (memo: RefinementMemo) => { if (memo.status === 'ok') memo.relation = 'similar' },
+    (memo: RefinementMemo) => { memo.rawResponse = 'Changed model response.' },
+  ]) {
+    const { table, memo, provider } = fixture()
+    table.records.ALPHA = memo('ALPHA', 'neutral')
+    table.manifest.recordsDigest = semanticRefinementDigest(table.records)
+    assert.doesNotThrow(provider)
+    mutate(table.records.ALPHA)
+    assert.throws(provider, /changed after offline verification/)
+  }
+  const { table, memo, provider } = fixture()
+  table.records.ALPHA = memo('ALPHA', 'neutral')
+  table.manifest.recordsDigest = semanticRefinementDigest(table.records)
+  delete table.records.ALPHA
+  assert.throws(provider, /changed after offline verification/)
+})
+
+test('exhaustive review includes low-similarity neutrals and previously trusted decisions', () => {
+  const { cache, inventory, table, provider } = fixture()
+  table.manifest.reviewScope = 'all-source-senses'
+  table.manifest.threshold = -1
+  table.manifest.trustedDecisionBases = []
+  table.retrieval[2][3] = [0]
+  table.manifest.retrievalDigest = semanticRetrievalDigest(cache.words, cache.senses, table.retrieval)
+  const result = provider().refine('CHAOS', inventory)
+  assert.equal(result.eligibleWords, 4)
+  assert.equal(result.ready, false)
+  assert.deepEqual(result.issues, words.map(word => `${word}: missing LLM review`))
+  table.manifest.trustedDecisionBases = ['reviewed-profile']
+  assert.throws(provider, /manifest/)
+})
+
+test('exhaustive neutral decisions display the actual reviewed sense and cannot omit all senses', () => {
+  const { cache, inventory, table, provider, memo } = fixture()
+  table.manifest.reviewScope = 'all-source-senses'
+  table.manifest.threshold = -1
+  table.manifest.trustedDecisionBases = []
+  table.retrieval[2][3] = [0]
+  table.manifest.retrievalDigest = semanticRetrievalDigest(cache.words, cache.senses, table.retrieval)
+  table.records.ALPHA = { ...memo('ALPHA', 'neutral'), senseId: 'ALPHA-qualified' }
+  const result = provider().refine('CHAOS', { ALPHA: inventory.ALPHA })
+  assert.equal(result.ready, true)
+  assert.equal(result.words.ALPHA.senseId, 'ALPHA-qualified')
+  assert.equal(result.words.ALPHA.definition, 'An unrelated interpretation.')
+  table.retrieval[2][3] = []
+  table.manifest.retrievalDigest = semanticRetrievalDigest(cache.words, cache.senses, table.retrieval)
+  assert.throws(provider, /every dictionary word/)
+})
+
+test('source corrections require actual model evidence and bind the frozen result to exact source and policy', () => {
+  const { cache, inventory, table, memo } = fixture()
+  const policy: SourceReviewPolicy = { version: 'editorial-test', sourceDigest: 'source', modelPolicyDigest: 'policy',
+    categoryRelations: { CHAOS: { ORDER: 'opposite' } }, categoryNames: { ORDER: 'order', OTHER: 'another meaning' },
+    relationPriority: ['similar', 'opposite'], lexnames: [], sourceDomainPriority: {}, reviews: [{
+      senseId: 'BETA-qualified', lemma: 'beta', definition: 'To restore order.', partOfSpeech: 'verb',
+      categories: ['ORDER'], rationale: 'Explicit restoration of order in this exact definition.' }] }
+  const run = () => createSemanticRefinementProvider(cache, base, words, policy).refine('CHAOS', { BETA: inventory.BETA })
+  assert.equal(run().ready, false, 'An editorial review cannot replace a missing model run.')
+  const record = { ...memo('BETA', 'neutral'), rawResponse: JSON.stringify({ senses: [{ index: 0,
+    definition: 'To restore order.', categories: ['OTHER'], response: '{"categories":["OTHER"]}' }] }) } as RefinementMemo
+  table.records.BETA = record
+  const raw = JSON.stringify(record)
+  const corrected = run()
+  assert.equal(corrected.ready, true)
+  assert.equal(corrected.words.BETA.relation, 'opposite')
+  assert.equal(corrected.words.BETA.senseId, 'BETA-qualified')
+  assert.equal(corrected.words.BETA.assessment!.decisionBasis, 'source-reviewed')
+  assert.equal(corrected.metadata!.sourceReviewedWords, 1)
+  assert.equal(JSON.stringify(table.records.BETA), raw, 'Raw model evidence is immutable.')
+  policy.reviews[0].rationale += ' Additional editorial explanation.'
+  assert.notEqual(run().metadata!.cacheDigest, corrected.metadata!.cacheDigest)
+  policy.reviews[0].definition = 'A changed source.'
+  assert.throws(run, /stale or incomplete source correction/)
+  policy.reviews[0].definition = 'To restore order.'
+  policy.modelPolicyDigest = 'different model policy'
+  assert.equal(run().words.BETA.relation, 'unrelated')
+  policy.modelPolicyDigest = 'policy'; policy.sourceDigest = 'different source export'
+  assert.equal(run().words.BETA.relation, 'unrelated')
+})
+
+test('one audited source governs every spelling and catches changed raw evidence', () => {
+  const { cache, inventory, table, memo } = fixture()
+  table.retrieval[0][3] = [1]
+  table.manifest.retrievalDigest = semanticRetrievalDigest(cache.words, cache.senses, table.retrieval)
+  const policy: SourceReviewPolicy = { version: 'editorial-test', sourceDigest: 'source', modelPolicyDigest: 'policy',
+    categoryRelations: { CHAOS: { ORDER: 'opposite' } }, categoryNames: { ORDER: 'order', OTHER: 'another meaning' },
+    relationPriority: ['similar', 'opposite'], lexnames: [], sourceDomainPriority: {}, reviews: [{
+      senseId: 'BETA-qualified', lemma: 'beta', definition: 'To restore order.', partOfSpeech: 'verb',
+      categories: ['ORDER'], rationale: 'Explicit ordering action.' }] }
+  for (const word of ['ALPHA', 'BETA'] as const) table.records[word] = { ...memo(word, 'neutral'),
+    rawResponse: JSON.stringify({ senses: [{ index: 0, definition: 'To restore order.', categories: ['OTHER'],
+      response: '{"categories":["OTHER"]}' }] }) } as RefinementMemo
+  const run = () => createSemanticRefinementProvider(cache, base, words, policy).refine('CHAOS', {
+    ALPHA: inventory.ALPHA, BETA: inventory.BETA })
+  assert.equal(run().metadata!.sourceReviewedWords, 2)
+  assert.deepEqual(Object.values(run().words).map(word => word.relation), ['opposite', 'opposite'])
+  table.records.ALPHA.rawResponse = table.records.ALPHA.rawResponse.replace('"categories":["OTHER"]', '"categories":["ORDER"]')
+  assert.throws(run, /changed underlying model evidence/)
 })

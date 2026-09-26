@@ -8,6 +8,10 @@ import { getGenerationWordCommonness, GENERATION_COMMONNESS_SOURCE } from '../sr
 import { isMeaningCompilationCurrent, assertMeaningPublicationReady } from '../src/generator/meaningCompiler.ts'
 import { isOpeningSafetyCertificateCurrent } from '../src/generator/openingSafety.ts'
 import type { RankedCandidate } from '../src/generator/generate.ts'
+import { assertSemanticQualityForPublication } from './lib/semanticQuality.ts'
+import { analyseSemanticChoices } from '../src/generator/semanticChoices.ts'
+import { validatePuzzle } from '../src/generator/validate.ts'
+import { assessedPublicationGates } from './lib/publicationGates.ts'
 
 const input = process.argv[2]
 if (!input) throw new Error('Usage: node scripts/package-assessed-daily.ts <reviewed-selected.json>')
@@ -15,6 +19,11 @@ const artifactDirectory = 'artifacts/meaning-v3'
 const selected = JSON.parse(readFileSync(input, 'utf8')) as RankedCandidate
 const encounter = selected.candidate.encounter
 assertMeaningPublicationReady(encounter)
+const semanticQuality = assertSemanticQualityForPublication()
+const choices = analyseSemanticChoices(encounter, selected.analysis.winningLines)
+assert.deepEqual(selected.analysis.semanticChoices, choices, 'Review must contain a current replayed counter-choice audit.')
+const validation = validatePuzzle(selected.candidate, selected.analysis, assessedPublicationGates)
+assert.ok(validation.accepted, validation.reasons.map(reason => reason.message).join('\n'))
 assert.equal(selected.validation.accepted, true, 'The selected candidate must pass validation.')
 assert.ok(selected.difficulty, 'Publication requires a measured difficulty rating.')
 assert.ok(isMeaningCompilationCurrent(encounter), 'Recompile against the complete current assessment cache before publication.')
@@ -81,9 +90,10 @@ const routes = selected.analysis.winningLines.map(line => {
     livesRemaining: state.playerResolve, turns }
 })
 
-const summary = { puzzleDate: '2026-09-25', puzzleDates: ['2026-09-25', '2026-09-26'], puzzleVersion: 12,
+const summary = { puzzleDate: '2026-09-26', puzzleDates: ['2026-09-26', '2026-09-27'], puzzleVersion: 12,
   candidateId: encounter.id, seed: selected.candidate.seed, enemy: encounter.enemy.word,
   assessment: meaningLexicon.assessment,
+  semanticQualityConfiguration: semanticQuality.configurationHash, choices,
   refills: encounter.refillQueue.length, dictionaryWords: Object.keys(meaningLexicon.words).length,
   openingWords: new Set(discovered.moves.map(move => move.word)).size,
   openingSelections: openingSafety.safeSelections, openingSuccessors: openingSafety.safeSuccessors,
@@ -108,7 +118,7 @@ const difficultyUpdates = ['src/daily/difficultyLabels.json', 'src/generator/dat
 
 // All checks and replays complete before replacing any publication files.
 mkdirSync(artifactDirectory, { recursive: true })
-writeFileSync('src/daily/puzzles/2026-09-25-v12.json', JSON.stringify({ ...rules, packedMeanings }) + '\n')
+writeFileSync('src/daily/puzzles/2026-09-26-v12.json', JSON.stringify({ ...rules, packedMeanings }) + '\n')
 writeFileSync(`${artifactDirectory}/selected.json.gz`, gzipSync(JSON.stringify(selected), { level: 9 }))
 writeFileSync(`${artifactDirectory}/walkthroughs.json`, JSON.stringify({ candidateId: encounter.id, routes }, null, 2) + '\n')
 writeFileSync(`${artifactDirectory}/summary.json`, JSON.stringify(summary, null, 2) + '\n')

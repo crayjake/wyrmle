@@ -218,5 +218,25 @@
     "label": "MEDIUM",
     "estimated": true,
     "evidence": "Bounded search: depth is a winning upper bound; route counts are observed lower bounds."
+  },
+  "daily-chaos-2026-09-26-v12": {
+    "minimumWordsToWin": null,
+    "bestKnownWordsToWin": 3,
+    "startingResolve": 5,
+    "winningLineCount": 30,
+    "viableOpeningCount": 30,
+    "requiredWordCommonness": 1,
+    "armourComplexity": 0.4,
+    "specialTileDependence": 0.1806451612903226,
+    "grammarDependence": 0,
+    "trapComplexity": 0.25,
+    "clutchOnly": false,
+    "resolveSlack": null,
+    "estimatedResolveSlack": 2,
+    "mechanicComplexity": 0.20572580645161292,
+    "score": 33,
+    "label": "MEDIUM",
+    "estimated": true,
+    "evidence": "Bounded search: depth is a winning upper bound; route counts are observed lower bounds."
   }
 }

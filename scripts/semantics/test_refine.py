@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from unittest.mock import patch
 
-from refine import digest, final_grammar, lexical_domain, parse_response, query_model, render_messages
+from refine import digest, final_grammar, independent_source_requests, lexical_domain, parse_response, query_model, render_messages, sense_input, source_category_cues, validate_verification_trace
 
 
 class ContextualInferenceTests(unittest.TestCase):
@@ -44,6 +44,125 @@ class ContextualInferenceTests(unittest.TestCase):
     def test_neutral_distractor_is_not_enemy_reinforcement(self):
         result = parse_response(self.spec, self.payload, "The meaning is illumination. FINAL LIGHT 0")
         self.assertEqual(result["relation"], "neutral")
+
+    def test_explicit_source_index_can_follow_the_final_group_on_a_new_line(self):
+        for final in ("FINAL: COLD\nINDEX: 1", "FINAL COLD\nSource Index: 1"):
+            result = parse_response(self.spec, self.payload, "The action makes things cold.\n" + final)
+            self.assertEqual(result["relation"], "opposite")
+            self.assertEqual(result["selectedSenseId"], self.payload["qualifiedSenses"][1]["id"])
+        with self.assertRaises(ValueError):
+            parse_response(self.spec, self.payload, "Cold action. FINAL COLD\nSource Index: 1 or 0")
+
+    def test_quoted_definition_must_match_the_selected_source_index(self):
+        self.spec["policy"]["requireQuotedDefinition"] = True
+        text = "DEFINITION: make very cold\nThis action causes cold. FINAL COLD 1"
+        result = parse_response(self.spec, self.payload, text)
+        self.assertEqual(result["explanation"], "This action causes cold.")
+        labeled = text.replace("DEFINITION: make very cold", "DEFINITION: freeze (verb; dictionary domain verb.change): make very cold")
+        self.assertEqual(parse_response(self.spec, self.payload, labeled), result)
+        for invalid in (text.replace("COLD 1", "COLD 0"), text.replace("make very cold", "cool things down")):
+            with self.assertRaises(ValueError):
+                parse_response(self.spec, self.payload, invalid)
+
+    def test_every_source_sense_requires_its_own_grounded_category_decision(self):
+        self.spec["policy"].update(senseCategories={"COLD": "cold", "HEAT": "heat", "OTHER": "other"},
+                                  categoryNames={"COLD": "cold", "HEAT": "heat", "OTHER": "other"},
+                                  categoryRelations={"TEST": {"COLD": "opposite", "HEAT": "similar"}},
+                                  relationPriority=["opposite", "similar"])
+        body = {"senses": [{"index": 0, "definition": "having moderate heat", "categories": ["HEAT"]},
+                           {"index": 1, "definition": "make very cold", "categories": ["COLD"]}]}
+        result = parse_response(self.spec, self.payload, json.dumps(body))
+        self.assertEqual(result["selectedSenseId"], self.payload["qualifiedSenses"][1]["id"])
+        self.assertEqual(result["relation"], "opposite")
+        self.assertEqual(len(result["senseDecisions"]), 2)
+        for mutate in (lambda b: b["senses"].pop(),
+                       lambda b: b["senses"][1].update(index=0),
+                       lambda b: b["senses"][1].update(definition="invented"),
+                       lambda b: b["senses"][1].update(categories=["FOREIGN"]),
+                       lambda b: b["senses"][1].update(categories=["OTHER", "COLD"])):
+            invalid = json.loads(json.dumps(body))
+            mutate(invalid)
+            with self.assertRaises(ValueError):
+                parse_response(self.spec, self.payload, json.dumps(invalid))
+        grammar = final_grammar(self.spec, self.payload)
+        self.assertIn("sense0", grammar)
+        self.assertIn("sense1", grammar)
+        self.assertIn("make very cold", grammar)
+
+    def test_independent_sense_inference_has_no_model_selected_source_index(self):
+        self.spec["policy"].update(independentSenseInference=True,
+                                  senseCategories={"COLD": "cold", "HEAT": "heat", "OTHER": "other"})
+        payload = {**self.payload, "qualifiedSenses": self.payload["qualifiedSenses"][:1]}
+        self.assertEqual(parse_response(self.spec, payload, '{"categories":["HEAT"]}'),
+                         {"status": "ok", "categories": ["HEAT"]})
+        for text in ('{"categories":["OTHER","HEAT"]}', '{"categories":["HEAT","HEAT"]}',
+                     '{"categories":["UNKNOWN"]}', '{"categories":["HEAT"],"index":1}'):
+            with self.assertRaises(ValueError):
+                parse_response(self.spec, payload, text)
+        self.assertIn("categories", final_grammar(self.spec, payload))
+
+    def test_source_preference_requires_agreement_with_the_reviewed_relation(self):
+        self.spec["policy"].update(senseCategories={"COLD": "cold", "HEAT": "heat", "OTHER": "other"},
+                                  categoryNames={"COLD": "cold", "HEAT": "heat"},
+                                  categoryRelations={"TEST": {"COLD": "opposite", "HEAT": "similar"}},
+                                  relationPriority=["opposite", "similar"],
+                                  sourceSelection="baseline-agreement-then-directness-v1",
+                                  sourceDomainPriority={"adj.all": 0, "verb.change": 1})
+        self.payload["preferredSenseId"] = self.payload["qualifiedSenses"][0]["id"]
+        body = {"senses": [{"index": 0, "definition": "having moderate heat", "categories": ["HEAT"]},
+                           {"index": 1, "definition": "make very cold", "categories": ["COLD"]}]}
+        result = parse_response(self.spec, self.payload, json.dumps(body))
+        self.assertEqual(result["selectedSenseId"], self.payload["qualifiedSenses"][1]["id"])
+        for row in body["senses"]:
+            row["categories"] = ["COLD"]
+        self.assertEqual(parse_response(self.spec, self.payload, json.dumps(body))["selectedSenseId"], self.payload["preferredSenseId"])
+        for row in body["senses"]:
+            row["categories"] = ["OTHER"]
+        self.payload["preferredSenseId"] = self.payload["qualifiedSenses"][1]["id"]
+        self.assertEqual(parse_response(self.spec, self.payload, json.dumps(body))["selectedSenseId"], self.payload["preferredSenseId"])
+
+    def test_source_work_is_deduplicated_without_losing_any_sense(self):
+        self.spec["manifest"] = {field: "test" for field in ("promptDigest", "policyDigest", "sourceDigest")}
+        self.spec["prompt"]["userTemplate"] = "{senseCategories}\n{numberedLemmaPosLexicalDomainDefinitions}"
+        pending = {"first": (self.payload, None), "inflection": ({**self.payload, "preferredSenseId": "other"}, None),
+                   "subset": ({**self.payload, "qualifiedSenses": self.payload["qualifiedSenses"][:1]}, None)}
+        requests = independent_source_requests(self.spec, pending)
+        self.assertEqual(len(requests), 2)
+        self.assertEqual({p["qualifiedSenses"][0]["id"] for p in requests.values()},
+                         {sense["id"] for sense in self.payload["qualifiedSenses"]})
+        self.spec["prompt"]["userTemplate"] += "{enemyWord}"
+        with self.assertRaisesRegex(ValueError, "must not depend"):
+            independent_source_requests(self.spec, pending)
+
+    def test_verification_must_check_every_proposed_scoring_sense_and_retain_provenance(self):
+        proposal = {"manifest": {field: "first-pass" for field in ("promptDigest", "policyDigest", "sourceDigest")},
+                    "policy": {"senseCategories": {"HEAT": "heat", "OTHER": "other"}}}
+        spec = {"proposal": proposal, "policy": {"verification": {"scoringCategories": ["HEAT"]}}}
+        sense = self.payload["qualifiedSenses"][0]
+        row = {"proposal": {"response": '{"categories":["HEAT"]}', "inputDigest": digest(sense_input(proposal, sense))},
+               "verified": True, "categories": ["OTHER"], "response": '{"categories":["OTHER"]}'}
+        validate_verification_trace(spec, sense, row)
+        for changes in ({"verified": False}, {"categories": ["COLD"]}, {"proposal": {**row["proposal"], "inputDigest": "changed"}}):
+            with self.assertRaises(ValueError):
+                validate_verification_trace(spec, sense, {**row, **changes})
+        row["proposal"]["response"] = '{"categories":["OTHER"]}'
+        row["verified"] = False
+        validate_verification_trace(spec, sense, row)
+        with self.assertRaises(ValueError):
+            validate_verification_trace(spec, sense, {**row, "response": '{"categories":["HEAT"]}'})
+
+    def test_source_cues_require_review_even_after_a_neutral_proposal_but_do_not_award_a_label(self):
+        proposal = {"manifest": {field: "first-pass" for field in ("promptDigest", "policyDigest", "sourceDigest")},
+                    "policy": {"senseCategories": {"ORDER": "order", "OTHER": "other"}}}
+        spec = {"proposal": proposal, "policy": {"verification": {"scoringCategories": ["ORDER"], "cuePatterns": {"ORDER": r"\btidy\b"}}}}
+        sense = {"id": "fixture", "lemma": "tool", "partOfSpeech": "noun", "definition": "An object used to tidy things."}
+        self.assertEqual(source_category_cues(spec, sense), ["ORDER"])
+        row = {"proposal": {"response": '{"categories":["OTHER"]}', "inputDigest": digest(sense_input(proposal, sense))},
+               "verified": True, "cueCategories": ["ORDER"], "categories": ["OTHER"], "response": '{"categories":["OTHER"]}'}
+        validate_verification_trace(spec, sense, row)
+        for changes in ({"verified": False}, {"cueCategories": []}):
+            with self.assertRaises(ValueError):
+                validate_verification_trace(spec, sense, {**row, **changes})
 
     def test_ambiguous_or_unverifiable_outputs_fail(self):
         for response in (
@@ -101,6 +220,21 @@ class ContextualInferenceTests(unittest.TestCase):
             self.assertEqual(result["status"], "error")
             self.assertEqual(len(result["attempts"]), 2)
             self.assertNotIn("relation", result)
+
+    def test_invalid_mixed_other_response_gets_a_grammar_repair_without_relaxing_validation(self):
+        self.spec["policy"].update(independentSenseInference=True, senseCategories={"PHYSICAL": "physical", "OTHER": "other"},
+                                  maxAttempts=3, temperature=0.7, seed=123, maxTokens=128, thinking=False,
+                                  constrainedFinalLabel=True, validationRetryPrompt="{error}; return valid categories")
+        payload = {**self.payload, "qualifiedSenses": self.payload["qualifiedSenses"][:1]}
+        with patch("refine.http_json", side_effect=[{"choices": [{"message": {"content": response}}]} for response in
+                  ['{"categories":["PHYSICAL","OTHER"]}', '{"categories":["PHYSICAL"]}']]) as http:
+            result = query_model("http://127.0.0.1", self.spec, payload)
+        self.assertEqual(result["categories"], ["PHYSICAL"])
+        self.assertEqual(result["attempts"][1]["syntaxRepair"], "standalone-other-v1")
+        self.assertIn("error", result["attempts"][0])
+        grammar = http.call_args.args[2]["grammar"]
+        self.assertIn('choices ::=', grammar)
+        self.assertNotIn('OTHER', grammar.split('category ::=')[1])
 
 
 if __name__ == "__main__":

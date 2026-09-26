@@ -24,6 +24,7 @@ import type { ValidationConfig } from './config.ts'
 import type { AnchorWord, CandidatePuzzle, GenerationGoal, WordRole } from './types.ts'
 import { buildWordPools } from './wordPools.ts'
 import { meaningLexicalProvider, withCompiledMeanings } from './meaningCompiler.ts'
+import { analyseSemanticChoices } from './semanticChoices.ts'
 
 export type GenerationOptions = {
   candidateCount?: number
@@ -114,7 +115,11 @@ export function createCandidate(enemyWord: string, seed: string | number, option
     enemyLetters: placeArmour(enemy, words, armourCount, random),
     startingResolve, startingTiles, refillQueue: 'E'.repeat((startingResolve + 1) * 16), minimumWordLength: 3,
     ...(refillLimit === undefined ? {} : { finiteRefills: true as const }),
-    grammarModifiers: meaningOnly ? {} : { adjective: 1 }, wordPartsOfSpeech: pools.wordPartsOfSpeech,
+    grammarModifiers: meaningOnly ? {} : { adjective: 1 },
+    // Meaning encounters read parts of speech from their frozen word records.
+    // Copying the entire authoring vocabulary here duplicates megabytes in
+    // every search-state key and can exhaust a browser worker's heap.
+    ...(meaningOnly ? {} : { wordPartsOfSpeech: pools.wordPartsOfSpeech }),
     ...(options.lexicalMode === 'legacy' ? {} : { lexicalRules: { ...currentLexicalRules } }),
     ...(meaningOnly ? {} : { longWordRule: { minimumLength: 6, bonusStrikes: 1 } }),
     tileEffects: { strike: { strike: true, preventResolveLoss: false }, ward: { strike: false, preventResolveLoss: true },
@@ -161,6 +166,12 @@ export function generateForEnemy(enemyWord: string, seed: string | number, optio
         hintLine: proposedLine ?? (candidate.construction.plannedTileIds.length ? candidate.construction.plannedTileIds : options.analysis?.solver?.hintLine),
       },
     })
+    if ([options.validation?.minimumCounterOpeningLemmas, options.validation?.minimumMultiHitCounterOpenings,
+      options.validation?.minimumMeaningBoostedOpenings, options.validation?.minimumWinningCounterLemmas,
+      options.validation?.minimumFamiliarWinningOpenings].some(minimum => (minimum ?? 0) > 0)) {
+      analysis.semanticChoices = analyseSemanticChoices(candidate.encounter, analysis.winningLines,
+        options.validation?.minimumWinningWordCommonness ?? 0.5)
+    }
     const validation = validatePuzzle(candidate, analysis, options.validation)
     const quality = scorePuzzle(candidate, analysis)
     const ranked: RankedCandidate = { candidate, analysis, validation, quality,

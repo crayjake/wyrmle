@@ -23,7 +23,7 @@ class MemoryStorage implements StorageLike {
 }
 
 const published = getDailyPuzzle('2026-09-25')
-const archived = getDailyPuzzle('2026-09-27')
+const archived = getDailyPuzzle('2026-09-28')
 const at = '2026-09-25T15:00:00.000Z'
 
 function continuation(game: LetterStrikeState): LetterStrikeState {

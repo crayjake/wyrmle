@@ -68,30 +68,6 @@ export function canUpgradeMeaningVocabulary(from: DailyPuzzleDefinition, to: Dai
   return compatible
 }
 
-function samePosition(left: LetterStrikeState, right: LetterStrikeState): boolean {
-  const { encounter: _leftRules, ...leftPosition } = left
-  const { encounter: _rightRules, ...rightPosition } = right
-  return sameData(leftPosition, rightPosition)
-}
-
-function upgradedMeaningRun(
-  previous: DailyPuzzleDefinition, latest: DailyPuzzleDefinition,
-  game: LetterStrikeState, undoHistory: LetterStrikeState[],
-) {
-  if (game.status !== 'playing' || !canUpgradeMeaningVocabulary(previous, latest)) return null
-  try {
-    const upgraded = replayWithSnapshots(latest, game.playedWords.map(turn => turn.tiles.map(tile => tile.id)))
-    // Preserve every scored turn, tile identity, refill, life and undo position.
-    // Corrected meanings may change future options, never a played outcome.
-    if (!samePosition(game, upgraded.game) || undoHistory.length !== upgraded.undoHistory.length
-      || undoHistory.some((position, index) => !samePosition(position, upgraded.undoHistory[index]))) return null
-    return upgraded
-  } catch {
-    // A failed compatibility replay leaves the validated original run intact.
-    return null
-  }
-}
-
 function assertVersions(value: Record<string, unknown>, puzzle: DailyPuzzleDefinition, checkSave = true): void {
   if ((checkSave && !supportedSaveVersion(value.saveVersion, puzzle))
     || value.gameVersion !== puzzle.gameVersion || value.puzzleVersion !== puzzle.puzzleVersion) {
@@ -361,11 +337,11 @@ export function loadDailySession(puzzle: DailyPuzzleDefinition, storage: Storage
     // A validated Begin-only snapshot has no committed choices or outcome to
     // preserve. Upgrade it in memory; the next commit writes the latest version.
     const untouched = game.status === 'playing' && game.playedWords.length === 0 && undosUsed === 0
-    const upgraded = untouched ? null : upgradedMeaningRun(pinned, latest, game, undoHistory)
+    // Played and undone attempts always retain their frozen scoring table.
     return {
-      game: untouched ? createLetterStrikeGame(latest.encounter) : upgraded?.game ?? game,
+      game: untouched ? createLetterStrikeGame(latest.encounter) : game,
       mode,
-      revision, undosUsed, undosRemaining, undoHistory: upgraded?.undoHistory ?? undoHistory,
+      revision, undosUsed, undosRemaining, undoHistory,
       started: true,
       result: completedAt === null ? null : buildDailyResult(pinned, game, completedAt, mode, undosUsed),
       resumed: true,

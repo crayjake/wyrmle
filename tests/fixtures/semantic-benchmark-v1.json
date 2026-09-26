@@ -1486,9 +1486,15 @@
       "enemy": "CHAOS",
       "word": "TABLE",
       "split": "development",
-      "expected": "neutral",
+      "expected": "opposite",
       "core": false,
-      "rationale": "This word does not intrinsically counter or reinforce the enemy concept."
+      "rationale": "The verb sense explicitly arranges data in tabular form, an act of organization that counters disorder. The furniture and already-arranged-data noun senses do not themselves qualify. All source senses must be considered, not only the everyday furniture sense.",
+      "allowedSenses": [
+        {
+          "senseId": "oewn-table__2.36.00..",
+          "definition": "arrange or enter in tabular form"
+        }
+      ]
     },
     {
       "id": "CHAOS/SEVEN",
@@ -1741,6 +1747,12 @@
       "kind": "source-constraint",
       "addedSenseId": "oewn-regulate__2.30.00..",
       "reason": "Independent game-policy review accepts both regulation of time/amount/degree/rate and conformity to rules as ORDER/CONTROL meanings. The original constraint was too narrow. The model neutral label remains a counted false negative."
+    },
+    {
+      "case": "CHAOS/TABLE",
+      "reviewedAt": "2026-09-26",
+      "change": "Correct neutral to opposite for the actual verb sense meaning arrange or enter in tabular form, under the established direct-arrangement policy. This does not approve the furniture noun or the data-object noun. Require the exact organizing verb sense.",
+      "originalFileSha256": "7a39630627bc9f0d87bf700a35e97f9255251d061e8d8ac93c391310f55529ed"
     }
   ]
 }

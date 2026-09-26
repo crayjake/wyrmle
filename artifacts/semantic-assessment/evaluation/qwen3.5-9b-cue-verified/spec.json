@@ -1,0 +1,990 @@
+{
+  "manifest": {
+    "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+    "modelId": "Qwen/Qwen3.5-9B",
+    "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "policyDigest": "a31eda202c6a2591990026668129de5d03837ac2eec27df03fcf5164ef54f76b",
+    "promptDigest": "9bf4e9aaf34389c4d35d0ec38a517b4a9da90dc499167e1b1325dd69fcf3bc02",
+    "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+    "threshold": -1,
+    "trustedDecisionBases": [],
+    "version": "wyrmle-semantic-refinement-1",
+    "reviewScope": "all-source-senses",
+    "sourceSelection": "baseline-agreement-then-directness-v1"
+  },
+  "policy": {
+    "classification": "all-source-classification-plus-definition-cues-then-direct-meaning-verification",
+    "cosineMinimum": -1,
+    "input": "all-dictionary-senses-sorted-by-id-with-lemma-pos-lexical-domain",
+    "invalid": "hard-fail",
+    "maxAttempts": 3,
+    "maxTokens": 128,
+    "meaningGroups": {
+      "ANGER": [
+        {
+          "concepts": [
+            "becoming calm",
+            "becoming relaxed",
+            "calm and composure",
+            "calming agitation",
+            "cheerfulness and good spirits",
+            "compassion and humane care",
+            "compassion for suffering",
+            "delight and enjoyment",
+            "forgiveness instead of resentment",
+            "friendliness and goodwill",
+            "gentleness and even temper",
+            "happiness and joy",
+            "kindness and consideration",
+            "kindness and forgiveness",
+            "laughter and mirth",
+            "patience and even temper",
+            "peace and freedom from disputes",
+            "peace of mind",
+            "peace without strife or turmoil",
+            "relaxation without anxiety",
+            "smiling and pleasure",
+            "contentment and satisfaction",
+            "warm affection and appreciation"
+          ],
+          "label": "OPPOSE",
+          "relation": "opposite"
+        },
+        {
+          "concepts": [
+            "anger and indignation",
+            "anger caused by irritation",
+            "annoyance and mild anger",
+            "feeling or expressing anger",
+            "fury and intense anger",
+            "resentment and bitter anger",
+            "wrath and intense anger"
+          ],
+          "label": "SAME",
+          "relation": "similar"
+        }
+      ],
+      "CHAOS": [
+        {
+          "concepts": [
+            "a stable social order",
+            "a systematic and orderly way of doing things",
+            "an even and unruffled temper",
+            "arranging things methodically",
+            "becoming calm after agitation",
+            "becoming relaxed",
+            "calm and composure instead of turmoil",
+            "calming agitation",
+            "clarity instead of confusion",
+            "clear expression instead of confusion",
+            "harmonious arrangement of parts",
+            "harmony and freedom from disputes",
+            "harmony between parts",
+            "logical and orderly relations between parts",
+            "logical arrangement",
+            "methodical and well organized order",
+            "methodical organization",
+            "order without disruption",
+            "organized and methodical arrangement",
+            "peace and quiet",
+            "peace of mind",
+            "peace without strife or turmoil",
+            "planning an orderly arrangement",
+            "proper arrangement and order",
+            "quiet without agitation",
+            "refreshing tranquility without tension",
+            "regaining composure",
+            "relaxation without anxiety",
+            "self-possession instead of agitation",
+            "serenity and an untroubled disposition",
+            "sorting into an orderly arrangement",
+            "structure and arrangement",
+            "tidiness and order",
+            "tranquility without disturbances"
+          ],
+          "label": "OPPOSE",
+          "relation": "opposite"
+        },
+        {
+          "concepts": [
+            "a confused disorderly state",
+            "absence of law or control",
+            "causing disorder",
+            "confused and disordered thought",
+            "disarray and untidiness",
+            "disorder and misplaced things",
+            "disorderly conduct",
+            "disturbed public order",
+            "extreme confusion and disorder",
+            "lack of order or plan",
+            "lawlessness and disorder",
+            "mess and disorder",
+            "turmoil and disturbance",
+            "unpredictable disorder"
+          ],
+          "label": "SAME",
+          "relation": "similar"
+        }
+      ],
+      "CRUELTY": [
+        {
+          "concepts": [
+            "compassion and humane care",
+            "compassion for suffering",
+            "empathy for others",
+            "gentleness and even temper",
+            "humaneness and consideration",
+            "kindness and benevolence",
+            "kindness and consideration",
+            "kindness and forgiveness",
+            "mercy toward others",
+            "affection and protective care"
+          ],
+          "label": "OPPOSE",
+          "relation": "opposite"
+        },
+        {
+          "concepts": [
+            "brutality and extreme cruelty",
+            "cruel and inhumane behavior",
+            "deliberately causing pain",
+            "inhumanity and lack of compassion",
+            "lack of mercy",
+            "malicious intent to hurt others"
+          ],
+          "label": "SAME",
+          "relation": "similar"
+        }
+      ],
+      "DESPAIR": [
+        {
+          "concepts": [
+            "an optimistic outlook",
+            "confident hopefulness",
+            "encouragement and support",
+            "giving hope and encouragement",
+            "hope for a better outcome",
+            "optimism about the future",
+            "trust and confident belief",
+            "resilience and constructive recovery from adversity"
+          ],
+          "label": "OPPOSE",
+          "relation": "opposite"
+        },
+        {
+          "concepts": [
+            "despair and lost hope",
+            "hopeless despondency",
+            "hopelessness",
+            "the absence of hope"
+          ],
+          "label": "SAME",
+          "relation": "similar"
+        }
+      ],
+      "FEAR": [
+        {
+          "concepts": [
+            "becoming calm",
+            "becoming relaxed",
+            "being safe from danger",
+            "boldness and daring",
+            "bravery and freedom from fear",
+            "calm and composure",
+            "calming agitation",
+            "confidence in oneself",
+            "courage in the face of danger",
+            "freedom from fear and anxiety",
+            "peace of mind",
+            "reassurance and restored confidence",
+            "relaxation without anxiety",
+            "safety from danger",
+            "security without fear or doubt"
+          ],
+          "label": "OPPOSE",
+          "relation": "opposite"
+        },
+        {
+          "concepts": [
+            "anxiety and apprehension",
+            "anxiety and nervous fear",
+            "anxious fear",
+            "anxious uneasiness",
+            "being afraid",
+            "dread of danger",
+            "fear of danger",
+            "horror and profound fear",
+            "provoking fear",
+            "terror and intense fear",
+            "worry and anxiety"
+          ],
+          "label": "SAME",
+          "relation": "similar"
+        }
+      ],
+      "MELANCHOLY": [
+        {
+          "concepts": [
+            "cheerfulness and good spirits",
+            "delight and enjoyment",
+            "happiness and joy",
+            "laughter and mirth",
+            "merriment and joy",
+            "smiling and pleasure"
+          ],
+          "label": "OPPOSE",
+          "relation": "opposite"
+        },
+        {
+          "concepts": [
+            "melancholy gloom",
+            "melancholy sadness",
+            "sadness and sorrow",
+            "sadness and unhappiness",
+            "sadness expressed in manner",
+            "sadness expressed in tears",
+            "thoughtful sadness"
+          ],
+          "label": "SAME",
+          "relation": "similar"
+        }
+      ]
+    },
+    "modelId": "Qwen/Qwen3.5-9B",
+    "modelSha256": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+    "modelSourceRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "preserve": [],
+    "promptDigest": "9bf4e9aaf34389c4d35d0ec38a517b4a9da90dc499167e1b1325dd69fcf3bc02",
+    "quantizationRepository": "unsloth/Qwen3.5-9B-GGUF",
+    "quantizationRevision": "3885219b6810b007914f3a7950a8d1b469d598a5",
+    "responseAggregation": "source-checked-proposals-and-verification-responses-then-deterministic-category-map",
+    "retrievalChannels": [
+      "lemma-definition",
+      "definition",
+      "lemma"
+    ],
+    "review": [
+      "every-inventory-word-including-neutral-and-previously-trusted"
+    ],
+    "runtime": "llama.cpp-b11146",
+    "runtimeBuild": "b11146-7fe450e19",
+    "seed": 123,
+    "temperature": 0.7,
+    "thinking": false,
+    "validationRetryPrompt": "Your response failed validation: {error}. Return only the categories JSON, using one to four distinct supplied categories, or OTHER alone. Do not include explanations or source indices.",
+    "version": "wyrmle-source-proposals-and-verification-v1",
+    "constrainedFinalLabel": true,
+    "reviewScope": "all-source-senses",
+    "senseCategories": {
+      "CALM": "Calm, composure, tranquility, patience, peace, freedom from strife, turmoil, agitation or disturbance; actions explicitly calming someone. Not mere caution, low physical sound volume, weather, inactivity or absence of wind.",
+      "JOY": "Happiness, joy, pleasure, cheerfulness, amusement, laughter, satisfaction or contentment; explicitly creating these feelings.",
+      "KINDNESS": "Kindness, benevolence, compassion, mercy, humane concern, gentleness in treatment, warm affection, appreciation, friendliness, goodwill, generosity, helpfulness or forgiveness. Not an occupation that may provide care, physical softness, or a posture that may accompany affection.",
+      "ORDER": "Order, organization, neatness, tidiness, tidying and neatening, methodical or sequential arrangement, logical patterns, stable social order, harmony, coherence or clarity of thought/expression; actions explicitly ordering, sequencing, organizing, regulating or clarifying. Not an object merely having structure, a field studying logic, musical adaptation for different instruments, generic physical firmness, physical hygiene alone, or physical transparency.",
+      "HOPE": "Hope, optimism, positive expectation about the future, promising favorable prospects, indications of likely positive outcomes, encouragement or explicitly inspiring hope. Not mere opportunity, convenient timing, or bare possibility without favorable prospects.",
+      "CONFIDENCE": "Confidence, assurance, trust in honesty or reliability, certainty or confident belief. Not merely holding an opinion, doctrinal religious belief, a financial property trust or a religious institution; religious doctrines belong to FIELD.",
+      "RESILIENCE": "Constructive perseverance, persistence despite adversity, resilience or emotional recovery. Not physical material elasticity or repairing an object.",
+      "COURAGE": "Courage, bravery, boldness or facing adversity without surrendering to fear; explicitly restoring courage.",
+      "SAFETY": "Safety, protection, security or freedom from danger or threat. Not a weapon, occupation, building or other object that could offer protection.",
+      "ANGER": "Anger, wrath, annoyance, irritation, resentment, indignation or explicitly provoking anger. Not unrelated negative feelings, mere bodily redness, exertion, generic violence or bloodshed.",
+      "FEAR": "Fear, anxiety, dread, worry, terror, apprehension or explicitly frightening someone. Not mere danger, injury, darkness or something potentially frightening.",
+      "SADNESS": "Sadness, sorrow, gloom, low spirits, unhappiness or explicitly depressing someone emotionally. Not unrelated negativity, physical darkness or literal downward movement.",
+      "HOPELESSNESS": "Despair, hopelessness, despondency, loss of hope, giving up hope or expecting things cannot improve. Not ordinary sadness, deception, impurity or unrelated negativity. A definition explicitly including both melancholy and despondency expresses SADNESS and HOPELESSNESS.",
+      "CRUELTY": "Cruelty, inhumanity, malicious harm, mercilessness, lack of compassion, ill-treatment, persecution or tormenting others. An action that causes suffering qualifies when its lemma and definition denote harmful treatment. Generic injury, violence, bloodshed, tools, medical treatment, or merely using a tool are insufficient.",
+      "DISORDER": "Disorder, confusion, disarray, mess, lawlessness, turmoil, lack of organization or explicitly disrupting order. Not a medical illness, politics, random physical phenomena or unrelated unease.",
+      "ROLE": "A person or group defined by an occupation, membership, affiliation, title or associated function, rather than an explicitly denoted emotion or moral trait.",
+      "OBJECT": "An object, substance, organism, body part, food, device, furniture or artifact; properties or possible uses do not turn the object itself into an emotional or abstract quality.",
+      "FIELD": "A field of study, science, research subject, religion or belief system. Studying a quality does not denote the quality itself.",
+      "PHYSICAL": "A physical property, position, color, action, injury, phenomenon or material process without an explicitly denoted scoring quality or feeling.",
+      "OTHER": "Any meaning not directly expressing the defined semantic categories, including grammatical words, caution, quantities and unrelated abstract concepts.",
+      "COMFORT": "Emotional comfort, consolation, encouragement, reassurance, relieving emotional distress or giving moral/emotional strength and support. Not merely physical comfort, furniture, bodily strength or medical treatment."
+    },
+    "categoryNames": {
+      "CALM": "calmness and composure",
+      "JOY": "happiness and good spirits",
+      "KINDNESS": "kindness and humane care",
+      "ORDER": "order, organization and clarity",
+      "HOPE": "hope and optimism",
+      "CONFIDENCE": "confidence and trust",
+      "RESILIENCE": "resilience and constructive perseverance",
+      "COURAGE": "courage and bravery",
+      "SAFETY": "safety and security",
+      "ANGER": "anger and resentment",
+      "FEAR": "fear and anxiety",
+      "SADNESS": "sadness and low spirits",
+      "HOPELESSNESS": "despair and hopelessness",
+      "CRUELTY": "cruelty and malicious harm",
+      "DISORDER": "disorder and confusion",
+      "ROLE": "an occupation or affiliation",
+      "OBJECT": "a physical object or substance",
+      "FIELD": "a field or belief system",
+      "PHYSICAL": "a physical property or action",
+      "OTHER": "another meaning",
+      "COMFORT": "emotional comfort and support"
+    },
+    "categoryRelations": {
+      "ANGER": {
+        "CALM": "opposite",
+        "JOY": "opposite",
+        "KINDNESS": "opposite",
+        "ANGER": "similar",
+        "COMFORT": "opposite"
+      },
+      "CHAOS": {
+        "CALM": "opposite",
+        "ORDER": "opposite",
+        "DISORDER": "similar"
+      },
+      "CRUELTY": {
+        "KINDNESS": "opposite",
+        "CRUELTY": "similar",
+        "COMFORT": "opposite"
+      },
+      "DESPAIR": {
+        "HOPE": "opposite",
+        "CONFIDENCE": "opposite",
+        "RESILIENCE": "opposite",
+        "HOPELESSNESS": "similar",
+        "COMFORT": "opposite"
+      },
+      "FEAR": {
+        "CALM": "opposite",
+        "COURAGE": "opposite",
+        "CONFIDENCE": "opposite",
+        "SAFETY": "opposite",
+        "FEAR": "similar",
+        "COMFORT": "opposite"
+      },
+      "MELANCHOLY": {
+        "JOY": "opposite",
+        "SADNESS": "similar",
+        "COMFORT": "opposite"
+      }
+    },
+    "relationPriority": [
+      "similar",
+      "opposite"
+    ],
+    "independentSenseInference": true,
+    "topP": 0.8,
+    "topK": 20,
+    "minP": 0,
+    "presencePenalty": 1.5,
+    "repeatPenalty": 1,
+    "sourceSelection": "baseline-agreement-then-directness-v1",
+    "sourceDomainPriority": {
+      "adj.all": 0,
+      "adj.pert": 0,
+      "adv.all": 0,
+      "noun.Tops": 5,
+      "noun.act": 3,
+      "noun.animal": 5,
+      "noun.artifact": 5,
+      "noun.attribute": 0,
+      "noun.body": 5,
+      "noun.cognition": 2,
+      "noun.communication": 2,
+      "noun.event": 5,
+      "noun.feeling": 0,
+      "noun.food": 5,
+      "noun.group": 4,
+      "noun.location": 5,
+      "noun.motive": 5,
+      "noun.object": 5,
+      "noun.person": 5,
+      "noun.phenomenon": 5,
+      "noun.plant": 5,
+      "noun.possession": 5,
+      "noun.process": 5,
+      "noun.quantity": 5,
+      "noun.relation": 2,
+      "noun.shape": 5,
+      "noun.state": 0,
+      "noun.substance": 5,
+      "noun.time": 5,
+      "verb.body": 1,
+      "verb.change": 1,
+      "verb.cognition": 1,
+      "verb.communication": 1,
+      "verb.competition": 1,
+      "verb.consumption": 1,
+      "verb.contact": 1,
+      "verb.creation": 1,
+      "verb.emotion": 1,
+      "verb.motion": 1,
+      "verb.perception": 1,
+      "verb.possession": 1,
+      "verb.social": 1,
+      "verb.stative": 1,
+      "verb.weather": 1,
+      "adj.ppl": 0
+    },
+    "verification": {
+      "proposalSpecDigest": "5328277e183273ad5590259e09bce23a888448f45eb3baa7ab8b2957d06fe5c5",
+      "proposalPolicyDigest": "cc9e26361c383e25eed489c7d53cf39e079c6a15c5b12c9aa13dfdeff1b10aed",
+      "proposalPromptDigest": "5d614ef96deda42278a99cd61f42ffa5ffe7f5bf80605f0604081326252cb28d",
+      "scoringCategories": [
+        "ANGER",
+        "CALM",
+        "COMFORT",
+        "CONFIDENCE",
+        "COURAGE",
+        "CRUELTY",
+        "DISORDER",
+        "FEAR",
+        "HOPE",
+        "HOPELESSNESS",
+        "JOY",
+        "KINDNESS",
+        "ORDER",
+        "RESILIENCE",
+        "SADNESS",
+        "SAFETY"
+      ],
+      "cuePatterns": {
+        "CALM": "\\b(calm(?:ness|ing|ed)?|compos(?:ed|ure)|unruffled|self-possession|peace(?:ful)?|quiet(?:en|ude)?|tranquil(?:ity|lity)?|seren(?:e|ity)|relax(?:ed|ation)|pacif(?:y|ied)|placid|untroubled|patien(?:t|ce)|sooth(?:e|ing))\\b",
+        "ORDER": "\\b(order(?:liness|ly)?|organi[sz](?:e|ed|ation|ing)|arrang(?:e|ed|ement|ing)|tid(?:y|iness|ying)|neat(?:en|ened|ness)?|sort(?:ed|ing)?|systematic|methodical|sequence|sequencing|sequential|logical|coheren(?:t|ce)|clarity|harmon(?:y|ious|ize)|regulat(?:e|ed|ion|ing)|concord)\\b",
+        "DISORDER": "\\b(disorder(?:ly|ed)?|disorgani[sz](?:e|ed|ation)|confus(?:ed|ion|ing)|disarray|chaos|chaotic|mess(?:y)?|lawless(?:ness)?|turmoil|tumult|commotion|anarch(?:y|ic)|disrupt(?:ion|ed)?|random|unordered)\\b",
+        "JOY": "\\b(joy(?:ful)?|happ(?:y|iness)|cheer(?:ful|fulness)?|pleasure|delight(?:ful)?|amuse(?:ment|d)?|laughter|merr(?:y|iment)|contentment|satisf(?:ied|action)|good humor|good spirits|joking|jokes)\\b",
+        "KINDNESS": "\\b(kindness|kindhearted|kind-hearted|kindly|benevolen(?:t|ce)|compassion(?:ate)?|mercy|merciful|humane(?:ness)?|sympath(?:y|etic)|empath(?:y|etic)|gentleness|affection(?:ate)?|fondness|fond of|forgiv(?:e|ing|eness)|friendliness|goodwill|generosity|helpfulness|appreciation|gratitude)\\b",
+        "HOPE": "\\b(hope|hopeful|optimis(?:m|tic)|encourag(?:e|ement)|promising|auspicious|favorable prospects)\\b",
+        "CONFIDENCE": "\\b(confiden(?:t|ce)|assurance|trust|reassur(?:e|ance)|self-assur(?:ed|ance)|certainty)\\b",
+        "RESILIENCE": "\\b(resilien(?:t|ce)|persever(?:e|ance|ing)|persisten(?:t|ce)|recover(?:ing|y)? from adversity)\\b",
+        "COURAGE": "\\b(courage(?:ous)?|brave(?:ry)?|bold(?:ness)?|daring|fearless(?:ness)?|intrepid|valiant|valou?r)\\b",
+        "SAFETY": "\\b(safe(?:ty)?|secure|security|protect(?:ion|ed)|freedom from danger)\\b",
+        "ANGER": "\\b(anger|angry|wrath|annoy(?:ed|ance)?|irritat(?:ion|ed|ing)|resentment|indignation|fury|enrage(?:d)?)\\b",
+        "FEAR": "\\b(fear(?:ful)?|anxiety|anxious|dread|worry|worried|terror|horror|apprehensi(?:on|ve)|fright(?:en|ened)?)\\b",
+        "SADNESS": "\\b(sad(?:ness)?|sorrow|gloom(?:y)?|low spirits|unhapp(?:y|iness)|depress(?:ed|ion|ing)|melanchol(?:y|ic)|tearful|weep(?:ing)?|grief|mourning)\\b",
+        "HOPELESSNESS": "\\b(despair|hopeless(?:ness)?|despond(?:ent|ency)|loss of hope|lost hope|absence of hope|give up hope)\\b",
+        "CRUELTY": "\\b(cruel(?:ty)?|inhuman(?:ity)?|malice|malicious|merciless(?:ness)?|ill-treatment|persecut(?:e|ion)|torment(?:ing)?|tortur(?:e|ing)|brutal(?:ity)?|sadis(?:m|tic))\\b",
+        "COMFORT": "\\b(emotional comfort|consol(?:e|ation)|reassur(?:e|ance)|relieving emotional distress|moral or emotional strength|encouragement)\\b"
+      },
+      "cueScope": "lemma-and-definition-v1"
+    }
+  },
+  "prompt": {
+    "examples": [],
+    "lexnames": [
+      "adj.all",
+      "adj.pert",
+      "adv.all",
+      "noun.Tops",
+      "noun.act",
+      "noun.animal",
+      "noun.artifact",
+      "noun.attribute",
+      "noun.body",
+      "noun.cognition",
+      "noun.communication",
+      "noun.event",
+      "noun.feeling",
+      "noun.food",
+      "noun.group",
+      "noun.location",
+      "noun.motive",
+      "noun.object",
+      "noun.person",
+      "noun.phenomenon",
+      "noun.plant",
+      "noun.possession",
+      "noun.process",
+      "noun.quantity",
+      "noun.relation",
+      "noun.shape",
+      "noun.state",
+      "noun.substance",
+      "noun.time",
+      "verb.body",
+      "verb.change",
+      "verb.cognition",
+      "verb.communication",
+      "verb.competition",
+      "verb.consumption",
+      "verb.contact",
+      "verb.creation",
+      "verb.emotion",
+      "verb.motion",
+      "verb.perception",
+      "verb.possession",
+      "verb.social",
+      "verb.stative",
+      "verb.weather",
+      "adj.ppl"
+    ],
+    "system": "You are a strict dictionary sense editor. Verify whether the supplied dictionary sense DIRECTLY denotes each candidate semantic category. Reject categories based only on association, possible use, generic causation, or another sense of the lemma. Read the exact definition in context. A spatial position, ranking, advancement, generic progress or favorable comparison is not organization. Music adaptation is not putting things in order. Physical endurance is not social order. A profession associated with caring is not itself compassion. Keep a category for a direct quality or an action explicitly producing that quality. Return only the supported candidate categories as JSON, or OTHER if none are directly supported.\nApply the supplied game categories by their full semantic scope, including ordinary synonyms; the definition need not contain the category name. Good humor and joking directly express amusement and good spirits. Fondness and affectionate attachment directly express warm affection. Fixing or adjusting timing, amounts or rates directly expresses regulation and regularity. These are direct meanings, not speculative consequences. In contrast, being positioned ahead or having a higher score is only relative position or comparison, never the organization of things.\nCandidate categories may come from an earlier model or broad text cues. A cue is only a review suggestion, never evidence by itself: reject irrelevant mentions, negations, associated occupations and tools. Explicitly tidying or neatening is ORDER, including tidying a room or neatening hair. Removing physical dirt alone is hygiene; that sense does not express orderly arrangement.",
+    "userTemplate": "Candidate categories:\n{senseCategories}\nSource sense: {sourceSenseJSON}\nReturn {\"categories\":[\"CATEGORY\"]} with supported candidates only, or {\"categories\":[\"OTHER\"]}."
+  },
+  "proposal": {
+    "manifest": {
+      "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+      "modelId": "Qwen/Qwen3.5-9B",
+      "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "policyDigest": "cc9e26361c383e25eed489c7d53cf39e079c6a15c5b12c9aa13dfdeff1b10aed",
+      "promptDigest": "5d614ef96deda42278a99cd61f42ffa5ffe7f5bf80605f0604081326252cb28d",
+      "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+      "threshold": -1,
+      "trustedDecisionBases": [],
+      "version": "wyrmle-semantic-refinement-1",
+      "reviewScope": "all-source-senses",
+      "sourceSelection": "baseline-agreement-then-directness-v1"
+    },
+    "policy": {
+      "classification": "independent-classification-of-every-source-sense",
+      "cosineMinimum": -1,
+      "input": "all-dictionary-senses-sorted-by-id-with-lemma-pos-lexical-domain",
+      "invalid": "hard-fail",
+      "maxAttempts": 3,
+      "maxTokens": 128,
+      "meaningGroups": {
+        "ANGER": [
+          {
+            "concepts": [
+              "becoming calm",
+              "becoming relaxed",
+              "calm and composure",
+              "calming agitation",
+              "cheerfulness and good spirits",
+              "compassion and humane care",
+              "compassion for suffering",
+              "delight and enjoyment",
+              "forgiveness instead of resentment",
+              "friendliness and goodwill",
+              "gentleness and even temper",
+              "happiness and joy",
+              "kindness and consideration",
+              "kindness and forgiveness",
+              "laughter and mirth",
+              "patience and even temper",
+              "peace and freedom from disputes",
+              "peace of mind",
+              "peace without strife or turmoil",
+              "relaxation without anxiety",
+              "smiling and pleasure",
+              "contentment and satisfaction",
+              "warm affection and appreciation"
+            ],
+            "label": "OPPOSE",
+            "relation": "opposite"
+          },
+          {
+            "concepts": [
+              "anger and indignation",
+              "anger caused by irritation",
+              "annoyance and mild anger",
+              "feeling or expressing anger",
+              "fury and intense anger",
+              "resentment and bitter anger",
+              "wrath and intense anger"
+            ],
+            "label": "SAME",
+            "relation": "similar"
+          }
+        ],
+        "CHAOS": [
+          {
+            "concepts": [
+              "a stable social order",
+              "a systematic and orderly way of doing things",
+              "an even and unruffled temper",
+              "arranging things methodically",
+              "becoming calm after agitation",
+              "becoming relaxed",
+              "calm and composure instead of turmoil",
+              "calming agitation",
+              "clarity instead of confusion",
+              "clear expression instead of confusion",
+              "harmonious arrangement of parts",
+              "harmony and freedom from disputes",
+              "harmony between parts",
+              "logical and orderly relations between parts",
+              "logical arrangement",
+              "methodical and well organized order",
+              "methodical organization",
+              "order without disruption",
+              "organized and methodical arrangement",
+              "peace and quiet",
+              "peace of mind",
+              "peace without strife or turmoil",
+              "planning an orderly arrangement",
+              "proper arrangement and order",
+              "quiet without agitation",
+              "refreshing tranquility without tension",
+              "regaining composure",
+              "relaxation without anxiety",
+              "self-possession instead of agitation",
+              "serenity and an untroubled disposition",
+              "sorting into an orderly arrangement",
+              "structure and arrangement",
+              "tidiness and order",
+              "tranquility without disturbances"
+            ],
+            "label": "OPPOSE",
+            "relation": "opposite"
+          },
+          {
+            "concepts": [
+              "a confused disorderly state",
+              "absence of law or control",
+              "causing disorder",
+              "confused and disordered thought",
+              "disarray and untidiness",
+              "disorder and misplaced things",
+              "disorderly conduct",
+              "disturbed public order",
+              "extreme confusion and disorder",
+              "lack of order or plan",
+              "lawlessness and disorder",
+              "mess and disorder",
+              "turmoil and disturbance",
+              "unpredictable disorder"
+            ],
+            "label": "SAME",
+            "relation": "similar"
+          }
+        ],
+        "CRUELTY": [
+          {
+            "concepts": [
+              "compassion and humane care",
+              "compassion for suffering",
+              "empathy for others",
+              "gentleness and even temper",
+              "humaneness and consideration",
+              "kindness and benevolence",
+              "kindness and consideration",
+              "kindness and forgiveness",
+              "mercy toward others",
+              "affection and protective care"
+            ],
+            "label": "OPPOSE",
+            "relation": "opposite"
+          },
+          {
+            "concepts": [
+              "brutality and extreme cruelty",
+              "cruel and inhumane behavior",
+              "deliberately causing pain",
+              "inhumanity and lack of compassion",
+              "lack of mercy",
+              "malicious intent to hurt others"
+            ],
+            "label": "SAME",
+            "relation": "similar"
+          }
+        ],
+        "DESPAIR": [
+          {
+            "concepts": [
+              "an optimistic outlook",
+              "confident hopefulness",
+              "encouragement and support",
+              "giving hope and encouragement",
+              "hope for a better outcome",
+              "optimism about the future",
+              "trust and confident belief",
+              "resilience and constructive recovery from adversity"
+            ],
+            "label": "OPPOSE",
+            "relation": "opposite"
+          },
+          {
+            "concepts": [
+              "despair and lost hope",
+              "hopeless despondency",
+              "hopelessness",
+              "the absence of hope"
+            ],
+            "label": "SAME",
+            "relation": "similar"
+          }
+        ],
+        "FEAR": [
+          {
+            "concepts": [
+              "becoming calm",
+              "becoming relaxed",
+              "being safe from danger",
+              "boldness and daring",
+              "bravery and freedom from fear",
+              "calm and composure",
+              "calming agitation",
+              "confidence in oneself",
+              "courage in the face of danger",
+              "freedom from fear and anxiety",
+              "peace of mind",
+              "reassurance and restored confidence",
+              "relaxation without anxiety",
+              "safety from danger",
+              "security without fear or doubt"
+            ],
+            "label": "OPPOSE",
+            "relation": "opposite"
+          },
+          {
+            "concepts": [
+              "anxiety and apprehension",
+              "anxiety and nervous fear",
+              "anxious fear",
+              "anxious uneasiness",
+              "being afraid",
+              "dread of danger",
+              "fear of danger",
+              "horror and profound fear",
+              "provoking fear",
+              "terror and intense fear",
+              "worry and anxiety"
+            ],
+            "label": "SAME",
+            "relation": "similar"
+          }
+        ],
+        "MELANCHOLY": [
+          {
+            "concepts": [
+              "cheerfulness and good spirits",
+              "delight and enjoyment",
+              "happiness and joy",
+              "laughter and mirth",
+              "merriment and joy",
+              "smiling and pleasure"
+            ],
+            "label": "OPPOSE",
+            "relation": "opposite"
+          },
+          {
+            "concepts": [
+              "melancholy gloom",
+              "melancholy sadness",
+              "sadness and sorrow",
+              "sadness and unhappiness",
+              "sadness expressed in manner",
+              "sadness expressed in tears",
+              "thoughtful sadness"
+            ],
+            "label": "SAME",
+            "relation": "similar"
+          }
+        ]
+      },
+      "modelId": "Qwen/Qwen3.5-9B",
+      "modelSha256": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+      "modelSourceRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "preserve": [],
+      "promptDigest": "5d614ef96deda42278a99cd61f42ffa5ffe7f5bf80605f0604081326252cb28d",
+      "quantizationRepository": "unsloth/Qwen3.5-9B-GGUF",
+      "quantizationRevision": "3885219b6810b007914f3a7950a8d1b469d598a5",
+      "responseAggregation": "source-checked-individual-responses-then-deterministic-category-map",
+      "retrievalChannels": [
+        "lemma-definition",
+        "definition",
+        "lemma"
+      ],
+      "review": [
+        "every-inventory-word-including-neutral-and-previously-trusted"
+      ],
+      "runtime": "llama.cpp-b11146",
+      "runtimeBuild": "b11146-7fe450e19",
+      "seed": 123,
+      "temperature": 0.7,
+      "thinking": false,
+      "validationRetryPrompt": "Your response failed validation: {error}. Return only the categories JSON, using one to four distinct supplied categories, or OTHER alone. Do not include explanations or source indices.",
+      "version": "wyrmle-independent-source-categories-v2",
+      "constrainedFinalLabel": true,
+      "reviewScope": "all-source-senses",
+      "senseCategories": {
+        "CALM": "Calm, composure, tranquility, patience, peace, freedom from strife, turmoil, agitation or disturbance; actions explicitly calming someone. Not mere caution, low physical sound volume, weather, inactivity or absence of wind.",
+        "JOY": "Happiness, joy, pleasure, cheerfulness, amusement, laughter, satisfaction or contentment; explicitly creating these feelings.",
+        "KINDNESS": "Kindness, benevolence, compassion, mercy, humane concern, gentleness in treatment, warm affection, appreciation, friendliness, goodwill, generosity, helpfulness or forgiveness. Not an occupation that may provide care, physical softness, or a posture that may accompany affection.",
+        "ORDER": "Order, organization, methodical or sequential arrangement, logical patterns, stable social order, harmony, coherence or clarity of thought/expression; actions explicitly ordering, sequencing, organizing, regulating or clarifying. Not an object merely having structure, a field studying logic, musical adaptation for different instruments, generic physical firmness, or physical transparency.",
+        "HOPE": "Hope, optimism, positive expectation about the future, promising favorable prospects, indications of likely positive outcomes, encouragement or explicitly inspiring hope. Not mere opportunity, convenient timing, or bare possibility without favorable prospects.",
+        "CONFIDENCE": "Confidence, assurance, trust in honesty or reliability, certainty or confident belief. Not merely holding an opinion, doctrinal religious belief, a financial property trust or a religious institution; religious doctrines belong to FIELD.",
+        "RESILIENCE": "Constructive perseverance, persistence despite adversity, resilience or emotional recovery. Not physical material elasticity or repairing an object.",
+        "COURAGE": "Courage, bravery, boldness or facing adversity without surrendering to fear; explicitly restoring courage.",
+        "SAFETY": "Safety, protection, security or freedom from danger or threat. Not a weapon, occupation, building or other object that could offer protection.",
+        "ANGER": "Anger, wrath, annoyance, irritation, resentment, indignation or explicitly provoking anger. Not unrelated negative feelings, mere bodily redness, exertion, generic violence or bloodshed.",
+        "FEAR": "Fear, anxiety, dread, worry, terror, apprehension or explicitly frightening someone. Not mere danger, injury, darkness or something potentially frightening.",
+        "SADNESS": "Sadness, sorrow, gloom, low spirits, unhappiness or explicitly depressing someone emotionally. Not unrelated negativity, physical darkness or literal downward movement.",
+        "HOPELESSNESS": "Despair, hopelessness, despondency, loss of hope, giving up hope or expecting things cannot improve. Not ordinary sadness, deception, impurity or unrelated negativity. A definition explicitly including both melancholy and despondency expresses SADNESS and HOPELESSNESS.",
+        "CRUELTY": "Cruelty, inhumanity, malicious harm, mercilessness, lack of compassion, ill-treatment, persecution or tormenting others. An action that causes suffering qualifies when its lemma and definition denote harmful treatment. Generic injury, violence, bloodshed, tools, medical treatment, or merely using a tool are insufficient.",
+        "DISORDER": "Disorder, confusion, disarray, mess, lawlessness, turmoil, lack of organization or explicitly disrupting order. Not a medical illness, politics, random physical phenomena or unrelated unease.",
+        "ROLE": "A person or group defined by an occupation, membership, affiliation, title or associated function, rather than an explicitly denoted emotion or moral trait.",
+        "OBJECT": "An object, substance, organism, body part, food, device, furniture or artifact; properties or possible uses do not turn the object itself into an emotional or abstract quality.",
+        "FIELD": "A field of study, science, research subject, religion or belief system. Studying a quality does not denote the quality itself.",
+        "PHYSICAL": "A physical property, position, color, action, injury, phenomenon or material process without an explicitly denoted scoring quality or feeling.",
+        "OTHER": "Any meaning not directly expressing the defined semantic categories, including grammatical words, caution, quantities and unrelated abstract concepts.",
+        "COMFORT": "Emotional comfort, consolation, encouragement, reassurance, relieving emotional distress or giving moral/emotional strength and support. Not merely physical comfort, furniture, bodily strength or medical treatment."
+      },
+      "categoryNames": {
+        "CALM": "calmness and composure",
+        "JOY": "happiness and good spirits",
+        "KINDNESS": "kindness and humane care",
+        "ORDER": "order, organization and clarity",
+        "HOPE": "hope and optimism",
+        "CONFIDENCE": "confidence and trust",
+        "RESILIENCE": "resilience and constructive perseverance",
+        "COURAGE": "courage and bravery",
+        "SAFETY": "safety and security",
+        "ANGER": "anger and resentment",
+        "FEAR": "fear and anxiety",
+        "SADNESS": "sadness and low spirits",
+        "HOPELESSNESS": "despair and hopelessness",
+        "CRUELTY": "cruelty and malicious harm",
+        "DISORDER": "disorder and confusion",
+        "ROLE": "an occupation or affiliation",
+        "OBJECT": "a physical object or substance",
+        "FIELD": "a field or belief system",
+        "PHYSICAL": "a physical property or action",
+        "OTHER": "another meaning",
+        "COMFORT": "emotional comfort and support"
+      },
+      "categoryRelations": {
+        "ANGER": {
+          "CALM": "opposite",
+          "JOY": "opposite",
+          "KINDNESS": "opposite",
+          "ANGER": "similar",
+          "COMFORT": "opposite"
+        },
+        "CHAOS": {
+          "CALM": "opposite",
+          "ORDER": "opposite",
+          "DISORDER": "similar"
+        },
+        "CRUELTY": {
+          "KINDNESS": "opposite",
+          "CRUELTY": "similar",
+          "COMFORT": "opposite"
+        },
+        "DESPAIR": {
+          "HOPE": "opposite",
+          "CONFIDENCE": "opposite",
+          "RESILIENCE": "opposite",
+          "HOPELESSNESS": "similar",
+          "COMFORT": "opposite"
+        },
+        "FEAR": {
+          "CALM": "opposite",
+          "COURAGE": "opposite",
+          "CONFIDENCE": "opposite",
+          "SAFETY": "opposite",
+          "FEAR": "similar",
+          "COMFORT": "opposite"
+        },
+        "MELANCHOLY": {
+          "JOY": "opposite",
+          "SADNESS": "similar",
+          "COMFORT": "opposite"
+        }
+      },
+      "relationPriority": [
+        "similar",
+        "opposite"
+      ],
+      "independentSenseInference": true,
+      "topP": 0.8,
+      "topK": 20,
+      "minP": 0,
+      "presencePenalty": 1.5,
+      "repeatPenalty": 1,
+      "sourceSelection": "baseline-agreement-then-directness-v1",
+      "sourceDomainPriority": {
+        "adj.all": 0,
+        "adj.pert": 0,
+        "adv.all": 0,
+        "noun.Tops": 5,
+        "noun.act": 3,
+        "noun.animal": 5,
+        "noun.artifact": 5,
+        "noun.attribute": 0,
+        "noun.body": 5,
+        "noun.cognition": 2,
+        "noun.communication": 2,
+        "noun.event": 5,
+        "noun.feeling": 0,
+        "noun.food": 5,
+        "noun.group": 4,
+        "noun.location": 5,
+        "noun.motive": 5,
+        "noun.object": 5,
+        "noun.person": 5,
+        "noun.phenomenon": 5,
+        "noun.plant": 5,
+        "noun.possession": 5,
+        "noun.process": 5,
+        "noun.quantity": 5,
+        "noun.relation": 2,
+        "noun.shape": 5,
+        "noun.state": 0,
+        "noun.substance": 5,
+        "noun.time": 5,
+        "verb.body": 1,
+        "verb.change": 1,
+        "verb.cognition": 1,
+        "verb.communication": 1,
+        "verb.competition": 1,
+        "verb.consumption": 1,
+        "verb.contact": 1,
+        "verb.creation": 1,
+        "verb.emotion": 1,
+        "verb.motion": 1,
+        "verb.perception": 1,
+        "verb.possession": 1,
+        "verb.social": 1,
+        "verb.stative": 1,
+        "verb.weather": 1,
+        "adj.ppl": 0
+      }
+    },
+    "prompt": {
+      "examples": [],
+      "lexnames": [
+        "adj.all",
+        "adj.pert",
+        "adv.all",
+        "noun.Tops",
+        "noun.act",
+        "noun.animal",
+        "noun.artifact",
+        "noun.attribute",
+        "noun.body",
+        "noun.cognition",
+        "noun.communication",
+        "noun.event",
+        "noun.feeling",
+        "noun.food",
+        "noun.group",
+        "noun.location",
+        "noun.motive",
+        "noun.object",
+        "noun.person",
+        "noun.phenomenon",
+        "noun.plant",
+        "noun.possession",
+        "noun.process",
+        "noun.quantity",
+        "noun.relation",
+        "noun.shape",
+        "noun.state",
+        "noun.substance",
+        "noun.time",
+        "verb.body",
+        "verb.change",
+        "verb.cognition",
+        "verb.communication",
+        "verb.competition",
+        "verb.consumption",
+        "verb.contact",
+        "verb.creation",
+        "verb.emotion",
+        "verb.motion",
+        "verb.perception",
+        "verb.possession",
+        "verb.social",
+        "verb.stative",
+        "verb.weather",
+        "adj.ppl"
+      ],
+      "system": "Classify the ONE supplied dictionary sense, using the supplied semantic categories. Interpret the definition in the context of its lemma, part of speech and lexical domain. Classify this exact sense, not other meanings of the same word.\nAssign categories only when the sense directly denotes them. Read every clause. Distinguish a quality from an object merely possessing it, a field studying it, a person whose occupation is associated with it, or an action that might incidentally cause it. An explicitly denoted emotional or moral trait counts, including when it defines a person. An action explicitly producing a quality can count. Do not substitute one negative emotion for another or mistake a quality for its negation. Do not infer anger or cruelty merely from generic violence, injury or a possible use of a tool.\nReturn one to four distinct categories if the definition explicitly contains multiple meanings. Use ROLE, OBJECT, FIELD, PHYSICAL or OTHER for non-scoring meanings. OTHER must stand alone. Return only the categories JSON. The source identity is fixed by this request and is validated outside the model.",
+      "userTemplate": "Category definitions:\n{senseCategories}\nThe single source sense to classify:\n{numberedLemmaPosLexicalDomainDefinitions}\nReturn only {\"categories\":[\"CATEGORY\"]}. Select categories for this exact sense, not a possible association or a different sense of its lemma."
+    }
+  }
+}

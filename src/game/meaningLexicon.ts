@@ -105,7 +105,7 @@ export function validateMeaningLexicon(encounter: LetterStrikeEncounter): void {
   if (assessment && assessment.assessedWords < Object.keys(lexicon.words).length) {
     throw new Error('Puzzle meaning data exceeds its assessed vocabulary coverage.')
   }
-  let refinedWords = 0
+  let refinedWords = 0, sourceReviewedWords = 0
   for (const [word, entry] of Object.entries(lexicon.words)) {
     if (!/^[A-Z]+$/.test(word) || word.length < lexicon.minimumWordLength || word.length > lexicon.maximumWordLength
       || !entry.definition?.trim() || !entry.senseId || !entry.lemma || !entry.reason
@@ -116,9 +116,13 @@ export function validateMeaningLexicon(encounter: LetterStrikeEncounter): void {
       if (entry.evidence !== 'model-assessed') throw new Error(`Missing model assessment for ${word}.`)
       const scores = readWordSemanticAssessment(entry.assessment)
       if (scores.sensesEvaluated > assessment.assessedSenses) throw new Error(`Invalid assessed sense count for ${word}.`)
-      if (scores.decisionBasis === 'local-llm') {
+      if (scores.decisionBasis === 'local-llm' || scores.decisionBasis === 'source-reviewed') {
         refinedWords++
         if (assessment.method !== 'local-llm' && !assessment.refinement) throw new Error(`LLM refinement for ${word} is missing its versioned metadata.`)
+      }
+      if (scores.decisionBasis === 'source-reviewed') {
+        sourceReviewedWords++
+        if (!assessment.refinement?.sourceReviewDigest) throw new Error(`Source review for ${word} is missing its versioned metadata.`)
       }
     } else if (Object.hasOwn(entry, 'assessment') || entry.evidence === 'model-assessed') {
       throw new Error(`Model assessment for ${word} is missing its versioned metadata.`)
@@ -126,4 +130,7 @@ export function validateMeaningLexicon(encounter: LetterStrikeEncounter): void {
   }
   if (assessment?.refinement && (assessment.refinement.eligibleWords > Object.keys(lexicon.words).length
     || assessment.refinement.reviewedWords !== refinedWords)) throw new Error('LLM refinement coverage does not match stored word evidence.')
+  if ((assessment?.refinement?.sourceReviewedWords ?? 0) !== sourceReviewedWords) {
+    throw new Error('Source review coverage does not match stored word evidence.')
+  }
 }

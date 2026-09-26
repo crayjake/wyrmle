@@ -32,7 +32,24 @@ export function validatePuzzle(candidate: CandidatePuzzle, analysis: PuzzleAnaly
     reject('stale-or-incomplete-meanings', 'Every allowed spelling needs current definition and semantic evidence compiled from the complete dictionary before solving.')
   }
   if (config.requireMeaningRefinement && !isMeaningPublicationReady(candidate.encounter)) {
-    reject('meaning-refinement-incomplete', 'Publication requires current contextual meaning review for every eligible spelling in the full tile supply.')
+    reject('meaning-refinement-incomplete', 'Publication requires complete contextual review and an audited final meaning for every spelling in the full tile supply.')
+  }
+  const choiceGates = [
+    ['familiarCounterOpeningLemmas', config.minimumCounterOpeningLemmas ?? 0],
+    ['multiHitCounterOpenings', config.minimumMultiHitCounterOpenings ?? 0],
+    ['meaningBoostedOpenings', config.minimumMeaningBoostedOpenings ?? 0],
+    ['winningCounterLemmas', config.minimumWinningCounterLemmas ?? 0],
+    ['familiarWinningOpenings', config.minimumFamiliarWinningOpenings ?? 0],
+  ] as const
+  if (choiceGates.some(([, minimum]) => minimum > 0)) {
+    const choices = analysis.semanticChoices
+    if (!choices?.openingEnumerationComplete || choices.encounterKey !== stateKey(createLetterStrikeGame(candidate.encounter))
+      || choices.minimumCommonness < config.minimumWinningWordCommonness) {
+      reject('missing-semantic-choice-audit', 'Publication needs a complete current audit of familiar counter choices and replayed winning routes.')
+    } else for (const [field, minimum] of choiceGates) {
+      if (new Set(choices[field]).size < minimum) reject(`few-${field}`,
+        `Only ${new Set(choices[field]).size} ${field}; publication requires at least ${minimum}.`)
+    }
   }
   if (candidate.encounter.finiteRefills) {
     if (!analysis.refillPressure || analysis.refillPressure.encounterKey !== stateKey(createLetterStrikeGame(candidate.encounter))) {

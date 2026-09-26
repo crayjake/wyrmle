@@ -150,6 +150,10 @@
         {
           "senseId": "oewn-dejected__3.00.00..",
           "definition": "affected or marked by low spirits"
+        },
+        {
+          "senseId": "oewn-deject__2.37.00..",
+          "definition": "lower someone's spirits; make downhearted"
         }
       ],
       "legacyRelation": null
@@ -239,6 +243,14 @@
     {
       "id": "CHAOS/DISORGANIZED",
       "reason": "DISORGANIZED is also an admitted inflection of DISORGANIZE; removing organization and lacking organization both reinforce CHAOS."
+    }
+  ],
+  "errata": [
+    {
+      "case": "MELANCHOLY/DEJECTED",
+      "reviewedAt": "2026-09-26",
+      "change": "Accept the source-backed past-participle/verb sense as well as the adjective. Lowering spirits directly produces melancholy, under the same causative-meaning policy as CLOUD. Expected label and quality thresholds are unchanged.",
+      "originalFileSha256": "68cbd9003f72030842803e8f5371fbdb61e4c17068e0963847a8e17f473902ea"
     }
   ]
 }

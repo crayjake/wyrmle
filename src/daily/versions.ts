@@ -26,3 +26,6 @@ export const MEANING_GAME_VERSION = 'letter-strike-7'
 export const MEANING_PUZZLE_VERSION = 10
 // Same physical puzzle and combat rules; corrected coverage and meaning profile.
 export const MEANING_COVERAGE_PUZZLE_VERSION = 11
+// These two explicitly requested dates share one assessed challenge.
+export const MODEL_ASSESSED_DATES: readonly string[] = ['2026-09-26', '2026-09-27']
+export const MODEL_ASSESSED_PUZZLE_VERSION = 12

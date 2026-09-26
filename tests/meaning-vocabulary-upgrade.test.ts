@@ -26,6 +26,7 @@ class MemoryStorage implements StorageLike {
 
 const corrected = getDailyPuzzleForVersion('2026-09-25', 'letter-strike-7', 11)
 const archived = getDailyPuzzleForVersion(corrected.puzzleId, 'letter-strike-7', 10)
+// The model release is September 26–27; September 25 stays on its exact v11.
 const current = getDailyPuzzle('2026-09-25')
 const at = '2026-09-25T17:00:00.000Z'
 const key = getRunStorageKey(corrected.puzzleId)
@@ -51,7 +52,7 @@ function historicalRun(turns: number[][], compact = true, undosUsed = 0, publica
     playedWords: game.playedWords, status: game.status,
     completedAt: game.status === 'playing' ? null : at,
     revision: turns.length + 3, undosUsed,
-    undoHistory: compact ? undoHistory.map(position) : undoHistory,
+    undoHistory: compact && publication.encounter.meaningLexicon ? undoHistory.map(position) : undoHistory,
   })
   return { game, raw }
 }
@@ -88,8 +89,9 @@ test('only the exact reviewed v10 to v11 meaning correction qualifies for an act
 })
 
 test('compact and former full v10 saves keep their scored publication after the model update', () => {
-  assert.equal(current.puzzleVersion, 12)
-  assert.equal(canUpgradeMeaningVocabulary(archived, current), false)
+  assert.equal(current.puzzleVersion, 11)
+  // Historical compatibility does not authorize migrating a played attempt.
+  assert.equal(canUpgradeMeaningVocabulary(archived, current), true)
   for (const compact of [true, false]) {
     const storage = new MemoryStorage()
     const { game, raw } = historicalRun([[2, 1, 3]], compact, 1) // BAR
@@ -155,7 +157,7 @@ test('a previously scored CALM turn stays on v10 when corrected semantics would 
   resetDailyPuzzle(corrected.puzzleId, storage)
   const restarted = loadDailySession(current, storage)
   assert.equal(restarted.game!.encounter, current.encounter)
-  assert.ok(restarted.game!.encounter.meaningLexicon!.assessment)
+  assert.equal(restarted.game!.encounter, corrected.encounter)
 })
 
 test('v10 wins, losses and terminal runs without separate results keep their exact publication and completion', () => {
@@ -215,7 +217,7 @@ test('the model publication validates old evidence and rejects replacement from 
 })
 
 test('scored v11 runs and undo positions stay on v11 until an explicit reset', () => {
-  assert.equal(current.puzzleVersion, 12)
+  assert.equal(current.puzzleVersion, 11)
   assert.equal(canUpgradeMeaningVocabulary(corrected, current), false)
   for (const compact of [true, false]) {
     const storage = new MemoryStorage()
@@ -262,8 +264,8 @@ test('v11 completions remain exact under the model publication, including a miss
   }
 })
 
-test('fresh sessions and untouched v11 Begin snapshots use the model-assessed publication without rewriting storage', () => {
-  assert.equal(current.puzzleVersion, 12)
+test('September 25 fresh sessions and untouched Begin snapshots retain the v11 publication without rewriting storage', () => {
+  assert.equal(current.puzzleVersion, 11)
   for (const beginOnly of [false, true]) {
     const storage = new MemoryStorage()
     const raw = beginOnly ? historicalRun([], true, 0, corrected).raw : null
@@ -271,10 +273,84 @@ test('fresh sessions and untouched v11 Begin snapshots use the model-assessed pu
     const loaded = loadDailySession(current, storage)
     assert.equal(loaded.error, null)
     assert.equal(loaded.game!.encounter, current.encounter)
-    assert.ok(loaded.game!.encounter.meaningLexicon!.assessment)
+    assert.equal(loaded.game!.encounter, corrected.encounter)
     assert.equal(loaded.game!.playedWords.length, 0)
     assert.equal(loaded.undosUsed, 0)
     assert.equal(storage.getItem(key), raw)
     assert.equal(storage.getItem(getResultStorageKey(current.puzzleId)), null)
+  }
+})
+
+const modelPublication = getDailyPuzzle('2026-09-26')
+const tomorrow = getDailyPuzzle('2026-09-27')
+const archivedTomorrow = getDailyPuzzleForVersion('2026-09-27', 'letter-strike-4', 4)
+const tomorrowKey = getRunStorageKey(tomorrow.puzzleId)
+
+test('tomorrow shares the new encounter while played v4 runs and their undo history remain pinned', () => {
+  assert.equal(tomorrow.puzzleVersion, 12)
+  assert.equal(tomorrow.encounter, modelPublication.encounter)
+  for (const compact of [true, false]) {
+    const storage = new MemoryStorage()
+    const today = historicalRun([[2, 1, 3]], true, 0, corrected)
+    storage.setItem(key, today.raw)
+    const fixture = historicalRun([[0, 1, 2]], compact, 0, archivedTomorrow) // JOY
+    storage.setItem(tomorrowKey, fixture.raw)
+    const loaded = loadDailySession(tomorrow, storage)
+    assert.equal(loaded.error, null)
+    assert.equal(loaded.game!.encounter, archivedTomorrow.encounter)
+    assert.deepEqual(loaded.game, fixture.game)
+    assert.equal(loaded.undoHistory[0].encounter, archivedTomorrow.encounter)
+    assert.equal(storage.getItem(tomorrowKey), fixture.raw)
+    const undone = undoDailyRun(tomorrow, storage, loaded.revision)
+    assert.equal(undone.game!.encounter, archivedTomorrow.encounter)
+    assert.equal(undone.game!.playedWords.length, 0)
+    assert.equal(loadDailySession(tomorrow, storage).game!.encounter, archivedTomorrow.encounter)
+    resetDailyPuzzle(tomorrow.puzzleId, storage)
+    assert.equal(loadDailySession(tomorrow, storage).game!.encounter, modelPublication.encounter)
+    assert.equal(storage.getItem(tomorrowKey), null)
+    assert.equal(storage.getItem(key), today.raw)
+    assert.equal(loadDailySession(current, storage).game!.encounter, corrected.encounter)
+  }
+})
+
+test('tomorrow preserves completed v4 evidence until reset and then starts the shared v12 puzzle', () => {
+  const turns = [[0, 1, 2], [4, 5, 15, 18, 16], [11, 20, 9, 10, 14, 17], [8, 21, 22, 27], [24, 30, 33, 26, 25, 19]]
+  const fixture = historicalRun(turns, true, 0, archivedTomorrow)
+  assert.equal(fixture.game.status, 'won')
+  const expected = buildDailyResult(archivedTomorrow, fixture.game, at)
+  const resultKey = getResultStorageKey(tomorrow.puzzleId)
+  const resultBytes = JSON.stringify({ saveVersion: SAVE_VERSION, result: expected })
+  for (const separateResult of [true, false]) {
+    const storage = new MemoryStorage()
+    storage.setItem(tomorrowKey, fixture.raw)
+    if (separateResult) storage.setItem(resultKey, resultBytes)
+    const loaded = loadDailySession(tomorrow, storage)
+    assert.equal(loaded.error, null)
+    assert.equal(loaded.game!.encounter, archivedTomorrow.encounter)
+    assert.deepEqual(loaded.result, expected)
+    assert.equal(storage.getItem(tomorrowKey), fixture.raw)
+    assert.equal(storage.getItem(resultKey), separateResult ? resultBytes : null)
+    const saved = saveDailyRun(tomorrow, createLetterStrikeGame(tomorrow.encounter), storage)
+    assert.deepEqual(saved.result, expected)
+    assert.equal(storage.getItem(resultKey), resultBytes)
+    resetDailyPuzzle(tomorrow.puzzleId, storage)
+    assert.equal(loadDailySession(tomorrow, storage).game!.encounter, tomorrow.encounter)
+    assert.equal(storage.getItem(tomorrowKey), null)
+    assert.equal(storage.getItem(resultKey), null)
+  }
+})
+
+test('tomorrow fresh sessions and untouched v4 Begin snapshots load the shared v12 without rewriting storage', () => {
+  for (const beginOnly of [false, true]) {
+    const storage = new MemoryStorage()
+    const raw = beginOnly ? historicalRun([], true, 0, archivedTomorrow).raw : null
+    if (raw) storage.setItem(tomorrowKey, raw)
+    const loaded = loadDailySession(tomorrow, storage)
+    assert.equal(loaded.error, null)
+    assert.equal(loaded.game!.encounter, modelPublication.encounter)
+    assert.equal(loaded.game!.playedWords.length, 0)
+    assert.equal(loaded.undosUsed, 0)
+    assert.equal(storage.getItem(tomorrowKey), raw)
+    assert.equal(storage.getItem(key), null)
   }
 })

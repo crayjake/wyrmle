@@ -15,6 +15,11 @@ export const defaultAnalysisConfig = {
 export type ValidationConfig = {
   /** Release requires complete contextual review; draft search may use the base assessment. */
   requireMeaningRefinement?: boolean
+  minimumCounterOpeningLemmas?: number
+  minimumMultiHitCounterOpenings?: number
+  minimumMeaningBoostedOpenings?: number
+  minimumWinningCounterLemmas?: number
+  minimumFamiliarWinningOpenings?: number
   requireOpeningSafety?: boolean
   openingSafetyScope?: 'all-damaging-openings' | 'all-valid-openings'
   allowRestrictedOpeningSafety?: boolean

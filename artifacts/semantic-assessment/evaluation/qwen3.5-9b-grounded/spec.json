@@ -1,0 +1,331 @@
+{
+  "manifest": {
+    "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+    "modelId": "Qwen/Qwen3.5-9B",
+    "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "policyDigest": "5ab81475969a0201c4494a8b1a83c55fdc5b51ed49417cbf134817b1712ef085",
+    "promptDigest": "29efbf75c97d1bcedd486b0a8100e6329d62d2dc13a3e6cdd849d071364b826e",
+    "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+    "threshold": -1,
+    "trustedDecisionBases": [],
+    "version": "wyrmle-semantic-refinement-1",
+    "reviewScope": "all-source-senses"
+  },
+  "policy": {
+    "classification": "all-senses-direct-denotation-with-association-exclusions",
+    "cosineMinimum": -1,
+    "input": "all-dictionary-senses-sorted-by-id-with-lemma-pos-lexical-domain",
+    "invalid": "hard-fail",
+    "maxAttempts": 3,
+    "maxTokens": 384,
+    "meaningGroups": {
+      "ANGER": [
+        {
+          "concepts": [
+            "becoming calm",
+            "becoming relaxed",
+            "calm and composure",
+            "calming agitation",
+            "cheerfulness and good spirits",
+            "compassion and humane care",
+            "compassion for suffering",
+            "delight and enjoyment",
+            "forgiveness instead of resentment",
+            "friendliness and goodwill",
+            "gentleness and even temper",
+            "happiness and joy",
+            "kindness and consideration",
+            "kindness and forgiveness",
+            "laughter and mirth",
+            "patience and even temper",
+            "peace and freedom from disputes",
+            "peace of mind",
+            "peace without strife or turmoil",
+            "relaxation without anxiety",
+            "smiling and pleasure",
+            "contentment and satisfaction",
+            "warm affection and appreciation"
+          ],
+          "label": "CALM_KINDNESS_JOY",
+          "relation": "opposite"
+        },
+        {
+          "concepts": [
+            "anger and indignation",
+            "anger caused by irritation",
+            "annoyance and mild anger",
+            "feeling or expressing anger",
+            "fury and intense anger",
+            "resentment and bitter anger",
+            "wrath and intense anger"
+          ],
+          "label": "ANGER",
+          "relation": "similar"
+        }
+      ],
+      "CHAOS": [
+        {
+          "concepts": [
+            "a stable social order",
+            "a systematic and orderly way of doing things",
+            "an even and unruffled temper",
+            "arranging things methodically",
+            "becoming calm after agitation",
+            "becoming relaxed",
+            "calm and composure instead of turmoil",
+            "calming agitation",
+            "clarity instead of confusion",
+            "clear expression instead of confusion",
+            "harmonious arrangement of parts",
+            "harmony and freedom from disputes",
+            "harmony between parts",
+            "logical and orderly relations between parts",
+            "logical arrangement",
+            "methodical and well organized order",
+            "methodical organization",
+            "order without disruption",
+            "organized and methodical arrangement",
+            "peace and quiet",
+            "peace of mind",
+            "peace without strife or turmoil",
+            "planning an orderly arrangement",
+            "proper arrangement and order",
+            "quiet without agitation",
+            "refreshing tranquility without tension",
+            "regaining composure",
+            "relaxation without anxiety",
+            "self-possession instead of agitation",
+            "serenity and an untroubled disposition",
+            "sorting into an orderly arrangement",
+            "structure and arrangement",
+            "tidiness and order",
+            "tranquility without disturbances"
+          ],
+          "label": "ORDER_CLARITY_CALM",
+          "relation": "opposite"
+        },
+        {
+          "concepts": [
+            "a confused disorderly state",
+            "absence of law or control",
+            "causing disorder",
+            "confused and disordered thought",
+            "disarray and untidiness",
+            "disorder and misplaced things",
+            "disorderly conduct",
+            "disturbed public order",
+            "extreme confusion and disorder",
+            "lack of order or plan",
+            "lawlessness and disorder",
+            "mess and disorder",
+            "turmoil and disturbance",
+            "unpredictable disorder"
+          ],
+          "label": "DISORDER_CONFUSION",
+          "relation": "similar"
+        }
+      ],
+      "CRUELTY": [
+        {
+          "concepts": [
+            "compassion and humane care",
+            "compassion for suffering",
+            "empathy for others",
+            "gentleness and even temper",
+            "humaneness and consideration",
+            "kindness and benevolence",
+            "kindness and consideration",
+            "kindness and forgiveness",
+            "mercy toward others",
+            "affection and protective care"
+          ],
+          "label": "KINDNESS_MERCY",
+          "relation": "opposite"
+        },
+        {
+          "concepts": [
+            "brutality and extreme cruelty",
+            "cruel and inhumane behavior",
+            "deliberately causing pain",
+            "inhumanity and lack of compassion",
+            "lack of mercy",
+            "malicious intent to hurt others"
+          ],
+          "label": "CRUELTY",
+          "relation": "similar"
+        }
+      ],
+      "DESPAIR": [
+        {
+          "concepts": [
+            "an optimistic outlook",
+            "confident hopefulness",
+            "encouragement and support",
+            "giving hope and encouragement",
+            "hope for a better outcome",
+            "optimism about the future",
+            "trust and confident belief",
+            "resilience and constructive recovery from adversity"
+          ],
+          "label": "HOPE_CONFIDENCE",
+          "relation": "opposite"
+        },
+        {
+          "concepts": [
+            "despair and lost hope",
+            "hopeless despondency",
+            "hopelessness",
+            "the absence of hope"
+          ],
+          "label": "DESPAIR_HOPELESSNESS",
+          "relation": "similar"
+        }
+      ],
+      "FEAR": [
+        {
+          "concepts": [
+            "becoming calm",
+            "becoming relaxed",
+            "being safe from danger",
+            "boldness and daring",
+            "bravery and freedom from fear",
+            "calm and composure",
+            "calming agitation",
+            "confidence in oneself",
+            "courage in the face of danger",
+            "freedom from fear and anxiety",
+            "peace of mind",
+            "reassurance and restored confidence",
+            "relaxation without anxiety",
+            "safety from danger",
+            "security without fear or doubt"
+          ],
+          "label": "SAFETY_COURAGE_CALM",
+          "relation": "opposite"
+        },
+        {
+          "concepts": [
+            "anxiety and apprehension",
+            "anxiety and nervous fear",
+            "anxious fear",
+            "anxious uneasiness",
+            "being afraid",
+            "dread of danger",
+            "fear of danger",
+            "horror and profound fear",
+            "provoking fear",
+            "terror and intense fear",
+            "worry and anxiety"
+          ],
+          "label": "FEAR_ANXIETY",
+          "relation": "similar"
+        }
+      ],
+      "MELANCHOLY": [
+        {
+          "concepts": [
+            "cheerfulness and good spirits",
+            "delight and enjoyment",
+            "happiness and joy",
+            "laughter and mirth",
+            "merriment and joy",
+            "smiling and pleasure"
+          ],
+          "label": "JOY_CHEERFULNESS",
+          "relation": "opposite"
+        },
+        {
+          "concepts": [
+            "melancholy gloom",
+            "melancholy sadness",
+            "sadness and sorrow",
+            "sadness and unhappiness",
+            "sadness expressed in manner",
+            "sadness expressed in tears",
+            "thoughtful sadness"
+          ],
+          "label": "SADNESS_GLOOM",
+          "relation": "similar"
+        }
+      ]
+    },
+    "modelId": "Qwen/Qwen3.5-9B",
+    "modelSha256": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+    "modelSourceRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "preserve": [],
+    "promptDigest": "29efbf75c97d1bcedd486b0a8100e6329d62d2dc13a3e6cdd849d071364b826e",
+    "quantizationRepository": "unsloth/Qwen3.5-9B-GGUF",
+    "quantizationRevision": "3885219b6810b007914f3a7950a8d1b469d598a5",
+    "responseAggregation": "exactly-one-final-target-group-and-source-index",
+    "retrievalChannels": [
+      "lemma-definition",
+      "definition",
+      "lemma"
+    ],
+    "review": [
+      "every-inventory-word-including-neutral-and-previously-trusted"
+    ],
+    "runtime": "llama.cpp-b11146",
+    "runtimeBuild": "b11146-7fe450e19",
+    "seed": 123,
+    "temperature": 0,
+    "thinking": false,
+    "validationRetryPrompt": "Your response failed validation: {error}. Use one of these supplied labels only: {allowedGroups}. The source index must be 0 through {maximumIndex}. Consider all supplied definitions, choose one supported target meaning if any, otherwise another supplied group or OTHER. Give a brief explanation and exactly one FINAL label index. Do not invent a group or use a group from an example.",
+    "version": "wyrmle-contextual-exhaustive-v3",
+    "constrainedFinalLabel": false,
+    "reviewScope": "all-source-senses",
+    "requireQuotedDefinition": true
+  },
+  "prompt": {
+    "examples": [],
+    "lexnames": [
+      "adj.all",
+      "adj.pert",
+      "adv.all",
+      "noun.Tops",
+      "noun.act",
+      "noun.animal",
+      "noun.artifact",
+      "noun.attribute",
+      "noun.body",
+      "noun.cognition",
+      "noun.communication",
+      "noun.event",
+      "noun.feeling",
+      "noun.food",
+      "noun.group",
+      "noun.location",
+      "noun.motive",
+      "noun.object",
+      "noun.person",
+      "noun.phenomenon",
+      "noun.plant",
+      "noun.possession",
+      "noun.process",
+      "noun.quantity",
+      "noun.relation",
+      "noun.shape",
+      "noun.state",
+      "noun.substance",
+      "noun.time",
+      "verb.body",
+      "verb.change",
+      "verb.cognition",
+      "verb.communication",
+      "verb.competition",
+      "verb.consumption",
+      "verb.contact",
+      "verb.creation",
+      "verb.emotion",
+      "verb.motion",
+      "verb.perception",
+      "verb.possession",
+      "verb.social",
+      "verb.stative",
+      "verb.weather",
+      "adj.ppl"
+    ],
+    "system": "Classify dictionary meanings for a word game. Decide from what each definition actually DENOTES, not from things associated with it. Review EVERY supplied sense; a neutral first or last sense must never hide a qualifying sense elsewhere.\nA counter directly expresses an opposing quality, emotion, action, state or intrinsic function. A reinforcement directly expresses the enemy quality. A word with any clearly supported scoring sense must use that sense instead of an unrelated one. Prefer the most direct definition of the quality or action over an associated person or object. Counter concepts include constructive capacities that oppose the enemy; exact antonymy and exact wording are not required.\nAssociation exclusions are mandatory. Naming a person, occupation, political affiliation, field of study, subject of research, physical object or instrument does not denote its associated quality. A definition describing an object that HAS a property, or a field that STUDIES it, is not a definition of that property itself. A colour, bodily sign, injury or generic violence does not by itself establish an emotion or deliberate cruelty. Cruelty requires intent to harm, inhumanity, malicious treatment, or lack of compassion. Different negative emotions do not substitute for one another. An action explicitly creating the target quality does qualify.\nFor each candidate, distinguish the actual head meaning from incidental properties. Check all clauses: explicit emotion or state in any clause counts. If both neutral and scoring definitions occur, choose a clearly supported scoring definition. If both scoring directions occur, choose the most explicit direct definition. The given concept lists illustrate categories rather than restrict them to matching phrases.\nReturn one short sentence explaining the selected definition's meaning, followed by FINAL, the exact supplied group label (or OTHER), and its integer source index. Never invent labels or source senses. OTHER means no supported scoring sense anywhere in the supplied list. Do not select a neutral definition before checking every other sense.\nBefore the explanation, write DEFINITION: followed by an exact verbatim copy of the selected dictionary definition, without adding quotation marks. Its source index on the FINAL line must point to that exact definition. Check the index carefully. The source quotation is validated against the supplied dictionary; an invented or mismatched quotation is rejected.",
+    "userTemplate": "Enemy: {enemyWord} \u2014 {enemyDefinition}\nScoring groups (all other meanings are OTHER / neutral):\n{meaningGroups}\nComplete dictionary senses:\n{numberedLemmaPosLexicalDomainDefinitions}\nCheck every sense and the association exclusions. Select the strongest directly supported scoring sense, or OTHER only if all senses are neutral. Write DEFINITION: and the exact selected definition, then a brief explanation, then FINAL GROUP INDEX. Verify the index matches the quoted definition."
+  }
+}

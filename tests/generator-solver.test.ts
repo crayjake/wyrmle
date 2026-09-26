@@ -248,7 +248,7 @@ test('new lexical encounters use diverse retention automatically while legacy re
   assert.equal(newResult.minimumTurnsToWin, oldResult.minimumTurnsToWin)
 })
 
-test('counterfactual sampling reaches a distinct meaningful route behind six finishing-word variations', () => {
+test('counterfactual replay reaches a distinct meaningful route behind six finishing-word variations', () => {
   const seed = fixture('CATDOGQQQQQQQQQQ', 'CD', 3)
   const encounter = { ...seed.encounter, lexicalRules: { ...currentLexicalRules },
     startingTiles: seed.tiles, enemyLetters: seed.enemyLetters,
@@ -263,7 +263,7 @@ test('counterfactual sampling reaches a distinct meaningful route behind six fin
   const analysis = analysePuzzle(encounter, { solution: { ...base, winningLines: realLines },
     maxReasonableStates: 0, includeCounterfactuals: false, wordCommonness: () => 0.9 })
   const semantic = analysis.counterfactuals.find(comparison => comparison.mechanic === 'semantic')!
-  assert.equal(semantic.replayedWinningLines, 2, 'Finishing variations contribute one representative, plus the distinct COD counter.')
+  assert.equal(semantic.replayedWinningLines, 7, 'Every retained witness is replayed, including the later distinct COD counter.')
   assert.equal(semantic.changedWinningOutcomes, 1)
   assert.ok(semantic.changedStrikeCount > 0)
   assert.ok(semantic.importance! > 0)

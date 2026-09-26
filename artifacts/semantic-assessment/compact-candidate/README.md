@@ -1,22 +1,16 @@
-# Draft compact candidate
+# Compact candidate and final assessment
 
-This physical candidate has twelve finite refills, one Hit tile, one Life tile, and one enemy Revive tile. It is an offline authoring input, not a published daily puzzle. Its stale draft meaning table is deliberately omitted.
+This directory preserves the original twelve-refill authoring candidate and its earlier baseline witness library. The September 26–27 v12 publication uses the same board and total letter supply, with both O refills moved to the final two positions (`ETSRENHACAOO`). That blocks the two-word shortcut found after the semantic corrections. The final encounter, classification table and fresh opening proof are stored together in `artifacts/meaning-v3/selected.json.gz`.
 
-The compressed baseline witness library covered 8,041 physical legal openings under an earlier vector/NLI classification. It is only a source of candidate routes: its certificate is not valid for current meanings. `scripts/prepare-assessed-openings.ts` compiles current, complete contextual meanings, re-enumerates every opening, replays these routes through the current engine, and searches remaining cases. Missing contextual reviews or an incomplete final proof prevent publication.
+The baseline witnesses are only route suggestions. They cannot certify changed meanings or refill order. `prepare-assessed-openings.ts` recompiles the actual current semantic provider, enumerates every physical opening, replays usable hints and searches unresolved positions. Missing reviews, unknown openings and proved unsafe openings all prevent publication. The tool writes independently verified checkpoints every minute; pass its last `opening-safety.json` as the witness input to resume.
 
-Once contextual review is complete, run:
-
-```sh
-node scripts/prepare-assessed-openings.ts artifacts/semantic-assessment/compact-candidate/candidate.json artifacts/semantic-assessment/compact-candidate/baseline-opening-witnesses.json.gz /tmp/wyrmle-final-openings --states 500 --seconds 600
-```
-
-The output candidate and opening-safety certificate must pass `scripts/review-assessed-daily.ts` and `scripts/package-assessed-daily.ts` before version 12 can be wired into either daily date. The proof tool writes independently verified checkpoints every minute. Pass its `opening-safety.json` as the witness input when continuing a bounded search; no old classification or certificate fingerprint is trusted.
-
-After packaging has created the actual `2026-09-25-v12.json` and `artifacts/meaning-v3` files, apply `publication-v12.patch` from the repository root. It wires the same encounter to **2026-09-25 and 2026-09-26**, independent of when generation finishes. It preserves archived encounters, updates the DEV review attachment, and adds complete publication and persistence coverage. The patch does not contain a placeholder puzzle or fabricated walkthrough.
+For a fresh candidate:
 
 ```sh
-git apply --check artifacts/semantic-assessment/compact-candidate/publication-v12.patch
-git apply artifacts/semantic-assessment/compact-candidate/publication-v12.patch
+node scripts/prepare-assessed-openings.ts CANDIDATE.json OLD_PROOF.json OUTPUT_DIRECTORY --states 500 --seconds 600
+node scripts/review-assessed-daily.ts OUTPUT_DIRECTORY/candidate.json OUTPUT_DIRECTORY/opening-safety.json REVIEWED.json
+node scripts/prove-assessed-minimum.ts REVIEWED.json MINIMUM_PROOF.json
+node scripts/package-assessed-daily.ts REVIEWED.json
 ```
 
-Run the full tests and build after applying it. Persistence tests take their latest winning route and hit counts from the actual packaged walkthrough; old played/completed runs remain pinned until reset.
+Publication is wired directly in the dated catalog for **2026-09-26 and 2026-09-27**. September 25 remains v11. The adjacent `publication-v12.patch` is an archived, superseded preparation artifact from the previous work; do not apply it to the current tree. Played, undone and completed saves retain their original frozen encounter; fresh attempts and explicit resets use the dated publication.

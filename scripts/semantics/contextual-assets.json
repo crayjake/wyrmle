@@ -1,15 +1,15 @@
 {
   "version": "wyrmle-contextual-assets-1",
   "model": {
-    "repository": "Qwen/Qwen3-4B-Instruct-2507",
-    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "repository": "Qwen/Qwen3.5-9B",
+    "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
     "license": "Apache-2.0",
-    "conversionRepository": "unsloth/Qwen3-4B-Instruct-2507-GGUF",
-    "conversionRevision": "a06e946bb6b655725eafa393f4a9745d460374c9",
-    "filename": "Qwen3-4B-Instruct-2507-Q4_K_M.gguf",
-    "url": "https://huggingface.co/unsloth/Qwen3-4B-Instruct-2507-GGUF/resolve/a06e946bb6b655725eafa393f4a9745d460374c9/Qwen3-4B-Instruct-2507-Q4_K_M.gguf",
-    "bytes": 2497281120,
-    "sha256": "3605803b982cb64aead44f6c1b2ae36e3acdb41d8e46c8a94c6533bc4c67e597"
+    "conversionRepository": "unsloth/Qwen3.5-9B-GGUF",
+    "conversionRevision": "3885219b6810b007914f3a7950a8d1b469d598a5",
+    "filename": "Qwen3.5-9B-Q4_K_M.gguf",
+    "url": "https://huggingface.co/unsloth/Qwen3.5-9B-GGUF/resolve/3885219b6810b007914f3a7950a8d1b469d598a5/Qwen3.5-9B-Q4_K_M.gguf",
+    "bytes": 5680522464,
+    "sha256": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8"
   },
   "runtime": {
     "repository": "ggml-org/llama.cpp",
@@ -27,7 +27,7 @@
       "--port",
       "8088",
       "-c",
-      "16384",
+      "131072",
       "-t",
       "8",
       "-tb",
@@ -35,10 +35,16 @@
       "-ngl",
       "0",
       "-np",
-      "4",
+      "16",
       "--no-webui",
       "--reasoning",
-      "off"
+      "off",
+      "--cache-ram",
+      "0",
+      "--checkpoint-min-step",
+      "128",
+      "-ub",
+      "128"
     ]
   },
   "vulkanRuntime": {
@@ -57,7 +63,7 @@
       "--port",
       "8089",
       "-c",
-      "16384",
+      "131072",
       "-t",
       "8",
       "-tb",
@@ -65,10 +71,16 @@
       "-ngl",
       "99",
       "-np",
-      "4",
+      "16",
       "--no-webui",
       "--reasoning",
-      "off"
+      "off",
+      "--cache-ram",
+      "0",
+      "--checkpoint-min-step",
+      "128",
+      "-ub",
+      "128"
     ]
   }
 }

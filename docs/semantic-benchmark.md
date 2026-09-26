@@ -26,7 +26,13 @@ A subsequent independent policy review widened REGULATE's source constraint to a
 
 The source audit also admitted the legitimate verb readings of DISORGANIZED and SATISFIED: removing organization and making someone happy or satisfied preserve their scoring meanings. Their earlier constraints had included only adjective senses. These corrections change neither expected label nor any accuracy threshold.
 
-## Publication gates
+A later source audit also accepts DEJECTED's verb sense, `oewn-deject__2.37.00..` ("lower someone's spirits; make downhearted"), alongside its adjective sense. This follows the same causative policy as CLOUD. The expected reinforcement label is unchanged. The [preceding development fixture](../artifacts/semantic-assessment/evaluation/development-before-deject-source-audit.json) and the failed model reports retain the earlier source constraint.
+
+Exhaustive sense review exposed another fixture omission: TABLE has the verb sense `oewn-table__2.36.00..`, "arrange or enter in tabular form". Under the existing policy allowing actions that directly organize things, this is a counter to CHAOS. The corrected case requires that precise verb sense; the furniture and data-object noun senses remain insufficient. The [preceding primary fixture](../artifacts/semantic-assessment/evaluation/primary-before-table-source-audit.json) and previous reports are preserved. This is a source-backed label correction, not a lowered accuracy gate.
+
+The source audit also admits TRUST's direct interpersonal-confidence sense (`oewn-trust__1.07.00..`, believing in others' honesty and reliability). It denotes the same confidence concept as the already accepted trust senses. Financial and institutional readings remain excluded. The [preceding confirmation fixture](../artifacts/semantic-assessment/evaluation/confirmation-before-trust-source-audit.json) is retained, and the expected label is unchanged.
+
+## Historical evaluation gates
 
 The initial thresholds were fixed before model evaluation. A separate novel-concept recall gate was added after the first candidate failed, before evaluating the second candidate. This strengthens the gate: a model cannot pass primarily by retaining old profiles while still missing most new scoring concepts.
 
@@ -49,6 +55,10 @@ Missing predictions fail coverage and count as incorrect. Duplicated predictions
 These gates detect obvious regressions and a range of unseen concepts. Passing a small benchmark cannot establish that every one of the dictionary's words has a perfect semantic label. Full assessment coverage, retained model/configuration provenance, source-sense validation and inspection of uncertain records are additional requirements.
 
 The [evaluation archive](../artifacts/semantic-assessment/evaluation/summary.json) retains failed candidates as well as subsequent results. During development, aggregate failure rates and structural diagnoses informed model changes; held-out word identities and expected labels were initially withheld from the model implementer. Later gameplay/source discussion also exposed a concept family from the confirmation set. Subsequent results on these fixtures are regression results, not final unseen-performance claims. Initial and corrected source-audit results are both retained. A separately frozen diagnostic evaluated once after final model selection must be reported on its own, without retroactively replacing these results or changing publication thresholds.
+
+## Current publication standard
+
+New publications require **zero known errors**: 100% labels, 100% required source senses, zero neutral false positives, and complete contextual review on all four existing regression sets (144 primary, 13 development, 36 confirmation and 18 later diagnostic cases). Every puzzle-inventory spelling receives review across all its dictionary senses, including previously trusted and low-similarity words. `scripts/lib/semanticQuality.ts` applies these stricter gates to actual provider output at both review and packaging. Historical fixtures, thresholds and failed reports remain unchanged for comparison. These repeatedly inspected sets are regression evidence; passing them does not establish perfect unseen accuracy.
 
 ## Running the evaluator
 
@@ -82,7 +92,7 @@ The resulting snapshot includes raw-output checksums, the source/configuration/m
 
 ## Evaluating the contextual review layer
 
-The complete dictionary-wide vector/NLI cache is a baseline. Its coverage and source checks remain separate from the final method's semantic quality. New puzzle publication also requires the frozen local LLM reviewer to finish every eligible word in that puzzle's complete possible-word inventory. Qualifying inputs and trusted baseline decisions follow the frozen policy; missing reviews cannot silently become neutral decisions.
+The complete dictionary-wide vector/NLI cache is a baseline. Its coverage and source checks remain separate from the final method's semantic quality. New puzzle publication also requires the frozen local LLM reviewer to finish every word and every dictionary sense in that puzzle's complete possible-word inventory. No retrieval cutoff or trusted-baseline exemption bypasses review; missing reviews cannot silently become neutral decisions.
 
 The final quality snapshot comes from `semanticRefinementProvider.refine` applied to all benchmark spellings, using ordinary frozen inference memo records. It retains actual failures as well as successes. Neither collection nor the provider receives expected labels. The independent evaluator checks the collected decisions afterwards:
 
@@ -112,3 +122,12 @@ node scripts/review-fresh-semantic-diagnostic.ts candidate-refinement.json artif
 ```
 
 Any later execution belongs in a separate regression directory and must not be described as another unseen diagnostic.
+
+### Full-inventory editorial regressions
+
+The inventory review found errors outside the earlier passing suites, including AHEAD, ENCOURAGE, CLEAN, COMB and CORE. These are recorded in `semantic-inventory-regressions-v1.json`, with inflection and incidental-organization cases. The actual model failures remain in the evaluation archive. A separate source-level correction ledger fixes audited definition errors across every affected spelling, while preserving model responses. Reported final quality evaluates this complete hybrid method; it is not a claim that the raw model had the same accuracy. The correction policy is included in the quality snapshot identity.
+
+
+The final hybrid passes **269/269 scored cases**: 144 primary, 13 development, 36 confirmation, 18 diagnostic and 58 inventory regressions. Required source constraints also pass. The raw model passed the earlier 211 cases but only **7/58** inventory regressions; both outputs remain in `artifacts/semantic-assessment/evaluation/contextual-final`. This is regression evidence after editorial correction, not unseen model accuracy.
+
+The source ledger contains 142 reviewed senses. Across the 10,379-word audited inventory (the candidate vocabulary plus 28 evaluation spellings), corrections change 186 labels and 192 label/source selections. The review inspected all final scoring sources, 780 cue-matching neutral definitions and 116 baseline conflicts. A frozen per-word inventory registry now prevents new or changed meanings from publishing solely on the strength of a passing benchmark. Unseen meanings still require review.
