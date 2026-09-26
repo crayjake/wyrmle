@@ -11,8 +11,7 @@ export default class PuzzleErrorBoundary extends Component<{ children: ReactNode
       <h2>Could not open this puzzle</h2>
       <p>Your saved progress is still on this device.</p>
       <button className="daily-button" onClick={() => window.location.reload()}>Try again</button>
-      <a className="daily-button" href="?calendar">Puzzle calendar</a>
-      <a className="daily-button" href={import.meta.env.BASE_URL}>Back to daily</a>
+      <a className="daily-button" href="?calendar">Calendar</a>
     </main>
   }
 }

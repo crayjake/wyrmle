@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import StarRating from '../components/StarRating'
 import { availableMonths, calendarDays } from './calendar'
 import { puzzleSchedule } from './scheduledPuzzle'
 import { challengeStars, readChallenge, CHALLENGE_PREFIX } from './challengeProgress'
@@ -21,7 +22,7 @@ export default function PuzzleCalendar({ today, requestedMonth }: { today: strin
   function changeMonth(next: string) { setMonth(next); window.history.replaceState(null, '', `?calendar=${next}`) }
   const dates = calendarDays(month)
   return <main className="container puzzle-calendar">
-    <header className="calendar-heading"><h1>Puzzles</h1><a className="daily-button" href={import.meta.env.BASE_URL}>Back to daily</a></header>
+    <header className="calendar-heading"><h1>Puzzles</h1><a className="daily-button" href={import.meta.env.BASE_URL}>Today</a></header>
     <nav className="calendar-month" aria-label="Choose month">
       <button className="icon-button" aria-label="Previous month" disabled={index <= 0} onClick={() => changeMonth(months[index - 1])}><ChevronLeft size={22} /></button>
       <h2 aria-live="polite">{new Intl.DateTimeFormat('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${month}-01T00:00:00Z`))}</h2>
@@ -41,7 +42,7 @@ export default function PuzzleCalendar({ today, requestedMonth }: { today: strin
         const started = Boolean(record?.run.started)
         const status = stars ? `${stars} of 3 stars` : started ? record?.run.status === 'lost' ? 'Try again' : 'In progress' : 'Not played'
         const content = <><span className="calendar-day-number">{Number(date.slice(-2))}</span>
-          <span className="calendar-day-stars" aria-hidden="true">{stars ? '★'.repeat(stars) + '☆'.repeat(3 - stars) : started ? '·' : '\u00a0'}</span></>
+          <span className="calendar-day-stars" aria-hidden="true">{stars > 0 && <StarRating stars={stars} />}</span></>
         return available ? <a key={date} className="calendar-day" href={`?daily=${date}`} data-date={date} data-stars={stars}
           data-started={started || undefined} aria-current={date === today ? 'date' : undefined}
           aria-label={`${describeDate(date)}${date === today ? ', Today' : ''}, ${status}`}>{content}</a>
@@ -49,6 +50,5 @@ export default function PuzzleCalendar({ today, requestedMonth }: { today: strin
       })}
     </div>
     </section>
-    <footer className="calendar-key"><span>★ 3 words</span><span>★★ 2 words</span><span>★★★ Bingo</span></footer>
   </main>
 }

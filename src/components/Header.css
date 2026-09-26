@@ -2,6 +2,19 @@
   position: relative;
 }
 
+.header { gap: 4px; }
+.header-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; flex: none; }
+.header-date { font-family: 'Share Tech Mono', monospace; font-size: 11px; line-height: 1.2; letter-spacing: 0; text-transform: none; }
+.header-best { display: flex; flex: 1; min-width: 56px; flex-direction: column; align-items: center; gap: 3px; }
+.header-best > span:first-child { font-family: 'Share Tech Mono', monospace; font-size: 10px; line-height: 1; letter-spacing: 0; text-transform: none; }
+.header-actions { flex: none; }
+
+@media (orientation: landscape) and (max-height: 550px) {
+  .header .title { font-size: 1.4rem; }
+  .header-best { --star-size: 16px; min-width: 50px; }
+  .header-actions { gap: 2px; }
+}
+
 .wyrm-dock {
   position: absolute;
   left: calc(100% + 0.5rem);

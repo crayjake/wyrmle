@@ -40,7 +40,7 @@ export default function DailyChallenge() {
   }
   if (location.calendar) return <Suspense fallback={<Loading />}><PuzzleCalendar today={today} requestedMonth={location.month} /></Suspense>
   if (tutorial) return <Suspense fallback={<Loading />}><TutorialBattle onComplete={finishTutorial} onSkip={finishTutorial} /></Suspense>
-  if (!entry) return <main className="container"><h2>No puzzle scheduled for this date</h2><button className="daily-button" onClick={calendar}>Puzzle calendar</button></main>
+  if (!entry) return <main className="container"><h2>No puzzle scheduled for this date</h2><button className="daily-button" onClick={calendar}>Calendar</button></main>
   return <LoadDaily key={entry.asset} entry={entry} today={today} onTutorial={() => setTutorial(true)} />
 }
 
@@ -56,7 +56,7 @@ function LoadDaily({ entry, today, onTutorial }: { entry: ScheduledPuzzle; today
       .catch(() => { if (!controller.signal.aborted) setError(true) })
     return () => controller.abort()
   }, [entry])
-  if (error) return <main className="container"><h2>Could not load this puzzle</h2><button className="daily-button" onClick={() => window.location.reload()}>Try again</button><button className="daily-button" onClick={calendar}>Puzzle calendar</button></main>
+  if (error) return <main className="container"><h2>Could not load this puzzle</h2><button className="daily-button" onClick={() => window.location.reload()}>Try again</button><button className="daily-button" onClick={calendar}>Calendar</button></main>
   return loaded ? <DailyAttempt entry={entry} encounter={loaded} today={today} onTutorial={onTutorial} /> : <Loading />
 }
 
@@ -96,7 +96,8 @@ function DailyAttempt({ entry, encounter, today, onTutorial }: {
   const lives = challengeLives(record.bestWords)
   const title = `${entry.date}${entry.date !== today ? ' · earlier daily' : ''}`
   return <>
-    <BattleScreen key={epoch} encounter={session.game.encounter} initial={session} daily title={title} guide={getPuzzleGuide(entry.id)}
+    <BattleScreen key={epoch} encounter={session.game.encounter} initial={session} title={title} guide={getPuzzleGuide(entry.id)}
+      bestStars={challengeStars(record.bestWords)} puzzleDate={entry.date !== today ? entry.date : undefined}
       onSave={(game, started, hintStep) => {
         try {
           const next = saveChallenge(current.current, game, started, window.localStorage, hintStep)
@@ -106,7 +107,6 @@ function DailyAttempt({ entry, encounter, today, onTutorial }: {
       menu={<>
         <button className="daily-button" onClick={() => setStats(true)}>Statistics</button>
         <button className="daily-button" onClick={onTutorial}>Tutorial</button>
-        {entry.date !== today && <a className="daily-button" href={import.meta.env.BASE_URL}>Back to daily</a>}
       </>}
       renderResult={game => <BattleResult game={game} onRetry={restart}
         nudge={lives === 1 ? 'Next challenge: find the one-word win.' : 'Next challenge: solve it with 2 lives.'}

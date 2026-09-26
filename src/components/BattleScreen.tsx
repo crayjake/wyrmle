@@ -23,7 +23,7 @@ export type BattleAttempt = { game: LetterStrikeState; started: boolean; hintSte
 
 /** Daily and archived puzzles share one battle UI and the same difficulty rules. */
 export default function BattleScreen({ encounter, initial, onSave, onRestart, onExit, title, onChoose, onNext,
-  guide, menu, renderResult, daily = false }: {
+  guide, menu, renderResult, bestStars, puzzleDate }: {
   encounter: LetterStrikeEncounter
   initial?: BattleAttempt
   onSave: (game: LetterStrikeState, started: boolean, hintStep: number) => boolean
@@ -35,7 +35,8 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
   guide?: BingoGuide
   menu?: ReactNode
   renderResult?: (game: LetterStrikeState) => ReactNode
-  daily?: boolean
+  bestStars?: number
+  puzzleDate?: string
 }) {
   const preferences = useUserPreferences()
   const easy = preferences.preferences.preferredMode === 'easy'
@@ -133,6 +134,7 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
       if (phase === 'waiting') begin()
     }}>
     <Header wyrmDockRef={wyrmDockRef} titleRef={wyrmTitleRef} showWyrm={false}
+      bestStars={bestStars} puzzleDate={puzzleDate}
       onHelp={() => setPanel('help')} onHistory={() => setPanel('log')} onSettings={() => setPanel('modes')} />
     {!progressSaved && <div className="daily-notice" role="alert"><span>Progress could not be saved.</span><button className="daily-button" onClick={() => persist(game, phase !== 'waiting')}>Retry save</button></div>}
     {showResult ? renderResult?.(game) ?? <BattleResult game={game} onRetry={onRestart} onNext={onNext}
@@ -218,7 +220,7 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
         <button className="daily-button" onClick={onRestart}>Restart puzzle</button>
         {hintsAvailable && <button className="daily-button" onClick={() => setPanel('hints')}>Hints</button>}
         {onChoose && <button className="daily-button" onClick={onChoose}>All puzzles</button>}
-        <button className="daily-button" onClick={onExit}>{daily ? 'Puzzle calendar' : 'Back to daily'}</button>
+        <button className="daily-button" onClick={onExit}>Calendar</button>
       </div>
     </BattlePanel>}
     {panel === 'log'  && <BattlePanel title="Played words" onClose={() => setPanel(null)}>

@@ -1,0 +1,4 @@
+.star-rating { display: inline-flex; align-items: center; gap: 1px; flex: none; line-height: 1; }
+.star-rating svg { width: var(--star-size, 18px); height: var(--star-size, 18px); flex: none; stroke-width: 2;
+  color: color-mix(in srgb, var(--fg) 65%, transparent); fill: none; }
+.star-rating svg[data-earned="true"] { color: var(--emph); fill: currentColor; }
