@@ -13,6 +13,8 @@ export const defaultAnalysisConfig = {
 } as const
 
 export type ValidationConfig = {
+  /** New designs must keep meaningful choices through sampled later turns. */
+  requireSustainedSemantics?: boolean
   /** Release requires complete contextual review; draft search may use the base assessment. */
   requireMeaningRefinement?: boolean
   minimumCounterOpeningLemmas?: number
@@ -84,6 +86,13 @@ export const defaultScoreWeights = {
   forcedSequence: -5,
   trivialWin: -20,
   chaoticBranching: -5,
+  continuingCounters: 12,
+  recurringResistedWords: 10,
+  semanticDiscoveries: 6,
+  sustainedCounterRoutes: 8,
+  neutralChipAway: -25,
+  counterDrought: -15,
+  semanticEndgame: 6,
 } as const
 
 export type ScoreWeights = { [Key in keyof typeof defaultScoreWeights]: number }

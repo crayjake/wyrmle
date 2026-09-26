@@ -13,8 +13,8 @@ export default defineConfig(({ mode, command }) => {
   const iconUrl = (filename: string) => command === 'build'
     ? new URL(filename, siteUrl).href
     : `${base.replace(/\/$/, '')}/${filename}`
-  const appleIcon = iconUrl('apple-touch-icon-v2.png')
-  const browserIcon = iconUrl('icons/wyrm-192-v2.png')
+  const appleIcon = iconUrl('apple-touch-icon-v3.png')
+  const browserIcon = iconUrl('icons/wyrm-192-v3.png')
 
   return {
     // Pages provides both values, including when deploying at a custom domain.

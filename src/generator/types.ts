@@ -14,6 +14,7 @@ export type CandidatePuzzle = {
   goal: GenerationGoal
   anchors: AnchorWord[]
   construction: {
+    design?: 'sustained-discovery'
     method: 'overlapping-multisets-and-lookahead'
     plannedWords: string[]
     plannedTileIds: number[][]

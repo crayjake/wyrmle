@@ -23,6 +23,8 @@ export type WordPools = {
 
 export type WordPoolOptions = {
   minimumCommonness?: number
+  /** Optional discoveries can be less frequent than the required ordinary vocabulary. */
+  minimumCounterCommonness?: number
   maximumLength?: number
   grammarPartOfSpeech?: PartOfSpeech
   grammarPolicy?: 'single' | 'any-recognized'
@@ -54,21 +56,21 @@ export function buildWordPools(enemyWord: string, provider: LexicalProvider = lo
     }
     return count
   }
-  const allowed = (entry: LexicalEntry) => entry.word.length >= 3 && entry.word.length <= maximumLength
+  const allowed = (entry: LexicalEntry, minimum = minimumCommonness) => entry.word.length >= 3 && entry.word.length <= maximumLength
     && /^[A-Z]+$/.test(entry.word) && isDictionaryWord(entry.word) && !entry.properNoun
-    && entry.commonness !== null && entry.commonness >= minimumCommonness
+    && entry.commonness !== null && entry.commonness >= minimum
   const rank = (a: LexicalEntry, b: LexicalEntry) => matches(b.word) - matches(a.word)
     || (b.commonness ?? 0) - (a.commonness ?? 0) || a.word.length - b.word.length || a.word.localeCompare(b.word)
-  const resolve = (words: readonly string[]) => [...new Set(words.map(normalizeWord))]
+  const resolve = (words: readonly string[], minimum = minimumCommonness) => [...new Set(words.map(normalizeWord))]
     .map(word => provider.getSubmittedWordEntry ? provider.getSubmittedWordEntry(word) : provider.getEntry(word))
-    .filter((entry): entry is LexicalEntry => Boolean(entry && allowed(entry))).sort(rank)
-  const counters = resolve(enemy?.counters ?? [])
+    .filter((entry): entry is LexicalEntry => Boolean(entry && allowed(entry, minimum))).sort(rank)
+  const counters = resolve(enemy?.counters ?? [], options.minimumCounterCommonness ?? minimumCommonness)
   const counterSet = new Set(counters.map(entry => entry.word))
   const resisted = resolve(enemy?.synonyms ?? []).filter(entry => !counterSet.has(entry.word))
   const resistedSet = new Set(resisted.map(entry => entry.word))
   const related = resolve(enemy?.related ?? []).filter(entry => !counterSet.has(entry.word) && !resistedSet.has(entry.word))
   const all = [...new Map([...provider.vocabulary(), ...counters, ...resisted, ...related]
-    .filter(allowed).map(entry => [entry.word, entry])).values()].sort(rank)
+    .filter(entry => allowed(entry) || counterSet.has(entry.word)).map(entry => [entry.word, entry])).values()].sort(rank)
   const neutral = all.filter(entry => !counterSet.has(entry.word) && !resistedSet.has(entry.word))
   const grammar = all.filter(entry => (options.grammarPolicy === 'any-recognized' || entry.partsOfSpeech.length === 1)
     && entry.partsOfSpeech.includes(options.grammarPartOfSpeech ?? 'adjective'))

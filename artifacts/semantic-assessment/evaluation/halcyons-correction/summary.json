@@ -1,0 +1,696 @@
+{
+  "source": "actual-frozen-hybrid-provider",
+  "modelId": "sentence-transformers/all-MiniLM-L6-v2 + cross-encoder/nli-deberta-v3-xsmall + Qwen/Qwen3.5-9B",
+  "configurationHash": "58136fdcb9e05e2b4ed9025c57f2380613cd26858de96b7662695e3f6e011cf7",
+  "refinementFileDigest": "ef771899d31c9f4c9b5b89d121a69b9d27d0a8228e5732176d806a2ffc58faa0",
+  "confirmationDigest": "dbb29a01f48a38e14b334210658434d6497e5d0150723c264bc965dbf0a153e4",
+  "baseCaches": {
+    "ANGER": {
+      "version": "wyrmle-vector-nli-v1",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2 + cross-encoder/nli-deberta-v3-xsmall",
+      "modelRevision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41 + a150876415327c80daeff35ca6f68f5ed8cf5c24",
+      "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+      "policyDigest": "808c633d59d3c481fb2029c533c6e1b87272bc93ede85f9bb8999f842e91e426",
+      "cacheDigest": "21485cf342dda5dda7eceff6683e610e8ddd18c663d0124e7fce26396ed71dbf",
+      "method": "embedding-nli",
+      "assessedWords": 116395,
+      "assessedSenses": 112646
+    },
+    "DESPAIR": {
+      "version": "wyrmle-vector-nli-v1",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2 + cross-encoder/nli-deberta-v3-xsmall",
+      "modelRevision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41 + a150876415327c80daeff35ca6f68f5ed8cf5c24",
+      "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+      "policyDigest": "808c633d59d3c481fb2029c533c6e1b87272bc93ede85f9bb8999f842e91e426",
+      "cacheDigest": "bf46cdb499d2c539b746f72467278c111bce2ddde5cd690d2c22d41b1cb5b73d",
+      "method": "embedding-nli",
+      "assessedWords": 116395,
+      "assessedSenses": 112646
+    },
+    "FEAR": {
+      "version": "wyrmle-vector-nli-v1",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2 + cross-encoder/nli-deberta-v3-xsmall",
+      "modelRevision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41 + a150876415327c80daeff35ca6f68f5ed8cf5c24",
+      "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+      "policyDigest": "808c633d59d3c481fb2029c533c6e1b87272bc93ede85f9bb8999f842e91e426",
+      "cacheDigest": "a823e2dcb77e61e1e2d2d93196cb437e3212baeb401824bc55afc111e9b8d51b",
+      "method": "embedding-nli",
+      "assessedWords": 116395,
+      "assessedSenses": 112646
+    },
+    "MELANCHOLY": {
+      "version": "wyrmle-vector-nli-v1",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2 + cross-encoder/nli-deberta-v3-xsmall",
+      "modelRevision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41 + a150876415327c80daeff35ca6f68f5ed8cf5c24",
+      "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+      "policyDigest": "808c633d59d3c481fb2029c533c6e1b87272bc93ede85f9bb8999f842e91e426",
+      "cacheDigest": "4d3363df874ce40a7d27b1eb4096e35f93311019fd0f62506d5c98b571c13aee",
+      "method": "embedding-nli",
+      "assessedWords": 116395,
+      "assessedSenses": 112646
+    },
+    "CRUELTY": {
+      "version": "wyrmle-vector-nli-v1",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2 + cross-encoder/nli-deberta-v3-xsmall",
+      "modelRevision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41 + a150876415327c80daeff35ca6f68f5ed8cf5c24",
+      "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+      "policyDigest": "808c633d59d3c481fb2029c533c6e1b87272bc93ede85f9bb8999f842e91e426",
+      "cacheDigest": "70de7e443ac0820464876655e61d97d63e3e830d9e14991c37f26f6f68f12e67",
+      "method": "embedding-nli",
+      "assessedWords": 116395,
+      "assessedSenses": 112646
+    },
+    "CHAOS": {
+      "version": "wyrmle-vector-nli-v1",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2 + cross-encoder/nli-deberta-v3-xsmall",
+      "modelRevision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41 + a150876415327c80daeff35ca6f68f5ed8cf5c24",
+      "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+      "policyDigest": "808c633d59d3c481fb2029c533c6e1b87272bc93ede85f9bb8999f842e91e426",
+      "cacheDigest": "079b87bdddcbf73638537487cabf14fe75c1e0df9cb5932b6e0bd6effde2695e",
+      "method": "embedding-nli",
+      "assessedWords": 116395,
+      "assessedSenses": 112646
+    }
+  },
+  "manifests": {
+    "ANGER": {
+      "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+      "modelId": "Qwen/Qwen3.5-9B",
+      "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "policyDigest": "76e46b27acbb1122759d5ca3c4f46dfd14a7eba597b75da06b7de35ac5a8ad72",
+      "promptDigest": "7fd7a66adba4c556171a71783c8e83f5cf9d667b1b1ee7d383af09789b09cffa",
+      "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+      "threshold": -1,
+      "trustedDecisionBases": [],
+      "version": "wyrmle-semantic-refinement-1",
+      "reviewScope": "all-source-senses",
+      "sourceSelection": "baseline-agreement-then-directness-v1",
+      "baseCacheDigest": "21485cf342dda5dda7eceff6683e610e8ddd18c663d0124e7fce26396ed71dbf",
+      "recordsDigest": "38cb01ca855915acc26059a210f0513aee7019a26fa3aaa79e377ac8f74f82d9",
+      "retrievalDigest": "c7d0321e16f01458b58393a7f98208a6990bc53b77ea49d8526800c627af0b3e"
+    },
+    "DESPAIR": {
+      "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+      "modelId": "Qwen/Qwen3.5-9B",
+      "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "policyDigest": "76e46b27acbb1122759d5ca3c4f46dfd14a7eba597b75da06b7de35ac5a8ad72",
+      "promptDigest": "7fd7a66adba4c556171a71783c8e83f5cf9d667b1b1ee7d383af09789b09cffa",
+      "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+      "threshold": -1,
+      "trustedDecisionBases": [],
+      "version": "wyrmle-semantic-refinement-1",
+      "reviewScope": "all-source-senses",
+      "sourceSelection": "baseline-agreement-then-directness-v1",
+      "baseCacheDigest": "bf46cdb499d2c539b746f72467278c111bce2ddde5cd690d2c22d41b1cb5b73d",
+      "recordsDigest": "fce349918b7411bf7441c34731a389e913e1b860fdc9802af6a8aa79053c3761",
+      "retrievalDigest": "eb602444d0988fd420a0cb1070563328b0d852c40da718983eab55a3005582ea"
+    },
+    "FEAR": {
+      "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+      "modelId": "Qwen/Qwen3.5-9B",
+      "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "policyDigest": "76e46b27acbb1122759d5ca3c4f46dfd14a7eba597b75da06b7de35ac5a8ad72",
+      "promptDigest": "7fd7a66adba4c556171a71783c8e83f5cf9d667b1b1ee7d383af09789b09cffa",
+      "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+      "threshold": -1,
+      "trustedDecisionBases": [],
+      "version": "wyrmle-semantic-refinement-1",
+      "reviewScope": "all-source-senses",
+      "sourceSelection": "baseline-agreement-then-directness-v1",
+      "baseCacheDigest": "a823e2dcb77e61e1e2d2d93196cb437e3212baeb401824bc55afc111e9b8d51b",
+      "recordsDigest": "e82c64f5a81f0412294d33847722ae94446ac1e5b652749e9e0e4b4bbd109856",
+      "retrievalDigest": "b74a9aa945a6a37a4104e19d5216be6260a6014e7b5de8debb15f39a9c398765"
+    },
+    "MELANCHOLY": {
+      "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+      "modelId": "Qwen/Qwen3.5-9B",
+      "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "policyDigest": "76e46b27acbb1122759d5ca3c4f46dfd14a7eba597b75da06b7de35ac5a8ad72",
+      "promptDigest": "7fd7a66adba4c556171a71783c8e83f5cf9d667b1b1ee7d383af09789b09cffa",
+      "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+      "threshold": -1,
+      "trustedDecisionBases": [],
+      "version": "wyrmle-semantic-refinement-1",
+      "reviewScope": "all-source-senses",
+      "sourceSelection": "baseline-agreement-then-directness-v1",
+      "baseCacheDigest": "4d3363df874ce40a7d27b1eb4096e35f93311019fd0f62506d5c98b571c13aee",
+      "recordsDigest": "8ca98685da0e39838053197569928c6d5924c93d8f96b5c349fca3801e9dbf0b",
+      "retrievalDigest": "265adb455fb3b70112b3857e799ddb235213b3af05f7d18e2a59c51a930f0b70"
+    },
+    "CRUELTY": {
+      "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+      "modelId": "Qwen/Qwen3.5-9B",
+      "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "policyDigest": "76e46b27acbb1122759d5ca3c4f46dfd14a7eba597b75da06b7de35ac5a8ad72",
+      "promptDigest": "7fd7a66adba4c556171a71783c8e83f5cf9d667b1b1ee7d383af09789b09cffa",
+      "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+      "threshold": -1,
+      "trustedDecisionBases": [],
+      "version": "wyrmle-semantic-refinement-1",
+      "reviewScope": "all-source-senses",
+      "sourceSelection": "baseline-agreement-then-directness-v1",
+      "baseCacheDigest": "70de7e443ac0820464876655e61d97d63e3e830d9e14991c37f26f6f68f12e67",
+      "recordsDigest": "3f09ec3f4258d82b477f86418bcce4ffd58da56cdc928784fb554ce1f118901b",
+      "retrievalDigest": "4ebc97d8fb9ecda707889c69423797535c198d14743a5481ab251fb73aa60005"
+    },
+    "CHAOS": {
+      "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+      "modelId": "Qwen/Qwen3.5-9B",
+      "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "policyDigest": "76e46b27acbb1122759d5ca3c4f46dfd14a7eba597b75da06b7de35ac5a8ad72",
+      "promptDigest": "7fd7a66adba4c556171a71783c8e83f5cf9d667b1b1ee7d383af09789b09cffa",
+      "sourceDigest": "3305bb342d1b87307af3ce8421cb26bf16be72c7f4514f3b3de0ef3832b889c3",
+      "threshold": -1,
+      "trustedDecisionBases": [],
+      "version": "wyrmle-semantic-refinement-1",
+      "reviewScope": "all-source-senses",
+      "sourceSelection": "baseline-agreement-then-directness-v1",
+      "baseCacheDigest": "079b87bdddcbf73638537487cabf14fe75c1e0df9cb5932b6e0bd6effde2695e",
+      "recordsDigest": "7d2e2ad0855b3803dd4c917d03c5ef346706156005ec7562c23a4d8d587c9772",
+      "retrievalDigest": "2b5c262bd486ac334b74042a3df867f7402000aef646457cd129d8dff2af9995"
+    }
+  },
+  "inventories": {
+    "ANGER": {
+      "ready": true,
+      "eligibleWords": 37,
+      "reviewedWords": 37,
+      "issues": [],
+      "metadata": {
+        "version": "wyrmle-semantic-refinement-1",
+        "modelId": "Qwen/Qwen3.5-9B",
+        "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+        "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+        "promptDigest": "7fd7a66adba4c556171a71783c8e83f5cf9d667b1b1ee7d383af09789b09cffa",
+        "eligibilityPolicyDigest": "76e46b27acbb1122759d5ca3c4f46dfd14a7eba597b75da06b7de35ac5a8ad72",
+        "baseCacheDigest": "21485cf342dda5dda7eceff6683e610e8ddd18c663d0124e7fce26396ed71dbf",
+        "inventoryDigest": "715be5ac2e200e2a6c0b535e98303dd624c08cb45ac06807ce5778567ef8a40a",
+        "cacheDigest": "3ca0128461e23f02aa2cd716e5d3f7a12d049e5ffbc8e29a9cb6ea2a0dd44647",
+        "eligibleWords": 37,
+        "reviewedWords": 37,
+        "sourceReviewDigest": "656c086ba3a7b06912624c2f292e5f91f0b263e4db1d6c4c88de3fdcafc26a1d",
+        "sourceReviewedWords": 1,
+        "reviewScope": "all-source-senses"
+      }
+    },
+    "DESPAIR": {
+      "ready": true,
+      "eligibleWords": 36,
+      "reviewedWords": 36,
+      "issues": [],
+      "metadata": {
+        "version": "wyrmle-semantic-refinement-1",
+        "modelId": "Qwen/Qwen3.5-9B",
+        "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+        "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+        "promptDigest": "7fd7a66adba4c556171a71783c8e83f5cf9d667b1b1ee7d383af09789b09cffa",
+        "eligibilityPolicyDigest": "76e46b27acbb1122759d5ca3c4f46dfd14a7eba597b75da06b7de35ac5a8ad72",
+        "baseCacheDigest": "bf46cdb499d2c539b746f72467278c111bce2ddde5cd690d2c22d41b1cb5b73d",
+        "inventoryDigest": "7dc233603056300021bbcb32f1644a69f89c5f4eb225b8d305904baffe34ae9f",
+        "cacheDigest": "27930b78fc2ee68eda0b6e8a194effadb33508b53ebd6f2d546df794d8efd1ec",
+        "eligibleWords": 36,
+        "reviewedWords": 36,
+        "reviewScope": "all-source-senses"
+      }
+    },
+    "FEAR": {
+      "ready": true,
+      "eligibleWords": 36,
+      "reviewedWords": 36,
+      "issues": [],
+      "metadata": {
+        "version": "wyrmle-semantic-refinement-1",
+        "modelId": "Qwen/Qwen3.5-9B",
+        "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+        "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+        "promptDigest": "7fd7a66adba4c556171a71783c8e83f5cf9d667b1b1ee7d383af09789b09cffa",
+        "eligibilityPolicyDigest": "76e46b27acbb1122759d5ca3c4f46dfd14a7eba597b75da06b7de35ac5a8ad72",
+        "baseCacheDigest": "a823e2dcb77e61e1e2d2d93196cb437e3212baeb401824bc55afc111e9b8d51b",
+        "inventoryDigest": "178fe749e61f7cd5f49d30db906f97c891650b7318d98e254f1e95888fcaf5d8",
+        "cacheDigest": "48220aafd266a0640f2654d04844a8a97c0e183e0c97ef8b61b7487dcbdf2d8e",
+        "eligibleWords": 36,
+        "reviewedWords": 36,
+        "reviewScope": "all-source-senses"
+      }
+    },
+    "MELANCHOLY": {
+      "ready": true,
+      "eligibleWords": 36,
+      "reviewedWords": 36,
+      "issues": [],
+      "metadata": {
+        "version": "wyrmle-semantic-refinement-1",
+        "modelId": "Qwen/Qwen3.5-9B",
+        "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+        "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+        "promptDigest": "7fd7a66adba4c556171a71783c8e83f5cf9d667b1b1ee7d383af09789b09cffa",
+        "eligibilityPolicyDigest": "76e46b27acbb1122759d5ca3c4f46dfd14a7eba597b75da06b7de35ac5a8ad72",
+        "baseCacheDigest": "4d3363df874ce40a7d27b1eb4096e35f93311019fd0f62506d5c98b571c13aee",
+        "inventoryDigest": "4c5ebf4023c60c2d318aa05bcbaa7c4e42ee96e87de18642338cb83714012e1b",
+        "cacheDigest": "0795ab61e4ab6394e4f43ae6fed2f663a6dd790a4cd34918198e9a3629789c7e",
+        "eligibleWords": 36,
+        "reviewedWords": 36,
+        "reviewScope": "all-source-senses"
+      }
+    },
+    "CRUELTY": {
+      "ready": true,
+      "eligibleWords": 36,
+      "reviewedWords": 36,
+      "issues": [],
+      "metadata": {
+        "version": "wyrmle-semantic-refinement-1",
+        "modelId": "Qwen/Qwen3.5-9B",
+        "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+        "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+        "promptDigest": "7fd7a66adba4c556171a71783c8e83f5cf9d667b1b1ee7d383af09789b09cffa",
+        "eligibilityPolicyDigest": "76e46b27acbb1122759d5ca3c4f46dfd14a7eba597b75da06b7de35ac5a8ad72",
+        "baseCacheDigest": "70de7e443ac0820464876655e61d97d63e3e830d9e14991c37f26f6f68f12e67",
+        "inventoryDigest": "3f6ce6806554ab8f09337f8432f1ddb085dba3954a486e9d94eb80042c45b366",
+        "cacheDigest": "5a308237594c21301aa03e8cbbaea304b4e6b4bebc987e43a2663783c82a2a54",
+        "eligibleWords": 36,
+        "reviewedWords": 36,
+        "sourceReviewDigest": "656c086ba3a7b06912624c2f292e5f91f0b263e4db1d6c4c88de3fdcafc26a1d",
+        "sourceReviewedWords": 1,
+        "reviewScope": "all-source-senses"
+      }
+    },
+    "CHAOS": {
+      "ready": true,
+      "eligibleWords": 95,
+      "reviewedWords": 95,
+      "issues": [],
+      "metadata": {
+        "version": "wyrmle-semantic-refinement-1",
+        "modelId": "Qwen/Qwen3.5-9B",
+        "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+        "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+        "promptDigest": "7fd7a66adba4c556171a71783c8e83f5cf9d667b1b1ee7d383af09789b09cffa",
+        "eligibilityPolicyDigest": "76e46b27acbb1122759d5ca3c4f46dfd14a7eba597b75da06b7de35ac5a8ad72",
+        "baseCacheDigest": "079b87bdddcbf73638537487cabf14fe75c1e0df9cb5932b6e0bd6effde2695e",
+        "inventoryDigest": "0a4b039dc7aa1bb67b507cad509ab4de7ce6d4f8890b4729ff060c20b98cbf5f",
+        "cacheDigest": "ac2cd9c5aeaeaa5c38f8a682e7cc4619fe41ec59e2a99b723c46b3a38c8fb828",
+        "eligibleWords": 95,
+        "reviewedWords": 95,
+        "sourceReviewDigest": "d413cd8b2567692a62ec20c4fa86faef5b24df5be0651645a1d645f24aaa60df",
+        "sourceReviewedWords": 55,
+        "reviewScope": "all-source-senses"
+      }
+    }
+  },
+  "passed": true,
+  "primary": {
+    "passed": true,
+    "failures": [],
+    "metrics": {
+      "coverage": {
+        "correct": 144,
+        "total": 144,
+        "rate": 1
+      },
+      "accuracy": {
+        "correct": 144,
+        "total": 144,
+        "rate": 1
+      },
+      "coreAccuracy": {
+        "correct": 15,
+        "total": 15,
+        "rate": 1
+      },
+      "holdoutAccuracy": {
+        "correct": 72,
+        "total": 72,
+        "rate": 1
+      },
+      "byEnemy": {
+        "ANGER": {
+          "correct": 24,
+          "total": 24,
+          "rate": 1
+        },
+        "DESPAIR": {
+          "correct": 24,
+          "total": 24,
+          "rate": 1
+        },
+        "FEAR": {
+          "correct": 24,
+          "total": 24,
+          "rate": 1
+        },
+        "MELANCHOLY": {
+          "correct": 24,
+          "total": 24,
+          "rate": 1
+        },
+        "CRUELTY": {
+          "correct": 24,
+          "total": 24,
+          "rate": 1
+        },
+        "CHAOS": {
+          "correct": 24,
+          "total": 24,
+          "rate": 1
+        }
+      },
+      "sourceSenseAccuracy": {
+        "correct": 144,
+        "total": 144,
+        "rate": 1
+      },
+      "constrainedSenseAccuracy": {
+        "correct": 31,
+        "total": 31,
+        "rate": 1
+      },
+      "neutralFalsePositives": {
+        "correct": 0,
+        "total": 45,
+        "rate": 0
+      },
+      "novelConceptRecall": {
+        "correct": 22,
+        "total": 22,
+        "rate": 1
+      }
+    },
+    "fixtureDigest": "be6dac627a03213445e9823f38c1df1c0c86da795248c831e06112f970e7600c"
+  },
+  "development": {
+    "passed": true,
+    "failures": [],
+    "metrics": {
+      "coverage": {
+        "correct": 13,
+        "total": 13,
+        "rate": 1
+      },
+      "accuracy": {
+        "correct": 13,
+        "total": 13,
+        "rate": 1
+      },
+      "coreAccuracy": {
+        "correct": 0,
+        "total": 0,
+        "rate": null
+      },
+      "holdoutAccuracy": {
+        "correct": 0,
+        "total": 0,
+        "rate": null
+      },
+      "byEnemy": {
+        "ANGER": {
+          "correct": 3,
+          "total": 3,
+          "rate": 1
+        },
+        "DESPAIR": {
+          "correct": 2,
+          "total": 2,
+          "rate": 1
+        },
+        "FEAR": {
+          "correct": 2,
+          "total": 2,
+          "rate": 1
+        },
+        "MELANCHOLY": {
+          "correct": 2,
+          "total": 2,
+          "rate": 1
+        },
+        "CRUELTY": {
+          "correct": 2,
+          "total": 2,
+          "rate": 1
+        },
+        "CHAOS": {
+          "correct": 2,
+          "total": 2,
+          "rate": 1
+        }
+      },
+      "sourceSenseAccuracy": {
+        "correct": 13,
+        "total": 13,
+        "rate": 1
+      },
+      "constrainedSenseAccuracy": {
+        "correct": 13,
+        "total": 13,
+        "rate": 1
+      },
+      "neutralFalsePositives": {
+        "correct": 0,
+        "total": 0,
+        "rate": null
+      },
+      "novelConceptRecall": {
+        "correct": 12,
+        "total": 12,
+        "rate": 1
+      }
+    }
+  },
+  "confirmation": {
+    "passed": true,
+    "failures": [],
+    "metrics": {
+      "coverage": {
+        "correct": 36,
+        "total": 36,
+        "rate": 1
+      },
+      "accuracy": {
+        "correct": 36,
+        "total": 36,
+        "rate": 1
+      },
+      "coreAccuracy": {
+        "correct": 0,
+        "total": 0,
+        "rate": null
+      },
+      "holdoutAccuracy": {
+        "correct": 0,
+        "total": 0,
+        "rate": null
+      },
+      "byEnemy": {
+        "ANGER": {
+          "correct": 6,
+          "total": 6,
+          "rate": 1
+        },
+        "DESPAIR": {
+          "correct": 6,
+          "total": 6,
+          "rate": 1
+        },
+        "FEAR": {
+          "correct": 6,
+          "total": 6,
+          "rate": 1
+        },
+        "MELANCHOLY": {
+          "correct": 6,
+          "total": 6,
+          "rate": 1
+        },
+        "CRUELTY": {
+          "correct": 6,
+          "total": 6,
+          "rate": 1
+        },
+        "CHAOS": {
+          "correct": 6,
+          "total": 6,
+          "rate": 1
+        }
+      },
+      "sourceSenseAccuracy": {
+        "correct": 36,
+        "total": 36,
+        "rate": 1
+      },
+      "constrainedSenseAccuracy": {
+        "correct": 24,
+        "total": 24,
+        "rate": 1
+      },
+      "neutralFalsePositives": {
+        "correct": 0,
+        "total": 12,
+        "rate": 0
+      },
+      "novelConceptRecall": {
+        "correct": 15,
+        "total": 15,
+        "rate": 1
+      }
+    },
+    "fixtureDigest": "53fd6031b0cf7c3e0703e7833bd56161314a6ea1fcc18a75d610b6a0ce04f3e1"
+  },
+  "diagnostic": {
+    "passed": true,
+    "failures": [],
+    "metrics": {
+      "coverage": {
+        "correct": 18,
+        "total": 18,
+        "rate": 1
+      },
+      "accuracy": {
+        "correct": 18,
+        "total": 18,
+        "rate": 1
+      },
+      "coreAccuracy": {
+        "correct": 0,
+        "total": 0,
+        "rate": null
+      },
+      "holdoutAccuracy": {
+        "correct": 0,
+        "total": 0,
+        "rate": null
+      },
+      "byEnemy": {
+        "ANGER": {
+          "correct": 3,
+          "total": 3,
+          "rate": 1
+        },
+        "DESPAIR": {
+          "correct": 3,
+          "total": 3,
+          "rate": 1
+        },
+        "FEAR": {
+          "correct": 3,
+          "total": 3,
+          "rate": 1
+        },
+        "MELANCHOLY": {
+          "correct": 3,
+          "total": 3,
+          "rate": 1
+        },
+        "CRUELTY": {
+          "correct": 3,
+          "total": 3,
+          "rate": 1
+        },
+        "CHAOS": {
+          "correct": 3,
+          "total": 3,
+          "rate": 1
+        }
+      },
+      "sourceSenseAccuracy": {
+        "correct": 18,
+        "total": 18,
+        "rate": 1
+      },
+      "constrainedSenseAccuracy": {
+        "correct": 12,
+        "total": 12,
+        "rate": 1
+      },
+      "neutralFalsePositives": {
+        "correct": 0,
+        "total": 6,
+        "rate": 0
+      },
+      "novelConceptRecall": {
+        "correct": 7,
+        "total": 7,
+        "rate": 1
+      }
+    },
+    "fixtureDigest": "75dc5ddeb19cb9d65a51ec87e7199986b3abeb71a655d485801d436ebc5c4106"
+  },
+  "inventory": {
+    "passed": true,
+    "failures": [],
+    "metrics": {
+      "coverage": {
+        "correct": 59,
+        "total": 59,
+        "rate": 1
+      },
+      "accuracy": {
+        "correct": 59,
+        "total": 59,
+        "rate": 1
+      },
+      "coreAccuracy": {
+        "correct": 0,
+        "total": 0,
+        "rate": null
+      },
+      "holdoutAccuracy": {
+        "correct": 0,
+        "total": 0,
+        "rate": null
+      },
+      "byEnemy": {
+        "ANGER": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        },
+        "DESPAIR": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        },
+        "FEAR": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        },
+        "MELANCHOLY": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        },
+        "CRUELTY": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        },
+        "CHAOS": {
+          "correct": 59,
+          "total": 59,
+          "rate": 1
+        }
+      },
+      "sourceSenseAccuracy": {
+        "correct": 59,
+        "total": 59,
+        "rate": 1
+      },
+      "constrainedSenseAccuracy": {
+        "correct": 40,
+        "total": 40,
+        "rate": 1
+      },
+      "neutralFalsePositives": {
+        "correct": 0,
+        "total": 19,
+        "rate": 0
+      },
+      "novelConceptRecall": {
+        "correct": 0,
+        "total": 0,
+        "rate": null
+      }
+    },
+    "fixtureDigest": "d890a03bbc22216c66707a9564e0f638ee99a9c5dc5835b96f8ca72dac99101b"
+  }
+}

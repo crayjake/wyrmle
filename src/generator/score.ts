@@ -10,7 +10,8 @@ const clamp = (value: number) => Math.max(0, Math.min(1, value))
 /** Scores describe the observed candidate; validation is an independent gate. */
 export function scorePuzzle(candidate: CandidatePuzzle, analysis: PuzzleAnalysis, overrides: Partial<ScoreWeights> = {}): QualityScore {
   const weights = { ...defaultScoreWeights,
-    ...(candidate.encounter.meaningLexicon ? { semanticChoices: 20, grammarRelevance: 0 } : {}), ...overrides }
+    ...(candidate.encounter.meaningLexicon ? { semanticChoices: 20, grammarRelevance: 0 } : {}),
+    ...(analysis.semanticJourney ? { semanticChoices: 10, resistedBait: 0, finiteSupplyChoices: 4, lateSuspense: 4, clutch: 3 } : {}), ...overrides }
   const components: ScoreComponent[] = []
   const add = (name: keyof ScoreWeights, value: number, explanation: string) => {
     const bounded = clamp(value)
@@ -43,6 +44,19 @@ export function scorePuzzle(candidate: CandidatePuzzle, analysis: PuzzleAnalysis
   add('forcedSequence', analysis.numberOfDistinctWinningStrategies <= 1 ? 1 : 0, 'Only one observed winning strategy; the search may be incomplete.')
   add('trivialWin', analysis.bestWinDepth !== null && analysis.bestWinDepth <= 1 ? 1 : 0, 'A witnessed one-move finish.')
   add('chaoticBranching', Math.max(0, analysis.branchingFactor - 150) / 350, 'Large distinct-word branching makes intended choices less legible.')
+  const journey = analysis.semanticJourney
+  if (journey) {
+    add('continuingCounters', journey.laterCounterChoiceRate ?? 0, 'Later sampled boards offer at least two counter lemmas, including a familiar option.')
+    add('recurringResistedWords', journey.laterResistedPresenceRate ?? 0, 'At least two familiar resisted words recur after varied actual plays.')
+    add('semanticDiscoveries', journey.positions.filter(position => position.discoveryWords.length > 0).length / Math.max(1, journey.positions.length),
+      'Less frequent counter words coexist with familiar resisted words; a discovery proxy requiring human review.')
+    add('sustainedCounterRoutes', journey.sustainedWinningRouteRate ?? 0, 'Replayed wins use multiple counters, a later meaning advantage, and at most one closing neutral word.')
+    add('neutralChipAway', journey.chipAwayWinRate ?? 0, 'Simple familiar/damage policies win with at most one opening counter and then only neutral words.')
+    add('counterDrought', 1 - (journey.laterMeaningAdvantageRate ?? 0), 'Later sampled positions with multiple HP remaining lack a counter that improves on its neutral equivalent.')
+    add('semanticEndgame', journey.positions.some(position => position.depth > 0 && position.remainingHits > 1
+      && position.temptingResistedFinishers.length > 0 && position.counterFinishers.length > 0) ? 1 : 0,
+    'A later board pairs a resisted word containing the remaining letters with an actual winning counter: the ending asks for meaning as well as spelling.')
+  }
   const rawTotal = components.reduce((sum, component) => sum + component.contribution, 0)
   return { total: Math.round(Math.max(0, Math.min(100, rawTotal)) * 100) / 100, rawTotal, components }
 }

@@ -15,7 +15,7 @@ import { currentLexicalRules, enrichSemanticRelations } from '../game/lexicalRul
 import type { LexicalEntry, LexicalProvider } from './lexicalProvider.ts'
 import { mutateCandidate } from './mutate.ts'
 import { placeArmour } from './placeArmour.ts'
-import { placeSpecialTiles } from './placeSpecialTiles.ts'
+import { placeSpecialTiles, validateRegenTileCount } from './placeSpecialTiles.ts'
 import { createRandom } from './random.ts'
 import { validateRefillLimit } from './refillLimit.ts'
 import { scorePuzzle } from './score.ts'
@@ -25,8 +25,12 @@ import type { AnchorWord, CandidatePuzzle, GenerationGoal, WordRole } from './ty
 import { buildWordPools } from './wordPools.ts'
 import { meaningLexicalProvider, withCompiledMeanings } from './meaningCompiler.ts'
 import { analyseSemanticChoices } from './semanticChoices.ts'
+import { rankDiscoveryAnchors, rankThematicAnchors } from './discoveryDesign.ts'
+import { findSpecialOpeningHints } from './strategyHints.ts'
 
 export type GenerationOptions = {
+  /** Meaning-mode default; classic keeps the previous authoring construction for comparison. */
+  design?: 'sustained-discovery' | 'classic'
   candidateCount?: number
   keep?: number
   refinementRounds?: number
@@ -36,6 +40,8 @@ export type GenerationOptions = {
   startingResolve?: number
   /** Opt-in preserves historical seed output and published daily snapshots. */
   includeRegenTile?: boolean
+  /** Explicit 0–3 overrides the historical boolean. */
+  regenTileCount?: number
   /** Opt-in finite replacement supply; refinement may change its length. */
   refillLimit?: number
   /** Only archival reproduction opts out of the complete, versioned lookup. */
@@ -71,16 +77,22 @@ export type GenerationResult = {
 
 export function createCandidate(enemyWord: string, seed: string | number, options: GenerationOptions = {}): CandidatePuzzle {
   const meaningOnly = options.lexicalMode !== 'legacy' && options.scoringMode !== 'legacy-bonuses'
+  const sustained = meaningOnly && options.design !== 'classic'
   const refillLimit = validateRefillLimit(options.refillLimit)
+  const regenCount = validateRegenTileCount(options.regenTileCount) ?? Number(options.includeRegenTile === true)
   const enemy = normalizeWord(enemyWord)
   const provider = options.provider ?? (meaningOnly ? meaningLexicalProvider : options.lexicalMode === 'legacy' ? localLexicalProvider : currentLexicalProvider)
   const suitability = analyseEnemySuitability(enemy, provider)
   if (!suitability.eligible) throw new Error(suitability.rejectionReasons.join(' '))
   const entry = provider.getEntry(enemy)!
-  const pools = buildWordPools(enemy, provider, { grammarPolicy: options.lexicalMode === 'legacy' ? 'single' : 'any-recognized' })
+  const pools = buildWordPools(enemy, provider, { grammarPolicy: options.lexicalMode === 'legacy' ? 'single' : 'any-recognized',
+    ...(sustained ? { minimumCounterCommonness: 0.4 } : {}) })
   const random = createRandom(seed)
   const goal = options.goal ?? chooseGenerationGoal(random)
-  const currentGoal = meaningOnly && goal.archetypes.includes('grammar-twist') ? {
+  const currentGoal: GenerationGoal = sustained && !options.goal ? {
+    archetypes: ['semantic-contrast', 'refill-planning', 'multiple-routes'],
+    description: 'Familiar resisted words recur while several counter discoveries remain useful throughout the fight.',
+  } : meaningOnly && goal.archetypes.includes('grammar-twist') ? {
     ...goal, archetypes: [...new Set(goal.archetypes.map(type => type === 'grammar-twist' ? 'semantic-contrast' as const : type))],
     description: 'Meaning and Hit tiles offer different ways through resisted words.',
   } : goal
@@ -97,17 +109,26 @@ export function createCandidate(enemyWord: string, seed: string | number, option
     if (role === 'neutral') roles.push('ward')
     anchors.push({ word: selected.word, roles, expected: 'opening', commonness: selected.commonness })
   }
-  addAnchor(pools.counters, 'counter', 7)
-  addAnchor(pools.resisted, 'resisted', 7)
-  if (meaningOnly) addAnchor(pools.counters, 'counter', 7)
-  else addAnchor(pools.grammar.filter(entry => pools.neutral.includes(entry)), 'grammar', 7)
-  addAnchor(pools.neutral, 'neutral', 6)
+  const discoveryCounters = rankDiscoveryAnchors(pools.counters, enemy)
+  const familiarResisted = rankThematicAnchors(pools.resisted, enemy)
+  if (sustained) {
+    addAnchor(familiarResisted.slice(0, 8), 'resisted', 8)
+    addAnchor(discoveryCounters.slice(0, 8), 'counter', 9)
+    addAnchor(familiarResisted, 'resisted', 8)
+    addAnchor(discoveryCounters, 'counter', 9)
+  } else {
+    addAnchor(pools.counters, 'counter', 7)
+    addAnchor(pools.resisted, 'resisted', 7)
+    if (meaningOnly) addAnchor(pools.counters, 'counter', 7)
+    else addAnchor(pools.grammar.filter(entry => pools.neutral.includes(entry)), 'grammar', 7)
+    addAnchor(pools.neutral, 'neutral', 6)
+  }
   const words = pools.all.map(entry => entry.word)
   const board = constructBoard(anchors.map(anchor => anchor.word), words, random)
   const startingTiles = placeSpecialTiles(board, enemy, pools.counters.map(entry => entry.word),
     anchors.filter(anchor => anchor.roles.includes('resisted')).map(anchor => anchor.word), random, options)
-  const armourCount = goal.archetypes.includes('armour-break') ? 2 : 1
-  const id = `generated-${enemy.toLowerCase()}-${meaningOnly ? 'meaning2-' : options.lexicalMode === 'legacy' ? '' : 'lex2-'}${encodeURIComponent(String(seed))}${refillLimit === undefined ? '' : `-finite${refillLimit}`}`
+  const armourCount = sustained ? Math.max(2, Math.min(enemy.length, 9 - enemy.length)) : goal.archetypes.includes('armour-break') ? 2 : 1
+  const id = `generated-${enemy.toLowerCase()}-${sustained ? 'meaning3-' : meaningOnly ? 'meaning2-' : options.lexicalMode === 'legacy' ? '' : 'lex2-'}${encodeURIComponent(String(seed))}${refillLimit === undefined ? '' : `-finite${refillLimit}`}${regenCount > 1 ? `-revives${regenCount}` : ''}`
   const startingResolve = options.startingResolve ?? 5
   let encounter: LetterStrikeEncounter = {
     id, enemy: { word: enemy, definition: entry.definition, partOfSpeech: entry.partsOfSpeech[0],
@@ -123,11 +144,14 @@ export function createCandidate(enemyWord: string, seed: string | number, option
     ...(options.lexicalMode === 'legacy' ? {} : { lexicalRules: { ...currentLexicalRules } }),
     ...(meaningOnly ? {} : { longWordRule: { minimumLength: 6, bonusStrikes: 1 } }),
     tileEffects: { strike: { strike: true, preventResolveLoss: false }, ward: { strike: false, preventResolveLoss: true },
-      ...(options.includeRegenTile ? { regen: { strike: false, preventResolveLoss: false, regenerate: true } } : {}),
+      ...(regenCount ? { regen: { strike: false, preventResolveLoss: false, regenerate: true } } : {}),
     },
   }
   const targetTurns = goal.archetypes.includes('clutch-finish') ? startingResolve + 1 : startingResolve
-  const refill = constructRefill(encounter, pools.all, random, targetTurns, refillLimit)
+  const refill = constructRefill(encounter, pools.all, random, targetTurns, refillLimit, sustained ? {
+    counters: discoveryCounters.slice(0, 32).map(entry => entry.word), resisted: familiarResisted.slice(0, 32).map(entry => entry.word),
+  } : undefined)
+  if (sustained) refill.construction.design = 'sustained-discovery'
   encounter.refillQueue = refill.refillQueue
   if (meaningOnly) encounter = withCompiledMeanings(encounter)
   for (const word of refill.construction.plannedWords) {
@@ -138,7 +162,7 @@ export function createCandidate(enemyWord: string, seed: string | number, option
     anchors.push({ word, roles, expected: 'refill', commonness: provider.getEntry(word)?.commonness ?? null })
   }
   return { id, seed: String(seed), enemyWord: enemy, encounter, goal: structuredClone(currentGoal), anchors,
-    construction: refill.construction, provenance: { generatorVersion: meaningOnly ? 'letter-strike-generator-4' : options.lexicalMode === 'legacy' ? 'letter-strike-generator-1' : 'letter-strike-generator-2', lexicalProvider: provider.id } }
+    construction: refill.construction, provenance: { generatorVersion: sustained ? 'letter-strike-generator-5' : meaningOnly ? 'letter-strike-generator-4' : options.lexicalMode === 'legacy' ? 'letter-strike-generator-1' : 'letter-strike-generator-2', lexicalProvider: provider.id } }
 }
 
 function compareCandidates(a: RankedCandidate, b: RankedCandidate): number {
@@ -149,6 +173,7 @@ function compareCandidates(a: RankedCandidate, b: RankedCandidate): number {
 /** Bounded deterministic hill climbing. Acceptance is always decided by analysis. */
 export function generateForEnemy(enemyWord: string, seed: string | number, options: GenerationOptions = {}): GenerationResult {
   validateRefillLimit(options.refillLimit)
+  validateRegenTileCount(options.regenTileCount)
   const provider = options.provider ?? (options.lexicalMode === 'legacy' ? localLexicalProvider
     : options.scoringMode === 'legacy-bonuses' ? currentLexicalProvider : meaningLexicalProvider)
   const enemy = normalizeWord(enemyWord)
@@ -157,15 +182,20 @@ export function generateForEnemy(enemyWord: string, seed: string | number, optio
     enemyRejections: [], attempted: 0, solvable: 0, acceptedCount: 0, accepted: [], ranked: [], rejectionCounts: {} }
   if (!enemySuitability.eligible) { report.enemyRejections.push(enemySuitability); return report }
   function evaluate(candidate: CandidatePuzzle, proposedLine?: readonly (readonly number[])[]): RankedCandidate {
+    const specialHints = candidate.construction.design === 'sustained-discovery'
+      ? findSpecialOpeningHints(candidate.encounter, options.analysis?.solver) : { hints: [], statesExplored: 0 }
     const analysis = analysePuzzle(candidate, {
       ...options.analysis,
       wordCommonness: options.analysis?.wordCommonness ?? (word => provider.getEntry(word)?.commonness ?? null),
       solver: { ...options.analysis?.solver,
+        ...(specialHints.hints.length ? { hintLines: [...(options.analysis?.solver?.hintLines ?? []), ...specialHints.hints] } : {}),
         // Parent routes are suggestions, replayed and validated on the mutation.
         // The solver never treats an inherited route as an inherited proof.
         hintLine: proposedLine ?? (candidate.construction.plannedTileIds.length ? candidate.construction.plannedTileIds : options.analysis?.solver?.hintLine),
       },
     })
+    analysis.statesExplored += specialHints.statesExplored
+    if (candidate.construction.design === 'sustained-discovery') analysis.notes.push(`Separate Hit-opening probes searched ${specialHints.statesExplored} states and supplied ${specialHints.hints.length} freshly replayed winning routes.`)
     if ([options.validation?.minimumCounterOpeningLemmas, options.validation?.minimumMultiHitCounterOpenings,
       options.validation?.minimumMeaningBoostedOpenings, options.validation?.minimumWinningCounterLemmas,
       options.validation?.minimumFamiliarWinningOpenings].some(minimum => (minimum ?? 0) > 0)) {
@@ -216,6 +246,7 @@ export function generateForEnemy(enemyWord: string, seed: string | number, optio
 /** Enemy screening precedes construction; the daily catalog is never modified. */
 export function generatePuzzle(seed: string | number, options: GenerationOptions = {}): GenerationResult {
   validateRefillLimit(options.refillLimit)
+  validateRegenTileCount(options.regenTileCount)
   const provider = options.provider ?? (options.lexicalMode === 'legacy' ? localLexicalProvider
     : options.scoringMode === 'legacy-bonuses' ? currentLexicalProvider : meaningLexicalProvider)
   const selection = selectEnemy(seed, { provider })

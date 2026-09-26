@@ -7,6 +7,7 @@ import { isOpeningSafetyCertificateCurrent } from './openingSafety.ts'
 import { createLetterStrikeGame } from '../game/letterStrike.ts'
 import { stateKey } from './stateKey.ts'
 import { isMeaningCompilationCurrent, isMeaningPublicationReady } from './meaningCompiler.ts'
+import { semanticJourneyKey } from './semanticJourney.ts'
 
 export type ValidationIssue = { code: string; message: string }
 export type ValidationResult = {
@@ -24,7 +25,7 @@ export function validatePuzzle(candidate: CandidatePuzzle, analysis: PuzzleAnaly
   const warnings: ValidationIssue[] = []
   const reject = (code: string, message: string) => reasons.push({ code, message })
   const warn = (code: string, message: string) => warnings.push({ code, message })
-  if (['letter-strike-generator-3', 'letter-strike-generator-4'].includes(candidate.provenance.generatorVersion)
+  if (['letter-strike-generator-3', 'letter-strike-generator-4', 'letter-strike-generator-5'].includes(candidate.provenance.generatorVersion)
     && !candidate.encounter.meaningLexicon) {
     reject('missing-puzzle-meanings', 'Meaning-era candidates must package their definition-backed dictionary; removing it cannot restore legacy word validity.')
   }
@@ -33,6 +34,25 @@ export function validatePuzzle(candidate: CandidatePuzzle, analysis: PuzzleAnaly
   }
   if (config.requireMeaningRefinement && !isMeaningPublicationReady(candidate.encounter)) {
     reject('meaning-refinement-incomplete', 'Publication requires complete contextual review and an audited final meaning for every spelling in the full tile supply.')
+  }
+  if (config.requireSustainedSemantics ?? (candidate.construction.design === 'sustained-discovery'
+    || candidate.provenance.generatorVersion === 'letter-strike-generator-5')) {
+    const journey = analysis.semanticJourney
+    if (!journey || journey.version !== 1 || journey.encounterKey !== semanticJourneyKey(candidate.encounter)
+      || journey.sampling.maxDepth < 3 || journey.sampling.statesPerDepth < 6 || !journey.byDepth.some(layer => layer.depth >= 2)) {
+      reject('missing-semantic-journey', 'Sustained-discovery puzzles need a current branch sample through later turns and exact winning-route replays.')
+    } else {
+      if ((journey.positions[0]?.resistedWords.length ?? 0) < 2) reject('thin-opening-theme', 'The opening needs at least two familiar resisted words to establish the enemy theme.')
+      if (!journey.positions.some(position => position.discoveryWords.length)) reject('no-semantic-discoveries', 'No sampled board pairs familiar resisted words with less obvious counter discoveries.')
+      for (const layer of journey.byDepth.filter(layer => layer.depth > 0)) {
+        if (layer.counterChoiceRate < 0.65) reject('later-counter-drought', `Only ${Math.round(layer.counterChoiceRate * 100)}% of turn-${layer.depth + 1} sampled boards offer multiple counter meanings.`)
+        if (layer.resistedPresenceRate < 0.5) reject('fading-enemy-theme', `The resisted theme survives on only ${Math.round(layer.resistedPresenceRate * 100)}% of turn-${layer.depth + 1} sampled boards.`)
+        if (layer.meaningAdvantageRate !== null && layer.meaningAdvantageRate < 0.65) reject('later-meaning-irrelevance', `Counters improve damage on only ${Math.round(layer.meaningAdvantageRate * 100)}% of turn-${layer.depth + 1} sampled boards with multiple HP remaining.`)
+      }
+      if ((journey.sustainedWinningRouteRate ?? 0) < 0.6) reject('opening-only-counter-routes', 'At least 60% of reviewed winning routes must use multiple counters with a later meaning advantage and no long neutral tail.')
+      if (journey.chipAwayWinRate === null || journey.chipAwayWinRate > 0.2) reject('easy-neutral-chip-away', 'Too many simple policies win after at most one opening counter, followed by neutral words.')
+      warn('sampled-semantic-journey', 'Journey quality is a bounded design diagnostic, not a guarantee over every possible play or a substitute for semantic review and playtesting.')
+    }
   }
   const choiceGates = [
     ['familiarCounterOpeningLemmas', config.minimumCounterOpeningLemmas ?? 0],

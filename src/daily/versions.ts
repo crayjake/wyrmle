@@ -29,3 +29,5 @@ export const MEANING_COVERAGE_PUZZLE_VERSION = 11
 // These two explicitly requested dates share one assessed challenge.
 export const MODEL_ASSESSED_DATES: readonly string[] = ['2026-09-26', '2026-09-27']
 export const MODEL_ASSESSED_PUZZLE_VERSION = 12
+// Same physical challenge; the mythical HALCYONS calming sense is corrected.
+export const HALCYONS_CORRECTION_PUZZLE_VERSION = 13

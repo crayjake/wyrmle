@@ -1,7 +1,8 @@
 import type { GenerationResult } from './generate.ts'
 import { validateRefillLimit } from './refillLimit.ts'
+import { validateRegenTileCount } from './placeSpecialTiles.ts'
 
-export type GeneratorRequest = { id: number; enemy: string | null; seed: string; candidateCount: number; includeRegenTile?: boolean; refillLimit?: number }
+export type GeneratorRequest = { id: number; enemy: string | null; seed: string; candidateCount: number; includeRegenTile?: boolean; regenTileCount?: number; refillLimit?: number }
 export type GeneratorProgress = { attempted: number; accepted: number; enemyWord: string }
 export type GeneratorResponse =
   | { id: number; type: 'progress'; progress: GeneratorProgress }
@@ -23,8 +24,10 @@ export function validateGeneratorRequest(value: unknown): GeneratorRequest {
   }
   if (input.includeRegenTile !== undefined && typeof input.includeRegenTile !== 'boolean') throw new Error('REGEN choice must be a boolean.')
   const refillLimit = validateRefillLimit(input.refillLimit)
+  const regenTileCount = validateRegenTileCount(input.regenTileCount)
   return { id: input.id!, seed: input.seed, enemy: input.enemy?.trim().toUpperCase() ?? null, candidateCount: input.candidateCount!,
     ...(input.includeRegenTile === undefined ? {} : { includeRegenTile: input.includeRegenTile }),
+    ...(regenTileCount === undefined ? {} : { regenTileCount }),
     ...(refillLimit === undefined ? {} : { refillLimit }),
   }
 }

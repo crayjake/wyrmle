@@ -67,7 +67,7 @@ test('Historical September 25 v7 retains the exact selected DESPAIR encounter as
   assert.equal('winningLines' in published.encounter, false)
   assert.equal('construction' in published.encounter, false)
   assert.equal(getDailyPuzzle('2026-09-23').puzzleVersion, 1)
-  assert.equal(getDailyPuzzle('2026-09-26').puzzleVersion, 12)
+  assert.equal(getDailyPuzzle('2026-09-26').puzzleVersion, 13)
   assert.equal(published.difficulty, 'MEDIUM')
   assert.deepEqual(published.encounter.startingTiles, archivedDespair.encounter.startingTiles)
   assert.equal(published.encounter.refillQueue, archivedDespair.encounter.refillQueue)

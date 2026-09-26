@@ -1,0 +1,562 @@
+[
+  {
+    "id": "halcyon-word-list-study-0",
+    "enemyHP": 9,
+    "lives": 5,
+    "board": "AEYSEICEHRSMUNLO",
+    "refills": "DLRELWCRAYACHYAMSRANPTCO",
+    "solvable": true,
+    "bestWin": 4,
+    "minimumProven": false,
+    "chipAwayWins": 0,
+    "chipAwayRuns": 10,
+    "laterCounterChoiceRate": 0.3333333333333333,
+    "laterResistedPresenceRate": 0.2916666666666667,
+    "sustainedWinningRouteRate": 0.2,
+    "routes": [
+      [
+        "CHAOS",
+        "YELL",
+        "MAN",
+        "SEA",
+        "HEAR"
+      ],
+      [
+        "CHAOS",
+        "YELL",
+        "MAN",
+        "SEA",
+        "CHAIR"
+      ],
+      [
+        "REAL",
+        "NOISY",
+        "CLASH",
+        "HEAR",
+        "REAL"
+      ],
+      [
+        "NOISE",
+        "CLASH",
+        "YELL",
+        "CAR",
+        "HEAR"
+      ],
+      [
+        "CALM",
+        "NOISY",
+        "CLASH",
+        "HEAR",
+        "REAL"
+      ],
+      [
+        "REAL",
+        "NOISY",
+        "CLASH",
+        "HEAR",
+        "SEAL"
+      ],
+      [
+        "NOISE",
+        "CLASH",
+        "YELL",
+        "HEAR"
+      ],
+      [
+        "SCREAM",
+        "NOISY",
+        "YELL",
+        "HEAR",
+        "HEAR"
+      ],
+      [
+        "HEAR",
+        "NOISY",
+        "SCREAM",
+        "YELL",
+        "HEAR"
+      ],
+      [
+        "CLASH",
+        "NOISY",
+        "YELL",
+        "CAR",
+        "HEAR"
+      ],
+      [
+        "NOISY",
+        "CLASH",
+        "YELL",
+        "CAR",
+        "HEAR"
+      ],
+      [
+        "NOISE",
+        "CLASH",
+        "YELL",
+        "CAR",
+        "HAM"
+      ],
+      [
+        "CALM",
+        "NOISY",
+        "CLASH",
+        "HEAR",
+        "SEAL"
+      ],
+      [
+        "CLAMOR",
+        "YELL",
+        "ANY",
+        "HEAR",
+        "HEAR"
+      ],
+      [
+        "NEAR",
+        "YELL",
+        "HOWL",
+        "SCREAM",
+        "HEAR"
+      ],
+      [
+        "CLAMOR",
+        "YELL",
+        "ANY",
+        "HEAR",
+        "CHAIR"
+      ],
+      [
+        "CLASHES",
+        "YELL",
+        "ROAR",
+        "CAN",
+        "HEAR"
+      ],
+      [
+        "SERENE",
+        "CHAOS",
+        "YELL",
+        "CHAIR",
+        "ANY"
+      ],
+      [
+        "SERENE",
+        "CHAOS",
+        "YELL",
+        "CHAIR",
+        "CAN"
+      ],
+      [
+        "SCREAM",
+        "ROWDY",
+        "ANARCHY",
+        "CLASHES",
+        "CLAMOR"
+      ]
+    ],
+    "endgames": [],
+    "scope": "explicit-editorial-word-list-study",
+    "publicationReady": false
+  },
+  {
+    "id": "halcyon-word-list-study-1",
+    "enemyHP": 11,
+    "lives": 5,
+    "board": "EHEMLTECOAINTSYR",
+    "refills": "WSONYLHWOSOLHSCAHAOYRPHN",
+    "solvable": true,
+    "bestWin": 5,
+    "minimumProven": false,
+    "chipAwayWins": 0,
+    "chipAwayRuns": 10,
+    "laterCounterChoiceRate": 0.8333333333333334,
+    "laterResistedPresenceRate": 0.041666666666666664,
+    "sustainedWinningRouteRate": 0.5,
+    "routes": [
+      [
+        "CLASH",
+        "NOISY",
+        "HOWL",
+        "SON",
+        "CAR"
+      ],
+      [
+        "NOISY",
+        "CLASH",
+        "HOWL",
+        "SON",
+        "CAR"
+      ],
+      [
+        "CLASH",
+        "NOISY",
+        "HOWL",
+        "SON",
+        "COAL"
+      ],
+      [
+        "NOISY",
+        "CLASH",
+        "HOWL",
+        "SON",
+        "COAL"
+      ],
+      [
+        "CLASH",
+        "NOISY",
+        "HOWL",
+        "SON",
+        "COAT"
+      ],
+      [
+        "NOISY",
+        "CLASH",
+        "HOWL",
+        "SON",
+        "COAT"
+      ],
+      [
+        "CLASH",
+        "NOISY",
+        "HOWL",
+        "SON",
+        "CHAOS"
+      ],
+      [
+        "NOISY",
+        "CLASH",
+        "HOWL",
+        "SON",
+        "CHAOS"
+      ],
+      [
+        "CLASH",
+        "NOISY",
+        "HOWL",
+        "SON",
+        "SCREAM"
+      ],
+      [
+        "NOISY",
+        "CLASH",
+        "HOWL",
+        "SON",
+        "SCREAM"
+      ],
+      [
+        "CLASH",
+        "NOISY",
+        "HOWL",
+        "SON",
+        "CLOTH"
+      ],
+      [
+        "NOISY",
+        "CLASH",
+        "HOWL",
+        "SON",
+        "CLOTH"
+      ],
+      [
+        "CLASH",
+        "NOISY",
+        "HOWL",
+        "SON",
+        "CART"
+      ],
+      [
+        "NOISY",
+        "CLASH",
+        "HOWL",
+        "SON",
+        "CART"
+      ],
+      [
+        "CLASH",
+        "NOISY",
+        "HOWL",
+        "SON",
+        "CLASH"
+      ],
+      [
+        "NOISY",
+        "CLASH",
+        "HOWL",
+        "SON",
+        "CLASH"
+      ],
+      [
+        "CLATTER",
+        "NOISY",
+        "HOWL",
+        "CHAOS",
+        "ANY"
+      ],
+      [
+        "CLATTER",
+        "NOISY",
+        "HOWL",
+        "CHAOS",
+        "MAN"
+      ],
+      [
+        "CLATTER",
+        "NOISY",
+        "HOWL",
+        "CHAOS",
+        "MONEY"
+      ],
+      [
+        "NOISY",
+        "HOWLS",
+        "HOWL",
+        "CHAOS",
+        "ANARCHY"
+      ]
+    ],
+    "endgames": [],
+    "scope": "explicit-editorial-word-list-study",
+    "publicationReady": false
+  },
+  {
+    "id": "halcyon-word-list-study-2",
+    "enemyHP": 13,
+    "lives": 5,
+    "board": "TEEAMENCHOYIRSSL",
+    "refills": "OWPNYSOLRHOGWIHHLNOSACAC",
+    "solvable": true,
+    "bestWin": 5,
+    "minimumProven": false,
+    "chipAwayWins": 0,
+    "chipAwayRuns": 10,
+    "laterCounterChoiceRate": 0.6666666666666666,
+    "laterResistedPresenceRate": 0,
+    "sustainedWinningRouteRate": 1,
+    "routes": [
+      [
+        "SCREAM",
+        "NOISY",
+        "HOWL",
+        "HOWLING",
+        "CHAOS"
+      ],
+      [
+        "NOISY",
+        "HOWLS",
+        "CHAOS",
+        "HOWLING",
+        "CHAOS"
+      ],
+      [
+        "SCREAM",
+        "NOISY",
+        "HOWL",
+        "HOWLING",
+        "CLASH"
+      ],
+      [
+        "SCREAM",
+        "NOISY",
+        "HOWL",
+        "HOWLING",
+        "CLASHES"
+      ]
+    ],
+    "endgames": [],
+    "scope": "explicit-editorial-word-list-study",
+    "publicationReady": false
+  },
+  {
+    "id": "halcyon-word-list-study-3",
+    "enemyHP": 11,
+    "lives": 4,
+    "board": "NOECSIYELHRESAMU",
+    "refills": "OYNTGIOSWHOHSLNCAHLLAPCS",
+    "solvable": true,
+    "bestWin": 4,
+    "minimumProven": false,
+    "chipAwayWins": 0,
+    "chipAwayRuns": 10,
+    "laterCounterChoiceRate": 0.6666666666666666,
+    "laterResistedPresenceRate": 0.05555555555555555,
+    "sustainedWinningRouteRate": 1,
+    "routes": [
+      [
+        "CHAOS",
+        "NOISY",
+        "HOWLING",
+        "CLASH"
+      ],
+      [
+        "CHAOS",
+        "NOISY",
+        "HOWLING",
+        "CLASHES"
+      ],
+      [
+        "NOISY",
+        "CHAOS",
+        "HOWLING",
+        "CLASHES"
+      ],
+      [
+        "CHAOS",
+        "NOISY",
+        "HOWLING",
+        "CLAMOR"
+      ],
+      [
+        "CHAOS",
+        "NOISY",
+        "HOWLING",
+        "CLAMOUR"
+      ]
+    ],
+    "endgames": [],
+    "scope": "explicit-editorial-word-list-study",
+    "publicationReady": false
+  },
+  {
+    "id": "halcyon-word-list-study-4",
+    "enemyHP": 11,
+    "lives": 5,
+    "board": "AEOENRIYHLSSMETC",
+    "refills": "HARMONYSERENECALMNOISYCLASHROARHOWL",
+    "solvable": true,
+    "bestWin": 5,
+    "minimumProven": false,
+    "chipAwayWins": 0,
+    "chipAwayRuns": 10,
+    "laterCounterChoiceRate": 0.8333333333333334,
+    "laterResistedPresenceRate": 0.5,
+    "sustainedWinningRouteRate": 1,
+    "routes": [
+      [
+        "HOME",
+        "ANARCHY",
+        "NOISE",
+        "YELL",
+        "CAN"
+      ],
+      [
+        "HOME",
+        "ANARCHY",
+        "NOISE",
+        "YELL",
+        "CAR"
+      ],
+      [
+        "STORM",
+        "ANARCHY",
+        "NOISE",
+        "CLASH",
+        "LINE"
+      ],
+      [
+        "STORM",
+        "ANARCHY",
+        "NOISE",
+        "CLASH",
+        "ONLY"
+      ],
+      [
+        "HOME",
+        "ANARCHY",
+        "NOISE",
+        "YELL",
+        "COAT"
+      ],
+      [
+        "HOME",
+        "ANARCHY",
+        "NOISE",
+        "YELL",
+        "CORN"
+      ],
+      [
+        "HOME",
+        "ANARCHY",
+        "NOISE",
+        "YELL",
+        "SCREAM"
+      ],
+      [
+        "STONE",
+        "CLASH",
+        "NOISY",
+        "ANARCHY",
+        "LINE"
+      ],
+      [
+        "STONE",
+        "CLASH",
+        "NOISY",
+        "ANARCHY",
+        "ONLY"
+      ],
+      [
+        "STORM",
+        "ANARCHY",
+        "NOISE",
+        "CLASH",
+        "LION"
+      ],
+      [
+        "HOME",
+        "ANARCHY",
+        "NOISE",
+        "YELL",
+        "CART"
+      ],
+      [
+        "STONE",
+        "CLASH",
+        "NOISY",
+        "ANARCHY",
+        "LION"
+      ],
+      [
+        "STORMS",
+        "ANARCHY",
+        "NOISE",
+        "YELL",
+        "CHAOS"
+      ]
+    ],
+    "endgames": [],
+    "scope": "explicit-editorial-word-list-study",
+    "publicationReady": false
+  },
+  {
+    "id": "halcyon-word-list-study-5",
+    "enemyHP": 11,
+    "lives": 4,
+    "board": "AEOIRHEYCNMEGLSI",
+    "refills": "RAMLLAEYANSHOECROOAMCHHRRNYSLSNEOIW",
+    "solvable": true,
+    "bestWin": 4,
+    "minimumProven": false,
+    "chipAwayWins": 0,
+    "chipAwayRuns": 10,
+    "laterCounterChoiceRate": 0.5,
+    "laterResistedPresenceRate": 0.2777777777777778,
+    "sustainedWinningRouteRate": 1,
+    "routes": [
+      [
+        "NOISILY",
+        "RAGE",
+        "CLASH",
+        "ANARCHY"
+      ],
+      [
+        "RAGE",
+        "NOISILY",
+        "CLASH",
+        "ANARCHY"
+      ]
+    ],
+    "endgames": [],
+    "scope": "explicit-editorial-word-list-study",
+    "publicationReady": false
+  }
+]

@@ -1,0 +1,49 @@
+{
+  "reviewMethod": "Source inspection of the reported HALCYONS miss; exact digest comparison of every other previously audited meaning.",
+  "scopeWords": 10379,
+  "unchangedWords": 10378,
+  "changedWords": [
+    "HALCYONS"
+  ],
+  "previousAudit": "artifacts/semantic-assessment/evaluation/contextual-final/inventory-review.json",
+  "previousSourceReviewPolicyDigest": "ad368149da4461fab7b6c522988d57efae9d3b3b4d478106e703cbaa4b89bf9c",
+  "sourceReviewPolicyDigest": "5912a9d2c9d6005552dc694807aad57fce4ed7e6781bc66531bb511172b9cd4e",
+  "metadata": {
+    "version": "wyrmle-semantic-refinement-1",
+    "modelId": "Qwen/Qwen3.5-9B",
+    "modelRevision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "modelDigest": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+    "promptDigest": "7fd7a66adba4c556171a71783c8e83f5cf9d667b1b1ee7d383af09789b09cffa",
+    "eligibilityPolicyDigest": "76e46b27acbb1122759d5ca3c4f46dfd14a7eba597b75da06b7de35ac5a8ad72",
+    "baseCacheDigest": "079b87bdddcbf73638537487cabf14fe75c1e0df9cb5932b6e0bd6effde2695e",
+    "inventoryDigest": "7a4cf42fb9272544f159f649848b4a0eabfe8e4b816f2a4c43115575861e1cc1",
+    "cacheDigest": "85d7e05bfa30dca3defab871720d5ff1ac58ebed96ceeccd5907310ab24165f0",
+    "eligibleWords": 10379,
+    "reviewedWords": 10379,
+    "sourceReviewDigest": "11c7242e894714b95a5371bbfc09d80abf4a4e24eb31e2e9a21ba1cb93b7fbfe",
+    "sourceReviewedWords": 248,
+    "reviewScope": "all-source-senses"
+  },
+  "reviewedMeaning": {
+    "definition": "a mythical bird said to breed at the time of the winter solstice in a nest floating on the sea and to have the power of calming the winds and waves",
+    "lemma": "halcyon",
+    "senseId": "oewn-halcyon__1.05.01..",
+    "partsOfSpeech": [
+      "noun"
+    ],
+    "relation": "opposite",
+    "reason": "This sense expresses calmness and composure, which counters CHAOS.",
+    "source": "oewn-2025",
+    "evidence": "model-assessed",
+    "assessment": {
+      "counterScore": 0,
+      "resistedScore": 0,
+      "margin": 0,
+      "sensesEvaluated": 1,
+      "selectedAnchor": "shipshape: characterized by order and neatness; free from disorder",
+      "decisionBasis": "source-reviewed"
+    }
+  },
+  "source": "https://ahdictionary.com/word/search.html?q=halcyon",
+  "limitation": "Regression coverage and a source review cannot establish zero undiscovered semantic mistakes."
+}

@@ -1,4 +1,14 @@
-# September 26–27: assessed CHAOS v12
+# September 26–27: assessed CHAOS v13
+
+V13 corrects the player-reported **HALCYONS** miss. Its stored noun sense explicitly describes mythical birds that calm winds and waves; it now counters CHAOS through that sense. HALCYON remains a counter through its peaceful adjective. This is a source-level correction, not blanket inheritance of adjective labels by plural nouns. [American Heritage](https://ahdictionary.com/word/search.html?q=halcyon) independently corroborates the calming noun sense.
+
+Exactly one of the 10,379 previously audited word records changed; the other 10,378 digests match. The actual model response remains intact and the amendment is marked `source-reviewed`. The supply now has **300 counters, 82 resisted words and 9,969 neutral words**. All **270 semantic regressions** pass, including the new noun-sense regression. This does not establish perfect unseen semantic judgement.
+
+The physical puzzle is unchanged. All **8,041 physical openings** were freshly replayed and certified again, and the three-word minimum was independently proved again. Fresh attempts on both dates use v13; played, undone and completed v12 attempts retain their exact meanings until reset.
+
+Current proof and walkthrough artifacts are in `artifacts/meaning-v4-halcyons/`. The source amendment is in `artifacts/semantic-assessment/evaluation/halcyons-correction/`. The separate [puzzle-design workbench](../artifacts/puzzle-design-2026-09-26/index.html) records balance experiments and unpublished drafts; their enemy-health changes are not part of v13.
+
+## Original v12 design review (historical)
 
 Both dates use the same frozen challenge. September 25 remains v11; played, undone and completed attempts keep their original rules. Fresh attempts and explicit resets load the publication for their date.
 

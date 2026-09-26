@@ -1,0 +1,3165 @@
+{
+  "puzzleId": "2026-09-26",
+  "encounterId": "daily-chaos-2026-09-26-v12",
+  "startingBoard": "OABRYDSHCGLENRMA",
+  "openingCounterCount": 78,
+  "fullSupplyCounterCount": 299,
+  "openings": [
+    {
+      "word": "AGENDA",
+      "hits": 2,
+      "revive": true,
+      "recoveries": [
+        {
+          "tileId": 15,
+          "enemyLetterId": "enemy-2",
+          "letter": "A",
+          "hitsBefore": 0,
+          "hitsAfter": 1
+        }
+      ],
+      "definition": "a temporally organized plan for matters to be attended to",
+      "lemma": "agenda",
+      "tileIds": [
+        1,
+        9,
+        11,
+        12,
+        5,
+        15
+      ]
+    },
+    {
+      "word": "AGENDAS",
+      "hits": 3,
+      "revive": true,
+      "recoveries": [
+        {
+          "tileId": 15,
+          "enemyLetterId": "enemy-2",
+          "letter": "A",
+          "hitsBefore": 0,
+          "hitsAfter": 1
+        }
+      ],
+      "definition": "a temporally organized plan for matters to be attended to",
+      "lemma": "agenda",
+      "tileIds": [
+        1,
+        9,
+        11,
+        12,
+        5,
+        15,
+        6
+      ]
+    },
+    {
+      "word": "AMEND",
+      "hits": 1,
+      "revive": false,
+      "recoveries": [],
+      "definition": "set straight or right",
+      "lemma": "amend",
+      "tileIds": [
+        1,
+        14,
+        11,
+        12,
+        5
+      ]
+    },
+    {
+      "word": "AMENDS",
+      "hits": 2,
+      "revive": false,
+      "recoveries": [],
+      "definition": "set straight or right",
+      "lemma": "amend",
+      "tileIds": [
+        1,
+        14,
+        11,
+        12,
+        5,
+        6
+      ]
+    },
+    {
+      "word": "ARRANGE",
+      "hits": 2,
+      "revive": true,
+      "recoveries": [
+        {
+          "tileId": 15,
+          "enemyLetterId": "enemy-2",
+          "letter": "A",
+          "hitsBefore": 0,
+          "hitsAfter": 1
+        }
+      ],
+      "definition": "arrange thoughts, ideas, temporal events",
+      "lemma": "arrange",
+      "tileIds": [
+        1,
+        13,
+        3,
+        15,
+        12,
+        9,
+        11
+      ]
+    },
+    {
+      "word": "ARRANGED",
+      "hits": 2,
+      "revive": true,
+      "recoveries": [
+        {
+          "tileId": 15,
+          "enemyLetterId": "enemy-2",
+          "letter": "A",
+          "hitsBefore": 0,
+          "hitsAfter": 1
+        }
+      ],
+      "definition": "arrange thoughts, ideas, temporal events",
+      "lemma": "arrange",
+      "tileIds": [
+        1,
+        13,
+        3,
+        15,
+        12,
+        9,
+        11,
+        5
+      ]
+    },
+    {
+      "word": "ARRANGES",
+      "hits": 3,
+      "revive": true,
+      "recoveries": [
+        {
+          "tileId": 15,
+          "enemyLetterId": "enemy-2",
+          "letter": "A",
+          "hitsBefore": 0,
+          "hitsAfter": 1
+        }
+      ],
+      "definition": "arrange thoughts, ideas, temporal events",
+      "lemma": "arrange",
+      "tileIds": [
+        1,
+        13,
+        3,
+        15,
+        12,
+        9,
+        11,
+        6
+      ]
+    },
+    {
+      "word": "ARRAY",
+      "hits": 2,
+      "revive": true,
+      "recoveries": [
+        {
+          "tileId": 15,
+          "enemyLetterId": "enemy-2",
+          "letter": "A",
+          "hitsBefore": 0,
+          "hitsAfter": 1
+        }
+      ],
+      "definition": "an orderly arrangement",
+      "lemma": "array",
+      "tileIds": [
+        1,
+        13,
+        3,
+        15,
+        4
+      ]
+    },
+    {
+      "word": "ARRAYED",
+      "hits": 2,
+      "revive": true,
+      "recoveries": [
+        {
+          "tileId": 15,
+          "enemyLetterId": "enemy-2",
+          "letter": "A",
+          "hitsBefore": 0,
+          "hitsAfter": 1
+        }
+      ],
+      "definition": "lay out orderly or logically in a line or as if in a line",
+      "lemma": "array",
+      "tileIds": [
+        1,
+        13,
+        3,
+        15,
+        4,
+        11,
+        5
+      ]
+    },
+    {
+      "word": "ARRAYS",
+      "hits": 3,
+      "revive": true,
+      "recoveries": [
+        {
+          "tileId": 15,
+          "enemyLetterId": "enemy-2",
+          "letter": "A",
+          "hitsBefore": 0,
+          "hitsAfter": 1
+        }
+      ],
+      "definition": "an orderly arrangement",
+      "lemma": "array",
+      "tileIds": [
+        1,
+        13,
+        3,
+        15,
+        4,
+        6
+      ]
+    },
+    {
+      "word": "BALANCE",
+      "hits": 3,
+      "revive": true,
+      "recoveries": [
+        {
+          "tileId": 15,
+          "enemyLetterId": "enemy-2",
+          "letter": "A",
+          "hitsBefore": 0,
+          "hitsAfter": 1
+        }
+      ],
+      "definition": "harmonious arrangement or relation of parts or elements within a whole (as in a design)",
+      "lemma": "balance",
+      "tileIds": [
+        2,
+        1,
+        10,
+        15,
+        12,
+        8,
+        11
+      ]
+    },
+    {
+      "word": "BALANCED",
+      "hits": 3,
+      "revive": true,
+      "recoveries": [
+        {
+          "tileId": 15,
+          "enemyLetterId": "enemy-2",
+          "letter": "A",
+          "hitsBefore": 0,
+          "hitsAfter": 1
+        }
+      ],
+      "definition": "bring into balance or equilibrium",
+      "lemma": "balance",
+      "tileIds": [
+        2,
+        1,
+        10,
+        15,
+        12,
+        8,
+        11,
+        5
+      ]
+    },
+    {
+      "word": "BALANCES",
+      "hits": 4,
+      "revive": true,
+      "recoveries": [
+        {
+          "tileId": 15,
+          "enemyLetterId": "enemy-2",
+          "letter": "A",
+          "hitsBefore": 0,
+          "hitsAfter": 1
+        }
+      ],
+      "definition": "harmonious arrangement or relation of parts or elements within a whole (as in a design)",
+      "lemma": "balance",
+      "tileIds": [
+        2,
+        1,
+        10,
+        15,
+        12,
+        8,
+        11,
+        6
+      ]
+    },
+    {
+      "word": "BLEND",
+      "hits": 0,
+      "revive": false,
+      "recoveries": [],
+      "definition": "blend or harmonize",
+      "lemma": "blend",
+      "tileIds": [
+        2,
+        10,
+        11,
+        12,
+        5
+      ]
+    },
+    {
+      "word": "BLENDS",
+      "hits": 1,
+      "revive": false,
+      "recoveries": [],
+      "definition": "blend or harmonize",
+      "lemma": "blend",
+      "tileIds": [
+        2,
+        10,
+        11,
+        12,
+        5,
+        6
+      ]
+    },
+    {
+      "word": "CALENDAR",
+      "hits": 3,
+      "revive": true,
+      "recoveries": [
+        {
+          "tileId": 15,
+          "enemyLetterId": "enemy-2",
+          "letter": "A",
+          "hitsBefore": 0,
+          "hitsAfter": 1
+        }
+      ],
+      "definition": "a tabular array of the days (usually for one year)",
+      "lemma": "calendar",
+      "tileIds": [
+        8,
+        1,
+        10,
+        11,
+        12,
+        5,
+        15,
+        13
+      ]
+    },
+    {
+      "word": "CALENDARS",
+      "hits": 4,
+      "revive": true,
+      "recoveries": [
+        {
+          "tileId": 15,
+          "enemyLetterId": "enemy-2",
+          "letter": "A",
+          "hitsBefore": 0,
+          "hitsAfter": 1
+        }
+      ],
+      "definition": "a tabular array of the days (usually for one year)",
+      "lemma": "calendar",
+      "tileIds": [
+        8,
+        1,
+        10,
+        11,
+        12,
+        5,
+        15,
+        13,
+        6
+      ]
+    },
+    {
+      "word": "CALM",
+      "hits": 2,
+      "revive": false,
+      "recoveries": [],
+      "definition": "not agitated; without losing self-possession",
+      "lemma": "calm",
+      "tileIds": [
+        8,
+        1,
+        10,
+        14
+      ]
+    },
+    {
+      "word": "CALMED",
+      "hits": 2,
+      "revive": false,
+      "recoveries": [],
+      "definition": "make calm or still",
+      "lemma": "calm",
+      "tileIds": [
+        8,
+        1,
+        10,
+        14,
+        11,
+        5
+      ]
+    },
+    {
+      "word": "CALMER",
+      "hits": 2,
+      "revive": false,
+      "recoveries": [],
+      "definition": "not agitated; without losing self-possession",
+      "lemma": "calm",
+      "tileIds": [
+        8,
+        1,
+        10,
+        14,
+        11,
+        13
+      ]
+    },
+    {
+      "word": "CALMS",
+      "hits": 3,
+      "revive": false,
+      "recoveries": [],
+      "definition": "make calm or still",
+      "lemma": "calm",
+      "tileIds": [
+        8,
+        1,
+        10,
+        14,
+        6
+      ]
+    },
+    {
+      "word": "CARD",
+      "hits": 2,
+      "revive": false,
+      "recoveries": [],
+      "definition": "(baseball) a list of batters in the order in which they will bat",
+      "lemma": "card",
+      "tileIds": [
+        8,
+        1,
+        13,
+        5
+      ]
+    },
+    {
+      "word": "CARDS",
+      "hits": 3,
+      "revive": false,
+      "recoveries": [],
+      "definition": "(baseball) a list of batters in the order in which they will bat",
+      "lemma": "card",
+      "tileIds": [
+        8,
+        1,
+        13,
+        5,
+        6
+      ]
+    },
+    {
+      "word": "CHORD",
+      "hits": 3,
+      "revive": false,
+      "recoveries": [],
+      "definition": "bring into consonance, harmony, or accord while making music or singing",
+      "lemma": "chord",
+      "tileIds": [
+        8,
+        7,
+        0,
+        13,
+        5
+      ]
+    },
+    {
+      "word": "CHORDS",
+      "hits": 4,
+      "revive": false,
+      "recoveries": [],
+      "definition": "bring into consonance, harmony, or accord while making music or singing",
+      "lemma": "chord",
+      "tileIds": [
+        8,
+        7,
+        0,
+        13,
+        5,
+        6
+      ]
+    },
+    {
+      "word": "CLEAN",
+      "hits": 2,
+      "revive": false,
+      "recoveries": [],
+      "definition": "clean and tidy up the house",
+      "lemma": "clean",
+      "tileIds": [
+        8,
+        10,
+        11,
+        1,
+        12
+      ]
+    },
+    {
+      "word": "CLEANS",
+      "hits": 3,
+      "revive": false,
+      "recoveries": [],
+      "definition": "clean and tidy up the house",
+      "lemma": "clean",
+      "tileIds": [
+        8,
+        10,
+        11,
+        1,
+        12,
+        6
+      ]
+    },
+    {
+      "word": "CLEAR",
+      "hits": 2,
+      "revive": false,
+      "recoveries": [],
+      "definition": "free from confusion or doubt",
+      "lemma": "clear",
+      "tileIds": [
+        8,
+        10,
+        11,
+        1,
+        13
+      ]
+    },
+    {
+      "word": "CLEARS",
+      "hits": 3,
+      "revive": false,
+      "recoveries": [],
+      "definition": "make free from confusion or ambiguity; make clear",
+      "lemma": "clear",
+      "tileIds": [
+        8,
+        10,
+        11,
+        1,
+        13,
+        6
+      ]
+    },
+    {
+      "word": "CODE",
+      "hits": 2,
+      "revive": false,
+      "recoveries": [],
+      "definition": "a set of rules or principles or laws (especially written ones)",
+      "lemma": "code",
+      "tileIds": [
+        8,
+        0,
+        5,
+        11
+      ]
+    },
+    {
+      "word": "CODES",
+      "hits": 3,
+      "revive": false,
+      "recoveries": [],
+      "definition": "a set of rules or principles or laws (especially written ones)",
+      "lemma": "code",
+      "tileIds": [
+        8,
+        0,
+        5,
+        11,
+        6
+      ]
+    },
+    {
+      "word": "COMB",
+      "hits": 2,
+      "revive": false,
+      "recoveries": [],
+      "definition": "smoothen and neaten with or as with a comb",
+      "lemma": "comb",
+      "tileIds": [
+        8,
+        0,
+        14,
+        2
+      ]
+    },
+    {
+      "word": "COMBED",
+      "hits": 2,
+      "revive": false,
+      "recoveries": [],
+      "definition": "smoothen and neaten with or as with a comb",
+      "lemma": "comb",
+      "tileIds": [
+        8,
+        0,
+        14,
+        2,
+        11,
+        5
+      ]
+    },
+    {
+      "word": "COMBS",
+      "hits": 3,
+      "revive": false,
+      "recoveries": [],
+      "definition": "smoothen and neaten with or as with a comb",
+      "lemma": "comb",
+      "tileIds": [
+        8,
+        0,
+        14,
+        2,
+        6
+      ]
+    },
+    {
+      "word": "CORRAL",
+      "hits": 3,
+      "revive": false,
+      "recoveries": [],
+      "definition": "arrange wagons so that they form a corral",
+      "lemma": "corral",
+      "tileIds": [
+        8,
+        0,
+        13,
+        3,
+        1,
+        10
+      ]
+    },
+    {
+      "word": "CORRALS",
+      "hits": 4,
+      "revive": false,
+      "recoveries": [],
+      "definition": "arrange wagons so that they form a corral",
+      "lemma": "corral",
+      "tileIds": [
+        8,
+        0,
+        13,
+        3,
+        1,
+        10,
+        6
+      ]
+    },
+    {
+      "word": "CRADLESONG",
+      "hits": 4,
+      "revive": false,
+      "recoveries": [],
+      "definition": "the act of singing a quiet song to lull a child to sleep",
+      "lemma": "cradlesong",
+      "tileIds": [
+        8,
+        13,
+        1,
+        5,
+        10,
+        11,
+        6,
+        0,
+        12,
+        9
+      ]
+    },
+    {
+      "word": "DONE",
+      "hits": 1,
+      "revive": false,
+      "recoveries": [],
+      "definition": "arrange attractively",
+      "lemma": "do",
+      "tileIds": [
+        5,
+        0,
+        12,
+        11
+      ]
+    },
+    {
+      "word": "DOS",
+      "hits": 2,
+      "revive": false,
+      "recoveries": [],
+      "definition": "arrange attractively",
+      "lemma": "do",
+      "tileIds": [
+        5,
+        0,
+        6
+      ]
+    },
+    {
+      "word": "EASY",
+      "hits": 2,
+      "revive": false,
+      "recoveries": [],
+      "definition": "free from worry or anxiety",
+      "lemma": "easy",
+      "tileIds": [
+        11,
+        1,
+        6,
+        4
+      ]
+    },
+    {
+      "word": "GOLDEN",
+      "hits": 1,
+      "revive": false,
+      "recoveries": [],
+      "definition": "marked by peace and prosperity",
+      "lemma": "golden",
+      "tileIds": [
+        9,
+        0,
+        10,
+        5,
+        11,
+        12
+      ]
+    },
+    {
+      "word": "GONE",
+      "hits": 1,
+      "revive": false,
+      "recoveries": [],
+      "definition": "blend or harmonize",
+      "lemma": "go",
+      "tileIds": [
+        9,
+        0,
+        12,
+        11
+      ]
+    },
+    {
+      "word": "GOS",
+      "hits": 2,
+      "revive": false,
+      "recoveries": [],
+      "definition": "blend or harmonize",
+      "lemma": "go",
+      "tileIds": [
+        9,
+        0,
+        6
+      ]
+    },
+    {
+      "word": "HAD",
+      "hits": 2,
+      "revive": false,
+      "recoveries": [],
+      "definition": "organize or be responsible for",
+      "lemma": "have",
+      "tileIds": [
+        7,
+        1,
+        5
+      ]
+    },
+    {
+      "word": "HALCYON",
+      "hits": 4,
+      "revive": false,
+      "recoveries": [],
+      "definition": "idyllically calm and peaceful; suggesting happy tranquillity",
+      "lemma": "halcyon",
+      "tileIds": [
+        7,
+        1,
+        10,
+        8,
+        4,
+        0,
+        12
+      ]
+    },
+    {
+      "word": "HARMONY",
+      "hits": 3,
+      "revive": false,
+      "recoveries": [],
+      "definition": "a harmonious state of things in general and of their properties (as of colors and sounds); congruity of parts with one another and with the whole",
+      "lemma": "harmony",
+      "tileIds": [
+        7,
+        1,
+        13,
+        14,
+        0,
+        12,
+        4
+      ]
+    },
+    {
+      "word": "HAS",
+      "hits": 3,
+      "revive": false,
+      "recoveries": [],
+      "definition": "organize or be responsible for",
+      "lemma": "have",
+      "tileIds": [
+        7,
+        1,
+        6
+      ]
+    },
+    {
+      "word": "HELD",
+      "hits": 1,
+      "revive": false,
+      "recoveries": [],
+      "definition": "organize or be responsible for",
+      "lemma": "hold",
+      "tileIds": [
+        7,
+        11,
+        10,
+        5
+      ]
+    },
+    {
+      "word": "HOLD",
+      "hits": 2,
+      "revive": false,
+      "recoveries": [],
+      "definition": "organize or be responsible for",
+      "lemma": "hold",
+      "tileIds": [
+        7,
+        0,
+        10,
+        5
+      ]
+    },
+    {
+      "word": "HOLDS",
+      "hits": 3,
+      "revive": false,
+      "recoveries": [],
+      "definition": "organize or be responsible for",
+      "lemma": "hold",
+      "tileIds": [
+        7,
+        0,
+        10,
+        5,
+        6
+      ]
+    },
+    {
+      "word": "LONG",
+      "hits": 1,
+      "revive": false,
+      "recoveries": [],
+      "definition": "planning prudently for the future",
+      "lemma": "long",
+      "tileIds": [
+        10,
+        0,
+        12,
+        9
+      ]
+    },
+    {
+      "word": "LONGER",
+      "hits": 1,
+      "revive": false,
+      "recoveries": [],
+      "definition": "planning prudently for the future",
+      "lemma": "long",
+      "tileIds": [
+        10,
+        0,
+        12,
+        9,
+        11,
+        13
+      ]
+    },
+    {
+      "word": "MADE",
+      "hits": 1,
+      "revive": false,
+      "recoveries": [],
+      "definition": "put in order or neaten",
+      "lemma": "make",
+      "tileIds": [
+        14,
+        1,
+        5,
+        11
+      ]
+    },
+    {
+      "word": "MARSHAL",
+      "hits": 4,
+      "revive": true,
+      "recoveries": [
+        {
+          "tileId": 15,
+          "enemyLetterId": "enemy-2",
+          "letter": "A",
+          "hitsBefore": 0,
+          "hitsAfter": 1
+        }
+      ],
+      "definition": "arrange in logical order",
+      "lemma": "marshal",
+      "tileIds": [
+        14,
+        1,
+        13,
+        6,
+        7,
+        15,
+        10
+      ]
+    },
+    {
+      "word": "MARSHALED",
+      "hits": 4,
+      "revive": true,
+      "recoveries": [
+        {
+          "tileId": 15,
+          "enemyLetterId": "enemy-2",
+          "letter": "A",
+          "hitsBefore": 0,
+          "hitsAfter": 1
+        }
+      ],
+      "definition": "arrange in logical order",
+      "lemma": "marshal",
+      "tileIds": [
+        14,
+        1,
+        13,
+        6,
+        7,
+        15,
+        10,
+        11,
+        5
+      ]
+    },
+    {
+      "word": "MELODY",
+      "hits": 1,
+      "revive": false,
+      "recoveries": [],
+      "definition": "the perception of pleasant arrangements of musical notes",
+      "lemma": "melody",
+      "tileIds": [
+        14,
+        11,
+        10,
+        0,
+        5,
+        4
+      ]
+    },
+    {
+      "word": "MESH",
+      "hits": 2,
+      "revive": false,
+      "recoveries": [],
+      "definition": "work together in harmony",
+      "lemma": "mesh",
+      "tileIds": [
+        14,
+        11,
+        6,
+        7
+      ]
+    },
+    {
+      "word": "MODE",
+      "hits": 1,
+      "revive": false,
+      "recoveries": [],
+      "definition": "any of various fixed orders of the various diatonic notes within an octave",
+      "lemma": "mode",
+      "tileIds": [
+        14,
+        0,
+        5,
+        11
+      ]
+    },
+    {
+      "word": "MODEL",
+      "hits": 1,
+      "revive": false,
+      "recoveries": [],
+      "definition": "plan or create according to a model or models",
+      "lemma": "model",
+      "tileIds": [
+        14,
+        0,
+        5,
+        11,
+        10
+      ]
+    },
+    {
+      "word": "MODELS",
+      "hits": 2,
+      "revive": false,
+      "recoveries": [],
+      "definition": "plan or create according to a model or models",
+      "lemma": "model",
+      "tileIds": [
+        14,
+        0,
+        5,
+        11,
+        10,
+        6
+      ]
+    },
+    {
+      "word": "MODES",
+      "hits": 2,
+      "revive": false,
+      "recoveries": [],
+      "definition": "any of various fixed orders of the various diatonic notes within an octave",
+      "lemma": "mode",
+      "tileIds": [
+        14,
+        0,
+        5,
+        11,
+        6
+      ]
+    },
+    {
+      "word": "ORDER",
+      "hits": 1,
+      "revive": false,
+      "recoveries": [],
+      "definition": "logical or comprehensible arrangement of separate elements",
+      "lemma": "order",
+      "tileIds": [
+        0,
+        13,
+        5,
+        11,
+        3
+      ]
+    },
+    {
+      "word": "ORDERLY",
+      "hits": 1,
+      "revive": false,
+      "recoveries": [],
+      "definition": "devoid of violence or disruption",
+      "lemma": "orderly",
+      "tileIds": [
+        0,
+        13,
+        5,
+        11,
+        3,
+        10,
+        4
+      ]
+    },
+    {
+      "word": "ORDERS",
+      "hits": 2,
+      "revive": false,
+      "recoveries": [],
+      "definition": "logical or comprehensible arrangement of separate elements",
+      "lemma": "order",
+      "tileIds": [
+        0,
+        13,
+        5,
+        11,
+        3,
+        6
+      ]
+    },
+    {
+      "word": "RANGE",
+      "hits": 1,
+      "revive": false,
+      "recoveries": [],
+      "definition": "lay out orderly or logically in a line or as if in a line",
+      "lemma": "range",
+      "tileIds": [
+        13,
+        1,
+        12,
+        9,
+        11
+      ]
+    },
+    {
+      "word": "RANGED",
+      "hits": 1,
+      "revive": false,
+      "recoveries": [],
+      "definition": "lay out orderly or logically in a line or as if in a line",
+      "lemma": "range",
+      "tileIds": [
+        13,
+        1,
+        12,
+        9,
+        11,
+        5
+      ]
+    },
+    {
+      "word": "RANGES",
+      "hits": 2,
+      "revive": false,
+      "recoveries": [],
+      "definition": "lay out orderly or logically in a line or as if in a line",
+      "lemma": "range",
+      "tileIds": [
+        13,
+        1,
+        12,
+        9,
+        11,
+        6
+      ]
+    },
+    {
+      "word": "READABLY",
+      "hits": 2,
+      "revive": true,
+      "recoveries": [
+        {
+          "tileId": 15,
+          "enemyLetterId": "enemy-2",
+          "letter": "A",
+          "hitsBefore": 0,
+          "hitsAfter": 1
+        }
+      ],
+      "definition": "in a legible manner",
+      "lemma": "readably",
+      "tileIds": [
+        13,
+        11,
+        1,
+        5,
+        15,
+        2,
+        10,
+        4
+      ]
+    },
+    {
+      "word": "REASON",
+      "hits": 3,
+      "revive": false,
+      "recoveries": [],
+      "definition": "the state of having good sense and sound judgment",
+      "lemma": "reason",
+      "tileIds": [
+        13,
+        11,
+        1,
+        6,
+        0,
+        12
+      ]
+    },
+    {
+      "word": "REASONABLY",
+      "hits": 4,
+      "revive": true,
+      "recoveries": [
+        {
+          "tileId": 15,
+          "enemyLetterId": "enemy-2",
+          "letter": "A",
+          "hitsBefore": 0,
+          "hitsAfter": 1
+        }
+      ],
+      "definition": "with good sense or in a reasonable or intelligent manner",
+      "lemma": "reasonably",
+      "tileIds": [
+        13,
+        11,
+        1,
+        6,
+        0,
+        12,
+        15,
+        2,
+        10,
+        4
+      ]
+    },
+    {
+      "word": "SANE",
+      "hits": 2,
+      "revive": false,
+      "recoveries": [],
+      "definition": "marked by sound judgment; having good reason",
+      "lemma": "sane",
+      "tileIds": [
+        6,
+        1,
+        12,
+        11
+      ]
+    },
+    {
+      "word": "SANELY",
+      "hits": 2,
+      "revive": false,
+      "recoveries": [],
+      "definition": "with good sense or in a reasonable or intelligent manner",
+      "lemma": "sanely",
+      "tileIds": [
+        6,
+        1,
+        12,
+        11,
+        10,
+        4
+      ]
+    },
+    {
+      "word": "SANER",
+      "hits": 2,
+      "revive": false,
+      "recoveries": [],
+      "definition": "marked by sound judgment; having good reason",
+      "lemma": "sane",
+      "tileIds": [
+        6,
+        1,
+        12,
+        11,
+        13
+      ]
+    },
+    {
+      "word": "SCALE",
+      "hits": 3,
+      "revive": false,
+      "recoveries": [],
+      "definition": "an ordered reference standard",
+      "lemma": "scale",
+      "tileIds": [
+        6,
+        8,
+        1,
+        10,
+        11
+      ]
+    },
+    {
+      "word": "SCALED",
+      "hits": 3,
+      "revive": false,
+      "recoveries": [],
+      "definition": "pattern, make, regulate, set, measure, or estimate according to some rate or standard",
+      "lemma": "scale",
+      "tileIds": [
+        6,
+        8,
+        1,
+        10,
+        11,
+        5
+      ]
+    },
+    {
+      "word": "SCAN",
+      "hits": 3,
+      "revive": false,
+      "recoveries": [],
+      "definition": "the act of scanning; systematic examination of a prescribed region",
+      "lemma": "scan",
+      "tileIds": [
+        6,
+        8,
+        1,
+        12
+      ]
+    },
+    {
+      "word": "SCHEMA",
+      "hits": 4,
+      "revive": false,
+      "recoveries": [],
+      "definition": "a schematic or preliminary plan",
+      "lemma": "schema",
+      "tileIds": [
+        6,
+        8,
+        7,
+        11,
+        14,
+        1
+      ]
+    },
+    {
+      "word": "SHARED",
+      "hits": 3,
+      "revive": false,
+      "recoveries": [],
+      "definition": "distributed in portions (often equal) on the basis of a plan or purpose",
+      "lemma": "shared",
+      "tileIds": [
+        6,
+        7,
+        1,
+        13,
+        11,
+        5
+      ]
+    }
+  ],
+  "fullSupply": [
+    {
+      "word": "ACCORD",
+      "definition": "harmony of people's opinions or actions or characters",
+      "lemma": "accord",
+      "opening": false
+    },
+    {
+      "word": "ACCORDANT",
+      "definition": "being in agreement or harmony; often followed by ‘with’",
+      "lemma": "accordant",
+      "opening": false
+    },
+    {
+      "word": "ACCORDS",
+      "definition": "harmony of people's opinions or actions or characters",
+      "lemma": "accord",
+      "opening": false
+    },
+    {
+      "word": "ADHERE",
+      "definition": "follow through or carry out a plan without deviation",
+      "lemma": "adhere",
+      "opening": false
+    },
+    {
+      "word": "ADHERES",
+      "definition": "follow through or carry out a plan without deviation",
+      "lemma": "adhere",
+      "opening": false
+    },
+    {
+      "word": "AGENDA",
+      "definition": "a temporally organized plan for matters to be attended to",
+      "lemma": "agenda",
+      "opening": true
+    },
+    {
+      "word": "AGENDAS",
+      "definition": "a temporally organized plan for matters to be attended to",
+      "lemma": "agenda",
+      "opening": true
+    },
+    {
+      "word": "AGREE",
+      "definition": "be in accord; be in agreement",
+      "lemma": "agree",
+      "opening": false
+    },
+    {
+      "word": "AGREED",
+      "definition": "united by being of the same opinion",
+      "lemma": "agreed",
+      "opening": false
+    },
+    {
+      "word": "AGREEMENT",
+      "definition": "harmony of people's opinions or actions or characters",
+      "lemma": "agreement",
+      "opening": false
+    },
+    {
+      "word": "AGREEMENTS",
+      "definition": "harmony of people's opinions or actions or characters",
+      "lemma": "agreement",
+      "opening": false
+    },
+    {
+      "word": "AGREES",
+      "definition": "be in accord; be in agreement",
+      "lemma": "agree",
+      "opening": false
+    },
+    {
+      "word": "AMEND",
+      "definition": "set straight or right",
+      "lemma": "amend",
+      "opening": true
+    },
+    {
+      "word": "AMENDS",
+      "definition": "set straight or right",
+      "lemma": "amend",
+      "opening": true
+    },
+    {
+      "word": "ANNALS",
+      "definition": "a chronological account of events in successive years",
+      "lemma": "annals",
+      "opening": false
+    },
+    {
+      "word": "ARRANGE",
+      "definition": "arrange thoughts, ideas, temporal events",
+      "lemma": "arrange",
+      "opening": true
+    },
+    {
+      "word": "ARRANGED",
+      "definition": "arrange thoughts, ideas, temporal events",
+      "lemma": "arrange",
+      "opening": true
+    },
+    {
+      "word": "ARRANGEMENT",
+      "definition": "an organized structure for arranging or classifying",
+      "lemma": "arrangement",
+      "opening": false
+    },
+    {
+      "word": "ARRANGEMENTS",
+      "definition": "an organized structure for arranging or classifying",
+      "lemma": "arrangement",
+      "opening": false
+    },
+    {
+      "word": "ARRANGES",
+      "definition": "arrange thoughts, ideas, temporal events",
+      "lemma": "arrange",
+      "opening": true
+    },
+    {
+      "word": "ARRAY",
+      "definition": "an orderly arrangement",
+      "lemma": "array",
+      "opening": true
+    },
+    {
+      "word": "ARRAYED",
+      "definition": "lay out orderly or logically in a line or as if in a line",
+      "lemma": "array",
+      "opening": true
+    },
+    {
+      "word": "ARRAYS",
+      "definition": "an orderly arrangement",
+      "lemma": "array",
+      "opening": true
+    },
+    {
+      "word": "ASSORT",
+      "definition": "arrange or order by classes or categories",
+      "lemma": "assort",
+      "opening": false
+    },
+    {
+      "word": "ASSORTED",
+      "definition": "arrange or order by classes or categories",
+      "lemma": "assort",
+      "opening": false
+    },
+    {
+      "word": "BALANCE",
+      "definition": "harmonious arrangement or relation of parts or elements within a whole (as in a design)",
+      "lemma": "balance",
+      "opening": true
+    },
+    {
+      "word": "BALANCED",
+      "definition": "bring into balance or equilibrium",
+      "lemma": "balance",
+      "opening": true
+    },
+    {
+      "word": "BALANCES",
+      "definition": "harmonious arrangement or relation of parts or elements within a whole (as in a design)",
+      "lemma": "balance",
+      "opening": true
+    },
+    {
+      "word": "BESEEM",
+      "definition": "accord or comport with",
+      "lemma": "beseem",
+      "opening": false
+    },
+    {
+      "word": "BESEEMS",
+      "definition": "accord or comport with",
+      "lemma": "beseem",
+      "opening": false
+    },
+    {
+      "word": "BLEND",
+      "definition": "blend or harmonize",
+      "lemma": "blend",
+      "opening": true
+    },
+    {
+      "word": "BLENDS",
+      "definition": "blend or harmonize",
+      "lemma": "blend",
+      "opening": true
+    },
+    {
+      "word": "CALENDAR",
+      "definition": "a tabular array of the days (usually for one year)",
+      "lemma": "calendar",
+      "opening": true
+    },
+    {
+      "word": "CALENDARS",
+      "definition": "a tabular array of the days (usually for one year)",
+      "lemma": "calendar",
+      "opening": true
+    },
+    {
+      "word": "CALM",
+      "definition": "not agitated; without losing self-possession",
+      "lemma": "calm",
+      "opening": true
+    },
+    {
+      "word": "CALMED",
+      "definition": "make calm or still",
+      "lemma": "calm",
+      "opening": true
+    },
+    {
+      "word": "CALMER",
+      "definition": "not agitated; without losing self-possession",
+      "lemma": "calm",
+      "opening": true
+    },
+    {
+      "word": "CALMEST",
+      "definition": "not agitated; without losing self-possession",
+      "lemma": "calm",
+      "opening": false
+    },
+    {
+      "word": "CALMNESS",
+      "definition": "steadiness of mind under stress",
+      "lemma": "calmness",
+      "opening": false
+    },
+    {
+      "word": "CALMS",
+      "definition": "make calm or still",
+      "lemma": "calm",
+      "opening": true
+    },
+    {
+      "word": "CARD",
+      "definition": "(baseball) a list of batters in the order in which they will bat",
+      "lemma": "card",
+      "opening": true
+    },
+    {
+      "word": "CARDS",
+      "definition": "(baseball) a list of batters in the order in which they will bat",
+      "lemma": "card",
+      "opening": true
+    },
+    {
+      "word": "CASCADE",
+      "definition": "a succession of stages or operations or processes or units",
+      "lemma": "cascade",
+      "opening": false
+    },
+    {
+      "word": "CASCADES",
+      "definition": "a succession of stages or operations or processes or units",
+      "lemma": "cascade",
+      "opening": false
+    },
+    {
+      "word": "CATALOG",
+      "definition": "make an itemized list or catalog of; classify",
+      "lemma": "catalog",
+      "opening": false
+    },
+    {
+      "word": "CATALOGED",
+      "definition": "make an itemized list or catalog of; classify",
+      "lemma": "catalog",
+      "opening": false
+    },
+    {
+      "word": "CATALOGS",
+      "definition": "make an itemized list or catalog of; classify",
+      "lemma": "catalog",
+      "opening": false
+    },
+    {
+      "word": "CATENA",
+      "definition": "a chain of connected ideas or passages or objects so arranged that each member is closely related to the preceding and following members (especially a series of patristic comments elucidating Christian dogma)",
+      "lemma": "catena",
+      "opening": false
+    },
+    {
+      "word": "CATENAE",
+      "definition": "a chain of connected ideas or passages or objects so arranged that each member is closely related to the preceding and following members (especially a series of patristic comments elucidating Christian dogma)",
+      "lemma": "catena",
+      "opening": false
+    },
+    {
+      "word": "CATENAS",
+      "definition": "a chain of connected ideas or passages or objects so arranged that each member is closely related to the preceding and following members (especially a series of patristic comments elucidating Christian dogma)",
+      "lemma": "catena",
+      "opening": false
+    },
+    {
+      "word": "CHART",
+      "definition": "plan in detail",
+      "lemma": "chart",
+      "opening": false
+    },
+    {
+      "word": "CHARTED",
+      "definition": "plan in detail",
+      "lemma": "chart",
+      "opening": false
+    },
+    {
+      "word": "CHARTS",
+      "definition": "plan in detail",
+      "lemma": "chart",
+      "opening": false
+    },
+    {
+      "word": "CHASTEN",
+      "definition": "correct by punishment or discipline",
+      "lemma": "chasten",
+      "opening": false
+    },
+    {
+      "word": "CHASTENED",
+      "definition": "correct by punishment or discipline",
+      "lemma": "chasten",
+      "opening": false
+    },
+    {
+      "word": "CHASTENS",
+      "definition": "correct by punishment or discipline",
+      "lemma": "chasten",
+      "opening": false
+    },
+    {
+      "word": "CHORD",
+      "definition": "bring into consonance, harmony, or accord while making music or singing",
+      "lemma": "chord",
+      "opening": true
+    },
+    {
+      "word": "CHORDS",
+      "definition": "bring into consonance, harmony, or accord while making music or singing",
+      "lemma": "chord",
+      "opening": true
+    },
+    {
+      "word": "CHRONOLOGY",
+      "definition": "an arrangement of events in time",
+      "lemma": "chronology",
+      "opening": false
+    },
+    {
+      "word": "CLASS",
+      "definition": "arrange or order by classes or categories",
+      "lemma": "class",
+      "opening": false
+    },
+    {
+      "word": "CLASSED",
+      "definition": "arrange or order by classes or categories",
+      "lemma": "class",
+      "opening": false
+    },
+    {
+      "word": "CLEAN",
+      "definition": "clean and tidy up the house",
+      "lemma": "clean",
+      "opening": true
+    },
+    {
+      "word": "CLEANED",
+      "definition": "clean and tidy up the house",
+      "lemma": "clean",
+      "opening": false
+    },
+    {
+      "word": "CLEANS",
+      "definition": "clean and tidy up the house",
+      "lemma": "clean",
+      "opening": true
+    },
+    {
+      "word": "CLEAR",
+      "definition": "free from confusion or doubt",
+      "lemma": "clear",
+      "opening": true
+    },
+    {
+      "word": "CLEARED",
+      "definition": "make free from confusion or ambiguity; make clear",
+      "lemma": "clear",
+      "opening": false
+    },
+    {
+      "word": "CLEARER",
+      "definition": "free from confusion or doubt",
+      "lemma": "clear",
+      "opening": false
+    },
+    {
+      "word": "CLEAREST",
+      "definition": "free from confusion or doubt",
+      "lemma": "clear",
+      "opening": false
+    },
+    {
+      "word": "CLEARNESS",
+      "definition": "free from obscurity and easy to understand; the comprehensibility of clear expression",
+      "lemma": "clearness",
+      "opening": false
+    },
+    {
+      "word": "CLEARS",
+      "definition": "make free from confusion or ambiguity; make clear",
+      "lemma": "clear",
+      "opening": true
+    },
+    {
+      "word": "CODE",
+      "definition": "a set of rules or principles or laws (especially written ones)",
+      "lemma": "code",
+      "opening": true
+    },
+    {
+      "word": "CODES",
+      "definition": "a set of rules or principles or laws (especially written ones)",
+      "lemma": "code",
+      "opening": true
+    },
+    {
+      "word": "COGENCY",
+      "definition": "the quality of being valid and rigorous",
+      "lemma": "cogency",
+      "opening": false
+    },
+    {
+      "word": "COHERE",
+      "definition": "have internal elements or parts logically connected so that aesthetic consistency results",
+      "lemma": "cohere",
+      "opening": false
+    },
+    {
+      "word": "COHERED",
+      "definition": "have internal elements or parts logically connected so that aesthetic consistency results",
+      "lemma": "cohere",
+      "opening": false
+    },
+    {
+      "word": "COHERENCE",
+      "definition": "logical and orderly and consistent relation of parts",
+      "lemma": "coherence",
+      "opening": false
+    },
+    {
+      "word": "COHERENCES",
+      "definition": "logical and orderly and consistent relation of parts",
+      "lemma": "coherence",
+      "opening": false
+    },
+    {
+      "word": "COHERENCY",
+      "definition": "logical and orderly and consistent relation of parts",
+      "lemma": "coherency",
+      "opening": false
+    },
+    {
+      "word": "COHERENT",
+      "definition": "marked by an orderly, logical, and aesthetically consistent relation of parts",
+      "lemma": "coherent",
+      "opening": false
+    },
+    {
+      "word": "COHERENTLY",
+      "definition": "in a coherent manner",
+      "lemma": "coherently",
+      "opening": false
+    },
+    {
+      "word": "COHERES",
+      "definition": "have internal elements or parts logically connected so that aesthetic consistency results",
+      "lemma": "cohere",
+      "opening": false
+    },
+    {
+      "word": "COMB",
+      "definition": "smoothen and neaten with or as with a comb",
+      "lemma": "comb",
+      "opening": true
+    },
+    {
+      "word": "COMBED",
+      "definition": "smoothen and neaten with or as with a comb",
+      "lemma": "comb",
+      "opening": true
+    },
+    {
+      "word": "COMBS",
+      "definition": "smoothen and neaten with or as with a comb",
+      "lemma": "comb",
+      "opening": true
+    },
+    {
+      "word": "CONCENTER",
+      "definition": "bring into focus or alignment; to converge or cause to converge; of ideas or emotions",
+      "lemma": "concenter",
+      "opening": false
+    },
+    {
+      "word": "CONCENTERED",
+      "definition": "bring into focus or alignment; to converge or cause to converge; of ideas or emotions",
+      "lemma": "concenter",
+      "opening": false
+    },
+    {
+      "word": "CONCENTERS",
+      "definition": "bring into focus or alignment; to converge or cause to converge; of ideas or emotions",
+      "lemma": "concenter",
+      "opening": false
+    },
+    {
+      "word": "CONCENTRE",
+      "definition": "bring into focus or alignment; to converge or cause to converge; of ideas or emotions",
+      "lemma": "concentre",
+      "opening": false
+    },
+    {
+      "word": "CONCENTRED",
+      "definition": "bring into focus or alignment; to converge or cause to converge; of ideas or emotions",
+      "lemma": "concentre",
+      "opening": false
+    },
+    {
+      "word": "CONCENTRES",
+      "definition": "bring into focus or alignment; to converge or cause to converge; of ideas or emotions",
+      "lemma": "concentre",
+      "opening": false
+    },
+    {
+      "word": "CONCERT",
+      "definition": "contrive (a plan) by mutual agreement",
+      "lemma": "concert",
+      "opening": false
+    },
+    {
+      "word": "CONCERTED",
+      "definition": "contrive (a plan) by mutual agreement",
+      "lemma": "concert",
+      "opening": false
+    },
+    {
+      "word": "CONCERTS",
+      "definition": "contrive (a plan) by mutual agreement",
+      "lemma": "concert",
+      "opening": false
+    },
+    {
+      "word": "CONCORD",
+      "definition": "a harmonious state of things in general and of their properties (as of colors and sounds); congruity of parts with one another and with the whole",
+      "lemma": "concord",
+      "opening": false
+    },
+    {
+      "word": "CONCORDS",
+      "definition": "a harmonious state of things in general and of their properties (as of colors and sounds); congruity of parts with one another and with the whole",
+      "lemma": "concord",
+      "opening": false
+    },
+    {
+      "word": "CONNECT",
+      "definition": "make a logical or causal connection",
+      "lemma": "connect",
+      "opening": false
+    },
+    {
+      "word": "CONNECTED",
+      "definition": "make a logical or causal connection",
+      "lemma": "connect",
+      "opening": false
+    },
+    {
+      "word": "CONNECTS",
+      "definition": "make a logical or causal connection",
+      "lemma": "connect",
+      "opening": false
+    },
+    {
+      "word": "CONTROL",
+      "definition": "lessen the intensity of; temper; hold in restraint; hold or keep within limits",
+      "lemma": "control",
+      "opening": false
+    },
+    {
+      "word": "CONTROLS",
+      "definition": "lessen the intensity of; temper; hold in restraint; hold or keep within limits",
+      "lemma": "control",
+      "opening": false
+    },
+    {
+      "word": "COOL",
+      "definition": "marked by calm self-control (especially in trying circumstances); unemotional",
+      "lemma": "cool",
+      "opening": false
+    },
+    {
+      "word": "COOLER",
+      "definition": "marked by calm self-control (especially in trying circumstances); unemotional",
+      "lemma": "cool",
+      "opening": false
+    },
+    {
+      "word": "COOLEST",
+      "definition": "marked by calm self-control (especially in trying circumstances); unemotional",
+      "lemma": "cool",
+      "opening": false
+    },
+    {
+      "word": "COOLNESS",
+      "definition": "calm and unruffled self-assurance",
+      "lemma": "coolness",
+      "opening": false
+    },
+    {
+      "word": "COOLS",
+      "definition": "great coolness and composure under strain",
+      "lemma": "cool",
+      "opening": false
+    },
+    {
+      "word": "CORRAL",
+      "definition": "arrange wagons so that they form a corral",
+      "lemma": "corral",
+      "opening": true
+    },
+    {
+      "word": "CORRALS",
+      "definition": "arrange wagons so that they form a corral",
+      "lemma": "corral",
+      "opening": true
+    },
+    {
+      "word": "CORRECT",
+      "definition": "alter or regulate so as to achieve accuracy or conform to a standard",
+      "lemma": "correct",
+      "opening": false
+    },
+    {
+      "word": "CORRECTED",
+      "definition": "alter or regulate so as to achieve accuracy or conform to a standard",
+      "lemma": "correct",
+      "opening": false
+    },
+    {
+      "word": "CORRECTS",
+      "definition": "alter or regulate so as to achieve accuracy or conform to a standard",
+      "lemma": "correct",
+      "opening": false
+    },
+    {
+      "word": "CRADLESONG",
+      "definition": "the act of singing a quiet song to lull a child to sleep",
+      "lemma": "cradlesong",
+      "opening": true
+    },
+    {
+      "word": "CRADLESONGS",
+      "definition": "the act of singing a quiet song to lull a child to sleep",
+      "lemma": "cradlesong",
+      "opening": false
+    },
+    {
+      "word": "CYCLE",
+      "definition": "a periodically repeated sequence of events",
+      "lemma": "cycle",
+      "opening": false
+    },
+    {
+      "word": "CYCLES",
+      "definition": "a periodically repeated sequence of events",
+      "lemma": "cycle",
+      "opening": false
+    },
+    {
+      "word": "DATABASE",
+      "definition": "an organized body of related information",
+      "lemma": "database",
+      "opening": false
+    },
+    {
+      "word": "DATABASES",
+      "definition": "an organized body of related information",
+      "lemma": "database",
+      "opening": false
+    },
+    {
+      "word": "DEMARCATE",
+      "definition": "separate clearly, as if by boundaries",
+      "lemma": "demarcate",
+      "opening": false
+    },
+    {
+      "word": "DEMARCATES",
+      "definition": "separate clearly, as if by boundaries",
+      "lemma": "demarcate",
+      "opening": false
+    },
+    {
+      "word": "DONE",
+      "definition": "arrange attractively",
+      "lemma": "do",
+      "opening": true
+    },
+    {
+      "word": "DOS",
+      "definition": "arrange attractively",
+      "lemma": "do",
+      "opening": true
+    },
+    {
+      "word": "DRESS",
+      "definition": "arrange attractively",
+      "lemma": "dress",
+      "opening": false
+    },
+    {
+      "word": "EASE",
+      "definition": "lessen the intensity of or calm",
+      "lemma": "ease",
+      "opening": false
+    },
+    {
+      "word": "EASED",
+      "definition": "lessen the intensity of or calm",
+      "lemma": "ease",
+      "opening": false
+    },
+    {
+      "word": "EASES",
+      "definition": "lessen the intensity of or calm",
+      "lemma": "ease",
+      "opening": false
+    },
+    {
+      "word": "EASY",
+      "definition": "free from worry or anxiety",
+      "lemma": "easy",
+      "opening": true
+    },
+    {
+      "word": "ECHELON",
+      "definition": "a body of troops arranged in a line",
+      "lemma": "echelon",
+      "opening": false
+    },
+    {
+      "word": "ECHELONS",
+      "definition": "a body of troops arranged in a line",
+      "lemma": "echelon",
+      "opening": false
+    },
+    {
+      "word": "ELABORATE",
+      "definition": "add details, as to an account or idea; clarify the meaning of and discourse in a learned way, usually in writing",
+      "lemma": "elaborate",
+      "opening": false
+    },
+    {
+      "word": "ELABORATED",
+      "definition": "add details, as to an account or idea; clarify the meaning of and discourse in a learned way, usually in writing",
+      "lemma": "elaborate",
+      "opening": false
+    },
+    {
+      "word": "ELABORATES",
+      "definition": "add details, as to an account or idea; clarify the meaning of and discourse in a learned way, usually in writing",
+      "lemma": "elaborate",
+      "opening": false
+    },
+    {
+      "word": "ELEGANCE",
+      "definition": "a quality of neatness and ingenious simplicity in the solution of a problem (especially in science or mathematics)",
+      "lemma": "elegance",
+      "opening": false
+    },
+    {
+      "word": "ELEGANCES",
+      "definition": "a quality of neatness and ingenious simplicity in the solution of a problem (especially in science or mathematics)",
+      "lemma": "elegance",
+      "opening": false
+    },
+    {
+      "word": "GENTLE",
+      "definition": "quiet and soothing",
+      "lemma": "gentle",
+      "opening": false
+    },
+    {
+      "word": "GENTLENESS",
+      "definition": "acting in a manner that is gentle and mild and even-tempered",
+      "lemma": "gentleness",
+      "opening": false
+    },
+    {
+      "word": "GENTLER",
+      "definition": "quiet and soothing",
+      "lemma": "gentle",
+      "opening": false
+    },
+    {
+      "word": "GENTLY",
+      "definition": "in a gentle manner",
+      "lemma": "gently",
+      "opening": false
+    },
+    {
+      "word": "GLOSS",
+      "definition": "provide interlinear explanations for words or phrases",
+      "lemma": "gloss",
+      "opening": false
+    },
+    {
+      "word": "GLOSSED",
+      "definition": "provide interlinear explanations for words or phrases",
+      "lemma": "gloss",
+      "opening": false
+    },
+    {
+      "word": "GOLDEN",
+      "definition": "marked by peace and prosperity",
+      "lemma": "golden",
+      "opening": true
+    },
+    {
+      "word": "GOLDENER",
+      "definition": "marked by peace and prosperity",
+      "lemma": "golden",
+      "opening": false
+    },
+    {
+      "word": "GOLDENEST",
+      "definition": "marked by peace and prosperity",
+      "lemma": "golden",
+      "opening": false
+    },
+    {
+      "word": "GONE",
+      "definition": "blend or harmonize",
+      "lemma": "go",
+      "opening": true
+    },
+    {
+      "word": "GOS",
+      "definition": "blend or harmonize",
+      "lemma": "go",
+      "opening": true
+    },
+    {
+      "word": "GRADATE",
+      "definition": "arrange according to grades",
+      "lemma": "gradate",
+      "opening": false
+    },
+    {
+      "word": "GRADATES",
+      "definition": "arrange according to grades",
+      "lemma": "gradate",
+      "opening": false
+    },
+    {
+      "word": "GROOM",
+      "definition": "give a neat appearance to",
+      "lemma": "groom",
+      "opening": false
+    },
+    {
+      "word": "GROOMED",
+      "definition": "neat and smart in appearance; well cared for",
+      "lemma": "groomed",
+      "opening": false
+    },
+    {
+      "word": "GROOMS",
+      "definition": "give a neat appearance to",
+      "lemma": "groom",
+      "opening": false
+    },
+    {
+      "word": "HAD",
+      "definition": "organize or be responsible for",
+      "lemma": "have",
+      "opening": true
+    },
+    {
+      "word": "HALCYON",
+      "definition": "idyllically calm and peaceful; suggesting happy tranquillity",
+      "lemma": "halcyon",
+      "opening": true
+    },
+    {
+      "word": "HARMONY",
+      "definition": "a harmonious state of things in general and of their properties (as of colors and sounds); congruity of parts with one another and with the whole",
+      "lemma": "harmony",
+      "opening": true
+    },
+    {
+      "word": "HARNESSED",
+      "definition": "brought under control and put to use",
+      "lemma": "harnessed",
+      "opening": false
+    },
+    {
+      "word": "HAS",
+      "definition": "organize or be responsible for",
+      "lemma": "have",
+      "opening": true
+    },
+    {
+      "word": "HEARTSEASE",
+      "definition": "the absence of mental stress or anxiety",
+      "lemma": "heartsease",
+      "opening": false
+    },
+    {
+      "word": "HELD",
+      "definition": "organize or be responsible for",
+      "lemma": "hold",
+      "opening": true
+    },
+    {
+      "word": "HOLD",
+      "definition": "organize or be responsible for",
+      "lemma": "hold",
+      "opening": true
+    },
+    {
+      "word": "HOLDS",
+      "definition": "organize or be responsible for",
+      "lemma": "hold",
+      "opening": true
+    },
+    {
+      "word": "HONEYMOON",
+      "definition": "the early (usually calm and harmonious) period of a relationship; business or political",
+      "lemma": "honeymoon",
+      "opening": false
+    },
+    {
+      "word": "HONEYMOONS",
+      "definition": "the early (usually calm and harmonious) period of a relationship; business or political",
+      "lemma": "honeymoon",
+      "opening": false
+    },
+    {
+      "word": "LONG",
+      "definition": "planning prudently for the future",
+      "lemma": "long",
+      "opening": true
+    },
+    {
+      "word": "LONGER",
+      "definition": "planning prudently for the future",
+      "lemma": "long",
+      "opening": true
+    },
+    {
+      "word": "LONGEST",
+      "definition": "planning prudently for the future",
+      "lemma": "long",
+      "opening": false
+    },
+    {
+      "word": "LOOSEN",
+      "definition": "disentangle and raise the fibers of",
+      "lemma": "loosen",
+      "opening": false
+    },
+    {
+      "word": "LOOSENED",
+      "definition": "disentangle and raise the fibers of",
+      "lemma": "loosen",
+      "opening": false
+    },
+    {
+      "word": "LOOSENS",
+      "definition": "disentangle and raise the fibers of",
+      "lemma": "loosen",
+      "opening": false
+    },
+    {
+      "word": "MADE",
+      "definition": "put in order or neaten",
+      "lemma": "make",
+      "opening": true
+    },
+    {
+      "word": "MARSHAL",
+      "definition": "arrange in logical order",
+      "lemma": "marshal",
+      "opening": true
+    },
+    {
+      "word": "MARSHALED",
+      "definition": "arrange in logical order",
+      "lemma": "marshal",
+      "opening": true
+    },
+    {
+      "word": "MARSHALS",
+      "definition": "arrange in logical order",
+      "lemma": "marshal",
+      "opening": false
+    },
+    {
+      "word": "MATCH",
+      "definition": "make correspond or harmonize",
+      "lemma": "match",
+      "opening": false
+    },
+    {
+      "word": "MATCHED",
+      "definition": "make correspond or harmonize",
+      "lemma": "match",
+      "opening": false
+    },
+    {
+      "word": "MATCHES",
+      "definition": "make correspond or harmonize",
+      "lemma": "match",
+      "opening": false
+    },
+    {
+      "word": "MELODY",
+      "definition": "the perception of pleasant arrangements of musical notes",
+      "lemma": "melody",
+      "opening": true
+    },
+    {
+      "word": "MESH",
+      "definition": "work together in harmony",
+      "lemma": "mesh",
+      "opening": true
+    },
+    {
+      "word": "MESHED",
+      "definition": "work together in harmony",
+      "lemma": "mesh",
+      "opening": false
+    },
+    {
+      "word": "MESHES",
+      "definition": "work together in harmony",
+      "lemma": "mesh",
+      "opening": false
+    },
+    {
+      "word": "METER",
+      "definition": "rhythm as given by division into parts of equal duration",
+      "lemma": "meter",
+      "opening": false
+    },
+    {
+      "word": "METERS",
+      "definition": "rhythm as given by division into parts of equal duration",
+      "lemma": "meter",
+      "opening": false
+    },
+    {
+      "word": "METHOD",
+      "definition": "a way of doing something, especially a systematic way; implies an orderly logical arrangement (usually in steps)",
+      "lemma": "method",
+      "opening": false
+    },
+    {
+      "word": "METHODOLOGY",
+      "definition": "the system of methods followed in a particular discipline",
+      "lemma": "methodology",
+      "opening": false
+    },
+    {
+      "word": "METHODS",
+      "definition": "a way of doing something, especially a systematic way; implies an orderly logical arrangement (usually in steps)",
+      "lemma": "method",
+      "opening": false
+    },
+    {
+      "word": "METRE",
+      "definition": "rhythm as given by division into parts of equal duration",
+      "lemma": "metre",
+      "opening": false
+    },
+    {
+      "word": "METRES",
+      "definition": "rhythm as given by division into parts of equal duration",
+      "lemma": "metre",
+      "opening": false
+    },
+    {
+      "word": "MODE",
+      "definition": "any of various fixed orders of the various diatonic notes within an octave",
+      "lemma": "mode",
+      "opening": true
+    },
+    {
+      "word": "MODEL",
+      "definition": "plan or create according to a model or models",
+      "lemma": "model",
+      "opening": true
+    },
+    {
+      "word": "MODELS",
+      "definition": "plan or create according to a model or models",
+      "lemma": "model",
+      "opening": true
+    },
+    {
+      "word": "MODERATE",
+      "definition": "lessen the intensity of; temper; hold in restraint; hold or keep within limits",
+      "lemma": "moderate",
+      "opening": false
+    },
+    {
+      "word": "MODERATES",
+      "definition": "lessen the intensity of; temper; hold in restraint; hold or keep within limits",
+      "lemma": "moderate",
+      "opening": false
+    },
+    {
+      "word": "MODES",
+      "definition": "any of various fixed orders of the various diatonic notes within an octave",
+      "lemma": "mode",
+      "opening": true
+    },
+    {
+      "word": "MONOTONE",
+      "definition": "of a sequence or function; consistently increasing and never decreasing or consistently decreasing and never increasing in value",
+      "lemma": "monotone",
+      "opening": false
+    },
+    {
+      "word": "NEAT",
+      "definition": "clean or organized",
+      "lemma": "neat",
+      "opening": false
+    },
+    {
+      "word": "NEATEN",
+      "definition": "put (things or places) in order",
+      "lemma": "neaten",
+      "opening": false
+    },
+    {
+      "word": "NEATENED",
+      "definition": "put (things or places) in order",
+      "lemma": "neaten",
+      "opening": false
+    },
+    {
+      "word": "NEATENS",
+      "definition": "put (things or places) in order",
+      "lemma": "neaten",
+      "opening": false
+    },
+    {
+      "word": "NEATER",
+      "definition": "clean or organized",
+      "lemma": "neat",
+      "opening": false
+    },
+    {
+      "word": "NEATLY",
+      "definition": "with neatness",
+      "lemma": "neatly",
+      "opening": false
+    },
+    {
+      "word": "NEATNESS",
+      "definition": "the trait of being neat and orderly",
+      "lemma": "neatness",
+      "opening": false
+    },
+    {
+      "word": "ONTOLOGY",
+      "definition": "(computer science) a rigorous and exhaustive organization of some knowledge domain that is usually hierarchical and contains all the relevant entities and their relations",
+      "lemma": "ontology",
+      "opening": false
+    },
+    {
+      "word": "ORDER",
+      "definition": "logical or comprehensible arrangement of separate elements",
+      "lemma": "order",
+      "opening": true
+    },
+    {
+      "word": "ORDERLY",
+      "definition": "devoid of violence or disruption",
+      "lemma": "orderly",
+      "opening": true
+    },
+    {
+      "word": "ORDERS",
+      "definition": "logical or comprehensible arrangement of separate elements",
+      "lemma": "order",
+      "opening": true
+    },
+    {
+      "word": "RANGE",
+      "definition": "lay out orderly or logically in a line or as if in a line",
+      "lemma": "range",
+      "opening": true
+    },
+    {
+      "word": "RANGED",
+      "definition": "lay out orderly or logically in a line or as if in a line",
+      "lemma": "range",
+      "opening": true
+    },
+    {
+      "word": "RANGES",
+      "definition": "lay out orderly or logically in a line or as if in a line",
+      "lemma": "range",
+      "opening": true
+    },
+    {
+      "word": "READABLY",
+      "definition": "in a legible manner",
+      "lemma": "readably",
+      "opening": true
+    },
+    {
+      "word": "REARRANGE",
+      "definition": "put into a new order or arrangement",
+      "lemma": "rearrange",
+      "opening": false
+    },
+    {
+      "word": "REARRANGED",
+      "definition": "put into a new order or arrangement",
+      "lemma": "rearrange",
+      "opening": false
+    },
+    {
+      "word": "REARRANGEMENT",
+      "definition": "changing an arrangement",
+      "lemma": "rearrangement",
+      "opening": false
+    },
+    {
+      "word": "REARRANGEMENTS",
+      "definition": "changing an arrangement",
+      "lemma": "rearrangement",
+      "opening": false
+    },
+    {
+      "word": "REARRANGES",
+      "definition": "put into a new order or arrangement",
+      "lemma": "rearrange",
+      "opening": false
+    },
+    {
+      "word": "REASON",
+      "definition": "the state of having good sense and sound judgment",
+      "lemma": "reason",
+      "opening": true
+    },
+    {
+      "word": "REASONABLE",
+      "definition": "showing reason or sound judgment",
+      "lemma": "reasonable",
+      "opening": false
+    },
+    {
+      "word": "REASONABLY",
+      "definition": "with good sense or in a reasonable or intelligent manner",
+      "lemma": "reasonably",
+      "opening": true
+    },
+    {
+      "word": "REASONED",
+      "definition": "logically valid",
+      "lemma": "reasoned",
+      "opening": false
+    },
+    {
+      "word": "REASONER",
+      "definition": "someone who reasons logically",
+      "lemma": "reasoner",
+      "opening": false
+    },
+    {
+      "word": "REASONERS",
+      "definition": "someone who reasons logically",
+      "lemma": "reasoner",
+      "opening": false
+    },
+    {
+      "word": "REASONS",
+      "definition": "the state of having good sense and sound judgment",
+      "lemma": "reason",
+      "opening": false
+    },
+    {
+      "word": "RECODE",
+      "definition": "put into a different code; rearrange mentally",
+      "lemma": "recode",
+      "opening": false
+    },
+    {
+      "word": "RECODES",
+      "definition": "put into a different code; rearrange mentally",
+      "lemma": "recode",
+      "opening": false
+    },
+    {
+      "word": "RELATE",
+      "definition": "make a logical or causal connection",
+      "lemma": "relate",
+      "opening": false
+    },
+    {
+      "word": "RELATED",
+      "definition": "make a logical or causal connection",
+      "lemma": "relate",
+      "opening": false
+    },
+    {
+      "word": "RELATES",
+      "definition": "make a logical or causal connection",
+      "lemma": "relate",
+      "opening": false
+    },
+    {
+      "word": "REMEDY",
+      "definition": "set straight or right",
+      "lemma": "remedy",
+      "opening": false
+    },
+    {
+      "word": "REORDER",
+      "definition": "assign a new order to",
+      "lemma": "reorder",
+      "opening": false
+    },
+    {
+      "word": "REORDERS",
+      "definition": "assign a new order to",
+      "lemma": "reorder",
+      "opening": false
+    },
+    {
+      "word": "RESEARCH",
+      "definition": "attempt to find out in a systematically and scientific manner",
+      "lemma": "research",
+      "opening": false
+    },
+    {
+      "word": "RESEARCHED",
+      "definition": "attempt to find out in a systematically and scientific manner",
+      "lemma": "research",
+      "opening": false
+    },
+    {
+      "word": "RESEARCHES",
+      "definition": "attempt to find out in a systematically and scientific manner",
+      "lemma": "research",
+      "opening": false
+    },
+    {
+      "word": "RETOOL",
+      "definition": "revise or reorganize, especially for the purpose of updating and improving",
+      "lemma": "retool",
+      "opening": false
+    },
+    {
+      "word": "RETOOLED",
+      "definition": "revise or reorganize, especially for the purpose of updating and improving",
+      "lemma": "retool",
+      "opening": false
+    },
+    {
+      "word": "RETOOLS",
+      "definition": "revise or reorganize, especially for the purpose of updating and improving",
+      "lemma": "retool",
+      "opening": false
+    },
+    {
+      "word": "RHYTHM",
+      "definition": "(architecture) the repetitive use of a group of visual elements to establish a recognizable pattern",
+      "lemma": "rhythm",
+      "opening": false
+    },
+    {
+      "word": "RHYTHMS",
+      "definition": "(architecture) the repetitive use of a group of visual elements to establish a recognizable pattern",
+      "lemma": "rhythm",
+      "opening": false
+    },
+    {
+      "word": "ROTA",
+      "definition": "a roster of names showing the order in which people should perform certain duties",
+      "lemma": "rota",
+      "opening": false
+    },
+    {
+      "word": "ROTAS",
+      "definition": "a roster of names showing the order in which people should perform certain duties",
+      "lemma": "rota",
+      "opening": false
+    },
+    {
+      "word": "SANE",
+      "definition": "marked by sound judgment; having good reason",
+      "lemma": "sane",
+      "opening": true
+    },
+    {
+      "word": "SANELY",
+      "definition": "with good sense or in a reasonable or intelligent manner",
+      "lemma": "sanely",
+      "opening": true
+    },
+    {
+      "word": "SANER",
+      "definition": "marked by sound judgment; having good reason",
+      "lemma": "sane",
+      "opening": true
+    },
+    {
+      "word": "SANEST",
+      "definition": "marked by sound judgment; having good reason",
+      "lemma": "sane",
+      "opening": false
+    },
+    {
+      "word": "SCALE",
+      "definition": "an ordered reference standard",
+      "lemma": "scale",
+      "opening": true
+    },
+    {
+      "word": "SCALED",
+      "definition": "pattern, make, regulate, set, measure, or estimate according to some rate or standard",
+      "lemma": "scale",
+      "opening": true
+    },
+    {
+      "word": "SCALES",
+      "definition": "an ordered reference standard",
+      "lemma": "scale",
+      "opening": false
+    },
+    {
+      "word": "SCAN",
+      "definition": "the act of scanning; systematic examination of a prescribed region",
+      "lemma": "scan",
+      "opening": true
+    },
+    {
+      "word": "SCANNED",
+      "definition": "conform to a metrical pattern",
+      "lemma": "scan",
+      "opening": false
+    },
+    {
+      "word": "SCANS",
+      "definition": "the act of scanning; systematic examination of a prescribed region",
+      "lemma": "scan",
+      "opening": false
+    },
+    {
+      "word": "SCHEMA",
+      "definition": "a schematic or preliminary plan",
+      "lemma": "schema",
+      "opening": true
+    },
+    {
+      "word": "SCHEMAS",
+      "definition": "a schematic or preliminary plan",
+      "lemma": "schema",
+      "opening": false
+    },
+    {
+      "word": "SCHEMATA",
+      "definition": "a schematic or preliminary plan",
+      "lemma": "schema",
+      "opening": false
+    },
+    {
+      "word": "SCHEME",
+      "definition": "devise a system or form a scheme for",
+      "lemma": "scheme",
+      "opening": false
+    },
+    {
+      "word": "SCHEMED",
+      "definition": "devise a system or form a scheme for",
+      "lemma": "scheme",
+      "opening": false
+    },
+    {
+      "word": "SCHEMES",
+      "definition": "devise a system or form a scheme for",
+      "lemma": "scheme",
+      "opening": false
+    },
+    {
+      "word": "SCREEN",
+      "definition": "examine methodically",
+      "lemma": "screen",
+      "opening": false
+    },
+    {
+      "word": "SCREENED",
+      "definition": "examine methodically",
+      "lemma": "screen",
+      "opening": false
+    },
+    {
+      "word": "SCREENS",
+      "definition": "examine methodically",
+      "lemma": "screen",
+      "opening": false
+    },
+    {
+      "word": "SEDATE",
+      "definition": "cause to be calm or quiet as by administering a sedative to",
+      "lemma": "sedate",
+      "opening": false
+    },
+    {
+      "word": "SEDATES",
+      "definition": "cause to be calm or quiet as by administering a sedative to",
+      "lemma": "sedate",
+      "opening": false
+    },
+    {
+      "word": "SEED",
+      "definition": "distribute (players or teams) so that outstanding teams or players will not meet in the early rounds",
+      "lemma": "seed",
+      "opening": false
+    },
+    {
+      "word": "SEEDS",
+      "definition": "distribute (players or teams) so that outstanding teams or players will not meet in the early rounds",
+      "lemma": "seed",
+      "opening": false
+    },
+    {
+      "word": "SERENE",
+      "definition": "not agitated; without losing self-possession",
+      "lemma": "serene",
+      "opening": false
+    },
+    {
+      "word": "SERENELY",
+      "definition": "in a peacefully serene manner",
+      "lemma": "serenely",
+      "opening": false
+    },
+    {
+      "word": "SERENER",
+      "definition": "not agitated; without losing self-possession",
+      "lemma": "serene",
+      "opening": false
+    },
+    {
+      "word": "SERENEST",
+      "definition": "not agitated; without losing self-possession",
+      "lemma": "serene",
+      "opening": false
+    },
+    {
+      "word": "SET",
+      "definition": "arrange attractively",
+      "lemma": "set",
+      "opening": false
+    },
+    {
+      "word": "SETS",
+      "definition": "arrange attractively",
+      "lemma": "set",
+      "opening": false
+    },
+    {
+      "word": "SHARED",
+      "definition": "distributed in portions (often equal) on the basis of a plan or purpose",
+      "lemma": "shared",
+      "opening": true
+    },
+    {
+      "word": "SLATE",
+      "definition": "designate or schedule",
+      "lemma": "slate",
+      "opening": false
+    },
+    {
+      "word": "SLATED",
+      "definition": "designate or schedule",
+      "lemma": "slate",
+      "opening": false
+    },
+    {
+      "word": "SLATES",
+      "definition": "designate or schedule",
+      "lemma": "slate",
+      "opening": false
+    },
+    {
+      "word": "SLOT",
+      "definition": "assign a time slot",
+      "lemma": "slot",
+      "opening": false
+    },
+    {
+      "word": "SLOTS",
+      "definition": "assign a time slot",
+      "lemma": "slot",
+      "opening": false
+    },
+    {
+      "word": "SORT",
+      "definition": "arrange or order by classes or categories",
+      "lemma": "sort",
+      "opening": false
+    },
+    {
+      "word": "SORTED",
+      "definition": "arrange or order by classes or categories",
+      "lemma": "sort",
+      "opening": false
+    },
+    {
+      "word": "SORTS",
+      "definition": "arrange or order by classes or categories",
+      "lemma": "sort",
+      "opening": false
+    },
+    {
+      "word": "STABLE",
+      "definition": "maintaining equilibrium",
+      "lemma": "stable",
+      "opening": false
+    },
+    {
+      "word": "STABLER",
+      "definition": "maintaining equilibrium",
+      "lemma": "stable",
+      "opening": false
+    },
+    {
+      "word": "STAGE",
+      "definition": "plan, organize, and carry out (an event)",
+      "lemma": "stage",
+      "opening": false
+    },
+    {
+      "word": "STAGED",
+      "definition": "plan, organize, and carry out (an event)",
+      "lemma": "stage",
+      "opening": false
+    },
+    {
+      "word": "STAGES",
+      "definition": "plan, organize, and carry out (an event)",
+      "lemma": "stage",
+      "opening": false
+    },
+    {
+      "word": "STEADY",
+      "definition": "not easily excited or upset",
+      "lemma": "steady",
+      "opening": false
+    },
+    {
+      "word": "STRAND",
+      "definition": "a pattern forming a unity within a larger structural whole",
+      "lemma": "strand",
+      "opening": false
+    },
+    {
+      "word": "STRANDS",
+      "definition": "a pattern forming a unity within a larger structural whole",
+      "lemma": "strand",
+      "opening": false
+    },
+    {
+      "word": "STYLE",
+      "definition": "make consistent with certain rules of style",
+      "lemma": "style",
+      "opening": false
+    },
+    {
+      "word": "STYLED",
+      "definition": "make consistent with certain rules of style",
+      "lemma": "style",
+      "opening": false
+    },
+    {
+      "word": "STYLES",
+      "definition": "make consistent with certain rules of style",
+      "lemma": "style",
+      "opening": false
+    },
+    {
+      "word": "SYSTEM",
+      "definition": "an ordered manner; orderliness by virtue of being methodical and well organized",
+      "lemma": "system",
+      "opening": false
+    },
+    {
+      "word": "TABLE",
+      "definition": "arrange or enter in tabular form",
+      "lemma": "table",
+      "opening": false
+    },
+    {
+      "word": "TABLED",
+      "definition": "arrange or enter in tabular form",
+      "lemma": "table",
+      "opening": false
+    },
+    {
+      "word": "TABLES",
+      "definition": "arrange or enter in tabular form",
+      "lemma": "table",
+      "opening": false
+    },
+    {
+      "word": "TAME",
+      "definition": "correct by punishment or discipline",
+      "lemma": "tame",
+      "opening": false
+    },
+    {
+      "word": "TAMED",
+      "definition": "correct by punishment or discipline",
+      "lemma": "tame",
+      "opening": false
+    },
+    {
+      "word": "TAMES",
+      "definition": "correct by punishment or discipline",
+      "lemma": "tame",
+      "opening": false
+    },
+    {
+      "word": "TANDEM",
+      "definition": "an arrangement of two or more objects or persons one behind another",
+      "lemma": "tandem",
+      "opening": false
+    },
+    {
+      "word": "TANDEMS",
+      "definition": "an arrangement of two or more objects or persons one behind another",
+      "lemma": "tandem",
+      "opening": false
+    },
+    {
+      "word": "TEASE",
+      "definition": "disentangle and raise the fibers of",
+      "lemma": "tease",
+      "opening": false
+    },
+    {
+      "word": "TEASED",
+      "definition": "disentangle and raise the fibers of",
+      "lemma": "tease",
+      "opening": false
+    },
+    {
+      "word": "TEASES",
+      "definition": "disentangle and raise the fibers of",
+      "lemma": "tease",
+      "opening": false
+    },
+    {
+      "word": "THREAD",
+      "definition": "the connections that link the various parts of an event or argument together",
+      "lemma": "thread",
+      "opening": false
+    },
+    {
+      "word": "THREADS",
+      "definition": "the connections that link the various parts of an event or argument together",
+      "lemma": "thread",
+      "opening": false
+    },
+    {
+      "word": "TONAL",
+      "definition": "having tonality; i.e. tones and chords organized in relation to one tone such as a keynote or tonic",
+      "lemma": "tonal",
+      "opening": false
+    }
+  ]
+}

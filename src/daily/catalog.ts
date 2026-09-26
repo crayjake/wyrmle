@@ -7,6 +7,7 @@ import finiteAnger20260925 from './puzzles/2026-09-25-v9.json' with { type: 'jso
 import meaningChaos20260925 from './puzzles/2026-09-25-v10.json' with { type: 'json' }
 import coveredMeaningChaos20260925 from './puzzles/2026-09-25-v11.json' with { type: 'json' }
 import assessedMeaningChaos20260926 from './puzzles/2026-09-26-v12.json' with { type: 'json' }
+import correctedMeaningChaos20260926 from './puzzles/2026-09-26-v13.json' with { type: 'json' }
 import { unpackMeaningLexicon } from '../game/meaningPacking.ts'
 import { unpackMeaningRevision } from '../game/meaningRevision.ts'
 
@@ -32,6 +33,10 @@ export const dailyEncounter20260925V11 = { ...coveredMeaningRules,
 const { packedMeanings: assessedPackedMeanings, ...assessedMeaningRules } = assessedMeaningChaos20260926
 export const dailyEncounter20260926V12 = { ...assessedMeaningRules,
   meaningLexicon: unpackMeaningLexicon(assessedPackedMeanings),
+} as LetterStrikeEncounter
+const { packedMeanings: correctedPackedMeanings, ...correctedMeaningRules } = correctedMeaningChaos20260926
+export const dailyEncounter20260926V13 = { ...correctedMeaningRules,
+  meaningLexicon: unpackMeaningLexicon(correctedPackedMeanings),
 } as LetterStrikeEncounter
 
 /**

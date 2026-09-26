@@ -1,0 +1,912 @@
+{
+  "enemy": "HALCYON",
+  "enemySense": {
+    "word": "HALCYON",
+    "senseId": "oewn-halcyon__5.00.00.peaceful.00",
+    "definition": "idyllically calm and peaceful; suggesting happy tranquillity",
+    "lemma": "halcyon",
+    "partsOfSpeech": [
+      "noun",
+      "adjective"
+    ],
+    "source": "oewn-2025"
+  },
+  "scope": "explicit-editorial-word-list-study",
+  "words": {
+    "CHAOS": {
+      "definition": "a state of extreme confusion and disorder",
+      "senseId": "oewn-chaos__1.26.00..",
+      "lemma": "chaos",
+      "partsOfSpeech": [
+        "noun"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "ANARCHY": {
+      "definition": "a state of lawlessness and disorder (usually resulting from a failure of government)",
+      "senseId": "oewn-anarchy__1.26.00..",
+      "lemma": "anarchy",
+      "partsOfSpeech": [
+        "noun"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "HAVOC": {
+      "definition": "violent and needless disturbance",
+      "senseId": "oewn-havoc__1.04.00..",
+      "lemma": "havoc",
+      "partsOfSpeech": [
+        "noun"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "CLAMOR": {
+      "definition": "a loud harsh or strident noise",
+      "senseId": "oewn-clamor__1.11.00..",
+      "lemma": "clamor",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "CLAMOUR": {
+      "definition": "loud and persistent outcry from many people",
+      "senseId": "oewn-clamour__1.10.00..",
+      "lemma": "clamour",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "CLANG": {
+      "definition": "a loud resonant repeating noise",
+      "senseId": "oewn-clang__1.11.00..",
+      "lemma": "clang",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "CLASH": {
+      "definition": "a loud resonant repeating noise",
+      "senseId": "oewn-clash__1.11.00..",
+      "lemma": "clash",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "CLASHES": {
+      "definition": "a loud resonant repeating noise",
+      "senseId": "oewn-clash__1.11.00..",
+      "lemma": "clash",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "NOISY": {
+      "definition": "full of or characterized by loud and nonmusical sounds",
+      "senseId": "oewn-noisy__3.00.00..",
+      "lemma": "noisy",
+      "partsOfSpeech": [
+        "adjective"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "NOISE": {
+      "definition": "sound of any kind (especially unintelligible or dissonant sound)",
+      "senseId": "oewn-noise__1.11.00..",
+      "lemma": "noise",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "NOISILY": {
+      "definition": "with much noise or loud and unpleasant sound",
+      "senseId": "oewn-noisily__4.02.00..",
+      "lemma": "noisily",
+      "partsOfSpeech": [
+        "adverb"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "HOWL": {
+      "definition": "a long loud emotional utterance",
+      "senseId": "oewn-howl__1.10.00..",
+      "lemma": "howl",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "HOWLS": {
+      "definition": "a long loud emotional utterance",
+      "senseId": "oewn-howl__1.10.00..",
+      "lemma": "howl",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "HOWLING": {
+      "definition": "emit long loud cries",
+      "senseId": "oewn-howl__2.32.02..",
+      "lemma": "howl",
+      "partsOfSpeech": [
+        "noun",
+        "verb",
+        "adjective"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "ROAR": {
+      "definition": "a deep prolonged loud noise",
+      "senseId": "oewn-roar__1.11.00..",
+      "lemma": "roar",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "ROARS": {
+      "definition": "a deep prolonged loud noise",
+      "senseId": "oewn-roar__1.11.00..",
+      "lemma": "roar",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "RANT": {
+      "definition": "a loud bombastic declamation expressed with strong emotion",
+      "senseId": "oewn-rant__1.10.01..",
+      "lemma": "rant",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "RANTS": {
+      "definition": "a loud bombastic declamation expressed with strong emotion",
+      "senseId": "oewn-rant__1.10.01..",
+      "lemma": "rant",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "RAGE": {
+      "definition": "a feeling of intense anger",
+      "senseId": "oewn-rage__1.12.00..",
+      "lemma": "rage",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "STORM": {
+      "definition": "a violent weather condition with winds 64-72 knots (11 on the Beaufort scale) and precipitation and thunder and lightning",
+      "senseId": "oewn-storm__1.19.00..",
+      "lemma": "storm",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "STORMS": {
+      "definition": "a violent weather condition with winds 64-72 knots (11 on the Beaufort scale) and precipitation and thunder and lightning",
+      "senseId": "oewn-storm__1.19.00..",
+      "lemma": "storm",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "STORMY": {
+      "definition": "(especially of weather) affected or characterized by storms or commotion",
+      "senseId": "oewn-stormy__3.00.00..",
+      "lemma": "stormy",
+      "partsOfSpeech": [
+        "adjective"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "ROWDY": {
+      "definition": "disturbing the public peace; loud and rough",
+      "senseId": "oewn-rowdy__5.00.00.disorderly.00",
+      "lemma": "rowdy",
+      "partsOfSpeech": [
+        "noun",
+        "adjective"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "CACOPHONY": {
+      "definition": "a loud harsh or strident noise",
+      "senseId": "oewn-cacophony__1.11.00..",
+      "lemma": "cacophony",
+      "partsOfSpeech": [
+        "noun"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "CLATTER": {
+      "definition": "a rattling noise (often produced by rapid movement)",
+      "senseId": "oewn-clatter__1.11.00..",
+      "lemma": "clatter",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "YELL": {
+      "definition": "a loud utterance; often in protest or opposition",
+      "senseId": "oewn-yell__1.10.00..",
+      "lemma": "yell",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "YELLS": {
+      "definition": "a loud utterance; often in protest or opposition",
+      "senseId": "oewn-yell__1.10.00..",
+      "lemma": "yell",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "SCREAM": {
+      "definition": "sharp piercing cry",
+      "senseId": "oewn-scream__1.10.00..",
+      "lemma": "scream",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "opposite",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense brings noise, agitation, conflict or disorder to a calm and peaceful situation."
+    },
+    "CALM": {
+      "definition": "not agitated; without losing self-possession",
+      "senseId": "oewn-calm__5.00.00.composed.00",
+      "lemma": "calm",
+      "partsOfSpeech": [
+        "noun",
+        "verb",
+        "adjective"
+      ],
+      "source": "oewn-2025",
+      "relation": "similar",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense expresses or creates calm, peacefulness or concord."
+    },
+    "CALMS": {
+      "definition": "steadiness of mind under stress",
+      "senseId": "oewn-calm__1.07.00..",
+      "lemma": "calm",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "similar",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense expresses or creates calm, peacefulness or concord."
+    },
+    "CALMER": {
+      "definition": "not agitated; without losing self-possession",
+      "senseId": "oewn-calm__5.00.00.composed.00",
+      "lemma": "calm",
+      "partsOfSpeech": [
+        "adjective"
+      ],
+      "source": "oewn-2025",
+      "relation": "similar",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense expresses or creates calm, peacefulness or concord."
+    },
+    "CALMEST": {
+      "definition": "not agitated; without losing self-possession",
+      "senseId": "oewn-calm__5.00.00.composed.00",
+      "lemma": "calm",
+      "partsOfSpeech": [
+        "adjective"
+      ],
+      "source": "oewn-2025",
+      "relation": "similar",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense expresses or creates calm, peacefulness or concord."
+    },
+    "SERENE": {
+      "definition": "not agitated; without losing self-possession",
+      "senseId": "oewn-serene__5.00.00.composed.00",
+      "lemma": "serene",
+      "partsOfSpeech": [
+        "adjective"
+      ],
+      "source": "oewn-2025",
+      "relation": "similar",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense expresses or creates calm, peacefulness or concord."
+    },
+    "TRANQUIL": {
+      "definition": "(of a body of water) free from disturbance by heavy waves",
+      "senseId": "oewn-tranquil__5.00.00.calm.00",
+      "lemma": "tranquil",
+      "partsOfSpeech": [
+        "adjective"
+      ],
+      "source": "oewn-2025",
+      "relation": "similar",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense expresses or creates calm, peacefulness or concord."
+    },
+    "PEACE": {
+      "definition": "the state prevailing during the absence of war",
+      "senseId": "oewn-peace__1.26.00..",
+      "lemma": "peace",
+      "partsOfSpeech": [
+        "noun"
+      ],
+      "source": "oewn-2025",
+      "relation": "similar",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense expresses or creates calm, peacefulness or concord."
+    },
+    "HARMONY": {
+      "definition": "compatibility in opinion and action",
+      "senseId": "oewn-harmony__1.07.01..",
+      "lemma": "harmony",
+      "partsOfSpeech": [
+        "noun"
+      ],
+      "source": "oewn-2025",
+      "relation": "similar",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense expresses or creates calm, peacefulness or concord."
+    },
+    "LULL": {
+      "definition": "a pause during which things are calm or activities are diminished",
+      "senseId": "oewn-lull__1.28.00..",
+      "lemma": "lull",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "similar",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense expresses or creates calm, peacefulness or concord."
+    },
+    "LULLABY": {
+      "definition": "a quiet song intended to lull a child to sleep",
+      "senseId": "oewn-lullaby__1.10.00..",
+      "lemma": "lullaby",
+      "partsOfSpeech": [
+        "noun"
+      ],
+      "source": "oewn-2025",
+      "relation": "similar",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense expresses or creates calm, peacefulness or concord."
+    },
+    "HALCYON": {
+      "definition": "idyllically calm and peaceful; suggesting happy tranquillity",
+      "senseId": "oewn-halcyon__5.00.00.peaceful.00",
+      "lemma": "halcyon",
+      "partsOfSpeech": [
+        "noun",
+        "adjective"
+      ],
+      "source": "oewn-2025",
+      "relation": "similar",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense expresses or creates calm, peacefulness or concord."
+    },
+    "SAND": {
+      "definition": "a loose material consisting of grains of rock or coral",
+      "senseId": "oewn-sand__1.27.00..",
+      "lemma": "sand",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "STONE": {
+      "definition": "of any of various dull tannish or grey colors",
+      "senseId": "oewn-stone__5.00.00.chromatic.00",
+      "lemma": "stone",
+      "partsOfSpeech": [
+        "noun",
+        "verb",
+        "adjective"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "CHAIR": {
+      "definition": "a seat for one person, with a support for the back",
+      "senseId": "oewn-chair__1.06.00..",
+      "lemma": "chair",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "CHAIN": {
+      "definition": "a series of things depending on each other as if linked together",
+      "senseId": "oewn-chain__1.14.00..",
+      "lemma": "chain",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "CHIN": {
+      "definition": "Kamarupan languages spoken in western Burma and Bangladesh and easternmost India",
+      "senseId": "oewn-chin__1.10.00..",
+      "lemma": "Chin",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "COAL": {
+      "definition": "fossil fuel consisting of carbonized vegetable matter deposited in the Carboniferous period",
+      "senseId": "oewn-coal__1.27.00..",
+      "lemma": "coal",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "CORN": {
+      "definition": "tall annual cereal grass bearing kernels on large ears: widely cultivated in America in many varieties; the principal cereal in Mexico and Central and South America since pre-Columbian times",
+      "senseId": "oewn-corn__1.20.00..",
+      "lemma": "corn",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "CLOTH": {
+      "definition": "artifact made by weaving or felting or knitting or crocheting natural or synthetic fibers",
+      "senseId": "oewn-cloth__1.06.00..",
+      "lemma": "cloth",
+      "partsOfSpeech": [
+        "noun"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "CART": {
+      "definition": "a heavy open wagon usually having two wheels and drawn by an animal",
+      "senseId": "oewn-cart__1.06.00..",
+      "lemma": "cart",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "COAT": {
+      "definition": "an outer garment that has sleeves and covers the body from shoulder down; worn outdoors",
+      "senseId": "oewn-coat__1.06.00..",
+      "lemma": "coat",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "CAR": {
+      "definition": "a motor vehicle with four wheels; usually propelled by an internal combustion engine",
+      "senseId": "oewn-car__1.06.00..",
+      "lemma": "car",
+      "partsOfSpeech": [
+        "noun"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "MAN": {
+      "definition": "an adult person who is male (as opposed to a woman)",
+      "senseId": "oewn-man__1.18.00..",
+      "lemma": "man",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "SON": {
+      "definition": "a male human offspring",
+      "senseId": "oewn-son__1.18.00..",
+      "lemma": "son",
+      "partsOfSpeech": [
+        "noun"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "ANY": {
+      "definition": "one or some or every or all without specification; entity, elective existential pronoun; quantifier, elective existential",
+      "senseId": "oewn-any__5.00.00.some.00",
+      "lemma": "any",
+      "partsOfSpeech": [
+        "adjective",
+        "adverb"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "ONLY": {
+      "definition": "being the only one; single and isolated from others",
+      "senseId": "oewn-only__5.00.00.single.05",
+      "lemma": "only",
+      "partsOfSpeech": [
+        "adjective",
+        "adverb"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "NAME": {
+      "definition": "a language unit by which a person or thing is known",
+      "senseId": "oewn-name__1.10.00..",
+      "lemma": "name",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "LINE": {
+      "definition": "a formation of people or things one beside another",
+      "senseId": "oewn-line__1.14.03..",
+      "lemma": "line",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "LION": {
+      "definition": "(astrology) a person who is born while the sun is in Leo",
+      "senseId": "oewn-lion__1.18.01..",
+      "lemma": "Lion",
+      "partsOfSpeech": [
+        "noun"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "RAM": {
+      "definition": "the most common computer memory which can be used by programs to perform necessary tasks while the computer is on; an integrated circuit memory chip allows information to be stored or accessed in any order and all storage locations are equally accessible",
+      "senseId": "oewn-ram__1.06.01..",
+      "lemma": "RAM",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "CAN": {
+      "definition": "airtight sealed metal container for food or drink or paint etc.",
+      "senseId": "oewn-can__1.06.00..",
+      "lemma": "can",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "HEN": {
+      "definition": "adult female chicken",
+      "senseId": "oewn-hen__1.05.01..",
+      "lemma": "hen",
+      "partsOfSpeech": [
+        "noun"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "HAM": {
+      "definition": "meat cut from the thigh of a hog (usually smoked)",
+      "senseId": "oewn-ham__1.13.00..",
+      "lemma": "ham",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "EAR": {
+      "definition": "the sense organ for hearing and equilibrium",
+      "senseId": "oewn-ear__1.08.00..",
+      "lemma": "ear",
+      "partsOfSpeech": [
+        "noun"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "SEA": {
+      "definition": "a division of an ocean or a large body of salt water partially enclosed by land",
+      "senseId": "oewn-sea__1.17.00..",
+      "lemma": "sea",
+      "partsOfSpeech": [
+        "noun"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "SEAL": {
+      "definition": "a member of a Naval Special Warfare unit who is trained for unconventional warfare",
+      "senseId": "oewn-seal__1.18.00..",
+      "lemma": "SEAL",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "HEAR": {
+      "definition": "perceive (sound) via the auditory sense",
+      "senseId": "oewn-hear__2.39.00..",
+      "lemma": "hear",
+      "partsOfSpeech": [
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "HOME": {
+      "definition": "used of your own ground",
+      "senseId": "oewn-home__3.00.00..",
+      "lemma": "home",
+      "partsOfSpeech": [
+        "noun",
+        "verb",
+        "adjective",
+        "adverb"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "REAL": {
+      "definition": "being or occurring in fact or actuality; having verified existence; not illusory",
+      "senseId": "oewn-real__3.00.00..",
+      "lemma": "real",
+      "partsOfSpeech": [
+        "noun",
+        "adjective",
+        "adverb"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "NEAR": {
+      "definition": "not far distant in time or space or degree or circumstances",
+      "senseId": "oewn-near__3.00.00..",
+      "lemma": "near",
+      "partsOfSpeech": [
+        "verb",
+        "adjective",
+        "adverb"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "LOAN": {
+      "definition": "the temporary provision of money (usually at interest)",
+      "senseId": "oewn-loan__1.21.00..",
+      "lemma": "loan",
+      "partsOfSpeech": [
+        "noun",
+        "verb"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    },
+    "MONEY": {
+      "definition": "the most common medium of exchange; functions as legal tender",
+      "senseId": "oewn-money__1.21.00..",
+      "lemma": "money",
+      "partsOfSpeech": [
+        "noun"
+      ],
+      "source": "oewn-2025",
+      "relation": "unrelated",
+      "evidence": "reviewed-profile",
+      "reason": "This reviewed sense describes an ordinary object, person, place or action without an inherent calming or disruptive meaning."
+    }
+  },
+  "limitation": "Only these listed spellings are admitted. Other words are rejected, never silently assumed neutral. A complete inventory and contextual review are required before daily publication."
+}

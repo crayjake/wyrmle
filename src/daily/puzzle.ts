@@ -1,6 +1,6 @@
 import {
   dailyEncounterV1, dailyEncounterV2, dailyEncounterV3, dailyEncounterV4,
-  dailyEncounter20260924, dailyEncounter20260924V6, dailyEncounter20260924V7, dailyEncounter20260925V8, dailyEncounter20260925V9, dailyEncounter20260925V10, dailyEncounter20260925V11, dailyEncounter20260926V12,
+  dailyEncounter20260924, dailyEncounter20260924V6, dailyEncounter20260924V7, dailyEncounter20260925V8, dailyEncounter20260925V9, dailyEncounter20260925V10, dailyEncounter20260925V11, dailyEncounter20260926V12, dailyEncounter20260926V13,
 } from './catalog.ts'
 import { validatePuzzleId } from './date.ts'
 import difficultyLabels from './difficultyLabels.json' with { type: 'json' }
@@ -16,6 +16,7 @@ import {
   FINITE_REFILL_GAME_VERSION, FINITE_REFILL_PUZZLE_VERSION,
   MEANING_GAME_VERSION, MEANING_PUZZLE_VERSION, MEANING_COVERAGE_PUZZLE_VERSION,
   MODEL_ASSESSED_DATES, MODEL_ASSESSED_PUZZLE_VERSION,
+  HALCYONS_CORRECTION_PUZZLE_VERSION,
 } from './versions.ts'
 
 function deepFreeze<T>(value: T): T {
@@ -39,6 +40,7 @@ deepFreeze(dailyEncounter20260925V9)
 deepFreeze(dailyEncounter20260925V10)
 deepFreeze(dailyEncounter20260925V11)
 deepFreeze(dailyEncounter20260926V12)
+deepFreeze(dailyEncounter20260926V13)
 
 /** Old rules remain available only for dates on which those rules were published. */
 export function getSupportedDailyPuzzles(puzzleId: string): DailyPuzzleDefinition[] {
@@ -85,6 +87,10 @@ export function getSupportedDailyPuzzles(puzzleId: string): DailyPuzzleDefinitio
   if (MODEL_ASSESSED_DATES.includes(puzzleId)) definitions.push({
     gameVersion: MEANING_GAME_VERSION, puzzleVersion: MODEL_ASSESSED_PUZZLE_VERSION,
     encounter: dailyEncounter20260926V12,
+  })
+  if (MODEL_ASSESSED_DATES.includes(puzzleId)) definitions.push({
+    gameVersion: MEANING_GAME_VERSION, puzzleVersion: HALCYONS_CORRECTION_PUZZLE_VERSION,
+    encounter: dailyEncounter20260926V13,
   })
   return definitions.map((definition) => deepFreeze({ puzzleId, date: puzzleId, ...definition,
     difficulty: (difficultyLabels as Record<string, PuzzleDifficultyLabel>)[definition.encounter.id],

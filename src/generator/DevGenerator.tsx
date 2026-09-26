@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
 import savedMeaning from './data/meaning-review.json'
-import { dailyEncounter20260926V12 } from '../daily/catalog.ts'
+import { dailyEncounter20260926V13 } from '../daily/catalog.ts'
 import type { GenerationResult, RankedCandidate } from './generate.ts'
 import type { GeneratorProgress, GeneratorRequest, GeneratorResponse } from './workerMessages.ts'
 import type { SolverMoveSummary } from './findMoves.ts'
@@ -15,16 +15,18 @@ type ResultFilter = 'accepted' | 'all' | 'rejected'
 // The review data omits the large meaning table: use the same frozen encounter
 // that gameplay publishes, without shipping another copy in the DEV bundle.
 const savedCandidates = [{ ...savedMeaning, candidate: {
-  ...savedMeaning.candidate, encounter: dailyEncounter20260926V12,
+  ...savedMeaning.candidate, encounter: dailyEncounter20260926V13,
 } }] as unknown as RankedCandidate[]
 // A playtest temporarily unmounts the browser. Keep this session's review queue
 // and selection in module memory; daily/localStorage records are unrelated.
 let reviewCache: {
   enemy: string; automatic: boolean; seed: string; count: number; includeRegenTile: boolean
+  regenTileCount: number
   finiteRefills: boolean; refillLimit: number
   ranked: RankedCandidate[]; selectedId: string | null; filter: ResultFilter; result: GenerationResult | null
 } = {
   enemy: 'CHAOS', automatic: false, seed: 'meaning-review', count: 8, includeRegenTile: true,
+  regenTileCount: 1,
   finiteRefills: true, refillLimit: 20,
   ranked: savedCandidates.slice(0, 5), selectedId: savedCandidates[0]?.candidate.id ?? null,
   filter: 'accepted', result: null,
@@ -126,6 +128,24 @@ function CandidateReview({ ranked, onPlay }: { ranked: RankedCandidate; onPlay: 
         <p className="generator-note">Winning counts are observed lower bounds. Familiarity is an authoring estimate; its source and coverage are recorded in the analysis notes.</p>
       </section>
     </div>
+    {analysis.semanticJourney && <section aria-label="Meaning through the puzzle">
+      <h3>Meaning through the puzzle</h3>
+      <dl className="generator-metrics">
+        <Metric label="Later boards with counter choices">{percent(analysis.semanticJourney.laterCounterChoiceRate)}</Metric>
+        <Metric label="Later boards retaining the theme">{percent(analysis.semanticJourney.laterResistedPresenceRate)}</Metric>
+        <Metric label="Later counters improve damage">{percent(analysis.semanticJourney.laterMeaningAdvantageRate)}</Metric>
+        <Metric label="Wins using counters throughout">{percent(analysis.semanticJourney.sustainedWinningRouteRate)}</Metric>
+        <Metric label="Simple chip-away wins">{analysis.semanticJourney.chipAwayRuns.filter(run => run.status === 'won').length} / {analysis.semanticJourney.chipAwayRuns.length}</Metric>
+      </dl>
+      <p className="generator-note">Samples include ordinary words, resisted temptations and counters. These are bounded design checks; frequency approximates familiarity, not human discovery difficulty. Winning routes and chip-away runs replay the real engine.</p>
+      <details><summary>Choices after different plays</summary>
+        {analysis.semanticJourney.positions.map((position, index) => <div key={index}>
+          <p><strong>{position.prefix.map(move => move.word).join(' → ') || 'Opening'}</strong> · {position.remainingHits} enemy HP · {position.lives} lives</p>
+          <p>Resisted: {position.resistedWords.slice(0, 8).join(', ') || 'none'}. Counters: {position.counterWords.slice(0, 12).join(', ') || 'none'}.</p>
+          {position.temptingResistedFinishers.length > 0 && position.counterFinishers.length > 0 && <p>Tempting ending: {position.temptingResistedFinishers.join(', ')}. Winning counters: {position.counterFinishers.join(', ')}.</p>}
+        </div>)}
+      </details>
+    </section>}
     {meanings && meaningCounts && <details>
       <summary>Frozen meaning coverage · {Object.keys(meanings.words).length.toLocaleString()} defined words</summary>
       <p>Every definition-backed spelling that fits the complete starting and refill supply is stored before solver search. The same table controls valid words, meaning classes, hit counts and exhausted-board detection. Words absent from it cannot be played.</p>
@@ -268,6 +288,7 @@ export default function DevGenerator({ onPlay, onClose }: Props) {
   const [seed, setSeed] = useState(reviewCache.seed)
   const [count, setCount] = useState(reviewCache.count)
   const [includeRegenTile, setIncludeRegenTile] = useState(reviewCache.includeRegenTile)
+  const [regenTileCount, setRegenTileCount] = useState(reviewCache.regenTileCount)
   const [finiteRefills, setFiniteRefills] = useState(reviewCache.finiteRefills)
   const [refillLimit, setRefillLimit] = useState(reviewCache.refillLimit)
   const [ranked, setRanked] = useState<RankedCandidate[]>(reviewCache.ranked)
@@ -280,8 +301,8 @@ export default function DevGenerator({ onPlay, onClose }: Props) {
   const [error, setError] = useState<string | null>(null)
   const [notice, setNotice] = useState<string | null>(null)
   useEffect(() => {
-    reviewCache = { enemy, automatic, seed, count, includeRegenTile, finiteRefills, refillLimit, ranked, selectedId, filter, result }
-  }, [enemy, automatic, seed, count, includeRegenTile, finiteRefills, refillLimit, ranked, selectedId, filter, result])
+    reviewCache = { enemy, automatic, seed, count, includeRegenTile, regenTileCount, finiteRefills, refillLimit, ranked, selectedId, filter, result }
+  }, [enemy, automatic, seed, count, includeRegenTile, regenTileCount, finiteRefills, refillLimit, ranked, selectedId, filter, result])
   useEffect(() => {
     const element = dialog.current
     const previousFocus = document.activeElement
@@ -322,6 +343,7 @@ export default function DevGenerator({ onPlay, onClose }: Props) {
         setError(event.message || 'Generator worker failed. The previous results are still available.')
       }
       const request: GeneratorRequest = { id, enemy: automatic ? null : enemy.trim().toUpperCase(), seed, candidateCount: count, includeRegenTile,
+        regenTileCount: includeRegenTile ? regenTileCount : 0,
         ...(finiteRefills ? { refillLimit } : {}) }
       instance.postMessage(request)
     } catch (failure) {
@@ -347,6 +369,7 @@ export default function DevGenerator({ onPlay, onClose }: Props) {
       <label>Seed<input value={seed} disabled={busy} onChange={event => setSeed(event.target.value)} required maxLength={128} /></label>
       <label>Initial candidates<input type="number" min={1} max={100} value={count} disabled={busy} onChange={event => setCount(Number(event.target.value))} required /></label>
       <label><input type="checkbox" checked={includeRegenTile} disabled={busy} onChange={event => setIncludeRegenTile(event.target.checked)} /> Include enemy Revive tile</label>
+      {includeRegenTile && <label>Enemy Revive tiles<input type="number" min={1} max={3} step={1} value={regenTileCount} disabled={busy} onChange={event => setRegenTileCount(Number(event.target.value))} required /></label>}
       <label><input type="checkbox" checked={finiteRefills} disabled={busy} onChange={event => setFiniteRefills(event.target.checked)} /> Finite refill supply</label>
       {finiteRefills && <label>Initial refill tiles<input type="number" min={0} max={96} step={1} value={refillLimit} disabled={busy} onChange={event => setRefillLimit(Number(event.target.value))} required />
         <small>Refinement may adjust this budget. Every candidate shows its final supply.</small></label>}

@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Current",
+    "enemyHP": 7,
+    "lives": 5,
+    "revives": 1,
+    "solvable": true,
+    "minimumProven": false,
+    "bestWin": 3,
+    "chipAwayWins": 8,
+    "chipAwayRuns": 10,
+    "sustainedWinningRouteRate": 0.8333333333333334,
+    "laterCounterChoiceRate": 0.7083333333333334,
+    "laterMeaningAdvantageRate": 0.6818181818181818,
+    "example": [
+      "AGO",
+      "RESEARCH",
+      "REASON"
+    ]
+  },
+  {
+    "name": "Four lives",
+    "enemyHP": 7,
+    "lives": 4,
+    "revives": 1,
+    "solvable": true,
+    "minimumProven": false,
+    "bestWin": 3,
+    "chipAwayWins": 6,
+    "chipAwayRuns": 10,
+    "sustainedWinningRouteRate": 0.8333333333333334,
+    "laterCounterChoiceRate": 0.6666666666666666,
+    "laterMeaningAdvantageRate": 0.6818181818181818,
+    "example": [
+      "AGO",
+      "RESEARCH",
+      "REASON"
+    ]
+  },
+  {
+    "name": "Nine enemy HP",
+    "enemyHP": 9,
+    "lives": 5,
+    "revives": 1,
+    "solvable": true,
+    "minimumProven": false,
+    "bestWin": 3,
+    "chipAwayWins": 0,
+    "chipAwayRuns": 10,
+    "sustainedWinningRouteRate": 0.75,
+    "laterCounterChoiceRate": 0.7083333333333334,
+    "laterMeaningAdvantageRate": 0.6666666666666666,
+    "example": [
+      "AND",
+      "RESEARCH",
+      "COOL",
+      "HAS"
+    ]
+  },
+  {
+    "name": "Ten enemy HP",
+    "enemyHP": 10,
+    "lives": 5,
+    "revives": 1,
+    "solvable": true,
+    "minimumProven": false,
+    "bestWin": 3,
+    "chipAwayWins": 0,
+    "chipAwayRuns": 10,
+    "sustainedWinningRouteRate": 0.6666666666666666,
+    "laterCounterChoiceRate": 0.7083333333333334,
+    "laterMeaningAdvantageRate": 0.6666666666666666,
+    "example": [
+      "AND",
+      "RESEARCH",
+      "COOL",
+      "HAS"
+    ]
+  },
+  {
+    "name": "Two Revive tiles",
+    "enemyHP": 7,
+    "lives": 5,
+    "revives": 2,
+    "solvable": true,
+    "minimumProven": false,
+    "bestWin": 3,
+    "chipAwayWins": 6,
+    "chipAwayRuns": 10,
+    "sustainedWinningRouteRate": 0.8333333333333334,
+    "laterCounterChoiceRate": 0.625,
+    "laterMeaningAdvantageRate": 0.6521739130434783,
+    "example": [
+      "CHANGE",
+      "SORT",
+      "HAD",
+      "COOL"
+    ]
+  },
+  {
+    "name": "Nine HP + two Revives",
+    "enemyHP": 9,
+    "lives": 5,
+    "revives": 2,
+    "solvable": true,
+    "minimumProven": false,
+    "bestWin": 4,
+    "chipAwayWins": 0,
+    "chipAwayRuns": 10,
+    "sustainedWinningRouteRate": 0.5833333333333334,
+    "laterCounterChoiceRate": 0.625,
+    "laterMeaningAdvantageRate": 0.6666666666666666,
+    "example": [
+      "SHARED",
+      "CLEAR",
+      "MATCH",
+      "GONE",
+      "SAY",
+      "BORN"
+    ]
+  }
+]

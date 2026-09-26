@@ -15,6 +15,8 @@ import { encounterRuleKey, stateKey } from './stateKey.ts'
 import { analyseRefillPressure } from './refillPressure.ts'
 import type { RefillPressureAnalysis } from './refillPressure.ts'
 import type { SemanticChoices } from './semanticChoices.ts'
+import { analyseSemanticJourney } from './semanticJourney.ts'
+import type { SemanticJourney, SemanticJourneyOptions } from './semanticJourney.ts'
 
 export type MechanicName = 'semantic' | 'ward' | 'strike' | 'grammar' | 'armour' | 'regen'
 export type ReviewLine = { moves: SolverMoveSummary[]; turns: number; resolveRemaining: number }
@@ -72,6 +74,7 @@ export type PuzzleAnalysis = {
   openingSafety?: OpeningSafetyReport
   /** Complete opening and replayed strategy audit for a publication review. */
   semanticChoices?: SemanticChoices
+  semanticJourney?: SemanticJourney
   refillPressure?: RefillPressureAnalysis
   solvable: boolean | null
   minimumTurnsToWin: number | null
@@ -161,6 +164,8 @@ export type AnalysisOptions = {
   maxFinalStates?: number
   maxFinalMoves?: number
   includeCounterfactuals?: boolean
+  /** Opt in for archived encounters; new sustained-discovery candidates require this audit. */
+  semanticJourney?: SemanticJourneyOptions | false
 }
 
 const clamp = (value: number) => Math.max(0, Math.min(1, value))
@@ -522,6 +527,8 @@ export function analysePuzzle(input: CandidatePuzzle | LetterStrikeEncounter, op
   if (finalUnknown) notes.push(`${finalUnknown} sampled final-Resolve states have unknown one-move rescue status.`)
   return {
     ...(lexicalAudit ? { lexicalAudit } : {}),
+    ...(options.semanticJourney !== false && (options.semanticJourney || ('construction' in input && input.construction.design === 'sustained-discovery'))
+      ? { semanticJourney: analyseSemanticJourney(encounter, solution.winningLines, options.semanticJourney || {}) } : {}),
     ...(encounter.finiteRefills ? { refillPressure: analyseRefillPressure(encounter, solution.winningLines) } : {}),
     solvable: solution.solvable === null && hasImpossibleLetterSupply(initial) ? false : solution.solvable, minimumTurnsToWin: solution.minimumTurnsToWin,
     minimumTurnsProven: solution.minimumTurnsToWin !== null,

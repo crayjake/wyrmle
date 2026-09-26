@@ -13,16 +13,29 @@ import { isOpeningSafetyCertificateCurrent } from '../src/generator/openingSafet
 import { getDefinedDictionaryWords } from '../src/lexicon/meaningDictionary.ts'
 import { stateKey } from '../src/generator/stateKey.ts'
 
-const selected = JSON.parse(gunzipSync(readFileSync(new URL('../artifacts/meaning-v3/selected.json.gz', import.meta.url))).toString()) as RankedCandidate
+const selected = JSON.parse(gunzipSync(readFileSync(new URL('../artifacts/meaning-v4-halcyons/selected.json.gz', import.meta.url))).toString()) as RankedCandidate
 const previous = JSON.parse(gunzipSync(readFileSync(new URL('../artifacts/meaning-v2/selected.json.gz', import.meta.url))).toString()) as RankedCandidate
-const walkthroughs = JSON.parse(readFileSync(new URL('../artifacts/meaning-v3/walkthroughs.json', import.meta.url), 'utf8')) as {
+const walkthroughs = JSON.parse(readFileSync(new URL('../artifacts/meaning-v4-halcyons/walkthroughs.json', import.meta.url), 'utf8')) as {
   candidateId: string; routes: { words: string[]; tileIds: number[][]; livesRemaining: number }[]
 }
 const puzzle = getDailyPuzzle('2026-09-26')
 const oldPuzzle = getDailyPuzzleForVersion('2026-09-25', 'letter-strike-7', 11)
 
+test('HALCYONS counters through its own calming noun sense while v12 remains replayable', () => {
+  const meanings = puzzle.encounter.meaningLexicon!.words
+  assert.equal(meanings.HALCYON.relation, 'opposite')
+  assert.equal(meanings.HALCYONS.relation, 'opposite')
+  assert.equal(meanings.HALCYONS.senseId, 'oewn-halcyon__1.05.01..')
+  assert.equal(meanings.HALCYONS.assessment!.decisionBasis, 'source-reviewed')
+  const archived = getDailyPuzzleForVersion('2026-09-26', 'letter-strike-7', 12)
+  assert.equal(archived.encounter.meaningLexicon!.words.HALCYONS.relation, 'unrelated')
+  assert.deepEqual(archived.encounter.startingTiles, puzzle.encounter.startingTiles)
+  assert.equal(archived.encounter.refillQueue, puzzle.encounter.refillQueue)
+  assert.deepEqual(archived.encounter.enemyLetters, puzzle.encounter.enemyLetters)
+})
+
 test('the separate exhaustive three-word proof binds to this exact publication and a real winning witness', () => {
-  const proof = JSON.parse(gunzipSync(readFileSync(new URL('../artifacts/meaning-v3/minimum-proof.json.gz', import.meta.url))).toString())
+  const proof = JSON.parse(gunzipSync(readFileSync(new URL('../artifacts/meaning-v4-halcyons/minimum-proof.json.gz', import.meta.url))).toString())
   let state = createLetterStrikeGame(puzzle.encounter)
   assert.equal(proof.encounterKey, stateKey(state))
   assert.equal(proof.provenMinimumWords, 3)
@@ -33,15 +46,15 @@ test('the separate exhaustive three-word proof binds to this exact publication a
   assert.equal(state.status, 'won')
 })
 
-test('today and tomorrow publish the same reviewed model-assessed v12 and preserve archived v11 independently', () => {
+test('today and tomorrow publish the same reviewed model-assessed v13 and preserve archived v11 independently', () => {
   const tomorrow = getDailyPuzzle('2026-09-27')
-  assert.equal(tomorrow.puzzleVersion, 12)
+  assert.equal(tomorrow.puzzleVersion, 13)
   assert.equal(tomorrow.puzzleId, '2026-09-27')
   assert.equal(tomorrow.date, '2026-09-27')
   assert.equal(tomorrow.encounter, puzzle.encounter)
   assert.notEqual(tomorrow.puzzleId, puzzle.puzzleId)
   assert.equal(getDailyPuzzle('2026-09-28').puzzleVersion, 4)
-  assert.equal(puzzle.puzzleVersion, 12)
+  assert.equal(puzzle.puzzleVersion, 13)
   assert.equal(puzzle.gameVersion, 'letter-strike-7')
   assert.deepEqual(puzzle.encounter, selected.candidate.encounter)
   assert.equal(JSON.stringify(puzzle.encounter), JSON.stringify(selected.candidate.encounter))

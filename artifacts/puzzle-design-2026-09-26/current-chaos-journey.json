@@ -1,0 +1,3451 @@
+{
+  "version": 1,
+  "encounterKey": "9fc51d33f0e07d6b9d63cb757f54facc70b34025142f130e856b3feca695c3c6",
+  "scope": "bounded-branch-sample-and-exact-route-replays",
+  "exhaustive": false,
+  "sampling": {
+    "maxDepth": 4,
+    "statesPerDepth": 6,
+    "counterCommonness": 0.4,
+    "familiarCommonness": 0.5,
+    "source": "pinned-wordfreq"
+  },
+  "positions": [
+    {
+      "depth": 0,
+      "prefix": [],
+      "board": "OABRYDSHCGLENRMA",
+      "remainingHits": 7,
+      "lives": 5,
+      "counterWords": [
+        "CARD",
+        "CODE",
+        "DONE",
+        "EASY",
+        "GONE",
+        "HELD",
+        "HOLD",
+        "LONG",
+        "MADE",
+        "CLEAR",
+        "MODEL",
+        "ORDER",
+        "RANGE",
+        "LONGER",
+        "REASON",
+        "CLEAN",
+        "SCALE",
+        "CARDS",
+        "BALANCE",
+        "MODELS",
+        "ORDERS",
+        "SHARED",
+        "GOLDEN",
+        "MODE",
+        "HOLDS",
+        "CALM",
+        "ARRANGED",
+        "AGENDA",
+        "CALENDAR",
+        "CODES",
+        "BALANCED",
+        "HARMONY",
+        "ARRAY",
+        "SCAN",
+        "RANGES",
+        "REASONABLY",
+        "ARRANGE",
+        "MODES",
+        "MARSHAL",
+        "MELODY",
+        "MESH",
+        "RANGED",
+        "SANE",
+        "CHORD",
+        "BALANCES",
+        "CLEARS",
+        "AMEND",
+        "SCALED",
+        "COMB",
+        "CHORDS",
+        "ORDERLY",
+        "BLENDS",
+        "AMENDS",
+        "CALENDARS",
+        "ARRAYS",
+        "AGENDAS",
+        "CALMED",
+        "CLEANS",
+        "COMBS",
+        "SCHEMA",
+        "CORRAL",
+        "CALMER",
+        "CALMS",
+        "COMBED",
+        "ARRANGES",
+        "HALCYON"
+      ],
+      "counterLemmas": 39,
+      "familiarCounterLemmas": 38,
+      "advantagedCounterLemmas": 27,
+      "resistedWords": [
+        "RANDOM",
+        "CHAOS",
+        "RANDOMLY",
+        "ROAR",
+        "ANARCHY",
+        "SCRAMBLED",
+        "SCRAMBLE",
+        "MOBS",
+        "ROARED"
+      ],
+      "salientWords": [
+        "ABLE",
+        "ALSO",
+        "AREA",
+        "ARMY",
+        "BASE",
+        "BODY",
+        "BORN",
+        "BOYS",
+        "CAME",
+        "CARD",
+        "CARE",
+        "CASE"
+      ],
+      "discoveryWords": [
+        "CODES",
+        "BALANCED",
+        "HARMONY",
+        "ARRAY",
+        "SCAN",
+        "RANGES",
+        "REASONABLY",
+        "ARRANGE",
+        "MODES",
+        "MARSHAL",
+        "MELODY",
+        "MESH",
+        "RANGED",
+        "SANE",
+        "CHORD",
+        "BALANCES",
+        "CLEARS",
+        "AMEND",
+        "SCALED",
+        "COMB",
+        "CHORDS",
+        "ORDERLY",
+        "BLENDS",
+        "AMENDS",
+        "CALENDARS",
+        "ARRAYS",
+        "AGENDAS",
+        "CALMED",
+        "CLEANS",
+        "COMBS",
+        "SCHEMA",
+        "CORRAL",
+        "CALMER",
+        "CALMS",
+        "COMBED",
+        "ARRANGES",
+        "HALCYON"
+      ]
+    },
+    {
+      "depth": 1,
+      "prefix": [
+        {
+          "word": "AGE",
+          "tileIds": [
+            1,
+            9,
+            11
+          ]
+        }
+      ],
+      "board": "OEBRYDSHCTLSNRMA",
+      "remainingHits": 6,
+      "lives": 4,
+      "counterWords": [
+        "CARD",
+        "CODE",
+        "DONE",
+        "EASY",
+        "HELD",
+        "HOLD",
+        "SORT",
+        "CLASS",
+        "CLEAR",
+        "MATCH",
+        "MODEL",
+        "ORDER",
+        "STYLE",
+        "REASON",
+        "SYSTEM",
+        "CLEAN",
+        "REASONS",
+        "SCALE",
+        "METHOD",
+        "CARDS",
+        "DRESS",
+        "MODELS",
+        "ORDERS",
+        "SETS",
+        "SHARED",
+        "METHODS",
+        "MODE",
+        "HOLDS",
+        "MATCHES",
+        "CALM",
+        "STABLE",
+        "CHART",
+        "THREAD",
+        "STYLES",
+        "STEADY",
+        "TABLES",
+        "SORTS",
+        "CODES",
+        "CHARTS",
+        "HARMONY",
+        "SLOT",
+        "SCAN",
+        "MATCHED",
+        "SCALES",
+        "MODES",
+        "THREADS",
+        "SLOTS",
+        "SORTED",
+        "SLATE",
+        "MELODY",
+        "MESH",
+        "STRAND",
+        "SANE",
+        "CHORD",
+        "STYLED",
+        "SCANS",
+        "CLEARS",
+        "SCALED",
+        "COMB",
+        "CHORDS",
+        "ORDERLY",
+        "SLATED",
+        "STRANDS",
+        "BLENDS",
+        "AMENDS",
+        "CLASSED",
+        "ASSORTED",
+        "CALMED",
+        "CLEANS",
+        "COMBS",
+        "SCHEMA",
+        "TONAL",
+        "CORRAL",
+        "CALMER",
+        "CALMS",
+        "CHARTED",
+        "COMBED",
+        "CALMNESS",
+        "ROTA",
+        "HALCYON",
+        "SLATES"
+      ],
+      "counterLemmas": 47,
+      "familiarCounterLemmas": 44,
+      "advantagedCounterLemmas": 39,
+      "resistedWords": [
+        "BEAT",
+        "LOST",
+        "MASS",
+        "STORM",
+        "RANDOM",
+        "MESS",
+        "BOTHER",
+        "CHAOS",
+        "BEATS",
+        "RANDOMLY",
+        "STORMS",
+        "MESSY",
+        "STRAY",
+        "ROAR",
+        "MATS",
+        "HASSLE",
+        "BOTHERS",
+        "STORMY",
+        "SCRAMBLED",
+        "SCRAMBLE",
+        "BOTCHED",
+        "MOBS",
+        "SHAMBLES",
+        "ROARED"
+      ],
+      "salientWords": [
+        "ABLE",
+        "ALSO",
+        "ARMY",
+        "BASE",
+        "BEAT",
+        "BEST",
+        "BODY",
+        "BORN",
+        "BOTH",
+        "BOYS",
+        "CAME",
+        "CARD"
+      ],
+      "discoveryWords": [
+        "HOLDS",
+        "MATCHES",
+        "CALM",
+        "STABLE",
+        "CHART",
+        "THREAD",
+        "STYLES",
+        "STEADY",
+        "TABLES",
+        "SORTS",
+        "CODES",
+        "CHARTS",
+        "HARMONY",
+        "SLOT",
+        "SCAN",
+        "MATCHED",
+        "SCALES",
+        "MODES",
+        "THREADS",
+        "SLOTS",
+        "SORTED",
+        "SLATE",
+        "MELODY",
+        "MESH",
+        "STRAND",
+        "SANE",
+        "CHORD",
+        "STYLED",
+        "SCANS",
+        "CLEARS",
+        "SCALED",
+        "COMB",
+        "CHORDS",
+        "ORDERLY",
+        "SLATED",
+        "STRANDS",
+        "BLENDS",
+        "AMENDS",
+        "CLASSED",
+        "ASSORTED",
+        "CALMED",
+        "CLEANS",
+        "COMBS",
+        "SCHEMA",
+        "TONAL",
+        "CORRAL",
+        "CALMER",
+        "CALMS",
+        "CHARTED",
+        "COMBED",
+        "CALMNESS",
+        "ROTA",
+        "HALCYON",
+        "SLATES"
+      ]
+    },
+    {
+      "depth": 1,
+      "prefix": [
+        {
+          "word": "RANDOM",
+          "tileIds": [
+            3,
+            1,
+            12,
+            5,
+            0,
+            14
+          ]
+        }
+      ],
+      "board": "ETBSYRSHCGLEERNA",
+      "remainingHits": 6,
+      "lives": 4,
+      "counterWords": [
+        "EASY",
+        "CLASS",
+        "CLEAR",
+        "STAGE",
+        "STYLE",
+        "RESEARCH",
+        "CLEAN",
+        "SCREEN",
+        "SCALE",
+        "SETS",
+        "STABLE",
+        "CHART",
+        "STAGES",
+        "STYLES",
+        "EASE",
+        "TABLES",
+        "CHARTS",
+        "AGREES",
+        "SCAN",
+        "RANGES",
+        "SCREENS",
+        "SCALES",
+        "SLATE",
+        "RELATES",
+        "CLEARER",
+        "SANE",
+        "SCANS",
+        "TEASE",
+        "CLEARS",
+        "ELEGANCE",
+        "SERENE",
+        "CLEANS",
+        "RESEARCHES",
+        "CLEAREST",
+        "EASES",
+        "TEASES",
+        "SLATES"
+      ],
+      "counterLemmas": 23,
+      "familiarCounterLemmas": 23,
+      "advantagedCounterLemmas": 20,
+      "resistedWords": [
+        "BEAT",
+        "GETS",
+        "BEATS",
+        "BEATEN",
+        "STRAY",
+        "HASSLE",
+        "TANGLE"
+      ],
+      "salientWords": [
+        "ABLE",
+        "BASE",
+        "BEAT",
+        "BEEN",
+        "BEST",
+        "CARE",
+        "CASE",
+        "EACH",
+        "EAST",
+        "EASY",
+        "ELSE",
+        "EYES"
+      ],
+      "discoveryWords": [
+        "STABLE",
+        "CHART",
+        "STAGES",
+        "STYLES",
+        "EASE",
+        "TABLES",
+        "CHARTS",
+        "AGREES",
+        "SCAN",
+        "RANGES",
+        "SCREENS",
+        "SCALES",
+        "SLATE",
+        "RELATES",
+        "CLEARER",
+        "SANE",
+        "SCANS",
+        "TEASE",
+        "CLEARS",
+        "ELEGANCE",
+        "SERENE",
+        "CLEANS",
+        "RESEARCHES",
+        "CLEAREST",
+        "EASES",
+        "TEASES",
+        "SLATES"
+      ]
+    },
+    {
+      "depth": 1,
+      "prefix": [
+        {
+          "word": "CARD",
+          "tileIds": [
+            8,
+            1,
+            3,
+            5
+          ]
+        }
+      ],
+      "board": "OEBTYSSHRGLENRMA",
+      "remainingHits": 5,
+      "lives": 4,
+      "counterWords": [
+        "EASY",
+        "GONE",
+        "LONG",
+        "SORT",
+        "STAGE",
+        "STYLE",
+        "LONGER",
+        "REASON",
+        "SYSTEM",
+        "REASONS",
+        "SETS",
+        "STABLE",
+        "STAGES",
+        "STYLES",
+        "EASE",
+        "TABLES",
+        "LONGEST",
+        "SORTS",
+        "METERS",
+        "METRES",
+        "HARMONY",
+        "SLOT",
+        "AGREES",
+        "RANGES",
+        "SLOTS",
+        "SLATE",
+        "RELATES",
+        "MESH",
+        "SANE",
+        "TEASE",
+        "GLOSS",
+        "TONAL",
+        "EASES",
+        "TEASES",
+        "ROTA",
+        "MESHES",
+        "SLATES"
+      ],
+      "counterLemmas": 26,
+      "familiarCounterLemmas": 25,
+      "advantagedCounterLemmas": 20,
+      "resistedWords": [
+        "BEAT",
+        "GETS",
+        "LOST",
+        "MASS",
+        "STORM",
+        "MESS",
+        "BOTHER",
+        "BEATS",
+        "BEATEN",
+        "STORMS",
+        "MESSY",
+        "STRAY",
+        "ROAR",
+        "MATS",
+        "HASSLE",
+        "BOTHERS",
+        "STORMY",
+        "MOBS",
+        "SHAMBLES",
+        "TANGLE"
+      ],
+      "salientWords": [
+        "ABLE",
+        "ALSO",
+        "ARMY",
+        "BASE",
+        "BEAT",
+        "BEEN",
+        "BEST",
+        "BORN",
+        "BOTH",
+        "BOYS",
+        "EAST",
+        "EASY"
+      ],
+      "discoveryWords": [
+        "STABLE",
+        "STAGES",
+        "STYLES",
+        "EASE",
+        "TABLES",
+        "LONGEST",
+        "SORTS",
+        "METERS",
+        "METRES",
+        "HARMONY",
+        "SLOT",
+        "AGREES",
+        "RANGES",
+        "SLOTS",
+        "SLATE",
+        "RELATES",
+        "MESH",
+        "SANE",
+        "TEASE",
+        "GLOSS",
+        "TONAL",
+        "EASES",
+        "TEASES",
+        "ROTA",
+        "MESHES",
+        "SLATES"
+      ]
+    },
+    {
+      "depth": 1,
+      "prefix": [
+        {
+          "word": "SECONDARY",
+          "tileIds": [
+            6,
+            11,
+            8,
+            0,
+            12,
+            5,
+            1,
+            3,
+            4
+          ]
+        }
+      ],
+      "board": "ETBSRENHHGLACRMA",
+      "remainingHits": 5,
+      "lives": 4,
+      "counterWords": [
+        "CLEAR",
+        "MATCH",
+        "RANGE",
+        "STAGE",
+        "TABLE",
+        "RESEARCH",
+        "AGREE",
+        "CLEAN",
+        "SCREEN",
+        "SCALE",
+        "BALANCE",
+        "MATCHES",
+        "SCHEME",
+        "CALM",
+        "STABLE",
+        "CHART",
+        "EASE",
+        "TABLES",
+        "RELATE",
+        "CHARTS",
+        "AGREES",
+        "SCAN",
+        "RANGES",
+        "NEAT",
+        "MARSHAL",
+        "SLATE",
+        "RELATES",
+        "MESH",
+        "CLEARER",
+        "SANE",
+        "BALANCES",
+        "TEASE",
+        "TAME",
+        "CLEARS",
+        "CLEANS",
+        "SCHEMA",
+        "CALMER",
+        "CLEAREST",
+        "CALMS"
+      ],
+      "counterLemmas": 26,
+      "familiarCounterLemmas": 26,
+      "advantagedCounterLemmas": 12,
+      "resistedWords": [
+        "BEAT",
+        "GETS",
+        "BEATS",
+        "BEATEN",
+        "MATS",
+        "SCRAMBLE",
+        "TANGLE"
+      ],
+      "salientWords": [
+        "ABLE",
+        "AREA",
+        "BASE",
+        "BEAT",
+        "BEEN",
+        "BEST",
+        "CAME",
+        "CARE",
+        "CASE",
+        "EACH",
+        "EAST",
+        "ELSE"
+      ],
+      "discoveryWords": [
+        "MATCHES",
+        "SCHEME",
+        "CALM",
+        "STABLE",
+        "CHART",
+        "EASE",
+        "TABLES",
+        "RELATE",
+        "CHARTS",
+        "AGREES",
+        "SCAN",
+        "RANGES",
+        "NEAT",
+        "MARSHAL",
+        "SLATE",
+        "RELATES",
+        "MESH",
+        "CLEARER",
+        "SANE",
+        "BALANCES",
+        "TEASE",
+        "TAME",
+        "CLEARS",
+        "CLEANS",
+        "SCHEMA",
+        "CALMER",
+        "CLEAREST",
+        "CALMS"
+      ]
+    },
+    {
+      "depth": 1,
+      "prefix": [
+        {
+          "word": "CHORDS",
+          "tileIds": [
+            8,
+            7,
+            0,
+            3,
+            5,
+            6
+          ]
+        }
+      ],
+      "board": "EABTYSRENGLENRMA",
+      "remainingHits": 3,
+      "lives": 4,
+      "counterWords": [
+        "EASY",
+        "RANGE",
+        "STAGE",
+        "TABLE",
+        "AGREE",
+        "AGREEMENT",
+        "STABLE",
+        "EASE",
+        "TABLES",
+        "ARRANGEMENT",
+        "RELATE",
+        "ARRANGEMENTS",
+        "AGREEMENTS",
+        "ARRAY",
+        "AGREES",
+        "RANGES",
+        "ARRANGE",
+        "NEAT",
+        "SLATE",
+        "RELATES",
+        "SANE",
+        "TEASE",
+        "TAME",
+        "NEATLY",
+        "ANNALS",
+        "ARRAYS",
+        "ARRANGES"
+      ],
+      "counterLemmas": 19,
+      "familiarCounterLemmas": 19,
+      "advantagedCounterLemmas": 0,
+      "resistedWords": [
+        "BEAT",
+        "GETS",
+        "BEATS",
+        "BEATEN",
+        "STRAY",
+        "MATS",
+        "MELEE",
+        "TANGLE"
+      ],
+      "salientWords": [
+        "ABLE",
+        "AREA",
+        "ARMY",
+        "BASE",
+        "BEAT",
+        "BEEN",
+        "BEST",
+        "EAST",
+        "EASY",
+        "ELSE",
+        "EYES",
+        "GAME"
+      ],
+      "discoveryWords": [
+        "STABLE",
+        "EASE",
+        "TABLES",
+        "ARRANGEMENT",
+        "RELATE",
+        "ARRANGEMENTS",
+        "AGREEMENTS",
+        "ARRAY",
+        "AGREES",
+        "RANGES",
+        "ARRANGE",
+        "NEAT",
+        "SLATE",
+        "RELATES",
+        "SANE",
+        "TEASE",
+        "TAME",
+        "NEATLY",
+        "ANNALS",
+        "ARRAYS",
+        "ARRANGES"
+      ]
+    },
+    {
+      "depth": 1,
+      "prefix": [
+        {
+          "word": "AGO",
+          "tileIds": [
+            1,
+            9,
+            0
+          ]
+        }
+      ],
+      "board": "ETBRYDSHCSLENRMA",
+      "remainingHits": 5,
+      "lives": 4,
+      "counterWords": [
+        "CARD",
+        "EASY",
+        "HELD",
+        "CLASS",
+        "CLEAR",
+        "MATCH",
+        "STYLE",
+        "SYSTEM",
+        "RESEARCH",
+        "CLEAN",
+        "SCREEN",
+        "SCALE",
+        "CARDS",
+        "DRESS",
+        "SETS",
+        "SHARED",
+        "MATCHES",
+        "SCHEME",
+        "CALM",
+        "STABLE",
+        "CHART",
+        "THREAD",
+        "STYLES",
+        "SEED",
+        "EASE",
+        "STEADY",
+        "TABLES",
+        "SEEDS",
+        "METERS",
+        "CLEARED",
+        "METRES",
+        "CHARTS",
+        "SCAN",
+        "SCHEMES",
+        "SCREENS",
+        "CLEANED",
+        "MATCHED",
+        "SCALES",
+        "THREADS",
+        "SLATE",
+        "RELATES",
+        "MESH",
+        "CLEARER",
+        "STRAND",
+        "SANE",
+        "STYLED",
+        "SCANS",
+        "TEASE",
+        "ADHERE",
+        "CLEARS",
+        "SCALED",
+        "SLATED",
+        "STRANDS",
+        "BLENDS",
+        "AMENDS",
+        "TEASED",
+        "CLASSED",
+        "CALMED",
+        "EASED",
+        "CLEANS",
+        "SCHEMA",
+        "CALMER",
+        "CLEAREST",
+        "CALMS",
+        "CHARTED",
+        "EASES",
+        "HARNESSED",
+        "CALMNESS",
+        "ADHERES",
+        "TEASES",
+        "SEDATE",
+        "MESHES",
+        "SLATES"
+      ],
+      "counterLemmas": 40,
+      "familiarCounterLemmas": 37,
+      "advantagedCounterLemmas": 31,
+      "resistedWords": [
+        "BEAT",
+        "MASS",
+        "MESS",
+        "BEATS",
+        "BEATEN",
+        "MESSED",
+        "MESSY",
+        "STRAY",
+        "MATS",
+        "HASSLE",
+        "SCRAMBLED",
+        "SCRAMBLE",
+        "SHAMBLES"
+      ],
+      "salientWords": [
+        "ABLE",
+        "ARMY",
+        "BASE",
+        "BEAT",
+        "BEEN",
+        "BEST",
+        "CAME",
+        "CARD",
+        "CARE",
+        "CASE",
+        "DAMN",
+        "DATE"
+      ],
+      "discoveryWords": [
+        "MATCHES",
+        "SCHEME",
+        "CALM",
+        "STABLE",
+        "CHART",
+        "THREAD",
+        "STYLES",
+        "SEED",
+        "EASE",
+        "STEADY",
+        "TABLES",
+        "SEEDS",
+        "METERS",
+        "CLEARED",
+        "METRES",
+        "CHARTS",
+        "SCAN",
+        "SCHEMES",
+        "SCREENS",
+        "CLEANED",
+        "MATCHED",
+        "SCALES",
+        "THREADS",
+        "SLATE",
+        "RELATES",
+        "MESH",
+        "CLEARER",
+        "STRAND",
+        "SANE",
+        "STYLED",
+        "SCANS",
+        "TEASE",
+        "ADHERE",
+        "CLEARS",
+        "SCALED",
+        "SLATED",
+        "STRANDS",
+        "BLENDS",
+        "AMENDS",
+        "TEASED",
+        "CLASSED",
+        "CALMED",
+        "EASED",
+        "CLEANS",
+        "SCHEMA",
+        "CALMER",
+        "CLEAREST",
+        "CALMS",
+        "CHARTED",
+        "EASES",
+        "HARNESSED",
+        "CALMNESS",
+        "ADHERES",
+        "TEASES",
+        "SEDATE",
+        "MESHES",
+        "SLATES"
+      ]
+    },
+    {
+      "depth": 2,
+      "prefix": [
+        {
+          "word": "AGE",
+          "tileIds": [
+            1,
+            9,
+            11
+          ]
+        },
+        {
+          "word": "BEAT",
+          "tileIds": [
+            2,
+            16,
+            15,
+            17
+          ]
+        }
+      ],
+      "board": "ORERYDSHCNLSNRMH",
+      "remainingHits": 7,
+      "lives": 3,
+      "counterWords": [
+        "CODE",
+        "DONE",
+        "HELD",
+        "HOLD",
+        "MODEL",
+        "ORDER",
+        "DRESS",
+        "MODELS",
+        "ORDERS",
+        "MODE",
+        "HOLDS",
+        "CODES",
+        "MODES",
+        "MELODY",
+        "MESH",
+        "CHORD",
+        "CHORDS",
+        "ORDERLY"
+      ],
+      "counterLemmas": 11,
+      "familiarCounterLemmas": 11,
+      "advantagedCounterLemmas": 7,
+      "resistedWords": [
+        "MESS",
+        "MESSY"
+      ],
+      "salientWords": [
+        "CODE",
+        "COLD",
+        "COME",
+        "DOES",
+        "DONE",
+        "HELD",
+        "HOLD",
+        "HOME",
+        "LESS",
+        "LORD",
+        "LOSE",
+        "LOSS"
+      ],
+      "discoveryWords": [
+        "MODES",
+        "MELODY",
+        "MESH",
+        "CHORD",
+        "CHORDS",
+        "ORDERLY"
+      ]
+    },
+    {
+      "depth": 2,
+      "prefix": [
+        {
+          "word": "RANDOM",
+          "tileIds": [
+            3,
+            1,
+            12,
+            5,
+            0,
+            14
+          ]
+        },
+        {
+          "word": "EASY",
+          "tileIds": [
+            11,
+            15,
+            6,
+            4
+          ]
+        }
+      ],
+      "board": "ETBSHRAHCGLCERNA",
+      "remainingHits": 5,
+      "lives": 3,
+      "counterWords": [
+        "CLEAR",
+        "RANGE",
+        "STAGE",
+        "TABLE",
+        "RESEARCH",
+        "AGREE",
+        "CLEAN",
+        "SCREEN",
+        "SCALE",
+        "BALANCE",
+        "STABLE",
+        "CHART",
+        "EASE",
+        "TABLES",
+        "RELATE",
+        "CHARTS",
+        "AGREES",
+        "SCAN",
+        "RANGES",
+        "ARRANGE",
+        "NEAT",
+        "SLATE",
+        "RELATES",
+        "CLEARER",
+        "SANE",
+        "BALANCES",
+        "TEASE",
+        "CLEARS",
+        "CLEANS",
+        "CLEAREST",
+        "ARRANGES"
+      ],
+      "counterLemmas": 20,
+      "familiarCounterLemmas": 20,
+      "advantagedCounterLemmas": 7,
+      "resistedWords": [
+        "BEAT",
+        "GETS",
+        "BEATS",
+        "BEATEN",
+        "TANGLE"
+      ],
+      "salientWords": [
+        "ABLE",
+        "AREA",
+        "BASE",
+        "BEAT",
+        "BEEN",
+        "BEST",
+        "CARE",
+        "CASE",
+        "EACH",
+        "EAST",
+        "ELSE",
+        "GETS"
+      ],
+      "discoveryWords": [
+        "STABLE",
+        "CHART",
+        "EASE",
+        "TABLES",
+        "RELATE",
+        "CHARTS",
+        "AGREES",
+        "SCAN",
+        "RANGES",
+        "ARRANGE",
+        "NEAT",
+        "SLATE",
+        "RELATES",
+        "CLEARER",
+        "SANE",
+        "BALANCES",
+        "TEASE",
+        "CLEARS",
+        "CLEANS",
+        "CLEAREST",
+        "ARRANGES"
+      ]
+    },
+    {
+      "depth": 2,
+      "prefix": [
+        {
+          "word": "CARD",
+          "tileIds": [
+            8,
+            1,
+            3,
+            5
+          ]
+        },
+        {
+          "word": "GENERATORS",
+          "tileIds": [
+            9,
+            11,
+            12,
+            16,
+            19,
+            15,
+            17,
+            0,
+            13,
+            6
+          ]
+        }
+      ],
+      "board": "ENBHYSAHCALOO.M.",
+      "remainingHits": 5,
+      "lives": 4,
+      "counterWords": [
+        "COOL",
+        "EASY",
+        "CLEAN",
+        "SCALE",
+        "BALANCE",
+        "CALM",
+        "SCAN",
+        "MESH",
+        "SANE",
+        "BALANCES",
+        "COMB",
+        "LOOSEN",
+        "CLEANS",
+        "COMBS",
+        "SCHEMA",
+        "COOLS",
+        "CALMS",
+        "HALCYON"
+      ],
+      "counterLemmas": 13,
+      "familiarCounterLemmas": 12,
+      "advantagedCounterLemmas": 13,
+      "resistedWords": [
+        "LOOSE",
+        "CHAOS",
+        "MOBS"
+      ],
+      "salientWords": [
+        "ABLE",
+        "ALSO",
+        "BASE",
+        "BOYS",
+        "CAME",
+        "CASE",
+        "COME",
+        "COOL",
+        "EACH",
+        "EASY",
+        "HOME",
+        "LOSE"
+      ],
+      "discoveryWords": [
+        "MESH",
+        "SANE",
+        "BALANCES",
+        "COMB",
+        "LOOSEN",
+        "CLEANS",
+        "COMBS",
+        "SCHEMA",
+        "COOLS",
+        "CALMS",
+        "HALCYON"
+      ]
+    },
+    {
+      "depth": 2,
+      "prefix": [
+        {
+          "word": "SECONDARY",
+          "tileIds": [
+            6,
+            11,
+            8,
+            0,
+            12,
+            5,
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "word": "MATCH",
+          "tileIds": [
+            14,
+            23,
+            17,
+            24,
+            7
+          ]
+        }
+      ],
+      "board": "EABSRENOHGLO.R.A",
+      "remainingHits": 2,
+      "lives": 3,
+      "counterWords": [
+        "GONE",
+        "LONG",
+        "LONGER",
+        "REASON",
+        "LOOSEN"
+      ],
+      "counterLemmas": 4,
+      "familiarCounterLemmas": 4,
+      "advantagedCounterLemmas": 1,
+      "resistedWords": [
+        "LOOSE",
+        "ROAR"
+      ],
+      "salientWords": [
+        "ABLE",
+        "ALSO",
+        "AREA",
+        "BASE",
+        "BEEN",
+        "BORN",
+        "ELSE",
+        "GOAL",
+        "GOES",
+        "GONE",
+        "HEAR",
+        "HERE"
+      ],
+      "discoveryWords": [
+        "LOOSEN"
+      ]
+    },
+    {
+      "depth": 2,
+      "prefix": [
+        {
+          "word": "CHORDS",
+          "tileIds": [
+            8,
+            7,
+            0,
+            3,
+            5,
+            6
+          ]
+        },
+        {
+          "word": "AGE",
+          "tileIds": [
+            1,
+            9,
+            11
+          ]
+        }
+      ],
+      "board": "EHBTYSRENALCNRMA",
+      "remainingHits": 2,
+      "lives": 3,
+      "counterWords": [
+        "EASY",
+        "CLEAR",
+        "MATCH",
+        "TABLE",
+        "RESEARCH",
+        "CLEAN",
+        "SCALE",
+        "MATCHES",
+        "CALM",
+        "STABLE",
+        "CHART",
+        "EASE",
+        "TABLES",
+        "RELATE",
+        "CHARTS",
+        "SCAN",
+        "NEAT",
+        "SLATE",
+        "RELATES",
+        "CLEARER",
+        "SANE",
+        "TEASE",
+        "TAME",
+        "CLEARS",
+        "NEATLY",
+        "CLEANS",
+        "SCHEMA",
+        "CALMER",
+        "CLEAREST",
+        "CALMS"
+      ],
+      "counterLemmas": 20,
+      "familiarCounterLemmas": 20,
+      "advantagedCounterLemmas": 0,
+      "resistedWords": [
+        "BEAT",
+        "BEATS",
+        "BEATEN",
+        "STRAY",
+        "MATS",
+        "ANARCHY",
+        "SCRAMBLE"
+      ],
+      "salientWords": [
+        "ABLE",
+        "AREA",
+        "ARMY",
+        "BASE",
+        "BEAT",
+        "BEEN",
+        "BEST",
+        "CAME",
+        "CARE",
+        "CASE",
+        "EACH",
+        "EAST"
+      ],
+      "discoveryWords": [
+        "MATCHES",
+        "CALM",
+        "STABLE",
+        "CHART",
+        "EASE",
+        "TABLES",
+        "RELATE",
+        "CHARTS",
+        "SCAN",
+        "NEAT",
+        "SLATE",
+        "RELATES",
+        "CLEARER",
+        "SANE",
+        "TEASE",
+        "TAME",
+        "CLEARS",
+        "NEATLY",
+        "CLEANS",
+        "SCHEMA",
+        "CALMER",
+        "CLEAREST",
+        "CALMS"
+      ]
+    },
+    {
+      "depth": 2,
+      "prefix": [
+        {
+          "word": "AGO",
+          "tileIds": [
+            1,
+            9,
+            0
+          ]
+        },
+        {
+          "word": "BEAT",
+          "tileIds": [
+            2,
+            11,
+            15,
+            17
+          ]
+        }
+      ],
+      "board": "ERERYDSHCSLNNRMH",
+      "remainingHits": 6,
+      "lives": 3,
+      "counterWords": [
+        "HELD",
+        "SCREEN",
+        "DRESS",
+        "SCHEME",
+        "SEED",
+        "SEEDS",
+        "SCHEMES",
+        "SCREENS",
+        "MESH",
+        "MESHES"
+      ],
+      "counterLemmas": 6,
+      "familiarCounterLemmas": 6,
+      "advantagedCounterLemmas": 3,
+      "resistedWords": [
+        "MESS",
+        "MESSED",
+        "MESSY"
+      ],
+      "salientWords": [
+        "ELSE",
+        "EYES",
+        "HELD",
+        "HERE",
+        "LESS",
+        "NEED",
+        "SEEM",
+        "SEEN",
+        "SEND",
+        "NEEDS",
+        "SEEMS",
+        "SENSE"
+      ],
+      "discoveryWords": [
+        "SCHEMES",
+        "SCREENS",
+        "MESH",
+        "MESHES"
+      ]
+    },
+    {
+      "depth": 3,
+      "prefix": [
+        {
+          "word": "AGE",
+          "tileIds": [
+            1,
+            9,
+            11
+          ]
+        },
+        {
+          "word": "BEAT",
+          "tileIds": [
+            2,
+            16,
+            15,
+            17
+          ]
+        },
+        {
+          "word": "CODE",
+          "tileIds": [
+            8,
+            0,
+            5,
+            20
+          ]
+        }
+      ],
+      "board": "ARCRYASHONLSNRMH",
+      "remainingHits": 5,
+      "lives": 2,
+      "counterWords": [
+        "CLASS",
+        "CALM",
+        "HARMONY",
+        "ARRAY",
+        "SCAN",
+        "MARSHAL",
+        "SCANS",
+        "ANNALS",
+        "ARRAYS",
+        "MARSHALS",
+        "CORRAL",
+        "CALMS",
+        "HALCYON"
+      ],
+      "counterLemmas": 9,
+      "familiarCounterLemmas": 8,
+      "advantagedCounterLemmas": 9,
+      "resistedWords": [
+        "MASS",
+        "CHAOS",
+        "ROAR",
+        "ANARCHY"
+      ],
+      "salientWords": [
+        "ALSO",
+        "ARMY",
+        "LOSS",
+        "MANY",
+        "ONLY",
+        "SAYS",
+        "CLASS",
+        "CROSS",
+        "MARCH",
+        "SORRY",
+        "ACROSS",
+        "NORMAL"
+      ],
+      "discoveryWords": [
+        "HARMONY",
+        "ARRAY",
+        "SCAN",
+        "MARSHAL",
+        "SCANS",
+        "ANNALS",
+        "ARRAYS",
+        "MARSHALS",
+        "CORRAL",
+        "CALMS",
+        "HALCYON"
+      ]
+    },
+    {
+      "depth": 3,
+      "prefix": [
+        {
+          "word": "RANDOM",
+          "tileIds": [
+            3,
+            1,
+            12,
+            5,
+            0,
+            14
+          ]
+        },
+        {
+          "word": "EASY",
+          "tileIds": [
+            11,
+            15,
+            6,
+            4
+          ]
+        },
+        {
+          "word": "CHARACTERS",
+          "tileIds": [
+            8,
+            7,
+            23,
+            19,
+            25,
+            24,
+            17,
+            16,
+            13,
+            18
+          ]
+        }
+      ],
+      "board": "OOB.H....GL.E.N.",
+      "remainingHits": 4,
+      "lives": 3,
+      "counterWords": [
+        "GONE",
+        "LONG"
+      ],
+      "counterLemmas": 2,
+      "familiarCounterLemmas": 2,
+      "advantagedCounterLemmas": 0,
+      "resistedWords": [],
+      "salientWords": [
+        "GONE",
+        "LONG",
+        "BLOG",
+        "HOLE",
+        "BONE",
+        "BELONG",
+        "LOGO",
+        "GLOBE",
+        "NOBLE",
+        "LONE",
+        "GLEN",
+        "NOEL"
+      ],
+      "discoveryWords": []
+    },
+    {
+      "depth": 3,
+      "prefix": [
+        {
+          "word": "CARD",
+          "tileIds": [
+            8,
+            1,
+            3,
+            5
+          ]
+        },
+        {
+          "word": "GENERATORS",
+          "tileIds": [
+            9,
+            11,
+            12,
+            16,
+            19,
+            15,
+            17,
+            0,
+            13,
+            6
+          ]
+        },
+        {
+          "word": "LOOSEN",
+          "tileIds": [
+            10,
+            26,
+            27,
+            18,
+            20,
+            21
+          ]
+        }
+      ],
+      "board": "..BHY.AHCA....M.",
+      "remainingHits": 2,
+      "lives": 3,
+      "counterWords": [],
+      "counterLemmas": 0,
+      "familiarCounterLemmas": 0,
+      "advantagedCounterLemmas": 0,
+      "resistedWords": [],
+      "salientWords": [
+        "MAYA",
+        "BACH"
+      ],
+      "discoveryWords": []
+    },
+    {
+      "depth": 3,
+      "prefix": [
+        {
+          "word": "SECONDARY",
+          "tileIds": [
+            6,
+            11,
+            8,
+            0,
+            12,
+            5,
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "word": "MATCH",
+          "tileIds": [
+            14,
+            23,
+            17,
+            24,
+            7
+          ]
+        },
+        {
+          "word": "AGE",
+          "tileIds": [
+            25,
+            9,
+            16
+          ]
+        }
+      ],
+      "board": "..BSRENOH.LO.R.A",
+      "remainingHits": 2,
+      "lives": 2,
+      "counterWords": [
+        "LOOSEN"
+      ],
+      "counterLemmas": 1,
+      "familiarCounterLemmas": 1,
+      "advantagedCounterLemmas": 1,
+      "resistedWords": [
+        "LOOSE",
+        "ROAR"
+      ],
+      "salientWords": [
+        "ABLE",
+        "ALSO",
+        "BASE",
+        "BORN",
+        "HEAR",
+        "LOSE",
+        "NEAR",
+        "ONES",
+        "REAL",
+        "ROLE",
+        "SOON",
+        "ALONE"
+      ],
+      "discoveryWords": [
+        "LOOSEN"
+      ]
+    },
+    {
+      "depth": 3,
+      "prefix": [
+        {
+          "word": "CHORDS",
+          "tileIds": [
+            8,
+            7,
+            0,
+            3,
+            5,
+            6
+          ]
+        },
+        {
+          "word": "AGE",
+          "tileIds": [
+            1,
+            9,
+            11
+          ]
+        },
+        {
+          "word": "BEAT",
+          "tileIds": [
+            2,
+            16,
+            23,
+            17
+          ]
+        }
+      ],
+      "board": "AHOOYSREN.LCNRMA",
+      "remainingHits": 2,
+      "lives": 2,
+      "counterWords": [
+        "COOL",
+        "EASY",
+        "CLEAR",
+        "REASON",
+        "CLEAN",
+        "SCALE",
+        "CALM",
+        "HARMONY",
+        "SCAN",
+        "COOLER",
+        "SANE",
+        "CLEARS",
+        "LOOSEN",
+        "CLEANS",
+        "SCHEMA",
+        "CORRAL",
+        "COOLS",
+        "CALMER",
+        "CALMS",
+        "HALCYON"
+      ],
+      "counterLemmas": 14,
+      "familiarCounterLemmas": 13,
+      "advantagedCounterLemmas": 4,
+      "resistedWords": [
+        "LOOSE",
+        "CHAOS",
+        "ROAR",
+        "ANARCHY"
+      ],
+      "salientWords": [
+        "ALSO",
+        "AREA",
+        "ARMY",
+        "CAME",
+        "CARE",
+        "CASE",
+        "COME",
+        "COOL",
+        "EACH",
+        "EASY",
+        "HEAR",
+        "HOME"
+      ],
+      "discoveryWords": [
+        "COOLER",
+        "SANE",
+        "CLEARS",
+        "LOOSEN",
+        "CLEANS",
+        "SCHEMA",
+        "CORRAL",
+        "COOLS",
+        "CALMER",
+        "CALMS",
+        "HALCYON"
+      ]
+    },
+    {
+      "depth": 3,
+      "prefix": [
+        {
+          "word": "AGO",
+          "tileIds": [
+            1,
+            9,
+            0
+          ]
+        },
+        {
+          "word": "BEAT",
+          "tileIds": [
+            2,
+            11,
+            15,
+            17
+          ]
+        },
+        {
+          "word": "HELD",
+          "tileIds": [
+            7,
+            16,
+            10,
+            5
+          ]
+        }
+      ],
+      "board": "ARERYCSACSONNRMH",
+      "remainingHits": 5,
+      "lives": 2,
+      "counterWords": [
+        "EASY",
+        "REASON",
+        "REASONS",
+        "HARMONY",
+        "ARRAY",
+        "SCAN",
+        "MESH",
+        "SANE",
+        "SCANS",
+        "ARRAYS",
+        "SCHEMA"
+      ],
+      "counterLemmas": 8,
+      "familiarCounterLemmas": 8,
+      "advantagedCounterLemmas": 7,
+      "resistedWords": [
+        "MASS",
+        "MESS",
+        "CHAOS",
+        "MESSY",
+        "ROAR",
+        "ANARCHY"
+      ],
+      "salientWords": [
+        "AREA",
+        "ARMY",
+        "CAME",
+        "CARE",
+        "CASE",
+        "COME",
+        "EACH",
+        "EASY",
+        "HEAR",
+        "HOME",
+        "MANY",
+        "MEAN"
+      ],
+      "discoveryWords": [
+        "HARMONY",
+        "ARRAY",
+        "SCAN",
+        "MESH",
+        "SANE",
+        "SCANS",
+        "ARRAYS",
+        "SCHEMA"
+      ]
+    },
+    {
+      "depth": 4,
+      "prefix": [
+        {
+          "word": "AGE",
+          "tileIds": [
+            1,
+            9,
+            11
+          ]
+        },
+        {
+          "word": "BEAT",
+          "tileIds": [
+            2,
+            16,
+            15,
+            17
+          ]
+        },
+        {
+          "word": "CODE",
+          "tileIds": [
+            8,
+            0,
+            5,
+            20
+          ]
+        },
+        {
+          "word": "SCHOLARS",
+          "tileIds": [
+            6,
+            24,
+            7,
+            26,
+            10,
+            23,
+            3,
+            18
+          ]
+        }
+      ],
+      "board": "OR..YA...N..NRMH",
+      "remainingHits": 4,
+      "lives": 1,
+      "counterWords": [
+        "HARMONY"
+      ],
+      "counterLemmas": 1,
+      "familiarCounterLemmas": 1,
+      "advantagedCounterLemmas": 1,
+      "resistedWords": [
+        "ROAR"
+      ],
+      "salientWords": [
+        "ARMY",
+        "MANY",
+        "HARRY",
+        "MAYOR",
+        "ROMAN",
+        "HARM",
+        "MARRY",
+        "HORN",
+        "NORMAN",
+        "HARMONY",
+        "ARMOR",
+        "NORM"
+      ],
+      "discoveryWords": []
+    },
+    {
+      "depth": 4,
+      "prefix": [
+        {
+          "word": "RANDOM",
+          "tileIds": [
+            3,
+            1,
+            12,
+            5,
+            0,
+            14
+          ]
+        },
+        {
+          "word": "EASY",
+          "tileIds": [
+            11,
+            15,
+            6,
+            4
+          ]
+        },
+        {
+          "word": "CHARACTERS",
+          "tileIds": [
+            8,
+            7,
+            23,
+            19,
+            25,
+            24,
+            17,
+            16,
+            13,
+            18
+          ]
+        },
+        {
+          "word": "GONE",
+          "tileIds": [
+            9,
+            26,
+            21,
+            20
+          ]
+        }
+      ],
+      "board": ".OB.H.....L.....",
+      "remainingHits": 3,
+      "lives": 2,
+      "counterWords": [],
+      "counterLemmas": 0,
+      "familiarCounterLemmas": 0,
+      "advantagedCounterLemmas": 0,
+      "resistedWords": [],
+      "salientWords": [],
+      "discoveryWords": []
+    },
+    {
+      "depth": 4,
+      "prefix": [
+        {
+          "word": "CARD",
+          "tileIds": [
+            8,
+            1,
+            3,
+            5
+          ]
+        },
+        {
+          "word": "GENERATORS",
+          "tileIds": [
+            9,
+            11,
+            12,
+            16,
+            19,
+            15,
+            17,
+            0,
+            13,
+            6
+          ]
+        },
+        {
+          "word": "LOOSEN",
+          "tileIds": [
+            10,
+            26,
+            27,
+            18,
+            20,
+            21
+          ]
+        },
+        {
+          "word": "MAY",
+          "tileIds": [
+            14,
+            23,
+            4
+          ]
+        }
+      ],
+      "board": "..BH...HCA......",
+      "remainingHits": 1,
+      "lives": 2,
+      "counterWords": [],
+      "counterLemmas": 0,
+      "familiarCounterLemmas": 0,
+      "advantagedCounterLemmas": 0,
+      "resistedWords": [],
+      "salientWords": [
+        "BACH"
+      ],
+      "discoveryWords": []
+    },
+    {
+      "depth": 4,
+      "prefix": [
+        {
+          "word": "SECONDARY",
+          "tileIds": [
+            6,
+            11,
+            8,
+            0,
+            12,
+            5,
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "word": "MATCH",
+          "tileIds": [
+            14,
+            23,
+            17,
+            24,
+            7
+          ]
+        },
+        {
+          "word": "AGE",
+          "tileIds": [
+            25,
+            9,
+            16
+          ]
+        },
+        {
+          "word": "LOOSE",
+          "tileIds": [
+            10,
+            26,
+            27,
+            18,
+            20
+          ]
+        }
+      ],
+      "board": "..B.R.N.H....R.A",
+      "remainingHits": 2,
+      "lives": 1,
+      "counterWords": [],
+      "counterLemmas": 0,
+      "familiarCounterLemmas": 0,
+      "advantagedCounterLemmas": 0,
+      "resistedWords": [],
+      "salientWords": [
+        "BARN",
+        "BRAN"
+      ],
+      "discoveryWords": []
+    },
+    {
+      "depth": 4,
+      "prefix": [
+        {
+          "word": "CHORDS",
+          "tileIds": [
+            8,
+            7,
+            0,
+            3,
+            5,
+            6
+          ]
+        },
+        {
+          "word": "AGE",
+          "tileIds": [
+            1,
+            9,
+            11
+          ]
+        },
+        {
+          "word": "BEAT",
+          "tileIds": [
+            2,
+            16,
+            23,
+            17
+          ]
+        },
+        {
+          "word": "COOL",
+          "tileIds": [
+            24,
+            26,
+            27,
+            10
+          ]
+        }
+      ],
+      "board": "AH..YSREN...NRMA",
+      "remainingHits": 1,
+      "lives": 1,
+      "counterWords": [
+        "EASY",
+        "SANE"
+      ],
+      "counterLemmas": 2,
+      "familiarCounterLemmas": 2,
+      "advantagedCounterLemmas": 0,
+      "resistedWords": [],
+      "salientWords": [
+        "AREA",
+        "ARMY",
+        "EASY",
+        "HEAR",
+        "MANY",
+        "MEAN",
+        "NAME",
+        "NEAR",
+        "SAME",
+        "YEAH",
+        "YEAR",
+        "AREAS"
+      ],
+      "discoveryWords": []
+    },
+    {
+      "depth": 4,
+      "prefix": [
+        {
+          "word": "AGO",
+          "tileIds": [
+            1,
+            9,
+            0
+          ]
+        },
+        {
+          "word": "BEAT",
+          "tileIds": [
+            2,
+            11,
+            15,
+            17
+          ]
+        },
+        {
+          "word": "HELD",
+          "tileIds": [
+            7,
+            16,
+            10,
+            5
+          ]
+        },
+        {
+          "word": "ACCESSORY",
+          "tileIds": [
+            23,
+            8,
+            24,
+            20,
+            6,
+            18,
+            26,
+            3,
+            4
+          ]
+        }
+      ],
+      "board": "OR.....A...NNRMH",
+      "remainingHits": 4,
+      "lives": 1,
+      "counterWords": [],
+      "counterLemmas": 0,
+      "familiarCounterLemmas": 0,
+      "advantagedCounterLemmas": 0,
+      "resistedWords": [
+        "ROAR"
+      ],
+      "salientWords": [
+        "ROMAN",
+        "HARM",
+        "HORN",
+        "NORMAN",
+        "ARMOR",
+        "NORM",
+        "MANOR",
+        "ROMA",
+        "ROAR",
+        "ROAM",
+        "MOAN",
+        "ANON"
+      ],
+      "discoveryWords": []
+    }
+  ],
+  "byDepth": [
+    {
+      "depth": 0,
+      "states": 1,
+      "counterChoiceRate": 1,
+      "resistedPresenceRate": 1,
+      "meaningAdvantageRate": 1
+    },
+    {
+      "depth": 1,
+      "states": 6,
+      "counterChoiceRate": 1,
+      "resistedPresenceRate": 1,
+      "meaningAdvantageRate": 0.8333333333333334
+    },
+    {
+      "depth": 2,
+      "states": 6,
+      "counterChoiceRate": 1,
+      "resistedPresenceRate": 1,
+      "meaningAdvantageRate": 0.8333333333333334
+    },
+    {
+      "depth": 3,
+      "states": 6,
+      "counterChoiceRate": 0.6666666666666666,
+      "resistedPresenceRate": 0.6666666666666666,
+      "meaningAdvantageRate": 0.6666666666666666
+    },
+    {
+      "depth": 4,
+      "states": 6,
+      "counterChoiceRate": 0.16666666666666666,
+      "resistedPresenceRate": 0,
+      "meaningAdvantageRate": 0.25
+    }
+  ],
+  "laterCounterChoiceRate": 0.7083333333333334,
+  "laterResistedPresenceRate": 0.6666666666666666,
+  "laterMeaningAdvantageRate": 0.6818181818181818,
+  "routes": [
+    {
+      "words": [
+        "AGO",
+        "RESEARCH",
+        "REASON"
+      ],
+      "counterTurns": [
+        2,
+        3
+      ],
+      "advantagedCounterTurns": [
+        2,
+        3
+      ],
+      "neutralTail": 0,
+      "newCounterWords": [
+        "RESEARCH"
+      ]
+    },
+    {
+      "words": [
+        "ALONG",
+        "RESEARCH",
+        "REASON"
+      ],
+      "counterTurns": [
+        2,
+        3
+      ],
+      "advantagedCounterTurns": [
+        2,
+        3
+      ],
+      "neutralTail": 0,
+      "newCounterWords": [
+        "RESEARCH"
+      ]
+    },
+    {
+      "words": [
+        "AMONG",
+        "RESEARCH",
+        "REASON"
+      ],
+      "counterTurns": [
+        2,
+        3
+      ],
+      "advantagedCounterTurns": [
+        2,
+        3
+      ],
+      "neutralTail": 0,
+      "newCounterWords": [
+        "RESEARCH"
+      ]
+    },
+    {
+      "words": [
+        "BODY",
+        "RESEARCH",
+        "REASON"
+      ],
+      "counterTurns": [
+        2,
+        3
+      ],
+      "advantagedCounterTurns": [
+        2,
+        3
+      ],
+      "neutralTail": 0,
+      "newCounterWords": [
+        "RESEARCH"
+      ]
+    },
+    {
+      "words": [
+        "BOY",
+        "RESEARCH",
+        "REASON"
+      ],
+      "counterTurns": [
+        2,
+        3
+      ],
+      "advantagedCounterTurns": [
+        2,
+        3
+      ],
+      "neutralTail": 0,
+      "newCounterWords": [
+        "RESEARCH"
+      ]
+    },
+    {
+      "words": [
+        "DOG",
+        "RESEARCH",
+        "REASON"
+      ],
+      "counterTurns": [
+        2,
+        3
+      ],
+      "advantagedCounterTurns": [
+        2,
+        3
+      ],
+      "neutralTail": 0,
+      "newCounterWords": [
+        "RESEARCH"
+      ]
+    },
+    {
+      "words": [
+        "GOAL",
+        "RESEARCH",
+        "REASON"
+      ],
+      "counterTurns": [
+        2,
+        3
+      ],
+      "advantagedCounterTurns": [
+        2,
+        3
+      ],
+      "neutralTail": 0,
+      "newCounterWords": [
+        "RESEARCH"
+      ]
+    },
+    {
+      "words": [
+        "GOLD",
+        "RESEARCH",
+        "REASON"
+      ],
+      "counterTurns": [
+        2,
+        3
+      ],
+      "advantagedCounterTurns": [
+        2,
+        3
+      ],
+      "neutralTail": 0,
+      "newCounterWords": [
+        "RESEARCH"
+      ]
+    },
+    {
+      "words": [
+        "LONG",
+        "RESEARCH",
+        "REASON"
+      ],
+      "counterTurns": [
+        1,
+        2,
+        3
+      ],
+      "advantagedCounterTurns": [
+        2,
+        3
+      ],
+      "neutralTail": 0,
+      "newCounterWords": [
+        "RESEARCH"
+      ]
+    },
+    {
+      "words": [
+        "ONLY",
+        "RESEARCH",
+        "REASON"
+      ],
+      "counterTurns": [
+        2,
+        3
+      ],
+      "advantagedCounterTurns": [
+        2,
+        3
+      ],
+      "neutralTail": 0,
+      "newCounterWords": [
+        "RESEARCH"
+      ]
+    },
+    {
+      "words": [
+        "REASON",
+        "MATCH",
+        "REASON"
+      ],
+      "counterTurns": [
+        1,
+        2,
+        3
+      ],
+      "advantagedCounterTurns": [
+        1,
+        2,
+        3
+      ],
+      "neutralTail": 0,
+      "newCounterWords": [
+        "MATCH"
+      ]
+    },
+    {
+      "words": [
+        "AND",
+        "RESEARCH",
+        "COOL",
+        "HAS"
+      ],
+      "counterTurns": [
+        2,
+        3,
+        4
+      ],
+      "advantagedCounterTurns": [
+        2,
+        3
+      ],
+      "neutralTail": 0,
+      "newCounterWords": [
+        "RESEARCH",
+        "COOL",
+        "HAS"
+      ]
+    },
+    {
+      "words": [
+        "BAD",
+        "RESEARCH",
+        "COOL",
+        "HAS"
+      ],
+      "counterTurns": [
+        2,
+        3,
+        4
+      ],
+      "advantagedCounterTurns": [
+        2,
+        3
+      ],
+      "neutralTail": 0,
+      "newCounterWords": [
+        "RESEARCH",
+        "COOL",
+        "HAS"
+      ]
+    },
+    {
+      "words": [
+        "CARD",
+        "HAS",
+        "GONE",
+        "REASON"
+      ],
+      "counterTurns": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "advantagedCounterTurns": [
+        2,
+        4
+      ],
+      "neutralTail": 0,
+      "newCounterWords": [
+        "HAS"
+      ]
+    },
+    {
+      "words": [
+        "CARE",
+        "HAS",
+        "DONE",
+        "REASON"
+      ],
+      "counterTurns": [
+        2,
+        3,
+        4
+      ],
+      "advantagedCounterTurns": [
+        2,
+        4
+      ],
+      "neutralTail": 0,
+      "newCounterWords": [
+        "HAS"
+      ]
+    },
+    {
+      "words": [
+        "CHANGE",
+        "SORT",
+        "HAD",
+        "COOL"
+      ],
+      "counterTurns": [
+        2,
+        3,
+        4
+      ],
+      "advantagedCounterTurns": [
+        2,
+        3
+      ],
+      "neutralTail": 0,
+      "newCounterWords": [
+        "SORT",
+        "HAD",
+        "COOL"
+      ]
+    },
+    {
+      "words": [
+        "CHARGE",
+        "SORT",
+        "HAD",
+        "COOL"
+      ],
+      "counterTurns": [
+        2,
+        3,
+        4
+      ],
+      "advantagedCounterTurns": [
+        2,
+        3
+      ],
+      "neutralTail": 0,
+      "newCounterWords": [
+        "SORT",
+        "HAD",
+        "COOL"
+      ]
+    },
+    {
+      "words": [
+        "DAMN",
+        "RESEARCH",
+        "COOL",
+        "HAS"
+      ],
+      "counterTurns": [
+        2,
+        3,
+        4
+      ],
+      "advantagedCounterTurns": [
+        2,
+        3
+      ],
+      "neutralTail": 0,
+      "newCounterWords": [
+        "RESEARCH",
+        "COOL",
+        "HAS"
+      ]
+    },
+    {
+      "words": [
+        "DAY",
+        "RESEARCH",
+        "COOL",
+        "HAS"
+      ],
+      "counterTurns": [
+        2,
+        3,
+        4
+      ],
+      "advantagedCounterTurns": [
+        2,
+        3
+      ],
+      "neutralTail": 0,
+      "newCounterWords": [
+        "RESEARCH",
+        "COOL",
+        "HAS"
+      ]
+    },
+    {
+      "words": [
+        "HELD",
+        "REASON",
+        "MATCH",
+        "GONE"
+      ],
+      "counterTurns": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "advantagedCounterTurns": [
+        2,
+        3
+      ],
+      "neutralTail": 0,
+      "newCounterWords": [
+        "MATCH"
+      ]
+    },
+    {
+      "words": [
+        "LORD",
+        "RESEARCH",
+        "HAS",
+        "GONE"
+      ],
+      "counterTurns": [
+        2,
+        3,
+        4
+      ],
+      "advantagedCounterTurns": [
+        2
+      ],
+      "neutralTail": 0,
+      "newCounterWords": [
+        "RESEARCH",
+        "HAS"
+      ]
+    },
+    {
+      "words": [
+        "MODEL",
+        "RESEARCH",
+        "HAS",
+        "AGO"
+      ],
+      "counterTurns": [
+        1,
+        2,
+        3
+      ],
+      "advantagedCounterTurns": [
+        2
+      ],
+      "neutralTail": 1,
+      "newCounterWords": [
+        "RESEARCH",
+        "HAS"
+      ]
+    },
+    {
+      "words": [
+        "RECORDS",
+        "HAS",
+        "CLEAR",
+        "GONE",
+        "BOY"
+      ],
+      "counterTurns": [
+        2,
+        3,
+        4
+      ],
+      "advantagedCounterTurns": [
+        2
+      ],
+      "neutralTail": 1,
+      "newCounterWords": [
+        "HAS"
+      ]
+    },
+    {
+      "words": [
+        "ALREADY",
+        "SCHEME",
+        "HAS",
+        "AGO",
+        "NON"
+      ],
+      "counterTurns": [
+        2,
+        3
+      ],
+      "advantagedCounterTurns": [
+        2
+      ],
+      "neutralTail": 2,
+      "newCounterWords": [
+        "SCHEME",
+        "HAS"
+      ]
+    },
+    {
+      "words": [
+        "COMEDY",
+        "HAS",
+        "CLEAR",
+        "GONE",
+        "SORT"
+      ],
+      "counterTurns": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "advantagedCounterTurns": [
+        2
+      ],
+      "neutralTail": 0,
+      "newCounterWords": [
+        "HAS",
+        "SORT"
+      ]
+    },
+    {
+      "words": [
+        "HOLDS",
+        "CAR",
+        "EASY",
+        "AGO"
+      ],
+      "counterTurns": [
+        1,
+        3
+      ],
+      "advantagedCounterTurns": [
+        1
+      ],
+      "neutralTail": 1,
+      "newCounterWords": []
+    },
+    {
+      "words": [
+        "RANDOM",
+        "RESEARCH",
+        "COOL",
+        "HAS"
+      ],
+      "counterTurns": [
+        2,
+        3,
+        4
+      ],
+      "advantagedCounterTurns": [
+        2,
+        3
+      ],
+      "neutralTail": 0,
+      "newCounterWords": [
+        "RESEARCH",
+        "COOL",
+        "HAS"
+      ]
+    },
+    {
+      "words": [
+        "BADLY",
+        "RESEARCH",
+        "REASON",
+        "AGO"
+      ],
+      "counterTurns": [
+        2,
+        3
+      ],
+      "advantagedCounterTurns": [
+        2,
+        3
+      ],
+      "neutralTail": 1,
+      "newCounterWords": [
+        "RESEARCH"
+      ]
+    },
+    {
+      "words": [
+        "REASONABLY",
+        "MATCH",
+        "AGO"
+      ],
+      "counterTurns": [
+        1,
+        2
+      ],
+      "advantagedCounterTurns": [
+        1,
+        2
+      ],
+      "neutralTail": 1,
+      "newCounterWords": [
+        "MATCH"
+      ]
+    },
+    {
+      "words": [
+        "MARSHALED",
+        "RESEARCH",
+        "NON",
+        "ACT",
+        "BOY"
+      ],
+      "counterTurns": [
+        1,
+        2
+      ],
+      "advantagedCounterTurns": [
+        1,
+        2
+      ],
+      "neutralTail": 3,
+      "newCounterWords": [
+        "MARSHALED",
+        "RESEARCH"
+      ]
+    }
+  ],
+  "sustainedWinningRouteRate": 0.9,
+  "chipAwayRuns": [
+    {
+      "opening": null,
+      "policy": "familiar",
+      "moves": [
+        {
+          "word": "AGE",
+          "tileIds": [
+            1,
+            9,
+            11
+          ]
+        },
+        {
+          "word": "BOY",
+          "tileIds": [
+            2,
+            0,
+            4
+          ]
+        },
+        {
+          "word": "HER",
+          "tileIds": [
+            7,
+            16,
+            3
+          ]
+        },
+        {
+          "word": "ACT",
+          "tileIds": [
+            23,
+            8,
+            17
+          ]
+        },
+        {
+          "word": "ASS",
+          "tileIds": [
+            25,
+            6,
+            18
+          ]
+        }
+      ],
+      "status": "lost"
+    },
+    {
+      "opening": null,
+      "policy": "damage",
+      "moves": [
+        {
+          "word": "AGO",
+          "tileIds": [
+            1,
+            9,
+            0
+          ]
+        },
+        {
+          "word": "HER",
+          "tileIds": [
+            7,
+            11,
+            3
+          ]
+        },
+        {
+          "word": "SEE",
+          "tileIds": [
+            6,
+            16,
+            20
+          ]
+        },
+        {
+          "word": "ACT",
+          "tileIds": [
+            23,
+            8,
+            17
+          ]
+        },
+        {
+          "word": "BOY",
+          "tileIds": [
+            2,
+            26,
+            4
+          ]
+        }
+      ],
+      "status": "lost"
+    },
+    {
+      "opening": "CHORDS",
+      "policy": "familiar",
+      "moves": [
+        {
+          "word": "CHORDS",
+          "tileIds": [
+            8,
+            7,
+            0,
+            3,
+            5,
+            6
+          ]
+        },
+        {
+          "word": "AGE",
+          "tileIds": [
+            1,
+            9,
+            11
+          ]
+        },
+        {
+          "word": "ACT",
+          "tileIds": [
+            23,
+            24,
+            17
+          ]
+        },
+        {
+          "word": "BOY",
+          "tileIds": [
+            2,
+            26,
+            4
+          ]
+        }
+      ],
+      "status": "won"
+    },
+    {
+      "opening": "CHORDS",
+      "policy": "damage",
+      "moves": [
+        {
+          "word": "CHORDS",
+          "tileIds": [
+            8,
+            7,
+            0,
+            3,
+            5,
+            6
+          ]
+        },
+        {
+          "word": "AGE",
+          "tileIds": [
+            1,
+            9,
+            11
+          ]
+        },
+        {
+          "word": "ACT",
+          "tileIds": [
+            23,
+            24,
+            17
+          ]
+        },
+        {
+          "word": "BOY",
+          "tileIds": [
+            2,
+            26,
+            4
+          ]
+        }
+      ],
+      "status": "won"
+    },
+    {
+      "opening": "SCHEMA",
+      "policy": "familiar",
+      "moves": [
+        {
+          "word": "SCHEMA",
+          "tileIds": [
+            6,
+            8,
+            7,
+            11,
+            14,
+            1
+          ]
+        },
+        {
+          "word": "BOY",
+          "tileIds": [
+            2,
+            0,
+            4
+          ]
+        },
+        {
+          "word": "ACT",
+          "tileIds": [
+            23,
+            24,
+            17
+          ]
+        },
+        {
+          "word": "AGO",
+          "tileIds": [
+            25,
+            9,
+            26
+          ]
+        }
+      ],
+      "status": "won"
+    },
+    {
+      "opening": "SCHEMA",
+      "policy": "damage",
+      "moves": [
+        {
+          "word": "SCHEMA",
+          "tileIds": [
+            6,
+            8,
+            7,
+            11,
+            14,
+            1
+          ]
+        },
+        {
+          "word": "BOY",
+          "tileIds": [
+            2,
+            0,
+            4
+          ]
+        },
+        {
+          "word": "ACT",
+          "tileIds": [
+            23,
+            24,
+            17
+          ]
+        },
+        {
+          "word": "AGO",
+          "tileIds": [
+            25,
+            9,
+            26
+          ]
+        }
+      ],
+      "status": "won"
+    },
+    {
+      "opening": "HALCYON",
+      "policy": "familiar",
+      "moves": [
+        {
+          "word": "HALCYON",
+          "tileIds": [
+            7,
+            1,
+            10,
+            8,
+            4,
+            0,
+            12
+          ]
+        },
+        {
+          "word": "SEE",
+          "tileIds": [
+            6,
+            11,
+            16
+          ]
+        },
+        {
+          "word": "ACT",
+          "tileIds": [
+            23,
+            24,
+            17
+          ]
+        },
+        {
+          "word": "AGO",
+          "tileIds": [
+            25,
+            9,
+            26
+          ]
+        }
+      ],
+      "status": "won"
+    },
+    {
+      "opening": "HALCYON",
+      "policy": "damage",
+      "moves": [
+        {
+          "word": "HALCYON",
+          "tileIds": [
+            7,
+            1,
+            10,
+            8,
+            4,
+            0,
+            12
+          ]
+        },
+        {
+          "word": "SEE",
+          "tileIds": [
+            6,
+            11,
+            16
+          ]
+        },
+        {
+          "word": "ACT",
+          "tileIds": [
+            23,
+            24,
+            17
+          ]
+        },
+        {
+          "word": "AGO",
+          "tileIds": [
+            25,
+            9,
+            26
+          ]
+        }
+      ],
+      "status": "won"
+    },
+    {
+      "opening": "REASON",
+      "policy": "familiar",
+      "moves": [
+        {
+          "word": "REASON",
+          "tileIds": [
+            3,
+            11,
+            1,
+            6,
+            0,
+            12
+          ]
+        },
+        {
+          "word": "HER",
+          "tileIds": [
+            7,
+            16,
+            19
+          ]
+        },
+        {
+          "word": "ACT",
+          "tileIds": [
+            23,
+            8,
+            17
+          ]
+        },
+        {
+          "word": "AGO",
+          "tileIds": [
+            25,
+            9,
+            26
+          ]
+        },
+        {
+          "word": "COLD",
+          "tileIds": [
+            24,
+            27,
+            10,
+            5
+          ]
+        }
+      ],
+      "status": "won"
+    },
+    {
+      "opening": "REASON",
+      "policy": "damage",
+      "moves": [
+        {
+          "word": "REASON",
+          "tileIds": [
+            3,
+            11,
+            1,
+            6,
+            0,
+            12
+          ]
+        },
+        {
+          "word": "HER",
+          "tileIds": [
+            7,
+            16,
+            19
+          ]
+        },
+        {
+          "word": "ACT",
+          "tileIds": [
+            23,
+            8,
+            17
+          ]
+        },
+        {
+          "word": "AGO",
+          "tileIds": [
+            25,
+            9,
+            26
+          ]
+        },
+        {
+          "word": "COLD",
+          "tileIds": [
+            24,
+            27,
+            10,
+            5
+          ]
+        }
+      ],
+      "status": "won"
+    }
+  ],
+  "chipAwayWinRate": 0.8
+}

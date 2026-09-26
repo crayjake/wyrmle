@@ -19,7 +19,9 @@ if (argumentsList.includes('--help')) {
   console.log('npm run generate -- --count 200 --enemy MELANCHOLY --seed review --out artifacts/melancholy [--refine 1] [--regen] [--refills 0..96] [--dev-top]')
   console.log('Omit --enemy for suitability-based automatic enemy selection. --states and --beam control bounded search. No daily catalog is changed.')
   console.log('--regen includes one harmful Revive tile. New puzzles compile a definition and meaning classification for every allowed word; no grammar or length bonuses.')
+  console.log('--revives N explicitly chooses 0–3 enemy Revive tiles, overriding --regen.')
   console.log('--legacy-bonuses reproduces the previous lexical/bonus generation; --legacy reproduces the original archived seed rules.')
+  console.log('Meaning puzzles default to sustained discovery: recurring resisted words, later counter choices and anti-chip-away review. --classic-design reproduces v4 construction for comparisons.')
   console.log('--refills N opts into N finite replacement letters (0–96). Length mutations may refine this budget; omitted keeps the historical padded supply.')
   process.exit(0)
 }
@@ -30,9 +32,11 @@ const output = resolve(argument('out', 'artifacts/generated'))
 const refillLimit = argumentsList.includes('--refills') ? validateRefillLimit(integer('refills', Number.NaN)) : undefined
 await mkdir(output, { recursive: true })
 const options: GenerationOptions = {
+  design: argumentsList.includes('--classic-design') ? 'classic' : 'sustained-discovery',
   lexicalMode: argumentsList.includes('--legacy') ? 'legacy' : 'current',
   scoringMode: argumentsList.includes('--legacy-bonuses') ? 'legacy-bonuses' : 'meaning',
   includeRegenTile: argumentsList.includes('--regen'),
+  ...(argumentsList.includes('--revives') ? { regenTileCount: integer('revives', Number.NaN) } : {}),
   ...(refillLimit === undefined ? {} : { refillLimit }),
   candidateCount: 1, keep: 100, refinementRounds: integer('refine', 0), mutationsPerRound: integer('mutations', 2),
   analysis: {

@@ -1,0 +1,321 @@
+{
+  "version": "wyrmle-semantic-development-extension-v1",
+  "fixtureDigest": "22e5bd6e77f7c9671310122205b83f408c4be69087dc970102b82d5bb76d04a9",
+  "legacyCoverageDigest": "d9cd0d750ee311c997942a45b7dadd85cec7a796359fcb1369b3d1ff42048b50",
+  "split": "all",
+  "modelId": "sentence-transformers/all-MiniLM-L6-v2 + cross-encoder/nli-deberta-v3-xsmall + Qwen/Qwen3.5-9B",
+  "configurationHash": "58136fdcb9e05e2b4ed9025c57f2380613cd26858de96b7662695e3f6e011cf7",
+  "passed": true,
+  "failures": [],
+  "metrics": {
+    "coverage": {
+      "correct": 13,
+      "total": 13,
+      "rate": 1
+    },
+    "accuracy": {
+      "correct": 13,
+      "total": 13,
+      "rate": 1
+    },
+    "coreAccuracy": {
+      "correct": 0,
+      "total": 0,
+      "rate": null
+    },
+    "holdoutAccuracy": {
+      "correct": 0,
+      "total": 0,
+      "rate": null
+    },
+    "byEnemy": {
+      "ANGER": {
+        "correct": 3,
+        "total": 3,
+        "rate": 1
+      },
+      "DESPAIR": {
+        "correct": 2,
+        "total": 2,
+        "rate": 1
+      },
+      "FEAR": {
+        "correct": 2,
+        "total": 2,
+        "rate": 1
+      },
+      "MELANCHOLY": {
+        "correct": 2,
+        "total": 2,
+        "rate": 1
+      },
+      "CRUELTY": {
+        "correct": 2,
+        "total": 2,
+        "rate": 1
+      },
+      "CHAOS": {
+        "correct": 2,
+        "total": 2,
+        "rate": 1
+      }
+    },
+    "sourceSenseAccuracy": {
+      "correct": 13,
+      "total": 13,
+      "rate": 1
+    },
+    "constrainedSenseAccuracy": {
+      "correct": 13,
+      "total": 13,
+      "rate": 1
+    },
+    "neutralFalsePositives": {
+      "correct": 0,
+      "total": 0,
+      "rate": null
+    },
+    "novelConceptRecall": {
+      "correct": 12,
+      "total": 12,
+      "rate": 1
+    }
+  },
+  "results": [
+    {
+      "id": "ANGER/CONTENTMENT",
+      "enemy": "ANGER",
+      "word": "CONTENTMENT",
+      "split": "development",
+      "core": false,
+      "expected": "opposite",
+      "actual": "opposite",
+      "correct": true,
+      "covered": true,
+      "senseId": "oewn-contentment__1.12.00..",
+      "sourceSenseValid": true,
+      "constrained": true,
+      "constrainedSenseCorrect": true,
+      "legacyRelation": null,
+      "novelConcept": true,
+      "rationale": "Satisfaction and happiness with life counter angry displeasure."
+    },
+    {
+      "id": "ANGER/ENRAGE",
+      "enemy": "ANGER",
+      "word": "ENRAGE",
+      "split": "development",
+      "core": false,
+      "expected": "similar",
+      "actual": "similar",
+      "correct": true,
+      "covered": true,
+      "senseId": "oewn-enrage__2.37.00..",
+      "sourceSenseValid": true,
+      "constrained": true,
+      "constrainedSenseCorrect": true,
+      "legacyRelation": null,
+      "novelConcept": true,
+      "rationale": "Making someone violently angry directly reinforces anger."
+    },
+    {
+      "id": "ANGER/IRRITATION",
+      "enemy": "ANGER",
+      "word": "IRRITATION",
+      "split": "development",
+      "core": false,
+      "expected": "similar",
+      "actual": "similar",
+      "correct": true,
+      "covered": true,
+      "senseId": "oewn-irritation__1.12.01..",
+      "sourceSenseValid": true,
+      "constrained": true,
+      "constrainedSenseCorrect": true,
+      "legacyRelation": "related",
+      "novelConcept": false,
+      "rationale": "An outburst of anger, an irritated emotional state, or behavior defined as causing anger reinforces anger; physical irritation is a distinct sense."
+    },
+    {
+      "id": "DESPAIR/FAITH",
+      "enemy": "DESPAIR",
+      "word": "FAITH",
+      "split": "development",
+      "core": false,
+      "expected": "opposite",
+      "actual": "opposite",
+      "correct": true,
+      "covered": true,
+      "senseId": "oewn-faith__1.09.01..",
+      "sourceSenseValid": true,
+      "constrained": true,
+      "constrainedSenseCorrect": true,
+      "legacyRelation": null,
+      "novelConcept": true,
+      "rationale": "Complete confidence in a person or plan counters hopelessness; institutional religion alone is not the relevant sense."
+    },
+    {
+      "id": "DESPAIR/DISCOURAGE",
+      "enemy": "DESPAIR",
+      "word": "DISCOURAGE",
+      "split": "development",
+      "core": false,
+      "expected": "similar",
+      "actual": "similar",
+      "correct": true,
+      "covered": true,
+      "senseId": "oewn-discourage__2.37.00..",
+      "sourceSenseValid": true,
+      "constrained": true,
+      "constrainedSenseCorrect": true,
+      "legacyRelation": null,
+      "novelConcept": true,
+      "rationale": "Taking away hope directly reinforces despair."
+    },
+    {
+      "id": "FEAR/PROTECT",
+      "enemy": "FEAR",
+      "word": "PROTECT",
+      "split": "development",
+      "core": false,
+      "expected": "opposite",
+      "actual": "opposite",
+      "correct": true,
+      "covered": true,
+      "senseId": "oewn-protect__2.33.00..",
+      "sourceSenseValid": true,
+      "constrained": true,
+      "constrainedSenseCorrect": true,
+      "legacyRelation": null,
+      "novelConcept": true,
+      "rationale": "Shielding someone from danger counters fear under the game safety policy."
+    },
+    {
+      "id": "FEAR/TREPIDATION",
+      "enemy": "FEAR",
+      "word": "TREPIDATION",
+      "split": "development",
+      "core": false,
+      "expected": "similar",
+      "actual": "similar",
+      "correct": true,
+      "covered": true,
+      "senseId": "oewn-trepidation__1.12.00..",
+      "sourceSenseValid": true,
+      "constrained": true,
+      "constrainedSenseCorrect": true,
+      "legacyRelation": null,
+      "novelConcept": true,
+      "rationale": "Alarm and dread directly reinforce fear."
+    },
+    {
+      "id": "MELANCHOLY/HILARIOUS",
+      "enemy": "MELANCHOLY",
+      "word": "HILARIOUS",
+      "split": "development",
+      "core": false,
+      "expected": "opposite",
+      "actual": "opposite",
+      "correct": true,
+      "covered": true,
+      "senseId": "oewn-hilarious__5.00.00.humorous.00",
+      "sourceSenseValid": true,
+      "constrained": true,
+      "constrainedSenseCorrect": true,
+      "legacyRelation": null,
+      "novelConcept": true,
+      "rationale": "Causing merriment and laughter counters low spirits."
+    },
+    {
+      "id": "MELANCHOLY/DEJECTED",
+      "enemy": "MELANCHOLY",
+      "word": "DEJECTED",
+      "split": "development",
+      "core": false,
+      "expected": "similar",
+      "actual": "similar",
+      "correct": true,
+      "covered": true,
+      "senseId": "oewn-dejected__3.00.00..",
+      "sourceSenseValid": true,
+      "constrained": true,
+      "constrainedSenseCorrect": true,
+      "legacyRelation": null,
+      "novelConcept": true,
+      "rationale": "Low spirits directly reinforce melancholy."
+    },
+    {
+      "id": "CRUELTY/ALTRUISM",
+      "enemy": "CRUELTY",
+      "word": "ALTRUISM",
+      "split": "development",
+      "core": false,
+      "expected": "opposite",
+      "actual": "opposite",
+      "correct": true,
+      "covered": true,
+      "senseId": "oewn-altruism__1.07.00..",
+      "sourceSenseValid": true,
+      "constrained": true,
+      "constrainedSenseCorrect": true,
+      "legacyRelation": null,
+      "novelConcept": true,
+      "rationale": "Unselfish concern for others welfare counters cruelty."
+    },
+    {
+      "id": "CRUELTY/OPPRESSION",
+      "enemy": "CRUELTY",
+      "word": "OPPRESSION",
+      "split": "development",
+      "core": false,
+      "expected": "similar",
+      "actual": "similar",
+      "correct": true,
+      "covered": true,
+      "senseId": "oewn-oppression__1.04.00..",
+      "sourceSenseValid": true,
+      "constrained": true,
+      "constrainedSenseCorrect": true,
+      "legacyRelation": null,
+      "novelConcept": true,
+      "rationale": "Subjugating people through cruelty or unjust force reinforces cruelty."
+    },
+    {
+      "id": "CHAOS/ARRANGEMENT",
+      "enemy": "CHAOS",
+      "word": "ARRANGEMENT",
+      "split": "development",
+      "core": false,
+      "expected": "opposite",
+      "actual": "opposite",
+      "correct": true,
+      "covered": true,
+      "senseId": "oewn-arrangement__1.09.00..",
+      "sourceSenseValid": true,
+      "constrained": true,
+      "constrainedSenseCorrect": true,
+      "legacyRelation": null,
+      "novelConcept": true,
+      "rationale": "An orderly grouping or organized structure counters disorder."
+    },
+    {
+      "id": "CHAOS/DISORGANIZED",
+      "enemy": "CHAOS",
+      "word": "DISORGANIZED",
+      "split": "development",
+      "core": false,
+      "expected": "similar",
+      "actual": "similar",
+      "correct": true,
+      "covered": true,
+      "senseId": "oewn-disorganize__2.41.00..",
+      "sourceSenseValid": true,
+      "constrained": true,
+      "constrainedSenseCorrect": true,
+      "legacyRelation": null,
+      "novelConcept": true,
+      "rationale": "Lacking order or methodical arrangement reinforces chaos."
+    }
+  ],
+  "review": []
+}

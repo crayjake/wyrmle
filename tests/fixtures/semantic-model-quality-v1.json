@@ -1,8 +1,8 @@
 {
   "source": "actual-frozen-hybrid-provider",
   "modelId": "sentence-transformers/all-MiniLM-L6-v2 + cross-encoder/nli-deberta-v3-xsmall + Qwen/Qwen3.5-9B",
-  "configurationHash": "c3edbf3832d03fb455c76d194c0c904d3157096d43e852b7191cdcfed3acb930",
-  "sourceReviewPolicyDigest": "ad368149da4461fab7b6c522988d57efae9d3b3b4d478106e703cbaa4b89bf9c",
+  "configurationHash": "58136fdcb9e05e2b4ed9025c57f2380613cd26858de96b7662695e3f6e011cf7",
+  "sourceReviewPolicyDigest": "5912a9d2c9d6005552dc694807aad57fce4ed7e6781bc66531bb511172b9cd4e",
   "refinementFileDigest": "ef771899d31c9f4c9b5b89d121a69b9d27d0a8228e5732176d806a2ffc58faa0",
   "confirmationDigest": "dbb29a01f48a38e14b334210658434d6497e5d0150723c264bc965dbf0a153e4",
   "baseCaches": {
@@ -278,8 +278,8 @@
     },
     "CHAOS": {
       "ready": true,
-      "eligibleWords": 94,
-      "reviewedWords": 94,
+      "eligibleWords": 95,
+      "reviewedWords": 95,
       "issues": [],
       "metadata": {
         "version": "wyrmle-semantic-refinement-1",
@@ -289,12 +289,12 @@
         "promptDigest": "7fd7a66adba4c556171a71783c8e83f5cf9d667b1b1ee7d383af09789b09cffa",
         "eligibilityPolicyDigest": "76e46b27acbb1122759d5ca3c4f46dfd14a7eba597b75da06b7de35ac5a8ad72",
         "baseCacheDigest": "079b87bdddcbf73638537487cabf14fe75c1e0df9cb5932b6e0bd6effde2695e",
-        "inventoryDigest": "60f31842a5e21934ac15717857b249e4b003b00d2233c3ac37475e81e092c75b",
-        "cacheDigest": "84946a057ed15048a0d5293c5a66c0897bff1c2698035d24666ce3ea338f6f25",
-        "eligibleWords": 94,
-        "reviewedWords": 94,
-        "sourceReviewDigest": "3691e956e640b148896401494d396ed2dccc27d529d4a3fc037b4cb6c4f02fc4",
-        "sourceReviewedWords": 54,
+        "inventoryDigest": "0a4b039dc7aa1bb67b507cad509ab4de7ce6d4f8890b4729ff060c20b98cbf5f",
+        "cacheDigest": "ac2cd9c5aeaeaa5c38f8a682e7cc4619fe41ec59e2a99b723c46b3a38c8fb828",
+        "eligibleWords": 95,
+        "reviewedWords": 95,
+        "sourceReviewDigest": "d413cd8b2567692a62ec20c4fa86faef5b24df5be0651645a1d645f24aaa60df",
+        "sourceReviewedWords": 55,
         "reviewScope": "all-source-senses"
       }
     }
@@ -2351,6 +2351,15 @@
       "baseWordDigest": "e252b4ad31ad9a9c93a1aa7dede92a66241ba83aa58e5b9d79ee1ac95c94e924",
       "decisionBasis": "source-reviewed",
       "memoDigest": "8c38918db834e45e66300255c6ac2d3ae503ac13befc2a5a88e9f8eae1a9890c"
+    },
+    {
+      "enemy": "CHAOS",
+      "word": "HALCYONS",
+      "relation": "opposite",
+      "senseId": "oewn-halcyon__1.05.01..",
+      "baseWordDigest": "08b17428bc542c0ecb202afea59f45359442bf917069b9789abe49171e8ff232",
+      "decisionBasis": "source-reviewed",
+      "memoDigest": "907a99fbbf1c1ef41a28ba44097221c8bbe74c91c562809680ffed0754439df3"
     },
     {
       "enemy": "CHAOS",

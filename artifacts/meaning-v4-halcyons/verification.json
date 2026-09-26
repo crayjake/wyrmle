@@ -1,0 +1,41 @@
+{
+  "date": "2026-09-26",
+  "nodeTests": {
+    "passed": 562,
+    "failed": 0
+  },
+  "semanticRegressions": {
+    "primary": 144,
+    "development": 13,
+    "confirmation": 36,
+    "diagnostic": 18,
+    "inventory": 59
+  },
+  "semanticRegressionsPassed": 270,
+  "typecheck": "passed (npm run build)",
+  "lint": "passed",
+  "build": "passed",
+  "openingCertification": {
+    "certified": true,
+    "safeSelections": 8041,
+    "unsafeSelections": 0,
+    "unknownSelections": 0,
+    "safeSuccessors": 5503
+  },
+  "provenMinimumWords": 3,
+  "browser": {
+    "datesWon": [
+      "2026-09-26",
+      "2026-09-27"
+    ],
+    "oldAttemptPreserved": true,
+    "width": 375,
+    "horizontalOverflow": false,
+    "runtimeErrors": []
+  },
+  "deployment": "Repository packaged only; not deployed",
+  "limitations": [
+    "Tests and source reviews establish zero known regression failures, not perfect unseen semantic judgement.",
+    "Opening certification guarantees a winning continuation after the first word, not after every later choice."
+  ]
+}

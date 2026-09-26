@@ -3,6 +3,7 @@ import type { LetterStrikeEncounter, LetterStrikeState, LetterStrikeTile } from 
 import type { Random } from './random.ts'
 import type { CandidatePuzzle } from './types.ts'
 import { validateRefillLimit } from './refillLimit.ts'
+import { replenishSemanticChoices } from './discoveryDesign.ts'
 
 type PlanningWord = { word: string; commonness: number | null }
 
@@ -34,6 +35,7 @@ function missingLetters(word: string, kept: readonly LetterStrikeTile[]): string
 export function constructRefill(
   encounter: LetterStrikeEncounter, vocabulary: readonly PlanningWord[], random: Random, targetTurns = encounter.startingResolve,
   refillLimit?: number,
+  design?: { counters: readonly string[]; resisted: readonly string[] },
 ): Pick<CandidatePuzzle, 'construction'> & { refillQueue: string } {
   validateRefillLimit(refillLimit)
   // Planning reuses these relations across many previews. Its own immutable
@@ -42,7 +44,8 @@ export function constructRefill(
     semanticRelations: Object.freeze(Object.fromEntries(Object.entries(encounter.enemy.semanticRelations)
       .map(([relation, entries]) => [relation, Object.freeze([...entries])]))) as LetterStrikeEncounter['enemy']['semanticRelations'],
   } }
-  const words = vocabulary.filter(entry => entry.word.length >= 3 && entry.word.length <= 10 && (entry.commonness ?? 0) >= 0.45)
+  const words = vocabulary.filter(entry => entry.word.length >= 3 && entry.word.length <= 10
+    && (entry.commonness ?? 0) >= (design?.counters.includes(entry.word) ? 0.4 : 0.45))
   // Rarity depends on the fixed planning vocabulary, not on a future move.
   // Repeated letters count once per entry, matching the former includes() scan.
   const letterCoverage = new Map<string, number>()
@@ -69,7 +72,7 @@ export function constructRefill(
       if (!preview.valid || netStrikes <= 0) return []
       return [{ entry, ids, preview, score: Math.min(netStrikes, desiredHits) * 5
         - Math.max(0, netStrikes - desiredHits) * 3 + (preview.resolveCost === 0 ? 1.5 : 0)
-        + (preview.semanticLabel === 'COUNTER' ? 2 : 0)
+        + (preview.semanticLabel === 'COUNTER' ? (design?.counters.includes(entry.word) ? 8 : 2) : 0)
         + (entry.commonness ?? 0) + random.next() * 2 + (entry.word === intended ? 30 : 0) }]
     }).sort((a, b) => b.score - a.score || a.entry.word.localeCompare(b.entry.word))
     const choice = choices[0]
@@ -90,11 +93,12 @@ export function constructRefill(
       const rareCoverage = preview.hits.reduce((sum, hit) => sum + 1 / Math.max(1, letterCoverage.get(hit.letter) ?? 0), 0)
       return [{ entry, missing, score: Math.min(netStrikes, futureHits) * 4
         - Math.max(0, netStrikes - futureHits) * 3 + rareCoverage * 30 + (preview.resolveCost === 0 ? 1.5 : 0)
-        + (preview.semanticLabel === 'COUNTER' ? 2 : 0)
+        + (preview.semanticLabel === 'COUNTER' ? (design?.counters.includes(entry.word) ? 8 : 2) : 0)
         + (entry.commonness ?? 0) + random.next() * 2 - (entry.word === choice.entry.word ? 1 : 0) }]
     }).sort((a, b) => b.score - a.score || a.entry.word.localeCompare(b.entry.word))
     const next = future[0]
-    const block = next ? [...next.missing] : []
+    const block = design ? replenishSemanticChoices(kept.map(tile => tile.letter), next?.missing ?? [], choice.ids.length,
+      design.counters, design.resisted, random) : next ? [...next.missing] : []
     // Unused refill slots replenish the selected counter/long-word vocabulary.
     const support = next?.entry.word ?? random.pick(words).word
     const replenishment = random.shuffle([...support])

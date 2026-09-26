@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WYRMLE — five icon directions</title>
+<style>
+:root{--paper:#eeeadd;--ink:#25281f;--muted:#656c59;--gold:#b18a3c;--icon-size:208px;--mask:23%}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+main{max-width:1520px;margin:auto;padding:52px 44px}header{display:flex;justify-content:space-between;gap:20px;align-items:start;border-bottom:1px solid #c7caba;padding-bottom:26px}
+.brand{font:24px Georgia,serif;letter-spacing:5px;margin:0 0 20px}h1{font:normal 42px Georgia,serif;margin:0 0 12px}.intro{font:15px/1.7 system-ui,sans-serif;color:var(--muted);margin:0;max-width:700px}.edition{text-align:right;font-size:11px;letter-spacing:1px;line-height:2;color:var(--muted)}
+.controls{display:flex;justify-content:space-between;gap:20px;align-items:center;margin:24px 0 36px;font-size:12px}.control{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+button{font:inherit;color:inherit;background:transparent;border:1px solid #b6bdab;border-radius:5px;padding:8px 12px;cursor:pointer}button[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+.gallery{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:26px}.image-wrap{height:224px;display:flex;align-items:center;justify-content:center}
+.icon{background:#25281f;width:min(var(--icon-size),100%);aspect-ratio:1;border-radius:var(--mask);display:block;object-fit:cover;box-shadow:0 8px 18px #25281f18}
+.number{font-size:11px;color:var(--gold);letter-spacing:2px;margin-top:24px}h2{font:normal 22px Georgia,serif;margin:10px 0}article p{font:14px/1.6 system-ui,sans-serif;color:var(--muted);min-height:46px;margin:0 0 14px}a{color:var(--ink);text-underline-offset:4px;font-size:11px}
+.small-preview{border-top:1px solid #c7caba;margin-top:42px;padding-top:24px;display:flex;align-items:center;gap:42px}.small-preview h3{font:normal 20px Georgia,serif;margin:0 0 8px}.small-preview p{font-size:11px;color:var(--muted);margin:0}.dock{display:flex;gap:26px}.dock img{background:#25281f;width:60px;height:60px;border-radius:23%;box-shadow:0 4px 10px #25281f13}.dock span{display:block;font-size:10px;color:var(--muted);text-align:center;margin-top:8px}
+footer{margin-top:32px;display:flex;justify-content:space-between;gap:24px;color:var(--muted);font-size:11px;line-height:1.7}
+@media(max-width:1050px){main{padding:28px}.gallery{gap:16px}.image-wrap{height:175px}:root{--icon-size:170px}h2{font-size:19px}}
+@media(max-width:760px){header{display:block}h1{font-size:34px}.edition{text-align:left;margin-top:18px}.controls{display:block}.control{margin-top:12px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 20px}.image-wrap{height:auto;min-height:150px}.small-preview{display:block}.dock{gap:16px;margin-top:20px;flex-wrap:wrap}footer{display:block}footer a{display:inline-block;margin-top:12px}}
+</style></head>
+<body><main>
+<header><div><p class="brand">WYRMLE</p><h1>Five icon directions.</h1><p class="intro">One palette, five personalities. Exploring the wyrm, the word tiles and the rhythm of a daily puzzle.</p></div><div class="edition">APP ICON STUDIES<br>26 SEPTEMBER 2026<br>01 — 05</div></header>
+<div class="controls"><div class="control">Preview shape <button data-mask="23%" aria-pressed="true">Rounded</button><button data-mask="0" aria-pressed="false">Square</button></div><div class="control">Icon size <button data-size="208px" aria-pressed="true">Large</button><button data-size="96px" aria-pressed="false">96 px</button><button data-size="60px" aria-pressed="false">60 px</button></div></div>
+<section class="gallery" aria-label="Five icon concepts">
+<article><div class="image-wrap"><img class="icon" src="01-wyrm-w.png" alt="Wyrm W icon concept"></div><div class="number">01</div><h2>Wyrm W</h2><p>The mascot becomes the initial. Simple and distinctive.</p><a href="01-wyrm-w.png" download>Download full-size PNG ↗</a></article>
+<article><div class="image-wrap"><img class="icon" src="02-gold-letter-tile.png" alt="Golden letter tile icon concept"></div><div class="number">02</div><h2>Golden letter tile</h2><p>Makes the word-game connection immediate.</p><a href="02-gold-letter-tile.png" download>Download full-size PNG ↗</a></article>
+<article><div class="image-wrap"><img class="icon" src="03-coiled-wyrm.png" alt="Coiled wyrm icon concept"></div><div class="number">03</div><h2>Coiled wyrm</h2><p>A compact emblem with a daily-cycle feel.</p><a href="03-coiled-wyrm.png" download>Download full-size PNG ↗</a></article>
+<article><div class="image-wrap"><img class="icon" src="04-pixel-trail.png" alt="Pixel trail icon concept"></div><div class="number">04</div><h2>Pixel trail</h2><p>Closest to the game’s retro tile language.</p><a href="04-pixel-trail.png" download>Download full-size PNG ↗</a></article>
+<article><div class="image-wrap"><img class="icon" src="05-curious-wyrm.png" alt="Curious wyrm icon concept"></div><div class="number">05</div><h2>Curious wyrm</h2><p>A softer character with more personality.</p><a href="05-curious-wyrm.png" download>Download full-size PNG ↗</a></article>
+</section>
+<section class="small-preview"><div><h3>At home-screen size.</h3><p>60-pixel previews</p></div><div class="dock"><div><img src="01-wyrm-w.png" alt="Wyrm W at 60 pixels"><span>01</span></div><div><img src="02-gold-letter-tile.png" alt="Golden letter tile at 60 pixels"><span>02</span></div><div><img src="03-coiled-wyrm.png" alt="Coiled wyrm at 60 pixels"><span>03</span></div><div><img src="04-pixel-trail.png" alt="Pixel trail at 60 pixels"><span>04</span></div><div><img src="05-curious-wyrm.png" alt="Curious wyrm at 60 pixels"><span>05</span></div></div></section>
+<footer><span>Generated with the built-in image tool using the current wyrm as a brand reference.<br>Individual full-size concepts and exact prompts are saved alongside this page.</span><div><a href="prompts.json">Prompt set</a> · <a href="chaos-counters.md">CHAOS counter guide</a></div></footer>
+</main><script>
+for(const key of ['mask','size'])for(const button of document.querySelectorAll('[data-'+key+']'))button.addEventListener('click',()=>{document.documentElement.style.setProperty(key==='mask'?'--mask':'--icon-size',button.dataset[key]);for(const sibling of document.querySelectorAll('[data-'+key+']'))sibling.setAttribute('aria-pressed',String(sibling===button));});
+</script></body></html>

@@ -15,6 +15,7 @@ workerScope.onmessage = ({ data }) => {
       candidateCount: request.candidateCount,
       keep: 20,
       includeRegenTile: request.includeRegenTile,
+      regenTileCount: request.regenTileCount,
       refillLimit: request.refillLimit,
       onProgress: progress => workerScope.postMessage({ id: request.id, type: 'progress', progress }),
     }

@@ -316,7 +316,7 @@ test('validation rejects definition tampering even when solver rule keys correct
   assert.ok(!validatePuzzle(candidate(original), analysis).reasons.some(reason => reason.code === 'stale-or-incomplete-meanings'))
   assert.ok(validatePuzzle(candidate(changed), analysis).reasons.some(reason => reason.code === 'stale-or-incomplete-meanings'))
   const removedTable = candidate({ ...original, meaningLexicon: undefined })
-  for (const version of ['letter-strike-generator-3', 'letter-strike-generator-4']) {
+  for (const version of ['letter-strike-generator-3', 'letter-strike-generator-4', 'letter-strike-generator-5']) {
     removedTable.provenance.generatorVersion = version
     assert.ok(validatePuzzle(removedTable, analysis).reasons.some(reason => reason.code === 'missing-puzzle-meanings'))
   }

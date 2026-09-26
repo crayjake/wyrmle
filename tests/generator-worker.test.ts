@@ -36,3 +36,12 @@ test('generator worker preserves finite zero and bounded refill choices without 
     assert.throws(() => validateGeneratorRequest({ ...request, refillLimit }), /between 0 and 96/)
   }
 })
+
+test('generator worker preserves explicit Revive counts and rejects malformed values', () => {
+  const request = { id: 1, seed: 'revive-count', enemy: 'CHAOS', candidateCount: 2, includeRegenTile: true }
+  assert.equal(Object.hasOwn(validateGeneratorRequest(request), 'regenTileCount'), false)
+  for (const regenTileCount of [0, 1, 2, 3]) assert.equal(validateGeneratorRequest({ ...request, regenTileCount }).regenTileCount, regenTileCount)
+  for (const regenTileCount of [-1, 4, 1.5, Number.NaN, Number.POSITIVE_INFINITY, '2', null]) {
+    assert.throws(() => validateGeneratorRequest({ ...request, regenTileCount }), /between 0 and 3/)
+  }
+})

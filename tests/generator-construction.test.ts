@@ -109,7 +109,8 @@ test('legacy-bonus serialized candidates retain their deterministic semantic and
 test('default serialized candidates carry the complete definition-backed meaning table without type or length bonuses', () => {
   const candidate = createCandidate('ANGER', 'serialized-meanings', { refillLimit: 12 })
   const restored = JSON.parse(JSON.stringify(candidate))
-  assert.equal(restored.provenance.generatorVersion, 'letter-strike-generator-4')
+  assert.equal(restored.provenance.generatorVersion, 'letter-strike-generator-5')
+  assert.equal(restored.construction.design, 'sustained-discovery')
   assert.equal(restored.encounter.meaningLexicon.policy, 'defined-only')
   assert.ok(Object.keys(restored.encounter.meaningLexicon.words).length > 0)
   assert.deepEqual(restored.encounter.meaningLexicon, candidate.encounter.meaningLexicon)

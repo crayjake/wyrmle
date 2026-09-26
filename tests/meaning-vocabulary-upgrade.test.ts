@@ -286,8 +286,24 @@ const tomorrow = getDailyPuzzle('2026-09-27')
 const archivedTomorrow = getDailyPuzzleForVersion('2026-09-27', 'letter-strike-4', 4)
 const tomorrowKey = getRunStorageKey(tomorrow.puzzleId)
 
+test('the HALCYONS correction preserves played v12 attempts and upgrades only fresh attempts', () => {
+  const archived = getDailyPuzzleForVersion('2026-09-26', 'letter-strike-7', 12)
+  const storageKey = getRunStorageKey(modelPublication.puzzleId)
+  for (const compact of [true, false]) {
+    const storage = new MemoryStorage()
+    const fixture = historicalRun([[1, 9, 0]], compact, 0, archived) // AGO
+    storage.setItem(storageKey, fixture.raw)
+    const loaded = loadDailySession(modelPublication, storage)
+    assert.equal(loaded.error, null)
+    assert.equal(loaded.game!.encounter, archived.encounter)
+    assert.equal(storage.getItem(storageKey), fixture.raw)
+    resetDailyPuzzle(modelPublication.puzzleId, storage)
+    assert.equal(loadDailySession(modelPublication, storage).game!.encounter, modelPublication.encounter)
+  }
+})
+
 test('tomorrow shares the new encounter while played v4 runs and their undo history remain pinned', () => {
-  assert.equal(tomorrow.puzzleVersion, 12)
+  assert.equal(tomorrow.puzzleVersion, 13)
   assert.equal(tomorrow.encounter, modelPublication.encounter)
   for (const compact of [true, false]) {
     const storage = new MemoryStorage()
@@ -313,7 +329,7 @@ test('tomorrow shares the new encounter while played v4 runs and their undo hist
   }
 })
 
-test('tomorrow preserves completed v4 evidence until reset and then starts the shared v12 puzzle', () => {
+test('tomorrow preserves completed v4 evidence until reset and then starts the shared v13 puzzle', () => {
   const turns = [[0, 1, 2], [4, 5, 15, 18, 16], [11, 20, 9, 10, 14, 17], [8, 21, 22, 27], [24, 30, 33, 26, 25, 19]]
   const fixture = historicalRun(turns, true, 0, archivedTomorrow)
   assert.equal(fixture.game.status, 'won')
@@ -340,7 +356,7 @@ test('tomorrow preserves completed v4 evidence until reset and then starts the s
   }
 })
 
-test('tomorrow fresh sessions and untouched v4 Begin snapshots load the shared v12 without rewriting storage', () => {
+test('tomorrow fresh sessions and untouched v4 Begin snapshots load the shared v13 without rewriting storage', () => {
   for (const beginOnly of [false, true]) {
     const storage = new MemoryStorage()
     const raw = beginOnly ? historicalRun([], true, 0, archivedTomorrow).raw : null

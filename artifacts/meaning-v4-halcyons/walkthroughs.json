@@ -1,0 +1,4087 @@
+{
+  "candidateId": "daily-chaos-2026-09-26-v13",
+  "routes": [
+    {
+      "words": [
+        "AGO",
+        "RESEARCH",
+        "REASON"
+      ],
+      "tileIds": [
+        [
+          1,
+          9,
+          0
+        ],
+        [
+          13,
+          11,
+          18,
+          16,
+          15,
+          3,
+          8,
+          7
+        ],
+        [
+          19,
+          20,
+          23,
+          6,
+          26,
+          12
+        ]
+      ],
+      "livesRemaining": 3,
+      "turns": [
+        {
+          "word": "AGO",
+          "tileIds": [
+            1,
+            9,
+            0
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 2,
+          "lives": 4,
+          "refills": 9,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-ago__5.00.00.past.00",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 2,
+            "selectedAnchor": "disoriented: having lost your bearings; confused as to time or place or personal identity",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "RESEARCH",
+          "tileIds": [
+            13,
+            11,
+            18,
+            16,
+            15,
+            3,
+            8,
+            7
+          ],
+          "meaning": "COUNTER",
+          "hits": 4,
+          "lives": 4,
+          "refills": 1,
+          "activeTiles": 16,
+          "recovery": [
+            {
+              "tileId": 15,
+              "enemyLetterId": "enemy-2",
+              "letter": "A",
+              "hitsBefore": 0,
+              "hitsAfter": 1
+            }
+          ],
+          "senseId": "oewn-research__2.32.00..",
+          "assessment": {
+            "counterScore": 0.7243,
+            "resistedScore": 0,
+            "margin": 0.7243,
+            "sensesEvaluated": 4,
+            "selectedAnchor": "systematically: in a systematic or consistent manner",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "REASON",
+          "tileIds": [
+            19,
+            20,
+            23,
+            6,
+            26,
+            12
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 11,
+          "recovery": [],
+          "senseId": "oewn-reason__1.26.00..",
+          "assessment": {
+            "counterScore": 0.0871,
+            "resistedScore": 0,
+            "margin": 0.0871,
+            "sensesEvaluated": 9,
+            "selectedAnchor": "calmness: steadiness of mind under stress",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "ALONG",
+        "RESEARCH",
+        "REASON"
+      ],
+      "tileIds": [
+        [
+          1,
+          10,
+          0,
+          12,
+          9
+        ],
+        [
+          13,
+          11,
+          18,
+          16,
+          15,
+          19,
+          8,
+          7
+        ],
+        [
+          3,
+          20,
+          23,
+          6,
+          26,
+          21
+        ]
+      ],
+      "livesRemaining": 3,
+      "turns": [
+        {
+          "word": "ALONG",
+          "tileIds": [
+            1,
+            10,
+            0,
+            12,
+            9
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 2,
+          "lives": 4,
+          "refills": 7,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-along__4.02.00..",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 5,
+            "selectedAnchor": "harmoniously: in a harmonious manner",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "RESEARCH",
+          "tileIds": [
+            13,
+            11,
+            18,
+            16,
+            15,
+            19,
+            8,
+            7
+          ],
+          "meaning": "COUNTER",
+          "hits": 4,
+          "lives": 4,
+          "refills": 0,
+          "activeTiles": 15,
+          "recovery": [
+            {
+              "tileId": 15,
+              "enemyLetterId": "enemy-2",
+              "letter": "A",
+              "hitsBefore": 0,
+              "hitsAfter": 1
+            }
+          ],
+          "senseId": "oewn-research__2.32.00..",
+          "assessment": {
+            "counterScore": 0.7243,
+            "resistedScore": 0,
+            "margin": 0.7243,
+            "sensesEvaluated": 4,
+            "selectedAnchor": "systematically: in a systematic or consistent manner",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "REASON",
+          "tileIds": [
+            3,
+            20,
+            23,
+            6,
+            26,
+            21
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 9,
+          "recovery": [],
+          "senseId": "oewn-reason__1.26.00..",
+          "assessment": {
+            "counterScore": 0.0871,
+            "resistedScore": 0,
+            "margin": 0.0871,
+            "sensesEvaluated": 9,
+            "selectedAnchor": "calmness: steadiness of mind under stress",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "AMONG",
+        "RESEARCH",
+        "REASON"
+      ],
+      "tileIds": [
+        [
+          1,
+          14,
+          0,
+          12,
+          9
+        ],
+        [
+          13,
+          11,
+          18,
+          16,
+          15,
+          19,
+          8,
+          7
+        ],
+        [
+          3,
+          20,
+          23,
+          6,
+          26,
+          21
+        ]
+      ],
+      "livesRemaining": 3,
+      "turns": [
+        {
+          "word": "AMONG",
+          "tileIds": [
+            1,
+            14,
+            0,
+            12,
+            9
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 2,
+          "lives": 4,
+          "refills": 7,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "wikt-en-e5217fe6569307ee1e55",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 9,
+            "selectedAnchor": "collectedly: in a self-collected or self-possessed manner",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "RESEARCH",
+          "tileIds": [
+            13,
+            11,
+            18,
+            16,
+            15,
+            19,
+            8,
+            7
+          ],
+          "meaning": "COUNTER",
+          "hits": 4,
+          "lives": 4,
+          "refills": 0,
+          "activeTiles": 15,
+          "recovery": [
+            {
+              "tileId": 15,
+              "enemyLetterId": "enemy-2",
+              "letter": "A",
+              "hitsBefore": 0,
+              "hitsAfter": 1
+            }
+          ],
+          "senseId": "oewn-research__2.32.00..",
+          "assessment": {
+            "counterScore": 0.7243,
+            "resistedScore": 0,
+            "margin": 0.7243,
+            "sensesEvaluated": 4,
+            "selectedAnchor": "systematically: in a systematic or consistent manner",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "REASON",
+          "tileIds": [
+            3,
+            20,
+            23,
+            6,
+            26,
+            21
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 9,
+          "recovery": [],
+          "senseId": "oewn-reason__1.26.00..",
+          "assessment": {
+            "counterScore": 0.0871,
+            "resistedScore": 0,
+            "margin": 0.0871,
+            "sensesEvaluated": 9,
+            "selectedAnchor": "calmness: steadiness of mind under stress",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "BODY",
+        "RESEARCH",
+        "REASON"
+      ],
+      "tileIds": [
+        [
+          2,
+          0,
+          5,
+          4
+        ],
+        [
+          13,
+          11,
+          18,
+          16,
+          1,
+          19,
+          8,
+          7
+        ],
+        [
+          3,
+          20,
+          23,
+          6,
+          26,
+          12
+        ]
+      ],
+      "livesRemaining": 3,
+      "turns": [
+        {
+          "word": "BODY",
+          "tileIds": [
+            2,
+            0,
+            5,
+            4
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 4,
+          "refills": 8,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-body__1.14.02..",
+          "assessment": {
+            "counterScore": 0.7903,
+            "resistedScore": 0,
+            "margin": 0.7903,
+            "sensesEvaluated": 12,
+            "selectedAnchor": "systematise: arrange according to a system or reduce to a system",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "RESEARCH",
+          "tileIds": [
+            13,
+            11,
+            18,
+            16,
+            1,
+            19,
+            8,
+            7
+          ],
+          "meaning": "COUNTER",
+          "hits": 4,
+          "lives": 4,
+          "refills": 0,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-research__2.32.00..",
+          "assessment": {
+            "counterScore": 0.7243,
+            "resistedScore": 0,
+            "margin": 0.7243,
+            "sensesEvaluated": 4,
+            "selectedAnchor": "systematically: in a systematic or consistent manner",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "REASON",
+          "tileIds": [
+            3,
+            20,
+            23,
+            6,
+            26,
+            12
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 10,
+          "recovery": [],
+          "senseId": "oewn-reason__1.26.00..",
+          "assessment": {
+            "counterScore": 0.0871,
+            "resistedScore": 0,
+            "margin": 0.0871,
+            "sensesEvaluated": 9,
+            "selectedAnchor": "calmness: steadiness of mind under stress",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "BOY",
+        "RESEARCH",
+        "REASON"
+      ],
+      "tileIds": [
+        [
+          2,
+          0,
+          4
+        ],
+        [
+          13,
+          11,
+          18,
+          16,
+          1,
+          3,
+          8,
+          7
+        ],
+        [
+          19,
+          20,
+          23,
+          6,
+          26,
+          12
+        ]
+      ],
+      "livesRemaining": 3,
+      "turns": [
+        {
+          "word": "BOY",
+          "tileIds": [
+            2,
+            0,
+            4
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 4,
+          "refills": 9,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-boy__1.18.01..",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 4,
+            "selectedAnchor": "disarray: untidiness (especially of clothing and appearance)",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "RESEARCH",
+          "tileIds": [
+            13,
+            11,
+            18,
+            16,
+            1,
+            3,
+            8,
+            7
+          ],
+          "meaning": "COUNTER",
+          "hits": 4,
+          "lives": 4,
+          "refills": 1,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-research__2.32.00..",
+          "assessment": {
+            "counterScore": 0.7243,
+            "resistedScore": 0,
+            "margin": 0.7243,
+            "sensesEvaluated": 4,
+            "selectedAnchor": "systematically: in a systematic or consistent manner",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "REASON",
+          "tileIds": [
+            19,
+            20,
+            23,
+            6,
+            26,
+            12
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 11,
+          "recovery": [],
+          "senseId": "oewn-reason__1.26.00..",
+          "assessment": {
+            "counterScore": 0.0871,
+            "resistedScore": 0,
+            "margin": 0.0871,
+            "sensesEvaluated": 9,
+            "selectedAnchor": "calmness: steadiness of mind under stress",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "DOG",
+        "RESEARCH",
+        "REASON"
+      ],
+      "tileIds": [
+        [
+          5,
+          0,
+          9
+        ],
+        [
+          13,
+          11,
+          18,
+          16,
+          1,
+          3,
+          8,
+          7
+        ],
+        [
+          19,
+          20,
+          23,
+          6,
+          26,
+          12
+        ]
+      ],
+      "livesRemaining": 3,
+      "turns": [
+        {
+          "word": "DOG",
+          "tileIds": [
+            5,
+            0,
+            9
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 4,
+          "refills": 9,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-dog__1.18.01..",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 8,
+            "selectedAnchor": "untidiness: the trait of being untidy and messy",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "RESEARCH",
+          "tileIds": [
+            13,
+            11,
+            18,
+            16,
+            1,
+            3,
+            8,
+            7
+          ],
+          "meaning": "COUNTER",
+          "hits": 4,
+          "lives": 4,
+          "refills": 1,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-research__2.32.00..",
+          "assessment": {
+            "counterScore": 0.7243,
+            "resistedScore": 0,
+            "margin": 0.7243,
+            "sensesEvaluated": 4,
+            "selectedAnchor": "systematically: in a systematic or consistent manner",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "REASON",
+          "tileIds": [
+            19,
+            20,
+            23,
+            6,
+            26,
+            12
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 11,
+          "recovery": [],
+          "senseId": "oewn-reason__1.26.00..",
+          "assessment": {
+            "counterScore": 0.0871,
+            "resistedScore": 0,
+            "margin": 0.0871,
+            "sensesEvaluated": 9,
+            "selectedAnchor": "calmness: steadiness of mind under stress",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "GOAL",
+        "RESEARCH",
+        "REASON"
+      ],
+      "tileIds": [
+        [
+          9,
+          0,
+          15,
+          10
+        ],
+        [
+          13,
+          11,
+          18,
+          16,
+          1,
+          19,
+          8,
+          7
+        ],
+        [
+          3,
+          20,
+          23,
+          6,
+          26,
+          21
+        ]
+      ],
+      "livesRemaining": 3,
+      "turns": [
+        {
+          "word": "GOAL",
+          "tileIds": [
+            9,
+            0,
+            15,
+            10
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 4,
+          "refills": 8,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-goal__1.09.00..",
+          "assessment": {
+            "counterScore": 0.6487,
+            "resistedScore": 0,
+            "margin": 0.6487,
+            "sensesEvaluated": 4,
+            "selectedAnchor": "design: plan something for a specific role or purpose or effect",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "RESEARCH",
+          "tileIds": [
+            13,
+            11,
+            18,
+            16,
+            1,
+            19,
+            8,
+            7
+          ],
+          "meaning": "COUNTER",
+          "hits": 4,
+          "lives": 4,
+          "refills": 0,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-research__2.32.00..",
+          "assessment": {
+            "counterScore": 0.7243,
+            "resistedScore": 0,
+            "margin": 0.7243,
+            "sensesEvaluated": 4,
+            "selectedAnchor": "systematically: in a systematic or consistent manner",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "REASON",
+          "tileIds": [
+            3,
+            20,
+            23,
+            6,
+            26,
+            21
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 10,
+          "recovery": [],
+          "senseId": "oewn-reason__1.26.00..",
+          "assessment": {
+            "counterScore": 0.0871,
+            "resistedScore": 0,
+            "margin": 0.0871,
+            "sensesEvaluated": 9,
+            "selectedAnchor": "calmness: steadiness of mind under stress",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "GOLD",
+        "RESEARCH",
+        "REASON"
+      ],
+      "tileIds": [
+        [
+          9,
+          0,
+          10,
+          5
+        ],
+        [
+          13,
+          11,
+          18,
+          16,
+          1,
+          19,
+          8,
+          7
+        ],
+        [
+          3,
+          20,
+          23,
+          6,
+          26,
+          12
+        ]
+      ],
+      "livesRemaining": 3,
+      "turns": [
+        {
+          "word": "GOLD",
+          "tileIds": [
+            9,
+            0,
+            10,
+            5
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 4,
+          "refills": 8,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-gold__1.21.01..",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 7,
+            "selectedAnchor": "neatly: with neatness",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "RESEARCH",
+          "tileIds": [
+            13,
+            11,
+            18,
+            16,
+            1,
+            19,
+            8,
+            7
+          ],
+          "meaning": "COUNTER",
+          "hits": 4,
+          "lives": 4,
+          "refills": 0,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-research__2.32.00..",
+          "assessment": {
+            "counterScore": 0.7243,
+            "resistedScore": 0,
+            "margin": 0.7243,
+            "sensesEvaluated": 4,
+            "selectedAnchor": "systematically: in a systematic or consistent manner",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "REASON",
+          "tileIds": [
+            3,
+            20,
+            23,
+            6,
+            26,
+            12
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 10,
+          "recovery": [],
+          "senseId": "oewn-reason__1.26.00..",
+          "assessment": {
+            "counterScore": 0.0871,
+            "resistedScore": 0,
+            "margin": 0.0871,
+            "sensesEvaluated": 9,
+            "selectedAnchor": "calmness: steadiness of mind under stress",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "LONG",
+        "RESEARCH",
+        "REASON"
+      ],
+      "tileIds": [
+        [
+          10,
+          0,
+          12,
+          9
+        ],
+        [
+          13,
+          11,
+          18,
+          16,
+          1,
+          19,
+          8,
+          7
+        ],
+        [
+          3,
+          20,
+          23,
+          6,
+          26,
+          21
+        ]
+      ],
+      "livesRemaining": 3,
+      "turns": [
+        {
+          "word": "LONG",
+          "tileIds": [
+            10,
+            0,
+            12,
+            9
+          ],
+          "meaning": "COUNTER",
+          "hits": 1,
+          "lives": 4,
+          "refills": 8,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-long__5.00.00.provident.00",
+          "assessment": {
+            "counterScore": 0.9474,
+            "resistedScore": 0,
+            "margin": 0.9474,
+            "sensesEvaluated": 12,
+            "selectedAnchor": "plan: make plans for something",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "RESEARCH",
+          "tileIds": [
+            13,
+            11,
+            18,
+            16,
+            1,
+            19,
+            8,
+            7
+          ],
+          "meaning": "COUNTER",
+          "hits": 4,
+          "lives": 4,
+          "refills": 0,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-research__2.32.00..",
+          "assessment": {
+            "counterScore": 0.7243,
+            "resistedScore": 0,
+            "margin": 0.7243,
+            "sensesEvaluated": 4,
+            "selectedAnchor": "systematically: in a systematic or consistent manner",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "REASON",
+          "tileIds": [
+            3,
+            20,
+            23,
+            6,
+            26,
+            21
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 10,
+          "recovery": [],
+          "senseId": "oewn-reason__1.26.00..",
+          "assessment": {
+            "counterScore": 0.0871,
+            "resistedScore": 0,
+            "margin": 0.0871,
+            "sensesEvaluated": 9,
+            "selectedAnchor": "calmness: steadiness of mind under stress",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "ONLY",
+        "RESEARCH",
+        "REASON"
+      ],
+      "tileIds": [
+        [
+          0,
+          12,
+          10,
+          4
+        ],
+        [
+          13,
+          11,
+          18,
+          16,
+          1,
+          19,
+          8,
+          7
+        ],
+        [
+          3,
+          20,
+          23,
+          6,
+          26,
+          21
+        ]
+      ],
+      "livesRemaining": 3,
+      "turns": [
+        {
+          "word": "ONLY",
+          "tileIds": [
+            0,
+            12,
+            10,
+            4
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 4,
+          "refills": 8,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-only__4.02.01..",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 8,
+            "selectedAnchor": "uncluttered: having nothing extraneous",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "RESEARCH",
+          "tileIds": [
+            13,
+            11,
+            18,
+            16,
+            1,
+            19,
+            8,
+            7
+          ],
+          "meaning": "COUNTER",
+          "hits": 4,
+          "lives": 4,
+          "refills": 0,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-research__2.32.00..",
+          "assessment": {
+            "counterScore": 0.7243,
+            "resistedScore": 0,
+            "margin": 0.7243,
+            "sensesEvaluated": 4,
+            "selectedAnchor": "systematically: in a systematic or consistent manner",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "REASON",
+          "tileIds": [
+            3,
+            20,
+            23,
+            6,
+            26,
+            21
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 10,
+          "recovery": [],
+          "senseId": "oewn-reason__1.26.00..",
+          "assessment": {
+            "counterScore": 0.0871,
+            "resistedScore": 0,
+            "margin": 0.0871,
+            "sensesEvaluated": 9,
+            "selectedAnchor": "calmness: steadiness of mind under stress",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "REASON",
+        "MATCH",
+        "REASON"
+      ],
+      "tileIds": [
+        [
+          13,
+          11,
+          1,
+          6,
+          0,
+          12
+        ],
+        [
+          14,
+          15,
+          17,
+          8,
+          7
+        ],
+        [
+          19,
+          16,
+          23,
+          18,
+          26,
+          21
+        ]
+      ],
+      "livesRemaining": 3,
+      "turns": [
+        {
+          "word": "REASON",
+          "tileIds": [
+            13,
+            11,
+            1,
+            6,
+            0,
+            12
+          ],
+          "meaning": "COUNTER",
+          "hits": 3,
+          "lives": 5,
+          "refills": 6,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-reason__1.26.00..",
+          "assessment": {
+            "counterScore": 0.0871,
+            "resistedScore": 0,
+            "margin": 0.0871,
+            "sensesEvaluated": 9,
+            "selectedAnchor": "calmness: steadiness of mind under stress",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "MATCH",
+          "tileIds": [
+            14,
+            15,
+            17,
+            8,
+            7
+          ],
+          "meaning": "COUNTER",
+          "hits": 3,
+          "lives": 4,
+          "refills": 1,
+          "activeTiles": 16,
+          "recovery": [
+            {
+              "tileId": 15,
+              "enemyLetterId": "enemy-2",
+              "letter": "A",
+              "hitsBefore": 0,
+              "hitsAfter": 1
+            }
+          ],
+          "senseId": "oewn-match__2.30.01..",
+          "assessment": {
+            "counterScore": 0.9475,
+            "resistedScore": 0,
+            "margin": 0.9475,
+            "sensesEvaluated": 18,
+            "selectedAnchor": "harmonious: exhibiting equivalence or correspondence among constituents of an entity or between different entities",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "REASON",
+          "tileIds": [
+            19,
+            16,
+            23,
+            18,
+            26,
+            21
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 11,
+          "recovery": [],
+          "senseId": "oewn-reason__1.26.00..",
+          "assessment": {
+            "counterScore": 0.0871,
+            "resistedScore": 0,
+            "margin": 0.0871,
+            "sensesEvaluated": 9,
+            "selectedAnchor": "calmness: steadiness of mind under stress",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "AND",
+        "RESEARCH",
+        "COOL",
+        "HAS"
+      ],
+      "tileIds": [
+        [
+          1,
+          12,
+          5
+        ],
+        [
+          13,
+          11,
+          18,
+          16,
+          15,
+          3,
+          8,
+          7
+        ],
+        [
+          24,
+          0,
+          26,
+          10
+        ],
+        [
+          22,
+          23,
+          6
+        ]
+      ],
+      "livesRemaining": 2,
+      "turns": [
+        {
+          "word": "AND",
+          "tileIds": [
+            1,
+            12,
+            5
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 4,
+          "refills": 9,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "wikt-en-9de47518ec40a4c73152",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 13,
+            "selectedAnchor": "coherent: marked by an orderly, logical, and aesthetically consistent relation of parts",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "RESEARCH",
+          "tileIds": [
+            13,
+            11,
+            18,
+            16,
+            15,
+            3,
+            8,
+            7
+          ],
+          "meaning": "COUNTER",
+          "hits": 4,
+          "lives": 4,
+          "refills": 1,
+          "activeTiles": 16,
+          "recovery": [
+            {
+              "tileId": 15,
+              "enemyLetterId": "enemy-2",
+              "letter": "A",
+              "hitsBefore": 0,
+              "hitsAfter": 1
+            }
+          ],
+          "senseId": "oewn-research__2.32.00..",
+          "assessment": {
+            "counterScore": 0.7243,
+            "resistedScore": 0,
+            "margin": 0.7243,
+            "sensesEvaluated": 4,
+            "selectedAnchor": "systematically: in a systematic or consistent manner",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "COOL",
+          "tileIds": [
+            24,
+            0,
+            26,
+            10
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 13,
+          "recovery": [],
+          "senseId": "oewn-cool__5.00.00.composed.00",
+          "assessment": {
+            "counterScore": 0.9914,
+            "resistedScore": 0,
+            "margin": 0.9914,
+            "sensesEvaluated": 12,
+            "selectedAnchor": "composed: serenely self-possessed and free from agitation especially in times of stress",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "HAS",
+          "tileIds": [
+            22,
+            23,
+            6
+          ],
+          "meaning": "COUNTER",
+          "hits": 1,
+          "lives": 2,
+          "refills": 0,
+          "activeTiles": 10,
+          "recovery": [],
+          "senseId": "oewn-have__2.36.00..",
+          "assessment": {
+            "counterScore": 0.3046,
+            "resistedScore": 0,
+            "margin": 0.3046,
+            "sensesEvaluated": 19,
+            "selectedAnchor": "organization: an ordered manner; orderliness by virtue of being methodical and well organized",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "BAD",
+        "RESEARCH",
+        "COOL",
+        "HAS"
+      ],
+      "tileIds": [
+        [
+          2,
+          1,
+          5
+        ],
+        [
+          13,
+          11,
+          18,
+          16,
+          15,
+          3,
+          8,
+          7
+        ],
+        [
+          24,
+          0,
+          26,
+          10
+        ],
+        [
+          22,
+          23,
+          6
+        ]
+      ],
+      "livesRemaining": 2,
+      "turns": [
+        {
+          "word": "BAD",
+          "tileIds": [
+            2,
+            1,
+            5
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 4,
+          "refills": 9,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-bad__5.00.00.unhealthy.00",
+          "assessment": {
+            "counterScore": 0.4631,
+            "resistedScore": 0.9089,
+            "margin": -0.4459,
+            "sensesEvaluated": 17,
+            "selectedAnchor": "disorder: a condition in which things are not in their expected places",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "RESEARCH",
+          "tileIds": [
+            13,
+            11,
+            18,
+            16,
+            15,
+            3,
+            8,
+            7
+          ],
+          "meaning": "COUNTER",
+          "hits": 4,
+          "lives": 4,
+          "refills": 1,
+          "activeTiles": 16,
+          "recovery": [
+            {
+              "tileId": 15,
+              "enemyLetterId": "enemy-2",
+              "letter": "A",
+              "hitsBefore": 0,
+              "hitsAfter": 1
+            }
+          ],
+          "senseId": "oewn-research__2.32.00..",
+          "assessment": {
+            "counterScore": 0.7243,
+            "resistedScore": 0,
+            "margin": 0.7243,
+            "sensesEvaluated": 4,
+            "selectedAnchor": "systematically: in a systematic or consistent manner",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "COOL",
+          "tileIds": [
+            24,
+            0,
+            26,
+            10
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 13,
+          "recovery": [],
+          "senseId": "oewn-cool__5.00.00.composed.00",
+          "assessment": {
+            "counterScore": 0.9914,
+            "resistedScore": 0,
+            "margin": 0.9914,
+            "sensesEvaluated": 12,
+            "selectedAnchor": "composed: serenely self-possessed and free from agitation especially in times of stress",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "HAS",
+          "tileIds": [
+            22,
+            23,
+            6
+          ],
+          "meaning": "COUNTER",
+          "hits": 1,
+          "lives": 2,
+          "refills": 0,
+          "activeTiles": 10,
+          "recovery": [],
+          "senseId": "oewn-have__2.36.00..",
+          "assessment": {
+            "counterScore": 0.3046,
+            "resistedScore": 0,
+            "margin": 0.3046,
+            "sensesEvaluated": 19,
+            "selectedAnchor": "organization: an ordered manner; orderliness by virtue of being methodical and well organized",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "CARD",
+        "HAS",
+        "GONE",
+        "REASON"
+      ],
+      "tileIds": [
+        [
+          8,
+          1,
+          13,
+          5
+        ],
+        [
+          7,
+          15,
+          18
+        ],
+        [
+          9,
+          0,
+          12,
+          11
+        ],
+        [
+          19,
+          16,
+          23,
+          6,
+          26,
+          21
+        ]
+      ],
+      "livesRemaining": 2,
+      "turns": [
+        {
+          "word": "CARD",
+          "tileIds": [
+            8,
+            1,
+            13,
+            5
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 5,
+          "refills": 8,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-card__1.10.03..",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 13,
+            "selectedAnchor": "befogged: stupefied by alcoholic drink",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "HAS",
+          "tileIds": [
+            7,
+            15,
+            18
+          ],
+          "meaning": "COUNTER",
+          "hits": 3,
+          "lives": 4,
+          "refills": 5,
+          "activeTiles": 16,
+          "recovery": [
+            {
+              "tileId": 15,
+              "enemyLetterId": "enemy-2",
+              "letter": "A",
+              "hitsBefore": 0,
+              "hitsAfter": 1
+            }
+          ],
+          "senseId": "oewn-have__2.36.00..",
+          "assessment": {
+            "counterScore": 0.3046,
+            "resistedScore": 0,
+            "margin": 0.3046,
+            "sensesEvaluated": 19,
+            "selectedAnchor": "organization: an ordered manner; orderliness by virtue of being methodical and well organized",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "GONE",
+          "tileIds": [
+            9,
+            0,
+            12,
+            11
+          ],
+          "meaning": "COUNTER",
+          "hits": 1,
+          "lives": 3,
+          "refills": 1,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-go__2.42.11..",
+          "assessment": {
+            "counterScore": 0.9553,
+            "resistedScore": 0.7246,
+            "margin": 0.2307,
+            "sensesEvaluated": 36,
+            "selectedAnchor": "accord: go together",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "REASON",
+          "tileIds": [
+            19,
+            16,
+            23,
+            6,
+            26,
+            21
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 2,
+          "refills": 0,
+          "activeTiles": 11,
+          "recovery": [],
+          "senseId": "oewn-reason__1.26.00..",
+          "assessment": {
+            "counterScore": 0.0871,
+            "resistedScore": 0,
+            "margin": 0.0871,
+            "sensesEvaluated": 9,
+            "selectedAnchor": "calmness: steadiness of mind under stress",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "CARE",
+        "HAS",
+        "DONE",
+        "REASON"
+      ],
+      "tileIds": [
+        [
+          8,
+          15,
+          13,
+          11
+        ],
+        [
+          7,
+          1,
+          18
+        ],
+        [
+          5,
+          0,
+          12,
+          16
+        ],
+        [
+          19,
+          20,
+          23,
+          6,
+          26,
+          21
+        ]
+      ],
+      "livesRemaining": 2,
+      "turns": [
+        {
+          "word": "CARE",
+          "tileIds": [
+            8,
+            15,
+            13,
+            11
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 5,
+          "refills": 8,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-care__1.12.01..",
+          "assessment": {
+            "counterScore": 0.4123,
+            "resistedScore": 0,
+            "margin": 0.4123,
+            "sensesEvaluated": 11,
+            "selectedAnchor": "relaxation: a feeling of refreshing tranquility and an absence of tension or worry",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "HAS",
+          "tileIds": [
+            7,
+            1,
+            18
+          ],
+          "meaning": "COUNTER",
+          "hits": 3,
+          "lives": 4,
+          "refills": 5,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-have__2.36.00..",
+          "assessment": {
+            "counterScore": 0.3046,
+            "resistedScore": 0,
+            "margin": 0.3046,
+            "sensesEvaluated": 19,
+            "selectedAnchor": "organization: an ordered manner; orderliness by virtue of being methodical and well organized",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "DONE",
+          "tileIds": [
+            5,
+            0,
+            12,
+            16
+          ],
+          "meaning": "COUNTER",
+          "hits": 1,
+          "lives": 3,
+          "refills": 1,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-do__2.29.04..",
+          "assessment": {
+            "counterScore": 0.8541,
+            "resistedScore": 0,
+            "margin": 0.8541,
+            "sensesEvaluated": 15,
+            "selectedAnchor": "design: plan something for a specific role or purpose or effect",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "REASON",
+          "tileIds": [
+            19,
+            20,
+            23,
+            6,
+            26,
+            21
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 2,
+          "refills": 0,
+          "activeTiles": 11,
+          "recovery": [],
+          "senseId": "oewn-reason__1.26.00..",
+          "assessment": {
+            "counterScore": 0.0871,
+            "resistedScore": 0,
+            "margin": 0.0871,
+            "sensesEvaluated": 9,
+            "selectedAnchor": "calmness: steadiness of mind under stress",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "CHANGE",
+        "SORT",
+        "HAD",
+        "COOL"
+      ],
+      "tileIds": [
+        [
+          8,
+          7,
+          1,
+          12,
+          9,
+          11
+        ],
+        [
+          18,
+          0,
+          13,
+          17
+        ],
+        [
+          22,
+          23,
+          5
+        ],
+        [
+          24,
+          26,
+          27,
+          10
+        ]
+      ],
+      "livesRemaining": 2,
+      "turns": [
+        {
+          "word": "CHANGE",
+          "tileIds": [
+            8,
+            7,
+            1,
+            12,
+            9,
+            11
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 2,
+          "lives": 4,
+          "refills": 6,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-change__1.06.00..",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 20,
+            "selectedAnchor": "disarray: untidiness (especially of clothing and appearance)",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "SORT",
+          "tileIds": [
+            18,
+            0,
+            13,
+            17
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 4,
+          "refills": 2,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-sort__2.31.00..",
+          "assessment": {
+            "counterScore": 0.9917,
+            "resistedScore": 0,
+            "margin": 0.9917,
+            "sensesEvaluated": 6,
+            "selectedAnchor": "sort: arrange or order by classes or categories",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "HAD",
+          "tileIds": [
+            22,
+            23,
+            5
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 15,
+          "recovery": [],
+          "senseId": "oewn-have__2.36.00..",
+          "assessment": {
+            "counterScore": 0.3046,
+            "resistedScore": 0,
+            "margin": 0.3046,
+            "sensesEvaluated": 18,
+            "selectedAnchor": "organization: an ordered manner; orderliness by virtue of being methodical and well organized",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "COOL",
+          "tileIds": [
+            24,
+            26,
+            27,
+            10
+          ],
+          "meaning": "COUNTER",
+          "hits": 1,
+          "lives": 2,
+          "refills": 0,
+          "activeTiles": 11,
+          "recovery": [],
+          "senseId": "oewn-cool__5.00.00.composed.00",
+          "assessment": {
+            "counterScore": 0.9914,
+            "resistedScore": 0,
+            "margin": 0.9914,
+            "sensesEvaluated": 12,
+            "selectedAnchor": "composed: serenely self-possessed and free from agitation especially in times of stress",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "CHARGE",
+        "SORT",
+        "HAD",
+        "COOL"
+      ],
+      "tileIds": [
+        [
+          8,
+          7,
+          1,
+          13,
+          9,
+          11
+        ],
+        [
+          18,
+          0,
+          19,
+          17
+        ],
+        [
+          22,
+          23,
+          5
+        ],
+        [
+          24,
+          26,
+          27,
+          10
+        ]
+      ],
+      "livesRemaining": 2,
+      "turns": [
+        {
+          "word": "CHARGE",
+          "tileIds": [
+            8,
+            7,
+            1,
+            13,
+            9,
+            11
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 2,
+          "lives": 5,
+          "refills": 6,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-charge__2.37.05..",
+          "assessment": {
+            "counterScore": 0.0003,
+            "resistedScore": 0,
+            "margin": 0.0003,
+            "sensesEvaluated": 40,
+            "selectedAnchor": "calm: not agitated; without losing self-possession",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "SORT",
+          "tileIds": [
+            18,
+            0,
+            19,
+            17
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 4,
+          "refills": 2,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-sort__2.31.00..",
+          "assessment": {
+            "counterScore": 0.9917,
+            "resistedScore": 0,
+            "margin": 0.9917,
+            "sensesEvaluated": 6,
+            "selectedAnchor": "sort: arrange or order by classes or categories",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "HAD",
+          "tileIds": [
+            22,
+            23,
+            5
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 15,
+          "recovery": [],
+          "senseId": "oewn-have__2.36.00..",
+          "assessment": {
+            "counterScore": 0.3046,
+            "resistedScore": 0,
+            "margin": 0.3046,
+            "sensesEvaluated": 18,
+            "selectedAnchor": "organization: an ordered manner; orderliness by virtue of being methodical and well organized",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "COOL",
+          "tileIds": [
+            24,
+            26,
+            27,
+            10
+          ],
+          "meaning": "COUNTER",
+          "hits": 1,
+          "lives": 2,
+          "refills": 0,
+          "activeTiles": 11,
+          "recovery": [],
+          "senseId": "oewn-cool__5.00.00.composed.00",
+          "assessment": {
+            "counterScore": 0.9914,
+            "resistedScore": 0,
+            "margin": 0.9914,
+            "sensesEvaluated": 12,
+            "selectedAnchor": "composed: serenely self-possessed and free from agitation especially in times of stress",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "DAMN",
+        "RESEARCH",
+        "COOL",
+        "HAS"
+      ],
+      "tileIds": [
+        [
+          5,
+          1,
+          14,
+          12
+        ],
+        [
+          13,
+          11,
+          18,
+          16,
+          15,
+          19,
+          8,
+          7
+        ],
+        [
+          24,
+          0,
+          26,
+          10
+        ],
+        [
+          22,
+          23,
+          6
+        ]
+      ],
+      "livesRemaining": 2,
+      "turns": [
+        {
+          "word": "DAMN",
+          "tileIds": [
+            5,
+            1,
+            14,
+            12
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 4,
+          "refills": 8,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-damn__5.00.02.cursed.00",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 5,
+            "selectedAnchor": "coolly: in a composed and unconcerned manner",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "RESEARCH",
+          "tileIds": [
+            13,
+            11,
+            18,
+            16,
+            15,
+            19,
+            8,
+            7
+          ],
+          "meaning": "COUNTER",
+          "hits": 4,
+          "lives": 4,
+          "refills": 0,
+          "activeTiles": 16,
+          "recovery": [
+            {
+              "tileId": 15,
+              "enemyLetterId": "enemy-2",
+              "letter": "A",
+              "hitsBefore": 0,
+              "hitsAfter": 1
+            }
+          ],
+          "senseId": "oewn-research__2.32.00..",
+          "assessment": {
+            "counterScore": 0.7243,
+            "resistedScore": 0,
+            "margin": 0.7243,
+            "sensesEvaluated": 4,
+            "selectedAnchor": "systematically: in a systematic or consistent manner",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "COOL",
+          "tileIds": [
+            24,
+            0,
+            26,
+            10
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 12,
+          "recovery": [],
+          "senseId": "oewn-cool__5.00.00.composed.00",
+          "assessment": {
+            "counterScore": 0.9914,
+            "resistedScore": 0,
+            "margin": 0.9914,
+            "sensesEvaluated": 12,
+            "selectedAnchor": "composed: serenely self-possessed and free from agitation especially in times of stress",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "HAS",
+          "tileIds": [
+            22,
+            23,
+            6
+          ],
+          "meaning": "COUNTER",
+          "hits": 1,
+          "lives": 2,
+          "refills": 0,
+          "activeTiles": 9,
+          "recovery": [],
+          "senseId": "oewn-have__2.36.00..",
+          "assessment": {
+            "counterScore": 0.3046,
+            "resistedScore": 0,
+            "margin": 0.3046,
+            "sensesEvaluated": 19,
+            "selectedAnchor": "organization: an ordered manner; orderliness by virtue of being methodical and well organized",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "DAY",
+        "RESEARCH",
+        "COOL",
+        "HAS"
+      ],
+      "tileIds": [
+        [
+          5,
+          1,
+          4
+        ],
+        [
+          13,
+          11,
+          18,
+          16,
+          15,
+          3,
+          8,
+          7
+        ],
+        [
+          24,
+          0,
+          26,
+          10
+        ],
+        [
+          22,
+          23,
+          6
+        ]
+      ],
+      "livesRemaining": 2,
+      "turns": [
+        {
+          "word": "DAY",
+          "tileIds": [
+            5,
+            1,
+            4
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 4,
+          "refills": 9,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-day__1.28.04..",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 9,
+            "selectedAnchor": "relaxation: a feeling of refreshing tranquility and an absence of tension or worry",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "RESEARCH",
+          "tileIds": [
+            13,
+            11,
+            18,
+            16,
+            15,
+            3,
+            8,
+            7
+          ],
+          "meaning": "COUNTER",
+          "hits": 4,
+          "lives": 4,
+          "refills": 1,
+          "activeTiles": 16,
+          "recovery": [
+            {
+              "tileId": 15,
+              "enemyLetterId": "enemy-2",
+              "letter": "A",
+              "hitsBefore": 0,
+              "hitsAfter": 1
+            }
+          ],
+          "senseId": "oewn-research__2.32.00..",
+          "assessment": {
+            "counterScore": 0.7243,
+            "resistedScore": 0,
+            "margin": 0.7243,
+            "sensesEvaluated": 4,
+            "selectedAnchor": "systematically: in a systematic or consistent manner",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "COOL",
+          "tileIds": [
+            24,
+            0,
+            26,
+            10
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 13,
+          "recovery": [],
+          "senseId": "oewn-cool__5.00.00.composed.00",
+          "assessment": {
+            "counterScore": 0.9914,
+            "resistedScore": 0,
+            "margin": 0.9914,
+            "sensesEvaluated": 12,
+            "selectedAnchor": "composed: serenely self-possessed and free from agitation especially in times of stress",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "HAS",
+          "tileIds": [
+            22,
+            23,
+            6
+          ],
+          "meaning": "COUNTER",
+          "hits": 1,
+          "lives": 2,
+          "refills": 0,
+          "activeTiles": 10,
+          "recovery": [],
+          "senseId": "oewn-have__2.36.00..",
+          "assessment": {
+            "counterScore": 0.3046,
+            "resistedScore": 0,
+            "margin": 0.3046,
+            "sensesEvaluated": 19,
+            "selectedAnchor": "organization: an ordered manner; orderliness by virtue of being methodical and well organized",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "HELD",
+        "REASON",
+        "MATCH",
+        "GONE"
+      ],
+      "tileIds": [
+        [
+          7,
+          11,
+          10,
+          5
+        ],
+        [
+          13,
+          16,
+          1,
+          18,
+          0,
+          12
+        ],
+        [
+          14,
+          23,
+          17,
+          24,
+          22
+        ],
+        [
+          9,
+          26,
+          21,
+          20
+        ]
+      ],
+      "livesRemaining": 2,
+      "turns": [
+        {
+          "word": "HELD",
+          "tileIds": [
+            7,
+            11,
+            10,
+            5
+          ],
+          "meaning": "COUNTER",
+          "hits": 1,
+          "lives": 4,
+          "refills": 8,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-hold__2.36.00..",
+          "assessment": {
+            "counterScore": 0.8353,
+            "resistedScore": 0.1916,
+            "margin": 0.6437,
+            "sensesEvaluated": 37,
+            "selectedAnchor": "harmonise: bring into consonance or accord",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "REASON",
+          "tileIds": [
+            13,
+            16,
+            1,
+            18,
+            0,
+            12
+          ],
+          "meaning": "COUNTER",
+          "hits": 3,
+          "lives": 4,
+          "refills": 2,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-reason__1.26.00..",
+          "assessment": {
+            "counterScore": 0.0871,
+            "resistedScore": 0,
+            "margin": 0.0871,
+            "sensesEvaluated": 9,
+            "selectedAnchor": "calmness: steadiness of mind under stress",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "MATCH",
+          "tileIds": [
+            14,
+            23,
+            17,
+            24,
+            22
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 13,
+          "recovery": [],
+          "senseId": "oewn-match__2.30.01..",
+          "assessment": {
+            "counterScore": 0.9475,
+            "resistedScore": 0,
+            "margin": 0.9475,
+            "sensesEvaluated": 18,
+            "selectedAnchor": "harmonious: exhibiting equivalence or correspondence among constituents of an entity or between different entities",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "GONE",
+          "tileIds": [
+            9,
+            26,
+            21,
+            20
+          ],
+          "meaning": "COUNTER",
+          "hits": 1,
+          "lives": 2,
+          "refills": 0,
+          "activeTiles": 9,
+          "recovery": [],
+          "senseId": "oewn-go__2.42.11..",
+          "assessment": {
+            "counterScore": 0.9553,
+            "resistedScore": 0.7246,
+            "margin": 0.2307,
+            "sensesEvaluated": 36,
+            "selectedAnchor": "accord: go together",
+            "decisionBasis": "source-reviewed"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "LORD",
+        "RESEARCH",
+        "HAS",
+        "GONE"
+      ],
+      "tileIds": [
+        [
+          10,
+          0,
+          13,
+          5
+        ],
+        [
+          3,
+          11,
+          18,
+          16,
+          1,
+          19,
+          8,
+          7
+        ],
+        [
+          22,
+          23,
+          6
+        ],
+        [
+          9,
+          26,
+          12,
+          20
+        ]
+      ],
+      "livesRemaining": 2,
+      "turns": [
+        {
+          "word": "LORD",
+          "tileIds": [
+            10,
+            0,
+            13,
+            5
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 5,
+          "refills": 8,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-lord__1.18.01..",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 3,
+            "selectedAnchor": "anarchically: in a lawless rebellious manner",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "RESEARCH",
+          "tileIds": [
+            3,
+            11,
+            18,
+            16,
+            1,
+            19,
+            8,
+            7
+          ],
+          "meaning": "COUNTER",
+          "hits": 4,
+          "lives": 4,
+          "refills": 0,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-research__2.32.00..",
+          "assessment": {
+            "counterScore": 0.7243,
+            "resistedScore": 0,
+            "margin": 0.7243,
+            "sensesEvaluated": 4,
+            "selectedAnchor": "systematically: in a systematic or consistent manner",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "HAS",
+          "tileIds": [
+            22,
+            23,
+            6
+          ],
+          "meaning": "COUNTER",
+          "hits": 1,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 13,
+          "recovery": [],
+          "senseId": "oewn-have__2.36.00..",
+          "assessment": {
+            "counterScore": 0.3046,
+            "resistedScore": 0,
+            "margin": 0.3046,
+            "sensesEvaluated": 19,
+            "selectedAnchor": "organization: an ordered manner; orderliness by virtue of being methodical and well organized",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "GONE",
+          "tileIds": [
+            9,
+            26,
+            12,
+            20
+          ],
+          "meaning": "COUNTER",
+          "hits": 1,
+          "lives": 2,
+          "refills": 0,
+          "activeTiles": 9,
+          "recovery": [],
+          "senseId": "oewn-go__2.42.11..",
+          "assessment": {
+            "counterScore": 0.9553,
+            "resistedScore": 0.7246,
+            "margin": 0.2307,
+            "sensesEvaluated": 36,
+            "selectedAnchor": "accord: go together",
+            "decisionBasis": "source-reviewed"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "MODEL",
+        "RESEARCH",
+        "HAS",
+        "AGO"
+      ],
+      "tileIds": [
+        [
+          14,
+          0,
+          5,
+          11,
+          10
+        ],
+        [
+          13,
+          16,
+          18,
+          20,
+          1,
+          19,
+          8,
+          7
+        ],
+        [
+          22,
+          23,
+          6
+        ],
+        [
+          25,
+          9,
+          26
+        ]
+      ],
+      "livesRemaining": 2,
+      "turns": [
+        {
+          "word": "MODEL",
+          "tileIds": [
+            14,
+            0,
+            5,
+            11,
+            10
+          ],
+          "meaning": "COUNTER",
+          "hits": 1,
+          "lives": 4,
+          "refills": 7,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-model__2.36.02..",
+          "assessment": {
+            "counterScore": 0.9277,
+            "resistedScore": 0,
+            "margin": 0.9277,
+            "sensesEvaluated": 16,
+            "selectedAnchor": "plan: make plans for something",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "RESEARCH",
+          "tileIds": [
+            13,
+            16,
+            18,
+            20,
+            1,
+            19,
+            8,
+            7
+          ],
+          "meaning": "COUNTER",
+          "hits": 4,
+          "lives": 4,
+          "refills": 0,
+          "activeTiles": 15,
+          "recovery": [],
+          "senseId": "oewn-research__2.32.00..",
+          "assessment": {
+            "counterScore": 0.7243,
+            "resistedScore": 0,
+            "margin": 0.7243,
+            "sensesEvaluated": 4,
+            "selectedAnchor": "systematically: in a systematic or consistent manner",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "HAS",
+          "tileIds": [
+            22,
+            23,
+            6
+          ],
+          "meaning": "COUNTER",
+          "hits": 1,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 12,
+          "recovery": [],
+          "senseId": "oewn-have__2.36.00..",
+          "assessment": {
+            "counterScore": 0.3046,
+            "resistedScore": 0,
+            "margin": 0.3046,
+            "sensesEvaluated": 19,
+            "selectedAnchor": "organization: an ordered manner; orderliness by virtue of being methodical and well organized",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "AGO",
+          "tileIds": [
+            25,
+            9,
+            26
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 2,
+          "refills": 0,
+          "activeTiles": 9,
+          "recovery": [],
+          "senseId": "oewn-ago__5.00.00.past.00",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 2,
+            "selectedAnchor": "disoriented: having lost your bearings; confused as to time or place or personal identity",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "RECORDS",
+        "HAS",
+        "CLEAR",
+        "GONE",
+        "BOY"
+      ],
+      "tileIds": [
+        [
+          13,
+          11,
+          8,
+          0,
+          3,
+          5,
+          6
+        ],
+        [
+          22,
+          1,
+          18
+        ],
+        [
+          24,
+          10,
+          16,
+          23,
+          19
+        ],
+        [
+          9,
+          26,
+          12,
+          20
+        ],
+        [
+          2,
+          27,
+          4
+        ]
+      ],
+      "livesRemaining": 1,
+      "turns": [
+        {
+          "word": "RECORDS",
+          "tileIds": [
+            13,
+            11,
+            8,
+            0,
+            3,
+            5,
+            6
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 5,
+          "refills": 5,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-record__2.39.00..",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 12,
+            "selectedAnchor": "collected: in full control of your faculties",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "HAS",
+          "tileIds": [
+            22,
+            1,
+            18
+          ],
+          "meaning": "COUNTER",
+          "hits": 3,
+          "lives": 4,
+          "refills": 2,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-have__2.36.00..",
+          "assessment": {
+            "counterScore": 0.3046,
+            "resistedScore": 0,
+            "margin": 0.3046,
+            "sensesEvaluated": 19,
+            "selectedAnchor": "organization: an ordered manner; orderliness by virtue of being methodical and well organized",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "CLEAR",
+          "tileIds": [
+            24,
+            10,
+            16,
+            23,
+            19
+          ],
+          "meaning": "COUNTER",
+          "hits": 1,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 13,
+          "recovery": [],
+          "senseId": "oewn-clear__5.00.00.clearheaded.00",
+          "assessment": {
+            "counterScore": 0.9855,
+            "resistedScore": 0.0052,
+            "margin": 0.9803,
+            "sensesEvaluated": 45,
+            "selectedAnchor": "clear: free from confusion or doubt",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "GONE",
+          "tileIds": [
+            9,
+            26,
+            12,
+            20
+          ],
+          "meaning": "COUNTER",
+          "hits": 1,
+          "lives": 2,
+          "refills": 0,
+          "activeTiles": 9,
+          "recovery": [],
+          "senseId": "oewn-go__2.42.11..",
+          "assessment": {
+            "counterScore": 0.9553,
+            "resistedScore": 0.7246,
+            "margin": 0.2307,
+            "sensesEvaluated": 36,
+            "selectedAnchor": "accord: go together",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "BOY",
+          "tileIds": [
+            2,
+            27,
+            4
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 1,
+          "refills": 0,
+          "activeTiles": 6,
+          "recovery": [],
+          "senseId": "oewn-boy__1.18.01..",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 4,
+            "selectedAnchor": "disarray: untidiness (especially of clothing and appearance)",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "ALREADY",
+        "SCHEME",
+        "HAS",
+        "AGO",
+        "NON"
+      ],
+      "tileIds": [
+        [
+          1,
+          10,
+          13,
+          11,
+          15,
+          5,
+          4
+        ],
+        [
+          18,
+          8,
+          22,
+          16,
+          14,
+          20
+        ],
+        [
+          7,
+          23,
+          6
+        ],
+        [
+          25,
+          9,
+          0
+        ],
+        [
+          12,
+          26,
+          21
+        ]
+      ],
+      "livesRemaining": 1,
+      "turns": [
+        {
+          "word": "ALREADY",
+          "tileIds": [
+            1,
+            10,
+            13,
+            11,
+            15,
+            5,
+            4
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 2,
+          "lives": 5,
+          "refills": 5,
+          "activeTiles": 16,
+          "recovery": [
+            {
+              "tileId": 15,
+              "enemyLetterId": "enemy-2",
+              "letter": "A",
+              "hitsBefore": 0,
+              "hitsAfter": 1
+            }
+          ],
+          "senseId": "oewn-already__4.02.00..",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 1,
+            "selectedAnchor": "systematic: characterized by order and planning",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "SCHEME",
+          "tileIds": [
+            18,
+            8,
+            22,
+            16,
+            14,
+            20
+          ],
+          "meaning": "COUNTER",
+          "hits": 3,
+          "lives": 4,
+          "refills": 0,
+          "activeTiles": 15,
+          "recovery": [],
+          "senseId": "oewn-scheme__2.31.01..",
+          "assessment": {
+            "counterScore": 0.9659,
+            "resistedScore": 0,
+            "margin": 0.9659,
+            "sensesEvaluated": 7,
+            "selectedAnchor": "plan: make plans for something",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "HAS",
+          "tileIds": [
+            7,
+            23,
+            6
+          ],
+          "meaning": "COUNTER",
+          "hits": 1,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 12,
+          "recovery": [],
+          "senseId": "oewn-have__2.36.00..",
+          "assessment": {
+            "counterScore": 0.3046,
+            "resistedScore": 0,
+            "margin": 0.3046,
+            "sensesEvaluated": 19,
+            "selectedAnchor": "organization: an ordered manner; orderliness by virtue of being methodical and well organized",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "AGO",
+          "tileIds": [
+            25,
+            9,
+            0
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 2,
+          "refills": 0,
+          "activeTiles": 9,
+          "recovery": [],
+          "senseId": "oewn-ago__5.00.00.past.00",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 2,
+            "selectedAnchor": "disoriented: having lost your bearings; confused as to time or place or personal identity",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "NON",
+          "tileIds": [
+            12,
+            26,
+            21
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 1,
+          "refills": 0,
+          "activeTiles": 6,
+          "recovery": [],
+          "senseId": "oewn-non__4.02.00..",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 1,
+            "selectedAnchor": "coolly: in a composed and unconcerned manner",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "COMEDY",
+        "HAS",
+        "CLEAR",
+        "GONE",
+        "SORT"
+      ],
+      "tileIds": [
+        [
+          8,
+          0,
+          14,
+          11,
+          5,
+          4
+        ],
+        [
+          7,
+          1,
+          18
+        ],
+        [
+          24,
+          10,
+          16,
+          23,
+          13
+        ],
+        [
+          9,
+          26,
+          12,
+          20
+        ],
+        [
+          6,
+          27,
+          19,
+          17
+        ]
+      ],
+      "livesRemaining": 1,
+      "turns": [
+        {
+          "word": "COMEDY",
+          "tileIds": [
+            8,
+            0,
+            14,
+            11,
+            5,
+            4
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 4,
+          "refills": 6,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-comedy__1.10.00..",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 2,
+            "selectedAnchor": "mellow: unhurried and relaxed",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "HAS",
+          "tileIds": [
+            7,
+            1,
+            18
+          ],
+          "meaning": "COUNTER",
+          "hits": 3,
+          "lives": 3,
+          "refills": 3,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-have__2.36.00..",
+          "assessment": {
+            "counterScore": 0.3046,
+            "resistedScore": 0,
+            "margin": 0.3046,
+            "sensesEvaluated": 19,
+            "selectedAnchor": "organization: an ordered manner; orderliness by virtue of being methodical and well organized",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "CLEAR",
+          "tileIds": [
+            24,
+            10,
+            16,
+            23,
+            13
+          ],
+          "meaning": "COUNTER",
+          "hits": 1,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 14,
+          "recovery": [],
+          "senseId": "oewn-clear__5.00.00.clearheaded.00",
+          "assessment": {
+            "counterScore": 0.9855,
+            "resistedScore": 0.0052,
+            "margin": 0.9803,
+            "sensesEvaluated": 45,
+            "selectedAnchor": "clear: free from confusion or doubt",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "GONE",
+          "tileIds": [
+            9,
+            26,
+            12,
+            20
+          ],
+          "meaning": "COUNTER",
+          "hits": 1,
+          "lives": 2,
+          "refills": 0,
+          "activeTiles": 10,
+          "recovery": [],
+          "senseId": "oewn-go__2.42.11..",
+          "assessment": {
+            "counterScore": 0.9553,
+            "resistedScore": 0.7246,
+            "margin": 0.2307,
+            "sensesEvaluated": 36,
+            "selectedAnchor": "accord: go together",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "SORT",
+          "tileIds": [
+            6,
+            27,
+            19,
+            17
+          ],
+          "meaning": "COUNTER",
+          "hits": 1,
+          "lives": 1,
+          "refills": 0,
+          "activeTiles": 6,
+          "recovery": [],
+          "senseId": "oewn-sort__2.31.00..",
+          "assessment": {
+            "counterScore": 0.9917,
+            "resistedScore": 0,
+            "margin": 0.9917,
+            "sensesEvaluated": 6,
+            "selectedAnchor": "sort: arrange or order by classes or categories",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "HOLDS",
+        "CAR",
+        "EASY",
+        "AGO"
+      ],
+      "tileIds": [
+        [
+          7,
+          0,
+          10,
+          5,
+          6
+        ],
+        [
+          8,
+          1,
+          13
+        ],
+        [
+          11,
+          23,
+          18,
+          4
+        ],
+        [
+          25,
+          9,
+          26
+        ]
+      ],
+      "livesRemaining": 2,
+      "turns": [
+        {
+          "word": "HOLDS",
+          "tileIds": [
+            7,
+            0,
+            10,
+            5,
+            6
+          ],
+          "meaning": "COUNTER",
+          "hits": 3,
+          "lives": 4,
+          "refills": 7,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-hold__2.36.00..",
+          "assessment": {
+            "counterScore": 0.8353,
+            "resistedScore": 0.1916,
+            "margin": 0.6437,
+            "sensesEvaluated": 45,
+            "selectedAnchor": "harmonise: bring into consonance or accord",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "CAR",
+          "tileIds": [
+            8,
+            1,
+            13
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 2,
+          "lives": 4,
+          "refills": 4,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-car__1.06.03..",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 5,
+            "selectedAnchor": "structure: give a structure to",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "EASY",
+          "tileIds": [
+            11,
+            23,
+            18,
+            4
+          ],
+          "meaning": "COUNTER",
+          "hits": 1,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-easy__3.00.02..",
+          "assessment": {
+            "counterScore": 0.9681,
+            "resistedScore": 0,
+            "margin": 0.9681,
+            "sensesEvaluated": 16,
+            "selectedAnchor": "relaxed: without strain or anxiety",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "AGO",
+          "tileIds": [
+            25,
+            9,
+            26
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 2,
+          "refills": 0,
+          "activeTiles": 13,
+          "recovery": [],
+          "senseId": "oewn-ago__5.00.00.past.00",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 2,
+            "selectedAnchor": "disoriented: having lost your bearings; confused as to time or place or personal identity",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "RANDOM",
+        "RESEARCH",
+        "COOL",
+        "HAS"
+      ],
+      "tileIds": [
+        [
+          13,
+          1,
+          12,
+          5,
+          0,
+          14
+        ],
+        [
+          3,
+          11,
+          18,
+          16,
+          15,
+          19,
+          8,
+          7
+        ],
+        [
+          24,
+          26,
+          27,
+          10
+        ],
+        [
+          22,
+          23,
+          6
+        ]
+      ],
+      "livesRemaining": 2,
+      "turns": [
+        {
+          "word": "RANDOM",
+          "tileIds": [
+            13,
+            1,
+            12,
+            5,
+            0,
+            14
+          ],
+          "meaning": "RESISTED",
+          "hits": 1,
+          "lives": 5,
+          "refills": 6,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-random__3.00.00..",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0.985,
+            "margin": -0.985,
+            "sensesEvaluated": 1,
+            "selectedAnchor": "random: lacking any definite plan or order or purpose; governed by or depending on chance",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "RESEARCH",
+          "tileIds": [
+            3,
+            11,
+            18,
+            16,
+            15,
+            19,
+            8,
+            7
+          ],
+          "meaning": "COUNTER",
+          "hits": 4,
+          "lives": 4,
+          "refills": 0,
+          "activeTiles": 14,
+          "recovery": [
+            {
+              "tileId": 15,
+              "enemyLetterId": "enemy-2",
+              "letter": "A",
+              "hitsBefore": 0,
+              "hitsAfter": 1
+            }
+          ],
+          "senseId": "oewn-research__2.32.00..",
+          "assessment": {
+            "counterScore": 0.7243,
+            "resistedScore": 0,
+            "margin": 0.7243,
+            "sensesEvaluated": 4,
+            "selectedAnchor": "systematically: in a systematic or consistent manner",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "COOL",
+          "tileIds": [
+            24,
+            26,
+            27,
+            10
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 10,
+          "recovery": [],
+          "senseId": "oewn-cool__5.00.00.composed.00",
+          "assessment": {
+            "counterScore": 0.9914,
+            "resistedScore": 0,
+            "margin": 0.9914,
+            "sensesEvaluated": 12,
+            "selectedAnchor": "composed: serenely self-possessed and free from agitation especially in times of stress",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "HAS",
+          "tileIds": [
+            22,
+            23,
+            6
+          ],
+          "meaning": "COUNTER",
+          "hits": 1,
+          "lives": 2,
+          "refills": 0,
+          "activeTiles": 7,
+          "recovery": [],
+          "senseId": "oewn-have__2.36.00..",
+          "assessment": {
+            "counterScore": 0.3046,
+            "resistedScore": 0,
+            "margin": 0.3046,
+            "sensesEvaluated": 19,
+            "selectedAnchor": "organization: an ordered manner; orderliness by virtue of being methodical and well organized",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "BADLY",
+        "RESEARCH",
+        "REASON",
+        "AGO"
+      ],
+      "tileIds": [
+        [
+          2,
+          1,
+          5,
+          10,
+          4
+        ],
+        [
+          13,
+          11,
+          18,
+          16,
+          15,
+          19,
+          8,
+          7
+        ],
+        [
+          3,
+          20,
+          23,
+          6,
+          0,
+          12
+        ],
+        [
+          25,
+          9,
+          26
+        ]
+      ],
+      "livesRemaining": 2,
+      "turns": [
+        {
+          "word": "BADLY",
+          "tileIds": [
+            2,
+            1,
+            5,
+            10,
+            4
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 4,
+          "refills": 7,
+          "activeTiles": 16,
+          "recovery": [],
+          "senseId": "oewn-badly__4.02.05..",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 10,
+            "selectedAnchor": "fractiousness: the trait of being prone to disobedience and lack of discipline",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "RESEARCH",
+          "tileIds": [
+            13,
+            11,
+            18,
+            16,
+            15,
+            19,
+            8,
+            7
+          ],
+          "meaning": "COUNTER",
+          "hits": 4,
+          "lives": 4,
+          "refills": 0,
+          "activeTiles": 15,
+          "recovery": [
+            {
+              "tileId": 15,
+              "enemyLetterId": "enemy-2",
+              "letter": "A",
+              "hitsBefore": 0,
+              "hitsAfter": 1
+            }
+          ],
+          "senseId": "oewn-research__2.32.00..",
+          "assessment": {
+            "counterScore": 0.7243,
+            "resistedScore": 0,
+            "margin": 0.7243,
+            "sensesEvaluated": 4,
+            "selectedAnchor": "systematically: in a systematic or consistent manner",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "REASON",
+          "tileIds": [
+            3,
+            20,
+            23,
+            6,
+            0,
+            12
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 9,
+          "recovery": [],
+          "senseId": "oewn-reason__1.26.00..",
+          "assessment": {
+            "counterScore": 0.0871,
+            "resistedScore": 0,
+            "margin": 0.0871,
+            "sensesEvaluated": 9,
+            "selectedAnchor": "calmness: steadiness of mind under stress",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "AGO",
+          "tileIds": [
+            25,
+            9,
+            26
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 2,
+          "refills": 0,
+          "activeTiles": 6,
+          "recovery": [],
+          "senseId": "oewn-ago__5.00.00.past.00",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 2,
+            "selectedAnchor": "disoriented: having lost your bearings; confused as to time or place or personal identity",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "REASONABLY",
+        "MATCH",
+        "AGO"
+      ],
+      "tileIds": [
+        [
+          13,
+          11,
+          1,
+          6,
+          0,
+          12,
+          15,
+          2,
+          10,
+          4
+        ],
+        [
+          14,
+          25,
+          17,
+          8,
+          7
+        ],
+        [
+          23,
+          9,
+          26
+        ]
+      ],
+      "livesRemaining": 3,
+      "turns": [
+        {
+          "word": "REASONABLY",
+          "tileIds": [
+            13,
+            11,
+            1,
+            6,
+            0,
+            12,
+            15,
+            2,
+            10,
+            4
+          ],
+          "meaning": "COUNTER",
+          "hits": 4,
+          "lives": 5,
+          "refills": 2,
+          "activeTiles": 16,
+          "recovery": [
+            {
+              "tileId": 15,
+              "enemyLetterId": "enemy-2",
+              "letter": "A",
+              "hitsBefore": 0,
+              "hitsAfter": 1
+            }
+          ],
+          "senseId": "oewn-reasonably__4.02.01..",
+          "assessment": {
+            "counterScore": 0.945,
+            "resistedScore": 0,
+            "margin": 0.945,
+            "sensesEvaluated": 2,
+            "selectedAnchor": "equably: in an equable manner",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "MATCH",
+          "tileIds": [
+            14,
+            25,
+            17,
+            8,
+            7
+          ],
+          "meaning": "COUNTER",
+          "hits": 3,
+          "lives": 4,
+          "refills": 0,
+          "activeTiles": 13,
+          "recovery": [],
+          "senseId": "oewn-match__2.30.01..",
+          "assessment": {
+            "counterScore": 0.9475,
+            "resistedScore": 0,
+            "margin": 0.9475,
+            "sensesEvaluated": 18,
+            "selectedAnchor": "harmonious: exhibiting equivalence or correspondence among constituents of an entity or between different entities",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "AGO",
+          "tileIds": [
+            23,
+            9,
+            26
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 10,
+          "recovery": [],
+          "senseId": "oewn-ago__5.00.00.past.00",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 2,
+            "selectedAnchor": "disoriented: having lost your bearings; confused as to time or place or personal identity",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    },
+    {
+      "words": [
+        "MARSHALED",
+        "RESEARCH",
+        "NON",
+        "ACT",
+        "BOY"
+      ],
+      "tileIds": [
+        [
+          14,
+          1,
+          13,
+          6,
+          7,
+          15,
+          10,
+          11,
+          5
+        ],
+        [
+          3,
+          16,
+          18,
+          20,
+          23,
+          19,
+          8,
+          22
+        ],
+        [
+          12,
+          27,
+          21
+        ],
+        [
+          25,
+          24,
+          17
+        ],
+        [
+          2,
+          0,
+          4
+        ]
+      ],
+      "livesRemaining": 1,
+      "turns": [
+        {
+          "word": "MARSHALED",
+          "tileIds": [
+            14,
+            1,
+            13,
+            6,
+            7,
+            15,
+            10,
+            11,
+            5
+          ],
+          "meaning": "COUNTER",
+          "hits": 4,
+          "lives": 5,
+          "refills": 3,
+          "activeTiles": 16,
+          "recovery": [
+            {
+              "tileId": 15,
+              "enemyLetterId": "enemy-2",
+              "letter": "A",
+              "hitsBefore": 0,
+              "hitsAfter": 1
+            }
+          ],
+          "senseId": "oewn-marshal__2.35.00..",
+          "assessment": {
+            "counterScore": 0.483,
+            "resistedScore": 0,
+            "margin": 0.483,
+            "sensesEvaluated": 4,
+            "selectedAnchor": "order: logical or comprehensible arrangement of separate elements",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "RESEARCH",
+          "tileIds": [
+            3,
+            16,
+            18,
+            20,
+            23,
+            19,
+            8,
+            22
+          ],
+          "meaning": "COUNTER",
+          "hits": 2,
+          "lives": 4,
+          "refills": 0,
+          "activeTiles": 11,
+          "recovery": [],
+          "senseId": "oewn-research__2.32.00..",
+          "assessment": {
+            "counterScore": 0.7243,
+            "resistedScore": 0,
+            "margin": 0.7243,
+            "sensesEvaluated": 4,
+            "selectedAnchor": "systematically: in a systematic or consistent manner",
+            "decisionBasis": "source-reviewed"
+          }
+        },
+        {
+          "word": "NON",
+          "tileIds": [
+            12,
+            27,
+            21
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 3,
+          "refills": 0,
+          "activeTiles": 8,
+          "recovery": [],
+          "senseId": "oewn-non__4.02.00..",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 1,
+            "selectedAnchor": "coolly: in a composed and unconcerned manner",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "ACT",
+          "tileIds": [
+            25,
+            24,
+            17
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 0,
+          "lives": 2,
+          "refills": 0,
+          "activeTiles": 5,
+          "recovery": [],
+          "senseId": "oewn-act__2.36.04..",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 14,
+            "selectedAnchor": "calm: not agitated; without losing self-possession",
+            "decisionBasis": "local-llm"
+          }
+        },
+        {
+          "word": "BOY",
+          "tileIds": [
+            2,
+            0,
+            4
+          ],
+          "meaning": "NEUTRAL",
+          "hits": 1,
+          "lives": 1,
+          "refills": 0,
+          "activeTiles": 2,
+          "recovery": [],
+          "senseId": "oewn-boy__1.18.01..",
+          "assessment": {
+            "counterScore": 0,
+            "resistedScore": 0,
+            "margin": 0,
+            "sensesEvaluated": 4,
+            "selectedAnchor": "disarray: untidiness (especially of clothing and appearance)",
+            "decisionBasis": "local-llm"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -14,10 +14,13 @@ import { validatePuzzle } from '../src/generator/validate.ts'
 import { assessedPublicationGates } from './lib/publicationGates.ts'
 
 const input = process.argv[2]
-if (!input) throw new Error('Usage: node scripts/package-assessed-daily.ts <reviewed-selected.json>')
-const artifactDirectory = 'artifacts/meaning-v3'
+if (!input) throw new Error('Usage: node scripts/package-assessed-daily.ts <reviewed-selected.json> [puzzle-version] [artifact-directory]')
+const puzzleVersion = Number(process.argv[3] ?? 12)
+assert.ok(Number.isSafeInteger(puzzleVersion) && puzzleVersion >= 12)
+const artifactDirectory = process.argv[4] ?? (puzzleVersion === 12 ? 'artifacts/meaning-v3' : `artifacts/meaning-v${puzzleVersion}`)
 const selected = JSON.parse(readFileSync(input, 'utf8')) as RankedCandidate
 const encounter = selected.candidate.encounter
+assert.equal(encounter.id, `daily-chaos-2026-09-26-v${puzzleVersion}`)
 assertMeaningPublicationReady(encounter)
 const semanticQuality = assertSemanticQualityForPublication()
 const choices = analyseSemanticChoices(encounter, selected.analysis.winningLines)
@@ -90,7 +93,7 @@ const routes = selected.analysis.winningLines.map(line => {
     livesRemaining: state.playerResolve, turns }
 })
 
-const summary = { puzzleDate: '2026-09-26', puzzleDates: ['2026-09-26', '2026-09-27'], puzzleVersion: 12,
+const summary = { puzzleDate: '2026-09-26', puzzleDates: ['2026-09-26', '2026-09-27'], puzzleVersion,
   candidateId: encounter.id, seed: selected.candidate.seed, enemy: encounter.enemy.word,
   assessment: meaningLexicon.assessment,
   semanticQualityConfiguration: semanticQuality.configurationHash, choices,
@@ -118,7 +121,7 @@ const difficultyUpdates = ['src/daily/difficultyLabels.json', 'src/generator/dat
 
 // All checks and replays complete before replacing any publication files.
 mkdirSync(artifactDirectory, { recursive: true })
-writeFileSync('src/daily/puzzles/2026-09-26-v12.json', JSON.stringify({ ...rules, packedMeanings }) + '\n')
+writeFileSync(`src/daily/puzzles/2026-09-26-v${puzzleVersion}.json`, JSON.stringify({ ...rules, packedMeanings }) + '\n')
 writeFileSync(`${artifactDirectory}/selected.json.gz`, gzipSync(JSON.stringify(selected), { level: 9 }))
 writeFileSync(`${artifactDirectory}/walkthroughs.json`, JSON.stringify({ candidateId: encounter.id, routes }, null, 2) + '\n')
 writeFileSync(`${artifactDirectory}/summary.json`, JSON.stringify(summary, null, 2) + '\n')
