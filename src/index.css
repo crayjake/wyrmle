@@ -27,11 +27,11 @@
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 1126px;
   margin: 0 auto;
   text-align: center;
-  min-height: 100svh;
+  min-height: var(--app-height, 100svh);
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -91,6 +91,6 @@ code {
    toolbars reduce the visible height. */
 @media (max-width: 600px) and (orientation: portrait) {
   :root {
-    font-size: clamp(16px, min(5vw, calc(100dvh / 35.5)), 21.5px);
+    font-size: clamp(16px, min(5vw, calc(var(--app-height, 100dvh) / 35.5)), 21.5px);
   }
 }

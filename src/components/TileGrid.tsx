@@ -56,7 +56,7 @@ export default function TileGrid({
   selectedTileIds,
   allowedTileIds,
   enemyLetters = [],
-  matchHint = 'off',
+  matchHint = 'underline',
   damage,
   primaryLabel,
   canAttack,
@@ -66,7 +66,7 @@ export default function TileGrid({
   onAttack,
 }: TileGridProps) {
   const reducedMotion = useReducedMotion()
-  const matchingIds = new Set(import.meta.env.DEV && matchHint !== 'off'
+  const matchingIds = new Set(matchHint !== 'off'
     ? getMatchingTileIds(tiles, enemyLetters) : [])
   const decoded = tiles.every((_, index) => revealedIndices.includes(index))
   const [displayLetters, setDisplayLetters] = useState(

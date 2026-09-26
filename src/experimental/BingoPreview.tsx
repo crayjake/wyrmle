@@ -129,5 +129,5 @@ function PreviewPuzzle({ entry, request }: { entry?: BingoPreviewEntry; request:
       `${bingoPreviewHref('bingos', request.lives)}${entry?.collection === 'new' ? '' : '&set=earlier'}`)}
     onNextPreview={next ? () => window.location.assign(bingoPreviewHref(next.id, request.lives)) : undefined}
     onMode={() => { restartBingoAttempt(bingoProgressKey(entry), request.lives); setAttempt(current => current + 1) }} onExit={exit}
-    matchHint="off" onMatchHintChange={() => {}} enemyGrid={false} onEnemyGridChange={() => {}} />
+    matchHint="underline" onMatchHintChange={() => {}} enemyGrid={false} onEnemyGridChange={() => {}} />
 }

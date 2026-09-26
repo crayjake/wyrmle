@@ -1,19 +1,5 @@
-.bingo-preview .enemy-definition { width: min(94%, 24rem); }
-.beta-header { position: relative; z-index: 1; display: flex; flex: none; align-items: center; gap: 4px; }
-.beta-header .title { margin-right: auto; font-size: 22px; }
-.beta-header nav { display: flex; align-items: center; gap: 8px; }
-.beta-header button, .bingo-result-link {
-  min-height: 44px; border: 0; background: transparent; color: var(--fg);
-  font: inherit; font-size: 14px; cursor: pointer; letter-spacing: 0; text-transform: none;
-}
-.beta-header .beta-icon-button { display: grid; place-items: center; width: 44px; padding: 0; }
-.beta-header button:focus-visible, .bingo-result-link:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }
 .beta-save-warning { margin: 0; font-size: 12px; letter-spacing: 0; text-transform: none; }
-.beta-refill-details { margin-top: 16px; font-size: 14px; }
-.beta-refill-details summary { cursor: pointer; padding-block: 10px; }
 .bingo-preview .daily-panel .dev-controls button { min-height: 44px; }
-.bingo-preview .battle-info { display: flex; justify-content: center; }
-.bingo-preview .battle-info .health-info { width: auto; align-items: center; }
 
 .bingo-hint-content { display: grid; gap: 12px; text-align: center; }
 .bingo-hint-step { font-size: 13px; color: var(--fg); }
@@ -106,16 +92,6 @@
   .bingo-preview-list { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 }
 
-/* The travelling wyrm and resting meter share the same larger pieces at every
-   preview life count. The decoder measures their actual dock centres. */
-.bingo-preview .wyrm-life-meter { gap: 4px; }
-.bingo-preview .wyrm-life-segment { width: 15px; height: 16px; }
-.bingo-preview .wyrm-life-tail { width: 11px; height: 11px; }
-.bingo-preview .wyrm-life-head { width: 19px; height: 19px; }
-.bingo-preview .wyrm-life-head::before { top: 3px; right: 3px; }
-.bingo-preview .wyrm-life-head::after { bottom: 3px; right: 3px; }
-.bingo-preview .wyrm-life-tongue { top: 7px; }
-
 /* Class changes happen after the enemy's hit animation resolves. Selection
    changes do not replay this animation, and ordinary dailies never opt in. */
 .wyrm-life-meter[data-animate-lives] > :not(.is-filled) {
@@ -131,56 +107,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   .wyrm-life-meter[data-animate-lives] > :not(.is-filled) { animation: none; }
-}
-
-/* Size the grid from the space actually left after the definition and move
-   feedback. Container units also track Safari toolbar and orientation changes. */
-.bingo-preview .enemy-zone { flex: none; }
-.bingo-preview .player-zone {
-  flex: 1;
-  min-height: 0;
-  justify-content: flex-end;
-  container-type: inline-size;
-}
-.bingo-preview .attack-info { flex: none; }
-.container.letter-combat.bingo-preview .controls {
-  --action-height: 44px;
-  --control-gap: 6px;
-  flex: 1;
-  min-height: 0;
-  width: 100%;
-  max-height: calc(min(100cqw, 18rem) + var(--action-height) + var(--control-gap));
-  margin-top: 0;
-  gap: var(--control-gap);
-  container-type: size;
-  align-items: center;
-  justify-content: flex-end;
-}
-.bingo-preview .tile-grid,
-.bingo-preview .battle-actions {
-  flex: none;
-  width: min(100%, 18rem, calc(100cqh - var(--action-height) - var(--control-gap)));
-}
-.bingo-preview .battle-actions button { min-height: var(--action-height); }
-
-@media (orientation: landscape) and (max-height: 550px) {
-  .container.letter-combat.bingo-preview {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    grid-template-rows: auto auto minmax(0, 1fr);
-    grid-template-areas: 'header player' 'supply player' 'enemy player';
-    padding: 6px 12px;
-    gap: 4px 16px;
-  }
-  .bingo-preview .beta-header { grid-area: header; }
-  .bingo-preview .battle-info { grid-area: supply; }
-  .bingo-preview .enemy-zone { grid-area: enemy; align-self: center; }
-  .bingo-preview .player-zone { grid-area: player; height: 100%; margin: 0; }
-  .bingo-preview .word { font-size: 24px; }
-  .bingo-preview .attack-info { gap: 1px; }
-  .bingo-preview .attack-line { padding: 0; }
-  .bingo-preview .enemy-section { gap: 2px; }
-  .bingo-preview .enemy-definition { width: 100%; line-height: 1.3; }
 }
 
 /* Results replace the board only after its final hit animation finishes. */
@@ -231,3 +157,6 @@
   .bingo-result-actions { width: 35%; }
   .bingo-result-word { font-size: 26px; padding: 0; }
 }
+
+.bingo-result-link { min-height: 44px; border: 0; background: transparent; font: inherit; font-size: 14px; cursor: pointer; }
+.bingo-result-link:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }

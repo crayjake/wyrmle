@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
 
-  height: 100dvh;
+  height: var(--app-height, 100dvh);
   min-height: 0;
   box-sizing: border-box;
   overflow-x: hidden;
@@ -209,24 +209,24 @@
    left for the encounter and the tutorial's longer explanations. */
 @media (max-width: 600px) and (orientation: portrait) {
   .container.letter-combat {
-    --board-size: clamp(12rem, calc(100dvh - 18.5rem), 18rem);
+    --board-size: clamp(12rem, calc(var(--app-height, 100dvh) - 19rem), 18rem);
   }
 
   .container.letter-combat[data-enemy-grid="true"] {
     /* Share short screens between two readable enemy rows and the board. */
-    --board-size: clamp(12rem, calc(100dvh - 19.5rem), 18rem);
+    --board-size: clamp(12rem, calc(var(--app-height, 100dvh) - 19.5rem), 18rem);
   }
 
   .container.letter-combat:has(.daily-notice) {
-    --board-size: clamp(12rem, calc(100dvh - 19.75rem), 18rem);
+    --board-size: clamp(12rem, calc(var(--app-height, 100dvh) - 19.75rem), 18rem);
   }
 
   .container.letter-combat[data-enemy-grid="true"]:has(.daily-notice) {
-    --board-size: clamp(12rem, calc(100dvh - 21.25rem), 18rem);
+    --board-size: clamp(12rem, calc(var(--app-height, 100dvh) - 21.25rem), 18rem);
   }
 
   .container.letter-combat .controls {
-    width: min(100%, var(--board-size));
+    width: min(100%, var(--board-size), var(--board-fit, 100vw));
   }
 
   .container.letter-combat .tile-letter {
@@ -264,7 +264,7 @@
 }
 
 .enemy-definition {
-  width: min(88%, 19rem, calc(var(--enemy-letter-count) * 2.85rem));
+  width: min(94%, 24rem);
 
   align-self: center;
 
@@ -504,7 +504,7 @@
 .controls {
   /* Safari's visible height changes with its toolbars. Reserve room for the
      header, encounter and attack preview; keep square tiles at least 44px. */
-  width: min(100%, clamp(12rem, calc(100dvh - 26rem), 19rem));
+  width: min(100%, clamp(12rem, calc(var(--app-height, 100dvh) - 26rem), 19rem), var(--board-fit, 100vw));
   align-self: center;
 
   display: flex;
@@ -728,4 +728,27 @@
   #root > .container.letter-combat {
     padding-top: max(2px, env(safe-area-inset-top, 0px));
   }
+}
+
+/* The same battle layout serves daily and beta puzzles. On a short landscape
+   viewport, put the board alongside the enemy so both resources remain visible. */
+@media (orientation: landscape) and (max-height: 550px) {
+  .container.letter-combat:not(.tutorial-battle):not([data-result]) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: auto auto minmax(0, 1fr);
+    grid-template-areas: 'header player' 'supply player' 'enemy player';
+    padding: 6px 12px;
+    gap: 4px 16px;
+  }
+  .letter-combat > .header { grid-area: header; }
+  .letter-combat > .battle-info { grid-area: supply; }
+  .letter-combat > .enemy-zone { grid-area: enemy; align-self: center; }
+  .letter-combat > .player-zone { grid-area: player; margin: 0; padding-top: 0; border: 0; }
+  .letter-combat .controls { width: min(100%, 18rem, calc(var(--app-height, 100dvh) - 8rem), var(--board-fit, 100vw)); }
+  .letter-combat .word { font-size: 24px; }
+  .letter-combat .attack-info { gap: 1px; }
+  .letter-combat .attack-line { padding: 0; }
+  .letter-combat .enemy-section { gap: 2px; }
+  .letter-combat .enemy-definition { width: 100%; line-height: 1.3; }
 }

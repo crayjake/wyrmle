@@ -1,7 +1,7 @@
 import { useCallback, useLayoutEffect, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
 import Header from '../components/Header'
-import { ChevronLeft, Ellipsis } from 'lucide-react'
+import { useBattleFit } from '../components/useBattleFit'
 import BingoResult from './bingo/BingoResult'
 import { MyInfo, EnemyInfo } from '../components/HealthInfo'
 import RefillSupply from '../components/RefillSupply'
@@ -75,6 +75,7 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
   const [hintStep, setHintStep] = useState(resumed?.hintStep ?? 1)
   const [progressSaved, setProgressSaved] = useState(true)
   const containerRef = useRef<HTMLElement>(null)
+  useBattleFit(containerRef)
   const enemyElements = useRef<(HTMLDivElement | null)[]>([])
   const tileElements = useRef<(HTMLButtonElement | null)[]>([])
   const refillElements = useRef<(HTMLSpanElement | null)[]>([])
@@ -181,16 +182,9 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
       if ((event.target as HTMLElement).closest('button, a, input, dialog')) return
       if (phase === 'waiting') begin()
     }}>
-    {bingoPreview ? <header className="beta-header">
-      <button type="button" className="beta-icon-button" onClick={onChoosePreview} aria-label="Choose a preview puzzle"><ChevronLeft size={22} /></button>
-      <div className="title" ref={wyrmTitleRef}>WYRMLE</div>
-      <nav aria-label="Puzzle controls">
-        {bingoGuide && <button type="button" onClick={() => setPanel('hints')}>Hints</button>}
-        <button type="button" className="beta-icon-button" onClick={() => setPanel('modes')} aria-label="Puzzle menu"><Ellipsis size={23} /></button>
-      </nav>
-    </header> : <>
-      <Header wyrmDockRef={wyrmDockRef} titleRef={wyrmTitleRef} showWyrm={!letterGame && phase === 'ready'}
-        onHelp={() => setPanel('help')} onHistory={() => setPanel('log')} onSettings={() => setPanel('modes')} />
+    <Header wyrmDockRef={wyrmDockRef} titleRef={wyrmTitleRef} showWyrm={!letterGame && phase === 'ready'}
+      onHelp={() => setPanel('help')} onHistory={() => setPanel('log')} onSettings={() => setPanel('modes')} />
+    {!bingoPreview && <>
       <div className="daily-meta">
         <button type="button" onClick={() => setPanel('modes')} aria-label="Switch combat mode">DEV · {modeLabels[mode]}</button>
         {phase === 'waiting' ? <button type="button" onClick={begin}>Begin</button>
@@ -204,7 +198,7 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
     <div className="battle-info">
       <MyInfo name={letterGame ? 'LIVES' : 'YOU'} health={displayedLives} maxHealth={game.encounter.startingResolve} wyrm={Boolean(letterGame)}
         wyrmRef={wyrmLifeRef} decoding={phase === 'enemy' || phase === 'tiles'} animateLives={bingoPreview} />
-      {letterGame && !bingoPreview && <RefillSupply game={letterGame} decoded={phase === 'ready'} revealed={revealedRefills} registerTile={registerRefill} />}
+      {letterGame && <RefillSupply game={letterGame} decoded={phase === 'ready'} revealed={revealedRefills} registerTile={registerRefill} />}
       {run.mode === 'damage'
         ? <EnemyInfo name={enemy.word} health={run.game.enemyHp} maxHealth={run.game.encounter.enemy.maxHealth} />
         : null}
@@ -278,16 +272,13 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
         {onChoosePreview && <button className="daily-button" onClick={onChoosePreview}>All puzzles</button>}
         {bingoPreview ? <>
           <button className="daily-button" onClick={() => onMode(mode)}>Restart puzzle</button>
+          {bingoGuide && <button className="daily-button" onClick={() => setPanel('hints')}>Hints</button>}
           <button className="daily-button" onClick={() => setPanel('log')}>Played words</button>
           <button className="daily-button" onClick={() => setPanel('help')}>How to play</button>
         </> : (encounter ? ['letter-strike'] as const : ['damage', 'letter-strike'] as const).map(value =>
           <button className="daily-button" key={value} onClick={() => onMode(value)}>{modeLabels[value]}</button>)}
         <button className="daily-button" onClick={onExit}>{bingoPreview ? 'Back to daily' : encounter ? 'Return to generator' : 'Return to daily game'}</button>
       </div>
-      {bingoPreview && letterGame?.encounter.finiteRefills && <details className="beta-refill-details">
-        <summary>Remaining refills</summary>
-        <RefillSupply game={letterGame} decoded revealed={[]} registerTile={() => {}} />
-      </details>}
     </PlaytestPanel>}
     {panel === 'log'  && <PlaytestPanel title={bingoPreview ? 'Played words' : 'Playtest log'} onClose={() => setPanel(null)}>
       {events.length > 0 ? <div className="dev-combat-log"><EncounterHud visible events={events} metric={metric} /></div>
@@ -307,6 +298,7 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
           <div>Double outlines need two hits. The first breaks armour; the next removes the letter. Matching tiles finish wounded copies first, then target from left to right.</div>
           <div>Blue − previews an armour break; red × previews removal. Defeated letters become centred dots with no outline. Repeated matching tiles can break and remove one armoured letter in the same word.</div>
           {Object.values(letterGame?.encounter.grammarModifiers ?? {}).some(value => value !== 0) && <div>This encounter also has word-type bonuses: an ADJECTIVE +1 weakness gives adjectives one extra normal matching hit. Counters already use all matching tiles.</div>}
+          {bingoPreview && bingoGuide && <button className="daily-button" onClick={() => setPanel('hints')}>Hints</button>}
           <div>{bingoPreview ? 'This is a practice preview. Restart freely; your daily progress and statistics are kept separate.' : 'This DEV comparison does not save to daily history.'}</div>
         </div>
       </PlaytestPanel>)}
