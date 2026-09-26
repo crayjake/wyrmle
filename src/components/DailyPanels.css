@@ -518,6 +518,10 @@
   width: 3.5rem;
 }
 
+.settings-preview-entry { margin-bottom: 1rem; }
+.settings-preview-entry a { display: flex; align-items: center; justify-content: center; box-sizing: border-box; text-decoration: none; min-height: 44px; }
+.settings-preview-entry p { margin: 0.5rem 0 0; font-size: 0.65rem; line-height: 1.5; }
+
 .settings-beta {
   margin-top: 1rem;
   padding-top: 0.8rem;

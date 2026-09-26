@@ -9,6 +9,7 @@ import type { DailyResult, DifficultyMode } from '../daily/types.ts'
 import type { LetterStrikeState } from '../game/letterStrike.ts'
 import { getDisplayEffectLabel, getLetterStrikeBattleEvents } from '../game/letterStrikeHud.ts'
 import { ModeChoices } from './ModeSelection'
+import { bingoPreviewHref } from '../experimental/bingo/catalog'
 import './DailyPanels.css'
 
 type PanelProps = { onClose: () => void }
@@ -73,6 +74,10 @@ export function SettingsPanel({ preferredMode, runMode, started, error, onChange
   onResetTutorial: () => void
 }) {
   return <DailyDialog title="Settings" subtitle="This browser" onClose={onClose}>
+    <div className="settings-preview-entry">
+      <a className="daily-button" href={bingoPreviewHref('bingos')}>Beta puzzles</a>
+      <p>Try the new puzzles with 3, 4 or 5 lives. Your daily progress stays saved.</p>
+    </div>
     <ModeChoices value={preferredMode} onChange={onChangeMode} />
     <p className="mode-note">{started
       ? `This Daily stays in ${runMode.toUpperCase()}. Your preference applies to your next run.`

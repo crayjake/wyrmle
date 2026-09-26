@@ -9,6 +9,8 @@
     "test": "node --test --test-isolation=none tests/*.test.ts",
     "test:ci": "node --test --test-isolation=none",
     "generate": "node scripts/generate.ts",
+    "assess:bingo": "node scripts/assess-bingo-generation.ts",
+    "export:bingo-previews": "node scripts/export-bingo-previews.ts",
     "audit-lexicon": "node scripts/audit-lexicon.ts",
     "export-semantic-source": "node scripts/export-semantic-source.ts",
     "package-semantic-cache": "node scripts/package-semantic-cache.ts",

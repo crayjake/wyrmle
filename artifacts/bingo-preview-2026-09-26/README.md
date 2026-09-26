@@ -1,5 +1,7 @@
 # Three lives and a hidden bingo
 
+The ten newer bingo-first boards are now playable through **Settings → Beta puzzles**, or at [`?preview=bingos`](https://crayjake.github.io/wyrmle/?preview=bingos) after deployment. Choose 3, 4 or 5 lives in the picker. [All preview URLs and build instructions](../bingo-previews-2026-09-26/README.md). The original puzzle documented below remains at `?preview=bingo`.
+
 Run `npm run dev`, then open **[the beta preview](http://localhost:5173/?preview=bingo)**. The same `?preview=bingo` entry point works in a production build. It is a separate practice puzzle: no daily attempt, preference, result or statistic is written. Restart returns the identical puzzle. Back to daily returns to the ordinary five-life game.
 
 The preview has three lives, sixteen normal tiles, finite refills and six enemy hits. There are no Life extensions, Hit overrides, Revives, grammar bonuses or long-word bonuses. A bingo succeeds through the existing counter rules. The three-piece wyrm travels through the intro and docks in the life meter; spent segments animate after hit resolution. Reduced motion skips both effects.

@@ -1,4 +1,5 @@
 .bingo-preview .beta-label { color: var(--blue); }
+.bingo-preview .enemy-definition { width: min(94%, 24rem); }
 
 .bingo-preview .beta-intro {
   margin: 0;
@@ -14,8 +15,65 @@
   padding: 0.2rem 0;
 }
 
-/* Tail, body, head: both the travelling wyrm and the resting life meter use
-   the same three larger pieces. The decoder measures their actual dock centres. */
+.bingo-preview .beta-intro button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--blue);
+  font: inherit;
+  cursor: pointer;
+}
+
+.container.bingo-library {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  justify-content: flex-start;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.bingo-library h1 { margin: 0; font-size: 1.25rem; }
+.bingo-library p { margin: 0; font-size: 0.8rem; line-height: 1.5; }
+.bingo-library a { color: var(--blue); }
+.bingo-lives-select { display: flex; align-items: center; gap: 1rem; font-size: 0.8rem; }
+.bingo-lives-select select {
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid color-mix(in srgb, var(--fg) 45%, transparent);
+  border-radius: 4px;
+  padding: 0.5rem;
+  font: inherit;
+  min-height: 44px;
+}
+.bingo-preview-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.bingo-preview-list a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+  height: 100%;
+  box-sizing: border-box;
+  min-height: 70px;
+  padding: 0.65rem;
+  border: 1px solid color-mix(in srgb, var(--fg) 45%, transparent);
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+.bingo-preview-list span { color: var(--fg); font-size: 0.6rem; }
+.bingo-original-link { font-size: 0.8rem; padding-block: 0.5rem; }
+
+/* The travelling wyrm and resting meter share the same larger pieces at every
+   preview life count. The decoder measures their actual dock centres. */
 .bingo-preview .wyrm-life-meter { gap: 4px; }
 .bingo-preview .wyrm-life-segment { width: 15px; height: 16px; }
 .bingo-preview .wyrm-life-tail { width: 11px; height: 11px; }
@@ -44,6 +102,6 @@
 @media (max-width: 600px) and (orientation: portrait) {
   /* Reserve room for the preview label and prompt without clipping Play. */
   .container.letter-combat.bingo-preview {
-    --board-size: clamp(12rem, calc(100dvh - 19.75rem), 18rem);
+    --board-size: clamp(12rem, calc(100dvh - 22.25rem), 18rem);
   }
 }

@@ -1,0 +1,1291 @@
+[
+  {
+    "enemy": "ANGER",
+    "letterCoveringSpellings": 61,
+    "letterCoveringLemmas": 49,
+    "twoArmourSpellings": 19,
+    "twoArmourLemmas": 15,
+    "twoArmourObservedSpellings": 16,
+    "twoArmourAtLeastPointFour": 3,
+    "candidates": [
+      {
+        "word": "SCREAMING",
+        "lemma": "screaming",
+        "armour": [],
+        "freeTiles": 7,
+        "commonness": 0.8374999999999999,
+        "definition": "marked by or causing boisterous merriment or convulsive laughter",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "RELAXING",
+        "lemma": "relax",
+        "armour": [],
+        "freeTiles": 8,
+        "commonness": 0.725,
+        "definition": "become less tense, rest, or take one's ease",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "ENCOURAGEMENT",
+        "lemma": "encouragement",
+        "armour": [
+          "N",
+          "E"
+        ],
+        "freeTiles": 3,
+        "commonness": 0.6975,
+        "definition": "the act of giving hope or support to someone",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "REWARDING",
+        "lemma": "rewarding",
+        "armour": [
+          "R"
+        ],
+        "freeTiles": 7,
+        "commonness": 0.685,
+        "definition": "providing personal satisfaction",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "INTERACTING",
+        "lemma": "interact",
+        "armour": [
+          "N"
+        ],
+        "freeTiles": 5,
+        "commonness": 0.665,
+        "definition": "act together or towards others or with others",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "REASSURING",
+        "lemma": "reassuring",
+        "armour": [
+          "R"
+        ],
+        "freeTiles": 6,
+        "commonness": 0.6,
+        "definition": "restoring confidence and relieving anxiety",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "DEGENERATE",
+        "lemma": "degenerate",
+        "armour": [
+          "E"
+        ],
+        "freeTiles": 6,
+        "commonness": 0.5825,
+        "definition": "unrestrained by convention or morality",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "APPRECIATING",
+        "lemma": "appreciate",
+        "armour": [
+          "A"
+        ],
+        "freeTiles": 4,
+        "commonness": 0.5575,
+        "definition": "recognize with gratitude; be grateful for",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "GRANDEUR",
+        "lemma": "grandeur",
+        "armour": [
+          "R"
+        ],
+        "freeTiles": 8,
+        "commonness": 0.555,
+        "definition": "the quality of being magnificent or splendid or grand",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "CHEERLEADING",
+        "lemma": "cheerlead",
+        "armour": [
+          "E"
+        ],
+        "freeTiles": 4,
+        "commonness": 0.54,
+        "definition": "act as a cheerleader in a sports event",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "ENDEARING",
+        "lemma": "endear",
+        "armour": [
+          "N",
+          "E"
+        ],
+        "freeTiles": 7,
+        "commonness": 0.5325,
+        "definition": "make attractive or lovable",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "EXHILARATING",
+        "lemma": "exhilarate",
+        "armour": [
+          "A"
+        ],
+        "freeTiles": 4,
+        "commonness": 0.53,
+        "definition": "fill with sublime emotion",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "HEARTWARMING",
+        "lemma": "heartwarming",
+        "armour": [
+          "A",
+          "R"
+        ],
+        "freeTiles": 4,
+        "commonness": 0.5125,
+        "definition": "causing gladness and pleasure",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "MODERATING",
+        "lemma": "moderate",
+        "armour": [],
+        "freeTiles": 6,
+        "commonness": 0.47250000000000003,
+        "definition": "make less strong or intense; soften",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "TOLERATING",
+        "lemma": "tolerate",
+        "armour": [],
+        "freeTiles": 6,
+        "commonness": 0.4375,
+        "definition": "put up with something or somebody unpleasant",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "CARESSING",
+        "lemma": "caress",
+        "armour": [],
+        "freeTiles": 7,
+        "commonness": 0.43000000000000005,
+        "definition": "touch or stroke lightly in a loving or endearing manner",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "ENTHRALLING",
+        "lemma": "enthral",
+        "armour": [
+          "N"
+        ],
+        "freeTiles": 5,
+        "commonness": 0.41500000000000004,
+        "definition": "hold spellbound",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "PAMPERING",
+        "lemma": "pampering",
+        "armour": [],
+        "freeTiles": 7,
+        "commonness": 0.4125,
+        "definition": "the act of indulging or gratifying a desire",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "HEARTENING",
+        "lemma": "heartening",
+        "armour": [
+          "N",
+          "E"
+        ],
+        "freeTiles": 6,
+        "commonness": 0.39,
+        "definition": "cheerfully encouraging",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "HEARTSTRINGS",
+        "lemma": "heartstrings",
+        "armour": [
+          "R"
+        ],
+        "freeTiles": 4,
+        "commonness": 0.38749999999999996,
+        "definition": "your deepest feelings of love and compassion",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "INVIGORATED",
+        "lemma": "invigorate",
+        "armour": [],
+        "freeTiles": 5,
+        "commonness": 0.36750000000000005,
+        "definition": "make lively",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "HERALDING",
+        "lemma": "herald",
+        "armour": [],
+        "freeTiles": 7,
+        "commonness": 0.345,
+        "definition": "greet enthusiastically or joyfully",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "INVIGORATE",
+        "lemma": "invigorate",
+        "armour": [],
+        "freeTiles": 6,
+        "commonness": 0.32999999999999996,
+        "definition": "make lively",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "REASSURINGLY",
+        "lemma": "reassuringly",
+        "armour": [
+          "R"
+        ],
+        "freeTiles": 4,
+        "commonness": 0.31499999999999995,
+        "definition": "in a reassuring manner",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "ENTRANCING",
+        "lemma": "entrance",
+        "armour": [
+          "N"
+        ],
+        "freeTiles": 6,
+        "commonness": 0.3075,
+        "definition": "attract; cause to be enamored",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "GRACIOUSNESS",
+        "lemma": "graciousness",
+        "armour": [],
+        "freeTiles": 4,
+        "commonness": 0.3075,
+        "definition": "the quality of being kind and gentle",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "GRATEFULNESS",
+        "lemma": "gratefulness",
+        "armour": [
+          "E"
+        ],
+        "freeTiles": 4,
+        "commonness": 0.2825,
+        "definition": "warm friendly feelings of gratitude",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "ENCOURAGINGLY",
+        "lemma": "encouragingly",
+        "armour": [
+          "N",
+          "G"
+        ],
+        "freeTiles": 3,
+        "commonness": 0.27749999999999997,
+        "definition": "in an encouraging manner",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "AGREEABLENESS",
+        "lemma": "agreeableness",
+        "armour": [
+          "A",
+          "E"
+        ],
+        "freeTiles": 3,
+        "commonness": 0.25749999999999995,
+        "definition": "pleasantness resulting from agreeable conditions",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "ENTERTAININGLY",
+        "lemma": "entertainingly",
+        "armour": [
+          "N",
+          "E"
+        ],
+        "freeTiles": 2,
+        "commonness": 0.25,
+        "definition": "in an entertaining manner",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "ENDEARINGLY",
+        "lemma": "endearingly",
+        "armour": [
+          "N",
+          "E"
+        ],
+        "freeTiles": 5,
+        "commonness": 0.245,
+        "definition": "in an adorable manner",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "FRATERNIZING",
+        "lemma": "fraternize",
+        "armour": [
+          "N",
+          "R"
+        ],
+        "freeTiles": 4,
+        "commonness": 0.2,
+        "definition": "be on friendly terms with someone, as if with a brother, especially with an enemy",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "MERRYMAKING",
+        "lemma": "merrymaking",
+        "armour": [
+          "R"
+        ],
+        "freeTiles": 5,
+        "commonness": 0.1975,
+        "definition": "a boisterous celebration; a merry festivity",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "COMMISERATING",
+        "lemma": "commiserate",
+        "armour": [],
+        "freeTiles": 3,
+        "commonness": 0.195,
+        "definition": "to feel or express sympathy or compassion",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "ENCOURAGEMENTS",
+        "lemma": "encouragement",
+        "armour": [
+          "N",
+          "E"
+        ],
+        "freeTiles": 2,
+        "commonness": 0.1925,
+        "definition": "the act of giving hope or support to someone",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "INVIGORATES",
+        "lemma": "invigorate",
+        "armour": [],
+        "freeTiles": 5,
+        "commonness": 0.1775,
+        "definition": "make lively",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "LIGHTHEARTEDNESS",
+        "lemma": "lightheartedness",
+        "armour": [
+          "E"
+        ],
+        "freeTiles": 0,
+        "commonness": 0.15250000000000002,
+        "definition": "the cheerful feeling you have when nothing is troubling you",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "FORBEARING",
+        "lemma": "forbearing",
+        "armour": [
+          "R"
+        ],
+        "freeTiles": 6,
+        "commonness": 0.15000000000000002,
+        "definition": "showing patient and unruffled self-control and restraint under adversity; slow to retaliate or express resentment",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "NONAGGRESSION",
+        "lemma": "nonaggression",
+        "armour": [
+          "N",
+          "G"
+        ],
+        "freeTiles": 3,
+        "commonness": 0.14250000000000002,
+        "definition": "a policy of not initiating hostilities",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "SCREAMINGLY",
+        "lemma": "screamingly",
+        "armour": [],
+        "freeTiles": 5,
+        "commonness": 0.11249999999999999,
+        "definition": "funny to the point where screams of laughter are excited",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "FRATERNISING",
+        "lemma": "fraternise",
+        "armour": [
+          "N",
+          "R"
+        ],
+        "freeTiles": 4,
+        "commonness": 0.09749999999999998,
+        "definition": "be on friendly terms with someone, as if with a brother, especially with an enemy",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "NONAGGRESSIVE",
+        "lemma": "nonaggressive",
+        "armour": [
+          "N",
+          "G",
+          "E"
+        ],
+        "freeTiles": 3,
+        "commonness": 0.0675,
+        "definition": "not aggressive; not given to fighting or assertiveness",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "UNAGGRESSIVE",
+        "lemma": "unaggressive",
+        "armour": [
+          "G",
+          "E"
+        ],
+        "freeTiles": 4,
+        "commonness": 0.0675,
+        "definition": "not aggressive; not given to fighting or assertiveness",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "GREGARIOUSNESS",
+        "lemma": "gregariousness",
+        "armour": [
+          "G",
+          "E",
+          "R"
+        ],
+        "freeTiles": 2,
+        "commonness": 0.06,
+        "definition": "the quality of being gregarious — having a dislike of being alone",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "ENRAPTURING",
+        "lemma": "enrapture",
+        "armour": [
+          "N",
+          "R"
+        ],
+        "freeTiles": 5,
+        "commonness": 0.034999999999999976,
+        "definition": "hold spellbound",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "INEBRIATING",
+        "lemma": "inebriate",
+        "armour": [
+          "N"
+        ],
+        "freeTiles": 5,
+        "commonness": 0.027500000000000024,
+        "definition": "fill with sublime emotion",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "AGREEABLENESSES",
+        "lemma": "agreeableness",
+        "armour": [
+          "A",
+          "E"
+        ],
+        "freeTiles": 1,
+        "commonness": 0,
+        "definition": "pleasantness resulting from agreeable conditions",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "BIGHEARTEDNESS",
+        "lemma": "bigheartedness",
+        "armour": [
+          "E"
+        ],
+        "freeTiles": 2,
+        "commonness": 0,
+        "definition": "the quality of being kind and generous",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "BIGHEARTEDNESSES",
+        "lemma": "bigheartedness",
+        "armour": [
+          "E"
+        ],
+        "freeTiles": 0,
+        "commonness": 0,
+        "definition": "the quality of being kind and generous",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "CHARMINGER",
+        "lemma": "charming",
+        "armour": [
+          "R"
+        ],
+        "freeTiles": 6,
+        "commonness": 0,
+        "definition": "pleasing or delighting",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "CHARMINGEST",
+        "lemma": "charming",
+        "armour": [],
+        "freeTiles": 5,
+        "commonness": 0,
+        "definition": "pleasing or delighting",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "EXUBERATING",
+        "lemma": "exuberate",
+        "armour": [
+          "E"
+        ],
+        "freeTiles": 5,
+        "commonness": 0,
+        "definition": "to express great joy",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "GAINLIER",
+        "lemma": "gainly",
+        "armour": [],
+        "freeTiles": 8,
+        "commonness": 0,
+        "definition": "graceful and pleasing",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "GALLANTER",
+        "lemma": "gallant",
+        "armour": [
+          "A"
+        ],
+        "freeTiles": 7,
+        "commonness": 0,
+        "definition": "lively and spirited",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "GRACIOUSNESSES",
+        "lemma": "graciousness",
+        "armour": [
+          "E"
+        ],
+        "freeTiles": 2,
+        "commonness": 0,
+        "definition": "the quality of being kind and gentle",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "GRANDEURS",
+        "lemma": "grandeur",
+        "armour": [
+          "R"
+        ],
+        "freeTiles": 7,
+        "commonness": 0,
+        "definition": "the quality of being magnificent or splendid or grand",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "GRATEFULNESSES",
+        "lemma": "gratefulness",
+        "armour": [
+          "E"
+        ],
+        "freeTiles": 2,
+        "commonness": 0,
+        "definition": "warm friendly feelings of gratitude",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "GREGARIOUSNESSES",
+        "lemma": "gregariousness",
+        "armour": [
+          "G",
+          "E",
+          "R"
+        ],
+        "freeTiles": 0,
+        "commonness": 0,
+        "definition": "the quality of being gregarious — having a dislike of being alone",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "MERRYMAKINGS",
+        "lemma": "merrymaking",
+        "armour": [
+          "R"
+        ],
+        "freeTiles": 4,
+        "commonness": 0,
+        "definition": "a boisterous celebration; a merry festivity",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "NONAGGRESSIONS",
+        "lemma": "nonaggression",
+        "armour": [
+          "N",
+          "G"
+        ],
+        "freeTiles": 2,
+        "commonness": 0,
+        "definition": "a policy of not initiating hostilities",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "PERORATING",
+        "lemma": "perorate",
+        "armour": [
+          "R"
+        ],
+        "freeTiles": 6,
+        "commonness": 0,
+        "definition": "deliver an oration in grandiloquent style",
+        "evidence": "model-assessed"
+      }
+    ]
+  },
+  {
+    "enemy": "CHAOS",
+    "letterCoveringSpellings": 17,
+    "letterCoveringLemmas": 9,
+    "twoArmourSpellings": 3,
+    "twoArmourLemmas": 2,
+    "twoArmourObservedSpellings": 1,
+    "twoArmourAtLeastPointFour": 0,
+    "candidates": [
+      {
+        "word": "ORCHESTRATED",
+        "lemma": "orchestrate",
+        "armour": [],
+        "freeTiles": 4,
+        "commonness": 0.57,
+        "definition": "plan and direct (a complex undertaking)",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "ORCHESTRATE",
+        "lemma": "orchestrate",
+        "armour": [],
+        "freeTiles": 5,
+        "commonness": 0.41500000000000004,
+        "definition": "plan and direct (a complex undertaking)",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "ORCHESTRATING",
+        "lemma": "orchestrate",
+        "armour": [],
+        "freeTiles": 3,
+        "commonness": 0.4075,
+        "definition": "plan and direct (a complex undertaking)",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "UNSOPHISTICATED",
+        "lemma": "unsophisticated",
+        "armour": [
+          "S"
+        ],
+        "freeTiles": 1,
+        "commonness": 0.39249999999999996,
+        "definition": "lacking complexity",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "HOUSECLEANING",
+        "lemma": "houseclean",
+        "armour": [],
+        "freeTiles": 3,
+        "commonness": 0.2875,
+        "definition": "clean and tidy up the house",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "ORCHESTRATES",
+        "lemma": "orchestrate",
+        "armour": [
+          "S"
+        ],
+        "freeTiles": 4,
+        "commonness": 0.25,
+        "definition": "plan and direct (a complex undertaking)",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "CHOREOGRAPHS",
+        "lemma": "choreograph",
+        "armour": [
+          "H",
+          "O"
+        ],
+        "freeTiles": 4,
+        "commonness": 0.13,
+        "definition": "plan and oversee the development and details of",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "ARCHITECTONICS",
+        "lemma": "architectonics",
+        "armour": [
+          "C"
+        ],
+        "freeTiles": 2,
+        "commonness": 0.07750000000000001,
+        "definition": "the science of architecture",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "HALCYONS",
+        "lemma": "halcyon",
+        "armour": [],
+        "freeTiles": 8,
+        "commonness": 0,
+        "definition": "a mythical bird said to breed at the time of the winter solstice in a nest floating on the sea and to have the power of calming the winds and waves",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "HOUSECLEAN",
+        "lemma": "houseclean",
+        "armour": [],
+        "freeTiles": 6,
+        "commonness": 0,
+        "definition": "clean and tidy up the house",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "HOUSECLEANED",
+        "lemma": "houseclean",
+        "armour": [],
+        "freeTiles": 4,
+        "commonness": 0,
+        "definition": "clean and tidy up the house",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "HOUSECLEANINGS",
+        "lemma": "housecleaning",
+        "armour": [
+          "S"
+        ],
+        "freeTiles": 2,
+        "commonness": 0,
+        "definition": "the act of cleaning the rooms and furnishings of a house",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "HOUSECLEANS",
+        "lemma": "houseclean",
+        "armour": [
+          "S"
+        ],
+        "freeTiles": 5,
+        "commonness": 0,
+        "definition": "clean and tidy up the house",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "METHODICALNESS",
+        "lemma": "methodicalness",
+        "armour": [
+          "S"
+        ],
+        "freeTiles": 2,
+        "commonness": 0,
+        "definition": "the quality of appreciating method and system",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "METHODICALNESSES",
+        "lemma": "methodicalness",
+        "armour": [
+          "S"
+        ],
+        "freeTiles": 0,
+        "commonness": 0,
+        "definition": "the quality of appreciating method and system",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "SCHEMATISATION",
+        "lemma": "schematisation",
+        "armour": [
+          "A",
+          "S"
+        ],
+        "freeTiles": 2,
+        "commonness": 0,
+        "definition": "providing a chart or outline of a system",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "SCHEMATISATIONS",
+        "lemma": "schematisation",
+        "armour": [
+          "A",
+          "S"
+        ],
+        "freeTiles": 1,
+        "commonness": 0,
+        "definition": "providing a chart or outline of a system",
+        "evidence": "model-assessed"
+      }
+    ]
+  },
+  {
+    "enemy": "CRUELTY",
+    "letterCoveringSpellings": 3,
+    "letterCoveringLemmas": 3,
+    "twoArmourSpellings": 1,
+    "twoArmourLemmas": 1,
+    "twoArmourObservedSpellings": 1,
+    "twoArmourAtLeastPointFour": 1,
+    "candidates": [
+      {
+        "word": "RESPECTFULLY",
+        "lemma": "respectfully",
+        "armour": [
+          "E",
+          "L"
+        ],
+        "freeTiles": 4,
+        "commonness": 0.6175,
+        "definition": "in a respectful manner",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "EXCULPATORY",
+        "lemma": "exculpatory",
+        "armour": [],
+        "freeTiles": 5,
+        "commonness": 0.3125,
+        "definition": "clearing of guilt or blame",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "COURTEOUSLY",
+        "lemma": "courteously",
+        "armour": [
+          "U"
+        ],
+        "freeTiles": 5,
+        "commonness": 0.2825,
+        "definition": "in a polite manner",
+        "evidence": "model-assessed"
+      }
+    ]
+  },
+  {
+    "enemy": "DESPAIR",
+    "letterCoveringSpellings": 2,
+    "letterCoveringLemmas": 2,
+    "twoArmourSpellings": 0,
+    "twoArmourLemmas": 0,
+    "twoArmourObservedSpellings": 0,
+    "twoArmourAtLeastPointFour": 0,
+    "candidates": [
+      {
+        "word": "PERSUADING",
+        "lemma": "persuade",
+        "armour": [],
+        "freeTiles": 6,
+        "commonness": 0.5225,
+        "definition": "win approval or support for",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "PATRONISED",
+        "lemma": "patronise",
+        "armour": [],
+        "freeTiles": 6,
+        "commonness": 0.33999999999999997,
+        "definition": "be a regular customer or client of",
+        "evidence": "model-assessed"
+      }
+    ]
+  },
+  {
+    "enemy": "FEAR",
+    "letterCoveringSpellings": 32,
+    "letterCoveringLemmas": 22,
+    "twoArmourSpellings": 5,
+    "twoArmourLemmas": 4,
+    "twoArmourObservedSpellings": 1,
+    "twoArmourAtLeastPointFour": 1,
+    "candidates": [
+      {
+        "word": "COMFORTABLE",
+        "lemma": "comfortable",
+        "armour": [],
+        "freeTiles": 5,
+        "commonness": 0.915,
+        "definition": "free from stress or conducive to mental ease; having or affording peace of mind",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "SAFER",
+        "lemma": "safe",
+        "armour": [],
+        "freeTiles": 11,
+        "commonness": 0.7725,
+        "definition": "free from danger or the risk of harm",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "FEARLESS",
+        "lemma": "fearless",
+        "armour": [
+          "E"
+        ],
+        "freeTiles": 8,
+        "commonness": 0.6375,
+        "definition": "invulnerable to fear or intimidation",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "SAFEGUARD",
+        "lemma": "safeguard",
+        "armour": [
+          "A"
+        ],
+        "freeTiles": 7,
+        "commonness": 0.6375,
+        "definition": "make safe",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "SAFEGUARDS",
+        "lemma": "safeguard",
+        "armour": [
+          "A"
+        ],
+        "freeTiles": 6,
+        "commonness": 0.595,
+        "definition": "make safe",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "GRACEFULLY",
+        "lemma": "gracefully",
+        "armour": [],
+        "freeTiles": 6,
+        "commonness": 0.5575,
+        "definition": "in a graceful manner",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "SAFEGUARDING",
+        "lemma": "safeguard",
+        "armour": [
+          "A"
+        ],
+        "freeTiles": 4,
+        "commonness": 0.5575,
+        "definition": "make safe",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "VERIFIABLE",
+        "lemma": "verifiable",
+        "armour": [
+          "E"
+        ],
+        "freeTiles": 6,
+        "commonness": 0.485,
+        "definition": "capable of being verified",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "REFRACTORY",
+        "lemma": "refractory",
+        "armour": [
+          "R"
+        ],
+        "freeTiles": 6,
+        "commonness": 0.47,
+        "definition": "stubbornly resistant to authority or control",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "FEARLESSLY",
+        "lemma": "fearlessly",
+        "armour": [
+          "E"
+        ],
+        "freeTiles": 6,
+        "commonness": 0.42000000000000004,
+        "definition": "without fear",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "SAFEGUARDED",
+        "lemma": "safeguard",
+        "armour": [
+          "E",
+          "A"
+        ],
+        "freeTiles": 5,
+        "commonness": 0.405,
+        "definition": "make safe",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "FEARLESSNESS",
+        "lemma": "fearlessness",
+        "armour": [
+          "E"
+        ],
+        "freeTiles": 4,
+        "commonness": 0.365,
+        "definition": "feeling no fear",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "CERTIFIABLE",
+        "lemma": "certifiable",
+        "armour": [
+          "E"
+        ],
+        "freeTiles": 5,
+        "commonness": 0.29500000000000004,
+        "definition": "capable of being guaranteed or certified",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "FORWARDNESS",
+        "lemma": "forwardness",
+        "armour": [
+          "R"
+        ],
+        "freeTiles": 5,
+        "commonness": 0.15999999999999998,
+        "definition": "offensive boldness and assertiveness",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "CAREFULNESS",
+        "lemma": "carefulness",
+        "armour": [
+          "E"
+        ],
+        "freeTiles": 5,
+        "commonness": 0.15250000000000002,
+        "definition": "the trait of being cautious; being attentive to possible danger",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "VERIFIABILITY",
+        "lemma": "verifiability",
+        "armour": [],
+        "freeTiles": 3,
+        "commonness": 0.14750000000000002,
+        "definition": "The state or property of being capable of being verified; confirmability.",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "CONFIRMABLE",
+        "lemma": "confirmable",
+        "armour": [],
+        "freeTiles": 5,
+        "commonness": 0.1175,
+        "definition": "capable of being tested (verified or falsified) by experiment or observation",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "AFFIRMABLE",
+        "lemma": "affirmable",
+        "armour": [
+          "F",
+          "A"
+        ],
+        "freeTiles": 6,
+        "commonness": 0,
+        "definition": "capable of being affirmed or asserted",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "CAREFREENESS",
+        "lemma": "carefreeness",
+        "armour": [
+          "E",
+          "R"
+        ],
+        "freeTiles": 4,
+        "commonness": 0,
+        "definition": "the trait of being without worry or responsibility",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "CAREFREENESSES",
+        "lemma": "carefreeness",
+        "armour": [
+          "E",
+          "R"
+        ],
+        "freeTiles": 2,
+        "commonness": 0,
+        "definition": "the trait of being without worry or responsibility",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "CAREFULNESSES",
+        "lemma": "carefulness",
+        "armour": [
+          "E"
+        ],
+        "freeTiles": 3,
+        "commonness": 0,
+        "definition": "the trait of being cautious; being attentive to possible danger",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "CONFIRMATIVE",
+        "lemma": "confirmative",
+        "armour": [],
+        "freeTiles": 4,
+        "commonness": 0,
+        "definition": "serving to support or corroborate",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "DREAMFULLY",
+        "lemma": "dreamfully",
+        "armour": [],
+        "freeTiles": 6,
+        "commonness": 0,
+        "definition": "in a dreamy manner",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "FEARLESSNESSES",
+        "lemma": "fearlessness",
+        "armour": [
+          "E"
+        ],
+        "freeTiles": 2,
+        "commonness": 0,
+        "definition": "feeling no fear",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "FOOLHARDIER",
+        "lemma": "foolhardy",
+        "armour": [
+          "R"
+        ],
+        "freeTiles": 5,
+        "commonness": 0,
+        "definition": "marked by defiant disregard for danger or consequences",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "FOOLHARDIEST",
+        "lemma": "foolhardy",
+        "armour": [],
+        "freeTiles": 4,
+        "commonness": 0,
+        "definition": "marked by defiant disregard for danger or consequences",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "FORWARDNESSES",
+        "lemma": "forwardness",
+        "armour": [
+          "E",
+          "R"
+        ],
+        "freeTiles": 3,
+        "commonness": 0,
+        "definition": "offensive boldness and assertiveness",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "FRACTIOUSNESS",
+        "lemma": "fractiousness",
+        "armour": [],
+        "freeTiles": 3,
+        "commonness": 0,
+        "definition": "the trait of being prone to disobedience and lack of discipline",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "FRACTIOUSNESSES",
+        "lemma": "fractiousness",
+        "armour": [
+          "E"
+        ],
+        "freeTiles": 1,
+        "commonness": 0,
+        "definition": "the trait of being prone to disobedience and lack of discipline",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "UNFEARING",
+        "lemma": "unfearing",
+        "armour": [],
+        "freeTiles": 7,
+        "commonness": 0,
+        "definition": "invulnerable to fear or intimidation",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "UNSAFER",
+        "lemma": "unsafe",
+        "armour": [],
+        "freeTiles": 9,
+        "commonness": 0,
+        "definition": "not safe from attack",
+        "evidence": "model-assessed"
+      },
+      {
+        "word": "VERIFIABILITIES",
+        "lemma": "verifiability",
+        "armour": [
+          "E"
+        ],
+        "freeTiles": 1,
+        "commonness": 0,
+        "definition": "The state or property of being capable of being verified; confirmability.",
+        "evidence": "model-assessed"
+      }
+    ]
+  },
+  {
+    "enemy": "MELANCHOLY",
+    "letterCoveringSpellings": 0,
+    "letterCoveringLemmas": 0,
+    "twoArmourSpellings": 0,
+    "twoArmourLemmas": 0,
+    "twoArmourObservedSpellings": 0,
+    "twoArmourAtLeastPointFour": 0,
+    "candidates": []
+  }
+]

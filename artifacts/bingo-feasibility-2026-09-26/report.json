@@ -1,0 +1,4009 @@
+{
+  "scope": "bingo-first-feasibility-study-not-published-content",
+  "dailyPublicationReady": false,
+  "node": "v26.8.2",
+  "settings": {
+    "seedsPerPair": 2,
+    "familiarCounterRoots": 4,
+    "highDamageCounterRoots": 4,
+    "neutralRoots": 2,
+    "resistedRoots": 2,
+    "beamWidth": 12,
+    "childrenPerState": 8,
+    "maximumTurns": 5,
+    "refillLength": 24,
+    "counterCommonness": 0.4,
+    "ordinaryCommonness": 0.5,
+    "minimumCounterLength": 4
+  },
+  "aggregate": [
+    {
+      "lives": 3,
+      "candidates": 10,
+      "sampledOpenings": 120,
+      "witnessedWinningOpenings": 94,
+      "unknownWithinBudget": 19,
+      "counterThenNeutralWinningOpenings": 28,
+      "supplyDeadOpenings": 7,
+      "counterThenTwoOrMoreNeutralsWinningOpenings": 17,
+      "laterBoardsSampled": 140,
+      "laterBoardsWithTwoCounterFamiliesAndBait": 122,
+      "laterBoardsWithMeaningAdvantage": 131,
+      "laterBoardsWithMoreThanOneHP": 140
+    },
+    {
+      "lives": 4,
+      "candidates": 10,
+      "sampledOpenings": 120,
+      "witnessedWinningOpenings": 110,
+      "unknownWithinBudget": 3,
+      "counterThenNeutralWinningOpenings": 40,
+      "supplyDeadOpenings": 7,
+      "counterThenTwoOrMoreNeutralsWinningOpenings": 29,
+      "laterBoardsSampled": 220,
+      "laterBoardsWithTwoCounterFamiliesAndBait": 182,
+      "laterBoardsWithMeaningAdvantage": 201,
+      "laterBoardsWithMoreThanOneHP": 219
+    },
+    {
+      "lives": 5,
+      "candidates": 10,
+      "sampledOpenings": 120,
+      "witnessedWinningOpenings": 111,
+      "unknownWithinBudget": 2,
+      "counterThenNeutralWinningOpenings": 51,
+      "supplyDeadOpenings": 7,
+      "counterThenTwoOrMoreNeutralsWinningOpenings": 40,
+      "laterBoardsSampled": 300,
+      "laterBoardsWithTwoCounterFamiliesAndBait": 238,
+      "laterBoardsWithMeaningAdvantage": 269,
+      "laterBoardsWithMoreThanOneHP": 298
+    }
+  ],
+  "control": {
+    "byLives": [
+      {
+        "lives": 3,
+        "sampledOpenings": 12,
+        "openingsWithWitness": 12,
+        "unknownWithinBudget": 0,
+        "supplyDeadOpenings": 0,
+        "counterThenNeutralWinningOpenings": 5,
+        "counterThenTwoOrMoreNeutralsWinningOpenings": 4,
+        "laterBoardsSampled": 14,
+        "laterBoardsWithTwoCounterFamiliesAndBait": 14,
+        "laterBoardsWithMeaningAdvantage": 14,
+        "laterBoardsWithMoreThanOneHP": 14
+      },
+      {
+        "lives": 4,
+        "sampledOpenings": 12,
+        "openingsWithWitness": 12,
+        "unknownWithinBudget": 0,
+        "supplyDeadOpenings": 0,
+        "counterThenNeutralWinningOpenings": 5,
+        "counterThenTwoOrMoreNeutralsWinningOpenings": 4,
+        "laterBoardsSampled": 22,
+        "laterBoardsWithTwoCounterFamiliesAndBait": 22,
+        "laterBoardsWithMeaningAdvantage": 22,
+        "laterBoardsWithMoreThanOneHP": 22
+      },
+      {
+        "lives": 5,
+        "sampledOpenings": 12,
+        "openingsWithWitness": 12,
+        "unknownWithinBudget": 0,
+        "supplyDeadOpenings": 0,
+        "counterThenNeutralWinningOpenings": 8,
+        "counterThenTwoOrMoreNeutralsWinningOpenings": 7,
+        "laterBoardsSampled": 30,
+        "laterBoardsWithTwoCounterFamiliesAndBait": 22,
+        "laterBoardsWithMeaningAdvantage": 23,
+        "laterBoardsWithMoreThanOneHP": 30
+      }
+    ],
+    "rootReports": [
+      {
+        "word": "EASY",
+        "label": "COUNTER",
+        "hits": 2,
+        "remainingHP": 4,
+        "supplyDeficits": [],
+        "nextCounterFamilies": 22,
+        "nextAdvantagedCounterFamilies": 17,
+        "nextResistedFamilies": 8,
+        "nextCounterExamples": [
+          "SORT",
+          "MATCH",
+          "REASON",
+          "SCALE",
+          "CORRECT",
+          "CONCERT",
+          "CHART",
+          "CONNECT"
+        ],
+        "nextResistedExamples": [
+          "LOST",
+          "STORM",
+          "CHAOS",
+          "ROAR",
+          "MATS",
+          "SCATTER",
+          "CHATTER",
+          "RATTLE"
+        ],
+        "witness": {
+          "words": [
+            "EASY",
+            "MATCHES",
+            "HOT"
+          ],
+          "tileIds": [
+            [
+              6,
+              11,
+              0,
+              14
+            ],
+            [
+              8,
+              16,
+              7,
+              3,
+              4,
+              13,
+              1
+            ],
+            [
+              20,
+              2,
+              9
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            2,
+            3,
+            1
+          ]
+        },
+        "expanded": 2,
+        "chipRuns": [
+          {
+            "policy": "familiar",
+            "words": [
+              "EASY",
+              "ACT",
+              "ASS",
+              "HER",
+              "HOT"
+            ],
+            "tileIds": [
+              [
+                6,
+                11,
+                0,
+                14
+              ],
+              [
+                16,
+                3,
+                7
+              ],
+              [
+                19,
+                1,
+                22
+              ],
+              [
+                4,
+                13,
+                5
+              ],
+              [
+                20,
+                2,
+                9
+              ]
+            ],
+            "labels": [
+              "COUNTER",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL"
+            ],
+            "hits": [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "statusWithFive": "won",
+            "winsAtLives": [
+              5
+            ]
+          },
+          {
+            "policy": "shortest",
+            "words": [
+              "EASY",
+              "ACT",
+              "ASS",
+              "HER",
+              "HOT"
+            ],
+            "tileIds": [
+              [
+                6,
+                11,
+                0,
+                14
+              ],
+              [
+                16,
+                3,
+                7
+              ],
+              [
+                19,
+                1,
+                22
+              ],
+              [
+                4,
+                13,
+                5
+              ],
+              [
+                20,
+                2,
+                9
+              ]
+            ],
+            "labels": [
+              "COUNTER",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL"
+            ],
+            "hits": [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "statusWithFive": "won",
+            "winsAtLives": [
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "word": "SORT",
+        "label": "COUNTER",
+        "hits": 2,
+        "remainingHP": 4,
+        "supplyDeficits": [],
+        "nextCounterFamilies": 26,
+        "nextAdvantagedCounterFamilies": 20,
+        "nextResistedFamilies": 3,
+        "nextCounterExamples": [
+          "EASY",
+          "CLEAR",
+          "MATCH",
+          "CLEAN",
+          "SCREEN",
+          "SCALE",
+          "SCHEME",
+          "CALM"
+        ],
+        "nextResistedExamples": [
+          "STRAY",
+          "MATS",
+          "ANARCHY"
+        ],
+        "witness": {
+          "words": [
+            "SORT",
+            "MATCHES"
+          ],
+          "tileIds": [
+            [
+              0,
+              2,
+              5,
+              7
+            ],
+            [
+              8,
+              11,
+              9,
+              3,
+              4,
+              6,
+              1
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            4
+          ]
+        },
+        "expanded": 1,
+        "chipRuns": [
+          {
+            "policy": "familiar",
+            "words": [
+              "SORT",
+              "ACT",
+              "ASS",
+              "CAN",
+              "HER"
+            ],
+            "tileIds": [
+              [
+                0,
+                2,
+                5,
+                7
+              ],
+              [
+                11,
+                3,
+                9
+              ],
+              [
+                16,
+                1,
+                22
+              ],
+              [
+                17,
+                19,
+                10
+              ],
+              [
+                4,
+                6,
+                12
+              ]
+            ],
+            "labels": [
+              "COUNTER",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL"
+            ],
+            "hits": [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "statusWithFive": "won",
+            "winsAtLives": [
+              5
+            ]
+          },
+          {
+            "policy": "shortest",
+            "words": [
+              "SORT",
+              "ACT",
+              "ASS",
+              "CAN",
+              "HER"
+            ],
+            "tileIds": [
+              [
+                0,
+                2,
+                5,
+                7
+              ],
+              [
+                11,
+                3,
+                9
+              ],
+              [
+                16,
+                1,
+                22
+              ],
+              [
+                17,
+                19,
+                10
+              ],
+              [
+                4,
+                6,
+                12
+              ]
+            ],
+            "labels": [
+              "COUNTER",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL"
+            ],
+            "hits": [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "statusWithFive": "won",
+            "winsAtLives": [
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "word": "CLASS",
+        "label": "COUNTER",
+        "hits": 4,
+        "remainingHP": 2,
+        "supplyDeficits": [],
+        "nextCounterFamilies": 6,
+        "nextAdvantagedCounterFamilies": 2,
+        "nextResistedFamilies": 3,
+        "nextCounterExamples": [
+          "HARMONY",
+          "COHERENT"
+        ],
+        "nextResistedExamples": [
+          "ROAR",
+          "ANARCHY",
+          "CHATTER"
+        ],
+        "witness": {
+          "words": [
+            "CLASS",
+            "HARMONY"
+          ],
+          "tileIds": [
+            [
+              3,
+              15,
+              11,
+              0,
+              1
+            ],
+            [
+              4,
+              16,
+              5,
+              8,
+              2,
+              10,
+              14
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            2
+          ]
+        },
+        "expanded": 1,
+        "chipRuns": [
+          {
+            "policy": "familiar",
+            "words": [
+              "CLASS",
+              "HER",
+              "HOT"
+            ],
+            "tileIds": [
+              [
+                3,
+                15,
+                11,
+                0,
+                1
+              ],
+              [
+                4,
+                6,
+                5
+              ],
+              [
+                20,
+                2,
+                7
+              ]
+            ],
+            "labels": [
+              "COUNTER",
+              "NEUTRAL",
+              "NEUTRAL"
+            ],
+            "hits": [
+              4,
+              1,
+              1
+            ],
+            "statusWithFive": "won",
+            "winsAtLives": [
+              3,
+              4,
+              5
+            ]
+          },
+          {
+            "policy": "shortest",
+            "words": [
+              "CLASS",
+              "HER",
+              "HOT"
+            ],
+            "tileIds": [
+              [
+                3,
+                15,
+                11,
+                0,
+                1
+              ],
+              [
+                4,
+                6,
+                5
+              ],
+              [
+                20,
+                2,
+                7
+              ]
+            ],
+            "labels": [
+              "COUNTER",
+              "NEUTRAL",
+              "NEUTRAL"
+            ],
+            "hits": [
+              4,
+              1,
+              1
+            ],
+            "statusWithFive": "won",
+            "winsAtLives": [
+              3,
+              4,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "word": "CLEAR",
+        "label": "COUNTER",
+        "hits": 2,
+        "remainingHP": 4,
+        "supplyDeficits": [],
+        "nextCounterFamilies": 15,
+        "nextAdvantagedCounterFamilies": 12,
+        "nextResistedFamilies": 11,
+        "nextCounterExamples": [
+          "SORT",
+          "REASON",
+          "SYSTEM",
+          "SETS",
+          "MATCHES",
+          "CHARTS",
+          "HARMONY",
+          "MESH"
+        ],
+        "nextResistedExamples": [
+          "MASS",
+          "STORM",
+          "MESS",
+          "CHAOS",
+          "MESSY",
+          "STRAY",
+          "MATS",
+          "ANARCHY"
+        ],
+        "witness": {
+          "words": [
+            "CLEAR",
+            "REASONS",
+            "HER"
+          ],
+          "tileIds": [
+            [
+              3,
+              15,
+              6,
+              11,
+              5
+            ],
+            [
+              12,
+              13,
+              16,
+              0,
+              2,
+              10,
+              1
+            ],
+            [
+              4,
+              21,
+              26
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            2,
+            3,
+            1
+          ]
+        },
+        "expanded": 2,
+        "chipRuns": [
+          {
+            "policy": "familiar",
+            "words": [
+              "CLEAR",
+              "ASS",
+              "HER",
+              "ASS",
+              "HOT"
+            ],
+            "tileIds": [
+              [
+                3,
+                15,
+                6,
+                11,
+                5
+              ],
+              [
+                16,
+                0,
+                1
+              ],
+              [
+                4,
+                13,
+                12
+              ],
+              [
+                19,
+                22,
+                25
+              ],
+              [
+                20,
+                2,
+                7
+              ]
+            ],
+            "labels": [
+              "COUNTER",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL"
+            ],
+            "hits": [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "statusWithFive": "won",
+            "winsAtLives": [
+              5
+            ]
+          },
+          {
+            "policy": "shortest",
+            "words": [
+              "CLEAR",
+              "ASS",
+              "HER",
+              "ASS",
+              "HOT"
+            ],
+            "tileIds": [
+              [
+                3,
+                15,
+                6,
+                11,
+                5
+              ],
+              [
+                16,
+                0,
+                1
+              ],
+              [
+                4,
+                13,
+                12
+              ],
+              [
+                19,
+                22,
+                25
+              ],
+              [
+                20,
+                2,
+                7
+              ]
+            ],
+            "labels": [
+              "COUNTER",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL"
+            ],
+            "hits": [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "statusWithFive": "won",
+            "winsAtLives": [
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "word": "ORCHESTRATE",
+        "label": "COUNTER",
+        "hits": 5,
+        "remainingHP": 1,
+        "supplyDeficits": [],
+        "nextCounterFamilies": 14,
+        "nextAdvantagedCounterFamilies": 0,
+        "nextResistedFamilies": 6,
+        "nextCounterExamples": [],
+        "nextResistedExamples": [
+          "MASS",
+          "MESS",
+          "CHAOS",
+          "MESSY",
+          "HASSLE",
+          "ANARCHY"
+        ],
+        "witness": {
+          "words": [
+            "ORCHESTRATE",
+            "ASS"
+          ],
+          "tileIds": [
+            [
+              2,
+              5,
+              3,
+              4,
+              6,
+              0,
+              7,
+              12,
+              11,
+              9,
+              13
+            ],
+            [
+              16,
+              1,
+              22
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            5,
+            1
+          ]
+        },
+        "expanded": 1,
+        "chipRuns": [
+          {
+            "policy": "familiar",
+            "words": [
+              "ORCHESTRATE",
+              "ASS"
+            ],
+            "tileIds": [
+              [
+                2,
+                5,
+                3,
+                4,
+                6,
+                0,
+                7,
+                12,
+                11,
+                9,
+                13
+              ],
+              [
+                16,
+                1,
+                22
+              ]
+            ],
+            "labels": [
+              "COUNTER",
+              "NEUTRAL"
+            ],
+            "hits": [
+              5,
+              1
+            ],
+            "statusWithFive": "won",
+            "winsAtLives": [
+              3,
+              4,
+              5
+            ]
+          },
+          {
+            "policy": "shortest",
+            "words": [
+              "ORCHESTRATE",
+              "ASS"
+            ],
+            "tileIds": [
+              [
+                2,
+                5,
+                3,
+                4,
+                6,
+                0,
+                7,
+                12,
+                11,
+                9,
+                13
+              ],
+              [
+                16,
+                1,
+                22
+              ]
+            ],
+            "labels": [
+              "COUNTER",
+              "NEUTRAL"
+            ],
+            "hits": [
+              5,
+              1
+            ],
+            "statusWithFive": "won",
+            "winsAtLives": [
+              3,
+              4,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "word": "RESEARCH",
+        "label": "COUNTER",
+        "hits": 4,
+        "remainingHP": 2,
+        "supplyDeficits": [],
+        "nextCounterFamilies": 23,
+        "nextAdvantagedCounterFamilies": 5,
+        "nextResistedFamilies": 8,
+        "nextCounterExamples": [
+          "SLOT",
+          "COOLEST",
+          "LOOSEN",
+          "COOLNESS",
+          "SMOOTHEST"
+        ],
+        "nextResistedExamples": [
+          "LOST",
+          "MASS",
+          "MESS",
+          "LOOSE",
+          "CHAOS",
+          "MESSY",
+          "MATS",
+          "HASSLE"
+        ],
+        "witness": {
+          "words": [
+            "RESEARCH",
+            "SLOT"
+          ],
+          "tileIds": [
+            [
+              5,
+              6,
+              0,
+              13,
+              11,
+              12,
+              3,
+              4
+            ],
+            [
+              1,
+              15,
+              2,
+              7
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            2
+          ]
+        },
+        "expanded": 1,
+        "chipRuns": [
+          {
+            "policy": "familiar",
+            "words": [
+              "RESEARCH",
+              "ASS",
+              "HOT"
+            ],
+            "tileIds": [
+              [
+                5,
+                6,
+                0,
+                13,
+                11,
+                12,
+                3,
+                4
+              ],
+              [
+                16,
+                1,
+                22
+              ],
+              [
+                20,
+                2,
+                7
+              ]
+            ],
+            "labels": [
+              "COUNTER",
+              "NEUTRAL",
+              "NEUTRAL"
+            ],
+            "hits": [
+              4,
+              1,
+              1
+            ],
+            "statusWithFive": "won",
+            "winsAtLives": [
+              3,
+              4,
+              5
+            ]
+          },
+          {
+            "policy": "shortest",
+            "words": [
+              "RESEARCH",
+              "ASS",
+              "HOT"
+            ],
+            "tileIds": [
+              [
+                5,
+                6,
+                0,
+                13,
+                11,
+                12,
+                3,
+                4
+              ],
+              [
+                16,
+                1,
+                22
+              ],
+              [
+                20,
+                2,
+                7
+              ]
+            ],
+            "labels": [
+              "COUNTER",
+              "NEUTRAL",
+              "NEUTRAL"
+            ],
+            "hits": [
+              4,
+              1,
+              1
+            ],
+            "statusWithFive": "won",
+            "winsAtLives": [
+              3,
+              4,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "word": "REASONS",
+        "label": "COUNTER",
+        "hits": 4,
+        "remainingHP": 2,
+        "supplyDeficits": [],
+        "nextCounterFamilies": 14,
+        "nextAdvantagedCounterFamilies": 4,
+        "nextResistedFamilies": 6,
+        "nextCounterExamples": [
+          "MATCH",
+          "SCHEME",
+          "CHART",
+          "SCHEMA"
+        ],
+        "nextResistedExamples": [
+          "STRAY",
+          "MATS",
+          "ANARCHY",
+          "SCATTER",
+          "CHATTER",
+          "RATTLE"
+        ],
+        "witness": {
+          "words": [
+            "REASONS",
+            "MATCH"
+          ],
+          "tileIds": [
+            [
+              5,
+              6,
+              11,
+              0,
+              2,
+              10,
+              1
+            ],
+            [
+              8,
+              16,
+              7,
+              3,
+              4
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            2
+          ]
+        },
+        "expanded": 1,
+        "chipRuns": [
+          {
+            "policy": "familiar",
+            "words": [
+              "REASONS",
+              "ACT",
+              "HER"
+            ],
+            "tileIds": [
+              [
+                5,
+                6,
+                11,
+                0,
+                2,
+                10,
+                1
+              ],
+              [
+                16,
+                3,
+                7
+              ],
+              [
+                4,
+                13,
+                12
+              ]
+            ],
+            "labels": [
+              "COUNTER",
+              "NEUTRAL",
+              "NEUTRAL"
+            ],
+            "hits": [
+              4,
+              1,
+              1
+            ],
+            "statusWithFive": "won",
+            "winsAtLives": [
+              3,
+              4,
+              5
+            ]
+          },
+          {
+            "policy": "shortest",
+            "words": [
+              "REASONS",
+              "ACT",
+              "HER"
+            ],
+            "tileIds": [
+              [
+                5,
+                6,
+                11,
+                0,
+                2,
+                10,
+                1
+              ],
+              [
+                16,
+                3,
+                7
+              ],
+              [
+                4,
+                13,
+                12
+              ]
+            ],
+            "labels": [
+              "COUNTER",
+              "NEUTRAL",
+              "NEUTRAL"
+            ],
+            "hits": [
+              4,
+              1,
+              1
+            ],
+            "statusWithFive": "won",
+            "winsAtLives": [
+              3,
+              4,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "word": "MATCHES",
+        "label": "COUNTER",
+        "hits": 4,
+        "remainingHP": 2,
+        "supplyDeficits": [],
+        "nextCounterFamilies": 27,
+        "nextAdvantagedCounterFamilies": 4,
+        "nextResistedFamilies": 6,
+        "nextCounterExamples": [
+          "SORT",
+          "REASON",
+          "SLOT",
+          "ECHELONS"
+        ],
+        "nextResistedExamples": [
+          "LOST",
+          "CHAOS",
+          "STRAY",
+          "ROAR",
+          "HASSLE",
+          "ANARCHY"
+        ],
+        "witness": {
+          "words": [
+            "MATCHES",
+            "SORT"
+          ],
+          "tileIds": [
+            [
+              8,
+              11,
+              7,
+              3,
+              4,
+              6,
+              0
+            ],
+            [
+              1,
+              2,
+              5,
+              9
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            2
+          ]
+        },
+        "expanded": 1,
+        "chipRuns": [
+          {
+            "policy": "familiar",
+            "words": [
+              "MATCHES",
+              "ASS",
+              "HOT"
+            ],
+            "tileIds": [
+              [
+                8,
+                11,
+                7,
+                3,
+                4,
+                6,
+                0
+              ],
+              [
+                16,
+                1,
+                22
+              ],
+              [
+                20,
+                2,
+                9
+              ]
+            ],
+            "labels": [
+              "COUNTER",
+              "NEUTRAL",
+              "NEUTRAL"
+            ],
+            "hits": [
+              4,
+              1,
+              1
+            ],
+            "statusWithFive": "won",
+            "winsAtLives": [
+              3,
+              4,
+              5
+            ]
+          },
+          {
+            "policy": "shortest",
+            "words": [
+              "MATCHES",
+              "ASS",
+              "HOT"
+            ],
+            "tileIds": [
+              [
+                8,
+                11,
+                7,
+                3,
+                4,
+                6,
+                0
+              ],
+              [
+                16,
+                1,
+                22
+              ],
+              [
+                20,
+                2,
+                9
+              ]
+            ],
+            "labels": [
+              "COUNTER",
+              "NEUTRAL",
+              "NEUTRAL"
+            ],
+            "hits": [
+              4,
+              1,
+              1
+            ],
+            "statusWithFive": "won",
+            "winsAtLives": [
+              3,
+              4,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "word": "ACT",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "remainingHP": 5,
+        "supplyDeficits": [],
+        "nextCounterFamilies": 35,
+        "nextAdvantagedCounterFamilies": 28,
+        "nextResistedFamilies": 11,
+        "nextCounterExamples": [
+          "SORT",
+          "CLASS",
+          "MATCH",
+          "REASON",
+          "SYSTEM",
+          "RESEARCH",
+          "SCREEN",
+          "SCALE"
+        ],
+        "nextResistedExamples": [
+          "LOST",
+          "MASS",
+          "STORM",
+          "MESS",
+          "CHAOS",
+          "MESSY",
+          "STRAY",
+          "ROAR"
+        ],
+        "witness": {
+          "words": [
+            "ACT",
+            "SCHEMES",
+            "HOT"
+          ],
+          "tileIds": [
+            [
+              11,
+              3,
+              7
+            ],
+            [
+              0,
+              17,
+              4,
+              6,
+              8,
+              13,
+              1
+            ],
+            [
+              20,
+              2,
+              9
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        },
+        "expanded": 2,
+        "chipRuns": [
+          {
+            "policy": "familiar",
+            "words": [
+              "ACT",
+              "ACT",
+              "ASS",
+              "HER",
+              "ASS"
+            ],
+            "tileIds": [
+              [
+                11,
+                3,
+                7
+              ],
+              [
+                16,
+                17,
+                9
+              ],
+              [
+                19,
+                0,
+                1
+              ],
+              [
+                4,
+                6,
+                5
+              ],
+              [
+                24,
+                22,
+                25
+              ]
+            ],
+            "labels": [
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL"
+            ],
+            "hits": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "statusWithFive": "lost",
+            "winsAtLives": []
+          },
+          {
+            "policy": "shortest",
+            "words": [
+              "ACT",
+              "ACT",
+              "ASS",
+              "HER",
+              "ASS"
+            ],
+            "tileIds": [
+              [
+                11,
+                3,
+                7
+              ],
+              [
+                16,
+                17,
+                9
+              ],
+              [
+                19,
+                0,
+                1
+              ],
+              [
+                4,
+                6,
+                5
+              ],
+              [
+                24,
+                22,
+                25
+              ]
+            ],
+            "labels": [
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL"
+            ],
+            "hits": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "statusWithFive": "lost",
+            "winsAtLives": []
+          }
+        ]
+      },
+      {
+        "word": "ANY",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "remainingHP": 5,
+        "supplyDeficits": [],
+        "nextCounterFamilies": 37,
+        "nextAdvantagedCounterFamilies": 30,
+        "nextResistedFamilies": 11,
+        "nextCounterExamples": [
+          "SORT",
+          "CLASS",
+          "MATCH",
+          "REASON",
+          "RESEARCH",
+          "SCREEN",
+          "SCALE",
+          "CORRECT"
+        ],
+        "nextResistedExamples": [
+          "LOST",
+          "MASS",
+          "STORM",
+          "MESS",
+          "CHAOS",
+          "ROAR",
+          "MATS",
+          "HASSLE"
+        ],
+        "witness": {
+          "words": [
+            "ANY",
+            "SCHEMES",
+            "HOT"
+          ],
+          "tileIds": [
+            [
+              11,
+              10,
+              14
+            ],
+            [
+              0,
+              3,
+              4,
+              6,
+              8,
+              13,
+              1
+            ],
+            [
+              20,
+              2,
+              7
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        },
+        "expanded": 2,
+        "chipRuns": [
+          {
+            "policy": "familiar",
+            "words": [
+              "ANY",
+              "ACT",
+              "ASS",
+              "HER",
+              "ASS"
+            ],
+            "tileIds": [
+              [
+                11,
+                10,
+                14
+              ],
+              [
+                16,
+                3,
+                7
+              ],
+              [
+                19,
+                0,
+                1
+              ],
+              [
+                4,
+                6,
+                5
+              ],
+              [
+                24,
+                22,
+                25
+              ]
+            ],
+            "labels": [
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL"
+            ],
+            "hits": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "statusWithFive": "lost",
+            "winsAtLives": []
+          },
+          {
+            "policy": "shortest",
+            "words": [
+              "ANY",
+              "ACT",
+              "ASS",
+              "HER",
+              "ASS"
+            ],
+            "tileIds": [
+              [
+                11,
+                10,
+                14
+              ],
+              [
+                16,
+                3,
+                7
+              ],
+              [
+                19,
+                0,
+                1
+              ],
+              [
+                4,
+                6,
+                5
+              ],
+              [
+                24,
+                22,
+                25
+              ]
+            ],
+            "labels": [
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL"
+            ],
+            "hits": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "statusWithFive": "lost",
+            "winsAtLives": []
+          }
+        ]
+      },
+      {
+        "word": "LOST",
+        "label": "RESISTED",
+        "hits": 0,
+        "remainingHP": 6,
+        "supplyDeficits": [],
+        "nextCounterFamilies": 17,
+        "nextAdvantagedCounterFamilies": 13,
+        "nextResistedFamilies": 3,
+        "nextCounterExamples": [
+          "EASY",
+          "MATCH",
+          "RESEARCH",
+          "SCREEN",
+          "SCHEME",
+          "CHART",
+          "EASE",
+          "SCAN"
+        ],
+        "nextResistedExamples": [
+          "STRAY",
+          "MATS",
+          "ANARCHY"
+        ],
+        "witness": {
+          "words": [
+            "LOST",
+            "RESEARCH",
+            "SORT"
+          ],
+          "tileIds": [
+            [
+              15,
+              2,
+              0,
+              7
+            ],
+            [
+              5,
+              6,
+              1,
+              13,
+              11,
+              12,
+              3,
+              4
+            ],
+            [
+              22,
+              23,
+              26,
+              9
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            4,
+            2
+          ]
+        },
+        "expanded": 2,
+        "chipRuns": [
+          {
+            "policy": "familiar",
+            "words": [
+              "LOST",
+              "ACT",
+              "ASS",
+              "CAN",
+              "HER"
+            ],
+            "tileIds": [
+              [
+                15,
+                2,
+                0,
+                7
+              ],
+              [
+                11,
+                3,
+                9
+              ],
+              [
+                16,
+                1,
+                22
+              ],
+              [
+                17,
+                19,
+                10
+              ],
+              [
+                4,
+                6,
+                5
+              ]
+            ],
+            "labels": [
+              "RESISTED",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL"
+            ],
+            "hits": [
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            "statusWithFive": "lost",
+            "winsAtLives": []
+          },
+          {
+            "policy": "shortest",
+            "words": [
+              "LOST",
+              "ACT",
+              "ASS",
+              "CAN",
+              "HER"
+            ],
+            "tileIds": [
+              [
+                15,
+                2,
+                0,
+                7
+              ],
+              [
+                11,
+                3,
+                9
+              ],
+              [
+                16,
+                1,
+                22
+              ],
+              [
+                17,
+                19,
+                10
+              ],
+              [
+                4,
+                6,
+                5
+              ]
+            ],
+            "labels": [
+              "RESISTED",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL"
+            ],
+            "hits": [
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            "statusWithFive": "lost",
+            "winsAtLives": []
+          }
+        ]
+      },
+      {
+        "word": "MASS",
+        "label": "RESISTED",
+        "hits": 0,
+        "remainingHP": 6,
+        "supplyDeficits": [],
+        "nextCounterFamilies": 20,
+        "nextAdvantagedCounterFamilies": 12,
+        "nextResistedFamilies": 5,
+        "nextCounterExamples": [
+          "CLEAR",
+          "CLEAN",
+          "CORRECT",
+          "CONCERT",
+          "CHART",
+          "CONNECT",
+          "COHERENT",
+          "TONAL"
+        ],
+        "nextResistedExamples": [
+          "LOTTERY",
+          "ROAR",
+          "ANARCHY",
+          "CHATTER",
+          "RATTLE"
+        ],
+        "witness": {
+          "words": [
+            "MASS",
+            "HALCYON",
+            "REASONS"
+          ],
+          "tileIds": [
+            [
+              8,
+              11,
+              0,
+              1
+            ],
+            [
+              4,
+              16,
+              15,
+              3,
+              14,
+              2,
+              10
+            ],
+            [
+              5,
+              6,
+              19,
+              22,
+              23,
+              18,
+              25
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            4,
+            2
+          ]
+        },
+        "expanded": 2,
+        "chipRuns": [
+          {
+            "policy": "familiar",
+            "words": [
+              "MASS",
+              "ACT",
+              "ACT",
+              "ASS",
+              "HER"
+            ],
+            "tileIds": [
+              [
+                8,
+                11,
+                0,
+                1
+              ],
+              [
+                16,
+                3,
+                7
+              ],
+              [
+                19,
+                17,
+                9
+              ],
+              [
+                24,
+                22,
+                25
+              ],
+              [
+                4,
+                6,
+                5
+              ]
+            ],
+            "labels": [
+              "RESISTED",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL"
+            ],
+            "hits": [
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            "statusWithFive": "lost",
+            "winsAtLives": []
+          },
+          {
+            "policy": "shortest",
+            "words": [
+              "MASS",
+              "ACT",
+              "ACT",
+              "ASS",
+              "HER"
+            ],
+            "tileIds": [
+              [
+                8,
+                11,
+                0,
+                1
+              ],
+              [
+                16,
+                3,
+                7
+              ],
+              [
+                19,
+                17,
+                9
+              ],
+              [
+                24,
+                22,
+                25
+              ],
+              [
+                4,
+                6,
+                5
+              ]
+            ],
+            "labels": [
+              "RESISTED",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL",
+              "NEUTRAL"
+            ],
+            "hits": [
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            "statusWithFive": "lost",
+            "winsAtLives": []
+          }
+        ]
+      }
+    ],
+    "layers": [
+      {
+        "nextTurn": 1,
+        "positions": [
+          {
+            "remainingHP": 6,
+            "counters": 45,
+            "advantagedCounters": 38,
+            "resisted": 15,
+            "neutral": 908,
+            "salientWords": [
+              {
+                "word": "ALSO",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "ARMY",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CAME",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CASE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "COME",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "COST",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EAST",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EASY",
+                "label": "COUNTER"
+              },
+              {
+                "word": "ELSE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EYES",
+                "label": "NEUTRAL"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nextTurn": 2,
+        "positions": [
+          {
+            "remainingHP": 6,
+            "counters": 17,
+            "advantagedCounters": 13,
+            "resisted": 3,
+            "neutral": 391,
+            "salientWords": [
+              {
+                "word": "AREA",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "ARMY",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CAME",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CASE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EAST",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EASY",
+                "label": "COUNTER"
+              },
+              {
+                "word": "EYES",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HATE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HERE",
+                "label": "NEUTRAL"
+              }
+            ]
+          },
+          {
+            "remainingHP": 6,
+            "counters": 20,
+            "advantagedCounters": 12,
+            "resisted": 5,
+            "neutral": 435,
+            "salientWords": [
+              {
+                "word": "AREA",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HATE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HERE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "LATE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NOTE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "ONCE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "ONLY",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "RACE",
+                "label": "NEUTRAL"
+              }
+            ]
+          },
+          {
+            "remainingHP": 4,
+            "counters": 22,
+            "advantagedCounters": 17,
+            "resisted": 8,
+            "neutral": 663,
+            "salientWords": [
+              {
+                "word": "ALSO",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "AREA",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CAME",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CASE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "COME",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "COST",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EAST",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HATE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HOME",
+                "label": "NEUTRAL"
+              }
+            ]
+          },
+          {
+            "remainingHP": 4,
+            "counters": 26,
+            "advantagedCounters": 20,
+            "resisted": 3,
+            "neutral": 512,
+            "salientWords": [
+              {
+                "word": "AREA",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "ARMY",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CAME",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CASE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EAST",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EASY",
+                "label": "COUNTER"
+              },
+              {
+                "word": "ELSE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EYES",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HATE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              }
+            ]
+          },
+          {
+            "remainingHP": 5,
+            "counters": 16,
+            "advantagedCounters": 8,
+            "resisted": 5,
+            "neutral": 433,
+            "salientWords": [
+              {
+                "word": "AREA",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "ARMY",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CAME",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CASE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EAST",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EASY",
+                "label": "COUNTER"
+              },
+              {
+                "word": "EYES",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HATE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HERE",
+                "label": "NEUTRAL"
+              }
+            ]
+          },
+          {
+            "remainingHP": 5,
+            "counters": 25,
+            "advantagedCounters": 20,
+            "resisted": 6,
+            "neutral": 601,
+            "salientWords": [
+              {
+                "word": "ALSO",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "AREA",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CASE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "COST",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EAST",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "ELSE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HATE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HERE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "LAST",
+                "label": "NEUTRAL"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nextTurn": 3,
+        "positions": [
+          {
+            "remainingHP": 6,
+            "counters": 10,
+            "advantagedCounters": 9,
+            "resisted": 1,
+            "neutral": 235,
+            "salientWords": [
+              {
+                "word": "AREA",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CAME",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CASE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "COME",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HERE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HOME",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "MEAN",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "MORE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NAME",
+                "label": "NEUTRAL"
+              }
+            ]
+          },
+          {
+            "remainingHP": 6,
+            "counters": 6,
+            "advantagedCounters": 6,
+            "resisted": 2,
+            "neutral": 178,
+            "salientWords": [
+              {
+                "word": "AREA",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CASE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HERE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "ONCE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "ONES",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "RACE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "SEEN",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "AREAS",
+                "label": "NEUTRAL"
+              }
+            ]
+          },
+          {
+            "remainingHP": 4,
+            "counters": 20,
+            "advantagedCounters": 14,
+            "resisted": 4,
+            "neutral": 527,
+            "salientWords": [
+              {
+                "word": "AREA",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CAME",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CASE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "COME",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "COST",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EAST",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HATE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HERE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HOME",
+                "label": "NEUTRAL"
+              }
+            ]
+          },
+          {
+            "remainingHP": 4,
+            "counters": 11,
+            "advantagedCounters": 11,
+            "resisted": 2,
+            "neutral": 190,
+            "salientWords": [
+              {
+                "word": "ALSO",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CAME",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CASE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "COME",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "ELSE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HOME",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "LOSE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "MEAN",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NAME",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "ONCE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "ONES",
+                "label": "NEUTRAL"
+              }
+            ]
+          },
+          {
+            "remainingHP": 5,
+            "counters": 20,
+            "advantagedCounters": 13,
+            "resisted": 3,
+            "neutral": 495,
+            "salientWords": [
+              {
+                "word": "AREA",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CAME",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CASE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "COME",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "COST",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EAST",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HATE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HERE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HOME",
+                "label": "NEUTRAL"
+              }
+            ]
+          },
+          {
+            "remainingHP": 5,
+            "counters": 15,
+            "advantagedCounters": 12,
+            "resisted": 1,
+            "neutral": 381,
+            "salientWords": [
+              {
+                "word": "AREA",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CASE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "COST",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EAST",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HATE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HERE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NOTE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "ONCE",
+                "label": "NEUTRAL"
+              }
+            ]
+          },
+          {
+            "remainingHP": 6,
+            "counters": 10,
+            "advantagedCounters": 9,
+            "resisted": 3,
+            "neutral": 210,
+            "salientWords": [
+              {
+                "word": "AREA",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CASE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EASY",
+                "label": "COUNTER"
+              },
+              {
+                "word": "EYES",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HERE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "ONCE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "ONES",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "RACE",
+                "label": "NEUTRAL"
+              }
+            ]
+          },
+          {
+            "remainingHP": 6,
+            "counters": 19,
+            "advantagedCounters": 14,
+            "resisted": 2,
+            "neutral": 340,
+            "salientWords": [
+              {
+                "word": "ALSO",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CASE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "COST",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EAST",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EASY",
+                "label": "COUNTER"
+              },
+              {
+                "word": "ELSE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EYES",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HATE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "LAST",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "LATE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "LOSE",
+                "label": "NEUTRAL"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nextTurn": 4,
+        "positions": [
+          {
+            "remainingHP": 6,
+            "counters": 10,
+            "advantagedCounters": 9,
+            "resisted": 2,
+            "neutral": 239,
+            "salientWords": [
+              {
+                "word": "AREA",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CAME",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CASE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "COME",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HERE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HOME",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "MEAN",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "MORE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NAME",
+                "label": "NEUTRAL"
+              }
+            ]
+          },
+          {
+            "remainingHP": 6,
+            "counters": 6,
+            "advantagedCounters": 6,
+            "resisted": 2,
+            "neutral": 152,
+            "salientWords": [
+              {
+                "word": "AREA",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CASE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HERE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "ONCE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "ONES",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "RACE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "SEEN",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "AREAS",
+                "label": "NEUTRAL"
+              }
+            ]
+          },
+          {
+            "remainingHP": 4,
+            "counters": 6,
+            "advantagedCounters": 4,
+            "resisted": 2,
+            "neutral": 160,
+            "salientWords": [
+              {
+                "word": "AREA",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CASE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HERE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "ONCE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "ONES",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "RACE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "SEEN",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "AREAS",
+                "label": "NEUTRAL"
+              }
+            ]
+          },
+          {
+            "remainingHP": 4,
+            "counters": 16,
+            "advantagedCounters": 15,
+            "resisted": 2,
+            "neutral": 336,
+            "salientWords": [
+              {
+                "word": "ALSO",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "AREA",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CAME",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CASE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "COME",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "ELSE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HERE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HOME",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "LOSE",
+                "label": "NEUTRAL"
+              }
+            ]
+          },
+          {
+            "remainingHP": 5,
+            "counters": 7,
+            "advantagedCounters": 4,
+            "resisted": 1,
+            "neutral": 150,
+            "salientWords": [
+              {
+                "word": "AREA",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CASE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HERE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "ONCE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "ONES",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "RACE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "SEEN",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "AREAS",
+                "label": "NEUTRAL"
+              }
+            ]
+          },
+          {
+            "remainingHP": 5,
+            "counters": 13,
+            "advantagedCounters": 10,
+            "resisted": 2,
+            "neutral": 392,
+            "salientWords": [
+              {
+                "word": "AREA",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CASE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "COST",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EAST",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HATE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HERE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NOTE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "ONCE",
+                "label": "NEUTRAL"
+              }
+            ]
+          },
+          {
+            "remainingHP": 6,
+            "counters": 9,
+            "advantagedCounters": 8,
+            "resisted": 3,
+            "neutral": 205,
+            "salientWords": [
+              {
+                "word": "AREA",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CASE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EASY",
+                "label": "COUNTER"
+              },
+              {
+                "word": "EYES",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HERE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "ONCE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "ONES",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "RACE",
+                "label": "NEUTRAL"
+              }
+            ]
+          },
+          {
+            "remainingHP": 6,
+            "counters": 16,
+            "advantagedCounters": 14,
+            "resisted": 3,
+            "neutral": 428,
+            "salientWords": [
+              {
+                "word": "AREA",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CASE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "COST",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EAST",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EASY",
+                "label": "COUNTER"
+              },
+              {
+                "word": "EYES",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HATE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HERE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NEAR",
+                "label": "NEUTRAL"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nextTurn": 5,
+        "positions": [
+          {
+            "remainingHP": 6,
+            "counters": 0,
+            "advantagedCounters": 0,
+            "resisted": 0,
+            "neutral": 38,
+            "salientWords": [
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HERE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "MEAN",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NAME",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "RARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "MANNER",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EARN",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HARM",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "REAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "MERE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HARE",
+                "label": "NEUTRAL"
+              }
+            ]
+          },
+          {
+            "remainingHP": 6,
+            "counters": 0,
+            "advantagedCounters": 0,
+            "resisted": 0,
+            "neutral": 19,
+            "salientWords": [
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HERE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "RARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EARN",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "REAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NEARER",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "RHEA",
+                "label": "NEUTRAL"
+              }
+            ]
+          },
+          {
+            "remainingHP": 4,
+            "counters": 0,
+            "advantagedCounters": 0,
+            "resisted": 0,
+            "neutral": 48,
+            "salientWords": [
+              {
+                "word": "AREA",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HERE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "RACE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CAREER",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "REACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "RARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EARN",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "REAR",
+                "label": "NEUTRAL"
+              }
+            ]
+          },
+          {
+            "remainingHP": 4,
+            "counters": 0,
+            "advantagedCounters": 0,
+            "resisted": 1,
+            "neutral": 59,
+            "salientWords": [
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HERE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "MEAN",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NAME",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "REAL",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "LEARN",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "MALE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "LANE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "MANNER",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EARN",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "MEAL",
+                "label": "NEUTRAL"
+              }
+            ]
+          },
+          {
+            "remainingHP": 5,
+            "counters": 0,
+            "advantagedCounters": 0,
+            "resisted": 0,
+            "neutral": 38,
+            "salientWords": [
+              {
+                "word": "CARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HERE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "RACE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "REACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EARN",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HENCE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "CHEER",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "ENHANCE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "RANCH",
+                "label": "NEUTRAL"
+              }
+            ]
+          },
+          {
+            "remainingHP": 5,
+            "counters": 4,
+            "advantagedCounters": 0,
+            "resisted": 0,
+            "neutral": 113,
+            "salientWords": [
+              {
+                "word": "EAST",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HATE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HERE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "RATE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "REST",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "SEEN",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "SENT",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "STAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "THAN",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "THEN",
+                "label": "NEUTRAL"
+              }
+            ]
+          },
+          {
+            "remainingHP": 6,
+            "counters": 0,
+            "advantagedCounters": 0,
+            "resisted": 0,
+            "neutral": 32,
+            "salientWords": [
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HERE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "YEAH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "YEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "RARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HENRY",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HARRY",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EARN",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "REAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "YARN",
+                "label": "NEUTRAL"
+              }
+            ]
+          },
+          {
+            "remainingHP": 6,
+            "counters": 2,
+            "advantagedCounters": 1,
+            "resisted": 0,
+            "neutral": 141,
+            "salientWords": [
+              {
+                "word": "CARE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "EACH",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HATE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "HERE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "NEAR",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "RACE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "RATE",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "THAN",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "THEN",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "THEY",
+                "label": "NEUTRAL"
+              },
+              {
+                "word": "YEAH",
+                "label": "NEUTRAL"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "start": {
+      "familiarCounterFamilies": 45,
+      "familiarResistedFamilies": 15,
+      "immediateWinningWords": [
+        "ORCHESTRATES"
+      ],
+      "familiarImmediateWinningWords": []
+    },
+    "runtime": {
+      "milliseconds": 379.048,
+      "uniquePositionsInspected": 70,
+      "movesInspected": 40232
+    },
+    "chipControl": [
+      {
+        "lives": 3,
+        "words": [
+          "CALMS",
+          "HEN",
+          "OAR"
+        ],
+        "status": "lost",
+        "livesLeft": 0
+      },
+      {
+        "lives": 4,
+        "words": [
+          "CALMS",
+          "HEN",
+          "OAR",
+          "SEA"
+        ],
+        "status": "won",
+        "livesLeft": 0
+      },
+      {
+        "lives": 5,
+        "words": [
+          "CALMS",
+          "HEN",
+          "OAR",
+          "SEA"
+        ],
+        "status": "won",
+        "livesLeft": 1
+      }
+    ],
+    "specialControls": [
+      {
+        "gem": "ward",
+        "letter": "L",
+        "words": [
+          "CALMS",
+          "HEN",
+          "OAR",
+          "SEA"
+        ],
+        "status": "won",
+        "livesLeft": 0,
+        "enemyHP": 0
+      },
+      {
+        "gem": "regen",
+        "letter": "S",
+        "words": [
+          "ORCHESTRATES"
+        ],
+        "status": "playing",
+        "livesLeft": 2,
+        "enemyHP": 1
+      }
+    ]
+  },
+  "semanticSpotChecks": [
+    {
+      "enemy": "ANGER",
+      "word": "FERMENTING",
+      "concern": "The stored agitation/excitement sense does not establish an antidote to anger. The explanation jumps to DELIGHT.",
+      "stored": {
+        "definition": "work up into agitation or excitement",
+        "lemma": "ferment",
+        "senseId": "oewn-ferment__2.37.00..",
+        "partsOfSpeech": [
+          "noun",
+          "verb"
+        ],
+        "relation": "opposite",
+        "reason": "Counters anger through delight: a feeling of extreme pleasure or satisfaction.",
+        "source": "oewn-2025",
+        "evidence": "model-assessed",
+        "assessment": {
+          "counterScore": 0.7585,
+          "resistedScore": 0,
+          "margin": 0.7585,
+          "sensesEvaluated": 5,
+          "selectedAnchor": "delight: a feeling of extreme pleasure or satisfaction",
+          "decisionBasis": "local-vector-nli"
+        }
+      }
+    },
+    {
+      "enemy": "DESPAIR",
+      "word": "PATRONISED",
+      "concern": "Being a regular customer does not establish hope or encouragement. The explanation substitutes ENCOURAGE.",
+      "stored": {
+        "definition": "be a regular customer or client of",
+        "lemma": "patronise",
+        "senseId": "oewn-patronise__2.32.00..",
+        "partsOfSpeech": [
+          "verb",
+          "adjective"
+        ],
+        "relation": "opposite",
+        "reason": "Counters despair through encourage: inspire with confidence; give hope or courage to.",
+        "source": "oewn-2025",
+        "evidence": "model-assessed",
+        "assessment": {
+          "counterScore": 0,
+          "resistedScore": 0,
+          "margin": 0,
+          "sensesEvaluated": 5,
+          "selectedAnchor": "encourage: inspire with confidence; give hope or courage to",
+          "decisionBasis": "source-direction-proof"
+        }
+      }
+    }
+  ],
+  "totalMilliseconds": 34492.311,
+  "limitations": [
+    "Existing model-labelled pools are proposals, not independently certified semantic truth. No new contextual model review was performed.",
+    "Two fixed seeds for each of five hand-selected enemy/bingo pairs; no random sample of all enemies or player study.",
+    "One canonical physical selection per word; bounded beam, familiar vocabulary, and productive continuations only. Search misses remain unknown. A separate missing-letter-supply check can prove a particular post-opening state impossible.",
+    "All three life counts reuse the same board and 24-letter finite queue planned for three turns. This isolates life count, not the best separately optimised design for each budget.",
+    "Witness depth is the shortest found within this bounded search, not a certified minimum.",
+    "All opening instant-win spellings are excluded throughout alternative-route searches and board sampling; a bingo alone cannot make a candidate pass.",
+    "Category mix is measured on sampled reachable boards, including losing trajectories; it does not establish safe continuations or human salience."
+  ]
+}

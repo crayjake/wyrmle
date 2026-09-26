@@ -23,6 +23,7 @@ import type { DifficultyMode } from './daily/types'
 import type { CandidatePuzzle } from './generator/types'
 import type { TutorialStep } from './tutorial/tutorial'
 import "./components/DailyPanels.css"
+import { readBingoPreviewRequest } from './experimental/bingo/catalog'
 
 const DevPanel = import.meta.env.DEV ? lazy(() => import('./components/DevPanel')) : null
 const DevCombat = import.meta.env.DEV ? lazy(() => import('./experimental/DevCombat')) : null
@@ -37,9 +38,10 @@ type OnboardingAction = 'replay' | 'tutorial' | 'reset' | 'preview'
 export default function App() {
   // The preview mounts before preferences or daily hooks: it cannot start,
   // overwrite or complete a daily attempt, even in a returning player's tab.
-  if (new URLSearchParams(window.location.search).get('preview') === 'bingo') {
+  const preview = readBingoPreviewRequest(window.location.search)
+  if (preview) {
     return <Suspense fallback={<main className="container"><p>Loading beta puzzle…</p></main>}>
-      <BingoPreview />
+      <BingoPreview request={preview} />
     </Suspense>
   }
   return <DailyApp />

@@ -1,0 +1,378 @@
+{
+  "build": "production",
+  "basePath": "/wyrmle/",
+  "checks": [
+    {
+      "name": "settings-375",
+      "layout": {
+        "viewport": 375,
+        "page": 375,
+        "width": 375,
+        "content": 375,
+        "height": 667,
+        "contentHeight": 667,
+        "refillLeft": 220.9375,
+        "lifeRight": 87.0625
+      }
+    },
+    {
+      "name": "picker-375",
+      "layout": {
+        "viewport": 375,
+        "page": 375,
+        "width": 375,
+        "content": 375,
+        "height": 667,
+        "contentHeight": 912
+      }
+    },
+    {
+      "name": "public-menu-picker-life-choice-lazy-assets-and-subpath"
+    },
+    {
+      "name": "bingo-chaos-1-375",
+      "layout": {
+        "viewport": 375,
+        "page": 375,
+        "width": 375,
+        "content": 375,
+        "height": 667,
+        "contentHeight": 667,
+        "refillLeft": 220.9375,
+        "lifeRight": 72.0625
+      }
+    },
+    {
+      "name": "bingo-chaos-1-bingo-win",
+      "word": "CHOREOGRAPHS"
+    },
+    {
+      "name": "bingo-chaos-2-375",
+      "layout": {
+        "viewport": 375,
+        "page": 375,
+        "width": 375,
+        "content": 375,
+        "height": 667,
+        "contentHeight": 667,
+        "refillLeft": 220.9375,
+        "lifeRight": 72.0625
+      }
+    },
+    {
+      "name": "bingo-chaos-2-bingo-win",
+      "word": "CHOREOGRAPHS"
+    },
+    {
+      "name": "bingo-anger-1-375",
+      "layout": {
+        "viewport": 375,
+        "page": 375,
+        "width": 375,
+        "content": 375,
+        "height": 667,
+        "contentHeight": 667,
+        "refillLeft": 220.9375,
+        "lifeRight": 72.0625
+      }
+    },
+    {
+      "name": "bingo-anger-1-bingo-win",
+      "word": "ENDEARING"
+    },
+    {
+      "name": "bingo-anger-2-375",
+      "layout": {
+        "viewport": 375,
+        "page": 375,
+        "width": 375,
+        "content": 375,
+        "height": 667,
+        "contentHeight": 667,
+        "refillLeft": 220.9375,
+        "lifeRight": 72.0625
+      }
+    },
+    {
+      "name": "bingo-anger-2-bingo-win",
+      "word": "ENDEARING"
+    },
+    {
+      "name": "bingo-anger-3-375",
+      "layout": {
+        "viewport": 375,
+        "page": 375,
+        "width": 375,
+        "content": 375,
+        "height": 667,
+        "contentHeight": 667,
+        "refillLeft": 220.9375,
+        "lifeRight": 72.0625
+      }
+    },
+    {
+      "name": "bingo-anger-3-bingo-win",
+      "word": "ENCOURAGEMENT"
+    },
+    {
+      "name": "bingo-anger-4-375",
+      "layout": {
+        "viewport": 375,
+        "page": 375,
+        "width": 375,
+        "content": 375,
+        "height": 667,
+        "contentHeight": 667,
+        "refillLeft": 220.9375,
+        "lifeRight": 72.0625
+      }
+    },
+    {
+      "name": "bingo-anger-4-bingo-win",
+      "word": "ENCOURAGEMENT"
+    },
+    {
+      "name": "bingo-cruelty-1-375",
+      "layout": {
+        "viewport": 375,
+        "page": 375,
+        "width": 375,
+        "content": 375,
+        "height": 667,
+        "contentHeight": 667,
+        "refillLeft": 172.9375,
+        "lifeRight": 72.0625
+      }
+    },
+    {
+      "name": "bingo-cruelty-1-bingo-win",
+      "word": "RESPECTFULLY"
+    },
+    {
+      "name": "bingo-cruelty-2-375",
+      "layout": {
+        "viewport": 375,
+        "page": 375,
+        "width": 375,
+        "content": 375,
+        "height": 667,
+        "contentHeight": 667,
+        "refillLeft": 172.9375,
+        "lifeRight": 72.0625
+      }
+    },
+    {
+      "name": "bingo-cruelty-2-bingo-win",
+      "word": "RESPECTFULLY"
+    },
+    {
+      "name": "bingo-fear-1-375",
+      "layout": {
+        "viewport": 375,
+        "page": 375,
+        "width": 375,
+        "content": 375,
+        "height": 667,
+        "contentHeight": 667,
+        "refillLeft": 244.9375,
+        "lifeRight": 72.0625
+      }
+    },
+    {
+      "name": "bingo-fear-1-bingo-win",
+      "word": "SAFEGUARDED"
+    },
+    {
+      "name": "bingo-fear-2-375",
+      "layout": {
+        "viewport": 375,
+        "page": 375,
+        "width": 375,
+        "content": 375,
+        "height": 667,
+        "contentHeight": 667,
+        "refillLeft": 244.9375,
+        "lifeRight": 72.0625
+      }
+    },
+    {
+      "name": "bingo-fear-2-bingo-win",
+      "word": "SAFEGUARDED"
+    },
+    {
+      "name": "4-life-restart-and-alternative-route",
+      "words": [
+        "COMPOSED",
+        "HALCYON",
+        "HER"
+      ]
+    },
+    {
+      "name": "5-life-restart-and-alternative-route",
+      "words": [
+        "COMPOSED",
+        "HALCYON",
+        "HER"
+      ]
+    },
+    {
+      "name": "daily-storage-preserved-and-daily-still-five-lives"
+    },
+    {
+      "name": "picker-320",
+      "layout": {
+        "viewport": 320,
+        "page": 320,
+        "width": 320,
+        "content": 320,
+        "height": 568,
+        "contentHeight": 785
+      }
+    },
+    {
+      "name": "bingo-chaos-1-5-lives-320",
+      "layout": {
+        "viewport": 320,
+        "page": 320,
+        "width": 320,
+        "content": 320,
+        "height": 568,
+        "contentHeight": 568,
+        "refillLeft": 168,
+        "lifeRight": 108
+      }
+    },
+    {
+      "name": "bingo-cruelty-1-5-lives-320",
+      "layout": {
+        "viewport": 320,
+        "page": 320,
+        "width": 320,
+        "content": 320,
+        "height": 568,
+        "contentHeight": 568,
+        "refillLeft": 120,
+        "lifeRight": 108
+      }
+    },
+    {
+      "name": "bingo-fear-1-5-lives-320",
+      "layout": {
+        "viewport": 320,
+        "page": 320,
+        "width": 320,
+        "content": 320,
+        "height": 568,
+        "contentHeight": 568,
+        "refillLeft": 192,
+        "lifeRight": 108
+      }
+    },
+    {
+      "name": "picker-900",
+      "layout": {
+        "viewport": 900,
+        "page": 900,
+        "width": 900,
+        "content": 900,
+        "height": 900,
+        "contentHeight": 900
+      }
+    },
+    {
+      "name": "bingo-chaos-1-5-lives-900",
+      "layout": {
+        "viewport": 900,
+        "page": 900,
+        "width": 900,
+        "content": 900,
+        "height": 900,
+        "contentHeight": 900,
+        "refillLeft": 748,
+        "lifeRight": 108
+      }
+    },
+    {
+      "name": "bingo-cruelty-1-5-lives-900",
+      "layout": {
+        "viewport": 900,
+        "page": 900,
+        "width": 900,
+        "content": 900,
+        "height": 900,
+        "contentHeight": 900,
+        "refillLeft": 700,
+        "lifeRight": 108
+      }
+    },
+    {
+      "name": "bingo-fear-1-5-lives-900",
+      "layout": {
+        "viewport": 900,
+        "page": 900,
+        "width": 900,
+        "content": 900,
+        "height": 900,
+        "contentHeight": 900,
+        "refillLeft": 772,
+        "lifeRight": 108
+      }
+    },
+    {
+      "name": "unknown-preview-and-download-error-isolation-and-retry"
+    },
+    {
+      "name": "five-life-intro-375",
+      "layout": {
+        "viewport": 375,
+        "page": 375,
+        "width": 375,
+        "content": 375,
+        "height": 667,
+        "contentHeight": 667,
+        "refillLeft": 172.9375,
+        "lifeRight": 110.0625
+      }
+    },
+    {
+      "name": "normal-motion-five-piece-intro-and-resolved-life-loss"
+    },
+    {
+      "name": "bingo-selected-and-won-small-phone-existing-daily-storage",
+      "layout": {
+        "height": 568,
+        "scroll": 568,
+        "width": 320,
+        "scrollWidth": 320
+      },
+      "savedKeys": [
+        "wyrmle:letter-strike:daily:v1:run:2026-09-27"
+      ]
+    },
+    {
+      "name": "bingo-anger-3-selected-and-won-small-phone-existing-daily-storage",
+      "layout": {
+        "height": 568,
+        "scroll": 568,
+        "width": 320,
+        "scrollWidth": 320
+      },
+      "savedKeys": [
+        "wyrmle:letter-strike:daily:v1:run:2026-09-27"
+      ]
+    },
+    {
+      "name": "bingo-fear-1-selected-and-won-small-phone-existing-daily-storage",
+      "layout": {
+        "height": 568,
+        "scroll": 568,
+        "width": 320,
+        "scrollWidth": 320
+      },
+      "savedKeys": [
+        "wyrmle:letter-strike:daily:v1:run:2026-09-27"
+      ]
+    }
+  ],
+  "errors": []
+}

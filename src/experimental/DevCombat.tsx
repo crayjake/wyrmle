@@ -48,12 +48,14 @@ export default function DevCombat({ initialMode, encounter, onExit, matchHint, o
     enemyGrid={enemyGrid} onEnemyGridChange={onEnemyGridChange} />
 }
 
-export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onMatchHintChange, enemyGrid, onEnemyGridChange, bingoPreview = false }: {
+export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onMatchHintChange, enemyGrid, onEnemyGridChange, bingoPreview = false, previewName, onChoosePreview }: {
   mode: CombatMode; onMode: (mode: CombatMode) => void; onExit: () => void
   encounter?: LetterStrikeEncounter
   matchHint: MatchHintMode; onMatchHintChange: (mode: MatchHintMode) => void
   enemyGrid: boolean; onEnemyGridChange: (grid: boolean) => void
   bingoPreview?: boolean
+  previewName?: string
+  onChoosePreview?: () => void
 }) {
   const [run, setRun] = useState<Run>(() => mode === 'damage'
     ? { mode, game: createGame(melancholyEncounter) }
@@ -142,6 +144,8 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
 
   const displayedLives = bingoPreview && resolving
     ? game.playerResolve + (game.playedWords.at(-1)?.preview.resolveCost ?? 0) : game.playerResolve
+  const alternativeTurns = game.encounter.startingResolve === 3 ? 'two or three'
+    : game.encounter.startingResolve === 4 ? 'two, three or four' : 'two, three, four or five'
 
   return <main className={`container dev-combat${letterGame ? ' letter-combat' : ''}${bingoPreview ? ' bingo-preview' : ''}`} data-combat-mode={mode}
     data-game-status={game.status} data-phase={phase} data-turns={game.playedWords.length}
@@ -153,7 +157,7 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
     <Header wyrmDockRef={wyrmDockRef} titleRef={wyrmTitleRef} showWyrm={!letterGame && phase === 'ready'}
       onHelp={() => setPanel('help')} onHistory={() => setPanel('log')} onSettings={() => setPanel('modes')} />
     <div className="daily-meta">
-      {bingoPreview ? <span className="beta-label">BETA · THREE LIVES</span> : <button type="button" onClick={() => setPanel('modes')} aria-label="Switch combat mode">
+      {bingoPreview ? <span className="beta-label">BETA · {game.encounter.startingResolve} LIVES</span> : <button type="button" onClick={() => setPanel('modes')} aria-label="Switch combat mode">
           DEV · {modeLabels[mode]}
         </button>}
       {phase === 'waiting'
@@ -161,7 +165,10 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
         : <button type="button" onClick={() => onMode(mode)}>Restart</button>}
       {encounter && <button type="button" onClick={onExit}>{bingoPreview ? 'Back to daily' : 'Return to generator'}</button>}
     </div>
-    {bingoPreview && <p className="beta-intro">A one-word win is hidden here. Can you find it?</p>}
+    {bingoPreview && <p className="beta-intro">
+      {onChoosePreview && <><button type="button" onClick={onChoosePreview} aria-label="Choose a preview puzzle">{previewName} ▾</button><span> · </span></>}
+      A one-word win is hidden here.
+    </p>}
     <div className="battle-info">
       <MyInfo name={letterGame ? 'LIVES' : 'YOU'} health={displayedLives} maxHealth={game.encounter.startingResolve} wyrm={Boolean(letterGame)}
         wyrmRef={wyrmLifeRef} decoding={phase === 'enemy' || phase === 'tiles'} animateLives={bingoPreview} />
@@ -206,11 +213,12 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
       onEnemyReveal={revealEnemyLetter} onTileReveal={revealTile} onRefillReveal={revealRefill}
       onEnemyDecoded={enemyDecoded} onTilesDecoded={tilesDecoded} />
 
-    {panel === 'modes' && <PlaytestPanel title={bingoPreview ? 'Three-life beta' : 'Combat playtest'} onClose={() => setPanel(null)}>
-      <p>{bingoPreview ? 'Three lives, familiar rules, and a hidden one-word win. Two- and three-word wins count too. Retry as often as you like; this preview does not affect your daily puzzle or statistics.' : 'Each mode starts a fresh encounter. Playtests do not save to daily history.'}</p>
+    {panel === 'modes' && <PlaytestPanel title={bingoPreview ? `${game.encounter.startingResolve}-life beta` : 'Combat playtest'} onClose={() => setPanel(null)}>
+      <p>{bingoPreview ? `${game.encounter.startingResolve} lives, familiar rules, and a hidden one-word win. You can also win in ${alternativeTurns} words. Draft meanings are still under review. Retry as often as you like; this preview does not affect your daily puzzle or statistics.` : 'Each mode starts a fresh encounter. Playtests do not save to daily history.'}</p>
       {!bingoPreview && letterGame && <MatchHintControls value={matchHint} onChange={onMatchHintChange} />}
       {!bingoPreview && <EnemyLayoutControls grid={enemyGrid} onChange={onEnemyGridChange} />}
       <div className="dev-controls">
+        {onChoosePreview && <button className="daily-button" onClick={onChoosePreview}>Choose puzzle / lives</button>}
         {bingoPreview ? <button className="daily-button" onClick={() => onMode(mode)}>Try again</button> : (encounter ? ['letter-strike'] as const : ['damage', 'letter-strike'] as const).map(value =>
           <button className="daily-button" key={value} onClick={() => onMode(value)}>{modeLabels[value]}</button>)}
         <button className="daily-button" onClick={onExit}>{bingoPreview ? 'Back to daily' : encounter ? 'Return to generator' : 'Return to daily game'}</button>
@@ -225,10 +233,10 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
         <p>Select any tiles in word order to spell at least three letters. Longer words deal more damage; counters add a bonus. Power adds damage and Ward prevents Resolve loss.</p>
         <p>Reduce enemy HP to zero before Resolve runs out. This DEV comparison does not save to daily history.</p>
       </PlaytestPanel>
-      : <PlaytestPanel title={bingoPreview ? 'Three lives · one hidden bingo' : 'Letter-strike mode'} onClose={() => setPanel(null)}>
+      : <PlaytestPanel title={bingoPreview ? `${game.encounter.startingResolve} lives · one hidden bingo` : 'Letter-strike mode'} onClose={() => setPanel(null)}>
         <div className="daily-help">
           <div>Remove every enemy letter before your {game.encounter.startingResolve} lives run out. Tap or swipe across tiles in spelling order; you can mix both.</div>
-          {bingoPreview && <div>One long counter can remove the whole enemy in a single word. You can also win in two or three words. Each played word uses one life; removing the final letter on your last life still wins.</div>}
+          {bingoPreview && <div>One long counter can remove the whole enemy in a single word. You can also win in {alternativeTurns} words. Each played word uses one life; removing the final letter on your last life still wins.</div>}
           <div><strong>Meaning drives your hits.</strong> Counter words hit with every matching tile. Neutral words get one normal matching hit, in spelling order. Similar meanings are resisted and have no normal hits.</div>
           {letterGame?.encounter.longWordRule && <div><strong>LONG +{letterGame.encounter.longWordRule.bonusStrikes}</strong> adds a normal strike allowance for neutral words of {letterGame.encounter.longWordRule.minimumLength}+ letters. It stacks with grammar weaknesses, but does not boost resisted words or counters.</div>}
           {!bingoPreview && <div>A blue <strong>HIT</strong> tile guarantees its matching hit, even on a resisted word. A green <strong>LIFE</strong> tile saves the life this turn would cost. A red <strong>REVIVE</strong> tile restores its enemy letter or its armour after your hits.</div>}
