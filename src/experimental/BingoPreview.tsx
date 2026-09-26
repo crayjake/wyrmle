@@ -16,19 +16,25 @@ export default function BingoPreview({ request }: { request: BingoPreviewRequest
   return <PreviewPuzzle key={`${request.id}:${request.lives}`} entry={entry} request={request} />
 }
 
-function PreviewFrame({ title, children }: { title: string; children: ReactNode }) {
+function PreviewFrame({ title, children, footer }: { title: string; children: ReactNode; footer?: ReactNode }) {
   return <main className="container bingo-library">
     <h1>{title}</h1>
     {children}
-    <button className="daily-button" onClick={exit}>Back to daily</button>
+    <div className="bingo-library-footer">
+      {footer}
+      <button className="daily-button" onClick={exit}>Back to daily</button>
+    </div>
   </main>
 }
 
 function PreviewLibrary({ lives, missing = false }: { lives: PreviewLives; missing?: boolean }) {
   const [selectedLives, setSelectedLives] = useState(lives)
-  return <PreviewFrame title="Bingo previews">
-    {missing && <p role="status">That preview was not found. Choose a puzzle below.</p>}
-    <p>Find the hidden one-word win, or take another route. These draft puzzles are still having their meanings reviewed. Practice never changes your daily progress or stats.</p>
+  return <PreviewFrame title="Bingo previews" footer={
+    <a className="daily-button" href={bingoPreviewHref('bingo', selectedLives)} aria-label="Original CHAOS preview">Original CHAOS</a>
+  }>
+    <p role={missing ? 'status' : undefined}>{missing
+      ? 'Preview not found. Choose a draft puzzle below.'
+      : 'Draft meanings. Daily progress stays saved.'}</p>
     <label className="bingo-lives-select">Starting lives
       <select value={selectedLives} onChange={event => {
         const next = Number(event.target.value) as PreviewLives
@@ -41,11 +47,10 @@ function PreviewLibrary({ lives, missing = false }: { lives: PreviewLives; missi
     <ul className="bingo-preview-list">
       {bingoPreviews.map(entry => <li key={entry.id}>
         <a href={bingoPreviewHref(entry.id, selectedLives)}>
-          <strong>{entry.title}</strong><span>{entry.enemyHP} enemy hits · {selectedLives} lives</span>
+          <strong>{entry.title}</strong><span>{entry.enemyHP} enemy hits</span>
         </a>
       </li>)}
     </ul>
-    <a className="bingo-original-link" href={bingoPreviewHref('bingo', selectedLives)}>Original CHAOS preview</a>
   </PreviewFrame>
 }
 

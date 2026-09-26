@@ -27,30 +27,36 @@
 .container.bingo-library {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding: 1.5rem;
+  width: 100%;
+  max-width: 36rem;
+  margin-inline: auto;
+  gap: clamp(6px, 1.4dvh, 12px);
+  padding: clamp(8px, 2dvh, 20px) clamp(12px, 3vw, 24px);
   justify-content: flex-start;
   text-transform: none;
   letter-spacing: 0;
 }
 
-.bingo-library h1 { margin: 0; font-size: 1.25rem; }
-.bingo-library p { margin: 0; font-size: 0.8rem; line-height: 1.5; }
+.bingo-library h1 { flex: none; margin: 0; font-size: clamp(20px, 1.25rem, 24px); }
+.bingo-library p { flex: none; margin: 0; font-size: 13px; line-height: 1.4; }
 .bingo-library a { color: var(--blue); }
-.bingo-lives-select { display: flex; align-items: center; gap: 1rem; font-size: 0.8rem; }
+.bingo-lives-select { display: flex; flex: none; align-items: center; justify-content: space-between; gap: 12px; font-size: 14px; }
 .bingo-lives-select select {
   background: var(--bg);
   color: var(--fg);
   border: 1px solid color-mix(in srgb, var(--fg) 45%, transparent);
   border-radius: 4px;
-  padding: 0.5rem;
+  padding: 8px;
   font: inherit;
   min-height: 44px;
 }
 .bingo-preview-list {
   display: grid;
+  flex: 1;
+  min-height: 0;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.6rem;
+  grid-auto-rows: minmax(44px, 1fr);
+  gap: 6px;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -59,18 +65,34 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 0.4rem;
+  gap: 2px;
   height: 100%;
   box-sizing: border-box;
-  min-height: 70px;
-  padding: 0.65rem;
+  min-height: 44px;
+  padding: 4px;
   border: 1px solid color-mix(in srgb, var(--fg) 45%, transparent);
   border-radius: 4px;
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 14px;
 }
-.bingo-preview-list span { color: var(--fg); font-size: 0.6rem; }
-.bingo-original-link { font-size: 0.8rem; padding-block: 0.5rem; }
+.bingo-preview-list span { color: var(--fg); font-size: 11px; line-height: 1.2; }
+.bingo-library-footer { display: flex; flex: none; gap: 8px; margin-top: auto; }
+.bingo-library-footer > * {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 6px;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+@media (orientation: landscape) and (max-height: 550px) {
+  .container.bingo-library { max-width: none; gap: 6px; padding-block: 8px; }
+  .bingo-preview-list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
 
 /* The travelling wyrm and resting meter share the same larger pieces at every
    preview life count. The decoder measures their actual dock centres. */
@@ -99,9 +121,54 @@
   .wyrm-life-meter[data-animate-lives] > :not(.is-filled) { animation: none; }
 }
 
-@media (max-width: 600px) and (orientation: portrait) {
-  /* Reserve room for the preview label and prompt without clipping Play. */
+/* Size the grid from the space actually left after the definition and move
+   feedback. Container units also track Safari toolbar and orientation changes. */
+.bingo-preview .enemy-zone { flex: none; }
+.bingo-preview .player-zone {
+  flex: 1;
+  min-height: 0;
+  justify-content: flex-end;
+  container-type: inline-size;
+}
+.bingo-preview .attack-info { flex: none; }
+.container.letter-combat.bingo-preview .controls {
+  --action-height: 44px;
+  --control-gap: 6px;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  max-height: calc(min(100cqw, 18rem) + var(--action-height) + var(--control-gap));
+  margin-top: 0;
+  gap: var(--control-gap);
+  container-type: size;
+  align-items: center;
+  justify-content: flex-end;
+}
+.bingo-preview .tile-grid,
+.bingo-preview .battle-actions {
+  flex: none;
+  width: min(100%, 18rem, calc(100cqh - var(--action-height) - var(--control-gap)));
+}
+.bingo-preview .battle-actions button { min-height: var(--action-height); }
+
+@media (orientation: landscape) and (max-height: 550px) {
   .container.letter-combat.bingo-preview {
-    --board-size: clamp(12rem, calc(100dvh - 22.25rem), 18rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: auto auto auto auto minmax(0, 1fr);
+    grid-template-areas: 'header player' 'meta player' 'intro player' 'supply player' 'enemy player';
+    padding: 6px 12px;
+    gap: 4px 16px;
   }
+  .bingo-preview .header { grid-area: header; }
+  .bingo-preview .daily-meta { grid-area: meta; }
+  .bingo-preview .beta-intro { grid-area: intro; }
+  .bingo-preview .battle-info { grid-area: supply; }
+  .bingo-preview .enemy-zone { grid-area: enemy; align-self: center; }
+  .bingo-preview .player-zone { grid-area: player; height: 100%; margin: 0; }
+  .bingo-preview .word { font-size: 24px; }
+  .bingo-preview .attack-info { gap: 1px; }
+  .bingo-preview .attack-line { padding: 0; }
+  .bingo-preview .enemy-section { gap: 2px; }
+  .bingo-preview .enemy-definition { width: 100%; line-height: 1.3; }
 }

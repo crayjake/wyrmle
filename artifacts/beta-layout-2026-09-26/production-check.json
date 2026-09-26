@@ -1,0 +1,22 @@
+{
+  "base": "http://127.0.0.1:4173/wyrmle/",
+  "checks": [
+    "production-picker",
+    "production-navigation-4-lives",
+    "production-live-resize-selected-320x568",
+    "production-live-resize-selected-390x664",
+    "production-live-resize-selected-430x740",
+    "production-live-resize-selected-568x320",
+    "production-live-resize-selected-667x375",
+    "production-live-resize-selected-430x932",
+    "production-safe-area-padding-selected",
+    "production-win-safe-area-padding",
+    "production-original-chaos",
+    "production-unknown-preview-picker",
+    "back-to-daily",
+    "production-normal-motion-intro",
+    "production-pointer-selection"
+  ],
+  "errors": [],
+  "webkit": "Unavailable: host lacks libicu74, libxml2 and libflite1 required by Playwright WebKit."
+}
