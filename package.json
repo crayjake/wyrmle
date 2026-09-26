@@ -10,6 +10,7 @@
     "test:ci": "node --test --test-isolation=none",
     "generate": "node scripts/generate.ts",
     "assess:bingo": "node scripts/assess-bingo-generation.ts",
+    "generate:bingo": "node scripts/generate-bingo-set.ts",
     "export:bingo-previews": "node scripts/export-bingo-previews.ts",
     "audit-lexicon": "node scripts/audit-lexicon.ts",
     "export-semantic-source": "node scripts/export-semantic-source.ts",

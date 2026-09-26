@@ -22,11 +22,12 @@ import {
 import type { LetterStrikeEncounter, LetterStrikeState } from '../game/letterStrike'
 import { getLetterStrikeBattleEvents, getLetterStrikeBonuses, getLetterStrikeGrammarModifiers, getLetterStrikeTileSummary } from '../game/letterStrikeHud'
 import './DevCombat.css'
+import type { BingoGuide } from './bingo/guides'
 
 type CombatMode = 'damage' | 'letter-strike'
 type Run = { mode: 'damage'; game: GameState } | { mode: 'letter-strike'; game: LetterStrikeState }
 type Phase = 'waiting' | 'enemy' | 'tiles' | 'ready'
-type Panel = 'help' | 'log' | 'modes' | null
+type Panel = 'help' | 'log' | 'modes' | 'hints' | null
 
 const modeLabels = { damage: 'DAMAGE MODE', 'letter-strike': 'LETTER-STRIKE MODE' }
 
@@ -48,7 +49,7 @@ export default function DevCombat({ initialMode, encounter, onExit, matchHint, o
     enemyGrid={enemyGrid} onEnemyGridChange={onEnemyGridChange} />
 }
 
-export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onMatchHintChange, enemyGrid, onEnemyGridChange, bingoPreview = false, previewName, onChoosePreview }: {
+export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onMatchHintChange, enemyGrid, onEnemyGridChange, bingoPreview = false, previewName, onChoosePreview, bingoGuide }: {
   mode: CombatMode; onMode: (mode: CombatMode) => void; onExit: () => void
   encounter?: LetterStrikeEncounter
   matchHint: MatchHintMode; onMatchHintChange: (mode: MatchHintMode) => void
@@ -56,12 +57,14 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
   bingoPreview?: boolean
   previewName?: string
   onChoosePreview?: () => void
+  bingoGuide?: BingoGuide
 }) {
   const [run, setRun] = useState<Run>(() => mode === 'damage'
     ? { mode, game: createGame(melancholyEncounter) }
     : { mode, game: createLetterStrikeGame(encounter) })
   const [phase, setPhase] = useState<Phase>('waiting')
   const [panel, setPanel] = useState<Panel>(null)
+  const [hintStep, setHintStep] = useState(1)
   const containerRef = useRef<HTMLElement>(null)
   const enemyElements = useRef<(HTMLDivElement | null)[]>([])
   const tileElements = useRef<(HTMLButtonElement | null)[]>([])
@@ -165,10 +168,11 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
         : <button type="button" onClick={() => onMode(mode)}>Restart</button>}
       {encounter && <button type="button" onClick={onExit}>{bingoPreview ? 'Back to daily' : 'Return to generator'}</button>}
     </div>
-    {bingoPreview && <p className="beta-intro">
-      {onChoosePreview && <><button type="button" onClick={onChoosePreview} aria-label="Choose a preview puzzle">{previewName} ▾</button><span> · </span></>}
-      A one-word win is hidden here.
-    </p>}
+    {bingoPreview && <div className="beta-intro">
+      {onChoosePreview && <button type="button" onClick={onChoosePreview} aria-label="Choose a preview puzzle">{previewName} ▾</button>}
+      <span>Hidden one-word win</span>
+      {bingoGuide && <button type="button" className="beta-hints-button" onClick={() => setPanel('hints')}>Hints</button>}
+    </div>}
     <div className="battle-info">
       <MyInfo name={letterGame ? 'LIVES' : 'YOU'} health={displayedLives} maxHealth={game.encounter.startingResolve} wyrm={Boolean(letterGame)}
         wyrmRef={wyrmLifeRef} decoding={phase === 'enemy' || phase === 'tiles'} animateLives={bingoPreview} />
@@ -213,6 +217,29 @@ export function PlaytestBattle({ mode, encounter, onMode, onExit, matchHint, onM
       onEnemyReveal={revealEnemyLetter} onTileReveal={revealTile} onRefillReveal={revealRefill}
       onEnemyDecoded={enemyDecoded} onTilesDecoded={tilesDecoded} />
 
+    {panel === 'hints' && bingoPreview && bingoGuide && <PlaytestPanel title="Bingo hints" onClose={() => setPanel(null)}>
+      <div className="bingo-hint-content" aria-live="polite" aria-atomic="true">
+        {hintStep <= 3 ? <>
+          <p className="bingo-hint-step">Hint {hintStep} of 3</p>
+          <p className="bingo-hint-text">{bingoGuide.hints[hintStep - 1]}</p>
+        </> : <>
+          <p className="bingo-answer">{bingoGuide.answer}</p>
+          <p>{bingoGuide.explanation}</p>
+          <p className="bingo-hint-step">A one-word win on the starting board.</p>
+        </>}
+      </div>
+      <div className="bingo-hint-actions">
+        {hintStep <= 3 ? <>
+          <button className="daily-button" disabled={hintStep === 1} onClick={() => setHintStep(step => step - 1)}>Previous hint</button>
+          <button className="daily-button" onClick={() => setHintStep(step => step + 1)}>
+            {hintStep === 3 ? 'Reveal answer' : `Next hint (${hintStep + 1}/3)`}
+          </button>
+        </> : <>
+          <button className="daily-button" onClick={() => setHintStep(3)}>Back to hints</button>
+          <button className="daily-button" onClick={() => onMode(mode)}>Restart puzzle</button>
+        </>}
+      </div>
+    </PlaytestPanel>}
     {panel === 'modes' && <PlaytestPanel title={bingoPreview ? `${game.encounter.startingResolve}-life beta` : 'Combat playtest'} onClose={() => setPanel(null)}>
       <p>{bingoPreview ? `${game.encounter.startingResolve} lives, familiar rules, and a hidden one-word win. You can also win in ${alternativeTurns} words. Draft meanings are still under review. Retry as often as you like; this preview does not affect your daily puzzle or statistics.` : 'Each mode starts a fresh encounter. Playtests do not save to daily history.'}</p>
       {!bingoPreview && letterGame && <MatchHintControls value={matchHint} onChange={onMatchHintChange} />}

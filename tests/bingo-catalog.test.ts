@@ -20,14 +20,15 @@ test('production preview URLs preserve the legacy beta and constrain life counts
   }
   // Bad preview names remain in the isolated picker, never silently mount a daily.
   assert.deepEqual(readBingoPreviewRequest('?preview=bingo-missing'), { id: 'bingo-missing', lives: 3 })
-  assert.equal(leaveBingoPreviewHref('https://example.com/wyrmle/?preview=bingo-chaos-1&lives=4&foo=bar'),
+  assert.equal(leaveBingoPreviewHref('https://example.com/wyrmle/?preview=bingo-chaos-1&lives=4&set=earlier&foo=bar'),
     'https://example.com/wyrmle/?foo=bar')
 })
 
 test('all ten frozen previews reproduce the assessed boards and winning routes at every life count', () => {
-  assert.equal(bingoPreviews.length, 10)
-  assert.equal(new Set(bingoPreviews.map(entry => entry.id)).size, 10)
-  for (const [index, entry] of bingoPreviews.entries()) {
+  const earlier = bingoPreviews.filter(entry => entry.collection !== 'new')
+  assert.equal(earlier.length, 10)
+  assert.equal(new Set(bingoPreviews.map(entry => entry.id)).size, bingoPreviews.length)
+  for (const [index, entry] of earlier.entries()) {
     const original = report[index]
     const payload = JSON.parse(readFileSync(new URL(`../public/${entry.asset}`, import.meta.url), 'utf8'))
     for (const lives of [3, 4, 5] as const) {

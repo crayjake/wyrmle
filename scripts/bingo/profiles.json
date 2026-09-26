@@ -1,0 +1,2343 @@
+[
+  {
+    "enemy": "ARID",
+    "enemySense": "oewn-arid__5.00.00.dry.01",
+    "bingo": "IRRIGATED",
+    "hints": [
+      "Think about changing the conditions around the enemy.",
+      "A grower might arrange for help when the weather will not provide it.",
+      "Nine letters: describes land after water has been supplied to it."
+    ],
+    "roots": [
+      {
+        "word": "IRRIGATE",
+        "senseId": "oewn-irrigate__2.30.00..",
+        "definition": "supply with water, as with channels or ditches or streams",
+        "relation": "opposite"
+      },
+      {
+        "word": "IRRIGATION",
+        "senseId": "oewn-irrigation__1.04.00..",
+        "definition": "supplying dry land with water by means of ditches etc",
+        "relation": "opposite"
+      },
+      {
+        "word": "WATER",
+        "senseId": "oewn-water__2.30.00..",
+        "definition": "supply with water, as with channels or ditches or streams",
+        "relation": "opposite"
+      },
+      {
+        "word": "WET",
+        "senseId": "oewn-wet__3.00.01..",
+        "definition": "covered or soaked with a liquid such as water",
+        "relation": "opposite"
+      },
+      {
+        "word": "MOIST",
+        "senseId": "oewn-moist__5.00.00.wet.01",
+        "definition": "slightly wet",
+        "relation": "opposite"
+      },
+      {
+        "word": "DAMP",
+        "senseId": "oewn-damp__5.00.00.wet.01",
+        "definition": "slightly wet",
+        "relation": "opposite"
+      },
+      {
+        "word": "RAIN",
+        "senseId": "oewn-rain__1.19.00..",
+        "definition": "water falling in drops from vapor condensed in the atmosphere",
+        "relation": "opposite"
+      },
+      {
+        "word": "RAINFALL",
+        "senseId": "oewn-rainfall__1.19.00..",
+        "definition": "water falling in drops from vapor condensed in the atmosphere",
+        "relation": "opposite"
+      },
+      {
+        "word": "RAINSTORM",
+        "senseId": "oewn-rainstorm__1.19.00..",
+        "definition": "a storm with rain",
+        "relation": "opposite"
+      },
+      {
+        "word": "HYDRATE",
+        "senseId": "oewn-hydrate__2.30.00..",
+        "definition": "cause to be hydrated; add water or moisture to",
+        "relation": "opposite"
+      },
+      {
+        "word": "HYDRATION",
+        "senseId": "oewn-hydration__1.22.00..",
+        "definition": "the process of combining with water; usually reversible",
+        "relation": "opposite"
+      },
+      {
+        "word": "SATURATE",
+        "senseId": "oewn-saturate__2.30.04..",
+        "definition": "infuse or fill completely",
+        "relation": "opposite"
+      },
+      {
+        "word": "DRENCH",
+        "senseId": "oewn-drench__2.30.00..",
+        "definition": "cover with liquid; pour liquid onto",
+        "relation": "opposite"
+      },
+      {
+        "word": "SOAK",
+        "senseId": "oewn-soak__2.35.01..",
+        "definition": "submerge in a liquid",
+        "relation": "opposite"
+      },
+      {
+        "word": "MOISTEN",
+        "senseId": "oewn-moisten__2.30.00..",
+        "definition": "make moist",
+        "relation": "opposite"
+      },
+      {
+        "word": "WETNESS",
+        "senseId": "oewn-wetness__1.26.00..",
+        "definition": "the condition of containing or being covered by a liquid (especially water)",
+        "relation": "opposite"
+      },
+      {
+        "word": "HUMID",
+        "senseId": "oewn-humid__5.00.00.wet.01",
+        "definition": "containing or characterized by a great deal of water vapor",
+        "relation": "opposite"
+      },
+      {
+        "word": "HUMIDITY",
+        "senseId": "oewn-humidity__1.26.00..",
+        "definition": "wetness in the atmosphere",
+        "relation": "opposite"
+      },
+      {
+        "word": "HUMIDIFY",
+        "senseId": "oewn-humidify__2.30.00..",
+        "definition": "make (more) humid",
+        "relation": "opposite"
+      },
+      {
+        "word": "DAMPEN",
+        "senseId": "oewn-dampen__2.30.01..",
+        "definition": "make moist",
+        "relation": "opposite"
+      },
+      {
+        "word": "WATERY",
+        "senseId": "oewn-watery__5.00.02.wet.01",
+        "definition": "filled with water",
+        "relation": "opposite"
+      },
+      {
+        "word": "DEW",
+        "senseId": "oewn-dew__1.27.00..",
+        "definition": "water that has condensed on a cool surface overnight from water vapor in the air",
+        "relation": "opposite"
+      },
+      {
+        "word": "DEWY",
+        "senseId": "oewn-dewy__5.00.00.wet.01",
+        "definition": "wet with dew",
+        "relation": "opposite"
+      },
+      {
+        "word": "ARID",
+        "senseId": "oewn-arid__5.00.00.dry.01",
+        "definition": "lacking sufficient water or rainfall",
+        "relation": "similar"
+      },
+      {
+        "word": "DRY",
+        "senseId": "oewn-dry__3.00.01..",
+        "definition": "free from liquid or moisture; lacking natural or normal moisture or depleted of water; or no longer wet",
+        "relation": "similar"
+      },
+      {
+        "word": "DROUGHT",
+        "senseId": "oewn-drought__1.26.00..",
+        "definition": "a shortage of rainfall",
+        "relation": "similar"
+      },
+      {
+        "word": "DESICCATE",
+        "senseId": "oewn-desiccate__2.30.05..",
+        "definition": "remove water from",
+        "relation": "similar"
+      },
+      {
+        "word": "DESICCATION",
+        "senseId": "oewn-desiccation__1.26.00..",
+        "definition": "dryness resulting from the removal of water",
+        "relation": "similar"
+      },
+      {
+        "word": "DESICCANT",
+        "senseId": "oewn-desiccant__1.27.00..",
+        "definition": "a substance that promotes drying (e.g., calcium oxide absorbs water and is used to remove moisture)",
+        "relation": "similar"
+      },
+      {
+        "word": "PARCH",
+        "senseId": "oewn-parch__2.30.00..",
+        "definition": "cause to wither or parch from exposure to heat",
+        "relation": "similar"
+      },
+      {
+        "word": "PARCHED",
+        "senseId": "oewn-parch__2.30.00..",
+        "definition": "cause to wither or parch from exposure to heat",
+        "relation": "similar"
+      },
+      {
+        "word": "DEHYDRATE",
+        "senseId": "oewn-dehydrate__2.30.01..",
+        "definition": "remove water from",
+        "relation": "similar"
+      },
+      {
+        "word": "DEHYDRATION",
+        "senseId": "oewn-dehydration__1.26.00..",
+        "definition": "dryness resulting from the removal of water",
+        "relation": "similar"
+      },
+      {
+        "word": "THIRST",
+        "senseId": "oewn-thirst__1.26.00..",
+        "definition": "a physiological need to drink",
+        "relation": "similar"
+      },
+      {
+        "word": "THIRSTY",
+        "senseId": "oewn-thirsty__5.00.00.dry.01",
+        "definition": "needing moisture",
+        "relation": "similar"
+      },
+      {
+        "word": "WITHER",
+        "senseId": "oewn-wither__2.30.00..",
+        "definition": "wither, as with a loss of moisture",
+        "relation": "similar"
+      },
+      {
+        "word": "DRAIN",
+        "senseId": "oewn-drain__2.30.01..",
+        "definition": "empty of liquid; drain the liquid from",
+        "relation": "similar"
+      },
+      {
+        "word": "EVAPORATE",
+        "senseId": "oewn-evaporate__2.30.00..",
+        "definition": "lose or cause to lose liquid by vaporization leaving a more concentrated residue",
+        "relation": "similar"
+      },
+      {
+        "word": "EVAPORATION",
+        "senseId": "oewn-evaporation__1.22.01..",
+        "definition": "the process of extracting moisture",
+        "relation": "similar"
+      },
+      {
+        "word": "WET",
+        "senseId": "oewn-wet__2.30.00..",
+        "definition": "cause to become wet",
+        "relation": "opposite"
+      },
+      {
+        "word": "DRY",
+        "senseId": "oewn-dry__2.30.01..",
+        "definition": "remove the moisture from and make dry",
+        "relation": "similar"
+      },
+      {
+        "word": "DRIZZLE",
+        "senseId": "oewn-drizzle__1.19.00..",
+        "definition": "very light rain; stronger than mist but less than a shower",
+        "relation": "opposite"
+      },
+      {
+        "word": "MIST",
+        "senseId": "oewn-mist__2.35.00..",
+        "definition": "spray finely or cover with mist",
+        "relation": "opposite"
+      },
+      {
+        "word": "RIVER",
+        "senseId": "oewn-river__1.17.00..",
+        "definition": "a large natural stream of water (larger than a creek)",
+        "relation": "opposite"
+      },
+      {
+        "word": "STREAM",
+        "senseId": "oewn-stream__1.17.00..",
+        "definition": "a natural body of running water flowing on or under the earth",
+        "relation": "opposite"
+      },
+      {
+        "word": "FLOOD",
+        "senseId": "oewn-flood__2.30.00..",
+        "definition": "cover with liquid, usually water",
+        "relation": "opposite"
+      },
+      {
+        "word": "SHOWER",
+        "senseId": "oewn-shower__1.19.00..",
+        "definition": "a brief period of precipitation",
+        "relation": "opposite"
+      },
+      {
+        "word": "SPRING",
+        "senseId": "oewn-spring__1.17.00..",
+        "definition": "a natural flow of ground water",
+        "relation": "opposite"
+      },
+      {
+        "word": "SNOW",
+        "senseId": "oewn-snow__1.27.00..",
+        "definition": "a layer of snowflakes (white crystals of frozen water) covering the ground",
+        "relation": "opposite"
+      },
+      {
+        "word": "STORM",
+        "senseId": "oewn-storm__2.43.01..",
+        "definition": "rain, hail, or snow hard and be very windy, often with thunder or lightning",
+        "relation": "opposite"
+      },
+      {
+        "word": "SPRAY",
+        "senseId": "oewn-spray__1.27.00..",
+        "definition": "water in small drops in the atmosphere; blown from waves or thrown up by a waterfall",
+        "relation": "opposite"
+      },
+      {
+        "word": "MUD",
+        "senseId": "oewn-mud__1.27.00..",
+        "definition": "water soaked soil; soft wet earth",
+        "relation": "opposite"
+      },
+      {
+        "word": "POUR",
+        "senseId": "oewn-pour__2.43.00..",
+        "definition": "rain heavily",
+        "relation": "opposite"
+      },
+      {
+        "word": "DIP",
+        "senseId": "oewn-dip__2.35.00..",
+        "definition": "immerse briefly into a liquid so as to wet, coat, or saturate",
+        "relation": "opposite"
+      },
+      {
+        "word": "SWAMP",
+        "senseId": "oewn-swamp__2.43.00..",
+        "definition": "drench or submerge or be drenched or submerged",
+        "relation": "opposite"
+      },
+      {
+        "word": "SPONGE",
+        "senseId": "oewn-sponge__2.35.00..",
+        "definition": "wipe with a sponge, so as to clean or moisten",
+        "relation": "opposite"
+      },
+      {
+        "word": "SPIT",
+        "senseId": "oewn-spit__2.43.00..",
+        "definition": "rain gently",
+        "relation": "opposite"
+      },
+      {
+        "word": "DANK",
+        "senseId": "oewn-dank__5.00.00.wet.01",
+        "definition": "unpleasantly cool and humid",
+        "relation": "opposite"
+      },
+      {
+        "word": "AIR",
+        "senseId": "oewn-air__2.30.01..",
+        "definition": "expose to warm or heated air, so as to dry",
+        "relation": "similar"
+      },
+      {
+        "word": "DUST",
+        "senseId": "oewn-dust__1.27.00..",
+        "definition": "fine powdery material such as dry earth or pollen that can be blown about in the air",
+        "relation": "similar"
+      },
+      {
+        "word": "DESERT",
+        "senseId": "oewn-desert__1.15.00..",
+        "definition": "arid land with little or no vegetation",
+        "relation": "similar"
+      }
+    ],
+    "explanation": "Supplying land with water directly counters its lack of rainfall or moisture.",
+    "excludedDerivations": [
+      "oewn-dipper__1.06.00..",
+      "oewn-dust__2.35.00.."
+    ],
+    "excludedWordSenses": []
+  },
+  {
+    "enemy": "ROT",
+    "enemySense": "oewn-rot__1.26.00..",
+    "bingo": "RESTORATION",
+    "hints": [
+      "Imagine finding something neglected that is still worth saving.",
+      "A skilled craftsperson could bring it back towards its former condition.",
+      "Eleven letters: the name for that process of bringing something back."
+    ],
+    "roots": [
+      {
+        "word": "RESTORE",
+        "senseId": "oewn-restore__2.41.01..",
+        "definition": "return to its original or usable and functioning condition",
+        "relation": "opposite"
+      },
+      {
+        "word": "RESTORATION",
+        "senseId": "oewn-restoration__1.04.00..",
+        "definition": "the act of restoring something or someone to a satisfactory state",
+        "relation": "opposite"
+      },
+      {
+        "word": "REPAIR",
+        "senseId": "oewn-repair__2.30.00..",
+        "definition": "restore by replacing a part or putting together what is torn or broken",
+        "relation": "opposite"
+      },
+      {
+        "word": "MEND",
+        "senseId": "oewn-mend__2.30.00..",
+        "definition": "restore by replacing a part or putting together what is torn or broken",
+        "relation": "opposite"
+      },
+      {
+        "word": "PRESERVE",
+        "senseId": "oewn-preserve__2.40.00..",
+        "definition": "keep in safety and protect from harm, decay, loss, or destruction",
+        "relation": "opposite"
+      },
+      {
+        "word": "PRESERVATION",
+        "senseId": "oewn-preservation__1.22.00..",
+        "definition": "a process that saves organic substances from decay",
+        "relation": "opposite"
+      },
+      {
+        "word": "PRESERVATIVE",
+        "senseId": "oewn-preservative__1.27.00..",
+        "definition": "a chemical compound that is added to protect against decay or decomposition",
+        "relation": "opposite"
+      },
+      {
+        "word": "ANTISEPTIC",
+        "senseId": "oewn-antiseptic__3.00.00..",
+        "definition": "thoroughly clean and free of or destructive to disease-causing organisms",
+        "relation": "opposite"
+      },
+      {
+        "word": "DISINFECT",
+        "senseId": "oewn-disinfect__2.29.00..",
+        "definition": "destroy microorganisms or pathogens by cleansing",
+        "relation": "opposite"
+      },
+      {
+        "word": "DISINFECTION",
+        "senseId": "oewn-disinfection__1.04.00..",
+        "definition": "treatment to destroy harmful microorganisms",
+        "relation": "opposite"
+      },
+      {
+        "word": "SANITIZE",
+        "senseId": "oewn-sanitize__2.35.00..",
+        "definition": "make sanitary by cleaning or sterilizing",
+        "relation": "opposite"
+      },
+      {
+        "word": "SANITISE",
+        "senseId": "oewn-sanitise__2.35.00..",
+        "definition": "make sanitary by cleaning or sterilizing",
+        "relation": "opposite"
+      },
+      {
+        "word": "STERILISE",
+        "senseId": "oewn-sterilise__2.29.01..",
+        "definition": "make free from bacteria",
+        "relation": "opposite"
+      },
+      {
+        "word": "STERILIZE",
+        "senseId": "oewn-sterilize__2.29.01..",
+        "definition": "make free from bacteria",
+        "relation": "opposite"
+      },
+      {
+        "word": "CURE",
+        "senseId": "oewn-cure__2.30.00..",
+        "definition": "prepare by drying, salting, or chemical processing in order to preserve",
+        "relation": "opposite"
+      },
+      {
+        "word": "FRESH",
+        "senseId": "oewn-fresh__3.00.01..",
+        "definition": "recently made, produced, or harvested",
+        "relation": "opposite"
+      },
+      {
+        "word": "FRESHNESS",
+        "senseId": "oewn-freshness__1.07.01..",
+        "definition": "the property of being pure and fresh (as if newly made); not stale or deteriorated",
+        "relation": "opposite"
+      },
+      {
+        "word": "CONSERVE",
+        "senseId": "oewn-conserve__2.40.02..",
+        "definition": "keep in safety and protect from harm, decay, loss, or destruction",
+        "relation": "opposite"
+      },
+      {
+        "word": "CONSERVATION",
+        "senseId": "oewn-conservation__1.11.00..",
+        "definition": "an occurrence of improvement by virtue of preventing loss or injury or other change",
+        "relation": "opposite"
+      },
+      {
+        "word": "REFURBISH",
+        "senseId": "oewn-refurbish__2.30.00..",
+        "definition": "make brighter and prettier",
+        "relation": "opposite"
+      },
+      {
+        "word": "REJUVENATE",
+        "senseId": "oewn-rejuvenate__2.30.04..",
+        "definition": "get or give new life or energy; return to life, regain energy, recuperate",
+        "relation": "opposite"
+      },
+      {
+        "word": "RENEW",
+        "senseId": "oewn-renew__2.36.00..",
+        "definition": "reestablish on a new, usually improved, basis or make new or like new",
+        "relation": "opposite"
+      },
+      {
+        "word": "RENOVATE",
+        "senseId": "oewn-renovate__2.30.00..",
+        "definition": "restore to a previous or better condition",
+        "relation": "opposite"
+      },
+      {
+        "word": "RENOVATION",
+        "senseId": "oewn-renovation__1.04.00..",
+        "definition": "the act of improving by renewing and restoring",
+        "relation": "opposite"
+      },
+      {
+        "word": "FIX",
+        "senseId": "oewn-fix__2.30.01..",
+        "definition": "restore by replacing a part or putting together what is torn or broken",
+        "relation": "opposite"
+      },
+      {
+        "word": "SOUND",
+        "senseId": "oewn-sound__3.00.01..",
+        "definition": "in good condition; free from defect or damage or decay",
+        "relation": "opposite"
+      },
+      {
+        "word": "HEALTHY",
+        "senseId": "oewn-healthy__3.00.00..",
+        "definition": "having or indicating good health in body or mind; free from infirmity or disease",
+        "relation": "opposite"
+      },
+      {
+        "word": "ROT",
+        "senseId": "oewn-rot__1.26.00..",
+        "definition": "a state of decay usually accompanied by an offensive odor",
+        "relation": "similar"
+      },
+      {
+        "word": "DECAY",
+        "senseId": "oewn-decay__1.19.00..",
+        "definition": "the organic phenomenon of rotting",
+        "relation": "similar"
+      },
+      {
+        "word": "SPOIL",
+        "senseId": "oewn-spoil__2.30.00..",
+        "definition": "become unfit for consumption or use",
+        "relation": "similar"
+      },
+      {
+        "word": "SPOILAGE",
+        "senseId": "oewn-spoilage__1.22.00..",
+        "definition": "the process of becoming spoiled",
+        "relation": "similar"
+      },
+      {
+        "word": "CORRUPT",
+        "senseId": "oewn-corrupt__5.00.00.stale.00",
+        "definition": "touched by rot or decay",
+        "relation": "similar"
+      },
+      {
+        "word": "DISINTEGRATE",
+        "senseId": "oewn-disintegrate__2.30.00..",
+        "definition": "break into parts or components or lose cohesion or unity",
+        "relation": "similar"
+      },
+      {
+        "word": "CRUMBLE",
+        "senseId": "oewn-crumble__2.30.13..",
+        "definition": "fall into decay or ruin",
+        "relation": "similar"
+      },
+      {
+        "word": "PUTREFY",
+        "senseId": "oewn-putrefy__2.30.00..",
+        "definition": "become putrid; decay with an offensive smell",
+        "relation": "similar"
+      },
+      {
+        "word": "PUTREFACTION",
+        "senseId": "oewn-putrefaction__1.26.00..",
+        "definition": "a state of decay usually accompanied by an offensive odor",
+        "relation": "similar"
+      },
+      {
+        "word": "ROTTEN",
+        "senseId": "oewn-rotten__5.00.00.stale.00",
+        "definition": "having decayed or disintegrated; usually implies foulness",
+        "relation": "similar"
+      },
+      {
+        "word": "DECOMPOSE",
+        "senseId": "oewn-decompose__2.30.01..",
+        "definition": "break down",
+        "relation": "similar"
+      },
+      {
+        "word": "DECOMPOSITION",
+        "senseId": "oewn-decomposition__1.22.00..",
+        "definition": "(biology) the process of decay caused by bacterial or fungal action",
+        "relation": "similar"
+      },
+      {
+        "word": "MOULD",
+        "senseId": "oewn-mould__2.30.04..",
+        "definition": "become moldy; spoil due to humidity",
+        "relation": "similar"
+      },
+      {
+        "word": "MOLD",
+        "senseId": "oewn-mold__2.30.00..",
+        "definition": "become moldy; spoil due to humidity",
+        "relation": "similar"
+      },
+      {
+        "word": "MILDEW",
+        "senseId": "oewn-mildew__1.22.00..",
+        "definition": "the process of becoming mildewed",
+        "relation": "similar"
+      },
+      {
+        "word": "FESTER",
+        "senseId": "oewn-fester__1.26.00..",
+        "definition": "a sore that has become inflamed and formed pus",
+        "relation": "similar"
+      },
+      {
+        "word": "RANCID",
+        "senseId": "oewn-rancid__5.00.00.stale.00",
+        "definition": "(used of decomposing oils or fats) having a rank smell or taste usually due to a chemical change or decomposition",
+        "relation": "similar"
+      },
+      {
+        "word": "RANCIDITY",
+        "senseId": "oewn-rancidity__1.26.00..",
+        "definition": "the state of being rancid; having a rancid scent or flavor (as of old cooking oil)",
+        "relation": "similar"
+      },
+      {
+        "word": "PUTRID",
+        "senseId": "oewn-putrid__3.01.00..",
+        "definition": "of or relating to or attended by putrefaction",
+        "relation": "similar"
+      },
+      {
+        "word": "TAINT",
+        "senseId": "oewn-taint__2.29.00..",
+        "definition": "contaminate with a disease or microorganism",
+        "relation": "similar"
+      },
+      {
+        "word": "DETERIORATE",
+        "senseId": "oewn-deteriorate__2.30.00..",
+        "definition": "become worse or disintegrate",
+        "relation": "similar"
+      },
+      {
+        "word": "DETERIORATION",
+        "senseId": "oewn-deterioration__1.26.00..",
+        "definition": "a symptom of reduced quality or strength",
+        "relation": "similar"
+      },
+      {
+        "word": "ROT",
+        "senseId": "oewn-rot__2.30.00..",
+        "definition": "break down",
+        "relation": "similar"
+      },
+      {
+        "word": "RESTORE",
+        "senseId": "oewn-restore__2.30.01..",
+        "definition": "restore by replacing a part or putting together what is torn or broken",
+        "relation": "opposite"
+      },
+      {
+        "word": "PRESERVE",
+        "senseId": "oewn-preserve__2.30.00..",
+        "definition": "prevent (food) from rotting",
+        "relation": "opposite"
+      },
+      {
+        "word": "SALT",
+        "senseId": "oewn-salt__2.30.00..",
+        "definition": "preserve with salt",
+        "relation": "opposite"
+      },
+      {
+        "word": "SANITATION",
+        "senseId": "oewn-sanitation__1.04.00..",
+        "definition": "making something sanitary (free of germs) as by sterilizing",
+        "relation": "opposite"
+      },
+      {
+        "word": "SANITARY",
+        "senseId": "oewn-sanitary__3.00.00..",
+        "definition": "free from filth and pathogens",
+        "relation": "opposite"
+      },
+      {
+        "word": "ANTISEPSIS",
+        "senseId": "oewn-antisepsis__1.22.00..",
+        "definition": "the process of inhibiting the growth and multiplication of microorganisms",
+        "relation": "opposite"
+      },
+      {
+        "word": "DESICCATE",
+        "senseId": "oewn-desiccate__2.30.04..",
+        "definition": "preserve by removing all water and liquids from",
+        "relation": "opposite"
+      },
+      {
+        "word": "REFRIGERATE",
+        "senseId": "oewn-refrigerate__2.30.01..",
+        "definition": "preserve by chilling",
+        "relation": "opposite"
+      },
+      {
+        "word": "CAN",
+        "senseId": "oewn-can__2.30.00..",
+        "definition": "preserve in a can or tin",
+        "relation": "opposite"
+      },
+      {
+        "word": "PICKLE",
+        "senseId": "oewn-pickle__2.30.00..",
+        "definition": "preserve in a pickling liquid",
+        "relation": "opposite"
+      },
+      {
+        "word": "SUGAR",
+        "senseId": "oewn-sugar__1.13.00..",
+        "definition": "a white crystalline carbohydrate used as a sweetener and preservative",
+        "relation": "opposite"
+      },
+      {
+        "word": "CORN",
+        "senseId": "oewn-corn__2.30.00..",
+        "definition": "preserve with large-grained rock salt",
+        "relation": "opposite"
+      },
+      {
+        "word": "DIP",
+        "senseId": "oewn-dip__2.35.11..",
+        "definition": "immerse in a disinfectant solution",
+        "relation": "opposite"
+      },
+      {
+        "word": "DRIED",
+        "senseId": "oewn-dried__5.00.00.preserved.02",
+        "definition": "preserved by removing natural moisture",
+        "relation": "opposite"
+      },
+      {
+        "word": "SPICE",
+        "senseId": "oewn-spice__1.27.00..",
+        "definition": "aromatic substances of vegetable origin used as a preservative",
+        "relation": "opposite"
+      },
+      {
+        "word": "CRISP",
+        "senseId": "oewn-crisp__5.00.00.fresh.01",
+        "definition": "pleasingly firm and fresh",
+        "relation": "opposite"
+      },
+      {
+        "word": "VINEGAR",
+        "senseId": "oewn-vinegar__1.13.00..",
+        "definition": "sour-tasting liquid produced usually by oxidation of the alcohol in wine or cider and used as a condiment or food preservative",
+        "relation": "opposite"
+      }
+    ],
+    "explanation": "Bringing something back into good condition counters its decay.",
+    "excludedDerivations": [
+      "oewn-curing__1.22.00..",
+      "oewn-fresh__5.00.00.invigorating.00",
+      "oewn-conservation__1.04.00..",
+      "oewn-conservationist__1.18.00..",
+      "oewn-health__1.26.01.."
+    ],
+    "excludedWordSenses": []
+  },
+  {
+    "enemy": "INERT",
+    "enemySense": "oewn-inert__5.00.00.inactive.01",
+    "bingo": "REINVIGORATE",
+    "hints": [
+      "Think about what could get a stalled effort going again.",
+      "It needs a fresh supply of energy or enthusiasm.",
+      "Twelve letters, a verb beginning RE: give something renewed vitality."
+    ],
+    "roots": [
+      {
+        "word": "REINVIGORATE",
+        "senseId": "oewn-reinvigorate__2.29.00..",
+        "definition": "impart vigor, strength, or vitality to",
+        "relation": "opposite"
+      },
+      {
+        "word": "INVIGORATE",
+        "senseId": "oewn-invigorate__2.30.01..",
+        "definition": "give life or energy to",
+        "relation": "opposite"
+      },
+      {
+        "word": "ANIMATE",
+        "senseId": "oewn-animate__2.29.00..",
+        "definition": "give new life or energy to",
+        "relation": "opposite"
+      },
+      {
+        "word": "ANIMATION",
+        "senseId": "oewn-animation__1.07.01..",
+        "definition": "quality of being active or spirited or alive and vigorous",
+        "relation": "opposite"
+      },
+      {
+        "word": "REANIMATE",
+        "senseId": "oewn-reanimate__2.29.00..",
+        "definition": "give new life or energy to",
+        "relation": "opposite"
+      },
+      {
+        "word": "VITALISE",
+        "senseId": "oewn-vitalise__2.30.00..",
+        "definition": "make more lively or vigorous",
+        "relation": "opposite"
+      },
+      {
+        "word": "VITALIZE",
+        "senseId": "oewn-vitalize__2.30.00..",
+        "definition": "make more lively or vigorous",
+        "relation": "opposite"
+      },
+      {
+        "word": "REVITALISE",
+        "senseId": "oewn-revitalise__2.30.00..",
+        "definition": "give new life or vigor to",
+        "relation": "opposite"
+      },
+      {
+        "word": "REVITALIZE",
+        "senseId": "oewn-revitalize__2.29.00..",
+        "definition": "restore strength",
+        "relation": "opposite"
+      },
+      {
+        "word": "ACTIVATE",
+        "senseId": "oewn-activate__2.36.00..",
+        "definition": "put in motion or move to act",
+        "relation": "opposite"
+      },
+      {
+        "word": "ACTIVE",
+        "senseId": "oewn-active__3.00.01..",
+        "definition": "characterized by energetic activity",
+        "relation": "opposite"
+      },
+      {
+        "word": "LIVELY",
+        "senseId": "oewn-lively__3.00.00..",
+        "definition": "full of life and energy",
+        "relation": "opposite"
+      },
+      {
+        "word": "ENERGETIC",
+        "senseId": "oewn-energetic__3.00.00..",
+        "definition": "possessing or exerting or displaying energy",
+        "relation": "opposite"
+      },
+      {
+        "word": "VIGOUR",
+        "senseId": "oewn-vigour__1.07.00..",
+        "definition": "active strength of body or mind",
+        "relation": "opposite"
+      },
+      {
+        "word": "VIGOR",
+        "senseId": "oewn-vigor__1.07.00..",
+        "definition": "active strength of body or mind",
+        "relation": "opposite"
+      },
+      {
+        "word": "ENERGY",
+        "senseId": "oewn-energy__1.26.00..",
+        "definition": "a healthy capacity for vigorous activity",
+        "relation": "opposite"
+      },
+      {
+        "word": "SPRY",
+        "senseId": "oewn-spry__5.00.00.active.01",
+        "definition": "moving quickly and lightly",
+        "relation": "opposite"
+      },
+      {
+        "word": "AGILITY",
+        "senseId": "oewn-agility__1.07.00..",
+        "definition": "the gracefulness of a person or animal that is quick and nimble",
+        "relation": "opposite"
+      },
+      {
+        "word": "AGILE",
+        "senseId": "oewn-agile__5.00.00.active.01",
+        "definition": "moving quickly and lightly",
+        "relation": "opposite"
+      },
+      {
+        "word": "ALERT",
+        "senseId": "oewn-alert__5.00.00.energetic.00",
+        "definition": "quick and energetic",
+        "relation": "opposite"
+      },
+      {
+        "word": "MOTIVATE",
+        "senseId": "oewn-motivate__2.36.00..",
+        "definition": "give an incentive for action",
+        "relation": "opposite"
+      },
+      {
+        "word": "MOVE",
+        "senseId": "oewn-move__2.29.06..",
+        "definition": "be in a state of action",
+        "relation": "opposite"
+      },
+      {
+        "word": "MOVEMENT",
+        "senseId": "oewn-movement__1.04.00..",
+        "definition": "a change of position that does not entail a change of location",
+        "relation": "opposite"
+      },
+      {
+        "word": "MOTION",
+        "senseId": "oewn-motion__1.11.00..",
+        "definition": "a natural event that involves a change in the position or location of something",
+        "relation": "opposite"
+      },
+      {
+        "word": "ACT",
+        "senseId": "oewn-act__2.41.00..",
+        "definition": "perform an action, or work out or perform (an action)",
+        "relation": "opposite"
+      },
+      {
+        "word": "INSPIRE",
+        "senseId": "oewn-inspire__2.32.01..",
+        "definition": "spur on or encourage especially by cheers and shouts",
+        "relation": "opposite"
+      },
+      {
+        "word": "VITAL",
+        "senseId": "oewn-vital__5.00.00.animated.00",
+        "definition": "full of spirit; full of life",
+        "relation": "opposite"
+      },
+      {
+        "word": "REVIVE",
+        "senseId": "oewn-revive__2.29.00..",
+        "definition": "give new life or energy to",
+        "relation": "opposite"
+      },
+      {
+        "word": "AWAKEN",
+        "senseId": "oewn-awaken__2.29.00..",
+        "definition": "cause to become awake or conscious",
+        "relation": "opposite"
+      },
+      {
+        "word": "STIMULATE",
+        "senseId": "oewn-stimulate__2.29.00..",
+        "definition": "cause to be alert and energetic",
+        "relation": "opposite"
+      },
+      {
+        "word": "ROUSE",
+        "senseId": "oewn-rouse__2.38.01..",
+        "definition": "become active",
+        "relation": "opposite"
+      },
+      {
+        "word": "AROUSE",
+        "senseId": "oewn-arouse__2.29.00..",
+        "definition": "cause to be alert and energetic",
+        "relation": "opposite"
+      },
+      {
+        "word": "STIR",
+        "senseId": "oewn-stir__2.36.00..",
+        "definition": "summon into action or bring into existence, often as if by magic",
+        "relation": "opposite"
+      },
+      {
+        "word": "ENLIVEN",
+        "senseId": "oewn-enliven__2.30.00..",
+        "definition": "make lively",
+        "relation": "opposite"
+      },
+      {
+        "word": "ACTIVITY",
+        "senseId": "oewn-activity__1.26.00..",
+        "definition": "the state of being active",
+        "relation": "opposite"
+      },
+      {
+        "word": "DYNAMIC",
+        "senseId": "oewn-dynamic__3.00.00..",
+        "definition": "characterized by action or forcefulness or force of personality",
+        "relation": "opposite"
+      },
+      {
+        "word": "DYNAMISM",
+        "senseId": "oewn-dynamism__1.07.00..",
+        "definition": "the activeness of an energetic personality",
+        "relation": "opposite"
+      },
+      {
+        "word": "VITALITY",
+        "senseId": "oewn-vitality__1.26.00..",
+        "definition": "a healthy capacity for vigorous activity",
+        "relation": "opposite"
+      },
+      {
+        "word": "INERT",
+        "senseId": "oewn-inert__5.00.00.inactive.01",
+        "definition": "slow and apathetic",
+        "relation": "similar"
+      },
+      {
+        "word": "APATHETIC",
+        "senseId": "oewn-apathetic__5.00.00.spiritless.00",
+        "definition": "showing little or no emotion or animation",
+        "relation": "similar"
+      },
+      {
+        "word": "APATHY",
+        "senseId": "oewn-apathy__1.12.00..",
+        "definition": "an absence of emotion or enthusiasm",
+        "relation": "similar"
+      },
+      {
+        "word": "LETHARGIC",
+        "senseId": "oewn-lethargic__3.00.00..",
+        "definition": "deficient in alertness or activity",
+        "relation": "similar"
+      },
+      {
+        "word": "LETHARGY",
+        "senseId": "oewn-lethargy__1.07.01..",
+        "definition": "inactivity; showing an unusual lack of energy",
+        "relation": "similar"
+      },
+      {
+        "word": "SLUGGISH",
+        "senseId": "oewn-sluggish__5.00.01.slow.01",
+        "definition": "slow or slothful",
+        "relation": "similar"
+      },
+      {
+        "word": "PASSIVE",
+        "senseId": "oewn-passive__3.00.01..",
+        "definition": "lacking in energy or will",
+        "relation": "similar"
+      },
+      {
+        "word": "IDLE",
+        "senseId": "oewn-idle__3.00.00..",
+        "definition": "not in action or at work",
+        "relation": "similar"
+      },
+      {
+        "word": "INACTIVE",
+        "senseId": "oewn-inactive__3.00.01..",
+        "definition": "not active physically or mentally",
+        "relation": "similar"
+      },
+      {
+        "word": "LISTLESS",
+        "senseId": "oewn-listless__5.00.00.lethargic.00",
+        "definition": "lacking zest or vivacity",
+        "relation": "similar"
+      },
+      {
+        "word": "STILL",
+        "senseId": "oewn-still__5.00.01.nonmoving.00",
+        "definition": "not in physical motion",
+        "relation": "similar"
+      },
+      {
+        "word": "LANGUID",
+        "senseId": "oewn-languid__5.00.00.lethargic.00",
+        "definition": "lacking spirit or liveliness",
+        "relation": "similar"
+      },
+      {
+        "word": "LAZINESS",
+        "senseId": "oewn-laziness__1.07.00..",
+        "definition": "inactivity resulting from a dislike of work",
+        "relation": "similar"
+      },
+      {
+        "word": "INDOLENT",
+        "senseId": "oewn-indolent__5.00.00.idle.00",
+        "definition": "disinclined to work or exertion",
+        "relation": "similar"
+      },
+      {
+        "word": "TORPID",
+        "senseId": "oewn-torpid__5.00.00.inactive.01",
+        "definition": "slow and apathetic",
+        "relation": "similar"
+      },
+      {
+        "word": "TORPOR",
+        "senseId": "oewn-torpor__1.07.00..",
+        "definition": "inactivity resulting from lethargy and lack of vigor or energy",
+        "relation": "similar"
+      },
+      {
+        "word": "INERTIA",
+        "senseId": "oewn-inertia__1.07.01..",
+        "definition": "a disposition to remain inactive or inert",
+        "relation": "similar"
+      },
+      {
+        "word": "SLOTH",
+        "senseId": "oewn-sloth__1.07.01..",
+        "definition": "a disinclination to work or exert yourself",
+        "relation": "similar"
+      },
+      {
+        "word": "DORMANT",
+        "senseId": "oewn-dormant__5.00.00.inactive.01",
+        "definition": "inactive but capable of becoming active",
+        "relation": "similar"
+      },
+      {
+        "word": "STAGNATE",
+        "senseId": "oewn-stagnate__2.42.01..",
+        "definition": "stand still",
+        "relation": "similar"
+      },
+      {
+        "word": "STAGNATION",
+        "senseId": "oewn-stagnation__1.26.00..",
+        "definition": "a state of inactivity (in business or art etc.)",
+        "relation": "similar"
+      },
+      {
+        "word": "IMMOBILE",
+        "senseId": "oewn-immobile__3.00.00..",
+        "definition": "not capable of movement or of being moved",
+        "relation": "similar"
+      },
+      {
+        "word": "LANGUISH",
+        "senseId": "oewn-languish__2.30.00..",
+        "definition": "lose vigor, health, or flesh, as through grief",
+        "relation": "similar"
+      },
+      {
+        "word": "LAZY",
+        "senseId": "oewn-lazy__5.00.00.idle.00",
+        "definition": "disinclined to work or exertion",
+        "relation": "similar"
+      },
+      {
+        "word": "SLEEP",
+        "senseId": "oewn-sleep__1.26.00..",
+        "definition": "a natural and periodic state of rest during which consciousness of the world is suspended",
+        "relation": "similar"
+      },
+      {
+        "word": "DROWSY",
+        "senseId": "oewn-drowsy__5.00.00.asleep.00",
+        "definition": "half asleep",
+        "relation": "similar"
+      },
+      {
+        "word": "WEARY",
+        "senseId": "oewn-weary__5.00.00.tired.00",
+        "definition": "physically and mentally fatigued",
+        "relation": "similar"
+      },
+      {
+        "word": "TIRE",
+        "senseId": "oewn-tire__2.29.01..",
+        "definition": "exhaust or get tired through overuse or great strain or stress",
+        "relation": "similar"
+      },
+      {
+        "word": "ANIMATE",
+        "senseId": "oewn-animate__2.30.00..",
+        "definition": "make lively",
+        "relation": "opposite"
+      },
+      {
+        "word": "INTEREST",
+        "senseId": "oewn-interest__2.37.00..",
+        "definition": "excite the curiosity of; engage the interest of",
+        "relation": "opposite"
+      },
+      {
+        "word": "ATTACK",
+        "senseId": "oewn-attack__2.30.00..",
+        "definition": "set to work upon; turn one's energies vigorously to a task",
+        "relation": "opposite"
+      },
+      {
+        "word": "LIFE",
+        "senseId": "oewn-life__1.07.01..",
+        "definition": "animation and energy in action or expression",
+        "relation": "opposite"
+      },
+      {
+        "word": "LIVE",
+        "senseId": "oewn-live__5.00.00.lively.00",
+        "definition": "abounding with life and energy",
+        "relation": "opposite"
+      },
+      {
+        "word": "STRIVE",
+        "senseId": "oewn-strive__2.33.00..",
+        "definition": "to exert much effort or energy",
+        "relation": "opposite"
+      },
+      {
+        "word": "PEP",
+        "senseId": "oewn-pep__1.07.00..",
+        "definition": "liveliness and energy",
+        "relation": "opposite"
+      },
+      {
+        "word": "STAMINA",
+        "senseId": "oewn-stamina__1.07.00..",
+        "definition": "enduring strength and energy",
+        "relation": "opposite"
+      },
+      {
+        "word": "TONIC",
+        "senseId": "oewn-tonic__5.00.00.invigorating.00",
+        "definition": "imparting vitality and energy",
+        "relation": "opposite"
+      },
+      {
+        "word": "SPARKLE",
+        "senseId": "oewn-sparkle__2.30.01..",
+        "definition": "be lively or brilliant or exhibit virtuosity",
+        "relation": "opposite"
+      },
+      {
+        "word": "GONE",
+        "senseId": "oewn-gone__5.00.00.tired.00",
+        "definition": "drained of energy or effectiveness; extremely tired; completely exhausted",
+        "relation": "similar"
+      },
+      {
+        "word": "REST",
+        "senseId": "oewn-rest__2.41.00..",
+        "definition": "be inactive, refrain from acting",
+        "relation": "similar"
+      },
+      {
+        "word": "SPENT",
+        "senseId": "oewn-spent__3.00.00..",
+        "definition": "depleted of energy, force, or strength",
+        "relation": "similar"
+      },
+      {
+        "word": "SLACK",
+        "senseId": "oewn-slack__2.41.00..",
+        "definition": "avoid responsibilities and work, be idle",
+        "relation": "similar"
+      },
+      {
+        "word": "LOAF",
+        "senseId": "oewn-loaf__2.42.01..",
+        "definition": "be lazy or idle",
+        "relation": "similar"
+      },
+      {
+        "word": "LIMP",
+        "senseId": "oewn-limp__5.00.00.weak.00",
+        "definition": "without energy or will",
+        "relation": "similar"
+      }
+    ],
+    "explanation": "Giving renewed energy or vitality counters being slow and apathetic.",
+    "excludedDerivations": [
+      "oewn-mover__1.18.01..",
+      "oewn-active__3.00.08..",
+      "oewn-active__5.00.00.operational.00"
+    ],
+    "excludedWordSenses": []
+  },
+  {
+    "enemy": "STINGY",
+    "enemySense": "oewn-stingy__3.00.00..",
+    "bingo": "UNSTINTINGLY",
+    "hints": [
+      "Think about a different approach to sharing what you have.",
+      "Picture giving freely, without holding anything back.",
+      "Twelve letters, ending LY: describes giving without limiting the amount."
+    ],
+    "roots": [
+      {
+        "word": "BIGHEARTEDNESS",
+        "senseId": "oewn-bigheartedness__1.07.00..",
+        "definition": "the quality of being kind and generous",
+        "relation": "opposite"
+      },
+      {
+        "word": "BIGHEARTED",
+        "senseId": "oewn-bighearted__5.00.00.generous.01",
+        "definition": "given or giving freely",
+        "relation": "opposite"
+      },
+      {
+        "word": "GENEROUS",
+        "senseId": "oewn-generous__3.00.01..",
+        "definition": "willing to give and share unstintingly",
+        "relation": "opposite"
+      },
+      {
+        "word": "GENEROSITY",
+        "senseId": "oewn-generosity__1.07.00..",
+        "definition": "the trait of being willing to give your money or time",
+        "relation": "opposite"
+      },
+      {
+        "word": "SHARE",
+        "senseId": "oewn-share__2.40.00..",
+        "definition": "give out as one's portion or share",
+        "relation": "opposite"
+      },
+      {
+        "word": "GIVE",
+        "senseId": "oewn-give__2.40.01..",
+        "definition": "give as a present; make a gift of",
+        "relation": "opposite"
+      },
+      {
+        "word": "GIVER",
+        "senseId": "oewn-giver__1.18.00..",
+        "definition": "person who makes a gift of property",
+        "relation": "opposite"
+      },
+      {
+        "word": "DONATE",
+        "senseId": "oewn-donate__2.40.00..",
+        "definition": "give to a charity or good cause",
+        "relation": "opposite"
+      },
+      {
+        "word": "DONATION",
+        "senseId": "oewn-donation__1.21.00..",
+        "definition": "a voluntary gift (as of money or service or ideas) made to some worthwhile cause",
+        "relation": "opposite"
+      },
+      {
+        "word": "DONOR",
+        "senseId": "oewn-donor__1.18.00..",
+        "definition": "person who makes a gift of property",
+        "relation": "opposite"
+      },
+      {
+        "word": "GRANT",
+        "senseId": "oewn-grant__1.21.00..",
+        "definition": "any monetary aid",
+        "relation": "opposite"
+      },
+      {
+        "word": "CHARITY",
+        "senseId": "oewn-charity__1.04.00..",
+        "definition": "an activity or gift that benefits the public at large",
+        "relation": "opposite"
+      },
+      {
+        "word": "CHARITABLE",
+        "senseId": "oewn-charitable__3.00.00..",
+        "definition": "full of love and generosity",
+        "relation": "opposite"
+      },
+      {
+        "word": "LARGESSE",
+        "senseId": "oewn-largesse__1.07.00..",
+        "definition": "liberality in bestowing gifts; extremely liberal and generous of spirit",
+        "relation": "opposite"
+      },
+      {
+        "word": "LIBERAL",
+        "senseId": "oewn-liberal__5.00.00.generous.01",
+        "definition": "given or giving freely",
+        "relation": "opposite"
+      },
+      {
+        "word": "LIBERALITY",
+        "senseId": "oewn-liberality__1.07.00..",
+        "definition": "the trait of being generous in behavior and temperament",
+        "relation": "opposite"
+      },
+      {
+        "word": "MUNIFICENT",
+        "senseId": "oewn-munificent__5.00.00.generous.01",
+        "definition": "very generous",
+        "relation": "opposite"
+      },
+      {
+        "word": "MUNIFICENCE",
+        "senseId": "oewn-munificence__1.07.00..",
+        "definition": "liberality in bestowing gifts; extremely liberal and generous of spirit",
+        "relation": "opposite"
+      },
+      {
+        "word": "ALTRUISTIC",
+        "senseId": "oewn-altruistic__3.00.00..",
+        "definition": "showing unselfish concern for the welfare of others",
+        "relation": "opposite"
+      },
+      {
+        "word": "ALTRUISM",
+        "senseId": "oewn-altruism__1.07.00..",
+        "definition": "the quality of unselfish concern for the welfare of others",
+        "relation": "opposite"
+      },
+      {
+        "word": "SELFLESS",
+        "senseId": "oewn-selfless__3.00.00..",
+        "definition": "showing unselfish concern for the welfare of others",
+        "relation": "opposite"
+      },
+      {
+        "word": "SELFLESSNESS",
+        "senseId": "oewn-selflessness__1.07.00..",
+        "definition": "the quality of unselfish concern for the welfare of others",
+        "relation": "opposite"
+      },
+      {
+        "word": "BENEVOLENT",
+        "senseId": "oewn-benevolent__5.00.00.generous.01",
+        "definition": "generous in providing aid to others",
+        "relation": "opposite"
+      },
+      {
+        "word": "BENEVOLENCE",
+        "senseId": "oewn-benevolence__1.07.00..",
+        "definition": "an inclination to do kind or charitable acts",
+        "relation": "opposite"
+      },
+      {
+        "word": "GIFT",
+        "senseId": "oewn-gift__2.40.00..",
+        "definition": "give as a present; make a gift of",
+        "relation": "opposite"
+      },
+      {
+        "word": "OFFER",
+        "senseId": "oewn-offer__2.40.02..",
+        "definition": "give something useful or necessary to",
+        "relation": "opposite"
+      },
+      {
+        "word": "CONTRIBUTE",
+        "senseId": "oewn-contribute__2.40.00..",
+        "definition": "contribute to some cause",
+        "relation": "opposite"
+      },
+      {
+        "word": "CONTRIBUTION",
+        "senseId": "oewn-contribution__1.21.00..",
+        "definition": "a voluntary gift (as of money or service or ideas) made to some worthwhile cause",
+        "relation": "opposite"
+      },
+      {
+        "word": "BOUNTIFUL",
+        "senseId": "oewn-bountiful__5.00.00.generous.01",
+        "definition": "given or giving freely",
+        "relation": "opposite"
+      },
+      {
+        "word": "MAGNANIMOUS",
+        "senseId": "oewn-magnanimous__5.00.00.noble.01",
+        "definition": "noble and generous in spirit",
+        "relation": "opposite"
+      },
+      {
+        "word": "LEND",
+        "senseId": "oewn-lend__2.40.00..",
+        "definition": "give temporarily; let have for a limited time",
+        "relation": "opposite"
+      },
+      {
+        "word": "SELFISH",
+        "senseId": "oewn-selfish__3.00.00..",
+        "definition": "concerned chiefly or only with yourself and your advantage to the exclusion of others",
+        "relation": "similar"
+      },
+      {
+        "word": "SELFISHNESS",
+        "senseId": "oewn-selfishness__1.07.00..",
+        "definition": "stinginess resulting from a concern for your own welfare and a disregard of others",
+        "relation": "similar"
+      },
+      {
+        "word": "HOARD",
+        "senseId": "oewn-hoard__1.21.00..",
+        "definition": "a secret store of valuables or money",
+        "relation": "similar"
+      },
+      {
+        "word": "HOARDER",
+        "senseId": "oewn-hoarder__1.18.00..",
+        "definition": "a person who accumulates things and hides them away for future use",
+        "relation": "similar"
+      },
+      {
+        "word": "HOARDING",
+        "senseId": "oewn-hoard__2.40.01..",
+        "definition": "save up as for future use",
+        "relation": "similar"
+      },
+      {
+        "word": "MISER",
+        "senseId": "oewn-miser__1.18.00..",
+        "definition": "a stingy hoarder of money and possessions (often living miserably)",
+        "relation": "similar"
+      },
+      {
+        "word": "MISERLY",
+        "senseId": "oewn-miserly__5.00.00.stingy.00",
+        "definition": "(used of persons or behavior) characterized by or indicative of lack of generosity",
+        "relation": "similar"
+      },
+      {
+        "word": "STINGY",
+        "senseId": "oewn-stingy__3.00.00..",
+        "definition": "unwilling to spend (money, time, resources, etc.)",
+        "relation": "similar"
+      },
+      {
+        "word": "STINGINESS",
+        "senseId": "oewn-stinginess__1.07.00..",
+        "definition": "a lack of generosity; a general unwillingness to part with money",
+        "relation": "similar"
+      },
+      {
+        "word": "GIVE",
+        "senseId": "oewn-give__2.40.00..",
+        "definition": "transfer possession of something concrete or abstract to somebody",
+        "relation": "opposite"
+      },
+      {
+        "word": "HOARD",
+        "senseId": "oewn-hoard__2.40.01..",
+        "definition": "save up as for future use",
+        "relation": "similar"
+      },
+      {
+        "word": "UNSTINTINGLY",
+        "senseId": "oewn-unstintingly__4.02.00..",
+        "definition": "in an unstinting manner",
+        "relation": "opposite"
+      },
+      {
+        "word": "UNSTINTING",
+        "senseId": "oewn-unstinting__5.00.00.generous.01",
+        "definition": "very generous",
+        "relation": "opposite"
+      },
+      {
+        "word": "STINT",
+        "senseId": "oewn-stint__2.40.01..",
+        "definition": "supply sparingly and with restricted quantities",
+        "relation": "similar"
+      },
+      {
+        "word": "MEAN",
+        "senseId": "oewn-mean__5.00.02.stingy.00",
+        "definition": "(used of persons or behavior) characterized by or indicative of lack of generosity",
+        "relation": "similar"
+      },
+      {
+        "word": "NIGGARDLY",
+        "senseId": "oewn-niggardly__5.00.00.stingy.00",
+        "definition": "petty or reluctant in giving or spending",
+        "relation": "similar"
+      },
+      {
+        "word": "TIGHTFISTED",
+        "senseId": "oewn-tightfisted__5.00.00.stingy.00",
+        "definition": "unwilling to part with money",
+        "relation": "similar"
+      },
+      {
+        "word": "UNGENEROUS",
+        "senseId": "oewn-ungenerous__3.00.04..",
+        "definition": "unwilling to spend (money, time, resources, etc.)",
+        "relation": "similar"
+      },
+      {
+        "word": "MISERLINESS",
+        "senseId": "oewn-miserliness__1.07.00..",
+        "definition": "total lack of generosity with money",
+        "relation": "similar"
+      },
+      {
+        "word": "GRATUITY",
+        "senseId": "oewn-gratuity__1.21.00..",
+        "definition": "a relatively small amount of money given for services rendered (as by a waiter)",
+        "relation": "opposite"
+      },
+      {
+        "word": "TIP",
+        "senseId": "oewn-tip__2.40.00..",
+        "definition": "give a tip or gratuity to in return for a service, beyond the compensation agreed on",
+        "relation": "opposite"
+      },
+      {
+        "word": "BESTOW",
+        "senseId": "oewn-bestow__2.40.02..",
+        "definition": "give as a gift",
+        "relation": "opposite"
+      },
+      {
+        "word": "BENEFIT",
+        "senseId": "oewn-benefit__1.10.00..",
+        "definition": "a performance to raise money for a charitable cause",
+        "relation": "opposite"
+      },
+      {
+        "word": "AID",
+        "senseId": "oewn-aid__1.21.00..",
+        "definition": "gift of money or other material help to support a person or cause",
+        "relation": "opposite"
+      },
+      {
+        "word": "TREAT",
+        "senseId": "oewn-treat__2.40.00..",
+        "definition": "provide with a gift or entertainment",
+        "relation": "opposite"
+      },
+      {
+        "word": "DOLE",
+        "senseId": "oewn-dole__1.21.00..",
+        "definition": "a share of money or food or clothing that has been charitably given",
+        "relation": "opposite"
+      },
+      {
+        "word": "NEAR",
+        "senseId": "oewn-near__5.00.00.stingy.00",
+        "definition": "giving or spending with reluctance",
+        "relation": "similar"
+      }
+    ],
+    "explanation": "Giving freely, without restricting the amount, is the opposite of being unwilling to give.",
+    "excludedDerivations": [
+      "oewn-bountifulness__1.07.00..",
+      "oewn-magnanimousness__1.07.00..",
+      "oewn-meanness__1.07.00..",
+      "oewn-treat__1.11.00.."
+    ],
+    "excludedWordSenses": []
+  },
+  {
+    "enemy": "FALSE",
+    "enemySense": "oewn-false__3.00.00..",
+    "bingo": "FACTUALNESS",
+    "hints": [
+      "Think about the quality a careful investigator wants in an account.",
+      "What matters is whether it is grounded in what actually happened.",
+      "Eleven letters, ending NESS: the quality of being based on facts."
+    ],
+    "roots": [
+      {
+        "word": "FACTUALNESS",
+        "senseId": "oewn-factualness__1.07.00..",
+        "definition": "the quality of being actual or based on fact",
+        "relation": "opposite"
+      },
+      {
+        "word": "FACTUAL",
+        "senseId": "oewn-factual__5.00.00.real.00",
+        "definition": "existing in act or fact",
+        "relation": "opposite"
+      },
+      {
+        "word": "FACT",
+        "senseId": "oewn-fact__1.09.01..",
+        "definition": "a piece of information about circumstances that exist or events that have occurred",
+        "relation": "opposite"
+      },
+      {
+        "word": "TRUTH",
+        "senseId": "oewn-truth__1.09.00..",
+        "definition": "a fact that has been verified",
+        "relation": "opposite"
+      },
+      {
+        "word": "TRUE",
+        "senseId": "oewn-true__3.00.00..",
+        "definition": "consistent with fact or reality; not false",
+        "relation": "opposite"
+      },
+      {
+        "word": "TRUTHFUL",
+        "senseId": "oewn-truthful__3.00.00..",
+        "definition": "expressing or given to expressing the truth",
+        "relation": "opposite"
+      },
+      {
+        "word": "HONEST",
+        "senseId": "oewn-honest__3.00.00..",
+        "definition": "not disposed to cheat or defraud; not deceptive or fraudulent; marked by truth",
+        "relation": "opposite"
+      },
+      {
+        "word": "HONESTY",
+        "senseId": "oewn-honesty__1.07.00..",
+        "definition": "the quality of being honest",
+        "relation": "opposite"
+      },
+      {
+        "word": "REALITY",
+        "senseId": "oewn-reality__1.26.02..",
+        "definition": "the state of the world as it really is rather than as you might want it to be",
+        "relation": "opposite"
+      },
+      {
+        "word": "REAL",
+        "senseId": "oewn-real__3.00.00..",
+        "definition": "being or occurring in fact or actuality; having verified existence; not illusory",
+        "relation": "opposite"
+      },
+      {
+        "word": "ACTUAL",
+        "senseId": "oewn-actual__3.00.00..",
+        "definition": "presently existing in fact and not merely potential or possible",
+        "relation": "opposite"
+      },
+      {
+        "word": "ACTUALITY",
+        "senseId": "oewn-actuality__1.26.00..",
+        "definition": "the state of actually existing objectively",
+        "relation": "opposite"
+      },
+      {
+        "word": "VERITY",
+        "senseId": "oewn-verity__1.26.00..",
+        "definition": "conformity to reality or actuality",
+        "relation": "opposite"
+      },
+      {
+        "word": "VERACIOUS",
+        "senseId": "oewn-veracious__5.00.00.truthful.00",
+        "definition": "habitually speaking the truth",
+        "relation": "opposite"
+      },
+      {
+        "word": "VERACITY",
+        "senseId": "oewn-veracity__1.07.00..",
+        "definition": "unwillingness to tell lies",
+        "relation": "opposite"
+      },
+      {
+        "word": "ACCURATE",
+        "senseId": "oewn-accurate__3.00.00..",
+        "definition": "conforming exactly or almost exactly to fact or to a standard or performing with total accuracy",
+        "relation": "opposite"
+      },
+      {
+        "word": "ACCURACY",
+        "senseId": "oewn-accuracy__1.07.02..",
+        "definition": "the quality of being near to the true value",
+        "relation": "opposite"
+      },
+      {
+        "word": "CORRECT",
+        "senseId": "oewn-correct__3.00.00..",
+        "definition": "free from error; especially conforming to fact or truth",
+        "relation": "opposite"
+      },
+      {
+        "word": "CORRECTNESS",
+        "senseId": "oewn-correctness__1.07.01..",
+        "definition": "conformity to fact or truth",
+        "relation": "opposite"
+      },
+      {
+        "word": "CANDOUR",
+        "senseId": "oewn-candour__1.07.00..",
+        "definition": "the quality of being honest and straightforward in attitude and speech",
+        "relation": "opposite"
+      },
+      {
+        "word": "CANDOR",
+        "senseId": "oewn-candor__1.07.00..",
+        "definition": "the quality of being honest and straightforward in attitude and speech",
+        "relation": "opposite"
+      },
+      {
+        "word": "CANDID",
+        "senseId": "oewn-candid__5.00.00.direct.02",
+        "definition": "characterized by directness in manner or speech; without subtlety or evasion",
+        "relation": "opposite"
+      },
+      {
+        "word": "SINCERITY",
+        "senseId": "oewn-sincerity__1.07.00..",
+        "definition": "the quality of being open and truthful; not deceitful or hypocritical",
+        "relation": "opposite"
+      },
+      {
+        "word": "SINCERE",
+        "senseId": "oewn-sincere__3.00.00..",
+        "definition": "open and genuine; not deceitful",
+        "relation": "opposite"
+      },
+      {
+        "word": "AUTHENTICATE",
+        "senseId": "oewn-authenticate__2.31.00..",
+        "definition": "establish the authenticity of something",
+        "relation": "opposite"
+      },
+      {
+        "word": "VERIFY",
+        "senseId": "oewn-verify__2.31.01..",
+        "definition": "confirm the truth of",
+        "relation": "opposite"
+      },
+      {
+        "word": "VERIFICATION",
+        "senseId": "oewn-verification__1.09.00..",
+        "definition": "additional proof that something that was believed (some fact or hypothesis or theory) is correct",
+        "relation": "opposite"
+      },
+      {
+        "word": "PROOF",
+        "senseId": "oewn-proof__1.09.00..",
+        "definition": "any factual evidence that helps to establish the truth of something",
+        "relation": "opposite"
+      },
+      {
+        "word": "PROVE",
+        "senseId": "oewn-prove__2.31.00..",
+        "definition": "establish the validity of something, as by an example, explanation or experiment",
+        "relation": "opposite"
+      },
+      {
+        "word": "SUBSTANTIATE",
+        "senseId": "oewn-substantiate__2.31.00..",
+        "definition": "establish or strengthen as with new evidence or facts",
+        "relation": "opposite"
+      },
+      {
+        "word": "VALIDATE",
+        "senseId": "oewn-validate__2.31.00..",
+        "definition": "prove valid; show or confirm the validity of something",
+        "relation": "opposite"
+      },
+      {
+        "word": "VALIDATION",
+        "senseId": "oewn-validation__1.04.00..",
+        "definition": "the act of validating; finding or testing the truth of something",
+        "relation": "opposite"
+      },
+      {
+        "word": "VALID",
+        "senseId": "oewn-valid__3.00.00..",
+        "definition": "well grounded in logic or truth or having legal force",
+        "relation": "opposite"
+      },
+      {
+        "word": "EVIDENCE",
+        "senseId": "oewn-evidence__1.09.00..",
+        "definition": "your basis for belief or disbelief; knowledge on which to base belief",
+        "relation": "opposite"
+      },
+      {
+        "word": "VERIFIABLE",
+        "senseId": "oewn-verifiable__5.00.00.objective.00",
+        "definition": "capable of being verified",
+        "relation": "opposite"
+      },
+      {
+        "word": "FACTUALLY",
+        "senseId": "oewn-factually__4.02.00..",
+        "definition": "as a fact or based on fact",
+        "relation": "opposite"
+      },
+      {
+        "word": "FAITHFUL",
+        "senseId": "oewn-faithful__5.00.00.accurate.00",
+        "definition": "marked by fidelity to an original",
+        "relation": "opposite"
+      },
+      {
+        "word": "RIGHT",
+        "senseId": "oewn-right__3.00.02..",
+        "definition": "free from error; especially conforming to fact or truth",
+        "relation": "opposite"
+      },
+      {
+        "word": "RIGHTLY",
+        "senseId": "oewn-rightly__4.02.00..",
+        "definition": "with honesty",
+        "relation": "opposite"
+      },
+      {
+        "word": "FALSE",
+        "senseId": "oewn-false__3.00.00..",
+        "definition": "not in accordance with the fact or reality or actuality",
+        "relation": "similar"
+      },
+      {
+        "word": "FALSIFY",
+        "senseId": "oewn-falsify__2.32.00..",
+        "definition": "make false by mutilation or addition; as of a message or story",
+        "relation": "similar"
+      },
+      {
+        "word": "FALSIFICATION",
+        "senseId": "oewn-falsification__1.04.02..",
+        "definition": "a willful perversion of facts",
+        "relation": "similar"
+      },
+      {
+        "word": "FALSEHOOD",
+        "senseId": "oewn-falsehood__1.10.00..",
+        "definition": "a false statement",
+        "relation": "similar"
+      },
+      {
+        "word": "LIE",
+        "senseId": "oewn-lie__1.10.00..",
+        "definition": "a statement that deviates from or perverts the truth",
+        "relation": "similar"
+      },
+      {
+        "word": "LIAR",
+        "senseId": "oewn-liar__1.18.00..",
+        "definition": "a person who has lied or who lies repeatedly",
+        "relation": "similar"
+      },
+      {
+        "word": "LYING",
+        "senseId": "oewn-lie__2.32.00..",
+        "definition": "tell an untruth; pretend with intent to deceive",
+        "relation": "similar"
+      },
+      {
+        "word": "UNTRUTH",
+        "senseId": "oewn-untruth__1.10.00..",
+        "definition": "a false statement",
+        "relation": "similar"
+      },
+      {
+        "word": "DISHONEST",
+        "senseId": "oewn-dishonest__3.00.00..",
+        "definition": "deceptive or fraudulent; disposed to cheat or defraud or deceive",
+        "relation": "similar"
+      },
+      {
+        "word": "DISHONESTY",
+        "senseId": "oewn-dishonesty__1.07.00..",
+        "definition": "the quality of being dishonest",
+        "relation": "similar"
+      },
+      {
+        "word": "DECEIT",
+        "senseId": "oewn-deceit__1.07.00..",
+        "definition": "the quality of being fraudulent",
+        "relation": "similar"
+      },
+      {
+        "word": "DECEIVE",
+        "senseId": "oewn-deceive__2.41.00..",
+        "definition": "be false to; be dishonest with",
+        "relation": "similar"
+      },
+      {
+        "word": "DECEPTION",
+        "senseId": "oewn-deception__1.10.00..",
+        "definition": "a misleading falsehood",
+        "relation": "similar"
+      },
+      {
+        "word": "DECEPTIVE",
+        "senseId": "oewn-deceptive__5.00.00.unreal.02",
+        "definition": "causing one to believe what is not true or fail to believe what is true",
+        "relation": "similar"
+      },
+      {
+        "word": "FALLACY",
+        "senseId": "oewn-fallacy__1.09.00..",
+        "definition": "a misconception resulting from incorrect reasoning",
+        "relation": "similar"
+      },
+      {
+        "word": "FALLACIOUS",
+        "senseId": "oewn-fallacious__5.00.00.incorrect.00",
+        "definition": "based on an incorrect or misleading notion or information",
+        "relation": "similar"
+      },
+      {
+        "word": "INACCURATE",
+        "senseId": "oewn-inaccurate__3.00.00..",
+        "definition": "erroneous",
+        "relation": "similar"
+      },
+      {
+        "word": "INCORRECT",
+        "senseId": "oewn-incorrect__3.00.00..",
+        "definition": "not correct; not in conformity with fact or truth",
+        "relation": "similar"
+      },
+      {
+        "word": "ERROR",
+        "senseId": "oewn-error__1.10.00..",
+        "definition": "part of a statement that is not correct",
+        "relation": "similar"
+      },
+      {
+        "word": "ERRONEOUS",
+        "senseId": "oewn-erroneous__5.00.00.incorrect.00",
+        "definition": "containing or characterized by error",
+        "relation": "similar"
+      },
+      {
+        "word": "MISTAKE",
+        "senseId": "oewn-mistake__1.10.00..",
+        "definition": "part of a statement that is not correct",
+        "relation": "similar"
+      },
+      {
+        "word": "MISTAKEN",
+        "senseId": "oewn-mistaken__5.00.00.wrong.01",
+        "definition": "wrong in e.g. opinion or judgment",
+        "relation": "similar"
+      },
+      {
+        "word": "BOGUS",
+        "senseId": "oewn-bogus__5.00.00.counterfeit.00",
+        "definition": "fraudulent; having a misleading appearance",
+        "relation": "similar"
+      },
+      {
+        "word": "FICTITIOUS",
+        "senseId": "oewn-fictitious__5.00.00.unreal.00",
+        "definition": "formed or conceived by the imagination",
+        "relation": "similar"
+      },
+      {
+        "word": "FICTIVE",
+        "senseId": "oewn-fictive__5.00.00.counterfeit.00",
+        "definition": "adopted in order to deceive",
+        "relation": "similar"
+      },
+      {
+        "word": "FICTION",
+        "senseId": "oewn-fiction__1.10.01..",
+        "definition": "a deliberately false or improbable account",
+        "relation": "similar"
+      },
+      {
+        "word": "FABRICATION",
+        "senseId": "oewn-fabrication__1.10.00..",
+        "definition": "a deliberately false or improbable account",
+        "relation": "similar"
+      },
+      {
+        "word": "FABRICATE",
+        "senseId": "oewn-fabricate__2.36.00..",
+        "definition": "concoct something artificial or untrue",
+        "relation": "similar"
+      },
+      {
+        "word": "FRAUDULENT",
+        "senseId": "oewn-fraudulent__5.00.00.dishonest.00",
+        "definition": "involving deception",
+        "relation": "similar"
+      },
+      {
+        "word": "FRAUD",
+        "senseId": "oewn-fraud__1.04.00..",
+        "definition": "intentional deception resulting in injury to another person",
+        "relation": "similar"
+      },
+      {
+        "word": "COUNTERFEIT",
+        "senseId": "oewn-counterfeit__3.00.00..",
+        "definition": "not genuine; imitating something superior",
+        "relation": "similar"
+      },
+      {
+        "word": "SPURIOUS",
+        "senseId": "oewn-spurious__5.00.00.false.00",
+        "definition": "plausible but false",
+        "relation": "similar"
+      },
+      {
+        "word": "SHAM",
+        "senseId": "oewn-sham__5.00.00.counterfeit.00",
+        "definition": "adopted in order to deceive",
+        "relation": "similar"
+      },
+      {
+        "word": "FAKE",
+        "senseId": "oewn-fake__5.00.00.counterfeit.00",
+        "definition": "fraudulent; having a misleading appearance",
+        "relation": "similar"
+      },
+      {
+        "word": "UNTRUE",
+        "senseId": "oewn-untrue__5.00.00.false.00",
+        "definition": "not according with the facts",
+        "relation": "similar"
+      },
+      {
+        "word": "MYTH",
+        "senseId": "oewn-myth__1.10.00..",
+        "definition": "a traditional story accepted as history; serves to explain the world view of a people",
+        "relation": "similar"
+      },
+      {
+        "word": "MYTHICAL",
+        "senseId": "oewn-mythical__5.00.00.unreal.00",
+        "definition": "based on or told of in traditional stories; lacking factual basis or historical validity",
+        "relation": "similar"
+      },
+      {
+        "word": "ILLUSION",
+        "senseId": "oewn-illusion__1.09.00..",
+        "definition": "something many people believe that is false",
+        "relation": "similar"
+      },
+      {
+        "word": "ILLUSORY",
+        "senseId": "oewn-illusory__5.00.00.unreal.00",
+        "definition": "based on or having the nature of an illusion",
+        "relation": "similar"
+      },
+      {
+        "word": "LIE",
+        "senseId": "oewn-lie__2.32.00..",
+        "definition": "tell an untruth; pretend with intent to deceive",
+        "relation": "similar"
+      },
+      {
+        "word": "CORRECT",
+        "senseId": "oewn-correct__2.30.00..",
+        "definition": "make right or correct",
+        "relation": "opposite"
+      },
+      {
+        "word": "REFUTE",
+        "senseId": "oewn-refute__2.32.00..",
+        "definition": "overthrow by argument, evidence, or proof",
+        "relation": "opposite"
+      },
+      {
+        "word": "DISPROVE",
+        "senseId": "oewn-disprove__2.31.00..",
+        "definition": "prove to be false",
+        "relation": "opposite"
+      },
+      {
+        "word": "DEBUNK",
+        "senseId": "oewn-debunk__2.32.00..",
+        "definition": "expose while ridiculing; especially of pretentious or false claims and ideas",
+        "relation": "opposite"
+      },
+      {
+        "word": "DATA",
+        "senseId": "oewn-data__1.14.00..",
+        "definition": "a collection of facts from which conclusions may be drawn",
+        "relation": "opposite"
+      },
+      {
+        "word": "DATUM",
+        "senseId": "oewn-datum__1.09.00..",
+        "definition": "an item of factual information derived from measurement or research",
+        "relation": "opposite"
+      },
+      {
+        "word": "REASON",
+        "senseId": "oewn-reason__1.09.01..",
+        "definition": "a fact that logically justifies some premise or conclusion",
+        "relation": "opposite"
+      },
+      {
+        "word": "RESEARCH",
+        "senseId": "oewn-research__1.04.00..",
+        "definition": "systematic investigation to establish facts",
+        "relation": "opposite"
+      },
+      {
+        "word": "MATERIAL",
+        "senseId": "oewn-material__3.00.03..",
+        "definition": "having substance or capable of being treated as fact; not imaginary",
+        "relation": "opposite"
+      },
+      {
+        "word": "AUDIT",
+        "senseId": "oewn-audit__2.31.01..",
+        "definition": "examine carefully for accuracy with the intent of verification",
+        "relation": "opposite"
+      },
+      {
+        "word": "AUTHENTIC",
+        "senseId": "oewn-authentic__5.00.00.trustworthy.00",
+        "definition": "conforming to fact and therefore worthy of belief",
+        "relation": "opposite"
+      },
+      {
+        "word": "TECHNICALLY",
+        "senseId": "oewn-technically__4.02.02..",
+        "definition": "according to the exact meaning; according to the facts",
+        "relation": "opposite"
+      },
+      {
+        "word": "OATH",
+        "senseId": "oewn-oath__1.10.00..",
+        "definition": "a commitment to tell the truth (especially in a court of law); to lie under oath is to become subject to prosecution for perjury",
+        "relation": "opposite"
+      },
+      {
+        "word": "DOCUMENTARY",
+        "senseId": "oewn-documentary__1.10.00..",
+        "definition": "a film or TV program presenting the facts about a person or event",
+        "relation": "opposite"
+      },
+      {
+        "word": "CONTRADICT",
+        "senseId": "oewn-contradict__2.31.00..",
+        "definition": "prove negative; show to be false",
+        "relation": "opposite"
+      },
+      {
+        "word": "LINE",
+        "senseId": "oewn-line__1.10.06..",
+        "definition": "persuasive but insincere talk that is usually intended to deceive or impress",
+        "relation": "similar"
+      },
+      {
+        "word": "KID",
+        "senseId": "oewn-kid__2.32.01..",
+        "definition": "tell false information to for fun",
+        "relation": "similar"
+      },
+      {
+        "word": "WILD",
+        "senseId": "oewn-wild__5.00.00.unsupported.02",
+        "definition": "without a basis in reason or fact",
+        "relation": "similar"
+      },
+      {
+        "word": "AFFECT",
+        "senseId": "oewn-affect__2.32.00..",
+        "definition": "make believe with the intent to deceive",
+        "relation": "similar"
+      },
+      {
+        "word": "TRICK",
+        "senseId": "oewn-trick__2.41.00..",
+        "definition": "deceive somebody",
+        "relation": "similar"
+      },
+      {
+        "word": "MASK",
+        "senseId": "oewn-mask__2.39.00..",
+        "definition": "hide under a false appearance",
+        "relation": "similar"
+      },
+      {
+        "word": "TWIST",
+        "senseId": "oewn-twist__2.32.00..",
+        "definition": "practice sophistry; change the meaning of or be vague about in order to mislead or deceive",
+        "relation": "similar"
+      },
+      {
+        "word": "UNREAL",
+        "senseId": "oewn-unreal__3.00.00..",
+        "definition": "lacking in reality or substance or genuineness; not corresponding to acknowledged facts or criteria",
+        "relation": "similar"
+      },
+      {
+        "word": "MISLEAD",
+        "senseId": "oewn-mislead__2.32.00..",
+        "definition": "give false or misleading information to",
+        "relation": "similar"
+      },
+      {
+        "word": "FALSELY",
+        "senseId": "oewn-falsely__4.02.00..",
+        "definition": "in a false manner",
+        "relation": "similar"
+      }
+    ],
+    "explanation": "Being actual and based on fact is the opposite of being false.",
+    "excludedDerivations": [
+      "oewn-real__5.00.00.serious.00",
+      "oewn-actual__5.00.00.current.00",
+      "oewn-validness__1.07.00..",
+      "oewn-incorrectness__1.07.02.."
+    ],
+    "excludedWordSenses": [
+      {
+        "word": "LAY",
+        "senseId": "oewn-lie__2.32.00..",
+        "reason": "LAY and LAIN inflect reclining LIE, not the tell-an-untruth sense (which uses LIED)."
+      },
+      {
+        "word": "LAIN",
+        "senseId": "oewn-lie__2.32.00..",
+        "reason": "LAY and LAIN inflect reclining LIE, not the tell-an-untruth sense (which uses LIED)."
+      }
+    ]
+  }
+]

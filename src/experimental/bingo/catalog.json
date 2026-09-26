@@ -68,5 +68,45 @@
     "enemy": "FEAR",
     "enemyHP": 6,
     "asset": "previews/bingo/fear-2-7af9328adbca.json"
+  },
+  {
+    "id": "bingo-arid-1",
+    "title": "ARID",
+    "enemy": "ARID",
+    "enemyHP": 6,
+    "asset": "previews/bingo/arid-1-4c25a59add03.json",
+    "collection": "new"
+  },
+  {
+    "id": "bingo-rot-1",
+    "title": "ROT",
+    "enemy": "ROT",
+    "enemyHP": 6,
+    "asset": "previews/bingo/rot-1-90da653aa82f.json",
+    "collection": "new"
+  },
+  {
+    "id": "bingo-inert-1",
+    "title": "INERT",
+    "enemy": "INERT",
+    "enemyHP": 8,
+    "asset": "previews/bingo/inert-1-791949f1a890.json",
+    "collection": "new"
+  },
+  {
+    "id": "bingo-stingy-1",
+    "title": "STINGY",
+    "enemy": "STINGY",
+    "enemyHP": 9,
+    "asset": "previews/bingo/stingy-1-f3a3973544d0.json",
+    "collection": "new"
+  },
+  {
+    "id": "bingo-false-1",
+    "title": "FALSE",
+    "enemy": "FALSE",
+    "enemyHP": 7,
+    "asset": "previews/bingo/false-1-287aac5b7875.json",
+    "collection": "new"
   }
 ]

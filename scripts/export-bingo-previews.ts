@@ -71,5 +71,8 @@ for (const candidate of candidates) {
   manifest.push({ id, title: `${candidate.enemy} ${ordinal}`, enemy: candidate.enemy, enemyHP: candidate.enemyHP, asset })
   console.log(`${id}: ${Math.round(Buffer.byteLength(payload) / 1024)} KB`)
 }
-writeFileSync('src/experimental/bingo/catalog.json', JSON.stringify(manifest, null, 2) + '\n')
+// Re-exporting the original study must not remove later bingo-first batches.
+const prior = JSON.parse(readFileSync('src/experimental/bingo/catalog.json', 'utf8')) as { id: string }[]
+const exportedIds = new Set(manifest.map(entry => entry.id))
+writeFileSync('src/experimental/bingo/catalog.json', JSON.stringify([...manifest, ...prior.filter(entry => !exportedIds.has(entry.id))], null, 2) + '\n')
 console.log(`Exported ${manifest.length} draft previews; daily catalog unchanged.`)

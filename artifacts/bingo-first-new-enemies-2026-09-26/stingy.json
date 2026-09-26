@@ -1,0 +1,756 @@
+{
+  "enemy": "STINGY",
+  "bingo": "UNSTINTINGLY",
+  "method": "bingo-first",
+  "semanticStatus": "draft-source-profile",
+  "accepted": true,
+  "seed": "bingo-first-3:STINGY:UNSTINTINGLY:8",
+  "anchors": [
+    "UNSTINTINGLY",
+    "SHARE"
+  ],
+  "plannedWords": [
+    "GRANT",
+    "CHARITY",
+    "DONATIONS"
+  ],
+  "analysis": {
+    "score": 231,
+    "bingos": [
+      "UNSTINTINGLY"
+    ],
+    "counterFamilies": 5,
+    "resistedFamilies": 4,
+    "winningOpenings": 5,
+    "repeatedCounterRoutes": 5,
+    "sustainedPositions": 7,
+    "sustainedFinalPositions": 5,
+    "neutralCleanupOpenings": 0,
+    "routes": [
+      {
+        "opening": "SHARE",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "AID",
+            "LOAN",
+            "GRANT",
+            "DONATING",
+            "GRATUITY"
+          ],
+          "resisted": [],
+          "neutral": 532
+        },
+        "thirdTurn": {
+          "counters": [
+            "GRANT",
+            "CHARITY",
+            "GRATUITY"
+          ],
+          "resisted": [
+            "TIGHT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SHARE",
+            "DONATING",
+            "CHARITY"
+          ],
+          "tileIds": [
+            [
+              12,
+              10,
+              15,
+              5,
+              0
+            ],
+            [
+              16,
+              17,
+              7,
+              19,
+              3,
+              2,
+              13,
+              8
+            ],
+            [
+              20,
+              26,
+              21,
+              18,
+              9,
+              4,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            5,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "TREAT",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "AID",
+            "LOAN",
+            "SHARING"
+          ],
+          "resisted": [
+            "HOARD"
+          ],
+          "neutral": 681
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "GRANT",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "SHARE",
+            "AID",
+            "LOAN",
+            "DEALS",
+            "CHARITY",
+            "DONATE",
+            "LEND"
+          ],
+          "resisted": [
+            "NEAR",
+            "CLOSE",
+            "HOARD",
+            "SCANT"
+          ],
+          "neutral": 1912
+        },
+        "thirdTurn": {
+          "counters": [
+            "GIVE",
+            "SHARE",
+            "AID",
+            "LOAN",
+            "DEALING",
+            "DONATIONS",
+            "DONATE",
+            "LEND",
+            "DONOR",
+            "LAVISH",
+            "GIVER"
+          ],
+          "resisted": [
+            "NEAR",
+            "HOARD"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "GRANT",
+            "CHARITY",
+            "SHARING"
+          ],
+          "tileIds": [
+            [
+              8,
+              5,
+              15,
+              7,
+              3
+            ],
+            [
+              20,
+              10,
+              19,
+              18,
+              2,
+              4,
+              11
+            ],
+            [
+              12,
+              26,
+              21,
+              24,
+              9,
+              13,
+              25
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "LENT",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "AID",
+            "GRANT",
+            "SHARING",
+            "DONATING"
+          ],
+          "resisted": [
+            "HOARD",
+            "STINGY"
+          ],
+          "neutral": 662
+        },
+        "thirdTurn": {
+          "counters": [
+            "AID",
+            "GRANT",
+            "CHARITY"
+          ],
+          "resisted": [
+            "HOARD"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "LENT",
+            "SHARING",
+            "CHARITY"
+          ],
+          "tileIds": [
+            [
+              6,
+              0,
+              7,
+              3
+            ],
+            [
+              12,
+              10,
+              15,
+              5,
+              2,
+              13,
+              8
+            ],
+            [
+              20,
+              26,
+              19,
+              18,
+              9,
+              4,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            4,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "GRATUITY",
+        "label": "COUNTER",
+        "hits": 5,
+        "later": {
+          "counters": [
+            "SHARE",
+            "AID",
+            "LOAN",
+            "DEALS",
+            "LEND",
+            "DONOR",
+            "LAVISH"
+          ],
+          "resisted": [
+            "NEAR",
+            "CLOSE",
+            "HOARD"
+          ],
+          "neutral": 907
+        },
+        "thirdTurn": {
+          "counters": [
+            "GIVE",
+            "AID",
+            "GRANT",
+            "TREATING",
+            "DONATE",
+            "GIVER"
+          ],
+          "resisted": [
+            "NEAR",
+            "TIGHT",
+            "HOARD"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "GRATUITY",
+            "LOANS",
+            "GIVEN"
+          ],
+          "tileIds": [
+            [
+              8,
+              5,
+              15,
+              3,
+              1,
+              2,
+              4,
+              11
+            ],
+            [
+              6,
+              17,
+              19,
+              7,
+              12
+            ],
+            [
+              25,
+              9,
+              23,
+              0,
+              13
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            5,
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "NEAR",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "AID",
+            "LOAN",
+            "GRANT",
+            "SHARING",
+            "DONATING",
+            "GRATUITY"
+          ],
+          "resisted": [
+            "TIGHT",
+            "STINT",
+            "HOARD",
+            "STINGY"
+          ],
+          "neutral": 966
+        },
+        "thirdTurn": {
+          "counters": [
+            "AID",
+            "LOAN",
+            "GRANT",
+            "SHARING",
+            "DONATIONS",
+            "DONOR",
+            "DONATING",
+            "LAVISH"
+          ],
+          "resisted": [
+            "HOARD",
+            "SCANT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "NEAR",
+            "GRATUITY",
+            "DONATIONS"
+          ],
+          "tileIds": [
+            [
+              7,
+              0,
+              15,
+              5
+            ],
+            [
+              8,
+              18,
+              19,
+              3,
+              1,
+              2,
+              4,
+              11
+            ],
+            [
+              16,
+              17,
+              13,
+              21,
+              27,
+              9,
+              22,
+              14,
+              12
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            5,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "TIGHT",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "AID",
+            "LOAN",
+            "DEALS",
+            "LEND"
+          ],
+          "resisted": [
+            "NEAR",
+            "CLOSE"
+          ],
+          "neutral": 824
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "STINT",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "AID",
+            "LOAN",
+            "DEALING",
+            "LEND"
+          ],
+          "resisted": [
+            "NEAR",
+            "HOARD"
+          ],
+          "neutral": 860
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "STINGY",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "AID",
+            "LOAN",
+            "DEALT",
+            "DONATE",
+            "LEND"
+          ],
+          "resisted": [
+            "NEAR",
+            "HOARD"
+          ],
+          "neutral": 877
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "AGE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [],
+          "resisted": [
+            "STINT"
+          ],
+          "neutral": 285
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "LEND"
+          ],
+          "resisted": [
+            "TIGHT",
+            "STINT",
+            "STINGY"
+          ],
+          "neutral": 1058
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      }
+    ]
+  },
+  "board": "EUITTRLNGIHYSNNA",
+  "refills": "DORACAOVRGHTTISAIONDMREN",
+  "inventory": [
+    {
+      "word": "GENEROSITY",
+      "armour": [],
+      "definition": "the trait of being willing to give your money or time"
+    },
+    {
+      "word": "UNSTINTINGLY",
+      "armour": [
+        "T",
+        "I",
+        "N"
+      ],
+      "definition": "in an unstinting manner"
+    }
+  ],
+  "seeds": [
+    {
+      "seed": "bingo-first-3:STINGY:UNSTINTINGLY:8",
+      "score": 231
+    },
+    {
+      "seed": "bingo-first-3:STINGY:UNSTINTINGLY:0",
+      "score": 225
+    },
+    {
+      "seed": "bingo-first-3:STINGY:UNSTINTINGLY:6",
+      "score": 208
+    },
+    {
+      "seed": "bingo-first-3:STINGY:UNSTINTINGLY:2",
+      "score": 155
+    },
+    {
+      "seed": "bingo-first-3:STINGY:UNSTINTINGLY:3",
+      "score": 149
+    },
+    {
+      "seed": "bingo-first-3:STINGY:UNSTINTINGLY:10",
+      "score": 107
+    },
+    {
+      "seed": "bingo-first-3:STINGY:UNSTINTINGLY:11",
+      "score": 100
+    },
+    {
+      "seed": "bingo-first-3:STINGY:UNSTINTINGLY:1",
+      "score": 90
+    },
+    {
+      "seed": "bingo-first-3:STINGY:UNSTINTINGLY:4",
+      "score": 73
+    },
+    {
+      "seed": "bingo-first-3:STINGY:UNSTINTINGLY:7",
+      "score": 71
+    },
+    {
+      "seed": "bingo-first-3:STINGY:UNSTINTINGLY:9",
+      "score": 71
+    },
+    {
+      "seed": "bingo-first-3:STINGY:UNSTINTINGLY:5",
+      "score": 51
+    }
+  ],
+  "derivations": [
+    {
+      "from": "oewn-generous__3.00.01..",
+      "to": "oewn-generosity__1.04.00..",
+      "definition": "acting generously",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-generosity__1.07.00..",
+      "to": "oewn-generous__3.00.02..",
+      "definition": "not petty in character and mind",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-share__2.40.00..",
+      "to": "oewn-share__1.04.00..",
+      "definition": "the allotment of some amount by dividing something",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-share__2.40.00..",
+      "to": "oewn-sharer__1.18.00..",
+      "definition": "someone who has or gives or receives a part or a share",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-share__2.40.00..",
+      "to": "oewn-sharing__1.04.00..",
+      "definition": "a distribution in shares",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-give__2.40.01..",
+      "to": "oewn-giving__1.04.01..",
+      "definition": "disposing of property by voluntary transfer without receiving value in return",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-donate__2.40.00..",
+      "to": "oewn-donation__1.04.00..",
+      "definition": "act of giving in common with others for a common purpose especially to a charity",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-grant__1.21.00..",
+      "to": "oewn-grant__2.40.03..",
+      "definition": "give as judged due or on the basis of merit",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-charitable__3.00.00..",
+      "to": "oewn-charitableness__1.07.00..",
+      "definition": "generosity as manifested by practicing charity (as for the poor or unfortunate)",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-altruistic__3.00.00..",
+      "to": "oewn-altruist__1.18.00..",
+      "definition": "someone who makes charitable donations intended to increase human well-being",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-selfless__3.00.00..",
+      "to": "oewn-selflessness__1.04.00..",
+      "definition": "acting with less concern for yourself than for the success of the joint activity",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-gift__2.40.00..",
+      "to": "oewn-gift__1.04.00..",
+      "definition": "the act of giving",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-gift__2.40.00..",
+      "to": "oewn-gift__1.21.00..",
+      "definition": "something acquired without compensation",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-offer__2.40.02..",
+      "to": "oewn-offer__1.10.01..",
+      "definition": "the verbal act of offering",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-contribute__2.40.00..",
+      "to": "oewn-contribution__1.04.02..",
+      "definition": "the effort contributed by a person in bringing about a result",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-contribute__2.40.00..",
+      "to": "oewn-contributor__1.18.00..",
+      "definition": "someone who contributes (or promises to contribute) a sum of money",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-lend__2.40.00..",
+      "to": "oewn-lendable__5.00.00.available.00",
+      "definition": "available for lending",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-lend__2.40.00..",
+      "to": "oewn-lender__1.18.00..",
+      "definition": "someone who lends money or gives credit in business matters",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-stint__2.40.01..",
+      "to": "oewn-stinter__1.18.00..",
+      "definition": "an economizer who stints someone with something",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-mean__5.00.02.stingy.00",
+      "to": "oewn-meanness__1.07.01..",
+      "definition": "extreme stinginess",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-niggardly__5.00.00.stingy.00",
+      "to": "oewn-niggard__1.18.00..",
+      "definition": "a selfish person who is unwilling to give or spend",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-tip__2.40.00..",
+      "to": "oewn-tipper__1.18.00..",
+      "definition": "a person who leaves a tip",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-bestow__2.40.02..",
+      "to": "oewn-bestowment__1.21.00..",
+      "definition": "a gift that is bestowed or conferred",
+      "relation": "opposite"
+    }
+  ],
+  "meaningWords": 35154,
+  "limitation": "Source-pinned roots, all-sense exact-synset expansion, one direct derivation, and explicit adjective/adverb links. Other defined words are neutral under this beta policy; complete contextual review and daily certification are outstanding."
+}

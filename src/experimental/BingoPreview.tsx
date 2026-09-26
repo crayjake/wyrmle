@@ -5,6 +5,7 @@ import type { LetterStrikeEncounter } from '../game/letterStrike'
 import { bingoPreviews, bingoPreviewHref, leaveBingoPreviewHref } from './bingo/catalog'
 import type { BingoPreviewEntry, BingoPreviewRequest, PreviewLives } from './bingo/catalog'
 import { decodeBingoPreview } from './bingo/previewData'
+import { getBingoGuide } from './bingo/guides'
 import './BingoPreview.css'
 
 const exit = () => window.location.assign(leaveBingoPreviewHref(window.location.href))
@@ -29,6 +30,12 @@ function PreviewFrame({ title, children, footer }: { title: string; children: Re
 
 function PreviewLibrary({ lives, missing = false }: { lives: PreviewLives; missing?: boolean }) {
   const [selectedLives, setSelectedLives] = useState(lives)
+  const [collection, setCollection] = useState(() => new URLSearchParams(window.location.search).get('set') === 'earlier' ? 'earlier' : 'new')
+  const hasNew = bingoPreviews.some(entry => entry.collection === 'new')
+  const entries = hasNew ? bingoPreviews.filter(entry => (entry.collection === 'new') === (collection === 'new')) : bingoPreviews
+  function libraryHref(nextLives: PreviewLives, nextCollection: string) {
+    return `${bingoPreviewHref('bingos', nextLives)}${nextCollection === 'earlier' ? '&set=earlier' : ''}`
+  }
   return <PreviewFrame title="Bingo previews" footer={
     <a className="daily-button" href={bingoPreviewHref('bingo', selectedLives)} aria-label="Original CHAOS preview">Original CHAOS</a>
   }>
@@ -39,13 +46,19 @@ function PreviewLibrary({ lives, missing = false }: { lives: PreviewLives; missi
       <select value={selectedLives} onChange={event => {
         const next = Number(event.target.value) as PreviewLives
         setSelectedLives(next)
-        window.history.replaceState(null, '', bingoPreviewHref('bingos', next))
+        window.history.replaceState(null, '', libraryHref(next, collection))
       }}>
         {[3, 4, 5].map(value => <option key={value} value={value}>{value} lives</option>)}
       </select>
     </label>
+    {hasNew && <div className="bingo-collections" aria-label="Puzzle collection">
+      {(['new', 'earlier'] as const).map(value => <button className="daily-button" key={value} aria-pressed={collection === value}
+        onClick={() => { setCollection(value); window.history.replaceState(null, '', libraryHref(selectedLives, value)) }}>
+        {value === 'new' ? 'Five new puzzles' : 'Earlier variants'}
+      </button>)}
+    </div>}
     <ul className="bingo-preview-list">
-      {bingoPreviews.map(entry => <li key={entry.id}>
+      {entries.map(entry => <li key={entry.id}>
         <a href={bingoPreviewHref(entry.id, selectedLives)}>
           <strong>{entry.title}</strong><span>{entry.enemyHP} enemy hits</span>
         </a>
@@ -84,7 +97,8 @@ function PreviewPuzzle({ entry, request }: { entry?: BingoPreviewEntry; request:
   </PreviewFrame>
 
   return <PlaytestBattle key={attempt} mode="letter-strike" encounter={loaded.encounter} bingoPreview
-    previewName={title} onChoosePreview={() => window.location.assign(bingoPreviewHref('bingos', request.lives))}
+    previewName={title} bingoGuide={getBingoGuide(request.id)} onChoosePreview={() => window.location.assign(
+      `${bingoPreviewHref('bingos', request.lives)}${entry?.collection === 'new' ? '' : '&set=earlier'}`)}
     onMode={() => setAttempt(current => current + 1)} onExit={exit}
     matchHint="off" onMatchHintChange={() => {}} enemyGrid={false} onEnemyGridChange={() => {}} />
 }

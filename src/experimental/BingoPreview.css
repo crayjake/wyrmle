@@ -2,6 +2,10 @@
 .bingo-preview .enemy-definition { width: min(94%, 24rem); }
 
 .bingo-preview .beta-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
   margin: 0;
   font-size: max(11px, 0.65rem);
   line-height: 1.4;
@@ -22,7 +26,16 @@
   color: var(--blue);
   font: inherit;
   cursor: pointer;
+  min-height: 32px;
 }
+
+.bingo-hint-content { display: grid; gap: 12px; text-align: center; }
+.bingo-hint-step { font-size: 13px; color: var(--fg); }
+.bingo-hint-text { min-height: 4.5em; font-size: 16px; line-height: 1.5; }
+.bingo-answer { overflow-wrap: anywhere; font-size: 24px; color: var(--emph); }
+.bingo-hint-actions { display: flex; gap: 8px; margin-top: 16px; }
+.bingo-hint-actions button { flex: 1; min-height: 44px; font-size: 14px; }
+.bingo-hint-actions button:disabled { opacity: 0.4; cursor: default; }
 
 .container.bingo-library {
   display: flex;
@@ -40,6 +53,9 @@
 .bingo-library h1 { flex: none; margin: 0; font-size: clamp(20px, 1.25rem, 24px); }
 .bingo-library p { flex: none; margin: 0; font-size: 13px; line-height: 1.4; }
 .bingo-library a { color: var(--blue); }
+.bingo-collections { display: flex; flex: none; gap: 8px; }
+.bingo-collections button { flex: 1; min-height: 44px; padding: 4px; font-size: 13px; }
+.bingo-collections button[aria-pressed="true"] { border-color: var(--emph); color: var(--emph); background: #4b3b1f; }
 .bingo-lives-select { display: flex; flex: none; align-items: center; justify-content: space-between; gap: 12px; font-size: 14px; }
 .bingo-lives-select select {
   background: var(--bg);
@@ -89,9 +105,13 @@
   text-decoration: none;
 }
 
+@media (orientation: portrait) and (max-height: 550px) {
+  .bingo-preview-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
 @media (orientation: landscape) and (max-height: 550px) {
   .container.bingo-library { max-width: none; gap: 6px; padding-block: 8px; }
-  .bingo-preview-list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .bingo-preview-list { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 }
 
 /* The travelling wyrm and resting meter share the same larger pieces at every

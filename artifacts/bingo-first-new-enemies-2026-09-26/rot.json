@@ -1,0 +1,1669 @@
+{
+  "enemy": "ROT",
+  "bingo": "RESTORATION",
+  "method": "bingo-first",
+  "semanticStatus": "draft-source-profile",
+  "accepted": true,
+  "seed": "bingo-first-3:ROT:RESTORATION:4",
+  "anchors": [
+    "RESTORATION",
+    "RENEWAL",
+    "SPICE"
+  ],
+  "plannedWords": [
+    "REPAIRS",
+    "RESTORES",
+    "DOCTORS"
+  ],
+  "analysis": {
+    "score": 444,
+    "bingos": [
+      "RESTORATION"
+    ],
+    "counterFamilies": 11,
+    "resistedFamilies": 4,
+    "winningOpenings": 12,
+    "repeatedCounterRoutes": 12,
+    "sustainedPositions": 13,
+    "sustainedFinalPositions": 2,
+    "neutralCleanupOpenings": 1,
+    "routes": [
+      {
+        "opening": "SWEET",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "DOCTOR",
+            "SALT",
+            "REPAIR",
+            "CORN",
+            "TIN",
+            "CRISP",
+            "SALTER"
+          ],
+          "resisted": [
+            "DROP",
+            "SPOIL",
+            "ROT"
+          ],
+          "neutral": 1475
+        },
+        "thirdTurn": {
+          "counters": [
+            "REPAIR"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SWEET",
+            "DOCTOR",
+            "REPAIR"
+          ],
+          "tileIds": [
+            [
+              9,
+              2,
+              4,
+              10,
+              7
+            ],
+            [
+              19,
+              1,
+              15,
+              14,
+              11,
+              5
+            ],
+            [
+              12,
+              18,
+              8,
+              0,
+              6,
+              17
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SALT",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SWEET",
+            "DOCTOR",
+            "CORN",
+            "RESTORE",
+            "RENEWED",
+            "TIN",
+            "CRISP",
+            "RESTORER"
+          ],
+          "resisted": [
+            "DROP",
+            "ROT"
+          ],
+          "neutral": 843
+        },
+        "thirdTurn": {
+          "counters": [
+            "REPAIR",
+            "RENEW"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SALT",
+            "DOCTOR",
+            "REPAIR"
+          ],
+          "tileIds": [
+            [
+              9,
+              0,
+              3,
+              7
+            ],
+            [
+              19,
+              1,
+              15,
+              14,
+              11,
+              5
+            ],
+            [
+              12,
+              4,
+              8,
+              22,
+              6,
+              17
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "REPAIR",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "SWEET",
+            "DOCTOR",
+            "CORN",
+            "RESTORE"
+          ],
+          "resisted": [
+            "ROTTEN",
+            "ROT"
+          ],
+          "neutral": 579
+        },
+        "thirdTurn": {
+          "counters": [
+            "SWEET",
+            "SALT",
+            "TIN",
+            "SALTER"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "REPAIR",
+            "DOCTOR",
+            "SWEET"
+          ],
+          "tileIds": [
+            [
+              5,
+              4,
+              8,
+              0,
+              6,
+              12
+            ],
+            [
+              19,
+              1,
+              15,
+              7,
+              11,
+              17
+            ],
+            [
+              9,
+              2,
+              10,
+              18,
+              14
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "CORN",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "SWEET",
+            "SALT",
+            "REPAIR",
+            "RESTORE",
+            "SALTER"
+          ],
+          "resisted": [
+            "DROP",
+            "SPOIL",
+            "ROT",
+            "DETERIORATE"
+          ],
+          "neutral": 1192
+        },
+        "thirdTurn": {
+          "counters": [
+            "SWEET",
+            "SALT",
+            "SALTER"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CORN",
+            "RESTORE",
+            "SWEET"
+          ],
+          "tileIds": [
+            [
+              15,
+              1,
+              5,
+              13
+            ],
+            [
+              12,
+              4,
+              9,
+              7,
+              11,
+              17,
+              10
+            ],
+            [
+              16,
+              2,
+              18,
+              24,
+              14
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "RESTORE",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "SALT",
+            "CORN",
+            "TIN",
+            "REPARATIONS",
+            "SALTER"
+          ],
+          "resisted": [
+            "DROP",
+            "SPOIL",
+            "ROT"
+          ],
+          "neutral": 1951
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "RESTORE",
+            "REPARATIONS"
+          ],
+          "tileIds": [
+            [
+              5,
+              4,
+              9,
+              7,
+              1,
+              12,
+              10
+            ],
+            [
+              17,
+              18,
+              8,
+              0,
+              20,
+              22,
+              14,
+              6,
+              11,
+              13,
+              16
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "TIN",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SWEET",
+            "SALT",
+            "RESTORE",
+            "SALTER",
+            "RESTORER"
+          ],
+          "resisted": [
+            "ROT"
+          ],
+          "neutral": 763
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "DROP",
+            "SOUR",
+            "SPOIL"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "TIN",
+            "RESTORE",
+            "LOW"
+          ],
+          "tileIds": [
+            [
+              7,
+              6,
+              13
+            ],
+            [
+              5,
+              4,
+              9,
+              14,
+              1,
+              12,
+              10
+            ],
+            [
+              3,
+              11,
+              2
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "CLEANER",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "REPAIR"
+          ],
+          "resisted": [
+            "DROP",
+            "ROT"
+          ],
+          "neutral": 718
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "RENEWAL",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "DOCTOR",
+            "REPAIR",
+            "CRISP"
+          ],
+          "resisted": [
+            "DROP",
+            "ROT"
+          ],
+          "neutral": 857
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RENEWAL",
+            "DOCTOR",
+            "ART"
+          ],
+          "tileIds": [
+            [
+              5,
+              4,
+              13,
+              10,
+              2,
+              0,
+              3
+            ],
+            [
+              19,
+              1,
+              15,
+              7,
+              11,
+              12
+            ],
+            [
+              22,
+              17,
+              14
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "RENEW",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "DOCTOR",
+            "SALT",
+            "REPAIR",
+            "CRISP",
+            "SALTER"
+          ],
+          "resisted": [
+            "DROP",
+            "SPOIL",
+            "ROT"
+          ],
+          "neutral": 1257
+        },
+        "thirdTurn": {
+          "counters": [
+            "SALT",
+            "SALTER"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RENEW",
+            "DOCTOR",
+            "SALT"
+          ],
+          "tileIds": [
+            [
+              5,
+              4,
+              13,
+              10,
+              2
+            ],
+            [
+              19,
+              1,
+              15,
+              7,
+              11,
+              12
+            ],
+            [
+              9,
+              0,
+              3,
+              14
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "CRISP",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SWEET",
+            "SALT",
+            "RESTORE",
+            "RENEWED",
+            "RENEWAL",
+            "SALTER",
+            "RESTORER"
+          ],
+          "resisted": [
+            "ROTTEN",
+            "ROT"
+          ],
+          "neutral": 729
+        },
+        "thirdTurn": {
+          "counters": [
+            "SOUND",
+            "SWEET",
+            "SALT",
+            "TIN",
+            "REPARATIONS",
+            "SALTER"
+          ],
+          "resisted": [
+            "DROP",
+            "SOUR",
+            "SPOIL",
+            "ROT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CRISP",
+            "RESTORE",
+            "REPARATIONS"
+          ],
+          "tileIds": [
+            [
+              15,
+              5,
+              6,
+              9,
+              8
+            ],
+            [
+              12,
+              4,
+              16,
+              7,
+              1,
+              17,
+              10
+            ],
+            [
+              20,
+              18,
+              27,
+              0,
+              26,
+              22,
+              14,
+              23,
+              11,
+              13,
+              21
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "SALTER",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "SWEET",
+            "DOCTOR",
+            "CORN",
+            "RESTORE",
+            "TIN",
+            "RENEW",
+            "CRISP",
+            "RESTORER"
+          ],
+          "resisted": [
+            "DROP",
+            "ROT"
+          ],
+          "neutral": 973
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SALTER",
+            "DOCTOR"
+          ],
+          "tileIds": [
+            [
+              9,
+              0,
+              3,
+              7,
+              4,
+              5
+            ],
+            [
+              19,
+              1,
+              15,
+              14,
+              11,
+              12
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "SPOIL",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "SWEET",
+            "CORN",
+            "RESTORE",
+            "RENEWED",
+            "RESTORER"
+          ],
+          "resisted": [
+            "ROTTEN",
+            "ROT"
+          ],
+          "neutral": 713
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "ROTTEN",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "REPAIR",
+            "CRISP"
+          ],
+          "resisted": [
+            "DROP",
+            "SPOIL"
+          ],
+          "neutral": 850
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "TAINT",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [],
+          "resisted": [
+            "DROP"
+          ],
+          "neutral": 298
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "ROTS",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "SWEET",
+            "SALT",
+            "REPAIR",
+            "CORN",
+            "RESTORE",
+            "RENEWED",
+            "TIN",
+            "CLEANER",
+            "RENEWAL",
+            "CRISP",
+            "SALTER"
+          ],
+          "resisted": [
+            "DROP",
+            "SPOIL",
+            "ROT"
+          ],
+          "neutral": 1986
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "ACT",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SWEET",
+            "RESTORE",
+            "TIN",
+            "RENEW",
+            "RESTORER"
+          ],
+          "resisted": [
+            "SPOIL",
+            "ROT"
+          ],
+          "neutral": 638
+        },
+        "thirdTurn": {
+          "counters": [
+            "SOUND"
+          ],
+          "resisted": [
+            "DROP",
+            "SOUR",
+            "SPOIL"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ACT",
+            "RESTORE",
+            "SOUND"
+          ],
+          "tileIds": [
+            [
+              0,
+              15,
+              7
+            ],
+            [
+              5,
+              4,
+              9,
+              14,
+              1,
+              12,
+              10
+            ],
+            [
+              16,
+              11,
+              25,
+              13,
+              19
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SWEET",
+            "CORN",
+            "RESTORE",
+            "RENEW"
+          ],
+          "resisted": [
+            "ROTTEN",
+            "ROT"
+          ],
+          "neutral": 550
+        },
+        "thirdTurn": {
+          "counters": [
+            "SOUND",
+            "DOCTOR",
+            "SALT",
+            "CORN",
+            "TIN",
+            "SALTER"
+          ],
+          "resisted": [
+            "DROP",
+            "CORRUPTION",
+            "CORRUPT",
+            "SOUR",
+            "SPOIL",
+            "ROT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AIR",
+            "SWEETER",
+            "DOCTOR"
+          ],
+          "tileIds": [
+            [
+              0,
+              6,
+              5
+            ],
+            [
+              9,
+              2,
+              4,
+              10,
+              7,
+              18,
+              12
+            ],
+            [
+              19,
+              1,
+              15,
+              14,
+              11,
+              17
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            3
+          ]
+        }
+      }
+    ]
+  },
+  "board": "AOWLERITPSEORNTC",
+  "refills": "SREDRSAIEURPISOOSDGMCORE",
+  "inventory": [
+    {
+      "word": "ANTIMICROBIAL",
+      "armour": [],
+      "definition": "an agent (as heat or radiation or a chemical) that destroys microorganisms that might carry disease"
+    },
+    {
+      "word": "ANTIMICROBIALS",
+      "armour": [],
+      "definition": "an agent (as heat or radiation or a chemical) that destroys microorganisms that might carry disease"
+    },
+    {
+      "word": "CONSERVATION",
+      "armour": [
+        "O"
+      ],
+      "definition": "an occurrence of improvement by virtue of preventing loss or injury or other change"
+    },
+    {
+      "word": "CONSERVATIONS",
+      "armour": [
+        "O"
+      ],
+      "definition": "an occurrence of improvement by virtue of preventing loss or injury or other change"
+    },
+    {
+      "word": "DEHYDRATION",
+      "armour": [],
+      "definition": "dryness resulting from the removal of water"
+    },
+    {
+      "word": "DEHYDRATIONS",
+      "armour": [],
+      "definition": "dryness resulting from the removal of water"
+    },
+    {
+      "word": "DOCTOR",
+      "armour": [
+        "O"
+      ],
+      "definition": "restore by replacing a part or putting together what is torn or broken"
+    },
+    {
+      "word": "DOCTORED",
+      "armour": [
+        "O"
+      ],
+      "definition": "restore by replacing a part or putting together what is torn or broken"
+    },
+    {
+      "word": "DOCTORING",
+      "armour": [
+        "O"
+      ],
+      "definition": "restore by replacing a part or putting together what is torn or broken"
+    },
+    {
+      "word": "DOCTORS",
+      "armour": [
+        "O"
+      ],
+      "definition": "restore by replacing a part or putting together what is torn or broken"
+    },
+    {
+      "word": "EVAPORATION",
+      "armour": [
+        "O"
+      ],
+      "definition": "the process of extracting moisture"
+    },
+    {
+      "word": "EVAPORATIONS",
+      "armour": [
+        "O"
+      ],
+      "definition": "the process of extracting moisture"
+    },
+    {
+      "word": "PRESERVATION",
+      "armour": [
+        "R"
+      ],
+      "definition": "a process that saves organic substances from decay"
+    },
+    {
+      "word": "PRESERVATIONS",
+      "armour": [
+        "R"
+      ],
+      "definition": "a process that saves organic substances from decay"
+    },
+    {
+      "word": "RECONSTRUCT",
+      "armour": [
+        "R",
+        "T"
+      ],
+      "definition": "return to its original or usable and functioning condition"
+    },
+    {
+      "word": "RECONSTRUCTED",
+      "armour": [
+        "R",
+        "T"
+      ],
+      "definition": "return to its original or usable and functioning condition"
+    },
+    {
+      "word": "RECONSTRUCTING",
+      "armour": [
+        "R",
+        "T"
+      ],
+      "definition": "return to its original or usable and functioning condition"
+    },
+    {
+      "word": "RECONSTRUCTS",
+      "armour": [
+        "R",
+        "T"
+      ],
+      "definition": "return to its original or usable and functioning condition"
+    },
+    {
+      "word": "REDEVELOPMENT",
+      "armour": [],
+      "definition": "the act of improving by renewing and restoring"
+    },
+    {
+      "word": "REDEVELOPMENTS",
+      "armour": [],
+      "definition": "the act of improving by renewing and restoring"
+    },
+    {
+      "word": "REFRIGERATION",
+      "armour": [
+        "R"
+      ],
+      "definition": "the process of cooling or freezing (e.g., food) for preservative purposes"
+    },
+    {
+      "word": "REFRIGERATIONS",
+      "armour": [
+        "R"
+      ],
+      "definition": "the process of cooling or freezing (e.g., food) for preservative purposes"
+    },
+    {
+      "word": "REFRIGERATOR",
+      "armour": [
+        "R"
+      ],
+      "definition": "white goods in which food can be stored at low temperatures"
+    },
+    {
+      "word": "REFRIGERATORS",
+      "armour": [
+        "R"
+      ],
+      "definition": "white goods in which food can be stored at low temperatures"
+    },
+    {
+      "word": "REJUVENATION",
+      "armour": [],
+      "definition": "the phenomenon of vitality and freshness being restored"
+    },
+    {
+      "word": "REJUVENATIONS",
+      "armour": [],
+      "definition": "the phenomenon of vitality and freshness being restored"
+    },
+    {
+      "word": "RENOVATE",
+      "armour": [],
+      "definition": "restore to a previous or better condition"
+    },
+    {
+      "word": "RENOVATED",
+      "armour": [],
+      "definition": "restore to a previous or better condition"
+    },
+    {
+      "word": "RENOVATES",
+      "armour": [],
+      "definition": "restore to a previous or better condition"
+    },
+    {
+      "word": "RENOVATING",
+      "armour": [],
+      "definition": "restore to a previous or better condition"
+    },
+    {
+      "word": "RENOVATION",
+      "armour": [
+        "O"
+      ],
+      "definition": "the act of improving by renewing and restoring"
+    },
+    {
+      "word": "RENOVATIONS",
+      "armour": [
+        "O"
+      ],
+      "definition": "the act of improving by renewing and restoring"
+    },
+    {
+      "word": "RENOVATOR",
+      "armour": [
+        "R",
+        "O"
+      ],
+      "definition": "a skilled worker who is employed to restore or refinish buildings or antique furniture"
+    },
+    {
+      "word": "RENOVATORS",
+      "armour": [
+        "R",
+        "O"
+      ],
+      "definition": "a skilled worker who is employed to restore or refinish buildings or antique furniture"
+    },
+    {
+      "word": "REPARATION",
+      "armour": [
+        "R"
+      ],
+      "definition": "the act of putting something in working order again"
+    },
+    {
+      "word": "REPARATIONS",
+      "armour": [
+        "R"
+      ],
+      "definition": "the act of putting something in working order again"
+    },
+    {
+      "word": "RESTORATION",
+      "armour": [
+        "R",
+        "O",
+        "T"
+      ],
+      "definition": "the act of restoring something or someone to a satisfactory state"
+    },
+    {
+      "word": "RESTORATIONS",
+      "armour": [
+        "R",
+        "O",
+        "T"
+      ],
+      "definition": "the act of restoring something or someone to a satisfactory state"
+    },
+    {
+      "word": "RESTORE",
+      "armour": [
+        "R"
+      ],
+      "definition": "return to its original or usable and functioning condition"
+    },
+    {
+      "word": "RESTORED",
+      "armour": [
+        "R"
+      ],
+      "definition": "return to its original or usable and functioning condition"
+    },
+    {
+      "word": "RESTORER",
+      "armour": [
+        "R"
+      ],
+      "definition": "a skilled worker who is employed to restore or refinish buildings or antique furniture"
+    },
+    {
+      "word": "RESTORERS",
+      "armour": [
+        "R"
+      ],
+      "definition": "a skilled worker who is employed to restore or refinish buildings or antique furniture"
+    },
+    {
+      "word": "RESTORES",
+      "armour": [
+        "R"
+      ],
+      "definition": "return to its original or usable and functioning condition"
+    },
+    {
+      "word": "RESTORING",
+      "armour": [
+        "R"
+      ],
+      "definition": "return to its original or usable and functioning condition"
+    },
+    {
+      "word": "STERILISATION",
+      "armour": [
+        "T"
+      ],
+      "definition": "the procedure of making some object free of live bacteria or other microorganisms (usually by heat or chemical means)"
+    },
+    {
+      "word": "STERILISATIONS",
+      "armour": [
+        "T"
+      ],
+      "definition": "the procedure of making some object free of live bacteria or other microorganisms (usually by heat or chemical means)"
+    },
+    {
+      "word": "STERILIZATION",
+      "armour": [
+        "T"
+      ],
+      "definition": "the procedure of making some object free of live bacteria or other microorganisms (usually by heat or chemical means)"
+    },
+    {
+      "word": "STERILIZATIONS",
+      "armour": [
+        "T"
+      ],
+      "definition": "the procedure of making some object free of live bacteria or other microorganisms (usually by heat or chemical means)"
+    }
+  ],
+  "seeds": [
+    {
+      "seed": "bingo-first-3:ROT:RESTORATION:4",
+      "score": 444
+    },
+    {
+      "seed": "bingo-first-3:ROT:RESTORATION:0",
+      "score": 400
+    },
+    {
+      "seed": "bingo-first-3:ROT:RESTORATION:3",
+      "score": 394
+    },
+    {
+      "seed": "bingo-first-3:ROT:RESTORATION:2",
+      "score": 383
+    },
+    {
+      "seed": "bingo-first-3:ROT:RESTORATION:7",
+      "score": 377
+    },
+    {
+      "seed": "bingo-first-3:ROT:RESTORATION:6",
+      "score": 372
+    },
+    {
+      "seed": "bingo-first-3:ROT:RESTORATION:10",
+      "score": 338
+    },
+    {
+      "seed": "bingo-first-3:ROT:RESTORATION:8",
+      "score": 338
+    },
+    {
+      "seed": "bingo-first-3:ROT:RESTORATION:11",
+      "score": 222
+    },
+    {
+      "seed": "bingo-first-3:ROT:RESTORATION:9",
+      "score": 311
+    },
+    {
+      "seed": "bingo-first-3:ROT:RESTORATION:5",
+      "score": 310
+    },
+    {
+      "seed": "bingo-first-3:ROT:RESTORATION:1",
+      "score": 278
+    }
+  ],
+  "derivations": [
+    {
+      "from": "oewn-restore__2.41.01..",
+      "to": "oewn-restoration__1.26.00..",
+      "definition": "the state of being restored to its former good condition",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-restore__2.41.01..",
+      "to": "oewn-restorer__1.18.00..",
+      "definition": "a skilled worker who is employed to restore or refinish buildings or antique furniture",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-repair__2.30.00..",
+      "to": "oewn-repair__1.04.00..",
+      "definition": "the act of putting something in working order again",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-repair__2.30.00..",
+      "to": "oewn-repairer__1.18.00..",
+      "definition": "a skilled worker who mends or repairs things",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-preserve__2.40.00..",
+      "to": "oewn-preservation__1.04.00..",
+      "definition": "the activity of protecting something from loss or danger",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-preserve__2.40.00..",
+      "to": "oewn-preservative__5.00.00.protective.00",
+      "definition": "tending or having the power to preserve",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-antiseptic__3.00.00..",
+      "to": "oewn-antisepsis__1.26.00..",
+      "definition": "(of non-living objects) the state of being free of pathogenic organisms",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-antiseptic__3.00.00..",
+      "to": "oewn-antiseptic__1.06.00..",
+      "definition": "a substance that destroys micro-organisms that carry disease without harming body tissues",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-disinfect__2.29.00..",
+      "to": "oewn-disinfectant__1.06.00..",
+      "definition": "an agent (as heat or radiation or a chemical) that destroys microorganisms that might carry disease",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-disinfect__2.29.00..",
+      "to": "oewn-disinfectant__5.00.00.antiseptic.00",
+      "definition": "preventing infection by inhibiting the growth or action of microorganisms",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-sterilise__2.29.01..",
+      "to": "oewn-sterilisation__1.04.01..",
+      "definition": "the procedure of making some object free of live bacteria or other microorganisms (usually by heat or chemical means)",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-sterilise__2.29.01..",
+      "to": "oewn-steriliser__1.06.00..",
+      "definition": "a device for heating substances above their boiling point; used to manufacture chemicals or to sterilize surgical instruments",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-freshness__1.07.01..",
+      "to": "oewn-fresh__5.00.00.clean.01",
+      "definition": "not yet used or soiled",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-freshness__1.07.01..",
+      "to": "oewn-fresh__5.00.00.pure.02",
+      "definition": "free from impurities",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-freshness__1.07.01..",
+      "to": "oewn-fresh__5.00.00.unsoured.00",
+      "definition": "not soured or preserved",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-rejuvenate__2.30.04..",
+      "to": "oewn-rejuvenation__1.19.00..",
+      "definition": "the phenomenon of vitality and freshness being restored",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-renew__2.36.00..",
+      "to": "oewn-renewal__1.04.01..",
+      "definition": "the act of renewing",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-sound__3.00.01..",
+      "to": "oewn-soundness__1.26.00..",
+      "definition": "a state or condition free from damage or decay",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-healthy__3.00.00..",
+      "to": "oewn-health__1.26.00..",
+      "definition": "a healthy state of wellbeing free from disease",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-healthy__3.00.00..",
+      "to": "oewn-healthiness__1.26.00..",
+      "definition": "the state of being vigorous and free from bodily or mental disease",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-decay__1.19.00..",
+      "to": "oewn-decay__2.30.02..",
+      "definition": "undergo decay or decomposition",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-disintegrate__2.30.00..",
+      "to": "oewn-disintegration__1.22.01..",
+      "definition": "separation into component parts",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-disintegrate__2.30.00..",
+      "to": "oewn-disintegration__1.26.00..",
+      "definition": "in a decomposed state",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-disintegrate__2.30.00..",
+      "to": "oewn-disintegrative__3.00.00..",
+      "definition": "tending to cause breakup into constituent elements or parts",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-putrefy__2.30.00..",
+      "to": "oewn-putrefacient__5.00.00.septic.00",
+      "definition": "causing or promoting bacterial putrefaction",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-rotten__5.00.00.stale.00",
+      "to": "oewn-rottenness__1.07.00..",
+      "definition": "the quality of rotting and becoming putrid",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-rotten__5.00.00.stale.00",
+      "to": "oewn-rottenness__1.26.00..",
+      "definition": "in a state of progressive putrefaction",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-mold__2.30.00..",
+      "to": "oewn-mold__1.20.00..",
+      "definition": "a fungus that produces a superficial growth on various kinds of damp or decaying organic matter",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-fester__1.26.00..",
+      "to": "oewn-fester__2.29.00..",
+      "definition": "ripen and generate pus",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-rancid__5.00.00.stale.00",
+      "to": "oewn-rancidness__1.07.00..",
+      "definition": "the property of being rancid",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-rancidity__1.26.00..",
+      "to": "oewn-rancid__5.00.00.malodorous.00",
+      "definition": "smelling of fermentation or staleness",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-putrid__3.01.00..",
+      "to": "oewn-putridity__1.26.00..",
+      "definition": "the state of being putrid",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-taint__2.29.00..",
+      "to": "oewn-taint__1.26.00..",
+      "definition": "the state of being contaminated",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-deteriorate__2.30.00..",
+      "to": "oewn-deterioration__1.22.00..",
+      "definition": "process of changing to an inferior state",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-deterioration__1.26.00..",
+      "to": "oewn-deteriorate__2.29.00..",
+      "definition": "grow progressively worse",
+      "relation": "similar"
+    },
+    {
+      "from": "oewn-restore__2.30.01..",
+      "to": "oewn-restoration__1.06.00..",
+      "definition": "some artifact that has been restored or reconstructed",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-preserve__2.30.00..",
+      "to": "oewn-preserve__1.13.00..",
+      "definition": "fruit preserved by cooking with sugar",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-preserve__2.30.00..",
+      "to": "oewn-preserver__1.18.02..",
+      "definition": "a cook who preserves fruits or meat",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-salt__2.30.00..",
+      "to": "oewn-salt__1.09.00..",
+      "definition": "the taste experience when common salt is taken into the mouth",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-salt__2.30.00..",
+      "to": "oewn-salt__1.13.00..",
+      "definition": "white crystalline form of especially sodium chloride used to season and preserve food",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-salt__2.30.00..",
+      "to": "oewn-salter__1.18.01..",
+      "definition": "someone who uses salt to preserve meat or fish or other foods",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-sanitary__3.00.00..",
+      "to": "oewn-sanitariness__1.26.00..",
+      "definition": "the state of being conducive to health",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-desiccate__2.30.04..",
+      "to": "oewn-desiccation__1.22.00..",
+      "definition": "the process of extracting moisture",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-desiccate__2.30.04..",
+      "to": "oewn-desiccation__1.26.00..",
+      "definition": "dryness resulting from the removal of water",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-refrigerate__2.30.01..",
+      "to": "oewn-refrigerant__5.00.00.cold.01",
+      "definition": "causing cooling or freezing",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-refrigerate__2.30.01..",
+      "to": "oewn-refrigeration__1.22.00..",
+      "definition": "the process of cooling or freezing (e.g., food) for preservative purposes",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-refrigerate__2.30.01..",
+      "to": "oewn-refrigerator__1.06.00..",
+      "definition": "white goods in which food can be stored at low temperatures",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-can__2.30.00..",
+      "to": "oewn-can__1.06.00..",
+      "definition": "airtight sealed metal container for food or drink or paint etc.",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-can__2.30.00..",
+      "to": "oewn-cannery__1.06.00..",
+      "definition": "a factory where food is canned",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-pickle__2.30.00..",
+      "to": "oewn-pickle__1.13.00..",
+      "definition": "vegetables (especially cucumbers) preserved in brine or vinegar",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-sugar__1.13.00..",
+      "to": "oewn-sugar__2.39.00..",
+      "definition": "sweeten with sugar",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-dip__2.35.11..",
+      "to": "oewn-dip__1.11.00..",
+      "definition": "a brief immersion",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-spice__1.27.00..",
+      "to": "oewn-spice__2.39.00..",
+      "definition": "add herbs or spices to",
+      "relation": "opposite"
+    },
+    {
+      "from": "oewn-crisp__5.00.00.fresh.01",
+      "to": "oewn-crispness__1.07.02..",
+      "definition": "a pleasing firmness and freshness",
+      "relation": "opposite"
+    }
+  ],
+  "meaningWords": 31483,
+  "limitation": "Source-pinned roots, all-sense exact-synset expansion, one direct derivation, and explicit adjective/adverb links. Other defined words are neutral under this beta policy; complete contextual review and daily certification are outstanding."
+}

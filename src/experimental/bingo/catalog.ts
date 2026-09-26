@@ -1,7 +1,7 @@
 import entries from './catalog.json' with { type: 'json' }
 
 export type PreviewLives = 3 | 4 | 5
-export type BingoPreviewEntry = { id: string; title: string; enemy: string; enemyHP: number; asset: string }
+export type BingoPreviewEntry = { id: string; title: string; enemy: string; enemyHP: number; asset: string; collection?: string }
 export type BingoPreviewRequest = { id: string; lives: PreviewLives }
 export const bingoPreviews: readonly BingoPreviewEntry[] = Object.freeze(entries.map(entry => Object.freeze(entry)))
 
@@ -22,5 +22,6 @@ export function leaveBingoPreviewHref(href: string): string {
   const url = new URL(href)
   url.searchParams.delete('preview')
   url.searchParams.delete('lives')
+  url.searchParams.delete('set')
   return url.href
 }
