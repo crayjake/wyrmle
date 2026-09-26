@@ -2,6 +2,7 @@ import { CircleHelp, History, Settings } from 'lucide-react'
 import type { Ref } from 'react'
 import WyrmCharacter from './WyrmCharacter'
 import StarRating from './StarRating'
+import './BattleResources.css'
 import './Header.css'
 
 type HeaderProps = {
@@ -32,7 +33,7 @@ export default function Header({ wyrmDockRef, titleRef, showWyrm, onHelp, onHist
             </div>
 
             {bestStars !== undefined && <div className="header-best">
-                <span aria-hidden="true">Best</span>
+                <span className="resource-label" aria-hidden="true">BEST</span>
                 <StarRating stars={bestStars} label={bestStars ? `Best: ${bestStars} of 3 stars` : 'Best: not solved yet'} />
             </div>}
 
