@@ -1,0 +1,9 @@
+{
+  "base": "http://127.0.0.1:4174/wyrmle/",
+  "checks": [
+    "375x667: intro, neutral/similar, all six words, 3/2/1 lives, stars, no overflow or Daily progress",
+    "320x568: intro, neutral/similar, all six words, 3/2/1 lives, stars, no overflow or Daily progress",
+    "667x375: intro, neutral/similar, all six words, 3/2/1 lives, stars, no overflow or Daily progress"
+  ],
+  "errors": []
+}

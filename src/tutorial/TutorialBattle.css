@@ -92,7 +92,7 @@
 }
 
 .tutorial-overview .tutorial-intro { padding-block: 0; }
-.tutorial-overview .tutorial-example-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.tutorial-overview .tutorial-example-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .tutorial-overview .tutorial-example { display: block; padding: 6px; min-height: 44px; text-align: center; font-size: 13px; }
 .tutorial-overview .tutorial-examples > p { margin-bottom: 6px; }
 @media (max-height: 600px) {

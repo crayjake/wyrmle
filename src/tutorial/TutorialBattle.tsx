@@ -2,6 +2,8 @@ import { useCallback, useEffect, useReducer, useRef, useState } from 'react'
 import Enemy from '../components/Enemy'
 import AttackInfo from '../components/AttackInfo'
 import TileGrid from '../components/TileGrid'
+import RefillSupply from '../components/RefillSupply'
+import BattleResult from '../components/BattleResult'
 import { MyInfo } from '../components/HealthInfo'
 import { previewLetterStrike } from '../game/letterStrike'
 import { getLetterStrikeGrammarModifiers, getLetterStrikeTileSummary } from '../game/letterStrikeHud'
@@ -47,28 +49,38 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
   const onResolutionComplete = useCallback(() => setResolving(false), [])
   const showPrediction = Boolean(move && preview.valid && !resolving)
   const visiblePreview = move ? preview : lastMove?.preview
-  const coreDemo = step === 'counter' || step === 'neutral'
   const jump = (step: TutorialStep) => { setResolving(false); dispatch({ type: 'jump', step }) }
   const header = <header className="header">
     <div className="title">WYRMLE</div>
     <button type="button" className="tutorial-skip" onClick={onSkip}>SKIP TUTORIAL</button>
   </header>
 
-  if (step === 'goal' || step === 'complete' && !resolving) return <main className="container tutorial-overview" data-tutorial-step={step}>
+  if (['three-won', 'two-won', 'complete'].includes(step) && !resolving) return <main className="container letter-combat tutorial-result" data-result="won" data-tutorial-step={step}>
+    {header}
+    <BattleResult game={game} onRetry={() => jump('goal')}
+      nudge={step === 'three-won' ? 'A win unlocks 2 lives. Same board, same refills: find a shorter route.'
+        : 'Two stars! Now try the same puzzle with one life.'}
+      actions={<>
+        <button type="button" className="daily-button bingo-result-primary" onClick={() => step === 'complete' ? onComplete() : dispatch({ type: 'continue' })}>
+          {step === 'three-won' ? 'TRY 2 LIVES' : step === 'two-won' ? 'TRY THE BINGO' : 'PLAY TODAY'}
+        </button>
+        {step === 'complete' ? <button type="button" className="daily-button" onClick={() => jump('goal')}>Replay tutorial</button>
+          : <p className="daily-best">Replays keep your best stars. Losing doesn’t reduce your next attempt’s lives.</p>}
+      </>} />
+  </main>
+
+  if (step === 'goal') return <main className="container tutorial-overview" data-tutorial-step={step}>
     {header}
     <section className="tutorial-intro" aria-labelledby="tutorial-title">
-      <span className="tutorial-eyebrow">{step === 'goal' ? 'A daily word battle' : 'Practice complete'}</span>
-      <h1 id="tutorial-title">{step === 'goal' ? 'Words are your weapons.' : 'You’re ready.'}</h1>
-      {step === 'goal' ? <ul className="tutorial-summary">
+      <span className="tutorial-eyebrow">A daily word battle</span>
+      <h1 id="tutorial-title">Words are your weapons.</h1>
+      <ul className="tutorial-summary">
         <li>Spell words of 3+ letters. Tap or swipe; tiles can be anywhere.</li>
-        <li>Counter meanings hit every matching letter. Neutral words hit once; similar words hit nothing.</li>
+        <li>Think opposing concepts: water counters dryness. A counter hits every matching letter; neutral words hit once, similar concepts hit nothing.</li>
         <li>Remove the whole enemy before your lives run out. Each word costs one life.</li>
-      </ul> : <p className="tutorial-completion-note">Find a counter, check its targets, then play. Used tiles refill while supplies last; empty spaces stay when the reserve runs out.</p>}
+      </ul>
       <div className="tutorial-intro-actions">
-        <button type="button" className="daily-button tutorial-start" onClick={() => step === 'goal' ? jump('counter') : onComplete()}>
-          {step === 'goal' ? 'TRY THE DEMO' : 'PLAY TODAY'}
-        </button>
-        {step !== 'goal' && <button type="button" className="daily-button" onClick={() => jump('counter')}>Replay the demo</button>}
+        <button type="button" className="daily-button tutorial-start" onClick={() => jump('water')}>TRY ARID · 3 → 2 → 1 LIVES</button>
       </div>
       <div className="tutorial-examples">
         <p>More practice</p>
@@ -83,8 +95,8 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
   return <main className="container letter-combat tutorial-battle" data-tutorial-step={step}>
     {header}
     <div className="battle-info">
-      <MyInfo name="Lives" health={game.playerResolve} maxHealth={game.encounter.startingResolve} />
-      <span className="tutorial-label">{coreDemo ? `DEMO · WORD ${step === 'counter' ? '1' : '2'} OF 2` : 'OPTIONAL PRACTICE'}</span>
+      <MyInfo name="Lives" health={game.playerResolve} maxHealth={game.encounter.startingResolve} animateLives />
+      <RefillSupply game={game} />
     </div>
     <div className="enemy-zone">
       <Enemy key={game.encounter.id}
@@ -116,7 +128,7 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
         <TileGrid tiles={game.tiles} specialTiles={getLetterStrikeTileSummary(game)}
           revealedIndices={tileIndices} registerTile={registerTile}
           selectedTileIds={game.selectedTileIds} ready={allowedTileIds.length > 0 && !resolving}
-          allowedTileIds={allowedTileIds}
+          allowedTileIds={allowedTileIds} enemyLetters={game.enemyLetters} matchHint="underline"
           primaryLabel={move?.action === 'attack' ? 'ATTACK' : 'CONTINUE'} canAttack={canAttack || canContinue}
           onToggleTile={tileId => dispatch({ type: 'select', tileId })}
           onSelectTiles={tileIds => dispatch({ type: 'select-many', tileIds })}
@@ -134,20 +146,21 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
 
 function TutorialPrompt({ state, selected }: { state: TutorialState; selected: boolean }) {
   switch (state.step) {
-    case 'counter': return <p>{selected
-      ? 'GLAD is SAD’s opposite: A and D disappear. Check the preview, then PLAY WORD.'
-      : 'Build GLAD using the highlighted letters. Letters can be anywhere.'}</p>
-    case 'neutral': return <p>{selected
-      ? 'SUN is neutral: only its first match, S, is hit. PLAY WORD to win.'
-      : 'Used tiles have refilled. Build SUN to remove the last S.'}</p>
-    case 'armour': return <p>Build SUN. S has a double border: one hit breaks armour; a second removes S.</p>
-    case 'armour-finish': return <p>S lost its armour. Build SUN again to remove it. Repeating words is allowed.</p>
-    case 'armour-complete': return <p>Two hits removed S: double border → single border → dot.</p>
-    case 'resisted': return <p>Build SAD. It means the same as the enemy: no hits, even though all three letters match.</p>
-    case 'resisted-result': return <p>SAD cost one life and hit nothing. Look for a counter instead.</p>
-    case 'bingo': return <p>Build GLADDENS: it means to make happy. Both D tiles are needed to break and remove the armoured D.</p>
-    case 'bingo-result': return <p>Bingo! One counter removed every letter, including the armour. Beta puzzles each hide a one-word win.</p>
-    case 'complete': return <p>Every enemy letter is gone. You won!</p>
+    case 'water': return <p>{selected
+      ? 'WATER counters the dry-land concept: remove A and crack R’s armour. Double borders need two hits.'
+      : 'ARID means dry. Build WATER with the highlighted tiles. Think opposing concepts, not just dictionary opposites.'}</p>
+    case 'spring': return <p>Used tiles refill from the supply above. Build SPRING: a source of water. Finish R and crack I’s armour.</p>
+    case 'dip': return <p>One life left. DIP means to put something into liquid. Build it to remove I and D and win.</p>
+    case 'three-won': return <p>Three words, one star. Next, the same board with two lives.</p>
+    case 'rain': return <p>Same starting board, two lives. Build RAIN: water from the sky counters dry land.</p>
+    case 'muddier': return <p>One life left. Build MUDDIER: wetter ground counters dry land. R, I and D remove the remaining letters.</p>
+    case 'two-won': return <p>Two words, two stars. Next, find the one-word win.</p>
+    case 'bingo': return <p>One life. Build IRRIGATED: supplied with water. Two Rs and two Is break the armour and clear every letter.</p>
+    case 'neutral': return <p>Build GRID. It has no opposing or similar concept here: only its first matching letter gets one hit.</p>
+    case 'neutral-result': return <p>GRID used a life to crack R’s armour. Neutral words can help, but counters do more with each life.</p>
+    case 'resisted': return <p>Build DRY. It shares ARID’s concept, so matching letters won’t help.</p>
+    case 'resisted-result': return <p>DRY used a life and hit nothing. Check the preview before playing a word.</p>
+    case 'complete': return <p>Bingo! Every letter removed in one word: three stars.</p>
     case 'goal': return null
   }
 }

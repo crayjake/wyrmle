@@ -1,0 +1,9 @@
+{
+  "base": "https://crayjake.github.io/wyrmle/",
+  "checks": [
+    "All three score pages and PNGs available in initial HTTP response",
+    "Recipient opens the archived puzzle with three lives and no awarded stars",
+    "Native share uses best bingo after a failed replay, without revealing the answer"
+  ],
+  "errors": []
+}

@@ -1,0 +1,314 @@
+{
+  "id": "tutorial-arid",
+  "enemy": {
+    "word": "ARID",
+    "definition": "lacking sufficient water or rainfall",
+    "partOfSpeech": "adjective",
+    "semanticRelations": {
+      "opposite": [
+        "WATER",
+        "SPRING",
+        "DIP",
+        "RAIN",
+        "MIRED",
+        "MUDDIER",
+        "IRRIGATED"
+      ],
+      "similar": [
+        "ARID",
+        "DRY",
+        "AIR",
+        "DUST"
+      ],
+      "related": []
+    }
+  },
+  "enemyLetters": [
+    {
+      "id": "enemy-0",
+      "letter": "A",
+      "initialHits": 1,
+      "hitsRemaining": 1
+    },
+    {
+      "id": "enemy-1",
+      "letter": "R",
+      "initialHits": 2,
+      "hitsRemaining": 2
+    },
+    {
+      "id": "enemy-2",
+      "letter": "I",
+      "initialHits": 2,
+      "hitsRemaining": 2
+    },
+    {
+      "id": "enemy-3",
+      "letter": "D",
+      "initialHits": 1,
+      "hitsRemaining": 1
+    }
+  ],
+  "startingTiles": [
+    {
+      "id": 0,
+      "letter": "I",
+      "type": "normal"
+    },
+    {
+      "id": 1,
+      "letter": "I",
+      "type": "normal"
+    },
+    {
+      "id": 2,
+      "letter": "D",
+      "type": "normal"
+    },
+    {
+      "id": 3,
+      "letter": "M",
+      "type": "normal"
+    },
+    {
+      "id": 4,
+      "letter": "Y",
+      "type": "normal"
+    },
+    {
+      "id": 5,
+      "letter": "N",
+      "type": "normal"
+    },
+    {
+      "id": 6,
+      "letter": "T",
+      "type": "normal"
+    },
+    {
+      "id": 7,
+      "letter": "S",
+      "type": "normal"
+    },
+    {
+      "id": 8,
+      "letter": "G",
+      "type": "normal"
+    },
+    {
+      "id": 9,
+      "letter": "E",
+      "type": "normal"
+    },
+    {
+      "id": 10,
+      "letter": "R",
+      "type": "normal"
+    },
+    {
+      "id": 11,
+      "letter": "A",
+      "type": "normal"
+    },
+    {
+      "id": 12,
+      "letter": "O",
+      "type": "normal"
+    },
+    {
+      "id": 13,
+      "letter": "W",
+      "type": "normal"
+    },
+    {
+      "id": 14,
+      "letter": "R",
+      "type": "normal"
+    },
+    {
+      "id": 15,
+      "letter": "P",
+      "type": "normal"
+    }
+  ],
+  "startingResolve": 3,
+  "refillQueue": "UDAHKPANNDAREISTREAMEDSP",
+  "finiteRefills": true,
+  "minimumWordLength": 3,
+  "grammarModifiers": {},
+  "tileEffects": {
+    "strike": {
+      "strike": true,
+      "preventResolveLoss": false
+    },
+    "ward": {
+      "strike": false,
+      "preventResolveLoss": true
+    }
+  },
+  "meaningLexicon": {
+    "version": "wyrmle-puzzle-meanings-1",
+    "dictionaryVersion": "wyrmle-defined-dictionary-v2",
+    "profileVersion": "bingo-source-profiles-1:38a61e09e8ea",
+    "policy": "defined-only",
+    "enemyWord": "ARID",
+    "letterSupply": "AAAAADDDDEEEEGHIIIKMMNNNOPPPRRRRSSSTTUWY",
+    "minimumWordLength": 3,
+    "maximumWordLength": 16,
+    "words": {
+      "WATER": {
+        "definition": "supply with water, as with channels or ditches or streams",
+        "lemma": "water",
+        "senseId": "oewn-water__2.30.00..",
+        "partsOfSpeech": [
+          "noun",
+          "verb"
+        ],
+        "relation": "opposite",
+        "reason": "Counters arid through water: supply with water, as with channels or ditches or streams.",
+        "source": "oewn-2025",
+        "evidence": "reviewed-profile"
+      },
+      "SPRING": {
+        "definition": "a natural flow of ground water",
+        "lemma": "spring",
+        "senseId": "oewn-spring__1.17.00..",
+        "partsOfSpeech": [
+          "noun",
+          "verb"
+        ],
+        "relation": "opposite",
+        "reason": "Counters arid through spring: a natural flow of ground water.",
+        "source": "oewn-2025",
+        "evidence": "reviewed-profile"
+      },
+      "DIP": {
+        "definition": "immerse briefly into a liquid so as to wet, coat, or saturate",
+        "lemma": "dip",
+        "senseId": "oewn-dip__2.35.00..",
+        "partsOfSpeech": [
+          "noun",
+          "verb"
+        ],
+        "relation": "opposite",
+        "reason": "Counters arid through dip: immerse briefly into a liquid so as to wet, coat, or saturate.",
+        "source": "oewn-2025",
+        "evidence": "reviewed-profile"
+      },
+      "RAIN": {
+        "definition": "water falling in drops from vapor condensed in the atmosphere",
+        "lemma": "rain",
+        "senseId": "oewn-rain__1.19.00..",
+        "partsOfSpeech": [
+          "noun",
+          "verb"
+        ],
+        "relation": "opposite",
+        "reason": "Counters arid through rain: water falling in drops from vapor condensed in the atmosphere.",
+        "source": "oewn-2025",
+        "evidence": "reviewed-profile"
+      },
+      "MIRED": {
+        "definition": "soil with mud, muck, or mire",
+        "lemma": "mire",
+        "senseId": "oewn-mire__2.35.00..",
+        "partsOfSpeech": [
+          "verb",
+          "adjective"
+        ],
+        "relation": "opposite",
+        "reason": "Counters arid through mud: water soaked soil; soft wet earth.",
+        "source": "oewn-2025",
+        "evidence": "lexical-expansion"
+      },
+      "MUDDIER": {
+        "definition": "(of soil) soft and watery",
+        "lemma": "muddy",
+        "senseId": "oewn-muddy__5.00.00.wet.01",
+        "partsOfSpeech": [
+          "adjective"
+        ],
+        "relation": "opposite",
+        "reason": "Counters arid through mud: water soaked soil; soft wet earth.",
+        "source": "oewn-2025",
+        "evidence": "lexical-expansion"
+      },
+      "GRID": {
+        "definition": "a pattern of regularly spaced horizontal and vertical lines",
+        "lemma": "grid",
+        "senseId": "oewn-grid__1.09.00..",
+        "partsOfSpeech": [
+          "noun"
+        ],
+        "relation": "unrelated",
+        "reason": "No counter or reinforcing sense in this source-pinned beta profile; full contextual certification remains outstanding.",
+        "source": "oewn-2025",
+        "evidence": "defined-neutral"
+      },
+      "IRRIGATED": {
+        "definition": "supply with water, as with channels or ditches or streams",
+        "lemma": "irrigate",
+        "senseId": "oewn-irrigate__2.30.00..",
+        "partsOfSpeech": [
+          "verb"
+        ],
+        "relation": "opposite",
+        "reason": "Counters arid through irrigate: supply with water, as with channels or ditches or streams.",
+        "source": "oewn-2025",
+        "evidence": "reviewed-profile"
+      },
+      "ARID": {
+        "definition": "lacking sufficient water or rainfall",
+        "lemma": "arid",
+        "senseId": "oewn-arid__5.00.00.dry.01",
+        "partsOfSpeech": [
+          "adjective"
+        ],
+        "relation": "similar",
+        "reason": "Reinforces arid through arid: lacking sufficient water or rainfall.",
+        "source": "oewn-2025",
+        "evidence": "reviewed-profile"
+      },
+      "DRY": {
+        "definition": "free from liquid or moisture; lacking natural or normal moisture or depleted of water; or no longer wet",
+        "lemma": "dry",
+        "senseId": "oewn-dry__3.00.01..",
+        "partsOfSpeech": [
+          "noun",
+          "verb",
+          "adjective"
+        ],
+        "relation": "similar",
+        "reason": "Reinforces arid through dry: free from liquid or moisture; lacking natural or normal moisture or depleted of water; or no longer wet.",
+        "source": "oewn-2025",
+        "evidence": "reviewed-profile"
+      },
+      "AIR": {
+        "definition": "expose to warm or heated air, so as to dry",
+        "lemma": "air",
+        "senseId": "oewn-air__2.30.01..",
+        "partsOfSpeech": [
+          "noun",
+          "verb"
+        ],
+        "relation": "similar",
+        "reason": "Reinforces arid through air: expose to warm or heated air, so as to dry.",
+        "source": "oewn-2025",
+        "evidence": "reviewed-profile"
+      },
+      "DUST": {
+        "definition": "fine powdery material such as dry earth or pollen that can be blown about in the air",
+        "lemma": "dust",
+        "senseId": "oewn-dust__1.27.00..",
+        "partsOfSpeech": [
+          "noun",
+          "verb"
+        ],
+        "relation": "similar",
+        "reason": "Reinforces arid through dust: fine powdery material such as dry earth or pollen that can be blown about in the air.",
+        "source": "oewn-2025",
+        "evidence": "reviewed-profile"
+      }
+    }
+  }
+}

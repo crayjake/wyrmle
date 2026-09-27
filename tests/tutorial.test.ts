@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import { readFileSync } from 'node:fs'
 import test from 'node:test'
 import { createLetterStrikeGame, previewLetterStrike, submitLetterStrike } from '../src/game/letterStrike.ts'
 import {
@@ -7,6 +8,8 @@ import {
 } from '../src/tutorial/tutorial.ts'
 import type { TutorialState } from '../src/tutorial/tutorial.ts'
 import { crossedTileIds } from '../src/components/tileSelectionGesture.ts'
+import { archivedPuzzles, decodeScheduledPuzzle } from '../src/daily/scheduledPuzzle.ts'
+import { winStars } from '../src/game/rating.ts'
 
 function selectGuidedWord(state: TutorialState) {
   const move = getTutorialMove(state)
@@ -18,12 +21,10 @@ function selectGuidedWord(state: TutorialState) {
   assert.equal(previewLetterStrike(state.game).word, move.word)
   return state
 }
-
 function advance(state: TutorialState) {
   assert.equal(canContinueInTutorial(state), true)
   return tutorialReducer(state, { type: 'continue' })
 }
-
 function attack(state: TutorialState) {
   assert.equal(canAttackInTutorial(state), true)
   const actual = submitLetterStrike(state.game)
@@ -32,31 +33,39 @@ function attack(state: TutorialState) {
   return next
 }
 
-test('a fast guided swipe validates GLAD in order and never plays it automatically', () => {
-  const state = createTutorial('counter')
-  const move = getTutorialMove(state)!
-  const bounds = state.game.tiles.map((tile, index) => ({
-    id: tile.id, left: index % 4 * 50, right: index % 4 * 50 + 44,
+test('the tutorial uses the actual archived ARID board, armour, refills and pinned meanings', () => {
+  const entry = archivedPuzzles.find(p => p.enemy === 'ARID')!
+  const original = decodeScheduledPuzzle(JSON.parse(readFileSync(`public/${entry.asset}`, 'utf8')), entry)
+  for (const field of ['startingTiles', 'enemyLetters', 'refillQueue', 'finiteRefills'] as const) {
+    assert.deepEqual(tutorialEncounter[field], original[field], field)
+  }
+  for (const [word, meaning] of Object.entries(tutorialEncounter.meaningLexicon!.words)) {
+    assert.deepEqual(meaning, original.meaningLexicon!.words[word])
+  }
+})
+
+test('a fast guided swipe validates WATER in order without automatically submitting it', () => {
+  const state = createTutorial('water'), move = getTutorialMove(state)!
+  const bounds = state.game.tiles.map((tile, index) => ({ id: tile.id,
+    left: index % 4 * 50, right: index % 4 * 50 + 44,
     top: Math.floor(index / 4) * 50, bottom: Math.floor(index / 4) * 50 + 44,
   }))
   const centers = move.tileIds.map(id => {
     const tile = bounds.find(tile => tile.id === id)!
     return { x: (tile.left + tile.right) / 2, y: (tile.top + tile.bottom) / 2 }
   })
-  // All pointer samples can arrive before one React render. Crossed unrelated
-  // tiles and duplicate samples remain subject to the next-letter restriction.
   const crossed = centers.slice(1).flatMap((point, index) => crossedTileIds(centers[index], point, bounds))
   const selected = tutorialReducer(state, { type: 'select-many', tileIds: crossed })
   assert.deepEqual(selected.game.selectedTileIds, move.tileIds)
-  assert.equal(previewLetterStrike(selected.game).word, 'GLAD')
-  assert.equal(selected.step, 'counter')
+  assert.equal(previewLetterStrike(selected.game).word, 'WATER')
+  assert.equal(selected.step, 'water')
   assert.equal(selected.game.playedWords.length, 0)
   assert.equal(canAttackInTutorial(selected), true)
   assert.deepEqual(tutorialReducer(selected, { type: 'select-many', tileIds: crossed }), selected)
 })
 
 test('guided swipes reject wrong or premature tiles and can append to tapped letters', () => {
-  let state = createTutorial('counter')
+  let state = createTutorial('water')
   const move = getTutorialMove(state)!
   const wrong = state.game.tiles.find(tile => !move.tileIds.includes(tile.id))!.id
   state = tutorialReducer(state, { type: 'select-many', tileIds: [wrong, move.tileIds[3], move.tileIds[0], move.tileIds[2]] })
@@ -64,65 +73,55 @@ test('guided swipes reject wrong or premature tiles and can append to tapped let
   state = tutorialReducer(state, { type: 'select', tileId: move.tileIds[1] })
   state = tutorialReducer(state, { type: 'select-many', tileIds: [move.tileIds[0], ...move.tileIds.slice(2)] })
   assert.deepEqual(state.game.selectedTileIds, move.tileIds)
-  state = tutorialReducer(state, { type: 'attack' })
-  assert.equal(state.step, 'neutral')
-  const sun = getTutorialMove(state)!
-  state = tutorialReducer(state, { type: 'select', tileId: sun.tileIds[0] })
-  state = tutorialReducer(state, { type: 'select-many', tileIds: sun.tileIds })
-  assert.equal(previewLetterStrike(state.game).word, 'SUN')
-  assert.deepEqual(state.game.selectedTileIds, sun.tileIds)
-  assert.equal(state.step, 'neutral')
-  assert.equal(state.game.status, 'playing')
+  state = attack(state)
+  assert.equal(state.step, 'spring')
+  const spring = getTutorialMove(state)!
+  state = tutorialReducer(state, { type: 'select', tileId: spring.tileIds[0] })
+  state = tutorialReducer(state, { type: 'select-many', tileIds: spring.tileIds })
+  assert.equal(previewLetterStrike(state.game).word, 'SPRING')
   assert.equal(state.game.playedWords.length, 1)
   assert.equal(canAttackInTutorial(state), true)
 })
 
-test('the core demo needs just GLAD and SUN plays after its briefing, with no intermediate Continue', () => {
-  const initial = createTutorial()
-  assert.equal(initial.step, 'goal')
-  assert.deepEqual(initial.game.enemyLetters.map(letter => letter.hitsRemaining), [1, 1, 1])
-  assert.equal(initial.game.playerResolve, 3)
-  assert.equal(initial.game.tiles.every(tile => tile.type === 'normal'), true)
-  assert.equal(initial.game.encounter.grammarModifiers, undefined)
-  assert.equal(tutorialReducer(initial, { type: 'attack' }), initial)
-  let state = advance(initial)
-  assert.equal(state.step, 'counter')
-  assert.equal(tutorialReducer(state, { type: 'continue' }), state)
-  state = selectGuidedWord(state)
-  const preview = previewLetterStrike(state.game)
-  assert.equal(preview.semanticLabel, 'COUNTER')
-  assert.equal(preview.strikes, 2)
-  assert.deepEqual(preview.hits.map(hit => hit.letter), ['A', 'D'])
-  assert.equal(preview.resolveCost, 1)
-  state = attack(state)
-  assert.equal(state.step, 'neutral')
-  assert.equal(state.game.playerResolve, 2)
-  assert.deepEqual(state.game.enemyLetters.map(letter => letter.hitsRemaining), [1, 0, 0])
-  assert.equal(state.game.refillIndex, 4)
-  assert.deepEqual(state.game.selectedTileIds, [])
-  state = selectGuidedWord(state)
-  assert.equal(previewLetterStrike(state.game).semanticLabel, 'NEUTRAL')
-  assert.deepEqual(previewLetterStrike(state.game).hits.map(hit => hit.letter), ['S'])
-  state = attack(state)
+test('three real wins progress through three, two and one lives on exactly the same starting board', () => {
+  let state = createTutorial()
+  assert.equal(tutorialReducer(state, { type: 'attack' }), state)
+  state = advance(state)
+  for (const [index, words] of [['WATER', 'SPRING', 'DIP'], ['RAIN', 'MUDDIER'], ['IRRIGATED']].entries()) {
+    const lives = 3 - index
+    assert.equal(state.game.playerResolve, lives)
+    assert.deepEqual(state.game.tiles, tutorialEncounter.startingTiles)
+    assert.equal(state.game.refillIndex, 0)
+    assert.deepEqual(state.game.enemyLetters.map(l => l.hitsRemaining), [1, 2, 2, 1])
+    for (const word of words) {
+      assert.equal(tutorialReducer(state, { type: 'continue' }), state)
+      assert.equal(getTutorialMove(state)?.word, word)
+      state = selectGuidedWord(state)
+      assert.equal(previewLetterStrike(state.game).semanticLabel, 'COUNTER')
+      state = attack(state)
+    }
+    assert.equal(state.game.status, 'won')
+    assert.equal(state.game.playerResolve, 0)
+    assert.equal(winStars(state.game.playedWords.length), index + 1)
+    assert.deepEqual(state.game.playedWords.map(m => m.word), words)
+    if (lives > 1) state = advance(state)
+  }
   assert.equal(state.step, 'complete')
-  assert.equal(state.game.status, 'won')
-  assert.equal(state.game.playerResolve, 1)
-  assert.deepEqual(state.game.playedWords.map(move => move.word), ['GLAD', 'SUN'])
   assert.deepEqual(createTutorial('complete'), state)
 })
 
-test('the script only enables the next letter, supports real deselection/Clear, and never submits an unrelated word', () => {
-  let state = createTutorial('counter')
+test('guidance supports real deselection and Clear, without spending lives or submitting an unrelated word', () => {
+  let state = createTutorial('water')
   const move = getTutorialMove(state)!
   assert.deepEqual(getAllowedTutorialTileIds(state), [move.tileIds[0]])
   assert.equal(tutorialReducer(state, { type: 'select', tileId: move.tileIds[1] }), state)
   state = tutorialReducer(state, { type: 'select', tileId: move.tileIds[0] })
-  assert.deepEqual(state.game.selectedTileIds, [move.tileIds[0]])
   state = tutorialReducer(state, { type: 'select', tileId: move.tileIds[0] })
   assert.deepEqual(state.game.selectedTileIds, [])
   state = selectGuidedWord(state)
   state = tutorialReducer(state, { type: 'select', tileId: move.tileIds[1] })
-  assert.deepEqual(state.game.selectedTileIds, [move.tileIds[0], move.tileIds[2], move.tileIds[3]])
+  assert.deepEqual(state.game.selectedTileIds, move.tileIds.filter((_, i) => i !== 1))
+  assert.equal(canAttackInTutorial(state), false)
   assert.equal(canContinueInTutorial(state), false)
   state = tutorialReducer(state, { type: 'clear' })
   assert.deepEqual(state.game.selectedTileIds, [])
@@ -130,81 +129,43 @@ test('the script only enables the next letter, supports real deselection/Clear, 
   assert.equal(state.game.playerResolve, 3)
 })
 
-test('optional armour example shows its two real hits without an intervening Continue', () => {
-  let state = selectGuidedWord(createTutorial('armour'))
-  assert.equal(state.game.enemyLetters[0].hitsRemaining, 2)
-  assert.equal(state.game.playedWords.length, 0)
-  let preview = previewLetterStrike(state.game)
-  assert.equal(preview.strikes, 1)
-  assert.deepEqual(preview.hits.map(hit => [hit.letter, hit.hitsBefore, hit.hitsAfter]), [['S', 2, 1]])
-  state = attack(state)
-  assert.equal(state.step, 'armour-finish')
-  assert.equal(state.game.enemyLetters[0].hitsRemaining, 1)
-  state = selectGuidedWord(state)
-  preview = previewLetterStrike(state.game)
-  assert.deepEqual(preview.hits.map(hit => [hit.letter, hit.hitsBefore, hit.hitsAfter]), [['S', 1, 0]])
-  state = attack(state)
-  assert.equal(state.step, 'armour-complete')
-  assert.equal(state.game.enemyLetters[0].hitsRemaining, 0)
-})
-
-test('resisted words cost a life and never hit, even with every enemy letter', () => {
-  let state = selectGuidedWord(createTutorial('resisted'))
-  const preview = previewLetterStrike(state.game)
-  assert.equal(preview.semanticLabel, 'RESISTED')
-  assert.equal(preview.strikes, 0)
-  assert.equal(preview.resolveCost, 1)
-  assert.deepEqual(preview.effectLabels, [])
-  state = attack(state)
-  assert.equal(state.step, 'resisted-result')
-  assert.equal(state.game.playerResolve, 2)
-  assert.deepEqual(state.game.enemyLetters.map(letter => letter.hitsRemaining), [1, 1, 1])
-})
-
-test('the bingo lesson wins in one counter using repeated letters to break armour', () => {
-  let state = selectGuidedWord(createTutorial('bingo'))
-  const preview = previewLetterStrike(state.game)
-  assert.equal(preview.word, 'GLADDENS')
-  assert.equal(preview.semanticLabel, 'COUNTER')
-  assert.deepEqual(preview.hits.map(hit => hit.letter), ['A', 'D', 'D', 'S'])
-  state = attack(state)
-  assert.equal(state.step, 'bingo-result')
-  assert.equal(state.game.status, 'won')
-  assert.equal(state.game.playedWords.length, 1)
-  assert.equal(state.game.playerResolve, 2)
-})
-
-test('every optional and DEV jump uses isolated real-engine state and leaves Daily untouched', () => {
-  const daily = createLetterStrikeGame()
-  const beforeDaily = structuredClone(daily)
-  const beforeFixtures = structuredClone(tutorialFixtures)
-  for (const encounter of Object.values(tutorialFixtures)) {
-    assert.ok(encounter.startingTiles.every(tile => tile.type === 'normal' && !tile.gem))
-    assert.equal(encounter.finiteRefills, true)
-    assert.equal(encounter.longWordRule, undefined)
-    assert.equal(encounter.grammarModifiers, undefined)
+test('optional neutral and similar examples demonstrate one hit and no hits, then reset practice', () => {
+  for (const step of ['neutral', 'resisted'] as const) {
+    const selected = selectGuidedWord(createTutorial(step))
+    const preview = previewLetterStrike(selected.game)
+    assert.equal(preview.semanticLabel, step === 'neutral' ? 'NEUTRAL' : 'RESISTED')
+    assert.equal(preview.strikes, step === 'neutral' ? 1 : 0)
+    const state = attack(selected)
+    assert.equal(state.game.playerResolve, 2)
+    assert.deepEqual(state.game.enemyLetters.map(l => l.hitsRemaining), step === 'neutral' ? [1, 1, 2, 1] : [1, 2, 2, 1])
+    assert.equal(advance(state).step, 'goal')
+    assert.equal(advance(state).game.playerResolve, 3)
   }
+})
+
+test('the bingo uses repeated Rs and Is to break armour with one life', () => {
+  const selected = selectGuidedWord(createTutorial('bingo'))
+  const preview = previewLetterStrike(selected.game)
+  assert.equal(preview.word, 'IRRIGATED')
+  assert.equal(preview.semanticLabel, 'COUNTER')
+  assert.deepEqual(preview.hits.map(hit => hit.letter), ['I', 'R', 'R', 'I', 'A', 'D'])
+  assert.equal(attack(selected).game.status, 'won')
+})
+
+test('every practice jump replays the actual engine, without mutating fixtures or Daily', () => {
+  const daily = createLetterStrikeGame(), beforeDaily = structuredClone(daily)
+  const beforeFixtures = structuredClone(tutorialFixtures)
   for (const { id } of tutorialSteps) {
-    let state = createTutorial(id)
+    const state = createTutorial(id)
     assert.equal(state.step, id)
+    assert.ok(state.game.tiles.every(t => t.type === 'normal' && !t.gem))
     let replay = createLetterStrikeGame(state.game.encounter)
-    for (const move of state.game.playedWords) {
-      replay = submitLetterStrike({ ...replay, selectedTileIds: move.tiles.map(tile => tile.id) })
-    }
+    for (const move of state.game.playedWords) replay = submitLetterStrike(replay, move.tiles.map(t => t.id))
     assert.deepEqual(state.game, { ...replay, selectedTileIds: state.game.selectedTileIds })
-    let transitions = 0
-    while (state.step !== 'complete') {
-      const move = getTutorialMove(state)
-      if (move) state = selectGuidedWord(state)
-      state = move?.action === 'attack' ? attack(state) : advance(state)
-      assert.ok(++transitions <= 4, `${id} should be a short independent example`)
-    }
   }
   assert.deepEqual(daily, beforeDaily)
   assert.deepEqual(tutorialFixtures, beforeFixtures)
-  assert.equal(createTutorial().game.encounter.id, tutorialEncounter.id)
-  assert.equal(createTutorial().game.playedWords.length, 0)
-  const replayed = tutorialReducer(createTutorial('complete'), { type: 'jump', step: 'counter' })
+  const replayed = tutorialReducer(createTutorial('complete'), { type: 'jump', step: 'water' })
   assert.equal(replayed.game.playedWords.length, 0)
   assert.equal(replayed.game.playerResolve, 3)
 })

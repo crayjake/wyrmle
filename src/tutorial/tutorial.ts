@@ -4,48 +4,30 @@ import {
 } from '../game/letterStrike.ts'
 import type { LetterStrikeEncounter, LetterStrikeState } from '../game/letterStrike.ts'
 
-// Each lesson uses the real rules and a finite supply. Daily saves are untouched.
-function encounter(id: string, board: string, options: {
-  armour?: number[]; opposite?: string[]; similar?: string[]; refill?: string
-} = {}): LetterStrikeEncounter {
-  if (board.length !== 16) throw new Error(`Tutorial board ${id} needs 16 letters.`)
-  return {
-    id: `tutorial-${id}`,
-    enemy: { word: 'SAD', definition: 'feeling unhappy', partOfSpeech: 'adjective',
-      semanticRelations: { opposite: options.opposite ?? [], similar: options.similar ?? [], related: [] } },
-    enemyLetters: [...'SAD'].map((letter, index) => ({
-      id: `${id}-enemy-${index}`, letter,
-      hitsRemaining: options.armour?.includes(index) ? 2 : 1,
-      initialHits: options.armour?.includes(index) ? 2 : 1,
-    })),
-    startingResolve: 3,
-    startingTiles: [...board].map((letter, id) => ({ id, letter, type: 'normal' })),
-    refillQueue: options.refill ?? 'SUNGLAD', finiteRefills: true,
-    minimumWordLength: 3,
-    tileEffects: { strike: { strike: false, preventResolveLoss: false }, ward: { strike: false, preventResolveLoss: false } },
-  }
-}
+import arid from './arid.json' with { type: 'json' }
 
-export const tutorialEncounter = encounter('sad-basics', 'GSUNOLERTAHIMPCD', { opposite: ['GLAD'] })
-export const tutorialFixtures = {
-  basic: tutorialEncounter,
-  armour: encounter('armour', 'SUNACTDIGOEPRLXY', { armour: [0], refill: 'SUN' }),
-  resisted: encounter('resisted', 'SADXLUNERTIOGPMC', { similar: ['SAD'] }),
-  bingo: encounter('bingo', 'GLADDENSCOURITMP', { armour: [2], opposite: ['GLADDENS'] }),
-} satisfies Record<string, LetterStrikeEncounter>
-
+// The archived ARID board, armour and finite refills, with only lesson words
+// retained in its frozen lexicon. Every action still runs through the real game.
+export const tutorialEncounter = arid as unknown as LetterStrikeEncounter
+const attempt = (lives: number): LetterStrikeEncounter => ({
+  ...tutorialEncounter, id: `tutorial-arid-${lives}`, startingResolve: lives,
+})
+export const tutorialFixtures = { basic: attempt(3), two: attempt(2), bingo: attempt(1) }
 export const tutorialSteps = [
-  { id: 'goal', label: 'Brief introduction' },
-  { id: 'counter', label: 'Demo · GLAD' },
-  { id: 'neutral', label: 'Demo · SUN' },
-  { id: 'complete', label: 'Ready to play' },
-  { id: 'armour', label: 'Optional · Armour' },
-  { id: 'armour-finish', label: 'Armour · second hit' },
-  { id: 'armour-complete', label: 'Armour · result' },
-  { id: 'resisted', label: 'Optional · Resistance' },
-  { id: 'resisted-result', label: 'Resistance · result' },
-  { id: 'bingo', label: 'Optional · Bingo' },
-  { id: 'bingo-result', label: 'Bingo · result' },
+  { id: 'goal', label: 'Introduction' },
+  { id: 'water', label: '3 lives · WATER' },
+  { id: 'spring', label: '3 lives · SPRING' },
+  { id: 'dip', label: '3 lives · DIP' },
+  { id: 'three-won', label: 'One star' },
+  { id: 'rain', label: '2 lives · RAIN' },
+  { id: 'muddier', label: '2 lives · MUDDIER' },
+  { id: 'two-won', label: 'Two stars' },
+  { id: 'bingo', label: '1 life · IRRIGATED' },
+  { id: 'complete', label: 'Bingo · three stars' },
+  { id: 'neutral', label: 'Optional · Neutral' },
+  { id: 'neutral-result', label: 'Neutral · result' },
+  { id: 'resisted', label: 'Optional · Similar' },
+  { id: 'resisted-result', label: 'Similar · result' },
 ] as const
 export type TutorialStep = typeof tutorialSteps[number]['id']
 export type TutorialState = { step: TutorialStep; game: LetterStrikeState }
@@ -54,29 +36,25 @@ export type TutorialAction = { type: 'continue' } | { type: 'select'; tileId: nu
   | { type: 'clear' } | { type: 'attack' } | { type: 'jump'; step: TutorialStep }
 
 export const tutorialExamples = [
-  { step: 'armour', label: 'Armour', description: 'A double border takes two hits.' },
-  { step: 'resisted', label: 'Resistance', description: 'Similar meaning uses a life but hits nothing.' },
-  { step: 'bingo', label: 'Bingo', description: 'One counter can remove the whole enemy.' },
+  { step: 'neutral', label: 'Neutral words', description: 'A neutral word hits only its first matching letter.' },
+  { step: 'resisted', label: 'Similar words', description: 'Similar concepts use a life but hit nothing.' },
 ] as const satisfies readonly { step: TutorialStep; label: string; description: string }[]
 
 const routes: readonly (readonly TutorialStep[])[] = [
-  ['goal', 'counter', 'neutral', 'complete'],
-  ['armour', 'armour-finish', 'armour-complete'],
-  ['resisted', 'resisted-result'],
-  ['bingo', 'bingo-result'],
+  ['goal', 'water', 'spring', 'dip', 'three-won', 'rain', 'muddier', 'two-won', 'bingo', 'complete'],
+  ['neutral', 'neutral-result', 'goal'],
+  ['resisted', 'resisted-result', 'goal'],
 ]
 type GuidedMove = { word: string; action: 'attack' }
-const moves: Partial<Record<TutorialStep, GuidedMove>> = {
-  counter: { word: 'GLAD', action: 'attack' },
-  neutral: { word: 'SUN', action: 'attack' },
-  armour: { word: 'SUN', action: 'attack' },
-  'armour-finish': { word: 'SUN', action: 'attack' },
-  resisted: { word: 'SAD', action: 'attack' },
-  bingo: { word: 'GLADDENS', action: 'attack' },
-}
+const moves: Partial<Record<TutorialStep, GuidedMove>> = Object.fromEntries(
+  [['water', 'WATER'], ['spring', 'SPRING'], ['dip', 'DIP'], ['rain', 'RAIN'],
+    ['muddier', 'MUDDIER'], ['bingo', 'IRRIGATED'], ['neutral', 'GRID'], ['resisted', 'DRY']]
+    .map(([step, word]) => [step, { word, action: 'attack' as const }]),
+)
 function enterStep(state: TutorialState, step: TutorialStep): TutorialState {
-  const fixture = step === 'armour' || step === 'resisted' || step === 'bingo' ? tutorialFixtures[step] : undefined
-  return { step, game: fixture ? createLetterStrikeGame(fixture) : state.game }
+  const lives = step === 'rain' ? 2 : step === 'bingo' ? 1
+    : ['goal', 'neutral', 'resisted'].includes(step) ? 3 : null
+  return { step, game: lives === null ? state.game : createLetterStrikeGame(attempt(lives)) }
 }
 export function getTutorialMove(state: TutorialState) {
   const move = moves[state.step]
@@ -135,7 +113,7 @@ export function tutorialReducer(state: TutorialState, action: TutorialAction): T
   if (action.type === 'attack' && !canAttackInTutorial(state)) return state
   if (state.step === 'complete') return state
   const route = routes.find(route => route.includes(state.step))!
-  const next = route[route.indexOf(state.step) + 1] ?? 'complete'
+  const next = route[route.indexOf(state.step) + 1] ?? 'goal'
   const game = action.type === 'attack' ? submitLetterStrike(state.game) : state.game
   return enterStep({ ...state, game }, next)
 }
