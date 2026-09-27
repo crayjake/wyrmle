@@ -17,7 +17,7 @@ test('a month of distinct bingo-first dailies has replayed one-, two- and three-
     const data = JSON.parse(readFileSync(`public/${entry.asset}`, 'utf8'))
     const digest = createHash('sha256').update(JSON.stringify(data)).digest('hex').slice(0, 12)
     assert.ok(entry.asset.endsWith(`-${digest}.json`), 'Asset must be immutable and content addressed')
-    const report = JSON.parse(readFileSync(`artifacts/daily-month-${dailySchedule[0].date}/${entry.id}.json`, 'utf8'))
+    const report = JSON.parse(readFileSync(entry.report ?? `artifacts/daily-month-${dailySchedule[0].date}/${entry.id}.json`, 'utf8'))
     assert.equal(report.accepted, true)
     assert.equal(report.asset, entry.asset)
     assert.ok(!answers.has(report.answer)); answers.add(report.answer)

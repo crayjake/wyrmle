@@ -1,0 +1,1162 @@
+{
+  "id": "sad-satisfied",
+  "enemy": "SAD",
+  "answer": "SATISFIED",
+  "accepted": true,
+  "seed": "bingo-first-3:SAD:SATISFIED:12",
+  "score": 428,
+  "analysis": {
+    "score": 428,
+    "bingos": [
+      "SATISFIED"
+    ],
+    "counterFamilies": 9,
+    "resistedFamilies": 4,
+    "winningOpenings": 12,
+    "repeatedCounterRoutes": 11,
+    "sustainedPositions": 11,
+    "sustainedFinalPositions": 6,
+    "neutralCleanupOpenings": 1,
+    "routes": [
+      {
+        "opening": "GAY",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SMILE",
+            "SMILING",
+            "DELIGHT",
+            "RELISH",
+            "GRINS"
+          ],
+          "resisted": [
+            "GRIEF",
+            "GRIM"
+          ],
+          "neutral": 692
+        },
+        "thirdTurn": {
+          "counters": [
+            "GLAD"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "GAY",
+            "SMILES",
+            "GLAD"
+          ],
+          "tileIds": [
+            [
+              5,
+              7,
+              10
+            ],
+            [
+              2,
+              11,
+              3,
+              8,
+              6,
+              13
+            ],
+            [
+              18,
+              16,
+              20,
+              15
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "GLAD",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "SMILE",
+            "SMILING",
+            "RELISH",
+            "GRINS"
+          ],
+          "resisted": [
+            "GRIEF",
+            "GRIM"
+          ],
+          "neutral": 554
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "GLAD",
+            "SMILES"
+          ],
+          "tileIds": [
+            [
+              5,
+              8,
+              7,
+              15
+            ],
+            [
+              2,
+              11,
+              3,
+              16,
+              6,
+              13
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "SMILE",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "GAY",
+            "GLAD",
+            "GAG",
+            "GRINS"
+          ],
+          "resisted": [
+            "SAD",
+            "SADLY"
+          ],
+          "neutral": 514
+        },
+        "thirdTurn": {
+          "counters": [
+            "JOYS",
+            "GAGS",
+            "GRINS"
+          ],
+          "resisted": [
+            "SAD",
+            "CRY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SMILE",
+            "GLAD",
+            "JOYS"
+          ],
+          "tileIds": [
+            [
+              2,
+              11,
+              3,
+              8,
+              6
+            ],
+            [
+              5,
+              16,
+              7,
+              15
+            ],
+            [
+              22,
+              24,
+              10,
+              13
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SMILING",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "GAY",
+            "GLAD",
+            "GAG",
+            "JEST"
+          ],
+          "resisted": [
+            "SAD",
+            "SADLY"
+          ],
+          "neutral": 488
+        },
+        "thirdTurn": {
+          "counters": [
+            "CHEERS",
+            "JOYS",
+            "JEST",
+            "GAYEST"
+          ],
+          "resisted": [
+            "SAD",
+            "CRY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SMILING",
+            "GLAD",
+            "CHEERS"
+          ],
+          "tileIds": [
+            [
+              2,
+              11,
+              3,
+              8,
+              4,
+              14,
+              5
+            ],
+            [
+              18,
+              16,
+              7,
+              15
+            ],
+            [
+              23,
+              1,
+              6,
+              25,
+              9,
+              13
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SATISFY",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "GLAD",
+            "DELIGHT"
+          ],
+          "resisted": [
+            "GRIM"
+          ],
+          "neutral": 610
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SATISFY",
+            "GLAD"
+          ],
+          "tileIds": [
+            [
+              2,
+              7,
+              12,
+              3,
+              13,
+              0,
+              10
+            ],
+            [
+              5,
+              8,
+              20,
+              15
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "DELIGHT",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "GAY",
+            "GLAD",
+            "SATISFY",
+            "GAG",
+            "GRINS"
+          ],
+          "resisted": [
+            "SAD",
+            "SADLY",
+            "GRIM",
+            "DISMAL"
+          ],
+          "neutral": 557
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DELIGHT",
+            "SATISFY"
+          ],
+          "tileIds": [
+            [
+              15,
+              6,
+              8,
+              3,
+              5,
+              1,
+              12
+            ],
+            [
+              2,
+              7,
+              17,
+              4,
+              13,
+              0,
+              10
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "RELISH",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "GAY",
+            "GLAD",
+            "GAG"
+          ],
+          "resisted": [
+            "SAD",
+            "SADLY",
+            "DISMAL"
+          ],
+          "neutral": 330
+        },
+        "thirdTurn": {
+          "counters": [
+            "ENJOYS",
+            "JOYS",
+            "GAGS",
+            "JEST",
+            "GAYEST"
+          ],
+          "resisted": [
+            "SAD"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RELISH",
+            "GLAD",
+            "ENJOYS"
+          ],
+          "tileIds": [
+            [
+              9,
+              6,
+              8,
+              3,
+              2,
+              1
+            ],
+            [
+              5,
+              16,
+              7,
+              15
+            ],
+            [
+              25,
+              14,
+              22,
+              24,
+              10,
+              13
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "GRINS",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "GAY",
+            "GLAD",
+            "SMILE",
+            "DELIGHT",
+            "GAG"
+          ],
+          "resisted": [
+            "SAD",
+            "SADLY",
+            "DISMAL"
+          ],
+          "neutral": 657
+        },
+        "thirdTurn": {
+          "counters": [
+            "SMILE",
+            "JOYS",
+            "DELIGHTS",
+            "SOLACE",
+            "JEST",
+            "GAYEST"
+          ],
+          "resisted": [
+            "SAD",
+            "SADLY",
+            "DISMAL"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "GRINS",
+            "GLAD",
+            "SMILE"
+          ],
+          "tileIds": [
+            [
+              5,
+              9,
+              3,
+              14,
+              2
+            ],
+            [
+              18,
+              8,
+              7,
+              15
+            ],
+            [
+              13,
+              11,
+              4,
+              16,
+              6
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "HILARITY",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "GLAD",
+            "GAGS",
+            "JEST"
+          ],
+          "resisted": [
+            "SAD"
+          ],
+          "neutral": 421
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "SADLY",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "SMILE",
+            "SMILING",
+            "GAG",
+            "RELISH",
+            "GRINS"
+          ],
+          "resisted": [
+            "GRIEF",
+            "GRIM"
+          ],
+          "neutral": 1035
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "GRIEF",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "GAY",
+            "GLAD",
+            "GAG"
+          ],
+          "resisted": [
+            "SAD",
+            "SADLY",
+            "DISMAL"
+          ],
+          "neutral": 436
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "GRIM",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "GAY",
+            "GLAD",
+            "SATISFY",
+            "DELIGHT",
+            "GAG"
+          ],
+          "resisted": [
+            "SAD",
+            "SADLY"
+          ],
+          "neutral": 862
+        },
+        "thirdTurn": {
+          "counters": [
+            "GLAD",
+            "ENJOYED",
+            "ELATED"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "GRIM",
+            "SATISFY",
+            "GLAD"
+          ],
+          "tileIds": [
+            [
+              5,
+              9,
+              3,
+              11
+            ],
+            [
+              2,
+              7,
+              12,
+              4,
+              13,
+              0,
+              10
+            ],
+            [
+              18,
+              8,
+              20,
+              15
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "DISMAL",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "GAY",
+            "GLAD",
+            "DELIGHT",
+            "GAG",
+            "RELISH",
+            "GRINS"
+          ],
+          "resisted": [
+            "SAD",
+            "SADLY",
+            "GRIEF"
+          ],
+          "neutral": 1225
+        },
+        "thirdTurn": {
+          "counters": [
+            "GAY",
+            "ENJOYS",
+            "GAG",
+            "JOYS",
+            "JEST"
+          ],
+          "resisted": [
+            "CRY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DISMAL",
+            "DELIGHTS",
+            "GAGS"
+          ],
+          "tileIds": [
+            [
+              15,
+              3,
+              2,
+              11,
+              7,
+              8
+            ],
+            [
+              21,
+              6,
+              16,
+              4,
+              5,
+              1,
+              12,
+              13
+            ],
+            [
+              18,
+              20,
+              19,
+              29
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "AGE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SMILING",
+            "GRINS"
+          ],
+          "resisted": [
+            "GRIM"
+          ],
+          "neutral": 284
+        },
+        "thirdTurn": {
+          "counters": [
+            "SATISFY",
+            "GAGS"
+          ],
+          "resisted": [
+            "SAD",
+            "SADLY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AGE",
+            "MIND",
+            "SATISFY"
+          ],
+          "tileIds": [
+            [
+              7,
+              5,
+              6
+            ],
+            [
+              11,
+              3,
+              14,
+              15
+            ],
+            [
+              2,
+              20,
+              12,
+              4,
+              13,
+              0,
+              10
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SMILE",
+            "DELIGHT"
+          ],
+          "resisted": [],
+          "neutral": 487
+        },
+        "thirdTurn": {
+          "counters": [
+            "GLAD"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AIR",
+            "SMILES",
+            "GLAD"
+          ],
+          "tileIds": [
+            [
+              7,
+              3,
+              9
+            ],
+            [
+              2,
+              11,
+              4,
+              8,
+              6,
+              13
+            ],
+            [
+              5,
+              16,
+              20,
+              15
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "DANGER",
+      "SATISFY"
+    ],
+    "tileIds": [
+      [
+        15,
+        7,
+        14,
+        5,
+        6,
+        9
+      ],
+      [
+        2,
+        20,
+        12,
+        3,
+        13,
+        0,
+        10
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      3
+    ]
+  },
+  "roots": [
+    {
+      "word": "SATISFY",
+      "senseId": "oewn-satisfy__2.37.00..",
+      "definition": "make happy or satisfied",
+      "relation": "opposite"
+    },
+    {
+      "word": "SATISFIED",
+      "senseId": "oewn-satisfied__5.00.00.contented.00",
+      "definition": "filled with satisfaction",
+      "relation": "opposite"
+    },
+    {
+      "word": "JOY",
+      "senseId": "oewn-joy__1.12.00..",
+      "definition": "the emotion of great happiness",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHEER",
+      "senseId": "oewn-cheer__2.32.03..",
+      "definition": "cause (somebody) to feel happier or more cheerful",
+      "relation": "opposite"
+    },
+    {
+      "word": "HAPPY",
+      "senseId": "oewn-happy__3.00.00..",
+      "definition": "enjoying or showing or marked by joy or pleasure",
+      "relation": "opposite"
+    },
+    {
+      "word": "SMILE",
+      "senseId": "oewn-smile__1.10.00..",
+      "definition": "a facial expression characterized by turning up the corners of the mouth; usually shows pleasure or amusement",
+      "relation": "opposite"
+    },
+    {
+      "word": "LAUGH",
+      "senseId": "oewn-laugh__1.10.01..",
+      "definition": "a humorous anecdote or remark intended to provoke laughter",
+      "relation": "opposite"
+    },
+    {
+      "word": "GRIN",
+      "senseId": "oewn-grin__1.10.00..",
+      "definition": "a facial expression characterized by turning up the corners of the mouth; usually shows pleasure or amusement",
+      "relation": "opposite"
+    },
+    {
+      "word": "GLEE",
+      "senseId": "oewn-glee__1.12.00..",
+      "definition": "great merriment",
+      "relation": "opposite"
+    },
+    {
+      "word": "GLAD",
+      "senseId": "oewn-glad__3.00.00..",
+      "definition": "showing or causing joy and pleasure; especially made happy",
+      "relation": "opposite"
+    },
+    {
+      "word": "MERRY",
+      "senseId": "oewn-merry__5.00.02.joyous.00",
+      "definition": "full of or showing high-spirited merriment",
+      "relation": "opposite"
+    },
+    {
+      "word": "DELIGHT",
+      "senseId": "oewn-delight__1.12.00..",
+      "definition": "a feeling of extreme pleasure or satisfaction",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMFORT",
+      "senseId": "oewn-comfort__2.37.01..",
+      "definition": "give moral or emotional strength to",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONSOLE",
+      "senseId": "oewn-console__2.37.00..",
+      "definition": "give moral or emotional strength to",
+      "relation": "opposite"
+    },
+    {
+      "word": "SOOTHE",
+      "senseId": "oewn-soothe__2.29.00..",
+      "definition": "cause to feel better",
+      "relation": "opposite"
+    },
+    {
+      "word": "BRIGHTEN",
+      "senseId": "oewn-brighten__2.30.01..",
+      "definition": "make more cheerful through the use of color",
+      "relation": "opposite"
+    },
+    {
+      "word": "ELATE",
+      "senseId": "oewn-elate__2.37.00..",
+      "definition": "fill with high spirits; fill with optimism",
+      "relation": "opposite"
+    },
+    {
+      "word": "JOLLY",
+      "senseId": "oewn-jolly__5.00.00.joyous.00",
+      "definition": "full of or showing high-spirited merriment",
+      "relation": "opposite"
+    },
+    {
+      "word": "JOVIAL",
+      "senseId": "oewn-jovial__5.00.00.joyous.00",
+      "definition": "full of or showing high-spirited merriment",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONTENT",
+      "senseId": "oewn-content__3.00.00..",
+      "definition": "satisfied or showing satisfaction with things as they are",
+      "relation": "opposite"
+    },
+    {
+      "word": "ENJOY",
+      "senseId": "oewn-enjoy__2.37.00..",
+      "definition": "derive or receive pleasure from; get enjoyment from; take pleasure in",
+      "relation": "opposite"
+    },
+    {
+      "word": "BLISS",
+      "senseId": "oewn-bliss__1.26.00..",
+      "definition": "a state of extreme happiness",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLEASURE",
+      "senseId": "oewn-pleasure__1.09.00..",
+      "definition": "something or someone that provides a source of happiness",
+      "relation": "opposite"
+    },
+    {
+      "word": "REJOICE",
+      "senseId": "oewn-rejoice__2.37.00..",
+      "definition": "feel happiness or joy",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHEERFUL",
+      "senseId": "oewn-cheerful__3.00.00..",
+      "definition": "being full of or promoting cheer; having or showing good spirits",
+      "relation": "opposite"
+    },
+    {
+      "word": "SAD",
+      "senseId": "oewn-sad__3.00.00..",
+      "definition": "experiencing or showing sorrow or unhappiness",
+      "relation": "similar"
+    },
+    {
+      "word": "UNHAPPY",
+      "senseId": "oewn-unhappy__3.00.00..",
+      "definition": "experiencing or marked by or causing sadness or sorrow or discontent",
+      "relation": "similar"
+    },
+    {
+      "word": "SORROW",
+      "senseId": "oewn-sorrow__1.09.00..",
+      "definition": "something that causes great unhappiness",
+      "relation": "similar"
+    },
+    {
+      "word": "GRIEF",
+      "senseId": "oewn-grief__1.12.00..",
+      "definition": "intense sorrow caused by loss of a loved one (especially by death)",
+      "relation": "similar"
+    },
+    {
+      "word": "MOURN",
+      "senseId": "oewn-mourn__2.37.00..",
+      "definition": "feel sadness",
+      "relation": "similar"
+    },
+    {
+      "word": "WEEP",
+      "senseId": "oewn-weep__2.29.00..",
+      "definition": "shed tears because of sadness, rage, or pain",
+      "relation": "similar"
+    },
+    {
+      "word": "CRY",
+      "senseId": "oewn-cry__2.29.00..",
+      "definition": "shed tears because of sadness, rage, or pain",
+      "relation": "similar"
+    },
+    {
+      "word": "SOB",
+      "senseId": "oewn-sob__2.29.00..",
+      "definition": "weep convulsively",
+      "relation": "similar"
+    },
+    {
+      "word": "WOE",
+      "senseId": "oewn-woe__1.26.00..",
+      "definition": "misery resulting from affliction",
+      "relation": "similar"
+    },
+    {
+      "word": "BLUE",
+      "senseId": "oewn-blue__5.00.00.depressing.00",
+      "definition": "causing dejection",
+      "relation": "similar"
+    },
+    {
+      "word": "DOWN",
+      "senseId": "oewn-down__5.00.00.dejected.00",
+      "definition": "filled with melancholy and despondency",
+      "relation": "similar"
+    },
+    {
+      "word": "GLUM",
+      "senseId": "oewn-glum__5.00.00.dejected.00",
+      "definition": "moody and melancholic",
+      "relation": "similar"
+    },
+    {
+      "word": "DISMAL",
+      "senseId": "oewn-dismal__5.00.00.depressing.00",
+      "definition": "causing dejection",
+      "relation": "similar"
+    },
+    {
+      "word": "GLOOM",
+      "senseId": "oewn-gloom__1.12.00..",
+      "definition": "a feeling of melancholy apprehension",
+      "relation": "similar"
+    },
+    {
+      "word": "MISERABLE",
+      "senseId": "oewn-miserable__5.00.00.unhappy.00",
+      "definition": "very unhappy; full of misery",
+      "relation": "similar"
+    },
+    {
+      "word": "MELANCHOLY",
+      "senseId": "oewn-melancholy__5.00.00.sad.00",
+      "definition": "characterized by or causing or expressing sadness",
+      "relation": "similar"
+    },
+    {
+      "word": "MOROSE",
+      "senseId": "oewn-morose__5.00.00.ill-natured.00",
+      "definition": "showing a brooding ill humor",
+      "relation": "similar"
+    },
+    {
+      "word": "DESPAIR",
+      "senseId": "oewn-despair__1.26.00..",
+      "definition": "a state in which all hope is lost or absent",
+      "relation": "similar"
+    },
+    {
+      "word": "DOLOR",
+      "senseId": "oewn-dolor__1.12.00..",
+      "definition": "(poetry) painful grief",
+      "relation": "similar"
+    }
+  ],
+  "semanticPolicy": "Pinned source senses and reviewed lexical families; unlabelled defined senses are neutral. Not a proof of exhaustive contextual semantic coverage.",
+  "asset": "puzzles/sad-satisfied-425ad7590030.json",
+  "novelty": []
+}

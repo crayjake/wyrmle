@@ -1,0 +1,730 @@
+{
+  "id": "cage-emancipating",
+  "enemy": "CAGE",
+  "answer": "EMANCIPATING",
+  "accepted": false,
+  "seed": "bingo-first-3:CAGE:EMANCIPATING:23:two-turn-route",
+  "score": 193,
+  "analysis": {
+    "score": 193,
+    "bingos": [
+      "EMANCIPATING"
+    ],
+    "counterFamilies": 2,
+    "resistedFamilies": 4,
+    "winningOpenings": 7,
+    "repeatedCounterRoutes": 5,
+    "sustainedPositions": 2,
+    "sustainedFinalPositions": 1,
+    "neutralCleanupOpenings": 0,
+    "routes": [
+      {
+        "opening": "SAVING",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "ESCAPE",
+            "UNTIE"
+          ],
+          "resisted": [
+            "TIE",
+            "PEN",
+            "PIN",
+            "CAGE",
+            "GIN",
+            "LAG"
+          ],
+          "neutral": 1052
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SAVING",
+            "ESCAPE"
+          ],
+          "tileIds": [
+            [
+              14,
+              0,
+              5,
+              13,
+              11,
+              9
+            ],
+            [
+              4,
+              16,
+              7,
+              3,
+              6,
+              17
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "ESCAPING",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "ESCAPE",
+            "SAVING"
+          ],
+          "resisted": [
+            "JAIL",
+            "TIE",
+            "PEN",
+            "PIN",
+            "CAGE",
+            "GIN",
+            "LAG",
+            "JUG"
+          ],
+          "neutral": 1135
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ESCAPING",
+            "SAVING"
+          ],
+          "tileIds": [
+            [
+              4,
+              14,
+              7,
+              0,
+              6,
+              13,
+              11,
+              9
+            ],
+            [
+              16,
+              3,
+              5,
+              15,
+              12,
+              18
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "TIES",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "SAVING",
+            "ESCAPING"
+          ],
+          "resisted": [
+            "PEN",
+            "PIN",
+            "CAGE",
+            "GIN",
+            "LAG"
+          ],
+          "neutral": 595
+        },
+        "thirdTurn": {
+          "counters": [
+            "SAVING"
+          ],
+          "resisted": [
+            "JAIL",
+            "PEN",
+            "PIN",
+            "CAGE",
+            "GIN",
+            "LAG",
+            "JUG"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "TIES",
+            "ESCAPING",
+            "SAVING"
+          ],
+          "tileIds": [
+            [
+              1,
+              13,
+              4,
+              14
+            ],
+            [
+              17,
+              16,
+              7,
+              0,
+              6,
+              15,
+              11,
+              9
+            ],
+            [
+              21,
+              3,
+              5,
+              26,
+              12,
+              18
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "CAGE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "SAVING",
+            "ESCAPING",
+            "UNTIE"
+          ],
+          "resisted": [
+            "TIE",
+            "PEN",
+            "PIN",
+            "CAGE",
+            "GIN",
+            "LAG"
+          ],
+          "neutral": 1088
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "PINS",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "SAVING",
+            "UNTIE"
+          ],
+          "resisted": [
+            "TIE",
+            "CAGE",
+            "GIN",
+            "LAG"
+          ],
+          "neutral": 779
+        },
+        "thirdTurn": {
+          "counters": [
+            "ESCAPE"
+          ],
+          "resisted": [
+            "CAGE",
+            "LAG",
+            "JUG"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "PINS",
+            "SAVING",
+            "ESCAPE"
+          ],
+          "tileIds": [
+            [
+              6,
+              13,
+              11,
+              14
+            ],
+            [
+              16,
+              0,
+              5,
+              15,
+              12,
+              9
+            ],
+            [
+              4,
+              21,
+              7,
+              3,
+              20,
+              17
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "PENS",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "SAVING",
+            "UNTIE"
+          ],
+          "resisted": [
+            "TIE",
+            "CAGE",
+            "GIN",
+            "LAG"
+          ],
+          "neutral": 729
+        },
+        "thirdTurn": {
+          "counters": [
+            "ESCAPE"
+          ],
+          "resisted": [
+            "JAIL",
+            "TIE",
+            "CAGE",
+            "LAG",
+            "JUG"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "PENS",
+            "SAVING",
+            "ESCAPE"
+          ],
+          "tileIds": [
+            [
+              6,
+              4,
+              11,
+              14
+            ],
+            [
+              16,
+              0,
+              5,
+              13,
+              12,
+              9
+            ],
+            [
+              17,
+              21,
+              7,
+              3,
+              20,
+              22
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "ACT",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SAVING"
+          ],
+          "resisted": [
+            "PEN",
+            "PIN",
+            "GIN",
+            "LAG"
+          ],
+          "neutral": 583
+        },
+        "thirdTurn": {
+          "counters": [
+            "SAVING",
+            "ESCAPING"
+          ],
+          "resisted": [
+            "PEN",
+            "PIN",
+            "CAGE",
+            "GIN",
+            "LAG"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ACT",
+            "MEN",
+            "ESCAPING"
+          ],
+          "tileIds": [
+            [
+              0,
+              7,
+              1
+            ],
+            [
+              2,
+              4,
+              11
+            ],
+            [
+              17,
+              14,
+              19,
+              3,
+              6,
+              13,
+              12,
+              9
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            1,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "AGE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SAVING",
+            "ESCAPING",
+            "UNTIE"
+          ],
+          "resisted": [
+            "TIE",
+            "PEN",
+            "PIN",
+            "CAGE",
+            "GIN",
+            "LAG"
+          ],
+          "neutral": 1088
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AGE",
+            "ESCAPING"
+          ],
+          "tileIds": [
+            [
+              0,
+              9,
+              4
+            ],
+            [
+              17,
+              14,
+              7,
+              3,
+              6,
+              13,
+              11,
+              18
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": null,
+  "roots": [
+    {
+      "word": "FREE",
+      "senseId": "oewn-free__2.41.00..",
+      "definition": "grant freedom to; free from confinement",
+      "relation": "opposite"
+    },
+    {
+      "word": "LIBERATE",
+      "senseId": "oewn-liberate__2.41.02..",
+      "definition": "grant freedom to; free from confinement",
+      "relation": "opposite"
+    },
+    {
+      "word": "LIBERTY",
+      "senseId": "oewn-liberty__1.26.03..",
+      "definition": "personal freedom from servitude or confinement or oppression",
+      "relation": "opposite"
+    },
+    {
+      "word": "RELEASE",
+      "senseId": "oewn-release__2.41.00..",
+      "definition": "grant freedom to; free from confinement",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNBIND",
+      "senseId": "oewn-unbind__2.35.00..",
+      "definition": "untie or unfasten",
+      "relation": "opposite"
+    },
+    {
+      "word": "EMANCIPATE",
+      "senseId": "oewn-emancipate__2.41.00..",
+      "definition": "free from slavery or servitude",
+      "relation": "opposite"
+    },
+    {
+      "word": "RESCUE",
+      "senseId": "oewn-rescue__1.04.00..",
+      "definition": "recovery or preservation from loss or danger",
+      "relation": "opposite"
+    },
+    {
+      "word": "ESCAPE",
+      "senseId": "oewn-escape__2.38.00..",
+      "definition": "run away from confinement",
+      "relation": "opposite"
+    },
+    {
+      "word": "ENFRANCHISE",
+      "senseId": "oewn-enfranchise__2.41.01..",
+      "definition": "grant freedom to; as from slavery or servitude",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNLOCK",
+      "senseId": "oewn-unlock__2.35.00..",
+      "definition": "open the lock of",
+      "relation": "opposite"
+    },
+    {
+      "word": "LOOSE",
+      "senseId": "oewn-loose__2.41.00..",
+      "definition": "grant freedom to; free from confinement",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNTIE",
+      "senseId": "oewn-untie__2.35.00..",
+      "definition": "undo the ties of",
+      "relation": "opposite"
+    },
+    {
+      "word": "DELIVER",
+      "senseId": "oewn-deliver__2.41.01..",
+      "definition": "free from harm or evil",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNCHAIN",
+      "senseId": "oewn-unchain__2.35.00..",
+      "definition": "remove the chains from",
+      "relation": "opposite"
+    },
+    {
+      "word": "FREEDOM",
+      "senseId": "oewn-freedom__1.26.00..",
+      "definition": "the condition of being free; the power to act or speak or think without externally imposed restraints",
+      "relation": "opposite"
+    },
+    {
+      "word": "INDEPENDENCE",
+      "senseId": "oewn-independence__1.26.00..",
+      "definition": "freedom from control or influence of another or others",
+      "relation": "opposite"
+    },
+    {
+      "word": "CAGE",
+      "senseId": "oewn-cage__1.26.00..",
+      "definition": "something that restricts freedom as a cage restricts movement",
+      "relation": "similar"
+    },
+    {
+      "word": "PEN",
+      "senseId": "oewn-pen__1.06.01..",
+      "definition": "an enclosure for confining livestock",
+      "relation": "similar"
+    },
+    {
+      "word": "TRAP",
+      "senseId": "oewn-trap__2.35.02..",
+      "definition": "to hold fast or prevent from moving",
+      "relation": "similar"
+    },
+    {
+      "word": "SNARE",
+      "senseId": "oewn-snare__1.06.00..",
+      "definition": "a trap for birds or small mammals; often has a slip noose",
+      "relation": "similar"
+    },
+    {
+      "word": "BIND",
+      "senseId": "oewn-bind__2.35.07..",
+      "definition": "secure with or as if with ropes",
+      "relation": "similar"
+    },
+    {
+      "word": "TIE",
+      "senseId": "oewn-tie__1.06.04..",
+      "definition": "a fastener that serves to join or connect",
+      "relation": "similar"
+    },
+    {
+      "word": "CHAIN",
+      "senseId": "oewn-chain__1.06.03..",
+      "definition": "anything that acts as a restraint",
+      "relation": "similar"
+    },
+    {
+      "word": "FETTER",
+      "senseId": "oewn-fetter__2.35.00..",
+      "definition": "restrain with fetters",
+      "relation": "similar"
+    },
+    {
+      "word": "SHACKLE",
+      "senseId": "oewn-shackle__1.06.00..",
+      "definition": "a restraint that confines or restricts freedom (especially something used to tie down or restrain a prisoner)",
+      "relation": "similar"
+    },
+    {
+      "word": "JAIL",
+      "senseId": "oewn-jail__2.41.00..",
+      "definition": "lock up or confine, in or as in a jail",
+      "relation": "similar"
+    },
+    {
+      "word": "GAOL",
+      "senseId": "oewn-gaol__2.41.00..",
+      "definition": "lock up or confine, in or as in a jail",
+      "relation": "similar"
+    },
+    {
+      "word": "PRISON",
+      "senseId": "oewn-prison__1.06.00..",
+      "definition": "a correctional institution where persons are confined while on trial or for punishment",
+      "relation": "similar"
+    },
+    {
+      "word": "CONFINE",
+      "senseId": "oewn-confine__2.41.00..",
+      "definition": "deprive of freedom; take into confinement",
+      "relation": "similar"
+    },
+    {
+      "word": "RESTRICT",
+      "senseId": "oewn-restrict__2.41.00..",
+      "definition": "place under restrictions; limit access to by law",
+      "relation": "similar"
+    },
+    {
+      "word": "ENSLAVE",
+      "senseId": "oewn-enslave__2.41.00..",
+      "definition": "make a slave of; bring into servitude",
+      "relation": "similar"
+    },
+    {
+      "word": "LOCK",
+      "senseId": "oewn-lock__1.06.00..",
+      "definition": "a fastener fitted to a door or drawer to keep it firmly closed",
+      "relation": "similar"
+    },
+    {
+      "word": "DETAIN",
+      "senseId": "oewn-detain__2.41.00..",
+      "definition": "deprive of freedom; take into confinement",
+      "relation": "similar"
+    },
+    {
+      "word": "CAPTURE",
+      "senseId": "oewn-capture__2.35.00..",
+      "definition": "capture as if by hunting, snaring, or trapping",
+      "relation": "similar"
+    },
+    {
+      "word": "HOLD",
+      "senseId": "oewn-hold__1.06.01..",
+      "definition": "a cell in a jail or prison",
+      "relation": "similar"
+    },
+    {
+      "word": "CONTAIN",
+      "senseId": "oewn-contain__2.41.00..",
+      "definition": "lessen the intensity of; temper; hold in restraint; hold or keep within limits",
+      "relation": "similar"
+    },
+    {
+      "word": "CAGE",
+      "senseId": "oewn-cage__2.41.00..",
+      "definition": "confine in a cage",
+      "relation": "similar"
+    }
+  ],
+  "novelty": [],
+  "semanticPolicy": "Pinned source senses and reviewed lexical families; unlabelled defined senses are neutral. Not a proof of exhaustive contextual semantic coverage.",
+  "asset": "puzzles/cage-emancipating-4ef73eab819c.json"
+}

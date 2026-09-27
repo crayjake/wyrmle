@@ -13,13 +13,18 @@ export type ChallengeRecord = {
   run: { lives: DailyLives | 4 | 5; started: boolean; status: LetterStrikeState['status']; moves: ChallengeMove[]; hintStep?: number }
 }
 export const challengeKey = (date: string) => CHALLENGE_PREFIX + date
+// A replacement board must never erase a played revision or inherit its stars.
+export const challengeBackupKey = (date: string, asset: string) => `wyrmle:daily:revision:v1:${date}:${asset}`
 export const challengeLives = (bestWords: number | null): DailyLives => bestWords === null ? 3 : bestWords <= 2 ? 1 : 2
 export const challengeStars = (words: number | null) => words === null ? 0 : winStars(words)
 const object = (v: unknown): v is Record<string, unknown> => Boolean(v && typeof v === 'object' && !Array.isArray(v))
 const integer = (v: unknown, min: number, max: number): v is number => Number.isSafeInteger(v) && Number(v) >= min && Number(v) <= max
 
 export function readChallenge(date: string, storage: Pick<StorageLike, 'getItem'>): ChallengeRecord | null {
-  const raw = storage.getItem(challengeKey(date))
+  return parseChallenge(date, storage.getItem(challengeKey(date)))
+}
+
+function parseChallenge(date: string, raw: string | null): ChallengeRecord | null {
   if (!raw || raw.length > 32_000) return null
   try {
     const v: unknown = JSON.parse(raw)
@@ -42,7 +47,9 @@ export function openChallenge(date: string, asset: string, encounter: LetterStri
   const saved = readChallenge(date, storage)
   const fresh: ChallengeRecord = { version: 1, date, asset, revision: saved?.revision ?? 0, attempts: 0, bestWords: null,
     run: { lives: 3, started: false, status: 'playing', moves: [] } }
-  const record = saved?.asset === asset ? saved : fresh
+  const backup = parseChallenge(date, storage.getItem(challengeBackupKey(date, asset)))
+  const record = saved?.asset === asset ? saved : backup?.asset === asset
+    ? { ...backup, revision: saved?.revision ?? 0 } : fresh
   let game = createLetterStrikeGame({ ...encounter, startingResolve: record.run.lives })
   for (const move of record.run.moves) {
     const next = submitLetterStrike(game, move.ids)
@@ -59,6 +66,10 @@ function write(record: ChallengeRecord, expectedRevision: number, storage: Pick<
   const existing = readChallenge(record.date, storage)
   if ((existing?.revision ?? 0) !== expectedRevision) throw new Error('This puzzle changed in another tab. Reload to continue.')
   const next = { ...record, revision: expectedRevision + 1 }
+  if (existing && existing.asset !== record.asset) {
+    storage.setItem(challengeBackupKey(existing.date, existing.asset), JSON.stringify(existing))
+  }
+  storage.setItem(challengeBackupKey(next.date, next.asset), JSON.stringify(next))
   storage.setItem(challengeKey(record.date), JSON.stringify(next))
   return next
 }

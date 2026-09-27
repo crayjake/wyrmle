@@ -1,5 +1,10 @@
 # Daily queue: 26 September–25 October 2026
 
+**Superseded for 27 September–16 October:** the original batch reused five
+enemy/bingo pairs from the archive. The [fresh replacement batch](../daily-month-2026-09-27/README.md)
+fixes those dates and adds publication-history novelty checks. This directory
+retains the original reports and schedule as historical evidence.
+
 Thirty different enemy words, thirty distinct planned bingo answers. The active schedule is `src/daily/schedule.json`; each date fetches only its own content-addressed JSON under `public/puzzles/`.
 
 All boards use the bingo-first constructor from `scripts/bingo/generate.ts`: choose an opposite word that covers the enemy, derive armour from repeated matching letters, preserve the bingo while filling spare board slots with counter/resisted families, then plan refills and score later positions. The monthly authoring command starts with three-turn refill plans and also tries two-turn plans when the best board lacks a separate two-word win. It does not use the retired daily generator or copy beta boards.
@@ -7,7 +12,7 @@ All boards use the bingo-first constructor from `scripts/bingo/generate.ts`: cho
 Run it yourself:
 
 ```sh
-npm run generate:daily -- --start 2026-09-26 --days 30 --seeds 6 --publish
+npm run generate:daily -- --set classic --start 2026-09-26 --days 30 --seeds 6
 ```
 
 Generation alone writes reports without changing the site. `--publish` writes the scheduled assets and manifest only after validation. `--resume` reuses local authoring payloads after checking their source-profile fingerprint, content hash, and replay proofs. Those regenerable `*.puzzle.json` authoring payloads are ignored by Git; published files are committed. `--enemies ROT,STINGY` limits an investigation without publishing an incomplete month. Candidate enemies and bingo words are defined in `scripts/bingo/dailyProfiles.ts`.

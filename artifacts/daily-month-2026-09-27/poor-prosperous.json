@@ -1,0 +1,939 @@
+{
+  "id": "poor-prosperous",
+  "enemy": "POOR",
+  "answer": "PROSPEROUS",
+  "accepted": true,
+  "seed": "bingo-first-3:POOR:PROSPEROUS:20",
+  "score": 293,
+  "analysis": {
+    "score": 293,
+    "bingos": [
+      "PROSPEROUS"
+    ],
+    "counterFamilies": 7,
+    "resistedFamilies": 2,
+    "winningOpenings": 8,
+    "repeatedCounterRoutes": 8,
+    "sustainedPositions": 2,
+    "sustainedFinalPositions": 6,
+    "neutralCleanupOpenings": 0,
+    "routes": [
+      {
+        "opening": "HELP",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "GRANT",
+            "EARN"
+          ],
+          "resisted": [
+            "POOR",
+            "WANT"
+          ],
+          "neutral": 1602
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "CLEAR",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SUPPORT",
+            "PROSPER"
+          ],
+          "resisted": [
+            "POOR"
+          ],
+          "neutral": 983
+        },
+        "thirdTurn": {
+          "counters": [
+            "ENDOW",
+            "DOWER"
+          ],
+          "resisted": [
+            "NEED"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CLEAR",
+            "SUPPORT",
+            "ENDOW"
+          ],
+          "tileIds": [
+            [
+              9,
+              14,
+              5,
+              13,
+              2
+            ],
+            [
+              6,
+              8,
+              4,
+              12,
+              7,
+              11,
+              18
+            ],
+            [
+              16,
+              1,
+              21,
+              10,
+              19
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "RICH",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SUPPORT",
+            "GRANT",
+            "EARN",
+            "OPULENT"
+          ],
+          "resisted": [
+            "POOR",
+            "WANT"
+          ],
+          "neutral": 1116
+        },
+        "thirdTurn": {
+          "counters": [
+            "DONATE",
+            "OPULENT",
+            "ENDOW",
+            "DOWER"
+          ],
+          "resisted": [
+            "NEED",
+            "WANT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RICH",
+            "SUPPORT",
+            "DONATE"
+          ],
+          "tileIds": [
+            [
+              2,
+              0,
+              9,
+              3
+            ],
+            [
+              6,
+              8,
+              4,
+              12,
+              7,
+              11,
+              18
+            ],
+            [
+              21,
+              10,
+              1,
+              13,
+              25,
+              5
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "EARN",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "HELP",
+            "SUPPORT",
+            "RICH",
+            "RICHES"
+          ],
+          "resisted": [
+            "POOR"
+          ],
+          "neutral": 978
+        },
+        "thirdTurn": {
+          "counters": [
+            "DOWER"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "EARN",
+            "SUPPORT",
+            "DOWER"
+          ],
+          "tileIds": [
+            [
+              5,
+              13,
+              2,
+              1
+            ],
+            [
+              6,
+              8,
+              4,
+              12,
+              7,
+              11,
+              18
+            ],
+            [
+              21,
+              10,
+              19,
+              16,
+              20
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "RICHES",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SUPPORT",
+            "GRAND",
+            "GRANT",
+            "EARN",
+            "DONATE",
+            "PROSPER",
+            "OPULENT",
+            "ENDOW",
+            "DOWER"
+          ],
+          "resisted": [
+            "POOR",
+            "WANT"
+          ],
+          "neutral": 1303
+        },
+        "thirdTurn": {
+          "counters": [
+            "DONATE",
+            "OPULENT",
+            "ENDOW",
+            "DOWER"
+          ],
+          "resisted": [
+            "NEED",
+            "WANT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RICHES",
+            "SUPPORT",
+            "DONATE"
+          ],
+          "tileIds": [
+            [
+              2,
+              0,
+              9,
+              3,
+              5,
+              6
+            ],
+            [
+              15,
+              8,
+              4,
+              12,
+              7,
+              11,
+              18
+            ],
+            [
+              21,
+              10,
+              1,
+              13,
+              25,
+              16
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "PROSPER",
+        "label": "COUNTER",
+        "hits": 5,
+        "later": {
+          "counters": [
+            "DONATE",
+            "ENDOW",
+            "DOWER"
+          ],
+          "resisted": [
+            "WANT"
+          ],
+          "neutral": 2381
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "PROSPER",
+            "DONATE"
+          ],
+          "tileIds": [
+            [
+              4,
+              2,
+              7,
+              6,
+              12,
+              5,
+              11
+            ],
+            [
+              21,
+              10,
+              1,
+              13,
+              18,
+              16
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            5,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "ENRICH",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SUPPORT",
+            "PROSPER",
+            "DOWER"
+          ],
+          "resisted": [
+            "POOR"
+          ],
+          "neutral": 997
+        },
+        "thirdTurn": {
+          "counters": [
+            "DONATE",
+            "OPULENT",
+            "ENDOW",
+            "DOWER"
+          ],
+          "resisted": [
+            "NEED",
+            "WANT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ENRICH",
+            "SUPPORT",
+            "DONATE"
+          ],
+          "tileIds": [
+            [
+              5,
+              1,
+              2,
+              0,
+              9,
+              3
+            ],
+            [
+              6,
+              8,
+              4,
+              12,
+              7,
+              11,
+              18
+            ],
+            [
+              21,
+              10,
+              28,
+              13,
+              25,
+              16
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "POOR",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "HELP",
+            "CLEAR",
+            "RICH",
+            "EASIER",
+            "GRANT",
+            "EARN",
+            "REALISE",
+            "RICHES",
+            "ENRICH",
+            "WEALTHIER"
+          ],
+          "resisted": [
+            "WANT"
+          ],
+          "neutral": 2018
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "PAUPER",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "RICH",
+            "RICHES",
+            "ENRICH",
+            "ENDOW",
+            "DOWER"
+          ],
+          "resisted": [],
+          "neutral": 1185
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "HELP",
+            "SUPPORT",
+            "OPULENT"
+          ],
+          "resisted": [
+            "POOR"
+          ],
+          "neutral": 947
+        },
+        "thirdTurn": {
+          "counters": [
+            "OPULENT",
+            "ENDOW",
+            "DOWER"
+          ],
+          "resisted": [
+            "NEED"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AIR",
+            "SUPPORT",
+            "OPULENT"
+          ],
+          "tileIds": [
+            [
+              13,
+              0,
+              2
+            ],
+            [
+              6,
+              8,
+              4,
+              12,
+              7,
+              11,
+              18
+            ],
+            [
+              10,
+              23,
+              22,
+              14,
+              5,
+              1,
+              25
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "ARE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "HELP",
+            "SUPPORT",
+            "RICH",
+            "RICHES",
+            "ENRICH",
+            "OPULENT"
+          ],
+          "resisted": [
+            "POOR"
+          ],
+          "neutral": 1415
+        },
+        "thirdTurn": {
+          "counters": [
+            "OPULENT",
+            "ENDOW",
+            "DOWER"
+          ],
+          "resisted": [
+            "NEED",
+            "PINCHED"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ARE",
+            "SUPPORT",
+            "OPULENT"
+          ],
+          "tileIds": [
+            [
+              13,
+              2,
+              5
+            ],
+            [
+              6,
+              8,
+              4,
+              12,
+              7,
+              11,
+              18
+            ],
+            [
+              10,
+              23,
+              22,
+              14,
+              16,
+              1,
+              25
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "ACORN",
+      "PROSPER"
+    ],
+    "tileIds": [
+      [
+        13,
+        9,
+        7,
+        2,
+        1
+      ],
+      [
+        4,
+        11,
+        10,
+        6,
+        12,
+        5,
+        20
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      5
+    ]
+  },
+  "roots": [
+    {
+      "word": "PROSPEROUS",
+      "senseId": "oewn-prosperous__5.00.00.rich.00",
+      "definition": "in fortunate circumstances financially; moderately rich",
+      "relation": "opposite"
+    },
+    {
+      "word": "RICH",
+      "senseId": "oewn-rich__3.00.00..",
+      "definition": "possessing material wealth",
+      "relation": "opposite"
+    },
+    {
+      "word": "WEALTHY",
+      "senseId": "oewn-wealthy__5.00.00.rich.00",
+      "definition": "having an abundant supply of money or possessions of value",
+      "relation": "opposite"
+    },
+    {
+      "word": "AFFLUENT",
+      "senseId": "oewn-affluent__5.00.00.rich.00",
+      "definition": "having an abundant supply of money or possessions of value",
+      "relation": "opposite"
+    },
+    {
+      "word": "OPULENT",
+      "senseId": "oewn-opulent__5.00.00.rich.03",
+      "definition": "ostentatiously rich and superior in quality",
+      "relation": "opposite"
+    },
+    {
+      "word": "WEALTH",
+      "senseId": "oewn-wealth__1.26.00..",
+      "definition": "the state of being rich and affluent; having a plentiful supply of material goods and money",
+      "relation": "opposite"
+    },
+    {
+      "word": "RICHES",
+      "senseId": "oewn-riches__1.21.00..",
+      "definition": "an abundance of material possessions and resources",
+      "relation": "opposite"
+    },
+    {
+      "word": "PROSPERITY",
+      "senseId": "oewn-prosperity__1.26.02..",
+      "definition": "an economic state of growth with rising profits and full employment",
+      "relation": "opposite"
+    },
+    {
+      "word": "FORTUNE",
+      "senseId": "oewn-fortune__1.21.00..",
+      "definition": "a large amount of wealth or prosperity",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLENTY",
+      "senseId": "oewn-plenty__1.07.00..",
+      "definition": "a full supply",
+      "relation": "opposite"
+    },
+    {
+      "word": "ABUNDANCE",
+      "senseId": "oewn-abundance__1.07.00..",
+      "definition": "the property of a more than adequate quantity or supply",
+      "relation": "opposite"
+    },
+    {
+      "word": "BOUNTY",
+      "senseId": "oewn-bounty__1.07.02..",
+      "definition": "the property of copious abundance",
+      "relation": "opposite"
+    },
+    {
+      "word": "ENDOW",
+      "senseId": "oewn-endow__2.40.00..",
+      "definition": "furnish with an endowment",
+      "relation": "opposite"
+    },
+    {
+      "word": "ENRICH",
+      "senseId": "oewn-enrich__2.40.00..",
+      "definition": "make wealthy or richer",
+      "relation": "opposite"
+    },
+    {
+      "word": "PROSPER",
+      "senseId": "oewn-prosper__2.40.00..",
+      "definition": "make steady progress; be at the high point in one's career or reach a high point in historical significance or importance",
+      "relation": "opposite"
+    },
+    {
+      "word": "FLOURISH",
+      "senseId": "oewn-flourish__2.40.00..",
+      "definition": "make steady progress; be at the high point in one's career or reach a high point in historical significance or importance",
+      "relation": "opposite"
+    },
+    {
+      "word": "EARN",
+      "senseId": "oewn-earn__2.40.01..",
+      "definition": "earn on some commercial or business transaction; earn as salary or wages",
+      "relation": "opposite"
+    },
+    {
+      "word": "PROFIT",
+      "senseId": "oewn-profit__2.40.00..",
+      "definition": "make a profit; gain money or materially",
+      "relation": "opposite"
+    },
+    {
+      "word": "INCOME",
+      "senseId": "oewn-income__1.21.00..",
+      "definition": "the financial gain (earned or unearned) accruing over a given period of time",
+      "relation": "opposite"
+    },
+    {
+      "word": "SUPPORT",
+      "senseId": "oewn-support__2.40.00..",
+      "definition": "support materially or financially",
+      "relation": "opposite"
+    },
+    {
+      "word": "AID",
+      "senseId": "oewn-aid__1.07.00..",
+      "definition": "a person or thing that is a resource that helps make something easier or possible to do",
+      "relation": "opposite"
+    },
+    {
+      "word": "GIVE",
+      "senseId": "oewn-give__2.40.00..",
+      "definition": "transfer possession of something concrete or abstract to somebody",
+      "relation": "opposite"
+    },
+    {
+      "word": "DONATE",
+      "senseId": "oewn-donate__2.40.00..",
+      "definition": "give to a charity or good cause",
+      "relation": "opposite"
+    },
+    {
+      "word": "GRANT",
+      "senseId": "oewn-grant__2.40.03..",
+      "definition": "give as judged due or on the basis of merit",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHARITY",
+      "senseId": "oewn-charity__1.14.01..",
+      "definition": "an institution set up to provide help to the needy",
+      "relation": "opposite"
+    },
+    {
+      "word": "SUBSIDY",
+      "senseId": "oewn-subsidy__1.21.00..",
+      "definition": "a grant paid by a government to an enterprise that benefits the public",
+      "relation": "opposite"
+    },
+    {
+      "word": "BENEFIT",
+      "senseId": "oewn-benefit__1.21.00..",
+      "definition": "financial assistance in time of need",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMFORTABLE",
+      "senseId": "oewn-comfortable__5.00.00.rich.00",
+      "definition": "in fortunate circumstances financially; moderately rich",
+      "relation": "opposite"
+    },
+    {
+      "word": "POOR",
+      "senseId": "oewn-poor__3.00.00..",
+      "definition": "having little money or few possessions",
+      "relation": "similar"
+    },
+    {
+      "word": "POVERTY",
+      "senseId": "oewn-poverty__1.26.00..",
+      "definition": "the state of having little or no money and few or no material possessions",
+      "relation": "similar"
+    },
+    {
+      "word": "NEEDY",
+      "senseId": "oewn-needy__5.00.00.poor.00",
+      "definition": "poor enough to need help from others",
+      "relation": "similar"
+    },
+    {
+      "word": "DESTITUTE",
+      "senseId": "oewn-destitute__5.00.00.poor.00",
+      "definition": "poor enough to need help from others",
+      "relation": "similar"
+    },
+    {
+      "word": "PENNILESS",
+      "senseId": "oewn-penniless__5.00.00.poor.00",
+      "definition": "not having enough money to pay for necessities",
+      "relation": "similar"
+    },
+    {
+      "word": "IMPOVERISHED",
+      "senseId": "oewn-impoverish__2.40.00..",
+      "definition": "make poor",
+      "relation": "similar"
+    },
+    {
+      "word": "BROKE",
+      "senseId": "oewn-broke__5.00.00.poor.00",
+      "definition": "lacking funds",
+      "relation": "similar"
+    },
+    {
+      "word": "NEED",
+      "senseId": "oewn-need__1.26.01..",
+      "definition": "a state of extreme poverty or destitution",
+      "relation": "similar"
+    },
+    {
+      "word": "WANT",
+      "senseId": "oewn-want__1.26.00..",
+      "definition": "a state of extreme poverty",
+      "relation": "similar"
+    },
+    {
+      "word": "PENURY",
+      "senseId": "oewn-penury__1.26.00..",
+      "definition": "a state of extreme poverty or destitution",
+      "relation": "similar"
+    },
+    {
+      "word": "SCARCITY",
+      "senseId": "oewn-scarcity__1.07.00..",
+      "definition": "a small and inadequate amount",
+      "relation": "similar"
+    },
+    {
+      "word": "DEPRIVATION",
+      "senseId": "oewn-deprivation__1.26.00..",
+      "definition": "a state of extreme poverty",
+      "relation": "similar"
+    },
+    {
+      "word": "INDIGENCE",
+      "senseId": "oewn-indigence__1.26.00..",
+      "definition": "a state of extreme poverty or destitution",
+      "relation": "similar"
+    },
+    {
+      "word": "PAUPER",
+      "senseId": "oewn-pauper__1.18.00..",
+      "definition": "a person who is very poor",
+      "relation": "similar"
+    },
+    {
+      "word": "BEGGAR",
+      "senseId": "oewn-beggar__1.18.00..",
+      "definition": "a pauper who lives by begging",
+      "relation": "similar"
+    },
+    {
+      "word": "IMPOVERISH",
+      "senseId": "oewn-impoverish__2.40.00..",
+      "definition": "make poor",
+      "relation": "similar"
+    }
+  ],
+  "novelty": [],
+  "semanticPolicy": "Pinned source senses and reviewed lexical families; unlabelled defined senses are neutral. Not a proof of exhaustive contextual semantic coverage.",
+  "asset": "puzzles/poor-prosperous-0f5d987ae551.json"
+}

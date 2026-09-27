@@ -1,0 +1,869 @@
+{
+  "id": "thin-thickening",
+  "enemy": "THIN",
+  "answer": "THICKENING",
+  "accepted": true,
+  "seed": "bingo-first-3:THIN:THICKENING:16:two-turn-route",
+  "score": 308,
+  "analysis": {
+    "score": 308,
+    "bingos": [
+      "THICKENING"
+    ],
+    "counterFamilies": 6,
+    "resistedFamilies": 4,
+    "winningOpenings": 8,
+    "repeatedCounterRoutes": 8,
+    "sustainedPositions": 5,
+    "sustainedFinalPositions": 5,
+    "neutralCleanupOpenings": 0,
+    "routes": [
+      {
+        "opening": "SET",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "THICK",
+            "CLOTTING"
+          ],
+          "resisted": [
+            "CUT",
+            "THIN",
+            "DILUTE",
+            "DILUTION"
+          ],
+          "neutral": 471
+        },
+        "thirdTurn": {
+          "counters": [
+            "SOLID",
+            "DENSE",
+            "CONDENSE"
+          ],
+          "resisted": [
+            "CUT",
+            "REDUCE",
+            "DILUTE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SET",
+            "THICK",
+            "CONDENSING"
+          ],
+          "tileIds": [
+            [
+              12,
+              5,
+              8
+            ],
+            [
+              16,
+              14,
+              4,
+              0,
+              1
+            ],
+            [
+              19,
+              11,
+              6,
+              3,
+              10,
+              9,
+              22,
+              7,
+              18,
+              2
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "SOLID",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "THICK"
+          ],
+          "resisted": [
+            "CUT",
+            "THIN"
+          ],
+          "neutral": 245
+        },
+        "thirdTurn": {
+          "counters": [
+            "DENSE",
+            "CONDENSE"
+          ],
+          "resisted": [
+            "CUT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SOLID",
+            "THICKER",
+            "CONDENSE"
+          ],
+          "tileIds": [
+            [
+              12,
+              11,
+              13,
+              4,
+              3
+            ],
+            [
+              8,
+              14,
+              7,
+              0,
+              1,
+              5,
+              20
+            ],
+            [
+              19,
+              26,
+              6,
+              27,
+              10,
+              9,
+              22,
+              21
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "THICK",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "SETTING",
+            "SOLID",
+            "DENSE",
+            "CLOTTING",
+            "CONDENSE"
+          ],
+          "resisted": [
+            "CUT",
+            "REDUCE",
+            "DILUTE"
+          ],
+          "neutral": 1202
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "THICK",
+            "CONDENSING"
+          ],
+          "tileIds": [
+            [
+              8,
+              14,
+              4,
+              0,
+              1
+            ],
+            [
+              19,
+              11,
+              6,
+              3,
+              5,
+              9,
+              12,
+              7,
+              18,
+              2
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "DENSE",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "THICK",
+            "CLOT"
+          ],
+          "resisted": [
+            "CUT",
+            "THIN"
+          ],
+          "neutral": 268
+        },
+        "thirdTurn": {
+          "counters": [
+            "SETTING",
+            "CLOTTING"
+          ],
+          "resisted": [
+            "CUT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DENSE",
+            "THICK",
+            "SETTING"
+          ],
+          "tileIds": [
+            [
+              3,
+              5,
+              6,
+              12,
+              10
+            ],
+            [
+              8,
+              14,
+              4,
+              0,
+              1
+            ],
+            [
+              22,
+              21,
+              16,
+              17,
+              7,
+              9,
+              2
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "CLOT",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SETTING",
+            "THICK",
+            "DENSE"
+          ],
+          "resisted": [
+            "CUT",
+            "THIN"
+          ],
+          "neutral": 489
+        },
+        "thirdTurn": {
+          "counters": [
+            "DENSE",
+            "CONDENSED"
+          ],
+          "resisted": [
+            "REDUCE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CLOT",
+            "THICKEST",
+            "CONDENSING"
+          ],
+          "tileIds": [
+            [
+              0,
+              13,
+              11,
+              8
+            ],
+            [
+              16,
+              14,
+              4,
+              19,
+              1,
+              5,
+              12,
+              17
+            ],
+            [
+              25,
+              26,
+              6,
+              3,
+              10,
+              9,
+              22,
+              7,
+              18,
+              2
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "CONDENSE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "SET",
+            "THICK"
+          ],
+          "resisted": [
+            "CUT",
+            "THIN"
+          ],
+          "neutral": 696
+        },
+        "thirdTurn": {
+          "counters": [
+            "SETTING",
+            "SOLID",
+            "RIGID",
+            "CLOTTING"
+          ],
+          "resisted": [
+            "CUT",
+            "REDUCE",
+            "DILUTE",
+            "DILUTION"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CONDENSE",
+            "THICK",
+            "SETTING"
+          ],
+          "tileIds": [
+            [
+              0,
+              11,
+              6,
+              3,
+              5,
+              9,
+              12,
+              10
+            ],
+            [
+              8,
+              14,
+              4,
+              19,
+              1
+            ],
+            [
+              22,
+              21,
+              16,
+              17,
+              7,
+              18,
+              2
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "THIN",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "SET",
+            "SOLID",
+            "DENSE",
+            "CLOT",
+            "CONDENSE"
+          ],
+          "resisted": [
+            "CUT",
+            "DILUTE"
+          ],
+          "neutral": 815
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "CUTS",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "THICK",
+            "CLOT"
+          ],
+          "resisted": [
+            "THIN"
+          ],
+          "neutral": 401
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "DILUTE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "SET",
+            "THICK"
+          ],
+          "resisted": [
+            "THIN"
+          ],
+          "neutral": 652
+        },
+        "thirdTurn": {
+          "counters": [
+            "DENSE",
+            "CONDENSE"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DILUTE",
+            "THICKER",
+            "CONDENSING"
+          ],
+          "tileIds": [
+            [
+              3,
+              4,
+              13,
+              15,
+              8,
+              5
+            ],
+            [
+              16,
+              14,
+              7,
+              0,
+              1,
+              10,
+              20
+            ],
+            [
+              19,
+              11,
+              6,
+              27,
+              21,
+              9,
+              12,
+              28,
+              18,
+              2
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "DILUTION",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "SET"
+          ],
+          "resisted": [],
+          "neutral": 210
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "DIE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SET",
+            "THICK",
+            "CLOT"
+          ],
+          "resisted": [
+            "CUT",
+            "THIN"
+          ],
+          "neutral": 592
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "END",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SET",
+            "THICK",
+            "CLOT"
+          ],
+          "resisted": [
+            "CUT",
+            "THIN"
+          ],
+          "neutral": 646
+        },
+        "thirdTurn": {
+          "counters": [
+            "THICK"
+          ],
+          "resisted": [
+            "CUT",
+            "THIN"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "END",
+            "SETTING",
+            "THICK"
+          ],
+          "tileIds": [
+            [
+              5,
+              6,
+              3
+            ],
+            [
+              12,
+              10,
+              8,
+              16,
+              4,
+              9,
+              2
+            ],
+            [
+              17,
+              14,
+              7,
+              0,
+              1
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            2
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "THICK",
+      "CONDENSING"
+    ],
+    "tileIds": [
+      [
+        8,
+        14,
+        4,
+        0,
+        1
+      ],
+      [
+        19,
+        11,
+        6,
+        3,
+        5,
+        9,
+        12,
+        7,
+        18,
+        2
+      ]
+    ],
+    "labels": [
+      "COUNTER",
+      "COUNTER"
+    ],
+    "hits": [
+      3,
+      3
+    ]
+  },
+  "roots": [
+    {
+      "word": "THICK",
+      "senseId": "oewn-thick__3.00.02..",
+      "definition": "relatively dense in consistency",
+      "relation": "opposite"
+    },
+    {
+      "word": "THICKEN",
+      "senseId": "oewn-thicken__2.30.01..",
+      "definition": "make thick or thicker",
+      "relation": "opposite"
+    },
+    {
+      "word": "DENSE",
+      "senseId": "oewn-dense__5.00.01.concentrated.00",
+      "definition": "having component parts closely crowded together",
+      "relation": "opposite"
+    },
+    {
+      "word": "SOLID",
+      "senseId": "oewn-solid__3.00.01..",
+      "definition": "of definite shape and volume; firm; neither liquid nor gaseous",
+      "relation": "opposite"
+    },
+    {
+      "word": "COAGULATE",
+      "senseId": "oewn-coagulate__2.30.00..",
+      "definition": "change from a liquid to a thickened or solid state",
+      "relation": "opposite"
+    },
+    {
+      "word": "CLOT",
+      "senseId": "oewn-clot__2.30.01..",
+      "definition": "change from a liquid to a thickened or solid state",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONGEAL",
+      "senseId": "oewn-congeal__2.30.00..",
+      "definition": "become gelatinous",
+      "relation": "opposite"
+    },
+    {
+      "word": "GEL",
+      "senseId": "oewn-gel__2.30.00..",
+      "definition": "become a gel",
+      "relation": "opposite"
+    },
+    {
+      "word": "JELL",
+      "senseId": "oewn-jell__2.30.00..",
+      "definition": "become gelatinous",
+      "relation": "opposite"
+    },
+    {
+      "word": "SET",
+      "senseId": "oewn-set__5.00.00.hard.01",
+      "definition": "converted to solid form (as concrete)",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONDENSE",
+      "senseId": "oewn-condense__2.30.06..",
+      "definition": "become more compact or concentrated",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONCENTRATE",
+      "senseId": "oewn-concentrate__2.30.01..",
+      "definition": "make denser, stronger, or purer",
+      "relation": "opposite"
+    },
+    {
+      "word": "STIFF",
+      "senseId": "oewn-stiff__5.00.01.inflexible.01",
+      "definition": "incapable of or resistant to bending",
+      "relation": "opposite"
+    },
+    {
+      "word": "VISCOUS",
+      "senseId": "oewn-viscous__5.00.00.thick.02",
+      "definition": "having a relatively high resistance to flow",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYRUPY",
+      "senseId": "oewn-syrupy__5.00.00.thick.02",
+      "definition": "having a relatively high resistance to flow",
+      "relation": "opposite"
+    },
+    {
+      "word": "DENSITY",
+      "senseId": "oewn-density__1.07.00..",
+      "definition": "the amount per unit size",
+      "relation": "opposite"
+    },
+    {
+      "word": "GELATINOUS",
+      "senseId": "oewn-gelatinous__5.00.00.thick.02",
+      "definition": "thick like gelatin",
+      "relation": "opposite"
+    },
+    {
+      "word": "THIN",
+      "senseId": "oewn-thin__3.00.02..",
+      "definition": "relatively thin in consistency or low in density; not viscous",
+      "relation": "similar"
+    },
+    {
+      "word": "DILUTE",
+      "senseId": "oewn-dilute__2.30.00..",
+      "definition": "lessen the strength or flavor of a solution or mixture",
+      "relation": "similar"
+    },
+    {
+      "word": "WATERY",
+      "senseId": "oewn-watery__5.00.00.diluted.00",
+      "definition": "overly diluted; thin and insipid",
+      "relation": "similar"
+    },
+    {
+      "word": "RUNNY",
+      "senseId": "oewn-runny__5.00.00.liquid.00",
+      "definition": "characteristic of a fluid; capable of flowing and easily changing shape",
+      "relation": "similar"
+    },
+    {
+      "word": "FLUID",
+      "senseId": "oewn-fluid__5.00.00.liquid.00",
+      "definition": "characteristic of a fluid; capable of flowing and easily changing shape",
+      "relation": "similar"
+    },
+    {
+      "word": "LIQUID",
+      "senseId": "oewn-liquid__1.27.00..",
+      "definition": "fluid matter having no fixed shape but a fixed volume",
+      "relation": "similar"
+    },
+    {
+      "word": "THINNESS",
+      "senseId": "oewn-thinness__1.07.02..",
+      "definition": "a consistency of low viscosity",
+      "relation": "similar"
+    },
+    {
+      "word": "DILUTION",
+      "senseId": "oewn-dilution__1.04.00..",
+      "definition": "weakening (reducing the concentration) by the addition of water or a thinner",
+      "relation": "similar"
+    },
+    {
+      "word": "WATER",
+      "senseId": "oewn-water__2.30.00..",
+      "definition": "supply with water, as with channels or ditches or streams",
+      "relation": "similar"
+    },
+    {
+      "word": "WEAK",
+      "senseId": "oewn-weak__5.00.00.diluted.00",
+      "definition": "overly diluted; thin and insipid",
+      "relation": "similar"
+    },
+    {
+      "word": "RAREFY",
+      "senseId": "oewn-rarefy__2.30.03..",
+      "definition": "lessen the density or solidity of",
+      "relation": "similar"
+    },
+    {
+      "word": "RARE",
+      "senseId": "oewn-rare__5.00.00.thin.02",
+      "definition": "having low density",
+      "relation": "similar"
+    }
+  ],
+  "novelty": [],
+  "semanticPolicy": "Pinned source senses and reviewed lexical families; unlabelled defined senses are neutral. Not a proof of exhaustive contextual semantic coverage.",
+  "asset": "puzzles/thin-thickening-e4b482250869.json"
+}

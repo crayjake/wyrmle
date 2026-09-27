@@ -1,0 +1,1640 @@
+{
+  "id": "err-corrected",
+  "enemy": "ERR",
+  "answer": "CORRECTED",
+  "accepted": true,
+  "seed": "bingo-first-3:ERR:CORRECTED:13",
+  "score": 442,
+  "analysis": {
+    "score": 442,
+    "bingos": [
+      "CORRECTED",
+      "REALER"
+    ],
+    "counterFamilies": 9,
+    "resistedFamilies": 4,
+    "winningOpenings": 15,
+    "repeatedCounterRoutes": 15,
+    "sustainedPositions": 11,
+    "sustainedFinalPositions": 4,
+    "neutralCleanupOpenings": 6,
+    "routes": [
+      {
+        "opening": "TRUE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "CLOSE",
+            "RIGHT",
+            "SEARCH",
+            "REALITY",
+            "RIGHTLY",
+            "VALIDATE",
+            "VERACITY",
+            "VERITY"
+          ],
+          "resisted": [
+            "COVER",
+            "LIE",
+            "ALTER",
+            "LIAR",
+            "IDLE"
+          ],
+          "neutral": 1351
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "TRUE",
+            "SEARCH"
+          ],
+          "tileIds": [
+            [
+              5,
+              4,
+              10,
+              9
+            ],
+            [
+              19,
+              11,
+              2,
+              13,
+              7,
+              16
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "REALITY",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "TRUE",
+            "RIGHT",
+            "SEARCH",
+            "AUDITOR",
+            "VOUCHERS"
+          ],
+          "resisted": [
+            "COVER",
+            "DECEIVE",
+            "DECEIT"
+          ],
+          "neutral": 1134
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "REALITY",
+            "TRUE"
+          ],
+          "tileIds": [
+            [
+              4,
+              9,
+              2,
+              0,
+              6,
+              5,
+              1
+            ],
+            [
+              18,
+              13,
+              10,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "TRULY",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "RIGHT",
+            "SEARCH"
+          ],
+          "resisted": [
+            "COVER",
+            "DECEIT"
+          ],
+          "neutral": 926
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "TRULY",
+            "SEARCHED"
+          ],
+          "tileIds": [
+            [
+              5,
+              4,
+              10,
+              0,
+              1
+            ],
+            [
+              19,
+              9,
+              2,
+              13,
+              7,
+              16,
+              11,
+              3
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "ACCURATE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "RIGHT",
+            "RIGHTLY",
+            "RIGOR",
+            "VERITY"
+          ],
+          "resisted": [
+            "LIE",
+            "IDLE",
+            "ERR"
+          ],
+          "neutral": 618
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "ACCURATE",
+            "VERITY"
+          ],
+          "tileIds": [
+            [
+              2,
+              7,
+              8,
+              10,
+              4,
+              15,
+              5,
+              9
+            ],
+            [
+              14,
+              11,
+              13,
+              6,
+              18,
+              1
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "ACCURATELY",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "TRUE",
+            "RIGHT",
+            "HONEST",
+            "GROUNDS",
+            "EVIDENT",
+            "RIGOR",
+            "RIGOUR"
+          ],
+          "resisted": [
+            "ERR"
+          ],
+          "neutral": 950
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "ACCURATELY",
+            "TRUE"
+          ],
+          "tileIds": [
+            [
+              2,
+              7,
+              8,
+              10,
+              4,
+              15,
+              5,
+              9,
+              0,
+              1
+            ],
+            [
+              18,
+              13,
+              25,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "AUDITOR",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "RIGHT",
+            "SEARCH",
+            "REALITY",
+            "REALISE",
+            "RIGHTLY",
+            "VERACITY",
+            "VERITY"
+          ],
+          "resisted": [
+            "LIE",
+            "ALTER",
+            "LIAR"
+          ],
+          "neutral": 735
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AUDITOR",
+            "REALISE"
+          ],
+          "tileIds": [
+            [
+              2,
+              10,
+              3,
+              6,
+              5,
+              12,
+              4
+            ],
+            [
+              13,
+              9,
+              15,
+              0,
+              20,
+              19,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "VALIDATE",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "TRUE",
+            "RIGHT",
+            "RIGOR",
+            "RIGOUR"
+          ],
+          "resisted": [
+            "ERROR",
+            "ERR"
+          ],
+          "neutral": 420
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "VALIDATE",
+            "TRUER"
+          ],
+          "tileIds": [
+            [
+              14,
+              2,
+              0,
+              6,
+              3,
+              15,
+              5,
+              9
+            ],
+            [
+              18,
+              4,
+              10,
+              11,
+              13
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "VERACITY",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "TRUE",
+            "CLOSE",
+            "RIGHT",
+            "RESEARCH",
+            "SEARCH",
+            "REALISE",
+            "AUDITOR",
+            "RIGOR",
+            "RIGOUR"
+          ],
+          "resisted": [
+            "LIE",
+            "ALTER",
+            "LIAR",
+            "IDLE",
+            "ERR",
+            "DECEIT"
+          ],
+          "neutral": 1521
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "VERACITY",
+            "TRUE"
+          ],
+          "tileIds": [
+            [
+              14,
+              9,
+              4,
+              2,
+              7,
+              6,
+              5,
+              1
+            ],
+            [
+              18,
+              13,
+              10,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "VERITY",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "TRUE",
+            "CLOSE",
+            "RIGHT",
+            "SEARCH",
+            "ACCURATE",
+            "REALISE",
+            "AUDITOR"
+          ],
+          "resisted": [
+            "LIE",
+            "ALTER",
+            "LIAR",
+            "IDLE",
+            "DECEIT"
+          ],
+          "neutral": 1460
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "VERITY",
+            "TRUE"
+          ],
+          "tileIds": [
+            [
+              14,
+              9,
+              4,
+              6,
+              5,
+              1
+            ],
+            [
+              18,
+              13,
+              10,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "COVER",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "TRUE",
+            "RIGHT",
+            "TRUTH",
+            "SEARCH",
+            "REALITY",
+            "TRULY",
+            "RIGHTLY"
+          ],
+          "resisted": [
+            "LIE",
+            "ALTER",
+            "LIAR",
+            "IDLE"
+          ],
+          "neutral": 1091
+        },
+        "thirdTurn": {
+          "counters": [
+            "RIGHT",
+            "SEARCH",
+            "REALITY",
+            "REALISE",
+            "SINCERELY",
+            "SINCERE",
+            "RIGHTLY",
+            "SINCERITY",
+            "NEGATE"
+          ],
+          "resisted": [
+            "LINE",
+            "LIE",
+            "ALTER",
+            "LIAR",
+            "IDLE",
+            "DECEIT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "COVER",
+            "TRUE",
+            "SEARCH"
+          ],
+          "tileIds": [
+            [
+              7,
+              12,
+              14,
+              9,
+              4
+            ],
+            [
+              5,
+              13,
+              10,
+              11
+            ],
+            [
+              19,
+              21,
+              2,
+              23,
+              8,
+              16
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "LIED",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "TRUE",
+            "TRUTH",
+            "SEARCH",
+            "ACCURATE",
+            "VOUCHERS"
+          ],
+          "resisted": [
+            "COVER",
+            "TORTURE",
+            "ERR"
+          ],
+          "neutral": 689
+        },
+        "thirdTurn": {
+          "counters": [
+            "REASON",
+            "SEARCH",
+            "HONEST",
+            "HONESTY",
+            "SINCERE",
+            "NEGATE",
+            "VERACITY",
+            "VERITY"
+          ],
+          "resisted": [
+            "COVER",
+            "COVERING"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "LIED",
+            "TRUER",
+            "REASON"
+          ],
+          "tileIds": [
+            [
+              0,
+              6,
+              9,
+              3
+            ],
+            [
+              5,
+              4,
+              10,
+              11,
+              13
+            ],
+            [
+              23,
+              21,
+              2,
+              19,
+              12,
+              24
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "ALTER",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "TRUE",
+            "RIGHT",
+            "SEARCH",
+            "AUDITOR",
+            "VOUCHERS",
+            "VERACITY",
+            "VERITY"
+          ],
+          "resisted": [
+            "COVER"
+          ],
+          "neutral": 1103
+        },
+        "thirdTurn": {
+          "counters": [
+            "REASON",
+            "SEARCH",
+            "SINCERE",
+            "CANDOR"
+          ],
+          "resisted": [
+            "COVER",
+            "COVERING",
+            "DECEIVING"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ALTER",
+            "TRUE",
+            "REASON"
+          ],
+          "tileIds": [
+            [
+              2,
+              0,
+              5,
+              9,
+              4
+            ],
+            [
+              18,
+              13,
+              10,
+              11
+            ],
+            [
+              23,
+              21,
+              15,
+              19,
+              12,
+              24
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "LIAR",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "TRUE",
+            "TRUTH",
+            "SEARCH",
+            "VOUCHERS"
+          ],
+          "resisted": [
+            "COVER"
+          ],
+          "neutral": 1001
+        },
+        "thirdTurn": {
+          "counters": [
+            "TRUE",
+            "VERITY"
+          ],
+          "resisted": [
+            "COVER",
+            "COVERING",
+            "UNTRUE",
+            "DECEIVE",
+            "DECEIT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "LIAR",
+            "SEARCHED",
+            "TRUE"
+          ],
+          "tileIds": [
+            [
+              0,
+              6,
+              2,
+              4
+            ],
+            [
+              19,
+              9,
+              15,
+              13,
+              7,
+              16,
+              11,
+              3
+            ],
+            [
+              5,
+              23,
+              10,
+              21
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "TRUE",
+            "TRUTH",
+            "TRULY",
+            "VOUCHER"
+          ],
+          "resisted": [
+            "COVER",
+            "ALTER"
+          ],
+          "neutral": 737
+        },
+        "thirdTurn": {
+          "counters": [
+            "CLOSE"
+          ],
+          "resisted": [
+            "LIE",
+            "IDLE",
+            "DECEIVE",
+            "DECEIT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AIR",
+            "TRUE",
+            "CLOSE"
+          ],
+          "tileIds": [
+            [
+              2,
+              6,
+              4
+            ],
+            [
+              5,
+              13,
+              10,
+              9
+            ],
+            [
+              7,
+              0,
+              12,
+              19,
+              11
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "ARE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "TRUE",
+            "RIGHT",
+            "TRUTH",
+            "REALITY",
+            "TRULY",
+            "RIGHTLY",
+            "AUDITOR",
+            "VOUCHER",
+            "VERACITY",
+            "VERITY"
+          ],
+          "resisted": [
+            "COVER",
+            "LIE",
+            "ALTER",
+            "LIAR",
+            "IDLE"
+          ],
+          "neutral": 929
+        },
+        "thirdTurn": {
+          "counters": [
+            "CLOSE"
+          ],
+          "resisted": [
+            "LIE",
+            "IDLE",
+            "DECEIT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ARE",
+            "TRUE",
+            "CLOSE"
+          ],
+          "tileIds": [
+            [
+              2,
+              4,
+              9
+            ],
+            [
+              5,
+              13,
+              10,
+              11
+            ],
+            [
+              7,
+              0,
+              12,
+              19,
+              21
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "ACCEDE",
+      "TRUER"
+    ],
+    "tileIds": [
+      [
+        2,
+        7,
+        8,
+        9,
+        3,
+        11
+      ],
+      [
+        5,
+        4,
+        10,
+        21,
+        13
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      3
+    ]
+  },
+  "roots": [
+    {
+      "word": "FACTUALNESS",
+      "senseId": "oewn-factualness__1.07.00..",
+      "definition": "the quality of being actual or based on fact",
+      "relation": "opposite"
+    },
+    {
+      "word": "FACTUAL",
+      "senseId": "oewn-factual__5.00.00.real.00",
+      "definition": "existing in act or fact",
+      "relation": "opposite"
+    },
+    {
+      "word": "FACT",
+      "senseId": "oewn-fact__1.09.01..",
+      "definition": "a piece of information about circumstances that exist or events that have occurred",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRUTH",
+      "senseId": "oewn-truth__1.09.00..",
+      "definition": "a fact that has been verified",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRUE",
+      "senseId": "oewn-true__3.00.00..",
+      "definition": "consistent with fact or reality; not false",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRUTHFUL",
+      "senseId": "oewn-truthful__3.00.00..",
+      "definition": "expressing or given to expressing the truth",
+      "relation": "opposite"
+    },
+    {
+      "word": "HONEST",
+      "senseId": "oewn-honest__3.00.00..",
+      "definition": "not disposed to cheat or defraud; not deceptive or fraudulent; marked by truth",
+      "relation": "opposite"
+    },
+    {
+      "word": "HONESTY",
+      "senseId": "oewn-honesty__1.07.00..",
+      "definition": "the quality of being honest",
+      "relation": "opposite"
+    },
+    {
+      "word": "REALITY",
+      "senseId": "oewn-reality__1.26.02..",
+      "definition": "the state of the world as it really is rather than as you might want it to be",
+      "relation": "opposite"
+    },
+    {
+      "word": "REAL",
+      "senseId": "oewn-real__3.00.00..",
+      "definition": "being or occurring in fact or actuality; having verified existence; not illusory",
+      "relation": "opposite"
+    },
+    {
+      "word": "ACTUAL",
+      "senseId": "oewn-actual__3.00.00..",
+      "definition": "presently existing in fact and not merely potential or possible",
+      "relation": "opposite"
+    },
+    {
+      "word": "ACTUALITY",
+      "senseId": "oewn-actuality__1.26.00..",
+      "definition": "the state of actually existing objectively",
+      "relation": "opposite"
+    },
+    {
+      "word": "VERITY",
+      "senseId": "oewn-verity__1.26.00..",
+      "definition": "conformity to reality or actuality",
+      "relation": "opposite"
+    },
+    {
+      "word": "VERACIOUS",
+      "senseId": "oewn-veracious__5.00.00.truthful.00",
+      "definition": "habitually speaking the truth",
+      "relation": "opposite"
+    },
+    {
+      "word": "VERACITY",
+      "senseId": "oewn-veracity__1.07.00..",
+      "definition": "unwillingness to tell lies",
+      "relation": "opposite"
+    },
+    {
+      "word": "ACCURATE",
+      "senseId": "oewn-accurate__3.00.00..",
+      "definition": "conforming exactly or almost exactly to fact or to a standard or performing with total accuracy",
+      "relation": "opposite"
+    },
+    {
+      "word": "ACCURACY",
+      "senseId": "oewn-accuracy__1.07.02..",
+      "definition": "the quality of being near to the true value",
+      "relation": "opposite"
+    },
+    {
+      "word": "CORRECT",
+      "senseId": "oewn-correct__3.00.00..",
+      "definition": "free from error; especially conforming to fact or truth",
+      "relation": "opposite"
+    },
+    {
+      "word": "CORRECTNESS",
+      "senseId": "oewn-correctness__1.07.01..",
+      "definition": "conformity to fact or truth",
+      "relation": "opposite"
+    },
+    {
+      "word": "CANDOUR",
+      "senseId": "oewn-candour__1.07.00..",
+      "definition": "the quality of being honest and straightforward in attitude and speech",
+      "relation": "opposite"
+    },
+    {
+      "word": "CANDOR",
+      "senseId": "oewn-candor__1.07.00..",
+      "definition": "the quality of being honest and straightforward in attitude and speech",
+      "relation": "opposite"
+    },
+    {
+      "word": "CANDID",
+      "senseId": "oewn-candid__5.00.00.direct.02",
+      "definition": "characterized by directness in manner or speech; without subtlety or evasion",
+      "relation": "opposite"
+    },
+    {
+      "word": "SINCERITY",
+      "senseId": "oewn-sincerity__1.07.00..",
+      "definition": "the quality of being open and truthful; not deceitful or hypocritical",
+      "relation": "opposite"
+    },
+    {
+      "word": "SINCERE",
+      "senseId": "oewn-sincere__3.00.00..",
+      "definition": "open and genuine; not deceitful",
+      "relation": "opposite"
+    },
+    {
+      "word": "AUTHENTICATE",
+      "senseId": "oewn-authenticate__2.31.00..",
+      "definition": "establish the authenticity of something",
+      "relation": "opposite"
+    },
+    {
+      "word": "VERIFY",
+      "senseId": "oewn-verify__2.31.01..",
+      "definition": "confirm the truth of",
+      "relation": "opposite"
+    },
+    {
+      "word": "VERIFICATION",
+      "senseId": "oewn-verification__1.09.00..",
+      "definition": "additional proof that something that was believed (some fact or hypothesis or theory) is correct",
+      "relation": "opposite"
+    },
+    {
+      "word": "PROOF",
+      "senseId": "oewn-proof__1.09.00..",
+      "definition": "any factual evidence that helps to establish the truth of something",
+      "relation": "opposite"
+    },
+    {
+      "word": "PROVE",
+      "senseId": "oewn-prove__2.31.00..",
+      "definition": "establish the validity of something, as by an example, explanation or experiment",
+      "relation": "opposite"
+    },
+    {
+      "word": "SUBSTANTIATE",
+      "senseId": "oewn-substantiate__2.31.00..",
+      "definition": "establish or strengthen as with new evidence or facts",
+      "relation": "opposite"
+    },
+    {
+      "word": "VALIDATE",
+      "senseId": "oewn-validate__2.31.00..",
+      "definition": "prove valid; show or confirm the validity of something",
+      "relation": "opposite"
+    },
+    {
+      "word": "VALIDATION",
+      "senseId": "oewn-validation__1.04.00..",
+      "definition": "the act of validating; finding or testing the truth of something",
+      "relation": "opposite"
+    },
+    {
+      "word": "VALID",
+      "senseId": "oewn-valid__3.00.00..",
+      "definition": "well grounded in logic or truth or having legal force",
+      "relation": "opposite"
+    },
+    {
+      "word": "EVIDENCE",
+      "senseId": "oewn-evidence__1.09.00..",
+      "definition": "your basis for belief or disbelief; knowledge on which to base belief",
+      "relation": "opposite"
+    },
+    {
+      "word": "VERIFIABLE",
+      "senseId": "oewn-verifiable__5.00.00.objective.00",
+      "definition": "capable of being verified",
+      "relation": "opposite"
+    },
+    {
+      "word": "FACTUALLY",
+      "senseId": "oewn-factually__4.02.00..",
+      "definition": "as a fact or based on fact",
+      "relation": "opposite"
+    },
+    {
+      "word": "FAITHFUL",
+      "senseId": "oewn-faithful__5.00.00.accurate.00",
+      "definition": "marked by fidelity to an original",
+      "relation": "opposite"
+    },
+    {
+      "word": "RIGHT",
+      "senseId": "oewn-right__3.00.02..",
+      "definition": "free from error; especially conforming to fact or truth",
+      "relation": "opposite"
+    },
+    {
+      "word": "RIGHTLY",
+      "senseId": "oewn-rightly__4.02.00..",
+      "definition": "with honesty",
+      "relation": "opposite"
+    },
+    {
+      "word": "FALSE",
+      "senseId": "oewn-false__3.00.00..",
+      "definition": "not in accordance with the fact or reality or actuality",
+      "relation": "similar"
+    },
+    {
+      "word": "FALSIFY",
+      "senseId": "oewn-falsify__2.32.00..",
+      "definition": "make false by mutilation or addition; as of a message or story",
+      "relation": "similar"
+    },
+    {
+      "word": "FALSIFICATION",
+      "senseId": "oewn-falsification__1.04.02..",
+      "definition": "a willful perversion of facts",
+      "relation": "similar"
+    },
+    {
+      "word": "FALSEHOOD",
+      "senseId": "oewn-falsehood__1.10.00..",
+      "definition": "a false statement",
+      "relation": "similar"
+    },
+    {
+      "word": "LIE",
+      "senseId": "oewn-lie__1.10.00..",
+      "definition": "a statement that deviates from or perverts the truth",
+      "relation": "similar"
+    },
+    {
+      "word": "LIAR",
+      "senseId": "oewn-liar__1.18.00..",
+      "definition": "a person who has lied or who lies repeatedly",
+      "relation": "similar"
+    },
+    {
+      "word": "LYING",
+      "senseId": "oewn-lie__2.32.00..",
+      "definition": "tell an untruth; pretend with intent to deceive",
+      "relation": "similar"
+    },
+    {
+      "word": "UNTRUTH",
+      "senseId": "oewn-untruth__1.10.00..",
+      "definition": "a false statement",
+      "relation": "similar"
+    },
+    {
+      "word": "DISHONEST",
+      "senseId": "oewn-dishonest__3.00.00..",
+      "definition": "deceptive or fraudulent; disposed to cheat or defraud or deceive",
+      "relation": "similar"
+    },
+    {
+      "word": "DISHONESTY",
+      "senseId": "oewn-dishonesty__1.07.00..",
+      "definition": "the quality of being dishonest",
+      "relation": "similar"
+    },
+    {
+      "word": "DECEIT",
+      "senseId": "oewn-deceit__1.07.00..",
+      "definition": "the quality of being fraudulent",
+      "relation": "similar"
+    },
+    {
+      "word": "DECEIVE",
+      "senseId": "oewn-deceive__2.41.00..",
+      "definition": "be false to; be dishonest with",
+      "relation": "similar"
+    },
+    {
+      "word": "DECEPTION",
+      "senseId": "oewn-deception__1.10.00..",
+      "definition": "a misleading falsehood",
+      "relation": "similar"
+    },
+    {
+      "word": "DECEPTIVE",
+      "senseId": "oewn-deceptive__5.00.00.unreal.02",
+      "definition": "causing one to believe what is not true or fail to believe what is true",
+      "relation": "similar"
+    },
+    {
+      "word": "FALLACY",
+      "senseId": "oewn-fallacy__1.09.00..",
+      "definition": "a misconception resulting from incorrect reasoning",
+      "relation": "similar"
+    },
+    {
+      "word": "FALLACIOUS",
+      "senseId": "oewn-fallacious__5.00.00.incorrect.00",
+      "definition": "based on an incorrect or misleading notion or information",
+      "relation": "similar"
+    },
+    {
+      "word": "INACCURATE",
+      "senseId": "oewn-inaccurate__3.00.00..",
+      "definition": "erroneous",
+      "relation": "similar"
+    },
+    {
+      "word": "INCORRECT",
+      "senseId": "oewn-incorrect__3.00.00..",
+      "definition": "not correct; not in conformity with fact or truth",
+      "relation": "similar"
+    },
+    {
+      "word": "ERROR",
+      "senseId": "oewn-error__1.10.00..",
+      "definition": "part of a statement that is not correct",
+      "relation": "similar"
+    },
+    {
+      "word": "ERRONEOUS",
+      "senseId": "oewn-erroneous__5.00.00.incorrect.00",
+      "definition": "containing or characterized by error",
+      "relation": "similar"
+    },
+    {
+      "word": "MISTAKE",
+      "senseId": "oewn-mistake__1.10.00..",
+      "definition": "part of a statement that is not correct",
+      "relation": "similar"
+    },
+    {
+      "word": "MISTAKEN",
+      "senseId": "oewn-mistaken__5.00.00.wrong.01",
+      "definition": "wrong in e.g. opinion or judgment",
+      "relation": "similar"
+    },
+    {
+      "word": "BOGUS",
+      "senseId": "oewn-bogus__5.00.00.counterfeit.00",
+      "definition": "fraudulent; having a misleading appearance",
+      "relation": "similar"
+    },
+    {
+      "word": "FICTITIOUS",
+      "senseId": "oewn-fictitious__5.00.00.unreal.00",
+      "definition": "formed or conceived by the imagination",
+      "relation": "similar"
+    },
+    {
+      "word": "FICTIVE",
+      "senseId": "oewn-fictive__5.00.00.counterfeit.00",
+      "definition": "adopted in order to deceive",
+      "relation": "similar"
+    },
+    {
+      "word": "FICTION",
+      "senseId": "oewn-fiction__1.10.01..",
+      "definition": "a deliberately false or improbable account",
+      "relation": "similar"
+    },
+    {
+      "word": "FABRICATION",
+      "senseId": "oewn-fabrication__1.10.00..",
+      "definition": "a deliberately false or improbable account",
+      "relation": "similar"
+    },
+    {
+      "word": "FABRICATE",
+      "senseId": "oewn-fabricate__2.36.00..",
+      "definition": "concoct something artificial or untrue",
+      "relation": "similar"
+    },
+    {
+      "word": "FRAUDULENT",
+      "senseId": "oewn-fraudulent__5.00.00.dishonest.00",
+      "definition": "involving deception",
+      "relation": "similar"
+    },
+    {
+      "word": "FRAUD",
+      "senseId": "oewn-fraud__1.04.00..",
+      "definition": "intentional deception resulting in injury to another person",
+      "relation": "similar"
+    },
+    {
+      "word": "COUNTERFEIT",
+      "senseId": "oewn-counterfeit__3.00.00..",
+      "definition": "not genuine; imitating something superior",
+      "relation": "similar"
+    },
+    {
+      "word": "SPURIOUS",
+      "senseId": "oewn-spurious__5.00.00.false.00",
+      "definition": "plausible but false",
+      "relation": "similar"
+    },
+    {
+      "word": "SHAM",
+      "senseId": "oewn-sham__5.00.00.counterfeit.00",
+      "definition": "adopted in order to deceive",
+      "relation": "similar"
+    },
+    {
+      "word": "FAKE",
+      "senseId": "oewn-fake__5.00.00.counterfeit.00",
+      "definition": "fraudulent; having a misleading appearance",
+      "relation": "similar"
+    },
+    {
+      "word": "UNTRUE",
+      "senseId": "oewn-untrue__5.00.00.false.00",
+      "definition": "not according with the facts",
+      "relation": "similar"
+    },
+    {
+      "word": "MYTH",
+      "senseId": "oewn-myth__1.10.00..",
+      "definition": "a traditional story accepted as history; serves to explain the world view of a people",
+      "relation": "similar"
+    },
+    {
+      "word": "MYTHICAL",
+      "senseId": "oewn-mythical__5.00.00.unreal.00",
+      "definition": "based on or told of in traditional stories; lacking factual basis or historical validity",
+      "relation": "similar"
+    },
+    {
+      "word": "ILLUSION",
+      "senseId": "oewn-illusion__1.09.00..",
+      "definition": "something many people believe that is false",
+      "relation": "similar"
+    },
+    {
+      "word": "ILLUSORY",
+      "senseId": "oewn-illusory__5.00.00.unreal.00",
+      "definition": "based on or having the nature of an illusion",
+      "relation": "similar"
+    },
+    {
+      "word": "LIE",
+      "senseId": "oewn-lie__2.32.00..",
+      "definition": "tell an untruth; pretend with intent to deceive",
+      "relation": "similar"
+    },
+    {
+      "word": "CORRECT",
+      "senseId": "oewn-correct__2.30.00..",
+      "definition": "make right or correct",
+      "relation": "opposite"
+    },
+    {
+      "word": "REFUTE",
+      "senseId": "oewn-refute__2.32.00..",
+      "definition": "overthrow by argument, evidence, or proof",
+      "relation": "opposite"
+    },
+    {
+      "word": "DISPROVE",
+      "senseId": "oewn-disprove__2.31.00..",
+      "definition": "prove to be false",
+      "relation": "opposite"
+    },
+    {
+      "word": "DEBUNK",
+      "senseId": "oewn-debunk__2.32.00..",
+      "definition": "expose while ridiculing; especially of pretentious or false claims and ideas",
+      "relation": "opposite"
+    },
+    {
+      "word": "DATA",
+      "senseId": "oewn-data__1.14.00..",
+      "definition": "a collection of facts from which conclusions may be drawn",
+      "relation": "opposite"
+    },
+    {
+      "word": "DATUM",
+      "senseId": "oewn-datum__1.09.00..",
+      "definition": "an item of factual information derived from measurement or research",
+      "relation": "opposite"
+    },
+    {
+      "word": "REASON",
+      "senseId": "oewn-reason__1.09.01..",
+      "definition": "a fact that logically justifies some premise or conclusion",
+      "relation": "opposite"
+    },
+    {
+      "word": "RESEARCH",
+      "senseId": "oewn-research__1.04.00..",
+      "definition": "systematic investigation to establish facts",
+      "relation": "opposite"
+    },
+    {
+      "word": "MATERIAL",
+      "senseId": "oewn-material__3.00.03..",
+      "definition": "having substance or capable of being treated as fact; not imaginary",
+      "relation": "opposite"
+    },
+    {
+      "word": "AUDIT",
+      "senseId": "oewn-audit__2.31.01..",
+      "definition": "examine carefully for accuracy with the intent of verification",
+      "relation": "opposite"
+    },
+    {
+      "word": "AUTHENTIC",
+      "senseId": "oewn-authentic__5.00.00.trustworthy.00",
+      "definition": "conforming to fact and therefore worthy of belief",
+      "relation": "opposite"
+    },
+    {
+      "word": "TECHNICALLY",
+      "senseId": "oewn-technically__4.02.02..",
+      "definition": "according to the exact meaning; according to the facts",
+      "relation": "opposite"
+    },
+    {
+      "word": "OATH",
+      "senseId": "oewn-oath__1.10.00..",
+      "definition": "a commitment to tell the truth (especially in a court of law); to lie under oath is to become subject to prosecution for perjury",
+      "relation": "opposite"
+    },
+    {
+      "word": "DOCUMENTARY",
+      "senseId": "oewn-documentary__1.10.00..",
+      "definition": "a film or TV program presenting the facts about a person or event",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONTRADICT",
+      "senseId": "oewn-contradict__2.31.00..",
+      "definition": "prove negative; show to be false",
+      "relation": "opposite"
+    },
+    {
+      "word": "LINE",
+      "senseId": "oewn-line__1.10.06..",
+      "definition": "persuasive but insincere talk that is usually intended to deceive or impress",
+      "relation": "similar"
+    },
+    {
+      "word": "KID",
+      "senseId": "oewn-kid__2.32.01..",
+      "definition": "tell false information to for fun",
+      "relation": "similar"
+    },
+    {
+      "word": "WILD",
+      "senseId": "oewn-wild__5.00.00.unsupported.02",
+      "definition": "without a basis in reason or fact",
+      "relation": "similar"
+    },
+    {
+      "word": "AFFECT",
+      "senseId": "oewn-affect__2.32.00..",
+      "definition": "make believe with the intent to deceive",
+      "relation": "similar"
+    },
+    {
+      "word": "TRICK",
+      "senseId": "oewn-trick__2.41.00..",
+      "definition": "deceive somebody",
+      "relation": "similar"
+    },
+    {
+      "word": "MASK",
+      "senseId": "oewn-mask__2.39.00..",
+      "definition": "hide under a false appearance",
+      "relation": "similar"
+    },
+    {
+      "word": "TWIST",
+      "senseId": "oewn-twist__2.32.00..",
+      "definition": "practice sophistry; change the meaning of or be vague about in order to mislead or deceive",
+      "relation": "similar"
+    },
+    {
+      "word": "UNREAL",
+      "senseId": "oewn-unreal__3.00.00..",
+      "definition": "lacking in reality or substance or genuineness; not corresponding to acknowledged facts or criteria",
+      "relation": "similar"
+    },
+    {
+      "word": "MISLEAD",
+      "senseId": "oewn-mislead__2.32.00..",
+      "definition": "give false or misleading information to",
+      "relation": "similar"
+    },
+    {
+      "word": "FALSELY",
+      "senseId": "oewn-falsely__4.02.00..",
+      "definition": "in a false manner",
+      "relation": "similar"
+    },
+    {
+      "word": "ERR",
+      "senseId": "oewn-err__2.31.00..",
+      "definition": "to make a mistake or be incorrect",
+      "relation": "similar"
+    }
+  ],
+  "semanticPolicy": "Pinned source senses and reviewed lexical families; unlabelled defined senses are neutral. Not a proof of exhaustive contextual semantic coverage.",
+  "asset": "puzzles/err-corrected-a7be18fdb819.json",
+  "novelty": []
+}

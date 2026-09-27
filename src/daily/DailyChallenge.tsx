@@ -87,7 +87,8 @@ function DailyAttempt({ entry, encounter, today, onTutorial }: {
   }
   function restart() {
     try {
-      const latest = readChallenge(entry.date, window.localStorage) ?? current.current
+      const saved = readChallenge(entry.date, window.localStorage)
+      const latest = saved?.asset === entry.asset ? saved : openChallenge(entry.date, entry.asset, encounter, window.localStorage).record
       current.current = restartChallenge(latest, window.localStorage)
       reload()
     } catch (cause) { setError(cause instanceof Error ? cause.message : 'Progress could not be saved.') }

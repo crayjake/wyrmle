@@ -1,0 +1,869 @@
+{
+  "id": "ignite-extinguish",
+  "enemy": "IGNITE",
+  "answer": "EXTINGUISH",
+  "accepted": true,
+  "seed": "bingo-first-3:IGNITE:EXTINGUISH:13",
+  "score": 255,
+  "analysis": {
+    "score": 255,
+    "bingos": [
+      "EXTINGUISH"
+    ],
+    "counterFamilies": 6,
+    "resistedFamilies": 4,
+    "winningOpenings": 7,
+    "repeatedCounterRoutes": 6,
+    "sustainedPositions": 7,
+    "sustainedFinalPositions": 2,
+    "neutralCleanupOpenings": 0,
+    "routes": [
+      {
+        "opening": "WATER",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "MOISTURE",
+            "SMOTHERING"
+          ],
+          "resisted": [
+            "HOT",
+            "FIRE",
+            "IGNITE"
+          ],
+          "neutral": 811
+        },
+        "thirdTurn": {
+          "counters": [
+            "FIREMAN"
+          ],
+          "resisted": [
+            "FIRE",
+            "FUEL",
+            "COAL",
+            "FLAME",
+            "FLARE",
+            "CHAR"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "WATER",
+            "SMOTHERING",
+            "FIREMAN"
+          ],
+          "tileIds": [
+            [
+              8,
+              14,
+              2,
+              13,
+              12
+            ],
+            [
+              9,
+              1,
+              4,
+              20,
+              3,
+              17,
+              18,
+              5,
+              15,
+              10
+            ],
+            [
+              7,
+              6,
+              27,
+              25,
+              21,
+              29,
+              24
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "WET",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "FIREMAN"
+          ],
+          "resisted": [
+            "FIRE"
+          ],
+          "neutral": 637
+        },
+        "thirdTurn": {
+          "counters": [
+            "MOISTURE",
+            "SMOTHERING"
+          ],
+          "resisted": [
+            "HOT",
+            "LIGHT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "WET",
+            "FIREMAN",
+            "SMOTHERING"
+          ],
+          "tileIds": [
+            [
+              8,
+              13,
+              2
+            ],
+            [
+              7,
+              5,
+              12,
+              17,
+              1,
+              14,
+              15
+            ],
+            [
+              9,
+              21,
+              4,
+              20,
+              3,
+              25,
+              18,
+              6,
+              24,
+              10
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "WASHING",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "MOISTURE",
+            "SMOTHER"
+          ],
+          "resisted": [
+            "HOT",
+            "FIRE",
+            "FUEL",
+            "LIT"
+          ],
+          "neutral": 607
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "WASHING",
+            "MOISTURE"
+          ],
+          "tileIds": [
+            [
+              8,
+              14,
+              9,
+              3,
+              5,
+              15,
+              10
+            ],
+            [
+              1,
+              4,
+              6,
+              19,
+              2,
+              0,
+              12,
+              13
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "MOISTURE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "WASHING",
+            "MANTLE",
+            "WATERING",
+            "FIREMAN",
+            "SMOTHERING"
+          ],
+          "resisted": [
+            "HOT",
+            "FIRE",
+            "LIGHT",
+            "HEAT",
+            "FLAME",
+            "FLARE",
+            "FLAMING"
+          ],
+          "neutral": 1532
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "MOISTURE",
+            "WASHING"
+          ],
+          "tileIds": [
+            [
+              1,
+              4,
+              5,
+              9,
+              2,
+              0,
+              12,
+              13
+            ],
+            [
+              8,
+              14,
+              19,
+              3,
+              6,
+              15,
+              10
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "FIREMAN",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "WET",
+            "MOISTURE",
+            "SMOTHER"
+          ],
+          "resisted": [
+            "HOT",
+            "LIGHT"
+          ],
+          "neutral": 664
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "HOT",
+            "HEAT",
+            "COAL",
+            "CHAR"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "FIREMAN",
+            "MOISTURE",
+            "AGE"
+          ],
+          "tileIds": [
+            [
+              7,
+              5,
+              12,
+              13,
+              1,
+              14,
+              15
+            ],
+            [
+              21,
+              4,
+              6,
+              9,
+              2,
+              0,
+              18,
+              17
+            ],
+            [
+              29,
+              10,
+              25
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            3,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SMOTHER",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "WASHING",
+            "MANTLE",
+            "WATERING",
+            "FIREMAN"
+          ],
+          "resisted": [
+            "FIRE",
+            "LIGHT",
+            "HEAT",
+            "FUEL",
+            "FLAME",
+            "FLARE",
+            "FLAMING",
+            "IGNITE"
+          ],
+          "neutral": 1381
+        },
+        "thirdTurn": {
+          "counters": [
+            "FIREMAN"
+          ],
+          "resisted": [
+            "FIRE",
+            "FUEL",
+            "COAL",
+            "LIT",
+            "FLAME",
+            "FLARE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SMOTHER",
+            "WASHING",
+            "FIREMAN"
+          ],
+          "tileIds": [
+            [
+              9,
+              1,
+              4,
+              2,
+              3,
+              13,
+              12
+            ],
+            [
+              8,
+              14,
+              19,
+              16,
+              5,
+              15,
+              10
+            ],
+            [
+              7,
+              6,
+              18,
+              17,
+              21,
+              29,
+              24
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "FIRE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "WATER",
+            "WET",
+            "WASHING",
+            "MOISTURE",
+            "SMOTHER"
+          ],
+          "resisted": [
+            "HOT",
+            "HEAT",
+            "SEARS"
+          ],
+          "neutral": 1327
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "HEAT",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [],
+          "resisted": [
+            "FIRE"
+          ],
+          "neutral": 504
+        },
+        "thirdTurn": {
+          "counters": [
+            "WET",
+            "MOISTURE",
+            "SMOTHER"
+          ],
+          "resisted": [
+            "HOT",
+            "FIRE",
+            "LIGHT",
+            "FUEL"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "HEAT",
+            "SIR",
+            "SMOTHERING"
+          ],
+          "tileIds": [
+            [
+              3,
+              13,
+              14,
+              2
+            ],
+            [
+              9,
+              5,
+              12
+            ],
+            [
+              19,
+              1,
+              4,
+              20,
+              16,
+              17,
+              18,
+              6,
+              15,
+              10
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            1,
+            5
+          ]
+        }
+      },
+      {
+        "opening": "IGNITE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "WATER",
+            "WET",
+            "WASHES",
+            "SMOTHER"
+          ],
+          "resisted": [
+            "HOT",
+            "HEAT",
+            "SEARS"
+          ],
+          "neutral": 552
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "SEARING",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "WET",
+            "MOISTURE",
+            "SMOTHER"
+          ],
+          "resisted": [
+            "HOT",
+            "FIRE",
+            "FUEL",
+            "LIT"
+          ],
+          "neutral": 569
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "AGE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "WET",
+            "MOISTURE",
+            "SMOTHER"
+          ],
+          "resisted": [
+            "HOT",
+            "FIRE"
+          ],
+          "neutral": 604
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "AGO",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "WET"
+          ],
+          "resisted": [
+            "FIRE"
+          ],
+          "neutral": 418
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "AFIRE",
+      "SMOTHERING"
+    ],
+    "tileIds": [
+      [
+        14,
+        7,
+        5,
+        12,
+        13
+      ],
+      [
+        9,
+        1,
+        4,
+        2,
+        3,
+        17,
+        18,
+        6,
+        15,
+        10
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      5
+    ]
+  },
+  "roots": [
+    {
+      "word": "EXTINGUISH",
+      "senseId": "oewn-extinguish__2.43.00..",
+      "definition": "put out, as of fires, flames, or lights",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUENCH",
+      "senseId": "oewn-quench__2.43.00..",
+      "definition": "put out, as of fires, flames, or lights",
+      "relation": "opposite"
+    },
+    {
+      "word": "DOUSE",
+      "senseId": "oewn-douse__2.43.00..",
+      "definition": "put out, as of a candle or a light",
+      "relation": "opposite"
+    },
+    {
+      "word": "DRENCH",
+      "senseId": "oewn-drench__2.30.00..",
+      "definition": "cover with liquid; pour liquid onto",
+      "relation": "opposite"
+    },
+    {
+      "word": "SMOTHER",
+      "senseId": "oewn-smother__2.35.00..",
+      "definition": "deprive of oxygen and prevent from breathing",
+      "relation": "opposite"
+    },
+    {
+      "word": "COOL",
+      "senseId": "oewn-cool__2.30.01..",
+      "definition": "make cool or cooler",
+      "relation": "opposite"
+    },
+    {
+      "word": "WET",
+      "senseId": "oewn-wet__1.26.00..",
+      "definition": "wetness caused by water",
+      "relation": "opposite"
+    },
+    {
+      "word": "WATER",
+      "senseId": "oewn-water__2.30.00..",
+      "definition": "supply with water, as with channels or ditches or streams",
+      "relation": "opposite"
+    },
+    {
+      "word": "DAMPEN",
+      "senseId": "oewn-dampen__2.30.01..",
+      "definition": "make moist",
+      "relation": "opposite"
+    },
+    {
+      "word": "SUPPRESS",
+      "senseId": "oewn-suppress__2.30.01..",
+      "definition": "lessen to the point of stopping",
+      "relation": "opposite"
+    },
+    {
+      "word": "BLANKET",
+      "senseId": "oewn-blanket__1.17.00..",
+      "definition": "anything that covers",
+      "relation": "opposite"
+    },
+    {
+      "word": "FIREFIGHTER",
+      "senseId": "oewn-firefighter__1.18.00..",
+      "definition": "a member of a fire department who tries to extinguish fires",
+      "relation": "opposite"
+    },
+    {
+      "word": "FIREMAN",
+      "senseId": "oewn-fireman__1.18.00..",
+      "definition": "a male member of a fire department who tries to extinguish fires",
+      "relation": "opposite"
+    },
+    {
+      "word": "SOAK",
+      "senseId": "oewn-soak__1.22.00..",
+      "definition": "the process of becoming softened and saturated as a consequence of being immersed in water (or other liquid)",
+      "relation": "opposite"
+    },
+    {
+      "word": "FLOOD",
+      "senseId": "oewn-flood__2.30.00..",
+      "definition": "cover with liquid, usually water",
+      "relation": "opposite"
+    },
+    {
+      "word": "IGNITE",
+      "senseId": "oewn-ignite__2.43.00..",
+      "definition": "cause to start burning; subject to fire or great heat",
+      "relation": "similar"
+    },
+    {
+      "word": "FIRE",
+      "senseId": "oewn-fire__1.22.00..",
+      "definition": "the process of combustion of inflammable materials producing heat and light and (often) smoke",
+      "relation": "similar"
+    },
+    {
+      "word": "BURN",
+      "senseId": "oewn-burn__2.30.00..",
+      "definition": "undergo combustion",
+      "relation": "similar"
+    },
+    {
+      "word": "BLAZE",
+      "senseId": "oewn-blaze__1.22.00..",
+      "definition": "a strong flame that burns brightly",
+      "relation": "similar"
+    },
+    {
+      "word": "FLAME",
+      "senseId": "oewn-flame__1.22.00..",
+      "definition": "the process of combustion of inflammable materials producing heat and light and (often) smoke",
+      "relation": "similar"
+    },
+    {
+      "word": "HEAT",
+      "senseId": "oewn-heat__2.30.01..",
+      "definition": "make hot or hotter",
+      "relation": "similar"
+    },
+    {
+      "word": "KINDLE",
+      "senseId": "oewn-kindle__2.43.01..",
+      "definition": "catch fire",
+      "relation": "similar"
+    },
+    {
+      "word": "SCORCH",
+      "senseId": "oewn-scorch__1.26.00..",
+      "definition": "a surface burn",
+      "relation": "similar"
+    },
+    {
+      "word": "SEAR",
+      "senseId": "oewn-sear__2.30.07..",
+      "definition": "become superficially burned",
+      "relation": "similar"
+    },
+    {
+      "word": "CHAR",
+      "senseId": "oewn-char__2.43.00..",
+      "definition": "burn to charcoal",
+      "relation": "similar"
+    },
+    {
+      "word": "SINGE",
+      "senseId": "oewn-singe__1.26.00..",
+      "definition": "a surface burn",
+      "relation": "similar"
+    },
+    {
+      "word": "INCINERATE",
+      "senseId": "oewn-incinerate__2.30.01..",
+      "definition": "become reduced to ashes",
+      "relation": "similar"
+    },
+    {
+      "word": "COMBUST",
+      "senseId": "oewn-combust__2.43.02..",
+      "definition": "cause to burn or combust",
+      "relation": "similar"
+    },
+    {
+      "word": "SPARK",
+      "senseId": "oewn-spark__1.17.00..",
+      "definition": "a small fragment of a burning substance thrown out by burning material or by friction",
+      "relation": "similar"
+    },
+    {
+      "word": "FLARE",
+      "senseId": "oewn-flare__2.43.00..",
+      "definition": "burn brightly",
+      "relation": "similar"
+    },
+    {
+      "word": "EMBER",
+      "senseId": "oewn-ember__1.17.00..",
+      "definition": "a hot fragment of wood or coal that is left from a fire and is glowing or smoldering",
+      "relation": "similar"
+    },
+    {
+      "word": "HOT",
+      "senseId": "oewn-hot__3.00.01..",
+      "definition": "used of physical heat; having a high or higher than desirable temperature or giving off heat or feeling or causing a sensation of heat or burning",
+      "relation": "similar"
+    },
+    {
+      "word": "FUEL",
+      "senseId": "oewn-fuel__1.27.00..",
+      "definition": "a substance that can be consumed to produce energy",
+      "relation": "similar"
+    },
+    {
+      "word": "STOKE",
+      "senseId": "oewn-stoke__2.41.00..",
+      "definition": "stir up or tend; of a fire",
+      "relation": "similar"
+    },
+    {
+      "word": "TINDER",
+      "senseId": "oewn-tinder__1.27.00..",
+      "definition": "material for starting a fire",
+      "relation": "similar"
+    },
+    {
+      "word": "LIGHT",
+      "senseId": "oewn-light__2.34.00..",
+      "definition": "begin to smoke",
+      "relation": "similar"
+    }
+  ],
+  "novelty": [],
+  "semanticPolicy": "Pinned source senses and reviewed lexical families; unlabelled defined senses are neutral. Not a proof of exhaustive contextual semantic coverage.",
+  "asset": "puzzles/ignite-extinguish-1deff98799f1.json"
+}

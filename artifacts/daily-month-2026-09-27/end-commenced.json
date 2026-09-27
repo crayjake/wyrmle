@@ -1,0 +1,796 @@
+{
+  "id": "end-commenced",
+  "enemy": "END",
+  "answer": "COMMENCED",
+  "accepted": true,
+  "seed": "bingo-first-3:END:COMMENCED:12",
+  "score": 277,
+  "analysis": {
+    "score": 277,
+    "bingos": [
+      "OPENED",
+      "COMMENCED"
+    ],
+    "counterFamilies": 6,
+    "resistedFamilies": 4,
+    "winningOpenings": 8,
+    "repeatedCounterRoutes": 8,
+    "sustainedPositions": 5,
+    "sustainedFinalPositions": 2,
+    "neutralCleanupOpenings": 1,
+    "routes": [
+      {
+        "opening": "GET",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "ROSE",
+            "AROSE"
+          ],
+          "resisted": [
+            "END",
+            "DONE",
+            "CLOSE",
+            "CONCLUDE"
+          ],
+          "neutral": 1024
+        },
+        "thirdTurn": {
+          "counters": [
+            "LAUNCH",
+            "UPHELD"
+          ],
+          "resisted": [
+            "END",
+            "DONE",
+            "HELD",
+            "CONCLUDE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "GET",
+            "ROSE",
+            "LAUNCHED"
+          ],
+          "tileIds": [
+            [
+              12,
+              3,
+              6
+            ],
+            [
+              9,
+              4,
+              8,
+              14
+            ],
+            [
+              16,
+              10,
+              18,
+              5,
+              13,
+              19,
+              22,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "ROSE",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "GET",
+            "LAUNCH",
+            "UPHELD",
+            "PLUNGE"
+          ],
+          "resisted": [
+            "END",
+            "HELD",
+            "HALT"
+          ],
+          "neutral": 438
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ROSE",
+            "LAUNCHED"
+          ],
+          "tileIds": [
+            [
+              9,
+              4,
+              8,
+              3
+            ],
+            [
+              16,
+              10,
+              18,
+              5,
+              13,
+              19,
+              14,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "GREW",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "LAUNCH",
+            "ONSET",
+            "UPHELD"
+          ],
+          "resisted": [
+            "END",
+            "DONE",
+            "HELD",
+            "LAST",
+            "STOP",
+            "CLOSE",
+            "HALT",
+            "CONCLUDE"
+          ],
+          "neutral": 1116
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "GREW",
+            "LAUNCHED"
+          ],
+          "tileIds": [
+            [
+              12,
+              9,
+              3,
+              7
+            ],
+            [
+              16,
+              10,
+              18,
+              5,
+              13,
+              19,
+              14,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "AROSE",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "GET",
+            "UPHELD",
+            "PLUNGE"
+          ],
+          "resisted": [
+            "END",
+            "DONE",
+            "HELD",
+            "CONCLUDE"
+          ],
+          "neutral": 360
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AROSE",
+            "PLUNGED"
+          ],
+          "tileIds": [
+            [
+              10,
+              9,
+              4,
+              8,
+              3
+            ],
+            [
+              2,
+              16,
+              18,
+              5,
+              12,
+              14,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "RENEW",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "UPHOLD"
+          ],
+          "resisted": [
+            "HOLD",
+            "LAST",
+            "STOP",
+            "HALT"
+          ],
+          "neutral": 473
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RENEW",
+            "UPHOLD"
+          ],
+          "tileIds": [
+            [
+              9,
+              3,
+              5,
+              14,
+              7
+            ],
+            [
+              18,
+              2,
+              19,
+              4,
+              16,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "ONSET",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "GREW",
+            "UPHELD"
+          ],
+          "resisted": [
+            "HELD"
+          ],
+          "neutral": 568
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "ONSET",
+            "UPHELD"
+          ],
+          "tileIds": [
+            [
+              4,
+              5,
+              8,
+              3,
+              6
+            ],
+            [
+              18,
+              2,
+              19,
+              14,
+              16,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "DONE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "GET",
+            "GREW"
+          ],
+          "resisted": [
+            "LAST",
+            "HALT"
+          ],
+          "neutral": 807
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "STOP",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "GREW",
+            "LAUNCH",
+            "RENEW",
+            "UPHELD",
+            "PLUNGE"
+          ],
+          "resisted": [
+            "END",
+            "HELD"
+          ],
+          "neutral": 577
+        },
+        "thirdTurn": {
+          "counters": [
+            "GET",
+            "ROSE",
+            "GREW",
+            "RENEW",
+            "ONSET"
+          ],
+          "resisted": [
+            "END",
+            "DONE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "STOP",
+            "LAUNCHED",
+            "GET"
+          ],
+          "tileIds": [
+            [
+              8,
+              6,
+              4,
+              2
+            ],
+            [
+              16,
+              10,
+              18,
+              5,
+              13,
+              19,
+              3,
+              11
+            ],
+            [
+              12,
+              14,
+              24
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "ENDS",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "GET",
+            "GREW"
+          ],
+          "resisted": [
+            "HALT"
+          ],
+          "neutral": 617
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "CEASE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "GROWN",
+            "UPHOLD"
+          ],
+          "resisted": [
+            "HOLD"
+          ],
+          "neutral": 317
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "AGE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "ROSE",
+            "ONSET"
+          ],
+          "resisted": [
+            "END",
+            "DONE",
+            "STOP",
+            "CLOSE",
+            "CONCLUDE"
+          ],
+          "neutral": 779
+        },
+        "thirdTurn": {
+          "counters": [
+            "UPHELD"
+          ],
+          "resisted": [
+            "HELD"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AGE",
+            "ONSET",
+            "UPHELD"
+          ],
+          "tileIds": [
+            [
+              10,
+              12,
+              3
+            ],
+            [
+              4,
+              5,
+              8,
+              14,
+              6
+            ],
+            [
+              18,
+              2,
+              19,
+              22,
+              16,
+              11
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "AND",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "GET",
+            "ROSE",
+            "GREW",
+            "RESUME"
+          ],
+          "resisted": [
+            "STOP",
+            "CLOSE"
+          ],
+          "neutral": 541
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "ACCEPT",
+      "PLUNGED"
+    ],
+    "tileIds": [
+      [
+        10,
+        13,
+        15,
+        3,
+        2,
+        6
+      ],
+      [
+        17,
+        16,
+        18,
+        5,
+        12,
+        14,
+        11
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      3
+    ]
+  },
+  "roots": [
+    {
+      "word": "COMMENCE",
+      "senseId": "oewn-commence__2.30.00..",
+      "definition": "take the first step or steps in carrying out an action",
+      "relation": "opposite"
+    },
+    {
+      "word": "BEGIN",
+      "senseId": "oewn-begin__2.30.00..",
+      "definition": "take the first step or steps in carrying out an action",
+      "relation": "opposite"
+    },
+    {
+      "word": "START",
+      "senseId": "oewn-start__1.11.00..",
+      "definition": "the beginning of anything",
+      "relation": "opposite"
+    },
+    {
+      "word": "OPEN",
+      "senseId": "oewn-open__2.41.00..",
+      "definition": "start to operate or function or cause to start operating or functioning",
+      "relation": "opposite"
+    },
+    {
+      "word": "LAUNCH",
+      "senseId": "oewn-launch__2.30.10..",
+      "definition": "begin with vigor",
+      "relation": "opposite"
+    },
+    {
+      "word": "INITIATE",
+      "senseId": "oewn-initiate__2.30.00..",
+      "definition": "set in motion, start an event or prepare the way for",
+      "relation": "opposite"
+    },
+    {
+      "word": "INAUGURATE",
+      "senseId": "oewn-inaugurate__2.41.00..",
+      "definition": "commence officially",
+      "relation": "opposite"
+    },
+    {
+      "word": "RESUME",
+      "senseId": "oewn-resume__2.30.00..",
+      "definition": "take up or begin anew",
+      "relation": "opposite"
+    },
+    {
+      "word": "RESTART",
+      "senseId": "oewn-restart__2.38.00..",
+      "definition": "start an engine again, for example",
+      "relation": "opposite"
+    },
+    {
+      "word": "RENEW",
+      "senseId": "oewn-renew__2.36.00..",
+      "definition": "reestablish on a new, usually improved, basis or make new or like new",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONTINUE",
+      "senseId": "oewn-continue__2.42.00..",
+      "definition": "keep or maintain in unaltered condition; cause to remain or last",
+      "relation": "opposite"
+    },
+    {
+      "word": "ORIGINATE",
+      "senseId": "oewn-originate__2.42.00..",
+      "definition": "come into existence; take on form or shape",
+      "relation": "opposite"
+    },
+    {
+      "word": "INITIATION",
+      "senseId": "oewn-initiation__1.04.01..",
+      "definition": "the act of starting something for the first time; introducing something new",
+      "relation": "opposite"
+    },
+    {
+      "word": "BEGINNING",
+      "senseId": "oewn-begin__2.42.00..",
+      "definition": "have a beginning, in a temporal, spatial, or evaluative sense",
+      "relation": "opposite"
+    },
+    {
+      "word": "ONSET",
+      "senseId": "oewn-onset__1.11.00..",
+      "definition": "the beginning or early stages",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMMENCEMENT",
+      "senseId": "oewn-commencement__1.04.00..",
+      "definition": "the act of starting something",
+      "relation": "opposite"
+    },
+    {
+      "word": "END",
+      "senseId": "oewn-end__2.30.01..",
+      "definition": "bring to an end or halt",
+      "relation": "similar"
+    },
+    {
+      "word": "STOP",
+      "senseId": "oewn-stop__1.11.00..",
+      "definition": "the event of something ending",
+      "relation": "similar"
+    },
+    {
+      "word": "CEASE",
+      "senseId": "oewn-cease__1.28.00..",
+      "definition": "(‘cease’ is a noun only in the phrase ‘without cease’) end",
+      "relation": "similar"
+    },
+    {
+      "word": "FINISH",
+      "senseId": "oewn-finish__1.28.00..",
+      "definition": "the temporal end; the concluding time",
+      "relation": "similar"
+    },
+    {
+      "word": "CLOSE",
+      "senseId": "oewn-close__2.41.01..",
+      "definition": "finish or terminate (meetings, speeches, etc.)",
+      "relation": "similar"
+    },
+    {
+      "word": "HALT",
+      "senseId": "oewn-halt__2.38.05..",
+      "definition": "cause to come to an abrupt stop",
+      "relation": "similar"
+    },
+    {
+      "word": "TERMINATE",
+      "senseId": "oewn-terminate__2.30.01..",
+      "definition": "bring to an end or halt",
+      "relation": "similar"
+    },
+    {
+      "word": "CONCLUDE",
+      "senseId": "oewn-conclude__2.31.01..",
+      "definition": "bring to a close",
+      "relation": "similar"
+    },
+    {
+      "word": "DONE",
+      "senseId": "oewn-done__5.00.00.finished.01",
+      "definition": "having finished or arrived at completion",
+      "relation": "similar"
+    },
+    {
+      "word": "FINAL",
+      "senseId": "oewn-final__5.00.00.closing.00",
+      "definition": "occurring at or forming an end or termination",
+      "relation": "similar"
+    },
+    {
+      "word": "LAST",
+      "senseId": "oewn-last__3.00.00..",
+      "definition": "coming after all others in time or space or degree or being the only one remaining",
+      "relation": "similar"
+    },
+    {
+      "word": "QUIT",
+      "senseId": "oewn-quit__2.42.04..",
+      "definition": "put an end to a state or an activity",
+      "relation": "similar"
+    },
+    {
+      "word": "CESSATION",
+      "senseId": "oewn-cessation__1.11.00..",
+      "definition": "a stopping",
+      "relation": "similar"
+    },
+    {
+      "word": "TERMINATION",
+      "senseId": "oewn-termination__1.28.00..",
+      "definition": "a coming to an end of a contract period",
+      "relation": "similar"
+    },
+    {
+      "word": "FINALE",
+      "senseId": "oewn-finale__1.28.00..",
+      "definition": "the temporal end; the concluding time",
+      "relation": "similar"
+    }
+  ],
+  "semanticPolicy": "Pinned source senses and reviewed lexical families; unlabelled defined senses are neutral. Not a proof of exhaustive contextual semantic coverage.",
+  "asset": "puzzles/end-commenced-0d3125184fe4.json",
+  "novelty": []
+}

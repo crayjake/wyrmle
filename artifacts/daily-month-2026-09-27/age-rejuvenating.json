@@ -1,0 +1,710 @@
+{
+  "id": "age-rejuvenating",
+  "enemy": "AGE",
+  "answer": "REJUVENATING",
+  "accepted": true,
+  "seed": "bingo-first-3:AGE:REJUVENATING:21",
+  "score": 220,
+  "analysis": {
+    "score": 220,
+    "bingos": [
+      "REJUVENATING"
+    ],
+    "counterFamilies": 4,
+    "resistedFamilies": 2,
+    "winningOpenings": 7,
+    "repeatedCounterRoutes": 7,
+    "sustainedPositions": 2,
+    "sustainedFinalPositions": 2,
+    "neutralCleanupOpenings": 1,
+    "routes": [
+      {
+        "opening": "NEW",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "RENOVATED",
+            "LIVEN",
+            "VERNAL"
+          ],
+          "resisted": [
+            "AGE",
+            "OLD",
+            "SENIOR"
+          ],
+          "neutral": 1693
+        },
+        "thirdTurn": {
+          "counters": [
+            "YOUNG"
+          ],
+          "resisted": [
+            "SENIOR"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "NEW",
+            "RENOVATED",
+            "YOUNG"
+          ],
+          "tileIds": [
+            [
+              8,
+              9,
+              4
+            ],
+            [
+              13,
+              12,
+              10,
+              3,
+              6,
+              1,
+              14,
+              17,
+              5
+            ],
+            [
+              20,
+              21,
+              7,
+              24,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "RENEW",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "YOUNG",
+            "RENOVATED",
+            "VERNAL"
+          ],
+          "resisted": [
+            "AGE",
+            "OLD",
+            "SENIOR"
+          ],
+          "neutral": 1922
+        },
+        "thirdTurn": {
+          "counters": [
+            "REPAIR",
+            "RENOVATED",
+            "VERNAL"
+          ],
+          "resisted": [
+            "AGE",
+            "OLD",
+            "SENIOR"
+          ]
+        },
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "RENEW",
+            "YOUNG",
+            "REPAIR"
+          ],
+          "tileIds": [
+            [
+              13,
+              9,
+              8,
+              12,
+              4
+            ],
+            [
+              20,
+              3,
+              7,
+              10,
+              11
+            ],
+            [
+              19,
+              17,
+              22,
+              1,
+              2,
+              23
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "RENOVATED",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "YOUNG",
+            "RENEWING"
+          ],
+          "resisted": [
+            "SENIOR"
+          ],
+          "neutral": 583
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RENOVATED",
+            "YOUNG"
+          ],
+          "tileIds": [
+            [
+              13,
+              9,
+              8,
+              3,
+              6,
+              1,
+              14,
+              12,
+              5
+            ],
+            [
+              20,
+              21,
+              7,
+              10,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "LIVEN",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "NEW",
+            "YOUNG",
+            "RESTORE",
+            "RENEWED"
+          ],
+          "resisted": [
+            "AGE"
+          ],
+          "neutral": 925
+        },
+        "thirdTurn": {
+          "counters": [
+            "REGENERATE"
+          ],
+          "resisted": [
+            "AGE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "LIVEN",
+            "YOUNGER",
+            "REGENERATE"
+          ],
+          "tileIds": [
+            [
+              15,
+              2,
+              6,
+              9,
+              8
+            ],
+            [
+              20,
+              3,
+              7,
+              10,
+              11,
+              12,
+              13
+            ],
+            [
+              19,
+              17,
+              25,
+              18,
+              24,
+              26,
+              23,
+              1,
+              14,
+              27
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "OLDER",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "NEW",
+            "RENEW"
+          ],
+          "resisted": [
+            "AGE"
+          ],
+          "neutral": 761
+        },
+        "thirdTurn": {
+          "counters": [
+            "RENOVATE"
+          ],
+          "resisted": [
+            "AGE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "OLDER",
+            "RENEWING",
+            "RENOVATE"
+          ],
+          "tileIds": [
+            [
+              3,
+              15,
+              5,
+              9,
+              13
+            ],
+            [
+              19,
+              12,
+              8,
+              17,
+              4,
+              2,
+              10,
+              11
+            ],
+            [
+              23,
+              18,
+              24,
+              21,
+              6,
+              1,
+              14,
+              26
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "AGED",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "NEW",
+            "RESTORE",
+            "RENEW",
+            "LIVEN",
+            "ENLIVEN"
+          ],
+          "resisted": [
+            "SENIOR"
+          ],
+          "neutral": 583
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "AGO",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "NEW",
+            "RENEWED",
+            "LIVEN",
+            "ENLIVEN"
+          ],
+          "resisted": [],
+          "neutral": 529
+        },
+        "thirdTurn": {
+          "counters": [
+            "YOUNG",
+            "RESTORING"
+          ],
+          "resisted": [
+            "SENIOR"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AGO",
+            "RENEWED",
+            "YOUNG"
+          ],
+          "tileIds": [
+            [
+              1,
+              11,
+              3
+            ],
+            [
+              13,
+              9,
+              8,
+              12,
+              4,
+              17,
+              5
+            ],
+            [
+              20,
+              21,
+              7,
+              10,
+              25
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "NEW"
+          ],
+          "resisted": [
+            "OLD"
+          ],
+          "neutral": 374
+        },
+        "thirdTurn": {
+          "counters": [
+            "YOUNG"
+          ],
+          "resisted": [
+            "OLD"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AIR",
+            "NEWEST",
+            "YOUNG"
+          ],
+          "tileIds": [
+            [
+              1,
+              2,
+              13
+            ],
+            [
+              8,
+              9,
+              4,
+              12,
+              16,
+              14
+            ],
+            [
+              20,
+              3,
+              7,
+              10,
+              11
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "ADO",
+      "RENEWING"
+    ],
+    "tileIds": [
+      [
+        1,
+        5,
+        3
+      ],
+      [
+        13,
+        9,
+        8,
+        12,
+        4,
+        2,
+        10,
+        11
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      3
+    ]
+  },
+  "roots": [
+    {
+      "word": "REJUVENATE",
+      "senseId": "oewn-rejuvenate__2.30.00..",
+      "definition": "make younger or more youthful",
+      "relation": "opposite"
+    },
+    {
+      "word": "YOUNG",
+      "senseId": "oewn-young__3.00.00..",
+      "definition": "(used of living things especially persons) in an early period of life or development or growth",
+      "relation": "opposite"
+    },
+    {
+      "word": "YOUTH",
+      "senseId": "oewn-youth__1.26.00..",
+      "definition": "early maturity; the state of being young or immature or inexperienced",
+      "relation": "opposite"
+    },
+    {
+      "word": "YOUTHFUL",
+      "senseId": "oewn-youthful__5.00.00.young.00",
+      "definition": "suggestive of youth; vigorous and fresh",
+      "relation": "opposite"
+    },
+    {
+      "word": "RENEW",
+      "senseId": "oewn-renew__2.36.00..",
+      "definition": "reestablish on a new, usually improved, basis or make new or like new",
+      "relation": "opposite"
+    },
+    {
+      "word": "REFRESH",
+      "senseId": "oewn-refresh__2.29.00..",
+      "definition": "make fresh again",
+      "relation": "opposite"
+    },
+    {
+      "word": "REVIVE",
+      "senseId": "oewn-revive__2.29.00..",
+      "definition": "give new life or energy to",
+      "relation": "opposite"
+    },
+    {
+      "word": "REVITALIZE",
+      "senseId": "oewn-revitalize__2.29.00..",
+      "definition": "restore strength",
+      "relation": "opposite"
+    },
+    {
+      "word": "RESTORE",
+      "senseId": "oewn-restore__2.41.01..",
+      "definition": "return to its original or usable and functioning condition",
+      "relation": "opposite"
+    },
+    {
+      "word": "FRESH",
+      "senseId": "oewn-fresh__5.00.00.rested.00",
+      "definition": "with restored energy",
+      "relation": "opposite"
+    },
+    {
+      "word": "NEW",
+      "senseId": "oewn-new__3.00.00..",
+      "definition": "not of long duration; having just (or relatively recently) come into being or been made or acquired or discovered",
+      "relation": "opposite"
+    },
+    {
+      "word": "REGENERATE",
+      "senseId": "oewn-regenerate__2.30.01..",
+      "definition": "get or give new life or energy; return to life, regain energy, recuperate",
+      "relation": "opposite"
+    },
+    {
+      "word": "RENOVATE",
+      "senseId": "oewn-renovate__2.30.00..",
+      "definition": "restore to a previous or better condition",
+      "relation": "opposite"
+    },
+    {
+      "word": "VITALIZE",
+      "senseId": "oewn-vitalize__2.30.01..",
+      "definition": "give life to",
+      "relation": "opposite"
+    },
+    {
+      "word": "ENLIVEN",
+      "senseId": "oewn-enliven__2.30.00..",
+      "definition": "make lively",
+      "relation": "opposite"
+    },
+    {
+      "word": "AGE",
+      "senseId": "oewn-age__2.30.02..",
+      "definition": "make older",
+      "relation": "similar"
+    },
+    {
+      "word": "OLD",
+      "senseId": "oewn-old__3.00.02..",
+      "definition": "(used especially of persons) having lived for a relatively long time or attained a specific age",
+      "relation": "similar"
+    },
+    {
+      "word": "OLDER",
+      "senseId": "oewn-older__5.00.00.old.02",
+      "definition": "advanced in years; (‘aged’ is pronounced as two syllables)",
+      "relation": "similar"
+    },
+    {
+      "word": "ELDERLY",
+      "senseId": "oewn-elderly__5.00.00.old.02",
+      "definition": "advanced in years; (‘aged’ is pronounced as two syllables)",
+      "relation": "similar"
+    },
+    {
+      "word": "AGED",
+      "senseId": "oewn-aged__5.00.01.old.02",
+      "definition": "advanced in years; (‘aged’ is pronounced as two syllables)",
+      "relation": "similar"
+    },
+    {
+      "word": "AGING",
+      "senseId": "oewn-age__2.30.01..",
+      "definition": "begin to seem older; get older",
+      "relation": "similar"
+    },
+    {
+      "word": "MATURE",
+      "senseId": "oewn-mature__3.00.01..",
+      "definition": "having reached full natural growth or development",
+      "relation": "similar"
+    },
+    {
+      "word": "RIPEN",
+      "senseId": "oewn-ripen__2.30.01..",
+      "definition": "cause to ripen or develop fully",
+      "relation": "similar"
+    },
+    {
+      "word": "ANCIENT",
+      "senseId": "oewn-ancient__5.00.00.past.00",
+      "definition": "belonging to times long past especially of the historical period before the fall of the Western Roman Empire",
+      "relation": "similar"
+    },
+    {
+      "word": "SENESCENCE",
+      "senseId": "oewn-senescence__1.22.00..",
+      "definition": "the organic process of growing older and showing the effects of increasing age",
+      "relation": "similar"
+    },
+    {
+      "word": "SENILE",
+      "senseId": "oewn-senile__5.00.00.old.02",
+      "definition": "mentally or physically infirm with age",
+      "relation": "similar"
+    },
+    {
+      "word": "ANTIQUATED",
+      "senseId": "oewn-antiquate__2.30.01..",
+      "definition": "make obsolete or old-fashioned",
+      "relation": "similar"
+    },
+    {
+      "word": "ANTIQUITY",
+      "senseId": "oewn-antiquity__1.28.00..",
+      "definition": "the historic period preceding the Middle Ages in Europe",
+      "relation": "similar"
+    }
+  ],
+  "novelty": [],
+  "semanticPolicy": "Pinned source senses and reviewed lexical families; unlabelled defined senses are neutral. Not a proof of exhaustive contextual semantic coverage.",
+  "asset": "puzzles/age-rejuvenating-bcb431bcbac4.json"
+}

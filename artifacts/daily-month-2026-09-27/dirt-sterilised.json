@@ -1,0 +1,1147 @@
+{
+  "id": "dirt-sterilised",
+  "enemy": "DIRT",
+  "answer": "STERILISED",
+  "accepted": true,
+  "seed": "bingo-first-3:DIRT:STERILISED:12",
+  "score": 433,
+  "analysis": {
+    "score": 433,
+    "bingos": [
+      "STERILISED",
+      "TIDIER"
+    ],
+    "counterFamilies": 8,
+    "resistedFamilies": 4,
+    "winningOpenings": 11,
+    "repeatedCounterRoutes": 11,
+    "sustainedPositions": 9,
+    "sustainedFinalPositions": 8,
+    "neutralCleanupOpenings": 0,
+    "routes": [
+      {
+        "opening": "DUST",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "CLEANER",
+            "RINSE",
+            "PRISTINE",
+            "SPICER"
+          ],
+          "resisted": [
+            "SPOT",
+            "SOIL",
+            "STAIN"
+          ],
+          "neutral": 1455
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DUST",
+            "PRISTINE"
+          ],
+          "tileIds": [
+            [
+              4,
+              3,
+              1,
+              11
+            ],
+            [
+              12,
+              7,
+              10,
+              2,
+              19,
+              13,
+              8,
+              6
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "CLEANED",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SCOUR"
+          ],
+          "resisted": [
+            "SPOT"
+          ],
+          "neutral": 355
+        },
+        "thirdTurn": {
+          "counters": [
+            "DUST",
+            "RINSE",
+            "PRISTINE",
+            "PURIFIED",
+            "RINSING"
+          ],
+          "resisted": [
+            "SPOT",
+            "DIRT",
+            "DUNG"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CLEANED",
+            "SCOUR",
+            "PRISTINE"
+          ],
+          "tileIds": [
+            [
+              5,
+              14,
+              6,
+              15,
+              8,
+              9,
+              4
+            ],
+            [
+              1,
+              17,
+              0,
+              3,
+              7
+            ],
+            [
+              12,
+              21,
+              10,
+              2,
+              11,
+              13,
+              22,
+              26
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            1,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "NEAT",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "DUST",
+            "SPICER",
+            "SCOUR"
+          ],
+          "resisted": [
+            "SPOT",
+            "SOIL",
+            "DIRT",
+            "SLUR"
+          ],
+          "neutral": 805
+        },
+        "thirdTurn": {
+          "counters": [
+            "DUST",
+            "SCOURING"
+          ],
+          "resisted": [
+            "SOIL",
+            "DIRT",
+            "FOUL",
+            "DUNG",
+            "SLUR"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "NEAT",
+            "SPICER",
+            "DUSTING"
+          ],
+          "tileIds": [
+            [
+              8,
+              6,
+              15,
+              11
+            ],
+            [
+              1,
+              12,
+              10,
+              5,
+              9,
+              7
+            ],
+            [
+              4,
+              3,
+              2,
+              19,
+              13,
+              22,
+              23
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "RINSE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "DUST"
+          ],
+          "resisted": [
+            "SPOT",
+            "SOIL",
+            "FOUL"
+          ],
+          "neutral": 935
+        },
+        "thirdTurn": {
+          "counters": [
+            "SPICER",
+            "SCOURING"
+          ],
+          "resisted": [
+            "SPOT",
+            "SOIL",
+            "FOUL",
+            "STAIN",
+            "SLUR"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RINSE",
+            "DUST",
+            "SPICER"
+          ],
+          "tileIds": [
+            [
+              7,
+              10,
+              8,
+              1,
+              6
+            ],
+            [
+              4,
+              3,
+              2,
+              11
+            ],
+            [
+              18,
+              12,
+              13,
+              5,
+              9,
+              21
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "PRISTINE",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "DUST",
+            "SCOURED"
+          ],
+          "resisted": [
+            "FOUL",
+            "DUNG",
+            "SLUR"
+          ],
+          "neutral": 1382
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "PRISTINE",
+            "DUST"
+          ],
+          "tileIds": [
+            [
+              12,
+              7,
+              10,
+              1,
+              11,
+              13,
+              8,
+              6
+            ],
+            [
+              4,
+              3,
+              2,
+              19
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SPICER",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "DUST",
+            "NEAT",
+            "RINSE",
+            "SCOURED"
+          ],
+          "resisted": [
+            "SOIL",
+            "DIRT",
+            "FOUL",
+            "STAINED",
+            "SLUR"
+          ],
+          "neutral": 1889
+        },
+        "thirdTurn": {
+          "counters": [
+            "CLEANING",
+            "CLEANSING",
+            "RINSE",
+            "SCOURING"
+          ],
+          "resisted": [
+            "SOIL",
+            "DIRT",
+            "FOUL",
+            "STAINED",
+            "DUNG",
+            "SLUR",
+            "UNCLEAN"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SPICER",
+            "DUST",
+            "CLEANING"
+          ],
+          "tileIds": [
+            [
+              1,
+              12,
+              10,
+              5,
+              6,
+              7
+            ],
+            [
+              4,
+              3,
+              2,
+              11
+            ],
+            [
+              17,
+              14,
+              9,
+              15,
+              8,
+              13,
+              22,
+              23
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SCOUR",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "CLEANED",
+            "NEAT",
+            "CLEANSED",
+            "ANTISEPTIC",
+            "DISINFECT"
+          ],
+          "resisted": [
+            "SPOT",
+            "SOIL",
+            "STAINED"
+          ],
+          "neutral": 1311
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SCOUR",
+            "DISINFECT"
+          ],
+          "tileIds": [
+            [
+              1,
+              5,
+              0,
+              3,
+              7
+            ],
+            [
+              4,
+              10,
+              2,
+              13,
+              8,
+              20,
+              6,
+              17,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "CLEANSED",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SCOURING"
+          ],
+          "resisted": [
+            "SPOT"
+          ],
+          "neutral": 486
+        },
+        "thirdTurn": {
+          "counters": [
+            "DUST",
+            "NEAT",
+            "RINSE",
+            "PRISTINE",
+            "PURIFIED",
+            "RINSING"
+          ],
+          "resisted": [
+            "SPOT",
+            "DIRT",
+            "STAINED",
+            "DUNG"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CLEANSED",
+            "SCOUR",
+            "PRISTINE"
+          ],
+          "tileIds": [
+            [
+              5,
+              14,
+              6,
+              15,
+              8,
+              1,
+              9,
+              4
+            ],
+            [
+              2,
+              17,
+              0,
+              3,
+              7
+            ],
+            [
+              12,
+              21,
+              10,
+              18,
+              11,
+              13,
+              22,
+              26
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            1,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "SPOT",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "DUST",
+            "CLEANED",
+            "NEAT",
+            "RINSE",
+            "SCOUR",
+            "CLEANSED"
+          ],
+          "resisted": [
+            "SOIL",
+            "DIRT",
+            "STAINED",
+            "SLUR"
+          ],
+          "neutral": 1751
+        },
+        "thirdTurn": {
+          "counters": [
+            "CLEANING",
+            "CLEANSING",
+            "RINSE",
+            "RINSING"
+          ],
+          "resisted": [
+            "SOIL",
+            "GREASE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SPOT",
+            "DUST",
+            "RINSING"
+          ],
+          "tileIds": [
+            [
+              1,
+              12,
+              0,
+              11
+            ],
+            [
+              4,
+              3,
+              2,
+              19
+            ],
+            [
+              7,
+              10,
+              8,
+              18,
+              13,
+              22,
+              23
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "SOIL",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "DUST",
+            "NEAT",
+            "RINSE",
+            "SPICER",
+            "SCOUR"
+          ],
+          "resisted": [
+            "SPOT",
+            "DIRT",
+            "STAINED"
+          ],
+          "neutral": 1855
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "DIRT",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "NEAT",
+            "SPOTLESS",
+            "CLEANEST"
+          ],
+          "resisted": [
+            "SPOT",
+            "SOIL",
+            "STAIN"
+          ],
+          "neutral": 943
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "STAINED",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "RINSE",
+            "SPICER",
+            "SCOUR"
+          ],
+          "resisted": [
+            "SPOT",
+            "SOIL",
+            "FOUL",
+            "SLUR"
+          ],
+          "neutral": 1049
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "ACT",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "RINSE",
+            "SPICER",
+            "SCOUR"
+          ],
+          "resisted": [
+            "SOIL",
+            "SLUR"
+          ],
+          "neutral": 838
+        },
+        "thirdTurn": {
+          "counters": [
+            "DUST",
+            "SPICER",
+            "SCOURING"
+          ],
+          "resisted": [
+            "SPOT",
+            "SOIL",
+            "DIRT",
+            "FOUL",
+            "DUNG",
+            "SLUR"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ACT",
+            "RINSE",
+            "DUSTING"
+          ],
+          "tileIds": [
+            [
+              15,
+              5,
+              11
+            ],
+            [
+              7,
+              10,
+              8,
+              1,
+              6
+            ],
+            [
+              4,
+              3,
+              2,
+              19,
+              13,
+              22,
+              23
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "DUST",
+            "SPOTLESS"
+          ],
+          "resisted": [
+            "SPOT",
+            "SOIL"
+          ],
+          "neutral": 819
+        },
+        "thirdTurn": {
+          "counters": [
+            "RINSE",
+            "SPICER"
+          ],
+          "resisted": [
+            "SPOT",
+            "SOIL"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AIR",
+            "DUST",
+            "RINSE"
+          ],
+          "tileIds": [
+            [
+              15,
+              10,
+              7
+            ],
+            [
+              4,
+              3,
+              1,
+              11
+            ],
+            [
+              21,
+              13,
+              8,
+              2,
+              6
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            2
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "ACED",
+      "PRISTINE"
+    ],
+    "tileIds": [
+      [
+        15,
+        5,
+        6,
+        4
+      ],
+      [
+        12,
+        7,
+        10,
+        1,
+        11,
+        13,
+        8,
+        9
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      4
+    ]
+  },
+  "roots": [
+    {
+      "word": "STERILISE",
+      "senseId": "oewn-sterilise__2.29.01..",
+      "definition": "make free from bacteria",
+      "relation": "opposite"
+    },
+    {
+      "word": "STERILIZE",
+      "senseId": "oewn-sterilize__2.29.01..",
+      "definition": "make free from bacteria",
+      "relation": "opposite"
+    },
+    {
+      "word": "CLEAN",
+      "senseId": "oewn-clean__3.00.01..",
+      "definition": "free from dirt or impurities; or having clean habits",
+      "relation": "opposite"
+    },
+    {
+      "word": "CLEANSE",
+      "senseId": "oewn-cleanse__2.29.00..",
+      "definition": "clean one's body or parts thereof, as by washing",
+      "relation": "opposite"
+    },
+    {
+      "word": "WASH",
+      "senseId": "oewn-wash__1.04.01..",
+      "definition": "the work of cleansing (usually with soap and water)",
+      "relation": "opposite"
+    },
+    {
+      "word": "SCRUB",
+      "senseId": "oewn-scrub__1.04.00..",
+      "definition": "the act of cleaning a surface by rubbing it with a brush and soap and water",
+      "relation": "opposite"
+    },
+    {
+      "word": "RINSE",
+      "senseId": "oewn-rinse__1.04.02..",
+      "definition": "the removal of soap with clean water in the final stage of washing",
+      "relation": "opposite"
+    },
+    {
+      "word": "SCOUR",
+      "senseId": "oewn-scour__2.35.01..",
+      "definition": "clean with hard rubbing",
+      "relation": "opposite"
+    },
+    {
+      "word": "PURIFY",
+      "senseId": "oewn-purify__2.30.00..",
+      "definition": "remove impurities from, increase the concentration of, and separate through the process of distillation",
+      "relation": "opposite"
+    },
+    {
+      "word": "PURIFICATION",
+      "senseId": "oewn-purification__1.04.00..",
+      "definition": "the act of cleaning by getting rid of impurities",
+      "relation": "opposite"
+    },
+    {
+      "word": "SANITIZE",
+      "senseId": "oewn-sanitize__2.35.00..",
+      "definition": "make sanitary by cleaning or sterilizing",
+      "relation": "opposite"
+    },
+    {
+      "word": "SANITISE",
+      "senseId": "oewn-sanitise__2.35.00..",
+      "definition": "make sanitary by cleaning or sterilizing",
+      "relation": "opposite"
+    },
+    {
+      "word": "SANITARY",
+      "senseId": "oewn-sanitary__3.00.00..",
+      "definition": "free from filth and pathogens",
+      "relation": "opposite"
+    },
+    {
+      "word": "HYGIENE",
+      "senseId": "oewn-hygiene__1.26.00..",
+      "definition": "a condition promoting sanitary practices",
+      "relation": "opposite"
+    },
+    {
+      "word": "HYGIENIC",
+      "senseId": "oewn-hygienic__5.00.00.sanitary.00",
+      "definition": "tending to promote or preserve health",
+      "relation": "opposite"
+    },
+    {
+      "word": "SOAP",
+      "senseId": "oewn-soap__1.06.00..",
+      "definition": "a cleansing agent made from the salts of vegetable or animal fats",
+      "relation": "opposite"
+    },
+    {
+      "word": "DETERGENT",
+      "senseId": "oewn-detergent__5.00.00.purifying.00",
+      "definition": "having cleansing power",
+      "relation": "opposite"
+    },
+    {
+      "word": "DISINFECT",
+      "senseId": "oewn-disinfect__2.29.00..",
+      "definition": "destroy microorganisms or pathogens by cleansing",
+      "relation": "opposite"
+    },
+    {
+      "word": "ANTISEPTIC",
+      "senseId": "oewn-antiseptic__3.00.00..",
+      "definition": "thoroughly clean and free of or destructive to disease-causing organisms",
+      "relation": "opposite"
+    },
+    {
+      "word": "SPOTLESS",
+      "senseId": "oewn-spotless__5.00.00.clean.01",
+      "definition": "completely neat and clean",
+      "relation": "opposite"
+    },
+    {
+      "word": "PRISTINE",
+      "senseId": "oewn-pristine__5.00.00.clean.01",
+      "definition": "immaculately clean and unused",
+      "relation": "opposite"
+    },
+    {
+      "word": "TIDY",
+      "senseId": "oewn-tidy__3.00.00..",
+      "definition": "marked by order and cleanliness in appearance or habits",
+      "relation": "opposite"
+    },
+    {
+      "word": "NEAT",
+      "senseId": "oewn-neat__5.00.00.tidy.00",
+      "definition": "clean or organized",
+      "relation": "opposite"
+    },
+    {
+      "word": "DUST",
+      "senseId": "oewn-dust__2.35.00..",
+      "definition": "remove the dust from",
+      "relation": "opposite"
+    },
+    {
+      "word": "SWEEP",
+      "senseId": "oewn-sweep__2.35.00..",
+      "definition": "sweep with a broom or as if with a broom",
+      "relation": "opposite"
+    },
+    {
+      "word": "MOP",
+      "senseId": "oewn-mop__1.06.00..",
+      "definition": "cleaning implement consisting of absorbent material fastened to a handle; for cleaning floors",
+      "relation": "opposite"
+    },
+    {
+      "word": "CLEANLINESS",
+      "senseId": "oewn-cleanliness__1.26.00..",
+      "definition": "the habit of keeping free of superficial imperfections",
+      "relation": "opposite"
+    },
+    {
+      "word": "DIRT",
+      "senseId": "oewn-dirt__1.26.00..",
+      "definition": "anything regarded as making something unclean",
+      "relation": "similar"
+    },
+    {
+      "word": "DIRTY",
+      "senseId": "oewn-dirty__3.00.01..",
+      "definition": "soiled or likely to soil with dirt or grime",
+      "relation": "similar"
+    },
+    {
+      "word": "FILTH",
+      "senseId": "oewn-filth__1.26.01..",
+      "definition": "anything regarded as making something unclean",
+      "relation": "similar"
+    },
+    {
+      "word": "GRIME",
+      "senseId": "oewn-grime__1.26.00..",
+      "definition": "anything regarded as making something unclean",
+      "relation": "similar"
+    },
+    {
+      "word": "MUD",
+      "senseId": "oewn-mud__1.27.00..",
+      "definition": "water soaked soil; soft wet earth",
+      "relation": "similar"
+    },
+    {
+      "word": "SOIL",
+      "senseId": "oewn-soil__2.35.00..",
+      "definition": "make soiled, filthy, or dirty",
+      "relation": "similar"
+    },
+    {
+      "word": "SOIL",
+      "senseId": "oewn-soil__1.27.01..",
+      "definition": "the part of the earth's surface consisting of humus and disintegrated rock",
+      "relation": "similar"
+    },
+    {
+      "word": "SMUDGE",
+      "senseId": "oewn-smudge__1.07.00..",
+      "definition": "a blemish made by dirt",
+      "relation": "similar"
+    },
+    {
+      "word": "STAIN",
+      "senseId": "oewn-stain__2.35.05..",
+      "definition": "make dirty or spotty, as by exposure to air; also used metaphorically",
+      "relation": "similar"
+    },
+    {
+      "word": "POLLUTE",
+      "senseId": "oewn-pollute__2.30.00..",
+      "definition": "make impure",
+      "relation": "similar"
+    },
+    {
+      "word": "CONTAMINATE",
+      "senseId": "oewn-contaminate__2.30.00..",
+      "definition": "make impure",
+      "relation": "similar"
+    },
+    {
+      "word": "TAINT",
+      "senseId": "oewn-taint__1.26.00..",
+      "definition": "the state of being contaminated",
+      "relation": "similar"
+    },
+    {
+      "word": "UNCLEAN",
+      "senseId": "oewn-unclean__3.00.04..",
+      "definition": "soiled or likely to soil with dirt or grime",
+      "relation": "similar"
+    },
+    {
+      "word": "SQUALOR",
+      "senseId": "oewn-squalor__1.26.00..",
+      "definition": "sordid dirtiness",
+      "relation": "similar"
+    },
+    {
+      "word": "MUCK",
+      "senseId": "oewn-muck__1.27.01..",
+      "definition": "fecal matter of animals",
+      "relation": "similar"
+    },
+    {
+      "word": "MESS",
+      "senseId": "oewn-mess__2.30.00..",
+      "definition": "make a mess of or create disorder in",
+      "relation": "similar"
+    },
+    {
+      "word": "DUST",
+      "senseId": "oewn-dust__1.27.02..",
+      "definition": "free microscopic particles of solid material",
+      "relation": "similar"
+    },
+    {
+      "word": "SMEAR",
+      "senseId": "oewn-smear__2.35.02..",
+      "definition": "stain by smearing or daubing with a dirty substance",
+      "relation": "similar"
+    }
+  ],
+  "semanticPolicy": "Pinned source senses and reviewed lexical families; unlabelled defined senses are neutral. Not a proof of exhaustive contextual semantic coverage.",
+  "asset": "puzzles/dirt-sterilised-546b9756df2a.json",
+  "novelty": []
+}

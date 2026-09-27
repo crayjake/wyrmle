@@ -1,0 +1,1272 @@
+{
+  "id": "tense-serenity",
+  "enemy": "TENSE",
+  "answer": "SERENITY",
+  "accepted": true,
+  "seed": "bingo-first-3:TENSE:SERENITY:13",
+  "score": 376,
+  "analysis": {
+    "score": 376,
+    "bingos": [
+      "SERENITY"
+    ],
+    "counterFamilies": 12,
+    "resistedFamilies": 4,
+    "winningOpenings": 15,
+    "repeatedCounterRoutes": 13,
+    "sustainedPositions": 6,
+    "sustainedFinalPositions": 2,
+    "neutralCleanupOpenings": 6,
+    "routes": [
+      {
+        "opening": "REST",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "PEACE",
+            "PEACEFUL",
+            "PEACEFULLY"
+          ],
+          "resisted": [],
+          "neutral": 350
+        },
+        "thirdTurn": {
+          "counters": [
+            "LOOSEN"
+          ],
+          "resisted": [
+            "FRET",
+            "ROUSE"
+          ]
+        },
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "REST",
+            "PEACE",
+            "LOOSEN"
+          ],
+          "tileIds": [
+            [
+              13,
+              4,
+              12,
+              0
+            ],
+            [
+              15,
+              5,
+              8,
+              14,
+              18
+            ],
+            [
+              10,
+              2,
+              9,
+              20,
+              22,
+              3
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "PEACE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "REST",
+            "STILL",
+            "LOOSE",
+            "LOOSEN",
+            "SOOTHE",
+            "RESTFUL"
+          ],
+          "resisted": [
+            "FUSS",
+            "FRET",
+            "ROUSE"
+          ],
+          "neutral": 755
+        },
+        "thirdTurn": {
+          "counters": [
+            "LOOSEN"
+          ],
+          "resisted": [
+            "FRET",
+            "ROUSE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "PEACE",
+            "REST",
+            "LOOSEN"
+          ],
+          "tileIds": [
+            [
+              15,
+              4,
+              8,
+              14,
+              5
+            ],
+            [
+              13,
+              18,
+              12,
+              0
+            ],
+            [
+              10,
+              2,
+              9,
+              20,
+              22,
+              3
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "RELIEF",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "LOOSE",
+            "CONSOLE",
+            "LOOSEN",
+            "SOLACE",
+            "SOOTHE"
+          ],
+          "resisted": [
+            "FUSS",
+            "UNEASY"
+          ],
+          "neutral": 984
+        },
+        "thirdTurn": {
+          "counters": [
+            "REST",
+            "RESTFUL"
+          ],
+          "resisted": [
+            "FUSS",
+            "FRET"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RELIEF",
+            "CONSOLE",
+            "REST"
+          ],
+          "tileIds": [
+            [
+              13,
+              4,
+              10,
+              1,
+              5,
+              6
+            ],
+            [
+              14,
+              2,
+              3,
+              12,
+              9,
+              17,
+              18
+            ],
+            [
+              23,
+              22,
+              20,
+              0
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "LOOSE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "REST",
+            "PEACE",
+            "RELIEF",
+            "EASE",
+            "PEACEFUL",
+            "RESPITE",
+            "RESTFUL"
+          ],
+          "resisted": [
+            "STRAIN",
+            "TENSE",
+            "UNEASY",
+            "FRET"
+          ],
+          "neutral": 1626
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "FRET"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "LOOSE",
+            "REST",
+            "ANY"
+          ],
+          "tileIds": [
+            [
+              10,
+              2,
+              9,
+              12,
+              4
+            ],
+            [
+              13,
+              5,
+              20,
+              0
+            ],
+            [
+              8,
+              3,
+              7
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "EASE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [],
+          "resisted": [
+            "FRET"
+          ],
+          "neutral": 616
+        },
+        "thirdTurn": {
+          "counters": [
+            "LOOSEN"
+          ],
+          "resisted": []
+        },
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "EASE",
+            "CUT",
+            "LOOSEN"
+          ],
+          "tileIds": [
+            [
+              4,
+              8,
+              12,
+              5
+            ],
+            [
+              14,
+              11,
+              0
+            ],
+            [
+              10,
+              2,
+              9,
+              20,
+              18,
+              3
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "PEACEFUL",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "REST",
+            "STILL",
+            "LOOSE",
+            "LOOSEN",
+            "SOOTHE",
+            "RELIEFS"
+          ],
+          "resisted": [
+            "TENSE",
+            "FRET"
+          ],
+          "neutral": 670
+        },
+        "thirdTurn": {
+          "counters": [
+            "RELAXING",
+            "SOOTHING",
+            "LOOSEN",
+            "LOOSING"
+          ],
+          "resisted": [
+            "ANXIETY",
+            "STRAIN",
+            "FRET"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "PEACEFUL",
+            "REST",
+            "RELAXING"
+          ],
+          "tileIds": [
+            [
+              15,
+              4,
+              8,
+              14,
+              5,
+              6,
+              11,
+              10
+            ],
+            [
+              13,
+              18,
+              12,
+              0
+            ],
+            [
+              23,
+              22,
+              17,
+              25,
+              26,
+              1,
+              3,
+              27
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "CONSOLE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "REST",
+            "STILL",
+            "RELIEF",
+            "EASE",
+            "RESPITE",
+            "RESTFUL"
+          ],
+          "resisted": [
+            "FRET"
+          ],
+          "neutral": 858
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "CONSOLE",
+            "REST"
+          ],
+          "tileIds": [
+            [
+              14,
+              2,
+              3,
+              12,
+              9,
+              10,
+              4
+            ],
+            [
+              13,
+              5,
+              20,
+              0
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "LOOSEN",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "REST",
+            "PEACE",
+            "STILL",
+            "RELIEF",
+            "EASE",
+            "PEACEFUL",
+            "PEACEFULLY",
+            "RESPITE",
+            "RESTFUL"
+          ],
+          "resisted": [
+            "FRET"
+          ],
+          "neutral": 1256
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "LOOSEN",
+            "REST"
+          ],
+          "tileIds": [
+            [
+              10,
+              2,
+              9,
+              12,
+              4,
+              3
+            ],
+            [
+              13,
+              5,
+              20,
+              0
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "SOLACE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "REST",
+            "STILL",
+            "RELIEF",
+            "RESPITE",
+            "REPOSE",
+            "RESTFUL"
+          ],
+          "resisted": [
+            "TENSE",
+            "FRET",
+            "ROUSE"
+          ],
+          "neutral": 971
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "FRET"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SOLACE",
+            "REST",
+            "ANY"
+          ],
+          "tileIds": [
+            [
+              12,
+              2,
+              10,
+              8,
+              14,
+              4
+            ],
+            [
+              13,
+              5,
+              20,
+              0
+            ],
+            [
+              25,
+              3,
+              7
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "RESPITE",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "CONSOLE",
+            "LOOSEN"
+          ],
+          "resisted": [
+            "UNEASY"
+          ],
+          "neutral": 341
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RESPITE",
+            "CONSOLE"
+          ],
+          "tileIds": [
+            [
+              13,
+              4,
+              12,
+              15,
+              1,
+              0,
+              5
+            ],
+            [
+              14,
+              2,
+              3,
+              20,
+              9,
+              10,
+              18
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "REPOSE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "STILL"
+          ],
+          "resisted": [
+            "UNEASY"
+          ],
+          "neutral": 870
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "FRET"
+          ]
+        },
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "REPOSE",
+            "STILL",
+            "ANY"
+          ],
+          "tileIds": [
+            [
+              13,
+              4,
+              15,
+              2,
+              12,
+              5
+            ],
+            [
+              20,
+              0,
+              1,
+              10,
+              17
+            ],
+            [
+              8,
+              3,
+              7
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            3,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "RESTFUL",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "PEACE",
+            "LOOSE",
+            "EASE",
+            "CONSOLE",
+            "LOOSEN",
+            "SOLACE"
+          ],
+          "resisted": [],
+          "neutral": 627
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "RESTFUL",
+            "CONSOLE"
+          ],
+          "tileIds": [
+            [
+              13,
+              4,
+              12,
+              0,
+              6,
+              11,
+              10
+            ],
+            [
+              14,
+              2,
+              3,
+              20,
+              9,
+              17,
+              5
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "STRAIN",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "LOOSE"
+          ],
+          "resisted": [],
+          "neutral": 204
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "TENSE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "LOOSE",
+            "SOLACE"
+          ],
+          "resisted": [
+            "ROUSE"
+          ],
+          "neutral": 877
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "UNEASY",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "REST",
+            "STILL",
+            "RELIEF",
+            "LOOSE",
+            "SOOTHE",
+            "RESPITE",
+            "REPOSE"
+          ],
+          "resisted": [
+            "FRET"
+          ],
+          "neutral": 673
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "FRET",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "PEACE",
+            "LOOSE",
+            "EASE",
+            "PEACEFUL",
+            "CONSOLE",
+            "PEACEFULLY",
+            "LOOSEN",
+            "SOLACE"
+          ],
+          "resisted": [
+            "UNEASY"
+          ],
+          "neutral": 733
+        },
+        "thirdTurn": {
+          "counters": [
+            "REST",
+            "STILL",
+            "RELIEF",
+            "EASE",
+            "RELAX",
+            "RESPITE",
+            "RESTFUL"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "FRET",
+            "CONSOLE",
+            "REST"
+          ],
+          "tileIds": [
+            [
+              6,
+              13,
+              4,
+              0
+            ],
+            [
+              14,
+              2,
+              3,
+              12,
+              9,
+              10,
+              5
+            ],
+            [
+              23,
+              18,
+              20,
+              24
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "ACT",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "RELIEF",
+            "LOOSE",
+            "LOOSEN",
+            "SERENE",
+            "REPOSE"
+          ],
+          "resisted": [
+            "ROUSE"
+          ],
+          "neutral": 516
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ACT",
+            "SERENE"
+          ],
+          "tileIds": [
+            [
+              8,
+              14,
+              0
+            ],
+            [
+              12,
+              4,
+              13,
+              5,
+              3,
+              18
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "ANY",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "REST",
+            "STILL",
+            "RELIEF",
+            "LOOSE",
+            "SOOTHE",
+            "RESPITE",
+            "REPOSE",
+            "RESTFUL"
+          ],
+          "resisted": [
+            "FRET",
+            "ROUSE"
+          ],
+          "neutral": 849
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ANY",
+            "RESPITE"
+          ],
+          "tileIds": [
+            [
+              8,
+              3,
+              7
+            ],
+            [
+              13,
+              4,
+              12,
+              15,
+              1,
+              0,
+              5
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "ACNE",
+      "RESPITE"
+    ],
+    "tileIds": [
+      [
+        8,
+        14,
+        3,
+        4
+      ],
+      [
+        13,
+        5,
+        12,
+        15,
+        1,
+        0,
+        18
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      4
+    ]
+  },
+  "roots": [
+    {
+      "word": "SERENITY",
+      "senseId": "oewn-serenity__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "SERENE",
+      "senseId": "oewn-serene__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALM",
+      "senseId": "oewn-calm__2.37.01..",
+      "definition": "become quiet or calm, especially after a state of agitation",
+      "relation": "opposite"
+    },
+    {
+      "word": "RELAX",
+      "senseId": "oewn-relax__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "RELAXED",
+      "senseId": "oewn-relax__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "EASE",
+      "senseId": "oewn-ease__1.07.00..",
+      "definition": "freedom from difficulty or hardship or effort",
+      "relation": "opposite"
+    },
+    {
+      "word": "SOOTHE",
+      "senseId": "oewn-soothe__2.29.00..",
+      "definition": "cause to feel better",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPOSE",
+      "senseId": "oewn-compose__2.37.00..",
+      "definition": "calm (someone, especially oneself); make quiet",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPOSURE",
+      "senseId": "oewn-composure__1.07.00..",
+      "definition": "steadiness of mind under stress",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUIL",
+      "senseId": "oewn-tranquil__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "PEACE",
+      "senseId": "oewn-peace__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "PEACEFUL",
+      "senseId": "oewn-peaceful__3.00.00..",
+      "definition": "not disturbed by strife or turmoil or war",
+      "relation": "opposite"
+    },
+    {
+      "word": "RESTFUL",
+      "senseId": "oewn-restful__3.00.00..",
+      "definition": "affording physical or mental rest",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIET",
+      "senseId": "oewn-quiet__1.07.00..",
+      "definition": "a disposition free from stress or emotion",
+      "relation": "opposite"
+    },
+    {
+      "word": "STILL",
+      "senseId": "oewn-still__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "LOOSEN",
+      "senseId": "oewn-loosen__2.30.00..",
+      "definition": "become loose or looser or less tight",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNWIND",
+      "senseId": "oewn-unwind__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "REST",
+      "senseId": "oewn-rest__1.28.00..",
+      "definition": "a pause for relaxation",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMFORT",
+      "senseId": "oewn-comfort__2.37.01..",
+      "definition": "give moral or emotional strength to",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLACID",
+      "senseId": "oewn-placid__5.00.00.good-natured.00",
+      "definition": "not easily irritated",
+      "relation": "opposite"
+    },
+    {
+      "word": "PACIFY",
+      "senseId": "oewn-pacify__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "MELLOW",
+      "senseId": "oewn-mellow__5.00.00.relaxed.00",
+      "definition": "unhurried and relaxed",
+      "relation": "opposite"
+    },
+    {
+      "word": "REASSURE",
+      "senseId": "oewn-reassure__2.32.00..",
+      "definition": "give reassurance to; give or restore confidence in; cause to feel sure or certain",
+      "relation": "opposite"
+    },
+    {
+      "word": "TENSE",
+      "senseId": "oewn-tense__3.00.03..",
+      "definition": "in or of a state of physical or nervous tension",
+      "relation": "similar"
+    },
+    {
+      "word": "TENSION",
+      "senseId": "oewn-tension__1.26.03..",
+      "definition": "(psychology) a state of mental or emotional strain or suspense",
+      "relation": "similar"
+    },
+    {
+      "word": "STRESS",
+      "senseId": "oewn-stress__1.26.02..",
+      "definition": "difficulty that causes worry or emotional tension",
+      "relation": "similar"
+    },
+    {
+      "word": "ANXIOUS",
+      "senseId": "oewn-anxious__5.00.00.troubled.00",
+      "definition": "causing or fraught with or showing anxiety",
+      "relation": "similar"
+    },
+    {
+      "word": "ANXIETY",
+      "senseId": "oewn-anxiety__1.26.00..",
+      "definition": "(psychiatry) a relatively permanent state of worry and nervousness occurring in a variety of mental disorders, usually accompanied by compulsive behavior or attacks of panic",
+      "relation": "similar"
+    },
+    {
+      "word": "NERVOUS",
+      "senseId": "oewn-nervous__5.00.00.tense.03",
+      "definition": "easily agitated",
+      "relation": "similar"
+    },
+    {
+      "word": "UNEASY",
+      "senseId": "oewn-uneasy__3.00.05..",
+      "definition": "lacking or not affording physical or mental rest",
+      "relation": "similar"
+    },
+    {
+      "word": "WORRY",
+      "senseId": "oewn-worry__2.37.00..",
+      "definition": "be worried, concerned, anxious, troubled, or uneasy",
+      "relation": "similar"
+    },
+    {
+      "word": "AGITATE",
+      "senseId": "oewn-agitate__2.37.00..",
+      "definition": "cause to be agitated, excited, or roused",
+      "relation": "similar"
+    },
+    {
+      "word": "AGITATION",
+      "senseId": "oewn-agitation__1.26.01..",
+      "definition": "a mental state of extreme emotional disturbance",
+      "relation": "similar"
+    },
+    {
+      "word": "EDGY",
+      "senseId": "oewn-edgy__5.00.00.tense.03",
+      "definition": "being in a tense state",
+      "relation": "similar"
+    },
+    {
+      "word": "JITTERY",
+      "senseId": "oewn-jittery__5.00.00.tense.03",
+      "definition": "being in a tense state",
+      "relation": "similar"
+    },
+    {
+      "word": "JITTERS",
+      "senseId": "oewn-jitters__1.26.00..",
+      "definition": "extreme nervousness",
+      "relation": "similar"
+    },
+    {
+      "word": "STRAIN",
+      "senseId": "oewn-strain__1.26.01..",
+      "definition": "(psychology) nervousness resulting from mental stress",
+      "relation": "similar"
+    },
+    {
+      "word": "FRET",
+      "senseId": "oewn-fret__2.37.03..",
+      "definition": "worry unnecessarily or excessively",
+      "relation": "similar"
+    },
+    {
+      "word": "UPTIGHT",
+      "senseId": "oewn-uptight__5.00.00.tense.03",
+      "definition": "being in a tense state",
+      "relation": "similar"
+    }
+  ],
+  "semanticPolicy": "Pinned source senses and reviewed lexical families; unlabelled defined senses are neutral. Not a proof of exhaustive contextual semantic coverage.",
+  "asset": "puzzles/tense-serenity-de8859fa2985.json",
+  "novelty": []
+}

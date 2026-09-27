@@ -1,12 +1,5 @@
 [
   {
-    "date": "2026-09-26",
-    "id": "arid-irrigated",
-    "enemy": "ARID",
-    "asset": "puzzles/arid-irrigated-7ca7058b541f.json",
-    "method": "bingo-first"
-  },
-  {
     "date": "2026-09-27",
     "id": "ignite-extinguish",
     "enemy": "IGNITE",
@@ -165,68 +158,5 @@
     "asset": "puzzles/sore-composure-067b4abc1f03.json",
     "method": "bingo-first",
     "report": "artifacts/daily-month-2026-09-27/sore-composure.json"
-  },
-  {
-    "date": "2026-10-17",
-    "id": "spite-compassionate",
-    "enemy": "SPITE",
-    "asset": "puzzles/spite-compassionate-f8b21b24dabd.json",
-    "method": "bingo-first"
-  },
-  {
-    "date": "2026-10-18",
-    "id": "stint-contributions",
-    "enemy": "STINT",
-    "asset": "puzzles/stint-contributions-212ec0113b3a.json",
-    "method": "bingo-first"
-  },
-  {
-    "date": "2026-10-19",
-    "id": "fallacy-factually",
-    "enemy": "FALLACY",
-    "asset": "puzzles/fallacy-factually-58db17bf2243.json",
-    "method": "bingo-first"
-  },
-  {
-    "date": "2026-10-20",
-    "id": "ire-friendlier",
-    "enemy": "IRE",
-    "asset": "puzzles/ire-friendlier-da02d802ce56.json",
-    "method": "bingo-first"
-  },
-  {
-    "date": "2026-10-21",
-    "id": "panic-pacifying",
-    "enemy": "PANIC",
-    "asset": "puzzles/panic-pacifying-ba2910767495.json",
-    "method": "bingo-first"
-  },
-  {
-    "date": "2026-10-22",
-    "id": "riot-coordinate",
-    "enemy": "RIOT",
-    "asset": "puzzles/riot-coordinate-0a54f63f275c.json",
-    "method": "bingo-first"
-  },
-  {
-    "date": "2026-10-23",
-    "id": "rotten-reconstructed",
-    "enemy": "ROTTEN",
-    "asset": "puzzles/rotten-reconstructed-8dd12a8074cd.json",
-    "method": "bingo-first"
-  },
-  {
-    "date": "2026-10-24",
-    "id": "inertia-invigorated",
-    "enemy": "INERTIA",
-    "asset": "puzzles/inertia-invigorated-93d0217d1a7e.json",
-    "method": "bingo-first"
-  },
-  {
-    "date": "2026-10-25",
-    "id": "deceive-evidence",
-    "enemy": "DECEIVE",
-    "asset": "puzzles/deceive-evidence-d36365129a3c.json",
-    "method": "bingo-first"
   }
 ]

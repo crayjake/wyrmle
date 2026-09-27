@@ -1,0 +1,4578 @@
+{
+  "id": "mad-camaraderie",
+  "enemy": "MAD",
+  "answer": "CAMARADERIE",
+  "accepted": true,
+  "seed": "bingo-first-3:MAD:CAMARADERIE:12",
+  "score": 588,
+  "analysis": {
+    "score": 588,
+    "bingos": [
+      "CAMARADERIE",
+      "CAMARADERIES"
+    ],
+    "counterFamilies": 12,
+    "resistedFamilies": 4,
+    "winningOpenings": 18,
+    "repeatedCounterRoutes": 16,
+    "sustainedPositions": 17,
+    "sustainedFinalPositions": 7,
+    "neutralCleanupOpenings": 3,
+    "routes": [
+      {
+        "opening": "CLEAR",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "KIND",
+            "STAND",
+            "MATE",
+            "EASE",
+            "SPARK",
+            "DIGEST",
+            "POISED",
+            "RAPT"
+          ],
+          "resisted": [
+            "MAD",
+            "STORM",
+            "ANGER",
+            "RAGE",
+            "SORE",
+            "RAMP",
+            "RAMPANT",
+            "RAMPAGE",
+            "RESENT",
+            "STEAMED",
+            "ENRAGED",
+            "IRE"
+          ],
+          "neutral": 1586
+        },
+        "thirdTurn": {
+          "counters": [
+            "MATE",
+            "MUG"
+          ],
+          "resisted": [
+            "MAD",
+            "RAGE",
+            "RAMP",
+            "OUTRAGED",
+            "IRE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CLEAR",
+            "STAND",
+            "MATE"
+          ],
+          "tileIds": [
+            [
+              2,
+              15,
+              11,
+              3,
+              10
+            ],
+            [
+              5,
+              7,
+              8,
+              18,
+              1
+            ],
+            [
+              6,
+              13,
+              23,
+              14
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "PEACE",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "KIND",
+            "STAND",
+            "GLAD",
+            "SMILE",
+            "MATE",
+            "DIGEST",
+            "GENIAL"
+          ],
+          "resisted": [
+            "MAD",
+            "STORM",
+            "ANGER",
+            "RAGE",
+            "SORE",
+            "IRE"
+          ],
+          "neutral": 1543
+        },
+        "thirdTurn": {
+          "counters": [
+            "MATE",
+            "MUG"
+          ],
+          "resisted": [
+            "MAD",
+            "RAGE",
+            "OUTRAGED",
+            "IRE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "PEACE",
+            "STAND",
+            "MATE"
+          ],
+          "tileIds": [
+            [
+              4,
+              11,
+              3,
+              2,
+              14
+            ],
+            [
+              5,
+              7,
+              8,
+              18,
+              1
+            ],
+            [
+              6,
+              13,
+              23,
+              20
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "PLEASE",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "KIND",
+            "GRACE",
+            "MATE",
+            "CARING",
+            "COMRADE"
+          ],
+          "resisted": [
+            "MAD",
+            "ANGER",
+            "RAGE",
+            "IRE"
+          ],
+          "neutral": 806
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "PLEASE",
+            "COMRADE"
+          ],
+          "tileIds": [
+            [
+              4,
+              15,
+              11,
+              3,
+              5,
+              14
+            ],
+            [
+              2,
+              9,
+              6,
+              10,
+              8,
+              1,
+              20
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "SOCIAL",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "MATE",
+            "RAPT"
+          ],
+          "resisted": [
+            "MAD",
+            "ANGER",
+            "RAGE",
+            "RAMP",
+            "RAMPANT",
+            "RAMPAGE",
+            "ENRAGED"
+          ],
+          "neutral": 402
+        },
+        "thirdTurn": {
+          "counters": [
+            "ENDURE"
+          ],
+          "resisted": [
+            "MAD",
+            "ANGER",
+            "RAGE",
+            "RAMP",
+            "ENRAGED"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SOCIAL",
+            "MATE",
+            "ENDURE"
+          ],
+          "tileIds": [
+            [
+              5,
+              9,
+              2,
+              0,
+              3,
+              15
+            ],
+            [
+              6,
+              8,
+              7,
+              11
+            ],
+            [
+              14,
+              18,
+              1,
+              22,
+              10,
+              20
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SMILE",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "PEACE",
+            "GRACE",
+            "MATE",
+            "COMRADE",
+            "RAPT"
+          ],
+          "resisted": [
+            "MAD",
+            "ANGER",
+            "RAGE",
+            "RAMP",
+            "RAMPANT",
+            "RAMPAGE",
+            "ENRAGED"
+          ],
+          "neutral": 705
+        },
+        "thirdTurn": {
+          "counters": [
+            "PATIENT",
+            "RAPT"
+          ],
+          "resisted": [
+            "ANGER",
+            "RAGE",
+            "ENRAGED",
+            "IRE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SMILE",
+            "COMRADE",
+            "PATIENT"
+          ],
+          "tileIds": [
+            [
+              5,
+              6,
+              0,
+              15,
+              11
+            ],
+            [
+              2,
+              9,
+              19,
+              10,
+              3,
+              1,
+              14
+            ],
+            [
+              4,
+              8,
+              7,
+              26,
+              20,
+              18,
+              23
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "MATE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "KIND",
+            "CLEAR",
+            "SOCIAL",
+            "GLAD",
+            "GRACE",
+            "CALM",
+            "CARING",
+            "PAL",
+            "SPARK",
+            "SMILED",
+            "PLEASING",
+            "COMRADES",
+            "POISED",
+            "SPARKLE",
+            "CORDIAL",
+            "GENIAL"
+          ],
+          "resisted": [
+            "MAD",
+            "ANGER",
+            "RAGE",
+            "SORE",
+            "RAMP",
+            "RAMPAGE",
+            "IRE"
+          ],
+          "neutral": 1725
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "MATE",
+            "GLAD"
+          ],
+          "tileIds": [
+            [
+              6,
+              3,
+              7,
+              11
+            ],
+            [
+              16,
+              15,
+              8,
+              1
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "CALM",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "KIND",
+            "STAND",
+            "MATE",
+            "EASE",
+            "SPARK",
+            "DIGEST",
+            "POISED",
+            "RAPT"
+          ],
+          "resisted": [
+            "MAD",
+            "STORM",
+            "ANGER",
+            "RAGE",
+            "SORE",
+            "RAMP",
+            "RAMPANT",
+            "RAMPAGE",
+            "RESENT",
+            "STEAMED",
+            "ENRAGED",
+            "IRE"
+          ],
+          "neutral": 1715
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "CALM",
+            "STAND"
+          ],
+          "tileIds": [
+            [
+              2,
+              3,
+              15,
+              6
+            ],
+            [
+              5,
+              7,
+              8,
+              18,
+              1
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "EASE",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "KIND",
+            "GLAD",
+            "CALM",
+            "CARING",
+            "PAL",
+            "CORDIAL",
+            "RAPT"
+          ],
+          "resisted": [
+            "MAD",
+            "RAMP",
+            "RAMPANT"
+          ],
+          "neutral": 636
+        },
+        "thirdTurn": {
+          "counters": [
+            "MATE",
+            "COMRADE"
+          ],
+          "resisted": [
+            "MAD",
+            "RAMP",
+            "IRE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "EASE",
+            "GLAD",
+            "MATE"
+          ],
+          "tileIds": [
+            [
+              11,
+              3,
+              5,
+              14
+            ],
+            [
+              16,
+              15,
+              8,
+              1
+            ],
+            [
+              6,
+              13,
+              7,
+              20
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "PAL",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "KIND",
+            "STAND",
+            "GRACE",
+            "MATE",
+            "EASE",
+            "CARING",
+            "DIGEST",
+            "COMRADES"
+          ],
+          "resisted": [
+            "MAD",
+            "STORM",
+            "ANGER",
+            "RAGE",
+            "SORE",
+            "RESENT",
+            "STEAMED",
+            "ENRAGED",
+            "IRE"
+          ],
+          "neutral": 1736
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "PAL",
+            "COMRADES"
+          ],
+          "tileIds": [
+            [
+              4,
+              3,
+              15
+            ],
+            [
+              2,
+              9,
+              6,
+              10,
+              8,
+              1,
+              11,
+              5
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "COMRADES",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "GLAD",
+            "PATIENT",
+            "MATE",
+            "PAL",
+            "ELATED",
+            "GENIAL",
+            "RAPT"
+          ],
+          "resisted": [
+            "MAD",
+            "ANGER",
+            "RAGE",
+            "RAMP",
+            "RAMPANT",
+            "RAMPAGE",
+            "ENRAGED",
+            "IRE"
+          ],
+          "neutral": 1137
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "COMRADES",
+            "GLAD"
+          ],
+          "tileIds": [
+            [
+              2,
+              9,
+              6,
+              10,
+              3,
+              1,
+              11,
+              5
+            ],
+            [
+              16,
+              15,
+              8,
+              21
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "POISED",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "CLEAR",
+            "GLAD",
+            "GRACE",
+            "MATE",
+            "CALM",
+            "ELATED"
+          ],
+          "resisted": [
+            "MAD",
+            "ANGER",
+            "RAGE",
+            "ENRAGED"
+          ],
+          "neutral": 518
+        },
+        "thirdTurn": {
+          "counters": [
+            "CLEAR",
+            "GLAD",
+            "GRACE",
+            "CALM",
+            "ELATED"
+          ],
+          "resisted": [
+            "MAD",
+            "ANGER",
+            "RAGE",
+            "ENRAGED"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "POISED",
+            "MATE",
+            "CLEAR"
+          ],
+          "tileIds": [
+            [
+              4,
+              9,
+              0,
+              5,
+              11,
+              1
+            ],
+            [
+              6,
+              3,
+              7,
+              14
+            ],
+            [
+              2,
+              15,
+              20,
+              8,
+              10
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "CORDIAL",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "STAND",
+            "MATE",
+            "EASE",
+            "SPARK",
+            "MUG",
+            "RAPT"
+          ],
+          "resisted": [
+            "MAD",
+            "ANGER",
+            "RAGE",
+            "RAMP",
+            "RAMPANT",
+            "RAMPAGE",
+            "RESENT",
+            "STEAMED",
+            "ENRAGED",
+            "STUNG"
+          ],
+          "neutral": 879
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "CORDIAL",
+            "MATE"
+          ],
+          "tileIds": [
+            [
+              2,
+              9,
+              10,
+              1,
+              0,
+              3,
+              15
+            ],
+            [
+              6,
+              8,
+              7,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "STORM",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "KIND",
+            "CLEAR",
+            "PEACE",
+            "GLAD",
+            "GRACE",
+            "CALM",
+            "CARING",
+            "PAL",
+            "GENIAL",
+            "PEACEMAKER"
+          ],
+          "resisted": [
+            "MAD",
+            "ANGER",
+            "RAGE",
+            "RAMP",
+            "RAMPAGE",
+            "ENRAGED",
+            "IRE"
+          ],
+          "neutral": 734
+        },
+        "thirdTurn": {
+          "counters": [
+            "RAPT"
+          ],
+          "resisted": [
+            "ANGER",
+            "RAGE",
+            "ENRAGED",
+            "IRE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "STORM",
+            "CALMED",
+            "RAPT"
+          ],
+          "tileIds": [
+            [
+              5,
+              7,
+              9,
+              10,
+              6
+            ],
+            [
+              2,
+              3,
+              15,
+              19,
+              11,
+              1
+            ],
+            [
+              12,
+              8,
+              4,
+              23
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SORE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "KIND",
+            "CLEAR",
+            "GLAD",
+            "GRACE",
+            "MATE",
+            "CALM",
+            "CARING",
+            "PAL",
+            "PLACATE",
+            "GENIAL",
+            "RAPT"
+          ],
+          "resisted": [
+            "MAD",
+            "ANGER",
+            "RAGE",
+            "RAMP",
+            "RAMPANT",
+            "RAMPAGE",
+            "IRE"
+          ],
+          "neutral": 969
+        },
+        "thirdTurn": {
+          "counters": [
+            "PATIENT",
+            "MATE",
+            "RAPT"
+          ],
+          "resisted": [
+            "MAD",
+            "ANGER",
+            "RAGE",
+            "RAMP",
+            "RAMPANT",
+            "RAMPAGE",
+            "ENRAGED",
+            "IRE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SORE",
+            "CALMED",
+            "PATIENT"
+          ],
+          "tileIds": [
+            [
+              5,
+              9,
+              10,
+              11
+            ],
+            [
+              2,
+              3,
+              15,
+              6,
+              14,
+              1
+            ],
+            [
+              4,
+              8,
+              7,
+              0,
+              20,
+              18,
+              23
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "RAMP",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "KIND",
+            "CLEAR",
+            "STAND",
+            "SOCIAL",
+            "GLAD",
+            "SMILE",
+            "GRACE",
+            "MATE",
+            "CALM",
+            "EASE",
+            "CARING",
+            "DIGEST",
+            "COMRADES",
+            "CORDIAL",
+            "ELATED",
+            "GENIAL"
+          ],
+          "resisted": [
+            "MAD",
+            "STORM",
+            "ANGER",
+            "RAGE",
+            "SORE",
+            "RESENT",
+            "STEAMED",
+            "ENRAGED",
+            "IRE"
+          ],
+          "neutral": 2347
+        },
+        "thirdTurn": {
+          "counters": [
+            "GLAD",
+            "PATIENT",
+            "PAL",
+            "ELATED",
+            "GENIAL"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RAMP",
+            "COMRADES",
+            "GLAD"
+          ],
+          "tileIds": [
+            [
+              10,
+              3,
+              6,
+              4
+            ],
+            [
+              2,
+              9,
+              19,
+              12,
+              8,
+              1,
+              11,
+              5
+            ],
+            [
+              16,
+              15,
+              13,
+              21
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "STEAMED",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "KIND",
+            "CLEAR",
+            "GLAD",
+            "GRACE",
+            "CALM",
+            "CARING",
+            "PAL",
+            "MUG",
+            "COMRADE",
+            "CORDIAL",
+            "GENIAL"
+          ],
+          "resisted": [
+            "MAD",
+            "ANGER",
+            "RAGE",
+            "RAMP",
+            "RAMPAGE",
+            "IRE"
+          ],
+          "neutral": 1143
+        },
+        "thirdTurn": {
+          "counters": [
+            "BEAR",
+            "PAL",
+            "UPBEAT",
+            "GENIAL",
+            "RAPT"
+          ],
+          "resisted": [
+            "ANGER",
+            "RAGE",
+            "IRE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "STEAMED",
+            "COMRADE",
+            "BEAR"
+          ],
+          "tileIds": [
+            [
+              5,
+              7,
+              11,
+              3,
+              6,
+              14,
+              1
+            ],
+            [
+              2,
+              9,
+              19,
+              10,
+              8,
+              21,
+              20
+            ],
+            [
+              28,
+              24,
+              13,
+              12
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "ACT",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "KIND",
+            "PLEASE",
+            "GLAD",
+            "SMILE",
+            "EASE",
+            "PAL",
+            "SPARK",
+            "POISED",
+            "SPARKLE",
+            "GENIAL",
+            "PLEASER"
+          ],
+          "resisted": [
+            "MAD",
+            "ANGER",
+            "RAGE",
+            "SORE",
+            "RAMP",
+            "RAMPAGE",
+            "ENRAGED",
+            "IRE",
+            "SPLEEN"
+          ],
+          "neutral": 1461
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "MAD",
+            "SORE",
+            "RAMP",
+            "IRE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ACT",
+            "GLAD",
+            "MAN"
+          ],
+          "tileIds": [
+            [
+              3,
+              2,
+              7
+            ],
+            [
+              16,
+              15,
+              8,
+              1
+            ],
+            [
+              6,
+              13,
+              18
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "CLEAR",
+            "PEACE",
+            "STAND",
+            "PLEASE",
+            "GLAD",
+            "GRACE",
+            "MATE",
+            "CALM",
+            "EASE",
+            "PLEASANT",
+            "PAL",
+            "SPARK",
+            "COMRADES",
+            "SPARKLE",
+            "ELATED",
+            "PLACATE",
+            "PLEASER",
+            "RAPT"
+          ],
+          "resisted": [
+            "MAD",
+            "STORM",
+            "ANGER",
+            "RAGE",
+            "SORE",
+            "RAMP",
+            "RAMPANT",
+            "RAMPAGE",
+            "RESENT",
+            "STEAMED",
+            "ENRAGED",
+            "SPLEEN"
+          ],
+          "neutral": 1800
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AIR",
+            "COMRADES"
+          ],
+          "tileIds": [
+            [
+              3,
+              0,
+              10
+            ],
+            [
+              2,
+              9,
+              6,
+              12,
+              8,
+              1,
+              11,
+              5
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "AAS",
+      "CALMED"
+    ],
+    "tileIds": [
+      [
+        3,
+        8,
+        5
+      ],
+      [
+        2,
+        13,
+        15,
+        6,
+        11,
+        1
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      3
+    ]
+  },
+  "roots": [
+    {
+      "word": "ACRIMONIOUS",
+      "senseId": "oewn-acrimonious__5.00.00.resentful.00",
+      "definition": "marked by strong resentment or cynicism",
+      "relation": "similar"
+    },
+    {
+      "word": "AFFABLE",
+      "senseId": "oewn-affable__5.00.00.friendly.01",
+      "definition": "diffusing warmth and friendliness",
+      "relation": "opposite"
+    },
+    {
+      "word": "AFFABLY",
+      "senseId": "oewn-affably__4.02.00..",
+      "definition": "in an affable manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "AGGRAVATED",
+      "senseId": "oewn-aggravated__5.00.00.angry.00",
+      "definition": "incited, especially deliberately, to anger",
+      "relation": "similar"
+    },
+    {
+      "word": "AMIABLE",
+      "senseId": "oewn-amiable__5.00.00.friendly.01",
+      "definition": "diffusing warmth and friendliness",
+      "relation": "opposite"
+    },
+    {
+      "word": "AMIABLY",
+      "senseId": "oewn-amiably__4.02.00..",
+      "definition": "in an affable manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "ANGER",
+      "senseId": "oewn-anger__1.12.00..",
+      "definition": "a strong emotion; a feeling that is oriented toward some real or supposed grievance",
+      "relation": "similar"
+    },
+    {
+      "word": "ANGERED",
+      "senseId": "oewn-anger__2.37.00..",
+      "definition": "make angry",
+      "relation": "similar"
+    },
+    {
+      "word": "ANGERING",
+      "senseId": "oewn-anger__2.37.00..",
+      "definition": "make angry",
+      "relation": "similar"
+    },
+    {
+      "word": "ANGERS",
+      "senseId": "oewn-anger__1.12.00..",
+      "definition": "a strong emotion; a feeling that is oriented toward some real or supposed grievance",
+      "relation": "similar"
+    },
+    {
+      "word": "ANGRIER",
+      "senseId": "oewn-angry__3.00.00..",
+      "definition": "feeling or showing anger",
+      "relation": "similar"
+    },
+    {
+      "word": "ANGRIEST",
+      "senseId": "oewn-angry__3.00.00..",
+      "definition": "feeling or showing anger",
+      "relation": "similar"
+    },
+    {
+      "word": "ANGRILY",
+      "senseId": "oewn-angrily__4.02.00..",
+      "definition": "with anger",
+      "relation": "similar"
+    },
+    {
+      "word": "ANGRINESS",
+      "senseId": "oewn-angriness__1.26.00..",
+      "definition": "the state of being angry",
+      "relation": "similar"
+    },
+    {
+      "word": "ANGRINESSES",
+      "senseId": "oewn-angriness__1.26.00..",
+      "definition": "the state of being angry",
+      "relation": "similar"
+    },
+    {
+      "word": "ANGRY",
+      "senseId": "oewn-angry__3.00.00..",
+      "definition": "feeling or showing anger",
+      "relation": "similar"
+    },
+    {
+      "word": "ANNOYANCE",
+      "senseId": "oewn-annoyance__1.12.00..",
+      "definition": "anger produced by some annoying irritation",
+      "relation": "similar"
+    },
+    {
+      "word": "ANNOYANCES",
+      "senseId": "oewn-annoyance__1.12.00..",
+      "definition": "anger produced by some annoying irritation",
+      "relation": "similar"
+    },
+    {
+      "word": "ANNOYED",
+      "senseId": "oewn-annoyed__5.00.00.displeased.00",
+      "definition": "aroused to impatience or anger",
+      "relation": "similar"
+    },
+    {
+      "word": "APPEASE",
+      "senseId": "oewn-appease__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "APPEASED",
+      "senseId": "oewn-appease__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "APPEASES",
+      "senseId": "oewn-appease__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "APPEASING",
+      "senseId": "oewn-appease__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "ASSUAGE",
+      "senseId": "oewn-assuage__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "ASSUAGED",
+      "senseId": "oewn-assuage__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "ASSUAGES",
+      "senseId": "oewn-assuage__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "ASSUAGING",
+      "senseId": "oewn-assuage__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "BEAMING",
+      "senseId": "oewn-beaming__5.00.00.cheerful.00",
+      "definition": "cheerful and bright",
+      "relation": "opposite"
+    },
+    {
+      "word": "BEAMISH",
+      "senseId": "oewn-beamish__5.00.00.cheerful.00",
+      "definition": "smiling with happiness or optimism",
+      "relation": "opposite"
+    },
+    {
+      "word": "BEATIFIC",
+      "senseId": "oewn-beatific__5.00.00.joyful.00",
+      "definition": "experiencing or bestowing celestial joy",
+      "relation": "opposite"
+    },
+    {
+      "word": "BENEVOLENT",
+      "senseId": "oewn-benevolent__5.00.00.kind.00",
+      "definition": "showing or motivated by sympathy and understanding and generosity",
+      "relation": "opposite"
+    },
+    {
+      "word": "BENEVOLENTLY",
+      "senseId": "oewn-benevolently__4.02.00..",
+      "definition": "in a benevolent manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "BENIGN",
+      "senseId": "oewn-benign__5.00.00.kind.00",
+      "definition": "kindness of disposition or manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "BENIGNANT",
+      "senseId": "oewn-benignant__5.00.00.kind.00",
+      "definition": "characterized by kindness and warm courtesy especially of a king to his subjects",
+      "relation": "opposite"
+    },
+    {
+      "word": "BENIGNER",
+      "senseId": "oewn-benign__5.00.00.kind.00",
+      "definition": "kindness of disposition or manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "BENIGNEST",
+      "senseId": "oewn-benign__5.00.00.kind.00",
+      "definition": "kindness of disposition or manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "BITTER",
+      "senseId": "oewn-bitter__5.00.00.resentful.00",
+      "definition": "marked by strong resentment or cynicism",
+      "relation": "similar"
+    },
+    {
+      "word": "BITTERER",
+      "senseId": "oewn-bitter__5.00.00.resentful.00",
+      "definition": "marked by strong resentment or cynicism",
+      "relation": "similar"
+    },
+    {
+      "word": "BITTEREST",
+      "senseId": "oewn-bitter__5.00.00.resentful.00",
+      "definition": "marked by strong resentment or cynicism",
+      "relation": "similar"
+    },
+    {
+      "word": "BITTERLY",
+      "senseId": "oewn-bitterly__4.02.00..",
+      "definition": "with bitterness; in a resentful manner",
+      "relation": "similar"
+    },
+    {
+      "word": "BITTERNESS",
+      "senseId": "oewn-bitterness__1.12.00..",
+      "definition": "a feeling of deep and bitter anger and ill-will",
+      "relation": "similar"
+    },
+    {
+      "word": "BITTERNESSES",
+      "senseId": "oewn-bitterness__1.12.00..",
+      "definition": "a feeling of deep and bitter anger and ill-will",
+      "relation": "similar"
+    },
+    {
+      "word": "BLACK",
+      "senseId": "oewn-black__5.00.00.angry.00",
+      "definition": "marked by anger or resentment or hostility",
+      "relation": "similar"
+    },
+    {
+      "word": "BLACKER",
+      "senseId": "oewn-black__5.00.00.angry.00",
+      "definition": "marked by anger or resentment or hostility",
+      "relation": "similar"
+    },
+    {
+      "word": "BLACKEST",
+      "senseId": "oewn-black__5.00.00.angry.00",
+      "definition": "marked by anger or resentment or hostility",
+      "relation": "similar"
+    },
+    {
+      "word": "BLESSED",
+      "senseId": "oewn-blessed__5.00.00.happy.00",
+      "definition": "characterized by happiness and good fortune",
+      "relation": "opposite"
+    },
+    {
+      "word": "BLESSEDER",
+      "senseId": "oewn-blessed__5.00.00.happy.00",
+      "definition": "characterized by happiness and good fortune",
+      "relation": "opposite"
+    },
+    {
+      "word": "BLESSEDEST",
+      "senseId": "oewn-blessed__5.00.00.happy.00",
+      "definition": "characterized by happiness and good fortune",
+      "relation": "opposite"
+    },
+    {
+      "word": "BLISSFUL",
+      "senseId": "oewn-blissful__5.00.00.happy.00",
+      "definition": "completely happy and contented",
+      "relation": "opposite"
+    },
+    {
+      "word": "BLISSFULLY",
+      "senseId": "oewn-blissfully__4.02.00..",
+      "definition": "in a blissful manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "BLITHE",
+      "senseId": "oewn-blithe__5.00.00.cheerful.00",
+      "definition": "carefree and happy and lighthearted",
+      "relation": "opposite"
+    },
+    {
+      "word": "BLITHELY",
+      "senseId": "oewn-blithely__4.02.00..",
+      "definition": "in a joyous manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "BLITHENESS",
+      "senseId": "oewn-blitheness__1.12.00..",
+      "definition": "a feeling of spontaneous good spirits",
+      "relation": "opposite"
+    },
+    {
+      "word": "BLITHENESSES",
+      "senseId": "oewn-blitheness__1.12.00..",
+      "definition": "a feeling of spontaneous good spirits",
+      "relation": "opposite"
+    },
+    {
+      "word": "BLITHER",
+      "senseId": "oewn-blithe__5.00.00.cheerful.00",
+      "definition": "carefree and happy and lighthearted",
+      "relation": "opposite"
+    },
+    {
+      "word": "BLITHESOME",
+      "senseId": "oewn-blithesome__5.00.00.cheerful.00",
+      "definition": "carefree and happy and lighthearted",
+      "relation": "opposite"
+    },
+    {
+      "word": "BLITHEST",
+      "senseId": "oewn-blithe__5.00.00.cheerful.00",
+      "definition": "carefree and happy and lighthearted",
+      "relation": "opposite"
+    },
+    {
+      "word": "BRIGHT",
+      "senseId": "oewn-bright__5.00.00.happy.00",
+      "definition": "characterized by happiness or gladness",
+      "relation": "opposite"
+    },
+    {
+      "word": "BRIGHTER",
+      "senseId": "oewn-bright__5.00.00.happy.00",
+      "definition": "characterized by happiness or gladness",
+      "relation": "opposite"
+    },
+    {
+      "word": "BRIGHTEST",
+      "senseId": "oewn-bright__5.00.00.happy.00",
+      "definition": "characterized by happiness or gladness",
+      "relation": "opposite"
+    },
+    {
+      "word": "BUOYANT",
+      "senseId": "oewn-buoyant__5.00.00.cheerful.00",
+      "definition": "characterized by liveliness and lightheartedness",
+      "relation": "opposite"
+    },
+    {
+      "word": "BUOYANTLY",
+      "senseId": "oewn-buoyantly__4.02.00..",
+      "definition": "in a cheerfully buoyant manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALM",
+      "senseId": "oewn-calm__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALMED",
+      "senseId": "oewn-calm__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALMER",
+      "senseId": "oewn-calm__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALMEST",
+      "senseId": "oewn-calm__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALMING",
+      "senseId": "oewn-calm__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALMLY",
+      "senseId": "oewn-calmly__4.02.00..",
+      "definition": "with self-possession (especially in times of stress)",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALMNESS",
+      "senseId": "oewn-calmness__1.07.00..",
+      "definition": "steadiness of mind under stress",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALMNESSES",
+      "senseId": "oewn-calmness__1.07.00..",
+      "definition": "steadiness of mind under stress",
+      "relation": "opposite"
+    },
+    {
+      "word": "CALMS",
+      "senseId": "oewn-calm__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "CARING",
+      "senseId": "oewn-caring__5.00.00.compassionate.00",
+      "definition": "feeling and exhibiting concern and empathy for others",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHAFE",
+      "senseId": "oewn-chafe__1.12.00..",
+      "definition": "anger produced by some annoying irritation",
+      "relation": "similar"
+    },
+    {
+      "word": "CHAFES",
+      "senseId": "oewn-chafe__1.12.00..",
+      "definition": "anger produced by some annoying irritation",
+      "relation": "similar"
+    },
+    {
+      "word": "CHARITABLE",
+      "senseId": "oewn-charitable__5.00.00.kind.00",
+      "definition": "showing or motivated by sympathy and understanding and generosity",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHEER",
+      "senseId": "oewn-cheer__1.07.00..",
+      "definition": "the quality of being cheerful and dispelling gloom",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHEERED",
+      "senseId": "oewn-cheer__2.32.00..",
+      "definition": "become cheerful",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHEERFUL",
+      "senseId": "oewn-cheerful__3.00.00..",
+      "definition": "being full of or promoting cheer; having or showing good spirits",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHEERFULLY",
+      "senseId": "oewn-cheerfully__4.02.00..",
+      "definition": "in a cheerful manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHEERFULNESS",
+      "senseId": "oewn-cheerfulness__1.07.00..",
+      "definition": "the quality of being cheerful and dispelling gloom",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHEERFULNESSES",
+      "senseId": "oewn-cheerfulness__1.07.00..",
+      "definition": "the quality of being cheerful and dispelling gloom",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHEERIER",
+      "senseId": "oewn-cheery__5.00.00.cheerful.00",
+      "definition": "bright and pleasant; promoting a feeling of cheer",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHEERIEST",
+      "senseId": "oewn-cheery__5.00.00.cheerful.00",
+      "definition": "bright and pleasant; promoting a feeling of cheer",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHEERILY",
+      "senseId": "oewn-cheerily__4.02.00..",
+      "definition": "in a good-humoured manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHEERING",
+      "senseId": "oewn-cheer__2.32.00..",
+      "definition": "become cheerful",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHEERS",
+      "senseId": "oewn-cheer__1.07.00..",
+      "definition": "the quality of being cheerful and dispelling gloom",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHEERY",
+      "senseId": "oewn-cheery__5.00.00.cheerful.00",
+      "definition": "bright and pleasant; promoting a feeling of cheer",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHIPPER",
+      "senseId": "oewn-chipper__5.00.00.cheerful.00",
+      "definition": "having a cheerful, lively, and self-confident air",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHIRPIER",
+      "senseId": "oewn-chirpy__5.00.00.cheerful.00",
+      "definition": "characterized by liveliness and lightheartedness",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHIRPIEST",
+      "senseId": "oewn-chirpy__5.00.00.cheerful.00",
+      "definition": "characterized by liveliness and lightheartedness",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHIRPILY",
+      "senseId": "oewn-chirpily__4.02.00..",
+      "definition": "in a cheerfully buoyant manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHIRPY",
+      "senseId": "oewn-chirpy__5.00.00.cheerful.00",
+      "definition": "characterized by liveliness and lightheartedness",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHOLER",
+      "senseId": "oewn-choler__1.12.01..",
+      "definition": "a strong emotion; a feeling that is oriented toward some real or supposed grievance",
+      "relation": "similar"
+    },
+    {
+      "word": "CHOLERIC",
+      "senseId": "oewn-choleric__5.00.00.angry.00",
+      "definition": "characterized by anger",
+      "relation": "similar"
+    },
+    {
+      "word": "CHOLERS",
+      "senseId": "oewn-choler__1.12.01..",
+      "definition": "a strong emotion; a feeling that is oriented toward some real or supposed grievance",
+      "relation": "similar"
+    },
+    {
+      "word": "CHUMMIER",
+      "senseId": "oewn-chummy__5.00.00.friendly.01",
+      "definition": "(used colloquially) having the relationship of friends or pals",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHUMMIEST",
+      "senseId": "oewn-chummy__5.00.00.friendly.01",
+      "definition": "(used colloquially) having the relationship of friends or pals",
+      "relation": "opposite"
+    },
+    {
+      "word": "CHUMMY",
+      "senseId": "oewn-chummy__5.00.00.friendly.01",
+      "definition": "(used colloquially) having the relationship of friends or pals",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPANIONATE",
+      "senseId": "oewn-companionate__5.00.00.friendly.01",
+      "definition": "like a companion",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPASSION",
+      "senseId": "oewn-compassion__1.12.00..",
+      "definition": "a deep awareness of and sympathy for another's suffering",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPASSIONATE",
+      "senseId": "oewn-compassionate__2.37.00..",
+      "definition": "share the suffering of",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPASSIONATED",
+      "senseId": "oewn-compassionate__2.37.00..",
+      "definition": "share the suffering of",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPASSIONATELY",
+      "senseId": "oewn-compassionately__4.02.00..",
+      "definition": "in a compassionate manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPASSIONATENESS",
+      "senseId": "oewn-compassionateness__1.12.00..",
+      "definition": "a deep awareness of and sympathy for another's suffering",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPASSIONATENESSES",
+      "senseId": "oewn-compassionateness__1.12.00..",
+      "definition": "a deep awareness of and sympathy for another's suffering",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPASSIONATES",
+      "senseId": "oewn-compassionate__2.37.00..",
+      "definition": "share the suffering of",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPASSIONATING",
+      "senseId": "oewn-compassionate__2.37.00..",
+      "definition": "share the suffering of",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPASSIONS",
+      "senseId": "oewn-compassion__1.12.00..",
+      "definition": "a deep awareness of and sympathy for another's suffering",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPOSURE",
+      "senseId": "oewn-composure__1.07.00..",
+      "definition": "steadiness of mind under stress",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMPOSURES",
+      "senseId": "oewn-composure__1.07.00..",
+      "definition": "steadiness of mind under stress",
+      "relation": "opposite"
+    },
+    {
+      "word": "COMRADELY",
+      "senseId": "oewn-comradely__5.00.00.friendly.01",
+      "definition": "heartily friendly and congenial",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONCILIATE",
+      "senseId": "oewn-conciliate__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONCILIATED",
+      "senseId": "oewn-conciliate__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONCILIATES",
+      "senseId": "oewn-conciliate__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "CONCILIATING",
+      "senseId": "oewn-conciliate__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "CORDIAL",
+      "senseId": "oewn-cordial__5.00.00.friendly.01",
+      "definition": "diffusing warmth and friendliness",
+      "relation": "opposite"
+    },
+    {
+      "word": "COSIER",
+      "senseId": "oewn-cosy__5.00.02.friendly.01",
+      "definition": "having or fostering a warm or friendly and informal atmosphere",
+      "relation": "opposite"
+    },
+    {
+      "word": "COSIEST",
+      "senseId": "oewn-cosy__5.00.02.friendly.01",
+      "definition": "having or fostering a warm or friendly and informal atmosphere",
+      "relation": "opposite"
+    },
+    {
+      "word": "COSY",
+      "senseId": "oewn-cosy__5.00.02.friendly.01",
+      "definition": "having or fostering a warm or friendly and informal atmosphere",
+      "relation": "opposite"
+    },
+    {
+      "word": "COUTHIE",
+      "senseId": "oewn-couthie__5.00.00.friendly.01",
+      "definition": "(chiefly Scottish) agreeable and genial",
+      "relation": "opposite"
+    },
+    {
+      "word": "COUTHIER",
+      "senseId": "oewn-couthie__5.00.00.friendly.01",
+      "definition": "(chiefly Scottish) agreeable and genial",
+      "relation": "opposite"
+    },
+    {
+      "word": "COUTHIEST",
+      "senseId": "oewn-couthie__5.00.00.friendly.01",
+      "definition": "(chiefly Scottish) agreeable and genial",
+      "relation": "opposite"
+    },
+    {
+      "word": "COUTHY",
+      "senseId": "oewn-couthy__5.00.00.friendly.01",
+      "definition": "(chiefly Scottish) agreeable and genial",
+      "relation": "opposite"
+    },
+    {
+      "word": "COZIER",
+      "senseId": "oewn-cozy__5.00.00.friendly.01",
+      "definition": "having or fostering a warm or friendly and informal atmosphere",
+      "relation": "opposite"
+    },
+    {
+      "word": "COZIEST",
+      "senseId": "oewn-cozy__5.00.00.friendly.01",
+      "definition": "having or fostering a warm or friendly and informal atmosphere",
+      "relation": "opposite"
+    },
+    {
+      "word": "COZY",
+      "senseId": "oewn-cozy__5.00.00.friendly.01",
+      "definition": "having or fostering a warm or friendly and informal atmosphere",
+      "relation": "opposite"
+    },
+    {
+      "word": "DEBONAIR",
+      "senseId": "oewn-debonair__5.00.00.cheerful.00",
+      "definition": "having a cheerful, lively, and self-confident air",
+      "relation": "opposite"
+    },
+    {
+      "word": "DEBONAIRE",
+      "senseId": "oewn-debonaire__5.00.00.cheerful.00",
+      "definition": "having a cheerful, lively, and self-confident air",
+      "relation": "opposite"
+    },
+    {
+      "word": "DECOMPRESS",
+      "senseId": "oewn-decompress__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "DECOMPRESSED",
+      "senseId": "oewn-decompress__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "DECOMPRESSES",
+      "senseId": "oewn-decompress__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "DECOMPRESSING",
+      "senseId": "oewn-decompress__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "DEGAGE",
+      "senseId": "oewn-degage__5.00.00.relaxed.00",
+      "definition": "free and relaxed in manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "DELECTATION",
+      "senseId": "oewn-delectation__1.12.00..",
+      "definition": "a feeling of extreme pleasure or satisfaction",
+      "relation": "opposite"
+    },
+    {
+      "word": "DELECTATIONS",
+      "senseId": "oewn-delectation__1.12.00..",
+      "definition": "a feeling of extreme pleasure or satisfaction",
+      "relation": "opposite"
+    },
+    {
+      "word": "DELIGHT",
+      "senseId": "oewn-delight__1.12.00..",
+      "definition": "a feeling of extreme pleasure or satisfaction",
+      "relation": "opposite"
+    },
+    {
+      "word": "DELIGHTED",
+      "senseId": "oewn-delight__2.34.00..",
+      "definition": "take delight in",
+      "relation": "opposite"
+    },
+    {
+      "word": "DELIGHTING",
+      "senseId": "oewn-delight__2.34.00..",
+      "definition": "take delight in",
+      "relation": "opposite"
+    },
+    {
+      "word": "DELIGHTS",
+      "senseId": "oewn-delight__1.12.00..",
+      "definition": "a feeling of extreme pleasure or satisfaction",
+      "relation": "opposite"
+    },
+    {
+      "word": "DOVISH",
+      "senseId": "oewn-dovish__5.00.00.peaceful.00",
+      "definition": "opposed to war",
+      "relation": "opposite"
+    },
+    {
+      "word": "ECSTATIC",
+      "senseId": "oewn-ecstatic__5.00.00.joyous.00",
+      "definition": "feeling great rapture or delight",
+      "relation": "opposite"
+    },
+    {
+      "word": "ECSTATICALLY",
+      "senseId": "oewn-ecstatically__4.02.00..",
+      "definition": "in an ecstatic manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "ELATED",
+      "senseId": "oewn-elated__5.00.00.joyous.00",
+      "definition": "full of high-spirited delight",
+      "relation": "opposite"
+    },
+    {
+      "word": "ENDURING",
+      "senseId": "oewn-enduring__5.00.00.patient.00",
+      "definition": "patiently bearing continual wrongs or trouble",
+      "relation": "opposite"
+    },
+    {
+      "word": "ENJOY",
+      "senseId": "oewn-enjoy__2.34.00..",
+      "definition": "take delight in",
+      "relation": "opposite"
+    },
+    {
+      "word": "ENJOYED",
+      "senseId": "oewn-enjoy__2.34.00..",
+      "definition": "take delight in",
+      "relation": "opposite"
+    },
+    {
+      "word": "ENJOYING",
+      "senseId": "oewn-enjoy__2.34.00..",
+      "definition": "take delight in",
+      "relation": "opposite"
+    },
+    {
+      "word": "ENJOYS",
+      "senseId": "oewn-enjoy__2.34.00..",
+      "definition": "take delight in",
+      "relation": "opposite"
+    },
+    {
+      "word": "ENRAGED",
+      "senseId": "oewn-enraged__5.00.00.angry.00",
+      "definition": "marked by extreme anger",
+      "relation": "similar"
+    },
+    {
+      "word": "ENRAPTURED",
+      "senseId": "oewn-enraptured__5.00.00.joyous.00",
+      "definition": "feeling great rapture or delight",
+      "relation": "opposite"
+    },
+    {
+      "word": "EQUANIMITIES",
+      "senseId": "oewn-equanimity__1.07.00..",
+      "definition": "steadiness of mind under stress",
+      "relation": "opposite"
+    },
+    {
+      "word": "EQUANIMITY",
+      "senseId": "oewn-equanimity__1.07.00..",
+      "definition": "steadiness of mind under stress",
+      "relation": "opposite"
+    },
+    {
+      "word": "EXASPERATE",
+      "senseId": "oewn-exasperate__2.37.01..",
+      "definition": "make furious",
+      "relation": "similar"
+    },
+    {
+      "word": "EXASPERATED",
+      "senseId": "oewn-exasperate__2.37.01..",
+      "definition": "make furious",
+      "relation": "similar"
+    },
+    {
+      "word": "EXASPERATES",
+      "senseId": "oewn-exasperate__2.37.01..",
+      "definition": "make furious",
+      "relation": "similar"
+    },
+    {
+      "word": "EXASPERATING",
+      "senseId": "oewn-exasperate__2.37.01..",
+      "definition": "make furious",
+      "relation": "similar"
+    },
+    {
+      "word": "EXONERATIVE",
+      "senseId": "oewn-exonerative__5.00.00.exculpatory.00",
+      "definition": "providing absolution",
+      "relation": "opposite"
+    },
+    {
+      "word": "FESTAL",
+      "senseId": "oewn-festal__5.00.00.joyous.00",
+      "definition": "offering fun and gaiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "FESTIVE",
+      "senseId": "oewn-festive__5.00.00.joyous.00",
+      "definition": "offering fun and gaiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "FORBEARANCE",
+      "senseId": "oewn-forbearance__1.07.00..",
+      "definition": "good-natured tolerance of delay or incompetence",
+      "relation": "opposite"
+    },
+    {
+      "word": "FORBEARANCES",
+      "senseId": "oewn-forbearance__1.07.00..",
+      "definition": "good-natured tolerance of delay or incompetence",
+      "relation": "opposite"
+    },
+    {
+      "word": "FORBEARING",
+      "senseId": "oewn-forbearing__5.00.00.patient.00",
+      "definition": "showing patient and unruffled self-control and restraint under adversity; slow to retaliate or express resentment",
+      "relation": "opposite"
+    },
+    {
+      "word": "FORGAVE",
+      "senseId": "oewn-forgive__2.32.00..",
+      "definition": "stop blaming or grant forgiveness",
+      "relation": "opposite"
+    },
+    {
+      "word": "FORGIVE",
+      "senseId": "oewn-forgive__2.32.00..",
+      "definition": "stop blaming or grant forgiveness",
+      "relation": "opposite"
+    },
+    {
+      "word": "FORGIVEN",
+      "senseId": "oewn-forgive__2.32.00..",
+      "definition": "stop blaming or grant forgiveness",
+      "relation": "opposite"
+    },
+    {
+      "word": "FORGIVENESS",
+      "senseId": "oewn-forgiveness__1.12.00..",
+      "definition": "compassionate feelings that support a willingness to forgive",
+      "relation": "opposite"
+    },
+    {
+      "word": "FORGIVENESSES",
+      "senseId": "oewn-forgiveness__1.12.00..",
+      "definition": "compassionate feelings that support a willingness to forgive",
+      "relation": "opposite"
+    },
+    {
+      "word": "FORGIVES",
+      "senseId": "oewn-forgive__2.32.00..",
+      "definition": "stop blaming or grant forgiveness",
+      "relation": "opposite"
+    },
+    {
+      "word": "FORGIVING",
+      "senseId": "oewn-forgive__2.32.00..",
+      "definition": "stop blaming or grant forgiveness",
+      "relation": "opposite"
+    },
+    {
+      "word": "FORGIVINGLY",
+      "senseId": "oewn-forgivingly__4.02.00..",
+      "definition": "with forgiveness; in a forgiving manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "FORGIVINGNESS",
+      "senseId": "oewn-forgivingness__1.07.00..",
+      "definition": "tendency to be kind and forgiving",
+      "relation": "opposite"
+    },
+    {
+      "word": "FORGIVINGNESSES",
+      "senseId": "oewn-forgivingness__1.07.00..",
+      "definition": "tendency to be kind and forgiving",
+      "relation": "opposite"
+    },
+    {
+      "word": "FRIENDLIER",
+      "senseId": "oewn-friendly__3.00.01..",
+      "definition": "characteristic of or befitting a friend",
+      "relation": "opposite"
+    },
+    {
+      "word": "FRIENDLIEST",
+      "senseId": "oewn-friendly__3.00.01..",
+      "definition": "characteristic of or befitting a friend",
+      "relation": "opposite"
+    },
+    {
+      "word": "FRIENDLINESS",
+      "senseId": "oewn-friendliness__1.07.00..",
+      "definition": "a friendly disposition",
+      "relation": "opposite"
+    },
+    {
+      "word": "FRIENDLINESSES",
+      "senseId": "oewn-friendliness__1.07.00..",
+      "definition": "a friendly disposition",
+      "relation": "opposite"
+    },
+    {
+      "word": "FRIENDLY",
+      "senseId": "oewn-friendly__3.00.01..",
+      "definition": "characteristic of or befitting a friend",
+      "relation": "opposite"
+    },
+    {
+      "word": "FURIES",
+      "senseId": "oewn-fury__1.12.00..",
+      "definition": "a feeling of intense anger",
+      "relation": "similar"
+    },
+    {
+      "word": "FURIOUS",
+      "senseId": "oewn-furious__5.00.00.angry.00",
+      "definition": "marked by extreme anger",
+      "relation": "similar"
+    },
+    {
+      "word": "FURIOUSLY",
+      "senseId": "oewn-furiously__4.02.01..",
+      "definition": "in an impassioned or very angry manner",
+      "relation": "similar"
+    },
+    {
+      "word": "FURY",
+      "senseId": "oewn-fury__1.12.00..",
+      "definition": "a feeling of intense anger",
+      "relation": "similar"
+    },
+    {
+      "word": "GAILY",
+      "senseId": "oewn-gaily__4.02.00..",
+      "definition": "in a gay manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "GALL",
+      "senseId": "oewn-gall__1.12.00..",
+      "definition": "a feeling of deep and bitter anger and ill-will",
+      "relation": "similar"
+    },
+    {
+      "word": "GALLED",
+      "senseId": "oewn-gall__2.37.00..",
+      "definition": "irritate or vex",
+      "relation": "similar"
+    },
+    {
+      "word": "GALLING",
+      "senseId": "oewn-gall__2.37.00..",
+      "definition": "irritate or vex",
+      "relation": "similar"
+    },
+    {
+      "word": "GALLS",
+      "senseId": "oewn-gall__1.12.00..",
+      "definition": "a feeling of deep and bitter anger and ill-will",
+      "relation": "similar"
+    },
+    {
+      "word": "GAY",
+      "senseId": "oewn-gay__5.00.00.cheerful.00",
+      "definition": "bright and pleasant; promoting a feeling of cheer",
+      "relation": "opposite"
+    },
+    {
+      "word": "GAYER",
+      "senseId": "oewn-gay__5.00.00.cheerful.00",
+      "definition": "bright and pleasant; promoting a feeling of cheer",
+      "relation": "opposite"
+    },
+    {
+      "word": "GAYEST",
+      "senseId": "oewn-gay__5.00.00.cheerful.00",
+      "definition": "bright and pleasant; promoting a feeling of cheer",
+      "relation": "opposite"
+    },
+    {
+      "word": "GAYLY",
+      "senseId": "oewn-gayly__4.02.00..",
+      "definition": "in a joyous manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "GENIAL",
+      "senseId": "oewn-genial__5.00.00.friendly.01",
+      "definition": "diffusing warmth and friendliness",
+      "relation": "opposite"
+    },
+    {
+      "word": "GENIALLY",
+      "senseId": "oewn-genially__4.02.00..",
+      "definition": "in an affable manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "GENTLE",
+      "senseId": "oewn-gentle__5.00.00.mild.00",
+      "definition": "soft and mild; not harsh or stern or severe",
+      "relation": "opposite"
+    },
+    {
+      "word": "GENTLED",
+      "senseId": "oewn-gentle__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "GENTLENESS",
+      "senseId": "oewn-gentleness__1.07.00..",
+      "definition": "acting in a manner that is gentle and mild and even-tempered",
+      "relation": "opposite"
+    },
+    {
+      "word": "GENTLENESSES",
+      "senseId": "oewn-gentleness__1.07.00..",
+      "definition": "acting in a manner that is gentle and mild and even-tempered",
+      "relation": "opposite"
+    },
+    {
+      "word": "GENTLER",
+      "senseId": "oewn-gentle__5.00.00.mild.00",
+      "definition": "soft and mild; not harsh or stern or severe",
+      "relation": "opposite"
+    },
+    {
+      "word": "GENTLES",
+      "senseId": "oewn-gentle__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "GENTLEST",
+      "senseId": "oewn-gentle__5.00.00.mild.00",
+      "definition": "soft and mild; not harsh or stern or severe",
+      "relation": "opposite"
+    },
+    {
+      "word": "GENTLING",
+      "senseId": "oewn-gentle__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "GENTLY",
+      "senseId": "oewn-gently__4.02.01..",
+      "definition": "in a gentle manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "GLAD",
+      "senseId": "oewn-glad__5.00.00.cheerful.00",
+      "definition": "cheerful and bright",
+      "relation": "opposite"
+    },
+    {
+      "word": "GLADDEN",
+      "senseId": "oewn-gladden__2.37.01..",
+      "definition": "make glad or happy",
+      "relation": "opposite"
+    },
+    {
+      "word": "GLADDENED",
+      "senseId": "oewn-gladden__2.37.01..",
+      "definition": "make glad or happy",
+      "relation": "opposite"
+    },
+    {
+      "word": "GLADDENING",
+      "senseId": "oewn-gladden__2.37.01..",
+      "definition": "make glad or happy",
+      "relation": "opposite"
+    },
+    {
+      "word": "GLADDENS",
+      "senseId": "oewn-gladden__2.37.01..",
+      "definition": "make glad or happy",
+      "relation": "opposite"
+    },
+    {
+      "word": "GLADDER",
+      "senseId": "oewn-glad__5.00.00.cheerful.00",
+      "definition": "cheerful and bright",
+      "relation": "opposite"
+    },
+    {
+      "word": "GLADDEST",
+      "senseId": "oewn-glad__5.00.00.cheerful.00",
+      "definition": "cheerful and bright",
+      "relation": "opposite"
+    },
+    {
+      "word": "GLEEFUL",
+      "senseId": "oewn-gleeful__5.00.00.joyous.00",
+      "definition": "full of high-spirited delight",
+      "relation": "opposite"
+    },
+    {
+      "word": "GLEEFULLY",
+      "senseId": "oewn-gleefully__4.02.00..",
+      "definition": "in a joyous and gleeful manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "GRACIOUS",
+      "senseId": "oewn-gracious__5.00.00.kind.00",
+      "definition": "characterized by kindness and warm courtesy especially of a king to his subjects",
+      "relation": "opposite"
+    },
+    {
+      "word": "GRIN",
+      "senseId": "oewn-grin__1.10.00..",
+      "definition": "a facial expression characterized by turning up the corners of the mouth; usually shows pleasure or amusement",
+      "relation": "opposite"
+    },
+    {
+      "word": "GRINNED",
+      "senseId": "oewn-grin__2.29.00..",
+      "definition": "to draw back the lips and reveal the teeth, in a smile, grimace, or snarl",
+      "relation": "opposite"
+    },
+    {
+      "word": "GRINNING",
+      "senseId": "oewn-grinning__1.10.00..",
+      "definition": "a facial expression characterized by turning up the corners of the mouth; usually shows pleasure or amusement",
+      "relation": "opposite"
+    },
+    {
+      "word": "GRINNINGS",
+      "senseId": "oewn-grinning__1.10.00..",
+      "definition": "a facial expression characterized by turning up the corners of the mouth; usually shows pleasure or amusement",
+      "relation": "opposite"
+    },
+    {
+      "word": "GRINS",
+      "senseId": "oewn-grin__1.10.00..",
+      "definition": "a facial expression characterized by turning up the corners of the mouth; usually shows pleasure or amusement",
+      "relation": "opposite"
+    },
+    {
+      "word": "GRUNTLE",
+      "senseId": "oewn-gruntle__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "GRUNTLED",
+      "senseId": "oewn-gruntle__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "GRUNTLES",
+      "senseId": "oewn-gruntle__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "GRUNTLING",
+      "senseId": "oewn-gruntle__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "HALCYON",
+      "senseId": "oewn-halcyon__5.00.00.peaceful.00",
+      "definition": "idyllically calm and peaceful; suggesting happy tranquillity",
+      "relation": "opposite"
+    },
+    {
+      "word": "HAPPIER",
+      "senseId": "oewn-happy__3.00.00..",
+      "definition": "enjoying or showing or marked by joy or pleasure",
+      "relation": "opposite"
+    },
+    {
+      "word": "HAPPIEST",
+      "senseId": "oewn-happy__3.00.00..",
+      "definition": "enjoying or showing or marked by joy or pleasure",
+      "relation": "opposite"
+    },
+    {
+      "word": "HAPPILY",
+      "senseId": "oewn-happily__4.02.01..",
+      "definition": "in a joyous manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "HAPPINESS",
+      "senseId": "oewn-happiness__1.12.00..",
+      "definition": "emotions experienced when in a state of well-being",
+      "relation": "opposite"
+    },
+    {
+      "word": "HAPPINESSES",
+      "senseId": "oewn-happiness__1.12.00..",
+      "definition": "emotions experienced when in a state of well-being",
+      "relation": "opposite"
+    },
+    {
+      "word": "HAPPY",
+      "senseId": "oewn-happy__3.00.00..",
+      "definition": "enjoying or showing or marked by joy or pleasure",
+      "relation": "opposite"
+    },
+    {
+      "word": "HEARTSEASE",
+      "senseId": "oewn-heartsease__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "HEARTSEASES",
+      "senseId": "oewn-heartsease__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "HOTHEADED",
+      "senseId": "oewn-hotheaded__5.00.00.ill-natured.00",
+      "definition": "quickly aroused to anger",
+      "relation": "similar"
+    },
+    {
+      "word": "HUFFIER",
+      "senseId": "oewn-huffy__5.00.00.angry.00",
+      "definition": "roused to anger",
+      "relation": "similar"
+    },
+    {
+      "word": "HUFFIEST",
+      "senseId": "oewn-huffy__5.00.00.angry.00",
+      "definition": "roused to anger",
+      "relation": "similar"
+    },
+    {
+      "word": "HUFFILY",
+      "senseId": "oewn-huffily__4.02.00..",
+      "definition": "in a huffy manner",
+      "relation": "similar"
+    },
+    {
+      "word": "HUFFY",
+      "senseId": "oewn-huffy__5.00.00.angry.00",
+      "definition": "roused to anger",
+      "relation": "similar"
+    },
+    {
+      "word": "INCENSE",
+      "senseId": "oewn-incense__2.37.01..",
+      "definition": "make furious",
+      "relation": "similar"
+    },
+    {
+      "word": "INCENSED",
+      "senseId": "oewn-incensed__5.00.00.angry.00",
+      "definition": "angered at something unjust or wrong",
+      "relation": "similar"
+    },
+    {
+      "word": "INCENSES",
+      "senseId": "oewn-incense__2.37.01..",
+      "definition": "make furious",
+      "relation": "similar"
+    },
+    {
+      "word": "INCENSING",
+      "senseId": "oewn-incense__2.37.01..",
+      "definition": "make furious",
+      "relation": "similar"
+    },
+    {
+      "word": "INDIGNANT",
+      "senseId": "oewn-indignant__5.00.00.angry.00",
+      "definition": "angered at something unjust or wrong",
+      "relation": "similar"
+    },
+    {
+      "word": "INDIGNANTLY",
+      "senseId": "oewn-indignantly__4.02.00..",
+      "definition": "in an indignant manner",
+      "relation": "similar"
+    },
+    {
+      "word": "INFORMAL",
+      "senseId": "oewn-informal__5.00.00.friendly.01",
+      "definition": "having or fostering a warm or friendly and informal atmosphere",
+      "relation": "opposite"
+    },
+    {
+      "word": "INFURIATE",
+      "senseId": "oewn-infuriate__2.37.00..",
+      "definition": "make furious",
+      "relation": "similar"
+    },
+    {
+      "word": "INFURIATED",
+      "senseId": "oewn-infuriate__2.37.00..",
+      "definition": "make furious",
+      "relation": "similar"
+    },
+    {
+      "word": "INFURIATES",
+      "senseId": "oewn-infuriate__2.37.00..",
+      "definition": "make furious",
+      "relation": "similar"
+    },
+    {
+      "word": "INFURIATING",
+      "senseId": "oewn-infuriate__2.37.00..",
+      "definition": "make furious",
+      "relation": "similar"
+    },
+    {
+      "word": "INTIMATE",
+      "senseId": "oewn-intimate__5.00.00.friendly.01",
+      "definition": "having or fostering a warm or friendly and informal atmosphere",
+      "relation": "opposite"
+    },
+    {
+      "word": "INTIMATER",
+      "senseId": "oewn-intimate__5.00.00.friendly.01",
+      "definition": "having or fostering a warm or friendly and informal atmosphere",
+      "relation": "opposite"
+    },
+    {
+      "word": "IRASCIBLE",
+      "senseId": "oewn-irascible__5.00.00.angry.00",
+      "definition": "characterized by anger",
+      "relation": "similar"
+    },
+    {
+      "word": "IRATE",
+      "senseId": "oewn-irate__5.00.00.angry.00",
+      "definition": "feeling or showing extreme anger",
+      "relation": "similar"
+    },
+    {
+      "word": "IRATELY",
+      "senseId": "oewn-irately__4.02.00..",
+      "definition": "in an irate manner",
+      "relation": "similar"
+    },
+    {
+      "word": "IRATER",
+      "senseId": "oewn-irate__5.00.00.angry.00",
+      "definition": "feeling or showing extreme anger",
+      "relation": "similar"
+    },
+    {
+      "word": "IRATEST",
+      "senseId": "oewn-irate__5.00.00.angry.00",
+      "definition": "feeling or showing extreme anger",
+      "relation": "similar"
+    },
+    {
+      "word": "IRE",
+      "senseId": "oewn-ire__1.12.00..",
+      "definition": "a strong emotion; a feeling that is oriented toward some real or supposed grievance",
+      "relation": "similar"
+    },
+    {
+      "word": "IREFUL",
+      "senseId": "oewn-ireful__5.00.00.angry.00",
+      "definition": "feeling or showing extreme anger",
+      "relation": "similar"
+    },
+    {
+      "word": "IRENIC",
+      "senseId": "oewn-irenic__5.00.00.peaceful.00",
+      "definition": "conducive to peace",
+      "relation": "opposite"
+    },
+    {
+      "word": "IRES",
+      "senseId": "oewn-ire__1.12.00..",
+      "definition": "a strong emotion; a feeling that is oriented toward some real or supposed grievance",
+      "relation": "similar"
+    },
+    {
+      "word": "IRK",
+      "senseId": "oewn-irk__2.37.00..",
+      "definition": "irritate or vex",
+      "relation": "similar"
+    },
+    {
+      "word": "IRKED",
+      "senseId": "oewn-irk__2.37.00..",
+      "definition": "irritate or vex",
+      "relation": "similar"
+    },
+    {
+      "word": "IRKING",
+      "senseId": "oewn-irk__2.37.00..",
+      "definition": "irritate or vex",
+      "relation": "similar"
+    },
+    {
+      "word": "IRKS",
+      "senseId": "oewn-irk__2.37.00..",
+      "definition": "irritate or vex",
+      "relation": "similar"
+    },
+    {
+      "word": "IRRITATED",
+      "senseId": "oewn-irritated__5.00.00.displeased.00",
+      "definition": "aroused to impatience or anger",
+      "relation": "similar"
+    },
+    {
+      "word": "JAUNTIER",
+      "senseId": "oewn-jaunty__5.00.00.cheerful.00",
+      "definition": "having a cheerful, lively, and self-confident air",
+      "relation": "opposite"
+    },
+    {
+      "word": "JAUNTIEST",
+      "senseId": "oewn-jaunty__5.00.00.cheerful.00",
+      "definition": "having a cheerful, lively, and self-confident air",
+      "relation": "opposite"
+    },
+    {
+      "word": "JAUNTY",
+      "senseId": "oewn-jaunty__5.00.00.cheerful.00",
+      "definition": "having a cheerful, lively, and self-confident air",
+      "relation": "opposite"
+    },
+    {
+      "word": "JOCUND",
+      "senseId": "oewn-jocund__5.00.00.joyous.00",
+      "definition": "full of or showing high-spirited merriment",
+      "relation": "opposite"
+    },
+    {
+      "word": "JOLLIER",
+      "senseId": "oewn-jolly__5.00.00.joyous.00",
+      "definition": "full of or showing high-spirited merriment",
+      "relation": "opposite"
+    },
+    {
+      "word": "JOLLIEST",
+      "senseId": "oewn-jolly__5.00.00.joyous.00",
+      "definition": "full of or showing high-spirited merriment",
+      "relation": "opposite"
+    },
+    {
+      "word": "JOLLY",
+      "senseId": "oewn-jolly__5.00.00.joyous.00",
+      "definition": "full of or showing high-spirited merriment",
+      "relation": "opposite"
+    },
+    {
+      "word": "JOVIAL",
+      "senseId": "oewn-jovial__5.00.00.joyous.00",
+      "definition": "full of or showing high-spirited merriment",
+      "relation": "opposite"
+    },
+    {
+      "word": "JOVIALLY",
+      "senseId": "oewn-jovially__4.02.00..",
+      "definition": "in a jovial manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "JOY",
+      "senseId": "oewn-joy__1.12.00..",
+      "definition": "the emotion of great happiness",
+      "relation": "opposite"
+    },
+    {
+      "word": "JOYED",
+      "senseId": "oewn-joy__2.37.00..",
+      "definition": "feel happiness or joy",
+      "relation": "opposite"
+    },
+    {
+      "word": "JOYFUL",
+      "senseId": "oewn-joyful__3.00.00..",
+      "definition": "full of or producing joy",
+      "relation": "opposite"
+    },
+    {
+      "word": "JOYFULLY",
+      "senseId": "oewn-joyfully__4.02.00..",
+      "definition": "in a joyous and gleeful manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "JOYFULNESS",
+      "senseId": "oewn-joyfulness__1.12.00..",
+      "definition": "the emotion of great happiness",
+      "relation": "opposite"
+    },
+    {
+      "word": "JOYFULNESSES",
+      "senseId": "oewn-joyfulness__1.12.00..",
+      "definition": "the emotion of great happiness",
+      "relation": "opposite"
+    },
+    {
+      "word": "JOYING",
+      "senseId": "oewn-joy__2.37.00..",
+      "definition": "feel happiness or joy",
+      "relation": "opposite"
+    },
+    {
+      "word": "JOYOUS",
+      "senseId": "oewn-joyous__3.00.00..",
+      "definition": "full of or characterized by joy",
+      "relation": "opposite"
+    },
+    {
+      "word": "JOYOUSLY",
+      "senseId": "oewn-joyously__4.02.00..",
+      "definition": "in a joyous and gleeful manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "JOYOUSNESS",
+      "senseId": "oewn-joyousness__1.12.00..",
+      "definition": "the emotion of great happiness",
+      "relation": "opposite"
+    },
+    {
+      "word": "JOYOUSNESSES",
+      "senseId": "oewn-joyousness__1.12.00..",
+      "definition": "the emotion of great happiness",
+      "relation": "opposite"
+    },
+    {
+      "word": "JOYS",
+      "senseId": "oewn-joy__1.12.00..",
+      "definition": "the emotion of great happiness",
+      "relation": "opposite"
+    },
+    {
+      "word": "JUBILANT",
+      "senseId": "oewn-jubilant__5.00.00.joyous.00",
+      "definition": "full of high-spirited delight",
+      "relation": "opposite"
+    },
+    {
+      "word": "JUBILANTLY",
+      "senseId": "oewn-jubilantly__4.02.00..",
+      "definition": "in a joyous manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "KIND",
+      "senseId": "oewn-kind__3.00.00..",
+      "definition": "having or showing a tender and considerate and helpful nature; used especially of persons and their behavior",
+      "relation": "opposite"
+    },
+    {
+      "word": "KINDER",
+      "senseId": "oewn-kind__3.00.00..",
+      "definition": "having or showing a tender and considerate and helpful nature; used especially of persons and their behavior",
+      "relation": "opposite"
+    },
+    {
+      "word": "KINDEST",
+      "senseId": "oewn-kind__3.00.00..",
+      "definition": "having or showing a tender and considerate and helpful nature; used especially of persons and their behavior",
+      "relation": "opposite"
+    },
+    {
+      "word": "KINDHEARTED",
+      "senseId": "oewn-kindhearted__5.00.00.kind.00",
+      "definition": "having or proceeding from an innately kind disposition",
+      "relation": "opposite"
+    },
+    {
+      "word": "KINDLIER",
+      "senseId": "oewn-kindly__5.00.00.kind.00",
+      "definition": "showing or motivated by sympathy and understanding and generosity",
+      "relation": "opposite"
+    },
+    {
+      "word": "KINDLIEST",
+      "senseId": "oewn-kindly__5.00.00.kind.00",
+      "definition": "showing or motivated by sympathy and understanding and generosity",
+      "relation": "opposite"
+    },
+    {
+      "word": "KINDLY",
+      "senseId": "oewn-kindly__4.02.00..",
+      "definition": "in a kind manner or out of kindness",
+      "relation": "opposite"
+    },
+    {
+      "word": "KINDNESS",
+      "senseId": "oewn-kindness__1.07.00..",
+      "definition": "the quality of being warmhearted and considerate and humane and sympathetic",
+      "relation": "opposite"
+    },
+    {
+      "word": "KINDNESSES",
+      "senseId": "oewn-kindness__1.07.00..",
+      "definition": "the quality of being warmhearted and considerate and humane and sympathetic",
+      "relation": "opposite"
+    },
+    {
+      "word": "LAUGH",
+      "senseId": "oewn-laugh__1.10.00..",
+      "definition": "the sound of laughing",
+      "relation": "opposite"
+    },
+    {
+      "word": "LAUGHED",
+      "senseId": "oewn-laugh__2.29.00..",
+      "definition": "produce laughter",
+      "relation": "opposite"
+    },
+    {
+      "word": "LAUGHING",
+      "senseId": "oewn-laughing__5.00.00.happy.00",
+      "definition": "showing or feeling mirth or pleasure or happiness",
+      "relation": "opposite"
+    },
+    {
+      "word": "LAUGHS",
+      "senseId": "oewn-laugh__1.10.00..",
+      "definition": "the sound of laughing",
+      "relation": "opposite"
+    },
+    {
+      "word": "LAUGHTER",
+      "senseId": "oewn-laughter__1.04.00..",
+      "definition": "the activity of laughing; the manifestation of joy or mirth or scorn",
+      "relation": "opposite"
+    },
+    {
+      "word": "LAUGHTERS",
+      "senseId": "oewn-laughter__1.04.00..",
+      "definition": "the activity of laughing; the manifestation of joy or mirth or scorn",
+      "relation": "opposite"
+    },
+    {
+      "word": "LENIFIED",
+      "senseId": "oewn-lenify__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "LENIFIES",
+      "senseId": "oewn-lenify__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "LENIFY",
+      "senseId": "oewn-lenify__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "LENIFYING",
+      "senseId": "oewn-lenify__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "LIGHTHEARTED",
+      "senseId": "oewn-lighthearted__5.00.00.cheerful.00",
+      "definition": "carefree and happy and lighthearted",
+      "relation": "opposite"
+    },
+    {
+      "word": "LIGHTSOME",
+      "senseId": "oewn-lightsome__5.00.00.cheerful.00",
+      "definition": "carefree and happy and lighthearted",
+      "relation": "opposite"
+    },
+    {
+      "word": "LIGHTSOMELY",
+      "senseId": "oewn-lightsomely__4.02.00..",
+      "definition": "in a light-hearted manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "LIVID",
+      "senseId": "oewn-livid__5.00.00.angry.00",
+      "definition": "furiously angry",
+      "relation": "similar"
+    },
+    {
+      "word": "LIVIDER",
+      "senseId": "oewn-livid__5.00.00.angry.00",
+      "definition": "furiously angry",
+      "relation": "similar"
+    },
+    {
+      "word": "LIVIDEST",
+      "senseId": "oewn-livid__5.00.00.angry.00",
+      "definition": "furiously angry",
+      "relation": "similar"
+    },
+    {
+      "word": "LIVIDLY",
+      "senseId": "oewn-lividly__4.02.00..",
+      "definition": "in a livid manner",
+      "relation": "similar"
+    },
+    {
+      "word": "LONGANIMITIES",
+      "senseId": "oewn-longanimity__1.07.00..",
+      "definition": "good-natured tolerance of delay or incompetence",
+      "relation": "opposite"
+    },
+    {
+      "word": "LONGANIMITY",
+      "senseId": "oewn-longanimity__1.07.00..",
+      "definition": "good-natured tolerance of delay or incompetence",
+      "relation": "opposite"
+    },
+    {
+      "word": "LONGANIMOUS",
+      "senseId": "oewn-longanimous__5.00.00.patient.00",
+      "definition": "showing patient and unruffled self-control and restraint under adversity; slow to retaliate or express resentment",
+      "relation": "opposite"
+    },
+    {
+      "word": "LULL",
+      "senseId": "oewn-lull__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "LULLED",
+      "senseId": "oewn-lull__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "LULLING",
+      "senseId": "oewn-lull__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "LULLS",
+      "senseId": "oewn-lull__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "MAD",
+      "senseId": "oewn-mad__5.00.00.angry.00",
+      "definition": "roused to anger",
+      "relation": "similar"
+    },
+    {
+      "word": "MADDENED",
+      "senseId": "oewn-maddened__5.00.00.angry.00",
+      "definition": "marked by extreme anger",
+      "relation": "similar"
+    },
+    {
+      "word": "MADDER",
+      "senseId": "oewn-mad__5.00.00.angry.00",
+      "definition": "roused to anger",
+      "relation": "similar"
+    },
+    {
+      "word": "MADDEST",
+      "senseId": "oewn-mad__5.00.00.angry.00",
+      "definition": "roused to anger",
+      "relation": "similar"
+    },
+    {
+      "word": "MADNESS",
+      "senseId": "oewn-madness__1.12.00..",
+      "definition": "a feeling of intense anger",
+      "relation": "similar"
+    },
+    {
+      "word": "MADNESSES",
+      "senseId": "oewn-madness__1.12.00..",
+      "definition": "a feeling of intense anger",
+      "relation": "similar"
+    },
+    {
+      "word": "MATEY",
+      "senseId": "oewn-matey__5.00.00.friendly.01",
+      "definition": "(used colloquially) having the relationship of friends or pals",
+      "relation": "opposite"
+    },
+    {
+      "word": "MELLOW",
+      "senseId": "oewn-mellow__5.00.00.relaxed.00",
+      "definition": "unhurried and relaxed",
+      "relation": "opposite"
+    },
+    {
+      "word": "MELLOWER",
+      "senseId": "oewn-mellow__5.00.00.relaxed.00",
+      "definition": "unhurried and relaxed",
+      "relation": "opposite"
+    },
+    {
+      "word": "MELLOWEST",
+      "senseId": "oewn-mellow__5.00.00.relaxed.00",
+      "definition": "unhurried and relaxed",
+      "relation": "opposite"
+    },
+    {
+      "word": "MELLOWLY",
+      "senseId": "oewn-mellowly__4.02.00..",
+      "definition": "in a mellow manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "MERRIER",
+      "senseId": "oewn-merry__5.00.01.joyous.00",
+      "definition": "offering fun and gaiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "MERRIEST",
+      "senseId": "oewn-merry__5.00.01.joyous.00",
+      "definition": "offering fun and gaiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "MERRILY",
+      "senseId": "oewn-merrily__4.02.00..",
+      "definition": "in a joyous manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "MERRY",
+      "senseId": "oewn-merry__5.00.01.joyous.00",
+      "definition": "offering fun and gaiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "MIFFED",
+      "senseId": "oewn-miffed__5.00.00.displeased.00",
+      "definition": "aroused to impatience or anger",
+      "relation": "similar"
+    },
+    {
+      "word": "MILDNESS",
+      "senseId": "oewn-mildness__1.07.01..",
+      "definition": "acting in a manner that is gentle and mild and even-tempered",
+      "relation": "opposite"
+    },
+    {
+      "word": "MILDNESSES",
+      "senseId": "oewn-mildness__1.07.01..",
+      "definition": "acting in a manner that is gentle and mild and even-tempered",
+      "relation": "opposite"
+    },
+    {
+      "word": "MIRTHFUL",
+      "senseId": "oewn-mirthful__5.00.00.joyous.00",
+      "definition": "full of or showing high-spirited merriment",
+      "relation": "opposite"
+    },
+    {
+      "word": "MIRTHFULLY",
+      "senseId": "oewn-mirthfully__4.02.00..",
+      "definition": "in a joyous manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "MOLLIFIED",
+      "senseId": "oewn-mollify__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "MOLLIFIES",
+      "senseId": "oewn-mollify__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "MOLLIFY",
+      "senseId": "oewn-mollify__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "MOLLIFYING",
+      "senseId": "oewn-mollify__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "NEIGHBORLY",
+      "senseId": "oewn-neighborly__5.00.00.friendly.01",
+      "definition": "exhibiting the qualities expected in a friendly neighbor",
+      "relation": "opposite"
+    },
+    {
+      "word": "NEIGHBOURLY",
+      "senseId": "oewn-neighbourly__5.00.00.friendly.01",
+      "definition": "exhibiting the qualities expected in a friendly neighbor",
+      "relation": "opposite"
+    },
+    {
+      "word": "NETTLED",
+      "senseId": "oewn-nettled__5.00.00.displeased.00",
+      "definition": "aroused to impatience or anger",
+      "relation": "similar"
+    },
+    {
+      "word": "NONBELLIGERENT",
+      "senseId": "oewn-nonbelligerent__5.00.00.peaceful.00",
+      "definition": "not directly at war",
+      "relation": "opposite"
+    },
+    {
+      "word": "NURTURANT",
+      "senseId": "oewn-nurturant__5.00.00.compassionate.00",
+      "definition": "providing physical and emotional care and nourishment",
+      "relation": "opposite"
+    },
+    {
+      "word": "OPENHEARTED",
+      "senseId": "oewn-openhearted__5.00.00.kind.00",
+      "definition": "showing or motivated by sympathy and understanding and generosity",
+      "relation": "opposite"
+    },
+    {
+      "word": "OUTRAGED",
+      "senseId": "oewn-outraged__5.00.00.angry.00",
+      "definition": "angered at something unjust or wrong",
+      "relation": "similar"
+    },
+    {
+      "word": "OVERJOYED",
+      "senseId": "oewn-overjoyed__5.00.00.joyful.00",
+      "definition": "extremely joyful",
+      "relation": "opposite"
+    },
+    {
+      "word": "PACIFIC",
+      "senseId": "oewn-pacific__5.00.02.peaceful.00",
+      "definition": "disposed to peace or of a peaceful nature",
+      "relation": "opposite"
+    },
+    {
+      "word": "PACIFICALLY",
+      "senseId": "oewn-pacifically__4.02.00..",
+      "definition": "in a peaceable manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "PACIFIED",
+      "senseId": "oewn-pacify__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "PACIFIES",
+      "senseId": "oewn-pacify__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "PACIFIST",
+      "senseId": "oewn-pacifist__5.00.00.peaceful.00",
+      "definition": "opposed to war",
+      "relation": "opposite"
+    },
+    {
+      "word": "PACIFISTIC",
+      "senseId": "oewn-pacifistic__5.00.00.peaceful.00",
+      "definition": "opposed to war",
+      "relation": "opposite"
+    },
+    {
+      "word": "PACIFISTICALLY",
+      "senseId": "oewn-pacifistically__4.02.00..",
+      "definition": "in a pacifistic manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "PACIFY",
+      "senseId": "oewn-pacify__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "PACIFYING",
+      "senseId": "oewn-pacify__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "PALLIER",
+      "senseId": "oewn-pally__5.00.00.friendly.01",
+      "definition": "(used colloquially) having the relationship of friends or pals",
+      "relation": "opposite"
+    },
+    {
+      "word": "PALLIEST",
+      "senseId": "oewn-pally__5.00.00.friendly.01",
+      "definition": "(used colloquially) having the relationship of friends or pals",
+      "relation": "opposite"
+    },
+    {
+      "word": "PALLY",
+      "senseId": "oewn-pally__5.00.00.friendly.01",
+      "definition": "(used colloquially) having the relationship of friends or pals",
+      "relation": "opposite"
+    },
+    {
+      "word": "PATIENCE",
+      "senseId": "oewn-patience__1.07.00..",
+      "definition": "good-natured tolerance of delay or incompetence",
+      "relation": "opposite"
+    },
+    {
+      "word": "PATIENCES",
+      "senseId": "oewn-patience__1.07.00..",
+      "definition": "good-natured tolerance of delay or incompetence",
+      "relation": "opposite"
+    },
+    {
+      "word": "PATIENT",
+      "senseId": "oewn-patient__3.00.00..",
+      "definition": "enduring trying circumstances with even temper or characterized by such endurance",
+      "relation": "opposite"
+    },
+    {
+      "word": "PATIENTER",
+      "senseId": "oewn-patient__3.00.00..",
+      "definition": "enduring trying circumstances with even temper or characterized by such endurance",
+      "relation": "opposite"
+    },
+    {
+      "word": "PATIENTEST",
+      "senseId": "oewn-patient__3.00.00..",
+      "definition": "enduring trying circumstances with even temper or characterized by such endurance",
+      "relation": "opposite"
+    },
+    {
+      "word": "PATIENTLY",
+      "senseId": "oewn-patiently__4.02.00..",
+      "definition": "with patience; in a patient manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "PEACE",
+      "senseId": "oewn-peace__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "PEACEABLE",
+      "senseId": "oewn-peaceable__3.00.00..",
+      "definition": "not disturbed by strife or turmoil or war",
+      "relation": "opposite"
+    },
+    {
+      "word": "PEACEABLY",
+      "senseId": "oewn-peaceably__4.02.00..",
+      "definition": "in a peaceable manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "PEACEFUL",
+      "senseId": "oewn-peaceful__3.00.00..",
+      "definition": "not disturbed by strife or turmoil or war",
+      "relation": "opposite"
+    },
+    {
+      "word": "PEACEFULLY",
+      "senseId": "oewn-peacefully__4.02.00..",
+      "definition": "in a peaceful manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "PEACEFULNESS",
+      "senseId": "oewn-peacefulness__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "PEACEFULNESSES",
+      "senseId": "oewn-peacefulness__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "PEACES",
+      "senseId": "oewn-peace__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "PEEVED",
+      "senseId": "oewn-peeved__5.00.00.displeased.00",
+      "definition": "aroused to impatience or anger",
+      "relation": "similar"
+    },
+    {
+      "word": "PERKIER",
+      "senseId": "oewn-perky__5.00.00.cheerful.00",
+      "definition": "characterized by liveliness and lightheartedness",
+      "relation": "opposite"
+    },
+    {
+      "word": "PERKIEST",
+      "senseId": "oewn-perky__5.00.00.cheerful.00",
+      "definition": "characterized by liveliness and lightheartedness",
+      "relation": "opposite"
+    },
+    {
+      "word": "PERKILY",
+      "senseId": "oewn-perkily__4.02.00..",
+      "definition": "in a perky manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "PERKY",
+      "senseId": "oewn-perky__5.00.00.cheerful.00",
+      "definition": "characterized by liveliness and lightheartedness",
+      "relation": "opposite"
+    },
+    {
+      "word": "PISSED",
+      "senseId": "oewn-pissed__5.00.00.displeased.00",
+      "definition": "aroused to impatience or anger",
+      "relation": "similar"
+    },
+    {
+      "word": "PITIED",
+      "senseId": "oewn-pity__2.37.00..",
+      "definition": "share the suffering of",
+      "relation": "opposite"
+    },
+    {
+      "word": "PITIES",
+      "senseId": "oewn-pity__1.07.00..",
+      "definition": "the humane quality of understanding the suffering of others and wanting to do something about it",
+      "relation": "opposite"
+    },
+    {
+      "word": "PITY",
+      "senseId": "oewn-pity__1.07.00..",
+      "definition": "the humane quality of understanding the suffering of others and wanting to do something about it",
+      "relation": "opposite"
+    },
+    {
+      "word": "PITYING",
+      "senseId": "oewn-pity__2.37.00..",
+      "definition": "share the suffering of",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLACATE",
+      "senseId": "oewn-placate__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLACATED",
+      "senseId": "oewn-placate__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLACATES",
+      "senseId": "oewn-placate__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLACATING",
+      "senseId": "oewn-placate__2.37.00..",
+      "definition": "cause to be more favorably inclined; gain the good will of",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLEASE",
+      "senseId": "oewn-please__2.37.00..",
+      "definition": "give pleasure to or be pleasing to",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLEASED",
+      "senseId": "oewn-please__2.37.00..",
+      "definition": "give pleasure to or be pleasing to",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLEASES",
+      "senseId": "oewn-please__2.37.00..",
+      "definition": "give pleasure to or be pleasing to",
+      "relation": "opposite"
+    },
+    {
+      "word": "PLEASING",
+      "senseId": "oewn-please__2.37.00..",
+      "definition": "give pleasure to or be pleasing to",
+      "relation": "opposite"
+    },
+    {
+      "word": "POLLYANNAISH",
+      "senseId": "oewn-pollyannaish__5.00.00.optimistic.00",
+      "definition": "pleasantly (even unrealistically) optimistic",
+      "relation": "opposite"
+    },
+    {
+      "word": "PROVOKED",
+      "senseId": "oewn-provoked__5.00.00.angry.00",
+      "definition": "incited, especially deliberately, to anger",
+      "relation": "similar"
+    },
+    {
+      "word": "QUIET",
+      "senseId": "oewn-quiet__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETED",
+      "senseId": "oewn-quiet__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETEN",
+      "senseId": "oewn-quieten__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETENED",
+      "senseId": "oewn-quieten__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETENING",
+      "senseId": "oewn-quieten__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETENS",
+      "senseId": "oewn-quieten__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETING",
+      "senseId": "oewn-quiet__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUIETS",
+      "senseId": "oewn-quiet__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "RAGE",
+      "senseId": "oewn-rage__1.12.00..",
+      "definition": "a feeling of intense anger",
+      "relation": "similar"
+    },
+    {
+      "word": "RAGED",
+      "senseId": "oewn-rage__2.37.00..",
+      "definition": "feel intense anger",
+      "relation": "similar"
+    },
+    {
+      "word": "RAGES",
+      "senseId": "oewn-rage__1.12.00..",
+      "definition": "a feeling of intense anger",
+      "relation": "similar"
+    },
+    {
+      "word": "RAGING",
+      "senseId": "oewn-rage__2.37.00..",
+      "definition": "feel intense anger",
+      "relation": "similar"
+    },
+    {
+      "word": "RAMP",
+      "senseId": "oewn-ramp__2.42.00..",
+      "definition": "behave violently, as if in state of a great anger",
+      "relation": "similar"
+    },
+    {
+      "word": "RAMPED",
+      "senseId": "oewn-ramp__2.42.00..",
+      "definition": "behave violently, as if in state of a great anger",
+      "relation": "similar"
+    },
+    {
+      "word": "RAMPING",
+      "senseId": "oewn-ramp__2.42.00..",
+      "definition": "behave violently, as if in state of a great anger",
+      "relation": "similar"
+    },
+    {
+      "word": "RAMPS",
+      "senseId": "oewn-ramp__2.42.00..",
+      "definition": "behave violently, as if in state of a great anger",
+      "relation": "similar"
+    },
+    {
+      "word": "RANCOR",
+      "senseId": "oewn-rancor__1.12.00..",
+      "definition": "a feeling of deep and bitter anger and ill-will",
+      "relation": "similar"
+    },
+    {
+      "word": "RANCOROUS",
+      "senseId": "oewn-rancorous__5.00.00.resentful.00",
+      "definition": "showing deep-seated resentment",
+      "relation": "similar"
+    },
+    {
+      "word": "RANCORS",
+      "senseId": "oewn-rancor__1.12.00..",
+      "definition": "a feeling of deep and bitter anger and ill-will",
+      "relation": "similar"
+    },
+    {
+      "word": "RANCOUR",
+      "senseId": "oewn-rancour__1.12.00..",
+      "definition": "a feeling of deep and bitter anger and ill-will",
+      "relation": "similar"
+    },
+    {
+      "word": "RANCOURS",
+      "senseId": "oewn-rancour__1.12.00..",
+      "definition": "a feeling of deep and bitter anger and ill-will",
+      "relation": "similar"
+    },
+    {
+      "word": "RAPT",
+      "senseId": "oewn-rapt__5.00.00.joyous.00",
+      "definition": "feeling great rapture or delight",
+      "relation": "opposite"
+    },
+    {
+      "word": "RAPTUROUS",
+      "senseId": "oewn-rapturous__5.00.00.joyous.00",
+      "definition": "feeling great rapture or delight",
+      "relation": "opposite"
+    },
+    {
+      "word": "RAPTUROUSLY",
+      "senseId": "oewn-rapturously__4.02.00..",
+      "definition": "in an ecstatic manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "REJOICE",
+      "senseId": "oewn-rejoice__2.37.00..",
+      "definition": "feel happiness or joy",
+      "relation": "opposite"
+    },
+    {
+      "word": "REJOICED",
+      "senseId": "oewn-rejoice__2.37.00..",
+      "definition": "feel happiness or joy",
+      "relation": "opposite"
+    },
+    {
+      "word": "REJOICES",
+      "senseId": "oewn-rejoice__2.37.00..",
+      "definition": "feel happiness or joy",
+      "relation": "opposite"
+    },
+    {
+      "word": "REJOICING",
+      "senseId": "oewn-rejoice__2.37.00..",
+      "definition": "feel happiness or joy",
+      "relation": "opposite"
+    },
+    {
+      "word": "RELAX",
+      "senseId": "oewn-relax__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "RELAXED",
+      "senseId": "oewn-relaxed__3.00.00..",
+      "definition": "without strain or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "RELAXES",
+      "senseId": "oewn-relax__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "RELAXING",
+      "senseId": "oewn-relax__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "REPOSE",
+      "senseId": "oewn-repose__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "REPOSES",
+      "senseId": "oewn-repose__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "RESENT",
+      "senseId": "oewn-resent__2.37.00..",
+      "definition": "feel bitter or indignant about",
+      "relation": "similar"
+    },
+    {
+      "word": "RESENTED",
+      "senseId": "oewn-resent__2.37.00..",
+      "definition": "feel bitter or indignant about",
+      "relation": "similar"
+    },
+    {
+      "word": "RESENTFUL",
+      "senseId": "oewn-resentful__3.00.00..",
+      "definition": "full of or marked by resentment or indignant ill will",
+      "relation": "similar"
+    },
+    {
+      "word": "RESENTFULLY",
+      "senseId": "oewn-resentfully__4.02.00..",
+      "definition": "with resentment; in a resentful manner",
+      "relation": "similar"
+    },
+    {
+      "word": "RESENTING",
+      "senseId": "oewn-resent__2.37.00..",
+      "definition": "feel bitter or indignant about",
+      "relation": "similar"
+    },
+    {
+      "word": "RESENTMENT",
+      "senseId": "oewn-resentment__1.12.00..",
+      "definition": "a feeling of deep and bitter anger and ill-will",
+      "relation": "similar"
+    },
+    {
+      "word": "RESENTMENTS",
+      "senseId": "oewn-resentment__1.12.00..",
+      "definition": "a feeling of deep and bitter anger and ill-will",
+      "relation": "similar"
+    },
+    {
+      "word": "RESENTS",
+      "senseId": "oewn-resent__2.37.00..",
+      "definition": "feel bitter or indignant about",
+      "relation": "similar"
+    },
+    {
+      "word": "REVEL",
+      "senseId": "oewn-revel__2.34.00..",
+      "definition": "take delight in",
+      "relation": "opposite"
+    },
+    {
+      "word": "REVELED",
+      "senseId": "oewn-revel__2.34.00..",
+      "definition": "take delight in",
+      "relation": "opposite"
+    },
+    {
+      "word": "REVELING",
+      "senseId": "oewn-revel__2.34.00..",
+      "definition": "take delight in",
+      "relation": "opposite"
+    },
+    {
+      "word": "REVELLED",
+      "senseId": "oewn-revel__2.34.00..",
+      "definition": "take delight in",
+      "relation": "opposite"
+    },
+    {
+      "word": "REVELLING",
+      "senseId": "oewn-revel__2.34.00..",
+      "definition": "take delight in",
+      "relation": "opposite"
+    },
+    {
+      "word": "REVELS",
+      "senseId": "oewn-revel__2.34.00..",
+      "definition": "take delight in",
+      "relation": "opposite"
+    },
+    {
+      "word": "RHAPSODIC",
+      "senseId": "oewn-rhapsodic__5.00.00.joyous.00",
+      "definition": "feeling great rapture or delight",
+      "relation": "opposite"
+    },
+    {
+      "word": "RHAPSODICALLY",
+      "senseId": "oewn-rhapsodically__4.02.00..",
+      "definition": "in an ecstatic manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "RIANT",
+      "senseId": "oewn-riant__5.00.00.happy.00",
+      "definition": "showing or feeling mirth or pleasure or happiness",
+      "relation": "opposite"
+    },
+    {
+      "word": "RILED",
+      "senseId": "oewn-riled__5.00.00.displeased.00",
+      "definition": "aroused to impatience or anger",
+      "relation": "similar"
+    },
+    {
+      "word": "ROILED",
+      "senseId": "oewn-roiled__5.00.00.displeased.00",
+      "definition": "aroused to impatience or anger",
+      "relation": "similar"
+    },
+    {
+      "word": "SERENE",
+      "senseId": "oewn-serene__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "SERENELY",
+      "senseId": "oewn-serenely__4.02.00..",
+      "definition": "in a peacefully serene manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "SERENER",
+      "senseId": "oewn-serene__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "SERENEST",
+      "senseId": "oewn-serene__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "SERENITIES",
+      "senseId": "oewn-serenity__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "SERENITY",
+      "senseId": "oewn-serenity__1.12.00..",
+      "definition": "the absence of mental stress or anxiety",
+      "relation": "opposite"
+    },
+    {
+      "word": "SMILE",
+      "senseId": "oewn-smile__1.10.00..",
+      "definition": "a facial expression characterized by turning up the corners of the mouth; usually shows pleasure or amusement",
+      "relation": "opposite"
+    },
+    {
+      "word": "SMILED",
+      "senseId": "oewn-smile__2.29.00..",
+      "definition": "change one's facial expression by spreading the lips, often to signal pleasure",
+      "relation": "opposite"
+    },
+    {
+      "word": "SMILES",
+      "senseId": "oewn-smile__1.10.00..",
+      "definition": "a facial expression characterized by turning up the corners of the mouth; usually shows pleasure or amusement",
+      "relation": "opposite"
+    },
+    {
+      "word": "SMILING",
+      "senseId": "oewn-smiling__1.10.00..",
+      "definition": "a facial expression characterized by turning up the corners of the mouth; usually shows pleasure or amusement",
+      "relation": "opposite"
+    },
+    {
+      "word": "SMILINGS",
+      "senseId": "oewn-smiling__1.10.00..",
+      "definition": "a facial expression characterized by turning up the corners of the mouth; usually shows pleasure or amusement",
+      "relation": "opposite"
+    },
+    {
+      "word": "SMOLDERING",
+      "senseId": "oewn-smoldering__5.00.00.angry.00",
+      "definition": "showing scarcely suppressed anger",
+      "relation": "similar"
+    },
+    {
+      "word": "SMOULDERING",
+      "senseId": "oewn-smouldering__5.00.00.angry.00",
+      "definition": "showing scarcely suppressed anger",
+      "relation": "similar"
+    },
+    {
+      "word": "SMOULDERINGLY",
+      "senseId": "oewn-smoulderingly__4.02.00..",
+      "definition": "with barely repressed anger",
+      "relation": "similar"
+    },
+    {
+      "word": "SOCIAL",
+      "senseId": "oewn-social__5.00.00.friendly.01",
+      "definition": "marked by friendly companionship with others",
+      "relation": "opposite"
+    },
+    {
+      "word": "SOFT",
+      "senseId": "oewn-soft__3.00.02..",
+      "definition": "compassionate and kind; conciliatory",
+      "relation": "opposite"
+    },
+    {
+      "word": "SOFTER",
+      "senseId": "oewn-soft__3.00.02..",
+      "definition": "compassionate and kind; conciliatory",
+      "relation": "opposite"
+    },
+    {
+      "word": "SOFTEST",
+      "senseId": "oewn-soft__3.00.02..",
+      "definition": "compassionate and kind; conciliatory",
+      "relation": "opposite"
+    },
+    {
+      "word": "SOFTNESS",
+      "senseId": "oewn-softness__1.07.03..",
+      "definition": "acting in a manner that is gentle and mild and even-tempered",
+      "relation": "opposite"
+    },
+    {
+      "word": "SOFTNESSES",
+      "senseId": "oewn-softness__1.07.03..",
+      "definition": "acting in a manner that is gentle and mild and even-tempered",
+      "relation": "opposite"
+    },
+    {
+      "word": "SORE",
+      "senseId": "oewn-sore__5.00.00.angry.00",
+      "definition": "roused to anger",
+      "relation": "similar"
+    },
+    {
+      "word": "SORER",
+      "senseId": "oewn-sore__5.00.00.angry.00",
+      "definition": "roused to anger",
+      "relation": "similar"
+    },
+    {
+      "word": "SOREST",
+      "senseId": "oewn-sore__5.00.00.angry.00",
+      "definition": "roused to anger",
+      "relation": "similar"
+    },
+    {
+      "word": "STEAMED",
+      "senseId": "oewn-steamed__5.00.00.displeased.00",
+      "definition": "aroused to impatience or anger",
+      "relation": "similar"
+    },
+    {
+      "word": "STILL",
+      "senseId": "oewn-still__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "STILLED",
+      "senseId": "oewn-still__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "STILLING",
+      "senseId": "oewn-still__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "STILLS",
+      "senseId": "oewn-still__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "STORM",
+      "senseId": "oewn-storm__2.42.00..",
+      "definition": "behave violently, as if in state of a great anger",
+      "relation": "similar"
+    },
+    {
+      "word": "STORMED",
+      "senseId": "oewn-storm__2.42.00..",
+      "definition": "behave violently, as if in state of a great anger",
+      "relation": "similar"
+    },
+    {
+      "word": "STORMING",
+      "senseId": "oewn-storm__2.42.00..",
+      "definition": "behave violently, as if in state of a great anger",
+      "relation": "similar"
+    },
+    {
+      "word": "STORMS",
+      "senseId": "oewn-storm__2.42.00..",
+      "definition": "behave violently, as if in state of a great anger",
+      "relation": "similar"
+    },
+    {
+      "word": "STUNG",
+      "senseId": "oewn-stung__5.00.00.displeased.00",
+      "definition": "aroused to impatience or anger",
+      "relation": "similar"
+    },
+    {
+      "word": "SUNNIER",
+      "senseId": "oewn-sunny__5.00.00.cheerful.00",
+      "definition": "bright and pleasant; promoting a feeling of cheer",
+      "relation": "opposite"
+    },
+    {
+      "word": "SUNNIEST",
+      "senseId": "oewn-sunny__5.00.00.cheerful.00",
+      "definition": "bright and pleasant; promoting a feeling of cheer",
+      "relation": "opposite"
+    },
+    {
+      "word": "SUNNILY",
+      "senseId": "oewn-sunnily__4.02.00..",
+      "definition": "in a good-humoured manner",
+      "relation": "opposite"
+    },
+    {
+      "word": "SUNNINESS",
+      "senseId": "oewn-sunniness__1.07.01..",
+      "definition": "the quality of being cheerful and dispelling gloom",
+      "relation": "opposite"
+    },
+    {
+      "word": "SUNNINESSES",
+      "senseId": "oewn-sunniness__1.07.01..",
+      "definition": "the quality of being cheerful and dispelling gloom",
+      "relation": "opposite"
+    },
+    {
+      "word": "SUNNY",
+      "senseId": "oewn-sunny__5.00.00.cheerful.00",
+      "definition": "bright and pleasant; promoting a feeling of cheer",
+      "relation": "opposite"
+    },
+    {
+      "word": "SUNSHINE",
+      "senseId": "oewn-sunshine__1.07.00..",
+      "definition": "the quality of being cheerful and dispelling gloom",
+      "relation": "opposite"
+    },
+    {
+      "word": "SUNSHINES",
+      "senseId": "oewn-sunshine__1.07.00..",
+      "definition": "the quality of being cheerful and dispelling gloom",
+      "relation": "opposite"
+    },
+    {
+      "word": "SYMPATHETIC",
+      "senseId": "oewn-sympathetic__5.00.00.kind.00",
+      "definition": "showing or motivated by sympathy and understanding and generosity",
+      "relation": "opposite"
+    },
+    {
+      "word": "TENDERHEARTED",
+      "senseId": "oewn-tenderhearted__5.00.00.compassionate.00",
+      "definition": "easily moved by another's distress",
+      "relation": "opposite"
+    },
+    {
+      "word": "TOLERANT",
+      "senseId": "oewn-tolerant__5.00.00.forgiving.00",
+      "definition": "tolerant and forgiving under provocation",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUIL",
+      "senseId": "oewn-tranquil__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILER",
+      "senseId": "oewn-tranquil__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILEST",
+      "senseId": "oewn-tranquil__5.00.00.composed.00",
+      "definition": "not agitated; without losing self-possession",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILIZE",
+      "senseId": "oewn-tranquilize__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILIZED",
+      "senseId": "oewn-tranquilize__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILIZES",
+      "senseId": "oewn-tranquilize__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILIZING",
+      "senseId": "oewn-tranquilize__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLISE",
+      "senseId": "oewn-tranquillise__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLISED",
+      "senseId": "oewn-tranquillise__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLISES",
+      "senseId": "oewn-tranquillise__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLISING",
+      "senseId": "oewn-tranquillise__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLIZE",
+      "senseId": "oewn-tranquillize__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLIZED",
+      "senseId": "oewn-tranquillize__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLIZES",
+      "senseId": "oewn-tranquillize__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLIZING",
+      "senseId": "oewn-tranquillize__2.37.00..",
+      "definition": "make calm or still",
+      "relation": "opposite"
+    },
+    {
+      "word": "TRANQUILLY",
+      "senseId": "oewn-tranquilly__4.02.01..",
+      "definition": "without emotional agitation",
+      "relation": "opposite"
+    },
+    {
+      "word": "TWINKLY",
+      "senseId": "oewn-twinkly__5.00.00.cheerful.00",
+      "definition": "smiling with happiness or optimism",
+      "relation": "opposite"
+    },
+    {
+      "word": "UMBRAGEOUS",
+      "senseId": "oewn-umbrageous__5.00.00.angry.00",
+      "definition": "angered at something unjust or wrong",
+      "relation": "similar"
+    },
+    {
+      "word": "UNBEND",
+      "senseId": "oewn-unbend__2.29.01..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNBENDED",
+      "senseId": "oewn-unbend__2.29.01..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNBENDING",
+      "senseId": "oewn-unbend__2.29.01..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNBENDS",
+      "senseId": "oewn-unbend__2.29.01..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNBENT",
+      "senseId": "oewn-unbend__2.29.01..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNHURRIED",
+      "senseId": "oewn-unhurried__5.00.00.patient.00",
+      "definition": "capable of accepting delay with equanimity",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNSTRAINED",
+      "senseId": "oewn-unstrained__5.00.00.relaxed.00",
+      "definition": "not placed under psychological stress",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNWIND",
+      "senseId": "oewn-unwind__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNWINDING",
+      "senseId": "oewn-unwind__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNWINDS",
+      "senseId": "oewn-unwind__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UNWOUND",
+      "senseId": "oewn-unwind__2.29.00..",
+      "definition": "become less tense, rest, or take one's ease",
+      "relation": "opposite"
+    },
+    {
+      "word": "UPBEAT",
+      "senseId": "oewn-upbeat__5.00.00.optimistic.00",
+      "definition": "pleasantly (even unrealistically) optimistic",
+      "relation": "opposite"
+    },
+    {
+      "word": "VEXATION",
+      "senseId": "oewn-vexation__1.12.00..",
+      "definition": "anger produced by some annoying irritation",
+      "relation": "similar"
+    },
+    {
+      "word": "VEXATIONS",
+      "senseId": "oewn-vexation__1.12.00..",
+      "definition": "anger produced by some annoying irritation",
+      "relation": "similar"
+    },
+    {
+      "word": "WRATH",
+      "senseId": "oewn-wrath__1.12.00..",
+      "definition": "intense anger (usually on an epic scale)",
+      "relation": "similar"
+    },
+    {
+      "word": "WRATHFUL",
+      "senseId": "oewn-wrathful__5.00.00.angry.00",
+      "definition": "vehemently incensed and condemnatory",
+      "relation": "similar"
+    },
+    {
+      "word": "WRATHFULLY",
+      "senseId": "oewn-wrathfully__4.02.00..",
+      "definition": "in a wrathful manner",
+      "relation": "similar"
+    },
+    {
+      "word": "WRATHS",
+      "senseId": "oewn-wrath__1.12.00..",
+      "definition": "intense anger (usually on an epic scale)",
+      "relation": "similar"
+    },
+    {
+      "word": "WROTH",
+      "senseId": "oewn-wroth__5.00.00.angry.00",
+      "definition": "vehemently incensed and condemnatory",
+      "relation": "similar"
+    },
+    {
+      "word": "WROTHFUL",
+      "senseId": "oewn-wrothful__5.00.00.angry.00",
+      "definition": "vehemently incensed and condemnatory",
+      "relation": "similar"
+    },
+    {
+      "word": "MAD",
+      "senseId": "oewn-mad__5.00.00.angry.00",
+      "definition": "roused to anger",
+      "relation": "similar"
+    }
+  ],
+  "semanticPolicy": "Pinned source senses and reviewed lexical families; unlabelled defined senses are neutral. Not a proof of exhaustive contextual semantic coverage.",
+  "asset": "puzzles/mad-camaraderie-51065f868fd7.json",
+  "novelty": []
+}

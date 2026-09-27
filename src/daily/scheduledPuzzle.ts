@@ -4,7 +4,7 @@ import { createLetterStrikeGame } from '../game/letterStrike.ts'
 import type { LetterStrikeEncounter } from '../game/letterStrike.ts'
 import { unpackMeaningLexicon } from '../game/meaningPacking.ts'
 
-export type ScheduledPuzzle = { date: string; id: string; enemy: string; asset: string; method: string; legacyBetaId?: string }
+export type ScheduledPuzzle = { date: string; id: string; enemy: string; asset: string; method: string; legacyBetaId?: string; report?: string }
 export const dailySchedule: readonly ScheduledPuzzle[] = schedule
 export const archivedPuzzles: readonly ScheduledPuzzle[] = archive
 export const puzzleSchedule = [...archivedPuzzles, ...dailySchedule].sort((a, b) => a.date.localeCompare(b.date))

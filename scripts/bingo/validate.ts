@@ -13,6 +13,8 @@ export function validateBingo(encounter: LetterStrikeEncounter, answer: string, 
   assert.equal(encounter.finiteRefills, true)
   assert.ok(encounter.startingTiles.every(tile => tile.type === 'normal' && !tile.gem), 'Special tiles are retired')
   assert.deepEqual(encounter.enemyLetters, bingoArmour(encounter.enemy.word, answer))
+  assert.ok(encounter.enemyLetters.reduce((sum, letter) => sum + letter.initialHits, 0) > 3,
+    'Three neutral single hits must not solve the puzzle')
   assert.ok(analysis.counterFamilies >= 4 && analysis.repeatedCounterRoutes >= 4
     && analysis.resistedFamilies >= 2 && analysis.sustainedPositions >= 2
     && analysis.sustainedFinalPositions >= 2, 'Insufficient ordinary routes')

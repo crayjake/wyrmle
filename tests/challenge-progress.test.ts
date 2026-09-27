@@ -3,7 +3,7 @@ import { test } from 'node:test'
 import { readFileSync } from 'node:fs'
 import { bingoPreviews } from '../src/experimental/bingo/catalog.ts'
 import { decodeBingoPreview } from '../src/experimental/bingo/previewData.ts'
-import { openChallenge, saveChallenge, restartChallenge, challengeLives, challengeStars, challengeHistory } from '../src/daily/challengeProgress.ts'
+import { openChallenge, saveChallenge, restartChallenge, challengeLives, challengeStars, challengeHistory, challengeKey, challengeBackupKey } from '../src/daily/challengeProgress.ts'
 import { createLetterStrikeGame, submitLetterStrike } from '../src/game/letterStrike.ts'
 import { selectWordIds } from '../src/generator/constructRefill.ts'
 
@@ -58,4 +58,52 @@ test('stale tabs cannot overwrite a newer attempt or best score', () => {
   assert.throws(() => saveChallenge(record, play(game, 'AIR'), true, store), /another tab/)
   assert.throws(() => restartChallenge(record, store), /another tab/)
   assert.equal(openChallenge(date, entry.asset, encounter, store).record.bestWords, newer.bestWords)
+})
+
+test('replacing a daily backs up the old win without transferring its stars or lives', () => {
+  const store = storage()
+  const old = openChallenge(date, entry.asset, encounter, store)
+  const win = saveChallenge(old.record, play(old.game, 'IRRIGATED'), true, store, 4)
+  // Simulate a record from the deployed version before per-asset backups existed.
+  store.removeItem(challengeBackupKey(date, entry.asset))
+  const replacement = 'puzzles/replacement.json'
+  const fresh = openChallenge(date, replacement, encounter, store)
+  assert.equal(fresh.record.bestWords, null)
+  assert.equal(fresh.record.attempts, 0)
+  assert.equal(fresh.record.run.lives, 3)
+  assert.equal(fresh.hintStep, 1)
+  assert.deepEqual(JSON.parse(store.getItem(challengeKey(date))!), win, 'Opening is read-only')
+  const started = saveChallenge(fresh.record, play(fresh.game, 'WATER'), true, store)
+  assert.deepEqual(JSON.parse(store.getItem(challengeBackupKey(date, entry.asset))!), win)
+  assert.equal(openChallenge(date, entry.asset, encounter, store).game.status, 'won', 'Old moves remain recoverable')
+  assert.equal(openChallenge(date, replacement, encounter, store).game.playedWords[0].word, 'WATER')
+  assert.equal(challengeHistory(store).length, 1, 'Backups are not counted as extra days')
+  assert.throws(() => restartChallenge(win, store), /another tab/)
+  assert.equal(restartChallenge(started, store).run.lives, 3)
+})
+
+test('a legacy tab cannot permanently erase progress on a replacement board', () => {
+  const store = storage()
+  const old = openChallenge(date, entry.asset, encounter, store)
+  const oldWin = saveChallenge(old.record, play(old.game, 'IRRIGATED'), true, store)
+  const replacement = 'puzzles/replacement.json'
+  const fresh = openChallenge(date, replacement, encounter, store)
+  saveChallenge(fresh.record, play(fresh.game, 'WATER'), true, store)
+  store.setItem(challengeKey(date), JSON.stringify({ ...oldWin, revision: 20 }))
+  const restored = openChallenge(date, replacement, encounter, store)
+  assert.equal(restored.record.revision, 20)
+  assert.equal(restored.record.bestWords, null)
+  assert.equal(restored.game.playedWords[0].word, 'WATER')
+  saveChallenge(restored.record, restored.game, true, store)
+  assert.equal(JSON.parse(store.getItem(challengeKey(date))!).asset, replacement)
+})
+
+test('a failed backup leaves the previous daily save untouched', () => {
+  const store = storage()
+  const old = openChallenge(date, entry.asset, encounter, store)
+  const win = saveChallenge(old.record, play(old.game, 'IRRIGATED'), true, store)
+  const fresh = openChallenge(date, 'replacement', encounter, store)
+  const full = { getItem: store.getItem, setItem: () => { throw new Error('Storage full') } }
+  assert.throws(() => saveChallenge(fresh.record, fresh.game, true, full), /Storage full/)
+  assert.deepEqual(JSON.parse(store.getItem(challengeKey(date))!), win)
 })

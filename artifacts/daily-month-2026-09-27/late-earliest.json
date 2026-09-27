@@ -1,0 +1,912 @@
+{
+  "id": "late-earliest",
+  "enemy": "LATE",
+  "answer": "EARLIEST",
+  "accepted": true,
+  "seed": "bingo-first-3:LATE:EARLIEST:13:two-turn-route",
+  "score": 262,
+  "analysis": {
+    "score": 262,
+    "bingos": [
+      "EARLIEST",
+      "PREMATURELY"
+    ],
+    "counterFamilies": 5,
+    "resistedFamilies": 4,
+    "winningOpenings": 10,
+    "repeatedCounterRoutes": 8,
+    "sustainedPositions": 8,
+    "sustainedFinalPositions": 3,
+    "neutralCleanupOpenings": 4,
+    "routes": [
+      {
+        "opening": "TIMELY",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "RUSHED",
+            "HASTE",
+            "SPED",
+            "HURRIED",
+            "HASTEN"
+          ],
+          "resisted": [
+            "LATE",
+            "DELAY",
+            "LAG",
+            "LINGER",
+            "DETAIN"
+          ],
+          "neutral": 1732
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "TIMELY",
+            "HASTE"
+          ],
+          "tileIds": [
+            [
+              12,
+              11,
+              7,
+              6,
+              5,
+              10
+            ],
+            [
+              0,
+              3,
+              13,
+              19,
+              14
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "PREMATURE",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [],
+          "resisted": [
+            "LATE",
+            "TABLE",
+            "DELAY",
+            "STALL",
+            "LAG",
+            "DETAIN"
+          ],
+          "neutral": 978
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "PREMATURE",
+            "ALL"
+          ],
+          "tileIds": [
+            [
+              9,
+              1,
+              6,
+              7,
+              3,
+              12,
+              4,
+              15,
+              14
+            ],
+            [
+              17,
+              5,
+              16
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "HASTE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "TIMELY",
+            "UNTIMELY"
+          ],
+          "resisted": [
+            "LATE",
+            "DELAY",
+            "LAG",
+            "LINGER",
+            "DETAIN",
+            "REMIT"
+          ],
+          "neutral": 961
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "HASTE",
+            "TIMELY"
+          ],
+          "tileIds": [
+            [
+              0,
+              3,
+              13,
+              12,
+              6
+            ],
+            [
+              19,
+              11,
+              7,
+              14,
+              5,
+              10
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "UNTIMELY",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "SPEED",
+            "RUSHED",
+            "HASTE",
+            "HURRIED"
+          ],
+          "resisted": [
+            "LATE",
+            "DELAY",
+            "LAG"
+          ],
+          "neutral": 1272
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "UNTIMELY",
+            "HASTE"
+          ],
+          "tileIds": [
+            [
+              4,
+              8,
+              12,
+              11,
+              7,
+              6,
+              5,
+              10
+            ],
+            [
+              0,
+              3,
+              13,
+              19,
+              14
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "HASTEN",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "TIMELY"
+          ],
+          "resisted": [
+            "LATE",
+            "DELAY",
+            "LAG",
+            "REMIT"
+          ],
+          "neutral": 602
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "HASTEN",
+            "TIMELY"
+          ],
+          "tileIds": [
+            [
+              0,
+              3,
+              13,
+              12,
+              6,
+              8
+            ],
+            [
+              19,
+              11,
+              7,
+              14,
+              5,
+              10
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "LATE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "RUSHED",
+            "TIMELY",
+            "HASTE",
+            "SPED",
+            "HURRIED",
+            "UNTIMELY",
+            "HASTEN"
+          ],
+          "resisted": [
+            "LATE",
+            "DELAY",
+            "LAG",
+            "LINGER",
+            "DETAIN",
+            "REMIT"
+          ],
+          "neutral": 2125
+        },
+        "thirdTurn": {
+          "counters": [
+            "RUSHED",
+            "HASTE",
+            "SPED",
+            "HURRIED",
+            "HASTEN"
+          ],
+          "resisted": [
+            "DETAIN"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "LATE",
+            "TIMELY",
+            "HASTE"
+          ],
+          "tileIds": [
+            [
+              5,
+              3,
+              12,
+              6
+            ],
+            [
+              19,
+              11,
+              7,
+              14,
+              16,
+              10
+            ],
+            [
+              0,
+              17,
+              13,
+              25,
+              22
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "LINGER",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "RUSHED",
+            "TIMELY",
+            "STIMULATE",
+            "HASTE",
+            "SPED"
+          ],
+          "resisted": [
+            "LATE",
+            "DELAY",
+            "REMIT"
+          ],
+          "neutral": 1211
+        },
+        "thirdTurn": {
+          "counters": [
+            "SPEED",
+            "RUSHED",
+            "HASTE"
+          ],
+          "resisted": [
+            "LATE",
+            "TABLE",
+            "DELAY",
+            "BELATED"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "LINGER",
+            "STIMULATE",
+            "SPEED"
+          ],
+          "tileIds": [
+            [
+              5,
+              11,
+              8,
+              2,
+              6,
+              1
+            ],
+            [
+              13,
+              12,
+              21,
+              7,
+              4,
+              16,
+              3,
+              19,
+              14
+            ],
+            [
+              29,
+              9,
+              22,
+              27,
+              18
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "REMIT",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "RUSHED",
+            "HASTE",
+            "SPED",
+            "HASTEN"
+          ],
+          "resisted": [
+            "LATE",
+            "DELAY",
+            "STALL",
+            "LAG"
+          ],
+          "neutral": 1017
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "LAGS",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "TIMELY",
+            "PREMATURE",
+            "HURRIED",
+            "UNTIMELY"
+          ],
+          "resisted": [
+            "LATE",
+            "DELAY",
+            "DETAIN",
+            "REMIT"
+          ],
+          "neutral": 1056
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "LATE",
+            "TABLE",
+            "DELAY",
+            "DETAIN",
+            "BELATED"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "LAGS",
+            "PREMATURE",
+            "ALL"
+          ],
+          "tileIds": [
+            [
+              5,
+              3,
+              2,
+              13
+            ],
+            [
+              9,
+              1,
+              6,
+              7,
+              17,
+              12,
+              4,
+              15,
+              14
+            ],
+            [
+              28,
+              16,
+              26
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            0,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "AGE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "RUSHED",
+            "TIMELY",
+            "HASTE",
+            "SPED",
+            "HURRIED",
+            "UNTIMELY",
+            "HASTEN"
+          ],
+          "resisted": [
+            "LATE",
+            "DELAY",
+            "STALL",
+            "DETAIN",
+            "REMIT"
+          ],
+          "neutral": 1685
+        },
+        "thirdTurn": {
+          "counters": [
+            "RUSHED",
+            "HASTE",
+            "SPED",
+            "HURRIED",
+            "HASTEN"
+          ],
+          "resisted": [
+            "LATE",
+            "TABLE",
+            "DELAY",
+            "DETAIN"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AGE",
+            "TIMELY",
+            "RUSHED"
+          ],
+          "tileIds": [
+            [
+              3,
+              2,
+              6
+            ],
+            [
+              12,
+              11,
+              7,
+              14,
+              5,
+              10
+            ],
+            [
+              1,
+              4,
+              13,
+              0,
+              22,
+              18
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SPEED",
+            "RUSHED",
+            "HASTE",
+            "HASTEN"
+          ],
+          "resisted": [
+            "LATE",
+            "DELAY",
+            "STALL",
+            "LAG"
+          ],
+          "neutral": 1521
+        },
+        "thirdTurn": {
+          "counters": [
+            "TIMELY"
+          ],
+          "resisted": [
+            "REMIT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AIR",
+            "HASTENED",
+            "TIMELY"
+          ],
+          "tileIds": [
+            [
+              3,
+              11,
+              1
+            ],
+            [
+              0,
+              17,
+              13,
+              12,
+              6,
+              8,
+              14,
+              18
+            ],
+            [
+              19,
+              21,
+              7,
+              22,
+              5,
+              10
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "EAGERLY",
+      "STIMULATE"
+    ],
+    "tileIds": [
+      [
+        6,
+        3,
+        2,
+        14,
+        1,
+        5,
+        10
+      ],
+      [
+        13,
+        12,
+        11,
+        7,
+        4,
+        16,
+        17,
+        19,
+        22
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      4
+    ]
+  },
+  "roots": [
+    {
+      "word": "EARLY",
+      "senseId": "oewn-early__3.00.00..",
+      "definition": "at or near the beginning of a period of time or course of events or before the usual or expected time",
+      "relation": "opposite"
+    },
+    {
+      "word": "PROMPT",
+      "senseId": "oewn-prompt__5.00.00.punctual.00",
+      "definition": "according to schedule or without delay; on time",
+      "relation": "opposite"
+    },
+    {
+      "word": "TIMELY",
+      "senseId": "oewn-timely__4.02.00..",
+      "definition": "at an opportune time",
+      "relation": "opposite"
+    },
+    {
+      "word": "PUNCTUAL",
+      "senseId": "oewn-punctual__3.00.00..",
+      "definition": "acting or arriving or performed exactly at the time appointed",
+      "relation": "opposite"
+    },
+    {
+      "word": "HASTEN",
+      "senseId": "oewn-hasten__2.30.00..",
+      "definition": "act at high speed",
+      "relation": "opposite"
+    },
+    {
+      "word": "HURRY",
+      "senseId": "oewn-hurry__2.30.00..",
+      "definition": "act at high speed",
+      "relation": "opposite"
+    },
+    {
+      "word": "RUSH",
+      "senseId": "oewn-rush__2.36.00..",
+      "definition": "cause to occur rapidly",
+      "relation": "opposite"
+    },
+    {
+      "word": "HASTE",
+      "senseId": "oewn-haste__1.07.00..",
+      "definition": "overly eager speed (and possible carelessness)",
+      "relation": "opposite"
+    },
+    {
+      "word": "SPEED",
+      "senseId": "oewn-speed__1.07.00..",
+      "definition": "a rate (usually rapid) at which something happens",
+      "relation": "opposite"
+    },
+    {
+      "word": "QUICKEN",
+      "senseId": "oewn-quicken__2.30.01..",
+      "definition": "move faster",
+      "relation": "opposite"
+    },
+    {
+      "word": "ACCELERATE",
+      "senseId": "oewn-accelerate__2.30.00..",
+      "definition": "move faster",
+      "relation": "opposite"
+    },
+    {
+      "word": "EXPEDITE",
+      "senseId": "oewn-expedite__2.41.00..",
+      "definition": "speed up the progress of; facilitate",
+      "relation": "opposite"
+    },
+    {
+      "word": "ANTICIPATE",
+      "senseId": "oewn-anticipate__2.31.01..",
+      "definition": "realize beforehand",
+      "relation": "opposite"
+    },
+    {
+      "word": "PREMATURE",
+      "senseId": "oewn-premature__5.00.00.early.00",
+      "definition": "uncommonly early or before the expected time",
+      "relation": "opposite"
+    },
+    {
+      "word": "PRECOCIOUS",
+      "senseId": "oewn-precocious__3.00.00..",
+      "definition": "characterized by or characteristic of exceptionally early development or maturity (especially in mental aptitude)",
+      "relation": "opposite"
+    },
+    {
+      "word": "READINESS",
+      "senseId": "oewn-readiness__1.26.00..",
+      "definition": "the state of having been made ready or prepared for use or action (especially military action)",
+      "relation": "opposite"
+    },
+    {
+      "word": "LATE",
+      "senseId": "oewn-late__3.00.00..",
+      "definition": "being or occurring at an advanced period of time or after a usual or expected time",
+      "relation": "similar"
+    },
+    {
+      "word": "TARDY",
+      "senseId": "oewn-tardy__5.00.00.unpunctual.00",
+      "definition": "after the expected or usual time; delayed",
+      "relation": "similar"
+    },
+    {
+      "word": "DELAY",
+      "senseId": "oewn-delay__2.30.00..",
+      "definition": "cause to be slowed down or delayed",
+      "relation": "similar"
+    },
+    {
+      "word": "DEFER",
+      "senseId": "oewn-defer__2.42.00..",
+      "definition": "hold back to a later time",
+      "relation": "similar"
+    },
+    {
+      "word": "WAIT",
+      "senseId": "oewn-wait__2.42.00..",
+      "definition": "stay in one place and anticipate or expect something",
+      "relation": "similar"
+    },
+    {
+      "word": "LAG",
+      "senseId": "oewn-lag__1.04.00..",
+      "definition": "the act of slowing down or falling behind",
+      "relation": "similar"
+    },
+    {
+      "word": "DAWDLE",
+      "senseId": "oewn-dawdle__2.38.00..",
+      "definition": "take one's time; proceed slowly",
+      "relation": "similar"
+    },
+    {
+      "word": "POSTPONE",
+      "senseId": "oewn-postpone__2.42.00..",
+      "definition": "hold back to a later time",
+      "relation": "similar"
+    },
+    {
+      "word": "SLOW",
+      "senseId": "oewn-slow__3.00.01..",
+      "definition": "not moving quickly; taking a comparatively long time",
+      "relation": "similar"
+    },
+    {
+      "word": "TARRY",
+      "senseId": "oewn-tarry__2.38.00..",
+      "definition": "leave slowly and hesitantly",
+      "relation": "similar"
+    },
+    {
+      "word": "OVERDUE",
+      "senseId": "oewn-overdue__5.00.00.due.00",
+      "definition": "past due; not paid at the scheduled time",
+      "relation": "similar"
+    },
+    {
+      "word": "LATENESS",
+      "senseId": "oewn-lateness__1.07.00..",
+      "definition": "quality of coming late or later in time",
+      "relation": "similar"
+    },
+    {
+      "word": "PROCRASTINATE",
+      "senseId": "oewn-procrastinate__2.42.00..",
+      "definition": "postpone doing what one should be doing",
+      "relation": "similar"
+    },
+    {
+      "word": "BELATED",
+      "senseId": "oewn-belated__5.00.00.unpunctual.00",
+      "definition": "after the expected or usual time; delayed",
+      "relation": "similar"
+    }
+  ],
+  "semanticPolicy": "Pinned source senses and reviewed lexical families; unlabelled defined senses are neutral. Not a proof of exhaustive contextual semantic coverage.",
+  "asset": "puzzles/late-earliest-5406a0b2021d.json",
+  "novelty": []
+}

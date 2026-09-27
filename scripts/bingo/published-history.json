@@ -1,0 +1,835 @@
+[
+  {
+    "id": "bingo-arid-1",
+    "enemy": "ARID",
+    "board": "ADEGIIMNOPRRSTWY",
+    "bingos": [
+      "IRRIGATED"
+    ],
+    "bingoFamilies": [
+      "IRRIGATE"
+    ]
+  },
+  {
+    "id": "bingo-rot-1",
+    "enemy": "ROT",
+    "board": "ACEEILNOOPRRSTTW",
+    "bingos": [
+      "RESTORATION"
+    ],
+    "bingoFamilies": [
+      "RESTORATION"
+    ]
+  },
+  {
+    "id": "bingo-inert-1",
+    "enemy": "INERT",
+    "board": "ACEEGIILNORRSTUV",
+    "bingos": [
+      "REINVIGORATE",
+      "REINVIGORATES"
+    ],
+    "bingoFamilies": [
+      "REINVIGORATE"
+    ]
+  },
+  {
+    "id": "bingo-stingy-1",
+    "enemy": "STINGY",
+    "board": "AEGHIILNNNRSTTUY",
+    "bingos": [
+      "UNSTINTINGLY"
+    ],
+    "bingoFamilies": [
+      "UNSTINTINGLY"
+    ]
+  },
+  {
+    "id": "bingo-false-1",
+    "enemy": "FALSE",
+    "board": "AACEEFILMNRSSTUY",
+    "bingos": [
+      "FACTUALNESS"
+    ],
+    "bingoFamilies": [
+      "FACTUALNESS"
+    ]
+  },
+  {
+    "id": "bingo-ire-1",
+    "enemy": "IRE",
+    "board": "AEEGILMNPRRRSTUY",
+    "bingos": [
+      "MERRIER",
+      "MERRIEST"
+    ],
+    "bingoFamilies": [
+      "MERRY"
+    ]
+  },
+  {
+    "id": "bingo-scare-1",
+    "enemy": "SCARE",
+    "board": "AACDEEHINRRSSTUY",
+    "bingos": [
+      "REASSURANCE"
+    ],
+    "bingoFamilies": [
+      "REASSURANCE"
+    ]
+  },
+  {
+    "id": "bingo-mess-1",
+    "enemy": "MESS",
+    "board": "ACDEILLMMNORSSTY",
+    "bingos": [
+      "MASTERMINDS"
+    ],
+    "bingoFamilies": [
+      "MASTERMIND"
+    ]
+  },
+  {
+    "id": "bingo-spite-1",
+    "enemy": "SPITE",
+    "board": "ACEEHILMNPRSSTUY",
+    "bingos": [
+      "EMPATHISES"
+    ],
+    "bingoFamilies": [
+      "EMPATHISE"
+    ]
+  },
+  {
+    "id": "bingo-taint-1",
+    "enemy": "TAINT",
+    "board": "AACEIILNNOPRRSTT",
+    "bingos": [
+      "SANITATION"
+    ],
+    "bingoFamilies": [
+      "SANITATION"
+    ]
+  },
+  {
+    "id": "arid-irrigated",
+    "enemy": "ARID",
+    "board": "ADEGHIIMNOPRRSTW",
+    "bingos": [
+      "IRRIGATED"
+    ],
+    "bingoFamilies": [
+      "IRRIGATE"
+    ]
+  },
+  {
+    "id": "false-factualness",
+    "enemy": "FALSE",
+    "board": "AACDEEFILNRSSTUY",
+    "bingos": [
+      "FACTUALNESS"
+    ],
+    "bingoFamilies": [
+      "FACTUALNESS"
+    ]
+  },
+  {
+    "id": "inert-reinvigorate",
+    "enemy": "INERT",
+    "board": "ACEEGHIILNORRSTV",
+    "bingos": [
+      "REINVIGORATE",
+      "REINVIGORATES"
+    ],
+    "bingoFamilies": [
+      "REINVIGORATE"
+    ]
+  },
+  {
+    "id": "rot-restoration",
+    "enemy": "ROT",
+    "board": "ACEEILNOOPRRSTTW",
+    "bingos": [
+      "RESTORATION"
+    ],
+    "bingoFamilies": [
+      "RESTORATION"
+    ]
+  },
+  {
+    "id": "anger-relaxing",
+    "enemy": "ANGER",
+    "board": "ACDEEGILMNOPRSTX",
+    "bingos": [
+      "CLEARING",
+      "RELAXING"
+    ],
+    "bingoFamilies": [
+      "CLEAR",
+      "RELAX"
+    ]
+  },
+  {
+    "id": "lie-verifiable",
+    "enemy": "LIE",
+    "board": "ABDEEFIIKLNRTUVY",
+    "bingos": [
+      "EVIDENTIAL",
+      "VERIFIABLE"
+    ],
+    "bingoFamilies": [
+      "EVIDENTIAL",
+      "VERIFIABLE"
+    ]
+  },
+  {
+    "id": "fear-fearlessness",
+    "enemy": "FEAR",
+    "board": "ADEEEFHLNRSSSSTU",
+    "bingos": [
+      "FEARLESS",
+      "FEARLESSNESS"
+    ],
+    "bingoFamilies": [
+      "FEARLESS",
+      "FEARLESSNESS"
+    ]
+  },
+  {
+    "id": "chaos-orchestrated",
+    "enemy": "CHAOS",
+    "board": "ACDEEGHIMNORRSTT",
+    "bingos": [
+      "ORCHESTRATE",
+      "ORCHESTRATED",
+      "ORCHESTRATING"
+    ],
+    "bingoFamilies": [
+      "ORCHESTRATE"
+    ]
+  },
+  {
+    "id": "stingy-unstintingly",
+    "enemy": "STINGY",
+    "board": "AEGIILNNNRSTTUVY",
+    "bingos": [
+      "UNSTINTINGLY"
+    ],
+    "bingoFamilies": [
+      "UNSTINTINGLY"
+    ]
+  },
+  {
+    "id": "idle-revitalized",
+    "enemy": "IDLE",
+    "board": "ACDEEIIKLNPRSTVZ",
+    "bingos": [
+      "REVITALISED",
+      "REVITALIZED"
+    ],
+    "bingoFamilies": [
+      "REVITALISE",
+      "REVITALIZE"
+    ]
+  },
+  {
+    "id": "untruth-truthfulness",
+    "enemy": "UNTRUTH",
+    "board": "ABEFHILNORSSTTUU",
+    "bingos": [
+      "TRUTHFULNESS"
+    ],
+    "bingoFamilies": [
+      "TRUTHFULNESS"
+    ]
+  },
+  {
+    "id": "cruel-mercifully",
+    "enemy": "CRUEL",
+    "board": "ACEEFGILLMNNRTUY",
+    "bingos": [
+      "MERCIFULLY"
+    ],
+    "bingoFamilies": [
+      "MERCIFULLY"
+    ]
+  },
+  {
+    "id": "deceit-directness",
+    "enemy": "DECEIT",
+    "board": "ACDEEFIILNRSSTVY",
+    "bingos": [
+      "DIRECTNESS",
+      "RECTIFIED"
+    ],
+    "bingoFamilies": [
+      "DIRECTNESS",
+      "RECTIFY"
+    ]
+  },
+  {
+    "id": "rage-lighthearted",
+    "enemy": "RAGE",
+    "board": "ADEEGHHILMNRSTTU",
+    "bingos": [
+      "LIGHTHEARTED"
+    ],
+    "bingoFamilies": [
+      "LIGHTHEARTED"
+    ]
+  },
+  {
+    "id": "dread-daredevil",
+    "enemy": "DREAD",
+    "board": "ACDDEEHILNRSTUVY",
+    "bingos": [
+      "DAREDEVIL",
+      "DAREDEVILS"
+    ],
+    "bingoFamilies": [
+      "DAREDEVIL"
+    ]
+  },
+  {
+    "id": "still-liveliest",
+    "enemy": "STILL",
+    "board": "ACEEGHIILLNORSTV",
+    "bingos": [
+      "LIVELIEST"
+    ],
+    "bingoFamilies": [
+      "LIVELY"
+    ]
+  },
+  {
+    "id": "mess-systematized",
+    "enemy": "MESS",
+    "board": "ACDEEILLMRSSTTYZ",
+    "bingos": [
+      "SYSTEMATIZE",
+      "SYSTEMATIZED",
+      "SYSTEMATIZER",
+      "SYSTEMIZE",
+      "SYSTEMIZED",
+      "SYSTEMIZER"
+    ],
+    "bingoFamilies": [
+      "SYSTEMATIZE",
+      "SYSTEMATIZER",
+      "SYSTEMIZE",
+      "SYSTEMIZER"
+    ]
+  },
+  {
+    "id": "taint-disinfectant",
+    "enemy": "TAINT",
+    "board": "ACDEFIIKLNNPRSTT",
+    "bingos": [
+      "DISINFECTANT"
+    ],
+    "bingoFamilies": [
+      "DISINFECTANT"
+    ]
+  },
+  {
+    "id": "fictive-verification",
+    "enemy": "FICTIVE",
+    "board": "ACDEFIIILNORSTVY",
+    "bingos": [
+      "VERIFICATION",
+      "VERIFICATIONS"
+    ],
+    "bingoFamilies": [
+      "VERIFICATION"
+    ]
+  },
+  {
+    "id": "tire-spirited",
+    "enemy": "TIRE",
+    "board": "ACDEGIILNOPRSTUV",
+    "bingos": [
+      "INVIGORATE",
+      "INVIGORATED",
+      "INVIGORATES",
+      "SPIRITED",
+      "VITALISER"
+    ],
+    "bingoFamilies": [
+      "INVIGORATE",
+      "SPIRITED",
+      "VITALISER"
+    ]
+  },
+  {
+    "id": "fiction-confirmation",
+    "enemy": "FICTION",
+    "board": "ACEFIILMNNOORSTY",
+    "bingos": [
+      "CONFIRMATION",
+      "CONFIRMATIONS"
+    ],
+    "bingoFamilies": [
+      "CONFIRMATION"
+    ]
+  },
+  {
+    "id": "spite-compassionate",
+    "enemy": "SPITE",
+    "board": "AACDEHIMNOOPSSTY",
+    "bingos": [
+      "COMPASSIONATE",
+      "COMPASSIONATED",
+      "SYMPATHIES",
+      "SYMPATHISE",
+      "SYMPATHISED"
+    ],
+    "bingoFamilies": [
+      "COMPASSIONATE",
+      "SYMPATHISE",
+      "SYMPATHY"
+    ]
+  },
+  {
+    "id": "stint-contributions",
+    "enemy": "STINT",
+    "board": "ABCDGIINNOORSTTU",
+    "bingos": [
+      "CONTRIBUTIONS"
+    ],
+    "bingoFamilies": [
+      "CONTRIBUTION"
+    ]
+  },
+  {
+    "id": "fallacy-factually",
+    "enemy": "FALLACY",
+    "board": "AACCDEFIILLRTUVY",
+    "bingos": [
+      "FACTUALLY"
+    ],
+    "bingoFamilies": [
+      "FACTUALLY"
+    ]
+  },
+  {
+    "id": "ire-friendlier",
+    "enemy": "IRE",
+    "board": "ACDEEFGIILNPRRST",
+    "bingos": [
+      "FRIENDLIER"
+    ],
+    "bingoFamilies": [
+      "FRIENDLY"
+    ]
+  },
+  {
+    "id": "panic-pacifying",
+    "enemy": "PANIC",
+    "board": "ACDEFGHIINOPRSTY",
+    "bingos": [
+      "PACIFYING"
+    ],
+    "bingoFamilies": [
+      "PACIFY"
+    ]
+  },
+  {
+    "id": "riot-coordinate",
+    "enemy": "RIOT",
+    "board": "ACDEHILLMNOORSTY",
+    "bingos": [
+      "COORDINATE",
+      "COORDINATES"
+    ],
+    "bingoFamilies": [
+      "COORDINATE"
+    ]
+  },
+  {
+    "id": "rotten-reconstructed",
+    "enemy": "ROTTEN",
+    "board": "CCDEEINOPRRSTTUW",
+    "bingos": [
+      "RECONSTRUCTED"
+    ],
+    "bingoFamilies": [
+      "RECONSTRUCT"
+    ]
+  },
+  {
+    "id": "inertia-invigorated",
+    "enemy": "INERTIA",
+    "board": "ACDEGIILMNOPRSTV",
+    "bingos": [
+      "INVIGORATE",
+      "INVIGORATED",
+      "INVIGORATES"
+    ],
+    "bingoFamilies": [
+      "INVIGORATE"
+    ]
+  },
+  {
+    "id": "deceive-evidence",
+    "enemy": "DECEIVE",
+    "board": "AACDEEEFILNRTUVY",
+    "bingos": [
+      "EVIDENCE"
+    ],
+    "bingoFamilies": [
+      "EVIDENCE"
+    ]
+  },
+  {
+    "id": "original-chaos-preview",
+    "enemy": "CHAOS",
+    "board": "ACEEHLMNORRSSTTY",
+    "bingos": [
+      "ORCHESTRATES"
+    ],
+    "bingoFamilies": [
+      "ORCHESTRATE"
+    ]
+  },
+  {
+    "id": "bingo-feasibility:CHAOS:CHOREOGRAPHS:0",
+    "enemy": "CHAOS",
+    "board": "ABCDEGHHLMOOPRRS",
+    "bingos": [
+      "CHOREOGRAPHS"
+    ],
+    "bingoFamilies": [
+      "CHOREOGRAPH"
+    ]
+  },
+  {
+    "id": "bingo-feasibility:CHAOS:CHOREOGRAPHS:1",
+    "enemy": "CHAOS",
+    "board": "ACDEGHHMNOOPRRSY",
+    "bingos": [
+      "CHOREOGRAPHS"
+    ],
+    "bingoFamilies": [
+      "CHOREOGRAPH"
+    ]
+  },
+  {
+    "id": "bingo-feasibility:ANGER:ENDEARING:0",
+    "enemy": "ANGER",
+    "board": "ADEEFGINNORSTUVY",
+    "bingos": [
+      "ENDEARING"
+    ],
+    "bingoFamilies": [
+      "ENDEAR",
+      "ENDEARING"
+    ]
+  },
+  {
+    "id": "bingo-feasibility:ANGER:ENDEARING:1",
+    "enemy": "ANGER",
+    "board": "ACDEEFGIMNNRSTUY",
+    "bingos": [
+      "ENDEARING"
+    ],
+    "bingoFamilies": [
+      "ENDEAR",
+      "ENDEARING"
+    ]
+  },
+  {
+    "id": "bingo-feasibility:ANGER:ENCOURAGEMENT:0",
+    "enemy": "ANGER",
+    "board": "ACEEEGHMNNORSTUW",
+    "bingos": [
+      "ENCOURAGEMENT"
+    ],
+    "bingoFamilies": [
+      "ENCOURAGEMENT"
+    ]
+  },
+  {
+    "id": "bingo-feasibility:ANGER:ENCOURAGEMENT:1",
+    "enemy": "ANGER",
+    "board": "ACEEEGMNNOOPRSTU",
+    "bingos": [
+      "ENCOURAGEMENT"
+    ],
+    "bingoFamilies": [
+      "ENCOURAGEMENT"
+    ]
+  },
+  {
+    "id": "bingo-feasibility:CRUELTY:RESPECTFULLY:0",
+    "enemy": "CRUELTY",
+    "board": "CEEFGGILLNPRSTUY",
+    "bingos": [
+      "RESPECTFULLY"
+    ],
+    "bingoFamilies": [
+      "RESPECTFULLY"
+    ]
+  },
+  {
+    "id": "bingo-feasibility:CRUELTY:RESPECTFULLY:1",
+    "enemy": "CRUELTY",
+    "board": "ACEEFILLMNPRSTUY",
+    "bingos": [
+      "RESPECTFULLY"
+    ],
+    "bingoFamilies": [
+      "RESPECTFULLY"
+    ]
+  },
+  {
+    "id": "bingo-feasibility:FEAR:SAFEGUARDED:0",
+    "enemy": "FEAR",
+    "board": "AACDDEEFGILORSUV",
+    "bingos": [
+      "SAFEGUARDED"
+    ],
+    "bingoFamilies": [
+      "SAFEGUARD"
+    ]
+  },
+  {
+    "id": "bingo-feasibility:FEAR:SAFEGUARDED:1",
+    "enemy": "FEAR",
+    "board": "AABCDDEEFGLORSUV",
+    "bingos": [
+      "SAFEGUARDED"
+    ],
+    "bingoFamilies": [
+      "SAFEGUARD"
+    ]
+  },
+  {
+    "id": "ignite-extinguish",
+    "enemy": "IGNITE",
+    "board": "AEFGHIIMNORSTUWX",
+    "bingos": [
+      "EXTINGUISH"
+    ],
+    "bingoFamilies": [
+      "EXTINGUISH"
+    ]
+  },
+  {
+    "id": "fury-cheerfully",
+    "enemy": "FURY",
+    "board": "ACEEFGHLLMPRSTUY",
+    "bingos": [
+      "CHEERFULLY"
+    ],
+    "bingoFamilies": [
+      "CHEERFULLY"
+    ]
+  },
+  {
+    "id": "dry-hydrated",
+    "enemy": "DRY",
+    "board": "ADDEHIMNOPRSTUWY",
+    "bingos": [
+      "HYDRATED"
+    ],
+    "bingoFamilies": [
+      "HYDRATE"
+    ]
+  },
+  {
+    "id": "static-activates",
+    "enemy": "STATIC",
+    "board": "AACEGIKLMNORSTTV",
+    "bingos": [
+      "ACTIVATES"
+    ],
+    "bingoFamilies": [
+      "ACTIVATE"
+    ]
+  },
+  {
+    "id": "err-corrected",
+    "enemy": "ERR",
+    "board": "AACCDEEILORRTUVY",
+    "bingos": [
+      "CORRECTED",
+      "REALER"
+    ],
+    "bingoFamilies": [
+      "CORRECT",
+      "REAL"
+    ]
+  },
+  {
+    "id": "scary-courageously",
+    "enemy": "SCARY",
+    "board": "ACDEFGHLOORSTUUY",
+    "bingos": [
+      "COURAGEOUSLY"
+    ],
+    "bingoFamilies": [
+      "COURAGEOUSLY"
+    ]
+  },
+  {
+    "id": "resent-tenderness",
+    "enemy": "RESENT",
+    "board": "ABDEEEGILNNPRSST",
+    "bingos": [
+      "TENDERNESS"
+    ],
+    "bingoFamilies": [
+      "TENDERNESS"
+    ]
+  },
+  {
+    "id": "inhuman-humanitarian",
+    "enemy": "INHUMAN",
+    "board": "AAABDEHIIMNNRSTU",
+    "bingos": [
+      "HUMANITARIAN"
+    ],
+    "bingoFamilies": [
+      "HUMANITARIAN"
+    ]
+  },
+  {
+    "id": "age-rejuvenating",
+    "enemy": "AGE",
+    "board": "ADEEGIJLNNORTUVW",
+    "bingos": [
+      "REJUVENATING"
+    ],
+    "bingoFamilies": [
+      "REJUVENATE"
+    ]
+  },
+  {
+    "id": "end-commenced",
+    "enemy": "END",
+    "board": "ACCDEEGMMNOPRSTW",
+    "bingos": [
+      "COMMENCED",
+      "OPENED"
+    ],
+    "bingoFamilies": [
+      "COMMENCE",
+      "OPEN"
+    ]
+  },
+  {
+    "id": "late-earliest",
+    "enemy": "LATE",
+    "board": "AEEGHILMNPRRSTUY",
+    "bingos": [
+      "EARLIEST",
+      "PREMATURELY"
+    ],
+    "bingoFamilies": [
+      "EARLY",
+      "PREMATURELY"
+    ]
+  },
+  {
+    "id": "thin-thickening",
+    "enemy": "THIN",
+    "board": "CDEEGHIIKLNNOSTU",
+    "bingos": [
+      "THICKENING"
+    ],
+    "bingoFamilies": [
+      "THICKEN"
+    ]
+  },
+  {
+    "id": "poor-prosperous",
+    "enemy": "POOR",
+    "board": "ACEHILNOOPPRRSSU",
+    "bingos": [
+      "PROSPEROUS"
+    ],
+    "bingoFamilies": [
+      "PROSPEROUS"
+    ]
+  },
+  {
+    "id": "mad-camaraderie",
+    "enemy": "MAD",
+    "board": "AAACDEEILMOPRRST",
+    "bingos": [
+      "CAMARADERIE",
+      "CAMARADERIES"
+    ],
+    "bingoFamilies": [
+      "CAMARADERIE"
+    ]
+  },
+  {
+    "id": "tense-serenity",
+    "enemy": "TENSE",
+    "board": "ACEEFILNOOPRSTUY",
+    "bingos": [
+      "SERENITY"
+    ],
+    "bingoFamilies": [
+      "SERENITY"
+    ]
+  },
+  {
+    "id": "sad-satisfied",
+    "enemy": "SAD",
+    "board": "ADEFGHIILMNRSSTY",
+    "bingos": [
+      "SATISFIED"
+    ],
+    "bingoFamilies": [
+      "SATISFIED"
+    ]
+  },
+  {
+    "id": "bind-unbridled",
+    "enemy": "BIND",
+    "board": "ABDDEEGILNNRSTUV",
+    "bingos": [
+      "UNBRIDLED"
+    ],
+    "bingoFamilies": [
+      "UNBRIDLED"
+    ]
+  },
+  {
+    "id": "ache-anaesthetic",
+    "enemy": "ACHE",
+    "board": "AACEEHILMNOPRSTT",
+    "bingos": [
+      "ANAESTHETIC"
+    ],
+    "bingoFamilies": [
+      "ANAESTHETIC"
+    ]
+  },
+  {
+    "id": "dirt-sterilised",
+    "enemy": "DIRT",
+    "board": "ACDEEIILNOPRSSTU",
+    "bingos": [
+      "STERILISED",
+      "TIDIER"
+    ],
+    "bingoFamilies": [
+      "STERILISE",
+      "TIDY"
+    ]
+  },
+  {
+    "id": "sore-composure",
+    "enemy": "SORE",
+    "board": "ACDEGHILMOOPRSTU",
+    "bingos": [
+      "COMPOSURE"
+    ],
+    "bingoFamilies": [
+      "COMPOSURE"
+    ]
+  }
+]
