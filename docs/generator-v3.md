@@ -38,6 +38,7 @@ V3 requires all of the following:
 3. A separate, productive two-word route uses distinct non-bingo families and words with Zipf ≥ 2.4. Its hardest word must score at least 0.4 below the easiest bingo. A shortened bingo cannot be the only intermediate challenge.
 4. A counter-led three-word route scores at least 0.4 below **even the cheapest legal two-word shortcut**. Every move hits, at least two are counters, the families are distinct and none belongs to a starting bingo. Each word has Zipf ≥ 2.8 and the hardest word scores at most 4.8, so an obscure third word cannot serve as the only evidence of an easy route.
 5. The existing gates still require multiple counter openings, at least four replayed counter routes, and counter/similar choices later in the game. All three difficulty witnesses replay in the real game engine with the actual life limit and frozen refills.
+6. Known semantic misses also have explicit regression expectations. When a required word is spellable from the puzzle's full letter supply, its frozen relation must match. For STOP, the START, BEGIN, RESTART and RESUME forms must counter it. This rejects neutral fallbacks during generation as well as publication; it does not override labels during gameplay.
 
 Normal copies of a letter are interchangeable for this search; there are no special tiles or grammar bonuses. The exact physical tile IDs for every witness are saved and replayed. Publication decodes the transported asset and recomputes the checks rather than trusting a stored pass flag.
 
@@ -72,13 +73,13 @@ This review is a scoped editorial check, not a claim that every admitted diction
 
 ## Benchmark results
 
-The calendar's September 11–15 cases are STOP, SOIL, TRUST, HIDE and DIM. Four assets are unchanged, preserving their saves and stars. TRUST replaces DAYS on September 13. The old DAYS asset remains available to the revision-backup mechanism; it does not carry its stars onto a different puzzle.
+The calendar's September 11–15 cases are STOP, SOIL, TRUST, HIDE and DIM. SOIL, HIDE and DIM retain their exact assets. TRUST replaces DAYS on September 13. STOP retains its board, armour, refills and bingo, with corrected START and RESTART meanings. Previous assets remain available to the revision-backup mechanism; their saved results are backed up rather than applied to changed rules.
 
 Lower scores mean easier vocabulary under the proxy. The two-word lower bound includes shortcuts that are excluded from the separately provided ordinary route.
 
 | Date | Enemy | Three-word route | Any two-word win, lower bound | Independent two-word route | Easiest bingo |
 | --- | --- | ---: | ---: | ---: | ---: |
-| Sep 11 | STOP | 1.80 | 2.40 | 3.46 | 5.42 |
+| Sep 11 | STOP | 0.60 | 1.80 | 1.80 | 5.42 |
 | Sep 12 | SOIL | 4.56 | 5.52 | 5.96 | 7.60 |
 | Sep 13 | TRUST | 1.70 | 3.42 | 3.42 | 7.02 |
 | Sep 14 | HIDE | 0.60 | 2.22 | 2.22 | 3.68 |

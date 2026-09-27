@@ -12,20 +12,20 @@
   "answer": "TRANSPORTS",
   "method": "bingo-first",
   "accepted": true,
-  "profileVersion": "bingo-source-profiles-1:9a3968217de7",
+  "profileVersion": "bingo-source-profiles-1:4efc91057819",
   "seeds": 2,
   "seed": "bingo-first-3:STOP:TRANSPORTS:13",
-  "score": 277,
+  "score": 377,
   "analysis": {
-    "score": 277,
+    "score": 377,
     "bingos": [
       "TRANSPORTS"
     ],
-    "counterFamilies": 7,
+    "counterFamilies": 9,
     "resistedFamilies": 4,
-    "winningOpenings": 7,
-    "repeatedCounterRoutes": 7,
-    "sustainedPositions": 9,
+    "winningOpenings": 10,
+    "repeatedCounterRoutes": 10,
+    "sustainedPositions": 11,
     "sustainedFinalPositions": 3,
     "neutralCleanupOpenings": 1,
     "routes": [
@@ -35,8 +35,10 @@
         "hits": 1,
         "later": {
           "counters": [
+            "START",
             "MOVES",
             "DRIVES",
+            "RESTART",
             "MOVERS"
           ],
           "resisted": [
@@ -45,27 +47,22 @@
             "ARREST",
             "TRAP"
           ],
-          "neutral": 910
+          "neutral": 906
         },
         "thirdTurn": {
           "counters": [
-            "DRIVES",
-            "TRANSMIT"
+            "PROCESSION"
           ],
           "resisted": [
-            "REST",
-            "ARREST",
-            "STATIC",
-            "INACTIVE",
-            "INERT"
+            "PIN"
           ]
         },
         "cleanup": false,
         "witness": {
           "words": [
             "GONE",
-            "POOR",
-            "TRANSMITS"
+            "STARTS",
+            "PROCESSION"
           ],
           "tileIds": [
             [
@@ -75,32 +72,35 @@
               5
             ],
             [
-              8,
-              16,
-              17,
-              6
-            ],
-            [
-              4,
-              15,
-              7,
-              23,
               12,
-              10,
-              9,
+              4,
+              7,
+              6,
               11,
               13
+            ],
+            [
+              8,
+              15,
+              16,
+              20,
+              18,
+              21,
+              25,
+              9,
+              17,
+              23
             ]
           ],
           "labels": [
             "COUNTER",
-            "NEUTRAL",
+            "COUNTER",
             "COUNTER"
           ],
           "hits": [
             1,
-            1,
-            4
+            4,
+            1
           ]
         }
       },
@@ -110,8 +110,10 @@
         "hits": 1,
         "later": {
           "counters": [
+            "START",
             "PROGRESS",
-            "PROGRESSION"
+            "PROGRESSION",
+            "RESTART"
           ],
           "resisted": [
             "REST",
@@ -121,11 +123,134 @@
             "PIN",
             "INERT"
           ],
-          "neutral": 1192
+          "neutral": 1187
         },
-        "thirdTurn": null,
+        "thirdTurn": {
+          "counters": [
+            "PROGRESS",
+            "PROGRESSION",
+            "PROCESSION"
+          ],
+          "resisted": [
+            "PIN"
+          ]
+        },
         "cleanup": false,
-        "witness": null
+        "witness": {
+          "words": [
+            "MOVE",
+            "STARTS",
+            "PROGRESS"
+          ],
+          "tileIds": [
+            [
+              10,
+              0,
+              14,
+              5
+            ],
+            [
+              12,
+              4,
+              7,
+              6,
+              11,
+              13
+            ],
+            [
+              8,
+              15,
+              16,
+              1,
+              19,
+              18,
+              21,
+              25
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "START",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "GONE",
+            "MOVE",
+            "DROVE",
+            "MOVER",
+            "ROVING"
+          ],
+          "resisted": [
+            "PIN"
+          ],
+          "neutral": 726
+        },
+        "thirdTurn": {
+          "counters": [
+            "PROGRESS",
+            "PROGRESSION",
+            "PROCESSION"
+          ],
+          "resisted": [
+            "PIN"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "START",
+            "MOVES",
+            "PROGRESS"
+          ],
+          "tileIds": [
+            [
+              12,
+              4,
+              7,
+              6,
+              11
+            ],
+            [
+              10,
+              0,
+              14,
+              5,
+              13
+            ],
+            [
+              8,
+              15,
+              16,
+              1,
+              19,
+              18,
+              21,
+              25
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2,
+            1
+          ]
+        }
       },
       {
         "opening": "PROGRESS",
@@ -133,6 +258,7 @@
         "hits": 4,
         "later": {
           "counters": [
+            "START",
             "MOTION",
             "TRANSMIT"
           ],
@@ -142,14 +268,14 @@
             "INACTIVE",
             "INERT"
           ],
-          "neutral": 1326
+          "neutral": 1324
         },
         "thirdTurn": null,
         "cleanup": true,
         "witness": {
           "words": [
             "PROGRESS",
-            "TRANSMIT"
+            "START"
           ],
           "tileIds": [
             [
@@ -163,13 +289,10 @@
               13
             ],
             [
-              4,
-              19,
-              7,
-              3,
               21,
-              10,
-              9,
+              4,
+              7,
+              19,
               11
             ]
           ],
@@ -189,9 +312,11 @@
         "hits": 1,
         "later": {
           "counters": [
+            "START",
             "PROGRESS",
             "MOTION",
             "PROGRESSION",
+            "RESTART",
             "TRANSMIT",
             "PROCESSION"
           ],
@@ -204,7 +329,7 @@
             "STATIC",
             "INERT"
           ],
-          "neutral": 1610
+          "neutral": 1606
         },
         "thirdTurn": {
           "counters": [
@@ -218,7 +343,7 @@
         "witness": {
           "words": [
             "DROVE",
-            "TRANSMITS",
+            "STARTS",
             "PROCESSION"
           ],
           "tileIds": [
@@ -230,13 +355,10 @@
               5
             ],
             [
-              4,
-              15,
-              7,
-              3,
               12,
-              10,
-              9,
+              4,
+              7,
+              15,
               11,
               13
             ],
@@ -248,9 +370,9 @@
               18,
               21,
               25,
-              22,
+              9,
               17,
-              23
+              3
             ]
           ],
           "labels": [
@@ -262,6 +384,64 @@
             1,
             4,
             1
+          ]
+        }
+      },
+      {
+        "opening": "RESTART",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "GONE",
+            "MOVE",
+            "DROVE",
+            "PROCESSION",
+            "MOVER",
+            "ROVING"
+          ],
+          "resisted": [
+            "PIN"
+          ],
+          "neutral": 676
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RESTART",
+            "PROCESSION"
+          ],
+          "tileIds": [
+            [
+              6,
+              5,
+              12,
+              4,
+              7,
+              15,
+              11
+            ],
+            [
+              8,
+              19,
+              0,
+              20,
+              18,
+              13,
+              21,
+              9,
+              16,
+              3
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            3
           ]
         }
       },
@@ -328,8 +508,10 @@
         "hits": 1,
         "later": {
           "counters": [
+            "START",
             "PROGRESS",
             "PROGRESSION",
+            "RESTART",
             "PROCESSION"
           ],
           "resisted": [
@@ -341,27 +523,22 @@
             "STATIC",
             "INERT"
           ],
-          "neutral": 1666
+          "neutral": 1661
         },
         "thirdTurn": {
           "counters": [
-            "TRANSMIT"
+            "PROCESSION"
           ],
           "resisted": [
-            "REST",
-            "STOP",
-            "TRAP",
-            "PIN",
-            "STATIC",
-            "INERT"
+            "PIN"
           ]
         },
         "cleanup": false,
         "witness": {
           "words": [
             "MOVER",
-            "PROGRESSION",
-            "TRANSMIT"
+            "STARTS",
+            "PROCESSION"
           ],
           "tileIds": [
             [
@@ -372,27 +549,24 @@
               6
             ],
             [
-              8,
-              15,
-              16,
-              1,
-              19,
-              18,
               12,
-              13,
+              4,
+              7,
+              15,
+              11,
+              13
+            ],
+            [
+              8,
+              19,
+              16,
+              20,
+              18,
+              21,
+              25,
               9,
               17,
               3
-            ],
-            [
-              4,
-              30,
-              7,
-              23,
-              21,
-              31,
-              22,
-              11
             ]
           ],
           "labels": [
@@ -402,8 +576,8 @@
           ],
           "hits": [
             1,
-            3,
-            2
+            4,
+            1
           ]
         }
       },
@@ -412,7 +586,10 @@
         "label": "COUNTER",
         "hits": 1,
         "later": {
-          "counters": [],
+          "counters": [
+            "START",
+            "RESTART"
+          ],
           "resisted": [
             "REST",
             "STOP",
@@ -420,28 +597,22 @@
             "EASE",
             "TRAP"
           ],
-          "neutral": 946
+          "neutral": 941
         },
         "thirdTurn": {
           "counters": [
-            "MOVES",
-            "MOTION",
-            "DRIVES",
-            "TRANSMIT",
-            "MOVERS"
+            "PROCESSION"
           ],
           "resisted": [
-            "REST",
-            "STATIC",
-            "INERT"
+            "PIN"
           ]
         },
         "cleanup": false,
         "witness": {
           "words": [
             "ROVING",
-            "PER",
-            "TRANSMITS"
+            "STARTS",
+            "PROCESSION"
           ],
           "tileIds": [
             [
@@ -453,31 +624,35 @@
               1
             ],
             [
-              8,
-              5,
-              15
-            ],
-            [
-              4,
-              19,
-              7,
-              23,
               12,
-              10,
-              22,
+              4,
+              7,
+              15,
               11,
               13
+            ],
+            [
+              8,
+              19,
+              16,
+              20,
+              5,
+              21,
+              25,
+              22,
+              17,
+              23
             ]
           ],
           "labels": [
             "COUNTER",
-            "NEUTRAL",
+            "COUNTER",
             "COUNTER"
           ],
           "hits": [
             1,
-            1,
-            4
+            4,
+            1
           ]
         }
       },
@@ -684,29 +859,28 @@
   },
   "twoWordWin": {
     "words": [
-      "PROGRESS",
-      "TRANSMIT"
+      "STARTED",
+      "PROGRESS"
     ],
     "tileIds": [
       [
-        8,
-        6,
-        0,
-        1,
-        15,
-        5,
         12,
-        13
+        4,
+        7,
+        6,
+        11,
+        5,
+        2
       ],
       [
-        4,
+        8,
+        15,
+        0,
+        1,
         19,
-        7,
-        3,
-        21,
-        10,
-        9,
-        11
+        18,
+        13,
+        21
       ]
     ],
     "labels": [
@@ -714,8 +888,8 @@
       "COUNTER"
     ],
     "hits": [
-      4,
-      2
+      3,
+      3
     ]
   },
   "identity": {
@@ -730,9 +904,9 @@
     ]
   },
   "novelty": [],
-  "asset": "puzzles/motion-0-stop-transports-953cde49313e.json",
+  "asset": "puzzles/motion-0-stop-transports-9f7ab6081bf2.json",
   "semanticPolicy": "Source-pinned concept pools with individually reviewed senses and lexical families. Unlabelled defined senses remain neutral; this is not an exhaustive contextual semantic proof.",
-  "editorialReview": "STOP means a halt or cessation of motion. Moving, progressing and transporting work against stopping. PROGRESS, ACT and MOTION are ordinary words. The three-word route uses two movement counters and one neutral; PROGRESS and TRANSMIT offer an independent two-word challenge.",
+  "editorialReview": "STOP means halting or ending an action. Starting, beginning and restarting directly counter stopping; movement counters remain valid. START, STARTS, STARTED, STARTING and the RESTART forms are now counters. GONE, DROP and STARTS provide a familiar three-word route (DROP is neutral); STARTED and PROGRESS provide the two-word route. Broad GET forms and surprise words such as STARTLED remain neutral. The board, refills and bingo are unchanged.",
   "generatorVersion": 3,
   "progression": {
     "version": 3,
@@ -744,7 +918,7 @@
       "twoWordPositionBudget": 20000,
       "threeWordPositionBudget": 12000
     },
-    "fingerprint": "5cefbed076dbdf8fec726081066e0d8d6ef4e6e050aa91f3ad2ae9a40a1b05f6",
+    "fingerprint": "ab1cbf8b9a5b62fc9401f350dde33442a49780565a1baaa5a3b469c91bc1420e",
     "accepted": true,
     "issues": [],
     "bingos": [
@@ -789,27 +963,28 @@
     "two": {
       "witness": {
         "words": [
-          "MOVES",
-          "TRANSPORT"
+          "STARTED",
+          "PROGRESS"
         ],
         "tileIds": [
           [
-            10,
-            0,
-            14,
+            12,
+            4,
+            7,
+            6,
+            11,
             5,
-            12
+            2
           ],
           [
-            4,
-            6,
-            7,
-            3,
-            13,
             8,
-            16,
             15,
-            11
+            0,
+            1,
+            19,
+            18,
+            13,
+            21
           ]
         ],
         "labels": [
@@ -817,53 +992,52 @@
           "COUNTER"
         ],
         "hits": [
-          2,
-          4
+          3,
+          3
         ]
       },
       "rating": {
         "words": [
-          "MOVES",
-          "TRANSPORT"
+          "STARTED",
+          "PROGRESS"
         ],
         "zipfs": [
-          4.59,
-          4.68
+          5.39,
+          4.78
         ],
-        "minZipf": 4.59,
-        "maxLength": 9,
-        "effort": 2.4,
-        "commonAndShort": false
+        "minZipf": 4.78,
+        "maxLength": 8,
+        "effort": 1.8,
+        "commonAndShort": true
       },
-      "positions": 1082,
+      "positions": 798,
       "complete": true
     },
     "twoWordRoute": {
       "witness": {
         "words": [
-          "PROGRESS",
-          "TRANSMIT"
+          "STARTED",
+          "PROGRESS"
         ],
         "tileIds": [
           [
-            8,
-            6,
-            0,
-            1,
-            15,
-            5,
             12,
-            13
+            4,
+            7,
+            6,
+            11,
+            5,
+            2
           ],
           [
-            4,
+            8,
+            15,
+            0,
+            1,
             19,
-            7,
-            3,
-            21,
-            10,
-            9,
-            11
+            18,
+            13,
+            21
           ]
         ],
         "labels": [
@@ -871,26 +1045,26 @@
           "COUNTER"
         ],
         "hits": [
-          4,
-          2
+          3,
+          3
         ]
       },
       "rating": {
         "words": [
-          "PROGRESS",
-          "TRANSMIT"
+          "STARTED",
+          "PROGRESS"
         ],
         "zipfs": [
-          4.78,
-          3.67
+          5.39,
+          4.78
         ],
-        "minZipf": 3.67,
+        "minZipf": 4.78,
         "maxLength": 8,
-        "effort": 3.46,
+        "effort": 1.8,
         "commonAndShort": true
       },
-      "positions": 1399,
-      "previews": 1569,
+      "positions": 664,
+      "previews": 1004,
       "improvingWins": 1,
       "searchComplete": true,
       "scope": "Zipf ≥ 2.4; positive-hit moves; canonical normal tile IDs; distinct families; no starting bingo family; ≥2 counters for three words. Effort is an uncalibrated bottleneck proxy, not measured human difficulty."
@@ -898,33 +1072,30 @@
     "three": {
       "witness": {
         "words": [
-          "PROGRESS",
-          "ACT",
-          "MOTION"
+          "GONE",
+          "DROP",
+          "STARTS"
         ],
         "tileIds": [
           [
-            8,
-            6,
-            0,
             1,
-            15,
-            5,
-            12,
-            13
+            0,
+            3,
+            5
           ],
           [
-            7,
-            20,
-            4
-          ],
-          [
-            10,
+            2,
+            6,
             16,
+            8
+          ],
+          [
+            12,
+            4,
+            7,
+            15,
             11,
-            9,
-            17,
-            3
+            13
           ]
         ],
         "labels": [
@@ -933,41 +1104,56 @@
           "COUNTER"
         ],
         "hits": [
-          4,
           1,
-          1
+          1,
+          4
         ]
       },
       "rating": {
         "words": [
-          "PROGRESS",
-          "ACT",
-          "MOTION"
+          "GONE",
+          "DROP",
+          "STARTS"
         ],
         "zipfs": [
-          4.78,
-          5.3,
-          4.59
+          5.17,
+          4.99,
+          4.83
         ],
-        "minZipf": 4.59,
-        "maxLength": 8,
-        "effort": 1.8,
+        "minZipf": 4.83,
+        "maxLength": 6,
+        "effort": 0.6,
         "commonAndShort": true
       },
-      "positions": 3537,
+      "positions": 17,
       "complete": true
     },
     "scope": "Every admitted starting bingo and the cheapest exact two-word win under a frequency/length bottleneck score; a counter-led three-word witness at least 0.4 easier. Two-word search includes repeated families, neutral and zero-hit refill moves. Three-word search requires distinct non-bingo families, positive hits and at least two counters. Normal tile copies use canonical selections. This is a vocabulary proxy, not a guarantee of subjective discovery difficulty or of every possible three-word route."
   },
   "semanticReview": {
-    "fingerprint": "5cefbed076dbdf8fec726081066e0d8d6ef4e6e050aa91f3ad2ae9a40a1b05f6",
+    "fingerprint": "ab1cbf8b9a5b62fc9401f350dde33442a49780565a1baaa5a3b469c91bc1420e",
     "verdict": "approved",
-    "enemyConcept": "STOP means a halt or cessation of motion. Moving, progressing and transporting work against stopping.",
+    "enemyConcept": "STOP means halting or ending an action. Starting, beginning and restarting directly counter stopping; movement counters remain valid.",
     "bingoConcepts": {
-      "TRANSPORTS": "Transports moves people or things from one place to another, countering a stop."
+      "TRANSPORTS": "Transports moves people or things between places, working against a stop."
     },
-    "routeVocabulary": "PROGRESS, ACT and MOTION are ordinary words. The three-word route uses two movement counters and one neutral; PROGRESS and TRANSMIT offer an independent two-word challenge.",
-    "reviewer": "Codex editorial review, 2026-09-27"
+    "routeVocabulary": "START, STARTS, STARTED, STARTING and the RESTART forms are now counters. GONE, DROP and STARTS provide a familiar three-word route (DROP is neutral); STARTED and PROGRESS provide the two-word route. Broad GET forms and surprise words such as STARTLED remain neutral. The board, refills and bingo are unchanged.",
+    "reviewer": "Codex editorial review of START / STARTING report, 2026-09-27"
   },
-  "publicationStatus": "reviewed"
+  "publicationStatus": "reviewed",
+  "semanticRevision": {
+    "previousAsset": "puzzles/motion-0-stop-transports-953cde49313e.json",
+    "previousProfileVersion": "bingo-source-profiles-1:9a3968217de7",
+    "changedWords": [
+      "RESTART",
+      "RESTARTED",
+      "RESTARTING",
+      "RESTARTS",
+      "START",
+      "STARTED",
+      "STARTING",
+      "STARTS"
+    ],
+    "reason": "START / STARTING were missing from the motion concept pool. Pin the ordinary start/begin/restart source senses; do not expand the broad get-started sense."
+  }
 }

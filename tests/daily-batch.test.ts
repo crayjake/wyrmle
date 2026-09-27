@@ -22,11 +22,15 @@ test('the stopped batch publishes 38 distinct reviewed puzzles and moves five ra
   assert.equal(new Set(reports.map(r => r.enemyLemma)).size, 38)
   for (const entry of manifest) {
     const replacement = benchmarks.find(b => b.changed && b.previous.id === entry.id)
-    assert.deepEqual(puzzleSchedule.filter(e => e.id === entry.id), replacement ? [] : [entry], 'A sample has no second date in the future queue')
+    assert.deepEqual(puzzleSchedule.filter(e => e.id === entry.id), replacement
+      ? replacement.current.id === entry.id ? [replacement.current] : [] : [entry], 'A sample has no second date in the future queue')
     if (replacement) assert.deepEqual(puzzleSchedule.filter(e => e.date === entry.date), [replacement.current], 'Only the documented V3 revision replaces an original sample')
     const report = read(entry.report), encounter = decodeScheduledPuzzle(read(`public/${entry.asset}`), entry)
     assert.equal(report.accepted, true); assert.ok(report.editorialReview)
-    assert.equal(encounter.meaningLexicon!.profileVersion, bingoProfileVersion(yearProfile(yearThemes.find(t => t.id === report.theme)!, report.side, report)))
+    // Superseded assets retain their published source version for saved replay.
+    // The current semantic revision is checked against its source in the V3 tests.
+    assert.equal(encounter.meaningLexicon!.profileVersion, replacement ? report.profileVersion
+      : bingoProfileVersion(yearProfile(yearThemes.find(t => t.id === report.theme)!, report.side, report)))
     const identity = puzzleIdentity(entry.id, encounter)
     assert.deepEqual(identity, report.identity)
     assert.deepEqual(freshnessIssues(identity, [...prior, ...reports.filter(r => r.id !== entry.id).map(r => r.identity)]), [])

@@ -12,6 +12,11 @@ import { packDictionaryMeanings, unpackMeaningLexicon } from '../src/game/meanin
 import { meaningSupply } from '../src/game/meaningLexicon.ts'
 import { assessProgressionV3, easiestTwoWordWin, validateProgressionV3 } from '../scripts/bingo/progressionV3.ts'
 import { replayRoute, wordEffort } from '../scripts/bingo/routeDifficulty.ts'
+import { createLetterStrikeGame, previewLetterStrike } from '../src/game/letterStrike.ts'
+import { selectWordIds } from '../src/generator/constructRefill.ts'
+import { bingoProfileVersion, createBingoMeanings } from '../scripts/bingo/meanings.ts'
+import { yearProfile, yearThemes } from '../scripts/bingo/year/profiles.ts'
+import { semanticRegressions } from '../scripts/bingo/semanticRegressions.ts'
 const read = (path: string) => JSON.parse(readFileSync(path, 'utf8'))
 const fixture = (enemy: string) => {
   const entry = benchmarks.find(b => b.current.enemy === enemy)!.current
@@ -50,12 +55,51 @@ test('the retired DAYS benchmark catches SHADY and rejects the easier-tier tie a
 })
 
 test('two-word lower bound includes bingo-family shortcuts and words below the ordinary frequency floor', () => {
-  const stop = assessProgressionV3(fixture('STOP'))
+  const previous = benchmarks.find(b => b.current.enemy === 'STOP')!.previous
+  const stop = assessProgressionV3(decodeScheduledPuzzle(read(`public/${previous.asset}`), previous))
   assert.deepEqual(stop.two.witness!.words, ['MOVES', 'TRANSPORT'])
   assert.ok(stop.two.rating!.effort < stop.twoWordRoute.rating!.effort)
   const soil = assessProgressionV3(fixture('SOIL'))
   assert.ok(soil.two.rating!.minZipf < 2.4)
   assert.ok(soil.two.rating!.effort < soil.twoWordRoute.rating!.effort)
+})
+
+test('STOP starting forms are counters in the source, published lexicon and real opening preview', () => {
+  const benchmark = benchmarks.find(b => b.current.enemy === 'STOP')!, report = read(benchmark.report), encounter = fixture('STOP')
+  const profile = yearProfile(yearThemes.find(t => t.id === 'motion')!, 0, report)
+  const source = createBingoMeanings(profile)
+  assert.equal(encounter.meaningLexicon!.profileVersion, bingoProfileVersion(profile))
+  for (const word of semanticRegressions[0].words) {
+    assert.equal(source.meanings[word].relation, 'opposite', word)
+    if (encounter.meaningLexicon!.words[word]) assert.equal(encounter.meaningLexicon!.words[word].relation, 'opposite', word)
+  }
+  for (const word of ['GET', 'GETS', 'GOT', 'GOTTEN', 'STARTLE', 'STARTLED', 'STARTLING']) {
+    assert.equal(source.meanings[word].relation, 'unrelated', `Do not expand a generic or surprise sense: ${word}`)
+  }
+  const state = createLetterStrikeGame(encounter)
+  for (const [word, hits] of [['START', 3], ['STARTS', 4], ['STARTED', 3], ['STARTING', 3]] as const) {
+    const ids = selectWordIds(state.tiles, word)
+    assert.ok(ids, word)
+    const preview = previewLetterStrike(state, ids)
+    assert.equal(preview.semanticLabel, 'COUNTER', word)
+    assert.equal(preview.strikes, hits, word)
+  }
+  const old = decodeScheduledPuzzle(read(`public/${benchmark.previous.asset}`), benchmark.previous)
+  assert.deepEqual(encounter.startingTiles, old.startingTiles)
+  assert.equal(encounter.refillQueue, old.refillQueue)
+  assert.deepEqual(encounter.enemyLetters, old.enemyLetters)
+})
+
+test('V3 rejects a neutral fallback for known direct counters even when its difficulty tiers pass', () => {
+  const encounter = fixture('STOP'), lexicon = encounter.meaningLexicon!
+  const broken = { ...encounter, meaningLexicon: { ...lexicon, words: { ...lexicon.words,
+    START: { ...lexicon.words.START, relation: 'unrelated' as const },
+    STARTING: { ...lexicon.words.STARTING, relation: 'unrelated' as const } } } }
+  const result = assessProgressionV3(broken)
+  assert.equal(result.accepted, false)
+  assert.ok(result.issues.some(issue => issue.startsWith('Semantic regression: START must counter STOP.')))
+  assert.ok(result.issues.some(issue => issue.startsWith('Semantic regression: STARTING must counter STOP.')))
+  assert.ok(result.issues.every(issue => issue.startsWith('Semantic regression:')), 'Difficulty alone would have passed')
 })
 
 function controlledStop(words: string[], board: string, queue: string) {

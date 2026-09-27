@@ -12,8 +12,8 @@ const read = (path: string) => JSON.parse(readFileSync(path, 'utf8'))
 const write = (path: string, value: unknown) => writeFileSync(path, JSON.stringify(value, null, 2) + '\n')
 const cases = read(`${directory}/benchmarks.json`), archive = read('src/daily/archive.json'), history = read('scripts/bingo/published-history.json')
 const identities = []
-// Validate the whole batch before mutating any catalog. Four entries keep their
-// exact asset identity and saves; only the explicitly superseded day changes.
+// Validate the whole batch before mutating any catalog. Only explicitly
+// superseded entries change; previous asset revisions remain available.
 for (const benchmark of cases) {
   const { current, previous } = benchmark, report = read(benchmark.report)
   const live = archive.find(e => e.date === current.date)

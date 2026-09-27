@@ -7,6 +7,7 @@ import { selectWordIds } from '../../src/generator/constructRefill.ts'
 import { getGenerationWordZipf } from '../../src/generator/familiarity.ts'
 import { rateRoute, replayRoute, wordEffort, searchEasierRoute } from './routeDifficulty.ts'
 import type { RouteWitness } from './routeDifficulty.ts'
+import { semanticRegressionIssues } from './semanticRegressions.ts'
 
 export const progressionV3Policy = {
   version: 3, minimumGap: .4, threeWordMaxEffort: 4.8, threeWordMinimumZipf: 2.8,
@@ -131,7 +132,7 @@ export function assessProgressionV3(encounter: LetterStrikeEncounter) {
   const twoWordRoute = searchEasierRoute(encounter, 2, bingos.map(b => b.words[0]), null)
   const ceiling = Math.min(progressionV3Policy.threeWordMaxEffort, (two.rating?.effort ?? 0) - progressionV3Policy.minimumGap)
   const three = approachableThreeWordWin(encounter, bingos.map(b => b.words[0]), ceiling)
-  const issues: string[] = []
+  const issues: string[] = semanticRegressionIssues(encounter)
   if (!bingos.length) issues.push('No starting bingo.')
   if (!two.complete) issues.push('Two-word lower bound is unproven: search budget exhausted.')
   if (!two.rating) issues.push('No two-word win.')
