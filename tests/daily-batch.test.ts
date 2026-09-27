@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs'
 import history from '../scripts/bingo/published-history.json' with { type: 'json' }
 import summary from '../artifacts/daily-year-2026-10-26/summary.json' with { type: 'json' }
 import manifest from '../artifacts/daily-year-2026-10-26/schedule.json' with { type: 'json' }
+import benchmarks from '../artifacts/daily-year-v3-benchmarks-2026-09-27/benchmarks.json' with { type: 'json' }
 import { conflictsWithBatch, sampleBatch, selectBatch } from '../scripts/bingo/year/select.ts'
 import { yearProfile, yearThemes } from '../scripts/bingo/year/profiles.ts'
 import { bingoProfileVersion, createBingoMeanings } from '../scripts/bingo/meanings.ts'
@@ -20,7 +21,9 @@ test('the stopped batch publishes 38 distinct reviewed puzzles and moves five ra
   assert.deepEqual(samples.map(r => r.id), summary.archiveSample.map(e => e.id))
   assert.equal(new Set(reports.map(r => r.enemyLemma)).size, 38)
   for (const entry of manifest) {
-    assert.deepEqual(puzzleSchedule.filter(e => e.id === entry.id), [entry], 'A sample has no second date in the future queue')
+    const replacement = benchmarks.find(b => b.changed && b.previous.id === entry.id)
+    assert.deepEqual(puzzleSchedule.filter(e => e.id === entry.id), replacement ? [] : [entry], 'A sample has no second date in the future queue')
+    if (replacement) assert.deepEqual(puzzleSchedule.filter(e => e.date === entry.date), [replacement.current], 'Only the documented V3 revision replaces an original sample')
     const report = read(entry.report), encounter = decodeScheduledPuzzle(read(`public/${entry.asset}`), entry)
     assert.equal(report.accepted, true); assert.ok(report.editorialReview)
     assert.equal(encounter.meaningLexicon!.profileVersion, bingoProfileVersion(yearProfile(yearThemes.find(t => t.id === report.theme)!, report.side, report)))

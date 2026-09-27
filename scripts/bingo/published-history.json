@@ -1291,5 +1291,16 @@
     "bingoFamilies": [
       "SANITIZE"
     ]
+  },
+  {
+    "id": "belief-1-trust-uncertainties",
+    "enemy": "TRUST",
+    "board": "ACEEIINNQRSTTUUY",
+    "bingos": [
+      "UNCERTAINTIES"
+    ],
+    "bingoFamilies": [
+      "UNCERTAINTY"
+    ]
   }
 ]

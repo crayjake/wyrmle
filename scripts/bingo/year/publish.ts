@@ -10,13 +10,14 @@ import { unpackMeaningLexicon } from '../../../src/game/meaningPacking.ts'
 import { createLetterStrikeGame, submitLetterStrike } from '../../../src/game/letterStrike.ts'
 import { getMeaningSense } from '../../lib/wordMeanings.ts'
 import { shiftPuzzleId, validatePuzzleId } from '../../../src/daily/date.ts'
+import { validateProgressionV3 } from '../progressionV3.ts'
 
 const read = (path: string) => JSON.parse(readFileSync(path, 'utf8'))
 export function publishBatch(directory: string, start: string, limit: number, sampleCount = 5) {
   validatePuzzleId(start)
   const history = read('scripts/bingo/published-history.json'), shortlist = new Set(read(`${directory}/editorial-shortlist.json`))
   const reports = readdirSync(`${directory}/reports`).filter(f => f.endsWith('.json')).map(f => read(`${directory}/reports/${f}`))
-    .filter(r => shortlist.has(r.id) && r.accepted && r.editorialReview && yearThemes.some(t => t.id === r.theme
+    .filter(r => shortlist.has(r.id) && r.accepted && r.generatorVersion === 3 && r.semanticReview?.verdict === 'approved' && r.editorialReview && yearThemes.some(t => t.id === r.theme
       && bingoProfileVersion(yearProfile(t, r.side, r)) === r.profileVersion))
   const chosen = selectBatch(reports, limit)
   assert.ok(chosen.length > sampleCount, 'Not enough reviewed, fresh puzzles to publish.')
@@ -40,6 +41,8 @@ export function publishBatch(directory: string, start: string, limit: number, sa
     assert.deepEqual(identity, report.identity)
     assert.deepEqual(freshnessIssues(identity, [...history, ...identities]), [])
     validateBingo(encounter, report.answer, report.analysis)
+    // A cached acceptance flag or hand-edited report cannot bypass V3.
+    validateProgressionV3(encounter, report.semanticReview)
     let two = createLetterStrikeGame({ ...encounter, startingResolve: 2 })
     for (const [turn, ids] of report.twoWordWin.tileIds.entries()) {
       two = submitLetterStrike(two, ids)

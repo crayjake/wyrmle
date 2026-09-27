@@ -1,4 +1,6 @@
-/** Offline experiment only. Not used by generation, publication or gameplay. */
+/** Vocabulary-effort primitives shared with bingo-first v3. The original audit
+ * searches below retain their documented restricted scope; they are not proofs
+ * of the cheapest unrestricted two-word win (see progressionV3.ts). */
 import assert from 'node:assert/strict'
 import { createLetterStrikeGame, previewLetterStrike, submitLetterStrike } from '../../src/game/letterStrike.ts'
 import type { LetterStrikeEncounter, LetterStrikeState } from '../../src/game/letterStrike.ts'

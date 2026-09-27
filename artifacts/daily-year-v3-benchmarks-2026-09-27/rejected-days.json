@@ -1,0 +1,207 @@
+{
+  "entry": {
+    "date": "2026-09-13",
+    "id": "light-1-days-shadowy",
+    "enemy": "DAYS",
+    "asset": "puzzles/light-1-days-shadowy-860b776720d9.json",
+    "method": "bingo-first",
+    "report": "artifacts/daily-year-2026-10-26/proofs/light-1-days-shadowy.json"
+  },
+  "progression": {
+    "version": 3,
+    "policy": {
+      "version": 3,
+      "minimumGap": 0.4,
+      "threeWordMaxEffort": 4.8,
+      "threeWordMinimumZipf": 2.8,
+      "twoWordPositionBudget": 20000,
+      "threeWordPositionBudget": 12000
+    },
+    "fingerprint": "c293465adc78ccebbe81e1c298d0bb30873de566edbd61b8e59d66feaffab20a",
+    "accepted": false,
+    "issues": [
+      "No familiar, counter-led three-word route below the two-word lower bound was found."
+    ],
+    "bingos": [
+      {
+        "words": [
+          "SHADY"
+        ],
+        "zipfs": [
+          3.71
+        ],
+        "minZipf": 3.71,
+        "maxLength": 5,
+        "effort": 1.58,
+        "commonAndShort": true,
+        "witness": {
+          "words": [
+            "SHADY"
+          ],
+          "tileIds": [
+            [
+              1,
+              15,
+              9,
+              8,
+              0
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            4
+          ]
+        }
+      },
+      {
+        "words": [
+          "SHADOWY"
+        ],
+        "zipfs": [
+          3.24
+        ],
+        "minZipf": 3.24,
+        "maxLength": 7,
+        "effort": 3.72,
+        "commonAndShort": false,
+        "witness": {
+          "words": [
+            "SHADOWY"
+          ],
+          "tileIds": [
+            [
+              1,
+              15,
+              9,
+              8,
+              11,
+              13,
+              0
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            4
+          ]
+        }
+      }
+    ],
+    "two": {
+      "witness": {
+        "words": [
+          "BOY",
+          "SHADE"
+        ],
+        "tileIds": [
+          [
+            12,
+            11,
+            0
+          ],
+          [
+            1,
+            15,
+            9,
+            8,
+            2
+          ]
+        ],
+        "labels": [
+          "NEUTRAL",
+          "COUNTER"
+        ],
+        "hits": [
+          1,
+          3
+        ]
+      },
+      "rating": {
+        "words": [
+          "BOY",
+          "SHADE"
+        ],
+        "zipfs": [
+          5.17,
+          4.16
+        ],
+        "minZipf": 4.16,
+        "maxLength": 5,
+        "effort": 0.68,
+        "commonAndShort": true
+      },
+      "positions": 402,
+      "complete": true
+    },
+    "twoWordRoute": {
+      "witness": {
+        "words": [
+          "BOY",
+          "SHADE"
+        ],
+        "tileIds": [
+          [
+            12,
+            11,
+            0
+          ],
+          [
+            1,
+            15,
+            9,
+            8,
+            2
+          ]
+        ],
+        "labels": [
+          "NEUTRAL",
+          "COUNTER"
+        ],
+        "hits": [
+          1,
+          3
+        ]
+      },
+      "rating": {
+        "words": [
+          "BOY",
+          "SHADE"
+        ],
+        "zipfs": [
+          5.17,
+          4.16
+        ],
+        "minZipf": 4.16,
+        "maxLength": 5,
+        "effort": 0.68,
+        "commonAndShort": true
+      },
+      "positions": 348,
+      "previews": 444,
+      "improvingWins": 2,
+      "searchComplete": true,
+      "scope": "Zipf ≥ 2.4; positive-hit moves; canonical normal tile IDs; distinct families; no starting bingo family; ≥2 counters for three words. Effort is an uncalibrated bottleneck proxy, not measured human difficulty."
+    },
+    "three": {
+      "witness": null,
+      "rating": null,
+      "positions": 362,
+      "complete": true
+    },
+    "scope": "Every admitted starting bingo and the cheapest exact two-word win under a frequency/length bottleneck score; a counter-led three-word witness at least 0.4 easier. Two-word search includes repeated families, neutral and zero-hit refill moves. Three-word search requires distinct non-bingo families, positive hits and at least two counters. Normal tile copies use canonical selections. This is a vocabulary proxy, not a guarantee of subjective discovery difficulty or of every possible three-word route."
+  },
+  "semanticReview": {
+    "fingerprint": "c293465adc78ccebbe81e1c298d0bb30873de566edbd61b8e59d66feaffab20a",
+    "verdict": "rejected",
+    "enemyConcept": "DAYS normally denotes periods of time. Treating it as daylight to make shade a counter requires an unfair change of sense.",
+    "bingoConcepts": {
+      "SHADY": "Shade does not oppose days. This is a forced daylight association, not a fair concept counter.",
+      "SHADOWY": "Same problem as SHADY: darkness versus days is not a clear counter relationship."
+    },
+    "routeVocabulary": "The easiest two- and three-word routes tie; SHADY is a short alternative to the advertised SHADOWY.",
+    "reviewer": "Codex editorial review, 2026-09-27"
+  }
+}

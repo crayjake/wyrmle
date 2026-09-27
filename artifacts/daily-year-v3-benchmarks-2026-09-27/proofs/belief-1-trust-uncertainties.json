@@ -1,0 +1,886 @@
+{
+  "id": "belief-1-trust-uncertainties",
+  "theme": "belief",
+  "side": 1,
+  "enemy": "TRUST",
+  "bingo": "UNCERTAINTIES",
+  "enemySense": "oewn-trust__1.09.01..",
+  "enemyLemma": "trust",
+  "bingoLemma": "uncertainty",
+  "armour": 0,
+  "frequency": 0.5975,
+  "answer": "UNCERTAINTIES",
+  "method": "bingo-first",
+  "generatorVersion": 3,
+  "accepted": true,
+  "profileVersion": "bingo-source-profiles-1:1843e454bd73",
+  "seeds": 2,
+  "seed": "bingo-first-3:TRUST:UNCERTAINTIES:13:two-turn-route",
+  "score": 167,
+  "analysis": {
+    "score": 167,
+    "bingos": [
+      "UNCERTAINTIES"
+    ],
+    "counterFamilies": 5,
+    "resistedFamilies": 3,
+    "winningOpenings": 9,
+    "repeatedCounterRoutes": 4,
+    "sustainedPositions": 2,
+    "sustainedFinalPositions": 2,
+    "neutralCleanupOpenings": 2,
+    "routes": [
+      {
+        "opening": "INQUIRY",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "DOUBT"
+          ],
+          "resisted": [
+            "TRUST"
+          ],
+          "neutral": 919
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "TRUST",
+            "ASSURANCE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "INQUIRY",
+            "DOUBTS",
+            "ACT"
+          ],
+          "tileIds": [
+            [
+              2,
+              0,
+              1,
+              10,
+              15,
+              4,
+              7
+            ],
+            [
+              19,
+              20,
+              13,
+              17,
+              5,
+              12
+            ],
+            [
+              6,
+              3,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "UNCERTAIN",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "QUESTION",
+            "DOUBT",
+            "DISTRUST"
+          ],
+          "resisted": [
+            "TRUST",
+            "TRUSTY"
+          ],
+          "neutral": 631
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "UNCERTAIN",
+            "QUESTION"
+          ],
+          "tileIds": [
+            [
+              10,
+              0,
+              3,
+              9,
+              4,
+              5,
+              6,
+              2,
+              8
+            ],
+            [
+              1,
+              13,
+              14,
+              12,
+              11,
+              15,
+              20,
+              21
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "UNSURE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [],
+          "resisted": [],
+          "neutral": 269
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": []
+        },
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "UNSURE",
+            "ACT",
+            "BIT"
+          ],
+          "tileIds": [
+            [
+              10,
+              0,
+              12,
+              13,
+              4,
+              9
+            ],
+            [
+              6,
+              3,
+              5
+            ],
+            [
+              17,
+              2,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL",
+            "NEUTRAL"
+          ],
+          "hits": [
+            3,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "QUERY",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "DOUBT"
+          ],
+          "resisted": [],
+          "neutral": 654
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "QUERY",
+            "DOUBTS",
+            "ACT"
+          ],
+          "tileIds": [
+            [
+              1,
+              10,
+              9,
+              4,
+              7
+            ],
+            [
+              19,
+              20,
+              13,
+              17,
+              5,
+              12
+            ],
+            [
+              6,
+              3,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "ENQUIRY",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "DOUBT",
+            "UNCERTAIN"
+          ],
+          "resisted": [
+            "TRUST"
+          ],
+          "neutral": 1204
+        },
+        "thirdTurn": {
+          "counters": [
+            "UNCERTAIN",
+            "DISTRUST"
+          ],
+          "resisted": [
+            "TRUST",
+            "SUSTAINED",
+            "ASSURANCE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ENQUIRY",
+            "DOUBTS",
+            "UNCERTAIN"
+          ],
+          "tileIds": [
+            [
+              9,
+              0,
+              1,
+              10,
+              2,
+              4,
+              7
+            ],
+            [
+              19,
+              20,
+              13,
+              17,
+              5,
+              12
+            ],
+            [
+              27,
+              8,
+              3,
+              14,
+              22,
+              11,
+              6,
+              15,
+              21
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "TRUST",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "DOUBT"
+          ],
+          "resisted": [],
+          "neutral": 420
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "CERTAINTY",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "QUESTION",
+            "DOUBT",
+            "UNSURE",
+            "DUBIOUS",
+            "DISTRUST"
+          ],
+          "resisted": [
+            "TRUST"
+          ],
+          "neutral": 605
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CERTAINTY",
+            "DISTRUST"
+          ],
+          "tileIds": [
+            [
+              3,
+              9,
+              4,
+              5,
+              6,
+              2,
+              0,
+              11,
+              7
+            ],
+            [
+              19,
+              15,
+              12,
+              16,
+              22,
+              10,
+              24,
+              18
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "opening": "TRUSTY",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "DOUBT"
+          ],
+          "resisted": [],
+          "neutral": 349
+        },
+        "thirdTurn": {
+          "counters": [
+            "QUESTION",
+            "DOUBT",
+            "DISTRUST"
+          ],
+          "resisted": [
+            "TRUST",
+            "SUSTAINED"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "TRUSTY",
+            "ANNOUNCED",
+            "DISTRUST"
+          ],
+          "tileIds": [
+            [
+              5,
+              4,
+              10,
+              12,
+              11,
+              7
+            ],
+            [
+              6,
+              0,
+              8,
+              20,
+              13,
+              21,
+              3,
+              9,
+              19
+            ],
+            [
+              23,
+              2,
+              24,
+              16,
+              22,
+              27,
+              25,
+              18
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            1,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "ACT",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "INQUIRY",
+            "UNSURE",
+            "QUERY",
+            "ENQUIRY"
+          ],
+          "resisted": [
+            "TRUST",
+            "TRUSTY"
+          ],
+          "neutral": 289
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ACT",
+            "UNSURE",
+            "BIT"
+          ],
+          "tileIds": [
+            [
+              6,
+              3,
+              5
+            ],
+            [
+              10,
+              0,
+              12,
+              13,
+              4,
+              9
+            ],
+            [
+              17,
+              2,
+              11
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [],
+          "resisted": [],
+          "neutral": 183
+        },
+        "thirdTurn": {
+          "counters": [
+            "QUESTION",
+            "DOUBT",
+            "DUBIOUS"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AIR",
+            "TEN",
+            "QUESTION"
+          ],
+          "tileIds": [
+            [
+              6,
+              2,
+              4
+            ],
+            [
+              5,
+              9,
+              0
+            ],
+            [
+              1,
+              10,
+              14,
+              12,
+              11,
+              15,
+              20,
+              8
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            1,
+            3
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "UNCERTAIN",
+      "DOUBTS"
+    ],
+    "tileIds": [
+      [
+        10,
+        0,
+        3,
+        9,
+        4,
+        5,
+        6,
+        2,
+        8
+      ],
+      [
+        19,
+        20,
+        13,
+        17,
+        11,
+        12
+      ]
+    ],
+    "labels": [
+      "COUNTER",
+      "COUNTER"
+    ],
+    "hits": [
+      3,
+      2
+    ]
+  },
+  "progression": {
+    "version": 3,
+    "policy": {
+      "version": 3,
+      "minimumGap": 0.4,
+      "threeWordMaxEffort": 4.8,
+      "threeWordMinimumZipf": 2.8,
+      "twoWordPositionBudget": 20000,
+      "threeWordPositionBudget": 12000
+    },
+    "fingerprint": "fe5669c88e171077c2da0e269964cb86639209193d1edf23e1246fdc94d81640",
+    "accepted": true,
+    "issues": [],
+    "bingos": [
+      {
+        "words": [
+          "UNCERTAINTIES"
+        ],
+        "zipfs": [
+          3.39
+        ],
+        "minZipf": 3.39,
+        "maxLength": 13,
+        "effort": 7.02,
+        "commonAndShort": false,
+        "witness": {
+          "words": [
+            "UNCERTAINTIES"
+          ],
+          "tileIds": [
+            [
+              10,
+              0,
+              3,
+              9,
+              4,
+              5,
+              6,
+              2,
+              8,
+              11,
+              15,
+              14,
+              12
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            5
+          ]
+        }
+      }
+    ],
+    "two": {
+      "witness": {
+        "words": [
+          "UNCERTAIN",
+          "DOUBTS"
+        ],
+        "tileIds": [
+          [
+            10,
+            0,
+            3,
+            9,
+            4,
+            5,
+            6,
+            2,
+            8
+          ],
+          [
+            19,
+            20,
+            13,
+            17,
+            11,
+            12
+          ]
+        ],
+        "labels": [
+          "COUNTER",
+          "COUNTER"
+        ],
+        "hits": [
+          3,
+          2
+        ]
+      },
+      "rating": {
+        "words": [
+          "UNCERTAIN",
+          "DOUBTS"
+        ],
+        "zipfs": [
+          3.99,
+          3.95
+        ],
+        "minZipf": 3.95,
+        "maxLength": 9,
+        "effort": 3.42,
+        "commonAndShort": false
+      },
+      "positions": 545,
+      "complete": true
+    },
+    "twoWordRoute": {
+      "witness": {
+        "words": [
+          "UNCERTAIN",
+          "DOUBTS"
+        ],
+        "tileIds": [
+          [
+            10,
+            0,
+            3,
+            9,
+            4,
+            5,
+            6,
+            2,
+            8
+          ],
+          [
+            19,
+            20,
+            13,
+            17,
+            11,
+            12
+          ]
+        ],
+        "labels": [
+          "COUNTER",
+          "COUNTER"
+        ],
+        "hits": [
+          3,
+          2
+        ]
+      },
+      "rating": {
+        "words": [
+          "UNCERTAIN",
+          "DOUBTS"
+        ],
+        "zipfs": [
+          3.99,
+          3.95
+        ],
+        "minZipf": 3.95,
+        "maxLength": 9,
+        "effort": 3.42,
+        "commonAndShort": false
+      },
+      "positions": 520,
+      "previews": 983,
+      "improvingWins": 1,
+      "searchComplete": true,
+      "scope": "Zipf ≥ 2.4; positive-hit moves; canonical normal tile IDs; distinct families; no starting bingo family; ≥2 counters for three words. Effort is an uncalibrated bottleneck proxy, not measured human difficulty."
+    },
+    "three": {
+      "witness": {
+        "words": [
+          "INQUIRY",
+          "ACT",
+          "DOUBTS"
+        ],
+        "tileIds": [
+          [
+            2,
+            0,
+            1,
+            10,
+            15,
+            4,
+            7
+          ],
+          [
+            6,
+            3,
+            5
+          ],
+          [
+            19,
+            20,
+            13,
+            17,
+            11,
+            12
+          ]
+        ],
+        "labels": [
+          "COUNTER",
+          "NEUTRAL",
+          "COUNTER"
+        ],
+        "hits": [
+          2,
+          1,
+          2
+        ]
+      },
+      "rating": {
+        "words": [
+          "INQUIRY",
+          "ACT",
+          "DOUBTS"
+        ],
+        "zipfs": [
+          4.25,
+          5.3,
+          3.95
+        ],
+        "minZipf": 3.95,
+        "maxLength": 7,
+        "effort": 1.7,
+        "commonAndShort": true
+      },
+      "positions": 6,
+      "complete": true
+    },
+    "scope": "Every admitted starting bingo and the cheapest exact two-word win under a frequency/length bottleneck score; a counter-led three-word witness at least 0.4 easier. Two-word search includes repeated families, neutral and zero-hit refill moves. Three-word search requires distinct non-bingo families, positive hits and at least two counters. Normal tile copies use canonical selections. This is a vocabulary proxy, not a guarantee of subjective discovery difficulty or of every possible three-word route."
+  },
+  "identity": {
+    "id": "belief-1-trust-uncertainties",
+    "enemy": "TRUST",
+    "board": "ACEEIINNQRSTTUUY",
+    "bingos": [
+      "UNCERTAINTIES"
+    ],
+    "bingoFamilies": [
+      "UNCERTAINTY"
+    ]
+  },
+  "novelty": [],
+  "asset": "puzzles/belief-1-trust-uncertainties-e975847442b4.json",
+  "publicationStatus": "reviewed",
+  "semanticPolicy": "Source-pinned concept pools with individually reviewed senses and lexical families. Unlabelled defined senses remain neutral; this is not an exhaustive contextual semantic proof.",
+  "semanticReview": {
+    "fingerprint": "fe5669c88e171077c2da0e269964cb86639209193d1edf23e1246fdc94d81640",
+    "verdict": "approved",
+    "enemyConcept": "TRUST means confidence in someone or something. Doubt, questioning and uncertainty challenge that confidence; no unusual sense of the enemy is needed.",
+    "bingoConcepts": {
+      "UNCERTAINTIES": "Uncertainties are doubts or things one cannot be sure of, undermining trust and confidence. The plural is natural and adds no invented suffix."
+    },
+    "routeVocabulary": "INQUIRY and DOUBTS are familiar words for questioning and doubt, with ACT as a neutral bridge. UNCERTAIN and DOUBTS give a distinct two-word route. All opening non-neutral families were reviewed: questions and uncertainty counter trust; trust, certainty and evidence reinforce it.",
+    "reviewer": "Codex editorial review, 2026-09-27"
+  },
+  "editorialReview": "TRUST means confidence in someone or something. Doubt, questioning and uncertainty challenge that confidence; no unusual sense of the enemy is needed. INQUIRY and DOUBTS are familiar words for questioning and doubt, with ACT as a neutral bridge. UNCERTAIN and DOUBTS give a distinct two-word route. All opening non-neutral families were reviewed: questions and uncertainty counter trust; trust, certainty and evidence reinforce it."
+}

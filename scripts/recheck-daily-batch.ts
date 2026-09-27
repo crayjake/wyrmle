@@ -9,6 +9,7 @@ import { findTwoWordWin } from './bingo/twoWordWin.ts'
 import { validateBingo } from './bingo/validate.ts'
 import { packDictionaryMeanings, unpackMeaningLexicon } from '../src/game/meaningPacking.ts'
 import { freshnessIssues, puzzleIdentity } from './bingo/freshness.ts'
+import { assessProgressionV3 } from './bingo/progressionV3.ts'
 
 const { values } = parseArgs({ options: { directory: { type: 'string', default: 'artifacts/daily-year-2026-10-26' } } })
 const directory = values.directory!, read = (path: string) => JSON.parse(readFileSync(path, 'utf8'))
@@ -22,8 +23,9 @@ for (const id of read(`${directory}/editorial-shortlist.json`)) {
   const encounter = meanings.compile({ ...payload.encounter, meaningLexicon: undefined })
   const analysis = analyseBingo(encounter), twoWordWin = findTwoWordWin(encounter, analysis.bingos)
   const identity = puzzleIdentity(id, encounter), novelty = freshnessIssues(identity, history)
+  const progression = assessProgressionV3(encounter)
   const accepted = analysis.counterFamilies >= 4 && analysis.repeatedCounterRoutes >= 4 && analysis.resistedFamilies >= 2
-    && analysis.sustainedPositions >= 2 && analysis.sustainedFinalPositions >= 2 && !!twoWordWin && !novelty.length
+    && analysis.sustainedPositions >= 2 && analysis.sustainedFinalPositions >= 2 && progression.accepted && !novelty.length
   const packed = packDictionaryMeanings(encounter.meaningLexicon!)
   if (accepted) {
     assert.deepEqual(unpackMeaningLexicon(packed), encounter.meaningLexicon)
@@ -31,8 +33,13 @@ for (const id of read(`${directory}/editorial-shortlist.json`)) {
   }
   const bytes = JSON.stringify({ ...payload, encounter: { ...encounter, meaningLexicon: packed } })
   const asset = `puzzles/${id}-${createHash('sha256').update(bytes).digest('hex').slice(0, 12)}.json`
-  const updated = { ...report, accepted, profileVersion: bingoProfileVersion(profile), analysis, twoWordWin,
-    score: analysis.score, identity, novelty, asset, editorialReview: 'Enemy/bingo relationship and opening non-neutral meanings reviewed; homograph forms corrected and obvious concept words added. Existing board and refills preserved, all quality gates rerun.' }
+  const semanticReview = report.semanticReview?.fingerprint === progression.fingerprint ? report.semanticReview : undefined
+  const updated = { ...report, accepted, generatorVersion: 3, progression, semanticReview,
+    publicationStatus: !accepted ? 'rejected' : semanticReview?.verdict === 'approved' ? 'reviewed' : 'needs-semantic-review',
+    profileVersion: bingoProfileVersion(profile), analysis, twoWordWin: progression.twoWordRoute.witness ?? twoWordWin,
+    score: analysis.score, identity, novelty, asset,
+    editorialReview: semanticReview?.verdict === 'approved' ? report.editorialReview : undefined,
+    recheckNote: 'Frozen meanings recompiled and mechanical/difficulty gates rerun. A semantic review is retained only for an identical encounter fingerprint.' }
   writeFileSync(`${directory}/payloads/${id}.puzzle.json`, bytes)
   writeFileSync(`${directory}/reports/${id}.json`, JSON.stringify(updated, null, 2)+'\n')
   console.log(JSON.stringify({ id, accepted, counters: analysis.counterFamilies, routes: analysis.repeatedCounterRoutes, sustained: analysis.sustainedPositions, finals: analysis.sustainedFinalPositions, twoWordWin: twoWordWin?.words, novelty }))

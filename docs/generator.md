@@ -1,5 +1,7 @@
 # Generator, solver and review workflow
 
+**For current daily authoring, use [bingo-first generator / validator v3](generator-v3.md).** It implements the counter-first construction method and adds a verified 3 → 2 → bingo difficulty ladder, reusable calendar benchmarks and a required publication meaning review. The v6 workflow below is the older meaning-first workshop and historical research documentation, not the current daily publisher.
+
 Current authoring (generator v6) uses ordinary letter tiles only. The browser generator has no Revive control; `--regen`, `--revives` and new special-tile requests are rejected. Published v14 likewise removes specials while keeping v13 available for saved-game replay. Historical special-tile analysis below describes archived encounters, not new puzzles.
 
 This is a local **development review pipeline** for the letter-strike game. New generation defaults to meaning-first rules: a definition-backed word table is compiled before search; grammar and long-word bonuses are disabled. Generated encounters use the existing `createLetterStrikeGame`, `previewLetterStrike` and `submitLetterStrike` functions. Nothing is published automatically. Committed Daily attempts keep their frozen rules and meanings; **Reset puzzle** deliberately opens that date’s current publication.

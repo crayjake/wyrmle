@@ -2,6 +2,8 @@
 
 A deterministic daily word game where the enemy word's letters are its health. Tap or swipe across tiles in spelling order, preview the meaning match and exact enemy cells that will be hit, and remove every letter before your lives run out. New games use ordinary letter tiles: meaning, armour and the changing letter supply determine your choices.
 
+Current puzzle authoring uses [bingo-first generator / validator v3](docs/generator-v3.md), with verified three-word, two-word and bingo difficulty tiers. Run `npm run benchmark:v3` to check the five September 11–15 samples. The older workshop and publication notes below preserve earlier experiments.
+
 The [archived CHAOS v13 review](docs/meaning-assessment-review.md) records the frozen dictionary, HALCYONS correction and publication proofs. The [generator guide](docs/generator.md#what-you-can-do-yourself) explains which enemies you can generate yourself and what still needs semantic review before publication. The [lexical and onboarding review](docs/lexical-onboarding-review.md) explains the earlier word-label pipeline, the short demo and the research behind it. The [gameplay review](docs/gameplay-onboarding-pass.md) preserves earlier player tests and records phone checks. The [ANGER review](docs/revive-candidate-notes.md) records the earlier bonus-based publication and its scoped rescue certificate; those proofs do not transfer to meaning-first puzzles.
 
 ## Run and verify

@@ -1,0 +1,107 @@
+[
+  {
+    "date": "2026-09-11",
+    "previous": {
+      "date": "2026-09-11",
+      "id": "motion-0-stop-transports",
+      "enemy": "STOP",
+      "asset": "puzzles/motion-0-stop-transports-953cde49313e.json",
+      "method": "bingo-first",
+      "report": "artifacts/daily-year-2026-10-26/proofs/motion-0-stop-transports.json"
+    },
+    "current": {
+      "date": "2026-09-11",
+      "id": "motion-0-stop-transports",
+      "enemy": "STOP",
+      "asset": "puzzles/motion-0-stop-transports-953cde49313e.json",
+      "method": "bingo-first",
+      "report": "artifacts/daily-year-2026-10-26/proofs/motion-0-stop-transports.json"
+    },
+    "changed": false,
+    "report": "artifacts/daily-year-v3-benchmarks-2026-09-27/proofs/motion-0-stop-transports.json"
+  },
+  {
+    "date": "2026-09-12",
+    "previous": {
+      "date": "2026-09-12",
+      "id": "cleanliness-0-soil-sterilization",
+      "enemy": "SOIL",
+      "asset": "puzzles/cleanliness-0-soil-sterilization-830eb151e488.json",
+      "method": "bingo-first",
+      "report": "artifacts/daily-year-2026-10-26/proofs/cleanliness-0-soil-sterilization.json"
+    },
+    "current": {
+      "date": "2026-09-12",
+      "id": "cleanliness-0-soil-sterilization",
+      "enemy": "SOIL",
+      "asset": "puzzles/cleanliness-0-soil-sterilization-830eb151e488.json",
+      "method": "bingo-first",
+      "report": "artifacts/daily-year-2026-10-26/proofs/cleanliness-0-soil-sterilization.json"
+    },
+    "changed": false,
+    "report": "artifacts/daily-year-v3-benchmarks-2026-09-27/proofs/cleanliness-0-soil-sterilization.json"
+  },
+  {
+    "date": "2026-09-13",
+    "previous": {
+      "date": "2026-09-13",
+      "id": "light-1-days-shadowy",
+      "enemy": "DAYS",
+      "asset": "puzzles/light-1-days-shadowy-860b776720d9.json",
+      "method": "bingo-first",
+      "report": "artifacts/daily-year-2026-10-26/proofs/light-1-days-shadowy.json"
+    },
+    "current": {
+      "date": "2026-09-13",
+      "id": "belief-1-trust-uncertainties",
+      "enemy": "TRUST",
+      "asset": "puzzles/belief-1-trust-uncertainties-e975847442b4.json",
+      "method": "bingo-first",
+      "report": "artifacts/daily-year-v3-benchmarks-2026-09-27/proofs/belief-1-trust-uncertainties.json"
+    },
+    "changed": true,
+    "report": "artifacts/daily-year-v3-benchmarks-2026-09-27/proofs/belief-1-trust-uncertainties.json"
+  },
+  {
+    "date": "2026-09-14",
+    "previous": {
+      "date": "2026-09-14",
+      "id": "concealment-0-hide-exhibited",
+      "enemy": "HIDE",
+      "asset": "puzzles/concealment-0-hide-exhibited-2a9fb437c54a.json",
+      "method": "bingo-first",
+      "report": "artifacts/daily-year-2026-10-26/proofs/concealment-0-hide-exhibited.json"
+    },
+    "current": {
+      "date": "2026-09-14",
+      "id": "concealment-0-hide-exhibited",
+      "enemy": "HIDE",
+      "asset": "puzzles/concealment-0-hide-exhibited-2a9fb437c54a.json",
+      "method": "bingo-first",
+      "report": "artifacts/daily-year-2026-10-26/proofs/concealment-0-hide-exhibited.json"
+    },
+    "changed": false,
+    "report": "artifacts/daily-year-v3-benchmarks-2026-09-27/proofs/concealment-0-hide-exhibited.json"
+  },
+  {
+    "date": "2026-09-15",
+    "previous": {
+      "date": "2026-09-15",
+      "id": "light-0-dim-illuminated",
+      "enemy": "DIM",
+      "asset": "puzzles/light-0-dim-illuminated-f0f671fbcb59.json",
+      "method": "bingo-first",
+      "report": "artifacts/daily-year-2026-10-26/proofs/light-0-dim-illuminated.json"
+    },
+    "current": {
+      "date": "2026-09-15",
+      "id": "light-0-dim-illuminated",
+      "enemy": "DIM",
+      "asset": "puzzles/light-0-dim-illuminated-f0f671fbcb59.json",
+      "method": "bingo-first",
+      "report": "artifacts/daily-year-2026-10-26/proofs/light-0-dim-illuminated.json"
+    },
+    "changed": false,
+    "report": "artifacts/daily-year-v3-benchmarks-2026-09-27/proofs/light-0-dim-illuminated.json"
+  }
+]

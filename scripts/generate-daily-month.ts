@@ -11,6 +11,7 @@ import { validateBingo } from './bingo/validate.ts'
 import { packMeaningLexicon, unpackMeaningLexicon } from '../src/game/meaningPacking.ts'
 import { freshnessIssues, mergeDailyWindow, puzzleIdentity } from './bingo/freshness.ts'
 import type { PuzzleIdentity } from './bingo/freshness.ts'
+import { assessProgressionV3, validateProgressionV3 } from './bingo/progressionV3.ts'
 
 const { values } = parseArgs({ options: { seeds: { type: 'string', default: '12' },
   start: { type: 'string', default: new Date().toISOString().slice(0, 10) }, days: { type: 'string', default: '30' },
@@ -61,7 +62,9 @@ for (const profile of profiles.filter(p => !values.enemies || values.enemies.toU
       }
       old.novelty = novelty
       old.twoWordWin ??= findTwoWordWin(encounter, old.analysis.bingos)
-      if (!old.twoWordWin || old.novelty.length) old.accepted = false
+      old.progression = assessProgressionV3(encounter)
+      old.generatorVersion = 3
+      if (!old.progression.accepted || old.novelty.length) old.accepted = false
       writeFileSync(path, JSON.stringify(old, null, 2) + '\n')
       assert.ok(accepts(old.analysis))
       validateBingo(encounter, profile.bingo, old.analysis)
@@ -81,21 +84,21 @@ for (const profile of profiles.filter(p => !values.enemies || values.enemies.toU
       const analysis = analyseBingo(candidate.encounter)
       const novelty = freshnessIssues(puzzleIdentity(id, candidate.encounter), history)
       const twoWordWin = accepts(analysis) ? findTwoWordWin(candidate.encounter, analysis.bingos) : null
-      candidates.push({ ...candidate, analysis, twoWordWin, novelty })
+      const progression = twoWordWin && !novelty.length ? assessProgressionV3(candidate.encounter) : null
+      candidates.push({ ...candidate, analysis, twoWordWin: progression?.twoWordRoute.witness ?? twoWordWin, progression, novelty })
     }
   }
   tryPlans(3)
-  const baseline = [...candidates].sort((a, b) => Number(accepts(b.analysis)) - Number(accepts(a.analysis))
-    || b.analysis.score - a.analysis.score)[0]
-  if (!accepts(baseline.analysis) || !baseline.twoWordWin) tryPlans(2)
-  candidates.sort((a, b) => Number(accepts(b.analysis) && !!b.twoWordWin && !b.novelty.length) - Number(accepts(a.analysis) && !!a.twoWordWin && !a.novelty.length) || b.analysis.score - a.analysis.score)
+  if (!candidates.some(c => accepts(c.analysis) && c.progression?.accepted && !c.novelty.length)) tryPlans(2)
+  candidates.sort((a, b) => Number(accepts(b.analysis) && !!b.progression?.accepted && !b.novelty.length) - Number(accepts(a.analysis) && !!a.progression?.accepted && !a.novelty.length) || b.analysis.score - a.analysis.score)
   const chosen = candidates[0]
-  const pass = accepts(chosen.analysis) && !!chosen.twoWordWin && !chosen.novelty.length
+  const pass = accepts(chosen.analysis) && !!chosen.progression?.accepted && !chosen.novelty.length
   if (pass) validateBingo(chosen.encounter, profile.bingo, chosen.analysis)
   const payload = { version: 1, id, method: 'bingo-first', semanticStatus: 'source-profile',
     encounter: { ...chosen.encounter, meaningLexicon: packMeaningLexicon(chosen.encounter.meaningLexicon!) } }
   const hash = createHash('sha256').update(JSON.stringify(payload)).digest('hex').slice(0, 12)
   const report = { id, enemy: profile.enemy, answer: profile.bingo, accepted: pass, seed: chosen.seed,
+    generatorVersion: 3, progression: chosen.progression, publicationStatus: pass ? 'needs-semantic-review' : 'rejected',
     score: chosen.analysis.score, analysis: chosen.analysis, twoWordWin: chosen.twoWordWin, roots: profile.roots, novelty: chosen.novelty,
     semanticPolicy: 'Pinned source senses and reviewed lexical families; unlabelled defined senses are neutral. Not a proof of exhaustive contextual semantic coverage.',
     asset: `puzzles/${id}-${hash}.json` }
@@ -140,7 +143,9 @@ if (values.publish) {
   const identities = []
   for (const item of chosen) {
     const { encounter } = readJson(`${directory}/${item.id}.puzzle.json`)
-    const identity = puzzleIdentity(item.id, { ...encounter, meaningLexicon: unpackMeaningLexicon(encounter.meaningLexicon) })
+    const decoded = { ...encounter, meaningLexicon: unpackMeaningLexicon(encounter.meaningLexicon) }
+    validateProgressionV3(decoded, item.semanticReview)
+    const identity = puzzleIdentity(item.id, decoded)
     assert.deepEqual(freshnessIssues(identity, [...history, ...identities]), [], `Repeated puzzle: ${item.id}`)
     identities.push(identity)
   }

@@ -1,0 +1,1035 @@
+{
+  "id": "cleanliness-0-soil-sterilization",
+  "theme": "cleanliness",
+  "side": 0,
+  "enemy": "SOIL",
+  "bingo": "STERILIZATION",
+  "enemySense": "oewn-soil__1.26.00..",
+  "enemyLemma": "soil",
+  "bingoLemma": "sterilization",
+  "armour": 1,
+  "frequency": 0.525,
+  "answer": "STERILIZATION",
+  "method": "bingo-first",
+  "accepted": true,
+  "profileVersion": "bingo-source-profiles-1:de0507502d6c",
+  "seeds": 2,
+  "seed": "bingo-first-3:SOIL:STERILIZATION:13",
+  "score": 313,
+  "analysis": {
+    "score": 313,
+    "bingos": [
+      "STERILIZATION"
+    ],
+    "counterFamilies": 7,
+    "resistedFamilies": 3,
+    "winningOpenings": 10,
+    "repeatedCounterRoutes": 8,
+    "sustainedPositions": 3,
+    "sustainedFinalPositions": 5,
+    "neutralCleanupOpenings": 0,
+    "routes": [
+      {
+        "opening": "CLEAN",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "RINSE"
+          ],
+          "resisted": [
+            "SPOT"
+          ],
+          "neutral": 426
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "RINSE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "CLEAN",
+            "CLEANUP",
+            "SPOTLESS",
+            "SANITIZE"
+          ],
+          "resisted": [
+            "SPOT",
+            "SOIL",
+            "STAIN"
+          ],
+          "neutral": 869
+        },
+        "thirdTurn": {
+          "counters": [
+            "DISTILLED",
+            "STERILIZED",
+            "SANITIZED",
+            "DISTILL"
+          ],
+          "resisted": [
+            "DIRT",
+            "STAINED",
+            "SLUR"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RINSE",
+            "SPOTLESS",
+            "DISTILLED"
+          ],
+          "tileIds": [
+            [
+              3,
+              8,
+              6,
+              10,
+              0
+            ],
+            [
+              16,
+              17,
+              1,
+              7,
+              4,
+              2,
+              18,
+              20
+            ],
+            [
+              22,
+              9,
+              23,
+              14,
+              12,
+              26,
+              28,
+              21,
+              24
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "CLEANSE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "RINSE"
+          ],
+          "resisted": [
+            "SPOT",
+            "DIRT"
+          ],
+          "neutral": 649
+        },
+        "thirdTurn": {
+          "counters": [
+            "RINSE",
+            "STERILIZED"
+          ],
+          "resisted": [
+            "DIRT",
+            "SLUR"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CLEANSE",
+            "POST",
+            "STERILIZED"
+          ],
+          "tileIds": [
+            [
+              5,
+              4,
+              0,
+              11,
+              6,
+              10,
+              2
+            ],
+            [
+              17,
+              1,
+              16,
+              7
+            ],
+            [
+              18,
+              14,
+              21,
+              3,
+              8,
+              26,
+              9,
+              13,
+              25,
+              22
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "CLEANERS",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [],
+          "resisted": [
+            "SPOT"
+          ],
+          "neutral": 354
+        },
+        "thirdTurn": {
+          "counters": [
+            "RINSE",
+            "STERILIZED"
+          ],
+          "resisted": [
+            "DIRT",
+            "SLUR"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CLEANERS",
+            "POST",
+            "STERILIZED"
+          ],
+          "tileIds": [
+            [
+              5,
+              4,
+              0,
+              11,
+              6,
+              2,
+              3,
+              10
+            ],
+            [
+              17,
+              1,
+              16,
+              7
+            ],
+            [
+              18,
+              14,
+              21,
+              27,
+              8,
+              26,
+              9,
+              13,
+              25,
+              22
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "CLEANSER",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [],
+          "resisted": [
+            "SPOT"
+          ],
+          "neutral": 354
+        },
+        "thirdTurn": {
+          "counters": [
+            "RINSE",
+            "STERILIZED"
+          ],
+          "resisted": [
+            "DIRT",
+            "SLUR"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CLEANSER",
+            "POST",
+            "STERILIZED"
+          ],
+          "tileIds": [
+            [
+              5,
+              4,
+              0,
+              11,
+              6,
+              10,
+              2,
+              3
+            ],
+            [
+              17,
+              1,
+              16,
+              7
+            ],
+            [
+              18,
+              14,
+              21,
+              27,
+              8,
+              26,
+              9,
+              13,
+              25,
+              22
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "SCOUR",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "SANITIZE"
+          ],
+          "resisted": [
+            "STAIN"
+          ],
+          "neutral": 400
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "DIRT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SCOUR",
+            "SANITIZE",
+            "LED"
+          ],
+          "tileIds": [
+            [
+              10,
+              5,
+              1,
+              15,
+              3
+            ],
+            [
+              16,
+              11,
+              6,
+              8,
+              7,
+              9,
+              13,
+              0
+            ],
+            [
+              4,
+              2,
+              22
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "STERILIZE",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [],
+          "resisted": [
+            "SPOT",
+            "STAINED"
+          ],
+          "neutral": 801
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "STERILIZE",
+            "NON"
+          ],
+          "tileIds": [
+            [
+              10,
+              7,
+              0,
+              3,
+              8,
+              4,
+              9,
+              13,
+              2
+            ],
+            [
+              6,
+              1,
+              19
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SOIL",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "RINSE",
+            "SANITIZE"
+          ],
+          "resisted": [
+            "STAIN"
+          ],
+          "neutral": 883
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "STAIN",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "RINSE",
+            "SPOTLESS",
+            "SCOUR",
+            "STERILIZE"
+          ],
+          "resisted": [
+            "SPOT",
+            "SOIL",
+            "SLUR"
+          ],
+          "neutral": 940
+        },
+        "thirdTurn": {
+          "counters": [
+            "SCOUR"
+          ],
+          "resisted": [
+            "SLUR"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "STAIN",
+            "STERILIZE",
+            "SCOUR"
+          ],
+          "tileIds": [
+            [
+              10,
+              7,
+              11,
+              8,
+              6
+            ],
+            [
+              16,
+              14,
+              0,
+              3,
+              9,
+              4,
+              12,
+              13,
+              2
+            ],
+            [
+              18,
+              5,
+              1,
+              15,
+              27
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SLUR",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "SANITIZE"
+          ],
+          "resisted": [
+            "SPOT",
+            "STAIN"
+          ],
+          "neutral": 502
+        },
+        "thirdTurn": {
+          "counters": [
+            "SPOTLESS"
+          ],
+          "resisted": [
+            "SPOT",
+            "SOIL",
+            "DIRT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SLUR",
+            "SANITIZE",
+            "SPOTLESS"
+          ],
+          "tileIds": [
+            [
+              10,
+              4,
+              15,
+              3
+            ],
+            [
+              16,
+              11,
+              6,
+              8,
+              7,
+              9,
+              13,
+              0
+            ],
+            [
+              18,
+              17,
+              1,
+              14,
+              26,
+              2,
+              20,
+              23
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SPOTLESS"
+          ],
+          "resisted": [
+            "SPOT",
+            "SOIL"
+          ],
+          "neutral": 546
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AIR",
+            "SPOTLESS",
+            "DID"
+          ],
+          "tileIds": [
+            [
+              11,
+              8,
+              3
+            ],
+            [
+              10,
+              17,
+              1,
+              7,
+              4,
+              0,
+              16,
+              18
+            ],
+            [
+              22,
+              9,
+              24
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "ICE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "RINSE",
+            "SPOTLESS",
+            "SANITIZE"
+          ],
+          "resisted": [
+            "SPOT",
+            "SOIL",
+            "STAIN",
+            "SLUR"
+          ],
+          "neutral": 1062
+        },
+        "thirdTurn": {
+          "counters": [
+            "RINSE",
+            "STERILIZED",
+            "SANITIZED"
+          ],
+          "resisted": [
+            "DIRT",
+            "STAINED",
+            "SLUR"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ICE",
+            "SPOTLESS",
+            "RINSE"
+          ],
+          "tileIds": [
+            [
+              8,
+              5,
+              0
+            ],
+            [
+              10,
+              17,
+              1,
+              7,
+              4,
+              2,
+              16,
+              18
+            ],
+            [
+              3,
+              9,
+              6,
+              20,
+              21
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "SANITIZE",
+      "SPOTLESS"
+    ],
+    "tileIds": [
+      [
+        10,
+        11,
+        6,
+        8,
+        7,
+        9,
+        13,
+        0
+      ],
+      [
+        16,
+        17,
+        1,
+        14,
+        4,
+        2,
+        18,
+        20
+      ]
+    ],
+    "labels": [
+      "COUNTER",
+      "COUNTER"
+    ],
+    "hits": [
+      3,
+      2
+    ]
+  },
+  "identity": {
+    "id": "cleanliness-0-soil-sterilization",
+    "enemy": "SOIL",
+    "board": "ACEEIIILNORSTTUZ",
+    "bingos": [
+      "STERILIZATION"
+    ],
+    "bingoFamilies": [
+      "STERILIZATION"
+    ]
+  },
+  "novelty": [],
+  "asset": "puzzles/cleanliness-0-soil-sterilization-830eb151e488.json",
+  "semanticPolicy": "Source-pinned concept pools with individually reviewed senses and lexical families. Unlabelled defined senses remain neutral; this is not an exhaustive contextual semantic proof.",
+  "editorialReview": "SOIL is dirt or the condition of being dirty, rather than a gardening-only reading. Rinsing, cleaning and sterilizing counter contamination. RINSE and SPOTLESS are natural cleaning words. ANTI is a dictionary word used here only as a neutral move. SANITIZE and SPOTLESS give a natural independent two-word route; the legal shorter DISTIL shortcut is included in the lower-bound search, not required from the player.",
+  "generatorVersion": 3,
+  "progression": {
+    "version": 3,
+    "policy": {
+      "version": 3,
+      "minimumGap": 0.4,
+      "threeWordMaxEffort": 4.8,
+      "threeWordMinimumZipf": 2.8,
+      "twoWordPositionBudget": 20000,
+      "threeWordPositionBudget": 12000
+    },
+    "fingerprint": "9759bef00f35dc17304d3a6bc5f4b7151148da0c8f7314d764e4075f9db51221",
+    "accepted": true,
+    "issues": [],
+    "bingos": [
+      {
+        "words": [
+          "STERILIZATION"
+        ],
+        "zipfs": [
+          3.1
+        ],
+        "minZipf": 3.1,
+        "maxLength": 13,
+        "effort": 7.6,
+        "commonAndShort": false,
+        "witness": {
+          "words": [
+            "STERILIZATION"
+          ],
+          "tileIds": [
+            [
+              10,
+              7,
+              0,
+              3,
+              8,
+              4,
+              9,
+              13,
+              11,
+              14,
+              12,
+              1,
+              6
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            5
+          ]
+        }
+      }
+    ],
+    "two": {
+      "witness": {
+        "words": [
+          "COUNTER",
+          "DISTIL"
+        ],
+        "tileIds": [
+          [
+            5,
+            1,
+            15,
+            6,
+            7,
+            0,
+            3
+          ],
+          [
+            22,
+            8,
+            10,
+            14,
+            9,
+            4
+          ]
+        ],
+        "labels": [
+          "NEUTRAL",
+          "COUNTER"
+        ],
+        "hits": [
+          1,
+          4
+        ]
+      },
+      "rating": {
+        "words": [
+          "COUNTER",
+          "DISTIL"
+        ],
+        "zipfs": [
+          4.56,
+          2.04
+        ],
+        "minZipf": 2.04,
+        "maxLength": 7,
+        "effort": 5.52,
+        "commonAndShort": false
+      },
+      "positions": 1575,
+      "complete": true
+    },
+    "twoWordRoute": {
+      "witness": {
+        "words": [
+          "SANITIZE",
+          "SPOTLESS"
+        ],
+        "tileIds": [
+          [
+            10,
+            11,
+            6,
+            8,
+            7,
+            9,
+            13,
+            0
+          ],
+          [
+            16,
+            17,
+            1,
+            14,
+            4,
+            2,
+            18,
+            20
+          ]
+        ],
+        "labels": [
+          "COUNTER",
+          "COUNTER"
+        ],
+        "hits": [
+          3,
+          2
+        ]
+      },
+      "rating": {
+        "words": [
+          "SANITIZE",
+          "SPOTLESS"
+        ],
+        "zipfs": [
+          2.42,
+          3.12
+        ],
+        "minZipf": 2.42,
+        "maxLength": 8,
+        "effort": 5.96,
+        "commonAndShort": false
+      },
+      "positions": 1264,
+      "previews": 1586,
+      "improvingWins": 2,
+      "searchComplete": true,
+      "scope": "Zipf ≥ 2.4; positive-hit moves; canonical normal tile IDs; distinct families; no starting bingo family; ≥2 counters for three words. Effort is an uncalibrated bottleneck proxy, not measured human difficulty."
+    },
+    "three": {
+      "witness": {
+        "words": [
+          "RINSE",
+          "ANTI",
+          "SPOTLESS"
+        ],
+        "tileIds": [
+          [
+            3,
+            8,
+            6,
+            10,
+            0
+          ],
+          [
+            11,
+            19,
+            7,
+            9
+          ],
+          [
+            16,
+            17,
+            1,
+            14,
+            4,
+            2,
+            18,
+            20
+          ]
+        ],
+        "labels": [
+          "COUNTER",
+          "NEUTRAL",
+          "COUNTER"
+        ],
+        "hits": [
+          2,
+          1,
+          2
+        ]
+      },
+      "rating": {
+        "words": [
+          "RINSE",
+          "ANTI",
+          "SPOTLESS"
+        ],
+        "zipfs": [
+          3.48,
+          5.01,
+          3.12
+        ],
+        "minZipf": 3.12,
+        "maxLength": 8,
+        "effort": 4.56,
+        "commonAndShort": false
+      },
+      "positions": 453,
+      "complete": true
+    },
+    "scope": "Every admitted starting bingo and the cheapest exact two-word win under a frequency/length bottleneck score; a counter-led three-word witness at least 0.4 easier. Two-word search includes repeated families, neutral and zero-hit refill moves. Three-word search requires distinct non-bingo families, positive hits and at least two counters. Normal tile copies use canonical selections. This is a vocabulary proxy, not a guarantee of subjective discovery difficulty or of every possible three-word route."
+  },
+  "semanticReview": {
+    "fingerprint": "9759bef00f35dc17304d3a6bc5f4b7151148da0c8f7314d764e4075f9db51221",
+    "verdict": "approved",
+    "enemyConcept": "SOIL is dirt or the condition of being dirty, rather than a gardening-only reading. Rinsing, cleaning and sterilizing counter contamination.",
+    "bingoConcepts": {
+      "STERILIZATION": "Sterilization removes contamination through cleaning or disinfection. This familiar process counters dirty or contaminated soil; it is a conceptual counter, not a claim that garden soil is an antonym of sterility."
+    },
+    "routeVocabulary": "RINSE and SPOTLESS are natural cleaning words. ANTI is a dictionary word used here only as a neutral move. SANITIZE and SPOTLESS give a natural independent two-word route; the legal shorter DISTIL shortcut is included in the lower-bound search, not required from the player.",
+    "reviewer": "Codex editorial review, 2026-09-27"
+  },
+  "publicationStatus": "reviewed"
+}
