@@ -1,0 +1,86 @@
+{
+  "puzzles": 38,
+  "corpus": "Pinned wordfreq 3.1.1 English large",
+  "savedTwoImprovedByOtherRecordedRoute": 22,
+  "comparableRecordedPuzzles": 37,
+  "recordedThreeHarderThanTwo": 8,
+  "recordedTwoHarderThanEasiestBingo": 5,
+  "displayedAnswerNotEasiestBingo": 5,
+  "recordedCommonShortThree": 23,
+  "searches": {
+    "puzzles": 38,
+    "completeTwo": 38,
+    "completeThree": 28,
+    "improvedTwo": 12,
+    "improvedThree": 23,
+    "commonShortThree": 30,
+    "comparable": 38,
+    "threeHarderThanTwo": 0,
+    "twoHarderThanBingo": 2,
+    "strictlyOrdered": 22
+  },
+  "thirdWordChecks": {
+    "prefixes": 203,
+    "noCommonShortFinisher": 48,
+    "savedFinisherCanBeImproved": 68
+  },
+  "observedSensitivity": [
+    {
+      "lengthWeight": 0.4,
+      "threeHarderThanTwo": 9
+    },
+    {
+      "lengthWeight": 0.6,
+      "threeHarderThanTwo": 8
+    },
+    {
+      "lengthWeight": 0.8,
+      "threeHarderThanTwo": 8
+    }
+  ],
+  "protectedFiles": {
+    "src/daily/schedule.json": "526ae8744fff06d7aa4a8592d07f492484866ffe56606da4b96a1f8368e79471",
+    "src/daily/archive.json": "a9c5ebafdd9dd89e07177704436c23a9f188f34854ad1edc72cce94ae6212e50",
+    "src/daily/guides.json": "48bf86c8f5515ebb881ae1e1add3f425f961e89856d4cfa95e119c1165b859b0",
+    "scripts/bingo/published-history.json": "02244e15839dffc989c0adc39140aad14f8db2b0e1cac2458092be80c8c8e9df",
+    "public/puzzles/motion-0-stop-transports-953cde49313e.json": "953cde49313ee40cea39699cf23441e62e711f7e27c93dae4be4a0bbd9e65f89",
+    "public/puzzles/cleanliness-0-soil-sterilization-830eb151e488.json": "830eb151e4881a41de336fd61d3f6b3d56430b64146810f2fe9cd3cd9dd948d1",
+    "public/puzzles/light-1-days-shadowy-860b776720d9.json": "860b776720d971bf2878e4ab2d0eb8ab3da81aa209c49528947fee6fdb70b538",
+    "public/puzzles/concealment-0-hide-exhibited-2a9fb437c54a.json": "2a9fb437c54adcd35e7954540c3363f835165cab91ef013b2a81a19c2727e863",
+    "public/puzzles/light-0-dim-illuminated-f0f671fbcb59.json": "f0f671fbcb593c6a4553ec5248c92bbbbf06121bd166d708a3ee176c39298a38",
+    "public/puzzles/light-0-shady-daylights-464d1fd809a0.json": "464d1fd809a0d222f6447c70e1321ffadbccde96740d97b33955a77af484cfb5",
+    "public/puzzles/cleanliness-1-rinse-smearing-50bc3ccddb48.json": "50bc3ccddb480f3011221597025205e69f46149117f76de2d4e1abf35e871bbc",
+    "public/puzzles/concealment-0-veil-revelation-9c9a2205b81e.json": "9c9a2205b81e40a3d9bf9e014f2e20604a28eb3927006275b130e666e5f5e871",
+    "public/puzzles/speed-1-raced-crawled-55b017aa524c.json": "55b017aa524c1b53d1a77af59b7a88fe3cc2a7513302f3f2dade16765f251b8b",
+    "public/puzzles/alliance-0-contend-confederation-459b26b16391.json": "459b26b163917727269333242178282cb8964b3a72d106db9fd32d4a774f08df",
+    "public/puzzles/permission-0-denies-licensed-20b3c08a2479.json": "20b3c08a2479a968a0d292ce04feb468c69daabb3f931d6da7d50b128efbac6d",
+    "public/puzzles/praise-1-praised-disparaged-6821048c2e61.json": "6821048c2e615ab319e7adbf5e01ff0345f22491fa8878d041175a3dfb99127b",
+    "public/puzzles/anger-0-tease-tolerates-01f502600dcf.json": "01f502600dcf7fb170a76c0bb17bcc10e5c2da50966f15456c34ffaf48dac083",
+    "public/puzzles/temperature-0-winter-sweltering-516576ca4c38.json": "516576ca4c38698248e24de280e56f70777bf8287dae577619f54544e03ff23b",
+    "public/puzzles/company-0-sole-sociable-06a81a462fd3.json": "06a81a462fd3eb182eb25cab9f13853484bfbbfd5e09915f8fc75f73a2db0bf0",
+    "public/puzzles/size-0-increase-decreasing-ec23b0ac1bb2.json": "ec23b0ac1bb2d62560f548c5525d3d9c05408daa27eb39ca662666f61e95506f",
+    "public/puzzles/safety-1-guard-dangerous-cff1b712456c.json": "cff1b712456c225376007d23922599e8357e03dd3802b8daca7705ea163d6c36",
+    "public/puzzles/softness-0-stone-softened-3cea0fc52953.json": "3cea0fc52953296072021b0ca5efc947ceca62f81d5694b847e4f016a5d2ffca",
+    "public/puzzles/balance-0-list-stabilise-738c6d0517c4.json": "738c6d0517c4d7f0d684692c0dee8412ee9dc3635b541619787ca7e397672229",
+    "public/puzzles/truth-0-lie-established-9e682b64a8ef.json": "9e682b64a8ef5207bddc34ea982534cf946048a2cc25a55bfd504982b1d72b21",
+    "public/puzzles/hunger-0-fast-feasting-ced590179cf6.json": "ced590179cf68ed32521a259d5598595e393b58e2acc2bd58d13717bf1e5280b",
+    "public/puzzles/victory-1-gain-failing-bd3820bbc9be.json": "bd3820bbc9beac0cb8183dd1b9512c474c141ecb5fcf6011708a8c0858215a72",
+    "public/puzzles/light-1-light-nightfall-3bf604d272cc.json": "3bf604d272ccc7c2e1b1e32ec5ebc5c9ef306ec0a141967cd924877d00a7d7fa",
+    "public/puzzles/quiet-1-calm-clamour-2b36ec42f450.json": "2b36ec42f4506d8ac66ebf73d76b78874623ca6c25793f994a9dbcb36530dbf9",
+    "public/puzzles/speed-1-sprint-procrastinate-8011048eeb61.json": "8011048eeb61fda1fad30f25f476937549df4ede598d47aff855d5172438bfb0",
+    "public/puzzles/anger-0-storm-comforts-77a076116d0d.json": "77a076116d0db037e54d61393ae6a03a56c1c30a461e6277ce07bfec9027ad98",
+    "public/puzzles/permission-1-let-forestall-6064ba06719f.json": "6064ba06719f8e1038d941acf119c1a97545916d197703837de65d450fda58ab",
+    "public/puzzles/alliance-0-feud-unified-603399b90c40.json": "603399b90c40cc1b3ffdceb0a36d122f78ef0127abb863538389f393119e45fa",
+    "public/puzzles/concealment-0-mask-unmistakable-073a4ce53bcf.json": "073a4ce53bcfb605841b90bf5d54a68ec463b28541657af9a948fc91acc2f969",
+    "public/puzzles/size-1-tiny-immensity-d9e5104cb3d3.json": "d9e5104cb3d39825d6746cca971b70908ef3327a6fef8b3e0ceedfffd5900b94",
+    "public/puzzles/praise-0-rail-complimentary-f6e1d15f21be.json": "f6e1d15f21be3d01e44478933acabc684025d0597ab2ec7c50582ea2644a1995",
+    "public/puzzles/victory-0-cede-conquered-291b24a4a3e3.json": "291b24a4a3e38ba53de5484a529974436387f1aa4154287279d1a00aa263687c",
+    "public/puzzles/light-0-night-sunlight-7addc6f246ff.json": "7addc6f246ff977e59c762f66e092f347e7dd239e35a16af79fbf4629f487b77",
+    "public/puzzles/quiet-0-din-dampening-8e7aa27e940f.json": "8e7aa27e940f801dc0f93eec69f7b5209d988dfa838ee6b15e243f82bfd444c8",
+    "public/puzzles/speed-0-lag-accelerating-2ed428ef3d05.json": "2ed428ef3d05d0ba8eb7ada9076996625e58e33bfb9feb006ab21c5daf1c29ce",
+    "public/puzzles/concealment-0-covers-discovered-db4ca66dceef.json": "db4ca66dceef339a549c9dac57a4360dcf8c1d2944177665a9ef40345c9a1007",
+    "public/puzzles/praise-0-roast-congratulates-70af513d2d08.json": "70af513d2d08b30201169c9048a25dced871241debbc498f8f60af32be051f91",
+    "public/puzzles/cleanliness-0-stain-sanitizing-297556c08645.json": "297556c086452dcfe29fc33c4d5022ddb53d1caac03133d7e5dfeb0210a42d7d"
+  },
+  "allProtectedFilesUnchanged": true
+}
