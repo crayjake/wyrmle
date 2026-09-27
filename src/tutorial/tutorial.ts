@@ -15,6 +15,7 @@ const attempt = (lives: number): LetterStrikeEncounter => ({
 export const tutorialFixtures = { basic: attempt(3), two: attempt(2), bingo: attempt(1) }
 export const tutorialSteps = [
   { id: 'goal', label: 'Introduction' },
+  { id: 'board', label: 'The board' },
   { id: 'water', label: '3 lives · WATER' },
   { id: 'spring', label: '3 lives · SPRING' },
   { id: 'dip', label: '3 lives · DIP' },
@@ -41,7 +42,7 @@ export const tutorialExamples = [
 ] as const satisfies readonly { step: TutorialStep; label: string; description: string }[]
 
 const routes: readonly (readonly TutorialStep[])[] = [
-  ['goal', 'water', 'spring', 'dip', 'three-won', 'rain', 'muddier', 'two-won', 'bingo', 'complete'],
+  ['goal', 'board', 'water', 'spring', 'dip', 'three-won', 'rain', 'muddier', 'two-won', 'bingo', 'complete'],
   ['neutral', 'neutral-result', 'goal'],
   ['resisted', 'resisted-result', 'goal'],
 ]

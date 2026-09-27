@@ -9,7 +9,11 @@ MUDDIER with two, then IRRIGATED with one. Each win uses the ordinary result
 screen, showing one, two and three stars; the bingo includes the wyrm animation.
 Restarting restores the same board and reserve. The lesson explicitly explains
 opposing concepts, water versus dryness, rather than requiring dictionary
-antonyms. Optional GRID and DRY examples demonstrate neutral and resisted plays.
+antonyms. The opening explains counters, neutral words and similar words before play.
+A board step introduces the enemy, lives and double borders. Building WATER
+explains tile selection, underlines, Clear and the hit preview. The first refill
+explains the letter counts and the blank box for other letters. Optional GRID
+and DRY examples demonstrate one hit and no hits.
 
 Validation: eight engine/gesture/state-isolation tests, lint, production build,
 and the complete browser walkthrough at 320 × 568, 375 × 667 and 667 × 375.

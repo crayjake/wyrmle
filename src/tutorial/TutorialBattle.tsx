@@ -73,14 +73,15 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
     {header}
     <section className="tutorial-intro" aria-labelledby="tutorial-title">
       <span className="tutorial-eyebrow">A daily word battle</span>
-      <h1 id="tutorial-title">Words are your weapons.</h1>
+      <h1 id="tutorial-title">Look for counters.</h1>
       <ul className="tutorial-summary">
-        <li>Spell words of 3+ letters. Tap or swipe; tiles can be anywhere.</li>
-        <li>Think opposing concepts: water counters dryness. A counter hits every matching letter; neutral words hit once, similar concepts hit nothing.</li>
-        <li>Remove the whole enemy before your lives run out. Each word costs one life.</li>
+        <li><strong>Counter:</strong> an opposing idea, like water against dryness. Each matching letter hits.</li>
+        <li><strong>Neutral:</strong> unrelated to the enemy. Only the first matching letter hits. Useful when you’re one hit short.</li>
+        <li><strong>Similar:</strong> more of the same idea, like DRY against ARID. No hits.</li>
       </ul>
+      <p className="tutorial-completion-note">Use the letter tiles to clear the enemy word before your lives run out.</p>
       <div className="tutorial-intro-actions">
-        <button type="button" className="daily-button tutorial-start" onClick={() => jump('water')}>TRY ARID · 3 → 2 → 1 LIVES</button>
+        <button type="button" className="daily-button tutorial-start" onClick={() => jump('board')}>TRY ARID · 3 → 2 → 1 LIVES</button>
       </div>
       <div className="tutorial-examples">
         <p>More practice</p>
@@ -120,7 +121,7 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
         strikePreview={visiblePreview} enemyWord={game.encounter.enemy.word}
         ready={canAttack}
         resolveBefore={showPrediction ? game.playerResolve : undefined}
-        message={resolving ? 'Watch the result…' : !move ? 'CONTINUE TO FINISH'
+        message={resolving ? 'Watch the result…' : !move ? 'CONTINUE WHEN READY'
           : !game.selectedTileIds.length ? `BUILD ${move.word}`
             : !selectedExpectedPrefix ? 'CLEAR TO START AGAIN'
               : !preview.valid ? 'KEEP BUILDING' : undefined} />
@@ -146,19 +147,20 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
 
 function TutorialPrompt({ state, selected }: { state: TutorialState; selected: boolean }) {
   switch (state.step) {
+    case 'board': return <p>ARID means dry. It’s the enemy word: clear all four letters to win. LIVES shows how many words you can play. You have three. R and I have double borders: each needs two hits.</p>
     case 'water': return <p>{selected
-      ? 'WATER counters the dry-land concept: remove A and crack R’s armour. Double borders need two hits.'
-      : 'ARID means dry. Build WATER with the highlighted tiles. Think opposing concepts, not just dictionary opposites.'}</p>
-    case 'spring': return <p>Used tiles refill from the supply above. Build SPRING: a source of water. Finish R and crack I’s armour.</p>
+      ? 'WATER fights dryness. The preview shows two hits: A will go, and R will lose one of its two borders. Play the word to spend one life.'
+      : 'Tap or swipe the highlighted tiles to spell WATER. Use any tiles, once each, to make words of 3+ letters. Underlined letters match the enemy. CLEAR lets you start the word again.'}</p>
+    case 'spring': return <p>Used tiles are replaced. REFILLS counts what’s left: letters still in the enemy, plus other letters in the blank box. It doesn’t show draw order. Build SPRING, a source of water, to hit R and I.</p>
     case 'dip': return <p>One life left. DIP means to put something into liquid. Build it to remove I and D and win.</p>
     case 'three-won': return <p>Three words, one star. Next, the same board with two lives.</p>
-    case 'rain': return <p>Same starting board, two lives. Build RAIN: water from the sky counters dry land.</p>
-    case 'muddier': return <p>One life left. Build MUDDIER: wetter ground counters dry land. R, I and D remove the remaining letters.</p>
+    case 'rain': return <p>Same board and refills, two lives. Build RAIN: another way to bring water to dry land.</p>
+    case 'muddier': return <p>One life left. Build MUDDIER: wet ground instead of dry. R, I and D clear the remaining letters.</p>
     case 'two-won': return <p>Two words, two stars. Next, find the one-word win.</p>
     case 'bingo': return <p>One life. Build IRRIGATED: supplied with water. Two Rs and two Is break the armour and clear every letter.</p>
-    case 'neutral': return <p>Build GRID. It has no opposing or similar concept here: only its first matching letter gets one hit.</p>
+    case 'neutral': return <p>Build GRID. It has nothing to do with dryness, so only its first matching letter gets a hit.</p>
     case 'neutral-result': return <p>GRID used a life to crack R’s armour. Neutral words can help, but counters do more with each life.</p>
-    case 'resisted': return <p>Build DRY. It shares ARID’s concept, so matching letters won’t help.</p>
+    case 'resisted': return <p>Build DRY. It means much the same as ARID, so it won’t hit any letters.</p>
     case 'resisted-result': return <p>DRY used a life and hit nothing. Check the preview before playing a word.</p>
     case 'complete': return <p>Bingo! Every letter removed in one word: three stars.</p>
     case 'goal': return null

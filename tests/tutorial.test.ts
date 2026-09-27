@@ -87,6 +87,9 @@ test('three real wins progress through three, two and one lives on exactly the s
   let state = createTutorial()
   assert.equal(tutorialReducer(state, { type: 'attack' }), state)
   state = advance(state)
+  assert.equal(state.step, 'board')
+  assert.equal(state.game.playedWords.length, 0)
+  state = advance(state)
   for (const [index, words] of [['WATER', 'SPRING', 'DIP'], ['RAIN', 'MUDDIER'], ['IRRIGATED']].entries()) {
     const lives = 3 - index
     assert.equal(state.game.playerResolve, lives)
