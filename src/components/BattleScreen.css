@@ -44,7 +44,7 @@
 .bingo-result-word { max-width: 100%; overflow-wrap: anywhere; color: var(--emph); font-family: 'Cutive Mono', monospace; font-size: clamp(24px, 7vw, 36px); padding-block: 10px; }
 .bingo-result-words { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 14px; padding: 0; margin: 4px 0; list-style: none; font-size: 14px; }
 .bingo-result-nudge { font-size: 14px; line-height: 1.4; }
-.bingo-result-actions { display: grid; gap: 8px; width: min(100%, 19rem); align-self: center; }
+.bingo-result-actions { display: grid; gap: 8px; width: min(100%, 240px); align-self: center; }
 .bingo-result-actions .daily-button { min-height: 48px; font-size: 16px; text-transform: none; letter-spacing: 0; }
 .bingo-result-actions .bingo-result-primary { background: var(--emph); border-color: var(--emph); color: var(--bg); }
 .bingo-result-link { color: var(--blue); }

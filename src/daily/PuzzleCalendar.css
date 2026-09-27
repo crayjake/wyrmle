@@ -17,7 +17,7 @@
 .calendar-day { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 4px; min-height: 0;
   border: 1px solid color-mix(in srgb, var(--fg) 35%, transparent); color: var(--fg); text-decoration: none; }
 .calendar-day-number { font-size: 19px; line-height: 1.1; }
-.calendar-day-stars { --star-size: clamp(12px, 3.75vw, 16px); display: flex; align-items: center; justify-content: center;
+.calendar-day-stars { --star-size: clamp(11px, 3.4vw, 14px); display: flex; align-items: center; justify-content: center;
   min-height: var(--star-size); font-family: monospace; font-size: 16px; line-height: 1; color: var(--emph); }
 .calendar-day[aria-current="date"] { border-color: var(--blue); }
 .calendar-day[aria-current="date"] .calendar-day-number { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
@@ -34,5 +34,5 @@
   .calendar-body { grid-column: 2; grid-row: 2 / 4; align-self: stretch; gap: 4px; }
   .calendar-day { gap: 2px; }
   .calendar-day-number { font-size: 16px; }
-  .calendar-day-stars { --star-size: clamp(12px, calc((100vw - 218px) / 21), 16px); }
+  .calendar-day-stars { --star-size: clamp(11px, calc((100vw - 218px) / 21), 14px); }
 }
