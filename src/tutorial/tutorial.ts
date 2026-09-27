@@ -16,6 +16,7 @@ export const tutorialFixtures = { basic: attempt(3), two: attempt(2), bingo: att
 export const tutorialSteps = [
   { id: 'goal', label: 'Introduction' },
   { id: 'board', label: 'The board' },
+  { id: 'word-types', label: 'Counters, neutral and similar words' },
   { id: 'water', label: '3 lives · WATER' },
   { id: 'spring', label: '3 lives · SPRING' },
   { id: 'dip', label: '3 lives · DIP' },
@@ -42,9 +43,9 @@ export const tutorialExamples = [
 ] as const satisfies readonly { step: TutorialStep; label: string; description: string }[]
 
 const routes: readonly (readonly TutorialStep[])[] = [
-  ['goal', 'board', 'water', 'spring', 'dip', 'three-won', 'rain', 'muddier', 'two-won', 'bingo', 'complete'],
-  ['neutral', 'neutral-result', 'goal'],
-  ['resisted', 'resisted-result', 'goal'],
+  ['goal', 'board', 'word-types', 'water', 'spring', 'dip', 'three-won', 'rain', 'muddier', 'two-won', 'bingo', 'complete'],
+  ['neutral', 'neutral-result', 'word-types'],
+  ['resisted', 'resisted-result', 'word-types'],
 ]
 type GuidedMove = { word: string; action: 'attack' }
 const moves: Partial<Record<TutorialStep, GuidedMove>> = Object.fromEntries(
@@ -54,8 +55,11 @@ const moves: Partial<Record<TutorialStep, GuidedMove>> = Object.fromEntries(
 )
 function enterStep(state: TutorialState, step: TutorialStep): TutorialState {
   const lives = step === 'rain' ? 2 : step === 'bingo' ? 1
-    : ['goal', 'neutral', 'resisted'].includes(step) ? 3 : null
-  return { step, game: lives === null ? state.game : createLetterStrikeGame(attempt(lives)) }
+    : ['goal', 'word-types', 'neutral', 'resisted'].includes(step) ? 3 : null
+  // Independent examples keep their own animation identity while the shared
+  // board stays mounted, so their first moves cannot reuse an earlier hit.
+  return { step, game: lives === null ? state.game
+    : createLetterStrikeGame({ ...attempt(lives), id: `tutorial-arid-${lives}-${step}` }) }
 }
 export function getTutorialMove(state: TutorialState) {
   const move = moves[state.step]

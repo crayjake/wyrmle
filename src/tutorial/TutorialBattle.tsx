@@ -26,6 +26,7 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
   const [resolving, setResolving] = useState(false)
   const tileElements = useRef<(HTMLButtonElement | null)[]>([])
   const { game, step } = state
+  const introducingBoard = ['goal', 'board', 'word-types'].includes(step)
   const move = getTutorialMove(state)
   const preview = previewLetterStrike(game)
   const allowedTileIds = getAllowedTutorialTileIds(state)
@@ -69,30 +70,6 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
       </>} />
   </main>
 
-  if (step === 'goal') return <main className="container tutorial-overview" data-tutorial-step={step}>
-    {header}
-    <section className="tutorial-intro" aria-labelledby="tutorial-title">
-      <span className="tutorial-eyebrow">A daily word battle</span>
-      <h1 id="tutorial-title">Look for counters.</h1>
-      <ul className="tutorial-summary">
-        <li><strong>Counter:</strong> an opposing idea, like water against dryness. Each matching letter hits.</li>
-        <li><strong>Neutral:</strong> unrelated to the enemy. Only the first matching letter hits. Useful when you’re one hit short.</li>
-        <li><strong>Similar:</strong> more of the same idea, like DRY against ARID. No hits.</li>
-      </ul>
-      <p className="tutorial-completion-note">Use the letter tiles to clear the enemy word before your lives run out.</p>
-      <div className="tutorial-intro-actions">
-        <button type="button" className="daily-button tutorial-start" onClick={() => jump('board')}>TRY ARID · 3 → 2 → 1 LIVES</button>
-      </div>
-      <div className="tutorial-examples">
-        <p>More practice</p>
-        <div className="tutorial-example-list">
-          {tutorialExamples.map(example => <button type="button" className="daily-button tutorial-example" key={example.step}
-            title={example.description} onClick={() => jump(example.step)}>{example.label}</button>)}
-        </div>
-      </div>
-    </section>
-  </main>
-
   return <main className="container letter-combat tutorial-battle" data-tutorial-step={step}>
     {header}
     <div className="battle-info">
@@ -114,17 +91,21 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
         onResolutionComplete={onResolutionComplete} />
       <div className="tutorial-coach" aria-label="Practice instructions" aria-live="polite" aria-atomic="true">
         <TutorialPrompt state={state} selected={Boolean(move && canAttackInTutorial(state))} />
+        {step === 'word-types' && <div className="tutorial-example-list" aria-label="Optional practice">
+          {tutorialExamples.map(example => <button type="button" className="daily-button tutorial-example" key={example.step}
+            title={example.description} onClick={() => jump(example.step)}>{example.label}</button>)}
+        </div>}
       </div>
     </div>
     <section className="player-zone" aria-label="Practice word selection">
-      <AttackInfo word={visiblePreview?.word ?? ''} damage={visiblePreview?.strikes ?? 0} maxDamage={0} metric="strikes"
+      {!introducingBoard && <AttackInfo word={visiblePreview?.word ?? ''} damage={visiblePreview?.strikes ?? 0} maxDamage={0} metric="strikes"
         strikePreview={visiblePreview} enemyWord={game.encounter.enemy.word}
         ready={canAttack}
         resolveBefore={showPrediction ? game.playerResolve : undefined}
         message={resolving ? 'Watch the result…' : !move ? 'CONTINUE WHEN READY'
           : !game.selectedTileIds.length ? `BUILD ${move.word}`
             : !selectedExpectedPrefix ? 'CLEAR TO START AGAIN'
-              : !preview.valid ? 'KEEP BUILDING' : undefined} />
+              : !preview.valid ? 'KEEP BUILDING' : undefined} />}
       <div className="controls">
         <TileGrid tiles={game.tiles} specialTiles={getLetterStrikeTileSummary(game)}
           revealedIndices={tileIndices} registerTile={registerTile}
@@ -147,7 +128,13 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
 
 function TutorialPrompt({ state, selected }: { state: TutorialState; selected: boolean }) {
   switch (state.step) {
-    case 'board': return <p>ARID means dry. It’s the enemy word: clear all four letters to win. LIVES shows how many words you can play. You have three. R and I have double borders: each needs two hits.</p>
+    case 'goal': return <p>Use these tiles to make words that clear the enemy word, ARID. It means dry. Let’s beat it in three words.</p>
+    case 'board': return <p>Clear all four enemy letters to win. R and I have double borders: each needs two hits. LIVES shows how many words you can play. You have three.</p>
+    case 'word-types': return <ul className="tutorial-word-types">
+      <li><strong>Counters</strong>, like WATER against dryness, hit every matching letter.</li>
+      <li><strong>Neutral</strong> means unrelated. GRID hits only its first matching letter.</li>
+      <li><strong>Similar words</strong>, like DRY, hit nothing.</li>
+    </ul>
     case 'water': return <p>{selected
       ? 'WATER fights dryness. The preview shows two hits: A will go, and R will lose one of its two borders. Play the word to spend one life.'
       : 'Tap or swipe the highlighted tiles to spell WATER. Use any tiles, once each, to make words of 3+ letters. Underlined letters match the enemy. CLEAR lets you start the word again.'}</p>
@@ -163,6 +150,5 @@ function TutorialPrompt({ state, selected }: { state: TutorialState; selected: b
     case 'resisted': return <p>Build DRY. It means much the same as ARID, so it won’t hit any letters.</p>
     case 'resisted-result': return <p>DRY used a life and hit nothing. Check the preview before playing a word.</p>
     case 'complete': return <p>Bingo! Every letter removed in one word: three stars.</p>
-    case 'goal': return null
   }
 }

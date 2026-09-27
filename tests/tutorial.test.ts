@@ -90,6 +90,8 @@ test('three real wins progress through three, two and one lives on exactly the s
   assert.equal(state.step, 'board')
   assert.equal(state.game.playedWords.length, 0)
   state = advance(state)
+  assert.equal(state.step, 'word-types')
+  state = advance(state)
   for (const [index, words] of [['WATER', 'SPRING', 'DIP'], ['RAIN', 'MUDDIER'], ['IRRIGATED']].entries()) {
     const lives = 3 - index
     assert.equal(state.game.playerResolve, lives)
@@ -141,8 +143,13 @@ test('optional neutral and similar examples demonstrate one hit and no hits, the
     const state = attack(selected)
     assert.equal(state.game.playerResolve, 2)
     assert.deepEqual(state.game.enemyLetters.map(l => l.hitsRemaining), step === 'neutral' ? [1, 1, 2, 1] : [1, 2, 2, 1])
-    assert.equal(advance(state).step, 'goal')
-    assert.equal(advance(state).game.playerResolve, 3)
+    const returned = advance(state)
+    assert.equal(returned.step, 'word-types')
+    assert.equal(returned.game.playerResolve, 3)
+    assert.deepEqual(returned.game.tiles, tutorialEncounter.startingTiles)
+    assert.equal(returned.game.refillIndex, 0)
+    assert.equal(returned.game.playedWords.length, 0)
+    assert.equal(advance(returned).step, 'water')
   }
 })
 
