@@ -4,6 +4,7 @@ import "./WyrmCharacter.css"
 
 type WyrmCharacterProps = {
   idle: boolean
+  loading?: boolean
 }
 
 // Offset each segment along the same wave so the little body slithers as a
@@ -14,10 +15,10 @@ function bodyWave(segment: number, amplitude: number) {
   )
 }
 
-export default function WyrmCharacter({ idle }: WyrmCharacterProps) {
+export default function WyrmCharacter({ idle, loading = false }: WyrmCharacterProps) {
   const reducedMotion = useReducedMotion()
-  const amplitude = idle ? 0.65 : 1.4
-  const duration = idle ? introTimings.idleWiggle : introTimings.travelWiggle
+  const amplitude = loading ? 1.8 : idle ? 0.65 : 1.4
+  const duration = loading ? 1.6 : idle ? introTimings.idleWiggle : introTimings.travelWiggle
   const waveTransition = reducedMotion
     ? { duration: 0 }
     : { duration, ease: "linear" as const, repeat: Infinity }
