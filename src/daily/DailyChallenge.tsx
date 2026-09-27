@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import BattleScreen, { BattlePanel } from '../components/BattleScreen'
 import BattleResult from '../components/BattleResult'
+import PuzzleLoading from '../components/PuzzleLoading'
 import type { LetterStrikeEncounter } from '../game/letterStrike'
 import { useUserPreferences } from '../useUserPreferences'
 import { getDailyPuzzleId } from './date'
@@ -38,13 +39,12 @@ export default function DailyChallenge() {
     preferences.update({ hasCompletedOnboarding: true, hasChosenMode: true })
     setTutorial(false)
   }
-  if (location.calendar) return <Suspense fallback={<Loading />}><PuzzleCalendar today={today} requestedMonth={location.month} /></Suspense>
-  if (tutorial) return <Suspense fallback={<Loading />}><TutorialBattle onComplete={finishTutorial} onSkip={finishTutorial} /></Suspense>
+  if (location.calendar) return <Suspense fallback={<PuzzleLoading />}><PuzzleCalendar today={today} requestedMonth={location.month} /></Suspense>
+  if (tutorial) return <Suspense fallback={<PuzzleLoading />}><TutorialBattle onComplete={finishTutorial} onSkip={finishTutorial} /></Suspense>
   if (!entry) return <main className="container"><h2>No puzzle scheduled for this date</h2><button className="daily-button" onClick={calendar}>Calendar</button></main>
   return <LoadDaily key={entry.asset} entry={entry} today={today} onTutorial={() => setTutorial(true)} />
 }
 
-function Loading() { return <main className="container"><p>Loading puzzle…</p></main> }
 function LoadDaily({ entry, today, onTutorial }: { entry: ScheduledPuzzle; today: string; onTutorial: () => void }) {
   const [loaded, setLoaded] = useState<LetterStrikeEncounter | null>(null)
   const [error, setError] = useState(false)
@@ -57,7 +57,7 @@ function LoadDaily({ entry, today, onTutorial }: { entry: ScheduledPuzzle; today
     return () => controller.abort()
   }, [entry])
   if (error) return <main className="container"><h2>Could not load this puzzle</h2><button className="daily-button" onClick={() => window.location.reload()}>Try again</button><button className="daily-button" onClick={calendar}>Calendar</button></main>
-  return loaded ? <DailyAttempt entry={entry} encounter={loaded} today={today} onTutorial={onTutorial} /> : <Loading />
+  return loaded ? <DailyAttempt entry={entry} encounter={loaded} today={today} onTutorial={onTutorial} /> : <PuzzleLoading />
 }
 
 function DailyAttempt({ entry, encounter, today, onTutorial }: {

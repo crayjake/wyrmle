@@ -1,0 +1,8 @@
+{
+  "base": "http://127.0.0.1:4174/wyrmle/",
+  "checks": [
+    "no-preference: centred, no visible text or scrolling, animation setting honoured, puzzle opens",
+    "reduce: centred, no visible text or scrolling, animation setting honoured, puzzle opens"
+  ],
+  "errors": []
+}

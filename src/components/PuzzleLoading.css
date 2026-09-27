@@ -1,0 +1,40 @@
+.container.puzzle-loading {
+  display: grid;
+  place-items: center;
+  padding: 0;
+}
+
+.puzzle-loading-orbit {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 112px;
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in srgb, var(--fg) 18%, transparent);
+  border-radius: 50%;
+  animation: puzzle-loading-arrive 240ms ease-out both;
+}
+
+.puzzle-loading-ring {
+  position: absolute;
+  inset: -1px;
+  border: 2px solid transparent;
+  border-top-color: var(--green);
+  border-radius: inherit;
+  animation: puzzle-loading-orbit 2.4s linear infinite;
+}
+
+.puzzle-loading-wyrm {
+  display: flex;
+  transform: scale(2.2);
+}
+
+@keyframes puzzle-loading-orbit { to { transform: rotate(360deg); } }
+@keyframes puzzle-loading-arrive {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .puzzle-loading-orbit, .puzzle-loading-ring { animation: none; }
+}
