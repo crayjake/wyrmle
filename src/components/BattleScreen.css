@@ -36,12 +36,6 @@
 .bingo-result p, .bingo-result h1 { margin: 0; }
 .bingo-result-enemy { font-size: 14px; letter-spacing: 0.18em; }
 .bingo-result-stars { position: relative; display: flex; gap: 12px; color: var(--emph); }
-.bingo-result[data-bingo] .bingo-result-stars { margin-top: 18px; }
-.bingo-result-wyrm {
-  position: absolute; top: -22px; left: calc(100% - 2rem); display: flex;
-  transform: scale(1.55); transform-origin: center;
-  animation: bingo-wyrm-victory 1800ms ease-in-out both;
-}
 .bingo-result-stars svg { width: clamp(30px, 6dvh, 46px); height: clamp(30px, 6dvh, 46px); stroke-width: 1.5; opacity: 0.3; }
 .bingo-result-stars svg[data-earned="true"] { fill: var(--emph); opacity: 1; animation: bingo-star-arrive 450ms ease-out both; }
 .bingo-result h1 { font-family: 'Cutive Mono', monospace; color: var(--emph); font-size: clamp(36px, 8dvh, 64px); font-weight: normal; line-height: 1; }
@@ -55,17 +49,8 @@
 .bingo-result-actions .bingo-result-primary { background: var(--emph); border-color: var(--emph); color: var(--bg); }
 .bingo-result-link { color: var(--blue); }
 @keyframes bingo-star-arrive { from { transform: translateY(8px) scale(0.7); opacity: 0; } to { transform: none; opacity: 1; } }
-/* The wyrm passes each star as it lights up, then rests above the last one. */
-@keyframes bingo-wyrm-victory {
-  0% { left: -20%; transform: translateY(10px) rotate(-15deg) scale(1.55); opacity: 0; }
-  15% { opacity: 1; }
-  25% { left: 4%; transform: translateY(-3px) rotate(-8deg) scale(1.55); }
-  50% { left: 38%; transform: translateY(3px) rotate(8deg) scale(1.55); }
-  75% { left: 75%; transform: translateY(-3px) rotate(-8deg) scale(1.55); }
-  100% { left: calc(100% - 2rem); transform: scale(1.55); opacity: 1; }
-}
 @media (prefers-reduced-motion: reduce) {
-  .bingo-result-stars svg[data-earned="true"], .bingo-result-wyrm { animation: none; }
+  .bingo-result-stars svg[data-earned="true"] { animation: none; }
 }
 @media (orientation: landscape) and (max-height: 550px) {
   .container.letter-combat.bingo-preview[data-result] { display: flex; }

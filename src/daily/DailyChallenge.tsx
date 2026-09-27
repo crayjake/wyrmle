@@ -117,7 +117,7 @@ function DailyAttempt({ entry, encounter, today, onTutorial }: {
           </button>
           <DailyShare record={record} />
           <button className="daily-button" onClick={() => setStats(true)}>Statistics</button>
-          <p className="daily-best">{record.bestWords ? `Best: ${'★'.repeat(challengeStars(record.bestWords))} · ${record.bestWords} ${record.bestWords === 1 ? 'word' : 'words'}` : 'Replay as often as you like.'}</p>
+          {!(game.status === 'won' && game.playedWords.length === 1) && <p className="daily-best">{record.bestWords ? `Best: ${'★'.repeat(challengeStars(record.bestWords))} · ${record.bestWords} ${record.bestWords === 1 ? 'word' : 'words'}` : 'Replay as often as you like.'}</p>}
         </>} />}
     />
     {error && <BattlePanel title="Progress could not be saved" onClose={() => setError('')}>

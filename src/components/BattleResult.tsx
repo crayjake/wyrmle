@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import type { ReactNode } from 'react'
 import { Star } from 'lucide-react'
-import WyrmCharacter from './WyrmCharacter'
+import BingoStars from './BingoStars'
 import type { LetterStrikeState } from '../game/letterStrike'
 import { winStars } from '../game/rating'
 
@@ -23,11 +23,10 @@ export default function BattleResult({ game, onRetry, onNext, onChoose, onHints,
   return <section className="bingo-result" data-bingo={bingo || undefined} aria-labelledby="bingo-result-title">
     <div className="bingo-result-story">
       <p className="bingo-result-enemy">{game.encounter.enemy.word}</p>
-      {won && <div className="bingo-result-stars" role="img" aria-label={`${stars} of 3 stars`}>
-        {bingo && <span className="bingo-result-wyrm" aria-hidden="true"><WyrmCharacter idle /></span>}
+      {won && (bingo ? <BingoStars /> : <div className="bingo-result-stars" role="img" aria-label={`${stars} of 3 stars`}>
         {[1, 2, 3].map(star => <Star key={star} aria-hidden="true" data-earned={star <= stars}
-          style={{ animationDelay: `${bingo ? 350 + (star - 1) * 500 : star * 100}ms` }} />)}
-      </div>}
+          style={{ animationDelay: `${star * 100}ms` }} />)}
+      </div>)}
       <h1 id="bingo-result-title" ref={heading} tabIndex={-1}>{bingo ? 'Bingo!' : won ? 'Solved!' : 'Another try?'}</h1>
       <p className="bingo-result-caption">{bingo ? 'Every letter. One word.' : won ? `Solved in ${words} words.`
         : game.playerResolve === 0 ? 'Out of lives.' : 'No playable words remain.'}</p>

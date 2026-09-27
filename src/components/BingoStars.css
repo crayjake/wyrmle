@@ -1,0 +1,33 @@
+.bingo-result[data-bingo] .bingo-stars-tour {
+  width: min(100%, 320px);
+  height: clamp(78px, 14dvh, 100px);
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  overflow: hidden;
+}
+.bingo-tour-star { display: flex; flex: none; }
+.bingo-stars-tour svg { fill: transparent; }
+.bingo-stars-tour svg[data-lit="true"] {
+  fill: var(--emph);
+  opacity: 1;
+  animation: bingo-star-light 420ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.bingo-stars-tour .bingo-result-wyrm {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  color: var(--green);
+}
+.bingo-wyrm-piece { position: absolute; top: 0; left: 0; width: 0; height: 0; }
+.bingo-wyrm-piece > span { position: absolute; transform: translate(-50%, -50%); }
+@keyframes bingo-star-light {
+  0% { transform: scale(0.9); opacity: 0.4; }
+  45% { transform: scale(1.14); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bingo-stars-tour svg[data-lit="true"] { animation: none; }
+  .bingo-stars-tour .bingo-result-wyrm { display: none; }
+}

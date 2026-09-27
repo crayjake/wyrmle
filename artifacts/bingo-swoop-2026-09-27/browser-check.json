@@ -1,0 +1,9 @@
+{
+  "base": "http://127.0.0.1:4174/wyrmle/",
+  "checks": [
+    "375x667 no-preference: stars light in sequence, no redundant best line, no overflow",
+    "320x568 reduce: stars light in sequence, no redundant best line, no overflow",
+    "667x375 no-preference: stars light in sequence, no redundant best line, no overflow"
+  ],
+  "errors": []
+}
