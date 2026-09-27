@@ -1,4 +1,5 @@
 import { archivedPuzzles, puzzleSchedule } from './scheduledPuzzle.ts'
+import { sharedPuzzleDate } from './scoreShare.ts'
 
 export function availableMonths(today: string) {
   return [...new Set(puzzleSchedule.filter(entry => entry.date <= today).map(entry => entry.date.slice(0, 7)))]
@@ -16,8 +17,12 @@ export function calendarDays(month: string): (string | null)[] {
 }
 
 /** Old shared preview links lead to their archived date or to the calendar. */
-export function puzzleLocation(search: string) {
+export function puzzleLocation(search: string, pathname = '') {
   const params = new URLSearchParams(search)
+  const shared = sharedPuzzleDate(pathname)
+  if (shared && !params.has('daily') && !params.has('calendar')) {
+    return { date: shared, calendar: false, month: null, replacement: `?daily=${shared}` }
+  }
   const preview = params.get('preview')
   if (preview === 'bingo' || preview === 'bingos' || preview?.startsWith('bingo-')) {
     const entry = archivedPuzzles.find(entry => entry.legacyBetaId === preview)

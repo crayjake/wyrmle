@@ -1,6 +1,12 @@
 import react from '@vitejs/plugin-react'
 import { defineConfig, loadEnv } from 'vite'
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { resolve, dirname } from 'node:path'
 import { DEFAULT_PUBLIC_SITE_URL, normalizePublicSiteUrl } from './src/lib/publicSiteUrl.ts'
+import { scoreSharePage } from './scripts/lib/scoreSharePage.ts'
+import { scoreSharePath } from './src/daily/scoreShare.ts'
+import dailySchedule from './src/daily/schedule.json' with { type: 'json' }
+import archive from './src/daily/archive.json' with { type: 'json' }
 
 // https://vite.dev/config/
 export default defineConfig(({ mode, command }) => {
@@ -15,6 +21,7 @@ export default defineConfig(({ mode, command }) => {
     : `${base.replace(/\/$/, '')}/${filename}`
   const appleIcon = iconUrl('apple-touch-icon-v3.png')
   const browserIcon = iconUrl('icons/wyrm-192-v3.png')
+  let outputDirectory = resolve('dist')
 
   return {
     // Pages provides both values, including when deploying at a custom domain.
@@ -23,6 +30,21 @@ export default defineConfig(({ mode, command }) => {
     define: { 'import.meta.env.VITE_SITE_URL': JSON.stringify(siteUrl) },
     plugins: [
       react(),
+      {
+        name: 'wyrmle-score-share-pages',
+        apply: 'build',
+        configResolved(config) { outputDirectory = resolve(config.root, config.build.outDir) },
+        closeBundle() {
+          const app = readFileSync(resolve(outputDirectory, 'index.html'), 'utf8')
+          for (const { date } of [...archive, ...dailySchedule]) {
+            for (const stars of [1, 2, 3] as const) {
+              const path = resolve(outputDirectory, scoreSharePath(date, stars), 'index.html')
+              mkdirSync(dirname(path), { recursive: true })
+              writeFileSync(path, scoreSharePage(app, date, stars, siteUrl))
+            }
+          }
+        },
+      },
       {
         name: 'wyrmle-public-metadata',
         // Emit into the initial HTML: link-preview crawlers do not need JavaScript.

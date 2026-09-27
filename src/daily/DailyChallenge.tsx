@@ -9,23 +9,23 @@ import type { ScheduledPuzzle } from './scheduledPuzzle'
 import { challengeHistory, challengeKey, challengeLives, challengeStars, openChallenge, readChallenge, restartChallenge, saveChallenge } from './challengeProgress'
 import type { ChallengeRecord } from './challengeProgress'
 import { shareResult } from './shareResult'
-import { getPublicSiteUrl } from '../lib/publicSiteUrl'
+import { challengeShareText } from './scoreShare'
 import { puzzleLocation } from './calendar'
 import { getPuzzleGuide } from './guides'
 import './DailyChallenge.css'
 
 const TutorialBattle = lazy(() => import('../tutorial/TutorialBattle'))
 const PuzzleCalendar = lazy(() => import('./PuzzleCalendar'))
-const calendar = () => window.location.assign('?calendar')
+const calendar = () => window.location.assign(`${import.meta.env.BASE_URL}?calendar`)
 
 export default function DailyChallenge() {
   const preferences = useUserPreferences()
   const [tutorial, setTutorial] = useState(!preferences.preferences.hasCompletedOnboarding)
   const [today, setToday] = useState(getDailyPuzzleId)
-  const [location] = useState(() => puzzleLocation(window.location.search))
+  const [location] = useState(() => puzzleLocation(window.location.search, window.location.pathname))
   const entry = location.date && location.date <= today ? scheduledPuzzle(location.date) : latestScheduledPuzzle(today)
   useEffect(() => {
-    if (location.replacement) window.history.replaceState(null, '', location.replacement)
+    if (location.replacement) window.history.replaceState(null, '', `${import.meta.env.BASE_URL}${location.replacement}`)
   }, [location])
   useEffect(() => {
     const update = () => setToday(getDailyPuzzleId())
@@ -130,8 +130,7 @@ function DailyAttempt({ entry, encounter, today, onTutorial }: {
 function DailyShare({ record }: { record: ChallengeRecord }) {
   const [status, setStatus] = useState('')
   const busy = useRef(false)
-  const words = record.bestWords
-  const text = [`WYRMLE ${record.date}`, words ? `${'★'.repeat(challengeStars(words))}${'☆'.repeat(3 - challengeStars(words))} · Best: ${words} ${words === 1 ? 'word' : 'words'}` : 'Still hunting for a win', getPublicSiteUrl()].join('\n')
+  const text = challengeShareText(record)
   return <><button className="daily-button" onClick={() => {
     if (busy.current) return
     busy.current = true
