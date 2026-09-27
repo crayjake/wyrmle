@@ -1,0 +1,1203 @@
+{
+  "id": "cleanliness-1-rinse-smearing",
+  "theme": "cleanliness",
+  "side": 1,
+  "enemy": "RINSE",
+  "bingo": "SMEARING",
+  "enemySense": "oewn-rinse__1.04.02..",
+  "enemyLemma": "rinse",
+  "bingoLemma": "smear",
+  "armour": 0,
+  "frequency": 0.4525,
+  "answer": "SMEARING",
+  "method": "bingo-first",
+  "accepted": true,
+  "profileVersion": "bingo-source-profiles-1:a66649e242ee",
+  "seeds": 2,
+  "seed": "bingo-first-3:RINSE:SMEARING:12:two-turn-route",
+  "score": 555,
+  "analysis": {
+    "score": 555,
+    "bingos": [
+      "TARNISHED",
+      "SMEARING",
+      "NASTIER",
+      "RAUNCHIEST"
+    ],
+    "counterFamilies": 11,
+    "resistedFamilies": 4,
+    "winningOpenings": 17,
+    "repeatedCounterRoutes": 17,
+    "sustainedPositions": 5,
+    "sustainedFinalPositions": 3,
+    "neutralCleanupOpenings": 0,
+    "routes": [
+      {
+        "opening": "DIRTY",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "UNCLEAN"
+          ],
+          "resisted": [
+            "CLEAN",
+            "CLEANSING"
+          ],
+          "neutral": 697
+        },
+        "thirdTurn": {
+          "counters": [
+            "GREASE",
+            "GRIMES"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DIRTY",
+            "UNCLEAN",
+            "GREASE"
+          ],
+          "tileIds": [
+            [
+              8,
+              7,
+              6,
+              14,
+              11
+            ],
+            [
+              1,
+              9,
+              10,
+              2,
+              3,
+              4,
+              19
+            ],
+            [
+              13,
+              21,
+              16,
+              17,
+              15,
+              23
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "DIRT",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "UNCLEAN"
+          ],
+          "resisted": [
+            "CLEAN",
+            "CLEANSING"
+          ],
+          "neutral": 678
+        },
+        "thirdTurn": {
+          "counters": [
+            "GREASE",
+            "GRIMES"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DIRT",
+            "UNCLEAN",
+            "GREASE"
+          ],
+          "tileIds": [
+            [
+              8,
+              7,
+              6,
+              14
+            ],
+            [
+              1,
+              9,
+              10,
+              2,
+              3,
+              4,
+              19
+            ],
+            [
+              13,
+              21,
+              16,
+              17,
+              15,
+              23
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "FILTHY",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "GREASE",
+            "GRIMES",
+            "SMUDGE",
+            "CRUD"
+          ],
+          "resisted": [
+            "RINSE"
+          ],
+          "neutral": 949
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "RINSE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "FILTHY",
+            "GREASE",
+            "AND"
+          ],
+          "tileIds": [
+            [
+              5,
+              7,
+              2,
+              14,
+              12,
+              11
+            ],
+            [
+              13,
+              6,
+              3,
+              4,
+              15,
+              16
+            ],
+            [
+              17,
+              9,
+              8
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "STAINED",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "GRIMES",
+            "SLUR",
+            "GRIMY",
+            "CRUD"
+          ],
+          "resisted": [
+            "CLEAN",
+            "LAUNDRY",
+            "RINSE"
+          ],
+          "neutral": 1527
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "STAINED",
+            "GRIMES"
+          ],
+          "tileIds": [
+            [
+              15,
+              14,
+              4,
+              7,
+              9,
+              3,
+              8
+            ],
+            [
+              13,
+              6,
+              18,
+              0,
+              16,
+              20
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "FILTH",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "GREASE",
+            "GRIMES",
+            "DINGY",
+            "SMUDGE",
+            "GRIMY",
+            "CRUD"
+          ],
+          "resisted": [
+            "RINSE"
+          ],
+          "neutral": 973
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "RINSE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "FILTH",
+            "GREASE",
+            "AND"
+          ],
+          "tileIds": [
+            [
+              5,
+              7,
+              2,
+              14,
+              12
+            ],
+            [
+              13,
+              6,
+              3,
+              4,
+              15,
+              16
+            ],
+            [
+              17,
+              9,
+              8
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "GRIMES",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "STAINED",
+            "UNCLEAN"
+          ],
+          "resisted": [
+            "CLEAN",
+            "LAUNDRY",
+            "RINSE"
+          ],
+          "neutral": 1535
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "GRIMES",
+            "STAINED"
+          ],
+          "tileIds": [
+            [
+              13,
+              6,
+              7,
+              0,
+              3,
+              15
+            ],
+            [
+              20,
+              14,
+              4,
+              18,
+              9,
+              16,
+              8
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SLUR",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "DINGY"
+          ],
+          "resisted": [],
+          "neutral": 525
+        },
+        "thirdTurn": {
+          "counters": [
+            "STAINED"
+          ],
+          "resisted": [
+            "RINSE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SLUR",
+            "DINGY",
+            "STAINED"
+          ],
+          "tileIds": [
+            [
+              15,
+              2,
+              1,
+              6
+            ],
+            [
+              8,
+              7,
+              9,
+              13,
+              11
+            ],
+            [
+              20,
+              14,
+              4,
+              18,
+              19,
+              3,
+              22
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "DINGY",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "STAIN",
+            "SLUR"
+          ],
+          "resisted": [
+            "CLEAN",
+            "RINSE",
+            "CLEANSE",
+            "CLEANERS",
+            "CLEANSER"
+          ],
+          "neutral": 1615
+        },
+        "thirdTurn": {
+          "counters": [
+            "STAINED"
+          ],
+          "resisted": [
+            "RINSE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DINGY",
+            "SLUR",
+            "STAINED"
+          ],
+          "tileIds": [
+            [
+              8,
+              7,
+              9,
+              13,
+              11
+            ],
+            [
+              15,
+              2,
+              1,
+              6
+            ],
+            [
+              20,
+              14,
+              4,
+              18,
+              19,
+              3,
+              22
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SMUDGE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "FILTHY",
+            "STAIN",
+            "FILTH"
+          ],
+          "resisted": [
+            "CLEAN",
+            "RINSE"
+          ],
+          "neutral": 897
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "CLEAN",
+            "RINSE",
+            "CLEANSE",
+            "CLEANERS",
+            "CLEANSER"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SMUDGE",
+            "STAIN",
+            "AIR"
+          ],
+          "tileIds": [
+            [
+              15,
+              0,
+              1,
+              8,
+              13,
+              3
+            ],
+            [
+              20,
+              14,
+              4,
+              7,
+              9
+            ],
+            [
+              17,
+              18,
+              6
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "GRIMY",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "STAINED",
+            "UNCLEAN",
+            "DEFILE"
+          ],
+          "resisted": [
+            "CLEAN",
+            "CLEANSE"
+          ],
+          "neutral": 1027
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "GRIMY",
+            "STAINED"
+          ],
+          "tileIds": [
+            [
+              13,
+              6,
+              7,
+              0,
+              11
+            ],
+            [
+              15,
+              14,
+              4,
+              18,
+              9,
+              3,
+              8
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "CRUD",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "FILTHY",
+            "STAIN",
+            "FILTH"
+          ],
+          "resisted": [],
+          "neutral": 789
+        },
+        "thirdTurn": {
+          "counters": [
+            "GREASE",
+            "GRIMES",
+            "DEFILE"
+          ],
+          "resisted": [
+            "RINSE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CRUD",
+            "STAIN",
+            "GREASE"
+          ],
+          "tileIds": [
+            [
+              10,
+              6,
+              1,
+              8
+            ],
+            [
+              15,
+              14,
+              4,
+              7,
+              9
+            ],
+            [
+              13,
+              21,
+              3,
+              17,
+              20,
+              16
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "CLEAN",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "DIRTY",
+            "DIRT",
+            "STAINED",
+            "GRIMES",
+            "DINGY",
+            "SMUDGE",
+            "GRIMY"
+          ],
+          "resisted": [
+            "RINSE"
+          ],
+          "neutral": 1479
+        },
+        "thirdTurn": {
+          "counters": [
+            "GREASE",
+            "GRIMES",
+            "GRIMY"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CLEAN",
+            "STAINED",
+            "GREASE"
+          ],
+          "tileIds": [
+            [
+              10,
+              2,
+              3,
+              4,
+              9
+            ],
+            [
+              15,
+              14,
+              17,
+              7,
+              19,
+              16,
+              8
+            ],
+            [
+              13,
+              6,
+              23,
+              25,
+              20,
+              24
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "LAUNDRY",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "DIRT",
+            "STAINED",
+            "GREASE",
+            "GRIMES"
+          ],
+          "resisted": [
+            "RINSE"
+          ],
+          "neutral": 1707
+        },
+        "thirdTurn": {
+          "counters": [
+            "GREASE",
+            "GRIMES"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "LAUNDRY",
+            "STAINED",
+            "GREASE"
+          ],
+          "tileIds": [
+            [
+              2,
+              4,
+              1,
+              9,
+              8,
+              6,
+              11
+            ],
+            [
+              15,
+              14,
+              17,
+              7,
+              19,
+              3,
+              22
+            ],
+            [
+              13,
+              21,
+              16,
+              25,
+              20,
+              23
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "RINSE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "FILTHY",
+            "STAINED",
+            "FILTH",
+            "DINGY",
+            "SMUDGE"
+          ],
+          "resisted": [
+            "CLEAN"
+          ],
+          "neutral": 1487
+        },
+        "thirdTurn": {
+          "counters": [
+            "GREASE",
+            "SLUR",
+            "CRUD"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RINSE",
+            "STAINED",
+            "GREASE"
+          ],
+          "tileIds": [
+            [
+              6,
+              7,
+              9,
+              15,
+              3
+            ],
+            [
+              20,
+              14,
+              4,
+              18,
+              19,
+              16,
+              8
+            ],
+            [
+              13,
+              21,
+              23,
+              17,
+              26,
+              24
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "LAUNDER",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "DIRTY",
+            "DIRT",
+            "STAINED",
+            "GRIMES",
+            "DINGY",
+            "GRIMY"
+          ],
+          "resisted": [
+            "RINSE"
+          ],
+          "neutral": 1542
+        },
+        "thirdTurn": {
+          "counters": [
+            "GREASE",
+            "GRIMES",
+            "GRIMY"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "LAUNDER",
+            "STAINED",
+            "GREASE"
+          ],
+          "tileIds": [
+            [
+              2,
+              4,
+              1,
+              9,
+              8,
+              3,
+              6
+            ],
+            [
+              15,
+              14,
+              17,
+              7,
+              19,
+              16,
+              22
+            ],
+            [
+              13,
+              21,
+              23,
+              25,
+              20,
+              24
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "AGE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "DIRTY",
+            "DIRT",
+            "FILTHY",
+            "STAINED",
+            "FILTH",
+            "SLUR",
+            "CRUD"
+          ],
+          "resisted": [
+            "CLEAN",
+            "LAUNDRY",
+            "RINSE"
+          ],
+          "neutral": 1916
+        },
+        "thirdTurn": {
+          "counters": [
+            "SLUR",
+            "CRUD"
+          ],
+          "resisted": [
+            "CLEAN",
+            "LAUNDRY",
+            "RINSE",
+            "CLEANSE",
+            "CLEANERS",
+            "CLEANSER"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AGE",
+            "STAINED",
+            "SLUR"
+          ],
+          "tileIds": [
+            [
+              4,
+              13,
+              3
+            ],
+            [
+              15,
+              14,
+              17,
+              7,
+              9,
+              16,
+              8
+            ],
+            [
+              20,
+              2,
+              1,
+              6
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "STAINED",
+            "DINGY",
+            "SMUDGE",
+            "DEFILE"
+          ],
+          "resisted": [
+            "CLEAN",
+            "CLEANSE"
+          ],
+          "neutral": 1614
+        },
+        "thirdTurn": {
+          "counters": [
+            "GREASE",
+            "SLUR",
+            "CRUD"
+          ],
+          "resisted": [
+            "CLEAN",
+            "LAUNDRY",
+            "CLEANSE",
+            "CLEANERS",
+            "CLEANSER"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AIR",
+            "STAINED",
+            "GREASE"
+          ],
+          "tileIds": [
+            [
+              4,
+              7,
+              6
+            ],
+            [
+              15,
+              14,
+              17,
+              18,
+              9,
+              3,
+              8
+            ],
+            [
+              13,
+              21,
+              16,
+              25,
+              20,
+              23
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "ACNE",
+      "GRIMES"
+    ],
+    "tileIds": [
+      [
+        4,
+        10,
+        9,
+        3
+      ],
+      [
+        13,
+        6,
+        7,
+        0,
+        16,
+        15
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      4
+    ]
+  },
+  "identity": {
+    "id": "cleanliness-1-rinse-smearing",
+    "enemy": "RINSE",
+    "board": "ACDEFGHILMNRSTUY",
+    "bingos": [
+      "NASTIER",
+      "RAUNCHIEST",
+      "SMEARING",
+      "TARNISHED"
+    ],
+    "bingoFamilies": [
+      "NASTY",
+      "RAUNCHY",
+      "SMEAR",
+      "TARNISH"
+    ]
+  },
+  "novelty": [],
+  "asset": "puzzles/cleanliness-1-rinse-smearing-50bc3ccddb48.json",
+  "semanticPolicy": "Source-pinned concept pools with individually reviewed senses and lexical families. Unlabelled defined senses remain neutral; this is not an exhaustive contextual semantic proof.",
+  "editorialReview": "Enemy/bingo relationship and opening non-neutral meanings reviewed; homograph forms corrected and obvious concept words added. Existing board and refills preserved, all quality gates rerun."
+}

@@ -1,0 +1,650 @@
+{
+  "id": "size-1-tiny-immensity",
+  "theme": "size",
+  "side": 1,
+  "enemy": "TINY",
+  "bingo": "IMMENSITY",
+  "enemySense": "oewn-tiny__5.00.00.small.00",
+  "enemyLemma": "tiny",
+  "bingoLemma": "immensity",
+  "armour": 1,
+  "frequency": 0.3225,
+  "answer": "IMMENSITY",
+  "method": "bingo-first",
+  "accepted": true,
+  "profileVersion": "bingo-source-profiles-1:52b63cfe41b8",
+  "seeds": 2,
+  "seed": "bingo-first-3:TINY:IMMENSITY:12:two-turn-route",
+  "score": 257,
+  "analysis": {
+    "score": 257,
+    "bingos": [
+      "IMMENSITY"
+    ],
+    "counterFamilies": 9,
+    "resistedFamilies": 2,
+    "winningOpenings": 8,
+    "repeatedCounterRoutes": 8,
+    "sustainedPositions": 3,
+    "sustainedFinalPositions": 3,
+    "neutralCleanupOpenings": 2,
+    "routes": [
+      {
+        "opening": "LARGEST",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "IMMENSE"
+          ],
+          "resisted": [],
+          "neutral": 151
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "GIANT",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "IMMENSE",
+            "IMMENSELY"
+          ],
+          "resisted": [
+            "LESSEN"
+          ],
+          "neutral": 507
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "GIANT",
+            "IMMENSELY"
+          ],
+          "tileIds": [
+            [
+              5,
+              9,
+              11,
+              13,
+              6
+            ],
+            [
+              14,
+              0,
+              8,
+              1,
+              19,
+              10,
+              12,
+              4,
+              15
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "VAST",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "BIG",
+            "IMMENSE",
+            "IMMENSELY"
+          ],
+          "resisted": [],
+          "neutral": 409
+        },
+        "thirdTurn": {
+          "counters": [
+            "BIG",
+            "GROWING",
+            "ENORMITY"
+          ],
+          "resisted": [
+            "TINY",
+            "TRIM"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "VAST",
+            "IMMENSELY",
+            "BIG"
+          ],
+          "tileIds": [
+            [
+              2,
+              11,
+              10,
+              6
+            ],
+            [
+              9,
+              0,
+              8,
+              1,
+              13,
+              17,
+              12,
+              4,
+              15
+            ],
+            [
+              16,
+              14,
+              5
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "MONSTER",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "BIG",
+            "IMMENSE",
+            "IMMENSELY"
+          ],
+          "resisted": [],
+          "neutral": 431
+        },
+        "thirdTurn": {
+          "counters": [
+            "BIG",
+            "GIANT"
+          ],
+          "resisted": [
+            "TINY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "MONSTER",
+            "IMMENSELY",
+            "BIG"
+          ],
+          "tileIds": [
+            [
+              0,
+              3,
+              13,
+              10,
+              6,
+              1,
+              7
+            ],
+            [
+              9,
+              8,
+              21,
+              12,
+              19,
+              17,
+              18,
+              4,
+              15
+            ],
+            [
+              16,
+              14,
+              5
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "IMMENSE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "BIG",
+            "LARGEST",
+            "GIANT",
+            "VAST",
+            "MONSTER",
+            "VASTLY",
+            "ENORMITY"
+          ],
+          "resisted": [
+            "TINY",
+            "TRIM"
+          ],
+          "neutral": 1647
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "IMMENSE",
+            "ENORMITY"
+          ],
+          "tileIds": [
+            [
+              9,
+              0,
+              8,
+              1,
+              13,
+              10,
+              12
+            ],
+            [
+              18,
+              19,
+              3,
+              7,
+              21,
+              14,
+              6,
+              15
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "VASTLY",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "BIG",
+            "GROWN",
+            "IMMENSE"
+          ],
+          "resisted": [],
+          "neutral": 330
+        },
+        "thirdTurn": {
+          "counters": [
+            "BIG",
+            "GROWING",
+            "ENORMITY"
+          ],
+          "resisted": [
+            "TINY",
+            "TRIM"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "VASTLY",
+            "IMMENSE",
+            "BIG"
+          ],
+          "tileIds": [
+            [
+              2,
+              11,
+              10,
+              6,
+              4,
+              15
+            ],
+            [
+              9,
+              0,
+              8,
+              1,
+              13,
+              17,
+              12
+            ],
+            [
+              16,
+              14,
+              5
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "IMMENSELY",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "BIG",
+            "GIANT",
+            "VAST",
+            "MONSTER",
+            "ENORMITY"
+          ],
+          "resisted": [
+            "TINY",
+            "TRIM"
+          ],
+          "neutral": 1140
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "IMMENSELY",
+            "GIANT"
+          ],
+          "tileIds": [
+            [
+              9,
+              0,
+              8,
+              1,
+              13,
+              10,
+              12,
+              4,
+              15
+            ],
+            [
+              5,
+              14,
+              11,
+              19,
+              6
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "ENLARGE",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [],
+          "resisted": [
+            "TINY"
+          ],
+          "neutral": 259
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "ENORMITY",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "BIG",
+            "IMMENSE",
+            "IMMENSELY"
+          ],
+          "resisted": [
+            "LESSEN"
+          ],
+          "neutral": 487
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ENORMITY",
+            "BIG"
+          ],
+          "tileIds": [
+            [
+              1,
+              13,
+              3,
+              7,
+              0,
+              9,
+              6,
+              15
+            ],
+            [
+              16,
+              14,
+              5
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "TINY",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "BIG",
+            "IMMENSE",
+            "ENLARGE"
+          ],
+          "resisted": [
+            "LESSEN"
+          ],
+          "neutral": 972
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "TRIM",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "BIG"
+          ],
+          "resisted": [
+            "LESSEN"
+          ],
+          "neutral": 642
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "BIG",
+            "IMMENSE",
+            "IMMENSELY"
+          ],
+          "resisted": [
+            "TINY",
+            "LESSEN"
+          ],
+          "neutral": 532
+        },
+        "thirdTurn": {
+          "counters": [
+            "BIGGEST"
+          ],
+          "resisted": [
+            "TINY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AIR",
+            "IMMENSELY",
+            "BIGGEST"
+          ],
+          "tileIds": [
+            [
+              11,
+              9,
+              7
+            ],
+            [
+              14,
+              0,
+              8,
+              1,
+              13,
+              10,
+              12,
+              4,
+              15
+            ],
+            [
+              16,
+              26,
+              5,
+              27,
+              18,
+              17,
+              6
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "ANY",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "BIG"
+          ],
+          "resisted": [
+            "TRIM"
+          ],
+          "neutral": 490
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "AEGIS",
+      "ENORMITY"
+    ],
+    "tileIds": [
+      [
+        11,
+        1,
+        5,
+        9,
+        10
+      ],
+      [
+        12,
+        13,
+        3,
+        7,
+        0,
+        14,
+        6,
+        15
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      4
+    ]
+  },
+  "identity": {
+    "id": "size-1-tiny-immensity",
+    "enemy": "TINY",
+    "board": "AEEGIILMMNORSTVY",
+    "bingos": [
+      "IMMENSITY"
+    ],
+    "bingoFamilies": [
+      "IMMENSITY"
+    ]
+  },
+  "novelty": [],
+  "asset": "puzzles/size-1-tiny-immensity-d9e5104cb3d3.json",
+  "semanticPolicy": "Source-pinned concept pools with individually reviewed senses and lexical families. Unlabelled defined senses remain neutral; this is not an exhaustive contextual semantic proof.",
+  "editorialReview": "Enemy/bingo relationship and opening non-neutral meanings reviewed; homograph forms corrected and obvious concept words added. Existing board and refills preserved, all quality gates rerun."
+}

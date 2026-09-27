@@ -1,0 +1,918 @@
+{
+  "id": "temperature-0-winter-sweltering",
+  "theme": "temperature",
+  "side": 0,
+  "enemy": "WINTER",
+  "bingo": "SWELTERING",
+  "enemySense": "oewn-winter__1.28.00..",
+  "enemyLemma": "winter",
+  "bingoLemma": "swelter",
+  "armour": 1,
+  "frequency": 0.4,
+  "answer": "SWELTERING",
+  "method": "bingo-first",
+  "accepted": true,
+  "profileVersion": "bingo-source-profiles-1:77fd3b227e82",
+  "seeds": 2,
+  "seed": "bingo-first-3:WINTER:SWELTERING:12",
+  "score": 390,
+  "analysis": {
+    "score": 390,
+    "bingos": [
+      "SWELTERING"
+    ],
+    "counterFamilies": 10,
+    "resistedFamilies": 3,
+    "winningOpenings": 11,
+    "repeatedCounterRoutes": 11,
+    "sustainedPositions": 2,
+    "sustainedFinalPositions": 6,
+    "neutralCleanupOpenings": 0,
+    "routes": [
+      {
+        "opening": "HOT",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "WARM",
+            "MELT",
+            "BAKING"
+          ],
+          "resisted": [
+            "WINTER",
+            "TREMBLE"
+          ],
+          "neutral": 1284
+        },
+        "thirdTurn": {
+          "counters": [
+            "HEAT",
+            "WARM",
+            "BAKED",
+            "ROAST",
+            "WARMTH",
+            "THAW",
+            "HOTNESS"
+          ],
+          "resisted": [
+            "SHAKE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "HOT",
+            "MELTING",
+            "WARMEST"
+          ],
+          "tileIds": [
+            [
+              11,
+              6,
+              15
+            ],
+            [
+              3,
+              4,
+              0,
+              18,
+              14,
+              7,
+              2
+            ],
+            [
+              8,
+              5,
+              1,
+              19,
+              9,
+              10,
+              25
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "HEAT",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "MELT",
+            "BOIL",
+            "BOILER"
+          ],
+          "resisted": [
+            "WINTER"
+          ],
+          "neutral": 766
+        },
+        "thirdTurn": {
+          "counters": [
+            "WARM",
+            "ROAST",
+            "WARMTH",
+            "THAW"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "HEAT",
+            "MELTING",
+            "WARM"
+          ],
+          "tileIds": [
+            [
+              11,
+              4,
+              5,
+              15
+            ],
+            [
+              3,
+              9,
+              0,
+              18,
+              14,
+              7,
+              2
+            ],
+            [
+              8,
+              24,
+              1,
+              19
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "WARM",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "HOT",
+            "MELT",
+            "BOIL"
+          ],
+          "resisted": [],
+          "neutral": 574
+        },
+        "thirdTurn": {
+          "counters": [
+            "HEAT",
+            "BAKED",
+            "HOTTEST",
+            "HOTNESS"
+          ],
+          "resisted": [
+            "SHAKE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "WARM",
+            "MELTING",
+            "HEAT"
+          ],
+          "tileIds": [
+            [
+              8,
+              5,
+              1,
+              3
+            ],
+            [
+              19,
+              4,
+              0,
+              15,
+              14,
+              7,
+              2
+            ],
+            [
+              11,
+              9,
+              24,
+              18
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "MELT",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "HEAT",
+            "WARM",
+            "MELT",
+            "BAKING",
+            "ROAST",
+            "BOIL",
+            "WARMTH",
+            "BOILER",
+            "THAW"
+          ],
+          "resisted": [
+            "WINTER",
+            "SHAKE"
+          ],
+          "neutral": 1840
+        },
+        "thirdTurn": {
+          "counters": [
+            "WARM",
+            "ROAST",
+            "WARMTH",
+            "THAW"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "MELT",
+            "HEATING",
+            "WARM"
+          ],
+          "tileIds": [
+            [
+              3,
+              4,
+              0,
+              15
+            ],
+            [
+              11,
+              9,
+              5,
+              18,
+              14,
+              7,
+              2
+            ],
+            [
+              8,
+              24,
+              1,
+              19
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "BAKING",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "HOT",
+            "MELT",
+            "HOTNESS"
+          ],
+          "resisted": [],
+          "neutral": 509
+        },
+        "thirdTurn": {
+          "counters": [
+            "HEAT",
+            "MELT",
+            "THAW",
+            "HOTNESS"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "BAKING",
+            "HOTTER",
+            "THAWED"
+          ],
+          "tileIds": [
+            [
+              13,
+              5,
+              12,
+              14,
+              7,
+              2
+            ],
+            [
+              11,
+              6,
+              15,
+              18,
+              4,
+              1
+            ],
+            [
+              25,
+              23,
+              24,
+              8,
+              9,
+              22
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "ROAST",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "MELT"
+          ],
+          "resisted": [],
+          "neutral": 412
+        },
+        "thirdTurn": {
+          "counters": [
+            "HEAT",
+            "BAKED",
+            "THAW"
+          ],
+          "resisted": [
+            "SHAKE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ROAST",
+            "MELTING",
+            "THAWED"
+          ],
+          "tileIds": [
+            [
+              1,
+              6,
+              5,
+              10,
+              15
+            ],
+            [
+              3,
+              4,
+              0,
+              18,
+              14,
+              7,
+              2
+            ],
+            [
+              25,
+              11,
+              24,
+              8,
+              9,
+              22
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "BOIL",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "HEAT",
+            "WARM",
+            "MELT",
+            "WARMTH",
+            "THAW"
+          ],
+          "resisted": [
+            "SHAKE"
+          ],
+          "neutral": 700
+        },
+        "thirdTurn": {
+          "counters": [
+            "HEAT",
+            "MELT",
+            "HOTTEST"
+          ],
+          "resisted": [
+            "SHAKE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "BOIL",
+            "WARMEST",
+            "MOLTEN"
+          ],
+          "tileIds": [
+            [
+              13,
+              6,
+              14,
+              0
+            ],
+            [
+              8,
+              5,
+              1,
+              3,
+              4,
+              10,
+              15
+            ],
+            [
+              19,
+              21,
+              16,
+              18,
+              9,
+              7
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "WARMTH",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "MELT",
+            "BOIL"
+          ],
+          "resisted": [],
+          "neutral": 573
+        },
+        "thirdTurn": {
+          "counters": [
+            "HEAT",
+            "BAKED",
+            "BOILED",
+            "HOTNESS"
+          ],
+          "resisted": [
+            "SHAKE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "WARMTH",
+            "MELTING",
+            "HEAT"
+          ],
+          "tileIds": [
+            [
+              8,
+              5,
+              1,
+              3,
+              15,
+              11
+            ],
+            [
+              19,
+              4,
+              0,
+              18,
+              14,
+              7,
+              2
+            ],
+            [
+              23,
+              9,
+              24,
+              25
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "BOILER",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "HOT",
+            "HEAT",
+            "MELT",
+            "THAW",
+            "HOTNESS"
+          ],
+          "resisted": [
+            "SHAKE"
+          ],
+          "neutral": 613
+        },
+        "thirdTurn": {
+          "counters": [
+            "THAW"
+          ],
+          "resisted": [
+            "SHAKE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "BOILER",
+            "MOLTEN",
+            "THAW"
+          ],
+          "tileIds": [
+            [
+              13,
+              6,
+              14,
+              0,
+              4,
+              1
+            ],
+            [
+              3,
+              21,
+              16,
+              15,
+              9,
+              7
+            ],
+            [
+              18,
+              11,
+              5,
+              8
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "THAW",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "MELT",
+            "BOIL",
+            "BOILER"
+          ],
+          "resisted": [
+            "TREMBLE"
+          ],
+          "neutral": 728
+        },
+        "thirdTurn": {
+          "counters": [
+            "HEAT",
+            "BAKED",
+            "ROAST",
+            "HOTTER",
+            "HOTNESS"
+          ],
+          "resisted": [
+            "SHAKE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "THAW",
+            "MELTING",
+            "ROASTED"
+          ],
+          "tileIds": [
+            [
+              15,
+              11,
+              5,
+              8
+            ],
+            [
+              3,
+              4,
+              0,
+              18,
+              14,
+              7,
+              2
+            ],
+            [
+              1,
+              6,
+              24,
+              10,
+              25,
+              9,
+              22
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "WINTER",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "HOT",
+            "HEAT",
+            "MELT",
+            "BAKE",
+            "HOTNESS"
+          ],
+          "resisted": [
+            "SHAKE"
+          ],
+          "neutral": 688
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "SHAKE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "MELT",
+            "BOIL",
+            "BOILER"
+          ],
+          "resisted": [
+            "WINTER"
+          ],
+          "neutral": 719
+        },
+        "thirdTurn": {
+          "counters": [
+            "HEAT",
+            "WARM",
+            "HOTTEST",
+            "ROAST",
+            "WARMTH",
+            "THAW"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SHAKE",
+            "MELTING",
+            "WARMEST"
+          ],
+          "tileIds": [
+            [
+              10,
+              11,
+              5,
+              12,
+              4
+            ],
+            [
+              3,
+              9,
+              0,
+              15,
+              14,
+              7,
+              2
+            ],
+            [
+              8,
+              24,
+              1,
+              19,
+              27,
+              20,
+              18
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            4,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "TREMBLE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "HOT",
+            "THAW"
+          ],
+          "resisted": [],
+          "neutral": 746
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "AGE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "HOT",
+            "MELT",
+            "BOIL",
+            "BOILER"
+          ],
+          "resisted": [
+            "WINTER"
+          ],
+          "neutral": 774
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "HOT",
+            "MELT"
+          ],
+          "resisted": [],
+          "neutral": 373
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "MELTING",
+      "WARMEST"
+    ],
+    "tileIds": [
+      [
+        3,
+        4,
+        0,
+        15,
+        14,
+        7,
+        2
+      ],
+      [
+        8,
+        5,
+        1,
+        19,
+        9,
+        10,
+        18
+      ]
+    ],
+    "labels": [
+      "COUNTER",
+      "COUNTER"
+    ],
+    "hits": [
+      4,
+      3
+    ]
+  },
+  "identity": {
+    "id": "temperature-0-winter-sweltering",
+    "enemy": "WINTER",
+    "board": "ABEEGHIKLMNORSTW",
+    "bingos": [
+      "SWELTERING"
+    ],
+    "bingoFamilies": [
+      "SWELTER"
+    ]
+  },
+  "novelty": [],
+  "asset": "puzzles/temperature-0-winter-sweltering-516576ca4c38.json",
+  "semanticPolicy": "Source-pinned concept pools with individually reviewed senses and lexical families. Unlabelled defined senses remain neutral; this is not an exhaustive contextual semantic proof.",
+  "editorialReview": "Enemy/bingo relationship and opening non-neutral meanings reviewed; homograph forms corrected and obvious concept words added. Existing board and refills preserved, all quality gates rerun."
+}

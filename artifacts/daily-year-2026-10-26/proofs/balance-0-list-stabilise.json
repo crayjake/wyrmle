@@ -1,0 +1,879 @@
+{
+  "id": "balance-0-list-stabilise",
+  "theme": "balance",
+  "side": 0,
+  "enemy": "LIST",
+  "bingo": "STABILISE",
+  "enemySense": "oewn-list__1.07.00..",
+  "enemyLemma": "list",
+  "bingoLemma": "stabilise",
+  "armour": 2,
+  "frequency": 0.42500000000000004,
+  "answer": "STABILISE",
+  "method": "bingo-first",
+  "accepted": true,
+  "profileVersion": "bingo-source-profiles-1:2a8125817d77",
+  "seeds": 2,
+  "seed": "bingo-first-3:LIST:STABILISE:13:two-turn-route",
+  "score": 329,
+  "analysis": {
+    "score": 329,
+    "bingos": [
+      "STABILISE",
+      "STABILIZERS",
+      "STABILIZES",
+      "STABILISER"
+    ],
+    "counterFamilies": 5,
+    "resistedFamilies": 4,
+    "winningOpenings": 11,
+    "repeatedCounterRoutes": 8,
+    "sustainedPositions": 9,
+    "sustainedFinalPositions": 3,
+    "neutralCleanupOpenings": 0,
+    "routes": [
+      {
+        "opening": "BALANCE",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "POISE"
+          ],
+          "resisted": [
+            "LIST",
+            "TIPS",
+            "TILT"
+          ],
+          "neutral": 414
+        },
+        "thirdTurn": {
+          "counters": [
+            "STABILITY"
+          ],
+          "resisted": [
+            "LIST",
+            "TILT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "BALANCE",
+            "POISE",
+            "STABILITY"
+          ],
+          "tileIds": [
+            [
+              11,
+              2,
+              10,
+              9,
+              15,
+              0,
+              4
+            ],
+            [
+              14,
+              3,
+              6,
+              5,
+              18
+            ],
+            [
+              12,
+              8,
+              27,
+              19,
+              13,
+              17,
+              26,
+              16,
+              20
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "PLANE",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "STABLE",
+            "STABILITY",
+            "BRACES"
+          ],
+          "resisted": [
+            "LIST",
+            "TILT"
+          ],
+          "neutral": 753
+        },
+        "thirdTurn": {
+          "counters": [
+            "STABLE",
+            "BRACES"
+          ],
+          "resisted": [
+            "LIST",
+            "TILT",
+            "STUMBLE",
+            "TUMBLE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "PLANE",
+            "STABILITY",
+            "STABLE"
+          ],
+          "tileIds": [
+            [
+              14,
+              10,
+              2,
+              15,
+              4
+            ],
+            [
+              5,
+              8,
+              9,
+              11,
+              6,
+              17,
+              13,
+              16,
+              20
+            ],
+            [
+              12,
+              21,
+              27,
+              19,
+              22,
+              18
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "STABLE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "STABLE",
+            "STABILITY",
+            "BRACES",
+            "POISE"
+          ],
+          "resisted": [
+            "LIST",
+            "TIPS",
+            "CANT",
+            "LEAN",
+            "TILT",
+            "SLANT"
+          ],
+          "neutral": 1437
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "STABLE",
+            "STABILITY"
+          ],
+          "tileIds": [
+            [
+              5,
+              8,
+              2,
+              11,
+              10,
+              4
+            ],
+            [
+              12,
+              16,
+              9,
+              19,
+              6,
+              17,
+              13,
+              21,
+              20
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "BRACES",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "PLANE",
+            "STABLE",
+            "STABILITY",
+            "POISE"
+          ],
+          "resisted": [
+            "LIST",
+            "TIPS",
+            "LEAN",
+            "TILT",
+            "SLANT"
+          ],
+          "neutral": 619
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "BRACES",
+            "STABILITY"
+          ],
+          "tileIds": [
+            [
+              11,
+              1,
+              2,
+              0,
+              4,
+              5
+            ],
+            [
+              12,
+              8,
+              9,
+              19,
+              6,
+              10,
+              13,
+              16,
+              20
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            5
+          ]
+        }
+      },
+      {
+        "opening": "POISE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "BALANCE",
+            "STABLE",
+            "BRACES"
+          ],
+          "resisted": [
+            "LIST",
+            "CANT",
+            "LEAN",
+            "TILT",
+            "SLANT"
+          ],
+          "neutral": 762
+        },
+        "thirdTurn": {
+          "counters": [
+            "STABILITY",
+            "BRACING"
+          ],
+          "resisted": [
+            "LIST",
+            "CANT",
+            "TILT",
+            "SLANT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "POISE",
+            "STABLE",
+            "STABILITY"
+          ],
+          "tileIds": [
+            [
+              14,
+              3,
+              6,
+              5,
+              4
+            ],
+            [
+              12,
+              8,
+              2,
+              11,
+              10,
+              18
+            ],
+            [
+              23,
+              16,
+              9,
+              19,
+              13,
+              17,
+              26,
+              21,
+              20
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "LIST",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "BALANCE",
+            "PLANE",
+            "STABLE",
+            "BRACES",
+            "POISE"
+          ],
+          "resisted": [
+            "LIST",
+            "TIPS",
+            "CANT",
+            "LEAN",
+            "REEL",
+            "SLANT"
+          ],
+          "neutral": 1375
+        },
+        "thirdTurn": {
+          "counters": [
+            "STABILITY",
+            "POISE"
+          ],
+          "resisted": [
+            "TIPS",
+            "ANGLE",
+            "CANT",
+            "LEAN",
+            "TILT",
+            "SLANT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "LIST",
+            "STABLER",
+            "STABILITY"
+          ],
+          "tileIds": [
+            [
+              10,
+              6,
+              5,
+              8
+            ],
+            [
+              12,
+              16,
+              2,
+              11,
+              17,
+              4,
+              1
+            ],
+            [
+              23,
+              21,
+              9,
+              19,
+              13,
+              22,
+              26,
+              25,
+              20
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "TIPS",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "BALANCE",
+            "STABLE",
+            "BRACES"
+          ],
+          "resisted": [
+            "LIST",
+            "CANT",
+            "LEAN",
+            "REEL",
+            "SLANT"
+          ],
+          "neutral": 1017
+        },
+        "thirdTurn": {
+          "counters": [
+            "STABILITY"
+          ],
+          "resisted": [
+            "LIST",
+            "ANGLE",
+            "CANT",
+            "LEAN",
+            "TILT",
+            "SLANT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "TIPS",
+            "STABLER",
+            "STABILITY"
+          ],
+          "tileIds": [
+            [
+              8,
+              6,
+              14,
+              5
+            ],
+            [
+              12,
+              16,
+              2,
+              11,
+              10,
+              4,
+              1
+            ],
+            [
+              23,
+              21,
+              9,
+              19,
+              13,
+              17,
+              26,
+              25,
+              20
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "CANT",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "STABLE",
+            "POISE"
+          ],
+          "resisted": [
+            "LIST",
+            "TIPS",
+            "REEL"
+          ],
+          "neutral": 757
+        },
+        "thirdTurn": {
+          "counters": [
+            "STABILITY"
+          ],
+          "resisted": [
+            "LIST",
+            "TIPS",
+            "TILT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CANT",
+            "SEE",
+            "STABILITY"
+          ],
+          "tileIds": [
+            [
+              0,
+              2,
+              15,
+              8
+            ],
+            [
+              5,
+              4,
+              18
+            ],
+            [
+              12,
+              16,
+              9,
+              11,
+              6,
+              10,
+              13,
+              21,
+              20
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            1,
+            5
+          ]
+        }
+      },
+      {
+        "opening": "LEAN",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "STABLE",
+            "BRACES",
+            "POISE"
+          ],
+          "resisted": [
+            "LIST",
+            "TIPS",
+            "TILT"
+          ],
+          "neutral": 958
+        },
+        "thirdTurn": {
+          "counters": [
+            "STABILITY"
+          ],
+          "resisted": [
+            "LIST",
+            "TIPS",
+            "TILT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "LEAN",
+            "SET",
+            "STABILITY"
+          ],
+          "tileIds": [
+            [
+              10,
+              4,
+              2,
+              15
+            ],
+            [
+              5,
+              18,
+              8
+            ],
+            [
+              12,
+              16,
+              9,
+              11,
+              6,
+              17,
+              13,
+              21,
+              20
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            1,
+            5
+          ]
+        }
+      },
+      {
+        "opening": "ACT",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "PLANE",
+            "STABLE",
+            "POISE"
+          ],
+          "resisted": [
+            "LIST",
+            "TIPS",
+            "LEAN",
+            "REEL",
+            "SLANT"
+          ],
+          "neutral": 1133
+        },
+        "thirdTurn": {
+          "counters": [
+            "STABILITY"
+          ],
+          "resisted": [
+            "LIST",
+            "TIPS",
+            "TILT",
+            "SLANT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ACT",
+            "SEE",
+            "STABILITY"
+          ],
+          "tileIds": [
+            [
+              2,
+              0,
+              8
+            ],
+            [
+              5,
+              4,
+              18
+            ],
+            [
+              12,
+              16,
+              9,
+              11,
+              6,
+              10,
+              13,
+              21,
+              20
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            1,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "PLANE",
+            "STABLE",
+            "POISE"
+          ],
+          "resisted": [
+            "LIST",
+            "TIPS",
+            "CANT",
+            "LEAN",
+            "TILT",
+            "SLANT"
+          ],
+          "neutral": 947
+        },
+        "thirdTurn": {
+          "counters": [
+            "POISE"
+          ],
+          "resisted": [
+            "LIST",
+            "TIPS",
+            "TILT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AIR",
+            "STABLE",
+            "POISE"
+          ],
+          "tileIds": [
+            [
+              2,
+              6,
+              1
+            ],
+            [
+              5,
+              8,
+              9,
+              11,
+              10,
+              4
+            ],
+            [
+              14,
+              3,
+              13,
+              12,
+              18
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            2
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "ABSENT",
+      "STABILITY"
+    ],
+    "tileIds": [
+      [
+        2,
+        11,
+        5,
+        4,
+        15,
+        8
+      ],
+      [
+        12,
+        16,
+        9,
+        19,
+        6,
+        10,
+        13,
+        21,
+        20
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      5
+    ]
+  },
+  "identity": {
+    "id": "balance-0-list-stabilise",
+    "enemy": "LIST",
+    "board": "AABCEIILNOPRSSTZ",
+    "bingos": [
+      "STABILISE",
+      "STABILISER",
+      "STABILIZERS",
+      "STABILIZES"
+    ],
+    "bingoFamilies": [
+      "STABILISE",
+      "STABILISER",
+      "STABILIZE",
+      "STABILIZER"
+    ]
+  },
+  "novelty": [],
+  "asset": "puzzles/balance-0-list-stabilise-738c6d0517c4.json",
+  "semanticPolicy": "Source-pinned concept pools with individually reviewed senses and lexical families. Unlabelled defined senses remain neutral; this is not an exhaustive contextual semantic proof.",
+  "editorialReview": "Enemy/bingo relationship and opening non-neutral meanings reviewed; homograph forms corrected and obvious concept words added. Existing board and refills preserved, all quality gates rerun."
+}

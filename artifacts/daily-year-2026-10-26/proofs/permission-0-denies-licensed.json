@@ -1,0 +1,952 @@
+{
+  "id": "permission-0-denies-licensed",
+  "theme": "permission",
+  "side": 0,
+  "enemy": "DENIES",
+  "bingo": "LICENSED",
+  "enemySense": "oewn-deny__2.40.01..",
+  "enemyLemma": "deny",
+  "bingoLemma": "license",
+  "armour": 0,
+  "frequency": 0.7925,
+  "answer": "LICENSED",
+  "method": "bingo-first",
+  "accepted": true,
+  "profileVersion": "bingo-source-profiles-1:0c2ec0674213",
+  "seeds": 2,
+  "seed": "bingo-first-3:DENIES:LICENSED:12",
+  "score": 441,
+  "analysis": {
+    "score": 441,
+    "bingos": [
+      "LICENSED"
+    ],
+    "counterFamilies": 8,
+    "resistedFamilies": 4,
+    "winningOpenings": 14,
+    "repeatedCounterRoutes": 12,
+    "sustainedPositions": 7,
+    "sustainedFinalPositions": 6,
+    "neutralCleanupOpenings": 1,
+    "routes": [
+      {
+        "opening": "LET",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "ACCEPT",
+            "ADMIT",
+            "CONSENT",
+            "PERMIT",
+            "SANCTIONED"
+          ],
+          "resisted": [
+            "CENSOR",
+            "OMIT"
+          ],
+          "neutral": 1468
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "LET",
+            "SANCTIONED"
+          ],
+          "tileIds": [
+            [
+              0,
+              8,
+              1
+            ],
+            [
+              6,
+              2,
+              5,
+              4,
+              17,
+              11,
+              10,
+              9,
+              12,
+              14
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            5
+          ]
+        }
+      },
+      {
+        "opening": "CLEAR",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "ADMIT",
+            "CONSENT",
+            "SANCTIONED"
+          ],
+          "resisted": [
+            "VETO",
+            "OMITTED"
+          ],
+          "neutral": 941
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CLEAR",
+            "SANCTIONED"
+          ],
+          "tileIds": [
+            [
+              4,
+              0,
+              8,
+              2,
+              3
+            ],
+            [
+              6,
+              18,
+              5,
+              13,
+              1,
+              11,
+              10,
+              9,
+              12,
+              14
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            5
+          ]
+        }
+      },
+      {
+        "opening": "ACCEPT",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "LET",
+            "ADMIT"
+          ],
+          "resisted": [
+            "DENIAL",
+            "VETO",
+            "OMITTED"
+          ],
+          "neutral": 1303
+        },
+        "thirdTurn": {
+          "counters": [
+            "LETS",
+            "ENABLE"
+          ],
+          "resisted": [
+            "BAR",
+            "BAN",
+            "VETO"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ACCEPT",
+            "ADMITTED",
+            "ENABLES"
+          ],
+          "tileIds": [
+            [
+              2,
+              4,
+              13,
+              8,
+              15,
+              1
+            ],
+            [
+              18,
+              14,
+              7,
+              11,
+              17,
+              21,
+              12,
+              20
+            ],
+            [
+              23,
+              5,
+              29,
+              28,
+              0,
+              25,
+              6
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "ADMIT",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "LET",
+            "CLEAR",
+            "ACCEPT",
+            "CONSENT",
+            "LICENCE",
+            "SANCTIONED"
+          ],
+          "resisted": [
+            "PREVENT",
+            "DECLINE",
+            "PREVENTION",
+            "DENIAL",
+            "DENIES",
+            "VETO",
+            "CENSORED"
+          ],
+          "neutral": 2040
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ADMIT",
+            "LICENCES"
+          ],
+          "tileIds": [
+            [
+              2,
+              14,
+              7,
+              11,
+              1
+            ],
+            [
+              0,
+              16,
+              4,
+              8,
+              5,
+              13,
+              12,
+              6
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "CONSENT",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "LET",
+            "CLEAR",
+            "ADMIT",
+            "PERMIT"
+          ],
+          "resisted": [],
+          "neutral": 638
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CONSENT",
+            "ADMITTED"
+          ],
+          "tileIds": [
+            [
+              4,
+              10,
+              5,
+              6,
+              8,
+              9,
+              1
+            ],
+            [
+              2,
+              14,
+              7,
+              11,
+              17,
+              21,
+              12,
+              20
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "PERMIT",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "LET",
+            "CONSENT",
+            "SANCTIONED"
+          ],
+          "resisted": [
+            "DENIAL",
+            "VETO"
+          ],
+          "neutral": 812
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "PERMIT",
+            "SANCTIONED"
+          ],
+          "tileIds": [
+            [
+              15,
+              8,
+              3,
+              7,
+              11,
+              1
+            ],
+            [
+              6,
+              2,
+              5,
+              4,
+              17,
+              16,
+              10,
+              9,
+              12,
+              14
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "LICENCE",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "ADMIT"
+          ],
+          "resisted": [
+            "OMIT"
+          ],
+          "neutral": 522
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "LICENCE",
+            "ADMITS"
+          ],
+          "tileIds": [
+            [
+              0,
+              11,
+              4,
+              8,
+              5,
+              13,
+              12
+            ],
+            [
+              2,
+              14,
+              7,
+              16,
+              1,
+              6
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "SANCTIONED",
+        "label": "COUNTER",
+        "hits": 5,
+        "later": {
+          "counters": [
+            "LET",
+            "CLEAR",
+            "PERMIT"
+          ],
+          "resisted": [],
+          "neutral": 1444
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SANCTIONED",
+            "LET"
+          ],
+          "tileIds": [
+            [
+              6,
+              2,
+              5,
+              4,
+              1,
+              11,
+              10,
+              9,
+              8,
+              14
+            ],
+            [
+              0,
+              12,
+              17
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            5,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "DECLINE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "ADMIT"
+          ],
+          "resisted": [
+            "OMIT"
+          ],
+          "neutral": 717
+        },
+        "thirdTurn": {
+          "counters": [
+            "LET",
+            "CLEAR",
+            "ENABLE",
+            "TOLERATE"
+          ],
+          "resisted": [
+            "BAR",
+            "PREVENT",
+            "BAN",
+            "VETO",
+            "CENSOR"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DECLINE",
+            "ADMITS",
+            "ENABLE"
+          ],
+          "tileIds": [
+            [
+              14,
+              8,
+              4,
+              0,
+              11,
+              5,
+              12
+            ],
+            [
+              2,
+              20,
+              7,
+              16,
+              1,
+              6
+            ],
+            [
+              23,
+              9,
+              18,
+              28,
+              26,
+              25
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "DENIAL",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "ACCEPT",
+            "ADMIT",
+            "PERMIT"
+          ],
+          "resisted": [
+            "VETO",
+            "OMITTED",
+            "CENSOR"
+          ],
+          "neutral": 1502
+        },
+        "thirdTurn": {
+          "counters": [
+            "LET",
+            "ENABLE"
+          ],
+          "resisted": [
+            "BAN",
+            "VETO"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DENIAL",
+            "PERMITS",
+            "ENABLED"
+          ],
+          "tileIds": [
+            [
+              14,
+              8,
+              5,
+              11,
+              2,
+              0
+            ],
+            [
+              15,
+              12,
+              3,
+              7,
+              16,
+              1,
+              6
+            ],
+            [
+              23,
+              9,
+              18,
+              28,
+              26,
+              25,
+              20
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "DENIES",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "ADMIT"
+          ],
+          "resisted": [
+            "OMIT"
+          ],
+          "neutral": 474
+        },
+        "thirdTurn": {
+          "counters": [
+            "LET",
+            "PERMIT",
+            "LICENCE"
+          ],
+          "resisted": [
+            "PREVENT",
+            "VETO",
+            "CENSOR",
+            "OMIT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DENIES",
+            "DATA",
+            "LICENCES"
+          ],
+          "tileIds": [
+            [
+              14,
+              8,
+              5,
+              11,
+              12,
+              6
+            ],
+            [
+              20,
+              2,
+              1,
+              18
+            ],
+            [
+              0,
+              16,
+              4,
+              23,
+              9,
+              13,
+              25,
+              24
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            1,
+            5
+          ]
+        }
+      },
+      {
+        "opening": "CENSORED",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "LET",
+            "ADMIT",
+            "ADMITTANCE"
+          ],
+          "resisted": [
+            "DENIAL"
+          ],
+          "neutral": 546
+        },
+        "thirdTurn": {
+          "counters": [
+            "LET",
+            "APPROVE"
+          ],
+          "resisted": [
+            "BAR",
+            "VETO"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CENSORED",
+            "ADMITTANCE",
+            "LETS"
+          ],
+          "tileIds": [
+            [
+              4,
+              8,
+              5,
+              6,
+              10,
+              3,
+              12,
+              14
+            ],
+            [
+              2,
+              20,
+              7,
+              11,
+              1,
+              17,
+              18,
+              9,
+              13,
+              23
+            ],
+            [
+              0,
+              25,
+              21,
+              24
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            4,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "LET",
+            "ACCEPT",
+            "ADMIT",
+            "CONSENT",
+            "LICENCE",
+            "SANCTIONED"
+          ],
+          "resisted": [
+            "DECLINE",
+            "DENIAL",
+            "DENIES",
+            "OMITTED"
+          ],
+          "neutral": 1407
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AIR",
+            "CONSENTED"
+          ],
+          "tileIds": [
+            [
+              2,
+              11,
+              3
+            ],
+            [
+              4,
+              10,
+              5,
+              6,
+              8,
+              9,
+              1,
+              12,
+              14
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            5
+          ]
+        }
+      },
+      {
+        "opening": "AND",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "LET",
+            "CLEAR",
+            "ACCEPT",
+            "PERMIT",
+            "LICENCE",
+            "TOLERATE"
+          ],
+          "resisted": [
+            "CENSOR",
+            "OMIT"
+          ],
+          "neutral": 1697
+        },
+        "thirdTurn": {
+          "counters": [
+            "ADMIT",
+            "PERMITTED",
+            "TOLERATED"
+          ],
+          "resisted": [
+            "VETO",
+            "OMITTED"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AND",
+            "LICENCES",
+            "ADMIT"
+          ],
+          "tileIds": [
+            [
+              2,
+              5,
+              14
+            ],
+            [
+              0,
+              11,
+              4,
+              8,
+              9,
+              13,
+              12,
+              6
+            ],
+            [
+              18,
+              20,
+              7,
+              16,
+              1
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "ACE",
+      "SANCTIONED"
+    ],
+    "tileIds": [
+      [
+        2,
+        4,
+        8
+      ],
+      [
+        6,
+        18,
+        5,
+        13,
+        1,
+        11,
+        10,
+        9,
+        12,
+        14
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      5
+    ]
+  },
+  "identity": {
+    "id": "permission-0-denies-licensed",
+    "enemy": "DENIES",
+    "board": "ACCDEEILMNNOPRST",
+    "bingos": [
+      "LICENSED"
+    ],
+    "bingoFamilies": [
+      "LICENSE"
+    ]
+  },
+  "novelty": [],
+  "asset": "puzzles/permission-0-denies-licensed-20b3c08a2479.json",
+  "semanticPolicy": "Source-pinned concept pools with individually reviewed senses and lexical families. Unlabelled defined senses remain neutral; this is not an exhaustive contextual semantic proof.",
+  "editorialReview": "Enemy/bingo relationship and opening non-neutral meanings reviewed; homograph forms corrected and obvious concept words added. Existing board and refills preserved, all quality gates rerun."
+}

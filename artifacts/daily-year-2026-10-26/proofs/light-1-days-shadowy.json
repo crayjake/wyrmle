@@ -1,0 +1,1076 @@
+{
+  "id": "light-1-days-shadowy",
+  "theme": "light",
+  "side": 1,
+  "enemy": "DAYS",
+  "bingo": "SHADOWY",
+  "enemySense": "oewn-day__1.28.02..",
+  "enemyLemma": "day",
+  "bingoLemma": "shadowy",
+  "armour": 0,
+  "frequency": 0.56,
+  "answer": "SHADOWY",
+  "method": "bingo-first",
+  "accepted": true,
+  "profileVersion": "bingo-source-profiles-1:d0a1ff5c713b",
+  "seeds": 2,
+  "seed": "bingo-first-3:DAYS:SHADOWY:13",
+  "score": 492,
+  "analysis": {
+    "score": 492,
+    "bingos": [
+      "SHADY",
+      "SHADOWY"
+    ],
+    "counterFamilies": 11,
+    "resistedFamilies": 4,
+    "winningOpenings": 17,
+    "repeatedCounterRoutes": 15,
+    "sustainedPositions": 9,
+    "sustainedFinalPositions": 2,
+    "neutralCleanupOpenings": 3,
+    "routes": [
+      {
+        "opening": "DARK",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "SHADOW",
+            "SHADE",
+            "CLOUDS",
+            "OBSCURE",
+            "MUDDY",
+            "CLOUDY"
+          ],
+          "resisted": [
+            "DAY",
+            "CLEAR",
+            "RAY",
+            "BEAM",
+            "GLOW",
+            "GLARE"
+          ],
+          "neutral": 1178
+        },
+        "thirdTurn": {
+          "counters": [
+            "MUDDY",
+            "MURKY",
+            "DUSKY"
+          ],
+          "resisted": []
+        },
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "DARK",
+            "SHADOW",
+            "MUDDY"
+          ],
+          "tileIds": [
+            [
+              8,
+              9,
+              6,
+              5
+            ],
+            [
+              1,
+              15,
+              19,
+              16,
+              11,
+              13
+            ],
+            [
+              14,
+              3,
+              18,
+              21,
+              0
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "BLACK",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "DARK",
+            "SHADOW",
+            "SHADE",
+            "MUDDY",
+            "DUSK",
+            "MURKY",
+            "DUSKY"
+          ],
+          "resisted": [
+            "DAY",
+            "RAY"
+          ],
+          "neutral": 566
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "BLACK",
+            "DUSKY"
+          ],
+          "tileIds": [
+            [
+              12,
+              7,
+              9,
+              4,
+              5
+            ],
+            [
+              8,
+              3,
+              1,
+              20,
+              0
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "CLOUD",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "DARK",
+            "SHADE"
+          ],
+          "resisted": [
+            "DAY",
+            "RAY",
+            "BEAM",
+            "DAYBREAK"
+          ],
+          "neutral": 392
+        },
+        "thirdTurn": {
+          "counters": [
+            "MUDDY",
+            "MURKY",
+            "DUSKY"
+          ],
+          "resisted": [
+            "DAY",
+            "RAY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CLOUD",
+            "SHADE",
+            "MUDDY"
+          ],
+          "tileIds": [
+            [
+              4,
+              7,
+              11,
+              3,
+              8
+            ],
+            [
+              1,
+              15,
+              9,
+              16,
+              2
+            ],
+            [
+              14,
+              24,
+              18,
+              21,
+              0
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SHADOW",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "MUDDY",
+            "MURKY",
+            "DARKLY"
+          ],
+          "resisted": [
+            "DAY",
+            "CLEAR",
+            "RAY",
+            "BEAM",
+            "GLARE"
+          ],
+          "neutral": 370
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SHADOW",
+            "MUDDY"
+          ],
+          "tileIds": [
+            [
+              1,
+              15,
+              9,
+              8,
+              11,
+              13
+            ],
+            [
+              14,
+              3,
+              16,
+              18,
+              0
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SHADE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "MUDDY",
+            "CLOUDY",
+            "MURKY",
+            "DARKLY"
+          ],
+          "resisted": [
+            "DAY",
+            "RAY",
+            "GLOW"
+          ],
+          "neutral": 293
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SHADE",
+            "MUDDY"
+          ],
+          "tileIds": [
+            [
+              1,
+              15,
+              9,
+              8,
+              2
+            ],
+            [
+              14,
+              3,
+              16,
+              18,
+              0
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "OBSCURE",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "DARK",
+            "DARKLY"
+          ],
+          "resisted": [
+            "DAY",
+            "RAY"
+          ],
+          "neutral": 85
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "OBSCURE",
+            "DARKLY"
+          ],
+          "tileIds": [
+            [
+              11,
+              12,
+              1,
+              4,
+              3,
+              6,
+              2
+            ],
+            [
+              8,
+              9,
+              17,
+              5,
+              7,
+              0
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "CLOUDY",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "DARK",
+            "SHADE"
+          ],
+          "resisted": [
+            "BEAM"
+          ],
+          "neutral": 317
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "CLOUDY",
+            "SHADE"
+          ],
+          "tileIds": [
+            [
+              4,
+              7,
+              11,
+              3,
+              8,
+              0
+            ],
+            [
+              1,
+              15,
+              9,
+              16,
+              2
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "DUSK",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [],
+          "resisted": [
+            "DAY",
+            "CLEAR",
+            "RAY",
+            "BEAM",
+            "GLOW",
+            "GLARE"
+          ],
+          "neutral": 613
+        },
+        "thirdTurn": {
+          "counters": [
+            "DARKLY"
+          ],
+          "resisted": [
+            "DAY",
+            "CLEAR",
+            "RAY",
+            "BEAM",
+            "GLOW",
+            "GLARE"
+          ]
+        },
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "DUSK",
+            "ADD",
+            "DARKLY"
+          ],
+          "tileIds": [
+            [
+              8,
+              3,
+              1,
+              5
+            ],
+            [
+              9,
+              16,
+              18
+            ],
+            [
+              21,
+              19,
+              6,
+              20,
+              7,
+              0
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "MURKY",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "DARK",
+            "BLACK",
+            "SHADOW",
+            "SHADE"
+          ],
+          "resisted": [
+            "CLEAR",
+            "GLOW",
+            "GLARE"
+          ],
+          "neutral": 742
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "MURKY",
+            "SHADOW"
+          ],
+          "tileIds": [
+            [
+              14,
+              3,
+              6,
+              5,
+              0
+            ],
+            [
+              1,
+              15,
+              9,
+              8,
+              11,
+              13
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "DARKLY",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "SHADOW",
+            "SHADE",
+            "OBSCURE",
+            "DUSK"
+          ],
+          "resisted": [
+            "BEAM"
+          ],
+          "neutral": 794
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DARKLY",
+            "SHADOW"
+          ],
+          "tileIds": [
+            [
+              8,
+              9,
+              6,
+              5,
+              7,
+              0
+            ],
+            [
+              1,
+              15,
+              19,
+              16,
+              11,
+              13
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "DUSKY",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "DARK",
+            "BLACK"
+          ],
+          "resisted": [
+            "CLEAR",
+            "BEAM",
+            "GLOW",
+            "GLARE"
+          ],
+          "neutral": 592
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DUSKY",
+            "DARK"
+          ],
+          "tileIds": [
+            [
+              8,
+              3,
+              1,
+              5,
+              0
+            ],
+            [
+              16,
+              9,
+              6,
+              20
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "DAYS",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "DARK",
+            "BLACK",
+            "CLOUD"
+          ],
+          "resisted": [
+            "CLEAR",
+            "BEAM",
+            "GLOW",
+            "GLARE"
+          ],
+          "neutral": 692
+        },
+        "thirdTurn": {
+          "counters": [
+            "CLOUDS",
+            "MUDDY",
+            "CLOUDY",
+            "DUSK",
+            "DUSKY"
+          ],
+          "resisted": [
+            "GLOW"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DAYS",
+            "DARKER",
+            "DUSKY"
+          ],
+          "tileIds": [
+            [
+              8,
+              9,
+              0,
+              1
+            ],
+            [
+              16,
+              19,
+              6,
+              5,
+              2,
+              17
+            ],
+            [
+              18,
+              3,
+              25,
+              20,
+              23
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "CLEAR",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "DARK",
+            "SHADOW",
+            "MUDDY",
+            "DUSK",
+            "MURKY",
+            "DUSKY"
+          ],
+          "resisted": [
+            "DAY",
+            "RAY"
+          ],
+          "neutral": 308
+        },
+        "thirdTurn": {
+          "counters": [
+            "MUDDY",
+            "MURKY",
+            "DUSKY"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CLEAR",
+            "SHADOW",
+            "MUDDY"
+          ],
+          "tileIds": [
+            [
+              4,
+              7,
+              2,
+              9,
+              6
+            ],
+            [
+              1,
+              15,
+              19,
+              8,
+              11,
+              13
+            ],
+            [
+              14,
+              3,
+              16,
+              18,
+              0
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "BEAM",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "DARK",
+            "CLOUD",
+            "SHADOW",
+            "CLOUDY",
+            "DUSK",
+            "DARKLY",
+            "DUSKY"
+          ],
+          "resisted": [
+            "DAY",
+            "RAY",
+            "GLOW"
+          ],
+          "neutral": 363
+        },
+        "thirdTurn": {
+          "counters": [
+            "MUDDY",
+            "MURKY",
+            "DUSKY"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "BEAM",
+            "SHADOW",
+            "MUDDY"
+          ],
+          "tileIds": [
+            [
+              12,
+              2,
+              9,
+              14
+            ],
+            [
+              1,
+              15,
+              19,
+              8,
+              11,
+              13
+            ],
+            [
+              22,
+              3,
+              16,
+              18,
+              0
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "RAYS",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "DARK",
+            "BLACK",
+            "CLOUD"
+          ],
+          "resisted": [
+            "CLEAR",
+            "BEAM",
+            "GLOW",
+            "GLARE"
+          ],
+          "neutral": 632
+        },
+        "thirdTurn": {
+          "counters": [
+            "MUDDY",
+            "DUSK",
+            "MURKY",
+            "DUSKY"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RAYS",
+            "BLACKED",
+            "DUSKY"
+          ],
+          "tileIds": [
+            [
+              6,
+              9,
+              0,
+              1
+            ],
+            [
+              12,
+              7,
+              19,
+              4,
+              5,
+              2,
+              8
+            ],
+            [
+              16,
+              3,
+              25,
+              20,
+              23
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "AGE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "CLOUD",
+            "MUDDY",
+            "CLOUDY",
+            "DUSK",
+            "MURKY",
+            "DUSKY"
+          ],
+          "resisted": [],
+          "neutral": 238
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AGE",
+            "DUSKY"
+          ],
+          "tileIds": [
+            [
+              9,
+              10,
+              2
+            ],
+            [
+              8,
+              3,
+              1,
+              5,
+              0
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "AGO",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "MUDDY",
+            "DUSK",
+            "MURKY",
+            "DUSKY"
+          ],
+          "resisted": [],
+          "neutral": 256
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AGO",
+            "DUSKY"
+          ],
+          "tileIds": [
+            [
+              9,
+              10,
+              11
+            ],
+            [
+              8,
+              3,
+              1,
+              5,
+              0
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "ABED",
+      "DUSKY"
+    ],
+    "tileIds": [
+      [
+        9,
+        12,
+        2,
+        8
+      ],
+      [
+        16,
+        3,
+        1,
+        5,
+        0
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      3
+    ]
+  },
+  "identity": {
+    "id": "light-1-days-shadowy",
+    "enemy": "DAYS",
+    "board": "ABCDEGHKLMORSUWY",
+    "bingos": [
+      "SHADOWY",
+      "SHADY"
+    ],
+    "bingoFamilies": [
+      "SHADOWY",
+      "SHADY"
+    ]
+  },
+  "novelty": [],
+  "asset": "puzzles/light-1-days-shadowy-860b776720d9.json",
+  "semanticPolicy": "Source-pinned concept pools with individually reviewed senses and lexical families. Unlabelled defined senses remain neutral; this is not an exhaustive contextual semantic proof.",
+  "editorialReview": "Enemy/bingo relationship and opening non-neutral meanings reviewed; homograph forms corrected and obvious concept words added. Existing board and refills preserved, all quality gates rerun."
+}

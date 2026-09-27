@@ -831,5 +831,465 @@
     "bingoFamilies": [
       "COMPOSURE"
     ]
+  },
+  {
+    "id": "motion-0-stop-transports",
+    "enemy": "STOP",
+    "board": "ADEGIMNOPRRSSTTV",
+    "bingos": [
+      "TRANSPORTS"
+    ],
+    "bingoFamilies": [
+      "TRANSPORT"
+    ]
+  },
+  {
+    "id": "cleanliness-0-soil-sterilization",
+    "enemy": "SOIL",
+    "board": "ACEEIIILNORSTTUZ",
+    "bingos": [
+      "STERILIZATION"
+    ],
+    "bingoFamilies": [
+      "STERILIZATION"
+    ]
+  },
+  {
+    "id": "light-1-days-shadowy",
+    "enemy": "DAYS",
+    "board": "ABCDEGHKLMORSUWY",
+    "bingos": [
+      "SHADOWY",
+      "SHADY"
+    ],
+    "bingoFamilies": [
+      "SHADOWY",
+      "SHADY"
+    ]
+  },
+  {
+    "id": "concealment-0-hide-exhibited",
+    "enemy": "HIDE",
+    "board": "BCDEEHIINOPRSTVX",
+    "bingos": [
+      "EXHIBITED"
+    ],
+    "bingoFamilies": [
+      "EXHIBIT"
+    ]
+  },
+  {
+    "id": "light-0-dim-illuminated",
+    "enemy": "DIM",
+    "board": "ABDEGHIILLMNSTUY",
+    "bingos": [
+      "ILLUMINATED",
+      "ILLUMINED"
+    ],
+    "bingoFamilies": [
+      "ILLUMINATE",
+      "ILLUMINE"
+    ]
+  },
+  {
+    "id": "light-0-shady-daylights",
+    "enemy": "SHADY",
+    "board": "AABDEGHILMNRSTUY",
+    "bingos": [
+      "DAYLIGHTS"
+    ],
+    "bingoFamilies": [
+      "DAYLIGHT"
+    ]
+  },
+  {
+    "id": "cleanliness-1-rinse-smearing",
+    "enemy": "RINSE",
+    "board": "ACDEFGHILMNRSTUY",
+    "bingos": [
+      "NASTIER",
+      "RAUNCHIEST",
+      "SMEARING",
+      "TARNISHED"
+    ],
+    "bingoFamilies": [
+      "NASTY",
+      "RAUNCHY",
+      "SMEAR",
+      "TARNISH"
+    ]
+  },
+  {
+    "id": "concealment-0-veil-revelation",
+    "enemy": "VEIL",
+    "board": "ACDEEILNOPRSTTVY",
+    "bingos": [
+      "EVIDENTLY",
+      "REVELATION",
+      "REVELATIONS"
+    ],
+    "bingoFamilies": [
+      "EVIDENTLY",
+      "REVELATION"
+    ]
+  },
+  {
+    "id": "speed-1-raced-crawled",
+    "enemy": "RACED",
+    "board": "ACDEHILLOPRRSTWY",
+    "bingos": [
+      "CRAWLED"
+    ],
+    "bingoFamilies": [
+      "CRAWL"
+    ]
+  },
+  {
+    "id": "alliance-0-contend-confederation",
+    "enemy": "CONTEND",
+    "board": "ACCDEEFILNNOORTU",
+    "bingos": [
+      "CONFEDERATION"
+    ],
+    "bingoFamilies": [
+      "CONFEDERATION"
+    ]
+  },
+  {
+    "id": "permission-0-denies-licensed",
+    "enemy": "DENIES",
+    "board": "ACCDEEILMNNOPRST",
+    "bingos": [
+      "LICENSED"
+    ],
+    "bingoFamilies": [
+      "LICENSE"
+    ]
+  },
+  {
+    "id": "praise-1-praised-disparaged",
+    "enemy": "PRAISED",
+    "board": "AABDDEEGILPRSSTU",
+    "bingos": [
+      "DISPARAGED"
+    ],
+    "bingoFamilies": [
+      "DISPARAGE"
+    ]
+  },
+  {
+    "id": "anger-0-tease-tolerates",
+    "enemy": "TEASE",
+    "board": "AABCDEEGLNOPRSTT",
+    "bingos": [
+      "TOLERATES"
+    ],
+    "bingoFamilies": [
+      "TOLERATE"
+    ]
+  },
+  {
+    "id": "temperature-0-winter-sweltering",
+    "enemy": "WINTER",
+    "board": "ABEEGHIKLMNORSTW",
+    "bingos": [
+      "SWELTERING"
+    ],
+    "bingoFamilies": [
+      "SWELTER"
+    ]
+  },
+  {
+    "id": "company-0-sole-sociable",
+    "enemy": "SOLE",
+    "board": "ABCDEFILMNOPRSTY",
+    "bingos": [
+      "SOCIABLE"
+    ],
+    "bingoFamilies": [
+      "SOCIABLE"
+    ]
+  },
+  {
+    "id": "size-0-increase-decreasing",
+    "enemy": "INCREASE",
+    "board": "ACDEEGIILMNORSTU",
+    "bingos": [
+      "DECREASING"
+    ],
+    "bingoFamilies": [
+      "DECREASE"
+    ]
+  },
+  {
+    "id": "safety-1-guard-dangerous",
+    "enemy": "GUARD",
+    "board": "ACDEEFGIKNORSTUV",
+    "bingos": [
+      "DANGEROUS"
+    ],
+    "bingoFamilies": [
+      "DANGEROUS"
+    ]
+  },
+  {
+    "id": "softness-0-stone-softened",
+    "enemy": "STONE",
+    "board": "CDEEFHIKLNORSTUY",
+    "bingos": [
+      "SOFTENED",
+      "SOFTENER"
+    ],
+    "bingoFamilies": [
+      "SOFTEN",
+      "SOFTENER"
+    ]
+  },
+  {
+    "id": "balance-0-list-stabilise",
+    "enemy": "LIST",
+    "board": "AABCEIILNOPRSSTZ",
+    "bingos": [
+      "STABILISE",
+      "STABILISER",
+      "STABILIZERS",
+      "STABILIZES"
+    ],
+    "bingoFamilies": [
+      "STABILISE",
+      "STABILISER",
+      "STABILIZE",
+      "STABILIZER"
+    ]
+  },
+  {
+    "id": "truth-0-lie-established",
+    "enemy": "LIE",
+    "board": "ABDEEHILNORSSTUY",
+    "bingos": [
+      "ESTABLISHED"
+    ],
+    "bingoFamilies": [
+      "ESTABLISH"
+    ]
+  },
+  {
+    "id": "hunger-0-fast-feasting",
+    "enemy": "FAST",
+    "board": "ADEEFGHIMNORSSTU",
+    "bingos": [
+      "FEAST",
+      "FEASTED",
+      "FEASTING",
+      "FEASTS"
+    ],
+    "bingoFamilies": [
+      "FEAST"
+    ]
+  },
+  {
+    "id": "victory-1-gain-failing",
+    "enemy": "GAIN",
+    "board": "ACDEEFFGIILNORST",
+    "bingos": [
+      "FAILING"
+    ],
+    "bingoFamilies": [
+      "FAIL"
+    ]
+  },
+  {
+    "id": "light-1-light-nightfall",
+    "enemy": "LIGHT",
+    "board": "ADFGHILLMNOOSTWY",
+    "bingos": [
+      "NIGHTFALL",
+      "NIGHTFALLS"
+    ],
+    "bingoFamilies": [
+      "NIGHTFALL"
+    ]
+  },
+  {
+    "id": "quiet-1-calm-clamour",
+    "enemy": "CALM",
+    "board": "ACDEEILMNORSTTUV",
+    "bingos": [
+      "CLAMOR",
+      "CLAMORED",
+      "CLAMORS",
+      "CLAMOUR",
+      "CLAMOURED",
+      "CLAMOURS"
+    ],
+    "bingoFamilies": [
+      "CLAMOR",
+      "CLAMOUR"
+    ]
+  },
+  {
+    "id": "speed-1-sprint-procrastinate",
+    "enemy": "SPRINT",
+    "board": "AACDEILNOPRRSTTY",
+    "bingos": [
+      "PROCRASTINATE",
+      "PROCRASTINATED"
+    ],
+    "bingoFamilies": [
+      "PROCRASTINATE"
+    ]
+  },
+  {
+    "id": "anger-0-storm-comforts",
+    "enemy": "STORM",
+    "board": "ACEEFHLMNOOPRSTT",
+    "bingos": [
+      "COMFORTS"
+    ],
+    "bingoFamilies": [
+      "COMFORT"
+    ]
+  },
+  {
+    "id": "permission-1-let-forestall",
+    "enemy": "LET",
+    "board": "ABCDEEFILLNORSTU",
+    "bingos": [
+      "FORESTALL",
+      "FORESTALLED"
+    ],
+    "bingoFamilies": [
+      "FORESTALL"
+    ]
+  },
+  {
+    "id": "alliance-0-feud-unified",
+    "enemy": "FEUD",
+    "board": "CCDEEFIILNOORSTU",
+    "bingos": [
+      "UNIFIED"
+    ],
+    "bingoFamilies": [
+      "UNIFY"
+    ]
+  },
+  {
+    "id": "concealment-0-mask-unmistakable",
+    "enemy": "MASK",
+    "board": "AABCEIKLMNORSTUV",
+    "bingos": [
+      "UNMISTAKABLE"
+    ],
+    "bingoFamilies": [
+      "UNMISTAKABLE"
+    ]
+  },
+  {
+    "id": "size-1-tiny-immensity",
+    "enemy": "TINY",
+    "board": "AEEGIILMMNORSTVY",
+    "bingos": [
+      "IMMENSITY"
+    ],
+    "bingoFamilies": [
+      "IMMENSITY"
+    ]
+  },
+  {
+    "id": "praise-0-rail-complimentary",
+    "enemy": "RAIL",
+    "board": "ACDEILMMNOPRSTUY",
+    "bingos": [
+      "COMPLIMENTARY",
+      "PROCLAIM",
+      "PROCLAIMED",
+      "PROCLAIMS"
+    ],
+    "bingoFamilies": [
+      "COMPLIMENTARY",
+      "PROCLAIM"
+    ]
+  },
+  {
+    "id": "victory-0-cede-conquered",
+    "enemy": "CEDE",
+    "board": "CCDEEHLLNOOQRSTU",
+    "bingos": [
+      "CONQUERED",
+      "SUCCEED"
+    ],
+    "bingoFamilies": [
+      "CONQUER",
+      "SUCCEED"
+    ]
+  },
+  {
+    "id": "light-0-night-sunlight",
+    "enemy": "NIGHT",
+    "board": "ABDEGHILMNRSTUYZ",
+    "bingos": [
+      "BRIGHTEN",
+      "BRIGHTENS",
+      "SUNLIGHT"
+    ],
+    "bingoFamilies": [
+      "BRIGHTEN",
+      "SUNLIGHT"
+    ]
+  },
+  {
+    "id": "quiet-0-din-dampening",
+    "enemy": "DIN",
+    "board": "ACDEGILMNNOOPRSU",
+    "bingos": [
+      "DAMPENING"
+    ],
+    "bingoFamilies": [
+      "DAMPEN"
+    ]
+  },
+  {
+    "id": "speed-0-lag-accelerating",
+    "enemy": "LAG",
+    "board": "AACCDEEGHILNPRST",
+    "bingos": [
+      "ACCELERATING"
+    ],
+    "bingoFamilies": [
+      "ACCELERATE"
+    ]
+  },
+  {
+    "id": "concealment-0-covers-discovered",
+    "enemy": "COVERS",
+    "board": "ACDDEEILNOPRSTTV",
+    "bingos": [
+      "DISCOVERED"
+    ],
+    "bingoFamilies": [
+      "DISCOVER"
+    ]
+  },
+  {
+    "id": "praise-0-roast-congratulates",
+    "enemy": "ROAST",
+    "board": "AACDEGILNOPRSTTU",
+    "bingos": [
+      "CONGRATULATES"
+    ],
+    "bingoFamilies": [
+      "CONGRATULATE"
+    ]
+  },
+  {
+    "id": "cleanliness-0-stain-sanitizing",
+    "enemy": "STAIN",
+    "board": "ACEEFGIIILNNRSTZ",
+    "bingos": [
+      "SANITIZING"
+    ],
+    "bingoFamilies": [
+      "SANITIZE"
+    ]
   }
 ]

@@ -31,11 +31,11 @@ test('calendar uses correct Monday-first dates, leap years, and only released mo
   assert.deepEqual(availableMonths('2026-10-25'), ['2026-09', '2026-10'])
   assert.equal(new Set(puzzleSchedule.map(entry => entry.date)).size, puzzleSchedule.length)
   assert.ok(archivedPuzzles.every(entry => entry.date < dailySchedule[0].date))
-  assert.equal(archivedPuzzles.length, 10)
+  assert.equal(archivedPuzzles.filter(entry => entry.legacyBetaId).length, 10)
 })
 
 test('beta links redirect to the corresponding archive date or the calendar', () => {
-  for (const entry of archivedPuzzles) assert.equal(puzzleLocation(`?preview=${entry.legacyBetaId}&lives=5`).date, entry.date)
+  for (const entry of archivedPuzzles.filter(entry => entry.legacyBetaId)) assert.equal(puzzleLocation(`?preview=${entry.legacyBetaId}&lives=5`).date, entry.date)
   for (const query of ['?preview=bingos', '?preview=bingo', '?preview=bingo-missing']) assert.equal(puzzleLocation(query).replacement, '?calendar')
   assert.equal(puzzleLocation('').calendar, false)
   assert.equal(puzzleLocation('?calendar=2026-09').month, '2026-09')
@@ -43,7 +43,7 @@ test('beta links redirect to the corresponding archive date or the calendar', ()
 
 test('migrating beta progress preserves stars, unfinished moves, hints and original saves', () => {
   for (const lives of [3, 4, 5] as const) {
-    const store = storage(), entry = archivedPuzzles[0]
+    const store = storage(), entry = archivedPuzzles.find(entry => entry.enemy === 'ARID')!
     const encounter = decodeScheduledPuzzle(read(`public/${entry.asset}`), entry)
     const initial = createLetterStrikeGame({ ...encounter, startingResolve: lives })
     const sourceKey = bingoProgressKey(entry)
@@ -67,7 +67,7 @@ test('migrating beta progress preserves stars, unfinished moves, hints and origi
 })
 
 test('historical four/five-word wins remain honestly recorded and failed writes leave sources intact', () => {
-  const store = storage(), entry = archivedPuzzles[0], sourceKey = bingoProgressKey(entry)
+  const store = storage(), entry = archivedPuzzles.find(entry => entry.enemy === 'ARID')!, sourceKey = bingoProgressKey(entry)
   const source = JSON.stringify({ version: 1, bestWords: 5, runs: {} })
   store.setItem(sourceKey, source)
   assert.throws(() => migrateArchiveProgress({ getItem: store.getItem, setItem: () => { throw new Error('quota') } }), /quota/)
@@ -76,7 +76,7 @@ test('historical four/five-word wins remain honestly recorded and failed writes 
   assert.equal(readChallenge(entry.date, store)?.bestWords, 5)
 })
 
-test('all forty dates have three progressive hints and a replayed winning reveal', () => {
+test('all calendar dates have three progressive hints and a replayed winning reveal', () => {
   for (const entry of puzzleSchedule) {
     const guide = getPuzzleGuide(entry.id)
     assert.ok(guide, entry.id)

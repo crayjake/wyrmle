@@ -1,0 +1,799 @@
+{
+  "id": "alliance-0-feud-unified",
+  "theme": "alliance",
+  "side": 0,
+  "enemy": "FEUD",
+  "bingo": "UNIFIED",
+  "enemySense": "oewn-feud__1.04.00..",
+  "enemyLemma": "feud",
+  "bingoLemma": "unify",
+  "armour": 0,
+  "frequency": 0.7175,
+  "answer": "UNIFIED",
+  "method": "bingo-first",
+  "accepted": true,
+  "profileVersion": "bingo-source-profiles-1:75610c24c401",
+  "seeds": 2,
+  "seed": "bingo-first-3:FEUD:UNIFIED:13",
+  "score": 324,
+  "analysis": {
+    "score": 324,
+    "bingos": [
+      "UNIFIED"
+    ],
+    "counterFamilies": 7,
+    "resistedFamilies": 3,
+    "winningOpenings": 11,
+    "repeatedCounterRoutes": 10,
+    "sustainedPositions": 5,
+    "sustainedFinalPositions": 2,
+    "neutralCleanupOpenings": 2,
+    "routes": [
+      {
+        "opening": "UNITED",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "FUSION"
+          ],
+          "resisted": [
+            "CONFLICT",
+            "COUNTER"
+          ],
+          "neutral": 722
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "UNITED",
+            "FUSION"
+          ],
+          "tileIds": [
+            [
+              13,
+              9,
+              0,
+              7,
+              5,
+              1
+            ],
+            [
+              3,
+              16,
+              2,
+              14,
+              10,
+              18
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "UNIT",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "UNITED",
+            "FUSION",
+            "RECONCILE",
+            "CONCORD",
+            "CONCERTED"
+          ],
+          "resisted": [
+            "CONFLICT",
+            "COUNTER",
+            "FEUD",
+            "CONTENDER",
+            "CONTEND"
+          ],
+          "neutral": 1159
+        },
+        "thirdTurn": {
+          "counters": [
+            "FUSION"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "UNIT",
+            "UNITED",
+            "FUSION"
+          ],
+          "tileIds": [
+            [
+              13,
+              9,
+              0,
+              7
+            ],
+            [
+              16,
+              18,
+              14,
+              17,
+              5,
+              1
+            ],
+            [
+              3,
+              25,
+              2,
+              24,
+              10,
+              19
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "FUSION",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "UNITED",
+            "RECONCILE",
+            "CONCORD",
+            "CONCERTED"
+          ],
+          "resisted": [
+            "COUNTER",
+            "CONTENDER",
+            "CONTEND"
+          ],
+          "neutral": 480
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "FUSION",
+            "UNITED"
+          ],
+          "tileIds": [
+            [
+              3,
+              13,
+              2,
+              0,
+              10,
+              9
+            ],
+            [
+              16,
+              18,
+              14,
+              7,
+              5,
+              1
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "RECONCILE",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "UNION",
+            "UNITED",
+            "UNIT",
+            "FUSION"
+          ],
+          "resisted": [
+            "FEUD"
+          ],
+          "neutral": 297
+        },
+        "thirdTurn": {
+          "counters": [
+            "FUSION"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RECONCILE",
+            "UNITED",
+            "FUSION"
+          ],
+          "tileIds": [
+            [
+              12,
+              5,
+              4,
+              10,
+              9,
+              11,
+              0,
+              6,
+              8
+            ],
+            [
+              13,
+              18,
+              14,
+              7,
+              20,
+              1
+            ],
+            [
+              3,
+              16,
+              2,
+              24,
+              15,
+              19
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "CONCORD",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "UNION",
+            "UNIT",
+            "FUSION",
+            "UNITE"
+          ],
+          "resisted": [],
+          "neutral": 322
+        },
+        "thirdTurn": {
+          "counters": [
+            "HELD",
+            "UNITED"
+          ],
+          "resisted": [
+            "FEUD"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CONCORD",
+            "FUSION",
+            "HELD"
+          ],
+          "tileIds": [
+            [
+              4,
+              10,
+              9,
+              11,
+              15,
+              12,
+              1
+            ],
+            [
+              3,
+              13,
+              2,
+              0,
+              21,
+              18
+            ],
+            [
+              26,
+              5,
+              6,
+              28
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "CONCERTED",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "UNION",
+            "UNIT",
+            "FUSION",
+            "UNITE"
+          ],
+          "resisted": [],
+          "neutral": 267
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "CONCERTED",
+            "FUSION"
+          ],
+          "tileIds": [
+            [
+              4,
+              10,
+              9,
+              11,
+              5,
+              12,
+              7,
+              8,
+              1
+            ],
+            [
+              3,
+              13,
+              2,
+              0,
+              15,
+              18
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "CONCUR",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "UNITED",
+            "FUSION"
+          ],
+          "resisted": [
+            "FEUD"
+          ],
+          "neutral": 489
+        },
+        "thirdTurn": {
+          "counters": [
+            "FUSION"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CONCUR",
+            "UNITED",
+            "FUSION"
+          ],
+          "tileIds": [
+            [
+              4,
+              10,
+              9,
+              11,
+              13,
+              12
+            ],
+            [
+              16,
+              18,
+              0,
+              7,
+              5,
+              1
+            ],
+            [
+              3,
+              25,
+              2,
+              14,
+              15,
+              19
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "CONFLICT",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "UNION",
+            "UNITED",
+            "UNIT"
+          ],
+          "resisted": [],
+          "neutral": 474
+        },
+        "thirdTurn": {
+          "counters": [
+            "FUSION"
+          ],
+          "resisted": [
+            "FEUD"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CONFLICT",
+            "UNITED",
+            "FUSION"
+          ],
+          "tileIds": [
+            [
+              4,
+              10,
+              9,
+              3,
+              6,
+              0,
+              11,
+              7
+            ],
+            [
+              13,
+              18,
+              14,
+              17,
+              5,
+              1
+            ],
+            [
+              27,
+              16,
+              2,
+              24,
+              15,
+              19
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "COUNTER",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "UNION",
+            "UNITED",
+            "UNIT",
+            "FUSION"
+          ],
+          "resisted": [
+            "FEUD",
+            "CONTEND"
+          ],
+          "neutral": 781
+        },
+        "thirdTurn": {
+          "counters": [
+            "FUSION"
+          ],
+          "resisted": [
+            "FEUD"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "COUNTER",
+            "UNITED",
+            "FUSION"
+          ],
+          "tileIds": [
+            [
+              4,
+              10,
+              13,
+              9,
+              7,
+              5,
+              12
+            ],
+            [
+              16,
+              18,
+              0,
+              17,
+              8,
+              1
+            ],
+            [
+              3,
+              25,
+              2,
+              14,
+              15,
+              19
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "FEUD",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "UNION",
+            "UNIT",
+            "UNITE",
+            "CONCUR"
+          ],
+          "resisted": [
+            "COUNTER",
+            "CONTENTION"
+          ],
+          "neutral": 561
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "CUT",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "UNITED",
+            "FUSION"
+          ],
+          "resisted": [
+            "COUNTER",
+            "FEUD",
+            "CONTENDER",
+            "CONTEND"
+          ],
+          "neutral": 1175
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CUT",
+            "UNITED",
+            "FOR"
+          ],
+          "tileIds": [
+            [
+              4,
+              13,
+              7
+            ],
+            [
+              16,
+              9,
+              0,
+              17,
+              5,
+              1
+            ],
+            [
+              3,
+              10,
+              12
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "DIE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "UNION",
+            "UNIT",
+            "FUSION",
+            "UNITE",
+            "CONCUR"
+          ],
+          "resisted": [
+            "CONFLICT",
+            "COUNTER"
+          ],
+          "neutral": 676
+        },
+        "thirdTurn": {
+          "counters": [
+            "UNITE",
+            "RECONCILE"
+          ],
+          "resisted": [
+            "COUNTER",
+            "CONTENTION"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DIE",
+            "FUSION",
+            "UNITE"
+          ],
+          "tileIds": [
+            [
+              1,
+              0,
+              5
+            ],
+            [
+              3,
+              13,
+              2,
+              14,
+              10,
+              9
+            ],
+            [
+              16,
+              18,
+              24,
+              7,
+              8
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "CONCERTED",
+      "FUSION"
+    ],
+    "tileIds": [
+      [
+        4,
+        10,
+        9,
+        11,
+        5,
+        12,
+        7,
+        8,
+        1
+      ],
+      [
+        3,
+        13,
+        2,
+        0,
+        15,
+        18
+      ]
+    ],
+    "labels": [
+      "COUNTER",
+      "COUNTER"
+    ],
+    "hits": [
+      2,
+      2
+    ]
+  },
+  "identity": {
+    "id": "alliance-0-feud-unified",
+    "enemy": "FEUD",
+    "board": "CCDEEFIILNOORSTU",
+    "bingos": [
+      "UNIFIED"
+    ],
+    "bingoFamilies": [
+      "UNIFY"
+    ]
+  },
+  "novelty": [],
+  "asset": "puzzles/alliance-0-feud-unified-603399b90c40.json",
+  "semanticPolicy": "Source-pinned concept pools with individually reviewed senses and lexical families. Unlabelled defined senses remain neutral; this is not an exhaustive contextual semantic proof.",
+  "editorialReview": "Enemy/bingo relationship and opening non-neutral meanings reviewed; homograph forms corrected and obvious concept words added. Existing board and refills preserved, all quality gates rerun."
+}

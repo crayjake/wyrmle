@@ -1,0 +1,768 @@
+{
+  "id": "hunger-0-fast-feasting",
+  "theme": "hunger",
+  "side": 0,
+  "enemy": "FAST",
+  "bingo": "FEASTING",
+  "enemySense": "oewn-fast__1.04.00..",
+  "enemyLemma": "fast",
+  "bingoLemma": "feast",
+  "armour": 0,
+  "frequency": 0.4625,
+  "answer": "FEASTING",
+  "method": "bingo-first",
+  "accepted": true,
+  "profileVersion": "bingo-source-profiles-1:524cfde04d43",
+  "seeds": 2,
+  "seed": "bingo-first-3:FAST:FEASTING:12",
+  "score": 282,
+  "analysis": {
+    "score": 282,
+    "bingos": [
+      "FEAST",
+      "FEASTS",
+      "FEASTING",
+      "FEASTED"
+    ],
+    "counterFamilies": 5,
+    "resistedFamilies": 4,
+    "winningOpenings": 11,
+    "repeatedCounterRoutes": 8,
+    "sustainedPositions": 6,
+    "sustainedFinalPositions": 3,
+    "neutralCleanupOpenings": 2,
+    "routes": [
+      {
+        "opening": "EAT",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "FED",
+            "MEALS",
+            "SUSTAINED",
+            "EATS",
+            "NOURISH",
+            "DINES"
+          ],
+          "resisted": [
+            "FAST",
+            "HUNGER",
+            "SHORTAGE",
+            "FAMINE"
+          ],
+          "neutral": 2591
+        },
+        "thirdTurn": {
+          "counters": [
+            "MEALS",
+            "SUSTAIN",
+            "NOURISH"
+          ],
+          "resisted": [
+            "HUNGER",
+            "SHORTAGE",
+            "STARVING"
+          ]
+        },
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "EAT",
+            "FED",
+            "MEALS"
+          ],
+          "tileIds": [
+            [
+              3,
+              6,
+              14
+            ],
+            [
+              8,
+              9,
+              10
+            ],
+            [
+              5,
+              20,
+              17,
+              16,
+              4
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "FEED",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SUSTAIN",
+            "NOURISH"
+          ],
+          "resisted": [],
+          "neutral": 907
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "FEED",
+            "SUSTAIN"
+          ],
+          "tileIds": [
+            [
+              8,
+              3,
+              9,
+              10
+            ],
+            [
+              4,
+              11,
+              13,
+              14,
+              6,
+              0,
+              2
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "SUSTAINED",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [],
+          "resisted": [],
+          "neutral": 353
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SUSTAINED",
+            "FAR"
+          ],
+          "tileIds": [
+            [
+              4,
+              11,
+              13,
+              14,
+              6,
+              0,
+              2,
+              3,
+              10
+            ],
+            [
+              8,
+              17,
+              12
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "EATER",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "FED",
+            "MEALS",
+            "SUSTAINED",
+            "EATS",
+            "DINES"
+          ],
+          "resisted": [
+            "FAST",
+            "FAMINE"
+          ],
+          "neutral": 1590
+        },
+        "thirdTurn": {
+          "counters": [
+            "MEALS",
+            "EATS",
+            "SUSTAIN"
+          ],
+          "resisted": [
+            "FAST",
+            "FAMINE"
+          ]
+        },
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "EATER",
+            "FED",
+            "MEALS"
+          ],
+          "tileIds": [
+            [
+              3,
+              6,
+              14,
+              9,
+              12
+            ],
+            [
+              8,
+              20,
+              10
+            ],
+            [
+              5,
+              22,
+              17,
+              16,
+              4
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "NOURISH",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "EAT",
+            "FEED",
+            "MEAL"
+          ],
+          "resisted": [
+            "FAST"
+          ],
+          "neutral": 317
+        },
+        "thirdTurn": {
+          "counters": [
+            "FEED"
+          ],
+          "resisted": [
+            "FAST"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "NOURISH",
+            "EAT",
+            "FEED"
+          ],
+          "tileIds": [
+            [
+              2,
+              1,
+              11,
+              12,
+              0,
+              4,
+              7
+            ],
+            [
+              3,
+              6,
+              14
+            ],
+            [
+              8,
+              9,
+              20,
+              10
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "FAST",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "EAT",
+            "MEAL",
+            "EATER",
+            "NOURISH",
+            "DINES"
+          ],
+          "resisted": [
+            "HUNGER",
+            "SHORTAGE"
+          ],
+          "neutral": 2373
+        },
+        "thirdTurn": {
+          "counters": [
+            "FEED",
+            "FEEDER"
+          ],
+          "resisted": [
+            "HUNGER"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "FAST",
+            "EATS",
+            "FEED"
+          ],
+          "tileIds": [
+            [
+              8,
+              6,
+              4,
+              14
+            ],
+            [
+              3,
+              17,
+              18,
+              13
+            ],
+            [
+              23,
+              9,
+              20,
+              10
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "HUNGER",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "EAT",
+            "FEED",
+            "MEAL"
+          ],
+          "resisted": [
+            "FAST"
+          ],
+          "neutral": 727
+        },
+        "thirdTurn": {
+          "counters": [
+            "FEED"
+          ],
+          "resisted": [
+            "FAST"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "HUNGER",
+            "EATS",
+            "FEED"
+          ],
+          "tileIds": [
+            [
+              7,
+              11,
+              2,
+              15,
+              3,
+              12
+            ],
+            [
+              9,
+              6,
+              14,
+              4
+            ],
+            [
+              8,
+              20,
+              22,
+              10
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SHORTAGE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "EAT",
+            "FEED",
+            "MEAL",
+            "DINES"
+          ],
+          "resisted": [
+            "FAST",
+            "FAMINE"
+          ],
+          "neutral": 791
+        },
+        "thirdTurn": {
+          "counters": [
+            "FEED"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SHORTAGE",
+            "EATS",
+            "FEED"
+          ],
+          "tileIds": [
+            [
+              4,
+              7,
+              1,
+              12,
+              14,
+              6,
+              15,
+              3
+            ],
+            [
+              9,
+              17,
+              18,
+              13
+            ],
+            [
+              8,
+              20,
+              22,
+              10
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "FAMINE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "EAT",
+            "EATER"
+          ],
+          "resisted": [
+            "SHORTAGE",
+            "STARVE"
+          ],
+          "neutral": 1057
+        },
+        "thirdTurn": {
+          "counters": [
+            "FEED"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "FAMINE",
+            "EATS",
+            "FEED"
+          ],
+          "tileIds": [
+            [
+              8,
+              6,
+              5,
+              0,
+              2,
+              3
+            ],
+            [
+              9,
+              17,
+              14,
+              4
+            ],
+            [
+              23,
+              20,
+              22,
+              10
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "AGE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "EAT",
+            "FED",
+            "MEALS",
+            "SUSTAINED",
+            "NOURISH",
+            "DINES"
+          ],
+          "resisted": [
+            "FAST",
+            "FAMINE"
+          ],
+          "neutral": 2115
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AGE",
+            "SUSTAINED",
+            "FOR"
+          ],
+          "tileIds": [
+            [
+              6,
+              15,
+              3
+            ],
+            [
+              4,
+              11,
+              13,
+              14,
+              17,
+              0,
+              2,
+              9,
+              10
+            ],
+            [
+              8,
+              1,
+              12
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "AGO",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "EAT",
+            "FEED",
+            "MEALS",
+            "SUSTAINED",
+            "EATER",
+            "DINES"
+          ],
+          "resisted": [
+            "FAST",
+            "FAMINE"
+          ],
+          "neutral": 1778
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AGO",
+            "SUSTAINED",
+            "FEEL"
+          ],
+          "tileIds": [
+            [
+              6,
+              15,
+              1
+            ],
+            [
+              4,
+              11,
+              13,
+              14,
+              17,
+              0,
+              2,
+              3,
+              10
+            ],
+            [
+              8,
+              9,
+              20,
+              16
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "DEFAME",
+      "EATS"
+    ],
+    "tileIds": [
+      [
+        10,
+        3,
+        8,
+        6,
+        5,
+        9
+      ],
+      [
+        20,
+        17,
+        14,
+        4
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      3
+    ]
+  },
+  "identity": {
+    "id": "hunger-0-fast-feasting",
+    "enemy": "FAST",
+    "board": "ADEEFGHIMNORSSTU",
+    "bingos": [
+      "FEAST",
+      "FEASTED",
+      "FEASTING",
+      "FEASTS"
+    ],
+    "bingoFamilies": [
+      "FEAST"
+    ]
+  },
+  "novelty": [],
+  "asset": "puzzles/hunger-0-fast-feasting-ced590179cf6.json",
+  "semanticPolicy": "Source-pinned concept pools with individually reviewed senses and lexical families. Unlabelled defined senses remain neutral; this is not an exhaustive contextual semantic proof.",
+  "editorialReview": "Enemy/bingo relationship and opening non-neutral meanings reviewed; homograph forms corrected and obvious concept words added. Existing board and refills preserved, all quality gates rerun."
+}

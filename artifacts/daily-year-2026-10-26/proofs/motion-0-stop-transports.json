@@ -1,0 +1,736 @@
+{
+  "id": "motion-0-stop-transports",
+  "theme": "motion",
+  "side": 0,
+  "enemy": "STOP",
+  "bingo": "TRANSPORTS",
+  "enemySense": "oewn-stop__1.11.00..",
+  "enemyLemma": "stop",
+  "bingoLemma": "transport",
+  "armour": 2,
+  "frequency": 0.5725,
+  "answer": "TRANSPORTS",
+  "method": "bingo-first",
+  "accepted": true,
+  "profileVersion": "bingo-source-profiles-1:9a3968217de7",
+  "seeds": 2,
+  "seed": "bingo-first-3:STOP:TRANSPORTS:13",
+  "score": 277,
+  "analysis": {
+    "score": 277,
+    "bingos": [
+      "TRANSPORTS"
+    ],
+    "counterFamilies": 7,
+    "resistedFamilies": 4,
+    "winningOpenings": 7,
+    "repeatedCounterRoutes": 7,
+    "sustainedPositions": 9,
+    "sustainedFinalPositions": 3,
+    "neutralCleanupOpenings": 1,
+    "routes": [
+      {
+        "opening": "GONE",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "MOVES",
+            "DRIVES",
+            "MOVERS"
+          ],
+          "resisted": [
+            "REST",
+            "STOP",
+            "ARREST",
+            "TRAP"
+          ],
+          "neutral": 910
+        },
+        "thirdTurn": {
+          "counters": [
+            "DRIVES",
+            "TRANSMIT"
+          ],
+          "resisted": [
+            "REST",
+            "ARREST",
+            "STATIC",
+            "INACTIVE",
+            "INERT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "GONE",
+            "POOR",
+            "TRANSMITS"
+          ],
+          "tileIds": [
+            [
+              1,
+              0,
+              3,
+              5
+            ],
+            [
+              8,
+              16,
+              17,
+              6
+            ],
+            [
+              4,
+              15,
+              7,
+              23,
+              12,
+              10,
+              9,
+              11,
+              13
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            1,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "MOVE",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "PROGRESS",
+            "PROGRESSION"
+          ],
+          "resisted": [
+            "REST",
+            "STOP",
+            "ARREST",
+            "TRAP",
+            "PIN",
+            "INERT"
+          ],
+          "neutral": 1192
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "PROGRESS",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "MOTION",
+            "TRANSMIT"
+          ],
+          "resisted": [
+            "REST",
+            "STATIC",
+            "INACTIVE",
+            "INERT"
+          ],
+          "neutral": 1326
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "PROGRESS",
+            "TRANSMIT"
+          ],
+          "tileIds": [
+            [
+              8,
+              6,
+              0,
+              1,
+              15,
+              5,
+              12,
+              13
+            ],
+            [
+              4,
+              19,
+              7,
+              3,
+              21,
+              10,
+              9,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "DROVE",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "PROGRESS",
+            "MOTION",
+            "PROGRESSION",
+            "TRANSMIT",
+            "PROCESSION"
+          ],
+          "resisted": [
+            "REST",
+            "STOP",
+            "ARREST",
+            "TRAP",
+            "PIN",
+            "STATIC",
+            "INERT"
+          ],
+          "neutral": 1610
+        },
+        "thirdTurn": {
+          "counters": [
+            "PROCESSION"
+          ],
+          "resisted": [
+            "PIN"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DROVE",
+            "TRANSMITS",
+            "PROCESSION"
+          ],
+          "tileIds": [
+            [
+              2,
+              6,
+              0,
+              14,
+              5
+            ],
+            [
+              4,
+              15,
+              7,
+              3,
+              12,
+              10,
+              9,
+              11,
+              13
+            ],
+            [
+              8,
+              19,
+              16,
+              20,
+              18,
+              21,
+              25,
+              22,
+              17,
+              23
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "TRANSMIT",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "GONE",
+            "PROGRESS",
+            "DROVE",
+            "PROGRESSION",
+            "PROCESSION",
+            "ROVING"
+          ],
+          "resisted": [
+            "PIN"
+          ],
+          "neutral": 676
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "TRANSMIT",
+            "PROGRESS"
+          ],
+          "tileIds": [
+            [
+              4,
+              6,
+              7,
+              3,
+              12,
+              10,
+              9,
+              11
+            ],
+            [
+              8,
+              15,
+              0,
+              1,
+              19,
+              5,
+              13,
+              21
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "MOVER",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "PROGRESS",
+            "PROGRESSION",
+            "PROCESSION"
+          ],
+          "resisted": [
+            "REST",
+            "STOP",
+            "ARREST",
+            "TRAP",
+            "PIN",
+            "STATIC",
+            "INERT"
+          ],
+          "neutral": 1666
+        },
+        "thirdTurn": {
+          "counters": [
+            "TRANSMIT"
+          ],
+          "resisted": [
+            "REST",
+            "STOP",
+            "TRAP",
+            "PIN",
+            "STATIC",
+            "INERT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "MOVER",
+            "PROGRESSION",
+            "TRANSMIT"
+          ],
+          "tileIds": [
+            [
+              10,
+              0,
+              14,
+              5,
+              6
+            ],
+            [
+              8,
+              15,
+              16,
+              1,
+              19,
+              18,
+              12,
+              13,
+              9,
+              17,
+              3
+            ],
+            [
+              4,
+              30,
+              7,
+              23,
+              21,
+              31,
+              22,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "ROVING",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [],
+          "resisted": [
+            "REST",
+            "STOP",
+            "ARRESTED",
+            "EASE",
+            "TRAP"
+          ],
+          "neutral": 946
+        },
+        "thirdTurn": {
+          "counters": [
+            "MOVES",
+            "MOTION",
+            "DRIVES",
+            "TRANSMIT",
+            "MOVERS"
+          ],
+          "resisted": [
+            "REST",
+            "STATIC",
+            "INERT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ROVING",
+            "PER",
+            "TRANSMITS"
+          ],
+          "tileIds": [
+            [
+              6,
+              0,
+              14,
+              9,
+              3,
+              1
+            ],
+            [
+              8,
+              5,
+              15
+            ],
+            [
+              4,
+              19,
+              7,
+              23,
+              12,
+              10,
+              22,
+              11,
+              13
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            1,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "REST",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "GONE",
+            "MOVE",
+            "MOTION",
+            "DROVE",
+            "MOVER",
+            "ROVING"
+          ],
+          "resisted": [
+            "REST",
+            "STOP",
+            "ARREST",
+            "TRAP",
+            "PIN",
+            "INERT"
+          ],
+          "neutral": 1451
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "STOP",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "GONE",
+            "MOVE",
+            "MOTION",
+            "DROVE",
+            "MOVER",
+            "ROVING"
+          ],
+          "resisted": [
+            "REST",
+            "ARRESTED",
+            "EASE",
+            "INERT"
+          ],
+          "neutral": 1313
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "ARREST",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "GONE",
+            "MOVE",
+            "MOTION",
+            "DROVE",
+            "PROCESSION",
+            "MOVER",
+            "ROVING"
+          ],
+          "resisted": [
+            "REST",
+            "STOP",
+            "PIN",
+            "INERT"
+          ],
+          "neutral": 1038
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "TRAP",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "GONE",
+            "MOVE",
+            "MOTION",
+            "DROVE",
+            "MOVER",
+            "ROVING"
+          ],
+          "resisted": [
+            "REST",
+            "INERT"
+          ],
+          "neutral": 767
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "AGO",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "MOVES",
+            "MOTION",
+            "DRIVES",
+            "MOVERS"
+          ],
+          "resisted": [
+            "REST",
+            "STOP",
+            "PIN",
+            "INERT"
+          ],
+          "neutral": 962
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "ART",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "GONE",
+            "MOVE",
+            "MOTION",
+            "DROVE",
+            "MOVER",
+            "ROVING"
+          ],
+          "resisted": [
+            "REST",
+            "STOP",
+            "PIN",
+            "INERT"
+          ],
+          "neutral": 1021
+        },
+        "thirdTurn": {
+          "counters": [
+            "PROGRESS",
+            "DRIVES"
+          ],
+          "resisted": [
+            "PIN"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ART",
+            "MOTIONS",
+            "PROGRESS"
+          ],
+          "tileIds": [
+            [
+              7,
+              6,
+              4
+            ],
+            [
+              10,
+              0,
+              11,
+              9,
+              16,
+              3,
+              12
+            ],
+            [
+              8,
+              15,
+              17,
+              1,
+              19,
+              5,
+              13,
+              21
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            2
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "PROGRESS",
+      "TRANSMIT"
+    ],
+    "tileIds": [
+      [
+        8,
+        6,
+        0,
+        1,
+        15,
+        5,
+        12,
+        13
+      ],
+      [
+        4,
+        19,
+        7,
+        3,
+        21,
+        10,
+        9,
+        11
+      ]
+    ],
+    "labels": [
+      "COUNTER",
+      "COUNTER"
+    ],
+    "hits": [
+      4,
+      2
+    ]
+  },
+  "identity": {
+    "id": "motion-0-stop-transports",
+    "enemy": "STOP",
+    "board": "ADEGIMNOPRRSSTTV",
+    "bingos": [
+      "TRANSPORTS"
+    ],
+    "bingoFamilies": [
+      "TRANSPORT"
+    ]
+  },
+  "novelty": [],
+  "asset": "puzzles/motion-0-stop-transports-953cde49313e.json",
+  "semanticPolicy": "Source-pinned concept pools with individually reviewed senses and lexical families. Unlabelled defined senses remain neutral; this is not an exhaustive contextual semantic proof.",
+  "editorialReview": "Enemy/bingo relationship and opening non-neutral meanings reviewed; homograph forms corrected and obvious concept words added. Existing board and refills preserved, all quality gates rerun."
+}

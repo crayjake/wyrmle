@@ -29,3 +29,5 @@ artifacts/melancholy
 
 # Regenerable authoring payloads; published puzzles live under public/puzzles.
 artifacts/daily-month-*/*.puzzle.json
+artifacts/daily-year-*/payloads/
+artifacts/daily-year-*/reports/

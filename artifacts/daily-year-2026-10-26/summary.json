@@ -1,0 +1,41 @@
+{
+  "generatedCandidates": 414,
+  "reviewedCandidates": 41,
+  "published": 38,
+  "futureDays": 33,
+  "start": "2026-10-26",
+  "end": "2026-11-27",
+  "archiveSampleSeed": "b683c656a4339866879cf9f2ad3d1756",
+  "archiveSample": [
+    {
+      "date": "2026-09-11",
+      "id": "motion-0-stop-transports",
+      "enemy": "STOP"
+    },
+    {
+      "date": "2026-09-12",
+      "id": "cleanliness-0-soil-sterilization",
+      "enemy": "SOIL"
+    },
+    {
+      "date": "2026-09-13",
+      "id": "light-1-days-shadowy",
+      "enemy": "DAYS"
+    },
+    {
+      "date": "2026-09-14",
+      "id": "concealment-0-hide-exhibited",
+      "enemy": "HIDE"
+    },
+    {
+      "date": "2026-09-15",
+      "id": "light-0-dim-illuminated",
+      "enemy": "DIM"
+    }
+  ],
+  "uniqueEnemies": 38,
+  "uniqueEnemyFamilies": 38,
+  "noveltyPolicy": "No repeated enemy families or starting letter pools within the batch; no shared available bingo family within the batch or with any previously published puzzle. Random samples move into the archive, leaving no future duplicate.",
+  "method": "bingo-first",
+  "proof": "Every publication replays its bingo, separate two-word solution and at least four distinct counter routes."
+}

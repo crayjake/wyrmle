@@ -7,9 +7,9 @@ import { shiftPuzzleId } from '../src/daily/date.ts'
 import { createLetterStrikeGame, submitLetterStrike } from '../src/game/letterStrike.ts'
 import { validateBingo } from '../scripts/bingo/validate.ts'
 
-test('a month of distinct bingo-first dailies has replayed one-, two- and three-life wins', () => {
-  assert.equal(dailySchedule.length, 30)
-  assert.equal(new Set(dailySchedule.map(entry => entry.enemy)).size, 30)
+test('the queued bingo-first dailies have replayed one-, two- and three-life wins', () => {
+  assert.ok(dailySchedule.length >= 30)
+  assert.equal(new Set(dailySchedule.map(entry => entry.enemy)).size, dailySchedule.length)
   const answers = new Set<string>()
   for (const [index, entry] of dailySchedule.entries()) {
     assert.equal(entry.date, shiftPuzzleId(dailySchedule[0].date, index))

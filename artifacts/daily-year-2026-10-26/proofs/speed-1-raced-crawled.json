@@ -1,0 +1,1042 @@
+{
+  "id": "speed-1-raced-crawled",
+  "theme": "speed",
+  "side": 1,
+  "enemy": "RACED",
+  "bingo": "CRAWLED",
+  "enemySense": "oewn-race__2.38.00..",
+  "enemyLemma": "race",
+  "bingoLemma": "crawl",
+  "armour": 0,
+  "frequency": 0.57,
+  "answer": "CRAWLED",
+  "method": "bingo-first",
+  "accepted": true,
+  "profileVersion": "bingo-source-profiles-1:385456f1b494",
+  "seeds": 2,
+  "seed": "bingo-first-3:RACED:CRAWLED:12",
+  "score": 453,
+  "analysis": {
+    "score": 453,
+    "bingos": [
+      "CRAWLED"
+    ],
+    "counterFamilies": 11,
+    "resistedFamilies": 4,
+    "winningOpenings": 16,
+    "repeatedCounterRoutes": 14,
+    "sustainedPositions": 7,
+    "sustainedFinalPositions": 5,
+    "neutralCleanupOpenings": 4,
+    "routes": [
+      {
+        "opening": "EASY",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "HOLD",
+            "CHECK",
+            "CREEP"
+          ],
+          "resisted": [],
+          "neutral": 526
+        },
+        "thirdTurn": {
+          "counters": [
+            "LATER",
+            "TRAILER",
+            "SLOWER",
+            "CREEP",
+            "RETARD",
+            "TARDY"
+          ],
+          "resisted": [
+            "RACE",
+            "SPEED",
+            "RAPID",
+            "RAPIDLY",
+            "SPEEDY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "EASY",
+            "CHECKED",
+            "LATER"
+          ],
+          "tileIds": [
+            [
+              6,
+              14,
+              9,
+              15
+            ],
+            [
+              11,
+              3,
+              17,
+              16,
+              19,
+              18,
+              8
+            ],
+            [
+              0,
+              25,
+              13,
+              23,
+              4
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "HOLD",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "EASY",
+            "LATE",
+            "WAIT",
+            "TRAILER",
+            "CREEP"
+          ],
+          "resisted": [
+            "RACE"
+          ],
+          "neutral": 877
+        },
+        "thirdTurn": {
+          "counters": [
+            "CREEP"
+          ],
+          "resisted": [
+            "SPEED",
+            "SPEEDY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "HOLD",
+            "LATER",
+            "CREEP"
+          ],
+          "tileIds": [
+            [
+              3,
+              2,
+              0,
+              8
+            ],
+            [
+              10,
+              14,
+              13,
+              6,
+              4
+            ],
+            [
+              11,
+              5,
+              17,
+              18,
+              12
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "LATE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "HOLD",
+            "CHECK",
+            "SLOWER",
+            "CREEP"
+          ],
+          "resisted": [
+            "SPEED",
+            "SPEEDY"
+          ],
+          "neutral": 726
+        },
+        "thirdTurn": {
+          "counters": [
+            "EASIER",
+            "SLOWER",
+            "CREEP"
+          ],
+          "resisted": [
+            "RACE",
+            "SPEED",
+            "RAPID",
+            "RAPIDLY",
+            "SPEEDY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "LATE",
+            "CHECKED",
+            "EASIER"
+          ],
+          "tileIds": [
+            [
+              0,
+              14,
+              13,
+              6
+            ],
+            [
+              11,
+              3,
+              17,
+              16,
+              19,
+              18,
+              8
+            ],
+            [
+              23,
+              25,
+              9,
+              1,
+              24,
+              4
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "WAIT",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "HOLD",
+            "CHECK",
+            "CREEP",
+            "POKE"
+          ],
+          "resisted": [
+            "SPEED",
+            "SPEEDY"
+          ],
+          "neutral": 375
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "WAIT",
+            "CREEPED"
+          ],
+          "tileIds": [
+            [
+              7,
+              14,
+              1,
+              13
+            ],
+            [
+              11,
+              4,
+              6,
+              17,
+              12,
+              18,
+              8
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "DELAY",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "CHECK",
+            "SLOWER",
+            "CREEP"
+          ],
+          "resisted": [],
+          "neutral": 850
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "DELAY",
+            "CREEP"
+          ],
+          "tileIds": [
+            [
+              8,
+              6,
+              0,
+              14,
+              15
+            ],
+            [
+              11,
+              4,
+              17,
+              18,
+              12
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "TRAILER",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "HOLD",
+            "CHECK"
+          ],
+          "resisted": [
+            "SPEED",
+            "SPEEDY"
+          ],
+          "neutral": 268
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "TRAILER",
+            "CHECKED"
+          ],
+          "tileIds": [
+            [
+              13,
+              4,
+              14,
+              1,
+              0,
+              6,
+              5
+            ],
+            [
+              11,
+              3,
+              17,
+              16,
+              19,
+              18,
+              8
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "SLOWER",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "EASY",
+            "LATE",
+            "CHECK",
+            "DELAY",
+            "CREEP",
+            "TARDY"
+          ],
+          "resisted": [
+            "RACE",
+            "SPEED",
+            "RAPID",
+            "RAPIDLY",
+            "DASH",
+            "SPEEDY",
+            "HASTE"
+          ],
+          "neutral": 1381
+        },
+        "thirdTurn": {
+          "counters": [
+            "EASY",
+            "LATE",
+            "DELAY",
+            "TARDY"
+          ],
+          "resisted": [
+            "RACE",
+            "SPEED",
+            "RAPID",
+            "RAPIDLY",
+            "SPEEDY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SLOWER",
+            "CHECKED",
+            "EASY"
+          ],
+          "tileIds": [
+            [
+              9,
+              0,
+              2,
+              7,
+              6,
+              4
+            ],
+            [
+              11,
+              3,
+              17,
+              16,
+              19,
+              18,
+              8
+            ],
+            [
+              23,
+              14,
+              21,
+              15
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "STALL",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "CHECK",
+            "CREEP",
+            "POKE"
+          ],
+          "resisted": [],
+          "neutral": 254
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "STALL",
+            "CREEPED"
+          ],
+          "tileIds": [
+            [
+              9,
+              13,
+              14,
+              0,
+              10
+            ],
+            [
+              11,
+              4,
+              6,
+              17,
+              12,
+              18,
+              8
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "RETARD",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "CHECK"
+          ],
+          "resisted": [],
+          "neutral": 355
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RETARD",
+            "CHECK"
+          ],
+          "tileIds": [
+            [
+              4,
+              6,
+              13,
+              14,
+              5,
+              8
+            ],
+            [
+              11,
+              3,
+              17,
+              16,
+              19
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "CREPT",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "EASY",
+            "HOLD",
+            "DELAY"
+          ],
+          "resisted": [
+            "RACE",
+            "DASH"
+          ],
+          "neutral": 973
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "CREPT",
+            "DELAY"
+          ],
+          "tileIds": [
+            [
+              11,
+              4,
+              6,
+              12,
+              13
+            ],
+            [
+              8,
+              17,
+              0,
+              14,
+              15
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "TARDY",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "CHECK",
+            "SLOWER",
+            "CREEP",
+            "POKE"
+          ],
+          "resisted": [],
+          "neutral": 512
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "TARDY",
+            "CHECK"
+          ],
+          "tileIds": [
+            [
+              13,
+              14,
+              4,
+              8,
+              15
+            ],
+            [
+              11,
+              3,
+              6,
+              16,
+              19
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "RACE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "HOLD",
+            "SLOWER",
+            "CREEP",
+            "POKE"
+          ],
+          "resisted": [
+            "SPEED",
+            "SPEEDY"
+          ],
+          "neutral": 1184
+        },
+        "thirdTurn": {
+          "counters": [
+            "EASY",
+            "HOLD",
+            "LATE",
+            "WAIT",
+            "DELAY",
+            "STALL"
+          ],
+          "resisted": [
+            "DASH",
+            "HASTE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RACE",
+            "CREEPS",
+            "DELAY"
+          ],
+          "tileIds": [
+            [
+              4,
+              14,
+              11,
+              6
+            ],
+            [
+              16,
+              5,
+              17,
+              18,
+              12,
+              9
+            ],
+            [
+              8,
+              23,
+              0,
+              25,
+              15
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "RAPID",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "CHECK",
+            "SLOWER"
+          ],
+          "resisted": [],
+          "neutral": 362
+        },
+        "thirdTurn": {
+          "counters": [
+            "EASY",
+            "LATE",
+            "DELAY",
+            "SLOWER",
+            "STALL",
+            "TARDY"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RAPID",
+            "CHECK",
+            "TARDY"
+          ],
+          "tileIds": [
+            [
+              4,
+              14,
+              12,
+              1,
+              8
+            ],
+            [
+              11,
+              3,
+              6,
+              16,
+              19
+            ],
+            [
+              13,
+              25,
+              5,
+              22,
+              15
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "RAPIDLY",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "HOLD",
+            "CHECK",
+            "SLOWER"
+          ],
+          "resisted": [],
+          "neutral": 549
+        },
+        "thirdTurn": {
+          "counters": [
+            "EASY",
+            "LATE",
+            "WAIT",
+            "SLOWER"
+          ],
+          "resisted": [
+            "RACE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RAPIDLY",
+            "CHECKED",
+            "LATER"
+          ],
+          "tileIds": [
+            [
+              4,
+              14,
+              12,
+              1,
+              8,
+              0,
+              15
+            ],
+            [
+              11,
+              3,
+              6,
+              16,
+              19,
+              17,
+              22
+            ],
+            [
+              10,
+              25,
+              13,
+              18,
+              5
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "DASH",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "CREEP",
+            "POKE"
+          ],
+          "resisted": [],
+          "neutral": 297
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "ACT",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "HOLD",
+            "SLOWER",
+            "CREEP"
+          ],
+          "resisted": [
+            "SPEED",
+            "SPEEDY"
+          ],
+          "neutral": 638
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ACT",
+            "CREEPED"
+          ],
+          "tileIds": [
+            [
+              14,
+              11,
+              13
+            ],
+            [
+              16,
+              4,
+              6,
+              17,
+              12,
+              18,
+              8
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "HOLD",
+            "SLOWER",
+            "CREEP"
+          ],
+          "resisted": [
+            "SPEED",
+            "SPEEDY"
+          ],
+          "neutral": 610
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AIR",
+            "CREEPED"
+          ],
+          "tileIds": [
+            [
+              14,
+              1,
+              4
+            ],
+            [
+              11,
+              5,
+              6,
+              17,
+              12,
+              18,
+              8
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "ACOLYTES",
+      "CREEPED"
+    ],
+    "tileIds": [
+      [
+        14,
+        11,
+        2,
+        0,
+        15,
+        13,
+        6,
+        9
+      ],
+      [
+        16,
+        4,
+        17,
+        18,
+        12,
+        23,
+        8
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      4
+    ]
+  },
+  "identity": {
+    "id": "speed-1-raced-crawled",
+    "enemy": "RACED",
+    "board": "ACDEHILLOPRRSTWY",
+    "bingos": [
+      "CRAWLED"
+    ],
+    "bingoFamilies": [
+      "CRAWL"
+    ]
+  },
+  "novelty": [],
+  "asset": "puzzles/speed-1-raced-crawled-55b017aa524c.json",
+  "semanticPolicy": "Source-pinned concept pools with individually reviewed senses and lexical families. Unlabelled defined senses remain neutral; this is not an exhaustive contextual semantic proof.",
+  "editorialReview": "Enemy/bingo relationship and opening non-neutral meanings reviewed; homograph forms corrected and obvious concept words added. Existing board and refills preserved, all quality gates rerun."
+}

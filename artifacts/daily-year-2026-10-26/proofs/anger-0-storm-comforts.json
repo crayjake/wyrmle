@@ -1,0 +1,870 @@
+{
+  "id": "anger-0-storm-comforts",
+  "theme": "anger",
+  "side": 0,
+  "enemy": "STORM",
+  "bingo": "COMFORTS",
+  "enemySense": "oewn-storm__2.42.00..",
+  "enemyLemma": "storm",
+  "bingoLemma": "comfort",
+  "armour": 1,
+  "frequency": 0.5825,
+  "answer": "COMFORTS",
+  "method": "bingo-first",
+  "accepted": true,
+  "profileVersion": "bingo-source-profiles-1:f8ba48e3c5f5",
+  "seeds": 2,
+  "seed": "bingo-first-3:STORM:COMFORTS:12",
+  "score": 349,
+  "analysis": {
+    "score": 349,
+    "bingos": [
+      "COMFORTS"
+    ],
+    "counterFamilies": 9,
+    "resistedFamilies": 4,
+    "winningOpenings": 11,
+    "repeatedCounterRoutes": 11,
+    "sustainedPositions": 3,
+    "sustainedFinalPositions": 3,
+    "neutralCleanupOpenings": 2,
+    "routes": [
+      {
+        "opening": "CALM",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "STOOD",
+            "DIGEST",
+            "SOOTHING",
+            "REPOSE"
+          ],
+          "resisted": [
+            "IRE"
+          ],
+          "neutral": 997
+        },
+        "thirdTurn": {
+          "counters": [
+            "BEAR"
+          ],
+          "resisted": [
+            "ANGER",
+            "RAGE",
+            "RAG",
+            "IRE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CALM",
+            "STOOD",
+            "BEAR"
+          ],
+          "tileIds": [
+            [
+              7,
+              15,
+              2,
+              12
+            ],
+            [
+              10,
+              8,
+              0,
+              14,
+              18
+            ],
+            [
+              21,
+              1,
+              20,
+              5
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "STOMACH",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "BEAR",
+            "ABODE"
+          ],
+          "resisted": [
+            "ANGER",
+            "RAGE",
+            "RAG",
+            "ENRAGED",
+            "IRE"
+          ],
+          "neutral": 1219
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "STOMACH",
+            "BORE"
+          ],
+          "tileIds": [
+            [
+              10,
+              8,
+              0,
+              12,
+              15,
+              7,
+              6
+            ],
+            [
+              21,
+              14,
+              5,
+              1
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "CONSOLE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "BEAR"
+          ],
+          "resisted": [
+            "RAGE",
+            "RAMP",
+            "RAG",
+            "IRE"
+          ],
+          "neutral": 480
+        },
+        "thirdTurn": {
+          "counters": [
+            "CALM"
+          ],
+          "resisted": [
+            "RAGE",
+            "RAMP",
+            "RAG"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CONSOLE",
+            "BIT",
+            "CALMER"
+          ],
+          "tileIds": [
+            [
+              7,
+              0,
+              13,
+              10,
+              14,
+              2,
+              1
+            ],
+            [
+              21,
+              16,
+              8
+            ],
+            [
+              24,
+              15,
+              23,
+              12,
+              11,
+              5
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "TOLERANCE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "CALM",
+            "STOMACH"
+          ],
+          "resisted": [
+            "STORM",
+            "RAMP",
+            "RAG"
+          ],
+          "neutral": 1065
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "TOLERANCE",
+            "STOMACH"
+          ],
+          "tileIds": [
+            [
+              8,
+              0,
+              2,
+              1,
+              5,
+              15,
+              13,
+              7,
+              11
+            ],
+            [
+              10,
+              9,
+              14,
+              12,
+              20,
+              24,
+              6
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "TOLERATE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "CALM"
+          ],
+          "resisted": [
+            "RAMP",
+            "RAG"
+          ],
+          "neutral": 1050
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "RAG"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "TOLERATE",
+            "CALMS",
+            "AGO"
+          ],
+          "tileIds": [
+            [
+              8,
+              0,
+              2,
+              1,
+              5,
+              15,
+              9,
+              11
+            ],
+            [
+              7,
+              20,
+              23,
+              12,
+              10
+            ],
+            [
+              22,
+              17,
+              14
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            3,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "TOLERANT",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "CALM",
+            "BEARS",
+            "SOLACE",
+            "ABODE"
+          ],
+          "resisted": [
+            "RAGE",
+            "RAMP",
+            "RAG",
+            "IRE"
+          ],
+          "neutral": 1487
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "RAMP",
+            "RAG"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "TOLERANT",
+            "SOLACE",
+            "HIM"
+          ],
+          "tileIds": [
+            [
+              8,
+              0,
+              2,
+              1,
+              5,
+              15,
+              13,
+              9
+            ],
+            [
+              10,
+              14,
+              23,
+              20,
+              7,
+              11
+            ],
+            [
+              6,
+              16,
+              12
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            3,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SOLACE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "BEAR",
+            "ABODE"
+          ],
+          "resisted": [
+            "ANGER",
+            "BOTHER",
+            "RAGE",
+            "RAMP",
+            "RAG",
+            "IRE"
+          ],
+          "neutral": 1113
+        },
+        "thirdTurn": {
+          "counters": [
+            "STAND",
+            "CALM",
+            "STOMACH"
+          ],
+          "resisted": [
+            "STORM",
+            "RAMP",
+            "RAG"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SOLACE",
+            "BEAR",
+            "STOMACH"
+          ],
+          "tileIds": [
+            [
+              10,
+              0,
+              2,
+              15,
+              7,
+              1
+            ],
+            [
+              21,
+              11,
+              20,
+              5
+            ],
+            [
+              25,
+              8,
+              14,
+              12,
+              22,
+              24,
+              6
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            1,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "SOOTHE",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "BEAR",
+            "CALM"
+          ],
+          "resisted": [
+            "ANGER",
+            "RAGE",
+            "RAMP",
+            "RAG",
+            "IRE"
+          ],
+          "neutral": 1187
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "SOOTHE",
+            "CALMER"
+          ],
+          "tileIds": [
+            [
+              10,
+              0,
+              14,
+              8,
+              6,
+              1
+            ],
+            [
+              7,
+              15,
+              2,
+              12,
+              11,
+              5
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "REPOSE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "CALM"
+          ],
+          "resisted": [
+            "RAG"
+          ],
+          "neutral": 783
+        },
+        "thirdTurn": {
+          "counters": [
+            "CALM",
+            "STOMACH"
+          ],
+          "resisted": [
+            "STORM",
+            "RAG",
+            "GALL"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "REPOSE",
+            "ANTI",
+            "STOMACH"
+          ],
+          "tileIds": [
+            [
+              5,
+              1,
+              4,
+              0,
+              10,
+              11
+            ],
+            [
+              15,
+              13,
+              8,
+              16
+            ],
+            [
+              25,
+              9,
+              14,
+              12,
+              20,
+              7,
+              6
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "STORM",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "GENTLE",
+            "TOLERANCE",
+            "PLACATE"
+          ],
+          "resisted": [
+            "ANGER",
+            "RAGE",
+            "RAG",
+            "ENRAGED",
+            "IRE"
+          ],
+          "neutral": 1588
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "RAMP",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "STOOD",
+            "GENTLE",
+            "CONSOLE",
+            "DIGEST",
+            "SOOTHING"
+          ],
+          "resisted": [
+            "IRE"
+          ],
+          "neutral": 1325
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "TEASE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "CALM"
+          ],
+          "resisted": [
+            "RAMP",
+            "RAG"
+          ],
+          "neutral": 821
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "TEASER",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "CALM"
+          ],
+          "resisted": [
+            "RAMP",
+            "RAG"
+          ],
+          "neutral": 958
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "ACT",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "STOOD",
+            "DIGEST",
+            "SOOTHING",
+            "REPOSE"
+          ],
+          "resisted": [
+            "STORM",
+            "IRE"
+          ],
+          "neutral": 1544
+        },
+        "thirdTurn": {
+          "counters": [
+            "BEAR",
+            "CALM"
+          ],
+          "resisted": [
+            "RAMP"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ACT",
+            "SOOTHING",
+            "CALMER"
+          ],
+          "tileIds": [
+            [
+              15,
+              7,
+              8
+            ],
+            [
+              10,
+              0,
+              14,
+              9,
+              6,
+              16,
+              13,
+              17
+            ],
+            [
+              24,
+              20,
+              2,
+              12,
+              1,
+              5
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "ARE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "STOOD",
+            "CONSOLE",
+            "DIGEST",
+            "SOOTHING"
+          ],
+          "resisted": [],
+          "neutral": 1051
+        },
+        "thirdTurn": {
+          "counters": [
+            "CALM"
+          ],
+          "resisted": [
+            "ANGER",
+            "RAGE",
+            "RAMP",
+            "RAG",
+            "GALL",
+            "IRE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ARE",
+            "STOOD",
+            "CALM"
+          ],
+          "tileIds": [
+            [
+              15,
+              5,
+              1
+            ],
+            [
+              10,
+              8,
+              0,
+              14,
+              18
+            ],
+            [
+              7,
+              20,
+              2,
+              12
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "ALES",
+      "COMFORTER"
+    ],
+    "tileIds": [
+      [
+        15,
+        2,
+        1,
+        10
+      ],
+      [
+        7,
+        0,
+        12,
+        3,
+        14,
+        5,
+        8,
+        11,
+        19
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      5
+    ]
+  },
+  "identity": {
+    "id": "anger-0-storm-comforts",
+    "enemy": "STORM",
+    "board": "ACEEFHLMNOOPRSTT",
+    "bingos": [
+      "COMFORTS"
+    ],
+    "bingoFamilies": [
+      "COMFORT"
+    ]
+  },
+  "novelty": [],
+  "asset": "puzzles/anger-0-storm-comforts-77a076116d0d.json",
+  "semanticPolicy": "Source-pinned concept pools with individually reviewed senses and lexical families. Unlabelled defined senses remain neutral; this is not an exhaustive contextual semantic proof.",
+  "editorialReview": "Enemy/bingo relationship and opening non-neutral meanings reviewed; homograph forms corrected and obvious concept words added. Existing board and refills preserved, all quality gates rerun."
+}

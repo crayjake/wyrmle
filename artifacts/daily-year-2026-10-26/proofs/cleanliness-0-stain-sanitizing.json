@@ -1,0 +1,638 @@
+{
+  "id": "cleanliness-0-stain-sanitizing",
+  "theme": "cleanliness",
+  "side": 0,
+  "enemy": "STAIN",
+  "bingo": "SANITIZING",
+  "enemySense": "oewn-stain__1.07.00..",
+  "enemyLemma": "stain",
+  "bingoLemma": "sanitize",
+  "armour": 2,
+  "frequency": 0.3175,
+  "answer": "SANITIZING",
+  "method": "bingo-first",
+  "accepted": true,
+  "profileVersion": "bingo-source-profiles-1:732e652cc8ae",
+  "seeds": 2,
+  "seed": "bingo-first-3:STAIN:SANITIZING:12",
+  "score": 214,
+  "analysis": {
+    "score": 214,
+    "bingos": [
+      "SANITIZING"
+    ],
+    "counterFamilies": 7,
+    "resistedFamilies": 2,
+    "winningOpenings": 7,
+    "repeatedCounterRoutes": 6,
+    "sustainedPositions": 3,
+    "sustainedFinalPositions": 2,
+    "neutralCleanupOpenings": 1,
+    "routes": [
+      {
+        "opening": "CLEAN",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "PURITY",
+            "RINSE",
+            "PURIFIED",
+            "PURIFIER"
+          ],
+          "resisted": [
+            "DIRTY",
+            "DIRT"
+          ],
+          "neutral": 544
+        },
+        "thirdTurn": {
+          "counters": [
+            "PURITY",
+            "PURIFY"
+          ],
+          "resisted": [
+            "SPOT",
+            "DIRTY",
+            "SOIL",
+            "DIRT",
+            "FOUL",
+            "SLUR"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CLEAN",
+            "RINSE",
+            "PURITY"
+          ],
+          "tileIds": [
+            [
+              9,
+              6,
+              8,
+              3,
+              7
+            ],
+            [
+              1,
+              2,
+              13,
+              12,
+              14
+            ],
+            [
+              19,
+              18,
+              17,
+              10,
+              11,
+              20
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "CLEANSING",
+        "label": "COUNTER",
+        "hits": 5,
+        "later": {
+          "counters": [
+            "PURITY",
+            "PURIFIED",
+            "PURIFIER"
+          ],
+          "resisted": [
+            "SPOT",
+            "DIRTY",
+            "SOIL",
+            "DIRT",
+            "FOUL",
+            "SLUR"
+          ],
+          "neutral": 843
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "CLEANSING",
+            "PURITY"
+          ],
+          "tileIds": [
+            [
+              9,
+              6,
+              8,
+              3,
+              7,
+              12,
+              2,
+              13,
+              4
+            ],
+            [
+              19,
+              18,
+              1,
+              10,
+              11,
+              20
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            5,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "RINSE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "CLEAN",
+            "LAUNDRY",
+            "PURITY",
+            "CLEANUP",
+            "PURIFIED",
+            "LAUNDER"
+          ],
+          "resisted": [
+            "DIRTY",
+            "DIRT"
+          ],
+          "neutral": 1111
+        },
+        "thirdTurn": {
+          "counters": [
+            "PURITY",
+            "PURIFY"
+          ],
+          "resisted": [
+            "SPOT",
+            "DIRTY",
+            "SOIL",
+            "DIRT",
+            "FOUL",
+            "SLUR"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RINSE",
+            "CLEAN",
+            "PURITY"
+          ],
+          "tileIds": [
+            [
+              1,
+              2,
+              7,
+              12,
+              8
+            ],
+            [
+              9,
+              6,
+              14,
+              3,
+              13
+            ],
+            [
+              19,
+              18,
+              17,
+              10,
+              11,
+              20
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "CLEANERS",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "PURITY",
+            "PURIFY"
+          ],
+          "resisted": [
+            "DIRTY",
+            "DIRT",
+            "SLUR"
+          ],
+          "neutral": 364
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "SOIL"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CLEANERS",
+            "PURIFYING",
+            "ACT"
+          ],
+          "tileIds": [
+            [
+              9,
+              6,
+              8,
+              3,
+              7,
+              14,
+              1,
+              12
+            ],
+            [
+              19,
+              18,
+              17,
+              2,
+              0,
+              20,
+              10,
+              13,
+              4
+            ],
+            [
+              26,
+              25,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            3,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "REFINING",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "PURITY"
+          ],
+          "resisted": [
+            "DIRTY",
+            "DIRT",
+            "SMEAR",
+            "SLUR",
+            "SULLY"
+          ],
+          "neutral": 1461
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "CLEANSER",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "PURITY",
+            "PURIFY"
+          ],
+          "resisted": [
+            "DIRTY",
+            "DIRT",
+            "SLUR"
+          ],
+          "neutral": 364
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "SOIL"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CLEANSER",
+            "PURIFYING",
+            "ACT"
+          ],
+          "tileIds": [
+            [
+              9,
+              6,
+              8,
+              3,
+              7,
+              12,
+              14,
+              1
+            ],
+            [
+              19,
+              18,
+              17,
+              2,
+              0,
+              20,
+              10,
+              13,
+              4
+            ],
+            [
+              26,
+              25,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            3,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "STERILIZE",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "LAUNDRY",
+            "SCOURING"
+          ],
+          "resisted": [
+            "SOIL",
+            "FOUL",
+            "SLUR"
+          ],
+          "neutral": 1092
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "SPOT",
+            "STAIN"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "STERILIZE",
+            "LAUNDRY",
+            "CAN"
+          ],
+          "tileIds": [
+            [
+              12,
+              11,
+              8,
+              1,
+              2,
+              6,
+              10,
+              5,
+              14
+            ],
+            [
+              22,
+              3,
+              18,
+              7,
+              16,
+              17,
+              20
+            ],
+            [
+              9,
+              26,
+              13
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            4,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "GREASE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "PURITY",
+            "PURIFY"
+          ],
+          "resisted": [
+            "DIRTY",
+            "DIRT"
+          ],
+          "neutral": 144
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "STAIN",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "PURIFIED",
+            "PURIFIER"
+          ],
+          "resisted": [],
+          "neutral": 397
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "ACT",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "RINSE",
+            "REFINING"
+          ],
+          "resisted": [
+            "SLUR"
+          ],
+          "neutral": 452
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "AGE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "RINSE",
+            "DISINFECT"
+          ],
+          "resisted": [
+            "DIRT",
+            "SLUR"
+          ],
+          "neutral": 469
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "SOIL",
+            "SLUR",
+            "SULLY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AGE",
+            "DISINFECT",
+            "ANY"
+          ],
+          "tileIds": [
+            [
+              3,
+              4,
+              8
+            ],
+            [
+              16,
+              2,
+              12,
+              10,
+              7,
+              0,
+              14,
+              9,
+              11
+            ],
+            [
+              26,
+              13,
+              20
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            1,
+            5,
+            1
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "ALE",
+      "DISINFECTING"
+    ],
+    "tileIds": [
+      [
+        3,
+        6,
+        8
+      ],
+      [
+        16,
+        2,
+        12,
+        10,
+        7,
+        0,
+        14,
+        9,
+        11,
+        15,
+        13,
+        4
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      6
+    ]
+  },
+  "identity": {
+    "id": "cleanliness-0-stain-sanitizing",
+    "enemy": "STAIN",
+    "board": "ACEEFGIIILNNRSTZ",
+    "bingos": [
+      "SANITIZING"
+    ],
+    "bingoFamilies": [
+      "SANITIZE"
+    ]
+  },
+  "novelty": [],
+  "asset": "puzzles/cleanliness-0-stain-sanitizing-297556c08645.json",
+  "semanticPolicy": "Source-pinned concept pools with individually reviewed senses and lexical families. Unlabelled defined senses remain neutral; this is not an exhaustive contextual semantic proof.",
+  "editorialReview": "Enemy/bingo relationship and opening non-neutral meanings reviewed; homograph forms corrected and obvious concept words added. Existing board and refills preserved, all quality gates rerun."
+}

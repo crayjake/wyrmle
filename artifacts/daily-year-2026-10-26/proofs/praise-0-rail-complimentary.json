@@ -1,0 +1,656 @@
+{
+  "id": "praise-0-rail-complimentary",
+  "theme": "praise",
+  "side": 0,
+  "enemy": "RAIL",
+  "bingo": "COMPLIMENTARY",
+  "enemySense": "oewn-rail__2.32.01..",
+  "enemyLemma": "rail",
+  "bingoLemma": "complimentary",
+  "armour": 0,
+  "frequency": 0.5875,
+  "answer": "COMPLIMENTARY",
+  "method": "bingo-first",
+  "accepted": true,
+  "profileVersion": "bingo-source-profiles-1:a3c71d4b2dd1",
+  "seeds": 2,
+  "seed": "bingo-first-3:RAIL:COMPLIMENTARY:12",
+  "score": 236,
+  "analysis": {
+    "score": 236,
+    "bingos": [
+      "PROCLAIMED",
+      "COMPLIMENTARY",
+      "PROCLAIM",
+      "PROCLAIMS"
+    ],
+    "counterFamilies": 7,
+    "resistedFamilies": 4,
+    "winningOpenings": 9,
+    "repeatedCounterRoutes": 8,
+    "sustainedPositions": 3,
+    "sustainedFinalPositions": 2,
+    "neutralCleanupOpenings": 3,
+    "routes": [
+      {
+        "opening": "PRAISE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "LAUD"
+          ],
+          "resisted": [
+            "COD"
+          ],
+          "neutral": 442
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "PRAISE",
+            "LAUD"
+          ],
+          "tileIds": [
+            [
+              13,
+              6,
+              8,
+              1,
+              3,
+              5
+            ],
+            [
+              2,
+              17,
+              7,
+              14
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "ADMIRE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "CLAP",
+            "LAUD"
+          ],
+          "resisted": [
+            "COD"
+          ],
+          "neutral": 641
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ADMIRE",
+            "CLAP"
+          ],
+          "tileIds": [
+            [
+              8,
+              14,
+              11,
+              1,
+              6,
+              5
+            ],
+            [
+              0,
+              2,
+              17,
+              13
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "COMPLIMENT",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "AWARD",
+            "LAUD"
+          ],
+          "resisted": [],
+          "neutral": 129
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "COMPLIMENT",
+            "AWARD"
+          ],
+          "tileIds": [
+            [
+              0,
+              12,
+              11,
+              13,
+              2,
+              1,
+              15,
+              5,
+              9,
+              4
+            ],
+            [
+              8,
+              19,
+              17,
+              6,
+              14
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "CLAP",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "ADMIRE",
+            "LAUDER"
+          ],
+          "resisted": [
+            "RIDE",
+            "RAIL",
+            "INSULT",
+            "ROAST",
+            "DISS"
+          ],
+          "neutral": 1724
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "CLAP",
+            "ADMIRE"
+          ],
+          "tileIds": [
+            [
+              0,
+              2,
+              8,
+              13
+            ],
+            [
+              17,
+              14,
+              11,
+              1,
+              6,
+              5
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "SPAT",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "ADMIRE",
+            "LAUDER",
+            "LAURELS",
+            "LAUD"
+          ],
+          "resisted": [
+            "RIDE",
+            "RAIL",
+            "RALLY",
+            "COD",
+            "SCORN"
+          ],
+          "neutral": 1340
+        },
+        "thirdTurn": {
+          "counters": [
+            "CLAP",
+            "LAUD"
+          ],
+          "resisted": [
+            "RALLY",
+            "COD",
+            "SCORN"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SPAT",
+            "ADMIRE",
+            "CLAP"
+          ],
+          "tileIds": [
+            [
+              3,
+              13,
+              8,
+              4
+            ],
+            [
+              17,
+              14,
+              11,
+              1,
+              6,
+              5
+            ],
+            [
+              0,
+              2,
+              20,
+              22
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "LAUDER",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [],
+          "resisted": [
+            "COD",
+            "DISS"
+          ],
+          "neutral": 772
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "LAUDER",
+            "ITS"
+          ],
+          "tileIds": [
+            [
+              2,
+              8,
+              7,
+              14,
+              5,
+              6
+            ],
+            [
+              1,
+              4,
+              3
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "LAUD",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "PRAISE",
+            "COMPLIMENT",
+            "PRISE"
+          ],
+          "resisted": [
+            "RAIL",
+            "ROAST",
+            "SCORN"
+          ],
+          "neutral": 1888
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "LAUD",
+            "PRAISE"
+          ],
+          "tileIds": [
+            [
+              2,
+              8,
+              7,
+              14
+            ],
+            [
+              13,
+              6,
+              17,
+              1,
+              3,
+              5
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "RIDE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "CLAP",
+            "SPAT"
+          ],
+          "resisted": [],
+          "neutral": 519
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "RAIL",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "CLAP",
+            "SPAT",
+            "LAUD"
+          ],
+          "resisted": [
+            "COD"
+          ],
+          "neutral": 1199
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "INSULT",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "AWARD",
+            "CLAP"
+          ],
+          "resisted": [
+            "RODE",
+            "COD"
+          ],
+          "neutral": 712
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "ROAST",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "CLAP",
+            "LAUD"
+          ],
+          "resisted": [],
+          "neutral": 758
+        },
+        "thirdTurn": {
+          "counters": [
+            "AWARD",
+            "PRAISE",
+            "ADMIRE",
+            "LAUDER",
+            "PRISE"
+          ],
+          "resisted": [
+            "RIDE",
+            "RAIL"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ROAST",
+            "CLAP",
+            "PRAISE"
+          ],
+          "tileIds": [
+            [
+              6,
+              12,
+              8,
+              3,
+              4
+            ],
+            [
+              0,
+              2,
+              17,
+              13
+            ],
+            [
+              22,
+              24,
+              20,
+              1,
+              18,
+              5
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "ACT",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "PRAISE",
+            "ADMIRE",
+            "LAUDER",
+            "LAURELS",
+            "LAUD",
+            "PRISE"
+          ],
+          "resisted": [
+            "RIDE",
+            "RAIL",
+            "RALLY",
+            "DISS"
+          ],
+          "neutral": 1291
+        },
+        "thirdTurn": {
+          "counters": [
+            "LAUD"
+          ],
+          "resisted": [
+            "RALLY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ACT",
+            "PRAISE",
+            "LAUD"
+          ],
+          "tileIds": [
+            [
+              8,
+              0,
+              4
+            ],
+            [
+              13,
+              6,
+              17,
+              1,
+              3,
+              5
+            ],
+            [
+              2,
+              20,
+              7,
+              14
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "CLAP",
+            "LAUD"
+          ],
+          "resisted": [
+            "COD"
+          ],
+          "neutral": 1147
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "ADMIRE",
+      "ACTUAL"
+    ],
+    "tileIds": [
+      [
+        8,
+        14,
+        11,
+        1,
+        6,
+        5
+      ],
+      [
+        17,
+        0,
+        4,
+        7,
+        20,
+        2
+      ]
+    ],
+    "labels": [
+      "COUNTER",
+      "NEUTRAL"
+    ],
+    "hits": [
+      3,
+      1
+    ]
+  },
+  "identity": {
+    "id": "praise-0-rail-complimentary",
+    "enemy": "RAIL",
+    "board": "ACDEILMMNOPRSTUY",
+    "bingos": [
+      "COMPLIMENTARY",
+      "PROCLAIM",
+      "PROCLAIMED",
+      "PROCLAIMS"
+    ],
+    "bingoFamilies": [
+      "COMPLIMENTARY",
+      "PROCLAIM"
+    ]
+  },
+  "novelty": [],
+  "asset": "puzzles/praise-0-rail-complimentary-f6e1d15f21be.json",
+  "semanticPolicy": "Source-pinned concept pools with individually reviewed senses and lexical families. Unlabelled defined senses remain neutral; this is not an exhaustive contextual semantic proof.",
+  "editorialReview": "Enemy/bingo relationship and opening non-neutral meanings reviewed; homograph forms corrected and obvious concept words added. Existing board and refills preserved, all quality gates rerun."
+}

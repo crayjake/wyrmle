@@ -1,0 +1,731 @@
+{
+  "id": "concealment-0-mask-unmistakable",
+  "theme": "concealment",
+  "side": 0,
+  "enemy": "MASK",
+  "bingo": "UNMISTAKABLE",
+  "enemySense": "oewn-mask__1.06.00..",
+  "enemyLemma": "mask",
+  "bingoLemma": "unmistakable",
+  "armour": 1,
+  "frequency": 0.52,
+  "answer": "UNMISTAKABLE",
+  "method": "bingo-first",
+  "accepted": true,
+  "profileVersion": "bingo-source-profiles-1:e0da8ae37943",
+  "seeds": 2,
+  "seed": "bingo-first-3:MASK:UNMISTAKABLE:12:two-turn-route",
+  "score": 303,
+  "analysis": {
+    "score": 303,
+    "bingos": [
+      "UNMISTAKABLE"
+    ],
+    "counterFamilies": 4,
+    "resistedFamilies": 4,
+    "winningOpenings": 10,
+    "repeatedCounterRoutes": 8,
+    "sustainedPositions": 4,
+    "sustainedFinalPositions": 3,
+    "neutralCleanupOpenings": 0,
+    "routes": [
+      {
+        "opening": "BREAK",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "FINDS",
+            "REVEAL",
+            "DISCOVER",
+            "DEMO",
+            "REVELATION",
+            "NOTICES",
+            "MANIFEST",
+            "UNVEILS",
+            "UNCOVERS",
+            "FINDERS"
+          ],
+          "resisted": [
+            "COVER",
+            "SECRET",
+            "SCREEN",
+            "VEIL",
+            "COVERT"
+          ],
+          "neutral": 2661
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "BREAK",
+            "MANIFEST"
+          ],
+          "tileIds": [
+            [
+              2,
+              4,
+              10,
+              0,
+              15
+            ],
+            [
+              5,
+              11,
+              13,
+              7,
+              18,
+              16,
+              9,
+              3
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "NOTICES",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "BREAK",
+            "REVEAL"
+          ],
+          "resisted": [
+            "MASK"
+          ],
+          "neutral": 682
+        },
+        "thirdTurn": {
+          "counters": [
+            "UNMASKED"
+          ],
+          "resisted": [
+            "MASK"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "NOTICES",
+            "BREAK",
+            "UNMASKED"
+          ],
+          "tileIds": [
+            [
+              13,
+              1,
+              3,
+              7,
+              12,
+              10,
+              9
+            ],
+            [
+              2,
+              4,
+              16,
+              0,
+              15
+            ],
+            [
+              14,
+              26,
+              5,
+              11,
+              21,
+              27,
+              17,
+              19
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "UNVEILS",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "BREAK",
+            "DEMO"
+          ],
+          "resisted": [
+            "SECRET",
+            "MASK"
+          ],
+          "neutral": 999
+        },
+        "thirdTurn": {
+          "counters": [
+            "DEMO",
+            "MANIFEST"
+          ],
+          "resisted": [
+            "MASK"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "UNVEILS",
+            "BREAKS",
+            "MANIFEST"
+          ],
+          "tileIds": [
+            [
+              14,
+              13,
+              6,
+              10,
+              7,
+              8,
+              9
+            ],
+            [
+              2,
+              4,
+              16,
+              0,
+              15,
+              21
+            ],
+            [
+              5,
+              11,
+              26,
+              28,
+              18,
+              17,
+              24,
+              3
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "UNCOVERS",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "BREAK"
+          ],
+          "resisted": [
+            "MASK"
+          ],
+          "neutral": 1109
+        },
+        "thirdTurn": {
+          "counters": [
+            "MANIFEST"
+          ],
+          "resisted": [
+            "MASK"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "UNCOVERS",
+            "BREAK",
+            "MANIFEST"
+          ],
+          "tileIds": [
+            [
+              14,
+              13,
+              12,
+              1,
+              6,
+              10,
+              4,
+              9
+            ],
+            [
+              2,
+              20,
+              16,
+              0,
+              15
+            ],
+            [
+              5,
+              11,
+              26,
+              7,
+              18,
+              17,
+              21,
+              3
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "COVER",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "BREAK",
+            "FINDS",
+            "MANIFEST",
+            "UNMASKED",
+            "FINDERS",
+            "DEBUNK"
+          ],
+          "resisted": [
+            "MASK"
+          ],
+          "neutral": 1740
+        },
+        "thirdTurn": {
+          "counters": [
+            "BREAK",
+            "MANIFEST"
+          ],
+          "resisted": [
+            "MASK"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "COVER",
+            "UNMASKED",
+            "BREAK"
+          ],
+          "tileIds": [
+            [
+              12,
+              1,
+              6,
+              10,
+              4
+            ],
+            [
+              14,
+              13,
+              5,
+              0,
+              9,
+              15,
+              16,
+              19
+            ],
+            [
+              2,
+              20,
+              17,
+              11,
+              27
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "MASK",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "REVEALED",
+            "REVELATION"
+          ],
+          "resisted": [
+            "COVER",
+            "VEIL",
+            "COVERT"
+          ],
+          "neutral": 1327
+        },
+        "thirdTurn": {
+          "counters": [
+            "UNMASK"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "MASK",
+            "REVEALED",
+            "UNMASK"
+          ],
+          "tileIds": [
+            [
+              5,
+              0,
+              9,
+              15
+            ],
+            [
+              4,
+              10,
+              6,
+              16,
+              11,
+              8,
+              17,
+              19
+            ],
+            [
+              14,
+              13,
+              25,
+              23,
+              21,
+              27
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            1,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "OBSCURE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "FINDS",
+            "REVEAL",
+            "MANIFEST",
+            "FINDERS"
+          ],
+          "resisted": [
+            "MASK",
+            "VEIL"
+          ],
+          "neutral": 1732
+        },
+        "thirdTurn": {
+          "counters": [
+            "BREAK",
+            "REVEAL"
+          ],
+          "resisted": [
+            "MASK",
+            "VEIL"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "OBSCURE",
+            "MANIFEST",
+            "BREAK"
+          ],
+          "tileIds": [
+            [
+              1,
+              2,
+              9,
+              12,
+              14,
+              4,
+              10
+            ],
+            [
+              5,
+              0,
+              13,
+              7,
+              18,
+              16,
+              21,
+              3
+            ],
+            [
+              29,
+              20,
+              17,
+              11,
+              15
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "VEIL",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "BREAK",
+            "DEMO",
+            "UNMASKED",
+            "DEBUNK"
+          ],
+          "resisted": [
+            "SECRET",
+            "SCREEN",
+            "MASK",
+            "OBSCURE"
+          ],
+          "neutral": 1491
+        },
+        "thirdTurn": {
+          "counters": [
+            "BREAK"
+          ],
+          "resisted": [
+            "MASK"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "VEIL",
+            "UNMASKED",
+            "BREAK"
+          ],
+          "tileIds": [
+            [
+              6,
+              10,
+              7,
+              8
+            ],
+            [
+              14,
+              13,
+              5,
+              0,
+              9,
+              15,
+              16,
+              19
+            ],
+            [
+              2,
+              4,
+              17,
+              11,
+              27
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "ACT",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "BREAK",
+            "REVEAL",
+            "OBSERVE",
+            "UNVEILS",
+            "UNMASK"
+          ],
+          "resisted": [
+            "MASK",
+            "VEIL"
+          ],
+          "neutral": 990
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ACT",
+            "UNMASK"
+          ],
+          "tileIds": [
+            [
+              0,
+              12,
+              3
+            ],
+            [
+              14,
+              13,
+              5,
+              11,
+              9,
+              15
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "UNMASK"
+          ],
+          "resisted": [
+            "MASK",
+            "CLOAK"
+          ],
+          "neutral": 853
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AIR",
+            "UNMASK"
+          ],
+          "tileIds": [
+            [
+              0,
+              7,
+              4
+            ],
+            [
+              14,
+              13,
+              5,
+              11,
+              9,
+              15
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "ABET",
+      "UNMASK"
+    ],
+    "tileIds": [
+      [
+        0,
+        2,
+        10,
+        3
+      ],
+      [
+        14,
+        13,
+        5,
+        11,
+        9,
+        15
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      4
+    ]
+  },
+  "identity": {
+    "id": "concealment-0-mask-unmistakable",
+    "enemy": "MASK",
+    "board": "AABCEIKLMNORSTUV",
+    "bingos": [
+      "UNMISTAKABLE"
+    ],
+    "bingoFamilies": [
+      "UNMISTAKABLE"
+    ]
+  },
+  "novelty": [],
+  "asset": "puzzles/concealment-0-mask-unmistakable-073a4ce53bcf.json",
+  "semanticPolicy": "Source-pinned concept pools with individually reviewed senses and lexical families. Unlabelled defined senses remain neutral; this is not an exhaustive contextual semantic proof.",
+  "editorialReview": "Enemy/bingo relationship and opening non-neutral meanings reviewed; homograph forms corrected and obvious concept words added. Existing board and refills preserved, all quality gates rerun."
+}

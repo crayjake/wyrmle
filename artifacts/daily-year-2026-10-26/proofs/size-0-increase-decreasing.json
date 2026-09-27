@@ -1,0 +1,879 @@
+{
+  "id": "size-0-increase-decreasing",
+  "theme": "size",
+  "side": 0,
+  "enemy": "INCREASE",
+  "bingo": "DECREASING",
+  "enemySense": "oewn-increase__1.22.00..",
+  "enemyLemma": "increase",
+  "bingoLemma": "decrease",
+  "armour": 0,
+  "frequency": 0.67,
+  "answer": "DECREASING",
+  "method": "bingo-first",
+  "accepted": true,
+  "profileVersion": "bingo-source-profiles-1:c545be8f76e6",
+  "seeds": 2,
+  "seed": "bingo-first-3:INCREASE:DECREASING:12",
+  "score": 380,
+  "analysis": {
+    "score": 380,
+    "bingos": [
+      "DECREASING"
+    ],
+    "counterFamilies": 8,
+    "resistedFamilies": 4,
+    "winningOpenings": 10,
+    "repeatedCounterRoutes": 10,
+    "sustainedPositions": 9,
+    "sustainedFinalPositions": 3,
+    "neutralCleanupOpenings": 0,
+    "routes": [
+      {
+        "opening": "CUT",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "MINUTE",
+            "TRIM",
+            "MINIATURE",
+            "MIDGET"
+          ],
+          "resisted": [
+            "LARGE",
+            "GIANT",
+            "MONSTER",
+            "TREMENDOUS",
+            "ENLARGED"
+          ],
+          "neutral": 1950
+        },
+        "thirdTurn": {
+          "counters": [
+            "LESSEN"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CUT",
+            "MINIATURE",
+            "LESSEN"
+          ],
+          "tileIds": [
+            [
+              5,
+              3,
+              8
+            ],
+            [
+              2,
+              6,
+              13,
+              10,
+              0,
+              17,
+              18,
+              7,
+              1
+            ],
+            [
+              4,
+              9,
+              11,
+              20,
+              16,
+              21
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            5,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "MINUTE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "CUT",
+            "MINUTE",
+            "REDUCE",
+            "DECLINE",
+            "REDUCTION",
+            "TRIM",
+            "LESSEN",
+            "MIDGET"
+          ],
+          "resisted": [
+            "LARGE",
+            "INCREASE",
+            "GIANT",
+            "MONSTER",
+            "TREMENDOUS",
+            "GREATNESS",
+            "ENLARGED"
+          ],
+          "neutral": 2838
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "LARGE",
+            "GIANT",
+            "MONSTER",
+            "ENLARGED"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "MINUTE",
+            "REDUCES",
+            "AGE"
+          ],
+          "tileIds": [
+            [
+              2,
+              6,
+              13,
+              3,
+              8,
+              1
+            ],
+            [
+              7,
+              9,
+              14,
+              18,
+              5,
+              16,
+              11
+            ],
+            [
+              0,
+              15,
+              23
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            3,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "REDUCE",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "MINUTE",
+            "TINIEST"
+          ],
+          "resisted": [
+            "GIANT"
+          ],
+          "neutral": 865
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "LARGE",
+            "IMMENSE",
+            "ENLARGED"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "REDUCE",
+            "TINIEST",
+            "AGE"
+          ],
+          "tileIds": [
+            [
+              7,
+              1,
+              14,
+              3,
+              5,
+              9
+            ],
+            [
+              8,
+              6,
+              13,
+              10,
+              16,
+              11,
+              17
+            ],
+            [
+              0,
+              15,
+              23
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            4,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "DECLINE",
+        "label": "COUNTER",
+        "hits": 5,
+        "later": {
+          "counters": [
+            "TRIM"
+          ],
+          "resisted": [
+            "GIANT",
+            "MONSTER"
+          ],
+          "neutral": 1000
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "MONSTER",
+            "TREMENDOUS"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DECLINE",
+            "TRIMS",
+            "AGE"
+          ],
+          "tileIds": [
+            [
+              14,
+              1,
+              5,
+              4,
+              6,
+              13,
+              9
+            ],
+            [
+              8,
+              7,
+              10,
+              2,
+              11
+            ],
+            [
+              0,
+              15,
+              16
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            5,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "REDUCTION",
+        "label": "COUNTER",
+        "hits": 5,
+        "later": {
+          "counters": [
+            "MINUTE",
+            "TRIMMED",
+            "LESSEN",
+            "MIDGET"
+          ],
+          "resisted": [
+            "LARGE",
+            "GIANT",
+            "IMMENSE",
+            "GREATNESS",
+            "ENLARGED"
+          ],
+          "neutral": 1549
+        },
+        "thirdTurn": {
+          "counters": [
+            "MINIATURE"
+          ],
+          "resisted": [
+            "GIANT",
+            "GIGANTIC"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "REDUCTION",
+            "LESSEN",
+            "MINIATURE"
+          ],
+          "tileIds": [
+            [
+              7,
+              1,
+              14,
+              3,
+              5,
+              8,
+              6,
+              12,
+              13
+            ],
+            [
+              4,
+              9,
+              11,
+              20,
+              16,
+              21
+            ],
+            [
+              2,
+              10,
+              26,
+              28,
+              0,
+              17,
+              18,
+              22,
+              23
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            5,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "TRIM",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "CUT",
+            "MINUTE",
+            "DECLINE",
+            "MIDGET"
+          ],
+          "resisted": [
+            "GIANT"
+          ],
+          "neutral": 1363
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "MONSTER",
+            "TREMENDOUS"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "TRIM",
+            "DECLINES",
+            "AGE"
+          ],
+          "tileIds": [
+            [
+              8,
+              7,
+              6,
+              2
+            ],
+            [
+              14,
+              1,
+              5,
+              4,
+              10,
+              13,
+              9,
+              11
+            ],
+            [
+              0,
+              15,
+              16
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            2,
+            5,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "MINIATURE",
+        "label": "COUNTER",
+        "hits": 5,
+        "later": {
+          "counters": [
+            "CUT",
+            "REDUCE",
+            "LESSEN"
+          ],
+          "resisted": [
+            "MONSTER",
+            "TREMENDOUS"
+          ],
+          "neutral": 924
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "MINIATURE",
+            "REDUCES"
+          ],
+          "tileIds": [
+            [
+              2,
+              6,
+              13,
+              10,
+              0,
+              8,
+              3,
+              7,
+              1
+            ],
+            [
+              22,
+              9,
+              14,
+              18,
+              5,
+              16,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            5,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "MIDGET",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "CUT",
+            "MINUTE",
+            "TRIM",
+            "LESSEN"
+          ],
+          "resisted": [
+            "INCREASE",
+            "MONSTER",
+            "INCREMENTS"
+          ],
+          "neutral": 1558
+        },
+        "thirdTurn": {
+          "counters": [
+            "CUT",
+            "MINUTE",
+            "REDUCE",
+            "DECLINE",
+            "REDUCTION",
+            "TRIM",
+            "LESSEN"
+          ],
+          "resisted": [
+            "MONSTER",
+            "TREMENDOUS",
+            "INCREMENTS"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "MIDGET",
+            "ARE",
+            "REDUCTIONS"
+          ],
+          "tileIds": [
+            [
+              2,
+              6,
+              14,
+              15,
+              1,
+              8
+            ],
+            [
+              0,
+              7,
+              9
+            ],
+            [
+              22,
+              16,
+              24,
+              3,
+              5,
+              17,
+              10,
+              12,
+              13,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            1,
+            5
+          ]
+        }
+      },
+      {
+        "opening": "LARGE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "CUT",
+            "MINUTE",
+            "TINIEST"
+          ],
+          "resisted": [
+            "IMMENSE"
+          ],
+          "neutral": 554
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "INCREASE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "MINUTE",
+            "TRIM",
+            "MIDGET"
+          ],
+          "resisted": [
+            "MONSTER",
+            "TREMENDOUS",
+            "IMMENSE"
+          ],
+          "neutral": 1052
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "GIANT",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "CUT",
+            "REDUCE",
+            "TRIM"
+          ],
+          "resisted": [],
+          "neutral": 761
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "MONSTER",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "CUT",
+            "MINUTE",
+            "REDUCE",
+            "DECLINE",
+            "TRIM",
+            "MINIATURE",
+            "MIDGET"
+          ],
+          "resisted": [
+            "LARGE",
+            "INCREASE",
+            "GIANT",
+            "ENLARGED"
+          ],
+          "neutral": 1823
+        },
+        "thirdTurn": {
+          "counters": [
+            "REDUCE",
+            "TRIM",
+            "MINIATURE"
+          ],
+          "resisted": [
+            "GIANT",
+            "GIGANTIC"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "MONSTER",
+            "DECLINES",
+            "MINIATURE"
+          ],
+          "tileIds": [
+            [
+              2,
+              12,
+              13,
+              11,
+              8,
+              1,
+              7
+            ],
+            [
+              14,
+              9,
+              5,
+              4,
+              6,
+              21,
+              16,
+              20
+            ],
+            [
+              19,
+              10,
+              26,
+              28,
+              0,
+              17,
+              3,
+              22,
+              23
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            6,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "ACT",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "MINUTE",
+            "TRIM",
+            "MIDGET"
+          ],
+          "resisted": [
+            "MONSTER",
+            "TREMENDOUS"
+          ],
+          "neutral": 1014
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "AGE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "CUT",
+            "MINUTE",
+            "REDUCE",
+            "DECLINE",
+            "REDUCTION",
+            "TRIM",
+            "TINIEST"
+          ],
+          "resisted": [
+            "MONSTER",
+            "TREMENDOUS"
+          ],
+          "neutral": 1141
+        },
+        "thirdTurn": {
+          "counters": [
+            "MINUTE",
+            "TRIMMED",
+            "MIDGET"
+          ],
+          "resisted": [
+            "IMMENSE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AGE",
+            "REDUCTIONS",
+            "MINUTE"
+          ],
+          "tileIds": [
+            [
+              0,
+              15,
+              1
+            ],
+            [
+              7,
+              9,
+              14,
+              3,
+              5,
+              8,
+              6,
+              12,
+              13,
+              11
+            ],
+            [
+              2,
+              10,
+              21,
+              18,
+              17,
+              16
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            6,
+            1
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "MINIATURE",
+      "REDUCES"
+    ],
+    "tileIds": [
+      [
+        2,
+        6,
+        13,
+        10,
+        0,
+        8,
+        3,
+        7,
+        1
+      ],
+      [
+        22,
+        9,
+        14,
+        18,
+        5,
+        16,
+        11
+      ]
+    ],
+    "labels": [
+      "COUNTER",
+      "COUNTER"
+    ],
+    "hits": [
+      5,
+      3
+    ]
+  },
+  "identity": {
+    "id": "size-0-increase-decreasing",
+    "enemy": "INCREASE",
+    "board": "ACDEEGIILMNORSTU",
+    "bingos": [
+      "DECREASING"
+    ],
+    "bingoFamilies": [
+      "DECREASE"
+    ]
+  },
+  "novelty": [],
+  "asset": "puzzles/size-0-increase-decreasing-ec23b0ac1bb2.json",
+  "semanticPolicy": "Source-pinned concept pools with individually reviewed senses and lexical families. Unlabelled defined senses remain neutral; this is not an exhaustive contextual semantic proof.",
+  "editorialReview": "Enemy/bingo relationship and opening non-neutral meanings reviewed; homograph forms corrected and obvious concept words added. Existing board and refills preserved, all quality gates rerun."
+}

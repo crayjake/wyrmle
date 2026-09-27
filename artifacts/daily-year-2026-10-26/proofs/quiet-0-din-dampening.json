@@ -1,0 +1,552 @@
+{
+  "id": "quiet-0-din-dampening",
+  "theme": "quiet",
+  "side": 0,
+  "enemy": "DIN",
+  "bingo": "DAMPENING",
+  "enemySense": "oewn-din__1.11.00..",
+  "enemyLemma": "din",
+  "bingoLemma": "dampen",
+  "armour": 1,
+  "frequency": 0.4075,
+  "answer": "DAMPENING",
+  "method": "bingo-first",
+  "accepted": true,
+  "profileVersion": "bingo-source-profiles-1:94a5c9b1ed37",
+  "seeds": 2,
+  "seed": "bingo-first-3:DIN:DAMPENING:13",
+  "score": 169,
+  "analysis": {
+    "score": 169,
+    "bingos": [
+      "DAMPENING"
+    ],
+    "counterFamilies": 4,
+    "resistedFamilies": 4,
+    "winningOpenings": 6,
+    "repeatedCounterRoutes": 5,
+    "sustainedPositions": 2,
+    "sustainedFinalPositions": 3,
+    "neutralCleanupOpenings": 2,
+    "routes": [
+      {
+        "opening": "DAMP",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SILENCING"
+          ],
+          "resisted": [
+            "NOISE",
+            "LOUD",
+            "DIN",
+            "RESOUNDING"
+          ],
+          "neutral": 888
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DAMP",
+            "SILENCING"
+          ],
+          "tileIds": [
+            [
+              7,
+              15,
+              10,
+              14
+            ],
+            [
+              12,
+              2,
+              9,
+              1,
+              3,
+              5,
+              17,
+              4,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "CALMING",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "SILENT",
+            "DULL"
+          ],
+          "resisted": [
+            "NOISE",
+            "LOUD",
+            "DIN"
+          ],
+          "neutral": 1119
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "LOUD"
+          ]
+        },
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "CALMING",
+            "SILENT",
+            "BED"
+          ],
+          "tileIds": [
+            [
+              5,
+              15,
+              9,
+              10,
+              2,
+              3,
+              11
+            ],
+            [
+              12,
+              17,
+              20,
+              1,
+              4,
+              21
+            ],
+            [
+              28,
+              23,
+              7
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            2,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "PLACID",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "SILENT",
+            "MUTING"
+          ],
+          "resisted": [
+            "NOISE",
+            "LOUD",
+            "DIN",
+            "RESOUNDING"
+          ],
+          "neutral": 1345
+        },
+        "thirdTurn": {
+          "counters": [
+            "SILENCE",
+            "SILENCER",
+            "MUTING"
+          ],
+          "resisted": [
+            "NOISE",
+            "LOUD",
+            "DIN"
+          ]
+        },
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "PLACID",
+            "SILENT",
+            "SILENCE"
+          ],
+          "tileIds": [
+            [
+              14,
+              9,
+              15,
+              5,
+              2,
+              7
+            ],
+            [
+              12,
+              17,
+              20,
+              1,
+              3,
+              21
+            ],
+            [
+              18,
+              25,
+              22,
+              23,
+              4,
+              27,
+              26
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "DAMPER",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "STILL"
+          ],
+          "resisted": [
+            "LOUD",
+            "DIN"
+          ],
+          "neutral": 502
+        },
+        "thirdTurn": {
+          "counters": [
+            "SILENCE",
+            "SILENT"
+          ],
+          "resisted": [
+            "NOISE",
+            "LOUD",
+            "DIN"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DAMPER",
+            "STILL",
+            "SILENCING"
+          ],
+          "tileIds": [
+            [
+              7,
+              15,
+              10,
+              14,
+              1,
+              8
+            ],
+            [
+              12,
+              21,
+              2,
+              9,
+              20
+            ],
+            [
+              18,
+              17,
+              22,
+              23,
+              3,
+              5,
+              25,
+              4,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "NOISE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "DULL",
+            "DAMP",
+            "CALMING",
+            "PLACID"
+          ],
+          "resisted": [
+            "LOUD",
+            "DIN"
+          ],
+          "neutral": 1017
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "LOUD",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "DAMP",
+            "DAMPER"
+          ],
+          "resisted": [
+            "NOISE",
+            "DIN"
+          ],
+          "neutral": 1482
+        },
+        "thirdTurn": {
+          "counters": [
+            "SILENCE",
+            "SILENT",
+            "SERENE",
+            "SILENCER"
+          ],
+          "resisted": [
+            "NOISE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "LOUD",
+            "DAMPING",
+            "SILENCE"
+          ],
+          "tileIds": [
+            [
+              9,
+              0,
+              13,
+              7
+            ],
+            [
+              16,
+              15,
+              10,
+              14,
+              2,
+              3,
+              11
+            ],
+            [
+              12,
+              17,
+              20,
+              1,
+              4,
+              5,
+              23
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "RESOUNDING",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "STILL",
+            "DAMP",
+            "CALMED",
+            "PLACID"
+          ],
+          "resisted": [],
+          "neutral": 1025
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "CLAMORING",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "STILL",
+            "SILENT",
+            "DULL"
+          ],
+          "resisted": [
+            "NOISE",
+            "LOUD",
+            "DIN"
+          ],
+          "neutral": 773
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [],
+          "resisted": [
+            "NOISE",
+            "LOUD",
+            "DIN"
+          ],
+          "neutral": 773
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "AND",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [],
+          "resisted": [
+            "NOISE",
+            "LOUD",
+            "DIN"
+          ],
+          "neutral": 1195
+        },
+        "thirdTurn": {
+          "counters": [
+            "STILL",
+            "MUTING"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AND",
+            "DIE",
+            "MUTING"
+          ],
+          "tileIds": [
+            [
+              15,
+              3,
+              7
+            ],
+            [
+              16,
+              2,
+              1
+            ],
+            [
+              10,
+              13,
+              21,
+              17,
+              4,
+              11
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            1,
+            2
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "ADO",
+      "SILENCING"
+    ],
+    "tileIds": [
+      [
+        15,
+        7,
+        0
+      ],
+      [
+        12,
+        2,
+        9,
+        1,
+        3,
+        5,
+        17,
+        4,
+        11
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      3
+    ]
+  },
+  "identity": {
+    "id": "quiet-0-din-dampening",
+    "enemy": "DIN",
+    "board": "ACDEGILMNNOOPRSU",
+    "bingos": [
+      "DAMPENING"
+    ],
+    "bingoFamilies": [
+      "DAMPEN"
+    ]
+  },
+  "novelty": [],
+  "asset": "puzzles/quiet-0-din-dampening-8e7aa27e940f.json",
+  "semanticPolicy": "Source-pinned concept pools with individually reviewed senses and lexical families. Unlabelled defined senses remain neutral; this is not an exhaustive contextual semantic proof.",
+  "editorialReview": "Enemy/bingo relationship and opening non-neutral meanings reviewed; homograph forms corrected and obvious concept words added. Existing board and refills preserved, all quality gates rerun."
+}

@@ -1,0 +1,597 @@
+{
+  "id": "concealment-0-hide-exhibited",
+  "theme": "concealment",
+  "side": 0,
+  "enemy": "HIDE",
+  "bingo": "EXHIBITED",
+  "enemySense": "oewn-hide__2.39.00..",
+  "enemyLemma": "hide",
+  "bingoLemma": "exhibit",
+  "armour": 2,
+  "frequency": 0.715,
+  "answer": "EXHIBITED",
+  "method": "bingo-first",
+  "accepted": true,
+  "profileVersion": "bingo-source-profiles-1:3cc64bc1d776",
+  "seeds": 2,
+  "seed": "bingo-first-3:HIDE:EXHIBITED:13",
+  "score": 221,
+  "analysis": {
+    "score": 221,
+    "bingos": [
+      "EXHIBITED"
+    ],
+    "counterFamilies": 6,
+    "resistedFamilies": 4,
+    "winningOpenings": 6,
+    "repeatedCounterRoutes": 6,
+    "sustainedPositions": 4,
+    "sustainedFinalPositions": 3,
+    "neutralCleanupOpenings": 1,
+    "routes": [
+      {
+        "opening": "PRESENT",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "SHOW"
+          ],
+          "resisted": [
+            "HIDE"
+          ],
+          "neutral": 349
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "NOTICE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "SHOW",
+            "EXPOSED",
+            "DISCOVER",
+            "OBSERVED"
+          ],
+          "resisted": [
+            "COVER",
+            "SCREEN",
+            "HIDE"
+          ],
+          "neutral": 935
+        },
+        "thirdTurn": {
+          "counters": [
+            "UNVEIL",
+            "DIVULGE"
+          ],
+          "resisted": [
+            "DISGUISE",
+            "VEIL"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "NOTICE",
+            "SHOWED",
+            "UNVEIL"
+          ],
+          "tileIds": [
+            [
+              14,
+              4,
+              3,
+              9,
+              6,
+              7
+            ],
+            [
+              10,
+              12,
+              16,
+              18,
+              11,
+              8
+            ],
+            [
+              23,
+              21,
+              13,
+              19,
+              15,
+              24
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "EXPOSED",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "SHOW",
+            "NOTICE",
+            "OBSERVING"
+          ],
+          "resisted": [
+            "COVER",
+            "COVERT"
+          ],
+          "neutral": 770
+        },
+        "thirdTurn": {
+          "counters": [
+            "NOTICE",
+            "DISCOVER",
+            "UNVEIL"
+          ],
+          "resisted": [
+            "COVER",
+            "OBSCURE",
+            "VEIL",
+            "COVERT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "EXPOSED",
+            "SHOWING",
+            "NOTICE"
+          ],
+          "tileIds": [
+            [
+              7,
+              1,
+              2,
+              4,
+              10,
+              11,
+              8
+            ],
+            [
+              22,
+              12,
+              16,
+              18,
+              9,
+              14,
+              20
+            ],
+            [
+              21,
+              28,
+              3,
+              15,
+              6,
+              19
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "DISCOVER",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "SHOW",
+            "NOTICE",
+            "EXPOSE"
+          ],
+          "resisted": [],
+          "neutral": 735
+        },
+        "thirdTurn": {
+          "counters": [
+            "SHOW"
+          ],
+          "resisted": [
+            "HIDE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DISCOVER",
+            "NOTICE",
+            "SHOW"
+          ],
+          "tileIds": [
+            [
+              8,
+              9,
+              10,
+              6,
+              4,
+              13,
+              7,
+              0
+            ],
+            [
+              14,
+              16,
+              3,
+              15,
+              17,
+              11
+            ],
+            [
+              22,
+              12,
+              28,
+              18
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "OBSERVED",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "SHOW",
+            "NOTICE",
+            "EXPOSING"
+          ],
+          "resisted": [],
+          "neutral": 604
+        },
+        "thirdTurn": {
+          "counters": [
+            "NOTICE"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "OBSERVED",
+            "SHOWING",
+            "NOTICE"
+          ],
+          "tileIds": [
+            [
+              4,
+              5,
+              10,
+              7,
+              0,
+              13,
+              11,
+              8
+            ],
+            [
+              22,
+              12,
+              16,
+              18,
+              9,
+              14,
+              20
+            ],
+            [
+              21,
+              28,
+              3,
+              15,
+              6,
+              19
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "EVIDENT",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "SHOW",
+            "EXPOSING"
+          ],
+          "resisted": [],
+          "neutral": 574
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "EVIDENT",
+            "SHOWING"
+          ],
+          "tileIds": [
+            [
+              7,
+              13,
+              9,
+              8,
+              11,
+              14,
+              3
+            ],
+            [
+              10,
+              12,
+              4,
+              18,
+              15,
+              21,
+              20
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "COVER",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "SHOW",
+            "NOTICE",
+            "EXPOSED"
+          ],
+          "resisted": [
+            "HIDE"
+          ],
+          "neutral": 768
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "SECRET",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [],
+          "resisted": [
+            "HIDE"
+          ],
+          "neutral": 266
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "SCREEN",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "NOTICE"
+          ],
+          "resisted": [
+            "HIDE"
+          ],
+          "neutral": 406
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "HIDE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "PRESENT",
+            "NOTICE",
+            "OBSERVE",
+            "EXPOSE"
+          ],
+          "resisted": [
+            "COVER",
+            "SECRET",
+            "SCREEN",
+            "COVERT"
+          ],
+          "neutral": 728
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "BED",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SHOW",
+            "NOTICE"
+          ],
+          "resisted": [
+            "COVER",
+            "COVERT"
+          ],
+          "neutral": 733
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "BIT",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SHOW",
+            "EXPOSED",
+            "DISCOVER"
+          ],
+          "resisted": [
+            "COVER",
+            "SCREEN",
+            "HIDE"
+          ],
+          "neutral": 704
+        },
+        "thirdTurn": {
+          "counters": [
+            "EXPOSE",
+            "UNCOVER",
+            "UNVEIL"
+          ],
+          "resisted": [
+            "COVER",
+            "SCREEN",
+            "VEIL"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "BIT",
+            "SHOWED",
+            "EXPOSING"
+          ],
+          "tileIds": [
+            [
+              5,
+              9,
+              3
+            ],
+            [
+              10,
+              12,
+              4,
+              18,
+              7,
+              8
+            ],
+            [
+              11,
+              1,
+              2,
+              16,
+              22,
+              15,
+              14,
+              20
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            2
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "EVIDENT",
+      "SHOWING"
+    ],
+    "tileIds": [
+      [
+        7,
+        13,
+        9,
+        8,
+        11,
+        14,
+        3
+      ],
+      [
+        10,
+        12,
+        4,
+        18,
+        15,
+        21,
+        20
+      ]
+    ],
+    "labels": [
+      "COUNTER",
+      "COUNTER"
+    ],
+    "hits": [
+      4,
+      2
+    ]
+  },
+  "identity": {
+    "id": "concealment-0-hide-exhibited",
+    "enemy": "HIDE",
+    "board": "BCDEEHIINOPRSTVX",
+    "bingos": [
+      "EXHIBITED"
+    ],
+    "bingoFamilies": [
+      "EXHIBIT"
+    ]
+  },
+  "novelty": [],
+  "asset": "puzzles/concealment-0-hide-exhibited-2a9fb437c54a.json",
+  "semanticPolicy": "Source-pinned concept pools with individually reviewed senses and lexical families. Unlabelled defined senses remain neutral; this is not an exhaustive contextual semantic proof.",
+  "editorialReview": "Enemy/bingo relationship and opening non-neutral meanings reviewed; homograph forms corrected and obvious concept words added. Existing board and refills preserved, all quality gates rerun."
+}

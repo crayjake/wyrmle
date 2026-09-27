@@ -1,0 +1,1634 @@
+[
+  {
+    "theme": "light",
+    "pole": 0,
+    "from": "NIGHT",
+    "word": "NIGHTLY",
+    "senseId": "oewn-nightly__5.00.00.periodic.00",
+    "definition": "happening every night"
+  },
+  {
+    "theme": "speed",
+    "pole": 0,
+    "from": "LEISURELY",
+    "word": "LEISURE",
+    "senseId": "oewn-leisure__1.28.00..",
+    "definition": "time available for ease and relaxation"
+  },
+  {
+    "theme": "strength",
+    "pole": 0,
+    "from": "FLIMSY",
+    "word": "FLIMSY",
+    "senseId": "oewn-flimsy__1.27.00..",
+    "definition": "a thin strong lightweight translucent paper used especially for making carbon copies"
+  },
+  {
+    "theme": "strength",
+    "pole": 0,
+    "from": "WANE",
+    "word": "WANE",
+    "senseId": "oewn-wane__2.30.01..",
+    "definition": "decrease in phase"
+  },
+  {
+    "theme": "strength",
+    "pole": 1,
+    "from": "FORTIFY",
+    "word": "FORTIFICATION",
+    "senseId": "oewn-fortification__1.04.00..",
+    "definition": "the addition of an ingredient for the purpose of enrichment (as the addition of alcohol to wine or the addition of vitamins to food)"
+  },
+  {
+    "theme": "strength",
+    "pole": 1,
+    "from": "EMPOWER",
+    "word": "EMPOWERMENT",
+    "senseId": "oewn-empowerment__1.04.00..",
+    "definition": "the act of conferring legality or sanction or formal warrant"
+  },
+  {
+    "theme": "hunger",
+    "pole": 1,
+    "from": "SATISFY",
+    "word": "SATISFACTORY",
+    "senseId": "oewn-satisfactory__3.00.00..",
+    "definition": "giving satisfaction"
+  },
+  {
+    "theme": "hunger",
+    "pole": 1,
+    "from": "SATISFY",
+    "word": "SATISFACTORY",
+    "senseId": "oewn-satisfactory__5.00.00.good.01",
+    "definition": "meeting requirements"
+  },
+  {
+    "theme": "hunger",
+    "pole": 1,
+    "from": "SATISFY",
+    "word": "SATISFIER",
+    "senseId": "oewn-satisfier__1.17.00..",
+    "definition": "any agent capable of producing satisfaction"
+  },
+  {
+    "theme": "health",
+    "pole": 1,
+    "from": "HEALTHY",
+    "word": "HEALTH",
+    "senseId": "oewn-health__1.26.01..",
+    "definition": "the general condition of body and mind"
+  },
+  {
+    "theme": "temperature",
+    "pole": 1,
+    "from": "ROASTING",
+    "word": "ROAST",
+    "senseId": "oewn-roast__1.13.00..",
+    "definition": "a piece of meat roasted or for roasting and of a size for slicing into more than one portion"
+  },
+  {
+    "theme": "temperature",
+    "pole": 1,
+    "from": "ROASTING",
+    "word": "ROASTER",
+    "senseId": "oewn-roaster__1.06.00..",
+    "definition": "a special cooking pan for roasting"
+  },
+  {
+    "theme": "temperature",
+    "pole": 1,
+    "from": "ROASTING",
+    "word": "ROASTER",
+    "senseId": "oewn-roaster__1.18.00..",
+    "definition": "a cook who roasts food"
+  },
+  {
+    "theme": "quiet",
+    "pole": 0,
+    "from": "BABBLE",
+    "word": "BABBLE",
+    "senseId": "oewn-babble__2.32.00..",
+    "definition": "to talk foolishly"
+  },
+  {
+    "theme": "quiet",
+    "pole": 1,
+    "from": "TRANQUILIZE",
+    "word": "TRANQUILIZER",
+    "senseId": "oewn-tranquilizer__1.06.00..",
+    "definition": "a drug used to reduce stress or tension without reducing mental clarity"
+  },
+  {
+    "theme": "concealment",
+    "pole": 1,
+    "from": "DISCOVER",
+    "word": "DISCOVERY",
+    "senseId": "oewn-discovery__1.09.00..",
+    "definition": "a productive insight"
+  },
+  {
+    "theme": "concealment",
+    "pole": 1,
+    "from": "DEMONSTRATE",
+    "word": "DEMONSTRATOR",
+    "senseId": "oewn-demonstrator__1.18.02..",
+    "definition": "a teacher or teacher's assistant who demonstrates the principles that are being taught"
+  },
+  {
+    "theme": "fullness",
+    "pole": 0,
+    "from": "EMPTINESS",
+    "word": "EMPTY",
+    "senseId": "oewn-empty__5.00.00.drained.00",
+    "definition": "emptied of emotion"
+  },
+  {
+    "theme": "fullness",
+    "pole": 0,
+    "from": "HOLLOW",
+    "word": "HOLLOW",
+    "senseId": "oewn-hollow__1.17.01..",
+    "definition": "a small valley between mountains"
+  },
+  {
+    "theme": "fullness",
+    "pole": 0,
+    "from": "VACANT",
+    "word": "VACATE",
+    "senseId": "oewn-vacate__2.41.00..",
+    "definition": "leave (a job, post, or position) voluntarily"
+  },
+  {
+    "theme": "fullness",
+    "pole": 1,
+    "from": "OCCUPY",
+    "word": "OCCUPATION",
+    "senseId": "oewn-occupation__1.28.00..",
+    "definition": "the period of time during which a place or position or nation is occupied"
+  },
+  {
+    "theme": "sharpness",
+    "pole": 1,
+    "from": "KEEN",
+    "word": "KEENNESS",
+    "senseId": "oewn-keenness__1.09.00..",
+    "definition": "a quick and penetrating intelligence"
+  },
+  {
+    "theme": "sharpness",
+    "pole": 1,
+    "from": "INCISIVE",
+    "word": "INCISIVENESS",
+    "senseId": "oewn-incisiveness__1.07.00..",
+    "definition": "keenness and forcefulness of thought or expression or intellect"
+  },
+  {
+    "theme": "sharpness",
+    "pole": 1,
+    "from": "POINTED",
+    "word": "POINT",
+    "senseId": "oewn-point__1.25.00..",
+    "definition": "a V shape"
+  },
+  {
+    "theme": "sharpness",
+    "pole": 1,
+    "from": "CUTTING",
+    "word": "CUTTER",
+    "senseId": "oewn-cutter__1.18.00..",
+    "definition": "someone whose work is cutting (as e.g. cutting cloth for garments)"
+  },
+  {
+    "theme": "flexibility",
+    "pole": 1,
+    "from": "BEND",
+    "word": "BEND",
+    "senseId": "oewn-bend__2.38.01..",
+    "definition": "change direction"
+  },
+  {
+    "theme": "flexibility",
+    "pole": 1,
+    "from": "ADAPT",
+    "word": "ADAPTER",
+    "senseId": "oewn-adapter__1.06.00..",
+    "definition": "device that enables something to be used in a way different from that for which it was intended or makes different pieces of apparatus compatible"
+  },
+  {
+    "theme": "softness",
+    "pole": 0,
+    "from": "TOUGH",
+    "word": "TOUGHNESS",
+    "senseId": "oewn-toughness__1.07.02..",
+    "definition": "impressive difficulty"
+  },
+  {
+    "theme": "softness",
+    "pole": 1,
+    "from": "SPONGY",
+    "word": "SPONGE",
+    "senseId": "oewn-sponge__1.05.00..",
+    "definition": "primitive multicellular marine animal whose porous body is supported by a fibrous skeletal framework; usually occurs in sessile colonies"
+  },
+  {
+    "theme": "softness",
+    "pole": 1,
+    "from": "SPONGY",
+    "word": "SPONGINESS",
+    "senseId": "oewn-sponginess__1.07.00..",
+    "definition": "the porosity of a sponge"
+  },
+  {
+    "theme": "height",
+    "pole": 0,
+    "from": "LOFTY",
+    "word": "LOFTINESS",
+    "senseId": "oewn-loftiness__1.07.02..",
+    "definition": "impressiveness in scale or proportion"
+  },
+  {
+    "theme": "height",
+    "pole": 0,
+    "from": "ASCEND",
+    "word": "ASCENDABLE",
+    "senseId": "oewn-ascendable__5.00.00.scalable.00",
+    "definition": "capable of being ascended"
+  },
+  {
+    "theme": "height",
+    "pole": 0,
+    "from": "ASCEND",
+    "word": "ASCENDER",
+    "senseId": "oewn-ascender__1.18.00..",
+    "definition": "someone who ascends"
+  },
+  {
+    "theme": "height",
+    "pole": 0,
+    "from": "SOAR",
+    "word": "SOAR",
+    "senseId": "oewn-soar__2.38.03..",
+    "definition": "fly by means of a hang glider"
+  },
+  {
+    "theme": "height",
+    "pole": 1,
+    "from": "LOWER",
+    "word": "LOWER",
+    "senseId": "oewn-lower__1.06.00..",
+    "definition": "the lower of two berths"
+  },
+  {
+    "theme": "height",
+    "pole": 1,
+    "from": "DECLINE",
+    "word": "DECLINE",
+    "senseId": "oewn-decline__2.30.00..",
+    "definition": "grow smaller"
+  },
+  {
+    "theme": "size",
+    "pole": 0,
+    "from": "LARGE",
+    "word": "LARGE",
+    "senseId": "oewn-large__1.07.00..",
+    "definition": "a garment size for a large person"
+  },
+  {
+    "theme": "size",
+    "pole": 0,
+    "from": "GIGANTIC",
+    "word": "GIANT",
+    "senseId": "oewn-giant__1.14.00..",
+    "definition": "an unusually large enterprise"
+  },
+  {
+    "theme": "size",
+    "pole": 1,
+    "from": "PETITE",
+    "word": "PETITE",
+    "senseId": "oewn-petite__1.07.00..",
+    "definition": "a garment size for short or slender women"
+  },
+  {
+    "theme": "texture",
+    "pole": 0,
+    "from": "JAGGED",
+    "word": "JAG",
+    "senseId": "oewn-jag__1.06.00..",
+    "definition": "a flap along the edge of a garment; used in medieval clothing"
+  },
+  {
+    "theme": "texture",
+    "pole": 0,
+    "from": "JAGGED",
+    "word": "JAG",
+    "senseId": "oewn-jag__1.06.01..",
+    "definition": "a slit in a garment that exposes material of a different color underneath; used in Renaissance clothing"
+  },
+  {
+    "theme": "texture",
+    "pole": 0,
+    "from": "BUMPY",
+    "word": "BUMP",
+    "senseId": "oewn-bump__1.11.00..",
+    "definition": "an impact (as from a collision)"
+  },
+  {
+    "theme": "texture",
+    "pole": 0,
+    "from": "ABRASIVE",
+    "word": "ABRADE",
+    "senseId": "oewn-abrade__2.35.00..",
+    "definition": "wear away"
+  },
+  {
+    "theme": "texture",
+    "pole": 0,
+    "from": "ABRASIVE",
+    "word": "ABRADE",
+    "senseId": "oewn-abrade__2.35.01..",
+    "definition": "rub hard or scrub"
+  },
+  {
+    "theme": "texture",
+    "pole": 1,
+    "from": "PLANE",
+    "word": "PLANE",
+    "senseId": "oewn-plane__1.25.00..",
+    "definition": "(mathematics) an unbounded two-dimensional shape"
+  },
+  {
+    "theme": "texture",
+    "pole": 1,
+    "from": "PLANE",
+    "word": "PLANENESS",
+    "senseId": "oewn-planeness__1.07.00..",
+    "definition": "the property of having two dimensions"
+  },
+  {
+    "theme": "weight",
+    "pole": 0,
+    "from": "BURDEN",
+    "word": "BURDEN",
+    "senseId": "oewn-burden__2.32.00..",
+    "definition": "impose a task upon, assign a responsibility to"
+  },
+  {
+    "theme": "humility",
+    "pole": 0,
+    "from": "VAIN",
+    "word": "VANITY",
+    "senseId": "oewn-vanity__1.07.01..",
+    "definition": "the quality of being valueless or futile"
+  },
+  {
+    "theme": "company",
+    "pole": 0,
+    "from": "ISOLATED",
+    "word": "ISOLABLE",
+    "senseId": "oewn-isolable__5.00.00.separate.00",
+    "definition": "capable of being isolated or disjoined"
+  },
+  {
+    "theme": "company",
+    "pole": 1,
+    "from": "ASSEMBLE",
+    "word": "ASSEMBLAGE",
+    "senseId": "oewn-assemblage__1.06.00..",
+    "definition": "a system of components assembled together for a particular purpose"
+  },
+  {
+    "theme": "safety",
+    "pole": 1,
+    "from": "DEFEND",
+    "word": "DEFENCE",
+    "senseId": "oewn-defence__1.10.00..",
+    "definition": "the justification for some act or belief"
+  },
+  {
+    "theme": "victory",
+    "pole": 0,
+    "from": "DEFEAT",
+    "word": "DEFEAT",
+    "senseId": "oewn-defeat__2.41.00..",
+    "definition": "thwart the passage of"
+  },
+  {
+    "theme": "victory",
+    "pole": 0,
+    "from": "FAIL",
+    "word": "FAILURE",
+    "senseId": "oewn-failure__1.04.01..",
+    "definition": "an unexpected omission"
+  },
+  {
+    "theme": "victory",
+    "pole": 1,
+    "from": "PREVAIL",
+    "word": "PREVALENCE",
+    "senseId": "oewn-prevalence__1.07.01..",
+    "definition": "a superiority in numbers or amount"
+  },
+  {
+    "theme": "victory",
+    "pole": 1,
+    "from": "VANQUISH",
+    "word": "VANQUISHABLE",
+    "senseId": "oewn-vanquishable__5.00.00.conquerable.00",
+    "definition": "susceptible to being defeated"
+  },
+  {
+    "theme": "interest",
+    "pole": 0,
+    "from": "STALE",
+    "word": "STALENESS",
+    "senseId": "oewn-staleness__1.07.01..",
+    "definition": "having lost purity and freshness as a consequence of aging"
+  },
+  {
+    "theme": "interest",
+    "pole": 1,
+    "from": "INTEREST",
+    "word": "INTEREST",
+    "senseId": "oewn-interest__2.42.01..",
+    "definition": "be on the mind of"
+  },
+  {
+    "theme": "interest",
+    "pole": 1,
+    "from": "CAPTIVATE",
+    "word": "CAPTIVE",
+    "senseId": "oewn-captive__1.18.02..",
+    "definition": "a person held in the grip of a strong emotion or passion"
+  },
+  {
+    "theme": "interest",
+    "pole": 1,
+    "from": "STIMULATE",
+    "word": "STIMULATIVE",
+    "senseId": "oewn-stimulative__3.00.00..",
+    "definition": "capable of arousing or accelerating physiological or psychological activity or response by a chemical agent"
+  },
+  {
+    "theme": "praise",
+    "pole": 0,
+    "from": "DERIDE",
+    "word": "DERISORY",
+    "senseId": "oewn-derisory__5.00.00.foolish.00",
+    "definition": "so unreasonable as to invite derision"
+  },
+  {
+    "theme": "praise",
+    "pole": 0,
+    "from": "RIDICULE",
+    "word": "RIDICULOUS",
+    "senseId": "oewn-ridiculous__5.00.00.humorous.00",
+    "definition": "broadly or extravagantly humorous; resembling farce"
+  },
+  {
+    "theme": "praise",
+    "pole": 1,
+    "from": "ADMIRE",
+    "word": "ADMIRER",
+    "senseId": "oewn-admirer__1.18.00..",
+    "definition": "someone who admires a young woman"
+  },
+  {
+    "theme": "praise",
+    "pole": 1,
+    "from": "ADMIRE",
+    "word": "ADMIRER",
+    "senseId": "oewn-admirer__1.18.01..",
+    "definition": "a person who backs a politician or a team etc."
+  },
+  {
+    "theme": "praise",
+    "pole": 1,
+    "from": "HONOR",
+    "word": "HONORARY",
+    "senseId": "oewn-honorary__5.00.00.unearned.00",
+    "definition": "given as an honor without the normal duties"
+  },
+  {
+    "theme": "patience",
+    "pole": 1,
+    "from": "CAUTIOUS",
+    "word": "CAUTIOUS",
+    "senseId": "oewn-cautious__1.14.00..",
+    "definition": "people who are fearful and cautious"
+  },
+  {
+    "theme": "belief",
+    "pole": 0,
+    "from": "QUESTION",
+    "word": "QUESTION",
+    "senseId": "oewn-question__2.32.00..",
+    "definition": "pose a question"
+  },
+  {
+    "theme": "belief",
+    "pole": 0,
+    "from": "QUESTION",
+    "word": "QUESTION",
+    "senseId": "oewn-question__2.32.03..",
+    "definition": "pose a series of questions to"
+  },
+  {
+    "theme": "belief",
+    "pole": 0,
+    "from": "QUESTION",
+    "word": "QUESTION",
+    "senseId": "oewn-question__2.32.09..",
+    "definition": "conduct an interview in television, newspaper, and radio reporting"
+  },
+  {
+    "theme": "belief",
+    "pole": 1,
+    "from": "AFFIRM",
+    "word": "AFFIRMATION",
+    "senseId": "oewn-affirmation__1.04.00..",
+    "definition": "a judgment by a higher court that the judgment of a lower court was correct and should stand"
+  },
+  {
+    "theme": "permission",
+    "pole": 0,
+    "from": "EXCLUDE",
+    "word": "EXCLUSIVE",
+    "senseId": "oewn-exclusive__5.00.00.unshared.00",
+    "definition": "not divided or shared with others"
+  },
+  {
+    "theme": "permission",
+    "pole": 1,
+    "from": "ADMIT",
+    "word": "ADMISSION",
+    "senseId": "oewn-admission__1.21.00..",
+    "definition": "the fee charged for admission"
+  },
+  {
+    "theme": "possession",
+    "pole": 0,
+    "from": "ACQUIRE",
+    "word": "ACQUIRER",
+    "senseId": "oewn-acquirer__1.14.00..",
+    "definition": "a corporation gaining financial control over another corporation or financial institution through a payment in cash or an exchange of stock"
+  },
+  {
+    "theme": "possession",
+    "pole": 0,
+    "from": "ACQUIRE",
+    "word": "ACQUIRER",
+    "senseId": "oewn-acquirer__1.14.01..",
+    "definition": "the financial institution that dispenses cash in automated teller machines and collects a fee from the bank that issued the credit card"
+  },
+  {
+    "theme": "possession",
+    "pole": 0,
+    "from": "ACQUIRE",
+    "word": "ACQUIRER",
+    "senseId": "oewn-acquirer__1.14.02..",
+    "definition": "a credit card processing bank; merchants receive credit for credit card receipts less a processing fee"
+  },
+  {
+    "theme": "possession",
+    "pole": 0,
+    "from": "ACQUIRE",
+    "word": "ACQUISITION",
+    "senseId": "oewn-acquisition__1.09.01..",
+    "definition": "the cognitive process of acquiring skill or knowledge"
+  },
+  {
+    "theme": "possession",
+    "pole": 1,
+    "from": "RELINQUISH",
+    "word": "RELINQUISHING",
+    "senseId": "oewn-relinquishing__1.04.00..",
+    "definition": "the act of giving up and abandoning a struggle or task etc."
+  },
+  {
+    "theme": "possession",
+    "pole": 1,
+    "from": "SURRENDER",
+    "word": "SURRENDER",
+    "senseId": "oewn-surrender__1.10.00..",
+    "definition": "a verbal act of admitting defeat"
+  },
+  {
+    "theme": "possession",
+    "pole": 1,
+    "from": "RELEASE",
+    "word": "RELEASE",
+    "senseId": "oewn-release__1.10.01..",
+    "definition": "a legal document evidencing the discharge of a debt or obligation"
+  },
+  {
+    "theme": "possession",
+    "pole": 1,
+    "from": "RETURN",
+    "word": "RETURN",
+    "senseId": "oewn-return__1.04.02..",
+    "definition": "getting something back again"
+  },
+  {
+    "theme": "affection",
+    "pole": 0,
+    "from": "ABHOR",
+    "word": "ABHORRER",
+    "senseId": "oewn-abhorrer__1.18.00..",
+    "definition": "a signer of a 1679 address to Charles II in which those who petitioned for the reconvening of parliament were condemned and abhorred"
+  },
+  {
+    "theme": "balance",
+    "pole": 0,
+    "from": "LEAN",
+    "word": "LEANER",
+    "senseId": "oewn-leaner__1.04.00..",
+    "definition": "(horseshoes) the throw of a horseshoe so as to lean against (but not encircle) the stake"
+  },
+  {
+    "theme": "balance",
+    "pole": 0,
+    "from": "UNSTABLE",
+    "word": "UNSTABLENESS",
+    "senseId": "oewn-unstableness__1.07.00..",
+    "definition": "the quality or attribute of being unstable and irresolute"
+  },
+  {
+    "theme": "balance",
+    "pole": 1,
+    "from": "EQUILIBRIUM",
+    "word": "EQUILIBRATE",
+    "senseId": "oewn-equilibrate__2.30.00..",
+    "definition": "bring to a chemical stasis or equilibrium"
+  },
+  {
+    "theme": "balance",
+    "pole": 1,
+    "from": "STABILIZE",
+    "word": "STABILIZER",
+    "senseId": "oewn-stabilizer__1.27.00..",
+    "definition": "a chemical that is added to a solution or mixture or suspension to maintain it in a stable or unchanging state"
+  },
+  {
+    "theme": "balance",
+    "pole": 1,
+    "from": "EQUALIZE",
+    "word": "EQUALIZER",
+    "senseId": "oewn-equalizer__1.04.00..",
+    "definition": "a score that makes the match even"
+  },
+  {
+    "theme": "simplicity",
+    "pole": 0,
+    "from": "COMPLICATED",
+    "word": "COMPLICATION",
+    "senseId": "oewn-complication__1.26.01..",
+    "definition": "any disease or disorder that occurs during the course of (or because of) another disease"
+  },
+  {
+    "theme": "simplicity",
+    "pole": 1,
+    "from": "SIMPLICITY",
+    "word": "SIMPLE",
+    "senseId": "oewn-simple__3.00.01..",
+    "definition": "(botany) of leaf shapes; of leaves having no divisions or subdivisions"
+  },
+  {
+    "theme": "simplicity",
+    "pole": 1,
+    "from": "EASY",
+    "word": "EASILY",
+    "senseId": "oewn-easily__4.02.05..",
+    "definition": "indicating high probability; in all likelihood"
+  },
+  {
+    "theme": "growth",
+    "pole": 0,
+    "from": "DEGENERATE",
+    "word": "DEGENERATION",
+    "senseId": "oewn-degeneration__1.26.00..",
+    "definition": "the state of being degenerate in mental or moral qualities"
+  },
+  {
+    "theme": "growth",
+    "pole": 0,
+    "from": "WANE",
+    "word": "WANE",
+    "senseId": "oewn-wane__2.30.01..",
+    "definition": "decrease in phase"
+  },
+  {
+    "theme": "truth",
+    "pole": 0,
+    "from": "DISTORT",
+    "word": "DISTORTION",
+    "senseId": "oewn-distortion__1.19.01..",
+    "definition": "a change (usually undesired) in the waveform of an acoustic or analog electrical signal; the difference between two measurements of a signal (as between the input and output signal)"
+  },
+  {
+    "theme": "cleanliness",
+    "pole": 1,
+    "from": "LAUNDER",
+    "word": "LAUNDRY",
+    "senseId": "oewn-laundry__1.06.01..",
+    "definition": "garments or white goods that can be cleaned by laundering"
+  },
+  {
+    "theme": "order",
+    "pole": 1,
+    "from": "ORGANIZE",
+    "word": "ORGANIZATION",
+    "senseId": "oewn-organization__1.04.02..",
+    "definition": "the act of forming or establishing something"
+  },
+  {
+    "theme": "order",
+    "pole": 1,
+    "from": "ORGANIZE",
+    "word": "ORGANIZATION",
+    "senseId": "oewn-organization__1.14.01..",
+    "definition": "the persons (or committees or departments etc.) who make up a body for the purpose of administering something"
+  },
+  {
+    "theme": "order",
+    "pole": 1,
+    "from": "ORGANIZE",
+    "word": "ORGANIZER",
+    "senseId": "oewn-organizer__1.06.00..",
+    "definition": "a lightweight consumer electronic device that looks like a hand-held computer but instead performs specific tasks; can serve as a diary or a personal database or a telephone or an alarm clock etc."
+  },
+  {
+    "theme": "restraint",
+    "pole": 0,
+    "from": "ENTRAP",
+    "word": "ENTRAPMENT",
+    "senseId": "oewn-entrapment__1.04.00..",
+    "definition": "a defense that claims the defendant would not have broken the law if not tricked into doing it by law enforcement officials"
+  },
+  {
+    "theme": "sorrow",
+    "pole": 1,
+    "from": "HAPPINESS",
+    "word": "HAPPY",
+    "senseId": "oewn-happy__5.00.00.fortunate.00",
+    "definition": "marked by good fortune"
+  },
+  {
+    "theme": "anger",
+    "pole": 1,
+    "from": "TOLERATE",
+    "word": "TOLERANT",
+    "senseId": "oewn-tolerant__5.00.00.patient.00",
+    "definition": "showing the capacity for endurance"
+  },
+  {
+    "theme": "kindness",
+    "pole": 1,
+    "from": "SYMPATHETIC",
+    "word": "SYMPATHY",
+    "senseId": "oewn-sympathy__1.09.00..",
+    "definition": "an inclination to support or be loyal to or to agree with an opinion"
+  },
+  {
+    "theme": "drought",
+    "pole": 0,
+    "from": "DRYNESS",
+    "word": "DRY",
+    "senseId": "oewn-dry__3.00.02..",
+    "definition": "not producing milk"
+  },
+  {
+    "theme": "drought",
+    "pole": 0,
+    "from": "DRYNESS",
+    "word": "DRY",
+    "senseId": "oewn-dry__3.00.06..",
+    "definition": "without a mucous or watery discharge"
+  },
+  {
+    "theme": "drought",
+    "pole": 0,
+    "from": "DRYNESS",
+    "word": "DRY",
+    "senseId": "oewn-dry__5.00.00.tearless.00",
+    "definition": "not shedding tears"
+  },
+  {
+    "theme": "generosity",
+    "pole": 0,
+    "from": "MEAN",
+    "word": "MEANNESS",
+    "senseId": "oewn-meanness__1.07.00..",
+    "definition": "the quality of being deliberately mean"
+  },
+  {
+    "theme": "generosity",
+    "pole": 1,
+    "from": "MAGNANIMOUS",
+    "word": "MAGNANIMOUSNESS",
+    "senseId": "oewn-magnanimousness__1.07.00..",
+    "definition": "the quality of elevation of mind and exaltation of character or ideals or conduct"
+  },
+  {
+    "theme": "beginning",
+    "pole": 0,
+    "from": "CLOSURE",
+    "word": "CLOSE",
+    "senseId": "oewn-close__2.39.10..",
+    "definition": "cause a window or an application to disappear on a computer desktop"
+  },
+  {
+    "theme": "beginning",
+    "pole": 1,
+    "from": "OPENING",
+    "word": "OPENER",
+    "senseId": "oewn-opener__1.06.00..",
+    "definition": "a hand tool used for opening sealed containers (bottles or cans)"
+  },
+  {
+    "theme": "beginning",
+    "pole": 1,
+    "from": "OPENING",
+    "word": "OPENER",
+    "senseId": "oewn-opener__1.18.00..",
+    "definition": "a person who unfastens or unwraps or opens"
+  },
+  {
+    "theme": "youth",
+    "pole": 1,
+    "from": "REFRESH",
+    "word": "REFRESHER",
+    "senseId": "oewn-refresher__1.13.00..",
+    "definition": "a drink that refreshes"
+  },
+  {
+    "theme": "youth",
+    "pole": 1,
+    "from": "RENOVATE",
+    "word": "RENOVATOR",
+    "senseId": "oewn-renovator__1.18.00..",
+    "definition": "a skilled worker who is employed to restore or refinish buildings or antique furniture"
+  },
+  {
+    "theme": "pain",
+    "pole": 0,
+    "from": "AGONY",
+    "word": "AGONIST",
+    "senseId": "oewn-agonist__1.18.00..",
+    "definition": "someone involved in a contest or battle (as in an agon)"
+  },
+  {
+    "theme": "pain",
+    "pole": 0,
+    "from": "AGONY",
+    "word": "AGONIST",
+    "senseId": "oewn-agonist__1.18.01..",
+    "definition": "the principal character in a work of fiction"
+  },
+  {
+    "theme": "pain",
+    "pole": 1,
+    "from": "BALM",
+    "word": "BALMY",
+    "senseId": "oewn-balmy__5.00.00.clement.02",
+    "definition": "mild and pleasant"
+  },
+  {
+    "theme": "peace",
+    "pole": 1,
+    "from": "PACIFY",
+    "word": "PACIFIER",
+    "senseId": "oewn-pacifier__1.06.00..",
+    "definition": "device used for an infant to suck or bite on"
+  },
+  {
+    "theme": "reason",
+    "pole": 1,
+    "from": "LOGIC",
+    "word": "LOGISTICIAN",
+    "senseId": "oewn-logistician__1.18.00..",
+    "definition": "a person skilled at logistics"
+  },
+  {
+    "theme": "reason",
+    "pole": 1,
+    "from": "SANITY",
+    "word": "SANE",
+    "senseId": "oewn-sane__3.00.00..",
+    "definition": "mentally healthy; free from mental disorder"
+  },
+  {
+    "theme": "visibility",
+    "pole": 0,
+    "from": "MIST",
+    "word": "MISTY",
+    "senseId": "oewn-misty__5.00.00.wet.01",
+    "definition": "wet with mist"
+  },
+  {
+    "theme": "visibility",
+    "pole": 1,
+    "from": "CLARITY",
+    "word": "CLEAR",
+    "senseId": "oewn-clear__3.00.00..",
+    "definition": "readily apparent to the mind"
+  },
+  {
+    "theme": "visibility",
+    "pole": 1,
+    "from": "CLARITY",
+    "word": "CLEAR",
+    "senseId": "oewn-clear__3.00.04..",
+    "definition": "accurately stated or described"
+  },
+  {
+    "theme": "visibility",
+    "pole": 1,
+    "from": "CLARITY",
+    "word": "CLEAR",
+    "senseId": "oewn-clear__5.00.00.legible.00",
+    "definition": "easily deciphered"
+  },
+  {
+    "theme": "distance",
+    "pole": 0,
+    "from": "NEIGHBOUR",
+    "word": "NEIGHBOURLY",
+    "senseId": "oewn-neighbourly__5.00.00.friendly.01",
+    "definition": "exhibiting the qualities expected in a friendly neighbor"
+  },
+  {
+    "theme": "distance",
+    "pole": 1,
+    "from": "DISTANT",
+    "word": "DISTANCE",
+    "senseId": "oewn-distance__1.28.01..",
+    "definition": "a remote point in time"
+  },
+  {
+    "theme": "distance",
+    "pole": 1,
+    "from": "ALOOF",
+    "word": "ALOOFNESS",
+    "senseId": "oewn-aloofness__1.07.00..",
+    "definition": "a disposition to be distant and unsympathetic in manner"
+  },
+  {
+    "theme": "brevity",
+    "pole": 0,
+    "from": "EXTENDED",
+    "word": "EXTENSION",
+    "senseId": "oewn-extension__1.04.02..",
+    "definition": "act of expanding in scope; making more widely available"
+  },
+  {
+    "theme": "brevity",
+    "pole": 0,
+    "from": "EXTENDED",
+    "word": "EXTENSIVE",
+    "senseId": "oewn-extensive__5.00.00.large.00",
+    "definition": "large in spatial extent or range or scope or quantity"
+  },
+  {
+    "theme": "brevity",
+    "pole": 0,
+    "from": "EXTENDED",
+    "word": "EXTENT",
+    "senseId": "oewn-extent__1.26.00..",
+    "definition": "the point or degree to which something extends"
+  },
+  {
+    "theme": "dryness",
+    "pole": 0,
+    "from": "DRIPPING",
+    "word": "DRIPPINGS",
+    "senseId": "oewn-drippings__1.13.00..",
+    "definition": "fat that exudes from meat and drips off while it is being roasted or fried"
+  },
+  {
+    "theme": "maturity",
+    "pole": 0,
+    "from": "JUVENILE",
+    "word": "JUVENILITY",
+    "senseId": "oewn-juvenility__1.07.00..",
+    "definition": "the freshness and vitality characteristic of a young person"
+  },
+  {
+    "theme": "civility",
+    "pole": 0,
+    "from": "OFFENSIVE",
+    "word": "OFFEND",
+    "senseId": "oewn-offend__2.41.00..",
+    "definition": "act in disregard of laws, rules, contracts, or promises"
+  },
+  {
+    "theme": "civility",
+    "pole": 0,
+    "from": "BRASH",
+    "word": "BRASHNESS",
+    "senseId": "oewn-brashness__1.07.00..",
+    "definition": "the trait of being rash and hasty"
+  },
+  {
+    "theme": "civility",
+    "pole": 1,
+    "from": "GRACIOUS",
+    "word": "GRACE",
+    "senseId": "oewn-grace__1.07.01..",
+    "definition": "elegance and beauty of movement or expression"
+  },
+  {
+    "theme": "certainty",
+    "pole": 1,
+    "from": "INTENTIONAL",
+    "word": "INTENTION",
+    "senseId": "oewn-intention__1.09.01..",
+    "definition": "(usually plural) the goal with respect to a marriage proposal"
+  },
+  {
+    "theme": "certainty",
+    "pole": 1,
+    "from": "CONSISTENT",
+    "word": "CONSISTENCY",
+    "senseId": "oewn-consistency__1.26.00..",
+    "definition": "logical coherence and accordance with the facts"
+  },
+  {
+    "theme": "decay",
+    "pole": 0,
+    "from": "DEGRADE",
+    "word": "DEGRADATION",
+    "senseId": "oewn-degradation__1.26.00..",
+    "definition": "a low or downcast state"
+  },
+  {
+    "theme": "decay",
+    "pole": 1,
+    "from": "CONSERVATION",
+    "word": "CONSERVATIONIST",
+    "senseId": "oewn-conservationist__1.18.00..",
+    "definition": "someone who works to protect the environment from destruction or pollution"
+  },
+  {
+    "theme": "awareness",
+    "pole": 0,
+    "from": "IGNORANT",
+    "word": "IGNORANTNESS",
+    "senseId": "oewn-ignorantness__1.09.00..",
+    "definition": "ignorance (especially of orthodox beliefs)"
+  },
+  {
+    "theme": "awareness",
+    "pole": 1,
+    "from": "EDUCATE",
+    "word": "EDUCATION",
+    "senseId": "oewn-education__1.14.00..",
+    "definition": "the United States federal department that administers all federal programs dealing with education (including federal aid to educational institutions and students); created 1979"
+  },
+  {
+    "theme": "awareness",
+    "pole": 1,
+    "from": "LEARN",
+    "word": "LEARNER",
+    "senseId": "oewn-learner__1.18.01..",
+    "definition": "works for an expert to learn a trade"
+  },
+  {
+    "theme": "energy",
+    "pole": 1,
+    "from": "ENERGIZE",
+    "word": "ENERGY",
+    "senseId": "oewn-energy__1.19.00..",
+    "definition": "(physics) a thermodynamic quantity equivalent to the capacity of a physical system to do work; the units of energy are joules or ergs"
+  },
+  {
+    "theme": "fire",
+    "pole": 1,
+    "from": "SUPPRESS",
+    "word": "SUPPRESSER",
+    "senseId": "oewn-suppresser__1.06.00..",
+    "definition": "an electrical device for suppressing unwanted currents"
+  },
+  {
+    "theme": "fire",
+    "pole": 1,
+    "from": "SUPPRESS",
+    "word": "SUPPRESSER",
+    "senseId": "oewn-suppresser__1.18.00..",
+    "definition": "someone who suppresses"
+  },
+  {
+    "theme": "fire",
+    "pole": 1,
+    "from": "SUPPRESS",
+    "word": "SUPPRESSION",
+    "senseId": "oewn-suppression__1.04.01..",
+    "definition": "the act of withholding or withdrawing some book or writing from publication or circulation"
+  },
+  {
+    "theme": "fire",
+    "pole": 1,
+    "from": "SUPPRESS",
+    "word": "SUPPRESSION",
+    "senseId": "oewn-suppression__1.04.02..",
+    "definition": "forceful prevention; putting down by power or authority"
+  },
+  {
+    "theme": "fire",
+    "pole": 1,
+    "from": "SUPPRESS",
+    "word": "SUPPRESSIVE",
+    "senseId": "oewn-suppressive__5.00.00.restrictive.00",
+    "definition": "tending to suppress"
+  },
+  {
+    "theme": "tension",
+    "pole": 0,
+    "from": "LOOSEN",
+    "word": "LOOSENING",
+    "senseId": "oewn-loosening__1.11.00..",
+    "definition": "an occurrence of control or strength weakening"
+  },
+  {
+    "theme": "tension",
+    "pole": 0,
+    "from": "LAX",
+    "word": "LAXITY",
+    "senseId": "oewn-laxity__1.07.00..",
+    "definition": "the quality of being lax and neglectful"
+  },
+  {
+    "theme": "tension",
+    "pole": 0,
+    "from": "FLOPPY",
+    "word": "FLOP",
+    "senseId": "oewn-flop__1.04.00..",
+    "definition": "the act of throwing yourself down; collapse; sink"
+  },
+  {
+    "theme": "tension",
+    "pole": 0,
+    "from": "RELAX",
+    "word": "RELAXATION",
+    "senseId": "oewn-relaxation__1.04.00..",
+    "definition": "freedom from activity (work or strain or responsibility)"
+  },
+  {
+    "theme": "tension",
+    "pole": 1,
+    "from": "TENSE",
+    "word": "TENSENESS",
+    "senseId": "oewn-tenseness__1.26.02..",
+    "definition": "(psychology) a state of mental or emotional strain or suspense"
+  },
+  {
+    "theme": "tension",
+    "pole": 1,
+    "from": "TENSION",
+    "word": "TENSE",
+    "senseId": "oewn-tense__2.29.00..",
+    "definition": "cause to be tense and uneasy or nervous or anxious"
+  },
+  {
+    "theme": "tension",
+    "pole": 1,
+    "from": "TENSION",
+    "word": "TENSE",
+    "senseId": "oewn-tense__2.29.01..",
+    "definition": "become tense, nervous, or uneasy"
+  },
+  {
+    "theme": "tension",
+    "pole": 1,
+    "from": "FASTEN",
+    "word": "FASTENER",
+    "senseId": "oewn-fastener__1.18.00..",
+    "definition": "a person who fastens or makes fast"
+  },
+  {
+    "theme": "access",
+    "pole": 0,
+    "from": "ADMIT",
+    "word": "ADMISSION",
+    "senseId": "oewn-admission__1.21.00..",
+    "definition": "the fee charged for admission"
+  },
+  {
+    "theme": "width",
+    "pole": 0,
+    "from": "EXPANSIVE",
+    "word": "EXPAND",
+    "senseId": "oewn-expand__2.30.02..",
+    "definition": "exaggerate or make bigger"
+  },
+  {
+    "theme": "width",
+    "pole": 0,
+    "from": "EXPANSIVE",
+    "word": "EXPAND",
+    "senseId": "oewn-expand__2.30.09..",
+    "definition": "expand the influence of"
+  },
+  {
+    "theme": "width",
+    "pole": 1,
+    "from": "COMPRESS",
+    "word": "COMPRESSION",
+    "senseId": "oewn-compression__1.04.01..",
+    "definition": "encoding information while reducing the bandwidth or bits required"
+  },
+  {
+    "theme": "depth",
+    "pole": 0,
+    "from": "SUBMERGED",
+    "word": "SUBMERGIBLE",
+    "senseId": "oewn-submergible__3.00.00..",
+    "definition": "capable of being immersed in water or functioning while submerged"
+  },
+  {
+    "theme": "depth",
+    "pole": 1,
+    "from": "SUPERFICIAL",
+    "word": "SUPERFICIALITY",
+    "senseId": "oewn-superficiality__1.07.01..",
+    "definition": "lack of depth of knowledge or thought or feeling"
+  },
+  {
+    "theme": "arithmetic",
+    "pole": 0,
+    "from": "ADD",
+    "word": "ADDITIVE",
+    "senseId": "oewn-additive__3.00.04..",
+    "definition": "designating or involving an equation whose terms are of the first degree"
+  },
+  {
+    "theme": "arithmetic",
+    "pole": 1,
+    "from": "FEWER",
+    "word": "FEW",
+    "senseId": "oewn-few__1.14.00..",
+    "definition": "a small elite group"
+  },
+  {
+    "theme": "arrival",
+    "pole": 0,
+    "from": "APPROACH",
+    "word": "APPROACH",
+    "senseId": "oewn-approach__1.07.01..",
+    "definition": "a close approximation"
+  },
+  {
+    "theme": "arrival",
+    "pole": 0,
+    "from": "APPEAR",
+    "word": "APPARENT",
+    "senseId": "oewn-apparent__5.00.00.obvious.00",
+    "definition": "clearly revealed to the mind or the senses or judgment"
+  },
+  {
+    "theme": "arrival",
+    "pole": 0,
+    "from": "APPEAR",
+    "word": "APPEARANCE",
+    "senseId": "oewn-appearance__1.07.00..",
+    "definition": "outward or visible aspect of a person or thing"
+  },
+  {
+    "theme": "arrival",
+    "pole": 1,
+    "from": "DEPART",
+    "word": "DEPARTURE",
+    "senseId": "oewn-departure__1.11.00..",
+    "definition": "euphemistic expressions for death"
+  },
+  {
+    "theme": "privacy",
+    "pole": 0,
+    "from": "PUBLISH",
+    "word": "PUBLISHER",
+    "senseId": "oewn-publisher__1.14.00..",
+    "definition": "a firm in the publishing business"
+  },
+  {
+    "theme": "privacy",
+    "pole": 0,
+    "from": "PUBLISH",
+    "word": "PUBLISHER",
+    "senseId": "oewn-publisher__1.18.00..",
+    "definition": "a person engaged in publishing periodicals or books or music"
+  },
+  {
+    "theme": "privacy",
+    "pole": 0,
+    "from": "PUBLISH",
+    "word": "PUBLISHER",
+    "senseId": "oewn-publisher__1.18.01..",
+    "definition": "the proprietor of a newspaper"
+  },
+  {
+    "theme": "privacy",
+    "pole": 0,
+    "from": "KNOWN",
+    "word": "KNOWABLE",
+    "senseId": "oewn-knowable__3.00.00..",
+    "definition": "capable of being known"
+  },
+  {
+    "theme": "privacy",
+    "pole": 0,
+    "from": "KNOWN",
+    "word": "KNOWER",
+    "senseId": "oewn-knower__1.18.00..",
+    "definition": "a person who knows or apprehends"
+  },
+  {
+    "theme": "privacy",
+    "pole": 0,
+    "from": "KNOWN",
+    "word": "KNOWING",
+    "senseId": "oewn-knowing__1.09.00..",
+    "definition": "a clear and certain mental apprehension"
+  },
+  {
+    "theme": "privacy",
+    "pole": 1,
+    "from": "CONFIDENTIAL",
+    "word": "CONFIDENCE",
+    "senseId": "oewn-confidence__1.26.03..",
+    "definition": "a trustful relationship"
+  },
+  {
+    "theme": "privacy",
+    "pole": 1,
+    "from": "DISCREET",
+    "word": "DISCREETNESS",
+    "senseId": "oewn-discreetness__1.07.00..",
+    "definition": "subtly skillful handling of a situation"
+  },
+  {
+    "theme": "artifice",
+    "pole": 0,
+    "from": "INNATE",
+    "word": "INNATENESS",
+    "senseId": "oewn-innateness__1.07.00..",
+    "definition": "the quality of being innate"
+  },
+  {
+    "theme": "artifice",
+    "pole": 1,
+    "from": "MANUFACTURED",
+    "word": "MANUFACTURER",
+    "senseId": "oewn-manufacturer__1.14.00..",
+    "definition": "a business engaged in manufacturing some product"
+  },
+  {
+    "theme": "artifice",
+    "pole": 1,
+    "from": "MANUFACTURED",
+    "word": "MANUFACTURER",
+    "senseId": "oewn-manufacturer__1.18.00..",
+    "definition": "someone who manufactures something"
+  },
+  {
+    "theme": "duration",
+    "pole": 0,
+    "from": "PERMANENT",
+    "word": "PERMANENT",
+    "senseId": "oewn-permanent__1.08.00..",
+    "definition": "a series of waves in the hair made by applying heat and chemicals"
+  },
+  {
+    "theme": "duration",
+    "pole": 0,
+    "from": "PERSISTENT",
+    "word": "PERSISTENCY",
+    "senseId": "oewn-persistency__1.07.00..",
+    "definition": "persistent determination"
+  },
+  {
+    "theme": "duration",
+    "pole": 1,
+    "from": "TRANSIENT",
+    "word": "TRANSIENT",
+    "senseId": "oewn-transient__1.11.00..",
+    "definition": "(physics) a short-lived oscillation in a system caused by a sudden change of voltage or current or load"
+  },
+  {
+    "theme": "construction",
+    "pole": 0,
+    "from": "DESTROY",
+    "word": "DESTROYER",
+    "senseId": "oewn-destroyer__1.06.00..",
+    "definition": "a small fast lightly armored but heavily armed warship"
+  },
+  {
+    "theme": "construction",
+    "pole": 1,
+    "from": "CREATE",
+    "word": "CREATURE",
+    "senseId": "oewn-creature__1.03.00..",
+    "definition": "a living organism characterized by voluntary movement"
+  },
+  {
+    "theme": "construction",
+    "pole": 1,
+    "from": "CREATE",
+    "word": "CREATURE",
+    "senseId": "oewn-creature__1.18.01..",
+    "definition": "a living being"
+  },
+  {
+    "theme": "cooking",
+    "pole": 0,
+    "from": "FRESH",
+    "word": "FRESHNESS",
+    "senseId": "oewn-freshness__1.07.01..",
+    "definition": "the property of being pure and fresh (as if newly made); not stale or deteriorated"
+  },
+  {
+    "theme": "cooking",
+    "pole": 1,
+    "from": "GRILL",
+    "word": "GRILL",
+    "senseId": "oewn-grill__1.06.00..",
+    "definition": "a framework of metal bars used as a partition or a grate"
+  },
+  {
+    "theme": "cooking",
+    "pole": 1,
+    "from": "GRILL",
+    "word": "GRILL",
+    "senseId": "oewn-grill__1.06.01..",
+    "definition": "a restaurant where food is cooked on a grill"
+  },
+  {
+    "theme": "cooking",
+    "pole": 1,
+    "from": "STEAM",
+    "word": "STEAM",
+    "senseId": "oewn-steam__2.35.00..",
+    "definition": "clean by means of steaming"
+  },
+  {
+    "theme": "cooking",
+    "pole": 1,
+    "from": "FRY",
+    "word": "FRIER",
+    "senseId": "oewn-frier__1.13.00..",
+    "definition": "flesh of a medium-sized young chicken suitable for frying"
+  },
+  {
+    "theme": "phase",
+    "pole": 0,
+    "from": "CRYSTALLIZE",
+    "word": "CRYSTAL",
+    "senseId": "oewn-crystal__1.27.01..",
+    "definition": "colorless glass made of almost pure silica"
+  },
+  {
+    "theme": "phase",
+    "pole": 1,
+    "from": "FLUID",
+    "word": "FLUIDNESS",
+    "senseId": "oewn-fluidness__1.07.01..",
+    "definition": "a changeable quality"
+  },
+  {
+    "theme": "phase",
+    "pole": 1,
+    "from": "FLOW",
+    "word": "FLOW",
+    "senseId": "oewn-flow__2.42.00..",
+    "definition": "be abundantly present"
+  },
+  {
+    "theme": "life",
+    "pole": 0,
+    "from": "LIFELESSNESS",
+    "word": "LIFELESS",
+    "senseId": "oewn-lifeless__5.00.00.unanimated.00",
+    "definition": "lacking animation or excitement or activity"
+  },
+  {
+    "theme": "life",
+    "pole": 1,
+    "from": "BREATHE",
+    "word": "BREATHER",
+    "senseId": "oewn-breather__1.06.00..",
+    "definition": "air passage provided by a retractable device containing intake and exhaust pipes; permits a submarine to stay submerged for extended periods of time"
+  },
+  {
+    "theme": "sobriety",
+    "pole": 0,
+    "from": "BEFUDDLED",
+    "word": "BEFUDDLEMENT",
+    "senseId": "oewn-befuddlement__1.09.00..",
+    "definition": "confusion resulting from failure to understand"
+  },
+  {
+    "theme": "sobriety",
+    "pole": 1,
+    "from": "MODERATE",
+    "word": "MODERATENESS",
+    "senseId": "oewn-moderateness__1.07.01..",
+    "definition": "the property of being moderate in price or expenditures"
+  },
+  {
+    "theme": "guilt",
+    "pole": 0,
+    "from": "FAULT",
+    "word": "FAULTY",
+    "senseId": "oewn-faulty__5.00.00.inaccurate.00",
+    "definition": "characterized by errors; not agreeing with a model or not following established rules"
+  },
+  {
+    "theme": "guilt",
+    "pole": 1,
+    "from": "VINDICATE",
+    "word": "VINDICATOR",
+    "senseId": "oewn-vindicator__1.18.00..",
+    "definition": "a person who argues to defend or justify some policy or institution"
+  },
+  {
+    "theme": "obedience",
+    "pole": 0,
+    "from": "CONFORM",
+    "word": "CONFORMANCE",
+    "senseId": "oewn-conformance__1.07.00..",
+    "definition": "correspondence in form or appearance"
+  },
+  {
+    "theme": "occupation",
+    "pole": 0,
+    "from": "WORKING",
+    "word": "WORK",
+    "senseId": "oewn-work__1.06.00..",
+    "definition": "a product produced or accomplished through the effort or activity or agency of a person or thing"
+  },
+  {
+    "theme": "occupation",
+    "pole": 0,
+    "from": "WORKING",
+    "word": "WORKER",
+    "senseId": "oewn-worker__1.05.01..",
+    "definition": "sterile member of a colony of social insects that forages for food and cares for the larvae"
+  },
+  {
+    "theme": "occupation",
+    "pole": 1,
+    "from": "RELAX",
+    "word": "RELAXATION",
+    "senseId": "oewn-relaxation__1.22.01..",
+    "definition": "(physiology) the gradual lengthening of inactive muscle or muscle fibers"
+  },
+  {
+    "theme": "equality",
+    "pole": 0,
+    "from": "CONSISTENT",
+    "word": "CONSISTENCY",
+    "senseId": "oewn-consistency__1.26.00..",
+    "definition": "logical coherence and accordance with the facts"
+  },
+  {
+    "theme": "equality",
+    "pole": 1,
+    "from": "IRREGULAR",
+    "word": "IRREGULARITY",
+    "senseId": "oewn-irregularity__1.04.00..",
+    "definition": "behavior that breaches the rule or etiquette or custom or morality"
+  },
+  {
+    "theme": "wholeness",
+    "pole": 1,
+    "from": "PIECE",
+    "word": "PIECE",
+    "senseId": "oewn-piece__2.30.00..",
+    "definition": "repair by adding pieces"
+  },
+  {
+    "theme": "wholeness",
+    "pole": 1,
+    "from": "PIECE",
+    "word": "PIECE",
+    "senseId": "oewn-piece__2.35.02..",
+    "definition": "to join or unite the pieces of"
+  },
+  {
+    "theme": "wholeness",
+    "pole": 1,
+    "from": "PIECE",
+    "word": "PIECE",
+    "senseId": "oewn-piece__2.36.00..",
+    "definition": "create by putting components or members together"
+  },
+  {
+    "theme": "wholeness",
+    "pole": 1,
+    "from": "DIVIDE",
+    "word": "DIVIDER",
+    "senseId": "oewn-divider__1.18.01..",
+    "definition": "a taxonomist who classifies organisms into many groups on the basis of relatively minor characteristics"
+  }
+]

@@ -4,10 +4,12 @@ import type { PartOfSpeech, SemanticRelation } from './types.ts'
 import { PARTS_OF_SPEECH } from './types.ts'
 import { readSemanticAssessmentMetadata, readWordSemanticAssessment } from './semanticAssessment.ts'
 import type { WordSemanticAssessment } from './semanticAssessment.ts'
+import { getDictionaryMeaning, MEANING_DICTIONARY_VERSION } from '../lexicon/meaningDictionary.ts'
 
 /** Lossless transport only. No meaning, scoring or validity is inferred here. */
 export const MEANING_PACKING_VERSION = 'wyrmle-packed-meanings-1' as const
 export const MEANING_ASSESSMENT_PACKING_VERSION = 'wyrmle-packed-meanings-2' as const
+export const MEANING_DICTIONARY_PACKING_VERSION = 'wyrmle-packed-meanings-3' as const
 type MeaningHeader = Omit<PuzzleMeaningLexicon, 'words'>
 type LegacyPackedMeaningRecord = readonly [
   definition: number, lemma: number, senseId: number, partsOfSpeech: number,
@@ -34,6 +36,35 @@ const headerKeys = new Set([
   'letterSupply', 'minimumWordLength', 'maximumWordLength', 'assessment',
 ])
 const fail = (detail: string): never => { throw new Error(`Invalid packed puzzle meanings: ${detail}.`) }
+
+type DictionaryPackedMeanings = Readonly<{
+  packingVersion: typeof MEANING_DICTIONARY_PACKING_VERSION
+  labelled: PackedMeaningLexicon
+  words: readonly string[]
+  neutralReason: string
+}>
+
+/** Reference exact neutral records in the app's versioned dictionary instead
+ * of shipping those same definitions in every date's download. Word membership
+ * and every semantic label remain fixed by the published puzzle. */
+export function packDictionaryMeanings(lexicon: PuzzleMeaningLexicon): DictionaryPackedMeanings | PackedMeaningLexicon {
+  if (lexicon.assessment || lexicon.dictionaryVersion !== MEANING_DICTIONARY_VERSION) return packMeaningLexicon(lexicon)
+  const neutralReason = Object.values(lexicon.words).find(record => record.evidence === 'defined-neutral')?.reason
+  if (neutralReason === undefined) return packMeaningLexicon(lexicon)
+  const labelled: Record<string, PuzzleWordMeaning> = {}
+  for (const [word, record] of Object.entries(lexicon.words)) {
+    const source = getDictionaryMeaning(word)
+    const reusable = source && record.relation === 'unrelated' && record.evidence === 'defined-neutral'
+      && record.reason === neutralReason && !Object.hasOwn(record, 'assessment')
+      && record.definition === source.definition && record.lemma === source.lemma
+      && record.senseId === source.senseId && record.source === source.source
+      && JSON.stringify(record.partsOfSpeech) === JSON.stringify(source.partsOfSpeech)
+    if (!reusable) labelled[word] = record
+  }
+  return Object.freeze({ packingVersion: MEANING_DICTIONARY_PACKING_VERSION,
+    labelled: packMeaningLexicon({ ...lexicon, words: labelled }),
+    words: Object.freeze(Object.keys(lexicon.words)), neutralReason })
+}
 
 /** Preserve record fields, POS ordering and word order while sharing repeats. */
 export function packMeaningLexicon(lexicon: PuzzleMeaningLexicon): PackedMeaningLexicon {
@@ -138,6 +169,26 @@ function readHeader(value: unknown, assessed: boolean): MeaningHeader {
 
 /** Decode only stored values; corrupt or unsupported transport fails closed. */
 export function unpackMeaningLexicon(packed: unknown): PuzzleMeaningLexicon {
+  if (object(packed) && packed.packingVersion === MEANING_DICTIONARY_PACKING_VERSION) {
+    // Do not recurse into arbitrary nested envelopes or assessed records.
+    if (!object(packed.labelled) || packed.labelled.packingVersion !== MEANING_PACKING_VERSION) return fail('invalid dictionary envelope')
+    const labelled = unpackMeaningLexicon(packed.labelled)
+    if (labelled.dictionaryVersion !== MEANING_DICTIONARY_VERSION) return fail('dictionary version mismatch')
+    if (typeof packed.neutralReason !== 'string' || !Array.isArray(packed.words)) return fail('invalid neutral word index')
+    const words: Record<string, PuzzleWordMeaning> = {}
+    for (const word of packed.words) {
+      if (typeof word !== 'string' || !/^[A-Z]+$/.test(word) || word.length < labelled.minimumWordLength
+        || word.length > labelled.maximumWordLength || Object.hasOwn(words, word)) return fail('invalid or duplicate dictionary word')
+      if (Object.hasOwn(labelled.words, word)) { words[word] = labelled.words[word]; continue }
+      const source = getDictionaryMeaning(word)
+      if (!source) return fail('unknown dictionary word')
+      words[word] = Object.freeze({ definition: source.definition, lemma: source.lemma, senseId: source.senseId,
+        partsOfSpeech: source.partsOfSpeech, relation: 'unrelated', reason: packed.neutralReason,
+        source: source.source, evidence: 'defined-neutral' })
+    }
+    if (Object.keys(labelled.words).some(word => !Object.hasOwn(words, word))) return fail('labelled word missing from index')
+    return Object.freeze({ ...labelled, words: Object.freeze(words) })
+  }
   if (!object(packed) || (packed.packingVersion !== MEANING_PACKING_VERSION
     && packed.packingVersion !== MEANING_ASSESSMENT_PACKING_VERSION)) {
     return fail('unsupported packing version')

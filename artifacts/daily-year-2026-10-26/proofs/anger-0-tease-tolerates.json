@@ -1,0 +1,982 @@
+{
+  "id": "anger-0-tease-tolerates",
+  "theme": "anger",
+  "side": 0,
+  "enemy": "TEASE",
+  "bingo": "TOLERATES",
+  "enemySense": "oewn-tease__1.18.00..",
+  "enemyLemma": "tease",
+  "bingoLemma": "tolerate",
+  "armour": 1,
+  "frequency": 0.405,
+  "answer": "TOLERATES",
+  "method": "bingo-first",
+  "accepted": true,
+  "profileVersion": "bingo-source-profiles-1:2e421cfc0d2d",
+  "seeds": 2,
+  "seed": "bingo-first-3:TEASE:TOLERATES:12",
+  "score": 390,
+  "analysis": {
+    "score": 390,
+    "bingos": [
+      "TOLERATES"
+    ],
+    "counterFamilies": 10,
+    "resistedFamilies": 4,
+    "winningOpenings": 12,
+    "repeatedCounterRoutes": 11,
+    "sustainedPositions": 8,
+    "sustainedFinalPositions": 4,
+    "neutralCleanupOpenings": 2,
+    "routes": [
+      {
+        "opening": "PEACE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "STAND",
+            "BEARS",
+            "DIGEST",
+            "TOLERANT",
+            "ABIDES",
+            "TOLERATION"
+          ],
+          "resisted": [
+            "ANGER",
+            "RAGE",
+            "RAG",
+            "IRE"
+          ],
+          "neutral": 2263
+        },
+        "thirdTurn": {
+          "counters": [
+            "DIGEST"
+          ],
+          "resisted": [
+            "STORM",
+            "IRE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "PEACE",
+            "STAND",
+            "DIGEST"
+          ],
+          "tileIds": [
+            [
+              6,
+              7,
+              2,
+              1,
+              8
+            ],
+            [
+              4,
+              13,
+              5,
+              14,
+              3
+            ],
+            [
+              24,
+              16,
+              12,
+              17,
+              23,
+              15
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "STAND",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "PEACE",
+            "BEAR"
+          ],
+          "resisted": [
+            "RAGE",
+            "RAG",
+            "IRE"
+          ],
+          "neutral": 581
+        },
+        "thirdTurn": {
+          "counters": [
+            "DIGEST"
+          ],
+          "resisted": [
+            "STORM",
+            "IRE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "STAND",
+            "PEACE",
+            "DIGEST"
+          ],
+          "tileIds": [
+            [
+              4,
+              13,
+              2,
+              14,
+              3
+            ],
+            [
+              6,
+              7,
+              5,
+              1,
+              8
+            ],
+            [
+              24,
+              16,
+              12,
+              17,
+              23,
+              15
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "BEAR",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "PEACE",
+            "STAND",
+            "GENTLE",
+            "CONSOLE",
+            "DIGEST",
+            "SOLACE"
+          ],
+          "resisted": [
+            "TEASE"
+          ],
+          "neutral": 1554
+        },
+        "thirdTurn": {
+          "counters": [
+            "STAND",
+            "SUPPORT"
+          ],
+          "resisted": [
+            "STORM",
+            "RAMP"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "BEAR",
+            "DIGEST",
+            "STAND"
+          ],
+          "tileIds": [
+            [
+              0,
+              7,
+              2,
+              11
+            ],
+            [
+              3,
+              16,
+              12,
+              8,
+              4,
+              13
+            ],
+            [
+              23,
+              15,
+              5,
+              14,
+              24
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "GENTLE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "SUPPORT",
+            "BEAR",
+            "STOOD",
+            "ABIDE"
+          ],
+          "resisted": [
+            "IRE"
+          ],
+          "neutral": 1100
+        },
+        "thirdTurn": {
+          "counters": [
+            "BEAR",
+            "ABIDE"
+          ],
+          "resisted": [
+            "RAGE",
+            "RAG",
+            "IRE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "GENTLE",
+            "SUPPORT",
+            "BEAR"
+          ],
+          "tileIds": [
+            [
+              12,
+              7,
+              14,
+              13,
+              9,
+              8
+            ],
+            [
+              4,
+              18,
+              6,
+              20,
+              10,
+              11,
+              15
+            ],
+            [
+              0,
+              17,
+              2,
+              21
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "TOLERANCE",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "SUPPORT",
+            "BEARS",
+            "DIGEST",
+            "ABIDES"
+          ],
+          "resisted": [
+            "RAGE",
+            "RAG",
+            "IRE"
+          ],
+          "neutral": 1072
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "TOLERANCE",
+            "SUPPORT"
+          ],
+          "tileIds": [
+            [
+              13,
+              10,
+              9,
+              7,
+              11,
+              2,
+              14,
+              1,
+              8
+            ],
+            [
+              4,
+              18,
+              6,
+              20,
+              19,
+              21,
+              15
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "TOLERANT",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "PEACE",
+            "BEAR",
+            "ABIDE",
+            "REPOSE"
+          ],
+          "resisted": [
+            "RAGE",
+            "RAG",
+            "IRE"
+          ],
+          "neutral": 924
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "TOLERANT",
+            "BEARS"
+          ],
+          "tileIds": [
+            [
+              13,
+              10,
+              9,
+              7,
+              11,
+              2,
+              14,
+              15
+            ],
+            [
+              0,
+              8,
+              5,
+              21,
+              4
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "SOLACE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "BEAR",
+            "ENDURE",
+            "ABIDE"
+          ],
+          "resisted": [
+            "ANGER",
+            "RAGE",
+            "RAG",
+            "ENRAGED",
+            "IRE"
+          ],
+          "neutral": 931
+        },
+        "thirdTurn": {
+          "counters": [
+            "SUPPORT",
+            "BORE",
+            "ENDURE",
+            "DIGEST",
+            "REPOSE"
+          ],
+          "resisted": [
+            "IRE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SOLACE",
+            "ART",
+            "SUPPORTED"
+          ],
+          "tileIds": [
+            [
+              4,
+              10,
+              9,
+              2,
+              1,
+              7
+            ],
+            [
+              5,
+              11,
+              13
+            ],
+            [
+              23,
+              18,
+              6,
+              20,
+              19,
+              21,
+              15,
+              8,
+              3
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "ABODE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "PEACE",
+            "SUPPORT",
+            "GENTLE",
+            "TOLERANCE",
+            "TOLERANT",
+            "SOLACE",
+            "REPOSE"
+          ],
+          "resisted": [
+            "ANGER",
+            "RAGE",
+            "TEASE",
+            "RAG",
+            "TEASER",
+            "IRE"
+          ],
+          "neutral": 1983
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "IRE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ABODE",
+            "TOLERANT",
+            "SIR"
+          ],
+          "tileIds": [
+            [
+              2,
+              0,
+              10,
+              3,
+              7
+            ],
+            [
+              13,
+              19,
+              9,
+              8,
+              11,
+              5,
+              14,
+              15
+            ],
+            [
+              4,
+              16,
+              21
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            2,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "PLACATE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "STOOD",
+            "BORE",
+            "ENDURE",
+            "DIGEST",
+            "REPOSE"
+          ],
+          "resisted": [
+            "IRE"
+          ],
+          "neutral": 1038
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "PLACATE",
+            "DIGEST"
+          ],
+          "tileIds": [
+            [
+              6,
+              9,
+              2,
+              1,
+              5,
+              13,
+              7
+            ],
+            [
+              3,
+              16,
+              12,
+              8,
+              4,
+              15
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "REPOSE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "BEAR",
+            "ABIDE",
+            "TOLERANT",
+            "PLACATE"
+          ],
+          "resisted": [
+            "ANGER",
+            "RAGE",
+            "RAG",
+            "IRE"
+          ],
+          "neutral": 1540
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "REPOSE",
+            "TOLERANT"
+          ],
+          "tileIds": [
+            [
+              11,
+              7,
+              6,
+              10,
+              4,
+              8
+            ],
+            [
+              13,
+              19,
+              9,
+              17,
+              21,
+              2,
+              14,
+              15
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "ANGER",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "PEACE",
+            "STOOD",
+            "ABIDE",
+            "SOLACE"
+          ],
+          "resisted": [
+            "TEASE"
+          ],
+          "neutral": 958
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "RAGE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "PEACE",
+            "STAND",
+            "CONSOLE",
+            "ABIDE",
+            "SOLACE"
+          ],
+          "resisted": [
+            "TEASE"
+          ],
+          "neutral": 1491
+        },
+        "thirdTurn": {
+          "counters": [
+            "PEACE",
+            "STAND",
+            "SUPPORT",
+            "CONSOLE",
+            "TOLERANCE",
+            "ENDURE",
+            "SOLACE",
+            "REPOSE"
+          ],
+          "resisted": [
+            "TEASE",
+            "TEASER"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RAGE",
+            "BIT",
+            "TOLERANCES"
+          ],
+          "tileIds": [
+            [
+              11,
+              2,
+              12,
+              7
+            ],
+            [
+              0,
+              16,
+              13
+            ],
+            [
+              15,
+              10,
+              9,
+              8,
+              21,
+              5,
+              14,
+              1,
+              17,
+              4
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            1,
+            5
+          ]
+        }
+      },
+      {
+        "opening": "TEASE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "BEAR",
+            "ABIDE"
+          ],
+          "resisted": [
+            "ANGER",
+            "RAGE",
+            "RAG",
+            "IRE"
+          ],
+          "neutral": 1459
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "TEASER",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "BEAR",
+            "ABIDE"
+          ],
+          "resisted": [
+            "ANGER",
+            "RAGE",
+            "RAG",
+            "IRE"
+          ],
+          "neutral": 1459
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "ACT",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "STAND",
+            "BEAR",
+            "GENTLE",
+            "ENDURE",
+            "DIGEST",
+            "ABIDE",
+            "SERENE",
+            "REPOSE"
+          ],
+          "resisted": [
+            "ANGER",
+            "RAGE",
+            "TEASE",
+            "RAG",
+            "TEASER",
+            "ENRAGED",
+            "IRE"
+          ],
+          "neutral": 2303
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "AGE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "PEACE",
+            "STAND",
+            "BEAR",
+            "TOLERANCE",
+            "ENDURE",
+            "ABIDE",
+            "TOLERANT",
+            "SOLACE",
+            "REPOSE"
+          ],
+          "resisted": [
+            "TEASE",
+            "TEASER",
+            "IRE"
+          ],
+          "neutral": 2668
+        },
+        "thirdTurn": {
+          "counters": [
+            "SUPPORT"
+          ],
+          "resisted": [
+            "STORM"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AGE",
+            "TOLERANCES",
+            "SUPPORT"
+          ],
+          "tileIds": [
+            [
+              2,
+              12,
+              7
+            ],
+            [
+              13,
+              10,
+              9,
+              8,
+              11,
+              5,
+              14,
+              1,
+              17,
+              4
+            ],
+            [
+              23,
+              18,
+              6,
+              20,
+              19,
+              21,
+              15
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4,
+            1
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "OPTED",
+      "TOLERANCES"
+    ],
+    "tileIds": [
+      [
+        10,
+        6,
+        13,
+        7,
+        3
+      ],
+      [
+        15,
+        19,
+        9,
+        8,
+        11,
+        2,
+        14,
+        1,
+        17,
+        4
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      5
+    ]
+  },
+  "identity": {
+    "id": "anger-0-tease-tolerates",
+    "enemy": "TEASE",
+    "board": "AABCDEEGLNOPRSTT",
+    "bingos": [
+      "TOLERATES"
+    ],
+    "bingoFamilies": [
+      "TOLERATE"
+    ]
+  },
+  "novelty": [],
+  "asset": "puzzles/anger-0-tease-tolerates-01f502600dcf.json",
+  "semanticPolicy": "Source-pinned concept pools with individually reviewed senses and lexical families. Unlabelled defined senses remain neutral; this is not an exhaustive contextual semantic proof.",
+  "editorialReview": "Enemy/bingo relationship and opening non-neutral meanings reviewed; homograph forms corrected and obvious concept words added. Existing board and refills preserved, all quality gates rerun."
+}

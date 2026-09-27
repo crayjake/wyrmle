@@ -1,0 +1,1153 @@
+{
+  "id": "light-0-night-sunlight",
+  "theme": "light",
+  "side": 0,
+  "enemy": "NIGHT",
+  "bingo": "SUNLIGHT",
+  "enemySense": "oewn-night__1.28.00..",
+  "enemyLemma": "night",
+  "bingoLemma": "sunlight",
+  "armour": 0,
+  "frequency": 0.715,
+  "answer": "SUNLIGHT",
+  "method": "bingo-first",
+  "accepted": true,
+  "profileVersion": "bingo-source-profiles-1:db7162bfac1b",
+  "seeds": 2,
+  "seed": "bingo-first-3:NIGHT:SUNLIGHT:13:two-turn-route",
+  "score": 567,
+  "analysis": {
+    "score": 567,
+    "bingos": [
+      "SUNLIGHT",
+      "BRIGHTEN",
+      "BRIGHTENS"
+    ],
+    "counterFamilies": 11,
+    "resistedFamilies": 4,
+    "winningOpenings": 17,
+    "repeatedCounterRoutes": 17,
+    "sustainedPositions": 11,
+    "sustainedFinalPositions": 7,
+    "neutralCleanupOpenings": 3,
+    "routes": [
+      {
+        "opening": "LIGHT",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "SUN",
+            "SHINE",
+            "SUNSHINE",
+            "SUNNY",
+            "SHINY",
+            "SUNRISE",
+            "BURNISHED"
+          ],
+          "resisted": [
+            "SHADE",
+            "SHADY",
+            "DIM"
+          ],
+          "neutral": 754
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "LIGHT",
+            "SUN"
+          ],
+          "tileIds": [
+            [
+              13,
+              10,
+              4,
+              8,
+              5
+            ],
+            [
+              14,
+              6,
+              1
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SUN",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "LIGHT",
+            "BRIGHT",
+            "DAYLIGHT",
+            "DAYTIME",
+            "GLARE",
+            "GLAZED",
+            "BEAMING",
+            "GLEAM"
+          ],
+          "resisted": [
+            "NIGHT",
+            "DIM"
+          ],
+          "neutral": 1001
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SUN",
+            "LIGHT"
+          ],
+          "tileIds": [
+            [
+              14,
+              6,
+              1
+            ],
+            [
+              13,
+              10,
+              4,
+              8,
+              5
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "BRIGHT",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "SUN",
+            "SHINE",
+            "SUNSHINE",
+            "SUNNY",
+            "SHINY"
+          ],
+          "resisted": [
+            "SHADE",
+            "SHADY",
+            "DIM"
+          ],
+          "neutral": 523
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "BRIGHT",
+            "SUN"
+          ],
+          "tileIds": [
+            [
+              7,
+              0,
+              10,
+              4,
+              8,
+              5
+            ],
+            [
+              14,
+              6,
+              1
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SHINE",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "LIGHT",
+            "BRIGHT",
+            "DAYLIGHT",
+            "DAYTIME",
+            "GLARE",
+            "GLAZED",
+            "BEAMING",
+            "GLEAM"
+          ],
+          "resisted": [
+            "NIGHT",
+            "SHADE",
+            "SHADY",
+            "MIST",
+            "DIM"
+          ],
+          "neutral": 1940
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "SHINE",
+            "LIGHT"
+          ],
+          "tileIds": [
+            [
+              14,
+              8,
+              10,
+              1,
+              15
+            ],
+            [
+              13,
+              20,
+              4,
+              17,
+              5
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "SHINY",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "LIGHT",
+            "BRIGHT",
+            "GLARE",
+            "GLAZED",
+            "BEAMING",
+            "GLEAM"
+          ],
+          "resisted": [
+            "NIGHT",
+            "SHADE",
+            "MIST",
+            "DIM"
+          ],
+          "neutral": 2046
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "SHINY",
+            "LIGHT"
+          ],
+          "tileIds": [
+            [
+              14,
+              8,
+              10,
+              1,
+              2
+            ],
+            [
+              13,
+              20,
+              4,
+              17,
+              5
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "DAYLIGHT",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "SUN",
+            "SHINE",
+            "SUNSHINE",
+            "SUNRISE"
+          ],
+          "resisted": [
+            "MIST"
+          ],
+          "neutral": 432
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DAYLIGHT",
+            "SUN"
+          ],
+          "tileIds": [
+            [
+              11,
+              3,
+              2,
+              13,
+              10,
+              4,
+              8,
+              5
+            ],
+            [
+              14,
+              6,
+              1
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "DAYTIME",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "SUN",
+            "SHINE",
+            "SUNSHINE",
+            "SUNRISE"
+          ],
+          "resisted": [],
+          "neutral": 270
+        },
+        "thirdTurn": {
+          "counters": [
+            "LIGHT",
+            "BRIGHT"
+          ],
+          "resisted": [
+            "NIGHT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DAYTIME",
+            "SHINE",
+            "LIGHT"
+          ],
+          "tileIds": [
+            [
+              11,
+              3,
+              2,
+              5,
+              10,
+              12,
+              15
+            ],
+            [
+              14,
+              8,
+              20,
+              1,
+              16
+            ],
+            [
+              13,
+              25,
+              4,
+              17,
+              23
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "GLARE",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SUN",
+            "SHINE",
+            "SUNSHINE",
+            "SUNNY",
+            "SHINY"
+          ],
+          "resisted": [
+            "MIST",
+            "DIM"
+          ],
+          "neutral": 344
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "NIGHT",
+            "MIST",
+            "DIM"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "GLARE",
+            "SHINE",
+            "BIT"
+          ],
+          "tileIds": [
+            [
+              4,
+              13,
+              3,
+              0,
+              15
+            ],
+            [
+              14,
+              8,
+              10,
+              1,
+              16
+            ],
+            [
+              7,
+              20,
+              5
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "GLAZED",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SUN",
+            "SHINE",
+            "SUNSHINE",
+            "SUNNY",
+            "SHINY",
+            "SUNRISE"
+          ],
+          "resisted": [
+            "MIST"
+          ],
+          "neutral": 398
+        },
+        "thirdTurn": {
+          "counters": [
+            "BRIGHT"
+          ],
+          "resisted": [
+            "NIGHT",
+            "MIST"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "GLAZED",
+            "SHINE",
+            "BRIGHT"
+          ],
+          "tileIds": [
+            [
+              4,
+              13,
+              3,
+              9,
+              15,
+              11
+            ],
+            [
+              14,
+              8,
+              10,
+              1,
+              16
+            ],
+            [
+              7,
+              0,
+              20,
+              24,
+              17,
+              5
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "BEAMING",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "LIT",
+            "SHINE",
+            "SHINY",
+            "BURNISHED"
+          ],
+          "resisted": [],
+          "neutral": 568
+        },
+        "thirdTurn": {
+          "counters": [
+            "BRIGHT",
+            "SHINE",
+            "SHINY",
+            "BURNISHED"
+          ],
+          "resisted": [
+            "NIGHT"
+          ]
+        },
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "BEAMING",
+            "LIT",
+            "BRIGHT"
+          ],
+          "tileIds": [
+            [
+              7,
+              15,
+              3,
+              12,
+              10,
+              1,
+              4
+            ],
+            [
+              13,
+              20,
+              5
+            ],
+            [
+              22,
+              0,
+              25,
+              24,
+              8,
+              23
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "GLEAM",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SUN",
+            "SHINE",
+            "SUNSHINE",
+            "SUNNY",
+            "SHINY",
+            "SUNRISE",
+            "BURNISHED"
+          ],
+          "resisted": [],
+          "neutral": 458
+        },
+        "thirdTurn": {
+          "counters": [
+            "BRIGHT"
+          ],
+          "resisted": [
+            "NIGHT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "GLEAM",
+            "SHINE",
+            "BRIGHT"
+          ],
+          "tileIds": [
+            [
+              4,
+              13,
+              15,
+              3,
+              12
+            ],
+            [
+              14,
+              8,
+              10,
+              1,
+              16
+            ],
+            [
+              7,
+              0,
+              20,
+              24,
+              17,
+              5
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "NIGHT",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "SUN",
+            "SHINE",
+            "SHINY",
+            "SUNRISE",
+            "BURNISHED"
+          ],
+          "resisted": [
+            "SHADE",
+            "SHADY",
+            "DIM"
+          ],
+          "neutral": 1125
+        },
+        "thirdTurn": {
+          "counters": [
+            "LIGHT",
+            "BRIGHT",
+            "DAYLIGHT",
+            "DAYTIME",
+            "GLARE",
+            "GLAZED",
+            "GLEAM"
+          ],
+          "resisted": [
+            "SHADE",
+            "SHADY",
+            "MIST",
+            "DIM"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "NIGHT",
+            "SHINES",
+            "LIGHT"
+          ],
+          "tileIds": [
+            [
+              1,
+              10,
+              4,
+              8,
+              5
+            ],
+            [
+              14,
+              17,
+              20,
+              18,
+              15,
+              19
+            ],
+            [
+              13,
+              25,
+              24,
+              26,
+              23
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            3,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "SHADE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "LIGHT",
+            "SUN",
+            "BRIGHT",
+            "SHINE",
+            "SUNNY",
+            "SHINY"
+          ],
+          "resisted": [
+            "NIGHT",
+            "MIST"
+          ],
+          "neutral": 669
+        },
+        "thirdTurn": {
+          "counters": [
+            "SUN",
+            "SUNNY",
+            "SUNRISE"
+          ],
+          "resisted": [
+            "MIST"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SHADE",
+            "LIGHT",
+            "SUN"
+          ],
+          "tileIds": [
+            [
+              14,
+              8,
+              3,
+              11,
+              15
+            ],
+            [
+              13,
+              10,
+              4,
+              17,
+              5
+            ],
+            [
+              19,
+              6,
+              1
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SHADY",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "LIGHT",
+            "SUN",
+            "BRIGHT",
+            "SHINE"
+          ],
+          "resisted": [
+            "NIGHT",
+            "MIST"
+          ],
+          "neutral": 725
+        },
+        "thirdTurn": {
+          "counters": [
+            "SUN",
+            "SUNRISE"
+          ],
+          "resisted": [
+            "MIST"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SHADY",
+            "LIGHT",
+            "SUN"
+          ],
+          "tileIds": [
+            [
+              14,
+              8,
+              3,
+              11,
+              2
+            ],
+            [
+              13,
+              10,
+              4,
+              17,
+              5
+            ],
+            [
+              19,
+              6,
+              1
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "MIST",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "SUN",
+            "SUNNY",
+            "GLARE",
+            "GLAZED"
+          ],
+          "resisted": [
+            "SHADE",
+            "SHADY"
+          ],
+          "neutral": 680
+        },
+        "thirdTurn": {
+          "counters": [
+            "LIGHT",
+            "BRIGHT",
+            "GLARE",
+            "GLAZED"
+          ],
+          "resisted": [
+            "SHADE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "MIST",
+            "SUNNY",
+            "LIGHT"
+          ],
+          "tileIds": [
+            [
+              12,
+              10,
+              14,
+              5
+            ],
+            [
+              19,
+              6,
+              1,
+              18,
+              2
+            ],
+            [
+              13,
+              20,
+              4,
+              8,
+              23
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            1,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "AGE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SUN",
+            "LIT",
+            "SHINE",
+            "SUNNY",
+            "SHINY",
+            "BURNISHED"
+          ],
+          "resisted": [
+            "MIST",
+            "DIM"
+          ],
+          "neutral": 652
+        },
+        "thirdTurn": {
+          "counters": [
+            "LIT"
+          ],
+          "resisted": [
+            "MIST",
+            "DIM"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AGE",
+            "SHINE",
+            "LIT"
+          ],
+          "tileIds": [
+            [
+              3,
+              4,
+              15
+            ],
+            [
+              14,
+              8,
+              10,
+              1,
+              16
+            ],
+            [
+              13,
+              20,
+              5
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SUN",
+            "SUNNY"
+          ],
+          "resisted": [],
+          "neutral": 358
+        },
+        "thirdTurn": {
+          "counters": [
+            "LIGHT",
+            "SHINE",
+            "SHINY"
+          ],
+          "resisted": [
+            "NIGHT",
+            "MIST",
+            "DIM"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AIR",
+            "SUN",
+            "LIGHT"
+          ],
+          "tileIds": [
+            [
+              3,
+              10,
+              0
+            ],
+            [
+              14,
+              6,
+              1
+            ],
+            [
+              13,
+              20,
+              4,
+              8,
+              5
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            1,
+            3
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "ADULT",
+      "SHINING"
+    ],
+    "tileIds": [
+      [
+        3,
+        11,
+        6,
+        13,
+        5
+      ],
+      [
+        14,
+        8,
+        10,
+        1,
+        20,
+        18,
+        4
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      4
+    ]
+  },
+  "identity": {
+    "id": "light-0-night-sunlight",
+    "enemy": "NIGHT",
+    "board": "ABDEGHILMNRSTUYZ",
+    "bingos": [
+      "BRIGHTEN",
+      "BRIGHTENS",
+      "SUNLIGHT"
+    ],
+    "bingoFamilies": [
+      "BRIGHTEN",
+      "SUNLIGHT"
+    ]
+  },
+  "novelty": [],
+  "asset": "puzzles/light-0-night-sunlight-7addc6f246ff.json",
+  "semanticPolicy": "Source-pinned concept pools with individually reviewed senses and lexical families. Unlabelled defined senses remain neutral; this is not an exhaustive contextual semantic proof.",
+  "editorialReview": "Enemy/bingo relationship and opening non-neutral meanings reviewed; homograph forms corrected and obvious concept words added. Existing board and refills preserved, all quality gates rerun."
+}

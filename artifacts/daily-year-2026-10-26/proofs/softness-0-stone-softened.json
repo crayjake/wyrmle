@@ -1,0 +1,781 @@
+{
+  "id": "softness-0-stone-softened",
+  "theme": "softness",
+  "side": 0,
+  "enemy": "STONE",
+  "bingo": "SOFTENED",
+  "enemySense": "oewn-stone__1.17.00..",
+  "enemyLemma": "stone",
+  "bingoLemma": "soften",
+  "armour": 1,
+  "frequency": 0.56,
+  "answer": "SOFTENED",
+  "method": "bingo-first",
+  "accepted": true,
+  "profileVersion": "bingo-source-profiles-1:cd107d0e99eb",
+  "seeds": 2,
+  "seed": "bingo-first-3:STONE:SOFTENED:13",
+  "score": 356,
+  "analysis": {
+    "score": 356,
+    "bingos": [
+      "SOFTENED",
+      "SOFTENER"
+    ],
+    "counterFamilies": 6,
+    "resistedFamilies": 4,
+    "winningOpenings": 11,
+    "repeatedCounterRoutes": 10,
+    "sustainedPositions": 7,
+    "sustainedFinalPositions": 3,
+    "neutralCleanupOpenings": 1,
+    "routes": [
+      {
+        "opening": "SOFT",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "YIELD",
+            "CUSHION"
+          ],
+          "resisted": [
+            "ROCK",
+            "SOLID",
+            "ROCKY"
+          ],
+          "neutral": 1102
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SOFT",
+            "CUSHIONED",
+            "EYE"
+          ],
+          "tileIds": [
+            [
+              9,
+              4,
+              13,
+              2
+            ],
+            [
+              0,
+              5,
+              17,
+              1,
+              12,
+              16,
+              11,
+              8,
+              15
+            ],
+            [
+              10,
+              14,
+              21
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            3,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SHOCK",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "SOFT",
+            "YIELD",
+            "TENDER",
+            "TENSILE"
+          ],
+          "resisted": [
+            "STONE",
+            "FIRM",
+            "SOLID",
+            "FLINT",
+            "STONY"
+          ],
+          "neutral": 1254
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SHOCK",
+            "TENDER"
+          ],
+          "tileIds": [
+            [
+              9,
+              1,
+              4,
+              0,
+              6
+            ],
+            [
+              2,
+              8,
+              11,
+              15,
+              10,
+              3
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            4
+          ]
+        }
+      },
+      {
+        "opening": "YIELD",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SOFT",
+            "SHOCK",
+            "MUSH",
+            "SOFTNESS"
+          ],
+          "resisted": [
+            "ROCK",
+            "STONE"
+          ],
+          "neutral": 644
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "YIELD",
+            "SOFTNESS"
+          ],
+          "tileIds": [
+            [
+              14,
+              12,
+              8,
+              7,
+              15
+            ],
+            [
+              9,
+              4,
+              13,
+              2,
+              11,
+              10,
+              17,
+              18
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            5
+          ]
+        }
+      },
+      {
+        "opening": "TENDER",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "SOFT",
+            "SHOCK",
+            "MUSH",
+            "MUSHY"
+          ],
+          "resisted": [],
+          "neutral": 581
+        },
+        "thirdTurn": null,
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "TENDER",
+            "SOFT"
+          ],
+          "tileIds": [
+            [
+              2,
+              8,
+              11,
+              15,
+              10,
+              3
+            ],
+            [
+              9,
+              4,
+              13,
+              20
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "CUSHION",
+        "label": "COUNTER",
+        "hits": 3,
+        "later": {
+          "counters": [
+            "SOFT"
+          ],
+          "resisted": [],
+          "neutral": 382
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CUSHION",
+            "SOFTER",
+            "EYE"
+          ],
+          "tileIds": [
+            [
+              0,
+              5,
+              9,
+              1,
+              12,
+              4,
+              11
+            ],
+            [
+              17,
+              16,
+              13,
+              2,
+              8,
+              3
+            ],
+            [
+              10,
+              14,
+              21
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            3,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "TENSILE",
+        "label": "COUNTER",
+        "hits": 5,
+        "later": {
+          "counters": [
+            "SOFT",
+            "SHOCK"
+          ],
+          "resisted": [
+            "ROCK",
+            "ROCKY"
+          ],
+          "neutral": 646
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "TENSILE",
+            "SOFT"
+          ],
+          "tileIds": [
+            [
+              2,
+              8,
+              11,
+              9,
+              12,
+              7,
+              10
+            ],
+            [
+              17,
+              4,
+              13,
+              20
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            5,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "ROCK",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "SOFT",
+            "YIELD",
+            "MUSH",
+            "SOFTNESS",
+            "TENSILE",
+            "MUSHY",
+            "LITHE"
+          ],
+          "resisted": [
+            "STONE",
+            "SOLID",
+            "FLINT",
+            "STONY"
+          ],
+          "neutral": 834
+        },
+        "thirdTurn": {
+          "counters": [
+            "YIELD",
+            "SOFTEST",
+            "LITHE"
+          ],
+          "resisted": [
+            "SOLID",
+            "STIFF"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ROCK",
+            "SOFTNESS",
+            "YIELD"
+          ],
+          "tileIds": [
+            [
+              3,
+              4,
+              0,
+              6
+            ],
+            [
+              9,
+              16,
+              13,
+              2,
+              11,
+              8,
+              17,
+              18
+            ],
+            [
+              14,
+              12,
+              10,
+              7,
+              15
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            5,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "STONE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "SOFT",
+            "SHOCK",
+            "YIELD",
+            "MUSH",
+            "MUSHY",
+            "LITHE",
+            "DUCTILE"
+          ],
+          "resisted": [
+            "ROCK",
+            "FIRM",
+            "SOLID",
+            "ROCKY"
+          ],
+          "neutral": 1266
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "SOLID",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "SOFT",
+            "SHOCK",
+            "MUSH",
+            "MUSHY"
+          ],
+          "resisted": [
+            "ROCK",
+            "STONE",
+            "ROCKY",
+            "STONY"
+          ],
+          "neutral": 783
+        },
+        "thirdTurn": {
+          "counters": [
+            "SOFTNESS"
+          ],
+          "resisted": [
+            "STONE",
+            "STONY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SOLID",
+            "SOFTER",
+            "SOFTNESS"
+          ],
+          "tileIds": [
+            [
+              9,
+              4,
+              7,
+              12,
+              15
+            ],
+            [
+              17,
+              16,
+              13,
+              2,
+              8,
+              3
+            ],
+            [
+              18,
+              25,
+              22,
+              20,
+              11,
+              10,
+              23,
+              26
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            4,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "ROCKY",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "SOFT",
+            "MUSH",
+            "SOFTNESS",
+            "TENSILE",
+            "LITHE"
+          ],
+          "resisted": [
+            "STONE",
+            "SOLID",
+            "FLINT"
+          ],
+          "neutral": 796
+        },
+        "thirdTurn": {
+          "counters": [
+            "SOFTEST",
+            "LITHE"
+          ],
+          "resisted": [
+            "SOLID",
+            "STIFF"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ROCKY",
+            "SOFTNESS",
+            "SOFTEST"
+          ],
+          "tileIds": [
+            [
+              3,
+              4,
+              0,
+              6,
+              14
+            ],
+            [
+              9,
+              16,
+              13,
+              2,
+              11,
+              8,
+              17,
+              18
+            ],
+            [
+              23,
+              25,
+              22,
+              20,
+              10,
+              26,
+              27
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            5,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "CUT",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "YIELD"
+          ],
+          "resisted": [
+            "SOLID"
+          ],
+          "neutral": 589
+        },
+        "thirdTurn": {
+          "counters": [
+            "SOFT",
+            "SOFTNESS"
+          ],
+          "resisted": [
+            "STONE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "CUT",
+            "YIELDS",
+            "SOFTNESS"
+          ],
+          "tileIds": [
+            [
+              0,
+              5,
+              2
+            ],
+            [
+              14,
+              12,
+              8,
+              7,
+              15,
+              9
+            ],
+            [
+              17,
+              4,
+              13,
+              20,
+              11,
+              10,
+              18,
+              23
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "DIE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "SOFT",
+            "SHOCK",
+            "SOFTNESS"
+          ],
+          "resisted": [
+            "ROCK",
+            "STONE",
+            "ROCKY",
+            "STONY"
+          ],
+          "neutral": 726
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DIE",
+            "SOFTNESS"
+          ],
+          "tileIds": [
+            [
+              15,
+              12,
+              8
+            ],
+            [
+              9,
+              4,
+              13,
+              2,
+              11,
+              10,
+              17,
+              18
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            5
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "CELERY",
+      "SOFTNESS"
+    ],
+    "tileIds": [
+      [
+        0,
+        8,
+        7,
+        10,
+        3,
+        14
+      ],
+      [
+        9,
+        4,
+        13,
+        2,
+        11,
+        21,
+        17,
+        18
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      5
+    ]
+  },
+  "identity": {
+    "id": "softness-0-stone-softened",
+    "enemy": "STONE",
+    "board": "CDEEFHIKLNORSTUY",
+    "bingos": [
+      "SOFTENED",
+      "SOFTENER"
+    ],
+    "bingoFamilies": [
+      "SOFTEN",
+      "SOFTENER"
+    ]
+  },
+  "novelty": [],
+  "asset": "puzzles/softness-0-stone-softened-3cea0fc52953.json",
+  "semanticPolicy": "Source-pinned concept pools with individually reviewed senses and lexical families. Unlabelled defined senses remain neutral; this is not an exhaustive contextual semantic proof.",
+  "editorialReview": "Enemy/bingo relationship and opening non-neutral meanings reviewed; homograph forms corrected and obvious concept words added. Existing board and refills preserved, all quality gates rerun."
+}

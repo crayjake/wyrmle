@@ -27,7 +27,10 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "generate:daily": "node scripts/generate-daily-month.ts",
-    "archive:bingo": "node scripts/archive-bingo-puzzles.ts"
+    "archive:bingo": "node scripts/archive-bingo-puzzles.ts",
+    "discover:batch": "node scripts/discover-year-candidates.ts",
+    "generate:batch": "node scripts/generate-daily-year.ts",
+    "recheck:batch": "node scripts/recheck-daily-batch.ts"
   },
   "dependencies": {
     "an-array-of-english-words": "^2.0.0",

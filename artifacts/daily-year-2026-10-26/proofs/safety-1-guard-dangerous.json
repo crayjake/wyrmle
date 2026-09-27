@@ -1,0 +1,833 @@
+{
+  "id": "safety-1-guard-dangerous",
+  "theme": "safety",
+  "side": 1,
+  "enemy": "GUARD",
+  "bingo": "DANGEROUS",
+  "enemySense": "oewn-guard__1.04.03..",
+  "enemyLemma": "guard",
+  "bingoLemma": "dangerous",
+  "armour": 0,
+  "frequency": 0.9475,
+  "answer": "DANGEROUS",
+  "method": "bingo-first",
+  "accepted": true,
+  "profileVersion": "bingo-source-profiles-1:d130cf368b4e",
+  "seeds": 2,
+  "seed": "bingo-first-3:GUARD:DANGEROUS:12:two-turn-route",
+  "score": 370,
+  "analysis": {
+    "score": 370,
+    "bingos": [
+      "DANGEROUS"
+    ],
+    "counterFamilies": 7,
+    "resistedFamilies": 4,
+    "winningOpenings": 11,
+    "repeatedCounterRoutes": 9,
+    "sustainedPositions": 11,
+    "sustainedFinalPositions": 2,
+    "neutralCleanupOpenings": 0,
+    "routes": [
+      {
+        "opening": "RISK",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "DANGER",
+            "ADVENTURE",
+            "VENTURE",
+            "UNSAFE"
+          ],
+          "resisted": [
+            "SAFE",
+            "SCREEN",
+            "GUARD",
+            "SECURE",
+            "RESCUE",
+            "SAFEGUARD",
+            "CONSERVE"
+          ],
+          "neutral": 1138
+        },
+        "thirdTurn": {
+          "counters": [
+            "UNSAFE"
+          ],
+          "resisted": [
+            "SAFE",
+            "SAFETY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "RISK",
+            "DANGER",
+            "UNSAFE"
+          ],
+          "tileIds": [
+            [
+              6,
+              12,
+              5,
+              14
+            ],
+            [
+              4,
+              8,
+              2,
+              13,
+              9,
+              18
+            ],
+            [
+              10,
+              21,
+              19,
+              16,
+              7,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "DANGER",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "VENTURE",
+            "INSECURE",
+            "UNSAFE"
+          ],
+          "resisted": [
+            "SAFE",
+            "SCREEN",
+            "SECURE",
+            "RESCUE",
+            "CONSERVE"
+          ],
+          "neutral": 1173
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DANGER",
+            "VENTURE"
+          ],
+          "tileIds": [
+            [
+              4,
+              8,
+              2,
+              13,
+              9,
+              6
+            ],
+            [
+              1,
+              11,
+              21,
+              0,
+              10,
+              18,
+              20
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "ADVENTURE",
+        "label": "COUNTER",
+        "hits": 4,
+        "later": {
+          "counters": [
+            "DANGER",
+            "STAKING"
+          ],
+          "resisted": [
+            "SAFE",
+            "SCREEN",
+            "GUARD",
+            "SECURE",
+            "RESCUE"
+          ],
+          "neutral": 1988
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ADVENTURE",
+            "DANGER"
+          ],
+          "tileIds": [
+            [
+              8,
+              4,
+              1,
+              9,
+              2,
+              0,
+              10,
+              6,
+              11
+            ],
+            [
+              22,
+              16,
+              21,
+              13,
+              20,
+              18
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "VENTURE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "DANGER",
+            "UNSAFE",
+            "RISKED"
+          ],
+          "resisted": [
+            "SAFE",
+            "GUARD",
+            "GUARDIAN",
+            "SAFEGUARD",
+            "RESCUING"
+          ],
+          "neutral": 990
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "VENTURE",
+            "DANGER"
+          ],
+          "tileIds": [
+            [
+              1,
+              9,
+              2,
+              0,
+              10,
+              6,
+              11
+            ],
+            [
+              4,
+              8,
+              21,
+              13,
+              20,
+              18
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "STAKE",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "DANGER",
+            "INSECURE",
+            "UNSAFE"
+          ],
+          "resisted": [
+            "SAFE",
+            "SCREEN",
+            "GUARD",
+            "SECURE",
+            "SAVING",
+            "RESCUE",
+            "CONSERVE"
+          ],
+          "neutral": 1097
+        },
+        "thirdTurn": {
+          "counters": [
+            "VENTURE",
+            "INSECURE"
+          ],
+          "resisted": [
+            "SECURITY",
+            "SCREEN",
+            "SECURE",
+            "RESCUE",
+            "CONSERVE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "STAKE",
+            "DANGER",
+            "VENTURE"
+          ],
+          "tileIds": [
+            [
+              5,
+              0,
+              8,
+              14,
+              9
+            ],
+            [
+              4,
+              16,
+              2,
+              13,
+              11,
+              6
+            ],
+            [
+              1,
+              20,
+              21,
+              24,
+              10,
+              18,
+              23
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "INSECURE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "DANGER",
+            "ADVENTURE",
+            "STAKE",
+            "UNSAFE",
+            "VENTURED"
+          ],
+          "resisted": [
+            "SAFE",
+            "GUARD",
+            "DEFEND",
+            "SAFEGUARD"
+          ],
+          "neutral": 957
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "INSECURE",
+            "DANGER"
+          ],
+          "tileIds": [
+            [
+              12,
+              2,
+              5,
+              9,
+              15,
+              10,
+              6,
+              11
+            ],
+            [
+              4,
+              8,
+              21,
+              13,
+              20,
+              18
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "UNSAFE",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "RISK",
+            "DANGER",
+            "ADVENTURE",
+            "VENTURE",
+            "INSECURE",
+            "STAKED"
+          ],
+          "resisted": [
+            "SCREEN",
+            "GUARD",
+            "SECURE",
+            "SAVING",
+            "RESCUE",
+            "CONSERVE"
+          ],
+          "neutral": 1885
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "UNSAFE",
+            "DANGER"
+          ],
+          "tileIds": [
+            [
+              10,
+              2,
+              5,
+              8,
+              7,
+              9
+            ],
+            [
+              4,
+              16,
+              21,
+              13,
+              11,
+              6
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "SAFE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "RISK",
+            "DANGER",
+            "STAKE"
+          ],
+          "resisted": [
+            "GUARD",
+            "SAVING",
+            "RESCUING"
+          ],
+          "neutral": 1520
+        },
+        "thirdTurn": {
+          "counters": [
+            "VENTURE",
+            "INSECURE"
+          ],
+          "resisted": [
+            "SECURITY",
+            "SCREEN",
+            "SECURE",
+            "RESCUE",
+            "CONSERVE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SAFE",
+            "DANGER",
+            "VENTURE"
+          ],
+          "tileIds": [
+            [
+              5,
+              8,
+              7,
+              9
+            ],
+            [
+              4,
+              16,
+              2,
+              13,
+              11,
+              6
+            ],
+            [
+              1,
+              20,
+              21,
+              0,
+              10,
+              18,
+              23
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SCREEN",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "RISK",
+            "DANGER",
+            "STAKE",
+            "UNSAFE"
+          ],
+          "resisted": [
+            "SAFE",
+            "GUARD",
+            "SAVING",
+            "GUARDIAN",
+            "SAFEGUARD"
+          ],
+          "neutral": 1190
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "SAFE",
+            "SAFETY"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SCREEN",
+            "DANGER",
+            "DUE"
+          ],
+          "tileIds": [
+            [
+              5,
+              15,
+              6,
+              9,
+              11,
+              2
+            ],
+            [
+              4,
+              8,
+              21,
+              13,
+              20,
+              18
+            ],
+            [
+              22,
+              10,
+              23
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            0,
+            4,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "GUARD",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "RISK",
+            "VENTURE",
+            "STAKE",
+            "INSECURE",
+            "UNSAFE"
+          ],
+          "resisted": [
+            "SAFE",
+            "SCREEN",
+            "SECURE",
+            "RESCUE",
+            "CONSERVE"
+          ],
+          "neutral": 1178
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "SECURE",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "RISK",
+            "DANGER",
+            "STAKE",
+            "UNSAFE",
+            "VENTURING",
+            "ADVENTURING"
+          ],
+          "resisted": [
+            "SAFE",
+            "GUARD",
+            "SAVING",
+            "GUARDIAN",
+            "SAFEGUARD"
+          ],
+          "neutral": 1289
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "SECURE",
+            "ADVENTURING"
+          ],
+          "tileIds": [
+            [
+              5,
+              9,
+              15,
+              10,
+              6,
+              11
+            ],
+            [
+              8,
+              4,
+              1,
+              20,
+              2,
+              0,
+              17,
+              18,
+              12,
+              21,
+              13
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "opening": "ACT",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "RISK",
+            "DANGER",
+            "UNSAFE"
+          ],
+          "resisted": [
+            "SAFE",
+            "GUARD",
+            "SAVING"
+          ],
+          "neutral": 879
+        },
+        "thirdTurn": {
+          "counters": [
+            "VENTURE"
+          ],
+          "resisted": []
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ACT",
+            "DANGER",
+            "VENTURE"
+          ],
+          "tileIds": [
+            [
+              8,
+              15,
+              0
+            ],
+            [
+              4,
+              16,
+              2,
+              13,
+              9,
+              6
+            ],
+            [
+              1,
+              11,
+              21,
+              24,
+              10,
+              18,
+              20
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "AGE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "RISK",
+            "UNSAFE",
+            "STAKED"
+          ],
+          "resisted": [
+            "SAFE"
+          ],
+          "neutral": 1388
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "ADVENTURE",
+      "ACTING"
+    ],
+    "tileIds": [
+      [
+        8,
+        4,
+        1,
+        9,
+        2,
+        0,
+        10,
+        6,
+        11
+      ],
+      [
+        16,
+        15,
+        24,
+        12,
+        21,
+        13
+      ]
+    ],
+    "labels": [
+      "COUNTER",
+      "NEUTRAL"
+    ],
+    "hits": [
+      4,
+      1
+    ]
+  },
+  "identity": {
+    "id": "safety-1-guard-dangerous",
+    "enemy": "GUARD",
+    "board": "ACDEEFGIKNORSTUV",
+    "bingos": [
+      "DANGEROUS"
+    ],
+    "bingoFamilies": [
+      "DANGEROUS"
+    ]
+  },
+  "novelty": [],
+  "asset": "puzzles/safety-1-guard-dangerous-cff1b712456c.json",
+  "semanticPolicy": "Source-pinned concept pools with individually reviewed senses and lexical families. Unlabelled defined senses remain neutral; this is not an exhaustive contextual semantic proof.",
+  "editorialReview": "Enemy/bingo relationship and opening non-neutral meanings reviewed; homograph forms corrected and obvious concept words added. Existing board and refills preserved, all quality gates rerun."
+}

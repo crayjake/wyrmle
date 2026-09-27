@@ -1,0 +1,778 @@
+{
+  "id": "truth-0-lie-established",
+  "theme": "truth",
+  "side": 0,
+  "enemy": "LIE",
+  "bingo": "ESTABLISHED",
+  "enemySense": "oewn-lie__1.10.00..",
+  "enemyLemma": "lie",
+  "bingoLemma": "establish",
+  "armour": 1,
+  "frequency": 0.9750000000000001,
+  "answer": "ESTABLISHED",
+  "method": "bingo-first",
+  "accepted": true,
+  "profileVersion": "bingo-source-profiles-1:616227d27627",
+  "seeds": 2,
+  "seed": "bingo-first-3:LIE:ESTABLISHED:12",
+  "score": 280,
+  "analysis": {
+    "score": 280,
+    "bingos": [
+      "ESTABLISHED"
+    ],
+    "counterFamilies": 6,
+    "resistedFamilies": 3,
+    "winningOpenings": 9,
+    "repeatedCounterRoutes": 9,
+    "sustainedPositions": 3,
+    "sustainedFinalPositions": 3,
+    "neutralCleanupOpenings": 2,
+    "routes": [
+      {
+        "opening": "TRUE",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [],
+          "resisted": [
+            "LIE"
+          ],
+          "neutral": 899
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "TRULY",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [],
+          "resisted": [
+            "LIE"
+          ],
+          "neutral": 799
+        },
+        "thirdTurn": {
+          "counters": [
+            "HONEST",
+            "SUSTAINED"
+          ],
+          "resisted": [
+            "FICTION",
+            "DISHONEST"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "TRULY",
+            "ABLE",
+            "SUSTAINED"
+          ],
+          "tileIds": [
+            [
+              14,
+              1,
+              3,
+              8,
+              4
+            ],
+            [
+              7,
+              10,
+              16,
+              0
+            ],
+            [
+              2,
+              19,
+              5,
+              24,
+              17,
+              13,
+              9,
+              15,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "HONEST",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [],
+          "resisted": [
+            "LIE",
+            "FALSE",
+            "FRAUD",
+            "LIAR",
+            "FABLE"
+          ],
+          "neutral": 633
+        },
+        "thirdTurn": {
+          "counters": [
+            "TRUE",
+            "CERTIFY"
+          ],
+          "resisted": [
+            "FRAUD",
+            "BASTARD",
+            "FABRICATED"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "HONEST",
+            "ALL",
+            "CERTIFY"
+          ],
+          "tileIds": [
+            [
+              12,
+              6,
+              9,
+              0,
+              2,
+              14
+            ],
+            [
+              7,
+              8,
+              16
+            ],
+            [
+              18,
+              15,
+              1,
+              24,
+              13,
+              21,
+              4
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "HONESTLY",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [],
+          "resisted": [
+            "LIE",
+            "FALSE",
+            "FRAUD",
+            "LIAR",
+            "FABLE"
+          ],
+          "neutral": 534
+        },
+        "thirdTurn": {
+          "counters": [
+            "SUSTAINED"
+          ],
+          "resisted": [
+            "LIE",
+            "FALSE",
+            "DECEIT",
+            "FABLE"
+          ]
+        },
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "HONESTLY",
+            "AIR",
+            "SUSTAINED"
+          ],
+          "tileIds": [
+            [
+              12,
+              6,
+              9,
+              0,
+              2,
+              14,
+              8,
+              4
+            ],
+            [
+              7,
+              13,
+              1
+            ],
+            [
+              5,
+              3,
+              22,
+              24,
+              17,
+              23,
+              25,
+              15,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "SUSTAINED",
+        "label": "COUNTER",
+        "hits": 2,
+        "later": {
+          "counters": [
+            "TRUE",
+            "ACTUALLY",
+            "TRULY",
+            "ACTUAL",
+            "FACTUAL",
+            "CERTIFY",
+            "FACTUALLY"
+          ],
+          "resisted": [
+            "LIE",
+            "FALSE",
+            "LIAR",
+            "FABLE"
+          ],
+          "neutral": 1374
+        },
+        "thirdTurn": {
+          "counters": [],
+          "resisted": [
+            "LIE",
+            "FALSE",
+            "FABLE"
+          ]
+        },
+        "cleanup": true,
+        "witness": {
+          "words": [
+            "SUSTAINED",
+            "TRUE",
+            "ALL"
+          ],
+          "tileIds": [
+            [
+              2,
+              3,
+              5,
+              14,
+              7,
+              13,
+              9,
+              0,
+              11
+            ],
+            [
+              24,
+              1,
+              19,
+              15
+            ],
+            [
+              17,
+              8,
+              16
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "NEUTRAL"
+          ],
+          "hits": [
+            2,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "HONESTY",
+        "label": "COUNTER",
+        "hits": 1,
+        "later": {
+          "counters": [],
+          "resisted": [
+            "LIE",
+            "FALSE",
+            "FRAUD",
+            "LIAR",
+            "FABLE"
+          ],
+          "neutral": 585
+        },
+        "thirdTurn": {
+          "counters": [
+            "TRUE",
+            "SUSTAINED"
+          ],
+          "resisted": [
+            "FRAUD",
+            "BASTARD",
+            "FABRICATED"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "HONESTY",
+            "ALL",
+            "SUSTAINED"
+          ],
+          "tileIds": [
+            [
+              12,
+              6,
+              9,
+              0,
+              2,
+              14,
+              4
+            ],
+            [
+              7,
+              8,
+              16
+            ],
+            [
+              5,
+              3,
+              22,
+              24,
+              17,
+              13,
+              25,
+              15,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "NEUTRAL",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "LIES",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "TRUE",
+            "TRULY",
+            "ACTUAL",
+            "HONEST",
+            "HONESTLY",
+            "HONESTY"
+          ],
+          "resisted": [
+            "BASTARD"
+          ],
+          "neutral": 1572
+        },
+        "thirdTurn": null,
+        "cleanup": false,
+        "witness": null
+      },
+      {
+        "opening": "LIAR",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "HONEST",
+            "HONESTLY",
+            "HONESTY"
+          ],
+          "resisted": [],
+          "neutral": 1098
+        },
+        "thirdTurn": {
+          "counters": [
+            "SUSTAINED"
+          ],
+          "resisted": [
+            "DECEIT"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "LIAR",
+            "HONESTLY",
+            "SUSTAINED"
+          ],
+          "tileIds": [
+            [
+              8,
+              13,
+              7,
+              1
+            ],
+            [
+              12,
+              6,
+              9,
+              0,
+              2,
+              14,
+              16,
+              4
+            ],
+            [
+              5,
+              3,
+              22,
+              24,
+              17,
+              23,
+              25,
+              15,
+              11
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "opening": "DISHONEST",
+        "label": "RESISTED",
+        "hits": 0,
+        "later": {
+          "counters": [
+            "TRUE",
+            "ACTUALLY",
+            "TRULY",
+            "ACTUAL",
+            "FACTUAL",
+            "CERTIFY",
+            "FACTUALLY"
+          ],
+          "resisted": [
+            "LIE",
+            "FALSE",
+            "LIAR",
+            "FABLE"
+          ],
+          "neutral": 751
+        },
+        "thirdTurn": {
+          "counters": [
+            "EVIDENCE"
+          ],
+          "resisted": [
+            "LIE",
+            "FALSE",
+            "FRAUD",
+            "LIAR",
+            "DECEIVE",
+            "FABLE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "DISHONEST",
+            "ACTUALLY",
+            "EVIDENCE"
+          ],
+          "tileIds": [
+            [
+              11,
+              13,
+              2,
+              12,
+              6,
+              9,
+              0,
+              5,
+              14
+            ],
+            [
+              7,
+              18,
+              24,
+              3,
+              17,
+              8,
+              16,
+              4
+            ],
+            [
+              15,
+              29,
+              23,
+              32,
+              26,
+              25,
+              27,
+              30
+            ]
+          ],
+          "labels": [
+            "RESISTED",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            0,
+            1,
+            3
+          ]
+        }
+      },
+      {
+        "opening": "AIR",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "HONEST",
+            "HONESTLY",
+            "HONESTY"
+          ],
+          "resisted": [],
+          "neutral": 1172
+        },
+        "thirdTurn": {
+          "counters": [
+            "SUSTAINED"
+          ],
+          "resisted": [
+            "LIE",
+            "FALSE",
+            "DECEIT",
+            "FABLE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "AIR",
+            "HONESTLY",
+            "SUSTAINED"
+          ],
+          "tileIds": [
+            [
+              7,
+              13,
+              1
+            ],
+            [
+              12,
+              6,
+              9,
+              0,
+              2,
+              14,
+              8,
+              4
+            ],
+            [
+              5,
+              3,
+              22,
+              24,
+              17,
+              23,
+              25,
+              15,
+              11
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "opening": "ARE",
+        "label": "NEUTRAL",
+        "hits": 1,
+        "later": {
+          "counters": [
+            "HONEST",
+            "HONESTLY",
+            "SUSTAINED",
+            "HONESTY"
+          ],
+          "resisted": [
+            "LIE",
+            "DISHONEST"
+          ],
+          "neutral": 1553
+        },
+        "thirdTurn": {
+          "counters": [
+            "SUSTAINED"
+          ],
+          "resisted": [
+            "LIE",
+            "FALSE",
+            "FABLE"
+          ]
+        },
+        "cleanup": false,
+        "witness": {
+          "words": [
+            "ARE",
+            "HONESTLY",
+            "SUSTAINED"
+          ],
+          "tileIds": [
+            [
+              7,
+              1,
+              0
+            ],
+            [
+              12,
+              6,
+              9,
+              15,
+              2,
+              14,
+              8,
+              4
+            ],
+            [
+              5,
+              3,
+              22,
+              24,
+              17,
+              13,
+              25,
+              26,
+              11
+            ]
+          ],
+          "labels": [
+            "NEUTRAL",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            1
+          ]
+        }
+      }
+    ]
+  },
+  "twoWordWin": {
+    "words": [
+      "SOUTHLAND",
+      "CERTIFIES"
+    ],
+    "tileIds": [
+      [
+        2,
+        6,
+        3,
+        14,
+        12,
+        8,
+        7,
+        9,
+        11
+      ],
+      [
+        18,
+        0,
+        1,
+        24,
+        13,
+        21,
+        23,
+        15,
+        5
+      ]
+    ],
+    "labels": [
+      "NEUTRAL",
+      "COUNTER"
+    ],
+    "hits": [
+      1,
+      3
+    ]
+  },
+  "identity": {
+    "id": "truth-0-lie-established",
+    "enemy": "LIE",
+    "board": "ABDEEHILNORSSTUY",
+    "bingos": [
+      "ESTABLISHED"
+    ],
+    "bingoFamilies": [
+      "ESTABLISH"
+    ]
+  },
+  "novelty": [],
+  "asset": "puzzles/truth-0-lie-established-9e682b64a8ef.json",
+  "semanticPolicy": "Source-pinned concept pools with individually reviewed senses and lexical families. Unlabelled defined senses remain neutral; this is not an exhaustive contextual semantic proof.",
+  "editorialReview": "Enemy/bingo relationship and opening non-neutral meanings reviewed; homograph forms corrected and obvious concept words added. Existing board and refills preserved, all quality gates rerun."
+}
