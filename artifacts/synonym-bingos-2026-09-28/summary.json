@@ -1,0 +1,75 @@
+{
+  "method": "Exact-synset, distinct-lemma, no-substring synonym letter census v1",
+  "source": {
+    "name": "Open English Wordnet 2025",
+    "catalogSha256": "45bf124f63a27591128e5648a0c7ae94e672a1b535a557765dba9b1bf129b51f",
+    "synsets": 107519,
+    "coveredSpellings": 116197,
+    "url": "https://en-word.net/",
+    "license": "CC-BY-4.0"
+  },
+  "familiarity": {
+    "version": "wyrmle-wordfreq-en-3.1.1-v1",
+    "sha256": "d42263143caa2d59fdd5d5ec22b7cc637eb3d3737c820fcd3fa9b04f104e33e7",
+    "dictionarySpellings": 116395,
+    "familiarMinimumZipf": 3
+  },
+  "policy": {
+    "enemyLength": [
+      3,
+      8
+    ],
+    "answerLength": [
+      3,
+      16
+    ],
+    "enemyAndAnswerMustBeSourceLemmas": true,
+    "sameSpellingExcluded": true,
+    "answerContainingEnemySubstringExcluded": true,
+    "semanticExpansion": "none; one exact source synset is required",
+    "fullCoverage": "multiset containment, respecting repeated enemy letters",
+    "armour": "one extra hit per enemy position, when the answer has a spare copy",
+    "frequencyIsSenseSpecific": false,
+    "regionalVariantsAndRelatedDerivationsMayRemain": true,
+    "boardsAndRoutesVerified": false
+  },
+  "counts": {
+    "eligibleEnemyLemmas": 30514,
+    "eligibleFamiliarEnemyLemmas": 11139,
+    "enemiesWithDistinctNonSubstringSynonym": 19462,
+    "enemiesSharingAtLeastOneLetter": 19207,
+    "familiarEnemiesSharingAtLeastOneLetterWithFamiliarSynonym": 6999,
+    "fullCoverage": {
+      "enemySpellings": 1395,
+      "pairs": 1594
+    },
+    "fullCoverageFamiliar": {
+      "enemySpellings": 250,
+      "pairs": 276
+    },
+    "fullCoverageFamiliarLongAnswer": {
+      "enemySpellings": 189,
+      "pairs": 199
+    },
+    "fullCoverageFamiliarOneArmour": {
+      "enemySpellings": 94,
+      "pairs": 96
+    },
+    "fullCoverageFamiliarTwoArmour": {
+      "enemySpellings": 23,
+      "pairs": 23
+    },
+    "fullCoverageTwoArmour": {
+      "enemySpellings": 157,
+      "pairs": 164
+    },
+    "familiarTwoArmourAndTwoAlternatives": {
+      "enemySpellings": 5,
+      "pairs": 5
+    },
+    "familiarTwoArmourAndFourAlternatives": {
+      "enemySpellings": 0,
+      "pairs": 0
+    }
+  }
+}

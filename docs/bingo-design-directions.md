@@ -48,6 +48,16 @@ Tradeoffs and open questions:
 - Displaying a short context sentence could clarify an ambiguous target word without adding another puzzle to solve.
 - Neutral damage, similar-word behaviour and any changes to them are undecided; this proposal does not remove them from the live game.
 
+## Follow-up proposal: synonyms of the enemy deal damage
+
+The user then suggested removing the opposite target entirely: play synonyms of the enemy itself. This supplies one visible semantic target while preserving the letter-coverage bingo. No separate clue is needed to explain which meaning to seek.
+
+A [reproducible lexical census](../artifacts/synonym-bingos-2026-09-28/README.md) checked exact source synonym sets, using distinct source lemmas and excluding answers containing the whole enemy spelling. Among 30,514 eligible 3–8-letter enemy lemmas, 19,207 have an overlapping synonym; 1,395 have one covering the full enemy letter multiset. Requiring both words to meet the existing Zipf 3 familiarity threshold leaves 250 enemy spellings, or 23 when also requiring two armour points. Examples include SANE → REASONABLE and LIT → ILLUMINATED.
+
+These are lexical candidates, not generated puzzles or an exhaustive count of English synonym relationships. Source groups are often too small to supply several good shorter routes; ordinary near-synonyms may require a broader, reviewed pool. Rare senses, spelling variants and related derivations also require editorial review. A prototype should explicitly exclude playing the enemy itself or merely inflecting it, since bingo boards necessarily contain its unarmoured letters.
+
+This is now a candidate for the simplest prototype. Whether it retains enough surprise and enough useful two-/three-word routes has not been tested. The user has not requested a live rule change.
+
 ## New proposal: put the enemy in a sentence / use a cryptic clue
 
 A sentence could pin down the intended sense and point to a family of counter words. Several answers to that shared definition could be valid, while the tiles determine the most effective one. This can preserve both the bingo and shorter routes.
@@ -56,7 +66,7 @@ A conventional cryptic clue usually pairs a definition with wordplay that constr
 
 If the clue identifies only the bingo and other words have no useful role, the result risks becoming the single-answer crossword experience the user wants to avoid. Merely putting the enemy in a sentence does not guarantee useful alternative answers or fair gameplay.
 
-Working recommendation: explore an explicit opposite target first, with a short sentence only when needed to establish its sense. Keep the concrete-weakness version as a second candidate. Full cryptic wordplay is optional exploration, not an agreed replacement for the game.
+Recommendation at that stage of the discussion: explore an explicit opposite target first, with a short sentence only when needed to establish its sense. The subsequent direct-synonym proposal above is simpler still and remains under consideration. Keep the concrete-weakness version as another candidate. Full cryptic wordplay is optional exploration, not an agreed replacement for the game.
 
 ## What a prototype must establish
 
@@ -66,4 +76,4 @@ Working recommendation: explore an explicit opposite target first, with a short 
 4. Check that shorter routes remain discoverable and that the bingo has a satisfying extra challenge. Word familiarity alone cannot prove this.
 5. Test whether players can predict semantic acceptance and explain the bingo connection after a reveal.
 
-No new method has been implemented or benchmarked as part of this discussion. Existing generator documentation describes the current implementation.
+No new gameplay method or puzzle generator has been implemented as part of this discussion. The direct-synonym proposal has a lexical census, not generated or route-validated puzzles. Existing generator documentation describes the current implementation.
