@@ -38,6 +38,20 @@ test('first visit recommends Normal and enters tutorial without creating Daily d
   assert.deepEqual([...storage.data.keys()], [PREFERENCES_KEY])
 })
 
+test('existing players move to two circular rings once, then can save a different layout', () => {
+  const storage = new MemoryStorage()
+  storage.setItem(PREFERENCES_KEY, JSON.stringify({ preferredMode: 'hard', hasCompletedOnboarding: true,
+    hasChosenMode: true, boardLayout: 'grid', tileShape: 'square' }))
+  const migrated = loadPreferences(storage)
+  assert.equal(migrated.boardLayout, 'wheel')
+  assert.equal(migrated.tileShape, 'circle')
+  assert.equal(migrated.preferredMode, 'hard')
+  assert.equal(migrated.hasCompletedOnboarding, true)
+  savePreferences(storage, { ...migrated, boardLayout: 'grid', tileShape: 'square' })
+  assert.equal(loadPreferences(storage).boardLayout, 'grid')
+  assert.equal(loadPreferences(storage).tileShape, 'square')
+})
+
 test('skip/completion survives interruption at mode selection without repeating tutorial', () => {
   const storage = new MemoryStorage()
   savePreferences(storage, { ...defaultPreferences(), hasCompletedOnboarding: true })

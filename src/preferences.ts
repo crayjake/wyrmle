@@ -8,10 +8,12 @@ export type UserPreferences = {
   hasChosenMode: boolean
   boardLayout?: 'grid' | 'wheel' | 'ring'
   tileShape?: 'square' | 'circle'
+  layoutVersion?: 1
 }
 
 export function defaultPreferences(): UserPreferences {
-  return { preferredMode: 'normal', hasCompletedOnboarding: false, hasChosenMode: false, boardLayout: 'wheel', tileShape: 'circle' }
+  return { preferredMode: 'normal', hasCompletedOnboarding: false, hasChosenMode: false,
+    boardLayout: 'wheel', tileShape: 'circle', layoutVersion: 1 }
 }
 
 function hasPreviousVisit(storage: StorageLike): boolean {
@@ -41,8 +43,10 @@ export function loadPreferences(storage: StorageLike): UserPreferences {
           hasCompletedOnboarding: complete,
           // Older preference records may predate the interrupted-choice flag.
           hasChosenMode: typeof data.hasChosenMode === 'boolean' ? data.hasChosenMode : complete,
-          ...(['grid', 'wheel', 'ring'].includes(data.boardLayout as string) ? { boardLayout: data.boardLayout as UserPreferences['boardLayout'] } : {}),
-          ...(['square', 'circle'].includes(data.tileShape as string) ? { tileShape: data.tileShape as UserPreferences['tileShape'] } : {}),
+          ...(data.layoutVersion === 1 && ['grid', 'wheel', 'ring'].includes(data.boardLayout as string)
+            ? { boardLayout: data.boardLayout as UserPreferences['boardLayout'] } : {}),
+          ...(data.layoutVersion === 1 && ['square', 'circle'].includes(data.tileShape as string)
+            ? { tileShape: data.tileShape as UserPreferences['tileShape'] } : {}),
         }
       }
     } catch { /* A damaged preference must not block access to saved gameplay. */ }
