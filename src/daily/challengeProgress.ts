@@ -10,6 +10,7 @@ export type ChallengeRecord = {
   version: 1; date: string; asset: string; revision: number; attempts: number
   bestWords: number | null
   bestSolution?: string[]
+  rules?: 'bingo-hunt'
   // Four/five lives are accepted only to finish a migrated historical attempt.
   run: { lives: DailyLives | 4 | 5; started: boolean; status: LetterStrikeState['status']; moves: ChallengeMove[]; hintStep?: number }
 }
@@ -31,7 +32,8 @@ function parseChallenge(date: string, raw: string | null): ChallengeRecord | nul
     const v: unknown = JSON.parse(raw)
     if (!object(v) || v.version !== 1 || v.date !== date || typeof v.asset !== 'string'
       || !integer(v.revision, 0, Number.MAX_SAFE_INTEGER) || !integer(v.attempts, 0, Number.MAX_SAFE_INTEGER)
-      || !(v.bestWords === null || integer(v.bestWords, 1, 32)) || !object(v.run)) return null
+      || !(v.bestWords === null || integer(v.bestWords, 1, 32)) || !object(v.run)
+      || (v.rules !== undefined && v.rules !== 'bingo-hunt')) return null
     const r = v.run
     if (!integer(r.lives, 1, 5) || typeof r.started !== 'boolean' || !['playing', 'won', 'lost'].includes(String(r.status))
       || (r.hintStep !== undefined && !integer(r.hintStep, 1, 4))
@@ -51,6 +53,7 @@ function parseChallenge(date: string, raw: string | null): ChallengeRecord | nul
 export function openChallenge(date: string, asset: string, encounter: LetterStrikeEncounter, storage: Pick<StorageLike, 'getItem'>) {
   const saved = readChallenge(date, storage)
   const fresh: ChallengeRecord = { version: 1, date, asset, revision: saved?.revision ?? 0, attempts: 0, bestWords: null,
+    ...(encounter.bingoHunt ? { rules: 'bingo-hunt' as const } : {}),
     run: { lives: 3, started: false, status: 'playing', moves: [] } }
   const backup = parseChallenge(date, storage.getItem(challengeBackupKey(date, asset)))
   const record = saved?.asset === asset ? saved : backup?.asset === asset
@@ -89,6 +92,11 @@ export function saveChallenge(record: ChallengeRecord, game: LetterStrikeState, 
   storage: Pick<StorageLike, 'getItem' | 'setItem'>, hintStep = record.run.hintStep ?? 1): ChallengeRecord {
   if (game.encounter.startingResolve !== record.run.lives) throw new Error('Attempt lives changed.')
   const moves = game.playedWords.map(move => ({ word: move.word, ids: move.tiles.map(tile => tile.id) }))
+  if (record.rules === 'bingo-hunt' && (!game.encounter.bingoHunt || record.run.started && !started
+    || moves.length < record.run.moves.length || record.run.moves.some((move, index) =>
+      move.word !== moves[index]?.word || JSON.stringify(move.ids) !== JSON.stringify(moves[index]?.ids)))) {
+    throw new Error('Daily Bingo Hunt has one attempt. Your progress is saved.')
+  }
   const previousSolution = challengeBestSolution(record)
   const bestSolution = game.status === 'won' && (moves.length < (record.bestWords ?? Infinity)
     || moves.length === record.bestWords && !previousSolution) ? moves.map(move => move.word) : previousSolution
@@ -99,6 +107,7 @@ export function saveChallenge(record: ChallengeRecord, game: LetterStrikeState, 
 }
 
 export function restartChallenge(record: ChallengeRecord, storage: Pick<StorageLike, 'getItem' | 'setItem'>): ChallengeRecord {
+  if (record.rules === 'bingo-hunt') throw new Error('Daily Bingo Hunt has one attempt. Your progress is saved.')
   return write({ ...record, bestSolution: challengeBestSolution(record),
     run: { lives: challengeLives(record.bestWords), started: false, status: 'playing', moves: [] } }, record.revision, storage)
 }

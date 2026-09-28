@@ -40,7 +40,8 @@ export default function PuzzleCalendar({ today, requestedMonth }: { today: strin
         if (record?.asset !== entry?.asset) record = null
         const stars = challengeStars(record?.bestWords ?? null)
         const started = Boolean(record?.run.started)
-        const status = stars ? `${stars} of 3 stars` : started ? record?.run.status === 'lost' ? 'Try again' : 'In progress' : 'Not played'
+        const status = stars ? `${stars} of 3 stars` : started ? record?.run.status === 'lost'
+          ? record.rules === 'bingo-hunt' ? 'Finished, no stars' : 'Try again' : 'In progress' : 'Not played'
         const content = <><span className="calendar-day-number">{Number(date.slice(-2))}</span>
           <span className="calendar-day-stars" aria-hidden="true">{stars > 0 && <StarRating stars={stars} />}</span></>
         return available ? <a key={date} className="calendar-day" href={`?daily=${date}`} data-date={date} data-stars={stars}

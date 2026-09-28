@@ -1,0 +1,333 @@
+{
+  "accepted": true,
+  "asset": "puzzles/hunt-big-2026-10-04-ea7d2ed1c948.json",
+  "answer": "NEGLIGIBLE",
+  "rules": "bingo-hunt",
+  "review": "Size and amount only. Negligible means so small as to be insignificant, not merely worthless. Minute is the adjective meaning tiny, not a unit of time. Little and tiny use smallness, not youth. Slim and stingy use small quantity, not body shape or personality. MINI uses the independently sourced miniature adjective sense, rather than borrowing the short-skirt reading.",
+  "identity": {
+    "id": "hunt-big-2026-10-04",
+    "enemy": "BIG",
+    "board": "BEEGGIILLMNSTTUY",
+    "bingos": [
+      "NEGLIGIBLE"
+    ],
+    "bingoFamilies": [
+      "NEGLIGIBLE"
+    ]
+  },
+  "witnesses": [
+    [
+      "NEGLIGIBLE"
+    ],
+    [
+      "LITTLE",
+      "NEGLIGIBLE"
+    ],
+    [
+      "LITTLE",
+      "TINY",
+      "NEGLIGIBLE"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "NEGLIGIBLE",
+      "effort": 5.22
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "LITTLE",
+      "TINY",
+      "MINUTE",
+      "TEENY",
+      "BITTY"
+    ],
+    "branches": [
+      {
+        "first": "BITTIE",
+        "next": [
+          "BITTY",
+          "LITTLE",
+          "TEENY",
+          "TINY"
+        ],
+        "preferredFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ],
+        "familiarFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ]
+      },
+      {
+        "first": "BITTY",
+        "next": [
+          "BITTIE",
+          "LITTLE",
+          "TEENY",
+          "TINY"
+        ],
+        "preferredFamilies": [
+          "little",
+          "teeny",
+          "tiny"
+        ],
+        "familiarFamilies": [
+          "little",
+          "teeny",
+          "tiny"
+        ]
+      },
+      {
+        "first": "LITTLE",
+        "next": [
+          "BITTIE",
+          "BITTY",
+          "TEENY",
+          "TINY"
+        ],
+        "preferredFamilies": [
+          "bitty",
+          "teeny",
+          "tiny"
+        ],
+        "familiarFamilies": [
+          "bitty",
+          "teeny",
+          "tiny"
+        ]
+      },
+      {
+        "first": "MINI",
+        "next": [
+          "BITTIE",
+          "BITTY",
+          "LITTLE",
+          "TEENY",
+          "TINY"
+        ],
+        "preferredFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ],
+        "familiarFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ]
+      },
+      {
+        "first": "MINUTE",
+        "next": [
+          "BITTIE",
+          "BITTY",
+          "LITTLE",
+          "TEENY",
+          "TINY"
+        ],
+        "preferredFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ],
+        "familiarFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ]
+      },
+      {
+        "first": "MINUTEST",
+        "next": [
+          "BITTIE",
+          "BITTY",
+          "LITTLE",
+          "TEENY",
+          "TINY"
+        ],
+        "preferredFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ],
+        "familiarFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ]
+      },
+      {
+        "first": "SLIM",
+        "next": [
+          "BITTIE",
+          "BITTY",
+          "LITTLE",
+          "TEENY",
+          "TINY"
+        ],
+        "preferredFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ],
+        "familiarFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ]
+      },
+      {
+        "first": "STINGY",
+        "next": [
+          "BITTIE",
+          "BITTY",
+          "LITTLE",
+          "TEENY",
+          "TINY"
+        ],
+        "preferredFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ],
+        "familiarFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ]
+      },
+      {
+        "first": "TEENSY",
+        "next": [
+          "BITTIE",
+          "BITTY",
+          "LITTLE",
+          "TEENY",
+          "TINY"
+        ],
+        "preferredFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ],
+        "familiarFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ]
+      },
+      {
+        "first": "TEENTSY",
+        "next": [
+          "BITTIE",
+          "BITTY",
+          "LITTLE",
+          "TEENY",
+          "TINY"
+        ],
+        "preferredFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ],
+        "familiarFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ]
+      },
+      {
+        "first": "TEENY",
+        "next": [
+          "BITTIE",
+          "BITTY",
+          "LITTLE",
+          "TINY"
+        ],
+        "preferredFamilies": [
+          "bitty",
+          "little",
+          "tiny"
+        ],
+        "familiarFamilies": [
+          "bitty",
+          "little",
+          "tiny"
+        ]
+      },
+      {
+        "first": "TINIEST",
+        "next": [
+          "BITTIE",
+          "BITTY",
+          "LITTLE",
+          "TEENY",
+          "TINY"
+        ],
+        "preferredFamilies": [
+          "bitty",
+          "little",
+          "teeny"
+        ],
+        "familiarFamilies": [
+          "bitty",
+          "little",
+          "teeny"
+        ]
+      },
+      {
+        "first": "TINY",
+        "next": [
+          "BITTIE",
+          "BITTY",
+          "LITTLE",
+          "TEENY"
+        ],
+        "preferredFamilies": [
+          "bitty",
+          "little",
+          "teeny"
+        ],
+        "familiarFamilies": [
+          "bitty",
+          "little",
+          "teeny"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 3,
+    "minFamiliarFamilies": 3,
+    "candidatesChecked": 20,
+    "pathsChecked": 60,
+    "removalOrder": [
+      1,
+      3,
+      4,
+      5,
+      8,
+      15
+    ]
+  }
+}

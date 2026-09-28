@@ -8,15 +8,19 @@ import { freshnessIssues, puzzleIdentity } from '../scripts/bingo/freshness.ts'
 import type { PuzzleIdentity } from '../scripts/bingo/freshness.ts'
 import { createBingoMeanings, bingoProfileVersion } from '../scripts/bingo/meanings.ts'
 import { getMeaningSense } from '../scripts/lib/wordMeanings.ts'
-import { dailySchedule, decodeScheduledPuzzle } from '../src/daily/scheduledPuzzle.ts'
+import dailySchedule from '../artifacts/bingo-hunt-daily-2026-09-29/previous-schedule.json' with { type: 'json' }
+import subsequentHunts from '../artifacts/bingo-hunt-daily-2026-09-29/schedule.json' with { type: 'json' }
+import { decodeScheduledPuzzle } from '../src/daily/scheduledPuzzle.ts'
 import { getPuzzleGuide } from '../src/daily/guides.ts'
 
-test('27 September through 16 October have twenty fresh enemies, bingo families and boards', () => {
+test('the retired combat queue from 27 September through 16 October have twenty fresh enemies, bingo families and boards', () => {
   const window = dailySchedule.filter(entry => entry.date >= '2026-09-27' && entry.date <= '2026-10-16')
   assert.equal(window.length, 20)
   assert.equal(new Set(window.map(entry => entry.enemy)).size, 20)
   const ids = new Set(window.map(entry => entry.id))
-  const before = history.filter(entry => !ids.has(entry.id))
+  // Later hunts may reuse an enemy with a genuinely different bingo and board.
+  const later = new Set(subsequentHunts.map(entry => entry.id))
+  const before = history.filter(entry => !ids.has(entry.id) && !later.has(entry.id))
   const batch: PuzzleIdentity[] = []
   for (const entry of window) {
     assert.ok(!before.some(old => old.enemy === entry.enemy), `Fresh enemy required for this replacement: ${entry.enemy}`)

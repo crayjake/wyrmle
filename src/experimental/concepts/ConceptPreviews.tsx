@@ -3,7 +3,7 @@ import { ArrowLeft, ChevronLeft, ChevronRight, Share2, Star, X } from 'lucide-re
 import BattleScreen from '../../components/BattleScreen'
 import BattleResult from '../../components/BattleResult'
 import PuzzleLoading from '../../components/PuzzleLoading'
-import BingoHuntInstructions from '../../components/BingoHuntInstructions'
+import BingoHuntIntro from '../../components/BingoHuntIntro'
 import type { LetterStrikeEncounter } from '../../game/letterStrike'
 import { conceptPath, conceptPreviews, conceptProgressKey, decodeConceptPuzzle } from './catalog'
 import type { ConceptEntry } from './catalog'
@@ -128,16 +128,12 @@ function ConceptBattle({ encounter, entry, onBack }: { encounter: LetterStrikeEn
     setIntroSeen(false)
     setAttempt(value => value + 1)
   }
-  if (entry.bingoHunt && !introSeen) return <main className="container hunt-intro">
-    <header className="concept-heading"><h1>Find the bingo</h1><button className="icon-button" aria-label="All previews" onClick={onBack}><X size={20} /></button></header>
-    <div className="hunt-intro-enemy"><strong>{entry.enemy}</strong><span>{entry.definition} · {entry.partOfSpeech}</span></div>
-    <BingoHuntInstructions partOfSpeech={entry.counterPartOfSpeech} />
-    {saveError && <p role="alert">Could not save your progress. Please try again.</p>}
-    <button className="daily-button bingo-result-primary" onClick={() => {
+  if (entry.bingoHunt && !introSeen) return <BingoHuntIntro enemy={encounter.enemy} partOfSpeech={entry.counterPartOfSpeech}
+    onClose={onBack} closeLabel="All previews" error={saveError ? 'Could not save your progress. Please try again.' : undefined}
+    onStart={() => {
       if (!saveBingoAttempt(key, initial.game, true, initial.hintStep)) { setSaveError(true); return }
       setSaveError(false); setIntroSeen(true)
-    }}>Play puzzle</button>
-  </main>
+    }} />
   return <BattleScreen key={attempt} encounter={encounter} initial={initial} title="Preview settings" autoBegin={entry.bingoHunt}
     guide={entry.guide} bestStars={best === null ? 0 : bingoStars(best)} onRestart={restart} onExit={onBack} exitLabel="All previews"
     onSave={(game, started, hintStep) => {

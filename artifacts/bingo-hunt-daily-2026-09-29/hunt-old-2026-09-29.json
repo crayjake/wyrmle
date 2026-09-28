@@ -1,0 +1,222 @@
+{
+  "accepted": true,
+  "asset": "puzzles/hunt-old-2026-09-29-6bb6a727cb79.json",
+  "answer": "ADOLESCENT",
+  "rules": "bingo-hunt",
+  "review": "Age of a person, not age of an object or how recently it was acquired. Young, teen, teenage and adolescent are adjectives for an early stage of life. Tender and early use their young-age readings; underage denotes youth. Adolescent also has a noun reading, but this puzzle pins its adjective sense. TEENAGER and TEENER are nouns, not adjective comparatives manufactured by suffix stripping. New, recent and unused do not oppose the displayed personal-age sense.",
+  "identity": {
+    "id": "hunt-old-2026-09-29",
+    "enemy": "OLD",
+    "board": "ABCDEEEGLNORSTUY",
+    "bingos": [
+      "ADOLESCENT"
+    ],
+    "bingoFamilies": [
+      "ADOLESCENT"
+    ]
+  },
+  "witnesses": [
+    [
+      "ADOLESCENT"
+    ],
+    [
+      "YOUNG",
+      "ADOLESCENT"
+    ],
+    [
+      "YOUNG",
+      "TEEN",
+      "ADOLESCENT"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "ADOLESCENT",
+      "effort": 4.84
+    }
+  ],
+  "helperEffort": 0.33999999999999986,
+  "removalProof": {
+    "preferredHelpers": [
+      "YOUNG",
+      "TEEN",
+      "TEENAGE",
+      "TENDER"
+    ],
+    "branches": [
+      {
+        "first": "EARLY",
+        "next": [
+          "TEEN",
+          "TEENAGE",
+          "TEENAGED",
+          "TENDER"
+        ],
+        "preferredFamilies": [
+          "teen",
+          "teenage",
+          "tender"
+        ],
+        "familiarFamilies": [
+          "teen",
+          "teenage",
+          "tender"
+        ]
+      },
+      {
+        "first": "TEEN",
+        "next": [
+          "TEENAGE",
+          "TEENAGED",
+          "TENDER"
+        ],
+        "preferredFamilies": [
+          "teenage",
+          "tender"
+        ],
+        "familiarFamilies": [
+          "teenage",
+          "tender"
+        ]
+      },
+      {
+        "first": "TEENAGE",
+        "next": [
+          "TEEN",
+          "TEENAGED",
+          "TENDER"
+        ],
+        "preferredFamilies": [
+          "teen",
+          "tender"
+        ],
+        "familiarFamilies": [
+          "teen",
+          "tender"
+        ]
+      },
+      {
+        "first": "TEENAGED",
+        "next": [
+          "TEEN",
+          "TEENAGE",
+          "TENDER"
+        ],
+        "preferredFamilies": [
+          "teen",
+          "teenage",
+          "tender"
+        ],
+        "familiarFamilies": [
+          "teen",
+          "teenage",
+          "tender"
+        ]
+      },
+      {
+        "first": "TENDER",
+        "next": [
+          "TEEN",
+          "TEENAGE",
+          "TEENAGED"
+        ],
+        "preferredFamilies": [
+          "teen",
+          "teenage"
+        ],
+        "familiarFamilies": [
+          "teen",
+          "teenage"
+        ]
+      },
+      {
+        "first": "UNDERAGE",
+        "next": [
+          "TEEN",
+          "TEENAGE",
+          "TEENAGED",
+          "TENDER"
+        ],
+        "preferredFamilies": [
+          "teen",
+          "teenage",
+          "tender"
+        ],
+        "familiarFamilies": [
+          "teen",
+          "teenage",
+          "tender"
+        ]
+      },
+      {
+        "first": "YOUNG",
+        "next": [
+          "TEEN",
+          "TEENAGE",
+          "TEENAGED",
+          "TENDER"
+        ],
+        "preferredFamilies": [
+          "teen",
+          "teenage",
+          "tender"
+        ],
+        "familiarFamilies": [
+          "teen",
+          "teenage",
+          "tender"
+        ]
+      },
+      {
+        "first": "YOUNGER",
+        "next": [
+          "TEEN",
+          "TEENAGE",
+          "TEENAGED",
+          "TENDER"
+        ],
+        "preferredFamilies": [
+          "teen",
+          "teenage",
+          "tender"
+        ],
+        "familiarFamilies": [
+          "teen",
+          "teenage",
+          "tender"
+        ]
+      },
+      {
+        "first": "YOUNGEST",
+        "next": [
+          "TEEN",
+          "TEENAGE",
+          "TEENAGED",
+          "TENDER"
+        ],
+        "preferredFamilies": [
+          "teen",
+          "teenage",
+          "tender"
+        ],
+        "familiarFamilies": [
+          "teen",
+          "teenage",
+          "tender"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 2,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 20,
+    "pathsChecked": 32,
+    "removalOrder": [
+      0,
+      11,
+      15,
+      6,
+      8,
+      14
+    ]
+  }
+}

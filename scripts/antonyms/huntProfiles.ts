@@ -1,7 +1,7 @@
 import { antonymProfiles } from './profiles.ts'
 import type { ConceptProfile } from './profiles.ts'
 
-type HuntProfile = {
+export type HuntProfile = {
   profile: ConceptProfile
   helpers: [string, string]
   preferredHelpers: string[]
@@ -9,6 +9,26 @@ type HuntProfile = {
 }
 
 const defaults = { refills: '', powers: [], routes: [], wordOnly: [], overrides: {} }
+
+/** A fresh Daily debut; keep this answer out of the preview selector. */
+export const tomorrowHunt: HuntProfile = {
+  helpers: ['YOUNG', 'TEEN'], preferredHelpers: ['YOUNG', 'TEEN', 'TEENAGE', 'TENDER'],
+  profile: { ...defaults, id: 'old', enemy: 'OLD', definition: 'having lived for a long time; advanced in age',
+    sense: 'oewn-old__3.00.02..', bingo: 'ADOLESCENT', letters: 'ADOLESCENTYUGEBR',
+    roots: ['oewn-young__3.00.00..', 'oewn-adolescent__5.00.00.young.00',
+      'oewn-teen__5.00.00.young.00', 'oewn-teenage__5.00.00.young.00', 'oewn-juvenile__3.01.00..',
+      'oewn-tender__5.00.00.young.00', 'oewn-early__5.00.00.young.00',
+      'oewn-underage__3.00.00..', 'oewn-underage__5.00.00.dependent.00'],
+    overrides: {
+      TEENAGER: { sense: 'oewn-teenager__1.18.00..', relation: 'unrelated',
+        reason: 'A noun for a young person, not a comparative of the adjective TEENAGE.' },
+      TEENER: { sense: 'oewn-teenager__1.18.00..', relation: 'unrelated',
+        reason: 'A noun for a teenager, not a comparative adjective meaning more TEEN.' },
+    },
+    review: 'Age of a person, not age of an object or how recently it was acquired. Young, teen, teenage and adolescent are adjectives for an early stage of life. Tender and early use their young-age readings; underage denotes youth. Adolescent also has a noun reading, but this puzzle pins its adjective sense. TEENAGER and TEENER are nouns, not adjective comparatives manufactured by suffix stripping. New, recent and unused do not oppose the displayed personal-age sense.',
+    hints: ['Think of the years between childhood and adulthood.', 'This adjective describes someone still growing up.', 'Ten letters, beginning with A.'],
+  },
+}
 
 /** Bingo-first boards: reserve the answer copies, add familiar antonyms, then
  * let planHuntRemovals exhaustively choose which spare letters disappear. */

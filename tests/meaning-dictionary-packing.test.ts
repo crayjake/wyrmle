@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import test from 'node:test'
 import { packDictionaryMeanings, packMeaningLexicon, unpackMeaningLexicon } from '../src/game/meaningPacking.ts'
-import { dailySchedule } from '../src/daily/scheduledPuzzle.ts'
+import dailySchedule from '../artifacts/bingo-hunt-daily-2026-09-29/previous-schedule.json' with { type: 'json' }
 import { createLetterStrikeGame, submitLetterStrike } from '../src/game/letterStrike.ts'
 import { selectWordIds } from '../src/generator/constructRefill.ts'
 import { getPuzzleGuide } from '../src/daily/guides.ts'

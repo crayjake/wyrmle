@@ -1,0 +1,199 @@
+{
+  "accepted": true,
+  "asset": "puzzles/hunt-loud-2026-10-01-f5f7faa946d6.json",
+  "answer": "SOUNDLESS",
+  "rules": "bingo-hunt",
+  "review": "Sound volume only. Low means low volume, not low pitch or height; muted and hushed mean softened sound. Mute uses expressed without speech, not disability. Silent and soundless denote an absence of sound. Loud clothing, quiet water and shy personalities are outside the displayed sense.",
+  "identity": {
+    "id": "hunt-loud-2026-10-01",
+    "enemy": "LOUD",
+    "board": "DEHHILMNOQSSSTUW",
+    "bingos": [
+      "SOUNDLESS"
+    ],
+    "bingoFamilies": [
+      "SOUNDLESS"
+    ]
+  },
+  "witnesses": [
+    [
+      "SOUNDLESS"
+    ],
+    [
+      "QUIET",
+      "SOUNDLESS"
+    ],
+    [
+      "QUIET",
+      "SILENT",
+      "SOUNDLESS"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "SOUNDLESS",
+      "effort": 7.18
+    }
+  ],
+  "helperEffort": 1.0999999999999996,
+  "removalProof": {
+    "preferredHelpers": [
+      "QUIET",
+      "LOW",
+      "SILENT",
+      "HUSHED",
+      "MUTE",
+      "MUTED"
+    ],
+    "branches": [
+      {
+        "first": "HUSHED",
+        "next": [
+          "MUTE",
+          "MUTED",
+          "SILENT"
+        ],
+        "preferredFamilies": [
+          "mute",
+          "muted",
+          "silent"
+        ],
+        "familiarFamilies": [
+          "mute",
+          "muted",
+          "silent"
+        ]
+      },
+      {
+        "first": "LOW",
+        "next": [
+          "MUTE",
+          "MUTED",
+          "SILENT"
+        ],
+        "preferredFamilies": [
+          "mute",
+          "muted",
+          "silent"
+        ],
+        "familiarFamilies": [
+          "mute",
+          "muted",
+          "silent"
+        ]
+      },
+      {
+        "first": "LOWEST",
+        "next": [
+          "MUTE",
+          "MUTED",
+          "SILENT"
+        ],
+        "preferredFamilies": [
+          "mute",
+          "muted",
+          "silent"
+        ],
+        "familiarFamilies": [
+          "mute",
+          "muted",
+          "silent"
+        ]
+      },
+      {
+        "first": "MUTE",
+        "next": [
+          "MUTED",
+          "SILENT"
+        ],
+        "preferredFamilies": [
+          "muted",
+          "silent"
+        ],
+        "familiarFamilies": [
+          "muted",
+          "silent"
+        ]
+      },
+      {
+        "first": "MUTED",
+        "next": [
+          "MUTE",
+          "SILENT"
+        ],
+        "preferredFamilies": [
+          "mute",
+          "silent"
+        ],
+        "familiarFamilies": [
+          "mute",
+          "silent"
+        ]
+      },
+      {
+        "first": "QUIET",
+        "next": [
+          "MUTE",
+          "MUTED",
+          "SILENT"
+        ],
+        "preferredFamilies": [
+          "mute",
+          "muted",
+          "silent"
+        ],
+        "familiarFamilies": [
+          "mute",
+          "muted",
+          "silent"
+        ]
+      },
+      {
+        "first": "SILENT",
+        "next": [
+          "MUTE",
+          "MUTED"
+        ],
+        "preferredFamilies": [
+          "mute",
+          "muted"
+        ],
+        "familiarFamilies": [
+          "mute",
+          "muted"
+        ]
+      },
+      {
+        "first": "THIN",
+        "next": [
+          "MUTE",
+          "MUTED",
+          "SILENT"
+        ],
+        "preferredFamilies": [
+          "mute",
+          "muted",
+          "silent"
+        ],
+        "familiarFamilies": [
+          "mute",
+          "muted",
+          "silent"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 2,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 35,
+    "pathsChecked": 21,
+    "removalOrder": [
+      5,
+      8,
+      12,
+      13,
+      1,
+      6,
+      15
+    ]
+  }
+}

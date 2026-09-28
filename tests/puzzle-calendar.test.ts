@@ -84,8 +84,10 @@ test('all calendar dates have three progressive hints and a replayed winning rev
     assert.equal(new Set(guide.hints).size, 3)
     assert.ok(guide.hints.every(hint => hint.length > 10 && !hint.toUpperCase().includes(guide.answer)))
     const encounter = decodeScheduledPuzzle(read(`public/${entry.asset}`), entry)
-    const game = createLetterStrikeGame({ ...encounter, startingResolve: 1 })
-    assert.equal(play(game, guide.answer).status, 'won', entry.id)
+    const game = createLetterStrikeGame({ ...encounter, startingResolve: entry.bingoHunt ? 3 : 1 })
+    const won = play(game, guide.answer)
+    assert.equal(won.status, 'won', entry.id)
+    assert.equal(won.playedWords.length, 1)
   }
 })
 

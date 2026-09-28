@@ -25,12 +25,13 @@ export type BattleAttempt = { game: LetterStrikeState; started: boolean; hintSte
 /** Daily and archived puzzles share one battle UI and the same difficulty rules. */
 export default function BattleScreen({ encounter, initial, onSave, onRestart, onExit, title, onChoose, onNext,
   guide, menu, renderResult, renderBestResult, bestStars, puzzleDate, boardLayout: layoutOverride, tileShape: shapeOverride,
-  onBoardLayoutChange, onTileShapeChange, notice, exitLabel = 'Calendar', autoBegin = false }: {
+  onBoardLayoutChange, onTileShapeChange, notice, exitLabel = 'Calendar', autoBegin = false, allowRestart = true }: {
   encounter: LetterStrikeEncounter
   initial?: BattleAttempt
   onSave: (game: LetterStrikeState, started: boolean, hintStep: number) => boolean
   onRestart: () => void
   autoBegin?: boolean
+  allowRestart?: boolean
   onExit: () => void
   exitLabel?: string
   title: string
@@ -242,7 +243,7 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
           </button>
         </> : <>
           <button className="daily-button" onClick={() => showHint(3)}>Back to hints</button>
-          <button className="daily-button" onClick={onRestart}>Restart puzzle</button>
+          {allowRestart && <button className="daily-button" onClick={onRestart}>Restart puzzle</button>}
         </>}
       </div>
     </BattlePanel>}
@@ -271,7 +272,7 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
       </fieldset>
       <div className="dev-controls">
         {menu}
-        <button className="daily-button" onClick={onRestart}>Restart puzzle</button>
+        {allowRestart && <button className="daily-button" onClick={onRestart}>Restart puzzle</button>}
         {hintsAvailable && <button className="daily-button" onClick={() => setPanel('hints')}>Hints</button>}
         {onChoose && <button className="daily-button" onClick={onChoose}>All puzzles</button>}
         <button className="daily-button" onClick={onExit}>{exitLabel}</button>
@@ -284,7 +285,7 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
         : <p>No submitted words in this attempt.</p>}
     </BattlePanel>}
     {panel === 'help' && <BattlePanel title="How to play" onClose={() => setPanel(null)}>
-        {encounter.bingoHunt ? <BingoHuntInstructions partOfSpeech={encounter.counterRules!.partOfSpeech} /> : <div className="daily-help">
+        {encounter.bingoHunt ? <BingoHuntInstructions partOfSpeech={encounter.counterRules!.partOfSpeech} daily={!allowRestart} /> : <div className="daily-help">
           <div>Remove every enemy letter before your {game.encounter.startingResolve} lives run out. Tap or swipe across tiles in spelling order; you can mix both.</div>
           <div>One {encounter.counterRules?.kind === 'antonym' ? 'antonym' : 'counter'} can remove the whole enemy in a single word. Each played word uses one life; removing the final letter on your last life still wins.</div>
           <div>Underlined tiles match a surviving enemy letter. Refills show the letters still available after you play.</div>

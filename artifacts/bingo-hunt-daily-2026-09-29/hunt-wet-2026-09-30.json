@@ -1,0 +1,468 @@
+{
+  "accepted": true,
+  "asset": "puzzles/hunt-wet-2026-09-30-4f50c0e99ac7.json",
+  "answer": "WATERLESS",
+  "rules": "bingo-hunt",
+  "review": "Literal moisture only. Dry, arid, parched, dried and waterless are adjective opposites. Sere and sear have the same dry-vegetation adjective reading. Do not admit dryness nouns, drying verbs, or the alcohol and humour senses of dry.",
+  "identity": {
+    "id": "hunt-wet-2026-09-30",
+    "enemy": "WET",
+    "board": "ACDEEHILPRRSSTWY",
+    "bingos": [
+      "WATERLESS",
+      "WITHERED"
+    ],
+    "bingoFamilies": [
+      "WATERLESS",
+      "WITHERED"
+    ]
+  },
+  "witnesses": [
+    [
+      "WATERLESS"
+    ],
+    [
+      "DRY",
+      "WATERLESS"
+    ],
+    [
+      "DRY",
+      "ARID",
+      "WATERLESS"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "WATERLESS",
+      "effort": 7.039999999999999
+    },
+    {
+      "word": "WITHERED",
+      "effort": 4.96
+    }
+  ],
+  "helperEffort": 2.26,
+  "removalProof": {
+    "preferredHelpers": [
+      "DRY",
+      "ARID",
+      "PARCHED"
+    ],
+    "branches": [
+      {
+        "first": "ARID",
+        "next": [
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "dry"
+        ],
+        "familiarFamilies": [
+          "dry",
+          "sear",
+          "sere"
+        ]
+      },
+      {
+        "first": "ARIDER",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "dry"
+        ],
+        "familiarFamilies": [
+          "dry",
+          "sear",
+          "sere"
+        ]
+      },
+      {
+        "first": "ARIDEST",
+        "next": [
+          "ARID",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "dry"
+        ],
+        "familiarFamilies": [
+          "dry",
+          "sear",
+          "sere"
+        ]
+      },
+      {
+        "first": "DRIER",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "sear",
+          "sere"
+        ]
+      },
+      {
+        "first": "DRIEST",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "sear",
+          "sere"
+        ]
+      },
+      {
+        "first": "DRY",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "sear",
+          "sere"
+        ]
+      },
+      {
+        "first": "DRYER",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "sear",
+          "sere"
+        ]
+      },
+      {
+        "first": "DRYEST",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "sear",
+          "sere"
+        ]
+      },
+      {
+        "first": "HARD",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid",
+          "dry"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "dry",
+          "sear",
+          "sere"
+        ]
+      },
+      {
+        "first": "HARDER",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid",
+          "dry"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "dry",
+          "sear",
+          "sere"
+        ]
+      },
+      {
+        "first": "HARDEST",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid",
+          "dry"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "dry",
+          "sear",
+          "sere"
+        ]
+      },
+      {
+        "first": "PARCHED",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid",
+          "dry"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "dry",
+          "sear",
+          "sere"
+        ]
+      },
+      {
+        "first": "SEAR",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid",
+          "dry"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "dry",
+          "sere"
+        ]
+      },
+      {
+        "first": "SEARER",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid",
+          "dry"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "dry",
+          "sere"
+        ]
+      },
+      {
+        "first": "SEAREST",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid",
+          "dry"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "dry",
+          "sere"
+        ]
+      },
+      {
+        "first": "SERE",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid",
+          "dry"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "dry",
+          "sear"
+        ]
+      },
+      {
+        "first": "SERER",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid",
+          "dry"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "dry",
+          "sear"
+        ]
+      },
+      {
+        "first": "SEREST",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE"
+        ],
+        "preferredFamilies": [
+          "arid",
+          "dry"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "dry",
+          "sear"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 3,
+    "candidatesChecked": 35,
+    "pathsChecked": 153,
+    "removalOrder": [
+      4,
+      7,
+      10,
+      13,
+      2,
+      14,
+      15
+    ]
+  }
+}

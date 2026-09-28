@@ -152,3 +152,33 @@ test('a failed backup leaves the previous daily save untouched', () => {
   assert.throws(() => saveChallenge(fresh.record, fresh.game, true, full), /Storage full/)
   assert.deepEqual(JSON.parse(store.getItem(challengeKey(date))!), win)
 })
+
+test('daily hunts save and resume one attempt with the right stars and no rewind', async () => {
+  const { scheduledPuzzle, decodeScheduledPuzzle } = await import('../src/daily/scheduledPuzzle.ts')
+  const hunt = scheduledPuzzle('2026-09-29')!
+  const puzzle = decodeScheduledPuzzle(JSON.parse(readFileSync(`public/${hunt.asset}`, 'utf8')), hunt)
+  const report = JSON.parse(readFileSync(hunt.report!, 'utf8'))
+  for (const route of report.witnesses) {
+    const store = storage()
+    let { record, game } = openChallenge(hunt.date, hunt.asset, puzzle, store)
+    const initial = game
+    record = saveChallenge(record, game, true, store)
+    assert.equal(record.rules, 'bingo-hunt')
+    assert.throws(() => restartChallenge(record, store), /one attempt/)
+    for (const word of route) {
+      game = play(game, word)
+      record = saveChallenge(record, game, true, store)
+      const restored = openChallenge(hunt.date, hunt.asset, puzzle, store)
+      assert.deepEqual(restored.game, game)
+      assert.equal(restored.started, true)
+      assert.throws(() => saveChallenge(record, initial, true, store), /one attempt/)
+    }
+    assert.equal(game.status, 'won')
+    assert.equal(record.attempts, 1)
+    assert.equal(challengeStars(record.bestWords), 4 - route.length)
+    assert.deepEqual(challengeBestSolution(record), route)
+    assert.throws(() => restartChallenge(record, store), /one attempt/)
+    assert.equal(openChallenge(hunt.date, hunt.asset, puzzle, store).game.status, 'won')
+    assert.equal(challengeHistory(store).length, 1)
+  }
+})
