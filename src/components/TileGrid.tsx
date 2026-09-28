@@ -89,7 +89,8 @@ export default function TileGrid({
   const { positions } = wheel
   const path = selectedTileIds.flatMap(id => {
     const index = tiles.findIndex(tile => tile.id === id)
-    return index < 0 ? [] : [positions[index]]
+    const position = positions[index]
+    return position ? [position] : []
   })
   const gestureRef = useRef<{ selection: TileSelectionGesture; bounds: TileGestureBounds[]; board: string } | null>(null)
   const pointerClickUntil = useRef(0)
@@ -235,6 +236,8 @@ export default function TileGrid({
             disabled={!ready} onClick={shuffle}><Shuffle size={20} /></button>
         </>}
         {tiles.map((tile, i) => {
+          const position = positions[i]
+          if (layout !== 'grid' && !position) return null
           const selectedIndex =
             selectedTileIds.indexOf(tile.id)
           const revealed = revealedIndices.includes(i)
@@ -261,10 +264,10 @@ export default function TileGrid({
               }}
             />
           )
-          return layout !== 'grid' ? <div key={tile.id} className="wheel-slot"
-            data-ring={positions[i].ring}
-            style={{ left: `calc(${positions[i].x}% - var(--wheel-tile-size) / 2)`,
-              top: `calc(${positions[i].y}% - var(--wheel-tile-size) / 2)` }}>{content}</div> : content
+          return layout !== 'grid' && position ? <div key={tile.id} className="wheel-slot"
+            data-ring={position.ring}
+            style={{ left: `calc(${position.x}% - var(--wheel-tile-size) / 2)`,
+              top: `calc(${position.y}% - var(--wheel-tile-size) / 2)` }}>{content}</div> : content
         })}
       </div>
 

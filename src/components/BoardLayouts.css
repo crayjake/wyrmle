@@ -1,7 +1,10 @@
 .container.letter-combat:is([data-board-layout="wheel"], [data-board-layout="ring"]) .player-zone { width: min(100%, 24rem); }
 .container.letter-combat:is([data-board-layout="wheel"], [data-board-layout="ring"]) .controls { width: min(100%, 22rem, var(--board-fit, 100vw)); }
 .anagram-wheel.tile-grid { display: block; position: relative; aspect-ratio: 1; isolation: isolate; container-type: inline-size; }
-.anagram-wheel .wheel-slot { position: absolute; width: var(--wheel-tile-size); aspect-ratio: 1; container-type: inline-size; }
+.anagram-wheel .wheel-slot {
+  position: absolute; width: var(--wheel-tile-size); aspect-ratio: 1; container-type: inline-size;
+  transition: left 280ms ease-out, top 280ms ease-out, width 280ms ease-out;
+}
 .tile-grid[data-tile-shape="circle"] .tile { border-radius: 50%; }
 .tile-grid[data-tile-shape="circle"] .tile-order { top: 2px; left: 50%; transform: translateX(-50%); font-size: 9px; }
 .anagram-wheel .tile { background: var(--bg); }
@@ -23,6 +26,9 @@
 .wheel-shuffle:enabled:hover { color: var(--emph); }
 .wheel-shuffle:enabled:active svg { transform: rotate(15deg); }
 
+@media (prefers-reduced-motion: reduce) {
+  .anagram-wheel .wheel-slot { transition: none; }
+}
 
 @media (orientation: landscape) and (max-height: 550px) {
   .container.letter-combat:is([data-board-layout="wheel"], [data-board-layout="ring"]) .controls { width: min(100%, 22rem, calc(var(--app-height, 100dvh) - 8rem), var(--board-fit, 100vw)); }
