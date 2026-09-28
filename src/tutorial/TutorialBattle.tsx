@@ -70,7 +70,7 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
       </>} />
   </main>
 
-  return <main className="container letter-combat tutorial-battle" data-tutorial-step={step}>
+  return <main className="container letter-combat tutorial-battle" data-tutorial-step={step} data-tutorial-reading={!move || undefined}>
     {header}
     <div className="battle-info">
       <MyInfo name="Lives" health={game.playerResolve} maxHealth={game.encounter.startingResolve} animateLives />
@@ -95,6 +95,8 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
           {tutorialExamples.map(example => <button type="button" className="daily-button tutorial-example" key={example.step}
             title={example.description} onClick={() => jump(example.step)}>{example.label}</button>)}
         </div>}
+        {!move && <button type="button" className="daily-button tutorial-continue" disabled={!canContinue}
+          onClick={() => dispatch({ type: 'continue' })}>Tap to continue <span aria-hidden="true">→</span></button>}
       </div>
     </div>
     <section className="player-zone" aria-label="Practice word selection">
@@ -102,7 +104,7 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
         strikePreview={visiblePreview} enemyWord={game.encounter.enemy.word}
         ready={canAttack}
         resolveBefore={showPrediction ? game.playerResolve : undefined}
-        message={resolving ? 'Watch the result…' : !move ? 'CONTINUE WHEN READY'
+        message={resolving ? 'Watch the result…' : !move ? undefined
           : !game.selectedTileIds.length ? `BUILD ${move.word}`
             : !selectedExpectedPrefix ? 'CLEAR TO START AGAIN'
               : !preview.valid ? 'KEEP BUILDING' : undefined} />}
@@ -111,12 +113,11 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
           revealedIndices={tileIndices} registerTile={registerTile}
           selectedTileIds={game.selectedTileIds} ready={allowedTileIds.length > 0 && !resolving}
           allowedTileIds={allowedTileIds} enemyLetters={game.enemyLetters} matchHint="underline"
-          primaryLabel={move?.action === 'attack' ? 'ATTACK' : 'CONTINUE'} canAttack={canAttack || canContinue}
+          showActions={Boolean(move)} canAttack={canAttack}
           onToggleTile={tileId => dispatch({ type: 'select', tileId })}
           onSelectTiles={tileIds => dispatch({ type: 'select-many', tileIds })}
           onClear={() => dispatch({ type: 'clear' })}
           onAttack={() => {
-            if (canContinue) { dispatch({ type: 'continue' }); return }
             if (!canAttack) return
             setResolving(true)
             dispatch({ type: 'attack' })
@@ -128,8 +129,8 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
 
 function TutorialPrompt({ state, selected }: { state: TutorialState; selected: boolean }) {
   switch (state.step) {
-    case 'goal': return <p>Use these tiles to make words that clear the enemy word, ARID. It means dry. Let’s beat it in three words.</p>
-    case 'board': return <p>Clear all four enemy letters to win. R and I have double borders: each needs two hits. LIVES shows how many words you can play. You have three.</p>
+    case 'goal': return <p>Make words from the tiles below to attack <strong>ARID</strong>, the enemy above. <strong>Remove all its letters to win.</strong> ARID means dry, so WATER fights it: the shared letters A and R take a hit.</p>
+    case 'board': return <p>Each hit removes a border. When a letter has no borders left, it disappears. R and I need two hits each. Every word costs one LIFE; you have three.</p>
     case 'word-types': return <ul className="tutorial-word-types">
       <li><strong>Counters</strong>, like WATER against dryness, hit every matching letter.</li>
       <li><strong>Neutral</strong> means unrelated. GRID hits only its first matching letter.</li>

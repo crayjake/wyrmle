@@ -33,6 +33,7 @@ type TileGridProps = {
   matchHint?: MatchHintMode
   damage?: number
   primaryLabel?: BattlePrimaryLabel
+  showActions?: boolean
   canAttack: boolean
   onToggleTile: (id: number) => void
   // Guided modes validate this ordered batch against their next-letter rule.
@@ -59,6 +60,7 @@ export default function TileGrid({
   matchHint = 'underline',
   damage,
   primaryLabel,
+  showActions = true,
   canAttack,
   onToggleTile,
   onSelectTiles,
@@ -210,14 +212,14 @@ export default function TileGrid({
         })}
       </div>
 
-      <BattleActions
+      {showActions && <BattleActions
         damage={damage}
         primaryLabel={primaryLabel}
         canAttack={canAttack}
         canClear={ready && selectedTileIds.length > 0}
         onClear={onClear}
         onAttack={onAttack}
-      />
+      />}
     </>
   )
 }

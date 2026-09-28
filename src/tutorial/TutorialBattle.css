@@ -20,6 +20,7 @@
   outline: 2px solid var(--blue);
   outline-offset: 2px;
 }
+.tutorial-continue:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
 .tutorial-coach {
   width: min(100%, 21rem);
   align-self: center;
@@ -48,6 +49,19 @@
   font-size: 13px;
   line-height: 1.2;
 }
+.tutorial-continue {
+  display: block; width: min(100%, 15rem); min-height: 44px; margin: 10px auto 0;
+  background: var(--emph); border-color: var(--emph); color: var(--bg);
+  font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase;
+}
+.tutorial-continue:disabled { opacity: 0.4; cursor: default; }
+@media (prefers-reduced-motion: no-preference) {
+  .tutorial-continue:not(:disabled) { animation: tutorial-continue-pulse 1.8s ease-in-out 3; }
+}
+@keyframes tutorial-continue-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 transparent; }
+  50% { box-shadow: 0 0 0 4px color-mix(in srgb, var(--emph) 30%, transparent); }
+}
 
 @media (max-width: 430px) and (max-height: 600px) {
   .tutorial-coach { line-height: 1.25; }
@@ -62,6 +76,7 @@
   max-height: calc(min(100cqw, 18rem) + var(--action-height) + var(--control-gap));
   gap: var(--control-gap); container-type: size; align-items: center; justify-content: flex-end;
 }
+.container.letter-combat.tutorial-battle[data-tutorial-reading] .controls { --action-height: 0px; --control-gap: 0px; }
 .tutorial-battle .tile-grid, .tutorial-battle .battle-actions { flex: none; width: min(100%, 18rem, calc(100cqh - var(--action-height) - var(--control-gap))); }
 .tutorial-battle .battle-actions button { min-height: var(--action-height); }
 @media (orientation: landscape) and (max-height: 550px) {
