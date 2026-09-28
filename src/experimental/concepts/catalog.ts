@@ -7,10 +7,12 @@ import { unpackMeaningLexicon } from '../../game/meaningPacking.ts'
 
 export type ConceptEntry = {
   bingoHunt?: boolean
+  // Only a generator-certified compatible revision may retain an older save key.
+  progressRevision?: string
   id: string; enemy: string; definition: string; asset: string; revision: string; powers: number; family?: string; partOfSpeech: PartOfSpeech; counterPartOfSpeech: PartOfSpeech; guide: BingoGuide
 }
 export const conceptPreviews = entries as unknown as readonly ConceptEntry[]
-export const conceptProgressKey = (entry: ConceptEntry) => `wyrmle:preview:antonyms:v2:${entry.id}:${entry.revision}`
+export const conceptProgressKey = (entry: ConceptEntry) => `wyrmle:preview:antonyms:v2:${entry.id}:${entry.progressRevision ?? entry.revision}`
 export const conceptPath = (id?: string, hunt = false) => `?preview=concepts${id ? `&puzzle=${encodeURIComponent(id)}` : hunt ? '&mode=hunt' : ''}`
 
 export function decodeConceptPuzzle(value: unknown, entry: ConceptEntry): LetterStrikeEncounter {

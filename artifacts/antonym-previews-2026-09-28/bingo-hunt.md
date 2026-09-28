@@ -8,8 +8,12 @@ Non-antonyms, invalid words and exact repeat guesses are rejected without spendi
 
 On the final life, the remaining letters form a single anagram ring. This also applies when resuming an attempt. Restarting restores the player's chosen layout; the automatic switch never changes their saved preference.
 
-One explanation appears before a fresh attempt. There are no instruction prompts between guesses. Help can reopen the explanation. The normal move preview indicates whether the selected word is an antonym and how many spare tiles it would remove.
+One explanation appears before a fresh attempt. There are no instruction prompts between guesses. Help can reopen the explanation. The normal move preview indicates whether the selected word is an antonym and how many spare tiles it would remove. Those physical tiles turn red and display × before submission. Invalid words, clearing the selection and bingos show no spare-removal markers.
 
 `npm run generate:concept-previews` reproduces both frozen assets. Engine tests cover every legal two-helper sequence on these boards, preservation of all answer copies, exact final anagrams, 1/2/3-guess wins, rejection without penalties, stale asset validation and saved replay. The mobile browser checks cover the introduction, gameplay, results and progress.
+
+Use `npm run generate:concept-previews -- --hunt-only` to rebuild only the two hunts. The generator searches every way to remove half the spare physical tiles, then chooses the plan with the strongest minimum number of different, reviewed helper families after **every** accepted opening. It rejects plans with no familiar follow-up. ALERT guarantees at least two of the reviewed helper families after any opening; TRUE guarantees at least one. After SLOW, ALERT retains IDLE, TIRED and INERT. After WRONG, TRUE retains UNREAL and INCORRECT. Frequency and length remain a rough familiarity measure.
+
+`hunt-proofs.json` records the chosen orders, follow-ups and legacy replay checks. `hunt-removal-audit.json` records the original weakness before this update. The answers and starting boards stay the same. These removal-only revisions retain their original progress keys after the generator verifies every legacy move sequence, including alternate physical copies of repeated letters.
 
 Author-only witnesses: ALERT → SLOW → INERT → LETHARGIC; TRUE → WRONG → UNREAL → INACCURATE. The first item is the enemy, not a played word.

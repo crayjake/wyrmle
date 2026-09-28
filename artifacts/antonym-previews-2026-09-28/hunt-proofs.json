@@ -1,0 +1,407 @@
+[
+  {
+    "id": "hunt-alert",
+    "revision": "67e5cee84d91",
+    "progressRevision": "215093c7c262",
+    "preferredHelpers": [
+      "SLOW",
+      "TIRED",
+      "IDLE",
+      "INERT"
+    ],
+    "branches": [
+      {
+        "first": "DROWSING",
+        "next": [
+          "GONE",
+          "GONER",
+          "IDLE",
+          "IDLER",
+          "INERT",
+          "LOGIER",
+          "TIRED"
+        ],
+        "preferredFamilies": [
+          "idle",
+          "inert",
+          "tired"
+        ],
+        "familiarFamilies": [
+          "gone",
+          "idle",
+          "inert",
+          "tired"
+        ]
+      },
+      {
+        "first": "GONE",
+        "next": [
+          "GONER",
+          "IDLE",
+          "IDLER",
+          "INERT",
+          "LOGIER",
+          "TIRED"
+        ],
+        "preferredFamilies": [
+          "idle",
+          "inert",
+          "tired"
+        ],
+        "familiarFamilies": [
+          "idle",
+          "inert",
+          "tired"
+        ]
+      },
+      {
+        "first": "GONER",
+        "next": [
+          "GONE",
+          "IDLE",
+          "IDLER",
+          "INERT",
+          "LOGIER",
+          "TIRED"
+        ],
+        "preferredFamilies": [
+          "idle",
+          "inert",
+          "tired"
+        ],
+        "familiarFamilies": [
+          "idle",
+          "inert",
+          "tired"
+        ]
+      },
+      {
+        "first": "IDLE",
+        "next": [
+          "GONE",
+          "GONER",
+          "IDLER",
+          "INERT",
+          "LOGIER",
+          "TIRED"
+        ],
+        "preferredFamilies": [
+          "inert",
+          "tired"
+        ],
+        "familiarFamilies": [
+          "gone",
+          "inert",
+          "tired"
+        ]
+      },
+      {
+        "first": "IDLER",
+        "next": [
+          "GONE",
+          "GONER",
+          "IDLE",
+          "INERT",
+          "LOGIER",
+          "TIRED"
+        ],
+        "preferredFamilies": [
+          "inert",
+          "tired"
+        ],
+        "familiarFamilies": [
+          "gone",
+          "inert",
+          "tired"
+        ]
+      },
+      {
+        "first": "IDLEST",
+        "next": [
+          "GONE",
+          "GONER",
+          "IDLE",
+          "IDLER",
+          "INERT",
+          "LOGIER",
+          "TIRED"
+        ],
+        "preferredFamilies": [
+          "inert",
+          "tired"
+        ],
+        "familiarFamilies": [
+          "gone",
+          "inert",
+          "tired"
+        ]
+      },
+      {
+        "first": "INERT",
+        "next": [
+          "GONE",
+          "GONER",
+          "IDLE",
+          "IDLER",
+          "LOGIER",
+          "TIRED"
+        ],
+        "preferredFamilies": [
+          "idle",
+          "tired"
+        ],
+        "familiarFamilies": [
+          "gone",
+          "idle",
+          "tired"
+        ]
+      },
+      {
+        "first": "LANGUID",
+        "next": [
+          "GONE",
+          "GONER",
+          "IDLE",
+          "IDLER",
+          "INERT",
+          "LOGIER",
+          "TIRED"
+        ],
+        "preferredFamilies": [
+          "idle",
+          "inert",
+          "tired"
+        ],
+        "familiarFamilies": [
+          "gone",
+          "idle",
+          "inert",
+          "tired"
+        ]
+      },
+      {
+        "first": "LOGIER",
+        "next": [
+          "GONE",
+          "GONER",
+          "IDLE",
+          "IDLER",
+          "INERT",
+          "TIRED"
+        ],
+        "preferredFamilies": [
+          "idle",
+          "inert",
+          "tired"
+        ],
+        "familiarFamilies": [
+          "gone",
+          "idle",
+          "inert",
+          "tired"
+        ]
+      },
+      {
+        "first": "LOGIEST",
+        "next": [
+          "GONE",
+          "GONER",
+          "IDLE",
+          "IDLER",
+          "INERT",
+          "LOGIER",
+          "TIRED"
+        ],
+        "preferredFamilies": [
+          "idle",
+          "inert",
+          "tired"
+        ],
+        "familiarFamilies": [
+          "gone",
+          "idle",
+          "inert",
+          "tired"
+        ]
+      },
+      {
+        "first": "SLOW",
+        "next": [
+          "GONE",
+          "GONER",
+          "IDLE",
+          "IDLER",
+          "INERT",
+          "LOGIER",
+          "TIRED"
+        ],
+        "preferredFamilies": [
+          "idle",
+          "inert",
+          "tired"
+        ],
+        "familiarFamilies": [
+          "gone",
+          "idle",
+          "inert",
+          "tired"
+        ]
+      },
+      {
+        "first": "SLOWER",
+        "next": [
+          "GONE",
+          "GONER",
+          "IDLE",
+          "IDLER",
+          "INERT",
+          "LOGIER",
+          "TIRED"
+        ],
+        "preferredFamilies": [
+          "idle",
+          "inert",
+          "tired"
+        ],
+        "familiarFamilies": [
+          "gone",
+          "idle",
+          "inert",
+          "tired"
+        ]
+      },
+      {
+        "first": "TIRED",
+        "next": [
+          "GONE",
+          "GONER",
+          "IDLE",
+          "IDLER",
+          "INERT",
+          "LOGIER"
+        ],
+        "preferredFamilies": [
+          "idle",
+          "inert"
+        ],
+        "familiarFamilies": [
+          "gone",
+          "idle",
+          "inert"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 2,
+    "minFamiliarFamilies": 3,
+    "candidatesChecked": 35,
+    "pathsChecked": 84,
+    "removalOrder": [
+      1,
+      5,
+      9,
+      15,
+      4,
+      7,
+      8
+    ],
+    "compatibility": {
+      "movesChecked": 51
+    }
+  },
+  {
+    "id": "hunt-true",
+    "revision": "13130d123252",
+    "progressRevision": "5f7f54a6985b",
+    "preferredHelpers": [
+      "WRONG",
+      "UNREAL",
+      "INCORRECT"
+    ],
+    "branches": [
+      {
+        "first": "INCORRECT",
+        "next": [
+          "UNREAL"
+        ],
+        "preferredFamilies": [
+          "unreal"
+        ],
+        "familiarFamilies": [
+          "unreal"
+        ]
+      },
+      {
+        "first": "UNREAL",
+        "next": [
+          "INCORRECT"
+        ],
+        "preferredFamilies": [
+          "incorrect"
+        ],
+        "familiarFamilies": [
+          "incorrect"
+        ]
+      },
+      {
+        "first": "WRONG",
+        "next": [
+          "INCORRECT",
+          "UNREAL"
+        ],
+        "preferredFamilies": [
+          "incorrect",
+          "unreal"
+        ],
+        "familiarFamilies": [
+          "incorrect",
+          "unreal"
+        ]
+      },
+      {
+        "first": "WRONGER",
+        "next": [
+          "INCORRECT",
+          "UNREAL"
+        ],
+        "preferredFamilies": [
+          "incorrect",
+          "unreal"
+        ],
+        "familiarFamilies": [
+          "incorrect",
+          "unreal"
+        ]
+      },
+      {
+        "first": "WRONGEST",
+        "next": [
+          "INCORRECT",
+          "UNREAL"
+        ],
+        "preferredFamilies": [
+          "incorrect",
+          "unreal"
+        ],
+        "familiarFamilies": [
+          "incorrect",
+          "unreal"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 20,
+    "pathsChecked": 8,
+    "removalOrder": [
+      0,
+      1,
+      14,
+      10,
+      13,
+      15
+    ],
+    "compatibility": {
+      "movesChecked": 334
+    }
+  }
+]

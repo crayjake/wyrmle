@@ -209,6 +209,7 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
         <TileGrid layout={boardLayout} tileShape={tileShape} revealedIndices={revealedTileIndices} registerTile={registerTile}
           ready={interactive} tiles={game.tiles} specialTiles={specialTiles}
           enemyLetters={game.enemyLetters} matchHint="underline"
+          removingTileIds={interactive && preview.valid ? preview.bingoHunt?.removedTileIds : undefined}
           selectedTileIds={game.selectedTileIds} canAttack={phase === 'waiting' || interactive && preview.valid}
           primaryLabel={phase === 'waiting' ? 'BEGIN' : 'ATTACK'}
           onToggleTile={select} onClear={clear} onAttack={phase === 'waiting' ? begin : attack} />

@@ -8,6 +8,7 @@ import { selectWordIds } from '../src/generator/constructRefill.ts'
 import { getStrikeSummary } from '../src/components/strikeSummary.ts'
 import { readBingoProgress, resumeBingoAttempt, saveBingoAttempt, restartBingoAttempt } from '../src/experimental/bingo/progress.ts'
 import { winStars } from '../src/game/rating.ts'
+import { certifyHuntProgressCompatibility, inspectHuntRemovals, planHuntRemovals } from '../scripts/antonyms/hunt.ts'
 
 const entries = conceptPreviews.filter(entry => entry.bingoHunt)
 const encounter = (id: string) => {
@@ -54,18 +55,70 @@ test('every accepted helper path preserves all answer copies and leaves its exac
       if (after.status === 'won') continue
       assert.equal(after.tiles.filter(tile => !tile.letter).length, Math.ceil(rule.removalOrder.length / 2))
       assert.ok(selectWordIds(after.tiles, rule.answer))
+      const otherFamilies = new Set<string>()
       for (const second of words) {
         const secondIds = selectWordIds(after.tiles, second)
         if (!secondIds || !previewLetterStrike(after, secondIds).valid) continue
         const final = submitLetterStrike(after, secondIds)
         if (final.status === 'won') continue
+        const family = initial.encounter.meaningLexicon!.words[second].lemma
+        if (family !== initial.encounter.meaningLexicon!.words[first].lemma) otherFamilies.add(family)
         checked++
         assert.equal(final.playerResolve, 1)
         assert.equal(sorted(final.tiles.map(tile => tile.letter).join('')), sorted(rule.answer))
         assert.equal(play(final, rule.answer).status, 'won')
       }
+      assert.ok(otherFamilies.size > 0, `${entry.id}: ${first} must leave another helper family`)
     }
     assert.ok(checked > 0, entry.id)
+  }
+})
+
+test('hunt generation chooses removal groups with familiar follow-ups after every opening', () => {
+  for (const [id, preferred, minimum] of [
+    ['hunt-alert', ['SLOW', 'TIRED', 'IDLE', 'INERT'], 2],
+    ['hunt-true', ['WRONG', 'UNREAL', 'INCORRECT'], 1],
+  ] as const) {
+    const current = encounter(id)
+    const plan = planHuntRemovals(current, current.bingoHunt!.answer, preferred)
+    assert.deepEqual(plan.encounter.bingoHunt, current.bingoHunt)
+    assert.ok(plan.review.minPreferredFamilies >= minimum)
+    assert.equal(plan.review.candidatesChecked, id === 'hunt-alert' ? 35 : 20)
+    assert.ok(plan.review.pathsChecked > 0)
+    const entry = entries.find(entry => entry.id === id)!
+    const old = decodeConceptPuzzle(JSON.parse(readFileSync(`public/previews/concepts/${id}-${entry.progressRevision}.json`, 'utf8')), entry)
+    assert.equal(inspectHuntRemovals(old, preferred).minPreferredFamilies, 0, 'old removal order had dead ends')
+  }
+  const current = encounter('hunt-alert')
+  assert.throws(() => planHuntRemovals(current, current.bingoHunt!.answer, ['INERT']), /No removal plan preserves/)
+  const afterSlow = play(createLetterStrikeGame(current), 'SLOW')
+  for (const word of ['IDLE', 'TIRED', 'INERT']) {
+    assert.equal(play(afterSlow, word).playerResolve, 1, word)
+  }
+})
+
+test('updated hunt revisions retain old progress and replay every old physical-tile sequence', () => {
+  for (const entry of entries) {
+    assert.ok(entry.progressRevision)
+    const oldEntry = { ...entry, revision: entry.progressRevision, progressRevision: undefined }
+    const old = decodeConceptPuzzle(JSON.parse(readFileSync(`public/previews/concepts/${entry.id}-${entry.progressRevision}.json`, 'utf8')), oldEntry)
+    const current = encounter(entry.id)
+    assert.ok(certifyHuntProgressCompatibility(old, current).movesChecked > 0)
+    assert.equal(conceptProgressKey(entry), conceptProgressKey(oldEntry))
+    const data = new Map<string, string>(), storage = { getItem: (key: string) => data.get(key) ?? null,
+      setItem: (key: string, value: string) => { data.set(key, value) } }
+    const oldStart = createLetterStrikeGame(old), key = conceptProgressKey(oldEntry)
+    saveBingoAttempt(key, play(oldStart, entry.guide.answer), true, 1, storage)
+    restartBingoAttempt(key, 3, storage)
+    saveBingoAttempt(key, play(oldStart, entry.id === 'hunt-alert' ? 'SLOW' : 'WRONG'), true, 1, storage)
+    const restored = resumeBingoAttempt(conceptProgressKey(entry), current, storage)
+    assert.equal(restored.started, true)
+    assert.equal(restored.game.playedWords.length, 1)
+    assert.equal(restored.game.playerResolve, 2)
+    assert.equal(readBingoProgress(conceptProgressKey(entry), storage).bestWords, 1)
+    const changed = structuredClone(current)
+    changed.startingTiles[0].letter = 'Z'
+    assert.throws(() => certifyHuntProgressCompatibility(old, changed))
   }
 })
 

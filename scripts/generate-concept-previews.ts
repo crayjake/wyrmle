@@ -1,7 +1,7 @@
 /** Rebuild reviewed counter previews and certify their difficulty progression. */
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
-import { mkdirSync, writeFileSync } from 'node:fs'
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { antonymProfiles } from './antonyms/profiles.ts'
 import { buildAntonymEncounter } from './antonyms/build.ts'
 import { packDictionaryMeanings } from '../src/game/meaningPacking.ts'
@@ -10,15 +10,22 @@ import type { LetterStrikeState } from '../src/game/letterStrike.ts'
 import { selectWordIds } from '../src/generator/constructRefill.ts'
 import { canSpell } from '../src/generator/constructBoard.ts'
 import { getGenerationWordZipf } from '../src/generator/familiarity.ts'
+import previousCatalog from '../src/experimental/concepts/catalog.json' with { type: 'json' }
+import type { ConceptEntry } from '../src/experimental/concepts/catalog.ts'
+import { decodeConceptPuzzle } from '../src/experimental/concepts/catalog.ts'
+import { certifyHuntProgressCompatibility, planHuntRemovals } from './antonyms/hunt.ts'
 
 import { certifyProgression } from './antonyms/progression.ts'
 
 const directory = 'artifacts/antonym-previews-2026-09-28'
 mkdirSync(directory, { recursive: true })
 mkdirSync('public/previews/concepts', { recursive: true })
-const catalog = []
+const huntOnly = process.argv.includes('--hunt-only')
+assert.ok(!huntOnly || !process.env.CONCEPT_ID, 'Choose --hunt-only or CONCEPT_ID')
+const catalog: ConceptEntry[] = huntOnly ? (previousCatalog as ConceptEntry[]).filter(entry => !entry.bingoHunt) : []
 const reports = []
 for (const profile of antonymProfiles) {
+  if (huntOnly) continue
   if (process.env.CONCEPT_ID && profile.id !== process.env.CONCEPT_ID) continue
   const { encounter, packed, roots, source, words } = buildAntonymEncounter(profile)
   const decoded = encounter
@@ -70,13 +77,19 @@ for (const profile of antonymProfiles) {
 }
 if (!process.env.CONCEPT_ID) {
   // Two comparisons with the same starting letters and reviewed antonyms.
-  for (const [id, helpers] of [['alert', ['SLOW', 'INERT']], ['true', ['WRONG', 'UNREAL']]] as const) {
+  const huntReports = []
+  for (const { id, helpers, preferredHelpers, progressRevision } of [
+    { id: 'alert', helpers: ['SLOW', 'INERT'], preferredHelpers: ['SLOW', 'TIRED', 'IDLE', 'INERT'], progressRevision: '215093c7c262' },
+    { id: 'true', helpers: ['WRONG', 'UNREAL'], preferredHelpers: ['WRONG', 'UNREAL', 'INCORRECT'], progressRevision: '5f7f54a6985b' },
+  ]) {
     const profile = antonymProfiles.find(profile => profile.id === id)!
-    const { encounter } = buildAntonymEncounter({ ...profile, refills: '' })
-    const keep = new Set(selectWordIds(encounter.startingTiles, profile.bingo)!)
+    const built = buildAntonymEncounter({ ...profile, refills: '' })
     const huntId = `hunt-${id}`
-    encounter.id = `antonym-preview-v2:${huntId}`
-    encounter.bingoHunt = { answer: profile.bingo, removalOrder: encounter.startingTiles.filter(tile => !keep.has(tile.id)).map(tile => tile.id) }
+    built.encounter.id = `antonym-preview-v2:${huntId}`
+    const { encounter, review } = planHuntRemovals(built.encounter, profile.bingo, preferredHelpers)
+    const previous = (previousCatalog as ConceptEntry[]).find(entry => entry.id === huntId)!
+    const legacy = decodeConceptPuzzle(JSON.parse(readFileSync(`public/previews/concepts/${huntId}-${progressRevision}.json`, 'utf8')), previous)
+    const compatibility = certifyHuntProgressCompatibility(legacy, encounter)
     for (const words of [[profile.bingo], [helpers[0], profile.bingo], [...helpers, profile.bingo]]) {
       let state = createLetterStrikeGame(encounter)
       for (const word of words) {
@@ -92,10 +105,13 @@ if (!process.env.CONCEPT_ID) {
     const revision = createHash('sha256').update(raw).digest('hex').slice(0, 12)
     const asset = `previews/concepts/${huntId}-${revision}.json`
     writeFileSync(`public/${asset}`, raw)
-    catalog.push({ id: huntId, enemy: profile.enemy, definition: profile.definition, asset, revision, powers: 0,
-      bingoHunt: true, partOfSpeech: encounter.enemy.partOfSpeech, counterPartOfSpeech: encounter.counterRules!.partOfSpeech,
+    catalog.push({ id: huntId, enemy: profile.enemy, definition: profile.definition, asset, revision, progressRevision, powers: 0,
+      bingoHunt: true, partOfSpeech: encounter.enemy.partOfSpeech!, counterPartOfSpeech: encounter.counterRules!.partOfSpeech,
       guide: { answer: profile.bingo, hints: profile.hints, explanation: `${profile.bingo} is an opposite adjective containing every letter of ${profile.enemy}.` } })
+    huntReports.push({ id: huntId, revision, progressRevision, ...review, compatibility })
+    console.log(huntId, JSON.stringify({ candidates: review.candidatesChecked, minimumFollowupFamilies: review.minPreferredFamilies, compatibility }))
   }
   writeFileSync('src/experimental/concepts/catalog.json', JSON.stringify(catalog, null, 2) + '\n')
+  writeFileSync(`${directory}/hunt-proofs.json`, JSON.stringify(huntReports, null, 2) + '\n')
 }
-writeFileSync(`${directory}/${process.env.CONCEPT_ID ? `${process.env.CONCEPT_ID}-proof` : 'proofs'}.json`, JSON.stringify(reports, null, 2) + '\n')
+if (!huntOnly) writeFileSync(`${directory}/${process.env.CONCEPT_ID ? `${process.env.CONCEPT_ID}-proof` : 'proofs'}.json`, JSON.stringify(reports, null, 2) + '\n')

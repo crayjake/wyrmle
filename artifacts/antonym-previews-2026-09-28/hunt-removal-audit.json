@@ -1,0 +1,461 @@
+{
+  "scope": "Frozen current semantics; exhaustive half-spare removal choices, every accepted first helper and every surviving second helper. Family diversity excludes the opening lemma; familiarity uses the existing length/frequency effort proxy <= 4.8. This is a design audit, not a change to published puzzle assets.",
+  "results": [
+    {
+      "id": "hunt-alert",
+      "asset": "previews/concepts/hunt-alert-215093c7c262.json",
+      "combinationsChecked": 35,
+      "current": {
+        "removalOrder": [
+          1,
+          4,
+          5,
+          7,
+          8,
+          9,
+          15
+        ],
+        "firstRemoval": "SOUD",
+        "branches": [
+          {
+            "first": "DROWSING",
+            "next": [
+              "INERT"
+            ],
+            "distinctFamiliarFamilies": [
+              "inert"
+            ]
+          },
+          {
+            "first": "GONE",
+            "next": [
+              "INERT"
+            ],
+            "distinctFamiliarFamilies": [
+              "inert"
+            ]
+          },
+          {
+            "first": "GONER",
+            "next": [
+              "INERT"
+            ],
+            "distinctFamiliarFamilies": [
+              "inert"
+            ]
+          },
+          {
+            "first": "IDLE",
+            "next": [
+              "INERT"
+            ],
+            "distinctFamiliarFamilies": [
+              "inert"
+            ]
+          },
+          {
+            "first": "IDLER",
+            "next": [
+              "INERT"
+            ],
+            "distinctFamiliarFamilies": [
+              "inert"
+            ]
+          },
+          {
+            "first": "IDLEST",
+            "next": [
+              "INERT"
+            ],
+            "distinctFamiliarFamilies": [
+              "inert"
+            ]
+          },
+          {
+            "first": "INERT",
+            "next": [],
+            "distinctFamiliarFamilies": []
+          },
+          {
+            "first": "LANGUID",
+            "next": [
+              "INERT"
+            ],
+            "distinctFamiliarFamilies": [
+              "inert"
+            ]
+          },
+          {
+            "first": "LOGIER",
+            "next": [
+              "INERT"
+            ],
+            "distinctFamiliarFamilies": [
+              "inert"
+            ]
+          },
+          {
+            "first": "LOGIEST",
+            "next": [
+              "INERT"
+            ],
+            "distinctFamiliarFamilies": [
+              "inert"
+            ]
+          },
+          {
+            "first": "SLOW",
+            "next": [
+              "INERT"
+            ],
+            "distinctFamiliarFamilies": [
+              "inert"
+            ]
+          },
+          {
+            "first": "SLOWER",
+            "next": [
+              "INERT"
+            ],
+            "distinctFamiliarFamilies": [
+              "inert"
+            ]
+          },
+          {
+            "first": "TIRED",
+            "next": [
+              "INERT"
+            ],
+            "distinctFamiliarFamilies": [
+              "inert"
+            ]
+          }
+        ],
+        "minOtherFamiliarFamilies": 0,
+        "deadEnds": [
+          "INERT"
+        ]
+      },
+      "suggested": {
+        "removalOrder": [
+          1,
+          4,
+          5,
+          9,
+          7,
+          8,
+          15
+        ],
+        "firstRemoval": "SOUX",
+        "branches": [
+          {
+            "first": "DROWSING",
+            "next": [
+              "IDLE",
+              "IDLER",
+              "INERT",
+              "TIRED"
+            ],
+            "distinctFamiliarFamilies": [
+              "idle",
+              "inert",
+              "tired"
+            ]
+          },
+          {
+            "first": "GONE",
+            "next": [
+              "IDLE",
+              "IDLER",
+              "INERT",
+              "TIRED"
+            ],
+            "distinctFamiliarFamilies": [
+              "idle",
+              "inert",
+              "tired"
+            ]
+          },
+          {
+            "first": "GONER",
+            "next": [
+              "IDLE",
+              "IDLER",
+              "INERT",
+              "TIRED"
+            ],
+            "distinctFamiliarFamilies": [
+              "idle",
+              "inert",
+              "tired"
+            ]
+          },
+          {
+            "first": "IDLE",
+            "next": [
+              "IDLER",
+              "INERT",
+              "TIRED"
+            ],
+            "distinctFamiliarFamilies": [
+              "inert",
+              "tired"
+            ]
+          },
+          {
+            "first": "IDLER",
+            "next": [
+              "IDLE",
+              "INERT",
+              "TIRED"
+            ],
+            "distinctFamiliarFamilies": [
+              "inert",
+              "tired"
+            ]
+          },
+          {
+            "first": "IDLEST",
+            "next": [
+              "IDLE",
+              "IDLER",
+              "INERT",
+              "TIRED"
+            ],
+            "distinctFamiliarFamilies": [
+              "inert",
+              "tired"
+            ]
+          },
+          {
+            "first": "INERT",
+            "next": [
+              "IDLE",
+              "IDLER",
+              "TIRED"
+            ],
+            "distinctFamiliarFamilies": [
+              "idle",
+              "tired"
+            ]
+          },
+          {
+            "first": "LANGUID",
+            "next": [
+              "IDLE",
+              "IDLER",
+              "INERT",
+              "TIRED"
+            ],
+            "distinctFamiliarFamilies": [
+              "idle",
+              "inert",
+              "tired"
+            ]
+          },
+          {
+            "first": "LOGIER",
+            "next": [
+              "IDLE",
+              "IDLER",
+              "INERT",
+              "TIRED"
+            ],
+            "distinctFamiliarFamilies": [
+              "idle",
+              "inert",
+              "tired"
+            ]
+          },
+          {
+            "first": "LOGIEST",
+            "next": [
+              "IDLE",
+              "IDLER",
+              "INERT",
+              "TIRED"
+            ],
+            "distinctFamiliarFamilies": [
+              "idle",
+              "inert",
+              "tired"
+            ]
+          },
+          {
+            "first": "SLOW",
+            "next": [
+              "IDLE",
+              "IDLER",
+              "INERT",
+              "TIRED"
+            ],
+            "distinctFamiliarFamilies": [
+              "idle",
+              "inert",
+              "tired"
+            ]
+          },
+          {
+            "first": "SLOWER",
+            "next": [
+              "IDLE",
+              "IDLER",
+              "INERT",
+              "TIRED"
+            ],
+            "distinctFamiliarFamilies": [
+              "idle",
+              "inert",
+              "tired"
+            ]
+          },
+          {
+            "first": "TIRED",
+            "next": [
+              "IDLE",
+              "IDLER",
+              "INERT"
+            ],
+            "distinctFamiliarFamilies": [
+              "idle",
+              "inert"
+            ]
+          }
+        ],
+        "minOtherFamiliarFamilies": 2,
+        "deadEnds": []
+      },
+      "bestMinimumOtherFamiliarFamilies": 3
+    },
+    {
+      "id": "hunt-true",
+      "asset": "previews/concepts/hunt-true-5f7f54a6985b.json",
+      "combinationsChecked": 20,
+      "current": {
+        "removalOrder": [
+          0,
+          1,
+          10,
+          13,
+          14,
+          15
+        ],
+        "firstRemoval": "SGO",
+        "branches": [
+          {
+            "first": "INCORRECT",
+            "next": [
+              "UNREAL"
+            ],
+            "distinctFamiliarFamilies": [
+              "unreal"
+            ]
+          },
+          {
+            "first": "UNREAL",
+            "next": [],
+            "distinctFamiliarFamilies": []
+          },
+          {
+            "first": "WRONG",
+            "next": [
+              "UNREAL"
+            ],
+            "distinctFamiliarFamilies": [
+              "unreal"
+            ]
+          },
+          {
+            "first": "WRONGER",
+            "next": [
+              "UNREAL"
+            ],
+            "distinctFamiliarFamilies": [
+              "unreal"
+            ]
+          },
+          {
+            "first": "WRONGEST",
+            "next": [
+              "UNREAL"
+            ],
+            "distinctFamiliarFamilies": [
+              "unreal"
+            ]
+          }
+        ],
+        "minOtherFamiliarFamilies": 0,
+        "deadEnds": [
+          "UNREAL"
+        ]
+      },
+      "suggested": {
+        "removalOrder": [
+          0,
+          1,
+          14,
+          10,
+          13,
+          15
+        ],
+        "firstRemoval": "SGW",
+        "branches": [
+          {
+            "first": "INCORRECT",
+            "next": [
+              "UNREAL"
+            ],
+            "distinctFamiliarFamilies": [
+              "unreal"
+            ]
+          },
+          {
+            "first": "UNREAL",
+            "next": [
+              "INCORRECT"
+            ],
+            "distinctFamiliarFamilies": [
+              "incorrect"
+            ]
+          },
+          {
+            "first": "WRONG",
+            "next": [
+              "INCORRECT",
+              "UNREAL"
+            ],
+            "distinctFamiliarFamilies": [
+              "incorrect",
+              "unreal"
+            ]
+          },
+          {
+            "first": "WRONGER",
+            "next": [
+              "INCORRECT",
+              "UNREAL"
+            ],
+            "distinctFamiliarFamilies": [
+              "incorrect",
+              "unreal"
+            ]
+          },
+          {
+            "first": "WRONGEST",
+            "next": [
+              "INCORRECT",
+              "UNREAL"
+            ],
+            "distinctFamiliarFamilies": [
+              "incorrect",
+              "unreal"
+            ]
+          }
+        ],
+        "minOtherFamiliarFamilies": 1,
+        "deadEnds": []
+      },
+      "bestMinimumOtherFamiliarFamilies": 1
+    }
+  ]
+}
