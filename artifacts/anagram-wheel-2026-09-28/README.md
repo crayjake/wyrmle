@@ -3,8 +3,11 @@
 [Open the interactive preview](https://crayjake.github.io/wyrmle/?preview=wheel).
 Locally, open `?preview=wheel` on the Vite site.
 
-The published 28 September FURY board can be displayed as two rings (ten outer
-tiles and six inner tiles), one ring containing all sixteen tiles, or the grid.
+The published 28 September FURY board can be displayed as two rings (underlined
+playable tiles inside, all other playable tiles outside), one ring containing
+all sixteen tiles, or the grid. The two-ring groups update as enemy letters are
+cleared and tiles refill. Repeated matching letters all stay inside, and Shuffle
+reorders each group without mixing them. The enemy display stays above the board.
 The original fonts, colours, thin outlines, enemy underlines, Lives, Refills and
 attack preview are shared with Daily. Layout and tile-shape choices now live
 in Settings and are also available in Daily and the concept previews.

@@ -1,6 +1,6 @@
 import { useReducedMotion } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
-import type { PointerEvent as ReactPointerEvent } from "react"
+import type { CSSProperties, PointerEvent as ReactPointerEvent } from "react"
 
 import Tile from "./Tile"
 import type { SpecialTilePresentation } from "./Tile"
@@ -9,6 +9,7 @@ import { Shuffle } from 'lucide-react'
 import type { BattlePrimaryLabel } from "./BattleActions"
 import { introTimings } from "../intro/config"
 import { getMatchingTileIds } from './tileMatchHints'
+import { wheelLayout } from './wheelLayout'
 import type { MatchHintMode } from './tileMatchHints'
 import { beginTileSelectionGesture, crossedTileIds, finishTileSelectionGesture, moveTileSelectionGesture } from './tileSelectionGesture'
 import type { TileGestureBounds, TileSelectionGesture } from './tileSelectionGesture'
@@ -84,15 +85,8 @@ export default function TileGrid({
   // Reorder positions only. Physical IDs, letter counts and refills stay intact.
   const [wheelOrder, setWheelOrder] = useState(() => tiles.map((_, index) => index))
   const [pointer, setPointer] = useState<{ x: number; y: number } | null>(null)
-  const positions = tiles.map((_, index) => {
-    const slot = wheelOrder.indexOf(index)
-    const outerCount = layout === 'ring' ? tiles.length : Math.min(10, tiles.length)
-    const outer = slot < outerCount
-    const count = outer ? outerCount : tiles.length - outerCount
-    const angle = ((outer ? slot : slot - outerCount) / count * 360 - 90) * Math.PI / 180
-    const radius = outer ? layout === 'ring' ? 42 : 41 : 22
-    return { x: 50 + Math.cos(angle) * radius, y: 50 + Math.sin(angle) * radius }
-  })
+  const wheel = wheelLayout(tiles, wheelOrder, matchingIds, layout === 'ring', tileShape)
+  const { positions } = wheel
   const path = selectedTileIds.flatMap(id => {
     const index = tiles.findIndex(tile => tile.id === id)
     return index < 0 ? [] : [positions[index]]
@@ -209,6 +203,7 @@ export default function TileGrid({
   return (
     <>
       <div className={`tile-grid${layout !== 'grid' ? ' anagram-wheel' : ''}`} ref={gridRef} data-swipe-ready={ready}
+        style={layout !== 'grid' ? { '--wheel-tile-size': `${wheel.tileSize}%` } as CSSProperties : undefined}
         data-tile-shape={tileShape} data-rings={layout === 'ring' ? 1 : layout === 'wheel' ? 2 : undefined}
         onPointerDown={beginGesture}
         onPointerMove={moveGesture}
@@ -231,7 +226,8 @@ export default function TileGrid({
       >
         {layout !== 'grid' && <>
           <svg className="wheel-trace" viewBox="0 0 100 100" aria-hidden="true">
-            <circle className="wheel-guide" cx="50" cy="50" r={layout === 'ring' ? 42 : 41} />
+            {wheel.hasOuter && <circle className="wheel-guide" cx="50" cy="50" r="42" />}
+            {wheel.hasInner && <circle className="wheel-guide" cx="50" cy="50" r="22" />}
             {path.length > 1 && <polyline points={path.map(point => `${point.x},${point.y}`).join(' ')} />}
             {pointer && path.length > 0 && <line className="wheel-live-trace" x1={path.at(-1)!.x} y1={path.at(-1)!.y} x2={pointer.x} y2={pointer.y} />}
           </svg>
@@ -266,7 +262,9 @@ export default function TileGrid({
             />
           )
           return layout !== 'grid' ? <div key={tile.id} className="wheel-slot"
-            style={{ left: `${positions[i].x}%`, top: `${positions[i].y}%` }}>{content}</div> : content
+            data-ring={positions[i].ring}
+            style={{ left: `calc(${positions[i].x}% - var(--wheel-tile-size) / 2)`,
+              top: `calc(${positions[i].y}% - var(--wheel-tile-size) / 2)` }}>{content}</div> : content
         })}
       </div>
 
