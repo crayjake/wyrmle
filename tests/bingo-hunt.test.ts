@@ -43,6 +43,38 @@ test('hunt wins in 1/2/3 guesses award 3/2/1 stars without damage or refills', (
   }
 })
 
+test('hunt previews matching enemy letters, with all red only for a valid bingo and no committed damage', () => {
+  const initial = createLetterStrikeGame(encounter('hunt-alert'))
+  for (const [word, matching] of [['SLOW', 'L'], ['IDLE', 'EL'], ['INERT', 'ERT'], ['LETHARGIC', 'AELRT']]) {
+    const ids = selectWordIds(initial.tiles, word)!
+    const preview = previewLetterStrike(initial, ids)
+    assert.equal(preview.valid, true)
+    assert.equal(sorted(preview.bingoHunt!.matchingHits.map(hit => hit.letter).join('')), matching)
+    assert.equal(new Set(preview.bingoHunt!.matchingHits.map(hit => hit.enemyLetterId)).size, matching.length)
+    assert.ok(preview.bingoHunt!.matchingHits.every(hit => hit.hitsBefore === 1 && hit.hitsAfter === 0))
+    assert.equal(preview.bingoHunt!.won, matching.length === initial.enemyLetters.length)
+    assert.deepEqual(preview.hits, [])
+    assert.equal(preview.strikes, 0)
+    assert.deepEqual(preview.enemyLetters, initial.enemyLetters)
+    assert.deepEqual(submitLetterStrike(initial, ids).enemyLetters, initial.enemyLetters)
+  }
+  for (const word of ['ALERT', 'CAT']) {
+    const preview = previewLetterStrike(initial, selectWordIds(initial.tiles, word)!)
+    assert.equal(preview.valid, false)
+    assert.deepEqual(preview.bingoHunt!.matchingHits, [])
+    assert.equal(preview.bingoHunt!.won, false)
+  }
+  const after = play(initial, 'INERT')
+  assert.deepEqual(previewLetterStrike(after, selectWordIds(after.tiles, 'INERT')!).bingoHunt!.matchingHits, [])
+  assert.deepEqual(previewLetterStrike(initial, []).bingoHunt!.matchingHits, [])
+  // One E must not light up two separate E targets in a future hunt.
+  const target = initial.enemyLetters.find(letter => letter.letter === 'E')!
+  const duplicateTargets = { ...initial, enemyLetters: [target, { ...target, id: 'second-E' }] }
+  const preview = previewLetterStrike(duplicateTargets, selectWordIds(initial.tiles, 'LETHARGIC')!)
+  assert.equal(preview.bingoHunt!.matchingHits.length, 1)
+  assert.equal(preview.bingoHunt!.won, false)
+})
+
 test('every accepted helper path preserves all answer copies and leaves its exact anagram on the final life', () => {
   for (const entry of entries) {
     const initial = createLetterStrikeGame(encounter(entry.id)), rule = initial.encounter.bingoHunt!

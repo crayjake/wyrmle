@@ -22,7 +22,6 @@ type TileProps = {
   elementRef?: Ref<HTMLButtonElement>
   boardIndex?: number
   matchHint?: MatchHintMode
-  previewRemoval?: boolean
   onClick?: () => void
 }
 
@@ -37,11 +36,9 @@ export default function Tile({
   elementRef,
   boardIndex,
   matchHint = 'off',
-  previewRemoval = false,
   onClick,
 }: TileProps) {
   const reducedMotion = useReducedMotion()
-  const willBeRemoved = revealed && !empty && previewRemoval
 
   return (
     <motion.button
@@ -50,7 +47,6 @@ export default function Tile({
       data-revealed={revealed}
       data-empty={empty || undefined}
       data-match-hint={revealed && matchHint !== 'off' ? matchHint : undefined}
-      data-removal-preview={willBeRemoved || undefined}
       type="button"
       className={[
         "tile",
@@ -60,8 +56,8 @@ export default function Tile({
       ].join(" ")}
       disabled={disabled || empty}
       aria-pressed={selected}
-      aria-label={empty ? 'Empty tile slot' : `${letter}${revealed && special ? `, ${special.label} tile` : ""}${revealed && matchHint !== 'off' ? ', matches a surviving enemy letter' : ''}${willBeRemoved ? ', will be removed when you play' : ''}`}
-      title={willBeRemoved ? 'Removed when you play this word' : revealed && special ? `${special.label}${special.detail ? `: ${special.detail}` : ""}` : undefined}
+      aria-label={empty ? 'Empty tile slot' : `${letter}${revealed && special ? `, ${special.label} tile` : ""}${revealed && matchHint !== 'off' ? ', matches a surviving enemy letter' : ''}`}
+      title={revealed && special ? `${special.label}${special.detail ? `: ${special.detail}` : ""}` : undefined}
       onClick={empty ? undefined : onClick}
       animate={
         reducedMotion
@@ -84,8 +80,6 @@ export default function Tile({
       <span className="tile-letter">
         {empty ? '' : letter}
       </span>
-
-      {willBeRemoved && <span className="tile-removal-marker" aria-hidden="true">×</span>}
 
       {selected && order !== undefined && (
         <span className="tile-order">

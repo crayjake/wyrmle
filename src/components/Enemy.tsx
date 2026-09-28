@@ -26,6 +26,7 @@ type EnemyProps = {
   modifierUnit?: string
   letterStates?: readonly EnemyLetterState[]
   predictedHits?: readonly LetterResolutionHit[]
+  previewMode?: 'damage' | 'bingo-match'
   predictedRecoveries?: readonly LetterResolutionHit[]
   resolvedHits?: readonly LetterResolutionHit[]
   resolvedRecoveries?: readonly LetterResolutionHit[]
@@ -52,6 +53,7 @@ export default function Enemy({
   modifierUnit,
   letterStates,
   predictedHits = [],
+  previewMode = 'damage',
   predictedRecoveries = [],
   resolvedHits,
   resolvedRecoveries,
@@ -105,7 +107,7 @@ export default function Enemy({
             const removed = hitsRemaining === 0
             const predicted = state && revealed && !removed && !resolution.resolving ? predictedByLetter.get(state.id) : undefined
             const targetOutcome = predicted ? (predicted.hitsAfter === 0 ? 'remove' : 'break') : undefined
-            const targetDescription = targetOutcome === 'remove'
+            const targetDescription = predicted && previewMode === 'bingo-match' ? 'matched by this word' : targetOutcome === 'remove'
               ? hitsRemaining !== undefined && hitsRemaining > 1 ? 'armour will break and letter will be removed' : 'letter will be removed'
               : targetOutcome === 'break' ? 'armour will break' : undefined
             const recovery = state && revealed && !resolution.resolving ? recoveredByLetter.get(state.id) : undefined
@@ -125,7 +127,8 @@ export default function Enemy({
                 title={[targetDescription, recoveryDescription].filter(Boolean).join('; ') || undefined}
                 role={state ? 'img' : undefined}
                 aria-label={state ? revealed
-                  ? `${letter}, ${removed ? 'removed' : `${hitsRemaining} ${hitsRemaining === 1 ? 'hit' : 'hits'} remaining`}${targetDescription ? `, targeted: ${targetDescription}` : ''}${recoveryDescription ? `, ${recoveryDescription}` : ''}`
+                  ? previewMode === 'bingo-match' ? `${letter}${targetDescription ? `, ${targetDescription}` : ''}`
+                    : `${letter}, ${removed ? 'removed' : `${hitsRemaining} ${hitsRemaining === 1 ? 'hit' : 'hits'} remaining`}${targetDescription ? `, targeted: ${targetDescription}` : ''}${recoveryDescription ? `, ${recoveryDescription}` : ''}`
                   : `Undecoded enemy letter ${i + 1}` : undefined}
                 className={[
                   'enemy-letter',

@@ -87,7 +87,7 @@
 }
 @media (max-height: 520px) {
   .hunt-intro { padding: 10px; gap: 8px; }
-  .hunt-intro .hunt-instructions { gap: 7px; }
+  .hunt-intro .hunt-instructions { gap: 7px; line-height: 1.25; }
 }
 @media (orientation: landscape) and (max-height: 550px) {
   .concept-hub .concept-group { display: grid; grid-template-columns: 1fr 1fr; column-gap: 20px; }

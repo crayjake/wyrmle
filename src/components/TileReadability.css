@@ -12,27 +12,6 @@
   border-color: var(--emph);
 }
 
-.letter-combat .tile[data-removal-preview] {
-  border-color: var(--red);
-  color: var(--red);
-}
-
-.tile-removal-marker {
-  position: absolute;
-  right: 4px;
-  bottom: 2px;
-  color: var(--red);
-  font-size: 12px;
-  line-height: 1;
-  pointer-events: none;
-}
-
-.tile-grid[data-tile-shape="circle"] .tile-removal-marker {
-  right: 50%;
-  bottom: 1px;
-  transform: translateX(50%);
-}
-
 .letter-combat .tile.strike, .letter-combat .tile.power {
   --special-colour: var(--blue);
 }

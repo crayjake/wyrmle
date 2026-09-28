@@ -81,7 +81,7 @@ export type LetterStrikeEvaluation = {
   hits: LetterStrikeHit[]
   recoveries?: LetterStrikeRecovery[]
   letterOutcomes: LetterStrikeLetterOutcome[]
-  bingoHunt?: { won: boolean; removedTileIds: number[] }
+  bingoHunt?: { won: boolean; removedTileIds: number[]; matchingHits: LetterStrikeHit[] }
 }
 export type LetterStrikePreview = LetterStrikeEvaluation & { valid: boolean; error: string | null }
 export type LetterStrikePlayedWord = {
@@ -361,7 +361,9 @@ export function evaluateLetterStrike(state: Pick<LetterStrikeState, 'encounter' 
     strikes: 0, resolveCost: 1, effectLabels: [], hits: [],
     enemyLetters: state.enemyLetters.map(letter => ({ ...letter })),
     letterOutcomes: buildLetterStrikeOutcomes(state.enemyLetters, []),
-    bingoHunt: { won: semanticLabel === 'COUNTER' && enemyLetters.every(letter => letter.hitsRemaining === 0), removedTileIds: [] },
+    // Keep the ordinary matching preview, but never commit these as damage.
+    bingoHunt: { won: semanticLabel === 'COUNTER' && enemyLetters.every(letter => letter.hitsRemaining === 0),
+      removedTileIds: [], matchingHits: hits },
   }
   return {
     word,
@@ -399,6 +401,7 @@ export function previewLetterStrike(state: LetterStrikeState, selectedTileIds: r
     ...(evaluation.bingoHunt ? { bingoHunt: {
       won: error === null && evaluation.bingoHunt.won,
       removedTileIds: error === null && !evaluation.bingoHunt.won ? huntRemovalIds(state) : [],
+      matchingHits: error === null ? evaluation.bingoHunt.matchingHits : [],
     } } : {}),
     ...(error !== null ? {
       strikes: 0, resolveCost: 0, effectLabels: [], hits: [],
