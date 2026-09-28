@@ -1,0 +1,34 @@
+.container.letter-combat:is([data-board-layout="wheel"], [data-board-layout="ring"]) .player-zone { width: min(100%, 24rem); }
+.container.letter-combat:is([data-board-layout="wheel"], [data-board-layout="ring"]) .controls { width: min(100%, 22rem, var(--board-fit, 100vw)); }
+.anagram-wheel.tile-grid { display: block; position: relative; aspect-ratio: 1; isolation: isolate; }
+.anagram-wheel .wheel-slot { position: absolute; width: 16.5%; aspect-ratio: 1; transform: translate(-50%, -50%); }
+.anagram-wheel[data-rings="1"] .wheel-slot { width: 12%; }
+.anagram-wheel[data-rings="1"][data-tile-shape="circle"] .wheel-slot { width: 15.5%; }
+.tile-grid[data-tile-shape="circle"] .tile { border-radius: 50%; }
+.tile-grid[data-tile-shape="circle"] .tile-order { top: 2px; left: 50%; transform: translateX(-50%); font-size: 9px; }
+.anagram-wheel .tile { background: var(--bg); }
+.anagram-wheel .tile.selected { background: #4b3b1f; }
+.anagram-wheel .tile:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.container.letter-combat .anagram-wheel .tile-letter { font-size: clamp(21px, 7vw, 32px); }
+.container.letter-combat .anagram-wheel[data-rings="1"] .tile-letter { font-size: clamp(18px, 6vw, 28px); }
+.anagram-wheel .tile-order { top: 2px; left: 3px; font-size: 10px; }
+.anagram-wheel .tile:disabled:not(.tile-empty) { cursor: default; }
+.wheel-trace { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.wheel-trace :is(polyline, line) { fill: none; stroke: var(--blue); stroke-width: 2; vector-effect: non-scaling-stroke; stroke-linejoin: round; stroke-linecap: round; }
+.wheel-guide { fill: none; stroke: var(--fg); stroke-width: 1; vector-effect: non-scaling-stroke; opacity: 0.12; }
+.wheel-live-trace { opacity: 0.5; }
+.anagram-wheel .wheel-shuffle {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 44px; height: 44px; color: var(--fg); background: var(--bg); z-index: 1;
+}
+.wheel-shuffle:disabled { opacity: 0.35; cursor: default; }
+.wheel-shuffle:enabled:hover { color: var(--emph); }
+.wheel-shuffle:enabled:active svg { transform: rotate(15deg); }
+
+
+@media (orientation: landscape) and (max-height: 550px) {
+  .container.letter-combat:is([data-board-layout="wheel"], [data-board-layout="ring"]) .controls { width: min(100%, 22rem, calc(var(--app-height, 100dvh) - 8rem), var(--board-fit, 100vw)); }
+}
+/* Special labels remain legible on small rings without covering the letter. */
+.anagram-wheel .tile-special-label { display: none; }
+.anagram-wheel .tile-special { bottom: 2px; }

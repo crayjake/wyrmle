@@ -6,8 +6,8 @@ Locally, open `?preview=wheel` on the Vite site.
 The published 28 September FURY board can be displayed as two rings (ten outer
 tiles and six inner tiles), one ring containing all sixteen tiles, or the grid.
 The original fonts, colours, thin outlines, enemy underlines, Lives, Refills and
-attack preview are shared with Daily. Square and circular tiles are available
-in this preview.
+attack preview are shared with Daily. Layout and tile-shape choices now live
+in Settings and are also available in Daily and the concept previews.
 
 | Layout | Square tiles | Circular tiles |
 | --- | --- | --- |
@@ -17,13 +17,13 @@ in this preview.
 - Tap letters or swipe through them in spelling order. A thin line traces the word.
 - The centre button shuffles positions and clears the selection. It preserves
   every physical tile, including repeated letters, and costs no life.
-- Grid / 2 rings / 1 ring compares layouts while keeping the selection and run.
-- The shape button toggles square and circular tiles. The URL retains both choices.
+- Settings → Grid / 2 rings / 1 ring compares layouts while keeping the selection and run.
+- Settings → Square tiles / Round tiles changes shape. This preview's URL retains both choices.
 - Play Word uses the real puzzle engine, including meanings, hits and refills.
 - Preview attempts live only in memory. They do not record a daily attempt or stars.
 
-The normal site entry still opens the daily grid. This preview has a separate
-lazy-loaded route and stylesheet.
+The normal site entry opens Daily with the saved layout, defaulting to the original
+square grid. This preview still has a separate lazy-loaded route.
 
 ## Captures
 

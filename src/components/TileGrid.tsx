@@ -14,6 +14,7 @@ import { beginTileSelectionGesture, crossedTileIds, finishTileSelectionGesture, 
 import type { TileGestureBounds, TileSelectionGesture } from './tileSelectionGesture'
 import './TileReadability.css'
 import './TileGesture.css'
+import './BoardLayouts.css'
 
 type BoardTilePresentation = {
   id: number

@@ -24,7 +24,7 @@ let reviewCache: {
 }
 const percent = (value: number | null) => value === null ? 'Unknown' : `${Math.round(value * 100)}%`
 const decimal = (value: number | null) => value === null ? 'Unknown' : value.toFixed(2)
-const specialLabels = { ward: 'Life', strike: 'Hit', regen: 'Revive' }
+const specialLabels = { ward: 'Life', strike: 'Hit', regen: 'Revive', power: 'Power' }
 const mechanicLabels = { semantic: 'Meaning', ward: 'Life', strike: 'Hit', regen: 'Revive', grammar: 'Word types', armour: 'Armour' }
 const displayReviewText = (value: string) => value.replace(/\b(ward|heart|resolve|regen)\b/gi, word =>
   ({ ward: 'Life', heart: 'Life', resolve: 'lives', regen: 'Revive' })[word.toLowerCase()]!)

@@ -1,0 +1,70 @@
+[
+  {
+    "id": "fiction",
+    "enemy": "FICTION",
+    "definition": "an invented story or false account",
+    "asset": "previews/synonyms/fiction-e963c4c922aa.json",
+    "revision": "e963c4c922aa",
+    "powers": 0,
+    "guide": {
+      "answer": "FABRICATION",
+      "hints": [
+        "Think of a story someone made up.",
+        "It can also mean making something in a workshop.",
+        "Eleven letters, beginning with F."
+      ],
+      "explanation": "FABRICATION shares the displayed meaning of FICTION. It contains every enemy letter."
+    }
+  },
+  {
+    "id": "eternal",
+    "enemy": "ETERNAL",
+    "definition": "lasting forever, or seeming never to end",
+    "asset": "previews/synonyms/eternal-27199887798e.json",
+    "revision": "27199887798e",
+    "powers": 0,
+    "guide": {
+      "answer": "INTERMINABLE",
+      "hints": [
+        "Think of a meeting that seems to go on forever.",
+        "There is a sense of wishing it would finally stop.",
+        "Twelve letters, beginning with I."
+      ],
+      "explanation": "INTERMINABLE shares the displayed meaning of ETERNAL. It contains every enemy letter."
+    }
+  },
+  {
+    "id": "calm-power",
+    "enemy": "CALM",
+    "definition": "quiet and free from agitation; to make something so",
+    "asset": "previews/synonyms/calm-power-6d5a9e23eefe.json",
+    "revision": "6d5a9e23eefe",
+    "powers": 1,
+    "guide": {
+      "answer": "PEACEFUL",
+      "hints": [
+        "Think of a place without conflict or disturbance.",
+        "The word starts with a five-letter word for calm.",
+        "Eight letters. Use the blue F."
+      ],
+      "explanation": "PEACEFUL shares the displayed meaning of CALM. The blue tiles cover the missing enemy letters."
+    }
+  },
+  {
+    "id": "gloom-power",
+    "enemy": "GLOOM",
+    "definition": "sadness or low spirits",
+    "asset": "previews/synonyms/gloom-power-89674b0fd64a.json",
+    "revision": "89674b0fd64a",
+    "powers": 2,
+    "guide": {
+      "answer": "MELANCHOLY",
+      "hints": [
+        "Think of a thoughtful, lingering sadness.",
+        "It is also a word for a sad mood.",
+        "Ten letters, beginning with M. Both blue tiles help."
+      ],
+      "explanation": "MELANCHOLY shares the displayed meaning of GLOOM. The blue tiles cover the missing enemy letters."
+    }
+  }
+]

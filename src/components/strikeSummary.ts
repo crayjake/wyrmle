@@ -9,7 +9,7 @@ const meaningLabels = {
 } as const
 
 /** Present the scored move, including rules carried by older saved puzzles. */
-export function getStrikeSummary(preview: LetterStrikePreview, lives?: number, enemyWord?: string) {
+export function getStrikeSummary(preview: LetterStrikePreview, lives?: number, enemyWord?: string, synonyms = false) {
   const details: StrikeDetail[] = []
   if (!preview.valid) return null
   if (preview.longWordModifier) details.push({ kind: 'legacy', text: `Long ${signed(preview.longWordModifier)}` })
@@ -20,6 +20,8 @@ export function getStrikeSummary(preview: LetterStrikePreview, lives?: number, e
   // A guaranteed hit is not necessarily an extra hit: a counter can already
   // use that tile. Never describe it as +1 without a counterfactual score.
   if (preview.effectLabels.includes('STRIKE')) details.push({ kind: 'hit', text: 'Hit tile' })
+  const powerHits = preview.hits.filter(hit => hit.wild)
+  if (powerHits.length) details.push({ kind: 'hit', text: `Power hits ${powerHits.map(hit => hit.letter).join(', ')}` })
   if (preview.resolveCost === 0) details.push({ kind: 'life', text: 'Life saved' })
   else if (lives !== undefined && lives <= preview.resolveCost && preview.enemyLetters.some(letter => letter.hitsRemaining > 0)) {
     details.push({ kind: 'last-life', text: 'Uses your last life' })
@@ -30,7 +32,8 @@ export function getStrikeSummary(preview: LetterStrikePreview, lives?: number, e
       `${recovery.letter} ${recovery.hitsBefore === 0 ? 'returns' : 'gains armour'}`).join(', ')}` })
   }
   return {
-    meaning: preview.semanticLabel === 'COUNTER' && enemyWord ? `Counters ${enemyWord}` : meaningLabels[preview.semanticLabel],
+    meaning: synonyms ? preview.semanticLabel === 'COUNTER' ? `Synonym of ${enemyWord}` : 'Not a synonym'
+      : preview.semanticLabel === 'COUNTER' && enemyWord ? `Counters ${enemyWord}` : meaningLabels[preview.semanticLabel],
     kind: preview.semanticLabel.toLowerCase(),
     hits: `${preview.strikes} ${preview.strikes === 1 ? 'hit' : 'hits'}`,
     details,

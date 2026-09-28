@@ -12,7 +12,7 @@
   border-color: var(--emph);
 }
 
-.letter-combat .tile.strike {
+.letter-combat .tile.strike, .letter-combat .tile.power {
   --special-colour: var(--blue);
 }
 

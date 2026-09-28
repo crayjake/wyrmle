@@ -12,6 +12,17 @@ class MemoryStorage implements StorageLike {
   key(index: number) { return [...this.data.keys()][index] ?? null }
 }
 
+test('layout and tile shape persist while old and invalid preferences retain the original defaults', () => {
+  const storage = new MemoryStorage()
+  savePreferences(storage, { ...defaultPreferences(), boardLayout: 'ring', tileShape: 'circle' })
+  assert.equal(loadPreferences(storage).boardLayout, 'ring')
+  assert.equal(loadPreferences(storage).tileShape, 'circle')
+  storage.setItem(PREFERENCES_KEY, JSON.stringify({ boardLayout: 'invalid', tileShape: 'triangle' }))
+  assert.equal(loadPreferences(storage).boardLayout, undefined)
+  assert.equal(loadPreferences(storage).tileShape, undefined)
+  assert.equal(loadPreferences(storage).preferredMode, 'normal')
+})
+
 test('first visit recommends Normal and enters tutorial without creating Daily data', () => {
   const storage = new MemoryStorage()
   const preferences = loadPreferences(storage)

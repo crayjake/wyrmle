@@ -1,0 +1,1382 @@
+[
+  {
+    "id": "fiction",
+    "revision": "e963c4c922aa",
+    "review": "An invented account can be a fabrication, lie, fable, fantasy or invention. Invention uses its made-up-account reading, not a useful device. Physical creations, patents and inventions in the technological sense are not separately added.",
+    "roots": [
+      {
+        "id": "oewn-fiction__1.10.01..",
+        "synset": "oewn-06770602-n",
+        "lemma": "fiction",
+        "partOfSpeech": "noun",
+        "definition": "a deliberately false or improbable account",
+        "definitions": [
+          "a deliberately false or improbable account"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-fictional__5.00.00.unreal.00"
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-fictionalize__2.36.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-fictitious__5.00.00.counterfeit.00"
+          }
+        ]
+      },
+      {
+        "id": "oewn-fable__1.10.02..",
+        "synset": "oewn-06770602-n",
+        "lemma": "fable",
+        "partOfSpeech": "noun",
+        "definition": "a deliberately false or improbable account",
+        "definitions": [
+          "a deliberately false or improbable account"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-fabulist__1.18.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-fabulous__5.00.00.incredible.00"
+          }
+        ]
+      },
+      {
+        "id": "oewn-lie__1.10.00..",
+        "synset": "oewn-06769542-n",
+        "lemma": "lie",
+        "partOfSpeech": "noun",
+        "definition": "a statement that deviates from or perverts the truth",
+        "definitions": [
+          "a statement that deviates from or perverts the truth"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-lie__2.32.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-falsehood__1.10.00..",
+        "synset": "oewn-06769118-n",
+        "lemma": "falsehood",
+        "partOfSpeech": "noun",
+        "definition": "a false statement",
+        "definitions": [
+          "a false statement"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-truth__1.10.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-deceit__1.10.00..",
+        "synset": "oewn-06770936-n",
+        "lemma": "deceit",
+        "partOfSpeech": "noun",
+        "definition": "a misleading falsehood",
+        "definitions": [
+          "a misleading falsehood"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-tale__1.10.01..",
+        "synset": "oewn-06769768-n",
+        "lemma": "tale",
+        "partOfSpeech": "noun",
+        "definition": "a trivial lie",
+        "definitions": [
+          "a trivial lie"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-story__1.10.02..",
+        "synset": "oewn-06769768-n",
+        "lemma": "story",
+        "partOfSpeech": "noun",
+        "definition": "a trivial lie",
+        "definitions": [
+          "a trivial lie"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-fancy__1.09.02..",
+        "synset": "oewn-05904666-n",
+        "lemma": "fancy",
+        "partOfSpeech": "noun",
+        "definition": "something many people believe that is false",
+        "definitions": [
+          "something many people believe that is false"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-fancy__2.36.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-fantasy__1.09.01..",
+        "synset": "oewn-05904666-n",
+        "lemma": "fantasy",
+        "partOfSpeech": "noun",
+        "definition": "something many people believe that is false",
+        "definitions": [
+          "something many people believe that is false"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-fantasize__2.36.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-fantasy__2.36.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-invention__1.09.00..",
+        "synset": "oewn-05641230-n",
+        "lemma": "invention",
+        "partOfSpeech": "noun",
+        "definition": "the creation of something in the mind",
+        "definitions": [
+          "the creation of something in the mind"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-invent__2.36.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-concoction__1.09.00..",
+        "synset": "oewn-05642064-n",
+        "lemma": "concoction",
+        "partOfSpeech": "noun",
+        "definition": "the invention of a scheme or story to suit some purpose",
+        "definitions": [
+          "the invention of a scheme or story to suit some purpose"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-concoct__2.36.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-concoct__2.36.02.."
+          }
+        ]
+      }
+    ],
+    "startingSynonyms": [
+      "FABLE",
+      "FABLES",
+      "FABRICATION",
+      "FABRICATIONS",
+      "FALSITY",
+      "FANCIES",
+      "FANCY",
+      "FANTASY",
+      "FIB",
+      "FIBS",
+      "LIE",
+      "LIES",
+      "STORY",
+      "TALE",
+      "TALES"
+    ],
+    "startingBingos": [
+      "FABRICATION",
+      "FABRICATIONS"
+    ],
+    "unpoweredBingos": [
+      "FABRICATION",
+      "FABRICATIONS"
+    ],
+    "routes": [
+      [
+        {
+          "word": "FABRICATION",
+          "ids": [
+            2,
+            7,
+            3,
+            13,
+            10,
+            1,
+            11,
+            4,
+            14,
+            5,
+            6
+          ],
+          "hits": 7,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "FALSITY",
+          "ids": [
+            2,
+            7,
+            0,
+            8,
+            10,
+            4,
+            12
+          ],
+          "hits": 3,
+          "powerHits": 0,
+          "remaining": "CION"
+        },
+        {
+          "word": "DECEPTION",
+          "ids": [
+            9,
+            15,
+            1,
+            20,
+            18,
+            19,
+            14,
+            5,
+            6
+          ],
+          "hits": 4,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "FANCY",
+          "ids": [
+            2,
+            7,
+            6,
+            1,
+            12
+          ],
+          "hits": 3,
+          "powerHits": 0,
+          "remaining": "ITIO"
+        },
+        {
+          "word": "LIE",
+          "ids": [
+            0,
+            10,
+            15
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": "TIO"
+        },
+        {
+          "word": "INVENTION",
+          "ids": [
+            14,
+            16,
+            17,
+            20,
+            22,
+            4,
+            21,
+            5,
+            23
+          ],
+          "hits": 3,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ]
+    ],
+    "routeEffort": [
+      5.64,
+      5.56,
+      3.32
+    ],
+    "words": 34744,
+    "bytes": 392447,
+    "limitation": "Reviewed synonym-family research prototype. Route witnesses are verified; not a v3 difficulty certification or an exhaustive contextual semantic audit."
+  },
+  {
+    "id": "eternal",
+    "revision": "27199887798e",
+    "review": "The displayed sense includes literal forever and a seemingly endless duration. LASTING uses prolonged duration; IMMORTAL uses never dying. FOREVER is the ordinary adverb expressing the same duration. Physical durability alone is not admitted through the LASTING synset.",
+    "roots": [
+      {
+        "id": "oewn-eternal__5.00.00.permanent.00",
+        "synset": "oewn-01759536-s",
+        "lemma": "eternal",
+        "partOfSpeech": "adjective",
+        "definition": "continuing forever or indefinitely",
+        "definitions": [
+          "continuing forever or indefinitely"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-eternity__1.26.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-eternal__5.00.00.long.02",
+        "synset": "oewn-01442658-s",
+        "lemma": "eternal",
+        "partOfSpeech": "adjective",
+        "definition": "tiresomely long; seemingly without end",
+        "definitions": [
+          "tiresomely long; seemingly without end"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-eternity__1.28.01.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-constant__5.00.00.continuous.01",
+        "synset": "oewn-00597981-s",
+        "lemma": "constant",
+        "partOfSpeech": "adjective",
+        "definition": "uninterrupted in time and indefinitely long continuing",
+        "definitions": [
+          "uninterrupted in time and indefinitely long continuing"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-forever__4.02.00..",
+        "synset": "oewn-00088030-r",
+        "lemma": "forever",
+        "partOfSpeech": "adverb",
+        "definition": "for a limitless time",
+        "definitions": [
+          "for a limitless time"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-forever__4.02.02..",
+        "synset": "oewn-00089564-r",
+        "lemma": "forever",
+        "partOfSpeech": "adverb",
+        "definition": "for a very long or seemingly endless time",
+        "definitions": [
+          "for a very long or seemingly endless time"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-lasting__5.00.00.long.02",
+        "synset": "oewn-01442370-s",
+        "lemma": "lasting",
+        "partOfSpeech": "adjective",
+        "definition": "existing for a long time",
+        "definitions": [
+          "existing for a long time"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-lastingness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-immortal__3.00.00..",
+        "synset": "oewn-01562296-a",
+        "lemma": "immortal",
+        "partOfSpeech": "adjective",
+        "definition": "not subject to death",
+        "definitions": [
+          "not subject to death"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-mortal__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-immortality__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-timeless__5.00.00.unaltered.00",
+        "synset": "oewn-00354532-s",
+        "lemma": "timeless",
+        "partOfSpeech": "adjective",
+        "definition": "unaffected by time",
+        "definitions": [
+          "unaffected by time"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-timelessness__1.26.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-perennial__5.00.00.long.02",
+        "synset": "oewn-01444620-s",
+        "lemma": "perennial",
+        "partOfSpeech": "adjective",
+        "definition": "lasting an indefinitely long time; suggesting self-renewal",
+        "definitions": [
+          "lasting an indefinitely long time; suggesting self-renewal"
+        ],
+        "relations": []
+      }
+    ],
+    "startingSynonyms": [
+      "AGELESS",
+      "ENDLESS",
+      "INTERMINABLE",
+      "LASTING",
+      "TIMELESS"
+    ],
+    "startingBingos": [
+      "INTERMINABLE"
+    ],
+    "unpoweredBingos": [
+      "INTERMINABLE"
+    ],
+    "routes": [
+      [
+        {
+          "word": "INTERMINABLE",
+          "ids": [
+            4,
+            1,
+            13,
+            6,
+            9,
+            7,
+            11,
+            3,
+            2,
+            8,
+            14,
+            10
+          ],
+          "hits": 7,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "ENDLESS",
+          "ids": [
+            6,
+            1,
+            5,
+            14,
+            10,
+            12,
+            15
+          ],
+          "hits": 4,
+          "powerHits": 0,
+          "remaining": "TRA"
+        },
+        {
+          "word": "IMMORTAL",
+          "ids": [
+            4,
+            7,
+            19,
+            18,
+            9,
+            13,
+            2,
+            16
+          ],
+          "hits": 3,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "ENDLESS",
+          "ids": [
+            6,
+            1,
+            5,
+            14,
+            10,
+            12,
+            15
+          ],
+          "hits": 4,
+          "powerHits": 0,
+          "remaining": "TRA"
+        },
+        {
+          "word": "LASTING",
+          "ids": [
+            16,
+            2,
+            17,
+            13,
+            4,
+            3,
+            0
+          ],
+          "hits": 2,
+          "powerHits": 0,
+          "remaining": "R"
+        },
+        {
+          "word": "FOREVER",
+          "ids": [
+            20,
+            18,
+            9,
+            22,
+            21,
+            23,
+            24
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ]
+    ],
+    "routeEffort": [
+      8.04,
+      3.26,
+      1.98
+    ],
+    "words": 52433,
+    "bytes": 604894,
+    "limitation": "Reviewed synonym-family research prototype. Route witnesses are verified; not a v3 difficulty certification or an exhaustive contextual semantic audit."
+  },
+  {
+    "id": "calm-power",
+    "revision": "6d5a9e23eefe",
+    "review": "Calm includes a quiet state and making something quiet. MILD is a calm/gentle manner, not a comparison of temperature. The POWER F supplies the missing M in PEACEFUL. The shorter routes can win without spending that power.",
+    "roots": [
+      {
+        "id": "oewn-calm__5.00.00.composed.00",
+        "synset": "oewn-00531862-s",
+        "lemma": "calm",
+        "partOfSpeech": "adjective",
+        "definition": "not agitated; without losing self-possession",
+        "definitions": [
+          "not agitated; without losing self-possession"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-calm__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-calmness__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-calmness__1.12.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-placid__5.00.00.calm.00",
+        "synset": "oewn-00303750-s",
+        "lemma": "placid",
+        "partOfSpeech": "adjective",
+        "definition": "(of a body of water) free from disturbance by heavy waves",
+        "definitions": [
+          "(of a body of water) free from disturbance by heavy waves"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-placidness__1.12.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-composed__3.00.00..",
+        "synset": "oewn-00531471-a",
+        "lemma": "composed",
+        "partOfSpeech": "adjective",
+        "definition": "serenely self-possessed and free from agitation especially in times of stress",
+        "definitions": [
+          "serenely self-possessed and free from agitation especially in times of stress"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-discomposed__3.00.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-peaceful__3.00.00..",
+        "synset": "oewn-01745141-a",
+        "lemma": "peaceful",
+        "partOfSpeech": "adjective",
+        "definition": "not disturbed by strife or turmoil or war",
+        "definitions": [
+          "not disturbed by strife or turmoil or war"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-unpeaceful__3.00.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-relaxed__3.00.00..",
+        "synset": "oewn-02416399-a",
+        "lemma": "relaxed",
+        "partOfSpeech": "adjective",
+        "definition": "without strain or anxiety",
+        "definitions": [
+          "without strain or anxiety"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-tense__3.00.03.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-easy__3.00.02..",
+        "synset": "oewn-00825684-a",
+        "lemma": "easy",
+        "partOfSpeech": "adjective",
+        "definition": "free from worry or anxiety",
+        "definitions": [
+          "free from worry or anxiety"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-uneasy__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-easiness__1.12.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-mild__3.00.00..",
+        "synset": "oewn-01512398-a",
+        "lemma": "mild",
+        "partOfSpeech": "adjective",
+        "definition": "moderate in type or degree or effect or force; far from extreme",
+        "definitions": [
+          "moderate in type or degree or effect or force; far from extreme"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-intense__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-mildness__1.07.01.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-peace__1.12.00..",
+        "synset": "oewn-07531029-n",
+        "lemma": "peace",
+        "partOfSpeech": "noun",
+        "definition": "the absence of mental stress or anxiety",
+        "definitions": [
+          "the absence of mental stress or anxiety"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-pacify__2.37.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-ease__2.37.00..",
+        "synset": "oewn-01819152-v",
+        "lemma": "ease",
+        "partOfSpeech": "verb",
+        "definition": "lessen the intensity of or calm",
+        "definitions": [
+          "lessen the intensity of or calm"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-ease__1.26.02.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-easement__1.04.00.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-ease__1.26.02..",
+            "qualifier": "state"
+          },
+          {
+            "type": "other",
+            "target": "oewn-easement__1.04.00..",
+            "qualifier": "event"
+          }
+        ]
+      },
+      {
+        "id": "oewn-lull__2.37.00..",
+        "synset": "oewn-01768652-v",
+        "lemma": "lull",
+        "partOfSpeech": "verb",
+        "definition": "make calm or still",
+        "definitions": [
+          "make calm or still"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-lull__1.28.00.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-lull__1.28.00..",
+            "qualifier": "event"
+          }
+        ]
+      },
+      {
+        "id": "oewn-relax__2.29.00..",
+        "synset": "oewn-00026378-v",
+        "lemma": "relax",
+        "partOfSpeech": "verb",
+        "definition": "become less tense, rest, or take one's ease",
+        "definitions": [
+          "become less tense, rest, or take one's ease"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-tense__2.29.01.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-relaxant__5.00.00.depressant.00"
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-relaxation__1.04.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-relaxation__1.22.01.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-relaxation__1.04.00..",
+            "qualifier": "event"
+          },
+          {
+            "type": "other",
+            "target": "oewn-relaxation__1.22.01..",
+            "qualifier": "event"
+          }
+        ]
+      },
+      {
+        "id": "oewn-relax__2.29.01..",
+        "synset": "oewn-00025647-v",
+        "lemma": "relax",
+        "partOfSpeech": "verb",
+        "definition": "cause to feel relaxed",
+        "definitions": [
+          "cause to feel relaxed"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-tense__2.29.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-relaxant__1.06.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-relaxant__5.00.00.depressant.00"
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-relaxation__1.12.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-relaxer__1.17.00.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-relaxation__1.12.00..",
+            "qualifier": "state"
+          },
+          {
+            "type": "other",
+            "target": "oewn-relaxer__1.17.00..",
+            "qualifier": "by_means_of"
+          }
+        ]
+      },
+      {
+        "id": "oewn-settle__2.30.05..",
+        "synset": "oewn-00559750-v",
+        "lemma": "settle",
+        "partOfSpeech": "verb",
+        "definition": "become resolved, fixed, established, or quiet",
+        "definitions": [
+          "become resolved, fixed, established, or quiet"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-soothe__2.37.00..",
+        "synset": "oewn-01818782-v",
+        "lemma": "soothe",
+        "partOfSpeech": "verb",
+        "definition": "give moral or emotional strength to",
+        "definitions": [
+          "give moral or emotional strength to"
+        ],
+        "relations": []
+      }
+    ],
+    "startingSynonyms": [
+      "EASE",
+      "EASED",
+      "EASIER",
+      "MILD",
+      "MILDER",
+      "MILDEST",
+      "PEACE",
+      "PEACEFUL",
+      "PEACES",
+      "PLACID",
+      "PLACIDER",
+      "PLACIDEST",
+      "REPOSE",
+      "STILL",
+      "STILLED",
+      "STILLER"
+    ],
+    "startingBingos": [
+      "PEACEFUL"
+    ],
+    "unpoweredBingos": [],
+    "routes": [
+      [
+        {
+          "word": "PEACEFUL",
+          "ids": [
+            10,
+            0,
+            9,
+            5,
+            2,
+            3,
+            8,
+            11
+          ],
+          "hits": 4,
+          "powerHits": 1,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "PEACE",
+          "ids": [
+            10,
+            0,
+            9,
+            5,
+            2
+          ],
+          "hits": 2,
+          "powerHits": 0,
+          "remaining": "LM"
+        },
+        {
+          "word": "MILD",
+          "ids": [
+            14,
+            7,
+            11,
+            4
+          ],
+          "hits": 2,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "MILD",
+          "ids": [
+            14,
+            7,
+            11,
+            4
+          ],
+          "hits": 2,
+          "powerHits": 0,
+          "remaining": "CA"
+        },
+        {
+          "word": "EASE",
+          "ids": [
+            0,
+            9,
+            13,
+            2
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": "C"
+        },
+        {
+          "word": "PEACE",
+          "ids": [
+            10,
+            18,
+            20,
+            5,
+            23
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ]
+    ],
+    "routeEffort": [
+      2.24,
+      0.78,
+      0.78
+    ],
+    "words": 29237,
+    "bytes": 326940,
+    "limitation": "Reviewed synonym-family research prototype. Route witnesses are verified; not a v3 difficulty certification or an exhaustive contextual semantic audit."
+  },
+  {
+    "id": "gloom-power",
+    "revision": "89674b0fd64a",
+    "review": "Words for sadness and words describing that mood count. LOW means low spirits, not height; MOROSE means a gloomy mood. No darkness, blue-colour or weather senses are added. MELANCHOLY needs the two POWER tiles to supply G and the second O.",
+    "roots": [
+      {
+        "id": "oewn-gloom__1.12.00..",
+        "synset": "oewn-07548645-n",
+        "lemma": "gloom",
+        "partOfSpeech": "noun",
+        "definition": "a feeling of melancholy apprehension",
+        "definitions": [
+          "a feeling of melancholy apprehension"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-gloom__1.26.02..",
+        "synset": "oewn-14548967-n",
+        "lemma": "gloom",
+        "partOfSpeech": "noun",
+        "definition": "an atmosphere of depression and melancholy",
+        "definitions": [
+          "an atmosphere of depression and melancholy"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-melancholy__1.12.00..",
+        "synset": "oewn-07548485-n",
+        "lemma": "melancholy",
+        "partOfSpeech": "noun",
+        "definition": "a feeling of thoughtful sadness",
+        "definitions": [
+          "a feeling of thoughtful sadness"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-melancholy__5.00.00.sad.00",
+        "synset": "oewn-01365600-s",
+        "lemma": "melancholy",
+        "partOfSpeech": "adjective",
+        "definition": "characterized by or causing or expressing sadness",
+        "definitions": [
+          "characterized by or causing or expressing sadness"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-melancholy__5.00.00.depressing.00",
+        "synset": "oewn-00366341-s",
+        "lemma": "melancholy",
+        "partOfSpeech": "adjective",
+        "definition": "grave or even gloomy in character",
+        "definitions": [
+          "grave or even gloomy in character"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-morose__5.00.00.ill-natured.00",
+        "synset": "oewn-01140878-s",
+        "lemma": "morose",
+        "partOfSpeech": "adjective",
+        "definition": "showing a brooding ill humor",
+        "definitions": [
+          "showing a brooding ill humor"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-moroseness__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-moroseness__1.12.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-low__5.00.00.dejected.00",
+        "synset": "oewn-00707060-s",
+        "lemma": "low",
+        "partOfSpeech": "adjective",
+        "definition": "filled with melancholy and despondency",
+        "definitions": [
+          "filled with melancholy and despondency"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-lowness__1.12.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-misery__1.12.00..",
+        "synset": "oewn-07549366-n",
+        "lemma": "misery",
+        "partOfSpeech": "noun",
+        "definition": "a feeling of intense unhappiness",
+        "definitions": [
+          "a feeling of intense unhappiness"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-sorrow__1.26.00..",
+        "synset": "oewn-14012536-n",
+        "lemma": "sorrow",
+        "partOfSpeech": "noun",
+        "definition": "the state of being sad",
+        "definitions": [
+          "the state of being sad"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-sorrow__2.37.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-sorrow__1.12.00..",
+        "synset": "oewn-07549818-n",
+        "lemma": "sorrow",
+        "partOfSpeech": "noun",
+        "definition": "an emotion of great sadness associated with loss or bereavement",
+        "definitions": [
+          "an emotion of great sadness associated with loss or bereavement"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-joy__1.12.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-sorrow__2.37.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-sad__3.00.00..",
+        "synset": "oewn-01364779-a",
+        "lemma": "sad",
+        "partOfSpeech": "adjective",
+        "definition": "experiencing or showing sorrow or unhappiness",
+        "definitions": [
+          "experiencing or showing sorrow or unhappiness"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-glad__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-sadness__1.12.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-sadness__1.26.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-sadness__1.26.00..",
+        "synset": "oewn-14012536-n",
+        "lemma": "sadness",
+        "partOfSpeech": "noun",
+        "definition": "the state of being sad",
+        "definitions": [
+          "the state of being sad"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-sad__3.00.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-unhappy__3.00.00..",
+        "synset": "oewn-01152997-a",
+        "lemma": "unhappy",
+        "partOfSpeech": "adjective",
+        "definition": "experiencing or marked by or causing sadness or sorrow or discontent",
+        "definitions": [
+          "experiencing or marked by or causing sadness or sorrow or discontent"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-happy__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-unhappiness__1.12.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-unhappiness__1.26.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-blues__1.26.00..",
+        "synset": "oewn-14427864-n",
+        "lemma": "blues",
+        "partOfSpeech": "noun",
+        "definition": "a state of depression",
+        "definitions": [
+          "a state of depression"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-dejection__1.26.00..",
+        "synset": "oewn-14510117-n",
+        "lemma": "dejection",
+        "partOfSpeech": "noun",
+        "definition": "a state of melancholy depression",
+        "definitions": [
+          "a state of melancholy depression"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-deject__2.37.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-dejected__3.00.00..",
+        "synset": "oewn-00706554-a",
+        "lemma": "dejected",
+        "partOfSpeech": "adjective",
+        "definition": "affected or marked by low spirits",
+        "definitions": [
+          "affected or marked by low spirits"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-elated__3.00.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-glum__5.00.00.dejected.00",
+        "synset": "oewn-00707714-s",
+        "lemma": "glum",
+        "partOfSpeech": "adjective",
+        "definition": "moody and melancholic",
+        "definitions": [
+          "moody and melancholic"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-glumness__1.12.00.."
+          }
+        ]
+      }
+    ],
+    "startingSynonyms": [
+      "LOW",
+      "LOWER",
+      "MELANCHOLY",
+      "MISERY",
+      "MOROSE",
+      "MOROSER",
+      "SORROW"
+    ],
+    "startingBingos": [
+      "MELANCHOLY"
+    ],
+    "unpoweredBingos": [],
+    "routes": [
+      [
+        {
+          "word": "MELANCHOLY",
+          "ids": [
+            15,
+            9,
+            2,
+            10,
+            4,
+            0,
+            12,
+            1,
+            3,
+            13
+          ],
+          "hits": 5,
+          "powerHits": 2,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "MOROSE",
+          "ids": [
+            15,
+            1,
+            7,
+            5,
+            14,
+            9
+          ],
+          "hits": 4,
+          "powerHits": 1,
+          "remaining": "L"
+        },
+        {
+          "word": "LOW",
+          "ids": [
+            2,
+            16,
+            8
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "LOW",
+          "ids": [
+            2,
+            1,
+            8
+          ],
+          "hits": 2,
+          "powerHits": 0,
+          "remaining": "GOM"
+        },
+        {
+          "word": "MISERY",
+          "ids": [
+            15,
+            6,
+            14,
+            9,
+            7,
+            13
+          ],
+          "hits": 2,
+          "powerHits": 1,
+          "remaining": "O"
+        },
+        {
+          "word": "SORROW",
+          "ids": [
+            18,
+            5,
+            11,
+            20,
+            16,
+            23
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ]
+    ],
+    "routeEffort": [
+      5.22,
+      4.72,
+      2.14
+    ],
+    "words": 34554,
+    "bytes": 382708,
+    "limitation": "Reviewed synonym-family research prototype. Route witnesses are verified; not a v3 difficulty certification or an exhaustive contextual semantic audit."
+  }
+]

@@ -13,6 +13,7 @@ const gemPresentation: Record<LetterStrikeGem, { label: string; symbol: string }
   strike: { label: 'HIT', symbol: '◆' },
   ward: { label: 'LIFE', symbol: '▪' },
   regen: { label: 'REVIVE', symbol: '+' },
+  power: { label: 'POWER', symbol: '◆' },
 }
 
 /** Translate recorded effect codes at the display boundary; saves stay exact. */
@@ -44,7 +45,7 @@ export function getLetterStrikeBonuses(preview: LetterStrikePreview): AttackBonu
 export function getLetterStrikeTileSummary(
   state: Pick<LetterStrikeState, 'tiles' | 'encounter'>,
 ): readonly LetterStrikeTileSummary[] {
-  return (['strike', 'ward', 'regen'] as const).flatMap(gem => {
+  return (['strike', 'ward', 'regen', 'power'] as const).flatMap(gem => {
     if (!state.tiles.some(tile => tile.type === 'gem' && tile.gem === gem)) return []
     const rule = state.encounter.tileEffects[gem]
     if (!rule) return []
@@ -55,6 +56,7 @@ export function getLetterStrikeTileSummary(
         ...(rule.strike ? ['HITS MATCHING LETTER'] : []),
         ...(rule.preventResolveLoss ? ['SAVES A LIFE THIS TURN'] : []),
         ...(rule.regenerate ? ['MATCHING ENEMY LETTER RECOVERS AFTER HITS'] : []),
+        ...(rule.bonusStrike ? ['A SYNONYM HITS ONE EXTRA ENEMY LETTER'] : []),
       ].join(' · '),
     }]
   })

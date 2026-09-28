@@ -2,6 +2,8 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { defaultPreferences, loadPreferences, PREFERENCES_KEY, savePreferences } from './preferences.ts'
 import type { UserPreferences } from './preferences.ts'
 
+const preferencesChanged = 'wyrmle:preferences-changed'
+
 function readPreferences(): UserPreferences {
   try { return loadPreferences(window.localStorage) }
   catch { return defaultPreferences() }
@@ -13,14 +15,18 @@ export function useUserPreferences() {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    function sync(event: StorageEvent) {
-      if (event.key !== PREFERENCES_KEY && event.key !== null) return
+    function sync(event: Event) {
+      if (event instanceof StorageEvent && event.key !== PREFERENCES_KEY && event.key !== null) return
       const next = readPreferences()
       currentPreferences.current = next
       setPreferences(current => JSON.stringify(current) === JSON.stringify(next) ? current : next)
     }
     window.addEventListener('storage', sync)
-    return () => window.removeEventListener('storage', sync)
+    window.addEventListener(preferencesChanged, sync)
+    return () => {
+      window.removeEventListener('storage', sync)
+      window.removeEventListener(preferencesChanged, sync)
+    }
   }, [])
 
   const update = useCallback((changes: Partial<UserPreferences>) => {
@@ -29,6 +35,7 @@ export function useUserPreferences() {
     setPreferences(next)
     try {
       savePreferences(window.localStorage, next)
+      window.dispatchEvent(new Event(preferencesChanged))
       setError(null)
     } catch {
       setError('Preferences could not be saved. They apply for this visit.')

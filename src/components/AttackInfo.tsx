@@ -19,6 +19,7 @@ type AttackInfoProps = {
     strikePreview?: LetterStrikePreview
     enemyWord?: string
     resolveBefore?: number
+    synonyms?: boolean
 }
 
 export default function AttackInfo({
@@ -32,13 +33,14 @@ export default function AttackInfo({
     strikePreview,
     enemyWord,
     resolveBefore,
+    synonyms = false,
 }: AttackInfoProps) {
     const segments = 12
     const filled = maxDamage > 0 ? Math.min(segments, Math.max(0, Math.round((damage / maxDamage) * segments))) : 0
     const strikeMetric = metric === 'strikes'
 
     if (strikeMetric) {
-        const summary = strikePreview && getStrikeSummary(strikePreview, resolveBefore, enemyWord)
+        const summary = strikePreview && getStrikeSummary(strikePreview, resolveBefore, enemyWord, synonyms)
         return (
             <div className="attack-info" data-metric="strikes">
                 <div className="attack-line">

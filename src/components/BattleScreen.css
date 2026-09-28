@@ -68,3 +68,5 @@
 .battle-difficulty button { flex: 1; min-height: 44px; }
 .battle-difficulty button[aria-pressed="true"] { color: var(--bg); background: var(--emph); border-color: var(--emph); }
 .battle-difficulty p { margin-top: 8px; font-size: 13px; }
+.battle-layout-settings { margin-bottom: 12px; }
+.battle-shape-settings { margin-top: 8px; }

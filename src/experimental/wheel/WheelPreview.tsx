@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Circle, Square, X } from 'lucide-react'
+import { X } from 'lucide-react'
 import BattleScreen from '../../components/BattleScreen'
 import BattleResult from '../../components/BattleResult'
 import PuzzleLoading from '../../components/PuzzleLoading'
@@ -46,19 +46,11 @@ function PreviewBattle({ encounter }: { encounter: LetterStrikeEncounter }) {
     window.history.replaceState(null, '', url)
   }, [layout, shape])
   return <BattleScreen key={attempt} encounter={encounter} initial={initial} boardLayout={layout} tileShape={shape}
+    onBoardLayoutChange={setLayout} onTileShapeChange={setShape}
     title="Anagram wheel preview" onSave={() => true} onRestart={restart}
     onExit={() => window.location.assign(`${dailyUrl}?calendar`)}
     notice={<div className="wheel-preview-bar">
-      <div className="wheel-layout-switch" role="group" aria-label="Letter layout">
-        {([{ value: 'grid', label: 'Grid' }, { value: 'wheel', label: '2 rings' }, { value: 'ring', label: '1 ring' }] as const)
-          .map(({ value, label }) => <button key={value} type="button" aria-pressed={layout === value}
-            onClick={() => setLayout(value)}>{label}</button>)}
-      </div>
-      <button type="button" className="icon-button wheel-shape-toggle" aria-pressed={shape === 'circle'}
-        aria-label={shape === 'circle' ? 'Use square tiles' : 'Use circular tiles'} title={shape === 'circle' ? 'Use square tiles' : 'Use circular tiles'}
-        onClick={() => setShape(value => value === 'square' ? 'circle' : 'square')}>
-        {shape === 'circle' ? <Square size={20} /> : <Circle size={20} />}
-      </button>
+      <span>Wheel preview · layouts in Settings</span>
       <a className="icon-button" href={dailyUrl} aria-label="Close preview"><X size={18} /></a>
     </div>}
     menu={<p className="wheel-preview-note">Practice on the FURY board. Preview attempts don’t affect your daily progress.</p>}

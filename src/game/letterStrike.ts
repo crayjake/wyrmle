@@ -6,8 +6,8 @@ import type { EnemyConcept, PartOfSpeech } from './types.ts'
 import { getEncounterPartsOfSpeech, validateLexicalRules } from './lexicalRules.ts'
 import type { LexicalRules } from './lexicalRules.ts'
 
-export type LetterStrikeGem = 'strike' | 'ward' | 'regen'
-export type LetterStrikeTileEffect = { strike: boolean; preventResolveLoss: boolean; regenerate?: boolean }
+export type LetterStrikeGem = 'strike' | 'ward' | 'regen' | 'power'
+export type LetterStrikeTileEffect = { strike: boolean; preventResolveLoss: boolean; regenerate?: boolean; bonusStrike?: boolean }
 export type LetterStrikeTile = {
   id: number
   letter: string
@@ -30,11 +30,13 @@ export type LetterStrikeEncounter = {
   // Omission preserves the exact sparse, single-POS rules of archived saves.
   lexicalRules?: LexicalRules
   meaningLexicon?: PuzzleMeaningLexicon
+  // Opt-in research rules. Daily/archived encounters keep counter damage.
+  synonymRules?: { excludedWords: readonly string[] }
   longWordRule?: { minimumLength: number; bonusStrikes: number }
   // Only archived encounters opt into the original overlapping Strike rule.
   strikeConsumesAllowance?: boolean
   // REGEN is opt-in so archived encounters and their saved previews stay exact.
-  tileEffects: Record<'strike' | 'ward', LetterStrikeTileEffect> & { regen?: LetterStrikeTileEffect }
+  tileEffects: Record<'strike' | 'ward', LetterStrikeTileEffect> & { regen?: LetterStrikeTileEffect; power?: LetterStrikeTileEffect }
 }
 export type LetterStrikeHit = {
   tileId: number
@@ -42,6 +44,8 @@ export type LetterStrikeHit = {
   letter: string
   hitsBefore: number
   hitsAfter: number
+  // A POWER hit does not require the tile's printed letter to match.
+  wild?: true
 }
 export type LetterStrikeRecovery = {
   tileId: number
@@ -137,6 +141,11 @@ export const letterStrikeEncounter: LetterStrikeEncounter = {
 export function createLetterStrikeGame(encounter = letterStrikeEncounter): LetterStrikeState {
   validateLexicalRules(encounter)
   validateMeaningLexicon(encounter)
+  if (encounter.synonymRules && (!encounter.synonymRules.excludedWords.includes(normalizeWord(encounter.enemy.word))
+    || encounter.synonymRules.excludedWords.some(word => !/^[A-Z]+$/.test(word))
+    || encounter.longWordRule || Object.values(encounter.grammarModifiers ?? {}).some(value => value !== 0))) {
+    throw new Error('Synonym previews must exclude the enemy and cannot award grammar or length bonuses.')
+  }
   const { startingTiles, startingResolve, enemyLetters, tileEffects } = encounter
   if (startingTiles.length !== 16 || new Set(startingTiles.map(tile => tile.id)).size !== 16) {
     throw new Error('An encounter needs 16 tiles with unique IDs.')
@@ -218,7 +227,10 @@ export function getLetterStrikeAllowance(encounter: LetterStrikeEncounter, word:
   normalStrikeAllowance: number
 } {
   const relation = getEncounterSemanticRelation(encounter, word)
-  const semanticLabel = relation === 'opposite' ? 'COUNTER' : relation === 'similar' ? 'RESISTED' : 'NEUTRAL'
+  // COUNTER is the existing full-hit scoring class. Synonym previews label it
+  // "Synonym" in the UI and retain truthful "similar" source relations.
+  const semanticLabel = encounter.synonymRules ? relation === 'similar' ? 'COUNTER' : 'RESISTED'
+    : relation === 'opposite' ? 'COUNTER' : relation === 'similar' ? 'RESISTED' : 'NEUTRAL'
   const parts = getEncounterPartsOfSpeech(encounter, word)
   // A submitted word has no sentence to disambiguate its use. Under new rules,
   // any recognized use qualifies; choose one best modifier, never stack types.
@@ -291,6 +303,7 @@ export function evaluateLetterStrike(state: Pick<LetterStrikeState, 'encounter' 
   let resolveCost = 1
   let usesStrike = false
   const regenTiles: LetterStrikeTile[] = []
+  const powerTiles: LetterStrikeTile[] = []
   for (const tile of tiles) {
     // The public scorer also respects physical tile identity if called directly.
     if (seenTiles.has(tile.id)) continue
@@ -298,6 +311,7 @@ export function evaluateLetterStrike(state: Pick<LetterStrikeState, 'encounter' 
     const effect = tile.type === 'gem' && tile.gem ? state.encounter.tileEffects[tile.gem] : undefined
     if (effect?.preventResolveLoss) resolveCost = 0
     if (effect?.regenerate) regenTiles.push(tile)
+    if (effect?.bonusStrike && state.encounter.synonymRules && semanticLabel === 'COUNTER') powerTiles.push(tile)
     const normalStrike = normalStrikesRemaining > 0
     if (!normalStrike && !effect?.strike) continue
     const target = selectEnemyTarget(enemyLetters, tile.letter)
@@ -310,6 +324,17 @@ export function evaluateLetterStrike(state: Pick<LetterStrikeState, 'encounter' 
     if (normalStrike && (!effect?.strike || state.encounter.strikeConsumesAllowance === true)) {
       normalStrikesRemaining -= 1
     }
+  }
+  let powerHits = 0
+  // Match ordinary letters first, then spend each selected POWER identity once.
+  // This can bridge a missing letter without changing the word's spelling.
+  for (const tile of powerTiles) {
+    const target = enemyLetters.find(letter => letter.hitsRemaining > 0)
+    if (!target) break
+    hits.push({ tileId: tile.id, enemyLetterId: target.id, letter: target.letter,
+      hitsBefore: target.hitsRemaining, hitsAfter: target.hitsRemaining - 1, wild: true })
+    target.hitsRemaining -= 1
+    powerHits++
   }
   const recoveries: LetterStrikeRecovery[] = []
   for (const tile of regenTiles) {
@@ -330,7 +355,7 @@ export function evaluateLetterStrike(state: Pick<LetterStrikeState, 'encounter' 
     grammaticalPartOfSpeech,
     strikes: hits.length,
     resolveCost,
-    effectLabels: [...(usesStrike ? ['STRIKE'] : []), ...(resolveCost === 0 ? ['WARD'] : []), ...(regenTiles.length ? ['REGEN'] : [])],
+    effectLabels: [...(usesStrike ? ['STRIKE'] : []), ...(powerHits ? ['POWER'] : []), ...(resolveCost === 0 ? ['WARD'] : []), ...(regenTiles.length ? ['REGEN'] : [])],
     enemyLetters,
     hits,
     ...(regenTiles.length ? { recoveries } : {}),
@@ -346,6 +371,7 @@ export function previewLetterStrike(state: LetterStrikeState, selectedTileIds: r
     : tiles.length !== selectedTileIds.length ? 'Selected tile is not on the board'
     : tiles.some(tile => tile.letter === '') ? 'Empty cells cannot be selected'
     : evaluation.word.length < state.encounter.minimumWordLength ? `Minimum ${state.encounter.minimumWordLength} letters`
+    : state.encounter.synonymRules?.excludedWords.includes(evaluation.word) ? 'Use a different word from the enemy'
     : !isEncounterWord(state.encounter, evaluation.word) ? state.encounter.meaningLexicon ? 'Not in this puzzle’s dictionary' : 'Not a valid word'
     : null
   return {

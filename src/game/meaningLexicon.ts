@@ -43,6 +43,7 @@ export function getStoredWordMeaning(encounter: LetterStrikeEncounter, word: str
 }
 
 export function isEncounterWord(encounter: LetterStrikeEncounter, word: string): boolean {
+  if (encounter.synonymRules?.excludedWords.includes(normalizeWord(word))) return false
   return encounter.meaningLexicon ? Boolean(getStoredWordMeaning(encounter, word)?.definition.trim()) : isDictionaryWord(word)
 }
 
@@ -91,6 +92,9 @@ export function canSpellEncounterWord(encounter: LetterStrikeEncounter, letters:
 export function validateMeaningLexicon(encounter: LetterStrikeEncounter): void {
   const lexicon = encounter.meaningLexicon
   if (!lexicon) return
+  if (encounter.synonymRules?.excludedWords.some(word => Object.hasOwn(lexicon.words, word))) {
+    throw new Error('Excluded enemy forms must be absent from the synonym puzzle dictionary.')
+  }
   if (lexicon.version !== MEANING_LEXICON_VERSION || lexicon.policy !== 'defined-only'
     || lexicon.enemyWord !== normalizeWord(encounter.enemy.word)
     || lexicon.letterSupply !== meaningSupply(encounter)

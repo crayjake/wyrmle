@@ -108,6 +108,7 @@ function DailyAttempt({ entry, encounter, today, onTutorial }: {
       menu={<>
         <button className="daily-button" onClick={() => setStats(true)}>Statistics</button>
         <button className="daily-button" onClick={onTutorial}>Tutorial</button>
+        <a className="daily-button" href="?preview=concepts">Concept previews</a>
       </>}
       renderBestResult={record.bestWords === null ? undefined : close => <BattleResult
         best={{ enemy: encounter.enemy.word, wordCount: record.bestWords!, solution: challengeBestSolution(record) }}

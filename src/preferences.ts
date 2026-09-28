@@ -6,6 +6,8 @@ export type UserPreferences = {
   preferredMode: DifficultyMode | 'easy'
   hasCompletedOnboarding: boolean
   hasChosenMode: boolean
+  boardLayout?: 'grid' | 'wheel' | 'ring'
+  tileShape?: 'square' | 'circle'
 }
 
 export function defaultPreferences(): UserPreferences {
@@ -38,6 +40,8 @@ export function loadPreferences(storage: StorageLike): UserPreferences {
           hasCompletedOnboarding: complete,
           // Older preference records may predate the interrupted-choice flag.
           hasChosenMode: typeof data.hasChosenMode === 'boolean' ? data.hasChosenMode : complete,
+          ...(['grid', 'wheel', 'ring'].includes(data.boardLayout as string) ? { boardLayout: data.boardLayout as UserPreferences['boardLayout'] } : {}),
+          ...(['square', 'circle'].includes(data.tileShape as string) ? { tileShape: data.tileShape as UserPreferences['tileShape'] } : {}),
         }
       }
     } catch { /* A damaged preference must not block access to saved gameplay. */ }

@@ -31,7 +31,8 @@
     "discover:batch": "node scripts/discover-year-candidates.ts",
     "generate:batch": "node scripts/generate-daily-year.ts",
     "recheck:batch": "node scripts/recheck-daily-batch.ts",
-    "benchmark:v3": "node scripts/benchmark-progression-v3.ts"
+    "benchmark:v3": "node scripts/benchmark-progression-v3.ts",
+    "generate:concept-previews": "node scripts/generate-synonym-previews.ts"
   },
   "dependencies": {
     "an-array-of-english-words": "^2.0.0",
