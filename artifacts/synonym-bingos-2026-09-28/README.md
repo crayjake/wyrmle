@@ -29,6 +29,36 @@ Counts are **distinct enemy spellings**, not concepts or certified puzzles.
 
 Of the 23 familiar two-armour pairs, only five have at least two other familiar, overlapping words in the **same source sense**. None have four. This is only a vocabulary-pool count: those alternatives are not guaranteed to cover the remaining letters or form playable shorter routes. Regional variants also remain in those counts; CENTER and CENTRE are separate spellings, not separate concepts.
 
+## Follow-up: two or more armour, and a year of unique enemies
+
+The original **23** means **at least two armour points**, not exactly two. Seventeen pairs have capacity for exactly two, five for three, and one for four. Three- and four-armour cases were already counted. Requiring extra armour cannot add candidates; every higher-capacity candidate already passes the lower minimum.
+
+The first scan excluded all non-lemma answers and required Zipf 3 for both words. Those are research filters, not necessary gameplay rules. A follow-up keeps familiar enemy lemmas (Zipf ≥ 3), allows less-common answers (Zipf ≥ 2.2, the current discovery minimum for bingo spellings), and admits inflections of **other** lemmas. The enemy's own lemma remains excluded. Source synonymy is still one exact synset; no adjective similarity expansion is used in this table. Answer length is restricted to 7–15 letters for comparison with current bingo discovery.
+
+| Minimum armour capacity | Candidate enemy spellings |
+| --- | ---: |
+| No minimum | 453 |
+| At least one point | 264 |
+| At least two points | 75 |
+| At least three points | 11 |
+| At least four points | 1 |
+
+These 453 enemies correspond to 795 pairs. All 795 were independently checked with the existing TypeScript source API and armour allocator. Forms inherit a lemma sense; grammatical fit, sense familiarity, derivatives and spelling variants still need editorial review. The 453 count does not establish 453 distinct enemy concepts or playable boards, and it does not establish enough survivors for 365 good puzzles.
+
+The current bingo discovery thresholds are lower for enemies too (Zipf ≥ 2.4). Applying those and allowing other-lemma inflections gives 578 enemy spellings with 7–15-letter answers, 341 with at least one armour point, and 102 with at least two. A separate broader mode permitting one direct adjective-similarity edge raises those counts to 646 / 382 / 117. That last mode is a near-synonym candidate search requiring review, not evidence of exact synonymy; it must not be silently merged into the strict results.
+
+Assessment: a year of unique enemies **with two armour points on every puzzle is not supported by these scans**. Variable armour gives a larger pool worth testing, but the required semantic review and good independent two-/three-word routes will remove candidates. Reusing an enemy with a new board could increase the number of puzzles; it would not establish a year of fresh enemy words. Broader reviewed synonym sources might add candidates, but that increase has not been measured here.
+
+Subsequent user clarification: **armour need not be present, provided the bingo is not a trivial synonym**. The two-armour condition is therefore not a requirement for the proposed design. The relevant next assessment is available difficulty and route quality with optional armour.
+
+The comparison is reproducible, read-only, and uses the same pinned inputs as the original scan:
+
+```sh
+python3 artifacts/synonym-bingos-2026-09-28/year-sensitivity.py
+```
+
+[year-sensitivity.json](year-sensitivity.json) stores the complete matrix for lemma-only versus other-lemma forms, exact synonymy versus one adjective-similarity edge, both answer-length ranges, three frequency policies and armour minimums 0–4. It counts unique enemy spellings and pairs separately. There is no live game or generator change.
+
 ## Examples worth examining
 
 These examples pass source synonymy and letter/armour checks. They have not had boards, refills or difficulty ladders generated.
@@ -42,6 +72,19 @@ These examples pass source synonymy and letter/armour checks. They have not had 
 | PRIME | PREMIER | First in rank | E, R |
 
 Sense labels matter. SANE → REASONABLE uses the judgment sense, not a claim that every use of those words is interchangeable. NOISE → DISSONANCE uses disagreeable sound, not arbitrary sound. The all-sense census also contains weak gameplay candidates, rare senses of common words, spelling variants and related derivations; these require editorial rejection or review.
+
+Examples for the follow-up request, where armour is optional:
+
+| Enemy | Possible bingo | Shared sense |
+| --- | --- | --- |
+| REST | RESPITE | A break or pause |
+| FICTION | FABRICATION | An invented, false account |
+| SURPLUS | SUPERFLUOUS | More than needed |
+| DEBATE | DELIBERATE | Consider or discuss carefully |
+| CURSE | SCOURGE | Something causing misery |
+| ETERNAL | INTERMINABLE | Seemingly endless; tiresomely long |
+
+All six have exact source-synset evidence and full enemy-letter multiset coverage in the original candidates artifact. None needs armour to qualify for a hypothetical bingo. SURPLUS also shares its source sense with EXTRA, SPARE, EXCESS and REDUNDANT; those are potential shorter plays, not a verified two-/three-word route. The examples do not change current gameplay, which still uses the existing counter rules.
 
 ## Design implications
 

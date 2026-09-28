@@ -1,0 +1,422 @@
+{
+  "exact_lemmas": {
+    "familiar_both": {
+      "answers_3_to_16": {
+        "0": {
+          "enemies": 250,
+          "pairs": 276
+        },
+        "1": {
+          "enemies": 94,
+          "pairs": 96
+        },
+        "2": {
+          "enemies": 23,
+          "pairs": 23
+        },
+        "3": {
+          "enemies": 6,
+          "pairs": 6
+        },
+        "4": {
+          "enemies": 1,
+          "pairs": 1
+        }
+      },
+      "answers_7_to_15": {
+        "0": {
+          "enemies": 189,
+          "pairs": 199
+        },
+        "1": {
+          "enemies": 84,
+          "pairs": 86
+        },
+        "2": {
+          "enemies": 23,
+          "pairs": 23
+        },
+        "3": {
+          "enemies": 6,
+          "pairs": 6
+        },
+        "4": {
+          "enemies": 1,
+          "pairs": 1
+        }
+      }
+    },
+    "familiar_enemy_less_common_bingo": {
+      "answers_3_to_16": {
+        "0": {
+          "enemies": 361,
+          "pairs": 409
+        },
+        "1": {
+          "enemies": 153,
+          "pairs": 158
+        },
+        "2": {
+          "enemies": 36,
+          "pairs": 37
+        },
+        "3": {
+          "enemies": 7,
+          "pairs": 8
+        },
+        "4": {
+          "enemies": 1,
+          "pairs": 1
+        }
+      },
+      "answers_7_to_15": {
+        "0": {
+          "enemies": 270,
+          "pairs": 295
+        },
+        "1": {
+          "enemies": 140,
+          "pairs": 145
+        },
+        "2": {
+          "enemies": 36,
+          "pairs": 37
+        },
+        "3": {
+          "enemies": 7,
+          "pairs": 8
+        },
+        "4": {
+          "enemies": 1,
+          "pairs": 1
+        }
+      }
+    },
+    "current_discovery_frequency_thresholds": {
+      "answers_3_to_16": {
+        "0": {
+          "enemies": 459,
+          "pairs": 511
+        },
+        "1": {
+          "enemies": 198,
+          "pairs": 204
+        },
+        "2": {
+          "enemies": 45,
+          "pairs": 46
+        },
+        "3": {
+          "enemies": 9,
+          "pairs": 10
+        },
+        "4": {
+          "enemies": 1,
+          "pairs": 1
+        }
+      },
+      "answers_7_to_15": {
+        "0": {
+          "enemies": 339,
+          "pairs": 366
+        },
+        "1": {
+          "enemies": 179,
+          "pairs": 185
+        },
+        "2": {
+          "enemies": 45,
+          "pairs": 46
+        },
+        "3": {
+          "enemies": 9,
+          "pairs": 10
+        },
+        "4": {
+          "enemies": 1,
+          "pairs": 1
+        }
+      }
+    }
+  },
+  "exact_other_lemma_forms": {
+    "familiar_both": {
+      "answers_3_to_16": {
+        "0": {
+          "enemies": 365,
+          "pairs": 636
+        },
+        "1": {
+          "enemies": 172,
+          "pairs": 267
+        },
+        "2": {
+          "enemies": 47,
+          "pairs": 58
+        },
+        "3": {
+          "enemies": 8,
+          "pairs": 12
+        },
+        "4": {
+          "enemies": 1,
+          "pairs": 1
+        }
+      },
+      "answers_7_to_15": {
+        "0": {
+          "enemies": 303,
+          "pairs": 500
+        },
+        "1": {
+          "enemies": 159,
+          "pairs": 246
+        },
+        "2": {
+          "enemies": 47,
+          "pairs": 58
+        },
+        "3": {
+          "enemies": 8,
+          "pairs": 12
+        },
+        "4": {
+          "enemies": 1,
+          "pairs": 1
+        }
+      }
+    },
+    "familiar_enemy_less_common_bingo": {
+      "answers_3_to_16": {
+        "0": {
+          "enemies": 533,
+          "pairs": 989
+        },
+        "1": {
+          "enemies": 281,
+          "pairs": 433
+        },
+        "2": {
+          "enemies": 75,
+          "pairs": 96
+        },
+        "3": {
+          "enemies": 11,
+          "pairs": 16
+        },
+        "4": {
+          "enemies": 1,
+          "pairs": 1
+        }
+      },
+      "answers_7_to_15": {
+        "0": {
+          "enemies": 453,
+          "pairs": 795
+        },
+        "1": {
+          "enemies": 264,
+          "pairs": 404
+        },
+        "2": {
+          "enemies": 75,
+          "pairs": 96
+        },
+        "3": {
+          "enemies": 11,
+          "pairs": 16
+        },
+        "4": {
+          "enemies": 1,
+          "pairs": 1
+        }
+      }
+    },
+    "current_discovery_frequency_thresholds": {
+      "answers_3_to_16": {
+        "0": {
+          "enemies": 683,
+          "pairs": 1189
+        },
+        "1": {
+          "enemies": 363,
+          "pairs": 536
+        },
+        "2": {
+          "enemies": 102,
+          "pairs": 128
+        },
+        "3": {
+          "enemies": 18,
+          "pairs": 24
+        },
+        "4": {
+          "enemies": 1,
+          "pairs": 1
+        }
+      },
+      "answers_7_to_15": {
+        "0": {
+          "enemies": 578,
+          "pairs": 951
+        },
+        "1": {
+          "enemies": 341,
+          "pairs": 498
+        },
+        "2": {
+          "enemies": 102,
+          "pairs": 128
+        },
+        "3": {
+          "enemies": 18,
+          "pairs": 24
+        },
+        "4": {
+          "enemies": 1,
+          "pairs": 1
+        }
+      }
+    }
+  },
+  "one_adjective_similarity_other_lemma_forms": {
+    "familiar_both": {
+      "answers_3_to_16": {
+        "0": {
+          "enemies": 405,
+          "pairs": 695
+        },
+        "1": {
+          "enemies": 192,
+          "pairs": 295
+        },
+        "2": {
+          "enemies": 56,
+          "pairs": 68
+        },
+        "3": {
+          "enemies": 11,
+          "pairs": 15
+        },
+        "4": {
+          "enemies": 1,
+          "pairs": 1
+        }
+      },
+      "answers_7_to_15": {
+        "0": {
+          "enemies": 339,
+          "pairs": 548
+        },
+        "1": {
+          "enemies": 179,
+          "pairs": 272
+        },
+        "2": {
+          "enemies": 56,
+          "pairs": 68
+        },
+        "3": {
+          "enemies": 11,
+          "pairs": 15
+        },
+        "4": {
+          "enemies": 1,
+          "pairs": 1
+        }
+      }
+    },
+    "familiar_enemy_less_common_bingo": {
+      "answers_3_to_16": {
+        "0": {
+          "enemies": 594,
+          "pairs": 1085
+        },
+        "1": {
+          "enemies": 317,
+          "pairs": 483
+        },
+        "2": {
+          "enemies": 90,
+          "pairs": 112
+        },
+        "3": {
+          "enemies": 16,
+          "pairs": 21
+        },
+        "4": {
+          "enemies": 1,
+          "pairs": 1
+        }
+      },
+      "answers_7_to_15": {
+        "0": {
+          "enemies": 511,
+          "pairs": 877
+        },
+        "1": {
+          "enemies": 300,
+          "pairs": 452
+        },
+        "2": {
+          "enemies": 90,
+          "pairs": 112
+        },
+        "3": {
+          "enemies": 16,
+          "pairs": 21
+        },
+        "4": {
+          "enemies": 1,
+          "pairs": 1
+        }
+      }
+    },
+    "current_discovery_frequency_thresholds": {
+      "answers_3_to_16": {
+        "0": {
+          "enemies": 754,
+          "pairs": 1296
+        },
+        "1": {
+          "enemies": 404,
+          "pairs": 592
+        },
+        "2": {
+          "enemies": 117,
+          "pairs": 144
+        },
+        "3": {
+          "enemies": 23,
+          "pairs": 29
+        },
+        "4": {
+          "enemies": 1,
+          "pairs": 1
+        }
+      },
+      "answers_7_to_15": {
+        "0": {
+          "enemies": 646,
+          "pairs": 1044
+        },
+        "1": {
+          "enemies": 382,
+          "pairs": 552
+        },
+        "2": {
+          "enemies": 117,
+          "pairs": 144
+        },
+        "3": {
+          "enemies": 23,
+          "pairs": 29
+        },
+        "4": {
+          "enemies": 1,
+          "pairs": 1
+        }
+      }
+    }
+  }
+}

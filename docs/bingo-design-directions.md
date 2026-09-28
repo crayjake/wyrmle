@@ -56,6 +56,10 @@ A [reproducible lexical census](../artifacts/synonym-bingos-2026-09-28/README.md
 
 These are lexical candidates, not generated puzzles or an exhaustive count of English synonym relationships. Source groups are often too small to supply several good shorter routes; ordinary near-synonyms may require a broader, reviewed pool. Rare senses, spelling variants and related derivations also require editorial review. A prototype should explicitly exclude playing the enemy itself or merely inflecting it, since bingo boards necessarily contain its unarmoured letters.
 
+The user wants enough fresh enemies for a year. A follow-up allowing inflections of other lemmas and less-common bingo answers found 453 candidate enemy spellings with familiar enemies and 7–15-letter answers; 264 can support at least one armour point and 75 at least two. The original 23 already included three- and four-armour candidates. These are still lexical candidates before editorial and route validation: a year with two armour points on every puzzle is not supported by the scans, and a year with variable armour remains unproven. The census report records the exact filters and a reproducible sensitivity comparison.
+
+The user subsequently clarified that **armour is optional as long as the bingo synonym is not trivial**. Further design work should use that requirement rather than demand two armour points. Good illustrative pairs include REST → RESPITE, FICTION → FABRICATION, SURPLUS → SUPERFLUOUS, DEBATE → DELIBERATE, CURSE → SCOURGE and ETERNAL → INTERMINABLE. All cover the enemy letter multiset. They need their ordinary shared sense pinned (for example CURSE as a cause of misery, and ETERNAL as a tiresomely long wait); none is a generated or route-validated puzzle. SURPLUS also has the source-backed shorter synonyms EXTRA, SPARE, EXCESS and REDUNDANT, making it an interesting vocabulary pool to investigate.
+
 This is now a candidate for the simplest prototype. Whether it retains enough surprise and enough useful two-/three-word routes has not been tested. The user has not requested a live rule change.
 
 ## New proposal: put the enemy in a sentence / use a cryptic clue
