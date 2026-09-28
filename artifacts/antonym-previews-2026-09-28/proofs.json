@@ -1,5 +1,4127 @@
 [
   {
+    "id": "alert",
+    "revision": "4f38a2f00668",
+    "review": "Opposite adjectives describe lack of wakefulness, responsiveness or energy. TIRED is depleted energy, not an overused joke; DULL means lifeless, not blunt. Chemical inertness and merely being late are outside this sense.",
+    "roots": [
+      {
+        "id": "oewn-lethargic__3.00.00..",
+        "synset": "oewn-00879020-a",
+        "lemma": "lethargic",
+        "partOfSpeech": "adjective",
+        "definition": "deficient in alertness or activity",
+        "definitions": [
+          "deficient in alertness or activity"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-energetic__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-lethargy__1.07.01.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-slow__3.00.01..",
+        "synset": "oewn-00983718-a",
+        "lemma": "slow",
+        "partOfSpeech": "adjective",
+        "definition": "not moving quickly; taking a comparatively long time",
+        "definitions": [
+          "not moving quickly; taking a comparatively long time"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-fast__3.00.01.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-slowness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-tired__3.00.00..",
+        "synset": "oewn-02440540-a",
+        "lemma": "tired",
+        "partOfSpeech": "adjective",
+        "definition": "depleted of strength or energy",
+        "definitions": [
+          "depleted of strength or energy"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-rested__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-tiredness__1.26.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-lazy__5.00.00.idle.00",
+        "synset": "oewn-00295445-s",
+        "lemma": "lazy",
+        "partOfSpeech": "adjective",
+        "definition": "disinclined to work or exertion",
+        "definitions": [
+          "disinclined to work or exertion"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-laziness__1.04.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-laziness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-lazy__5.00.00.slow.01",
+        "synset": "oewn-00984495-s",
+        "lemma": "lazy",
+        "partOfSpeech": "adjective",
+        "definition": "moving slowly and gently",
+        "definitions": [
+          "moving slowly and gently"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-laziness__1.04.01.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-languid__5.00.00.lethargic.00",
+        "synset": "oewn-00879513-s",
+        "lemma": "languid",
+        "partOfSpeech": "adjective",
+        "definition": "lacking spirit or liveliness",
+        "definitions": [
+          "lacking spirit or liveliness"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-idle__3.00.00..",
+        "synset": "oewn-00295041-a",
+        "lemma": "idle",
+        "partOfSpeech": "adjective",
+        "definition": "not in action or at work",
+        "definitions": [
+          "not in action or at work"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-busy__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-idleness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-sluggish__5.00.01.slow.01",
+        "synset": "oewn-00984894-s",
+        "lemma": "sluggish",
+        "partOfSpeech": "adjective",
+        "definition": "slow or slothful",
+        "definitions": [
+          "slow or slothful"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-sluggishness__1.07.01.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-sluggish__5.00.00.inactive.01",
+        "synset": "oewn-00034435-s",
+        "lemma": "sluggish",
+        "partOfSpeech": "adjective",
+        "definition": "slow and apathetic",
+        "definitions": [
+          "slow and apathetic"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-sluggishness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-drowsy__5.00.00.asleep.00",
+        "synset": "oewn-00189924-s",
+        "lemma": "drowsy",
+        "partOfSpeech": "adjective",
+        "definition": "half asleep",
+        "definitions": [
+          "half asleep"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-drowse__1.04.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-drowsiness__1.26.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-drowsy__5.00.00.inattentive.00",
+        "synset": "oewn-00167028-s",
+        "lemma": "drowsy",
+        "partOfSpeech": "adjective",
+        "definition": "showing lack of attention or boredom",
+        "definitions": [
+          "showing lack of attention or boredom"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-sleepy__5.00.00.asleep.00",
+        "synset": "oewn-00190505-s",
+        "lemma": "sleepy",
+        "partOfSpeech": "adjective",
+        "definition": "ready to fall asleep",
+        "definitions": [
+          "ready to fall asleep"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-sleep__1.26.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-sleepiness__1.26.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-leaden__5.00.00.heavy.02",
+        "synset": "oewn-01193396-s",
+        "lemma": "leaden",
+        "partOfSpeech": "adjective",
+        "definition": "made heavy or weighted down with weariness",
+        "definitions": [
+          "made heavy or weighted down with weariness"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-leaden__5.00.00.effortful.00",
+        "synset": "oewn-00841295-s",
+        "lemma": "leaden",
+        "partOfSpeech": "adjective",
+        "definition": "(of movement) slow and laborious",
+        "definitions": [
+          "(of movement) slow and laborious"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-leaden__5.00.00.dull.03",
+        "synset": "oewn-00811237-s",
+        "lemma": "leaden",
+        "partOfSpeech": "adjective",
+        "definition": "lacking lightness or liveliness",
+        "definitions": [
+          "lacking lightness or liveliness"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-dull__3.00.03..",
+        "synset": "oewn-00810082-a",
+        "lemma": "dull",
+        "partOfSpeech": "adjective",
+        "definition": "lacking in liveliness or animation",
+        "definitions": [
+          "lacking in liveliness or animation"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-lively__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-dullness__1.07.02.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-inactive__3.00.04..",
+        "synset": "oewn-00039705-a",
+        "lemma": "inactive",
+        "partOfSpeech": "adjective",
+        "definition": "lacking in energy or will",
+        "definitions": [
+          "lacking in energy or will"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-inactiveness__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-inactivity__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-inactive__3.00.01..",
+        "synset": "oewn-00033687-a",
+        "lemma": "inactive",
+        "partOfSpeech": "adjective",
+        "definition": "not active physically or mentally",
+        "definitions": [
+          "not active physically or mentally"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-active__3.00.01.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-inactiveness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-inert__5.00.00.inactive.01",
+        "synset": "oewn-00034435-s",
+        "lemma": "inert",
+        "partOfSpeech": "adjective",
+        "definition": "slow and apathetic",
+        "definitions": [
+          "slow and apathetic"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-inertness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-somnolent__5.00.00.asleep.00",
+        "synset": "oewn-00190741-s",
+        "lemma": "somnolent",
+        "partOfSpeech": "adjective",
+        "definition": "inclined to or marked by drowsiness",
+        "definitions": [
+          "inclined to or marked by drowsiness"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-somnolence__1.26.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-asleep__3.00.00..",
+        "synset": "oewn-00189224-a",
+        "lemma": "asleep",
+        "partOfSpeech": "adjective",
+        "definition": "in a state of sleep",
+        "definitions": [
+          "in a state of sleep"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-awake__3.00.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-dormant__5.00.00.inactive.01",
+        "synset": "oewn-00034145-s",
+        "lemma": "dormant",
+        "partOfSpeech": "adjective",
+        "definition": "inactive but capable of becoming active",
+        "definitions": [
+          "inactive but capable of becoming active"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-dormancy__1.26.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-slothful__5.00.00.idle.00",
+        "synset": "oewn-00295445-s",
+        "lemma": "slothful",
+        "partOfSpeech": "adjective",
+        "definition": "disinclined to work or exertion",
+        "definitions": [
+          "disinclined to work or exertion"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-slothfulness__1.07.01.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-dazed__5.00.00.lethargic.00",
+        "synset": "oewn-00879271-s",
+        "lemma": "dazed",
+        "partOfSpeech": "adjective",
+        "definition": "stunned or confused and slow to react (as from blows or drunkenness or exhaustion)",
+        "definitions": [
+          "stunned or confused and slow to react (as from blows or drunkenness or exhaustion)"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-weary__5.00.00.tired.00",
+        "synset": "oewn-02441240-s",
+        "lemma": "weary",
+        "partOfSpeech": "adjective",
+        "definition": "physically and mentally fatigued",
+        "definitions": [
+          "physically and mentally fatigued"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-weariness__1.26.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-exhausted__5.00.00.tired.00",
+        "synset": "oewn-02442263-s",
+        "lemma": "exhausted",
+        "partOfSpeech": "adjective",
+        "definition": "drained of energy or effectiveness; extremely tired; completely exhausted",
+        "definitions": [
+          "drained of energy or effectiveness; extremely tired; completely exhausted"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-torpid__5.00.00.inactive.01",
+        "synset": "oewn-00034435-s",
+        "lemma": "torpid",
+        "partOfSpeech": "adjective",
+        "definition": "slow and apathetic",
+        "definitions": [
+          "slow and apathetic"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-torpidity__1.26.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-torpidness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-listless__5.00.00.lethargic.00",
+        "synset": "oewn-00879774-s",
+        "lemma": "listless",
+        "partOfSpeech": "adjective",
+        "definition": "lacking zest or vivacity",
+        "definitions": [
+          "lacking zest or vivacity"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-listlessness__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-listlessness__1.12.00.."
+          }
+        ]
+      }
+    ],
+    "progression": {
+      "passed": true,
+      "issues": [],
+      "ratings": {
+        "three": {
+          "words": [
+            "SLOW",
+            "TIRED",
+            "LAZY"
+          ],
+          "zipfs": [
+            4.85,
+            4.71,
+            4.24
+          ],
+          "minZipf": 4.24,
+          "maxLength": 5,
+          "effort": 0.52,
+          "commonAndShort": true
+        },
+        "two": {
+          "words": [
+            "LANGUID",
+            "TIRED"
+          ],
+          "zipfs": [
+            2.54,
+            4.71
+          ],
+          "minZipf": 2.54,
+          "maxLength": 7,
+          "effort": 5.12,
+          "commonAndShort": false
+        },
+        "bingo": {
+          "words": [
+            "LETHARGIC"
+          ],
+          "zipfs": [
+            2.78
+          ],
+          "minZipf": 2.78,
+          "maxLength": 9,
+          "effort": 5.84,
+          "commonAndShort": false
+        }
+      },
+      "bingos": [
+        {
+          "words": [
+            "LETHARGIC"
+          ],
+          "tileIds": [
+            [
+              3,
+              12,
+              11,
+              6,
+              2,
+              13,
+              10,
+              0,
+              14
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            5
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "words": [
+            "LETHARGIC"
+          ],
+          "tileIds": [
+            [
+              3,
+              12,
+              11,
+              6,
+              2,
+              13,
+              10,
+              0,
+              14
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            5
+          ]
+        },
+        {
+          "words": [
+            "LANGUID",
+            "TIRED"
+          ],
+          "tileIds": [
+            [
+              3,
+              2,
+              8,
+              10,
+              5,
+              0,
+              7
+            ],
+            [
+              11,
+              18,
+              13,
+              12,
+              17
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3
+          ]
+        },
+        {
+          "words": [
+            "SLOW",
+            "TIRED",
+            "LAZY"
+          ],
+          "tileIds": [
+            [
+              1,
+              3,
+              4,
+              15
+            ],
+            [
+              11,
+              0,
+              13,
+              12,
+              7
+            ],
+            [
+              16,
+              2,
+              23,
+              24
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3,
+            1
+          ]
+        }
+      ],
+      "cheapestTwo": {
+        "words": [
+          "LANGUID",
+          "TIRED"
+        ],
+        "tileIds": [
+          [
+            3,
+            2,
+            8,
+            10,
+            5,
+            0,
+            7
+          ],
+          [
+            11,
+            18,
+            13,
+            12,
+            17
+          ]
+        ],
+        "labels": [
+          "COUNTER",
+          "COUNTER"
+        ],
+        "hits": [
+          2,
+          3
+        ]
+      },
+      "positions": 3582,
+      "previews": 14246,
+      "searchComplete": true,
+      "scope": "All legal first moves, repeated words and POWER-selection variants; exact cheapest two-word bottleneck. Three-word witness uses distinct, familiar counter families. Word frequency and length are a difficulty proxy, not measured human solving difficulty."
+    },
+    "startingCounters": [
+      "DROWSING",
+      "GONE",
+      "GONER",
+      "IDLE",
+      "IDLER",
+      "IDLEST",
+      "INERT",
+      "LANGUID",
+      "LETHARGIC",
+      "LOGIER",
+      "LOGIEST",
+      "SLOW",
+      "SLOWER",
+      "TIRED"
+    ],
+    "startingBingos": [
+      "LETHARGIC"
+    ],
+    "unpoweredBingos": [
+      "LETHARGIC"
+    ],
+    "routes": [
+      [
+        {
+          "word": "LETHARGIC",
+          "ids": [
+            3,
+            12,
+            11,
+            6,
+            2,
+            13,
+            10,
+            0,
+            14
+          ],
+          "hits": 5,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "LANGUID",
+          "ids": [
+            3,
+            2,
+            8,
+            10,
+            5,
+            0,
+            7
+          ],
+          "hits": 2,
+          "powerHits": 0,
+          "remaining": "ERT"
+        },
+        {
+          "word": "TIRED",
+          "ids": [
+            11,
+            18,
+            13,
+            12,
+            17
+          ],
+          "hits": 3,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "SLOW",
+          "ids": [
+            1,
+            3,
+            4,
+            15
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": "AERT"
+        },
+        {
+          "word": "TIRED",
+          "ids": [
+            11,
+            0,
+            13,
+            12,
+            7
+          ],
+          "hits": 3,
+          "powerHits": 0,
+          "remaining": "A"
+        },
+        {
+          "word": "LAZY",
+          "ids": [
+            16,
+            2,
+            23,
+            24
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ]
+    ],
+    "routeEffort": [
+      5.84,
+      5.12,
+      0.52
+    ],
+    "words": 26447,
+    "bytes": 288670,
+    "limitation": "Reviewed senses and exact route checks; subjective human difficulty still needs playtesting."
+  },
+  {
+    "id": "true",
+    "revision": "138ffe51b4b9",
+    "review": "Factually false, erroneous or misrepresented statements oppose TRUE. BOGUS uses fraudulent, TWISTED uses misrepresented meaning. Wrong morality, a bent shape, and unfaithful relationships are different senses and excluded.",
+    "roots": [
+      {
+        "id": "oewn-inaccurate__3.00.00..",
+        "synset": "oewn-00023420-a",
+        "lemma": "inaccurate",
+        "partOfSpeech": "adjective",
+        "definition": "erroneous",
+        "definitions": [
+          "erroneous"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-accurate__3.00.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-incorrect__3.00.00..",
+        "synset": "oewn-00635278-a",
+        "lemma": "incorrect",
+        "partOfSpeech": "adjective",
+        "definition": "not correct; not in conformity with fact or truth",
+        "definitions": [
+          "not correct; not in conformity with fact or truth"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-correct__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-incorrectness__1.07.01.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-incorrectness__1.07.02.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-incorrect__5.00.00.inaccurate.00",
+        "synset": "oewn-00023894-s",
+        "lemma": "incorrect",
+        "partOfSpeech": "adjective",
+        "definition": "characterized by errors; not agreeing with a model or not following established rules",
+        "definitions": [
+          "characterized by errors; not agreeing with a model or not following established rules"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-wrong__3.00.02..",
+        "synset": "oewn-00635278-a",
+        "lemma": "wrong",
+        "partOfSpeech": "adjective",
+        "definition": "not correct; not in conformity with fact or truth",
+        "definitions": [
+          "not correct; not in conformity with fact or truth"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-right__3.00.02.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-wrongness__1.07.01.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-wrong__5.00.00.inaccurate.00",
+        "synset": "oewn-00023894-s",
+        "lemma": "wrong",
+        "partOfSpeech": "adjective",
+        "definition": "characterized by errors; not agreeing with a model or not following established rules",
+        "definitions": [
+          "characterized by errors; not agreeing with a model or not following established rules"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-false__3.00.00..",
+        "synset": "oewn-02470951-a",
+        "lemma": "false",
+        "partOfSpeech": "adjective",
+        "definition": "not in accordance with the fact or reality or actuality",
+        "definitions": [
+          "not in accordance with the fact or reality or actuality"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-true__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-falseness__1.26.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-falsity__1.10.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-false__5.00.00.incorrect.00",
+        "synset": "oewn-00636075-s",
+        "lemma": "false",
+        "partOfSpeech": "adjective",
+        "definition": "arising from error",
+        "definitions": [
+          "arising from error"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-falseness__1.26.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-falsity__1.26.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-false__5.00.00.invalid.00",
+        "synset": "oewn-02510210-s",
+        "lemma": "false",
+        "partOfSpeech": "adjective",
+        "definition": "erroneous and usually accidental",
+        "definitions": [
+          "erroneous and usually accidental"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-false__5.00.00.dishonest.00",
+        "synset": "oewn-01227300-s",
+        "lemma": "false",
+        "partOfSpeech": "adjective",
+        "definition": "designed to deceive",
+        "definitions": [
+          "designed to deceive"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-bogus__5.00.00.counterfeit.00",
+        "synset": "oewn-01121219-s",
+        "lemma": "bogus",
+        "partOfSpeech": "adjective",
+        "definition": "fraudulent; having a misleading appearance",
+        "definitions": [
+          "fraudulent; having a misleading appearance"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-twisted__5.00.00.disingenuous.00",
+        "synset": "oewn-01314022-s",
+        "lemma": "twisted",
+        "partOfSpeech": "adjective",
+        "definition": "having an intended meaning altered or misrepresented",
+        "definitions": [
+          "having an intended meaning altered or misrepresented"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-untrue__5.00.00.false.00",
+        "synset": "oewn-02471717-s",
+        "lemma": "untrue",
+        "partOfSpeech": "adjective",
+        "definition": "not according with the facts",
+        "definitions": [
+          "not according with the facts"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-fictitious__5.00.00.unreal.00",
+        "synset": "oewn-01942527-s",
+        "lemma": "fictitious",
+        "partOfSpeech": "adjective",
+        "definition": "formed or conceived by the imagination",
+        "definitions": [
+          "formed or conceived by the imagination"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-fiction__1.10.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-fictional__5.00.00.unreal.00",
+        "synset": "oewn-01942527-s",
+        "lemma": "fictional",
+        "partOfSpeech": "adjective",
+        "definition": "formed or conceived by the imagination",
+        "definitions": [
+          "formed or conceived by the imagination"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-fiction__1.10.01.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-erroneous__5.00.00.incorrect.00",
+        "synset": "oewn-00635789-s",
+        "lemma": "erroneous",
+        "partOfSpeech": "adjective",
+        "definition": "containing or characterized by error",
+        "definitions": [
+          "containing or characterized by error"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-erroneousness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-fallacious__5.00.00.incorrect.00",
+        "synset": "oewn-00635924-s",
+        "lemma": "fallacious",
+        "partOfSpeech": "adjective",
+        "definition": "based on an incorrect or misleading notion or information",
+        "definitions": [
+          "based on an incorrect or misleading notion or information"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-fallaciousness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-misleading__5.00.00.dishonest.00",
+        "synset": "oewn-01226942-s",
+        "lemma": "misleading",
+        "partOfSpeech": "adjective",
+        "definition": "designed to deceive or mislead either deliberately or inadvertently",
+        "definitions": [
+          "designed to deceive or mislead either deliberately or inadvertently"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-deceptive__5.00.00.unreal.02",
+        "synset": "oewn-01945592-s",
+        "lemma": "deceptive",
+        "partOfSpeech": "adjective",
+        "definition": "causing one to believe what is not true or fail to believe what is true",
+        "definitions": [
+          "causing one to believe what is not true or fail to believe what is true"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-deceive__2.32.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-deceive__2.41.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-deceptiveness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-fake__5.00.00.counterfeit.00",
+        "synset": "oewn-01121219-s",
+        "lemma": "fake",
+        "partOfSpeech": "adjective",
+        "definition": "fraudulent; having a misleading appearance",
+        "definitions": [
+          "fraudulent; having a misleading appearance"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-fake__1.18.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-sham__5.00.00.counterfeit.00",
+        "synset": "oewn-01120599-s",
+        "lemma": "sham",
+        "partOfSpeech": "adjective",
+        "definition": "adopted in order to deceive",
+        "definitions": [
+          "adopted in order to deceive"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-sham__1.06.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-sham__1.18.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-spurious__5.00.00.false.00",
+        "synset": "oewn-02471438-s",
+        "lemma": "spurious",
+        "partOfSpeech": "adjective",
+        "definition": "plausible but false",
+        "definitions": [
+          "plausible but false"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-spuriousness__1.26.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-fabricated__5.00.00.unreal.00",
+        "synset": "oewn-01942527-s",
+        "lemma": "fabricated",
+        "partOfSpeech": "adjective",
+        "definition": "formed or conceived by the imagination",
+        "definitions": [
+          "formed or conceived by the imagination"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-distorted__5.00.00.disingenuous.00",
+        "synset": "oewn-01314022-s",
+        "lemma": "distorted",
+        "partOfSpeech": "adjective",
+        "definition": "having an intended meaning altered or misrepresented",
+        "definitions": [
+          "having an intended meaning altered or misrepresented"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-unreal__3.00.00..",
+        "synset": "oewn-01941146-a",
+        "lemma": "unreal",
+        "partOfSpeech": "adjective",
+        "definition": "lacking in reality or substance or genuineness; not corresponding to acknowledged facts or criteria",
+        "definitions": [
+          "lacking in reality or substance or genuineness; not corresponding to acknowledged facts or criteria"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-real__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-unreality__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-unreality__1.26.00.."
+          }
+        ]
+      }
+    ],
+    "progression": {
+      "passed": true,
+      "issues": [],
+      "ratings": {
+        "three": {
+          "words": [
+            "WRONG",
+            "BOGUS",
+            "TWISTED"
+          ],
+          "zipfs": [
+            5.39,
+            3.43,
+            3.98
+          ],
+          "minZipf": 3.43,
+          "maxLength": 7,
+          "effort": 2.24,
+          "commonAndShort": false
+        },
+        "two": {
+          "words": [
+            "INCORRECT",
+            "BOGUS"
+          ],
+          "zipfs": [
+            3.94,
+            3.43
+          ],
+          "minZipf": 3.43,
+          "maxLength": 9,
+          "effort": 3.52,
+          "commonAndShort": false
+        },
+        "bingo": {
+          "words": [
+            "INACCURATE"
+          ],
+          "zipfs": [
+            3.65
+          ],
+          "minZipf": 3.65,
+          "maxLength": 10,
+          "effort": 4.7,
+          "commonAndShort": false
+        }
+      },
+      "bingos": [
+        {
+          "words": [
+            "INACCURATE"
+          ],
+          "tileIds": [
+            [
+              4,
+              5,
+              3,
+              2,
+              6,
+              7,
+              11,
+              8,
+              12,
+              9
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            4
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "words": [
+            "INACCURATE"
+          ],
+          "tileIds": [
+            [
+              4,
+              5,
+              3,
+              2,
+              6,
+              7,
+              11,
+              8,
+              12,
+              9
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            4
+          ]
+        },
+        {
+          "words": [
+            "INCORRECT",
+            "BOGUS"
+          ],
+          "tileIds": [
+            [
+              4,
+              5,
+              2,
+              10,
+              11,
+              13,
+              9,
+              6,
+              12
+            ],
+            [
+              16,
+              17,
+              1,
+              7,
+              0
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            1
+          ]
+        },
+        {
+          "words": [
+            "WRONG",
+            "BOGUS",
+            "TWISTED"
+          ],
+          "tileIds": [
+            [
+              14,
+              11,
+              10,
+              5,
+              1
+            ],
+            [
+              16,
+              17,
+              18,
+              7,
+              0
+            ],
+            [
+              12,
+              21,
+              4,
+              20,
+              23,
+              9,
+              22
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            1,
+            2
+          ]
+        }
+      ],
+      "cheapestTwo": {
+        "words": [
+          "INCORRECT",
+          "BOGUS"
+        ],
+        "tileIds": [
+          [
+            4,
+            5,
+            2,
+            10,
+            11,
+            13,
+            9,
+            6,
+            12
+          ],
+          [
+            16,
+            17,
+            1,
+            7,
+            0
+          ]
+        ],
+        "labels": [
+          "COUNTER",
+          "COUNTER"
+        ],
+        "hits": [
+          3,
+          1
+        ]
+      },
+      "positions": 1379,
+      "previews": 1777,
+      "searchComplete": true,
+      "scope": "All legal first moves, repeated words and POWER-selection variants; exact cheapest two-word bottleneck. Three-word witness uses distinct, familiar counter families. Word frequency and length are a difficulty proxy, not measured human solving difficulty."
+    },
+    "startingCounters": [
+      "INACCURATE",
+      "INCORRECT",
+      "UNREAL",
+      "WRONG",
+      "WRONGER",
+      "WRONGEST"
+    ],
+    "startingBingos": [
+      "INACCURATE"
+    ],
+    "unpoweredBingos": [
+      "INACCURATE"
+    ],
+    "routes": [
+      [
+        {
+          "word": "INACCURATE",
+          "ids": [
+            4,
+            5,
+            3,
+            2,
+            6,
+            7,
+            11,
+            8,
+            12,
+            9
+          ],
+          "hits": 4,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "INCORRECT",
+          "ids": [
+            4,
+            5,
+            2,
+            10,
+            11,
+            13,
+            9,
+            6,
+            12
+          ],
+          "hits": 3,
+          "powerHits": 0,
+          "remaining": "U"
+        },
+        {
+          "word": "BOGUS",
+          "ids": [
+            16,
+            17,
+            1,
+            7,
+            0
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "WRONG",
+          "ids": [
+            14,
+            11,
+            10,
+            5,
+            1
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": "TUE"
+        },
+        {
+          "word": "BOGUS",
+          "ids": [
+            16,
+            17,
+            18,
+            7,
+            0
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": "TE"
+        },
+        {
+          "word": "TWISTED",
+          "ids": [
+            12,
+            21,
+            4,
+            20,
+            23,
+            9,
+            22
+          ],
+          "hits": 2,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ]
+    ],
+    "routeEffort": [
+      4.7,
+      3.52,
+      2.24
+    ],
+    "words": 21052,
+    "bytes": 222762,
+    "limitation": "Reviewed senses and exact route checks; subjective human difficulty still needs playtesting."
+  },
+  {
+    "id": "stern",
+    "revision": "28a7f8355991",
+    "review": "Gentle, lenient and considerate manners oppose a stern manner. EASY means not strict; SOFT means lenient or kind, not a material. Nice and sweet use interpersonal readings. Broad headwords stay pinned to their reviewed spelling and inflections.",
+    "roots": [
+      {
+        "id": "oewn-considerate__3.00.00..",
+        "synset": "oewn-00642003-a",
+        "lemma": "considerate",
+        "partOfSpeech": "adjective",
+        "definition": "showing concern for the rights and feelings of others",
+        "definitions": [
+          "showing concern for the rights and feelings of others"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-inconsiderate__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-considerateness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-kind__3.00.00..",
+        "synset": "oewn-01374976-a",
+        "lemma": "kind",
+        "partOfSpeech": "adjective",
+        "definition": "having or showing a tender and considerate and helpful nature; used especially of persons and their behavior",
+        "definitions": [
+          "having or showing a tender and considerate and helpful nature; used especially of persons and their behavior"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-unkind__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-kindness__1.04.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-kindness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-nice__3.00.00..",
+        "synset": "oewn-01590750-a",
+        "lemma": "nice",
+        "partOfSpeech": "adjective",
+        "definition": "pleasant or pleasing or agreeable in nature or appearance",
+        "definitions": [
+          "pleasant or pleasing or agreeable in nature or appearance"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-nasty__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-niceness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-nice__5.00.00.polite.00",
+        "synset": "oewn-00644482-s",
+        "lemma": "nice",
+        "partOfSpeech": "adjective",
+        "definition": "exhibiting courtesy and politeness",
+        "definitions": [
+          "exhibiting courtesy and politeness"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-niceness__1.07.02.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-warm__3.00.02..",
+        "synset": "oewn-02541266-a",
+        "lemma": "warm",
+        "partOfSpeech": "adjective",
+        "definition": "psychologically warm; friendly and responsive",
+        "definitions": [
+          "psychologically warm; friendly and responsive"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-cool__3.00.02.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-warmness__1.12.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-soft__3.00.02..",
+        "synset": "oewn-01159626-a",
+        "lemma": "soft",
+        "partOfSpeech": "adjective",
+        "definition": "compassionate and kind; conciliatory",
+        "definitions": [
+          "compassionate and kind; conciliatory"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-hard__3.00.02.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-softness__1.07.03.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-soft__5.00.00.permissive.01",
+        "synset": "oewn-01767671-s",
+        "lemma": "soft",
+        "partOfSpeech": "adjective",
+        "definition": "tolerant or lenient",
+        "definitions": [
+          "tolerant or lenient"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-softness__1.07.02.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-soft__5.00.00.mild.00",
+        "synset": "oewn-01512745-s",
+        "lemma": "soft",
+        "partOfSpeech": "adjective",
+        "definition": "soft and mild; not harsh or stern or severe",
+        "definitions": [
+          "soft and mild; not harsh or stern or severe"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-tender__3.00.03..",
+        "synset": "oewn-02457962-a",
+        "lemma": "tender",
+        "partOfSpeech": "adjective",
+        "definition": "given to sympathy or gentleness or sentimentality",
+        "definitions": [
+          "given to sympathy or gentleness or sentimentality"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-tough__3.00.03.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-tenderness__1.12.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-tenderness__1.12.03.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-tender__5.00.00.loving.00",
+        "synset": "oewn-01467633-s",
+        "lemma": "tender",
+        "partOfSpeech": "adjective",
+        "definition": "having or displaying warmth or affection",
+        "definitions": [
+          "having or displaying warmth or affection"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-tenderness__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-tenderness__1.12.01.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-easy__5.00.01.undemanding.01",
+        "synset": "oewn-00715296-s",
+        "lemma": "easy",
+        "partOfSpeech": "adjective",
+        "definition": "not strict",
+        "definitions": [
+          "not strict"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-gentle__5.00.00.mild.00",
+        "synset": "oewn-01512745-s",
+        "lemma": "gentle",
+        "partOfSpeech": "adjective",
+        "definition": "soft and mild; not harsh or stern or severe",
+        "definitions": [
+          "soft and mild; not harsh or stern or severe"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-gentleness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-gentle__5.00.01.kind.00",
+        "synset": "oewn-01376241-s",
+        "lemma": "gentle",
+        "partOfSpeech": "adjective",
+        "definition": "having or showing a kindly or tender nature",
+        "definitions": [
+          "having or showing a kindly or tender nature"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-gentleness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-mild__3.00.00..",
+        "synset": "oewn-01512398-a",
+        "lemma": "mild",
+        "partOfSpeech": "adjective",
+        "definition": "moderate in type or degree or effect or force; far from extreme",
+        "definitions": [
+          "moderate in type or degree or effect or force; far from extreme"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-intense__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-mildness__1.07.01.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-lenient__5.00.00.permissive.01",
+        "synset": "oewn-01767671-s",
+        "lemma": "lenient",
+        "partOfSpeech": "adjective",
+        "definition": "tolerant or lenient",
+        "definitions": [
+          "tolerant or lenient"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-lenience__1.04.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-lenience__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-leniency__1.07.02.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-indulgent__3.00.00..",
+        "synset": "oewn-01300436-a",
+        "lemma": "indulgent",
+        "partOfSpeech": "adjective",
+        "definition": "characterized by or given to yielding to the wishes of someone",
+        "definitions": [
+          "characterized by or given to yielding to the wishes of someone"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-nonindulgent__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-indulgence__1.07.02.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-friendly__3.00.01..",
+        "synset": "oewn-01078338-a",
+        "lemma": "friendly",
+        "partOfSpeech": "adjective",
+        "definition": "characteristic of or befitting a friend",
+        "definitions": [
+          "characteristic of or befitting a friend"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-unfriendly__3.00.01.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-friend__1.18.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-friendliness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-sweet__5.00.00.lovable.00",
+        "synset": "oewn-01462871-s",
+        "lemma": "sweet",
+        "partOfSpeech": "adjective",
+        "definition": "having a sweet nature befitting an angel or cherub",
+        "definitions": [
+          "having a sweet nature befitting an angel or cherub"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-sweetness__1.07.03.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-pleasant__5.00.00.nice.00",
+        "synset": "oewn-01591274-s",
+        "lemma": "pleasant",
+        "partOfSpeech": "adjective",
+        "definition": "(of persons) having pleasing manners or behavior",
+        "definitions": [
+          "(of persons) having pleasing manners or behavior"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-pleasantness__1.12.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-please__2.37.03.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-benign__5.00.00.kind.00",
+        "synset": "oewn-01375700-s",
+        "lemma": "benign",
+        "partOfSpeech": "adjective",
+        "definition": "kindness of disposition or manner",
+        "definitions": [
+          "kindness of disposition or manner"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-benignancy__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-benignity__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-clement__3.00.01..",
+        "synset": "oewn-00439279-a",
+        "lemma": "clement",
+        "partOfSpeech": "adjective",
+        "definition": "(used of persons or behavior) inclined to show mercy",
+        "definitions": [
+          "(used of persons or behavior) inclined to show mercy"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-inclement__3.00.01.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-clemency__1.04.01.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-genial__5.00.00.friendly.01",
+        "synset": "oewn-01078866-s",
+        "lemma": "genial",
+        "partOfSpeech": "adjective",
+        "definition": "diffusing warmth and friendliness",
+        "definitions": [
+          "diffusing warmth and friendliness"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-geniality__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-affable__5.00.00.friendly.01",
+        "synset": "oewn-01078866-s",
+        "lemma": "affable",
+        "partOfSpeech": "adjective",
+        "definition": "diffusing warmth and friendliness",
+        "definitions": [
+          "diffusing warmth and friendliness"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-affability__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-affableness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-gracious__5.00.00.polite.00",
+        "synset": "oewn-00644482-s",
+        "lemma": "gracious",
+        "partOfSpeech": "adjective",
+        "definition": "exhibiting courtesy and politeness",
+        "definitions": [
+          "exhibiting courtesy and politeness"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-grace__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-graciousness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-cordial__5.00.00.warm.02",
+        "synset": "oewn-02541527-s",
+        "lemma": "cordial",
+        "partOfSpeech": "adjective",
+        "definition": "politely warm and friendly",
+        "definitions": [
+          "politely warm and friendly"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-cordiality__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-lenient__5.00.00.undemanding.01",
+        "synset": "oewn-00715296-s",
+        "lemma": "lenient",
+        "partOfSpeech": "adjective",
+        "definition": "not strict",
+        "definitions": [
+          "not strict"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-lenience__1.07.02.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-leniency__1.04.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-lax__5.00.00.negligent.00",
+        "synset": "oewn-00759003-s",
+        "lemma": "lax",
+        "partOfSpeech": "adjective",
+        "definition": "lacking in rigor or strictness",
+        "definitions": [
+          "lacking in rigor or strictness"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-laxity__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-laxness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-tolerant__5.00.00.forgiving.00",
+        "synset": "oewn-01044891-s",
+        "lemma": "tolerant",
+        "partOfSpeech": "adjective",
+        "definition": "tolerant and forgiving under provocation",
+        "definitions": [
+          "tolerant and forgiving under provocation"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-tolerate__2.31.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-merciful__3.00.00..",
+        "synset": "oewn-01510813-a",
+        "lemma": "merciful",
+        "partOfSpeech": "adjective",
+        "definition": "showing or giving mercy",
+        "definitions": [
+          "showing or giving mercy"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-merciless__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-mercifulness__1.04.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-mercifulness__1.12.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-civil__3.00.00..",
+        "synset": "oewn-00645401-a",
+        "lemma": "civil",
+        "partOfSpeech": "adjective",
+        "definition": "not rude; marked by satisfactory (or especially minimal) adherence to social usages and sufficient but not noteworthy consideration for others",
+        "definitions": [
+          "not rude; marked by satisfactory (or especially minimal) adherence to social usages and sufficient but not noteworthy consideration for others"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-uncivil__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-civility__1.04.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-civility__1.07.00.."
+          }
+        ]
+      }
+    ],
+    "progression": {
+      "passed": true,
+      "issues": [],
+      "ratings": {
+        "three": {
+          "words": [
+            "NICE",
+            "WARM",
+            "SOFT"
+          ],
+          "zipfs": [
+            5.37,
+            4.71,
+            4.68
+          ],
+          "minZipf": 4.68,
+          "maxLength": 4,
+          "effort": 0,
+          "commonAndShort": true
+        },
+        "two": {
+          "words": [
+            "TENDER",
+            "EASY"
+          ],
+          "zipfs": [
+            4.09,
+            5.29
+          ],
+          "minZipf": 4.09,
+          "maxLength": 6,
+          "effort": 1.42,
+          "commonAndShort": true
+        },
+        "bingo": {
+          "words": [
+            "CONSIDERATE"
+          ],
+          "zipfs": [
+            3.3
+          ],
+          "minZipf": 3.3,
+          "maxLength": 11,
+          "effort": 6,
+          "commonAndShort": false
+        }
+      },
+      "bingos": [
+        {
+          "words": [
+            "CONSIDERATE"
+          ],
+          "tileIds": [
+            [
+              7,
+              8,
+              10,
+              1,
+              15,
+              3,
+              12,
+              13,
+              11,
+              0,
+              14
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            5
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "words": [
+            "CONSIDERATE"
+          ],
+          "tileIds": [
+            [
+              7,
+              8,
+              10,
+              1,
+              15,
+              3,
+              12,
+              13,
+              11,
+              0,
+              14
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            5
+          ]
+        },
+        {
+          "words": [
+            "TENDER",
+            "EASY"
+          ],
+          "tileIds": [
+            [
+              0,
+              12,
+              10,
+              3,
+              14,
+              13
+            ],
+            [
+              20,
+              11,
+              1,
+              21
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            1
+          ]
+        },
+        {
+          "words": [
+            "NICE",
+            "WARM",
+            "SOFT"
+          ],
+          "tileIds": [
+            [
+              10,
+              15,
+              7,
+              12
+            ],
+            [
+              4,
+              11,
+              13,
+              5
+            ],
+            [
+              1,
+              8,
+              23,
+              0
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            1,
+            2
+          ]
+        }
+      ],
+      "cheapestTwo": {
+        "words": [
+          "TENDER",
+          "EASY"
+        ],
+        "tileIds": [
+          [
+            0,
+            12,
+            10,
+            3,
+            14,
+            13
+          ],
+          [
+            20,
+            11,
+            1,
+            21
+          ]
+        ],
+        "labels": [
+          "COUNTER",
+          "COUNTER"
+        ],
+        "hits": [
+          4,
+          1
+        ]
+      },
+      "positions": 948,
+      "previews": 2454,
+      "searchComplete": true,
+      "scope": "All legal first moves, repeated words and POWER-selection variants; exact cheapest two-word bottleneck. Three-word witness uses distinct, familiar counter families. Word frequency and length are a difficulty proxy, not measured human solving difficulty."
+    },
+    "startingCounters": [
+      "CLEMENT",
+      "CONSIDERATE",
+      "CORDIAL",
+      "EASIER",
+      "EASIEST",
+      "GENIAL",
+      "GENTLE",
+      "GENTLER",
+      "MILD",
+      "MILDER",
+      "MILDEST",
+      "NICE",
+      "NICER",
+      "NICEST",
+      "SWEET",
+      "TENDER",
+      "WARM",
+      "WARMEST"
+    ],
+    "startingBingos": [
+      "CONSIDERATE"
+    ],
+    "unpoweredBingos": [
+      "CONSIDERATE"
+    ],
+    "routes": [
+      [
+        {
+          "word": "CONSIDERATE",
+          "ids": [
+            7,
+            8,
+            10,
+            1,
+            15,
+            3,
+            12,
+            13,
+            11,
+            0,
+            14
+          ],
+          "hits": 5,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "TENDER",
+          "ids": [
+            0,
+            12,
+            10,
+            3,
+            14,
+            13
+          ],
+          "hits": 4,
+          "powerHits": 0,
+          "remaining": "S"
+        },
+        {
+          "word": "EASY",
+          "ids": [
+            20,
+            11,
+            1,
+            21
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "NICE",
+          "ids": [
+            10,
+            15,
+            7,
+            12
+          ],
+          "hits": 2,
+          "powerHits": 0,
+          "remaining": "STR"
+        },
+        {
+          "word": "WARM",
+          "ids": [
+            4,
+            11,
+            13,
+            5
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": "ST"
+        },
+        {
+          "word": "SOFT",
+          "ids": [
+            1,
+            8,
+            23,
+            0
+          ],
+          "hits": 2,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ]
+    ],
+    "routeEffort": [
+      6,
+      1.42,
+      0
+    ],
+    "words": 33709,
+    "bytes": 370375,
+    "limitation": "Reviewed senses and exact route checks; subjective human difficulty still needs playtesting."
+  },
+  {
+    "id": "hostile",
+    "revision": "f7101631eb46",
+    "review": "Welcoming, friendly or conciliatory behaviour opposes ill will. SOCIAL means friendly companionship, not merely living in a society. HELPFUL describes an assisting rather than antagonistic person. HOSPITABLE is about welcoming guests, not an environment suitable for plants.",
+    "roots": [
+      {
+        "id": "oewn-hospitable__3.00.02..",
+        "synset": "oewn-01246699-a",
+        "lemma": "hospitable",
+        "partOfSpeech": "adjective",
+        "definition": "disposed to treat guests and strangers with cordiality and generosity",
+        "definitions": [
+          "disposed to treat guests and strangers with cordiality and generosity"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-inhospitable__3.00.02.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-hospitableness__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-hospitality__1.10.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-friendly__3.00.01..",
+        "synset": "oewn-01078338-a",
+        "lemma": "friendly",
+        "partOfSpeech": "adjective",
+        "definition": "characteristic of or befitting a friend",
+        "definitions": [
+          "characteristic of or befitting a friend"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-unfriendly__3.00.01.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-friend__1.18.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-friendliness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-friendly__5.00.00.amicable.00",
+        "synset": "oewn-01249700-s",
+        "lemma": "friendly",
+        "partOfSpeech": "adjective",
+        "definition": "inclined to help or support; not antagonistic or hostile",
+        "definitions": [
+          "inclined to help or support; not antagonistic or hostile"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-friendliness__1.12.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-social__5.00.00.friendly.01",
+        "synset": "oewn-01080322-s",
+        "lemma": "social",
+        "partOfSpeech": "adjective",
+        "definition": "marked by friendly companionship with others",
+        "definitions": [
+          "marked by friendly companionship with others"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-social__1.14.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-sociality__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-hearty__5.00.00.warm.02",
+        "synset": "oewn-02541648-s",
+        "lemma": "hearty",
+        "partOfSpeech": "adjective",
+        "definition": "showing warm and heartfelt friendliness",
+        "definitions": [
+          "showing warm and heartfelt friendliness"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-heart__1.12.04.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-heartiness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-kind__3.00.00..",
+        "synset": "oewn-01374976-a",
+        "lemma": "kind",
+        "partOfSpeech": "adjective",
+        "definition": "having or showing a tender and considerate and helpful nature; used especially of persons and their behavior",
+        "definitions": [
+          "having or showing a tender and considerate and helpful nature; used especially of persons and their behavior"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-unkind__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-kindness__1.04.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-kindness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-nice__3.00.00..",
+        "synset": "oewn-01590750-a",
+        "lemma": "nice",
+        "partOfSpeech": "adjective",
+        "definition": "pleasant or pleasing or agreeable in nature or appearance",
+        "definitions": [
+          "pleasant or pleasing or agreeable in nature or appearance"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-nasty__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-niceness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-nice__5.00.00.polite.00",
+        "synset": "oewn-00644482-s",
+        "lemma": "nice",
+        "partOfSpeech": "adjective",
+        "definition": "exhibiting courtesy and politeness",
+        "definitions": [
+          "exhibiting courtesy and politeness"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-niceness__1.07.02.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-warm__3.00.02..",
+        "synset": "oewn-02541266-a",
+        "lemma": "warm",
+        "partOfSpeech": "adjective",
+        "definition": "psychologically warm; friendly and responsive",
+        "definitions": [
+          "psychologically warm; friendly and responsive"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-cool__3.00.02.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-warmness__1.12.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-soft__3.00.02..",
+        "synset": "oewn-01159626-a",
+        "lemma": "soft",
+        "partOfSpeech": "adjective",
+        "definition": "compassionate and kind; conciliatory",
+        "definitions": [
+          "compassionate and kind; conciliatory"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-hard__3.00.02.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-softness__1.07.03.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-soft__5.00.00.conciliatory.00",
+        "synset": "oewn-00764017-s",
+        "lemma": "soft",
+        "partOfSpeech": "adjective",
+        "definition": "willing to negotiate and compromise",
+        "definitions": [
+          "willing to negotiate and compromise"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-softness__1.07.03.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-helpful__3.00.00..",
+        "synset": "oewn-01199079-a",
+        "lemma": "helpful",
+        "partOfSpeech": "adjective",
+        "definition": "providing assistance or serving a useful function",
+        "definitions": [
+          "providing assistance or serving a useful function"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-unhelpful__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-helpfulness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-amiable__5.00.00.friendly.01",
+        "synset": "oewn-01078866-s",
+        "lemma": "amiable",
+        "partOfSpeech": "adjective",
+        "definition": "diffusing warmth and friendliness",
+        "definitions": [
+          "diffusing warmth and friendliness"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-amiability__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-amiability__1.12.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-amity__1.26.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-amicable__3.00.00..",
+        "synset": "oewn-01249453-a",
+        "lemma": "amicable",
+        "partOfSpeech": "adjective",
+        "definition": "characterized by friendship and good will",
+        "definitions": [
+          "characterized by friendship and good will"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-hostile__3.00.01.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-amicability__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-amicableness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-benevolent__5.00.00.kind.00",
+        "synset": "oewn-01375875-s",
+        "lemma": "benevolent",
+        "partOfSpeech": "adjective",
+        "definition": "showing or motivated by sympathy and understanding and generosity",
+        "definitions": [
+          "showing or motivated by sympathy and understanding and generosity"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-pleasant__5.00.00.nice.00",
+        "synset": "oewn-01591274-s",
+        "lemma": "pleasant",
+        "partOfSpeech": "adjective",
+        "definition": "(of persons) having pleasing manners or behavior",
+        "definitions": [
+          "(of persons) having pleasing manners or behavior"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-pleasantness__1.12.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-please__2.37.03.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-benign__5.00.00.kind.00",
+        "synset": "oewn-01375700-s",
+        "lemma": "benign",
+        "partOfSpeech": "adjective",
+        "definition": "kindness of disposition or manner",
+        "definitions": [
+          "kindness of disposition or manner"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-benignancy__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-benignity__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-genial__5.00.00.friendly.01",
+        "synset": "oewn-01078866-s",
+        "lemma": "genial",
+        "partOfSpeech": "adjective",
+        "definition": "diffusing warmth and friendliness",
+        "definitions": [
+          "diffusing warmth and friendliness"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-geniality__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-affable__5.00.00.friendly.01",
+        "synset": "oewn-01078866-s",
+        "lemma": "affable",
+        "partOfSpeech": "adjective",
+        "definition": "diffusing warmth and friendliness",
+        "definitions": [
+          "diffusing warmth and friendliness"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-affability__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-affableness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-gracious__5.00.00.polite.00",
+        "synset": "oewn-00644482-s",
+        "lemma": "gracious",
+        "partOfSpeech": "adjective",
+        "definition": "exhibiting courtesy and politeness",
+        "definitions": [
+          "exhibiting courtesy and politeness"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-grace__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-graciousness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-cordial__5.00.00.warm.02",
+        "synset": "oewn-02541527-s",
+        "lemma": "cordial",
+        "partOfSpeech": "adjective",
+        "definition": "politely warm and friendly",
+        "definitions": [
+          "politely warm and friendly"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-cordiality__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-sweet__5.00.00.lovable.00",
+        "synset": "oewn-01462871-s",
+        "lemma": "sweet",
+        "partOfSpeech": "adjective",
+        "definition": "having a sweet nature befitting an angel or cherub",
+        "definitions": [
+          "having a sweet nature befitting an angel or cherub"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-sweetness__1.07.03.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-civil__3.00.00..",
+        "synset": "oewn-00645401-a",
+        "lemma": "civil",
+        "partOfSpeech": "adjective",
+        "definition": "not rude; marked by satisfactory (or especially minimal) adherence to social usages and sufficient but not noteworthy consideration for others",
+        "definitions": [
+          "not rude; marked by satisfactory (or especially minimal) adherence to social usages and sufficient but not noteworthy consideration for others"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-uncivil__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-civility__1.04.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-civility__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-considerate__3.00.00..",
+        "synset": "oewn-00642003-a",
+        "lemma": "considerate",
+        "partOfSpeech": "adjective",
+        "definition": "showing concern for the rights and feelings of others",
+        "definitions": [
+          "showing concern for the rights and feelings of others"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-inconsiderate__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-considerateness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-gentle__5.00.01.kind.00",
+        "synset": "oewn-01376241-s",
+        "lemma": "gentle",
+        "partOfSpeech": "adjective",
+        "definition": "having or showing a kindly or tender nature",
+        "definitions": [
+          "having or showing a kindly or tender nature"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-gentleness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-polite__3.00.00..",
+        "synset": "oewn-00644180-a",
+        "lemma": "polite",
+        "partOfSpeech": "adjective",
+        "definition": "showing regard for others in manners, speech, behavior, etc.",
+        "definitions": [
+          "showing regard for others in manners, speech, behavior, etc."
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-impolite__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-politeness__1.04.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-courteous__3.00.00..",
+        "synset": "oewn-00642864-a",
+        "lemma": "courteous",
+        "partOfSpeech": "adjective",
+        "definition": "characterized by courtesy and gracious good manners",
+        "definitions": [
+          "characterized by courtesy and gracious good manners"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-discourteous__3.00.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-sociable__3.00.00..",
+        "synset": "oewn-02264897-a",
+        "lemma": "sociable",
+        "partOfSpeech": "adjective",
+        "definition": "inclined to or conducive to companionship with others",
+        "definitions": [
+          "inclined to or conducive to companionship with others"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-unsociable__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-sociability__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-sociable__1.14.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-sociableness__1.07.00.."
+          }
+        ]
+      }
+    ],
+    "progression": {
+      "passed": true,
+      "issues": [],
+      "ratings": {
+        "three": {
+          "words": [
+            "NICE",
+            "SOFT",
+            "HELPFUL"
+          ],
+          "zipfs": [
+            5.37,
+            4.68,
+            4.43
+          ],
+          "minZipf": 4.43,
+          "maxLength": 7,
+          "effort": 1.34,
+          "commonAndShort": true
+        },
+        "two": {
+          "words": [
+            "SOCIAL",
+            "HEARTY"
+          ],
+          "zipfs": [
+            5.42,
+            3.38
+          ],
+          "minZipf": 3.38,
+          "maxLength": 6,
+          "effort": 2.84,
+          "commonAndShort": false
+        },
+        "bingo": {
+          "words": [
+            "HOSPITABLE"
+          ],
+          "zipfs": [
+            2.96
+          ],
+          "minZipf": 2.96,
+          "maxLength": 10,
+          "effort": 6.08,
+          "commonAndShort": false
+        }
+      },
+      "bingos": [
+        {
+          "words": [
+            "HOSPITABLE"
+          ],
+          "tileIds": [
+            [
+              5,
+              11,
+              3,
+              10,
+              6,
+              7,
+              0,
+              2,
+              1,
+              12
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            7
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "words": [
+            "HOSPITABLE"
+          ],
+          "tileIds": [
+            [
+              5,
+              11,
+              3,
+              10,
+              6,
+              7,
+              0,
+              2,
+              1,
+              12
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            7
+          ]
+        },
+        {
+          "words": [
+            "SOCIAL",
+            "HEARTY"
+          ],
+          "tileIds": [
+            [
+              3,
+              11,
+              4,
+              6,
+              0,
+              1
+            ],
+            [
+              5,
+              12,
+              16,
+              18,
+              7,
+              19
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            4,
+            3
+          ]
+        },
+        {
+          "words": [
+            "NICE",
+            "SOFT",
+            "HELPFUL"
+          ],
+          "tileIds": [
+            [
+              15,
+              6,
+              4,
+              12
+            ],
+            [
+              3,
+              11,
+              8,
+              7
+            ],
+            [
+              5,
+              14,
+              1,
+              10,
+              20,
+              13,
+              9
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3,
+            2
+          ]
+        }
+      ],
+      "cheapestTwo": {
+        "words": [
+          "SOCIAL",
+          "HEARTY"
+        ],
+        "tileIds": [
+          [
+            3,
+            11,
+            4,
+            6,
+            0,
+            1
+          ],
+          [
+            5,
+            12,
+            16,
+            18,
+            7,
+            19
+          ]
+        ],
+        "labels": [
+          "COUNTER",
+          "COUNTER"
+        ],
+        "hits": [
+          4,
+          3
+        ]
+      },
+      "positions": 1125,
+      "previews": 1992,
+      "searchComplete": true,
+      "scope": "All legal first moves, repeated words and POWER-selection variants; exact cheapest two-word bottleneck. Three-word witness uses distinct, familiar counter families. Word frequency and length are a difficulty proxy, not measured human solving difficulty."
+    },
+    "startingCounters": [
+      "HELPFUL",
+      "HOSPITABLE",
+      "NICE",
+      "NICEST",
+      "POLITE",
+      "SOCIABLE",
+      "SOCIAL",
+      "SOFT"
+    ],
+    "startingBingos": [
+      "HOSPITABLE"
+    ],
+    "unpoweredBingos": [
+      "HOSPITABLE"
+    ],
+    "routes": [
+      [
+        {
+          "word": "HOSPITABLE",
+          "ids": [
+            5,
+            11,
+            3,
+            10,
+            6,
+            7,
+            0,
+            2,
+            1,
+            12
+          ],
+          "hits": 7,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "SOCIAL",
+          "ids": [
+            3,
+            11,
+            4,
+            6,
+            0,
+            1
+          ],
+          "hits": 4,
+          "powerHits": 0,
+          "remaining": "HTE"
+        },
+        {
+          "word": "HEARTY",
+          "ids": [
+            5,
+            12,
+            16,
+            18,
+            7,
+            19
+          ],
+          "hits": 3,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "NICE",
+          "ids": [
+            15,
+            6,
+            4,
+            12
+          ],
+          "hits": 2,
+          "powerHits": 0,
+          "remaining": "HOSTL"
+        },
+        {
+          "word": "SOFT",
+          "ids": [
+            3,
+            11,
+            8,
+            7
+          ],
+          "hits": 3,
+          "powerHits": 0,
+          "remaining": "HL"
+        },
+        {
+          "word": "HELPFUL",
+          "ids": [
+            5,
+            14,
+            1,
+            10,
+            20,
+            13,
+            9
+          ],
+          "hits": 2,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ]
+    ],
+    "routeEffort": [
+      6.08,
+      2.84,
+      1.34
+    ],
+    "words": 30786,
+    "bytes": 336550,
+    "limitation": "Reviewed senses and exact route checks; subjective human difficulty still needs playtesting."
+  },
+  {
+    "id": "rude",
+    "revision": "47c2a7341747",
+    "review": "Civil, courteous, kind and refined interpersonal manners oppose uncivil rudeness. CULTURED and REFINED use their person readings, never laboratory cultures or processed sugar. HUMANE is civil and considerate treatment; warmth refers to manner, not temperature.",
+    "roots": [
+      {
+        "id": "oewn-cultured__5.00.00.refined.01",
+        "synset": "oewn-01954376-s",
+        "lemma": "cultured",
+        "partOfSpeech": "adjective",
+        "definition": "marked by refinement in taste and manners",
+        "definitions": [
+          "marked by refinement in taste and manners"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-refined__3.00.01..",
+        "synset": "oewn-01953883-a",
+        "lemma": "refined",
+        "partOfSpeech": "adjective",
+        "definition": "(used of persons and their behavior) cultivated and genteel",
+        "definitions": [
+          "(used of persons and their behavior) cultivated and genteel"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-unrefined__3.00.01.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-refined__5.00.00.sophisticated.00",
+        "synset": "oewn-02278936-s",
+        "lemma": "refined",
+        "partOfSpeech": "adjective",
+        "definition": "showing a high degree of refinement and the assurance that comes from wide social experience",
+        "definitions": [
+          "showing a high degree of refinement and the assurance that comes from wide social experience"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-suave__5.00.00.diplomatic.00",
+        "synset": "oewn-00762345-s",
+        "lemma": "suave",
+        "partOfSpeech": "adjective",
+        "definition": "smoothly agreeable and courteous with a degree of sophistication",
+        "definitions": [
+          "smoothly agreeable and courteous with a degree of sophistication"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-suaveness__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-suavity__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-suave__5.00.00.refined.01",
+        "synset": "oewn-01954912-s",
+        "lemma": "suave",
+        "partOfSpeech": "adjective",
+        "definition": "having a sophisticated charm",
+        "definitions": [
+          "having a sophisticated charm"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-suaveness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-kind__3.00.00..",
+        "synset": "oewn-01374976-a",
+        "lemma": "kind",
+        "partOfSpeech": "adjective",
+        "definition": "having or showing a tender and considerate and helpful nature; used especially of persons and their behavior",
+        "definitions": [
+          "having or showing a tender and considerate and helpful nature; used especially of persons and their behavior"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-unkind__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-kindness__1.04.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-kindness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-warm__3.00.02..",
+        "synset": "oewn-02541266-a",
+        "lemma": "warm",
+        "partOfSpeech": "adjective",
+        "definition": "psychologically warm; friendly and responsive",
+        "definitions": [
+          "psychologically warm; friendly and responsive"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-cool__3.00.02.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-warmness__1.12.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-humane__5.00.00.civilized.00",
+        "synset": "oewn-00413537-s",
+        "lemma": "humane",
+        "partOfSpeech": "adjective",
+        "definition": "showing evidence of moral and intellectual advancement",
+        "definitions": [
+          "showing evidence of moral and intellectual advancement"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-humane__3.00.00..",
+        "synset": "oewn-01264939-a",
+        "lemma": "humane",
+        "partOfSpeech": "adjective",
+        "definition": "marked or motivated by concern with the alleviation of suffering",
+        "definitions": [
+          "marked or motivated by concern with the alleviation of suffering"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-inhumane__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-humaneness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-nice__5.00.00.polite.00",
+        "synset": "oewn-00644482-s",
+        "lemma": "nice",
+        "partOfSpeech": "adjective",
+        "definition": "exhibiting courtesy and politeness",
+        "definitions": [
+          "exhibiting courtesy and politeness"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-niceness__1.07.02.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-polite__3.00.00..",
+        "synset": "oewn-00644180-a",
+        "lemma": "polite",
+        "partOfSpeech": "adjective",
+        "definition": "showing regard for others in manners, speech, behavior, etc.",
+        "definitions": [
+          "showing regard for others in manners, speech, behavior, etc."
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-impolite__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-politeness__1.04.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-courteous__3.00.00..",
+        "synset": "oewn-00642864-a",
+        "lemma": "courteous",
+        "partOfSpeech": "adjective",
+        "definition": "characterized by courtesy and gracious good manners",
+        "definitions": [
+          "characterized by courtesy and gracious good manners"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-discourteous__3.00.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-courteous__5.00.00.polite.00",
+        "synset": "oewn-00644482-s",
+        "lemma": "courteous",
+        "partOfSpeech": "adjective",
+        "definition": "exhibiting courtesy and politeness",
+        "definitions": [
+          "exhibiting courtesy and politeness"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-gentle__5.00.01.kind.00",
+        "synset": "oewn-01376241-s",
+        "lemma": "gentle",
+        "partOfSpeech": "adjective",
+        "definition": "having or showing a kindly or tender nature",
+        "definitions": [
+          "having or showing a kindly or tender nature"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-gentleness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-tender__3.00.03..",
+        "synset": "oewn-02457962-a",
+        "lemma": "tender",
+        "partOfSpeech": "adjective",
+        "definition": "given to sympathy or gentleness or sentimentality",
+        "definitions": [
+          "given to sympathy or gentleness or sentimentality"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-tough__3.00.03.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-tenderness__1.12.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-tenderness__1.12.03.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-pleasant__5.00.00.nice.00",
+        "synset": "oewn-01591274-s",
+        "lemma": "pleasant",
+        "partOfSpeech": "adjective",
+        "definition": "(of persons) having pleasing manners or behavior",
+        "definitions": [
+          "(of persons) having pleasing manners or behavior"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-pleasantness__1.12.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-please__2.37.03.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-urbane__5.00.00.sophisticated.00",
+        "synset": "oewn-02278936-s",
+        "lemma": "urbane",
+        "partOfSpeech": "adjective",
+        "definition": "showing a high degree of refinement and the assurance that comes from wide social experience",
+        "definitions": [
+          "showing a high degree of refinement and the assurance that comes from wide social experience"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-urbanity__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-polished__5.00.00.sophisticated.00",
+        "synset": "oewn-02278936-s",
+        "lemma": "polished",
+        "partOfSpeech": "adjective",
+        "definition": "showing a high degree of refinement and the assurance that comes from wide social experience",
+        "definitions": [
+          "showing a high degree of refinement and the assurance that comes from wide social experience"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-benign__5.00.00.kind.00",
+        "synset": "oewn-01375700-s",
+        "lemma": "benign",
+        "partOfSpeech": "adjective",
+        "definition": "kindness of disposition or manner",
+        "definitions": [
+          "kindness of disposition or manner"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-benignancy__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-benignity__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-genial__5.00.00.friendly.01",
+        "synset": "oewn-01078866-s",
+        "lemma": "genial",
+        "partOfSpeech": "adjective",
+        "definition": "diffusing warmth and friendliness",
+        "definitions": [
+          "diffusing warmth and friendliness"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-geniality__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-affable__5.00.00.friendly.01",
+        "synset": "oewn-01078866-s",
+        "lemma": "affable",
+        "partOfSpeech": "adjective",
+        "definition": "diffusing warmth and friendliness",
+        "definitions": [
+          "diffusing warmth and friendliness"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-affability__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-affableness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-gracious__5.00.00.polite.00",
+        "synset": "oewn-00644482-s",
+        "lemma": "gracious",
+        "partOfSpeech": "adjective",
+        "definition": "exhibiting courtesy and politeness",
+        "definitions": [
+          "exhibiting courtesy and politeness"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-grace__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-graciousness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-cordial__5.00.00.warm.02",
+        "synset": "oewn-02541527-s",
+        "lemma": "cordial",
+        "partOfSpeech": "adjective",
+        "definition": "politely warm and friendly",
+        "definitions": [
+          "politely warm and friendly"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-cordiality__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-sweet__5.00.00.lovable.00",
+        "synset": "oewn-01462871-s",
+        "lemma": "sweet",
+        "partOfSpeech": "adjective",
+        "definition": "having a sweet nature befitting an angel or cherub",
+        "definitions": [
+          "having a sweet nature befitting an angel or cherub"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-sweetness__1.07.03.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-civil__3.00.00..",
+        "synset": "oewn-00645401-a",
+        "lemma": "civil",
+        "partOfSpeech": "adjective",
+        "definition": "not rude; marked by satisfactory (or especially minimal) adherence to social usages and sufficient but not noteworthy consideration for others",
+        "definitions": [
+          "not rude; marked by satisfactory (or especially minimal) adherence to social usages and sufficient but not noteworthy consideration for others"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-uncivil__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-civility__1.04.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-civility__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-considerate__3.00.00..",
+        "synset": "oewn-00642003-a",
+        "lemma": "considerate",
+        "partOfSpeech": "adjective",
+        "definition": "showing concern for the rights and feelings of others",
+        "definitions": [
+          "showing concern for the rights and feelings of others"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-inconsiderate__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-considerateness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-decent__5.00.00.respectable.00",
+        "synset": "oewn-02000490-s",
+        "lemma": "decent",
+        "partOfSpeech": "adjective",
+        "definition": "socially or conventionally correct; refined or virtuous",
+        "definitions": [
+          "socially or conventionally correct; refined or virtuous"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-decency__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-decency__1.07.01.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-nice__5.00.00.respectable.00",
+        "synset": "oewn-02000490-s",
+        "lemma": "nice",
+        "partOfSpeech": "adjective",
+        "definition": "socially or conventionally correct; refined or virtuous",
+        "definitions": [
+          "socially or conventionally correct; refined or virtuous"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-niceness__1.07.02.."
+          }
+        ]
+      }
+    ],
+    "progression": {
+      "passed": true,
+      "issues": [],
+      "ratings": {
+        "three": {
+          "words": [
+            "WARM",
+            "KIND",
+            "HUMANE"
+          ],
+          "zipfs": [
+            4.71,
+            5.45,
+            3.62
+          ],
+          "minZipf": 3.62,
+          "maxLength": 6,
+          "effort": 2.36,
+          "commonAndShort": true
+        },
+        "two": {
+          "words": [
+            "REFINED",
+            "SUAVE"
+          ],
+          "zipfs": [
+            3.83,
+            2.9
+          ],
+          "minZipf": 2.9,
+          "maxLength": 7,
+          "effort": 3.2,
+          "commonAndShort": false
+        },
+        "bingo": {
+          "words": [
+            "CULTURED"
+          ],
+          "zipfs": [
+            3.3
+          ],
+          "minZipf": 3.3,
+          "maxLength": 8,
+          "effort": 4.2,
+          "commonAndShort": false
+        }
+      },
+      "bingos": [
+        {
+          "words": [
+            "CULTURED"
+          ],
+          "tileIds": [
+            [
+              15,
+              2,
+              6,
+              14,
+              9,
+              7,
+              5,
+              13
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            4
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "words": [
+            "CULTURED"
+          ],
+          "tileIds": [
+            [
+              15,
+              2,
+              6,
+              14,
+              9,
+              7,
+              5,
+              13
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            4
+          ]
+        },
+        {
+          "words": [
+            "REFINED",
+            "SUAVE"
+          ],
+          "tileIds": [
+            [
+              7,
+              5,
+              10,
+              12,
+              4,
+              11,
+              13
+            ],
+            [
+              20,
+              2,
+              1,
+              21,
+              19
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            1
+          ]
+        },
+        {
+          "words": [
+            "WARM",
+            "KIND",
+            "HUMANE"
+          ],
+          "tileIds": [
+            [
+              8,
+              1,
+              7,
+              3
+            ],
+            [
+              0,
+              12,
+              4,
+              13
+            ],
+            [
+              23,
+              2,
+              16,
+              17,
+              18,
+              5
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            1,
+            2
+          ]
+        }
+      ],
+      "cheapestTwo": {
+        "words": [
+          "REFINED",
+          "SUAVE"
+        ],
+        "tileIds": [
+          [
+            7,
+            5,
+            10,
+            12,
+            4,
+            11,
+            13
+          ],
+          [
+            20,
+            2,
+            1,
+            21,
+            19
+          ]
+        ],
+        "labels": [
+          "COUNTER",
+          "COUNTER"
+        ],
+        "hits": [
+          3,
+          1
+        ]
+      },
+      "positions": 959,
+      "previews": 2377,
+      "searchComplete": true,
+      "scope": "All legal first moves, repeated words and POWER-selection variants; exact cheapest two-word bottleneck. Three-word witness uses distinct, familiar counter families. Word frequency and length are a difficulty proxy, not measured human solving difficulty."
+    },
+    "startingCounters": [
+      "CULTURED",
+      "DECENT",
+      "KIND",
+      "KINDER",
+      "NICE",
+      "NICER",
+      "REFINED",
+      "TENDER",
+      "WARM"
+    ],
+    "startingBingos": [
+      "CULTURED"
+    ],
+    "unpoweredBingos": [
+      "CULTURED"
+    ],
+    "routes": [
+      [
+        {
+          "word": "CULTURED",
+          "ids": [
+            15,
+            2,
+            6,
+            14,
+            9,
+            7,
+            5,
+            13
+          ],
+          "hits": 4,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "REFINED",
+          "ids": [
+            7,
+            5,
+            10,
+            12,
+            4,
+            11,
+            13
+          ],
+          "hits": 3,
+          "powerHits": 0,
+          "remaining": "U"
+        },
+        {
+          "word": "SUAVE",
+          "ids": [
+            20,
+            2,
+            1,
+            21,
+            19
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "WARM",
+          "ids": [
+            8,
+            1,
+            7,
+            3
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": "UDE"
+        },
+        {
+          "word": "KIND",
+          "ids": [
+            0,
+            12,
+            4,
+            13
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": "UE"
+        },
+        {
+          "word": "HUMANE",
+          "ids": [
+            23,
+            2,
+            16,
+            17,
+            18,
+            5
+          ],
+          "hits": 2,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ]
+    ],
+    "routeEffort": [
+      4.2,
+      3.2,
+      2.36
+    ],
+    "words": 22501,
+    "bytes": 238057,
+    "limitation": "Reviewed senses and exact route checks; subjective human difficulty still needs playtesting."
+  },
+  {
     "id": "dry",
     "revision": "09308fa90df3",
     "review": "Adjectives containing moisture oppose DRY as lacking moisture. HYDRATED is an adjective, not HYDRATE the verb. DAMP, SOGGY and RAINY retain wetness readings; alcohol and humour readings are not admitted. Comparative adjectives remain adjectives.",

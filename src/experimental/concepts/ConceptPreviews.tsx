@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ArrowLeft, Share2, Star, X } from 'lucide-react'
+import { ArrowLeft, ChevronLeft, ChevronRight, Share2, Star, X } from 'lucide-react'
 import BattleScreen from '../../components/BattleScreen'
 import BattleResult from '../../components/BattleResult'
 import PuzzleLoading from '../../components/PuzzleLoading'
@@ -16,6 +16,7 @@ const entryGroup = (entry?: ConceptEntry): PreviewGroup => entry?.family ? 'fami
 export default function ConceptPreviews() {
   const [selected, setSelected] = useState(() => new URLSearchParams(window.location.search).get('puzzle'))
   const [group, setGroup] = useState<PreviewGroup>(() => entryGroup(conceptPreviews.find(entry => entry.id === selected)))
+  const [page, setPage] = useState(0)
   useEffect(() => {
     const sync = () => setSelected(new URLSearchParams(window.location.search).get('puzzle'))
     window.addEventListener('popstate', sync)
@@ -28,10 +29,10 @@ export default function ConceptPreviews() {
   }
   const entry = conceptPreviews.find(item => item.id === selected)
   return entry ? <LoadPreview key={entry.id} entry={entry} onBack={() => navigate()} />
-    : <PreviewHub onSelect={navigate} group={group} onGroup={setGroup} />
+    : <PreviewHub onSelect={navigate} group={group} onGroup={next => { setGroup(next); setPage(0) }} page={page} onPage={setPage} />
 }
 
-function PreviewHub({ onSelect, group, onGroup }: { onSelect: (id: string) => void; group: PreviewGroup; onGroup: (group: PreviewGroup) => void }) {
+function PreviewHub({ onSelect, group, onGroup, page, onPage }: { onSelect: (id: string) => void; group: PreviewGroup; onGroup: (group: PreviewGroup) => void; page: number; onPage: (page: number) => void }) {
   const [shareStatus, setShareStatus] = useState('')
   const [, refresh] = useState(0)
   useEffect(() => {
@@ -42,12 +43,16 @@ function PreviewHub({ onSelect, group, onGroup }: { onSelect: (id: string) => vo
   async function share() {
     const url = new URL(conceptPath(), window.location.href).href
     try {
-      if (navigator.share) await navigator.share({ title: 'Wyrmle · Concept previews', text: 'Try six Wyrmle puzzles: clear opposites and one-family counters. Each has a bingo.', url })
+      if (navigator.share) await navigator.share({ title: 'Wyrmle · Concept previews', text: 'Try Wyrmle’s new puzzle ideas. Each has a bingo.', url })
       else { await navigator.clipboard.writeText(url); setShareStatus('Link copied') }
     } catch (error) {
       if (!(error instanceof DOMException && error.name === 'AbortError')) setShareStatus('Send this page’s address to share.')
     }
   }
+  const entries = conceptPreviews.filter(entry => group === 'family' ? Boolean(entry.family)
+    : !entry.family && Boolean(entry.powers) === (group === 'power'))
+  const pages = Math.ceil(entries.length / 2)
+  const current = Math.min(page, pages - 1)
   return <main className="container concept-hub">
     <header className="concept-heading"><div><a href={base} className="concept-brand">WYRMLE</a><h1>Concept previews</h1></div>
       <nav aria-label="Preview navigation">
@@ -65,8 +70,7 @@ function PreviewHub({ onSelect, group, onGroup }: { onSelect: (id: string) => vo
         ? 'Every counter belongs to one named family. SEARS keeps verbs against a verb. DIRT uses cleaning verbs against a noun.'
         : 'Find opposites of the meaning shown: adjectives against adjectives, nouns against nouns. Their matching letters hit.'}</p>
       {group !== 'antonyms' && <p className="concept-extra">Each blue tile in a counter hits one extra enemy letter. Its power is used up.</p>}
-      <div className="concept-cards">{conceptPreviews.filter(entry => group === 'family' ? Boolean(entry.family)
-        : !entry.family && Boolean(entry.powers) === (group === 'power')).map(entry => {
+      <div className="concept-cards">{entries.slice(current * 2, current * 2 + 2).map(entry => {
         const progress = describeBingoProgress(readBingoProgress(conceptProgressKey(entry)), 3)
         return <button className="concept-card" key={entry.id} data-progress={progress.status}
           onClick={() => onSelect(entry.id)} aria-label={`${entry.enemy}, ${entry.powers ? 'with POWER, ' : ''}${progress.accessible}`}>
@@ -77,6 +81,11 @@ function PreviewHub({ onSelect, group, onGroup }: { onSelect: (id: string) => vo
         </button>
       })}</div>
     </section>
+    {pages > 1 && <nav className="concept-pages" aria-label="More preview puzzles">
+      <button className="icon-button" aria-label="Previous puzzles" disabled={current === 0} onClick={() => onPage(current - 1)}><ChevronLeft size={20} /></button>
+      <span aria-live="polite">{current + 1} / {pages}</span>
+      <button className="icon-button" aria-label="Next puzzles" disabled={current === pages - 1} onClick={() => onPage(current + 1)}><ChevronRight size={20} /></button>
+    </nav>}
     <p className="concept-common-rule">Other words do no damage. Every word uses one life.</p>
     <footer className="concept-footer">
       <p>Best: ★ 3 words · ★★ 2 · ★★★ bingo<br />Progress stays on this device. Daily is separate.</p>

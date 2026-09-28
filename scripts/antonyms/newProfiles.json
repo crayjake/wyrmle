@@ -1,0 +1,383 @@
+[
+  {
+    "id": "dear",
+    "enemy": "DEAR",
+    "definition": "expensive; high in price",
+    "sense": "oewn-dear__5.00.00.expensive.00",
+    "bingo": "AFFORDABLE",
+    "letters": "AFFORDABLEHCPWOS",
+    "refills": "RMTEEACPHLOSDIN",
+    "routes": [
+      [
+        "AFFORDABLE"
+      ],
+      [
+        "LOWER",
+        "MODERATE"
+      ],
+      [
+        "CHEAP",
+        "LOWER",
+        "MODEST"
+      ]
+    ],
+    "roots": [
+      "oewn-affordable__5.00.00.cheap.00",
+      "oewn-cheap__3.00.00..",
+      "oewn-inexpensive__3.00.00..",
+      "oewn-low__3.00.02..",
+      "oewn-modest__5.00.00.moderate.00",
+      "oewn-modest__5.00.00.limited.00",
+      "oewn-moderate__3.00.00..",
+      "oewn-fair__5.00.00.moderate.00",
+      "oewn-reasonable__5.00.00.moderate.00",
+      "oewn-economical__5.00.00.efficient.00"
+    ],
+    "hints": [
+      "Use the price meaning of the enemy.",
+      "Something that fits within your budget.",
+      "Ten letters, beginning with A."
+    ],
+    "review": "DEAR means expensive, not beloved. Price adjectives only: cheap, affordable, low, modest, moderate, fair and reasonable all describe a price. LOW uses amount, never height or mood. ECONOMICAL uses low resource cost, not economic theory. Nouns and price-cutting verbs do not count.",
+    "powers": [],
+    "wordOnly": [
+      "oewn-low__3.00.02..",
+      "oewn-modest__5.00.00.moderate.00",
+      "oewn-modest__5.00.00.limited.00",
+      "oewn-moderate__3.00.00..",
+      "oewn-fair__5.00.00.moderate.00",
+      "oewn-reasonable__5.00.00.moderate.00",
+      "oewn-economical__5.00.00.efficient.00"
+    ],
+    "overrides": {}
+  },
+  {
+    "id": "alert",
+    "enemy": "ALERT",
+    "definition": "awake, responsive and quick to act",
+    "sense": "oewn-alert__5.00.00.energetic.00",
+    "bingo": "LETHARGIC",
+    "letters": "LETHARGICNUDSOWX",
+    "refills": "LDIEXAAZYRSETON",
+    "routes": [
+      [
+        "LETHARGIC"
+      ],
+      [
+        "LANGUID",
+        "TIRED"
+      ],
+      [
+        "SLOW",
+        "TIRED",
+        "LAZY"
+      ]
+    ],
+    "roots": [
+      "oewn-lethargic__3.00.00..",
+      "oewn-slow__3.00.01..",
+      "oewn-tired__3.00.00..",
+      "oewn-lazy__5.00.00.idle.00",
+      "oewn-lazy__5.00.00.slow.01",
+      "oewn-languid__5.00.00.lethargic.00",
+      "oewn-idle__3.00.00..",
+      "oewn-sluggish__5.00.01.slow.01",
+      "oewn-sluggish__5.00.00.inactive.01",
+      "oewn-drowsy__5.00.00.asleep.00",
+      "oewn-drowsy__5.00.00.inattentive.00",
+      "oewn-sleepy__5.00.00.asleep.00",
+      "oewn-leaden__5.00.00.heavy.02",
+      "oewn-leaden__5.00.00.effortful.00",
+      "oewn-leaden__5.00.00.dull.03",
+      "oewn-dull__3.00.03..",
+      "oewn-inactive__3.00.04..",
+      "oewn-inactive__3.00.01..",
+      "oewn-inert__5.00.00.inactive.01",
+      "oewn-somnolent__5.00.00.asleep.00",
+      "oewn-asleep__3.00.00..",
+      "oewn-dormant__5.00.00.inactive.01",
+      "oewn-slothful__5.00.00.idle.00",
+      "oewn-dazed__5.00.00.lethargic.00",
+      "oewn-weary__5.00.00.tired.00",
+      "oewn-exhausted__5.00.00.tired.00",
+      "oewn-torpid__5.00.00.inactive.01",
+      "oewn-listless__5.00.00.lethargic.00"
+    ],
+    "hints": [
+      "Think of someone with very little energy.",
+      "They feel sluggish and struggle to get going.",
+      "Nine letters, beginning with L."
+    ],
+    "review": "Opposite adjectives describe lack of wakefulness, responsiveness or energy. TIRED is depleted energy, not an overused joke; DULL means lifeless, not blunt. Chemical inertness and merely being late are outside this sense.",
+    "powers": [],
+    "wordOnly": [
+      "oewn-slow__3.00.01..",
+      "oewn-idle__3.00.00..",
+      "oewn-dull__3.00.03.."
+    ],
+    "overrides": {}
+  },
+  {
+    "id": "true",
+    "enemy": "TRUE",
+    "definition": "accurate and in accordance with the facts",
+    "sense": "oewn-true__3.00.00..",
+    "bingo": "INACCURATE",
+    "letters": "INACCURATEWOGSRL",
+    "refills": "BOGLSWDTESTFALR",
+    "routes": [
+      [
+        "INACCURATE"
+      ],
+      [
+        "INCORRECT",
+        "BOGUS"
+      ],
+      [
+        "WRONG",
+        "BOGUS",
+        "TWISTED"
+      ]
+    ],
+    "roots": [
+      "oewn-inaccurate__3.00.00..",
+      "oewn-incorrect__3.00.00..",
+      "oewn-incorrect__5.00.00.inaccurate.00",
+      "oewn-wrong__3.00.02..",
+      "oewn-wrong__5.00.00.inaccurate.00",
+      "oewn-false__3.00.00..",
+      "oewn-false__5.00.00.incorrect.00",
+      "oewn-false__5.00.00.invalid.00",
+      "oewn-false__5.00.00.dishonest.00",
+      "oewn-bogus__5.00.00.counterfeit.00",
+      "oewn-twisted__5.00.00.disingenuous.00",
+      "oewn-untrue__5.00.00.false.00",
+      "oewn-fictitious__5.00.00.unreal.00",
+      "oewn-fictional__5.00.00.unreal.00",
+      "oewn-erroneous__5.00.00.incorrect.00",
+      "oewn-fallacious__5.00.00.incorrect.00",
+      "oewn-misleading__5.00.00.dishonest.00",
+      "oewn-deceptive__5.00.00.unreal.02",
+      "oewn-fake__5.00.00.counterfeit.00",
+      "oewn-sham__5.00.00.counterfeit.00",
+      "oewn-spurious__5.00.00.false.00",
+      "oewn-fabricated__5.00.00.unreal.00",
+      "oewn-distorted__5.00.00.disingenuous.00",
+      "oewn-unreal__3.00.00.."
+    ],
+    "hints": [
+      "Think about a statement that gets the details wrong.",
+      "You might describe an unreliable measurement this way.",
+      "Ten letters, beginning with I."
+    ],
+    "review": "Factually false, erroneous or misrepresented statements oppose TRUE. BOGUS uses fraudulent, TWISTED uses misrepresented meaning. Wrong morality, a bent shape, and unfaithful relationships are different senses and excluded.",
+    "powers": [],
+    "wordOnly": [],
+    "overrides": {}
+  },
+  {
+    "id": "stern",
+    "enemy": "STERN",
+    "definition": "strict and forbidding in manner",
+    "sense": "oewn-stern__5.00.00.nonindulgent.00",
+    "bingo": "CONSIDERATE",
+    "letters": "CONSIDERATEWMSGL",
+    "refills": "AXNREYOFSTUIDK",
+    "routes": [
+      [
+        "CONSIDERATE"
+      ],
+      [
+        "TENDER",
+        "EASY"
+      ],
+      [
+        "NICE",
+        "WARM",
+        "SOFT"
+      ]
+    ],
+    "roots": [
+      "oewn-considerate__3.00.00..",
+      "oewn-kind__3.00.00..",
+      "oewn-nice__3.00.00..",
+      "oewn-nice__5.00.00.polite.00",
+      "oewn-warm__3.00.02..",
+      "oewn-soft__3.00.02..",
+      "oewn-soft__5.00.00.permissive.01",
+      "oewn-soft__5.00.00.mild.00",
+      "oewn-tender__3.00.03..",
+      "oewn-tender__5.00.00.loving.00",
+      "oewn-easy__5.00.01.undemanding.01",
+      "oewn-gentle__5.00.00.mild.00",
+      "oewn-gentle__5.00.01.kind.00",
+      "oewn-mild__3.00.00..",
+      "oewn-lenient__5.00.00.permissive.01",
+      "oewn-indulgent__3.00.00..",
+      "oewn-friendly__3.00.01..",
+      "oewn-sweet__5.00.00.lovable.00",
+      "oewn-pleasant__5.00.00.nice.00",
+      "oewn-benign__5.00.00.kind.00",
+      "oewn-clement__3.00.01..",
+      "oewn-genial__5.00.00.friendly.01",
+      "oewn-affable__5.00.00.friendly.01",
+      "oewn-gracious__5.00.00.polite.00",
+      "oewn-cordial__5.00.00.warm.02",
+      "oewn-lenient__5.00.00.undemanding.01",
+      "oewn-lax__5.00.00.negligent.00",
+      "oewn-tolerant__5.00.00.forgiving.00",
+      "oewn-merciful__3.00.00..",
+      "oewn-civil__3.00.00.."
+    ],
+    "hints": [
+      "Think of someone who takes other people\u2019s feelings into account.",
+      "They are thoughtful about the effect their actions have on others.",
+      "Eleven letters, beginning with C."
+    ],
+    "review": "Gentle, lenient and considerate manners oppose a stern manner. EASY means not strict; SOFT means lenient or kind, not a material. Nice and sweet use interpersonal readings. Broad headwords stay pinned to their reviewed spelling and inflections.",
+    "powers": [],
+    "wordOnly": [
+      "oewn-nice__3.00.00..",
+      "oewn-nice__5.00.00.polite.00",
+      "oewn-sweet__5.00.00.lovable.00"
+    ],
+    "overrides": {}
+  },
+  {
+    "id": "hostile",
+    "enemy": "HOSTILE",
+    "definition": "unfriendly and showing ill will",
+    "sense": "oewn-hostile__3.00.01..",
+    "bingo": "HOSPITABLE",
+    "letters": "HOSPITABLENCFULE",
+    "refills": "AERYFNCWMIOLST",
+    "routes": [
+      [
+        "HOSPITABLE"
+      ],
+      [
+        "SOCIAL",
+        "HEARTY"
+      ],
+      [
+        "NICE",
+        "SOFT",
+        "HELPFUL"
+      ]
+    ],
+    "roots": [
+      "oewn-hospitable__3.00.02..",
+      "oewn-friendly__3.00.01..",
+      "oewn-friendly__5.00.00.amicable.00",
+      "oewn-social__5.00.00.friendly.01",
+      "oewn-hearty__5.00.00.warm.02",
+      "oewn-kind__3.00.00..",
+      "oewn-nice__3.00.00..",
+      "oewn-nice__5.00.00.polite.00",
+      "oewn-warm__3.00.02..",
+      "oewn-soft__3.00.02..",
+      "oewn-soft__5.00.00.conciliatory.00",
+      "oewn-helpful__3.00.00..",
+      "oewn-amiable__5.00.00.friendly.01",
+      "oewn-amicable__3.00.00..",
+      "oewn-benevolent__5.00.00.kind.00",
+      "oewn-pleasant__5.00.00.nice.00",
+      "oewn-benign__5.00.00.kind.00",
+      "oewn-genial__5.00.00.friendly.01",
+      "oewn-affable__5.00.00.friendly.01",
+      "oewn-gracious__5.00.00.polite.00",
+      "oewn-cordial__5.00.00.warm.02",
+      "oewn-sweet__5.00.00.lovable.00",
+      "oewn-civil__3.00.00..",
+      "oewn-considerate__3.00.00..",
+      "oewn-gentle__5.00.01.kind.00",
+      "oewn-polite__3.00.00..",
+      "oewn-courteous__3.00.00..",
+      "oewn-sociable__3.00.00.."
+    ],
+    "hints": [
+      "Think of the welcome you would like to get as a guest.",
+      "A host who makes strangers feel comfortable is this.",
+      "Ten letters, beginning with H."
+    ],
+    "review": "Welcoming, friendly or conciliatory behaviour opposes ill will. SOCIAL means friendly companionship, not merely living in a society. HELPFUL describes an assisting rather than antagonistic person. HOSPITABLE is about welcoming guests, not an environment suitable for plants.",
+    "powers": [],
+    "wordOnly": [
+      "oewn-social__5.00.00.friendly.01",
+      "oewn-nice__3.00.00..",
+      "oewn-nice__5.00.00.polite.00",
+      "oewn-helpful__3.00.00..",
+      "oewn-sweet__5.00.00.lovable.00"
+    ],
+    "overrides": {}
+  },
+  {
+    "id": "rude",
+    "enemy": "RUDE",
+    "definition": "uncivil and discourteous in manner",
+    "sense": "oewn-rude__5.00.00.impolite.00",
+    "bingo": "CULTURED",
+    "letters": "CULTUREDWAMKINEF",
+    "refills": "MANESVEHICOTUL",
+    "routes": [
+      [
+        "CULTURED"
+      ],
+      [
+        "REFINED",
+        "SUAVE"
+      ],
+      [
+        "WARM",
+        "KIND",
+        "HUMANE"
+      ]
+    ],
+    "roots": [
+      "oewn-cultured__5.00.00.refined.01",
+      "oewn-refined__3.00.01..",
+      "oewn-refined__5.00.00.sophisticated.00",
+      "oewn-suave__5.00.00.diplomatic.00",
+      "oewn-suave__5.00.00.refined.01",
+      "oewn-kind__3.00.00..",
+      "oewn-warm__3.00.02..",
+      "oewn-humane__5.00.00.civilized.00",
+      "oewn-humane__3.00.00..",
+      "oewn-nice__5.00.00.polite.00",
+      "oewn-polite__3.00.00..",
+      "oewn-courteous__3.00.00..",
+      "oewn-courteous__5.00.00.polite.00",
+      "oewn-gentle__5.00.01.kind.00",
+      "oewn-tender__3.00.03..",
+      "oewn-pleasant__5.00.00.nice.00",
+      "oewn-urbane__5.00.00.sophisticated.00",
+      "oewn-polished__5.00.00.sophisticated.00",
+      "oewn-benign__5.00.00.kind.00",
+      "oewn-genial__5.00.00.friendly.01",
+      "oewn-affable__5.00.00.friendly.01",
+      "oewn-gracious__5.00.00.polite.00",
+      "oewn-cordial__5.00.00.warm.02",
+      "oewn-sweet__5.00.00.lovable.00",
+      "oewn-civil__3.00.00..",
+      "oewn-considerate__3.00.00..",
+      "oewn-decent__5.00.00.respectable.00",
+      "oewn-nice__5.00.00.respectable.00"
+    ],
+    "hints": [
+      "Think of someone with refined manners and tastes.",
+      "The same word can describe pearls grown by people.",
+      "Eight letters, beginning with C."
+    ],
+    "review": "Civil, courteous, kind and refined interpersonal manners oppose uncivil rudeness. CULTURED and REFINED use their person readings, never laboratory cultures or processed sugar. HUMANE is civil and considerate treatment; warmth refers to manner, not temperature.",
+    "powers": [],
+    "wordOnly": [
+      "oewn-humane__5.00.00.civilized.00",
+      "oewn-humane__3.00.00..",
+      "oewn-nice__5.00.00.polite.00",
+      "oewn-sweet__5.00.00.lovable.00",
+      "oewn-decent__5.00.00.respectable.00",
+      "oewn-nice__5.00.00.respectable.00"
+    ],
+    "overrides": {}
+  }
+]

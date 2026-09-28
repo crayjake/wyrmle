@@ -1,5 +1,100 @@
 [
   {
+    "id": "alert",
+    "enemy": "ALERT",
+    "definition": "awake, responsive and quick to act",
+    "asset": "previews/concepts/alert-4f38a2f00668.json",
+    "revision": "4f38a2f00668",
+    "powers": 0,
+    "partOfSpeech": "adjective",
+    "counterPartOfSpeech": "adjective",
+    "guide": {
+      "answer": "LETHARGIC",
+      "hints": [
+        "Think of someone with very little energy.",
+        "They feel sluggish and struggle to get going.",
+        "Nine letters, beginning with L."
+      ],
+      "explanation": "LETHARGIC is an opposite adjective for ALERT. It contains every enemy letter."
+    }
+  },
+  {
+    "id": "true",
+    "enemy": "TRUE",
+    "definition": "accurate and in accordance with the facts",
+    "asset": "previews/concepts/true-138ffe51b4b9.json",
+    "revision": "138ffe51b4b9",
+    "powers": 0,
+    "partOfSpeech": "adjective",
+    "counterPartOfSpeech": "adjective",
+    "guide": {
+      "answer": "INACCURATE",
+      "hints": [
+        "Think about a statement that gets the details wrong.",
+        "You might describe an unreliable measurement this way.",
+        "Ten letters, beginning with I."
+      ],
+      "explanation": "INACCURATE is an opposite adjective for TRUE. It contains every enemy letter."
+    }
+  },
+  {
+    "id": "stern",
+    "enemy": "STERN",
+    "definition": "strict and forbidding in manner",
+    "asset": "previews/concepts/stern-28a7f8355991.json",
+    "revision": "28a7f8355991",
+    "powers": 0,
+    "partOfSpeech": "adjective",
+    "counterPartOfSpeech": "adjective",
+    "guide": {
+      "answer": "CONSIDERATE",
+      "hints": [
+        "Think of someone who takes other people’s feelings into account.",
+        "They are thoughtful about the effect their actions have on others.",
+        "Eleven letters, beginning with C."
+      ],
+      "explanation": "CONSIDERATE is an opposite adjective for STERN. It contains every enemy letter."
+    }
+  },
+  {
+    "id": "hostile",
+    "enemy": "HOSTILE",
+    "definition": "unfriendly and showing ill will",
+    "asset": "previews/concepts/hostile-f7101631eb46.json",
+    "revision": "f7101631eb46",
+    "powers": 0,
+    "partOfSpeech": "adjective",
+    "counterPartOfSpeech": "adjective",
+    "guide": {
+      "answer": "HOSPITABLE",
+      "hints": [
+        "Think of the welcome you would like to get as a guest.",
+        "A host who makes strangers feel comfortable is this.",
+        "Ten letters, beginning with H."
+      ],
+      "explanation": "HOSPITABLE is an opposite adjective for HOSTILE. It contains every enemy letter."
+    }
+  },
+  {
+    "id": "rude",
+    "enemy": "RUDE",
+    "definition": "uncivil and discourteous in manner",
+    "asset": "previews/concepts/rude-47c2a7341747.json",
+    "revision": "47c2a7341747",
+    "powers": 0,
+    "partOfSpeech": "adjective",
+    "counterPartOfSpeech": "adjective",
+    "guide": {
+      "answer": "CULTURED",
+      "hints": [
+        "Think of someone with refined manners and tastes.",
+        "The same word can describe pearls grown by people.",
+        "Eight letters, beginning with C."
+      ],
+      "explanation": "CULTURED is an opposite adjective for RUDE. It contains every enemy letter."
+    }
+  },
+  {
     "id": "dry",
     "enemy": "DRY",
     "definition": "lacking water or moisture",

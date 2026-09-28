@@ -26,8 +26,14 @@ test('27 September through 16 October have twenty fresh enemies, bingo families 
     assert.deepEqual(freshnessIssues(identity, [...before, ...batch]), [], entry.id)
     assert.ok(identity.bingos.includes(getPuzzleGuide(entry.id)!.answer))
     assert.ok(history.some(old => JSON.stringify(old) === JSON.stringify(identity)), 'Remember published puzzle after retirement')
-    const profile = profiles.find(p => p.enemy === entry.enemy)!
-    assert.equal(encounter.meaningLexicon!.profileVersion, bingoProfileVersion(profile))
+    if (entry.date === '2026-09-29') {
+      assert.equal(entry.enemy, 'DEAR')
+      assert.equal(encounter.counterRules?.kind, 'antonym')
+      assert.equal(encounter.counterRules.partOfSpeech, 'adjective')
+    } else {
+      const profile = profiles.find(p => p.enemy === entry.enemy)!
+      assert.equal(encounter.meaningLexicon!.profileVersion, bingoProfileVersion(profile))
+    }
     batch.push(identity)
   }
   for (const entry of original.filter(entry => entry.date < '2026-09-27' || entry.date > '2026-10-16')) {

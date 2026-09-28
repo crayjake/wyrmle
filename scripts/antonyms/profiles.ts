@@ -1,4 +1,5 @@
 import type { PartOfSpeech, SemanticRelation } from '../../src/game/types.ts'
+import newProfiles from './newProfiles.json' with { type: 'json' }
 
 export type ConceptProfile = {
   id: string; enemy: string; definition: string; sense: string; bingo: string; letters: string; refills: string; powers: string[];
@@ -9,6 +10,7 @@ export type ConceptProfile = {
 
 /** Reviewed opposite senses. Strict antonyms match the enemy's word type; family previews declare their counter type. */
 export const antonymProfiles: ConceptProfile[] = [
+  ...(newProfiles as unknown as ConceptProfile[]).filter(profile => profile.id !== 'dear'),
   {
     id: 'dry', enemy: 'DRY', definition: 'lacking water or moisture', sense: 'oewn-dry__3.00.01..',
     bingo: 'HYDRATED', letters: 'HYDRATEDWMPSOGGX', refills: 'AETVINYRAMEOSTUL', powers: [],
@@ -109,3 +111,5 @@ export const antonymProfiles: ConceptProfile[] = [
     hints: ['Every answer here is an action that cleans.', 'Think of cleaning equipment so that no germs remain.', 'Ten letters, beginning with S. Use the British spelling.'],
   },
 ]
+
+export const tomorrowAntonym = (newProfiles as unknown as ConceptProfile[]).find(profile => profile.id === 'dear')!

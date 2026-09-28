@@ -57,6 +57,9 @@
 .concept-tabs button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 .concept-hub .concept-extra { margin-top: 8px; }
 .concept-hub .concept-common-rule { font-size: 13px; }
+.concept-pages { display: flex; justify-content: center; align-items: center; gap: 18px; }
+.concept-pages .icon-button { width: 44px; height: 44px; }
+.concept-pages button:disabled { opacity: .3; cursor: default; }
 .concept-family { grid-column: 1 / -1; text-transform: uppercase; font-size: 11px; color: var(--blue); }
 @media (orientation: landscape) and (max-height: 550px) {
   .concept-hub .concept-group { display: grid; grid-template-columns: 1fr 1fr; column-gap: 20px; }

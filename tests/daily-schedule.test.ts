@@ -6,6 +6,7 @@ import { dailySchedule, decodeScheduledPuzzle, latestScheduledPuzzle, scheduledP
 import { shiftPuzzleId } from '../src/daily/date.ts'
 import { createLetterStrikeGame, submitLetterStrike } from '../src/game/letterStrike.ts'
 import { validateBingo } from '../scripts/bingo/validate.ts'
+import { certifyProgression } from '../scripts/antonyms/progression.ts'
 
 test('the queued bingo-first dailies have replayed one-, two- and three-life wins', () => {
   assert.ok(dailySchedule.length >= 30)
@@ -24,7 +25,10 @@ test('the queued bingo-first dailies have replayed one-, two- and three-life win
     const encounter = decodeScheduledPuzzle(data, entry)
     assert.equal(encounter.startingResolve, 3)
     assert.ok(encounter.enemyLetters.reduce((sum, letter) => sum + letter.initialHits, 0) > 3, 'Neutral single hits must not solve the puzzle')
-    validateBingo(encounter, report.answer, report.analysis)
+    if (encounter.counterRules) {
+      const proof = certifyProgression(encounter, report.progression.routes.map((route: { words: string[] }) => route.words))
+      assert.deepEqual(proof.issues, [])
+    } else validateBingo(encounter, report.answer, report.analysis)
     assert.ok(report.twoWordWin, `${entry.id}: two-life challenge needs an ordinary win`)
     let state = createLetterStrikeGame({ ...encounter, startingResolve: 2 })
     for (const [turn, ids] of report.twoWordWin.tileIds.entries()) {

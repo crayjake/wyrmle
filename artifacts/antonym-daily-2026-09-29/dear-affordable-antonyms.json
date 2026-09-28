@@ -1,0 +1,253 @@
+{
+  "accepted": true,
+  "asset": "puzzles/dear-affordable-antonyms-f8703b6c6647.json",
+  "answer": "AFFORDABLE",
+  "rules": "same-part-of-speech-antonyms",
+  "review": "DEAR means expensive, not beloved. Price adjectives only: cheap, affordable, low, modest, moderate, fair and reasonable all describe a price. LOW uses amount, never height or mood. ECONOMICAL uses low resource cost, not economic theory. Nouns and price-cutting verbs do not count.",
+  "progression": {
+    "passed": true,
+    "issues": [],
+    "ratings": {
+      "three": {
+        "words": [
+          "CHEAP",
+          "LOWER",
+          "MODEST"
+        ],
+        "zipfs": [
+          4.71,
+          5.11,
+          4.03
+        ],
+        "minZipf": 4.03,
+        "maxLength": 6,
+        "effort": 1.54,
+        "commonAndShort": true
+      },
+      "two": {
+        "words": [
+          "LOWER",
+          "MODERATE"
+        ],
+        "zipfs": [
+          5.11,
+          4.27
+        ],
+        "minZipf": 4.27,
+        "maxLength": 8,
+        "effort": 2.26,
+        "commonAndShort": true
+      },
+      "bingo": {
+        "words": [
+          "AFFORDABLE"
+        ],
+        "zipfs": [
+          4.22
+        ],
+        "minZipf": 4.22,
+        "maxLength": 10,
+        "effort": 3.56,
+        "commonAndShort": false
+      }
+    },
+    "bingos": [
+      {
+        "words": [
+          "AFFORDABLE"
+        ],
+        "tileIds": [
+          [
+            14,
+            1,
+            13,
+            5,
+            7,
+            11,
+            15,
+            2,
+            9,
+            4
+          ]
+        ],
+        "labels": [
+          "COUNTER"
+        ],
+        "hits": [
+          4
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "words": [
+          "AFFORDABLE"
+        ],
+        "tileIds": [
+          [
+            14,
+            1,
+            13,
+            5,
+            7,
+            11,
+            15,
+            2,
+            9,
+            4
+          ]
+        ],
+        "labels": [
+          "COUNTER"
+        ],
+        "hits": [
+          4
+        ]
+      },
+      {
+        "words": [
+          "LOWER",
+          "MODERATE"
+        ],
+        "tileIds": [
+          [
+            9,
+            5,
+            6,
+            4,
+            7
+          ],
+          [
+            17,
+            12,
+            11,
+            19,
+            16,
+            14,
+            18,
+            20
+          ]
+        ],
+        "labels": [
+          "COUNTER",
+          "COUNTER"
+        ],
+        "hits": [
+          2,
+          2
+        ]
+      },
+      {
+        "words": [
+          "CHEAP",
+          "LOWER",
+          "MODEST"
+        ],
+        "tileIds": [
+          [
+            0,
+            8,
+            4,
+            14,
+            3
+          ],
+          [
+            9,
+            5,
+            6,
+            19,
+            7
+          ],
+          [
+            17,
+            12,
+            11,
+            20,
+            10,
+            18
+          ]
+        ],
+        "labels": [
+          "COUNTER",
+          "COUNTER",
+          "COUNTER"
+        ],
+        "hits": [
+          2,
+          1,
+          1
+        ]
+      }
+    ],
+    "cheapestTwo": {
+      "words": [
+        "LOWER",
+        "MODERATE"
+      ],
+      "tileIds": [
+        [
+          9,
+          5,
+          6,
+          4,
+          7
+        ],
+        [
+          17,
+          12,
+          11,
+          19,
+          16,
+          14,
+          18,
+          20
+        ]
+      ],
+      "labels": [
+        "COUNTER",
+        "COUNTER"
+      ],
+      "hits": [
+        2,
+        2
+      ]
+    },
+    "positions": 579,
+    "previews": 1197,
+    "searchComplete": true,
+    "scope": "All legal first moves, repeated words and POWER-selection variants; exact cheapest two-word bottleneck. Three-word witness uses distinct, familiar counter families. Word frequency and length are a difficulty proxy, not measured human solving difficulty."
+  },
+  "twoWordWin": {
+    "words": [
+      "LOWER",
+      "MODERATE"
+    ],
+    "tileIds": [
+      [
+        9,
+        5,
+        6,
+        4,
+        7
+      ],
+      [
+        17,
+        12,
+        11,
+        19,
+        16,
+        14,
+        18,
+        20
+      ]
+    ],
+    "labels": [
+      "COUNTER",
+      "COUNTER"
+    ],
+    "hits": [
+      2,
+      2
+    ]
+  }
+}

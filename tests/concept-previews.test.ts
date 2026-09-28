@@ -9,10 +9,12 @@ import { isEncounterWord } from '../src/game/meaningLexicon.ts'
 import { selectWordIds } from '../src/generator/constructRefill.ts'
 import { getStrikeSummary } from '../src/components/strikeSummary.ts'
 import { certifyProgression, physicalChoices } from '../scripts/antonyms/progression.ts'
+import { antonymProfiles } from '../scripts/antonyms/profiles.ts'
 
 const encounters = new Map(conceptPreviews.map(entry => [entry.id,
   decodeConceptPuzzle(JSON.parse(readFileSync(new URL(`../public/${entry.asset}`, import.meta.url), 'utf8')), entry)]))
 const routes: Record<string, string[][]> = {
+  ...Object.fromEntries(antonymProfiles.map(profile => [profile.id, profile.routes])),
   dry: [['HYDRATED'], ['DAMP', 'WATERY'], ['DAMP', 'SOGGY', 'RAINY']],
   mean: [['COMPASSIONATE'], ['KIND', 'AMIABLE'], ['KIND', 'NICE', 'WARM']],
   'dread-power': [['FEARLESSNESS'], ['BOLDNESS', 'DARING'], ['EASE', 'NERVE', 'RELIEF']],
@@ -30,8 +32,8 @@ function play(game: LetterStrikeState, word: string) {
   return next
 }
 
-test('all six downloadable boards have working one-, two- and three-word wins', () => {
-  assert.equal(encounters.size, 6)
+test('all downloadable boards have working one-, two- and three-word wins', () => {
+  assert.equal(encounters.size, 11)
   for (const [id, paths] of Object.entries(routes)) for (const path of paths) {
     let game = initial(id)
     for (const word of path) {
@@ -44,7 +46,7 @@ test('all six downloadable boards have working one-, two- and three-word wins', 
   }
 })
 
-test('all six pass exhaustive two-word difficulty checks, including neutral setups and POWER selections', () => {
+test('all boards pass exhaustive two-word difficulty checks, including neutral setups and POWER selections', () => {
   for (const [id, paths] of Object.entries(routes)) {
     const report = certifyProgression(encounters.get(id)!, paths)
     assert.equal(report.searchComplete, true)
@@ -164,7 +166,7 @@ test('enemy forms are excluded while ordinary counter inflections survive', () =
 test('preview progress resumes actual moves, keeps best stars on retry and does not touch Daily', () => {
   const data = new Map([['wyrmle:daily:sentinel', 'unchanged']])
   const storage = { getItem: (key: string) => data.get(key) ?? null, setItem: (key: string, value: string) => { data.set(key, value) } }
-  const entry = conceptPreviews[0], key = conceptProgressKey(entry), start = initial(entry.id)
+  const entry = conceptPreviews.find(entry => entry.id === 'dry')!, key = conceptProgressKey(entry), start = initial(entry.id)
   const first = play(start, 'DAMP')
   assert.equal(saveBingoAttempt(key, first, true, 2, storage), true)
   assert.deepEqual(resumeBingoAttempt(key, start.encounter, storage).game, first)
