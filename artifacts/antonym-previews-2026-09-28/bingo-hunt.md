@@ -6,6 +6,8 @@ A single opposite adjective containing every enemy letter wins. Simpler antonyms
 
 Non-antonyms, invalid words and exact repeat guesses are rejected without spending a life or revealing tiles. Wins on guesses one, two and three earn three, two and one stars. A restart remains available for this preview. The existing Daily and plain preview rules are separate.
 
+On the final life, the remaining letters form a single anagram ring. This also applies when resuming an attempt. Restarting restores the player's chosen layout; the automatic switch never changes their saved preference.
+
 One explanation appears before a fresh attempt. There are no instruction prompts between guesses. Help can reopen the explanation. The normal move preview indicates whether the selected word is an antonym and how many spare tiles it would remove.
 
 `npm run generate:concept-previews` reproduces both frozen assets. Engine tests cover every legal two-helper sequence on these boards, preservation of all answer copies, exact final anagrams, 1/2/3-guess wins, rejection without penalties, stale asset validation and saved replay. The mobile browser checks cover the introduction, gameplay, results and progress.

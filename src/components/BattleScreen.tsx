@@ -49,12 +49,15 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
   notice?: ReactNode
 }) {
   const preferences = useUserPreferences()
-  const boardLayout = layoutOverride ?? preferences.preferences.boardLayout ?? 'grid'
+  const preferredLayout = layoutOverride ?? preferences.preferences.boardLayout ?? 'grid'
   const tileShape = shapeOverride ?? preferences.preferences.tileShape ?? 'square'
   const easy = preferences.preferences.preferredMode === 'easy'
   const hard = preferences.preferences.preferredMode === 'hard' || preferences.preferences.preferredMode === 'hardcore'
   const hintsAvailable = easy && Boolean(guide)
   const [game, setGame] = useState(() => initial?.game ?? createLetterStrikeGame(encounter))
+  // The last hunt guess is a single anagram, without changing the saved layout.
+  const finalAnagram = Boolean(encounter.bingoHunt && game.playerResolve <= 1)
+  const boardLayout = finalAnagram ? 'ring' : preferredLayout
   const [phase, setPhase] = useState<Phase>(initial?.started ? 'ready' : 'waiting')
   useLayoutEffect(() => {
     // Start after the board and wyrm dock refs have mounted.
@@ -247,9 +250,10 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
         <legend>Letter layout</legend>
         <div>
           {([{ value: 'grid', label: 'Grid' }, { value: 'wheel', label: '2 rings' }, { value: 'ring', label: '1 ring' }] as const).map(option =>
-            <button className="daily-button" key={option.value} aria-pressed={boardLayout === option.value}
+            <button className="daily-button" key={option.value} aria-pressed={boardLayout === option.value} disabled={finalAnagram}
               onClick={() => { preferences.update({ boardLayout: option.value }); onBoardLayoutChange?.(option.value) }}>{option.label}</button>)}
         </div>
+        {finalAnagram && <p>The final anagram uses one ring.</p>}
         <div className="battle-shape-settings">
           {(['square', 'circle'] as const).map(shape => <button className="daily-button" key={shape} aria-pressed={tileShape === shape}
             onClick={() => { preferences.update({ tileShape: shape }); onTileShapeChange?.(shape) }}>{shape === 'square' ? 'Square tiles' : 'Round tiles'}</button>)}
