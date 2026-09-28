@@ -3,8 +3,8 @@
     "id": "alert",
     "enemy": "ALERT",
     "definition": "awake, responsive and quick to act",
-    "asset": "previews/concepts/alert-4f38a2f00668.json",
-    "revision": "4f38a2f00668",
+    "asset": "previews/concepts/alert-980e5f153ea2.json",
+    "revision": "980e5f153ea2",
     "powers": 0,
     "partOfSpeech": "adjective",
     "counterPartOfSpeech": "adjective",
@@ -60,8 +60,8 @@
     "id": "hostile",
     "enemy": "HOSTILE",
     "definition": "unfriendly and showing ill will",
-    "asset": "previews/concepts/hostile-f7101631eb46.json",
-    "revision": "f7101631eb46",
+    "asset": "previews/concepts/hostile-c1793f5aadbc.json",
+    "revision": "c1793f5aadbc",
     "powers": 0,
     "partOfSpeech": "adjective",
     "counterPartOfSpeech": "adjective",
@@ -79,8 +79,8 @@
     "id": "rude",
     "enemy": "RUDE",
     "definition": "uncivil and discourteous in manner",
-    "asset": "previews/concepts/rude-47c2a7341747.json",
-    "revision": "47c2a7341747",
+    "asset": "previews/concepts/rude-3bbcbe104704.json",
+    "revision": "3bbcbe104704",
     "powers": 0,
     "partOfSpeech": "adjective",
     "counterPartOfSpeech": "adjective",
@@ -208,6 +208,46 @@
         "Ten letters, beginning with S. Use the British spelling."
       ],
       "explanation": "STERILISED belongs to the “clean” counter family. It contains every enemy letter."
+    }
+  },
+  {
+    "id": "hunt-alert",
+    "enemy": "ALERT",
+    "definition": "awake, responsive and quick to act",
+    "asset": "previews/concepts/hunt-alert-215093c7c262.json",
+    "revision": "215093c7c262",
+    "powers": 0,
+    "bingoHunt": true,
+    "partOfSpeech": "adjective",
+    "counterPartOfSpeech": "adjective",
+    "guide": {
+      "answer": "LETHARGIC",
+      "hints": [
+        "Think of someone with very little energy.",
+        "They feel sluggish and struggle to get going.",
+        "Nine letters, beginning with L."
+      ],
+      "explanation": "LETHARGIC is an opposite adjective containing every letter of ALERT."
+    }
+  },
+  {
+    "id": "hunt-true",
+    "enemy": "TRUE",
+    "definition": "accurate and in accordance with the facts",
+    "asset": "previews/concepts/hunt-true-5f7f54a6985b.json",
+    "revision": "5f7f54a6985b",
+    "powers": 0,
+    "bingoHunt": true,
+    "partOfSpeech": "adjective",
+    "counterPartOfSpeech": "adjective",
+    "guide": {
+      "answer": "INACCURATE",
+      "hints": [
+        "Think about a statement that gets the details wrong.",
+        "You might describe an unreliable measurement this way.",
+        "Ten letters, beginning with I."
+      ],
+      "explanation": "INACCURATE is an opposite adjective containing every letter of TRUE."
     }
   }
 ]

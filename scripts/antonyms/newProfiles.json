@@ -31,7 +31,8 @@
       "oewn-moderate__3.00.00..",
       "oewn-fair__5.00.00.moderate.00",
       "oewn-reasonable__5.00.00.moderate.00",
-      "oewn-economical__5.00.00.efficient.00"
+      "oewn-economical__5.00.00.efficient.00",
+      "oewn-free__5.00.00.unpaid.00"
     ],
     "hints": [
       "Use the price meaning of the enemy.",
@@ -101,7 +102,8 @@
       "oewn-weary__5.00.00.tired.00",
       "oewn-exhausted__5.00.00.tired.00",
       "oewn-torpid__5.00.00.inactive.01",
-      "oewn-listless__5.00.00.lethargic.00"
+      "oewn-listless__5.00.00.lethargic.00",
+      "oewn-distracted__5.00.00.inattentive.00"
     ],
     "hints": [
       "Think of someone with very little energy.",
@@ -293,7 +295,12 @@
       "oewn-gentle__5.00.01.kind.00",
       "oewn-polite__3.00.00..",
       "oewn-courteous__3.00.00..",
-      "oewn-sociable__3.00.00.."
+      "oewn-sociable__3.00.00..",
+      "oewn-peaceful__3.00.00..",
+      "oewn-peaceable__5.00.02.peaceful.00",
+      "oewn-peaceable__5.00.01.peaceful.00",
+      "oewn-welcoming__5.00.01.hospitable.02",
+      "oewn-tender__3.00.03.."
     ],
     "hints": [
       "Think of the welcome you would like to get as a guest.",
@@ -361,7 +368,10 @@
       "oewn-civil__3.00.00..",
       "oewn-considerate__3.00.00..",
       "oewn-decent__5.00.00.respectable.00",
-      "oewn-nice__5.00.00.respectable.00"
+      "oewn-nice__5.00.00.respectable.00",
+      "oewn-tactful__3.00.00..",
+      "oewn-tactful__5.00.00.diplomatic.00",
+      "oewn-soft__3.00.02.."
     ],
     "hints": [
       "Think of someone with refined manners and tastes.",

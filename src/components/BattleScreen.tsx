@@ -9,6 +9,7 @@ import Enemy from './Enemy'
 import AttackInfo from './AttackInfo'
 import TileGrid from './TileGrid'
 import EncounterHud from './EncounterHud'
+import BingoHuntInstructions from './BingoHuntInstructions'
 import WyrmDecoder from './WyrmDecoder'
 import { createLetterStrikeGame, toggleLetterStrikeTile, clearLetterStrikeSelection, previewLetterStrike, submitLetterStrike } from '../game/letterStrike'
 import type { LetterStrikeEncounter, LetterStrikeState } from '../game/letterStrike'
@@ -24,11 +25,12 @@ export type BattleAttempt = { game: LetterStrikeState; started: boolean; hintSte
 /** Daily and archived puzzles share one battle UI and the same difficulty rules. */
 export default function BattleScreen({ encounter, initial, onSave, onRestart, onExit, title, onChoose, onNext,
   guide, menu, renderResult, renderBestResult, bestStars, puzzleDate, boardLayout: layoutOverride, tileShape: shapeOverride,
-  onBoardLayoutChange, onTileShapeChange, notice, exitLabel = 'Calendar' }: {
+  onBoardLayoutChange, onTileShapeChange, notice, exitLabel = 'Calendar', autoBegin = false }: {
   encounter: LetterStrikeEncounter
   initial?: BattleAttempt
   onSave: (game: LetterStrikeState, started: boolean, hintStep: number) => boolean
   onRestart: () => void
+  autoBegin?: boolean
   onExit: () => void
   exitLabel?: string
   title: string
@@ -54,6 +56,12 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
   const hintsAvailable = easy && Boolean(guide)
   const [game, setGame] = useState(() => initial?.game ?? createLetterStrikeGame(encounter))
   const [phase, setPhase] = useState<Phase>(initial?.started ? 'ready' : 'waiting')
+  useLayoutEffect(() => {
+    // Start after the board and wyrm dock refs have mounted.
+    if (!autoBegin || initial?.started) return
+    const frame = requestAnimationFrame(() => setPhase('enemy'))
+    return () => cancelAnimationFrame(frame)
+  }, [autoBegin, initial?.started])
   const [panel, setPanel] = useState<Panel>(null)
   const [viewingBest, setViewingBest] = useState(false)
   const wasViewingBest = useRef(false)
@@ -149,6 +157,7 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
   return <main className="container letter-combat bingo-preview" data-combat-mode="letter-strike"
     data-board-layout={boardLayout}
     data-counter-rules={encounter.counterRules ? true : undefined}
+    data-bingo-hunt={encounter.bingoHunt ? true : undefined}
     data-game-status={game.status} data-result={showResult || viewingBest || undefined} data-phase={phase} data-turns={game.playedWords.length}
     ref={containerRef}
     onClick={event => {
@@ -167,7 +176,9 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
     <div className="battle-info">
       <MyInfo name="LIVES" health={displayedLives} maxHealth={game.encounter.startingResolve} wyrm
         wyrmRef={wyrmLifeRef} decoding={phase === 'enemy' || phase === 'tiles'} animateLives />
-      <RefillSupply game={game} decoded={phase === 'ready'} revealed={revealedRefills} registerTile={registerRefill} />
+      {encounter.bingoHunt ? <div className="hunt-resource"><span className="resource-label">TILES LEFT</span>
+        <span>{game.tiles.filter(tile => tile.letter).length}</span></div>
+        : <RefillSupply game={game} decoded={phase === 'ready'} revealed={revealedRefills} registerTile={registerRefill} />}
     </div>
     <div className="enemy-zone">
       <Enemy name={enemy.word} definition={enemy.definition} partOfSpeech={enemy.partOfSpeech}
@@ -262,11 +273,13 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
       </div>
     </BattlePanel>}
     {panel === 'log'  && <BattlePanel title="Played words" onClose={() => setPanel(null)}>
-      {events.length > 0 ? <div className="dev-combat-log"><EncounterHud visible events={events} metric="strikes" /></div>
+      {events.length > 0 ? encounter.bingoHunt ? <ol className="hunt-history">{game.playedWords.map(move => <li key={move.word}>
+        <strong>{move.word}</strong><span>{move.preview.bingoHunt?.won ? 'Bingo' : `${move.preview.bingoHunt?.removedTileIds.length} spare tiles removed`}</span>
+      </li>)}</ol> : <div className="dev-combat-log"><EncounterHud visible events={events} metric="strikes" /></div>
         : <p>No submitted words in this attempt.</p>}
     </BattlePanel>}
     {panel === 'help' && <BattlePanel title="How to play" onClose={() => setPanel(null)}>
-        <div className="daily-help">
+        {encounter.bingoHunt ? <BingoHuntInstructions partOfSpeech={encounter.counterRules!.partOfSpeech} /> : <div className="daily-help">
           <div>Remove every enemy letter before your {game.encounter.startingResolve} lives run out. Tap or swipe across tiles in spelling order; you can mix both.</div>
           <div>One {encounter.counterRules?.kind === 'antonym' ? 'antonym' : 'counter'} can remove the whole enemy in a single word. Each played word uses one life; removing the final letter on your last life still wins.</div>
           <div>Underlined tiles match a surviving enemy letter. Refills show the letters still available after you play.</div>
@@ -283,7 +296,7 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
           <div>Blue − previews an armour break; red × previews removal. Defeated letters become centred dots with no outline. Repeated matching tiles can break and remove one armoured letter in the same word.</div>
           {hintsAvailable && <button className="daily-button" onClick={() => setPanel('hints')}>Hints</button>}
           <div>Replay freely. Best win: ★★★ in one word, ★★ in two, ★ in three or more.</div>
-        </div>
+        </div>}
       </BattlePanel>}
   </main>
 }

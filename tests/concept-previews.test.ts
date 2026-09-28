@@ -33,7 +33,7 @@ function play(game: LetterStrikeState, word: string) {
 }
 
 test('all downloadable boards have working one-, two- and three-word wins', () => {
-  assert.equal(encounters.size, 11)
+  assert.equal(encounters.size, 13)
   for (const [id, paths] of Object.entries(routes)) for (const path of paths) {
     let game = initial(id)
     for (const word of path) {
@@ -88,6 +88,7 @@ test('strict previews require matching word types; the family pair deliberately 
     }
   }
   for (const [id, words] of Object.entries({ dry: ['HYDRATED', 'SATURATED', 'SODDEN', 'WATERLOGGED'],
+    alert: ['DISTRACTED', 'WEARY'], hostile: ['PEACEFUL', 'PEACEABLE'], rude: ['TACTFUL', 'SOFT'],
     mean: ['POLITE', 'WARMHEARTED'], 'sear-family': ['DAMP', 'DAMPS', 'DAMPING', 'SATURATE', 'SATURATES'], 'dread-power': ['EASE', 'RELIEF'] })) {
     for (const word of words) assert.equal(encounters.get(id)!.meaningLexicon!.words[word]?.relation, 'opposite', `${id}/${word}`)
   }

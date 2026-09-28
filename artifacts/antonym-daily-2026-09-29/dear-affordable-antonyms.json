@@ -1,6 +1,6 @@
 {
   "accepted": true,
-  "asset": "puzzles/dear-affordable-antonyms-f8703b6c6647.json",
+  "asset": "puzzles/dear-affordable-antonyms-eb778afb0c12.json",
   "answer": "AFFORDABLE",
   "rules": "same-part-of-speech-antonyms",
   "review": "DEAR means expensive, not beloved. Price adjectives only: cheap, affordable, low, modest, moderate, fair and reasonable all describe a price. LOW uses amount, never height or mood. ECONOMICAL uses low resource cost, not economic theory. Nouns and price-cutting verbs do not count.",
@@ -213,7 +213,7 @@
       ]
     },
     "positions": 579,
-    "previews": 1197,
+    "previews": 1556,
     "searchComplete": true,
     "scope": "All legal first moves, repeated words and POWER-selection variants; exact cheapest two-word bottleneck. Three-word witness uses distinct, familiar counter families. Word frequency and length are a difficulty proxy, not measured human solving difficulty."
   },

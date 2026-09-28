@@ -6,6 +6,8 @@ import type { EnemyConcept, PartOfSpeech } from './types.ts'
 import { PARTS_OF_SPEECH } from './types.ts'
 import { getEncounterPartsOfSpeech, validateLexicalRules } from './lexicalRules.ts'
 import type { LexicalRules } from './lexicalRules.ts'
+import { huntRemovalIds, removeHuntSpares, validateBingoHunt } from './bingoHunt.ts'
+import type { BingoHuntRules } from './bingoHunt.ts'
 
 export type LetterStrikeGem = 'strike' | 'ward' | 'regen' | 'power'
 export type LetterStrikeTileEffect = { strike: boolean; preventResolveLoss: boolean; regenerate?: boolean; bonusStrike?: boolean }
@@ -33,6 +35,7 @@ export type LetterStrikeEncounter = {
   meaningLexicon?: PuzzleMeaningLexicon
   // Opt-in research rules. Daily/archived encounters keep counter damage.
   counterRules?: { kind: 'antonym' | 'family'; partOfSpeech: PartOfSpeech; family?: string; excludedWords: readonly string[] }
+  bingoHunt?: BingoHuntRules
   longWordRule?: { minimumLength: number; bonusStrikes: number }
   // Only archived encounters opt into the original overlapping Strike rule.
   strikeConsumesAllowance?: boolean
@@ -78,6 +81,7 @@ export type LetterStrikeEvaluation = {
   hits: LetterStrikeHit[]
   recoveries?: LetterStrikeRecovery[]
   letterOutcomes: LetterStrikeLetterOutcome[]
+  bingoHunt?: { won: boolean; removedTileIds: number[] }
 }
 export type LetterStrikePreview = LetterStrikeEvaluation & { valid: boolean; error: string | null }
 export type LetterStrikePlayedWord = {
@@ -179,6 +183,7 @@ export function createLetterStrikeGame(encounter = letterStrikeEncounter): Lette
     : !/^[a-z]+$/i.test(encounter.refillQueue) || encounter.refillQueue.length < (startingResolve + wardTurns) * 16) {
     throw new Error('Provide enough deterministic refill letters for all possible turns.')
   }
+  validateBingoHunt(encounter)
   return {
     encounter,
     tiles: startingTiles.map(tile => ({ ...tile, letter: tile.letter.toUpperCase() })),
@@ -351,6 +356,13 @@ export function evaluateLetterStrike(state: Pick<LetterStrikeState, 'encounter' 
     // belongs to armour, so duplicate targeting still finishes wounded armour.
     if (target.hitsRemaining === 2 && target.initialHits === 1) target.armourGained = true
   }
+  if (state.encounter.bingoHunt) return {
+    word, semanticLabel, longWordModifier: 0, grammaticalModifier: 0, grammaticalPartOfSpeech: null,
+    strikes: 0, resolveCost: 1, effectLabels: [], hits: [],
+    enemyLetters: state.enemyLetters.map(letter => ({ ...letter })),
+    letterOutcomes: buildLetterStrikeOutcomes(state.enemyLetters, []),
+    bingoHunt: { won: semanticLabel === 'COUNTER' && enemyLetters.every(letter => letter.hitsRemaining === 0), removedTileIds: [] },
+  }
   return {
     word,
     semanticLabel,
@@ -377,11 +389,17 @@ export function previewLetterStrike(state: LetterStrikeState, selectedTileIds: r
     : evaluation.word.length < state.encounter.minimumWordLength ? `Minimum ${state.encounter.minimumWordLength} letters`
     : state.encounter.counterRules?.excludedWords.includes(evaluation.word) ? 'Use a different word from the enemy'
     : !isEncounterWord(state.encounter, evaluation.word) ? state.encounter.meaningLexicon ? 'Not in this puzzle’s dictionary' : 'Not a valid word'
+    : state.encounter.bingoHunt && evaluation.semanticLabel !== 'COUNTER' ? `Not an opposite ${state.encounter.counterRules!.partOfSpeech}. No life lost.`
+    : state.encounter.bingoHunt && state.playedWords.some(move => move.word === evaluation.word) ? 'Already tried. Choose another opposite. No life lost.'
     : null
   return {
     ...evaluation,
     valid: error === null,
     error,
+    ...(evaluation.bingoHunt ? { bingoHunt: {
+      won: error === null && evaluation.bingoHunt.won,
+      removedTileIds: error === null && !evaluation.bingoHunt.won ? huntRemovalIds(state) : [],
+    } } : {}),
     ...(error !== null ? {
       strikes: 0, resolveCost: 0, effectLabels: [], hits: [],
       ...(evaluation.recoveries ? { recoveries: [] } : {}),
@@ -397,8 +415,8 @@ export function submitLetterStrike(state: LetterStrikeState, selectedTileIds: re
   const preview = previewLetterStrike(state, selectedTileIds)
   if (!preview.valid) return { ...state, error: preview.error }
   const playerResolve = Math.max(0, state.playerResolve - preview.resolveCost)
-  const refilled = refillBoard(state, selectedTileIds)
-  const status = preview.enemyLetters.every(letter => letter.hitsRemaining === 0) ? 'won'
+  const refilled = preview.bingoHunt ? removeHuntSpares(state, preview.bingoHunt.removedTileIds) : refillBoard(state, selectedTileIds)
+  const status = preview.bingoHunt?.won || preview.enemyLetters.every(letter => letter.hitsRemaining === 0) ? 'won'
     : playerResolve === 0 || (state.encounter.finiteRefills
       && !canSpellEncounterWord(state.encounter, refilled.tiles.map(tile => tile.letter))) ? 'lost' : 'playing'
   return {

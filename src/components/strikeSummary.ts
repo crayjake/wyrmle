@@ -12,6 +12,11 @@ const meaningLabels = {
 export function getStrikeSummary(preview: LetterStrikePreview, lives?: number, enemyWord?: string, counterRules?: LetterStrikeEncounter['counterRules']) {
   const details: StrikeDetail[] = []
   if (!preview.valid) return null
+  if (preview.bingoHunt) return {
+    meaning: `Opposite of ${enemyWord}`, kind: 'counter',
+    hits: preview.bingoHunt.won ? 'Bingo' : `${preview.bingoHunt.removedTileIds.length} spare tiles removed`,
+    details: lives === 1 && !preview.bingoHunt.won ? [{ kind: 'last-life' as const, text: 'Uses your last life' }] : [],
+  }
   if (preview.longWordModifier) details.push({ kind: 'legacy', text: `Long ${signed(preview.longWordModifier)}` })
   if (preview.grammaticalModifier && preview.grammaticalPartOfSpeech) {
     details.push({ kind: preview.grammaticalModifier > 0 ? 'legacy' : 'legacy-resisted',

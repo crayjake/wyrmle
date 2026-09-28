@@ -4,6 +4,7 @@ import { createHash } from 'node:crypto'
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { antonymProfiles } from './antonyms/profiles.ts'
 import { buildAntonymEncounter } from './antonyms/build.ts'
+import { packDictionaryMeanings } from '../src/game/meaningPacking.ts'
 import { createLetterStrikeGame, submitLetterStrike } from '../src/game/letterStrike.ts'
 import type { LetterStrikeState } from '../src/game/letterStrike.ts'
 import { selectWordIds } from '../src/generator/constructRefill.ts'
@@ -67,5 +68,34 @@ for (const profile of antonymProfiles) {
     limitation: 'Reviewed senses and exact route checks; subjective human difficulty still needs playtesting.' })
   console.log(profile.id, JSON.stringify({ starts, bingos, unpoweredBingos, routes: routes.map(route => route.map(step => `${step.word}:${step.hits}`)) }))
 }
-if (!process.env.CONCEPT_ID) writeFileSync('src/experimental/concepts/catalog.json', JSON.stringify(catalog, null, 2) + '\n')
+if (!process.env.CONCEPT_ID) {
+  // Two comparisons with the same starting letters and reviewed antonyms.
+  for (const [id, helpers] of [['alert', ['SLOW', 'INERT']], ['true', ['WRONG', 'UNREAL']]] as const) {
+    const profile = antonymProfiles.find(profile => profile.id === id)!
+    const { encounter } = buildAntonymEncounter({ ...profile, refills: '' })
+    const keep = new Set(selectWordIds(encounter.startingTiles, profile.bingo)!)
+    const huntId = `hunt-${id}`
+    encounter.id = `antonym-preview-v2:${huntId}`
+    encounter.bingoHunt = { answer: profile.bingo, removalOrder: encounter.startingTiles.filter(tile => !keep.has(tile.id)).map(tile => tile.id) }
+    for (const words of [[profile.bingo], [helpers[0], profile.bingo], [...helpers, profile.bingo]]) {
+      let state = createLetterStrikeGame(encounter)
+      for (const word of words) {
+        const ids = selectWordIds(state.tiles, word)
+        assert.ok(ids, `${huntId}: ${word}`)
+        state = submitLetterStrike(state, ids)
+        assert.equal(state.error, null)
+      }
+      assert.equal(state.status, 'won')
+      assert.equal(state.playedWords.length, words.length)
+    }
+    const raw = JSON.stringify({ ...encounter, meaningLexicon: packDictionaryMeanings(encounter.meaningLexicon!) }) + '\n'
+    const revision = createHash('sha256').update(raw).digest('hex').slice(0, 12)
+    const asset = `previews/concepts/${huntId}-${revision}.json`
+    writeFileSync(`public/${asset}`, raw)
+    catalog.push({ id: huntId, enemy: profile.enemy, definition: profile.definition, asset, revision, powers: 0,
+      bingoHunt: true, partOfSpeech: encounter.enemy.partOfSpeech, counterPartOfSpeech: encounter.counterRules!.partOfSpeech,
+      guide: { answer: profile.bingo, hints: profile.hints, explanation: `${profile.bingo} is an opposite adjective containing every letter of ${profile.enemy}.` } })
+  }
+  writeFileSync('src/experimental/concepts/catalog.json', JSON.stringify(catalog, null, 2) + '\n')
+}
 writeFileSync(`${directory}/${process.env.CONCEPT_ID ? `${process.env.CONCEPT_ID}-proof` : 'proofs'}.json`, JSON.stringify(reports, null, 2) + '\n')

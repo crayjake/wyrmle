@@ -1,7 +1,7 @@
 [
   {
     "id": "alert",
-    "revision": "4f38a2f00668",
+    "revision": "980e5f153ea2",
     "review": "Opposite adjectives describe lack of wakefulness, responsiveness or energy. TIRED is depleted energy, not an overused joke; DULL means lifeless, not blunt. Chemical inertness and merely being late are outside this sense.",
     "roots": [
       {
@@ -464,6 +464,17 @@
             "target": "oewn-listlessness__1.12.00.."
           }
         ]
+      },
+      {
+        "id": "oewn-distracted__5.00.00.inattentive.00",
+        "synset": "oewn-00166720-s",
+        "lemma": "distracted",
+        "partOfSpeech": "adjective",
+        "definition": "having the attention diverted especially because of anxiety",
+        "definitions": [
+          "having the attention diverted especially because of anxiety"
+        ],
+        "relations": []
       }
     ],
     "progression": {
@@ -790,7 +801,7 @@
       0.52
     ],
     "words": 26447,
-    "bytes": 288670,
+    "bytes": 289075,
     "limitation": "Reviewed senses and exact route checks; subjective human difficulty still needs playtesting."
   },
   {
@@ -2424,7 +2435,7 @@
   },
   {
     "id": "hostile",
-    "revision": "f7101631eb46",
+    "revision": "c1793f5aadbc",
     "review": "Welcoming, friendly or conciliatory behaviour opposes ill will. SOCIAL means friendly companionship, not merely living in a society. HELPFUL describes an assisting rather than antagonistic person. HOSPITABLE is about welcoming guests, not an environment suitable for plants.",
     "roots": [
       {
@@ -2977,6 +2988,89 @@
             "target": "oewn-sociableness__1.07.00.."
           }
         ]
+      },
+      {
+        "id": "oewn-peaceful__3.00.00..",
+        "synset": "oewn-01745141-a",
+        "lemma": "peaceful",
+        "partOfSpeech": "adjective",
+        "definition": "not disturbed by strife or turmoil or war",
+        "definitions": [
+          "not disturbed by strife or turmoil or war"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-unpeaceful__3.00.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-peaceable__5.00.02.peaceful.00",
+        "synset": "oewn-01746368-s",
+        "lemma": "peaceable",
+        "partOfSpeech": "adjective",
+        "definition": "inclined or disposed to peace",
+        "definitions": [
+          "inclined or disposed to peace"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-peaceableness__1.26.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-peaceable__5.00.01.peaceful.00",
+        "synset": "oewn-01745918-s",
+        "lemma": "peaceable",
+        "partOfSpeech": "adjective",
+        "definition": "disposed to peace or of a peaceful nature",
+        "definitions": [
+          "disposed to peace or of a peaceful nature"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-peaceableness__1.26.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-welcoming__5.00.01.hospitable.02",
+        "synset": "oewn-01246980-s",
+        "lemma": "welcoming",
+        "partOfSpeech": "adjective",
+        "definition": "very cordial",
+        "definitions": [
+          "very cordial"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-tender__3.00.03..",
+        "synset": "oewn-02457962-a",
+        "lemma": "tender",
+        "partOfSpeech": "adjective",
+        "definition": "given to sympathy or gentleness or sentimentality",
+        "definitions": [
+          "given to sympathy or gentleness or sentimentality"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-tough__3.00.03.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-tenderness__1.12.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-tenderness__1.12.03.."
+          }
+        ]
       }
     ],
     "progression": {
@@ -3185,7 +3279,7 @@
         ]
       },
       "positions": 1125,
-      "previews": 1992,
+      "previews": 2334,
       "searchComplete": true,
       "scope": "All legal first moves, repeated words and POWER-selection variants; exact cheapest two-word bottleneck. Three-word witness uses distinct, familiar counter families. Word frequency and length are a difficulty proxy, not measured human solving difficulty."
     },
@@ -3194,6 +3288,7 @@
       "HOSPITABLE",
       "NICE",
       "NICEST",
+      "PEACEFUL",
       "POLITE",
       "SOCIABLE",
       "SOCIAL",
@@ -3304,12 +3399,12 @@
       1.34
     ],
     "words": 30786,
-    "bytes": 336550,
+    "bytes": 337289,
     "limitation": "Reviewed senses and exact route checks; subjective human difficulty still needs playtesting."
   },
   {
     "id": "rude",
-    "revision": "47c2a7341747",
+    "revision": "3bbcbe104704",
     "review": "Civil, courteous, kind and refined interpersonal manners oppose uncivil rudeness. CULTURED and REFINED use their person readings, never laboratory cultures or processed sugar. HUMANE is civil and considerate treatment; warmth refers to manner, not temperature.",
     "roots": [
       {
@@ -3798,6 +3893,62 @@
             "target": "oewn-niceness__1.07.02.."
           }
         ]
+      },
+      {
+        "id": "oewn-tactful__3.00.00..",
+        "synset": "oewn-02392951-a",
+        "lemma": "tactful",
+        "partOfSpeech": "adjective",
+        "definition": "having or showing a sense of what is fitting and considerate in dealing with others",
+        "definitions": [
+          "having or showing a sense of what is fitting and considerate in dealing with others"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-tactless__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-tactfulness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-tactful__5.00.00.diplomatic.00",
+        "synset": "oewn-00762714-s",
+        "lemma": "tactful",
+        "partOfSpeech": "adjective",
+        "definition": "showing skill and sensitivity in dealing with people",
+        "definitions": [
+          "showing skill and sensitivity in dealing with people"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-tactfulness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-soft__3.00.02..",
+        "synset": "oewn-01159626-a",
+        "lemma": "soft",
+        "partOfSpeech": "adjective",
+        "definition": "compassionate and kind; conciliatory",
+        "definitions": [
+          "compassionate and kind; conciliatory"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-hard__3.00.02.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-softness__1.07.03.."
+          }
+        ]
       }
     ],
     "progression": {
@@ -4118,7 +4269,7 @@
       2.36
     ],
     "words": 22501,
-    "bytes": 238057,
+    "bytes": 238624,
     "limitation": "Reviewed senses and exact route checks; subjective human difficulty still needs playtesting."
   },
   {

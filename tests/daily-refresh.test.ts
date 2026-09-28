@@ -30,6 +30,7 @@ test('27 September through 16 October have twenty fresh enemies, bingo families 
       assert.equal(entry.enemy, 'DEAR')
       assert.equal(encounter.counterRules?.kind, 'antonym')
       assert.equal(encounter.counterRules.partOfSpeech, 'adjective')
+      assert.equal(encounter.meaningLexicon!.words.FREE.relation, 'opposite', 'Free of charge is an opposite price adjective')
     } else {
       const profile = profiles.find(p => p.enemy === entry.enemy)!
       assert.equal(encounter.meaningLexicon!.profileVersion, bingoProfileVersion(profile))
