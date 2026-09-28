@@ -1,4 +1,4 @@
-import type { LetterStrikePreview } from '../game/letterStrike'
+import type { LetterStrikeEncounter, LetterStrikePreview } from '../game/letterStrike'
 import { getStrikeSummary } from './strikeSummary'
 
 type Bonus = {
@@ -19,7 +19,7 @@ type AttackInfoProps = {
     strikePreview?: LetterStrikePreview
     enemyWord?: string
     resolveBefore?: number
-    synonyms?: boolean
+    counterRules?: LetterStrikeEncounter['counterRules']
 }
 
 export default function AttackInfo({
@@ -33,14 +33,14 @@ export default function AttackInfo({
     strikePreview,
     enemyWord,
     resolveBefore,
-    synonyms = false,
+    counterRules,
 }: AttackInfoProps) {
     const segments = 12
     const filled = maxDamage > 0 ? Math.min(segments, Math.max(0, Math.round((damage / maxDamage) * segments))) : 0
     const strikeMetric = metric === 'strikes'
 
     if (strikeMetric) {
-        const summary = strikePreview && getStrikeSummary(strikePreview, resolveBefore, enemyWord, synonyms)
+        const summary = strikePreview && getStrikeSummary(strikePreview, resolveBefore, enemyWord, counterRules)
         return (
             <div className="attack-info" data-metric="strikes">
                 <div className="attack-line">

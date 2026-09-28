@@ -26,7 +26,7 @@ export default function EncounterHud({ visible, events, metric = 'damage' }: Enc
             <span className="encounter-hud-word" title={event.word}>{event.word}</span>
             <span className="encounter-hud-damage">{event.damage} {metric === 'strikes' ? (event.damage === 1 ? 'HIT' : 'HITS') : 'DMG'}</span>
             <span className="encounter-hud-result">
-              <span className={['COUNTER', 'SYNONYM'].includes(event.semanticLabel) ? 'hud-counter' : ['RESISTED', 'RELATED'].includes(event.semanticLabel) ? 'hud-negative' : undefined}>
+              <span className={['COUNTER', 'ANTONYM'].includes(event.semanticLabel) ? 'hud-counter' : ['RESISTED', 'RELATED'].includes(event.semanticLabel) ? 'hud-negative' : undefined}>
                 {event.semanticLabel}
               </span>
               {event.effectLabels.map(label => (

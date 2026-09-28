@@ -10,9 +10,12 @@ import { bingoStars, describeBingoProgress, readBingoProgress, restartBingoAttem
 import './ConceptPreviews.css'
 
 const base = import.meta.env.BASE_URL
+type PreviewGroup = 'antonyms' | 'power' | 'family'
+const entryGroup = (entry?: ConceptEntry): PreviewGroup => entry?.family ? 'family' : entry?.powers ? 'power' : 'antonyms'
 
 export default function ConceptPreviews() {
   const [selected, setSelected] = useState(() => new URLSearchParams(window.location.search).get('puzzle'))
+  const [group, setGroup] = useState<PreviewGroup>(() => entryGroup(conceptPreviews.find(entry => entry.id === selected)))
   useEffect(() => {
     const sync = () => setSelected(new URLSearchParams(window.location.search).get('puzzle'))
     window.addEventListener('popstate', sync)
@@ -21,13 +24,14 @@ export default function ConceptPreviews() {
   function navigate(id?: string) {
     window.history.pushState(null, '', conceptPath(id))
     setSelected(id ?? null)
+    if (id) setGroup(entryGroup(conceptPreviews.find(entry => entry.id === id)))
   }
   const entry = conceptPreviews.find(item => item.id === selected)
   return entry ? <LoadPreview key={entry.id} entry={entry} onBack={() => navigate()} />
-    : <PreviewHub onSelect={navigate} />
+    : <PreviewHub onSelect={navigate} group={group} onGroup={setGroup} />
 }
 
-function PreviewHub({ onSelect }: { onSelect: (id: string) => void }) {
+function PreviewHub({ onSelect, group, onGroup }: { onSelect: (id: string) => void; group: PreviewGroup; onGroup: (group: PreviewGroup) => void }) {
   const [shareStatus, setShareStatus] = useState('')
   const [, refresh] = useState(0)
   useEffect(() => {
@@ -38,7 +42,7 @@ function PreviewHub({ onSelect }: { onSelect: (id: string) => void }) {
   async function share() {
     const url = new URL(conceptPath(), window.location.href).href
     try {
-      if (navigator.share) await navigator.share({ title: 'Wyrmle · Concept previews', text: 'Try two new Wyrmle rules. Four puzzles, each with a one-word win.', url })
+      if (navigator.share) await navigator.share({ title: 'Wyrmle · Concept previews', text: 'Try six Wyrmle puzzles: clear opposites and one-family counters. Each has a bingo.', url })
       else { await navigator.clipboard.writeText(url); setShareStatus('Link copied') }
     } catch (error) {
       if (!(error instanceof DOMException && error.name === 'AbortError')) setShareStatus('Send this page’s address to share.')
@@ -51,22 +55,29 @@ function PreviewHub({ onSelect }: { onSelect: (id: string) => void }) {
         <a className="icon-button" href={base} aria-label="Back to Daily"><X size={20} /></a>
       </nav></header>
     <p className="concept-intro">Three lives. Clear every enemy letter. A one-word win is a bingo.</p>
-    <div className="concept-groups">
-      {[false, true].map(power => <section className="concept-group" key={String(power)} aria-labelledby={power ? 'power-heading' : 'synonym-heading'}>
-        <h2 id={power ? 'power-heading' : 'synonym-heading'}>{power ? 'Synonyms + POWER' : 'Synonyms'}</h2>
-        <p>{power ? 'Same rules. Each blue tile in a synonym hits one extra enemy letter, even without a matching letter. Its power is used up.'
-          : 'Find words with the enemy’s meaning. Their matching letters hit. Other words do no damage. Every word costs one life.'}</p>
-        <div className="concept-cards">{conceptPreviews.filter(entry => Boolean(entry.powers) === power).map(entry => {
-          const progress = describeBingoProgress(readBingoProgress(conceptProgressKey(entry)), 3)
-          return <button className="concept-card" key={entry.id} data-progress={progress.status}
-            onClick={() => onSelect(entry.id)} aria-label={`${entry.enemy}, ${power ? 'with POWER, ' : ''}${progress.accessible}`}>
-            <strong>{entry.enemy}</strong>
-            <span className="concept-stars" aria-hidden="true">{[1, 2, 3].map(star => <Star key={star} data-earned={star <= progress.stars} size={16} />)}</span>
-            <span className="concept-status">{progress.label}</span>
-          </button>
-        })}</div>
-      </section>)}
+    <div className="concept-tabs" role="group" aria-label="Preview rules">
+      {([['antonyms', 'Antonyms'], ['power', '+ POWER'], ['family', 'One family']] as const).map(([id, label]) =>
+        <button key={id} aria-pressed={group === id} onClick={() => onGroup(id)}>{label}</button>)}
     </div>
+    <section className="concept-group" aria-labelledby="concept-rule-title">
+      <h2 id="concept-rule-title">{group === 'family' ? 'One opposing idea' : group === 'power' ? 'Antonyms + POWER' : 'Same word type. Opposite meaning.'}</h2>
+      <p>{group === 'family'
+        ? 'Every counter belongs to one named family. SEARS keeps verbs against a verb. DIRT uses cleaning verbs against a noun.'
+        : 'Find opposites of the meaning shown: adjectives against adjectives, nouns against nouns. Their matching letters hit.'}</p>
+      {group !== 'antonyms' && <p className="concept-extra">Each blue tile in a counter hits one extra enemy letter. Its power is used up.</p>}
+      <div className="concept-cards">{conceptPreviews.filter(entry => group === 'family' ? Boolean(entry.family)
+        : !entry.family && Boolean(entry.powers) === (group === 'power')).map(entry => {
+        const progress = describeBingoProgress(readBingoProgress(conceptProgressKey(entry)), 3)
+        return <button className="concept-card" key={entry.id} data-progress={progress.status}
+          onClick={() => onSelect(entry.id)} aria-label={`${entry.enemy}, ${entry.powers ? 'with POWER, ' : ''}${progress.accessible}`}>
+          <strong>{entry.enemy}</strong>
+          <span className="concept-stars" aria-hidden="true">{[1, 2, 3].map(star => <Star key={star} data-earned={star <= progress.stars} size={16} />)}</span>
+          {entry.family && <span className="concept-family">{entry.family}</span>}
+          <span className="concept-status">{progress.label}</span>
+        </button>
+      })}</div>
+    </section>
+    <p className="concept-common-rule">Other words do no damage. Every word uses one life.</p>
     <footer className="concept-footer">
       <p>Best: ★ 3 words · ★★ 2 · ★★★ bingo<br />Progress stays on this device. Daily is separate.</p>
       <span className="concept-share-status" role="status">{shareStatus}</span>
@@ -113,7 +124,7 @@ function ConceptBattle({ encounter, entry, onBack }: { encounter: LetterStrikeEn
     }}
     notice={<div className="concept-battle-bar">
       <button onClick={onBack}><ArrowLeft size={15} />Previews</button>
-      <span>{saveError ? 'Could not save restart' : entry.powers ? 'Synonyms + POWER' : 'Synonyms'}</span>
+      <span>{saveError ? 'Could not save restart' : entry.family ? `${entry.family} · ${entry.counterPartOfSpeech}s` : entry.powers ? 'Antonyms + POWER' : 'Antonyms'}</span>
     </div>}
     menu={<a className="daily-button" href={base}>Daily puzzle</a>}
     renderBestResult={best === null ? undefined : close => <BattleResult best={{ enemy: entry.enemy, wordCount: best }} onRetry={close}

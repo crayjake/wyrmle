@@ -1,0 +1,4592 @@
+[
+  {
+    "id": "dry",
+    "revision": "09308fa90df3",
+    "review": "Adjectives containing moisture oppose DRY as lacking moisture. HYDRATED is an adjective, not HYDRATE the verb. DAMP, SOGGY and RAINY retain wetness readings; alcohol and humour readings are not admitted. Comparative adjectives remain adjectives.",
+    "roots": [
+      {
+        "id": "oewn-wet__3.00.01..",
+        "synset": "oewn-02558087-a",
+        "lemma": "wet",
+        "partOfSpeech": "adjective",
+        "definition": "covered or soaked with a liquid such as water",
+        "definitions": [
+          "covered or soaked with a liquid such as water"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-dry__3.00.01.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-wetness__1.26.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-wet__3.00.05..",
+        "synset": "oewn-02565896-a",
+        "lemma": "wet",
+        "partOfSpeech": "adjective",
+        "definition": "containing moisture or volatile components",
+        "definitions": [
+          "containing moisture or volatile components"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-dry__3.00.05.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-wet__1.26.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-wetness__1.26.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-damp__5.00.00.wet.01",
+        "synset": "oewn-02559590-s",
+        "lemma": "damp",
+        "partOfSpeech": "adjective",
+        "definition": "slightly wet",
+        "definitions": [
+          "slightly wet"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-damp__1.26.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-dampness__1.26.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-moist__5.00.00.wet.01",
+        "synset": "oewn-02559590-s",
+        "lemma": "moist",
+        "partOfSpeech": "adjective",
+        "definition": "slightly wet",
+        "definitions": [
+          "slightly wet"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-moistness__1.26.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-soggy__5.00.00.wet.01",
+        "synset": "oewn-02558836-s",
+        "lemma": "soggy",
+        "partOfSpeech": "adjective",
+        "definition": "(of soil) soft and watery",
+        "definitions": [
+          "(of soil) soft and watery"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-sogginess__1.26.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-dewy__5.00.00.wet.01",
+        "synset": "oewn-02558632-s",
+        "lemma": "dewy",
+        "partOfSpeech": "adjective",
+        "definition": "wet with dew",
+        "definitions": [
+          "wet with dew"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-dew__1.27.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-watery__5.00.02.wet.01",
+        "synset": "oewn-02562029-s",
+        "lemma": "watery",
+        "partOfSpeech": "adjective",
+        "definition": "filled with water",
+        "definitions": [
+          "filled with water"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-water__1.27.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-wateriness__1.26.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-watery__5.00.01.wet.01",
+        "synset": "oewn-02560627-s",
+        "lemma": "watery",
+        "partOfSpeech": "adjective",
+        "definition": "wet with secreted or exuded moisture such as sweat or tears",
+        "definitions": [
+          "wet with secreted or exuded moisture such as sweat or tears"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-wateriness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-humid__5.00.00.wet.01",
+        "synset": "oewn-02560163-s",
+        "lemma": "humid",
+        "partOfSpeech": "adjective",
+        "definition": "containing or characterized by a great deal of water vapor",
+        "definitions": [
+          "containing or characterized by a great deal of water vapor"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-humidity__1.26.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-humidness__1.26.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-rainy__5.00.00.wet.01",
+        "synset": "oewn-02561103-s",
+        "lemma": "rainy",
+        "partOfSpeech": "adjective",
+        "definition": "(of weather) wet by periods of rain",
+        "definitions": [
+          "(of weather) wet by periods of rain"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-rain__1.19.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-rain__1.27.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-sodden__5.00.00.wet.01",
+        "synset": "oewn-02559802-s",
+        "lemma": "sodden",
+        "partOfSpeech": "adjective",
+        "definition": "wet through and through; thoroughly wet",
+        "definitions": [
+          "wet through and through; thoroughly wet"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-waterlogged__5.00.00.wet.01",
+        "synset": "oewn-02558836-s",
+        "lemma": "waterlogged",
+        "partOfSpeech": "adjective",
+        "definition": "(of soil) soft and watery",
+        "definitions": [
+          "(of soil) soft and watery"
+        ],
+        "relations": []
+      }
+    ],
+    "supplemental": {
+      "HYDRATED": {
+        "definition": "Having enough water in the body; not dehydrated.",
+        "lemma": "hydrated",
+        "partOfSpeech": "adjective",
+        "senseId": "wiktionary-en:hydrated:adjective:2:85896008",
+        "sourceUrl": "https://en.wiktionary.org/w/index.php?title=hydrated&oldid=85896008"
+      },
+      "SATURATED": {
+        "definition": "Thoroughly soaked with moisture.",
+        "lemma": "saturated",
+        "partOfSpeech": "adjective",
+        "senseId": "wiktionary-en:saturated:adjective:2:92016973",
+        "sourceUrl": "https://en.wiktionary.org/w/index.php?title=saturated&oldid=92016973"
+      }
+    },
+    "progression": {
+      "passed": true,
+      "issues": [],
+      "ratings": {
+        "three": {
+          "words": [
+            "DAMP",
+            "SOGGY",
+            "RAINY"
+          ],
+          "zipfs": [
+            3.62,
+            3.14,
+            3.74
+          ],
+          "minZipf": 3.14,
+          "maxLength": 5,
+          "effort": 2.72,
+          "commonAndShort": false
+        },
+        "two": {
+          "words": [
+            "DAMP",
+            "WATERY"
+          ],
+          "zipfs": [
+            3.62,
+            3.19
+          ],
+          "minZipf": 3.19,
+          "maxLength": 6,
+          "effort": 3.22,
+          "commonAndShort": false
+        },
+        "bingo": {
+          "words": [
+            "HYDRATED"
+          ],
+          "zipfs": [
+            3.27
+          ],
+          "minZipf": 3.27,
+          "maxLength": 8,
+          "effort": 4.26,
+          "commonAndShort": false
+        }
+      },
+      "bingos": [
+        {
+          "words": [
+            "HYDRATED"
+          ],
+          "tileIds": [
+            [
+              14,
+              0,
+              4,
+              3,
+              6,
+              13,
+              1,
+              12
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            3
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "words": [
+            "HYDRATED"
+          ],
+          "tileIds": [
+            [
+              14,
+              0,
+              4,
+              3,
+              6,
+              13,
+              1,
+              12
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            3
+          ]
+        },
+        {
+          "words": [
+            "DAMP",
+            "WATERY"
+          ],
+          "tileIds": [
+            [
+              4,
+              6,
+              8,
+              7
+            ],
+            [
+              2,
+              16,
+              13,
+              1,
+              3,
+              0
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2
+          ]
+        },
+        {
+          "words": [
+            "DAMP",
+            "SOGGY",
+            "RAINY"
+          ],
+          "tileIds": [
+            [
+              4,
+              6,
+              8,
+              7
+            ],
+            [
+              11,
+              10,
+              5,
+              15,
+              0
+            ],
+            [
+              3,
+              16,
+              20,
+              21,
+              22
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "cheapestTwo": {
+        "words": [
+          "DAMP",
+          "WATERY"
+        ],
+        "tileIds": [
+          [
+            4,
+            6,
+            8,
+            7
+          ],
+          [
+            2,
+            16,
+            13,
+            1,
+            3,
+            0
+          ]
+        ],
+        "labels": [
+          "COUNTER",
+          "COUNTER"
+        ],
+        "hits": [
+          1,
+          2
+        ]
+      },
+      "positions": 879,
+      "previews": 1478,
+      "searchComplete": true,
+      "scope": "All legal first moves, repeated words and POWER-selection variants; exact cheapest two-word bottleneck. Three-word witness uses distinct, familiar counter families. Word frequency and length are a difficulty proxy, not measured human solving difficulty."
+    },
+    "startingCounters": [
+      "DAMP",
+      "DAMPER",
+      "DAMPEST",
+      "DEWY",
+      "HYDRATED",
+      "MARSHY",
+      "SHOWERY",
+      "SOGGY",
+      "SWAMPY",
+      "WATERY",
+      "WET"
+    ],
+    "startingBingos": [
+      "HYDRATED"
+    ],
+    "unpoweredBingos": [
+      "HYDRATED"
+    ],
+    "routes": [
+      [
+        {
+          "word": "HYDRATED",
+          "ids": [
+            14,
+            0,
+            4,
+            3,
+            6,
+            13,
+            1,
+            12
+          ],
+          "hits": 3,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "DAMP",
+          "ids": [
+            4,
+            6,
+            8,
+            7
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": "RY"
+        },
+        {
+          "word": "WATERY",
+          "ids": [
+            2,
+            16,
+            13,
+            1,
+            3,
+            0
+          ],
+          "hits": 2,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "DAMP",
+          "ids": [
+            4,
+            6,
+            8,
+            7
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": "RY"
+        },
+        {
+          "word": "SOGGY",
+          "ids": [
+            11,
+            10,
+            5,
+            15,
+            0
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": "R"
+        },
+        {
+          "word": "RAINY",
+          "ids": [
+            3,
+            16,
+            20,
+            21,
+            22
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ]
+    ],
+    "routeEffort": [
+      4.26,
+      3.22,
+      2.72
+    ],
+    "words": 30417,
+    "bytes": 322562,
+    "limitation": "Reviewed senses and exact route checks; subjective human difficulty still needs playtesting."
+  },
+  {
+    "id": "mean",
+    "revision": "2d49b823bbf3",
+    "review": "Kind, considerate descriptions oppose an unkind person. COMPASSIONATE is an adjective; COMPASSION and KINDNESS are nouns and cannot damage this adjective enemy. WARM uses its friendly-person reading, not temperature.",
+    "roots": [
+      {
+        "id": "oewn-kind__3.00.00..",
+        "synset": "oewn-01374976-a",
+        "lemma": "kind",
+        "partOfSpeech": "adjective",
+        "definition": "having or showing a tender and considerate and helpful nature; used especially of persons and their behavior",
+        "definitions": [
+          "having or showing a tender and considerate and helpful nature; used especially of persons and their behavior"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-unkind__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-kindness__1.04.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-kindness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-nice__3.00.00..",
+        "synset": "oewn-01590750-a",
+        "lemma": "nice",
+        "partOfSpeech": "adjective",
+        "definition": "pleasant or pleasing or agreeable in nature or appearance",
+        "definitions": [
+          "pleasant or pleasing or agreeable in nature or appearance"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-nasty__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-niceness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-nice__5.00.00.polite.00",
+        "synset": "oewn-00644482-s",
+        "lemma": "nice",
+        "partOfSpeech": "adjective",
+        "definition": "exhibiting courtesy and politeness",
+        "definitions": [
+          "exhibiting courtesy and politeness"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-niceness__1.07.02.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-warm__3.00.02..",
+        "synset": "oewn-02541266-a",
+        "lemma": "warm",
+        "partOfSpeech": "adjective",
+        "definition": "psychologically warm; friendly and responsive",
+        "definitions": [
+          "psychologically warm; friendly and responsive"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-cool__3.00.02.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-warmness__1.12.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-amiable__5.00.00.good-natured.00",
+        "synset": "oewn-01137732-s",
+        "lemma": "amiable",
+        "partOfSpeech": "adjective",
+        "definition": "disposed to please",
+        "definitions": [
+          "disposed to please"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-amiability__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-amiability__1.12.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-amiableness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-amiable__5.00.00.friendly.01",
+        "synset": "oewn-01078866-s",
+        "lemma": "amiable",
+        "partOfSpeech": "adjective",
+        "definition": "diffusing warmth and friendliness",
+        "definitions": [
+          "diffusing warmth and friendliness"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-amiability__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-amiability__1.12.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-amity__1.26.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-amicable__3.00.00..",
+        "synset": "oewn-01249453-a",
+        "lemma": "amicable",
+        "partOfSpeech": "adjective",
+        "definition": "characterized by friendship and good will",
+        "definitions": [
+          "characterized by friendship and good will"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-hostile__3.00.01.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-amicability__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-amicableness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-benign__5.00.00.kind.00",
+        "synset": "oewn-01375700-s",
+        "lemma": "benign",
+        "partOfSpeech": "adjective",
+        "definition": "kindness of disposition or manner",
+        "definitions": [
+          "kindness of disposition or manner"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-benignancy__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-benignity__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-gentle__5.00.01.kind.00",
+        "synset": "oewn-01376241-s",
+        "lemma": "gentle",
+        "partOfSpeech": "adjective",
+        "definition": "having or showing a kindly or tender nature",
+        "definitions": [
+          "having or showing a kindly or tender nature"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-gentleness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-humane__3.00.00..",
+        "synset": "oewn-01264939-a",
+        "lemma": "humane",
+        "partOfSpeech": "adjective",
+        "definition": "marked or motivated by concern with the alleviation of suffering",
+        "definitions": [
+          "marked or motivated by concern with the alleviation of suffering"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-inhumane__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-humaneness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-compassionate__3.00.00..",
+        "synset": "oewn-00508211-a",
+        "lemma": "compassionate",
+        "partOfSpeech": "adjective",
+        "definition": "showing or having compassion",
+        "definitions": [
+          "showing or having compassion"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-uncompassionate__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-compassion__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-compassion__1.12.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-compassionateness__1.12.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-considerate__3.00.00..",
+        "synset": "oewn-00642003-a",
+        "lemma": "considerate",
+        "partOfSpeech": "adjective",
+        "definition": "showing concern for the rights and feelings of others",
+        "definitions": [
+          "showing concern for the rights and feelings of others"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-inconsiderate__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-considerateness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-benevolent__3.01.00..",
+        "synset": "oewn-02672151-a",
+        "lemma": "benevolent",
+        "partOfSpeech": "adjective",
+        "definition": "intending or showing kindness",
+        "definitions": [
+          "intending or showing kindness"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-benevolence__1.04.00.."
+          },
+          {
+            "type": "pertainym",
+            "target": "oewn-benevolence__1.04.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-benevolent__5.00.00.kind.00",
+        "synset": "oewn-01375875-s",
+        "lemma": "benevolent",
+        "partOfSpeech": "adjective",
+        "definition": "showing or motivated by sympathy and understanding and generosity",
+        "definitions": [
+          "showing or motivated by sympathy and understanding and generosity"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-generous__3.00.02..",
+        "synset": "oewn-01118176-a",
+        "lemma": "generous",
+        "partOfSpeech": "adjective",
+        "definition": "not petty in character and mind",
+        "definitions": [
+          "not petty in character and mind"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-ungenerous__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-generosity__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-generousness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-good__3.00.02..",
+        "synset": "oewn-01133477-a",
+        "lemma": "good",
+        "partOfSpeech": "adjective",
+        "definition": "morally admirable",
+        "definitions": [
+          "morally admirable"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-evil__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-goodness__1.07.01.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-sweet__5.00.00.lovable.00",
+        "synset": "oewn-01462871-s",
+        "lemma": "sweet",
+        "partOfSpeech": "adjective",
+        "definition": "having a sweet nature befitting an angel or cherub",
+        "definitions": [
+          "having a sweet nature befitting an angel or cherub"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-sweetness__1.07.03.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-friendly__3.00.01..",
+        "synset": "oewn-01078338-a",
+        "lemma": "friendly",
+        "partOfSpeech": "adjective",
+        "definition": "characteristic of or befitting a friend",
+        "definitions": [
+          "characteristic of or befitting a friend"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-unfriendly__3.00.01.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-friend__1.18.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-friendliness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-friendly__5.00.00.amicable.00",
+        "synset": "oewn-01249700-s",
+        "lemma": "friendly",
+        "partOfSpeech": "adjective",
+        "definition": "inclined to help or support; not antagonistic or hostile",
+        "definitions": [
+          "inclined to help or support; not antagonistic or hostile"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-friendliness__1.12.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-loving__3.00.00..",
+        "synset": "oewn-01466898-a",
+        "lemma": "loving",
+        "partOfSpeech": "adjective",
+        "definition": "feeling or showing love and affection",
+        "definitions": [
+          "feeling or showing love and affection"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-unloving__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-lovingness__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-lovingness__1.12.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-caring__5.00.00.compassionate.00",
+        "synset": "oewn-00508513-s",
+        "lemma": "caring",
+        "partOfSpeech": "adjective",
+        "definition": "feeling and exhibiting concern and empathy for others",
+        "definitions": [
+          "feeling and exhibiting concern and empathy for others"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-caring__1.12.01.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-tender__3.00.03..",
+        "synset": "oewn-02457962-a",
+        "lemma": "tender",
+        "partOfSpeech": "adjective",
+        "definition": "given to sympathy or gentleness or sentimentality",
+        "definitions": [
+          "given to sympathy or gentleness or sentimentality"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-tough__3.00.03.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-tenderness__1.12.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-tenderness__1.12.03.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-tender__5.00.00.loving.00",
+        "synset": "oewn-01467633-s",
+        "lemma": "tender",
+        "partOfSpeech": "adjective",
+        "definition": "having or displaying warmth or affection",
+        "definitions": [
+          "having or displaying warmth or affection"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-tenderness__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-tenderness__1.12.01.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-warmhearted__3.00.00..",
+        "synset": "oewn-02543785-a",
+        "lemma": "warmhearted",
+        "partOfSpeech": "adjective",
+        "definition": "marked by warmth of feeling like kindness and sympathy and generosity",
+        "definitions": [
+          "marked by warmth of feeling like kindness and sympathy and generosity"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-coldhearted__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-warmheartedness__1.12.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-warmheartedness__1.12.01.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-sympathetic__5.00.00.kind.00",
+        "synset": "oewn-01375875-s",
+        "lemma": "sympathetic",
+        "partOfSpeech": "adjective",
+        "definition": "showing or motivated by sympathy and understanding and generosity",
+        "definitions": [
+          "showing or motivated by sympathy and understanding and generosity"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-pleasant__5.00.00.nice.00",
+        "synset": "oewn-01591274-s",
+        "lemma": "pleasant",
+        "partOfSpeech": "adjective",
+        "definition": "(of persons) having pleasing manners or behavior",
+        "definitions": [
+          "(of persons) having pleasing manners or behavior"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-pleasantness__1.12.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-please__2.37.03.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-polite__3.00.00..",
+        "synset": "oewn-00644180-a",
+        "lemma": "polite",
+        "partOfSpeech": "adjective",
+        "definition": "showing regard for others in manners, speech, behavior, etc.",
+        "definitions": [
+          "showing regard for others in manners, speech, behavior, etc."
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-impolite__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-politeness__1.04.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-courteous__5.00.00.polite.00",
+        "synset": "oewn-00644482-s",
+        "lemma": "courteous",
+        "partOfSpeech": "adjective",
+        "definition": "exhibiting courtesy and politeness",
+        "definitions": [
+          "exhibiting courtesy and politeness"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-gracious__5.00.00.kind.00",
+        "synset": "oewn-01375495-s",
+        "lemma": "gracious",
+        "partOfSpeech": "adjective",
+        "definition": "characterized by kindness and warm courtesy especially of a king to his subjects",
+        "definitions": [
+          "characterized by kindness and warm courtesy especially of a king to his subjects"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-grace__1.07.03.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-graciousness__1.07.01.."
+          }
+        ]
+      }
+    ],
+    "progression": {
+      "passed": true,
+      "issues": [],
+      "ratings": {
+        "three": {
+          "words": [
+            "KIND",
+            "NICE",
+            "WARM"
+          ],
+          "zipfs": [
+            5.45,
+            5.37,
+            4.71
+          ],
+          "minZipf": 4.71,
+          "maxLength": 4,
+          "effort": 0,
+          "commonAndShort": true
+        },
+        "two": {
+          "words": [
+            "NICEST",
+            "WARM"
+          ],
+          "zipfs": [
+            3.52,
+            4.71
+          ],
+          "minZipf": 3.52,
+          "maxLength": 6,
+          "effort": 2.56,
+          "commonAndShort": true
+        },
+        "bingo": {
+          "words": [
+            "COMPASSIONATE"
+          ],
+          "zipfs": [
+            3.55
+          ],
+          "minZipf": 3.55,
+          "maxLength": 13,
+          "effort": 6.7,
+          "commonAndShort": false
+        }
+      },
+      "bingos": [
+        {
+          "words": [
+            "COMPASSIONATE"
+          ],
+          "tileIds": [
+            [
+              6,
+              3,
+              7,
+              10,
+              5,
+              2,
+              14,
+              15,
+              4,
+              0,
+              12,
+              11,
+              13
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            4
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "words": [
+            "COMPASSIONATE"
+          ],
+          "tileIds": [
+            [
+              6,
+              3,
+              7,
+              10,
+              5,
+              2,
+              14,
+              15,
+              4,
+              0,
+              12,
+              11,
+              13
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            4
+          ]
+        },
+        {
+          "words": [
+            "KIND",
+            "AMIABLE"
+          ],
+          "tileIds": [
+            [
+              8,
+              15,
+              0,
+              9
+            ],
+            [
+              5,
+              7,
+              18,
+              12,
+              16,
+              17,
+              13
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            3
+          ]
+        },
+        {
+          "words": [
+            "KIND",
+            "NICE",
+            "WARM"
+          ],
+          "tileIds": [
+            [
+              8,
+              15,
+              0,
+              9
+            ],
+            [
+              19,
+              18,
+              6,
+              13
+            ],
+            [
+              20,
+              5,
+              1,
+              7
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            1,
+            2
+          ]
+        }
+      ],
+      "cheapestTwo": {
+        "words": [
+          "NICEST",
+          "WARM"
+        ],
+        "tileIds": [
+          [
+            0,
+            15,
+            6,
+            13,
+            2,
+            11
+          ],
+          [
+            20,
+            5,
+            1,
+            7
+          ]
+        ],
+        "labels": [
+          "COUNTER",
+          "COUNTER"
+        ],
+        "hits": [
+          2,
+          2
+        ]
+      },
+      "positions": 1278,
+      "previews": 3442,
+      "searchComplete": true,
+      "scope": "All legal first moves, repeated words and POWER-selection variants; exact cheapest two-word bottleneck. Three-word witness uses distinct, familiar counter families. Word frequency and length are a difficulty proxy, not measured human solving difficulty."
+    },
+    "startingCounters": [
+      "COMPASSIONATE",
+      "KIND",
+      "KINDER",
+      "KINDEST",
+      "NICE",
+      "NICER",
+      "NICEST"
+    ],
+    "startingBingos": [
+      "COMPASSIONATE"
+    ],
+    "unpoweredBingos": [
+      "COMPASSIONATE"
+    ],
+    "routes": [
+      [
+        {
+          "word": "COMPASSIONATE",
+          "ids": [
+            6,
+            3,
+            7,
+            10,
+            5,
+            2,
+            14,
+            15,
+            4,
+            0,
+            12,
+            11,
+            13
+          ],
+          "hits": 4,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "KIND",
+          "ids": [
+            8,
+            15,
+            0,
+            9
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": "MEA"
+        },
+        {
+          "word": "AMIABLE",
+          "ids": [
+            5,
+            7,
+            18,
+            12,
+            16,
+            17,
+            13
+          ],
+          "hits": 3,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "KIND",
+          "ids": [
+            8,
+            15,
+            0,
+            9
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": "MEA"
+        },
+        {
+          "word": "NICE",
+          "ids": [
+            19,
+            18,
+            6,
+            13
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": "MA"
+        },
+        {
+          "word": "WARM",
+          "ids": [
+            20,
+            5,
+            1,
+            7
+          ],
+          "hits": 2,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ]
+    ],
+    "routeEffort": [
+      6.7,
+      4.52,
+      0
+    ],
+    "words": 50536,
+    "bytes": 566610,
+    "limitation": "Reviewed senses and exact route checks; subjective human difficulty still needs playtesting."
+  },
+  {
+    "id": "dread-power",
+    "revision": "5ba19a6e1a5e",
+    "review": "Nouns for fearlessness, courage, or freedom from distress oppose the feeling of fear. EASE and RELIEF use their emotional readings; neither a verb nor sculptural relief qualifies. FEARLESSNESS is a noun; FEARLESS and BRAVE are adjectives and do no damage. NERVE means courage, DARING names boldness, VALOR names courage (British VALOUR also counts). The plural NERVES is reviewed separately as anxiety, not mechanically inherited from NERVE.",
+    "roots": [
+      {
+        "id": "oewn-fearlessness__1.12.00..",
+        "synset": "oewn-07541421-n",
+        "lemma": "fearlessness",
+        "partOfSpeech": "noun",
+        "definition": "feeling no fear",
+        "definitions": [
+          "feeling no fear"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-fear__1.12.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-fearless__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-fearless__5.00.00.bold.00"
+          }
+        ]
+      },
+      {
+        "id": "oewn-fearlessness__1.07.00..",
+        "synset": "oewn-04865686-n",
+        "lemma": "fearlessness",
+        "partOfSpeech": "noun",
+        "definition": "the trait of feeling no fear",
+        "definitions": [
+          "the trait of feeling no fear"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-fearfulness__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-fearless__5.00.00.bold.00"
+          }
+        ]
+      },
+      {
+        "id": "oewn-courage__1.07.00..",
+        "synset": "oewn-04864314-n",
+        "lemma": "courage",
+        "partOfSpeech": "noun",
+        "definition": "a quality of spirit that enables you to face danger or pain without showing fear",
+        "definitions": [
+          "a quality of spirit that enables you to face danger or pain without showing fear"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-cowardice__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-courageous__3.00.04.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-bravery__1.07.00..",
+        "synset": "oewn-04864314-n",
+        "lemma": "bravery",
+        "partOfSpeech": "noun",
+        "definition": "a quality of spirit that enables you to face danger or pain without showing fear",
+        "definitions": [
+          "a quality of spirit that enables you to face danger or pain without showing fear"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-bravery__1.12.00..",
+        "synset": "oewn-07541421-n",
+        "lemma": "bravery",
+        "partOfSpeech": "noun",
+        "definition": "feeling no fear",
+        "definitions": [
+          "feeling no fear"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-valor__1.07.00..",
+        "synset": "oewn-04864969-n",
+        "lemma": "valor",
+        "partOfSpeech": "noun",
+        "definition": "the qualities of a hero or heroine; exceptional or heroic courage when facing danger (especially in battle)",
+        "definitions": [
+          "the qualities of a hero or heroine; exceptional or heroic courage when facing danger (especially in battle)"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-valorous__5.00.00.brave.00"
+          },
+          {
+            "type": "exemplifies",
+            "target": "oewn-american_spelling__1.10.01.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-valour__1.07.00..",
+        "synset": "oewn-04864969-n",
+        "lemma": "valour",
+        "partOfSpeech": "noun",
+        "definition": "the qualities of a hero or heroine; exceptional or heroic courage when facing danger (especially in battle)",
+        "definitions": [
+          "the qualities of a hero or heroine; exceptional or heroic courage when facing danger (especially in battle)"
+        ],
+        "relations": [
+          {
+            "type": "exemplifies",
+            "target": "oewn-australian_spelling__1.10.01.."
+          },
+          {
+            "type": "exemplifies",
+            "target": "oewn-british_spelling__1.10.01.."
+          },
+          {
+            "type": "exemplifies",
+            "target": "oewn-canadian_spelling__1.10.01.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-nerve__1.07.00..",
+        "synset": "oewn-04864721-n",
+        "lemma": "nerve",
+        "partOfSpeech": "noun",
+        "definition": "the courage to carry on",
+        "definitions": [
+          "the courage to carry on"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-nerve__2.37.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-nervy__5.00.00.bold.00"
+          }
+        ]
+      },
+      {
+        "id": "oewn-guts__1.07.00..",
+        "synset": "oewn-05039506-n",
+        "lemma": "guts",
+        "partOfSpeech": "noun",
+        "definition": "fortitude and determination",
+        "definitions": [
+          "fortitude and determination"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-gutsy__3.00.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-daring__1.07.00..",
+        "synset": "oewn-04866016-n",
+        "lemma": "daring",
+        "partOfSpeech": "noun",
+        "definition": "the trait of being willing to undertake things that involve risk or danger",
+        "definitions": [
+          "the trait of being willing to undertake things that involve risk or danger"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-dare__2.41.01.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-boldness__1.07.00..",
+        "synset": "oewn-04866016-n",
+        "lemma": "boldness",
+        "partOfSpeech": "noun",
+        "definition": "the trait of being willing to undertake things that involve risk or danger",
+        "definitions": [
+          "the trait of being willing to undertake things that involve risk or danger"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-timidity__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-bold__3.00.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-confidence__1.26.02..",
+        "synset": "oewn-14507328-n",
+        "lemma": "confidence",
+        "partOfSpeech": "noun",
+        "definition": "a state of confident hopefulness that events will be favorable",
+        "definitions": [
+          "a state of confident hopefulness that events will be favorable"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-confident__3.00.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-intrepidity__1.07.00..",
+        "synset": "oewn-04865320-n",
+        "lemma": "intrepidity",
+        "partOfSpeech": "noun",
+        "definition": "resolute courageousness",
+        "definitions": [
+          "resolute courageousness"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-intrepid__5.00.00.bold.00"
+          }
+        ]
+      },
+      {
+        "id": "oewn-ease__1.26.02..",
+        "synset": "oewn-14469215-n",
+        "lemma": "ease",
+        "partOfSpeech": "noun",
+        "definition": "the condition of being comfortable or relieved (especially after being relieved of distress)",
+        "definitions": [
+          "the condition of being comfortable or relieved (especially after being relieved of distress)"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-ease__2.37.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-relief__1.12.00..",
+        "synset": "oewn-07508420-n",
+        "lemma": "relief",
+        "partOfSpeech": "noun",
+        "definition": "the feeling that comes when something burdensome is removed or reduced",
+        "definitions": [
+          "the feeling that comes when something burdensome is removed or reduced"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-relief__1.26.00..",
+        "synset": "oewn-14469215-n",
+        "lemma": "relief",
+        "partOfSpeech": "noun",
+        "definition": "the condition of being comfortable or relieved (especially after being relieved of distress)",
+        "definitions": [
+          "the condition of being comfortable or relieved (especially after being relieved of distress)"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-calm__1.07.00..",
+        "synset": "oewn-04910990-n",
+        "lemma": "calm",
+        "partOfSpeech": "noun",
+        "definition": "steadiness of mind under stress",
+        "definitions": [
+          "steadiness of mind under stress"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-calm__2.29.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-calm__2.37.01.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-calm__5.00.00.composed.00"
+          }
+        ]
+      },
+      {
+        "id": "oewn-calmness__1.12.00..",
+        "synset": "oewn-07530207-n",
+        "lemma": "calmness",
+        "partOfSpeech": "noun",
+        "definition": "a feeling of calm; an absence of agitation or excitement",
+        "definitions": [
+          "a feeling of calm; an absence of agitation or excitement"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-agitation__1.12.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-calm__5.00.00.composed.00"
+          }
+        ]
+      },
+      {
+        "id": "oewn-peace__1.12.00..",
+        "synset": "oewn-07531029-n",
+        "lemma": "peace",
+        "partOfSpeech": "noun",
+        "definition": "the absence of mental stress or anxiety",
+        "definitions": [
+          "the absence of mental stress or anxiety"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-pacify__2.37.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-assurance__1.09.00..",
+        "synset": "oewn-05705328-n",
+        "lemma": "assurance",
+        "partOfSpeech": "noun",
+        "definition": "freedom from doubt; belief in yourself and your abilities",
+        "definitions": [
+          "freedom from doubt; belief in yourself and your abilities"
+        ],
+        "relations": []
+      }
+    ],
+    "progression": {
+      "passed": true,
+      "issues": [],
+      "ratings": {
+        "three": {
+          "words": [
+            "EASE",
+            "NERVE",
+            "RELIEF"
+          ],
+          "zipfs": [
+            4.34,
+            4.19,
+            4.55
+          ],
+          "minZipf": 4.19,
+          "maxLength": 6,
+          "effort": 0.62,
+          "commonAndShort": true
+        },
+        "two": {
+          "words": [
+            "EASES",
+            "RELIEF"
+          ],
+          "zipfs": [
+            2.93,
+            4.55
+          ],
+          "minZipf": 2.93,
+          "maxLength": 6,
+          "effort": 3.14,
+          "commonAndShort": false
+        },
+        "bingo": {
+          "words": [
+            "FEARLESSNESS"
+          ],
+          "zipfs": [
+            2.46
+          ],
+          "minZipf": 2.46,
+          "maxLength": 12,
+          "effort": 8.28,
+          "commonAndShort": false
+        }
+      },
+      "bingos": [
+        {
+          "words": [
+            "FEARLESSNESS"
+          ],
+          "tileIds": [
+            [
+              9,
+              1,
+              4,
+              13,
+              6,
+              8,
+              0,
+              3,
+              7,
+              15,
+              5,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            5
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "words": [
+            "FEARLESSNESS"
+          ],
+          "tileIds": [
+            [
+              9,
+              1,
+              4,
+              13,
+              6,
+              8,
+              0,
+              3,
+              7,
+              15,
+              5,
+              11
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            5
+          ]
+        },
+        {
+          "words": [
+            "BOLDNESS",
+            "DARING"
+          ],
+          "tileIds": [
+            [
+              10,
+              2,
+              6,
+              12,
+              7,
+              1,
+              0,
+              3
+            ],
+            [
+              22,
+              4,
+              13,
+              20,
+              18,
+              14
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2
+          ]
+        },
+        {
+          "words": [
+            "EASE",
+            "NERVE",
+            "RELIEF"
+          ],
+          "tileIds": [
+            [
+              1,
+              4,
+              0,
+              8
+            ],
+            [
+              7,
+              15,
+              13,
+              16,
+              19
+            ],
+            [
+              21,
+              23,
+              6,
+              20,
+              24,
+              9
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            1,
+            2
+          ]
+        }
+      ],
+      "cheapestTwo": {
+        "words": [
+          "EASES",
+          "RELIEF"
+        ],
+        "tileIds": [
+          [
+            1,
+            4,
+            0,
+            8,
+            3
+          ],
+          [
+            13,
+            15,
+            6,
+            20,
+            19,
+            9
+          ]
+        ],
+        "labels": [
+          "COUNTER",
+          "COUNTER"
+        ],
+        "hits": [
+          2,
+          3
+        ]
+      },
+      "positions": 624,
+      "previews": 1284,
+      "searchComplete": true,
+      "scope": "All legal first moves, repeated words and POWER-selection variants; exact cheapest two-word bottleneck. Three-word witness uses distinct, familiar counter families. Word frequency and length are a difficulty proxy, not measured human solving difficulty."
+    },
+    "startingCounters": [
+      "BOLDNESS",
+      "BOLDNESSES",
+      "EASE",
+      "EASES",
+      "FEARLESSNESS"
+    ],
+    "startingBingos": [
+      "FEARLESSNESS"
+    ],
+    "unpoweredBingos": [],
+    "routes": [
+      [
+        {
+          "word": "FEARLESSNESS",
+          "ids": [
+            9,
+            1,
+            4,
+            13,
+            6,
+            8,
+            0,
+            3,
+            7,
+            15,
+            5,
+            11
+          ],
+          "hits": 5,
+          "powerHits": 2,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "BOLDNESS",
+          "ids": [
+            10,
+            2,
+            6,
+            12,
+            7,
+            1,
+            0,
+            3
+          ],
+          "hits": 3,
+          "powerHits": 1,
+          "remaining": "AD"
+        },
+        {
+          "word": "DARING",
+          "ids": [
+            22,
+            4,
+            13,
+            20,
+            18,
+            14
+          ],
+          "hits": 2,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "EASE",
+          "ids": [
+            1,
+            4,
+            0,
+            8
+          ],
+          "hits": 2,
+          "powerHits": 0,
+          "remaining": "DRD"
+        },
+        {
+          "word": "NERVE",
+          "ids": [
+            7,
+            15,
+            13,
+            16,
+            19
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": "DD"
+        },
+        {
+          "word": "RELIEF",
+          "ids": [
+            21,
+            23,
+            6,
+            20,
+            24,
+            9
+          ],
+          "hits": 2,
+          "powerHits": 2,
+          "remaining": ""
+        }
+      ]
+    ],
+    "routeEffort": [
+      8.28,
+      5,
+      0.62
+    ],
+    "words": 12735,
+    "bytes": 136372,
+    "limitation": "Reviewed senses and exact route checks; subjective human difficulty still needs playtesting."
+  },
+  {
+    "id": "eternal-power",
+    "revision": "9d50c4effef3",
+    "review": "Adjectives with a finite lifespan oppose lasting forever. TEMPORAL uses the source’s explicit not-eternal reading. MORTAL describes a life that ends. Mortality and brevity are nouns, and briefly is an adverb: none can damage ETERNAL. One POWER tile supplies the L absent from IMPERMANENT.",
+    "roots": [
+      {
+        "id": "oewn-impermanent__3.00.00..",
+        "synset": "oewn-01760139-a",
+        "lemma": "impermanent",
+        "partOfSpeech": "adjective",
+        "definition": "not permanent; not lasting",
+        "definitions": [
+          "not permanent; not lasting"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-permanent__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-impermanence__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-impermanency__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-impermanent__5.00.00.finite.00",
+        "synset": "oewn-01010709-s",
+        "lemma": "impermanent",
+        "partOfSpeech": "adjective",
+        "definition": "existing or enduring for a limited time only",
+        "definitions": [
+          "existing or enduring for a limited time only"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-impermanence__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-impermanency__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-brief__5.00.00.short.02",
+        "synset": "oewn-01445717-s",
+        "lemma": "brief",
+        "partOfSpeech": "adjective",
+        "definition": "of short duration or distance",
+        "definitions": [
+          "of short duration or distance"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-brevity__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-briefness__1.07.01.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-short__3.00.02..",
+        "synset": "oewn-01445077-a",
+        "lemma": "short",
+        "partOfSpeech": "adjective",
+        "definition": "primarily temporal sense; indicating or being or seeming to be limited in duration",
+        "definitions": [
+          "primarily temporal sense; indicating or being or seeming to be limited in duration"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-long__3.00.02.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-shortness__1.07.02.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-finite__3.00.00..",
+        "synset": "oewn-01010155-a",
+        "lemma": "finite",
+        "partOfSpeech": "adjective",
+        "definition": "bounded or limited in magnitude or spatial or temporal extent",
+        "definitions": [
+          "bounded or limited in magnitude or spatial or temporal extent"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-infinite__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-finiteness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-mortal__3.00.00..",
+        "synset": "oewn-01562007-a",
+        "lemma": "mortal",
+        "partOfSpeech": "adjective",
+        "definition": "subject to death",
+        "definitions": [
+          "subject to death"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-immortal__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-mortal__1.03.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-mortality__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-temporary__3.00.00..",
+        "synset": "oewn-01760139-a",
+        "lemma": "temporary",
+        "partOfSpeech": "adjective",
+        "definition": "not permanent; not lasting",
+        "definitions": [
+          "not permanent; not lasting"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-temporariness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-temporal__5.00.00.impermanent.00",
+        "synset": "oewn-01762426-s",
+        "lemma": "temporal",
+        "partOfSpeech": "adjective",
+        "definition": "not eternal",
+        "definitions": [
+          "not eternal"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-transient__5.00.00.impermanent.00",
+        "synset": "oewn-01760804-s",
+        "lemma": "transient",
+        "partOfSpeech": "adjective",
+        "definition": "lasting a very short time",
+        "definitions": [
+          "lasting a very short time"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-transience__1.07.01.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-transiency__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-transient__1.11.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-transient__1.18.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-ephemeral__5.00.00.impermanent.00",
+        "synset": "oewn-01760804-s",
+        "lemma": "ephemeral",
+        "partOfSpeech": "adjective",
+        "definition": "lasting a very short time",
+        "definitions": [
+          "lasting a very short time"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-ephemera__1.28.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-ephemerality__1.07.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-ephemeralness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-fleeting__5.00.00.short.02",
+        "synset": "oewn-01445988-s",
+        "lemma": "fleeting",
+        "partOfSpeech": "adjective",
+        "definition": "lasting for a markedly brief time",
+        "definitions": [
+          "lasting for a markedly brief time"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-fleetingness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-momentary__5.00.00.short.02",
+        "synset": "oewn-01445988-s",
+        "lemma": "momentary",
+        "partOfSpeech": "adjective",
+        "definition": "lasting for a markedly brief time",
+        "definitions": [
+          "lasting for a markedly brief time"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-moment__1.28.01.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-transitory__5.00.00.impermanent.00",
+        "synset": "oewn-01760804-s",
+        "lemma": "transitory",
+        "partOfSpeech": "adjective",
+        "definition": "lasting a very short time",
+        "definitions": [
+          "lasting a very short time"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-transitoriness__1.07.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-passing__5.00.00.impermanent.00",
+        "synset": "oewn-01760804-s",
+        "lemma": "passing",
+        "partOfSpeech": "adjective",
+        "definition": "lasting a very short time",
+        "definitions": [
+          "lasting a very short time"
+        ],
+        "relations": []
+      }
+    ],
+    "progression": {
+      "passed": true,
+      "issues": [],
+      "ratings": {
+        "three": {
+          "words": [
+            "BRIEF",
+            "FINITE",
+            "MORTAL"
+          ],
+          "zipfs": [
+            4.52,
+            3.75,
+            3.86
+          ],
+          "minZipf": 3.75,
+          "maxLength": 6,
+          "effort": 2.1,
+          "commonAndShort": true
+        },
+        "two": {
+          "words": [
+            "TEMPORAL",
+            "FINITE"
+          ],
+          "zipfs": [
+            3.63,
+            3.75
+          ],
+          "minZipf": 3.63,
+          "maxLength": 8,
+          "effort": 3.54,
+          "commonAndShort": true
+        },
+        "bingo": {
+          "words": [
+            "IMPERMANENT"
+          ],
+          "zipfs": [
+            2.19
+          ],
+          "minZipf": 2.19,
+          "maxLength": 11,
+          "effort": 8.22,
+          "commonAndShort": false
+        }
+      },
+      "bingos": [
+        {
+          "words": [
+            "IMPERMANENT"
+          ],
+          "tileIds": [
+            [
+              5,
+              7,
+              14,
+              0,
+              15,
+              10,
+              4,
+              1,
+              9,
+              11,
+              2
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            7
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "words": [
+            "IMPERMANENT"
+          ],
+          "tileIds": [
+            [
+              5,
+              7,
+              14,
+              0,
+              15,
+              10,
+              4,
+              1,
+              9,
+              11,
+              2
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            7
+          ]
+        },
+        {
+          "words": [
+            "TEMPORAL",
+            "FINITE"
+          ],
+          "tileIds": [
+            [
+              2,
+              0,
+              7,
+              14,
+              13,
+              15,
+              4,
+              6
+            ],
+            [
+              8,
+              5,
+              1,
+              17,
+              3,
+              9
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            6,
+            1
+          ]
+        },
+        {
+          "words": [
+            "BRIEF",
+            "FINITE",
+            "MORTAL"
+          ],
+          "tileIds": [
+            [
+              12,
+              15,
+              5,
+              0,
+              8
+            ],
+            [
+              16,
+              17,
+              1,
+              18,
+              2,
+              9
+            ],
+            [
+              7,
+              13,
+              23,
+              3,
+              4,
+              6
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            3,
+            2
+          ]
+        }
+      ],
+      "cheapestTwo": {
+        "words": [
+          "TEMPORAL",
+          "FINITE"
+        ],
+        "tileIds": [
+          [
+            2,
+            0,
+            7,
+            14,
+            13,
+            15,
+            4,
+            6
+          ],
+          [
+            8,
+            5,
+            1,
+            17,
+            3,
+            9
+          ]
+        ],
+        "labels": [
+          "COUNTER",
+          "COUNTER"
+        ],
+        "hits": [
+          6,
+          1
+        ]
+      },
+      "positions": 802,
+      "previews": 1145,
+      "searchComplete": true,
+      "scope": "All legal first moves, repeated words and POWER-selection variants; exact cheapest two-word bottleneck. Three-word witness uses distinct, familiar counter families. Word frequency and length are a difficulty proxy, not measured human solving difficulty."
+    },
+    "startingCounters": [
+      "BRIEF",
+      "IMPERMANENT",
+      "MORTAL",
+      "TEMPORAL"
+    ],
+    "startingBingos": [
+      "IMPERMANENT"
+    ],
+    "unpoweredBingos": [],
+    "routes": [
+      [
+        {
+          "word": "IMPERMANENT",
+          "ids": [
+            5,
+            7,
+            14,
+            0,
+            15,
+            10,
+            4,
+            1,
+            9,
+            11,
+            2
+          ],
+          "hits": 7,
+          "powerHits": 1,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "TEMPORAL",
+          "ids": [
+            2,
+            0,
+            7,
+            14,
+            13,
+            15,
+            4,
+            6
+          ],
+          "hits": 6,
+          "powerHits": 1,
+          "remaining": "N"
+        },
+        {
+          "word": "FINITE",
+          "ids": [
+            8,
+            5,
+            1,
+            17,
+            3,
+            9
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "BRIEF",
+          "ids": [
+            12,
+            15,
+            5,
+            0,
+            8
+          ],
+          "hits": 2,
+          "powerHits": 0,
+          "remaining": "TENAL"
+        },
+        {
+          "word": "FINITE",
+          "ids": [
+            16,
+            17,
+            1,
+            18,
+            2,
+            9
+          ],
+          "hits": 3,
+          "powerHits": 0,
+          "remaining": "AL"
+        },
+        {
+          "word": "MORTAL",
+          "ids": [
+            7,
+            13,
+            23,
+            3,
+            4,
+            6
+          ],
+          "hits": 2,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ]
+    ],
+    "routeEffort": [
+      8.22,
+      3.54,
+      2.1
+    ],
+    "words": 23848,
+    "bytes": 258682,
+    "limitation": "Reviewed senses and exact route checks; subjective human difficulty still needs playtesting."
+  },
+  {
+    "id": "sear-family",
+    "revision": "ac164706b868",
+    "review": "Enemy and counters are verbs. Only adding water or moisture counters drying plants in the heat. IRRIGATES, WATER, WET and SOAK share this single literal action family. Shade, cooling, shelter and repair are outside it. The noun WATER is not the damaging reading; the verb is.",
+    "roots": [
+      {
+        "id": "oewn-irrigate__2.30.00..",
+        "synset": "oewn-00228662-v",
+        "lemma": "irrigate",
+        "partOfSpeech": "verb",
+        "definition": "supply with water, as with channels or ditches or streams",
+        "definitions": [
+          "supply with water, as with channels or ditches or streams"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-irrigation__1.04.00.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-irrigation__1.04.00..",
+            "qualifier": "event"
+          }
+        ]
+      },
+      {
+        "id": "oewn-water__2.30.00..",
+        "synset": "oewn-00228662-v",
+        "lemma": "water",
+        "partOfSpeech": "verb",
+        "definition": "supply with water, as with channels or ditches or streams",
+        "definitions": [
+          "supply with water, as with channels or ditches or streams"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-water__1.27.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-waterer__1.18.01.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-watering__1.04.00.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-water__1.27.00..",
+            "qualifier": "material"
+          },
+          {
+            "type": "other",
+            "target": "oewn-water__1.27.00..",
+            "qualifier": "uses"
+          },
+          {
+            "type": "other",
+            "target": "oewn-waterer__1.18.01..",
+            "qualifier": "agent"
+          }
+        ]
+      },
+      {
+        "id": "oewn-water__2.40.00..",
+        "synset": "oewn-02362872-v",
+        "lemma": "water",
+        "partOfSpeech": "verb",
+        "definition": "provide with water",
+        "definitions": [
+          "provide with water"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-water__1.27.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-waterer__1.18.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-waterer__1.18.01.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-water__1.27.00..",
+            "qualifier": "material"
+          },
+          {
+            "type": "other",
+            "target": "oewn-water__1.27.00..",
+            "qualifier": "uses"
+          },
+          {
+            "type": "other",
+            "target": "oewn-waterer__1.18.00..",
+            "qualifier": "agent"
+          },
+          {
+            "type": "other",
+            "target": "oewn-waterer__1.18.01..",
+            "qualifier": "agent"
+          }
+        ]
+      },
+      {
+        "id": "oewn-wet__2.30.00..",
+        "synset": "oewn-00215377-v",
+        "lemma": "wet",
+        "partOfSpeech": "verb",
+        "definition": "cause to become wet",
+        "definitions": [
+          "cause to become wet"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-dry__2.30.01.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-wet__1.26.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-wetter__1.18.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-wetting__1.04.00.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-wet__1.26.00..",
+            "qualifier": "event"
+          },
+          {
+            "type": "other",
+            "target": "oewn-wetter__1.18.00..",
+            "qualifier": "agent"
+          }
+        ]
+      },
+      {
+        "id": "oewn-soak__2.35.01..",
+        "synset": "oewn-01581362-v",
+        "lemma": "soak",
+        "partOfSpeech": "verb",
+        "definition": "submerge in a liquid",
+        "definitions": [
+          "submerge in a liquid"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-soak__1.22.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-soakage__1.22.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-soaking__1.04.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-soaking__1.22.00.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-soak__1.22.00..",
+            "qualifier": "event"
+          }
+        ]
+      },
+      {
+        "id": "oewn-soak__2.30.01..",
+        "synset": "oewn-00216642-v",
+        "lemma": "soak",
+        "partOfSpeech": "verb",
+        "definition": "cover with liquid; pour liquid onto",
+        "definitions": [
+          "cover with liquid; pour liquid onto"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-soaker__1.19.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-soaking__1.04.01.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-soaker__1.19.00..",
+            "qualifier": "by_means_of"
+          }
+        ]
+      },
+      {
+        "id": "oewn-moisten__2.30.00..",
+        "synset": "oewn-00218382-v",
+        "lemma": "moisten",
+        "partOfSpeech": "verb",
+        "definition": "make moist",
+        "definitions": [
+          "make moist"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-moistener__1.06.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-moistening__1.04.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-moisture__1.26.00.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-moistener__1.06.00..",
+            "qualifier": "instrument"
+          }
+        ]
+      },
+      {
+        "id": "oewn-moisten__2.35.00..",
+        "synset": "oewn-01378747-v",
+        "lemma": "moisten",
+        "partOfSpeech": "verb",
+        "definition": "moisten with fine drops",
+        "definitions": [
+          "moisten with fine drops"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-moistening__1.04.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-mist__2.35.00..",
+        "synset": "oewn-01375968-v",
+        "lemma": "mist",
+        "partOfSpeech": "verb",
+        "definition": "spray finely or cover with mist",
+        "definitions": [
+          "spray finely or cover with mist"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-mist__1.19.00.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-mist__1.19.00..",
+            "qualifier": "uses"
+          }
+        ]
+      },
+      {
+        "id": "oewn-dampen__2.30.01..",
+        "synset": "oewn-00218382-v",
+        "lemma": "dampen",
+        "partOfSpeech": "verb",
+        "definition": "make moist",
+        "definitions": [
+          "make moist"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-dampener__1.06.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-dampening__1.04.00.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-dampener__1.06.00..",
+            "qualifier": "instrument"
+          }
+        ]
+      },
+      {
+        "id": "oewn-drench__2.30.00..",
+        "synset": "oewn-00216642-v",
+        "lemma": "drench",
+        "partOfSpeech": "verb",
+        "definition": "cover with liquid; pour liquid onto",
+        "definitions": [
+          "cover with liquid; pour liquid onto"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-douse__2.42.09..",
+        "synset": "oewn-02655322-v",
+        "lemma": "douse",
+        "partOfSpeech": "verb",
+        "definition": "wet thoroughly",
+        "definitions": [
+          "wet thoroughly"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-douse__2.30.00..",
+        "synset": "oewn-00216642-v",
+        "lemma": "douse",
+        "partOfSpeech": "verb",
+        "definition": "cover with liquid; pour liquid onto",
+        "definitions": [
+          "cover with liquid; pour liquid onto"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-spray__2.35.03..",
+        "synset": "oewn-01376216-v",
+        "lemma": "spray",
+        "partOfSpeech": "verb",
+        "definition": "cover by spraying with a liquid",
+        "definitions": [
+          "cover by spraying with a liquid"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-sprayer__1.18.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-spraying__1.04.02.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-sprayer__1.18.00..",
+            "qualifier": "agent"
+          }
+        ]
+      },
+      {
+        "id": "oewn-sprinkle__2.30.00..",
+        "synset": "oewn-00229081-v",
+        "lemma": "sprinkle",
+        "partOfSpeech": "verb",
+        "definition": "scatter with liquid; wet lightly",
+        "definitions": [
+          "scatter with liquid; wet lightly"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-sprinkle__1.04.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-sprinkler__1.06.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-sprinkling__1.04.02.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-sprinkle__1.04.00..",
+            "qualifier": "event"
+          },
+          {
+            "type": "other",
+            "target": "oewn-sprinkler__1.06.00..",
+            "qualifier": "instrument"
+          }
+        ]
+      },
+      {
+        "id": "oewn-hydrate__2.30.03..",
+        "synset": "oewn-00214833-v",
+        "lemma": "hydrate",
+        "partOfSpeech": "verb",
+        "definition": "supply water or liquid to in order to maintain a healthy balance",
+        "definitions": [
+          "supply water or liquid to in order to maintain a healthy balance"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-hydrate__2.30.00..",
+        "synset": "oewn-00214446-v",
+        "lemma": "hydrate",
+        "partOfSpeech": "verb",
+        "definition": "cause to be hydrated; add water or moisture to",
+        "definitions": [
+          "cause to be hydrated; add water or moisture to"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-dehydrate__2.30.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-hydrate__1.27.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-hydration__1.22.00.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-hydration__1.22.00..",
+            "qualifier": "event"
+          }
+        ]
+      },
+      {
+        "id": "oewn-saturate__2.30.04..",
+        "synset": "oewn-00498786-v",
+        "lemma": "saturate",
+        "partOfSpeech": "verb",
+        "definition": "infuse or fill completely",
+        "definitions": [
+          "infuse or fill completely"
+        ],
+        "relations": []
+      }
+    ],
+    "supplemental": {
+      "DAMP": {
+        "definition": "Make slightly wet.",
+        "lemma": "damp",
+        "partOfSpeech": "verb",
+        "senseId": "wiktionary-en:damp:verb:2:92515406",
+        "sourceUrl": "https://en.wiktionary.org/w/index.php?title=damp&oldid=92515406"
+      },
+      "DAMPS": {
+        "definition": "Make slightly wet.",
+        "lemma": "damp",
+        "partOfSpeech": "verb",
+        "senseId": "wiktionary-en:damp:verb:2:92515406",
+        "sourceUrl": "https://en.wiktionary.org/w/index.php?title=damp&oldid=92515406"
+      },
+      "DAMPED": {
+        "definition": "Make slightly wet.",
+        "lemma": "damp",
+        "partOfSpeech": "verb",
+        "senseId": "wiktionary-en:damp:verb:2:92515406",
+        "sourceUrl": "https://en.wiktionary.org/w/index.php?title=damp&oldid=92515406"
+      },
+      "DAMPING": {
+        "definition": "Make slightly wet.",
+        "lemma": "damp",
+        "partOfSpeech": "verb",
+        "senseId": "wiktionary-en:damp:verb:2:92515406",
+        "sourceUrl": "https://en.wiktionary.org/w/index.php?title=damp&oldid=92515406"
+      }
+    },
+    "progression": {
+      "passed": true,
+      "issues": [],
+      "ratings": {
+        "three": {
+          "words": [
+            "MIST",
+            "SOAK",
+            "WATER"
+          ],
+          "zipfs": [
+            3.67,
+            3.61,
+            5.52
+          ],
+          "minZipf": 3.61,
+          "maxLength": 5,
+          "effort": 1.78,
+          "commonAndShort": true
+        },
+        "two": {
+          "words": [
+            "SPRINKLE",
+            "WATERS"
+          ],
+          "zipfs": [
+            3.39,
+            4.45
+          ],
+          "minZipf": 3.39,
+          "maxLength": 8,
+          "effort": 4.02,
+          "commonAndShort": false
+        },
+        "bingo": {
+          "words": [
+            "SPARGE"
+          ],
+          "zipfs": [
+            1.44
+          ],
+          "minZipf": 1.44,
+          "maxLength": 6,
+          "effort": 6.72,
+          "commonAndShort": false
+        }
+      },
+      "bingos": [
+        {
+          "words": [
+            "SPARGE"
+          ],
+          "tileIds": [
+            [
+              5,
+              12,
+              1,
+              7,
+              8,
+              10
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            5
+          ]
+        },
+        {
+          "words": [
+            "IRRIGATES"
+          ],
+          "tileIds": [
+            [
+              0,
+              7,
+              14,
+              15,
+              8,
+              1,
+              11,
+              10,
+              5
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            5
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "words": [
+            "IRRIGATES"
+          ],
+          "tileIds": [
+            [
+              0,
+              7,
+              14,
+              15,
+              8,
+              1,
+              11,
+              10,
+              5
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            5
+          ]
+        },
+        {
+          "words": [
+            "SPRINKLE",
+            "WATERS"
+          ],
+          "tileIds": [
+            [
+              5,
+              12,
+              7,
+              0,
+              4,
+              2,
+              3,
+              10
+            ],
+            [
+              23,
+              1,
+              11,
+              22,
+              14,
+              16
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            3,
+            2
+          ]
+        },
+        {
+          "words": [
+            "MIST",
+            "SOAK",
+            "WATER"
+          ],
+          "tileIds": [
+            [
+              13,
+              0,
+              5,
+              11
+            ],
+            [
+              16,
+              6,
+              1,
+              2
+            ],
+            [
+              23,
+              21,
+              20,
+              10,
+              7
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            1,
+            2,
+            2
+          ]
+        }
+      ],
+      "cheapestTwo": {
+        "words": [
+          "SPRINKLE",
+          "WATERS"
+        ],
+        "tileIds": [
+          [
+            5,
+            12,
+            7,
+            0,
+            4,
+            2,
+            3,
+            10
+          ],
+          [
+            23,
+            1,
+            11,
+            22,
+            14,
+            16
+          ]
+        ],
+        "labels": [
+          "COUNTER",
+          "COUNTER"
+        ],
+        "hits": [
+          3,
+          2
+        ]
+      },
+      "positions": 2019,
+      "previews": 5874,
+      "searchComplete": true,
+      "scope": "All legal first moves, repeated words and POWER-selection variants; exact cheapest two-word bottleneck. Three-word witness uses distinct, familiar counter families. Word frequency and length are a difficulty proxy, not measured human solving difficulty."
+    },
+    "startingCounters": [
+      "IRRIGATE",
+      "IRRIGATES",
+      "MIST",
+      "MISTING",
+      "MOISTEN",
+      "SOAK",
+      "SOAKING",
+      "SOP",
+      "SPARGE",
+      "SPRINKLE"
+    ],
+    "startingBingos": [
+      "IRRIGATES",
+      "SPARGE"
+    ],
+    "unpoweredBingos": [],
+    "routes": [
+      [
+        {
+          "word": "IRRIGATES",
+          "ids": [
+            0,
+            7,
+            14,
+            15,
+            8,
+            1,
+            11,
+            10,
+            5
+          ],
+          "hits": 5,
+          "powerHits": 1,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "SPRINKLE",
+          "ids": [
+            5,
+            12,
+            7,
+            0,
+            4,
+            2,
+            3,
+            10
+          ],
+          "hits": 3,
+          "powerHits": 0,
+          "remaining": "AS"
+        },
+        {
+          "word": "WATERS",
+          "ids": [
+            23,
+            1,
+            11,
+            22,
+            14,
+            16
+          ],
+          "hits": 2,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "MIST",
+          "ids": [
+            13,
+            0,
+            5,
+            11
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": "EARS"
+        },
+        {
+          "word": "SOAK",
+          "ids": [
+            16,
+            6,
+            1,
+            2
+          ],
+          "hits": 2,
+          "powerHits": 0,
+          "remaining": "ER"
+        },
+        {
+          "word": "WATER",
+          "ids": [
+            23,
+            21,
+            20,
+            10,
+            7
+          ],
+          "hits": 2,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ]
+    ],
+    "routeEffort": [
+      8.26,
+      4.02,
+      1.78
+    ],
+    "words": 38701,
+    "bytes": 422196,
+    "limitation": "Reviewed senses and exact route checks; subjective human difficulty still needs playtesting."
+  },
+  {
+    "id": "dirt-family",
+    "revision": "9c44c51dab27",
+    "review": "Deliberately crosses word types: DIRT is a noun, and all damaging readings are cleaning verbs. Removing dirt and hygienic cleaning form the one stated family; tidying, beauty, purity as a virtue and covering dirt do not. STERILISED uses the cleaning sense, never the infertility sense. DUST uses remove dust, not sprinkle dust.",
+    "roots": [
+      {
+        "id": "oewn-clean__2.35.00..",
+        "synset": "oewn-01535377-v",
+        "lemma": "clean",
+        "partOfSpeech": "verb",
+        "definition": "make clean by removing dirt, filth, or unwanted substances from",
+        "definitions": [
+          "make clean by removing dirt, filth, or unwanted substances from"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-dirty__2.35.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-cleaner__1.06.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-cleaner__1.18.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-cleaner__1.18.01.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-cleaning__1.04.00.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-cleaner__1.06.00..",
+            "qualifier": "material"
+          },
+          {
+            "type": "other",
+            "target": "oewn-cleaner__1.18.00..",
+            "qualifier": "agent"
+          },
+          {
+            "type": "other",
+            "target": "oewn-cleaner__1.18.01..",
+            "qualifier": "agent"
+          }
+        ]
+      },
+      {
+        "id": "oewn-clean__2.29.00..",
+        "synset": "oewn-00035769-v",
+        "lemma": "clean",
+        "partOfSpeech": "verb",
+        "definition": "clean one's body or parts thereof, as by washing",
+        "definitions": [
+          "clean one's body or parts thereof, as by washing"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-cleaning__1.04.00.."
+          }
+        ]
+      },
+      {
+        "id": "oewn-cleanse__2.29.00..",
+        "synset": "oewn-00035769-v",
+        "lemma": "cleanse",
+        "partOfSpeech": "verb",
+        "definition": "clean one's body or parts thereof, as by washing",
+        "definitions": [
+          "clean one's body or parts thereof, as by washing"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-cleanser__1.06.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-cleansing__1.04.00.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-cleanser__1.06.00..",
+            "qualifier": "material"
+          }
+        ]
+      },
+      {
+        "id": "oewn-dust__2.35.00..",
+        "synset": "oewn-01246915-v",
+        "lemma": "dust",
+        "partOfSpeech": "verb",
+        "definition": "remove the dust from",
+        "definitions": [
+          "remove the dust from"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-dust__1.27.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-duster__1.06.01.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-dust__1.27.00..",
+            "qualifier": "undergoer"
+          },
+          {
+            "type": "other",
+            "target": "oewn-duster__1.06.01..",
+            "qualifier": "instrument"
+          }
+        ]
+      },
+      {
+        "id": "oewn-wipe__2.35.00..",
+        "synset": "oewn-01394891-v",
+        "lemma": "wipe",
+        "partOfSpeech": "verb",
+        "definition": "rub with a circular motion",
+        "definitions": [
+          "rub with a circular motion"
+        ],
+        "relations": [
+          {
+            "type": "also",
+            "target": "oewn-wipe_away__2.35.00.."
+          },
+          {
+            "type": "also",
+            "target": "oewn-wipe_off__2.35.00.."
+          },
+          {
+            "type": "also",
+            "target": "oewn-wipe_off__2.35.01.."
+          },
+          {
+            "type": "also",
+            "target": "oewn-wipe_out__2.34.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-wipe__1.04.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-wiper__1.06.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-wiper__1.06.01.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-wiper__1.18.00.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-wipe__1.04.00..",
+            "qualifier": "event"
+          },
+          {
+            "type": "other",
+            "target": "oewn-wiper__1.06.00..",
+            "qualifier": "instrument"
+          },
+          {
+            "type": "other",
+            "target": "oewn-wiper__1.06.01..",
+            "qualifier": "instrument"
+          },
+          {
+            "type": "other",
+            "target": "oewn-wiper__1.18.00..",
+            "qualifier": "agent"
+          }
+        ]
+      },
+      {
+        "id": "oewn-scrub__2.35.00..",
+        "synset": "oewn-01253792-v",
+        "lemma": "scrub",
+        "partOfSpeech": "verb",
+        "definition": "clean with hard rubbing",
+        "definitions": [
+          "clean with hard rubbing"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-scrub__1.04.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-scrubber__1.06.01.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-scrubber__1.18.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-scrubbing__1.04.00.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-scrub__1.04.00..",
+            "qualifier": "event"
+          },
+          {
+            "type": "other",
+            "target": "oewn-scrubber__1.06.01..",
+            "qualifier": "instrument"
+          },
+          {
+            "type": "other",
+            "target": "oewn-scrubber__1.18.00..",
+            "qualifier": "agent"
+          }
+        ]
+      },
+      {
+        "id": "oewn-scrub__2.29.00..",
+        "synset": "oewn-00036773-v",
+        "lemma": "scrub",
+        "partOfSpeech": "verb",
+        "definition": "wash thoroughly",
+        "definitions": [
+          "wash thoroughly"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-scrub__1.04.00.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-scrub__1.04.00..",
+            "qualifier": "event"
+          }
+        ]
+      },
+      {
+        "id": "oewn-rinse__2.35.00..",
+        "synset": "oewn-01538956-v",
+        "lemma": "rinse",
+        "partOfSpeech": "verb",
+        "definition": "wash off soap or remaining dirt",
+        "definitions": [
+          "wash off soap or remaining dirt"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-rinse__1.04.02.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-rinsing__1.04.00.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-rinse__1.04.02..",
+            "qualifier": "event"
+          }
+        ]
+      },
+      {
+        "id": "oewn-wash__2.35.00..",
+        "synset": "oewn-01538034-v",
+        "lemma": "wash",
+        "partOfSpeech": "verb",
+        "definition": "cleanse with a cleaning agent, such as soap, and water",
+        "definitions": [
+          "cleanse with a cleaning agent, such as soap, and water"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-wash__1.04.01.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-wash__1.06.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-washable__3.00.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-washer__1.06.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-washer__1.18.00.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-wash__1.04.01..",
+            "qualifier": "event"
+          },
+          {
+            "type": "other",
+            "target": "oewn-wash__1.06.00..",
+            "qualifier": "undergoer"
+          },
+          {
+            "type": "other",
+            "target": "oewn-washer__1.06.00..",
+            "qualifier": "instrument"
+          },
+          {
+            "type": "other",
+            "target": "oewn-washer__1.18.00..",
+            "qualifier": "agent"
+          }
+        ]
+      },
+      {
+        "id": "oewn-wash__2.29.00..",
+        "synset": "oewn-00036355-v",
+        "lemma": "wash",
+        "partOfSpeech": "verb",
+        "definition": "cleanse (one's body) with soap and water",
+        "definitions": [
+          "cleanse (one's body) with soap and water"
+        ],
+        "relations": [
+          {
+            "type": "also",
+            "target": "oewn-wash_up__2.29.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-wash__1.04.01.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-washing__1.04.00.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-wash__1.04.01..",
+            "qualifier": "event"
+          }
+        ]
+      },
+      {
+        "id": "oewn-wash__2.30.05..",
+        "synset": "oewn-00558763-v",
+        "lemma": "wash",
+        "partOfSpeech": "verb",
+        "definition": "remove by the application of water or other liquid and soap or some other cleaning agent",
+        "definitions": [
+          "remove by the application of water or other liquid and soap or some other cleaning agent"
+        ],
+        "relations": []
+      },
+      {
+        "id": "oewn-swab__2.35.00..",
+        "synset": "oewn-01246742-v",
+        "lemma": "swab",
+        "partOfSpeech": "verb",
+        "definition": "wash with a swab or a mop",
+        "definitions": [
+          "wash with a swab or a mop"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-swab__1.06.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-swabbing__1.04.00.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-swab__1.06.00..",
+            "qualifier": "instrument"
+          }
+        ]
+      },
+      {
+        "id": "oewn-scour__2.35.01..",
+        "synset": "oewn-01253792-v",
+        "lemma": "scour",
+        "partOfSpeech": "verb",
+        "definition": "clean with hard rubbing",
+        "definitions": [
+          "clean with hard rubbing"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-scour__1.15.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-scourer__1.18.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-scouring__1.04.00.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-scour__1.15.00..",
+            "qualifier": "location"
+          },
+          {
+            "type": "other",
+            "target": "oewn-scourer__1.18.00..",
+            "qualifier": "agent"
+          }
+        ]
+      },
+      {
+        "id": "oewn-scour__2.35.00..",
+        "synset": "oewn-01254215-v",
+        "lemma": "scour",
+        "partOfSpeech": "verb",
+        "definition": "rub hard or scrub",
+        "definitions": [
+          "rub hard or scrub"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-scour__1.15.00.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-scour__1.15.00..",
+            "qualifier": "location"
+          }
+        ]
+      },
+      {
+        "id": "oewn-soap__2.29.00..",
+        "synset": "oewn-00036925-v",
+        "lemma": "soap",
+        "partOfSpeech": "verb",
+        "definition": "rub soap all over, usually with the purpose of cleaning",
+        "definitions": [
+          "rub soap all over, usually with the purpose of cleaning"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-soap__1.06.00.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-soap__1.06.00..",
+            "qualifier": "event"
+          }
+        ]
+      },
+      {
+        "id": "oewn-sweep__2.35.01..",
+        "synset": "oewn-01396650-v",
+        "lemma": "sweep",
+        "partOfSpeech": "verb",
+        "definition": "clean by sweeping",
+        "definitions": [
+          "clean by sweeping"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-sweep__1.18.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-sweeper__1.06.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-sweeper__1.18.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-sweeping__1.04.00.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-sweep__1.18.00..",
+            "qualifier": "agent"
+          },
+          {
+            "type": "other",
+            "target": "oewn-sweeper__1.06.00..",
+            "qualifier": "instrument"
+          },
+          {
+            "type": "other",
+            "target": "oewn-sweeper__1.18.00..",
+            "qualifier": "agent"
+          }
+        ]
+      },
+      {
+        "id": "oewn-mop__2.35.01..",
+        "synset": "oewn-01395993-v",
+        "lemma": "mop",
+        "partOfSpeech": "verb",
+        "definition": "to wash or wipe with or as if with a mop",
+        "definitions": [
+          "to wash or wipe with or as if with a mop"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-mop__1.06.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-mopper__1.18.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-mopping__1.04.00.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-mop__1.06.00..",
+            "qualifier": "instrument"
+          },
+          {
+            "type": "other",
+            "target": "oewn-mopper__1.18.00..",
+            "qualifier": "agent"
+          }
+        ]
+      },
+      {
+        "id": "oewn-sterilise__2.29.01..",
+        "synset": "oewn-00062353-v",
+        "lemma": "sterilise",
+        "partOfSpeech": "verb",
+        "definition": "make free from bacteria",
+        "definitions": [
+          "make free from bacteria"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-sterilisation__1.04.01.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-steriliser__1.06.00.."
+          },
+          {
+            "type": "exemplifies",
+            "target": "oewn-australian_spelling__1.10.01.."
+          },
+          {
+            "type": "exemplifies",
+            "target": "oewn-british_spelling__1.10.01.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-sterilisation__1.04.01..",
+            "qualifier": "event"
+          },
+          {
+            "type": "other",
+            "target": "oewn-steriliser__1.06.00..",
+            "qualifier": "instrument"
+          }
+        ]
+      },
+      {
+        "id": "oewn-sterilize__2.29.01..",
+        "synset": "oewn-00062353-v",
+        "lemma": "sterilize",
+        "partOfSpeech": "verb",
+        "definition": "make free from bacteria",
+        "definitions": [
+          "make free from bacteria"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-sterilization__1.04.01.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-sterilizer__1.06.00.."
+          },
+          {
+            "type": "exemplifies",
+            "target": "oewn-american_spelling__1.10.01.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-sterilization__1.04.01..",
+            "qualifier": "event"
+          },
+          {
+            "type": "other",
+            "target": "oewn-sterilizer__1.06.00..",
+            "qualifier": "instrument"
+          }
+        ]
+      },
+      {
+        "id": "oewn-sanitise__2.35.00..",
+        "synset": "oewn-01247616-v",
+        "lemma": "sanitise",
+        "partOfSpeech": "verb",
+        "definition": "make sanitary by cleaning or sterilizing",
+        "definitions": [
+          "make sanitary by cleaning or sterilizing"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-sanitisation__1.04.00.."
+          },
+          {
+            "type": "exemplifies",
+            "target": "oewn-australian_spelling__1.10.01.."
+          },
+          {
+            "type": "exemplifies",
+            "target": "oewn-british_spelling__1.10.01.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-sanitisation__1.04.00..",
+            "qualifier": "event"
+          }
+        ]
+      },
+      {
+        "id": "oewn-sanitize__2.35.00..",
+        "synset": "oewn-01247616-v",
+        "lemma": "sanitize",
+        "partOfSpeech": "verb",
+        "definition": "make sanitary by cleaning or sterilizing",
+        "definitions": [
+          "make sanitary by cleaning or sterilizing"
+        ],
+        "relations": [
+          {
+            "type": "derivation",
+            "target": "oewn-sanitization__1.04.00.."
+          },
+          {
+            "type": "exemplifies",
+            "target": "oewn-american_spelling__1.10.01.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-sanitization__1.04.00..",
+            "qualifier": "event"
+          }
+        ]
+      },
+      {
+        "id": "oewn-disinfect__2.29.00..",
+        "synset": "oewn-00089076-v",
+        "lemma": "disinfect",
+        "partOfSpeech": "verb",
+        "definition": "destroy microorganisms or pathogens by cleansing",
+        "definitions": [
+          "destroy microorganisms or pathogens by cleansing"
+        ],
+        "relations": [
+          {
+            "type": "antonym",
+            "target": "oewn-infect__2.29.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-disinfectant__1.06.00.."
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-disinfectant__5.00.00.antiseptic.00"
+          },
+          {
+            "type": "derivation",
+            "target": "oewn-disinfection__1.04.00.."
+          },
+          {
+            "type": "other",
+            "target": "oewn-disinfection__1.04.00..",
+            "qualifier": "event"
+          }
+        ]
+      }
+    ],
+    "progression": {
+      "passed": true,
+      "issues": [],
+      "ratings": {
+        "three": {
+          "words": [
+            "DUST",
+            "WIPE",
+            "SCRUB"
+          ],
+          "zipfs": [
+            4.41,
+            4.01,
+            3.69
+          ],
+          "minZipf": 3.69,
+          "maxLength": 5,
+          "effort": 1.62,
+          "commonAndShort": true
+        },
+        "two": {
+          "words": [
+            "DUST",
+            "RINSE"
+          ],
+          "zipfs": [
+            4.41,
+            3.48
+          ],
+          "minZipf": 3.48,
+          "maxLength": 5,
+          "effort": 2.04,
+          "commonAndShort": false
+        },
+        "bingo": {
+          "words": [
+            "STERILISED"
+          ],
+          "zipfs": [
+            2.3
+          ],
+          "minZipf": 2.3,
+          "maxLength": 10,
+          "effort": 7.4,
+          "commonAndShort": false
+        }
+      },
+      "bingos": [
+        {
+          "words": [
+            "STERILISED"
+          ],
+          "tileIds": [
+            [
+              4,
+              7,
+              0,
+              6,
+              2,
+              15,
+              11,
+              12,
+              13,
+              14
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            4
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "words": [
+            "STERILISED"
+          ],
+          "tileIds": [
+            [
+              4,
+              7,
+              0,
+              6,
+              2,
+              15,
+              11,
+              12,
+              13,
+              14
+            ]
+          ],
+          "labels": [
+            "COUNTER"
+          ],
+          "hits": [
+            4
+          ]
+        },
+        {
+          "words": [
+            "DUST",
+            "RINSE"
+          ],
+          "tileIds": [
+            [
+              14,
+              10,
+              4,
+              7
+            ],
+            [
+              6,
+              2,
+              16,
+              12,
+              0
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            2
+          ]
+        },
+        {
+          "words": [
+            "DUST",
+            "WIPE",
+            "SCRUB"
+          ],
+          "tileIds": [
+            [
+              14,
+              10,
+              4,
+              7
+            ],
+            [
+              3,
+              2,
+              1,
+              0
+            ],
+            [
+              12,
+              9,
+              6,
+              19,
+              8
+            ]
+          ],
+          "labels": [
+            "COUNTER",
+            "COUNTER",
+            "COUNTER"
+          ],
+          "hits": [
+            2,
+            1,
+            1
+          ]
+        }
+      ],
+      "cheapestTwo": {
+        "words": [
+          "DUST",
+          "RINSE"
+        ],
+        "tileIds": [
+          [
+            14,
+            10,
+            4,
+            7
+          ],
+          [
+            6,
+            2,
+            16,
+            12,
+            0
+          ]
+        ],
+        "labels": [
+          "COUNTER",
+          "COUNTER"
+        ],
+        "hits": [
+          2,
+          2
+        ]
+      },
+      "positions": 418,
+      "previews": 1264,
+      "searchComplete": true,
+      "scope": "All legal first moves, repeated words and POWER-selection variants; exact cheapest two-word bottleneck. Three-word witness uses distinct, familiar counter families. Word frequency and length are a difficulty proxy, not measured human solving difficulty."
+    },
+    "startingCounters": [
+      "DUST",
+      "DUSTS",
+      "SCRUB",
+      "SCRUBS",
+      "STERILISE",
+      "STERILISED",
+      "SWEEP",
+      "SWEEPS",
+      "SWEPT",
+      "WIPE",
+      "WIPED",
+      "WIPES"
+    ],
+    "startingBingos": [
+      "STERILISED"
+    ],
+    "unpoweredBingos": [
+      "STERILISED"
+    ],
+    "routes": [
+      [
+        {
+          "word": "STERILISED",
+          "ids": [
+            4,
+            7,
+            0,
+            6,
+            2,
+            15,
+            11,
+            12,
+            13,
+            14
+          ],
+          "hits": 4,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "DUST",
+          "ids": [
+            14,
+            10,
+            4,
+            7
+          ],
+          "hits": 2,
+          "powerHits": 0,
+          "remaining": "IR"
+        },
+        {
+          "word": "RINSE",
+          "ids": [
+            6,
+            2,
+            16,
+            12,
+            0
+          ],
+          "hits": 2,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ],
+      [
+        {
+          "word": "DUST",
+          "ids": [
+            14,
+            10,
+            4,
+            7
+          ],
+          "hits": 2,
+          "powerHits": 0,
+          "remaining": "IR"
+        },
+        {
+          "word": "WIPE",
+          "ids": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": "R"
+        },
+        {
+          "word": "SCRUB",
+          "ids": [
+            12,
+            9,
+            6,
+            19,
+            8
+          ],
+          "hits": 1,
+          "powerHits": 0,
+          "remaining": ""
+        }
+      ]
+    ],
+    "routeEffort": [
+      7.4,
+      2.04,
+      1.62
+    ],
+    "words": 31469,
+    "bytes": 344557,
+    "limitation": "Reviewed senses and exact route checks; subjective human difficulty still needs playtesting."
+  }
+]

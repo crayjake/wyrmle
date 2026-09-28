@@ -56,7 +56,7 @@ export function getLetterStrikeTileSummary(
         ...(rule.strike ? ['HITS MATCHING LETTER'] : []),
         ...(rule.preventResolveLoss ? ['SAVES A LIFE THIS TURN'] : []),
         ...(rule.regenerate ? ['MATCHING ENEMY LETTER RECOVERS AFTER HITS'] : []),
-        ...(rule.bonusStrike ? ['A SYNONYM HITS ONE EXTRA ENEMY LETTER'] : []),
+        ...(rule.bonusStrike ? ['A COUNTER HITS ONE EXTRA ENEMY LETTER'] : []),
       ].join(' · '),
     }]
   })

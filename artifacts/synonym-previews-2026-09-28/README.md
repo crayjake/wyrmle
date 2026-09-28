@@ -1,3 +1,5 @@
+> Historical experiment. The playable previews and rebuild command now use [the six antonym/family examples](../antonym-previews-2026-09-28/README.md). The routes below describe the retired synonym boards.
+
 # Playable concept previews
 
 Share **https://crayjake.github.io/wyrmle/?preview=concepts**. Also available from Daily → Settings → Concept previews.
@@ -25,7 +27,7 @@ CALM's blue F supplies the missing M in PEACEFUL. GLOOM's blue M and C supply G 
 
 ## Rebuild and evidence
 
-Run `npm run generate:concept-previews`. The builder takes reviewed sense pools and designed letter/refill supplies from [profiles.ts](../../scripts/synonyms/profiles.ts), compiles all defined words spellable from their total supply, freezes their labels, packs/downloads dictionaries, and replays route witnesses through the real engine. It writes content-addressed assets, the preview catalog, and [proofs.json](proofs.json), including physical tile IDs, hits, POWER hits, all starting synonyms/bingos, source senses, and a familiarity/length effort estimate.
+The retired builder took reviewed sense pools and designed letter/refill supplies from its authored profiles, compiles all defined words spellable from their total supply, freezes their labels, packs/downloads dictionaries, and replays route witnesses through the real engine. It wrote content-addressed assets, the preview catalog, and [proofs.json](proofs.json), including physical tile IDs, hits, POWER hits, all starting synonyms/bingos, source senses, and a familiarity/length effort estimate.
 
 This is a reproducible builder for these four authored examples, **not an automatic arbitrary-enemy generator or a v3 difficulty certificate**. The semantic policy admits reviewed same-meaning families across word types (for example sadness and words describing sadness). Those editorial boundaries still need player testing; exact source synonym groups alone omit ordinary alternatives. No antonym, sentiment-score, or recursive thesaurus expansion is used.
 

@@ -43,7 +43,7 @@ export function getStoredWordMeaning(encounter: LetterStrikeEncounter, word: str
 }
 
 export function isEncounterWord(encounter: LetterStrikeEncounter, word: string): boolean {
-  if (encounter.synonymRules?.excludedWords.includes(normalizeWord(word))) return false
+  if (encounter.counterRules?.excludedWords.includes(normalizeWord(word))) return false
   return encounter.meaningLexicon ? Boolean(getStoredWordMeaning(encounter, word)?.definition.trim()) : isDictionaryWord(word)
 }
 
@@ -92,8 +92,8 @@ export function canSpellEncounterWord(encounter: LetterStrikeEncounter, letters:
 export function validateMeaningLexicon(encounter: LetterStrikeEncounter): void {
   const lexicon = encounter.meaningLexicon
   if (!lexicon) return
-  if (encounter.synonymRules?.excludedWords.some(word => Object.hasOwn(lexicon.words, word))) {
-    throw new Error('Excluded enemy forms must be absent from the synonym puzzle dictionary.')
+  if (encounter.counterRules?.excludedWords.some(word => Object.hasOwn(lexicon.words, word))) {
+    throw new Error('Excluded enemy forms must be absent from the antonym puzzle dictionary.')
   }
   if (lexicon.version !== MEANING_LEXICON_VERSION || lexicon.policy !== 'defined-only'
     || lexicon.enemyWord !== normalizeWord(encounter.enemy.word)
@@ -111,6 +111,10 @@ export function validateMeaningLexicon(encounter: LetterStrikeEncounter): void {
   }
   let refinedWords = 0, sourceReviewedWords = 0
   for (const [word, entry] of Object.entries(lexicon.words)) {
+    if (encounter.counterRules && entry.relation === 'opposite'
+      && (entry.partsOfSpeech.length !== 1 || entry.partsOfSpeech[0] !== encounter.counterRules.partOfSpeech)) {
+      throw new Error(`Antonym ${word} must use the counter rule's part of speech.`)
+    }
     if (!/^[A-Z]+$/.test(word) || word.length < lexicon.minimumWordLength || word.length > lexicon.maximumWordLength
       || !entry.definition?.trim() || !entry.senseId || !entry.lemma || !entry.reason
       || !['oewn-2025', 'wiktionary-en'].includes(entry.source) || !['opposite', 'similar', 'related', 'unrelated'].includes(entry.relation)) {

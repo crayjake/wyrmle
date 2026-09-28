@@ -1,0 +1,118 @@
+[
+  {
+    "id": "dry",
+    "enemy": "DRY",
+    "definition": "lacking water or moisture",
+    "asset": "previews/concepts/dry-09308fa90df3.json",
+    "revision": "09308fa90df3",
+    "powers": 0,
+    "partOfSpeech": "adjective",
+    "counterPartOfSpeech": "adjective",
+    "guide": {
+      "answer": "HYDRATED",
+      "hints": [
+        "Think of something that has enough water in it.",
+        "The word is often used when talking about drinking enough water.",
+        "Eight letters, beginning with H."
+      ],
+      "explanation": "HYDRATED is an opposite adjective for DRY. It contains every enemy letter."
+    }
+  },
+  {
+    "id": "mean",
+    "enemy": "MEAN",
+    "definition": "unkind or malicious towards others",
+    "asset": "previews/concepts/mean-2d49b823bbf3.json",
+    "revision": "2d49b823bbf3",
+    "powers": 0,
+    "partOfSpeech": "adjective",
+    "counterPartOfSpeech": "adjective",
+    "guide": {
+      "answer": "COMPASSIONATE",
+      "hints": [
+        "Think of someone who notices another person’s suffering and cares.",
+        "It describes a person who feels sympathy and wants to help.",
+        "Thirteen letters, beginning with C."
+      ],
+      "explanation": "COMPASSIONATE is an opposite adjective for MEAN. It contains every enemy letter."
+    }
+  },
+  {
+    "id": "dread-power",
+    "enemy": "DREAD",
+    "definition": "a feeling of fear about what may happen",
+    "asset": "previews/concepts/dread-power-5ba19a6e1a5e.json",
+    "revision": "5ba19a6e1a5e",
+    "powers": 2,
+    "partOfSpeech": "noun",
+    "counterPartOfSpeech": "noun",
+    "guide": {
+      "answer": "FEARLESSNESS",
+      "hints": [
+        "Look for a noun meaning the absence of fear.",
+        "It names a quality, rather than describing a person.",
+        "Twelve letters, beginning with F. Use both blue tiles."
+      ],
+      "explanation": "FEARLESSNESS is an opposite noun for DREAD. The blue tiles cover the missing enemy letters."
+    }
+  },
+  {
+    "id": "eternal-power",
+    "enemy": "ETERNAL",
+    "definition": "lasting forever; without an end in time",
+    "asset": "previews/concepts/eternal-power-9d50c4effef3.json",
+    "revision": "9d50c4effef3",
+    "powers": 1,
+    "partOfSpeech": "adjective",
+    "counterPartOfSpeech": "adjective",
+    "guide": {
+      "answer": "IMPERMANENT",
+      "hints": [
+        "Think of something that will not last.",
+        "It is the opposite of permanent.",
+        "Eleven letters, beginning with I. The blue P covers one missing letter."
+      ],
+      "explanation": "IMPERMANENT is an opposite adjective for ETERNAL. The blue tiles cover the missing enemy letters."
+    }
+  },
+  {
+    "id": "sear-family",
+    "enemy": "SEARS",
+    "definition": "causes plants to wither or dry out in the heat",
+    "asset": "previews/concepts/sear-family-ac164706b868.json",
+    "revision": "ac164706b868",
+    "powers": 1,
+    "family": "add water",
+    "partOfSpeech": "verb",
+    "counterPartOfSpeech": "verb",
+    "guide": {
+      "answer": "IRRIGATES",
+      "hints": [
+        "Look for another way to say supply water.",
+        "Farmers do this to fields when rain is not enough.",
+        "Nine letters, beginning with I. The blue G supplies the second S."
+      ],
+      "explanation": "IRRIGATES belongs to the “add water” counter family. The blue tiles cover the missing enemy letters."
+    }
+  },
+  {
+    "id": "dirt-family",
+    "enemy": "DIRT",
+    "definition": "unclean matter on a surface",
+    "asset": "previews/concepts/dirt-family-9c44c51dab27.json",
+    "revision": "9c44c51dab27",
+    "powers": 0,
+    "family": "clean",
+    "partOfSpeech": "noun",
+    "counterPartOfSpeech": "verb",
+    "guide": {
+      "answer": "STERILISED",
+      "hints": [
+        "Every answer here is an action that cleans.",
+        "Think of cleaning equipment so that no germs remain.",
+        "Ten letters, beginning with S. Use the British spelling."
+      ],
+      "explanation": "STERILISED belongs to the “clean” counter family. It contains every enemy letter."
+    }
+  }
+]

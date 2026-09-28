@@ -3,6 +3,7 @@ import { canSpellEncounterWord, getEncounterSemanticRelation, isEncounterWord, v
 import type { PuzzleMeaningLexicon } from './meaningLexicon.ts'
 import { getSelectedTiles, refillBoard } from './tiles.ts'
 import type { EnemyConcept, PartOfSpeech } from './types.ts'
+import { PARTS_OF_SPEECH } from './types.ts'
 import { getEncounterPartsOfSpeech, validateLexicalRules } from './lexicalRules.ts'
 import type { LexicalRules } from './lexicalRules.ts'
 
@@ -31,7 +32,7 @@ export type LetterStrikeEncounter = {
   lexicalRules?: LexicalRules
   meaningLexicon?: PuzzleMeaningLexicon
   // Opt-in research rules. Daily/archived encounters keep counter damage.
-  synonymRules?: { excludedWords: readonly string[] }
+  counterRules?: { kind: 'antonym' | 'family'; partOfSpeech: PartOfSpeech; family?: string; excludedWords: readonly string[] }
   longWordRule?: { minimumLength: number; bonusStrikes: number }
   // Only archived encounters opt into the original overlapping Strike rule.
   strikeConsumesAllowance?: boolean
@@ -141,10 +142,14 @@ export const letterStrikeEncounter: LetterStrikeEncounter = {
 export function createLetterStrikeGame(encounter = letterStrikeEncounter): LetterStrikeState {
   validateLexicalRules(encounter)
   validateMeaningLexicon(encounter)
-  if (encounter.synonymRules && (!encounter.synonymRules.excludedWords.includes(normalizeWord(encounter.enemy.word))
-    || encounter.synonymRules.excludedWords.some(word => !/^[A-Z]+$/.test(word))
+  if (encounter.counterRules && (!encounter.meaningLexicon || !PARTS_OF_SPEECH.includes(encounter.counterRules.partOfSpeech)
+    || !encounter.counterRules.excludedWords.includes(normalizeWord(encounter.enemy.word))
+    || !['antonym', 'family'].includes(encounter.counterRules.kind)
+    || (encounter.counterRules.kind === 'antonym' && encounter.counterRules.partOfSpeech !== encounter.enemy.partOfSpeech)
+    || (encounter.counterRules.kind === 'family' && !encounter.counterRules.family?.trim())
+    || encounter.counterRules.excludedWords.some(word => !/^[A-Z]+$/.test(word))
     || encounter.longWordRule || Object.values(encounter.grammarModifiers ?? {}).some(value => value !== 0))) {
-    throw new Error('Synonym previews must exclude the enemy and cannot award grammar or length bonuses.')
+    throw new Error('Antonym previews must exclude the enemy and cannot award grammar or length bonuses.')
   }
   const { startingTiles, startingResolve, enemyLetters, tileEffects } = encounter
   if (startingTiles.length !== 16 || new Set(startingTiles.map(tile => tile.id)).size !== 16) {
@@ -227,11 +232,10 @@ export function getLetterStrikeAllowance(encounter: LetterStrikeEncounter, word:
   normalStrikeAllowance: number
 } {
   const relation = getEncounterSemanticRelation(encounter, word)
-  // COUNTER is the existing full-hit scoring class. Synonym previews label it
-  // "Synonym" in the UI and retain truthful "similar" source relations.
-  const semanticLabel = encounter.synonymRules ? relation === 'similar' ? 'COUNTER' : 'RESISTED'
-    : relation === 'opposite' ? 'COUNTER' : relation === 'similar' ? 'RESISTED' : 'NEUTRAL'
   const parts = getEncounterPartsOfSpeech(encounter, word)
+  const semanticLabel = encounter.counterRules
+    ? relation === 'opposite' && parts?.includes(encounter.counterRules.partOfSpeech) ? 'COUNTER' : 'RESISTED'
+    : relation === 'opposite' ? 'COUNTER' : relation === 'similar' ? 'RESISTED' : 'NEUTRAL'
   // A submitted word has no sentence to disambiguate its use. Under new rules,
   // any recognized use qualifies; choose one best modifier, never stack types.
   const partOfSpeech = encounter.lexicalRules && parts?.length
@@ -311,7 +315,7 @@ export function evaluateLetterStrike(state: Pick<LetterStrikeState, 'encounter' 
     const effect = tile.type === 'gem' && tile.gem ? state.encounter.tileEffects[tile.gem] : undefined
     if (effect?.preventResolveLoss) resolveCost = 0
     if (effect?.regenerate) regenTiles.push(tile)
-    if (effect?.bonusStrike && state.encounter.synonymRules && semanticLabel === 'COUNTER') powerTiles.push(tile)
+    if (effect?.bonusStrike && state.encounter.counterRules && semanticLabel === 'COUNTER') powerTiles.push(tile)
     const normalStrike = normalStrikesRemaining > 0
     if (!normalStrike && !effect?.strike) continue
     const target = selectEnemyTarget(enemyLetters, tile.letter)
@@ -371,7 +375,7 @@ export function previewLetterStrike(state: LetterStrikeState, selectedTileIds: r
     : tiles.length !== selectedTileIds.length ? 'Selected tile is not on the board'
     : tiles.some(tile => tile.letter === '') ? 'Empty cells cannot be selected'
     : evaluation.word.length < state.encounter.minimumWordLength ? `Minimum ${state.encounter.minimumWordLength} letters`
-    : state.encounter.synonymRules?.excludedWords.includes(evaluation.word) ? 'Use a different word from the enemy'
+    : state.encounter.counterRules?.excludedWords.includes(evaluation.word) ? 'Use a different word from the enemy'
     : !isEncounterWord(state.encounter, evaluation.word) ? state.encounter.meaningLexicon ? 'Not in this puzzle’s dictionary' : 'Not a valid word'
     : null
   return {

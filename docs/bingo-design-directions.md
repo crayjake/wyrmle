@@ -80,6 +80,13 @@ Recommendation at that stage of the discussion: explore an explicit opposite tar
 4. Check that shorter routes remain discoverable and that the bingo has a satisfying extra challenge. Word familiarity alone cannot prove this.
 5. Test whether players can predict semantic acceptance and explain the bingo connection after a reveal.
 
-The direct-synonym proposal now has [four playable research previews](../artifacts/synonym-previews-2026-09-28/README.md), a shareable selection page at `?preview=concepts`, isolated saved progress, and a reproducible builder (`npm run generate:concept-previews`). FICTION and ETERNAL use plain synonym damage; CALM and GLOOM use POWER tiles to supply missing enemy letters. All four have real-engine one-/two-/three-word route proofs. The two POWER boards have no unpowered starting bingo.
+The earlier direct-synonym proposal was tested in [four research previews](../artifacts/synonym-previews-2026-09-28/README.md), a shareable selection page at `?preview=concepts`, isolated saved progress, and a reproducible builder (`npm run generate:concept-previews`). FICTION and ETERNAL use plain synonym damage; CALM and GLOOM use POWER tiles to supply missing enemy letters. All four have real-engine one-/two-/three-word route proofs. The two POWER boards have no unpowered starting bingo.
 
-The user clarified that special powers should expand the enemy/answer pairs that can make a puzzle. An extra-life tile would not solve missing bingo letters; the POWER rule does. These four authored examples are not an arbitrary-enemy generator, a certified difficulty progression, or evidence that a full year is ready. Daily retains its existing counter rules.
+For that first experiment, the user clarified that special powers should expand the enemy/answer pairs that can make a puzzle. An extra-life tile would not solve missing bingo letters; the POWER rule does. These four authored examples are not an arbitrary-enemy generator, a certified difficulty progression, or evidence that a full year is ready. Daily retains its existing counter rules.
+
+
+## Six opposite/family previews (28 September)
+
+The current share page is `?preview=concepts`. The four synonym examples have been replaced with same-part-of-speech antonyms: DRY, MEAN, DREAD + POWER and ETERNAL + POWER. Two further examples compare one narrow counter family: SEARS uses water-adding verbs against a verb, while DIRT uses cleaning verbs against a noun. SEARS also uses one POWER tile to enable its bingo.
+
+The family is stated to the player. These examples test whether a consistent, visible counter category feels fairer than several different conceptual ways to oppose an enemy. They do not change Daily. See [rules, route proofs and rebuilding](../artifacts/antonym-previews-2026-09-28/README.md).

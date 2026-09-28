@@ -1,4 +1,4 @@
-import type { LetterStrikePreview } from '../game/letterStrike.ts'
+import type { LetterStrikeEncounter, LetterStrikePreview } from '../game/letterStrike.ts'
 
 export type StrikeDetail = { kind: 'hit' | 'life' | 'revive' | 'legacy' | 'legacy-resisted' | 'last-life'; text: string }
 
@@ -9,7 +9,7 @@ const meaningLabels = {
 } as const
 
 /** Present the scored move, including rules carried by older saved puzzles. */
-export function getStrikeSummary(preview: LetterStrikePreview, lives?: number, enemyWord?: string, synonyms = false) {
+export function getStrikeSummary(preview: LetterStrikePreview, lives?: number, enemyWord?: string, counterRules?: LetterStrikeEncounter['counterRules']) {
   const details: StrikeDetail[] = []
   if (!preview.valid) return null
   if (preview.longWordModifier) details.push({ kind: 'legacy', text: `Long ${signed(preview.longWordModifier)}` })
@@ -32,7 +32,9 @@ export function getStrikeSummary(preview: LetterStrikePreview, lives?: number, e
       `${recovery.letter} ${recovery.hitsBefore === 0 ? 'returns' : 'gains armour'}`).join(', ')}` })
   }
   return {
-    meaning: synonyms ? preview.semanticLabel === 'COUNTER' ? `Synonym of ${enemyWord}` : 'Not a synonym'
+    meaning: counterRules ? preview.semanticLabel === 'COUNTER'
+      ? counterRules.kind === 'antonym' ? `Opposite of ${enemyWord}` : `Counters ${enemyWord}`
+      : `Not a counter ${counterRules.partOfSpeech}`
       : preview.semanticLabel === 'COUNTER' && enemyWord ? `Counters ${enemyWord}` : meaningLabels[preview.semanticLabel],
     kind: preview.semanticLabel.toLowerCase(),
     hits: `${preview.strikes} ${preview.strikes === 1 ? 'hit' : 'hits'}`,

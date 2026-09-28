@@ -110,8 +110,8 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
   const interactive = phase === 'ready' && game.status === 'playing' && !resolving && !viewingBest
   const attackPreview = previewLetterStrike(game)
   const preview = { ...attackPreview, amount: attackPreview.strikes, maximum: 0, bonuses: getLetterStrikeBonuses(attackPreview) }
-  const events = getLetterStrikeBattleEvents(game).map(event => game.encounter.synonymRules
-    ? { ...event, semanticLabel: event.semanticLabel === 'COUNTER' ? 'SYNONYM' : 'NO MATCH' } : event)
+  const events = getLetterStrikeBattleEvents(game).map(event => game.encounter.counterRules
+    ? { ...event, semanticLabel: event.semanticLabel === 'COUNTER' ? (game.encounter.counterRules.kind === 'antonym' ? 'ANTONYM' : 'COUNTER') : 'NO MATCH' } : event)
   const specialTiles = getLetterStrikeTileSummary(game)
   const message = resolving ? undefined
     : game.status === 'won' ? game.playedWords.length === 1 ? 'BINGO · ONE WORD!' : 'VICTORY'
@@ -148,7 +148,7 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
     ? game.playerResolve + (game.playedWords.at(-1)?.preview.resolveCost ?? 0) : game.playerResolve
   return <main className="container letter-combat bingo-preview" data-combat-mode="letter-strike"
     data-board-layout={boardLayout}
-    data-synonyms={encounter.synonymRules ? true : undefined}
+    data-counter-rules={encounter.counterRules ? true : undefined}
     data-game-status={game.status} data-result={showResult || viewingBest || undefined} data-phase={phase} data-turns={game.playedWords.length}
     ref={containerRef}
     onClick={event => {
@@ -188,7 +188,7 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
       <AttackInfo word={preview.word} damage={preview.amount} maxDamage={preview.maximum}
         metric="strikes" ready={interactive && preview.valid} message={message} bonuses={preview.bonuses}
         strikePreview={'hits' in preview ? preview : undefined} enemyWord={enemy.word}
-        synonyms={Boolean(encounter.synonymRules)}
+        counterRules={encounter.counterRules}
         resolveBefore={interactive && preview.valid ? game.playerResolve : undefined}
       />
       <div className="controls">
@@ -268,13 +268,16 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
     {panel === 'help' && <BattlePanel title="How to play" onClose={() => setPanel(null)}>
         <div className="daily-help">
           <div>Remove every enemy letter before your {game.encounter.startingResolve} lives run out. Tap or swipe across tiles in spelling order; you can mix both.</div>
-          <div>One {encounter.synonymRules ? 'synonym' : 'long counter'} can remove the whole enemy in a single word. Each played word uses one life; removing the final letter on your last life still wins.</div>
+          <div>One {encounter.counterRules?.kind === 'antonym' ? 'antonym' : 'counter'} can remove the whole enemy in a single word. Each played word uses one life; removing the final letter on your last life still wins.</div>
           <div>Underlined tiles match a surviving enemy letter. Refills show the letters still available after you play.</div>
-          {encounter.synonymRules ? <>
-            <div><strong>Find synonyms of the enemy.</strong> Use the meaning shown beneath it. Every matching letter in a synonym hits. Other words do no damage, but still use a life and draw refills.</div>
-            <div>The enemy word and its own inflections cannot be played. Ordinary forms of other synonyms count.</div>
+          {encounter.counterRules ? <>
+            <div>{encounter.counterRules.kind === 'family'
+              ? <><strong>Counter family: {encounter.counterRules.family}.</strong> Find {encounter.counterRules.partOfSpeech}s in this family.</>
+              : <><strong>Find opposite {encounter.counterRules.partOfSpeech}s.</strong> Use the enemy’s displayed meaning and the same word type.</>}
+              {' '}Every matching letter in a counter hits. Other words do no damage, but still use a life and draw refills.</div>
+            <div>The enemy word and its own inflections cannot be played. Ordinary forms of counters count when they keep the required meaning and word type.</div>
             {specialTiles.some(tile => tile.id === 'ward') && <div>The green LIFE tile saves your life for that turn, even in a word that does no damage. It becomes an ordinary tile when refilled.</div>}
-            {game.encounter.tileEffects.power?.bonusStrike && <div>A synonym using the blue POWER tile hits one extra enemy letter after its matching letters hit. No matching letter is needed for that extra hit. The tile loses its power when used. Other words cannot trigger it.</div>}
+            {game.encounter.tileEffects.power?.bonusStrike && <div>A counter using the blue POWER tile hits one extra enemy letter after its matching letters hit. No matching letter is needed for that extra hit. The tile loses its power when used. Other words cannot trigger it.</div>}
           </> : <div><strong>Meaning drives your hits.</strong> Counter words hit with every matching tile. Neutral words get one normal matching hit, in spelling order. Similar meanings are resisted and have no normal hits.</div>}
           <div>Double outlines need two hits. The first breaks armour; the next removes the letter. Matching tiles finish wounded copies first, then target from left to right.</div>
           <div>Blue − previews an armour break; red × previews removal. Defeated letters become centred dots with no outline. Repeated matching tiles can break and remove one armoured letter in the same word.</div>
