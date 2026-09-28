@@ -218,7 +218,7 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
     <WyrmDecoder phase={phase} containerRef={containerRef} enemyLetters={enemyElements}
       tileElements={tileElements} refillElements={refillElements} dockRef={wyrmLifeRef}
       lifeSegments={game.encounter.startingResolve}
-      enemyCount={enemy.word.length} tileCount={game.tiles.length}
+      enemyCount={enemy.word.length} tileCount={game.tiles.length} boardLayout={boardLayout}
       onEnemyReveal={revealEnemyLetter} onTileReveal={revealTile} onRefillReveal={revealRefill}
       onEnemyDecoded={enemyDecoded} onTilesDecoded={tilesDecoded} />
     </>}

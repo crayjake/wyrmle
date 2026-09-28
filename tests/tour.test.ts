@@ -3,6 +3,7 @@ import { test } from 'node:test'
 import { getTileRevealOrder } from '../src/intro/paths.ts'
 import { createDecodeTour } from '../src/intro/tour.ts'
 import { sampleWalkingPiece, smoothTravelDistance } from '../src/intro/walk.ts'
+import { wheelLayout } from '../src/components/wheelLayout.ts'
 
 function close(actual: number, expected: number, tolerance = 1e-6) {
   assert.ok(Math.abs(actual - expected) <= tolerance, `${actual} differs from ${expected}`)
@@ -131,5 +132,87 @@ test('partial and shuffled boards keep a single route and correct target arrival
         }
       }
     }
+  }
+})
+
+function wheelFixture(width: number, innerCount: number, single = false, reverse = false, removed: number[] = []) {
+  const input = layout(width, 0)
+  const board = input.tiles.map((_, index) => ({ id: index, letter: removed.includes(index) ? '' : 'A' }))
+  const ordering = board.map((_, index) => index)
+  const { positions } = wheelLayout(board, reverse ? ordering.reverse() : ordering,
+    new Set(board.slice(0, innerCount).map(tile => tile.id)), single, 'circle')
+  const size = width - 32
+  const center = { x: width / 2, y: 390 }
+  return {
+    ...input,
+    tiles: positions.map(point => point ? { x: center.x + (point.x - 50) * size / 100,
+      y: center.y + (point.y - 50) * size / 100 } : { x: 0, y: 0 }),
+    wheel: { center, rings: ['outer', 'inner'].map(ring =>
+      positions.flatMap((point, index) => point?.ring === ring ? [index] : [])) },
+  }
+}
+
+test('wheel tours sweep each circle outside in without skipping or reassigning any physical tiles', () => {
+  for (const innerCount of [0, 1, 2, 5, 8, 15, 16]) for (const single of [false, true]) {
+    for (const reverse of [false, true]) for (const removed of [[], [0, 3, 5, 7, 10, 11, 15]]) {
+      const input = wheelFixture(375, innerCount, single, reverse, removed)
+      const before = structuredClone(input)
+      const { route, events } = createDecodeTour(input)
+      assert.deepEqual(input, before)
+      const visits = events.filter(event => event.kind === 'tiles')
+      assert.deepEqual(visits.map(event => event.index).sort((a, b) => a - b),
+        input.wheel.rings.flat().sort((a, b) => a - b))
+      assert.deepEqual(visits.map(event => input.wheel.rings[0].includes(event.index) ? 'outer' : 'inner'),
+        [...input.wheel.rings[0].map(() => 'outer'), ...input.wheel.rings[1].map(() => 'inner')])
+      visits.forEach((event, index) => {
+        closePoint(route.sample(event.distance), input.tiles[event.index])
+        if (index) assert.ok(event.distance > visits[index - 1].distance)
+      })
+      // No shortcuts through the centre/shuffle button, even for sparse rings.
+      const minRadius = Math.min(...input.wheel.rings.flat().map(index =>
+        Math.hypot(input.tiles[index].x - input.wheel.center.x, input.tiles[index].y - input.wheel.center.y)))
+      for (let d = visits[0].distance; d <= visits.at(-1)!.distance; d += 2) {
+        const pose = route.sample(d)
+        assert.ok(Math.hypot(pose.x - input.wheel.center.x, pose.y - input.wheel.center.y) >= minRadius - 2)
+      }
+      closePoint(route.sample(route.length), input.dock)
+    }
+  }
+})
+
+test('spiralling avoids the old grid-order detours and keeps the whole wyrm on screen', () => {
+  for (const width of [320, 375]) for (const single of [false, true]) for (const refillCount of [0, 6]) {
+    const input = wheelFixture(width, 5, single)
+    input.refills = layout(width, refillCount).refills
+    const { route, events } = createDecodeTour(input)
+    const oldTour = createDecodeTour({ ...input, wheel: undefined })
+    assert.ok(route.length < oldTour.route.length * .8, 'at least 20% shorter than the criss-crossing route')
+    assert.deepEqual(events.filter(event => event.kind !== 'tiles').map(({ kind, index }) => ({ kind, index })),
+      oldTour.events.filter(event => event.kind !== 'tiles').map(({ kind, index }) => ({ kind, index })))
+    for (let d = 0; d <= route.length; d += 2) {
+      for (const offset of [0, 16, 30, 44, 56.5]) {
+        const pose = sampleWalkingPiece(route, d, offset, d / 250, 1)
+        const radians = offset === 0 ? pose.angle * Math.PI / 180 : 0
+        const halfWidth = 7.5 * (Math.abs(Math.cos(radians)) * pose.scaleX + Math.abs(Math.sin(radians)) * pose.scaleY)
+        const halfHeight = 7.5 * (Math.abs(Math.sin(radians)) * pose.scaleX + Math.abs(Math.cos(radians)) * pose.scaleY)
+        assert.ok(pose.x >= halfWidth && pose.x <= width - halfWidth && pose.y >= halfHeight && pose.y <= 629 - halfHeight)
+      }
+    }
+    // Continuous headings at tile reveals and the transition between rings.
+    for (const event of events.filter(event => event.kind === 'tiles')) {
+      const before = route.sample(event.distance - .1), after = route.sample(event.distance + .1)
+      assert.ok(Math.abs(after.angle - before.angle) < 2)
+    }
+  }
+})
+
+test('empty and two-singleton wheel tours are safe', () => {
+  for (const removed of [Array.from({ length: 16 }, (_, index) => index),
+    Array.from({ length: 16 }, (_, index) => index).filter(index => index !== 0 && index !== 15)]) {
+    const input = wheelFixture(320, 1, false, false, removed)
+    const { route, events } = createDecodeTour(input)
+    assert.equal(events.filter(event => event.kind === 'tiles').length, 16 - removed.length)
+    closePoint(route.sample(route.length), input.dock)
+    assert.ok(Number.isFinite(route.length))
   }
 })

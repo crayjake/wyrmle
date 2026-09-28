@@ -21,6 +21,7 @@ type WyrmDecoderProps = {
   lifeSegments?: number
   enemyCount: number
   tileCount: number
+  boardLayout?: 'grid' | 'wheel' | 'ring'
   tilePath?: TileRevealMode
   seed?: number | string
   onEnemyReveal: (index: number) => void
@@ -63,7 +64,7 @@ const mix = (from: number, to: number, amount: number) => from + (to - from) * a
 
 export default function WyrmDecoder({
   phase, containerRef, enemyLetters, tileElements, refillElements, dockRef, lifeSegments,
-  enemyCount, tileCount, tilePath, seed,
+  enemyCount, tileCount, boardLayout = 'grid', tilePath, seed,
   onEnemyReveal, onTileReveal, onRefillReveal, onEnemyDecoded, onTilesDecoded,
 }: WyrmDecoderProps) {
   const reducedMotion = useReducedMotion()
@@ -97,8 +98,15 @@ export default function WyrmDecoder({
     const enemies = enemyLetters.current.slice(0, enemyCount).map(element => layoutCenter(element, container))
     const tiles = tileElements.current.slice(0, tileCount).map(element => layoutCenter(element, container))
     const refills = refillElements.current.filter((element): element is HTMLSpanElement => Boolean(element)).map(center)
+    const wheelElement = boardLayout !== 'grid'
+      ? tileElements.current.find(element => element)?.closest<HTMLElement>('.anagram-wheel') : undefined
+    const wheel = wheelElement ? {
+      center: layoutCenter(wheelElement, container),
+      rings: ['outer', 'inner'].map(ring => tiles.flatMap((_, index) =>
+        tileElements.current[index]?.closest<HTMLElement>('.wheel-slot')?.dataset.ring === ring ? [index] : [])),
+    } : undefined
     const { route, events } = createDecodeTour({
-      width: container.clientWidth, dock: dockHead, enemies, refills, tiles,
+      width: container.clientWidth, dock: dockHead, enemies, refills, tiles, wheel,
       order: getTileRevealOrder(tileCount, tilePath, seed),
     })
     let finished = false
@@ -190,7 +198,7 @@ export default function WyrmDecoder({
       document.fonts.removeEventListener('loadingdone', fontsChanged)
     }
   }, [active, reducedMotion, containerRef, enemyLetters, tileElements, refillElements, dockRef, enemyCount, tileCount,
-    tilePath, seed, onEnemyReveal, onTileReveal, onRefillReveal, onEnemyDecoded, onTilesDecoded, pieces, x, y, rotate])
+    boardLayout, tilePath, seed, onEnemyReveal, onTileReveal, onRefillReveal, onEnemyDecoded, onTilesDecoded, pieces, x, y, rotate])
 
   if (!active || !visible || reducedMotion) return null
   if (lifeSegments === undefined) return <motion.div className="wyrm-decoder" data-route={routeStage} aria-hidden="true"

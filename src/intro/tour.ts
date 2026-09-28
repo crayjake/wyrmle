@@ -1,17 +1,20 @@
 import type { Point } from './movement.ts'
 import { createWalkRoute } from './walk.ts'
 import type { WalkPoint } from './walk.ts'
+import { createSpiralWaypoints } from './spiral.ts'
+import type { DecodeWheel } from './spiral.ts'
 
 export type DecodeTarget = { kind: 'enemy' | 'refills' | 'tiles'; index: number; distance: number }
 
 /** One visible trip: leave lives, read the enemy, read reserves, read the board, return. */
-export function createDecodeTour({ width, dock, enemies, refills, tiles, order }: {
+export function createDecodeTour({ width, dock, enemies, refills, tiles, order, wheel }: {
   width: number
   dock: Point
   enemies: readonly Point[]
   refills: readonly Point[]
   tiles: readonly Point[]
   order: readonly number[]
+  wheel?: DecodeWheel
 }) {
   const left = 12
   const right = width - 12
@@ -26,7 +29,7 @@ export function createDecodeTour({ width, dock, enemies, refills, tiles, order }
   if (enemies.length) {
     add(Math.min(dock.x + 39, right), dock.y + 18)
     enemies.forEach((point, index) => target('enemy', index, point, 0))
-    add(right - 6, enemies.at(-1)!.y)
+    if (!wheel || refills.length) add(right - 6, enemies.at(-1)!.y)
   }
   if (refills.length) {
     add(right, refills.at(-1)!.y, -Math.PI / 2)
@@ -35,7 +38,14 @@ export function createDecodeTour({ width, dock, enemies, refills, tiles, order }
   }
 
   const boardOrder = order.filter(index => tiles[index])
-  if (boardOrder.length) {
+  if (wheel) {
+    const exit = { x: left, y: dock.y + 45 }
+    for (const point of createSpiralWaypoints(tiles, wheel, points.at(-1)!, exit)) {
+      if (point.tileIndex !== undefined) target('tiles', point.tileIndex, point, point.angle)
+      else add(point.x, point.y, point.angle)
+    }
+    add(exit.x, exit.y, -Math.PI / 2)
+  } else if (boardOrder.length) {
     const first = tiles[boardOrder[0]]
     add(left + 12, dock.y + 34)
     add(left, Math.max(dock.y + 40, first.y - 45), Math.PI / 2)
