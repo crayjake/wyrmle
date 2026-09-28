@@ -306,7 +306,29 @@
     ],
     "compatibility": {
       "movesChecked": 51
-    }
+    },
+    "witnesses": [
+      [
+        "LETHARGIC"
+      ],
+      [
+        "SLOW",
+        "LETHARGIC"
+      ],
+      [
+        "SLOW",
+        "INERT",
+        "LETHARGIC"
+      ]
+    ],
+    "startingBingos": [
+      {
+        "word": "LETHARGIC",
+        "effort": 5.84
+      }
+    ],
+    "helperEffort": 2.8200000000000003,
+    "semanticReview": "Opposite adjectives describe lack of wakefulness, responsiveness or energy. TIRED is depleted energy, not an overused joke; DULL means lifeless, not blunt. Chemical inertness and merely being late are outside this sense."
   },
   {
     "id": "hunt-true",
@@ -402,6 +424,1410 @@
     ],
     "compatibility": {
       "movesChecked": 334
-    }
+    },
+    "witnesses": [
+      [
+        "INACCURATE"
+      ],
+      [
+        "WRONG",
+        "INACCURATE"
+      ],
+      [
+        "WRONG",
+        "UNREAL",
+        "INACCURATE"
+      ]
+    ],
+    "startingBingos": [
+      {
+        "word": "INACCURATE",
+        "effort": 4.7
+      }
+    ],
+    "helperEffort": 2.8200000000000003,
+    "semanticReview": "Factually false, erroneous or misrepresented statements oppose TRUE. BOGUS uses fraudulent, TWISTED uses misrepresented meaning. Wrong morality, a bent shape, and unfaithful relationships are different senses and excluded."
+  },
+  {
+    "id": "hunt-wet",
+    "revision": "fc957a6f4962",
+    "preferredHelpers": [
+      "DRY",
+      "ARID",
+      "PARCHED"
+    ],
+    "branches": [
+      {
+        "first": "ARID",
+        "next": [
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "dry"
+        ],
+        "familiarFamilies": [
+          "dry",
+          "sear",
+          "sere"
+        ]
+      },
+      {
+        "first": "ARIDER",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "dry"
+        ],
+        "familiarFamilies": [
+          "dry",
+          "sear",
+          "sere"
+        ]
+      },
+      {
+        "first": "ARIDEST",
+        "next": [
+          "ARID",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "dry"
+        ],
+        "familiarFamilies": [
+          "dry",
+          "sear",
+          "sere"
+        ]
+      },
+      {
+        "first": "DRIER",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "sear",
+          "sere"
+        ]
+      },
+      {
+        "first": "DRIEST",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "sear",
+          "sere"
+        ]
+      },
+      {
+        "first": "DRY",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "sear",
+          "sere"
+        ]
+      },
+      {
+        "first": "DRYER",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "sear",
+          "sere"
+        ]
+      },
+      {
+        "first": "DRYEST",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "sear",
+          "sere"
+        ]
+      },
+      {
+        "first": "HARD",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid",
+          "dry"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "dry",
+          "sear",
+          "sere"
+        ]
+      },
+      {
+        "first": "HARDER",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid",
+          "dry"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "dry",
+          "sear",
+          "sere"
+        ]
+      },
+      {
+        "first": "HARDEST",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid",
+          "dry"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "dry",
+          "sear",
+          "sere"
+        ]
+      },
+      {
+        "first": "PARCHED",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid",
+          "dry"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "dry",
+          "sear",
+          "sere"
+        ]
+      },
+      {
+        "first": "SEAR",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid",
+          "dry"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "dry",
+          "sere"
+        ]
+      },
+      {
+        "first": "SEARER",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid",
+          "dry"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "dry",
+          "sere"
+        ]
+      },
+      {
+        "first": "SEAREST",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid",
+          "dry"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "dry",
+          "sere"
+        ]
+      },
+      {
+        "first": "SERE",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid",
+          "dry"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "dry",
+          "sear"
+        ]
+      },
+      {
+        "first": "SERER",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE",
+          "SEREST"
+        ],
+        "preferredFamilies": [
+          "arid",
+          "dry"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "dry",
+          "sear"
+        ]
+      },
+      {
+        "first": "SEREST",
+        "next": [
+          "ARID",
+          "ARIDEST",
+          "DRIEST",
+          "DRY",
+          "DRYEST",
+          "SEAR",
+          "SEAREST",
+          "SERE"
+        ],
+        "preferredFamilies": [
+          "arid",
+          "dry"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "dry",
+          "sear"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 3,
+    "candidatesChecked": 35,
+    "pathsChecked": 153,
+    "removalOrder": [
+      4,
+      7,
+      10,
+      13,
+      2,
+      14,
+      15
+    ],
+    "witnesses": [
+      [
+        "WATERLESS"
+      ],
+      [
+        "DRY",
+        "WATERLESS"
+      ],
+      [
+        "DRY",
+        "ARID",
+        "WATERLESS"
+      ]
+    ],
+    "startingBingos": [
+      {
+        "word": "WATERLESS",
+        "effort": 7.039999999999999
+      },
+      {
+        "word": "WITHERED",
+        "effort": 4.96
+      }
+    ],
+    "helperEffort": 2.26,
+    "semanticReview": "Literal moisture only. Dry, arid, parched, dried and waterless are adjective opposites. Sere and sear have the same dry-vegetation adjective reading. Do not admit dryness nouns, drying verbs, or the alcohol and humour senses of dry."
+  },
+  {
+    "id": "hunt-loud",
+    "revision": "b770a8a3d95f",
+    "preferredHelpers": [
+      "QUIET",
+      "LOW",
+      "SILENT",
+      "HUSHED",
+      "MUTE",
+      "MUTED"
+    ],
+    "branches": [
+      {
+        "first": "HUSHED",
+        "next": [
+          "MUTE",
+          "MUTED",
+          "SILENT"
+        ],
+        "preferredFamilies": [
+          "mute",
+          "muted",
+          "silent"
+        ],
+        "familiarFamilies": [
+          "mute",
+          "muted",
+          "silent"
+        ]
+      },
+      {
+        "first": "LOW",
+        "next": [
+          "MUTE",
+          "MUTED",
+          "SILENT"
+        ],
+        "preferredFamilies": [
+          "mute",
+          "muted",
+          "silent"
+        ],
+        "familiarFamilies": [
+          "mute",
+          "muted",
+          "silent"
+        ]
+      },
+      {
+        "first": "LOWEST",
+        "next": [
+          "MUTE",
+          "MUTED",
+          "SILENT"
+        ],
+        "preferredFamilies": [
+          "mute",
+          "muted",
+          "silent"
+        ],
+        "familiarFamilies": [
+          "mute",
+          "muted",
+          "silent"
+        ]
+      },
+      {
+        "first": "MUTE",
+        "next": [
+          "MUTED",
+          "SILENT"
+        ],
+        "preferredFamilies": [
+          "muted",
+          "silent"
+        ],
+        "familiarFamilies": [
+          "muted",
+          "silent"
+        ]
+      },
+      {
+        "first": "MUTED",
+        "next": [
+          "MUTE",
+          "SILENT"
+        ],
+        "preferredFamilies": [
+          "mute",
+          "silent"
+        ],
+        "familiarFamilies": [
+          "mute",
+          "silent"
+        ]
+      },
+      {
+        "first": "QUIET",
+        "next": [
+          "MUTE",
+          "MUTED",
+          "SILENT"
+        ],
+        "preferredFamilies": [
+          "mute",
+          "muted",
+          "silent"
+        ],
+        "familiarFamilies": [
+          "mute",
+          "muted",
+          "silent"
+        ]
+      },
+      {
+        "first": "SILENT",
+        "next": [
+          "MUTE",
+          "MUTED"
+        ],
+        "preferredFamilies": [
+          "mute",
+          "muted"
+        ],
+        "familiarFamilies": [
+          "mute",
+          "muted"
+        ]
+      },
+      {
+        "first": "THIN",
+        "next": [
+          "MUTE",
+          "MUTED",
+          "SILENT"
+        ],
+        "preferredFamilies": [
+          "mute",
+          "muted",
+          "silent"
+        ],
+        "familiarFamilies": [
+          "mute",
+          "muted",
+          "silent"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 2,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 35,
+    "pathsChecked": 21,
+    "removalOrder": [
+      5,
+      8,
+      12,
+      13,
+      1,
+      6,
+      15
+    ],
+    "witnesses": [
+      [
+        "SOUNDLESS"
+      ],
+      [
+        "QUIET",
+        "SOUNDLESS"
+      ],
+      [
+        "QUIET",
+        "SILENT",
+        "SOUNDLESS"
+      ]
+    ],
+    "startingBingos": [
+      {
+        "word": "SOUNDLESS",
+        "effort": 7.18
+      }
+    ],
+    "helperEffort": 1.0999999999999996,
+    "semanticReview": "Sound volume only. Low means low volume, not low pitch or height; muted and hushed mean softened sound. Mute uses expressed without speech, not disability. Silent and soundless denote an absence of sound. Loud clothing, quiet water and shy personalities are outside the displayed sense."
+  },
+  {
+    "id": "hunt-dim",
+    "revision": "692b51b4e34f",
+    "preferredHelpers": [
+      "BRIGHT",
+      "LIGHT",
+      "LIT",
+      "RADIANT",
+      "ALIGHT"
+    ],
+    "branches": [
+      {
+        "first": "ALIGHT",
+        "next": [
+          "LIGHT",
+          "LIGHTED",
+          "LIT"
+        ],
+        "preferredFamilies": [
+          "light",
+          "lit"
+        ],
+        "familiarFamilies": [
+          "light",
+          "lighted",
+          "lit"
+        ]
+      },
+      {
+        "first": "ARDENT",
+        "next": [
+          "ALIGHT",
+          "LIGHT",
+          "LIGHTED",
+          "LIT"
+        ],
+        "preferredFamilies": [
+          "alight",
+          "light",
+          "lit"
+        ],
+        "familiarFamilies": [
+          "alight",
+          "light",
+          "lighted",
+          "lit"
+        ]
+      },
+      {
+        "first": "BEAMING",
+        "next": [
+          "ALIGHT",
+          "LIGHT",
+          "LIGHTED",
+          "LIT"
+        ],
+        "preferredFamilies": [
+          "alight",
+          "light",
+          "lit"
+        ],
+        "familiarFamilies": [
+          "alight",
+          "light",
+          "lighted",
+          "lit"
+        ]
+      },
+      {
+        "first": "BRIGHT",
+        "next": [
+          "ALIGHT",
+          "LIGHT",
+          "LIGHTED",
+          "LIT"
+        ],
+        "preferredFamilies": [
+          "alight",
+          "light",
+          "lit"
+        ],
+        "familiarFamilies": [
+          "alight",
+          "light",
+          "lighted",
+          "lit"
+        ]
+      },
+      {
+        "first": "BRILLIANT",
+        "next": [
+          "ALIGHT",
+          "LIGHT",
+          "LIGHTED",
+          "LIT"
+        ],
+        "preferredFamilies": [
+          "alight",
+          "light",
+          "lit"
+        ],
+        "familiarFamilies": [
+          "alight",
+          "light",
+          "lighted",
+          "lit"
+        ]
+      },
+      {
+        "first": "LAMBENT",
+        "next": [
+          "ALIGHT",
+          "LIGHT",
+          "LIGHTED",
+          "LIT"
+        ],
+        "preferredFamilies": [
+          "alight",
+          "light",
+          "lit"
+        ],
+        "familiarFamilies": [
+          "alight",
+          "light",
+          "lighted",
+          "lit"
+        ]
+      },
+      {
+        "first": "LIGHT",
+        "next": [
+          "ALIGHT",
+          "LIGHTED",
+          "LIT"
+        ],
+        "preferredFamilies": [
+          "alight",
+          "lit"
+        ],
+        "familiarFamilies": [
+          "alight",
+          "lighted",
+          "lit"
+        ]
+      },
+      {
+        "first": "LIGHTED",
+        "next": [
+          "ALIGHT",
+          "LIGHT",
+          "LIT"
+        ],
+        "preferredFamilies": [
+          "alight",
+          "light",
+          "lit"
+        ],
+        "familiarFamilies": [
+          "alight",
+          "light",
+          "lit"
+        ]
+      },
+      {
+        "first": "LIGHTER",
+        "next": [
+          "ALIGHT",
+          "LIGHT",
+          "LIGHTED",
+          "LIT"
+        ],
+        "preferredFamilies": [
+          "alight",
+          "lit"
+        ],
+        "familiarFamilies": [
+          "alight",
+          "lighted",
+          "lit"
+        ]
+      },
+      {
+        "first": "LIT",
+        "next": [
+          "ALIGHT",
+          "LIGHT",
+          "LIGHTED"
+        ],
+        "preferredFamilies": [
+          "alight",
+          "light"
+        ],
+        "familiarFamilies": [
+          "alight",
+          "light",
+          "lighted"
+        ]
+      },
+      {
+        "first": "LITER",
+        "next": [
+          "ALIGHT",
+          "LIGHT",
+          "LIGHTED",
+          "LIT"
+        ],
+        "preferredFamilies": [
+          "alight",
+          "light"
+        ],
+        "familiarFamilies": [
+          "alight",
+          "light",
+          "lighted"
+        ]
+      },
+      {
+        "first": "LURID",
+        "next": [
+          "ALIGHT",
+          "LIGHT",
+          "LIGHTED",
+          "LIT"
+        ],
+        "preferredFamilies": [
+          "alight",
+          "light",
+          "lit"
+        ],
+        "familiarFamilies": [
+          "alight",
+          "light",
+          "lighted",
+          "lit"
+        ]
+      },
+      {
+        "first": "RADIANT",
+        "next": [
+          "ALIGHT",
+          "LIGHT",
+          "LIGHTED",
+          "LIT"
+        ],
+        "preferredFamilies": [
+          "alight",
+          "light",
+          "lit"
+        ],
+        "familiarFamilies": [
+          "alight",
+          "light",
+          "lighted",
+          "lit"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 2,
+    "minFamiliarFamilies": 3,
+    "candidatesChecked": 10,
+    "pathsChecked": 48,
+    "removalOrder": [
+      0,
+      7,
+      11,
+      2,
+      14
+    ],
+    "witnesses": [
+      [
+        "ILLUMINATED"
+      ],
+      [
+        "BRIGHT",
+        "ILLUMINATED"
+      ],
+      [
+        "BRIGHT",
+        "LIT",
+        "ILLUMINATED"
+      ]
+    ],
+    "startingBingos": [
+      {
+        "word": "ILLUMINATED",
+        "effort": 5.6
+      }
+    ],
+    "helperEffort": 0.6199999999999992,
+    "semanticReview": "Literal light levels. Illuminated and lit describe something supplied with light; bright, radiant and light are light-emitting or well-lit adjectives. Intelligence, hope, light weight and light colours are not the chosen readings. LIGHT as a verb is not the counter reading."
+  },
+  {
+    "id": "hunt-thin",
+    "revision": "a9dbaf190eee",
+    "preferredHelpers": [
+      "THICK",
+      "DENSE",
+      "VISCOUS",
+      "HEAVY"
+    ],
+    "branches": [
+      {
+        "first": "DENSE",
+        "next": [
+          "HEAVIEST",
+          "THICK"
+        ],
+        "preferredFamilies": [
+          "thick"
+        ],
+        "familiarFamilies": [
+          "heavy",
+          "thick"
+        ]
+      },
+      {
+        "first": "DENSEST",
+        "next": [
+          "DENSE",
+          "HEAVIEST",
+          "THICK"
+        ],
+        "preferredFamilies": [
+          "thick"
+        ],
+        "familiarFamilies": [
+          "heavy",
+          "thick"
+        ]
+      },
+      {
+        "first": "HEAVIEST",
+        "next": [
+          "DENSE",
+          "THICK"
+        ],
+        "preferredFamilies": [
+          "dense",
+          "thick"
+        ],
+        "familiarFamilies": [
+          "dense",
+          "thick"
+        ]
+      },
+      {
+        "first": "HEAVY",
+        "next": [
+          "DENSE",
+          "HEAVIEST",
+          "THICK"
+        ],
+        "preferredFamilies": [
+          "dense",
+          "thick"
+        ],
+        "familiarFamilies": [
+          "dense",
+          "thick"
+        ]
+      },
+      {
+        "first": "THICK",
+        "next": [
+          "DENSE",
+          "HEAVIEST"
+        ],
+        "preferredFamilies": [
+          "dense"
+        ],
+        "familiarFamilies": [
+          "dense",
+          "heavy"
+        ]
+      },
+      {
+        "first": "VISCOUS",
+        "next": [
+          "DENSE",
+          "HEAVIEST",
+          "THICK"
+        ],
+        "preferredFamilies": [
+          "dense",
+          "thick"
+        ],
+        "familiarFamilies": [
+          "dense",
+          "heavy",
+          "thick"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 35,
+    "pathsChecked": 15,
+    "removalOrder": [
+      3,
+      5,
+      6,
+      10,
+      1,
+      9,
+      13
+    ],
+    "witnesses": [
+      [
+        "THICKENED"
+      ],
+      [
+        "THICK",
+        "THICKENED"
+      ],
+      [
+        "THICK",
+        "DENSE",
+        "THICKENED"
+      ]
+    ],
+    "startingBingos": [
+      {
+        "word": "THICKENED",
+        "effort": 5.619999999999999
+      }
+    ],
+    "helperEffort": 1.04,
+    "semanticReview": "Consistency and density, not body shape or the width of a solid. Thickened is an adjective meaning made thick in consistency. Thick and viscous oppose watery; dense and heavy use high density. Sticky alone is not the opposite of thin, and the verb THICKEN is not an adjective."
+  },
+  {
+    "id": "hunt-big",
+    "revision": "afbf6088b3be",
+    "preferredHelpers": [
+      "LITTLE",
+      "TINY",
+      "MINUTE",
+      "TEENY",
+      "BITTY"
+    ],
+    "branches": [
+      {
+        "first": "BITTIE",
+        "next": [
+          "BITTY",
+          "LITTLE",
+          "TEENY",
+          "TINY"
+        ],
+        "preferredFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ],
+        "familiarFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ]
+      },
+      {
+        "first": "BITTY",
+        "next": [
+          "BITTIE",
+          "LITTLE",
+          "TEENY",
+          "TINY"
+        ],
+        "preferredFamilies": [
+          "little",
+          "teeny",
+          "tiny"
+        ],
+        "familiarFamilies": [
+          "little",
+          "teeny",
+          "tiny"
+        ]
+      },
+      {
+        "first": "LITTLE",
+        "next": [
+          "BITTIE",
+          "BITTY",
+          "TEENY",
+          "TINY"
+        ],
+        "preferredFamilies": [
+          "bitty",
+          "teeny",
+          "tiny"
+        ],
+        "familiarFamilies": [
+          "bitty",
+          "teeny",
+          "tiny"
+        ]
+      },
+      {
+        "first": "MINI",
+        "next": [
+          "BITTIE",
+          "BITTY",
+          "LITTLE",
+          "TEENY",
+          "TINY"
+        ],
+        "preferredFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ],
+        "familiarFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ]
+      },
+      {
+        "first": "MINUTE",
+        "next": [
+          "BITTIE",
+          "BITTY",
+          "LITTLE",
+          "TEENY",
+          "TINY"
+        ],
+        "preferredFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ],
+        "familiarFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ]
+      },
+      {
+        "first": "MINUTEST",
+        "next": [
+          "BITTIE",
+          "BITTY",
+          "LITTLE",
+          "TEENY",
+          "TINY"
+        ],
+        "preferredFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ],
+        "familiarFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ]
+      },
+      {
+        "first": "SLIM",
+        "next": [
+          "BITTIE",
+          "BITTY",
+          "LITTLE",
+          "TEENY",
+          "TINY"
+        ],
+        "preferredFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ],
+        "familiarFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ]
+      },
+      {
+        "first": "STINGY",
+        "next": [
+          "BITTIE",
+          "BITTY",
+          "LITTLE",
+          "TEENY",
+          "TINY"
+        ],
+        "preferredFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ],
+        "familiarFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ]
+      },
+      {
+        "first": "TEENSY",
+        "next": [
+          "BITTIE",
+          "BITTY",
+          "LITTLE",
+          "TEENY",
+          "TINY"
+        ],
+        "preferredFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ],
+        "familiarFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ]
+      },
+      {
+        "first": "TEENTSY",
+        "next": [
+          "BITTIE",
+          "BITTY",
+          "LITTLE",
+          "TEENY",
+          "TINY"
+        ],
+        "preferredFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ],
+        "familiarFamilies": [
+          "bitty",
+          "little",
+          "teeny",
+          "tiny"
+        ]
+      },
+      {
+        "first": "TEENY",
+        "next": [
+          "BITTIE",
+          "BITTY",
+          "LITTLE",
+          "TINY"
+        ],
+        "preferredFamilies": [
+          "bitty",
+          "little",
+          "tiny"
+        ],
+        "familiarFamilies": [
+          "bitty",
+          "little",
+          "tiny"
+        ]
+      },
+      {
+        "first": "TINIEST",
+        "next": [
+          "BITTIE",
+          "BITTY",
+          "LITTLE",
+          "TEENY",
+          "TINY"
+        ],
+        "preferredFamilies": [
+          "bitty",
+          "little",
+          "teeny"
+        ],
+        "familiarFamilies": [
+          "bitty",
+          "little",
+          "teeny"
+        ]
+      },
+      {
+        "first": "TINY",
+        "next": [
+          "BITTIE",
+          "BITTY",
+          "LITTLE",
+          "TEENY"
+        ],
+        "preferredFamilies": [
+          "bitty",
+          "little",
+          "teeny"
+        ],
+        "familiarFamilies": [
+          "bitty",
+          "little",
+          "teeny"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 3,
+    "minFamiliarFamilies": 3,
+    "candidatesChecked": 20,
+    "pathsChecked": 60,
+    "removalOrder": [
+      1,
+      3,
+      4,
+      5,
+      8,
+      15
+    ],
+    "witnesses": [
+      [
+        "NEGLIGIBLE"
+      ],
+      [
+        "LITTLE",
+        "NEGLIGIBLE"
+      ],
+      [
+        "LITTLE",
+        "TINY",
+        "NEGLIGIBLE"
+      ]
+    ],
+    "startingBingos": [
+      {
+        "word": "NEGLIGIBLE",
+        "effort": 5.22
+      }
+    ],
+    "helperEffort": 0,
+    "semanticReview": "Size and amount only. Negligible means so small as to be insignificant, not merely worthless. Minute is the adjective meaning tiny, not a unit of time. Little and tiny use smallness, not youth. Slim and stingy use small quantity, not body shape or personality. MINI uses the independently sourced miniature adjective sense, rather than borrowing the short-skirt reading."
   }
 ]

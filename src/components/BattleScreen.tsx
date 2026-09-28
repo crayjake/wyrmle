@@ -49,8 +49,8 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
   notice?: ReactNode
 }) {
   const preferences = useUserPreferences()
-  const preferredLayout = layoutOverride ?? preferences.preferences.boardLayout ?? 'grid'
-  const tileShape = shapeOverride ?? preferences.preferences.tileShape ?? 'square'
+  const preferredLayout = layoutOverride ?? preferences.preferences.boardLayout ?? 'wheel'
+  const tileShape = shapeOverride ?? preferences.preferences.tileShape ?? 'circle'
   const easy = preferences.preferences.preferredMode === 'easy'
   const hard = preferences.preferences.preferredMode === 'hard' || preferences.preferences.preferredMode === 'hardcore'
   const hintsAvailable = easy && Boolean(guide)

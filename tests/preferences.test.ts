@@ -12,14 +12,19 @@ class MemoryStorage implements StorageLike {
   key(index: number) { return [...this.data.keys()][index] ?? null }
 }
 
-test('layout and tile shape persist while old and invalid preferences retain the original defaults', () => {
+test('two rings and circular tiles are the defaults; explicit layout choices still persist', () => {
   const storage = new MemoryStorage()
+  assert.equal(loadPreferences(storage).boardLayout, 'wheel')
+  assert.equal(loadPreferences(storage).tileShape, 'circle')
+  savePreferences(storage, { ...defaultPreferences(), boardLayout: 'grid', tileShape: 'square' })
+  assert.equal(loadPreferences(storage).boardLayout, 'grid')
+  assert.equal(loadPreferences(storage).tileShape, 'square')
   savePreferences(storage, { ...defaultPreferences(), boardLayout: 'ring', tileShape: 'circle' })
   assert.equal(loadPreferences(storage).boardLayout, 'ring')
   assert.equal(loadPreferences(storage).tileShape, 'circle')
   storage.setItem(PREFERENCES_KEY, JSON.stringify({ boardLayout: 'invalid', tileShape: 'triangle' }))
-  assert.equal(loadPreferences(storage).boardLayout, undefined)
-  assert.equal(loadPreferences(storage).tileShape, undefined)
+  assert.equal(loadPreferences(storage).boardLayout, 'wheel')
+  assert.equal(loadPreferences(storage).tileShape, 'circle')
   assert.equal(loadPreferences(storage).preferredMode, 'normal')
 })
 
@@ -84,7 +89,7 @@ test('changing preference and resetting onboarding touches no Daily records', ()
 test('invalid preference values fall back to Normal and keep returning-player status', () => {
   const storage = new MemoryStorage()
   storage.setItem(PREFERENCES_KEY, JSON.stringify({ preferredMode: 'cheat', hasCompletedOnboarding: true }))
-  assert.deepEqual(loadPreferences(storage), { preferredMode: 'normal', hasCompletedOnboarding: true, hasChosenMode: true })
+  assert.deepEqual(loadPreferences(storage), { ...defaultPreferences(), hasCompletedOnboarding: true, hasChosenMode: true })
   storage.setItem('wyrmle:daily:run:2026-09-24', 'old')
   for (const value of ['{invalid', 'null', '[]', '"text"']) {
     storage.setItem(PREFERENCES_KEY, value)

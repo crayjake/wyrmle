@@ -11,7 +11,7 @@ export type UserPreferences = {
 }
 
 export function defaultPreferences(): UserPreferences {
-  return { preferredMode: 'normal', hasCompletedOnboarding: false, hasChosenMode: false }
+  return { preferredMode: 'normal', hasCompletedOnboarding: false, hasChosenMode: false, boardLayout: 'wheel', tileShape: 'circle' }
 }
 
 function hasPreviousVisit(storage: StorageLike): boolean {
@@ -36,6 +36,7 @@ export function loadPreferences(storage: StorageLike): UserPreferences {
         const complete = typeof data.hasCompletedOnboarding === 'boolean'
           ? data.hasCompletedOnboarding : returning
         return {
+          ...defaults,
           preferredMode: data.preferredMode === 'easy' || data.preferredMode === 'hard' || data.preferredMode === 'hardcore' ? data.preferredMode : 'normal',
           hasCompletedOnboarding: complete,
           // Older preference records may predate the interrupted-choice flag.

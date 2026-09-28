@@ -5,7 +5,7 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { antonymProfiles } from './antonyms/profiles.ts'
 import { buildAntonymEncounter } from './antonyms/build.ts'
 import { packDictionaryMeanings } from '../src/game/meaningPacking.ts'
-import { createLetterStrikeGame, submitLetterStrike } from '../src/game/letterStrike.ts'
+import { createLetterStrikeGame, previewLetterStrike, submitLetterStrike } from '../src/game/letterStrike.ts'
 import type { LetterStrikeState } from '../src/game/letterStrike.ts'
 import { selectWordIds } from '../src/generator/constructRefill.ts'
 import { canSpell } from '../src/generator/constructBoard.ts'
@@ -14,6 +14,8 @@ import previousCatalog from '../src/experimental/concepts/catalog.json' with { t
 import type { ConceptEntry } from '../src/experimental/concepts/catalog.ts'
 import { decodeConceptPuzzle } from '../src/experimental/concepts/catalog.ts'
 import { certifyHuntProgressCompatibility, planHuntRemovals } from './antonyms/hunt.ts'
+import { huntProfiles } from './antonyms/huntProfiles.ts'
+import { wordEffort } from './bingo/routeDifficulty.ts'
 
 import { certifyProgression } from './antonyms/progression.ts'
 
@@ -76,20 +78,28 @@ for (const profile of antonymProfiles) {
   console.log(profile.id, JSON.stringify({ starts, bingos, unpoweredBingos, routes: routes.map(route => route.map(step => `${step.word}:${step.hits}`)) }))
 }
 if (!process.env.CONCEPT_ID) {
-  // Two comparisons with the same starting letters and reviewed antonyms.
+  // Each hunt is independently reproducible; legacy comparisons keep their saves.
   const huntReports = []
-  for (const { id, helpers, preferredHelpers, progressRevision } of [
-    { id: 'alert', helpers: ['SLOW', 'INERT'], preferredHelpers: ['SLOW', 'TIRED', 'IDLE', 'INERT'], progressRevision: '215093c7c262' },
-    { id: 'true', helpers: ['WRONG', 'UNREAL'], preferredHelpers: ['WRONG', 'UNREAL', 'INCORRECT'], progressRevision: '5f7f54a6985b' },
-  ]) {
-    const profile = antonymProfiles.find(profile => profile.id === id)!
+  for (const { profile, helpers, preferredHelpers, progressRevision } of huntProfiles) {
     const built = buildAntonymEncounter({ ...profile, refills: '' })
-    const huntId = `hunt-${id}`
+    const huntId = `hunt-${profile.id}`
     built.encounter.id = `antonym-preview-v2:${huntId}`
     const { encounter, review } = planHuntRemovals(built.encounter, profile.bingo, preferredHelpers)
-    const previous = (previousCatalog as ConceptEntry[]).find(entry => entry.id === huntId)!
-    const legacy = decodeConceptPuzzle(JSON.parse(readFileSync(`public/previews/concepts/${huntId}-${progressRevision}.json`, 'utf8')), previous)
-    const compatibility = certifyHuntProgressCompatibility(legacy, encounter)
+    let compatibility
+    if (progressRevision) {
+      const previous = (previousCatalog as ConceptEntry[]).find(entry => entry.id === huntId)!
+      const legacy = decodeConceptPuzzle(JSON.parse(readFileSync(`public/previews/concepts/${huntId}-${progressRevision}.json`, 'utf8')), previous)
+      compatibility = certifyHuntProgressCompatibility(legacy, encounter)
+    }
+    const initial = createLetterStrikeGame(encounter)
+    const startingBingos = Object.keys(encounter.meaningLexicon!.words).flatMap(word => {
+      const ids = selectWordIds(initial.tiles, word)
+      const preview = ids ? previewLetterStrike(initial, ids) : undefined
+      return preview?.valid && preview.bingoHunt?.won ? [{ word, effort: wordEffort(word) }] : []
+    })
+    const helperEffort = Math.max(...helpers.map(wordEffort))
+    assert.ok(startingBingos.length && startingBingos.every(bingo => bingo.effort >= helperEffort + .4),
+      `${huntId}: an easier bingo undercuts the planned helpers`)
     for (const words of [[profile.bingo], [helpers[0], profile.bingo], [...helpers, profile.bingo]]) {
       let state = createLetterStrikeGame(encounter)
       for (const word of words) {
@@ -108,7 +118,9 @@ if (!process.env.CONCEPT_ID) {
     catalog.push({ id: huntId, enemy: profile.enemy, definition: profile.definition, asset, revision, progressRevision, powers: 0,
       bingoHunt: true, partOfSpeech: encounter.enemy.partOfSpeech!, counterPartOfSpeech: encounter.counterRules!.partOfSpeech,
       guide: { answer: profile.bingo, hints: profile.hints, explanation: `${profile.bingo} is an opposite adjective containing every letter of ${profile.enemy}.` } })
-    huntReports.push({ id: huntId, revision, progressRevision, ...review, compatibility })
+    huntReports.push({ id: huntId, revision, progressRevision, ...review, compatibility,
+      witnesses: [[profile.bingo], [helpers[0], profile.bingo], [...helpers, profile.bingo]],
+      startingBingos, helperEffort, semanticReview: profile.review })
     console.log(huntId, JSON.stringify({ candidates: review.candidatesChecked, minimumFollowupFamilies: review.minPreferredFamilies, compatibility }))
   }
   writeFileSync('src/experimental/concepts/catalog.json', JSON.stringify(catalog, null, 2) + '\n')

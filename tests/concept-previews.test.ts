@@ -33,7 +33,7 @@ function play(game: LetterStrikeState, word: string) {
 }
 
 test('all downloadable boards have working one-, two- and three-word wins', () => {
-  assert.equal(encounters.size, 13)
+  assert.equal(encounters.size, 18)
   for (const [id, paths] of Object.entries(routes)) for (const path of paths) {
     let game = initial(id)
     for (const word of path) {
