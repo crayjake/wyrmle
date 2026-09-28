@@ -9,6 +9,7 @@ export type ChallengeMove = { word: string; ids: number[] }
 export type ChallengeRecord = {
   version: 1; date: string; asset: string; revision: number; attempts: number
   bestWords: number | null
+  bestSolution?: string[]
   // Four/five lives are accepted only to finish a migrated historical attempt.
   run: { lives: DailyLives | 4 | 5; started: boolean; status: LetterStrikeState['status']; moves: ChallengeMove[]; hintStep?: number }
 }
@@ -39,6 +40,10 @@ function parseChallenge(date: string, raw: string | null): ChallengeRecord | nul
     if (!r.moves.every(m => object(m) && typeof m.word === 'string' && /^[A-Z]{3,16}$/.test(m.word)
       && Array.isArray(m.ids) && m.ids.length === m.word.length && new Set(m.ids).size === m.ids.length
       && m.ids.every(id => integer(id, 0, 10_000)))) return null
+    // Older saves contain only the score. A missing/bad optional word list must
+    // not discard that score or the current attempt.
+    if (v.bestSolution !== undefined && (!Array.isArray(v.bestSolution) || v.bestSolution.length !== v.bestWords
+      || !v.bestSolution.every(word => typeof word === 'string' && /^[A-Z]{3,16}$/.test(word)))) delete v.bestSolution
     return v as ChallengeRecord
   } catch { return null }
 }
@@ -74,17 +79,28 @@ function write(record: ChallengeRecord, expectedRevision: number, storage: Pick<
   return next
 }
 
+/** Recover older wins while their moves still exist, before a replay replaces them. */
+export function challengeBestSolution(record: ChallengeRecord): string[] | undefined {
+  return record.bestSolution ?? (record.run.status === 'won' && record.run.moves.length === record.bestWords
+    ? record.run.moves.map(move => move.word) : undefined)
+}
+
 export function saveChallenge(record: ChallengeRecord, game: LetterStrikeState, started: boolean,
   storage: Pick<StorageLike, 'getItem' | 'setItem'>, hintStep = record.run.hintStep ?? 1): ChallengeRecord {
   if (game.encounter.startingResolve !== record.run.lives) throw new Error('Attempt lives changed.')
   const moves = game.playedWords.map(move => ({ word: move.word, ids: move.tiles.map(tile => tile.id) }))
+  const previousSolution = challengeBestSolution(record)
+  const bestSolution = game.status === 'won' && (moves.length < (record.bestWords ?? Infinity)
+    || moves.length === record.bestWords && !previousSolution) ? moves.map(move => move.word) : previousSolution
   return write({ ...record, attempts: record.attempts + Number(started && !record.run.started),
     bestWords: game.status === 'won' ? Math.min(record.bestWords ?? Infinity, moves.length) : record.bestWords,
+    bestSolution,
     run: { lives: record.run.lives, started, status: game.status, moves, hintStep } }, record.revision, storage)
 }
 
 export function restartChallenge(record: ChallengeRecord, storage: Pick<StorageLike, 'getItem' | 'setItem'>): ChallengeRecord {
-  return write({ ...record, run: { lives: challengeLives(record.bestWords), started: false, status: 'playing', moves: [] } }, record.revision, storage)
+  return write({ ...record, bestSolution: challengeBestSolution(record),
+    run: { lives: challengeLives(record.bestWords), started: false, status: 'playing', moves: [] } }, record.revision, storage)
 }
 
 /** Count a date once at its best result; replaying never inflates star totals. */

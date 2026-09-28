@@ -13,10 +13,11 @@ type HeaderProps = {
     onHistory: () => void
     onSettings?: () => void
     bestStars?: number
+    onBest?: () => void
     puzzleDate?: string
 }
 
-export default function Header({ wyrmDockRef, titleRef, showWyrm, onHelp, onHistory, onSettings, bestStars, puzzleDate }: HeaderProps) {
+export default function Header({ wyrmDockRef, titleRef, showWyrm, onHelp, onHistory, onSettings, bestStars, onBest, puzzleDate }: HeaderProps) {
     return (
         <header className="header">
             <div className="header-brand">
@@ -32,10 +33,11 @@ export default function Header({ wyrmDockRef, titleRef, showWyrm, onHelp, onHist
             </time>}
             </div>
 
-            {bestStars !== undefined && <div className="header-best">
+            {bestStars !== undefined && <button type="button" className="header-best" onClick={onBest}
+                disabled={!onBest} aria-label={bestStars ? `View best result: ${bestStars} of 3 stars` : 'Best: not solved yet'}>
                 <span className="resource-label" aria-hidden="true">BEST</span>
                 <StarRating stars={bestStars} label={bestStars ? `Best: ${bestStars} of 3 stars` : 'Best: not solved yet'} />
-            </div>}
+            </button>}
 
             <nav className="header-actions">
             <button className="icon-button" aria-label="Help" onClick={onHelp}>

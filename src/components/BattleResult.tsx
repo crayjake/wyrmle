@@ -5,36 +5,41 @@ import BingoStars from './BingoStars'
 import type { LetterStrikeState } from '../game/letterStrike'
 import { winStars } from '../game/rating'
 
-export default function BattleResult({ game, onRetry, onNext, onChoose, onHints, actions, nudge }: {
-  game: LetterStrikeState
+type ResultSource = { game: LetterStrikeState; best?: never } | {
+  game?: never
+  best: { enemy: string; wordCount: number; solution?: string[] }
+}
+
+export default function BattleResult({ game, best, onRetry, onNext, onChoose, onHints, actions, nudge }: ResultSource & {
   onRetry: () => void
   onNext?: () => void
   onChoose?: () => void
   onHints?: () => void
   actions?: ReactNode
-  nudge?: string
+  nudge?: string | null
 }) {
   const heading = useRef<HTMLHeadingElement>(null)
   useEffect(() => { heading.current?.focus({ preventScroll: true }) }, [])
-  const won = game.status === 'won'
-  const words = game.playedWords.length
+  const won = best !== undefined || game.status === 'won'
+  const words = best?.wordCount ?? game!.playedWords.length
+  const solution = best ? best.solution : game.playedWords.map(move => move.word)
   const bingo = won && words === 1
   const stars = won ? winStars(words) : 0
   return <section className="bingo-result" data-bingo={bingo || undefined} aria-labelledby="bingo-result-title">
     <div className="bingo-result-story">
-      <p className="bingo-result-enemy">{game.encounter.enemy.word}</p>
+      <p className="bingo-result-enemy">{best?.enemy ?? game!.encounter.enemy.word}</p>
       {won && (bingo ? <BingoStars /> : <div className="bingo-result-stars" role="img" aria-label={`${stars} of 3 stars`}>
         {[1, 2, 3].map(star => <Star key={star} aria-hidden="true" data-earned={star <= stars}
           style={{ animationDelay: `${star * 100}ms` }} />)}
       </div>)}
       <h1 id="bingo-result-title" ref={heading} tabIndex={-1}>{bingo ? 'Bingo!' : won ? 'Solved!' : 'Another try?'}</h1>
       <p className="bingo-result-caption">{bingo ? 'Every letter. One word.' : won ? `Solved in ${words} words.`
-        : game.playerResolve === 0 ? 'Out of lives.' : 'No playable words remain.'}</p>
-      {bingo ? <p className="bingo-result-word">{game.playedWords[0].word}</p>
+        : game?.playerResolve === 0 ? 'Out of lives.' : 'No playable words remain.'}</p>
+      {solution?.length ? bingo ? <p className="bingo-result-word">{solution[0]}</p>
         : <ol className="bingo-result-words" aria-label="Your words">
-          {game.playedWords.map((move, index) => <li key={index}>{move.word}</li>)}
-        </ol>}
-      {won && !bingo && <p className="bingo-result-nudge">{nudge ?? 'Can you find the one-word win?'}</p>}
+          {solution.map((word, index) => <li key={index}>{word}</li>)}
+        </ol> : null}
+      {won && !bingo && nudge !== null && <p className="bingo-result-nudge">{nudge ?? 'Can you find the one-word win?'}</p>}
     </div>
     <div className="bingo-result-actions">
       {actions ?? <>

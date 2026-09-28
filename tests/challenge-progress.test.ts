@@ -3,7 +3,7 @@ import { test } from 'node:test'
 import { readFileSync } from 'node:fs'
 import { bingoPreviews } from '../src/experimental/bingo/catalog.ts'
 import { decodeBingoPreview } from '../src/experimental/bingo/previewData.ts'
-import { openChallenge, saveChallenge, restartChallenge, challengeLives, challengeStars, challengeHistory, challengeKey, challengeBackupKey } from '../src/daily/challengeProgress.ts'
+import { openChallenge, saveChallenge, restartChallenge, challengeLives, challengeStars, challengeHistory, challengeBestSolution, readChallenge, challengeKey, challengeBackupKey } from '../src/daily/challengeProgress.ts'
 import { createLetterStrikeGame, submitLetterStrike } from '../src/game/letterStrike.ts'
 import { selectWordIds } from '../src/generator/constructRefill.ts'
 
@@ -50,6 +50,51 @@ test('losses do not reduce lives; duplicate begin saves do not count extra attem
   assert.equal(game.status, 'lost'); assert.equal(record.bestWords, null)
   assert.equal(restartChallenge(record, store).run.lives, 3)
   assert.deepEqual([null, 3, 2, 1].map(challengeLives), [3, 2, 1, 1])
+})
+
+test('best winning words survive replays, losses and reloads, and change with a better score', () => {
+  const store = storage()
+  let { record, game } = openChallenge(date, entry.asset, encounter, store)
+  for (const word of ['WATER', 'SPRING', 'DIP']) game = play(game, word)
+  record = saveChallenge(record, game, true, store)
+  assert.deepEqual(challengeBestSolution(record), ['WATER', 'SPRING', 'DIP'])
+  record = restartChallenge(record, store)
+  ;({ record, game } = openChallenge(date, entry.asset, encounter, store))
+  for (const word of ['AIR', 'AIR']) game = play(game, word)
+  record = saveChallenge(record, game, true, store)
+  assert.equal(game.status, 'lost')
+  assert.deepEqual(challengeBestSolution(readChallenge(date, store)!), ['WATER', 'SPRING', 'DIP'])
+  record = restartChallenge(record, store)
+  ;({ record, game } = openChallenge(date, entry.asset, encounter, store))
+  for (const word of ['RAIN', 'MIRED']) game = play(game, word)
+  record = saveChallenge(record, game, true, store)
+  assert.deepEqual(challengeBestSolution(record), ['RAIN', 'MIRED'])
+  record = restartChallenge(record, store)
+  ;({ record, game } = openChallenge(date, entry.asset, encounter, store))
+  record = saveChallenge(record, play(game, 'IRRIGATED'), true, store)
+  assert.deepEqual(challengeBestSolution(readChallenge(date, store)!), ['IRRIGATED'])
+})
+
+test('older wins recover their words before restart; older score-only saves remain usable', () => {
+  const store = storage()
+  const opened = openChallenge(date, entry.asset, encounter, store)
+  const win = saveChallenge(opened.record, play(opened.game, 'IRRIGATED'), true, store)
+  delete win.bestSolution
+  store.setItem(challengeKey(date), JSON.stringify(win))
+  assert.deepEqual(challengeBestSolution(readChallenge(date, store)!), ['IRRIGATED'])
+  let record = restartChallenge(readChallenge(date, store)!, store)
+  assert.deepEqual(challengeBestSolution(record), ['IRRIGATED'])
+  delete record.bestSolution
+  store.setItem(challengeKey(date), JSON.stringify(record))
+  assert.equal(challengeBestSolution(readChallenge(date, store)!), undefined)
+  assert.equal(openChallenge(date, entry.asset, encounter, store).record.bestWords, 1)
+  for (const bestSolution of [null, 'IRRIGATED', ['BAD', 'DATA'], ['not a saved word']]) {
+    store.setItem(challengeKey(date), JSON.stringify({ ...record, bestSolution }))
+    assert.equal(readChallenge(date, store)!.bestWords, 1)
+    assert.equal(challengeBestSolution(readChallenge(date, store)!), undefined)
+  }
+  record = saveChallenge(record, play(openChallenge(date, entry.asset, encounter, store).game, 'IRRIGATED'), true, store)
+  assert.deepEqual(challengeBestSolution(record), ['IRRIGATED'], 'A tied win can fill a missing word list')
 })
 
 test('stale tabs cannot overwrite a newer attempt or best score', () => {

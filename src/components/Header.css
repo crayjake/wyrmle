@@ -5,6 +5,10 @@
 .header { gap: 4px; }
 .header-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; flex: none; }
 .header-best { display: flex; flex: 1; min-width: 56px; flex-direction: column; align-items: center; gap: 3px; }
+.header-best { min-height: 44px; justify-content: center; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; }
+.header-best:disabled { cursor: default; opacity: 1; }
+.header-best:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.header-best:enabled:hover .resource-label { color: var(--emph); }
 .header-actions { flex: none; }
 
 @media (orientation: landscape) and (max-height: 550px) {

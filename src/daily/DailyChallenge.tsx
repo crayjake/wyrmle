@@ -7,7 +7,7 @@ import { useUserPreferences } from '../useUserPreferences'
 import { getDailyPuzzleId } from './date'
 import { decodeScheduledPuzzle, latestScheduledPuzzle, scheduledPuzzle } from './scheduledPuzzle'
 import type { ScheduledPuzzle } from './scheduledPuzzle'
-import { challengeHistory, challengeKey, challengeLives, challengeStars, openChallenge, readChallenge, restartChallenge, saveChallenge } from './challengeProgress'
+import { challengeBestSolution, challengeHistory, challengeKey, challengeLives, challengeStars, openChallenge, readChallenge, restartChallenge, saveChallenge } from './challengeProgress'
 import type { ChallengeRecord } from './challengeProgress'
 import { shareResult } from './shareResult'
 import { challengeShareText } from './scoreShare'
@@ -109,6 +109,12 @@ function DailyAttempt({ entry, encounter, today, onTutorial }: {
         <button className="daily-button" onClick={() => setStats(true)}>Statistics</button>
         <button className="daily-button" onClick={onTutorial}>Tutorial</button>
       </>}
+      renderBestResult={record.bestWords === null ? undefined : close => <BattleResult
+        best={{ enemy: encounter.enemy.word, wordCount: record.bestWords!, solution: challengeBestSolution(record) }}
+        onRetry={close} nudge={null} actions={<>
+          <DailyShare record={record} />
+          <button className="daily-button" onClick={close}>Back to puzzle</button>
+        </>} />}
       renderResult={game => <BattleResult game={game} onRetry={restart}
         nudge={lives === 1 ? 'Next challenge: find the one-word win.' : 'Next challenge: solve it with 2 lives.'}
         actions={<>

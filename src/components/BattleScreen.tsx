@@ -23,7 +23,7 @@ export type BattleAttempt = { game: LetterStrikeState; started: boolean; hintSte
 
 /** Daily and archived puzzles share one battle UI and the same difficulty rules. */
 export default function BattleScreen({ encounter, initial, onSave, onRestart, onExit, title, onChoose, onNext,
-  guide, menu, renderResult, bestStars, puzzleDate }: {
+  guide, menu, renderResult, renderBestResult, bestStars, puzzleDate }: {
   encounter: LetterStrikeEncounter
   initial?: BattleAttempt
   onSave: (game: LetterStrikeState, started: boolean, hintStep: number) => boolean
@@ -35,6 +35,7 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
   guide?: BingoGuide
   menu?: ReactNode
   renderResult?: (game: LetterStrikeState) => ReactNode
+  renderBestResult?: (onClose: () => void) => ReactNode
   bestStars?: number
   puzzleDate?: string
 }) {
@@ -45,10 +46,17 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
   const [game, setGame] = useState(() => initial?.game ?? createLetterStrikeGame(encounter))
   const [phase, setPhase] = useState<Phase>(initial?.started ? 'ready' : 'waiting')
   const [panel, setPanel] = useState<Panel>(null)
+  const [viewingBest, setViewingBest] = useState(false)
+  const wasViewingBest = useRef(false)
   const [hintStep, setHintStep] = useState(initial?.hintStep ?? 1)
   const [progressSaved, setProgressSaved] = useState(true)
   const containerRef = useRef<HTMLElement>(null)
-  useBattleFit(containerRef)
+  useLayoutEffect(() => {
+    if (wasViewingBest.current && !viewingBest) {
+      containerRef.current?.querySelector<HTMLButtonElement>('.header-best')?.focus({ preventScroll: true })
+    }
+    wasViewingBest.current = viewingBest
+  }, [viewingBest])
   const enemyElements = useRef<(HTMLDivElement | null)[]>([])
   const tileElements = useRef<(HTMLButtonElement | null)[]>([])
   const refillElements = useRef<(HTMLSpanElement | null)[]>([])
@@ -89,7 +97,8 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
   const resolutionComplete = useCallback(() => setResolvedTurnCount(game.playedWords.length), [game.playedWords.length])
   const enemy = game.encounter.enemy
   const showResult = game.status !== 'playing' && !resolving
-  const interactive = phase === 'ready' && game.status === 'playing' && !resolving
+  useBattleFit(containerRef, !viewingBest && !showResult)
+  const interactive = phase === 'ready' && game.status === 'playing' && !resolving && !viewingBest
   const attackPreview = previewLetterStrike(game)
   const preview = { ...attackPreview, amount: attackPreview.strikes, maximum: 0, bonuses: getLetterStrikeBonuses(attackPreview) }
   const events = getLetterStrikeBattleEvents(game)
@@ -123,21 +132,24 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
     persist(game, phase !== 'waiting', step)
     setHintStep(step)
   }
+  const closeBest = () => setViewingBest(false)
 
   const displayedLives = resolving
     ? game.playerResolve + (game.playedWords.at(-1)?.preview.resolveCost ?? 0) : game.playerResolve
   return <main className="container letter-combat bingo-preview" data-combat-mode="letter-strike"
-    data-game-status={game.status} data-result={showResult || undefined} data-phase={phase} data-turns={game.playedWords.length}
+    data-game-status={game.status} data-result={showResult || viewingBest || undefined} data-phase={phase} data-turns={game.playedWords.length}
     ref={containerRef}
     onClick={event => {
       if ((event.target as HTMLElement).closest('button, a, input, dialog')) return
-      if (phase === 'waiting') begin()
+      if (phase === 'waiting' && !viewingBest) begin()
     }}>
     <Header wyrmDockRef={wyrmDockRef} titleRef={wyrmTitleRef} showWyrm={false}
       bestStars={bestStars} puzzleDate={puzzleDate}
+      onBest={renderBestResult && bestStars && !resolving && (phase === 'ready' || phase === 'waiting')
+        ? () => setViewingBest(true) : undefined}
       onHelp={() => setPanel('help')} onHistory={() => setPanel('log')} onSettings={() => setPanel('modes')} />
     {!progressSaved && <div className="daily-notice" role="alert"><span>Progress could not be saved.</span><button className="daily-button" onClick={() => persist(game, phase !== 'waiting')}>Retry save</button></div>}
-    {showResult ? renderResult?.(game) ?? <BattleResult game={game} onRetry={onRestart} onNext={onNext}
+    {viewingBest ? renderBestResult?.(closeBest) : showResult ? renderResult?.(game) ?? <BattleResult game={game} onRetry={onRestart} onNext={onNext}
       onChoose={onChoose} onHints={hintsAvailable ? () => setPanel('hints') : undefined} /> : <>
     <div className="battle-info">
       <MyInfo name="LIVES" health={displayedLives} maxHealth={game.encounter.startingResolve} wyrm
