@@ -23,7 +23,7 @@ export type BattleAttempt = { game: LetterStrikeState; started: boolean; hintSte
 
 /** Daily and archived puzzles share one battle UI and the same difficulty rules. */
 export default function BattleScreen({ encounter, initial, onSave, onRestart, onExit, title, onChoose, onNext,
-  guide, menu, renderResult, renderBestResult, bestStars, puzzleDate, boardLayout = 'grid', notice }: {
+  guide, menu, renderResult, renderBestResult, bestStars, puzzleDate, boardLayout = 'grid', tileShape = 'square', notice }: {
   encounter: LetterStrikeEncounter
   initial?: BattleAttempt
   onSave: (game: LetterStrikeState, started: boolean, hintStep: number) => boolean
@@ -38,7 +38,8 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
   renderBestResult?: (onClose: () => void) => ReactNode
   bestStars?: number
   puzzleDate?: string
-  boardLayout?: 'grid' | 'wheel'
+  boardLayout?: 'grid' | 'wheel' | 'ring'
+  tileShape?: 'square' | 'circle'
   notice?: ReactNode
 }) {
   const preferences = useUserPreferences()
@@ -182,7 +183,7 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
         resolveBefore={interactive && preview.valid ? game.playerResolve : undefined}
       />
       <div className="controls">
-        <TileGrid layout={boardLayout} revealedIndices={revealedTileIndices} registerTile={registerTile}
+        <TileGrid layout={boardLayout} tileShape={tileShape} revealedIndices={revealedTileIndices} registerTile={registerTile}
           ready={interactive} tiles={game.tiles} specialTiles={specialTiles}
           enemyLetters={game.enemyLetters} matchHint="underline"
           selectedTileIds={game.selectedTileIds} canAttack={phase === 'waiting' || interactive && preview.valid}

@@ -35,7 +35,8 @@ type TileGridProps = {
   damage?: number
   primaryLabel?: BattlePrimaryLabel
   showActions?: boolean
-  layout?: 'grid' | 'wheel'
+  layout?: 'grid' | 'wheel' | 'ring'
+  tileShape?: 'square' | 'circle'
   canAttack: boolean
   onToggleTile: (id: number) => void
   // Guided modes validate this ordered batch against their next-letter rule.
@@ -64,6 +65,7 @@ export default function TileGrid({
   primaryLabel,
   showActions = true,
   layout = 'grid',
+  tileShape = 'square',
   canAttack,
   onToggleTile,
   onSelectTiles,
@@ -83,11 +85,11 @@ export default function TileGrid({
   const [pointer, setPointer] = useState<{ x: number; y: number } | null>(null)
   const positions = tiles.map((_, index) => {
     const slot = wheelOrder.indexOf(index)
-    const outerCount = Math.min(10, tiles.length)
+    const outerCount = layout === 'ring' ? tiles.length : Math.min(10, tiles.length)
     const outer = slot < outerCount
     const count = outer ? outerCount : tiles.length - outerCount
     const angle = ((outer ? slot : slot - outerCount) / count * 360 - 90) * Math.PI / 180
-    const radius = outer ? 41 : 22
+    const radius = outer ? layout === 'ring' ? 42 : 41 : 22
     return { x: 50 + Math.cos(angle) * radius, y: 50 + Math.sin(angle) * radius }
   })
   const path = selectedTileIds.flatMap(id => {
@@ -96,7 +98,7 @@ export default function TileGrid({
   })
   const gestureRef = useRef<{ selection: TileSelectionGesture; bounds: TileGestureBounds[]; board: string } | null>(null)
   const pointerClickUntil = useRef(0)
-  const board = `${layout}|${tiles.map(tile => `${tile.id}:${tile.letter}`).join('|')}`
+  const board = `${layout}:${tileShape}|${tiles.map(tile => `${tile.id}:${tile.letter}`).join('|')}`
 
   function cancelGesture() {
     const gesture = gestureRef.current
@@ -110,7 +112,7 @@ export default function TileGrid({
   }
 
   function movePointer(event: ReactPointerEvent<HTMLDivElement>) {
-    if (layout !== 'wheel') return
+    if (layout === 'grid') return
     const rect = event.currentTarget.getBoundingClientRect()
     setPointer({ x: (event.clientX - rect.left) / rect.width * 100, y: (event.clientY - rect.top) / rect.height * 100 })
   }
@@ -153,7 +155,8 @@ export default function TileGrid({
       const boardTile = tiles[Number(element.dataset.tileIndex)]
       if (!boardTile?.letter) return []
       const rect = element.getBoundingClientRect()
-      return [{ id: boardTile.id, left: rect.left, right: rect.right, top: rect.top, bottom: rect.bottom }]
+      return [{ id: boardTile.id, left: rect.left, right: rect.right, top: rect.top, bottom: rect.bottom,
+        ...(tileShape === 'circle' ? { radius: Math.min(rect.width, rect.height) / 2 } : {}) }]
     })
     const started = beginTileSelectionGesture(event.pointerId, { x: event.clientX, y: event.clientY }, tile.id, selectedTileIds)
     gestureRef.current = { selection: started.gesture, bounds, board }
@@ -204,7 +207,8 @@ export default function TileGrid({
 
   return (
     <>
-      <div className={`tile-grid${layout === 'wheel' ? ' anagram-wheel' : ''}`} ref={gridRef} data-swipe-ready={ready}
+      <div className={`tile-grid${layout !== 'grid' ? ' anagram-wheel' : ''}`} ref={gridRef} data-swipe-ready={ready}
+        data-tile-shape={tileShape} data-rings={layout === 'ring' ? 1 : layout === 'wheel' ? 2 : undefined}
         onPointerDown={beginGesture}
         onPointerMove={moveGesture}
         onPointerUp={endGesture}
@@ -224,9 +228,9 @@ export default function TileGrid({
           }
         }}
       >
-        {layout === 'wheel' && <>
+        {layout !== 'grid' && <>
           <svg className="wheel-trace" viewBox="0 0 100 100" aria-hidden="true">
-            <circle className="wheel-guide" cx="50" cy="50" r="41" />
+            <circle className="wheel-guide" cx="50" cy="50" r={layout === 'ring' ? 42 : 41} />
             {path.length > 1 && <polyline points={path.map(point => `${point.x},${point.y}`).join(' ')} />}
             {pointer && path.length > 0 && <line className="wheel-live-trace" x1={path.at(-1)!.x} y1={path.at(-1)!.y} x2={pointer.x} y2={pointer.y} />}
           </svg>
@@ -260,7 +264,7 @@ export default function TileGrid({
               }}
             />
           )
-          return layout === 'wheel' ? <div key={tile.id} className="wheel-slot"
+          return layout !== 'grid' ? <div key={tile.id} className="wheel-slot"
             style={{ left: `${positions[i].x}%`, top: `${positions[i].y}%` }}>{content}</div> : content
         })}
       </div>

@@ -6,6 +6,7 @@ export type TileGestureBounds = {
   right: number
   top: number
   bottom: number
+  radius?: number
 }
 
 export type TileSelectionGesture = {
@@ -24,6 +25,22 @@ const TAP_SLOP = 8
 // Return where a segment first enters a tile. Testing the whole segment means
 // fast swipes still collect tiles between the browser's pointer samples.
 function entryDistance(start: TileGesturePoint, end: TileGesturePoint, bounds: TileGestureBounds): number | null {
+  // Round tiles use their visible disc, so a swipe through an empty corner
+  // cannot collect a neighbouring letter in a tightly packed ring.
+  if (bounds.radius !== undefined) {
+    const x = start.x - (bounds.left + bounds.right) / 2
+    const y = start.y - (bounds.top + bounds.bottom) / 2
+    const dx = end.x - start.x, dy = end.y - start.y
+    const c = x * x + y * y - bounds.radius * bounds.radius
+    if (c <= 0) return 0
+    const a = dx * dx + dy * dy
+    if (a === 0) return null
+    const b = 2 * (x * dx + y * dy)
+    const discriminant = b * b - 4 * a * c
+    if (discriminant < 0) return null
+    const entry = (-b - Math.sqrt(discriminant)) / (2 * a)
+    return entry >= 0 && entry <= 1 ? entry : null
+  }
   let entry = 0
   let exit = 1
   for (const [origin, delta, minimum, maximum] of [

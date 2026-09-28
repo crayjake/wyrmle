@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import { beginTileSelectionGesture, finishTileSelectionGesture, moveTileSelectionGesture } from '../src/components/tileSelectionGesture.ts'
+import { beginTileSelectionGesture, crossedTileIds, finishTileSelectionGesture, moveTileSelectionGesture } from '../src/components/tileSelectionGesture.ts'
 import type { TileGestureBounds } from '../src/components/tileSelectionGesture.ts'
 
 const row: TileGestureBounds[] = Array.from({ length: 4 }, (_, index) => ({
@@ -70,4 +70,23 @@ test('same letters on different physical tiles remain independently selectable',
   const started = beginTileSelectionGesture(1, { x: 22, y: 22 }, 10, [99])
   const moved = moveTileSelectionGesture(started.gesture, { x: 72, y: 22 }, row)
   assert.deepEqual([...moved.gesture.selected], [99, 10, 11])
+})
+
+test('round tiles ignore empty square corners, including stationary touches', () => {
+  const tile = { ...row[0], radius: 22 }
+  assert.deepEqual(crossedTileIds({ x: 0, y: 0 }, { x: 4, y: 0 }, [tile]), [])
+  assert.deepEqual(crossedTileIds({ x: 1, y: 1 }, { x: 1, y: 1 }, [tile]), [])
+  assert.deepEqual(crossedTileIds({ x: 22, y: 22 }, { x: 22, y: 22 }, [tile]), [10])
+  assert.deepEqual(crossedTileIds({ x: -10, y: -1 }, { x: 54, y: -1 }, [tile]), [])
+  assert.deepEqual(crossedTileIds({ x: -10, y: 0 }, { x: 54, y: 0 }, [tile]), [10])
+})
+
+test('a fast swipe collects circular targets in travel order and does not repeat them', () => {
+  const circles = row.map(tile => ({ ...tile, radius: 22 }))
+  const started = beginTileSelectionGesture(1, { x: 22, y: 22 }, 10, [])
+  const moved = moveTileSelectionGesture(started.gesture, { x: 172, y: 22 }, circles)
+  assert.deepEqual(moved.addedIds, [11, 12, 13])
+  const back = moveTileSelectionGesture(moved.gesture, { x: 22, y: 22 }, circles)
+  assert.deepEqual(back.addedIds, [])
+  assert.deepEqual(crossedTileIds({ x: 195, y: 22 }, { x: -1, y: 22 }, circles), [13, 12, 11, 10])
 })

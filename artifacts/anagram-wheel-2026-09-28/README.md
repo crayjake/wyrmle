@@ -3,14 +3,22 @@
 [Open the interactive preview](https://crayjake.github.io/wyrmle/?preview=wheel).
 Locally, open `?preview=wheel` on the Vite site.
 
-The published 28 September FURY board is displayed as ten outer tiles and six
-inner tiles. The original fonts, colours, square outlines, enemy underlines,
-Lives, Refills and attack preview are shared with Daily.
+The published 28 September FURY board can be displayed as two rings (ten outer
+tiles and six inner tiles), one ring containing all sixteen tiles, or the grid.
+The original fonts, colours, thin outlines, enemy underlines, Lives, Refills and
+attack preview are shared with Daily. Square and circular tiles are available
+in this preview.
+
+| Layout | Square tiles | Circular tiles |
+| --- | --- | --- |
+| Two rings | [Try it](https://crayjake.github.io/wyrmle/?preview=wheel&layout=double&tiles=square) | [Try it](https://crayjake.github.io/wyrmle/?preview=wheel&layout=double&tiles=circle) |
+| One ring | [Try it](https://crayjake.github.io/wyrmle/?preview=wheel&layout=single&tiles=square) | [Try it](https://crayjake.github.io/wyrmle/?preview=wheel&layout=single&tiles=circle) |
 
 - Tap letters or swipe through them in spelling order. A thin line traces the word.
 - The centre button shuffles positions and clears the selection. It preserves
   every physical tile, including repeated letters, and costs no life.
-- Wheel / Grid compares both layouts while keeping the current selection and run.
+- Grid / 2 rings / 1 ring compares layouts while keeping the selection and run.
+- The shape button toggles square and circular tiles. The URL retains both choices.
 - Play Word uses the real puzzle engine, including meanings, hits and refills.
 - Preview attempts live only in memory. They do not record a daily attempt or stars.
 
@@ -19,9 +27,14 @@ lazy-loaded route and stylesheet.
 
 ## Captures
 
-- [Wheel](wheel-idle.png)
-- [CHEERFUL selected, showing the path and three predicted hits](wheel-selected.png)
-- [Same selection on the grid](grid-comparison.png)
+- [Two rings, square](double-square-selected.png)
+- [Two rings, circular](double-circle-selected.png)
+- [One ring, square](single-square-selected.png)
+- [One ring, circular](single-circle-selected.png)
+
+Each shows CHEERFUL selected, its path and three predicted hits. Matching idle
+captures are saved alongside these. The earlier `wheel-*.png` and
+`grid-comparison.png` captures preserve the first version of the mock-up.
 
 ## Verification
 
@@ -33,5 +46,8 @@ The smallest 320×480 viewport needs 33 px tiles; typical phone sizes retain
 
 A touch-input check covered drag order, revisiting selected tiles without
 duplication, immediate shuffle, correct refills after CHEERFUL, and two remaining
-lives. It also verified that no Daily progress was written. The shared-grid
-tutorial and saved-best result checks passed separately.
+lives. It also verified that no Daily progress was written. Both tile shapes
+and ring counts were checked on the phone and landscape viewports. Circular
+hit detection follows the actual disc; tests cover empty corners, tangents,
+fast swipes and repeated visits. The shared-grid tutorial and saved-best result
+checks passed separately.

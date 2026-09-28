@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { X } from 'lucide-react'
+import { Circle, Square, X } from 'lucide-react'
 import BattleScreen from '../../components/BattleScreen'
 import BattleResult from '../../components/BattleResult'
 import PuzzleLoading from '../../components/PuzzleLoading'
@@ -30,19 +30,35 @@ export default function WheelPreview() {
 }
 
 function PreviewBattle({ encounter }: { encounter: LetterStrikeEncounter }) {
-  const [layout, setLayout] = useState<'grid' | 'wheel'>('wheel')
+  const [layout, setLayout] = useState<'grid' | 'wheel' | 'ring'>(() => {
+    const value = new URLSearchParams(window.location.search).get('layout')
+    return value === 'single' ? 'ring' : value === 'grid' ? 'grid' : 'wheel'
+  })
+  const [shape, setShape] = useState<'square' | 'circle'>(() =>
+    new URLSearchParams(window.location.search).get('tiles') === 'circle' ? 'circle' : 'square')
   const [attempt, setAttempt] = useState(0)
   const initial = useMemo(() => ({ game: createLetterStrikeGame(encounter), started: true }), [encounter])
   const restart = () => setAttempt(value => value + 1)
-  return <BattleScreen key={attempt} encounter={encounter} initial={initial} boardLayout={layout}
+  useEffect(() => {
+    const url = new URL(window.location.href)
+    url.searchParams.set('layout', layout === 'ring' ? 'single' : layout === 'wheel' ? 'double' : 'grid')
+    url.searchParams.set('tiles', shape)
+    window.history.replaceState(null, '', url)
+  }, [layout, shape])
+  return <BattleScreen key={attempt} encounter={encounter} initial={initial} boardLayout={layout} tileShape={shape}
     title="Anagram wheel preview" onSave={() => true} onRestart={restart}
     onExit={() => window.location.assign(`${dailyUrl}?calendar`)}
     notice={<div className="wheel-preview-bar">
-      <span className="resource-label">PREVIEW</span>
       <div className="wheel-layout-switch" role="group" aria-label="Letter layout">
-        {(['wheel', 'grid'] as const).map(value => <button key={value} type="button" aria-pressed={layout === value}
-          onClick={() => setLayout(value)}>{value}</button>)}
+        {([{ value: 'grid', label: 'Grid' }, { value: 'wheel', label: '2 rings' }, { value: 'ring', label: '1 ring' }] as const)
+          .map(({ value, label }) => <button key={value} type="button" aria-pressed={layout === value}
+            onClick={() => setLayout(value)}>{label}</button>)}
       </div>
+      <button type="button" className="icon-button wheel-shape-toggle" aria-pressed={shape === 'circle'}
+        aria-label={shape === 'circle' ? 'Use square tiles' : 'Use circular tiles'} title={shape === 'circle' ? 'Use square tiles' : 'Use circular tiles'}
+        onClick={() => setShape(value => value === 'square' ? 'circle' : 'square')}>
+        {shape === 'circle' ? <Square size={20} /> : <Circle size={20} />}
+      </button>
       <a className="icon-button" href={dailyUrl} aria-label="Close preview"><X size={18} /></a>
     </div>}
     menu={<p className="wheel-preview-note">Practice on the FURY board. Preview attempts don’t affect your daily progress.</p>}
