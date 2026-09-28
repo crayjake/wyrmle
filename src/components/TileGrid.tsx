@@ -5,6 +5,7 @@ import type { PointerEvent as ReactPointerEvent } from "react"
 import Tile from "./Tile"
 import type { SpecialTilePresentation } from "./Tile"
 import BattleActions from "./BattleActions"
+import { Shuffle } from 'lucide-react'
 import type { BattlePrimaryLabel } from "./BattleActions"
 import { introTimings } from "../intro/config"
 import { getMatchingTileIds } from './tileMatchHints'
@@ -34,6 +35,7 @@ type TileGridProps = {
   damage?: number
   primaryLabel?: BattlePrimaryLabel
   showActions?: boolean
+  layout?: 'grid' | 'wheel'
   canAttack: boolean
   onToggleTile: (id: number) => void
   // Guided modes validate this ordered batch against their next-letter rule.
@@ -61,6 +63,7 @@ export default function TileGrid({
   damage,
   primaryLabel,
   showActions = true,
+  layout = 'grid',
   canAttack,
   onToggleTile,
   onSelectTiles,
@@ -75,24 +78,60 @@ export default function TileGrid({
     tiles.map(() => randomGlyph())
   )
   const gridRef = useRef<HTMLDivElement>(null)
+  // Reorder positions only. Physical IDs, letter counts and refills stay intact.
+  const [wheelOrder, setWheelOrder] = useState(() => tiles.map((_, index) => index))
+  const [pointer, setPointer] = useState<{ x: number; y: number } | null>(null)
+  const positions = tiles.map((_, index) => {
+    const slot = wheelOrder.indexOf(index)
+    const outerCount = Math.min(10, tiles.length)
+    const outer = slot < outerCount
+    const count = outer ? outerCount : tiles.length - outerCount
+    const angle = ((outer ? slot : slot - outerCount) / count * 360 - 90) * Math.PI / 180
+    const radius = outer ? 41 : 22
+    return { x: 50 + Math.cos(angle) * radius, y: 50 + Math.sin(angle) * radius }
+  })
+  const path = selectedTileIds.flatMap(id => {
+    const index = tiles.findIndex(tile => tile.id === id)
+    return index < 0 ? [] : [positions[index]]
+  })
   const gestureRef = useRef<{ selection: TileSelectionGesture; bounds: TileGestureBounds[]; board: string } | null>(null)
   const pointerClickUntil = useRef(0)
-  const board = tiles.map(tile => `${tile.id}:${tile.letter}`).join('|')
+  const board = `${layout}|${tiles.map(tile => `${tile.id}:${tile.letter}`).join('|')}`
 
   function cancelGesture() {
     const gesture = gestureRef.current
     if (!gesture) return
     gestureRef.current = null
+    setPointer(null)
     pointerClickUntil.current = performance.now() + 600
     if (gridRef.current?.hasPointerCapture(gesture.selection.pointerId)) {
       gridRef.current.releasePointerCapture(gesture.selection.pointerId)
     }
   }
 
+  function movePointer(event: ReactPointerEvent<HTMLDivElement>) {
+    if (layout !== 'wheel') return
+    const rect = event.currentTarget.getBoundingClientRect()
+    setPointer({ x: (event.clientX - rect.left) / rect.width * 100, y: (event.clientY - rect.top) / rect.height * 100 })
+  }
+
+  function shuffle() {
+    cancelGesture()
+    onClear()
+    setWheelOrder(current => {
+      const next = [...current]
+      for (let index = next.length - 1; index > 0; index--) {
+        const target = Math.floor(Math.random() * (index + 1))
+        ;[next[index], next[target]] = [next[target], next[index]]
+      }
+      return next
+    })
+  }
+
   // A submitted/replaced board cannot inherit a gesture from the previous turn.
   useEffect(() => {
     if (!ready || (gestureRef.current && gestureRef.current.board !== board)) cancelGesture()
-  }, [ready, board])
+  }, [ready, board, layout])
 
   useEffect(() => {
     window.addEventListener('blur', cancelGesture)
@@ -120,12 +159,14 @@ export default function TileGrid({
     gestureRef.current = { selection: started.gesture, bounds, board }
     pointerClickUntil.current = Number.POSITIVE_INFINITY
     event.currentTarget.setPointerCapture(event.pointerId)
+    movePointer(event)
     for (const id of started.addedIds) onToggleTile(id)
   }
 
   function moveGesture(event: ReactPointerEvent<HTMLDivElement>) {
     let gesture = gestureRef.current
     if (!gesture || event.pointerId !== gesture.selection.pointerId || !ready || gesture.board !== board) return
+    movePointer(event)
     const samples = event.nativeEvent.getCoalescedEvents?.() ?? []
     const bounds = gesture.bounds.filter(tile => onSelectTiles !== undefined || allowedTileIds === undefined || allowedTileIds.includes(tile.id))
     const crossed: number[] = []
@@ -163,7 +204,7 @@ export default function TileGrid({
 
   return (
     <>
-      <div className="tile-grid" ref={gridRef} data-swipe-ready={ready}
+      <div className={`tile-grid${layout === 'wheel' ? ' anagram-wheel' : ''}`} ref={gridRef} data-swipe-ready={ready}
         onPointerDown={beginGesture}
         onPointerMove={moveGesture}
         onPointerUp={endGesture}
@@ -176,18 +217,28 @@ export default function TileGrid({
         onClickCapture={event => {
           // Pointer selection already happened on down/move/up. Keyboard and
           // assistive-technology clicks (detail 0) keep the native button path.
+          if (!(event.target as Element).closest('button[data-tile-index]')) return
           if (event.detail !== 0 && performance.now() < pointerClickUntil.current) {
             event.preventDefault()
             event.stopPropagation()
           }
         }}
       >
+        {layout === 'wheel' && <>
+          <svg className="wheel-trace" viewBox="0 0 100 100" aria-hidden="true">
+            <circle className="wheel-guide" cx="50" cy="50" r="41" />
+            {path.length > 1 && <polyline points={path.map(point => `${point.x},${point.y}`).join(' ')} />}
+            {pointer && path.length > 0 && <line className="wheel-live-trace" x1={path.at(-1)!.x} y1={path.at(-1)!.y} x2={pointer.x} y2={pointer.y} />}
+          </svg>
+          <button type="button" className="wheel-shuffle icon-button" aria-label="Shuffle letters" title="Shuffle letters"
+            disabled={!ready} onClick={shuffle}><Shuffle size={20} /></button>
+        </>}
         {tiles.map((tile, i) => {
           const selectedIndex =
             selectedTileIds.indexOf(tile.id)
           const revealed = revealedIndices.includes(i)
 
-          return (
+          const content = (
             <Tile
               key={tile.id}
               elementRef={element => registerTile(i, element)}
@@ -209,6 +260,8 @@ export default function TileGrid({
               }}
             />
           )
+          return layout === 'wheel' ? <div key={tile.id} className="wheel-slot"
+            style={{ left: `${positions[i].x}%`, top: `${positions[i].y}%` }}>{content}</div> : content
         })}
       </div>
 

@@ -2,7 +2,7 @@ import { useLayoutEffect } from 'react'
 import type { RefObject } from 'react'
 
 /** Keep the original battle proportions, shrinking only a board that cannot fit. */
-export function useBattleFit(ref: RefObject<HTMLElement | null>, boardVisible: boolean) {
+export function useBattleFit(ref: RefObject<HTMLElement | null>, boardVisible: boolean, layout = 'grid') {
   useLayoutEffect(() => {
     if (!boardVisible) return
     const main = ref.current
@@ -42,5 +42,5 @@ export function useBattleFit(ref: RefObject<HTMLElement | null>, boardVisible: b
       observer.disconnect()
       document.fonts.removeEventListener('loadingdone', fit)
     }
-  }, [ref, boardVisible])
+  }, [ref, boardVisible, layout])
 }

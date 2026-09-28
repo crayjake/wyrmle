@@ -5,11 +5,12 @@ import './App.css'
 import './components/DailyPanels.css'
 
 const DailyApp = lazy(() => import('./daily/DailyChallenge'))
+const WheelPreview = lazy(() => import('./experimental/wheel/WheelPreview'))
 
 export default function App() {
   return <PuzzleErrorBoundary>
     <Suspense fallback={<PuzzleLoading />}>
-      <DailyApp />
+      {new URLSearchParams(window.location.search).get('preview') === 'wheel' ? <WheelPreview /> : <DailyApp />}
     </Suspense>
   </PuzzleErrorBoundary>
 }

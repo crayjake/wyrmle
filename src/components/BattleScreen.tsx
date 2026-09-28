@@ -23,7 +23,7 @@ export type BattleAttempt = { game: LetterStrikeState; started: boolean; hintSte
 
 /** Daily and archived puzzles share one battle UI and the same difficulty rules. */
 export default function BattleScreen({ encounter, initial, onSave, onRestart, onExit, title, onChoose, onNext,
-  guide, menu, renderResult, renderBestResult, bestStars, puzzleDate }: {
+  guide, menu, renderResult, renderBestResult, bestStars, puzzleDate, boardLayout = 'grid', notice }: {
   encounter: LetterStrikeEncounter
   initial?: BattleAttempt
   onSave: (game: LetterStrikeState, started: boolean, hintStep: number) => boolean
@@ -38,6 +38,8 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
   renderBestResult?: (onClose: () => void) => ReactNode
   bestStars?: number
   puzzleDate?: string
+  boardLayout?: 'grid' | 'wheel'
+  notice?: ReactNode
 }) {
   const preferences = useUserPreferences()
   const easy = preferences.preferences.preferredMode === 'easy'
@@ -97,7 +99,7 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
   const resolutionComplete = useCallback(() => setResolvedTurnCount(game.playedWords.length), [game.playedWords.length])
   const enemy = game.encounter.enemy
   const showResult = game.status !== 'playing' && !resolving
-  useBattleFit(containerRef, !viewingBest && !showResult)
+  useBattleFit(containerRef, !viewingBest && !showResult, boardLayout)
   const interactive = phase === 'ready' && game.status === 'playing' && !resolving && !viewingBest
   const attackPreview = previewLetterStrike(game)
   const preview = { ...attackPreview, amount: attackPreview.strikes, maximum: 0, bonuses: getLetterStrikeBonuses(attackPreview) }
@@ -137,6 +139,7 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
   const displayedLives = resolving
     ? game.playerResolve + (game.playedWords.at(-1)?.preview.resolveCost ?? 0) : game.playerResolve
   return <main className="container letter-combat bingo-preview" data-combat-mode="letter-strike"
+    data-board-layout={boardLayout}
     data-game-status={game.status} data-result={showResult || viewingBest || undefined} data-phase={phase} data-turns={game.playedWords.length}
     ref={containerRef}
     onClick={event => {
@@ -148,6 +151,7 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
       onBest={renderBestResult && bestStars && !resolving && (phase === 'ready' || phase === 'waiting')
         ? () => setViewingBest(true) : undefined}
       onHelp={() => setPanel('help')} onHistory={() => setPanel('log')} onSettings={() => setPanel('modes')} />
+    {notice}
     {!progressSaved && <div className="daily-notice" role="alert"><span>Progress could not be saved.</span><button className="daily-button" onClick={() => persist(game, phase !== 'waiting')}>Retry save</button></div>}
     {viewingBest ? renderBestResult?.(closeBest) : showResult ? renderResult?.(game) ?? <BattleResult game={game} onRetry={onRestart} onNext={onNext}
       onChoose={onChoose} onHints={hintsAvailable ? () => setPanel('hints') : undefined} /> : <>
@@ -178,7 +182,7 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
         resolveBefore={interactive && preview.valid ? game.playerResolve : undefined}
       />
       <div className="controls">
-        <TileGrid revealedIndices={revealedTileIndices} registerTile={registerTile}
+        <TileGrid layout={boardLayout} revealedIndices={revealedTileIndices} registerTile={registerTile}
           ready={interactive} tiles={game.tiles} specialTiles={specialTiles}
           enemyLetters={game.enemyLetters} matchHint="underline"
           selectedTileIds={game.selectedTileIds} canAttack={phase === 'waiting' || interactive && preview.valid}
