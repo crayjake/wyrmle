@@ -65,7 +65,6 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
     {header}
     <div className="battle-info">
       <MyInfo name="Lives" health={game.playerResolve} maxHealth={game.encounter.startingResolve} animateLives />
-      <div className="hunt-resource"><span className="resource-label">TILES LEFT</span><span>{game.tiles.filter(tile => tile.letter).length}</span></div>
     </div>
     <div className="enemy-zone">
       <Enemy key={game.encounter.id}
@@ -119,7 +118,7 @@ function TutorialPrompt({ state, selected }: { state: TutorialState; selected: b
     case 'goal': return <p>Find a word that means the opposite of <strong>DRY</strong> and contains D, R and Y. That’s a bingo. The tiles below hold the answer, mixed with extra letters.</p>
     case 'board': return <p>The outlines tell you how many copies to use: <strong>two Ds, one R and one Y</strong>. Underlined tiles match those letters. You have <strong>three lives</strong> to find the bingo.</p>
     case 'damp': return <p>{selected ? 'DAMP is an opposite adjective, just like DRY. It isn’t a bingo, but playing it removes some spare tiles. Try it.' : 'Need help? A simpler opposite clears spare tiles. Tap the highlighted tiles to spell DAMP. CLEAR lets you start your word again.'}</p>
-    case 'removed': return <p>One life used. Some spare tiles have gone; <strong>TILES LEFT</strong> counts what remains. Played letters stay available. The enemy doesn’t lose letters—you must cover them all in one word.</p>
+    case 'removed': return <p>One life used. Some spare tiles have gone. Played letters stay available. The enemy doesn’t lose letters—you must cover them all in one word.</p>
     case 'wet': return <p>Play <strong>WET</strong>, another opposite adjective. This removes the last spare tiles. Other words are rejected without costing a life in Normal and Easy mode.</p>
     case 'bingo': return <p>One life left, and just the answer’s letters. Spell <strong>HYDRATED</strong>: supplied with water. Both Ds, R and Y turn red—every required copy is there.</p>
     case 'complete': return null

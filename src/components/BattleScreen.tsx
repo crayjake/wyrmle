@@ -143,8 +143,6 @@ export default function BattleScreen({ encounter, initial, onSave, onExit, guide
     <div className="battle-info">
       <MyInfo name="LIVES" health={displayedLives} maxHealth={game.encounter.startingResolve} wyrm
         wyrmRef={wyrmLifeRef} decoding={phase === 'enemy' || phase === 'tiles'} animateLives />
-      <div className="hunt-resource"><span className="resource-label">TILES LEFT</span>
-        <span>{game.tiles.filter(tile => tile.letter).length}</span></div>
     </div>
     <div className="enemy-zone">
       <Enemy name={enemy.word} definition={enemy.definition} partOfSpeech={enemy.partOfSpeech}

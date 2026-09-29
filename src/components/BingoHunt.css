@@ -10,8 +10,6 @@
 .hunt-instructions strong { font-weight: normal; color: var(--emph); }
 .hunt-instructions .hunt-rating { font-family: 'Share Tech Mono', monospace; font-size: 13px; color: var(--emph); }
 .hunt-intro > .daily-button { margin-top: auto; min-height: 44px; }
-.hunt-resource { display: grid; justify-items: end; gap: 8px; font-size: 20px; color: var(--emph); }
-.hunt-resource .resource-label { color: var(--fg); }
 .hunt-history { display: grid; gap: 14px; padding-left: 24px; font-size: 14px; }
 .hunt-history li span { display: block; margin-top: 5px; font-size: 12px; }
 [data-bingo-hunt] .tile.tile-empty { opacity: 0 !important; transition: opacity 250ms ease-out; }
