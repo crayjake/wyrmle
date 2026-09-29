@@ -103,6 +103,7 @@ function DailyAttempt({ entry, encounter, today, onTutorial }: {
   const lives = challengeLives(record.bestWords)
   const title = `${entry.date}${entry.date !== today ? ' · earlier daily' : ''}`
   if (hunt && !introSeen) return <BingoHuntIntro enemy={encounter.enemy}
+    armour={encounter.enemyLetters.some(letter => letter.initialHits > 1)}
     partOfSpeech={encounter.counterRules!.partOfSpeech} daily closeLabel="Calendar" onClose={calendar} error={error}
     onStart={() => {
       try {
@@ -150,7 +151,9 @@ function DailyAttempt({ entry, encounter, today, onTutorial }: {
       <p>{error}</p><div className="dev-controls"><button className="daily-button" onClick={reload}>Reload saved attempt</button>{!hunt && <button className="daily-button" onClick={restart}>Restart puzzle</button>}</div>
     </BattlePanel>}
     {stats && <DailyStats onClose={() => setStats(false)} current={record} />}
-    {help && <BattlePanel title="Find the bingo" onClose={() => setHelp(false)}><BingoHuntInstructions partOfSpeech={encounter.counterRules!.partOfSpeech} daily /></BattlePanel>}
+    {help && <BattlePanel title="Find the bingo" onClose={() => setHelp(false)}><BingoHuntInstructions partOfSpeech={encounter.counterRules!.partOfSpeech}
+      armour={encounter.enemyLetters.some(letter => letter.initialHits > 1)} daily
+      hard={preferences.preferences.preferredMode === 'hard' || preferences.preferences.preferredMode === 'hardcore'} /></BattlePanel>}
   </>
 }
 

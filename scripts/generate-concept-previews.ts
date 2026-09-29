@@ -14,7 +14,7 @@ import previousCatalog from '../src/experimental/concepts/catalog.json' with { t
 import type { ConceptEntry } from '../src/experimental/concepts/catalog.ts'
 import { decodeConceptPuzzle } from '../src/experimental/concepts/catalog.ts'
 import { certifyHuntProgressCompatibility, planHuntRemovals } from './antonyms/hunt.ts'
-import { huntProfiles } from './antonyms/huntProfiles.ts'
+import { allHuntProfiles } from './antonyms/huntProfiles.ts'
 import { wordEffort } from './bingo/routeDifficulty.ts'
 
 import { certifyProgression } from './antonyms/progression.ts'
@@ -80,7 +80,7 @@ for (const profile of antonymProfiles) {
 if (!process.env.CONCEPT_ID) {
   // Each hunt is independently reproducible; legacy comparisons keep their saves.
   const huntReports = []
-  for (const { profile, helpers, preferredHelpers, progressRevision } of huntProfiles) {
+  for (const { profile, helpers, preferredHelpers, progressRevision } of allHuntProfiles) {
     const built = buildAntonymEncounter({ ...profile, refills: '' })
     const huntId = `hunt-${profile.id}`
     built.encounter.id = `antonym-preview-v2:${huntId}`
@@ -116,11 +116,11 @@ if (!process.env.CONCEPT_ID) {
     const asset = `previews/concepts/${huntId}-${revision}.json`
     writeFileSync(`public/${asset}`, raw)
     catalog.push({ id: huntId, enemy: profile.enemy, definition: profile.definition, asset, revision, progressRevision, powers: 0,
-      bingoHunt: true, partOfSpeech: encounter.enemy.partOfSpeech!, counterPartOfSpeech: encounter.counterRules!.partOfSpeech,
-      guide: { answer: profile.bingo, hints: profile.hints, explanation: `${profile.bingo} is an opposite adjective containing every letter of ${profile.enemy}.` } })
+      bingoHunt: true, armour: profile.armour, partOfSpeech: encounter.enemy.partOfSpeech!, counterPartOfSpeech: encounter.counterRules!.partOfSpeech,
+      guide: { answer: profile.bingo, hints: profile.hints, explanation: `${profile.bingo} is an opposite ${encounter.enemy.partOfSpeech} containing every letter of ${profile.enemy}.${profile.armour ? ' It includes every required copy of the armoured letters.' : ''}` } })
     huntReports.push({ id: huntId, revision, progressRevision, ...review, compatibility,
       witnesses: [[profile.bingo], [helpers[0], profile.bingo], [...helpers, profile.bingo]],
-      startingBingos, helperEffort, semanticReview: profile.review })
+      startingBingos, helperEffort, semanticReview: profile.review, armour: profile.armour })
     console.log(huntId, JSON.stringify({ candidates: review.candidatesChecked, minimumFollowupFamilies: review.minPreferredFamilies, compatibility }))
   }
   writeFileSync('src/experimental/concepts/catalog.json', JSON.stringify(catalog, null, 2) + '\n')

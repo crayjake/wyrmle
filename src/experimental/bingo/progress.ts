@@ -5,7 +5,7 @@ import type { BingoPreviewEntry, PreviewLives } from './catalog.ts'
 
 export const BINGO_PROGRESS_PREFIX = 'wyrmle:beta:bingo:v1:'
 type ProgressStorage = Pick<Storage, 'getItem' | 'setItem'>
-type SavedMove = { word: string; ids: number[] }
+type SavedMove = { word: string; ids: number[]; hardGuess?: true }
 type SavedAttempt = {
   started: boolean
   status: LetterStrikeState['status']
@@ -44,6 +44,7 @@ export function readBingoProgress(key: string, storage = browserStorage()): Bing
       if (!object(run) || typeof run.started !== 'boolean' || !['playing', 'won', 'lost'].includes(String(run.status))
         || !integer(run.hintStep, 1, 4) || !Array.isArray(run.moves) || run.moves.length > 32) continue
       if (!run.moves.every(move => object(move) && typeof move.word === 'string' && /^[A-Z]{3,16}$/.test(move.word)
+        && (move.hardGuess === undefined || move.hardGuess === true)
         && Array.isArray(move.ids) && move.ids.length === move.word.length && new Set(move.ids).size === move.ids.length
         && move.ids.every(id => integer(id, 0, 10_000)))) continue
       if ((!run.started && run.moves.length > 0) || (run.status === 'won' && run.moves.length === 0)) continue
@@ -67,7 +68,8 @@ export function saveBingoAttempt(key: string, game: LetterStrikeState, started: 
   storage = browserStorage()): boolean {
   if (!started && hintStep === 1 && game.playedWords.length === 0) return true
   const progress = readBingoProgress(key, storage)
-  const moves = game.playedWords.map(move => ({ word: move.word, ids: move.tiles.map(tile => tile.id) }))
+  const moves = game.playedWords.map(move => ({ word: move.word, ids: move.tiles.map(tile => tile.id),
+    ...(move.hardGuess ? { hardGuess: true as const } : {}) }))
   progress.runs[game.encounter.startingResolve as PreviewLives] = { started, status: game.status, moves, hintStep }
   if (game.status === 'won' && moves.length > 0) progress.bestWords = Math.min(progress.bestWords ?? Infinity, moves.length)
   return write(key, progress, storage)
@@ -87,7 +89,7 @@ export function resumeBingoAttempt(key: string, encounter: LetterStrikeEncounter
   if (!saved) return fresh
   let game = initial
   for (const move of saved.moves) {
-    const next = submitLetterStrike(game, move.ids)
+    const next = submitLetterStrike(game, move.ids, { hardGuess: move.hardGuess })
     if (next.error || next.playedWords.length !== game.playedWords.length + 1
       || next.playedWords.at(-1)?.word !== move.word) return fresh
     game = next

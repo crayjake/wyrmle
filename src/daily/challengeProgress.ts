@@ -5,7 +5,7 @@ import type { StorageLike } from './types.ts'
 
 export const CHALLENGE_PREFIX = 'wyrmle:daily:challenge:v1:'
 export type DailyLives = 1 | 2 | 3
-export type ChallengeMove = { word: string; ids: number[] }
+export type ChallengeMove = { word: string; ids: number[]; hardGuess?: true }
 export type ChallengeRecord = {
   version: 1; date: string; asset: string; revision: number; attempts: number
   bestWords: number | null
@@ -40,6 +40,7 @@ function parseChallenge(date: string, raw: string | null): ChallengeRecord | nul
       || !Array.isArray(r.moves) || r.moves.length > r.lives || (!r.started && r.moves.length > 0)
       || (r.status === 'won' && r.moves.length === 0)) return null
     if (!r.moves.every(m => object(m) && typeof m.word === 'string' && /^[A-Z]{3,16}$/.test(m.word)
+      && (m.hardGuess === undefined || m.hardGuess === true)
       && Array.isArray(m.ids) && m.ids.length === m.word.length && new Set(m.ids).size === m.ids.length
       && m.ids.every(id => integer(id, 0, 10_000)))) return null
     // Older saves contain only the score. A missing/bad optional word list must
@@ -60,7 +61,7 @@ export function openChallenge(date: string, asset: string, encounter: LetterStri
     ? { ...backup, revision: saved?.revision ?? 0 } : fresh
   let game = createLetterStrikeGame({ ...encounter, startingResolve: record.run.lives })
   for (const move of record.run.moves) {
-    const next = submitLetterStrike(game, move.ids)
+    const next = submitLetterStrike(game, move.ids, { hardGuess: move.hardGuess })
     if (next.error || next.playedWords.length !== game.playedWords.length + 1 || next.playedWords.at(-1)?.word !== move.word) {
       throw new Error('This saved attempt cannot be restored. Restart this puzzle to try again.')
     }
@@ -91,10 +92,12 @@ export function challengeBestSolution(record: ChallengeRecord): string[] | undef
 export function saveChallenge(record: ChallengeRecord, game: LetterStrikeState, started: boolean,
   storage: Pick<StorageLike, 'getItem' | 'setItem'>, hintStep = record.run.hintStep ?? 1): ChallengeRecord {
   if (game.encounter.startingResolve !== record.run.lives) throw new Error('Attempt lives changed.')
-  const moves = game.playedWords.map(move => ({ word: move.word, ids: move.tiles.map(tile => tile.id) }))
+  const moves = game.playedWords.map(move => ({ word: move.word, ids: move.tiles.map(tile => tile.id),
+    ...(move.hardGuess ? { hardGuess: true as const } : {}) }))
   if (record.rules === 'bingo-hunt' && (!game.encounter.bingoHunt || record.run.started && !started
     || moves.length < record.run.moves.length || record.run.moves.some((move, index) =>
-      move.word !== moves[index]?.word || JSON.stringify(move.ids) !== JSON.stringify(moves[index]?.ids)))) {
+      move.word !== moves[index]?.word || move.hardGuess !== moves[index]?.hardGuess
+      || JSON.stringify(move.ids) !== JSON.stringify(moves[index]?.ids)))) {
     throw new Error('Daily Bingo Hunt has one attempt. Your progress is saved.')
   }
   const previousSolution = challengeBestSolution(record)

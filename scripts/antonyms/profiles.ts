@@ -6,6 +6,8 @@ export type ConceptProfile = {
   routes: string[][]; roots: string[]; wordOnly: string[]; overrides: Record<string, {sense: string; relation: SemanticRelation; reason: string}>;
   supplemental?: Record<string, { definition: string; lemma: string; partOfSpeech: PartOfSpeech; senseId: string; sourceUrl: string }>;
   review: string; hints: [string,string,string]; family?: string; counterPartOfSpeech?: PartOfSpeech
+  /** Optional total copy counts by zero-based enemy slot; omitted slots need one. */
+  armour?: Record<number, number>
 }
 
 /** Reviewed opposite senses. Strict antonyms match the enemy's word type; family previews declare their counter type. */

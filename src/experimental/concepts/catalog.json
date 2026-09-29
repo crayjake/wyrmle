@@ -296,8 +296,8 @@
     "id": "hunt-dim",
     "enemy": "DIM",
     "definition": "lacking light; not bright",
-    "asset": "previews/concepts/hunt-dim-692b51b4e34f.json",
-    "revision": "692b51b4e34f",
+    "asset": "previews/concepts/hunt-dim-894982aad680.json",
+    "revision": "894982aad680",
     "powers": 0,
     "bingoHunt": true,
     "partOfSpeech": "adjective",
@@ -350,6 +350,76 @@
         "Ten letters, beginning with N."
       ],
       "explanation": "NEGLIGIBLE is an opposite adjective containing every letter of BIG."
+    }
+  },
+  {
+    "id": "hunt-wet-armoured",
+    "enemy": "WET",
+    "definition": "containing water or moisture",
+    "asset": "previews/concepts/hunt-wet-armoured-80ea3e57955d.json",
+    "revision": "80ea3e57955d",
+    "powers": 0,
+    "bingoHunt": true,
+    "armour": {
+      "1": 2
+    },
+    "partOfSpeech": "adjective",
+    "counterPartOfSpeech": "adjective",
+    "guide": {
+      "answer": "WATERLESS",
+      "hints": [
+        "Think of a place where nothing could get a drink.",
+        "An adjective saying that a particular liquid is absent.",
+        "Nine letters, beginning with W."
+      ],
+      "explanation": "WATERLESS is an opposite adjective containing every letter of WET. It includes every required copy of the armoured letters."
+    }
+  },
+  {
+    "id": "hunt-dim-armoured",
+    "enemy": "DIM",
+    "definition": "lacking light; not bright",
+    "asset": "previews/concepts/hunt-dim-armoured-e786e63f4f64.json",
+    "revision": "e786e63f4f64",
+    "powers": 0,
+    "bingoHunt": true,
+    "armour": {
+      "1": 2
+    },
+    "partOfSpeech": "adjective",
+    "counterPartOfSpeech": "adjective",
+    "guide": {
+      "answer": "ILLUMINATED",
+      "hints": [
+        "Think of a building after its lamps have been switched on.",
+        "This can also describe a decorated medieval manuscript.",
+        "Eleven letters, beginning with I."
+      ],
+      "explanation": "ILLUMINATED is an opposite adjective containing every letter of DIM. It includes every required copy of the armoured letters."
+    }
+  },
+  {
+    "id": "hunt-big-armoured",
+    "enemy": "BIG",
+    "definition": "large in size or amount",
+    "asset": "previews/concepts/hunt-big-armoured-23de63f6d9b5.json",
+    "revision": "23de63f6d9b5",
+    "powers": 0,
+    "bingoHunt": true,
+    "armour": {
+      "1": 2,
+      "2": 2
+    },
+    "partOfSpeech": "adjective",
+    "counterPartOfSpeech": "adjective",
+    "guide": {
+      "answer": "NEGLIGIBLE",
+      "hints": [
+        "Think of an amount too small to make much difference.",
+        "It is so slight that you could ignore it in a calculation.",
+        "Ten letters, beginning with N."
+      ],
+      "explanation": "NEGLIGIBLE is an opposite adjective containing every letter of BIG. It includes every required copy of the armoured letters."
     }
   }
 ]

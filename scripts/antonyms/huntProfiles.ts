@@ -71,7 +71,9 @@ export const huntProfiles: HuntProfile[] = [
         'oewn-bright__3.00.00..', 'oewn-bright__5.00.00.light.06', 'oewn-bright__3.00.02..',
         'oewn-radiant__5.00.00.bright.00', 'oewn-alight__5.00.00.lighted.00', 'oewn-aglow__5.00.00.bright.00',
         'oewn-brilliant__5.00.00.bright.00', 'oewn-ardent__5.00.00.bright.00', 'oewn-lurid__5.00.00.bright.00'],
-      review: 'Literal light levels. Illuminated and lit describe something supplied with light; bright, radiant and light are light-emitting or well-lit adjectives. Intelligence, hope, light weight and light colours are not the chosen readings. LIGHT as a verb is not the counter reading.',
+      overrides: { LITER: { sense: 'oewn-liter__1.23.00..', relation: 'unrelated',
+        reason: 'LITER is a noun for a unit of volume, not a comparative adjective of LIT or LITE.' } },
+      review: 'Literal light levels. Illuminated and lit describe something supplied with light; bright, radiant and light are light-emitting or well-lit adjectives. Intelligence, hope, light weight and light colours are not the chosen readings. LIGHT as a verb is not the counter reading. LITER is a volume-unit noun, not more LIT: suffix stripping must not manufacture an adjective sense.',
       hints: ['Think of a building after its lamps have been switched on.', 'This can also describe a decorated medieval manuscript.', 'Eleven letters, beginning with I.'],
     },
   },
@@ -102,3 +104,15 @@ export const huntProfiles: HuntProfile[] = [
     },
   },
 ]
+
+/** Separate comparisons: armour is optional, and existing hunts keep their saves. */
+export const armouredHuntProfiles: HuntProfile[] = [
+  { id: 'wet', armour: { 1: 2 } },
+  { id: 'dim', armour: { 1: 2 } },
+  { id: 'big', armour: { 1: 2, 2: 2 } },
+].map(({ id, armour }) => {
+  const source = huntProfiles.find(hunt => hunt.profile.id === id)!
+  return { ...source, profile: { ...source.profile, id: `${id}-armoured`, armour } }
+})
+
+export const allHuntProfiles = [...huntProfiles, ...armouredHuntProfiles]

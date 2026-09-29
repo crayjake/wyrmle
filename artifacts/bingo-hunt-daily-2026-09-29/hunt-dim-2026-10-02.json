@@ -1,9 +1,9 @@
 {
   "accepted": true,
-  "asset": "puzzles/hunt-dim-2026-10-02-b9460c84c881.json",
+  "asset": "puzzles/hunt-dim-2026-10-02-ca76f4ac1235.json",
   "answer": "ILLUMINATED",
   "rules": "bingo-hunt",
-  "review": "Literal light levels. Illuminated and lit describe something supplied with light; bright, radiant and light are light-emitting or well-lit adjectives. Intelligence, hope, light weight and light colours are not the chosen readings. LIGHT as a verb is not the counter reading.",
+  "review": "Literal light levels. Illuminated and lit describe something supplied with light; bright, radiant and light are light-emitting or well-lit adjectives. Intelligence, hope, light weight and light colours are not the chosen readings. LIGHT as a verb is not the counter reading. LITER is a volume-unit noun, not more LIT: suffix stripping must not manufacture an adjective sense.",
   "identity": {
     "id": "hunt-dim-2026-10-02",
     "enemy": "DIM",
@@ -233,24 +233,6 @@
         ]
       },
       {
-        "first": "LITER",
-        "next": [
-          "ALIGHT",
-          "LIGHT",
-          "LIGHTED",
-          "LIT"
-        ],
-        "preferredFamilies": [
-          "alight",
-          "light"
-        ],
-        "familiarFamilies": [
-          "alight",
-          "light",
-          "lighted"
-        ]
-      },
-      {
         "first": "LURID",
         "next": [
           "ALIGHT",
@@ -294,7 +276,7 @@
     "minPreferredFamilies": 2,
     "minFamiliarFamilies": 3,
     "candidatesChecked": 10,
-    "pathsChecked": 48,
+    "pathsChecked": 44,
     "removalOrder": [
       0,
       7,

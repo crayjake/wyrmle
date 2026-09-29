@@ -7,6 +7,7 @@ import { unpackMeaningLexicon } from '../../game/meaningPacking.ts'
 
 export type ConceptEntry = {
   bingoHunt?: boolean
+  armour?: Record<number, number>
   // Only a generator-certified compatible revision may retain an older save key.
   progressRevision?: string
   id: string; enemy: string; definition: string; asset: string; revision: string; powers: number; family?: string; partOfSpeech: PartOfSpeech; counterPartOfSpeech: PartOfSpeech; guide: BingoGuide
@@ -20,6 +21,7 @@ export function decodeConceptPuzzle(value: unknown, entry: ConceptEntry): Letter
   const raw = value as LetterStrikeEncounter
   if (raw.id !== `antonym-preview-v2:${entry.id}` || raw.enemy?.word !== entry.enemy || !raw.counterRules
     || Boolean(raw.bingoHunt) !== Boolean(entry.bingoHunt)
+    || raw.enemyLetters?.some((letter, index) => letter.initialHits !== (entry.armour?.[index] ?? 1))
     || raw.enemy.partOfSpeech !== entry.partOfSpeech
     || raw.counterRules.partOfSpeech !== entry.counterPartOfSpeech || raw.counterRules.family !== entry.family
     || raw.counterRules.kind !== (entry.family ? 'family' : 'antonym') || raw.startingResolve !== 3) throw new Error('Wrong preview')

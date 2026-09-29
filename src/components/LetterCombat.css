@@ -38,6 +38,15 @@
   pointer-events: none;
 }
 
+.letter-combat .enemy-copy-count {
+  position: absolute;
+  bottom: 2px;
+  right: 3px;
+  color: inherit;
+  font: max(10px, 0.5rem)/1 'Share Tech Mono', monospace;
+  pointer-events: none;
+}
+
 .letter-combat .enemy-letter-removed,
 .letter-combat .enemy-letter-removed[data-struck="true"] {
   border-color: transparent;

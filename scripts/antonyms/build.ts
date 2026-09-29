@@ -12,6 +12,9 @@ import { createRandom } from '../../src/generator/random.ts'
 
 export function buildAntonymEncounter(profile: ConceptProfile) {
   assert.equal(profile.letters.length, 16, profile.id)
+  const armour = profile.armour ?? {}
+  assert.ok(Object.entries(armour).every(([slot, copies]) => /^(0|[1-9]\d*)$/.test(slot)
+    && Number(slot) < profile.enemy.length && Number.isSafeInteger(copies) && copies >= 2 && copies <= 16), 'Invalid armour copy count or slot')
   const roots = profile.roots.map(id => { const sense = getMeaningSense(id); assert.ok(sense, id); return sense })
   const exact = new Set<string>(profile.roots)
   const synsets = new Set(roots.filter(root => !(profile.wordOnly as readonly string[]).includes(root.id)).map(root => root.synset))
@@ -32,7 +35,8 @@ export function buildAntonymEncounter(profile: ConceptProfile) {
       if (power >= 0) { powers.splice(power, 1); return { id, letter, type: 'gem', gem: 'power' } }
       return { id, letter, type: 'normal' }
     }),
-    enemyLetters: [...profile.enemy].map((letter, index) => ({ id: `enemy-${index}`, letter, initialHits: 1, hitsRemaining: 1 })),
+    enemyLetters: [...profile.enemy].map((letter, index) => ({ id: `enemy-${index}`, letter,
+      initialHits: armour[index] ?? 1, hitsRemaining: armour[index] ?? 1 })),
     startingResolve: 3, minimumWordLength: 3, finiteRefills: true, refillQueue: profile.refills,
     tileEffects: { strike: { strike: true, preventResolveLoss: false }, ward: { strike: false, preventResolveLoss: true },
       ...(profile.powers.length ? { power: { strike: false, preventResolveLoss: false, bonusStrike: true } } : {}) },

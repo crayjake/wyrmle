@@ -107,3 +107,11 @@ test('tomorrow pins age adjectives without treating nouns as manufactured compar
     assert.equal(encounter.meaningLexicon!.words[word]?.relation, 'unrelated', word)
   }
 })
+
+test('queued DIM rejects LITER as a noun while keeping LIT as an adjective counter', () => {
+  const entry = dailySchedule.find(entry => entry.enemy === 'DIM')!
+  const encounter = decodeScheduledPuzzle(JSON.parse(readFileSync(`public/${entry.asset}`, 'utf8')), entry)
+  assert.equal(encounter.meaningLexicon!.words.LIT.relation, 'opposite')
+  assert.equal(encounter.meaningLexicon!.words.LITER.relation, 'unrelated')
+  assert.deepEqual(encounter.meaningLexicon!.words.LITER.partsOfSpeech, ['noun'])
+})

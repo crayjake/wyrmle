@@ -75,10 +75,11 @@ function PreviewHub({ onSelect, group, onGroup, page, onPage }: { onSelect: (id:
       <div className="concept-cards">{entries.slice(current * 2, current * 2 + 2).map(entry => {
         const progress = describeBingoProgress(readBingoProgress(conceptProgressKey(entry)), 3)
         return <button className="concept-card" key={entry.id} data-progress={progress.status}
-          onClick={() => onSelect(entry.id)} aria-label={`${entry.enemy}, ${entry.powers ? 'with POWER, ' : ''}${progress.accessible}`}>
+          onClick={() => onSelect(entry.id)} aria-label={`${entry.enemy}, ${entry.armour ? 'with armour, ' : ''}${entry.powers ? 'with POWER, ' : ''}${progress.accessible}`}>
           <strong>{entry.enemy}</strong>
           <span className="concept-stars" aria-hidden="true">{[1, 2, 3].map(star => <Star key={star} data-earned={star <= progress.stars} size={16} />)}</span>
           {entry.family && <span className="concept-family">{entry.family}</span>}
+          {Boolean(entry.armour) && <span className="concept-family">Armour</span>}
           <span className="concept-status">{progress.label}</span>
         </button>
       })}</div>
@@ -129,6 +130,7 @@ function ConceptBattle({ encounter, entry, onBack }: { encounter: LetterStrikeEn
     setAttempt(value => value + 1)
   }
   if (entry.bingoHunt && !introSeen) return <BingoHuntIntro enemy={encounter.enemy} partOfSpeech={entry.counterPartOfSpeech}
+    armour={encounter.enemyLetters.some(letter => letter.initialHits > 1)}
     onClose={onBack} closeLabel="All previews" error={saveError ? 'Could not save your progress. Please try again.' : undefined}
     onStart={() => {
       if (!saveBingoAttempt(key, initial.game, true, initial.hintStep)) { setSaveError(true); return }
@@ -143,7 +145,7 @@ function ConceptBattle({ encounter, entry, onBack }: { encounter: LetterStrikeEn
     }}
     notice={<div className="concept-battle-bar">
       <button onClick={onBack}><ArrowLeft size={15} />Previews</button>
-      <span>{saveError ? 'Could not save restart' : entry.bingoHunt ? 'Bingo hunt' : entry.family ? `${entry.family} · ${entry.counterPartOfSpeech}s` : entry.powers ? 'Antonyms + POWER' : 'Antonyms'}</span>
+      <span>{saveError ? 'Could not save restart' : entry.bingoHunt ? entry.armour ? 'Bingo hunt · Armour' : 'Bingo hunt' : entry.family ? `${entry.family} · ${entry.counterPartOfSpeech}s` : entry.powers ? 'Antonyms + POWER' : 'Antonyms'}</span>
     </div>}
     menu={<a className="daily-button" href={base}>Daily puzzle</a>}
     renderBestResult={best === null ? undefined : close => <BattleResult best={{ enemy: entry.enemy, wordCount: best, bingoHunt: entry.bingoHunt }} onRetry={close}

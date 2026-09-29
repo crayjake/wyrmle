@@ -54,10 +54,12 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
   const tileShape = shapeOverride ?? preferences.preferences.tileShape ?? 'circle'
   const easy = preferences.preferences.preferredMode === 'easy'
   const hard = preferences.preferences.preferredMode === 'hard' || preferences.preferences.preferredMode === 'hardcore'
+  const hardHunt = hard && Boolean(encounter.bingoHunt)
   const hintsAvailable = easy && Boolean(guide)
   const [game, setGame] = useState(() => initial?.game ?? createLetterStrikeGame(encounter))
-  // The last hunt guess is a single anagram, without changing the saved layout.
-  const finalAnagram = Boolean(encounter.bingoHunt && game.playerResolve <= 1)
+  // Hard misses can leave spares on the final life; only collapse a true anagram.
+  const finalAnagram = Boolean(encounter.bingoHunt && game.playerResolve <= 1
+    && game.tiles.filter(tile => tile.letter).length === encounter.bingoHunt.answer.length)
   const boardLayout = finalAnagram ? 'ring' : preferredLayout
   const [phase, setPhase] = useState<Phase>(initial?.started ? 'ready' : 'waiting')
   useLayoutEffect(() => {
@@ -120,7 +122,7 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
   const showResult = game.status !== 'playing' && !resolving
   useBattleFit(containerRef, !viewingBest && !showResult, boardLayout)
   const interactive = phase === 'ready' && game.status === 'playing' && !resolving && !viewingBest
-  const attackPreview = previewLetterStrike(game)
+  const attackPreview = previewLetterStrike(game, undefined, { hardGuess: hardHunt })
   const preview = { ...attackPreview, amount: attackPreview.strikes, maximum: 0, bonuses: getLetterStrikeBonuses(attackPreview) }
   const events = getLetterStrikeBattleEvents(game).map(event => game.encounter.counterRules
     ? { ...event, semanticLabel: event.semanticLabel === 'COUNTER' ? (game.encounter.counterRules.kind === 'antonym' ? 'ANTONYM' : 'COUNTER') : 'NO MATCH' } : event)
@@ -142,7 +144,7 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
   }
   function attack() {
     if (!interactive) return
-    const next = submitLetterStrike(game)
+    const next = submitLetterStrike(game, undefined, { hardGuess: hardHunt })
     if (next.playedWords.length > game.playedWords.length) persist(next, true)
     setGame(next)
   }
@@ -187,12 +189,13 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
     <div className="enemy-zone">
       <Enemy name={enemy.word} definition={enemy.definition} partOfSpeech={enemy.partOfSpeech}
         hideDefinition={hard}
+        hideCopyCounts={hardHunt}
         modifiers={getLetterStrikeGrammarModifiers(game)}
         modifierUnit="STRIKE"
         introFinished={phase === 'ready'}
         letterStates={game.enemyLetters}
         previewMode={encounter.bingoHunt ? 'bingo-match' : 'damage'}
-        predictedHits={interactive && preview.valid ? preview.bingoHunt?.matchingHits ?? preview.hits : []}
+        predictedHits={!hardHunt && interactive && preview.valid ? preview.bingoHunt?.matchingHits ?? preview.hits : []}
         predictedRecoveries={interactive && preview.valid && 'recoveries' in preview ? preview.recoveries : undefined}
         resolvedHits={resolving ? game.playedWords.at(-1)?.preview.hits : undefined}
         resolvedRecoveries={resolving ? game.playedWords.at(-1)?.preview.recoveries : undefined}
@@ -203,7 +206,7 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
     <div className="player-zone">
       <AttackInfo word={preview.word} damage={preview.amount} maxDamage={preview.maximum}
         metric="strikes" ready={interactive && preview.valid} message={message} bonuses={preview.bonuses}
-        strikePreview={'hits' in preview ? preview : undefined} enemyWord={enemy.word}
+        strikePreview={!hardHunt ? preview : undefined} enemyWord={enemy.word}
         counterRules={encounter.counterRules}
         resolveBefore={interactive && preview.valid ? game.playerResolve : undefined}
       />
@@ -268,7 +271,8 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
           <button className="daily-button" aria-pressed={!easy && !hard} onClick={() => preferences.update({ preferredMode: 'normal' })}>Normal</button>
           <button className="daily-button" aria-pressed={hard} onClick={() => preferences.update({ preferredMode: 'hard' })}>Hard</button>
         </div>
-        <p>{hard ? 'Enemy definition hidden. No hints.' : easy ? 'Enemy definition shown. Three hints and an answer reveal.' : 'Enemy definition shown. No hints.'}</p>
+        <p>{hard ? encounter.bingoHunt ? 'No definition, copy counts or guess preview. Every new dictionary word costs a life. Only antonyms remove spare tiles.' : 'Enemy definition hidden. No hints.'
+          : easy ? 'Definition and copy counts shown. Three hints and an answer reveal.' : 'Definition and copy counts shown. No hints.'}</p>
       </fieldset>
       <div className="dev-controls">
         {menu}
@@ -280,12 +284,13 @@ export default function BattleScreen({ encounter, initial, onSave, onRestart, on
     </BattlePanel>}
     {panel === 'log'  && <BattlePanel title="Played words" onClose={() => setPanel(null)}>
       {events.length > 0 ? encounter.bingoHunt ? <ol className="hunt-history">{game.playedWords.map(move => <li key={move.word}>
-        <strong>{move.word}</strong><span>{move.preview.bingoHunt?.won ? 'Bingo' : `${move.preview.bingoHunt?.removedTileIds.length} spare tiles removed`}</span>
+        <strong>{move.word}</strong><span>{move.preview.bingoHunt?.won ? 'Bingo' : `${move.semanticLabel !== 'COUNTER' ? 'Not an antonym · ' : ''}${move.preview.bingoHunt?.removedTileIds.length} spare tiles removed`}</span>
       </li>)}</ol> : <div className="dev-combat-log"><EncounterHud visible events={events} metric="strikes" /></div>
         : <p>No submitted words in this attempt.</p>}
     </BattlePanel>}
     {panel === 'help' && <BattlePanel title="How to play" onClose={() => setPanel(null)}>
-        {encounter.bingoHunt ? <BingoHuntInstructions partOfSpeech={encounter.counterRules!.partOfSpeech} daily={!allowRestart} /> : <div className="daily-help">
+        {encounter.bingoHunt ? <BingoHuntInstructions partOfSpeech={encounter.counterRules!.partOfSpeech} daily={!allowRestart}
+          armour={encounter.enemyLetters.some(letter => letter.initialHits > 1)} hard={hard} /> : <div className="daily-help">
           <div>Remove every enemy letter before your {game.encounter.startingResolve} lives run out. Tap or swipe across tiles in spelling order; you can mix both.</div>
           <div>One {encounter.counterRules?.kind === 'antonym' ? 'antonym' : 'counter'} can remove the whole enemy in a single word. Each played word uses one life; removing the final letter on your last life still wins.</div>
           <div>Underlined tiles match a surviving enemy letter. Refills show the letters still available after you play.</div>

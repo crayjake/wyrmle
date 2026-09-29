@@ -13,9 +13,14 @@ export function validateBingoHunt(encounter: LetterStrikeEncounter) {
   const meaning = encounter.meaningLexicon?.words[rule.answer]
   const available = [...rule.answer]
   const coversEnemy = encounter.enemyLetters.every(letter => {
-    const index = available.indexOf(letter.letter)
-    if (index < 0 || letter.initialHits !== 1) return false
-    available.splice(index, 1)
+    if (!Number.isSafeInteger(letter.initialHits) || letter.initialHits < 1 || letter.initialHits > 16) return false
+    // Armour needs an extra physical copy in this single word. Separate slots
+    // with the same letter also consume their own copies from the answer.
+    for (let copy = 0; copy < letter.initialHits; copy++) {
+      const index = available.indexOf(letter.letter.toUpperCase())
+      if (index < 0) return false
+      available.splice(index, 1)
+    }
     return true
   })
   if (encounter.counterRules?.kind !== 'antonym' || encounter.startingResolve !== 3
@@ -32,7 +37,9 @@ export function validateBingoHunt(encounter: LetterStrikeEncounter) {
 
 export function huntRemovalIds(state: LetterStrikeState): number[] {
   const order = state.encounter.bingoHunt!.removalOrder
-  const total = Math.min(order.length, Math.ceil(order.length * (state.playedWords.length + 1) / 2))
+  // Hard misses spend lives but must not advance the help earned by antonyms.
+  const helpers = state.playedWords.filter(move => move.semanticLabel === 'COUNTER').length
+  const total = Math.min(order.length, Math.ceil(order.length * (helpers + 1) / 2))
   return order.slice(0, total).filter(id => state.tiles.some(tile => tile.id === id && tile.letter !== ''))
 }
 

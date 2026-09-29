@@ -1,4 +1,4 @@
-import { normalizeWord, prototypeWordPartsOfSpeech } from './dictionary.ts'
+import { isDictionaryWord, normalizeWord, prototypeWordPartsOfSpeech } from './dictionary.ts'
 import { canSpellEncounterWord, getEncounterSemanticRelation, isEncounterWord, validateMeaningLexicon } from './meaningLexicon.ts'
 import type { PuzzleMeaningLexicon } from './meaningLexicon.ts'
 import { getSelectedTiles, refillBoard } from './tiles.ts'
@@ -33,7 +33,7 @@ export type LetterStrikeEncounter = {
   // Omission preserves the exact sparse, single-POS rules of archived saves.
   lexicalRules?: LexicalRules
   meaningLexicon?: PuzzleMeaningLexicon
-  // Opt-in research rules. Daily/archived encounters keep counter damage.
+  // Strict counter meanings for authored antonym puzzles and Bingo Hunt.
   counterRules?: { kind: 'antonym' | 'family'; partOfSpeech: PartOfSpeech; family?: string; excludedWords: readonly string[] }
   bingoHunt?: BingoHuntRules
   longWordRule?: { minimumLength: number; bonusStrikes: number }
@@ -85,6 +85,8 @@ export type LetterStrikeEvaluation = {
 }
 export type LetterStrikePreview = LetterStrikeEvaluation & { valid: boolean; error: string | null }
 export type LetterStrikePlayedWord = {
+  // Persist the rules used for each guess, even if difficulty changes later.
+  hardGuess?: true
   word: string
   strikes: number
   semanticLabel: LetterStrikeEvaluation['semanticLabel']
@@ -175,8 +177,10 @@ export function createLetterStrikeGame(encounter = letterStrikeEncounter): Lette
   }
   if (enemyLetters.length === 0 || new Set(enemyLetters.map(letter => letter.id)).size !== enemyLetters.length
     || enemyLetters.some(letter => !/^[a-z]$/i.test(letter.letter)
-      || ![1, 2].includes(letter.initialHits) || letter.hitsRemaining !== letter.initialHits)) {
-    throw new Error('Enemy letters need distinct identities and one or two starting hits.')
+      || !Number.isSafeInteger(letter.initialHits) || letter.initialHits < 1
+      || letter.initialHits > (encounter.bingoHunt ? 16 : 2) || letter.hitsRemaining !== letter.initialHits)) {
+    throw new Error(encounter.bingoHunt ? 'Enemy letters need distinct identities and valid starting hits.'
+      : 'Enemy letters need distinct identities and one or two starting hits.')
   }
   const wardTurns = startingTiles.filter(tile => tile.type === 'gem' && tile.gem && tileEffects[tile.gem]?.preventResolveLoss).length
   if (encounter.finiteRefills ? !/^[a-z]*$/i.test(encounter.refillQueue)
@@ -381,7 +385,11 @@ export function evaluateLetterStrike(state: Pick<LetterStrikeState, 'encounter' 
   }
 }
 
-export function previewLetterStrike(state: LetterStrikeState, selectedTileIds: readonly number[] = state.selectedTileIds): LetterStrikePreview {
+export type LetterStrikeGuessOptions = { hardGuess?: boolean }
+
+export function previewLetterStrike(state: LetterStrikeState, selectedTileIds: readonly number[] = state.selectedTileIds,
+  options: LetterStrikeGuessOptions = {}): LetterStrikePreview {
+  const hardGuess = Boolean(state.encounter.bingoHunt && options.hardGuess)
   const tiles = getSelectedTiles(state, selectedTileIds)
   const evaluation = evaluateLetterStrike(state, tiles)
   const error = state.status !== 'playing' ? 'Encounter finished'
@@ -389,10 +397,11 @@ export function previewLetterStrike(state: LetterStrikeState, selectedTileIds: r
     : tiles.length !== selectedTileIds.length ? 'Selected tile is not on the board'
     : tiles.some(tile => tile.letter === '') ? 'Empty cells cannot be selected'
     : evaluation.word.length < state.encounter.minimumWordLength ? `Minimum ${state.encounter.minimumWordLength} letters`
-    : state.encounter.counterRules?.excludedWords.includes(evaluation.word) ? 'Use a different word from the enemy'
-    : !isEncounterWord(state.encounter, evaluation.word) ? state.encounter.meaningLexicon ? 'Not in this puzzle’s dictionary' : 'Not a valid word'
-    : state.encounter.bingoHunt && evaluation.semanticLabel !== 'COUNTER' ? `Not an opposite ${state.encounter.counterRules!.partOfSpeech}. No life lost.`
-    : state.encounter.bingoHunt && state.playedWords.some(move => move.word === evaluation.word) ? 'Already tried. Choose another opposite. No life lost.'
+    : !hardGuess && state.encounter.counterRules?.excludedWords.includes(evaluation.word) ? 'Use a different word from the enemy'
+    : !(hardGuess ? isDictionaryWord(evaluation.word) : isEncounterWord(state.encounter, evaluation.word))
+      ? hardGuess ? 'Not a valid word' : state.encounter.meaningLexicon ? 'Not in this puzzle’s dictionary' : 'Not a valid word'
+    : state.encounter.bingoHunt && !hardGuess && evaluation.semanticLabel !== 'COUNTER' ? `Not an opposite ${state.encounter.counterRules!.partOfSpeech}. No life lost.`
+    : state.encounter.bingoHunt && state.playedWords.some(move => move.word === evaluation.word) ? 'Already tried. Choose another word. No life lost.'
     : null
   return {
     ...evaluation,
@@ -400,7 +409,7 @@ export function previewLetterStrike(state: LetterStrikeState, selectedTileIds: r
     error,
     ...(evaluation.bingoHunt ? { bingoHunt: {
       won: error === null && evaluation.bingoHunt.won,
-      removedTileIds: error === null && !evaluation.bingoHunt.won ? huntRemovalIds(state) : [],
+      removedTileIds: error === null && !evaluation.bingoHunt.won && evaluation.semanticLabel === 'COUNTER' ? huntRemovalIds(state) : [],
       matchingHits: error === null ? evaluation.bingoHunt.matchingHits : [],
     } } : {}),
     ...(error !== null ? {
@@ -413,9 +422,10 @@ export function previewLetterStrike(state: LetterStrikeState, selectedTileIds: r
   }
 }
 
-export function submitLetterStrike(state: LetterStrikeState, selectedTileIds: readonly number[] = state.selectedTileIds): LetterStrikeState {
+export function submitLetterStrike(state: LetterStrikeState, selectedTileIds: readonly number[] = state.selectedTileIds,
+  options: LetterStrikeGuessOptions = {}): LetterStrikeState {
   if (state.status !== 'playing') return state
-  const preview = previewLetterStrike(state, selectedTileIds)
+  const preview = previewLetterStrike(state, selectedTileIds, options)
   if (!preview.valid) return { ...state, error: preview.error }
   const playerResolve = Math.max(0, state.playerResolve - preview.resolveCost)
   const refilled = preview.bingoHunt ? removeHuntSpares(state, preview.bingoHunt.removedTileIds) : refillBoard(state, selectedTileIds)
@@ -429,6 +439,7 @@ export function submitLetterStrike(state: LetterStrikeState, selectedTileIds: re
     enemyLetters: preview.enemyLetters,
     playerResolve,
     playedWords: [...state.playedWords, {
+      ...(state.encounter.bingoHunt && options.hardGuess ? { hardGuess: true as const } : {}),
       word: preview.word,
       strikes: preview.strikes,
       semanticLabel: preview.semanticLabel,

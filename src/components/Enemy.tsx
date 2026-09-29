@@ -19,6 +19,7 @@ type EnemyProps = {
   name: string
   definition: string
   hideDefinition?: boolean
+  hideCopyCounts?: boolean
   partOfSpeech?: string
   revealedIndices: readonly number[]
   registerLetter: (index: number, element: HTMLDivElement | null) => void
@@ -46,6 +47,7 @@ export default function Enemy({
   name,
   definition,
   hideDefinition = false,
+  hideCopyCounts = false,
   partOfSpeech,
   revealedIndices,
   registerLetter,
@@ -107,7 +109,10 @@ export default function Enemy({
             const removed = hitsRemaining === 0
             const predicted = state && revealed && !removed && !resolution.resolving ? predictedByLetter.get(state.id) : undefined
             const targetOutcome = predicted ? (predicted.hitsAfter === 0 ? 'remove' : 'break') : undefined
-            const targetDescription = predicted && previewMode === 'bingo-match' ? 'matched by this word' : targetOutcome === 'remove'
+            const requiredCopies = state?.initialHits ?? hitsRemaining ?? 1
+            const matchedCopies = predicted ? requiredCopies - predicted.hitsAfter : 0
+            const targetDescription = predicted && previewMode === 'bingo-match'
+              ? requiredCopies > 1 ? `${matchedCopies} of ${requiredCopies} copies matched by this word` : 'matched by this word' : targetOutcome === 'remove'
               ? hitsRemaining !== undefined && hitsRemaining > 1 ? 'armour will break and letter will be removed' : 'letter will be removed'
               : targetOutcome === 'break' ? 'armour will break' : undefined
             const recovery = state && revealed && !resolution.resolving ? recoveredByLetter.get(state.id) : undefined
@@ -119,7 +124,7 @@ export default function Enemy({
                 ref={element => registerLetter(i, element)}
                 data-enemy-index={i}
                 data-revealed={revealed}
-                data-hits-remaining={hitsRemaining}
+                data-hits-remaining={hideCopyCounts ? undefined : hitsRemaining}
                 data-struck={state && state.id === resolution.activeLetterId || undefined}
                 data-regenerated={state && state.id === resolution.activeLetterId && resolution.activeIsRecovery || undefined}
                 data-target-outcome={targetOutcome}
@@ -127,13 +132,13 @@ export default function Enemy({
                 title={[targetDescription, recoveryDescription].filter(Boolean).join('; ') || undefined}
                 role={state ? 'img' : undefined}
                 aria-label={state ? revealed
-                  ? previewMode === 'bingo-match' ? `${letter}${targetDescription ? `, ${targetDescription}` : ''}`
+                  ? previewMode === 'bingo-match' ? `${letter}${!hideCopyCounts && requiredCopies > 1 ? `, armoured, ${requiredCopies} copies needed in one word` : ''}${targetDescription ? `, ${targetDescription}` : ''}`
                     : `${letter}, ${removed ? 'removed' : `${hitsRemaining} ${hitsRemaining === 1 ? 'hit' : 'hits'} remaining`}${targetDescription ? `, targeted: ${targetDescription}` : ''}${recoveryDescription ? `, ${recoveryDescription}` : ''}`
                   : `Undecoded enemy letter ${i + 1}` : undefined}
                 className={[
                   'enemy-letter',
                   revealed ? 'resolved' : 'scrambled',
-                  hitsRemaining !== undefined && hitsRemaining > 1 ? 'enemy-letter-armoured' : '',
+                  !hideCopyCounts && hitsRemaining !== undefined && hitsRemaining > 1 ? 'enemy-letter-armoured' : '',
                   removed ? 'enemy-letter-removed' : '',
                 ].join(' ')}
                 initial={false}
@@ -152,6 +157,8 @@ export default function Enemy({
                 <span className="enemy-letter-glyph" aria-hidden={state ? true : undefined}>
                   {revealed ? removed ? '·' : letter : display[i]}
                 </span>
+                {previewMode === 'bingo-match' && !hideCopyCounts && revealed && requiredCopies > 1
+                  && <span className="enemy-copy-count" aria-hidden="true">×{requiredCopies}</span>}
                 {targetOutcome && <span className="enemy-target-marker" aria-hidden="true">
                   {targetOutcome === 'break' ? '−' : '×'}
                 </span>}
