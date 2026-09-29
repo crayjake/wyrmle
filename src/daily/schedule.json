@@ -1,28 +1,5 @@
 [
   {
-    "date": "2026-09-26",
-    "id": "arid-irrigated",
-    "enemy": "ARID",
-    "asset": "puzzles/arid-irrigated-7ca7058b541f.json",
-    "method": "bingo-first"
-  },
-  {
-    "date": "2026-09-27",
-    "id": "ignite-extinguish",
-    "enemy": "IGNITE",
-    "asset": "puzzles/ignite-extinguish-1deff98799f1.json",
-    "method": "bingo-first",
-    "report": "artifacts/daily-month-2026-09-27/ignite-extinguish.json"
-  },
-  {
-    "date": "2026-09-28",
-    "id": "fury-cheerfully",
-    "enemy": "FURY",
-    "asset": "puzzles/fury-cheerfully-5c2f90552f86.json",
-    "method": "bingo-first",
-    "report": "artifacts/daily-month-2026-09-27/fury-cheerfully.json"
-  },
-  {
     "date": "2026-09-29",
     "id": "hunt-old-2026-09-29",
     "enemy": "OLD",
@@ -33,21 +10,21 @@
   },
   {
     "date": "2026-09-30",
-    "id": "hunt-wet-2026-09-30",
-    "enemy": "WET",
-    "asset": "puzzles/hunt-wet-2026-09-30-4f50c0e99ac7.json",
+    "id": "puzzle-dear-2026-09-30",
+    "enemy": "DEAR",
+    "asset": "puzzles/puzzle-dear-2026-09-30-c0e65fcc38b8.json",
     "method": "bingo-first",
     "bingoHunt": true,
-    "report": "artifacts/bingo-hunt-daily-2026-09-29/hunt-wet-2026-09-30.json"
+    "report": "artifacts/puzzles/2026-09-30/puzzle-dear-2026-09-30.json"
   },
   {
     "date": "2026-10-01",
-    "id": "hunt-loud-2026-10-01",
-    "enemy": "LOUD",
-    "asset": "puzzles/hunt-loud-2026-10-01-f5f7faa946d6.json",
+    "id": "puzzle-stern-2026-10-01",
+    "enemy": "STERN",
+    "asset": "puzzles/puzzle-stern-2026-10-01-83e932d42673.json",
     "method": "bingo-first",
     "bingoHunt": true,
-    "report": "artifacts/bingo-hunt-daily-2026-09-29/hunt-loud-2026-10-01.json"
+    "report": "artifacts/puzzles/2026-10-01/puzzle-stern-2026-10-01.json"
   },
   {
     "date": "2026-10-02",

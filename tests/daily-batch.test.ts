@@ -10,7 +10,8 @@ import { yearProfile, yearThemes } from '../scripts/bingo/year/profiles.ts'
 import { bingoProfileVersion, createBingoMeanings } from '../scripts/bingo/meanings.ts'
 import { freshnessIssues, puzzleIdentity } from '../scripts/bingo/freshness.ts'
 import dailySchedule from '../artifacts/bingo-hunt-daily-2026-09-29/previous-schedule.json' with { type: 'json' }
-import { decodeScheduledPuzzle, archivedPuzzles } from '../src/daily/scheduledPuzzle.ts'
+import { decodeScheduledPuzzle } from '../src/daily/scheduledPuzzle.ts'
+import archivedPuzzles from '../artifacts/calendar-transition-2026-09-29/previous-archive.json' with { type: 'json' }
 import { validateBingo } from '../scripts/bingo/validate.ts'
 const puzzleSchedule = [...archivedPuzzles, ...dailySchedule]
 const read = (path: string) => JSON.parse(readFileSync(path, 'utf8'))

@@ -13,7 +13,7 @@ export default function BingoHuntInstructions({ partOfSpeech, daily = false, arm
       : <>A simpler opposite uses one and removes spare tiles.</>} Played tiles stay; no refills.</p>
     <p>{hard ? <>Wrong guesses remove nothing, so <strong>spare tiles may remain on your last life</strong>.</>
       : <>Two simpler opposites leave <strong>just the bingo’s letters</strong>. Rearrange them to win.</>}</p>
-    <p>{daily && 'One attempt per day. '}{hard ? 'Non-words' : 'Other words'} and repeat guesses cost no lives.</p>
+    <p>{daily && 'One attempt per puzzle. '}{hard ? 'Non-words' : 'Other words'} and repeat guesses cost no lives.</p>
     <p className="hunt-rating">★★★ first guess · ★★ second · ★ third</p>
   </div>
 }

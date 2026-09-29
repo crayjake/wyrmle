@@ -1,0 +1,358 @@
+{
+  "accepted": true,
+  "asset": "puzzles/archive-hunt-alert-9bc2b11cb7d0.json",
+  "answer": "LETHARGIC",
+  "witnesses": [
+    [
+      "LETHARGIC"
+    ],
+    [
+      "SLOW",
+      "LETHARGIC"
+    ],
+    [
+      "SLOW",
+      "INERT",
+      "LETHARGIC"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "LETHARGIC",
+      "effort": 5.84
+    }
+  ],
+  "helperEffort": 2.8200000000000003,
+  "removalProof": {
+    "id": "hunt-alert",
+    "revision": "67e5cee84d91",
+    "progressRevision": "215093c7c262",
+    "preferredHelpers": [
+      "SLOW",
+      "TIRED",
+      "IDLE",
+      "INERT"
+    ],
+    "branches": [
+      {
+        "first": "DROWSING",
+        "next": [
+          "GONE",
+          "GONER",
+          "IDLE",
+          "IDLER",
+          "INERT",
+          "LOGIER",
+          "TIRED"
+        ],
+        "preferredFamilies": [
+          "idle",
+          "inert",
+          "tired"
+        ],
+        "familiarFamilies": [
+          "gone",
+          "idle",
+          "inert",
+          "tired"
+        ]
+      },
+      {
+        "first": "GONE",
+        "next": [
+          "GONER",
+          "IDLE",
+          "IDLER",
+          "INERT",
+          "LOGIER",
+          "TIRED"
+        ],
+        "preferredFamilies": [
+          "idle",
+          "inert",
+          "tired"
+        ],
+        "familiarFamilies": [
+          "idle",
+          "inert",
+          "tired"
+        ]
+      },
+      {
+        "first": "GONER",
+        "next": [
+          "GONE",
+          "IDLE",
+          "IDLER",
+          "INERT",
+          "LOGIER",
+          "TIRED"
+        ],
+        "preferredFamilies": [
+          "idle",
+          "inert",
+          "tired"
+        ],
+        "familiarFamilies": [
+          "idle",
+          "inert",
+          "tired"
+        ]
+      },
+      {
+        "first": "IDLE",
+        "next": [
+          "GONE",
+          "GONER",
+          "IDLER",
+          "INERT",
+          "LOGIER",
+          "TIRED"
+        ],
+        "preferredFamilies": [
+          "inert",
+          "tired"
+        ],
+        "familiarFamilies": [
+          "gone",
+          "inert",
+          "tired"
+        ]
+      },
+      {
+        "first": "IDLER",
+        "next": [
+          "GONE",
+          "GONER",
+          "IDLE",
+          "INERT",
+          "LOGIER",
+          "TIRED"
+        ],
+        "preferredFamilies": [
+          "inert",
+          "tired"
+        ],
+        "familiarFamilies": [
+          "gone",
+          "inert",
+          "tired"
+        ]
+      },
+      {
+        "first": "IDLEST",
+        "next": [
+          "GONE",
+          "GONER",
+          "IDLE",
+          "IDLER",
+          "INERT",
+          "LOGIER",
+          "TIRED"
+        ],
+        "preferredFamilies": [
+          "inert",
+          "tired"
+        ],
+        "familiarFamilies": [
+          "gone",
+          "inert",
+          "tired"
+        ]
+      },
+      {
+        "first": "INERT",
+        "next": [
+          "GONE",
+          "GONER",
+          "IDLE",
+          "IDLER",
+          "LOGIER",
+          "TIRED"
+        ],
+        "preferredFamilies": [
+          "idle",
+          "tired"
+        ],
+        "familiarFamilies": [
+          "gone",
+          "idle",
+          "tired"
+        ]
+      },
+      {
+        "first": "LANGUID",
+        "next": [
+          "GONE",
+          "GONER",
+          "IDLE",
+          "IDLER",
+          "INERT",
+          "LOGIER",
+          "TIRED"
+        ],
+        "preferredFamilies": [
+          "idle",
+          "inert",
+          "tired"
+        ],
+        "familiarFamilies": [
+          "gone",
+          "idle",
+          "inert",
+          "tired"
+        ]
+      },
+      {
+        "first": "LOGIER",
+        "next": [
+          "GONE",
+          "GONER",
+          "IDLE",
+          "IDLER",
+          "INERT",
+          "TIRED"
+        ],
+        "preferredFamilies": [
+          "idle",
+          "inert",
+          "tired"
+        ],
+        "familiarFamilies": [
+          "gone",
+          "idle",
+          "inert",
+          "tired"
+        ]
+      },
+      {
+        "first": "LOGIEST",
+        "next": [
+          "GONE",
+          "GONER",
+          "IDLE",
+          "IDLER",
+          "INERT",
+          "LOGIER",
+          "TIRED"
+        ],
+        "preferredFamilies": [
+          "idle",
+          "inert",
+          "tired"
+        ],
+        "familiarFamilies": [
+          "gone",
+          "idle",
+          "inert",
+          "tired"
+        ]
+      },
+      {
+        "first": "SLOW",
+        "next": [
+          "GONE",
+          "GONER",
+          "IDLE",
+          "IDLER",
+          "INERT",
+          "LOGIER",
+          "TIRED"
+        ],
+        "preferredFamilies": [
+          "idle",
+          "inert",
+          "tired"
+        ],
+        "familiarFamilies": [
+          "gone",
+          "idle",
+          "inert",
+          "tired"
+        ]
+      },
+      {
+        "first": "SLOWER",
+        "next": [
+          "GONE",
+          "GONER",
+          "IDLE",
+          "IDLER",
+          "INERT",
+          "LOGIER",
+          "TIRED"
+        ],
+        "preferredFamilies": [
+          "idle",
+          "inert",
+          "tired"
+        ],
+        "familiarFamilies": [
+          "gone",
+          "idle",
+          "inert",
+          "tired"
+        ]
+      },
+      {
+        "first": "TIRED",
+        "next": [
+          "GONE",
+          "GONER",
+          "IDLE",
+          "IDLER",
+          "INERT",
+          "LOGIER"
+        ],
+        "preferredFamilies": [
+          "idle",
+          "inert"
+        ],
+        "familiarFamilies": [
+          "gone",
+          "idle",
+          "inert"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 2,
+    "minFamiliarFamilies": 3,
+    "candidatesChecked": 35,
+    "pathsChecked": 84,
+    "removalOrder": [
+      1,
+      5,
+      9,
+      15,
+      4,
+      7,
+      8
+    ],
+    "compatibility": {
+      "movesChecked": 51
+    },
+    "witnesses": [
+      [
+        "LETHARGIC"
+      ],
+      [
+        "SLOW",
+        "LETHARGIC"
+      ],
+      [
+        "SLOW",
+        "INERT",
+        "LETHARGIC"
+      ]
+    ],
+    "startingBingos": [
+      {
+        "word": "LETHARGIC",
+        "effort": 5.84
+      }
+    ],
+    "helperEffort": 2.8200000000000003,
+    "semanticReview": "Opposite adjectives describe lack of wakefulness, responsiveness or energy. TIRED is depleted energy, not an overused joke; DULL means lifeless, not blunt. Chemical inertness and merely being late are outside this sense."
+  },
+  "review": "Opposite adjectives describe lack of wakefulness, responsiveness or energy. TIRED is depleted energy, not an overused joke; DULL means lifeless, not blunt. Chemical inertness and merely being late are outside this sense."
+}

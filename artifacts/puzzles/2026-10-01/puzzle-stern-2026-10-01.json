@@ -1,0 +1,444 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-stern-2026-10-01-83e932d42673.json",
+  "answer": "CONSIDERATE",
+  "rules": "bingo-hunt",
+  "review": "Gentle, lenient and considerate manners oppose a stern manner. EASY means not strict; SOFT means lenient or kind, not a material. Nice and sweet use interpersonal readings. Broad headwords stay pinned to their reviewed spelling and inflections.",
+  "identity": {
+    "id": "puzzle-stern-2026-10-01",
+    "enemy": "STERN",
+    "board": "ACDEEGILMNORSSTW",
+    "bingos": [
+      "CONSIDERATE"
+    ],
+    "bingoFamilies": [
+      "CONSIDERATE"
+    ]
+  },
+  "witnesses": [
+    [
+      "CONSIDERATE"
+    ],
+    [
+      "WARM",
+      "CONSIDERATE"
+    ],
+    [
+      "WARM",
+      "NICE",
+      "CONSIDERATE"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "CONSIDERATE",
+      "effort": 6
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "WARM",
+      "NICE"
+    ],
+    "branches": [
+      {
+        "first": "CLEMENT",
+        "next": [
+          "EASIER",
+          "NICE",
+          "NICER",
+          "NICEST",
+          "SWEET",
+          "TENDER",
+          "WARM",
+          "WARMEST"
+        ],
+        "preferredFamilies": [
+          "nice",
+          "warm"
+        ],
+        "familiarFamilies": [
+          "easy",
+          "nice",
+          "sweet",
+          "tender",
+          "warm"
+        ]
+      },
+      {
+        "first": "CORDIAL",
+        "next": [
+          "EASIER",
+          "NICE",
+          "NICER",
+          "NICEST",
+          "SWEET",
+          "TENDER",
+          "WARM",
+          "WARMEST"
+        ],
+        "preferredFamilies": [
+          "nice",
+          "warm"
+        ],
+        "familiarFamilies": [
+          "easy",
+          "nice",
+          "sweet",
+          "tender",
+          "warm"
+        ]
+      },
+      {
+        "first": "EASIER",
+        "next": [
+          "NICE",
+          "NICER",
+          "NICEST",
+          "SWEET",
+          "TENDER",
+          "WARM",
+          "WARMEST"
+        ],
+        "preferredFamilies": [
+          "nice",
+          "warm"
+        ],
+        "familiarFamilies": [
+          "nice",
+          "sweet",
+          "tender",
+          "warm"
+        ]
+      },
+      {
+        "first": "EASIEST",
+        "next": [
+          "EASIER",
+          "NICE",
+          "NICER",
+          "NICEST",
+          "SWEET",
+          "TENDER",
+          "WARM",
+          "WARMEST"
+        ],
+        "preferredFamilies": [
+          "nice",
+          "warm"
+        ],
+        "familiarFamilies": [
+          "nice",
+          "sweet",
+          "tender",
+          "warm"
+        ]
+      },
+      {
+        "first": "GENIAL",
+        "next": [
+          "EASIER",
+          "NICE",
+          "NICER",
+          "NICEST",
+          "SWEET",
+          "TENDER",
+          "WARM",
+          "WARMEST"
+        ],
+        "preferredFamilies": [
+          "nice",
+          "warm"
+        ],
+        "familiarFamilies": [
+          "easy",
+          "nice",
+          "sweet",
+          "tender",
+          "warm"
+        ]
+      },
+      {
+        "first": "GENTLE",
+        "next": [
+          "EASIER",
+          "NICE",
+          "NICER",
+          "NICEST",
+          "SWEET",
+          "TENDER",
+          "WARM",
+          "WARMEST"
+        ],
+        "preferredFamilies": [
+          "nice",
+          "warm"
+        ],
+        "familiarFamilies": [
+          "easy",
+          "nice",
+          "sweet",
+          "tender",
+          "warm"
+        ]
+      },
+      {
+        "first": "GENTLER",
+        "next": [
+          "EASIER",
+          "NICE",
+          "NICER",
+          "NICEST",
+          "SWEET",
+          "TENDER",
+          "WARM",
+          "WARMEST"
+        ],
+        "preferredFamilies": [
+          "nice",
+          "warm"
+        ],
+        "familiarFamilies": [
+          "easy",
+          "nice",
+          "sweet",
+          "tender",
+          "warm"
+        ]
+      },
+      {
+        "first": "MILD",
+        "next": [
+          "EASIER",
+          "NICE",
+          "NICER",
+          "NICEST",
+          "SWEET",
+          "TENDER",
+          "WARM",
+          "WARMEST"
+        ],
+        "preferredFamilies": [
+          "nice",
+          "warm"
+        ],
+        "familiarFamilies": [
+          "easy",
+          "nice",
+          "sweet",
+          "tender",
+          "warm"
+        ]
+      },
+      {
+        "first": "MILDER",
+        "next": [
+          "EASIER",
+          "NICE",
+          "NICER",
+          "NICEST",
+          "SWEET",
+          "TENDER",
+          "WARM",
+          "WARMEST"
+        ],
+        "preferredFamilies": [
+          "nice",
+          "warm"
+        ],
+        "familiarFamilies": [
+          "easy",
+          "nice",
+          "sweet",
+          "tender",
+          "warm"
+        ]
+      },
+      {
+        "first": "MILDEST",
+        "next": [
+          "EASIER",
+          "NICE",
+          "NICER",
+          "NICEST",
+          "SWEET",
+          "TENDER",
+          "WARM",
+          "WARMEST"
+        ],
+        "preferredFamilies": [
+          "nice",
+          "warm"
+        ],
+        "familiarFamilies": [
+          "easy",
+          "nice",
+          "sweet",
+          "tender",
+          "warm"
+        ]
+      },
+      {
+        "first": "NICE",
+        "next": [
+          "EASIER",
+          "NICER",
+          "NICEST",
+          "SWEET",
+          "TENDER",
+          "WARM",
+          "WARMEST"
+        ],
+        "preferredFamilies": [
+          "warm"
+        ],
+        "familiarFamilies": [
+          "easy",
+          "sweet",
+          "tender",
+          "warm"
+        ]
+      },
+      {
+        "first": "NICER",
+        "next": [
+          "EASIER",
+          "NICE",
+          "NICEST",
+          "SWEET",
+          "TENDER",
+          "WARM",
+          "WARMEST"
+        ],
+        "preferredFamilies": [
+          "warm"
+        ],
+        "familiarFamilies": [
+          "easy",
+          "sweet",
+          "tender",
+          "warm"
+        ]
+      },
+      {
+        "first": "NICEST",
+        "next": [
+          "EASIER",
+          "NICE",
+          "NICER",
+          "SWEET",
+          "TENDER",
+          "WARM",
+          "WARMEST"
+        ],
+        "preferredFamilies": [
+          "warm"
+        ],
+        "familiarFamilies": [
+          "easy",
+          "sweet",
+          "tender",
+          "warm"
+        ]
+      },
+      {
+        "first": "SWEET",
+        "next": [
+          "EASIER",
+          "NICE",
+          "NICER",
+          "NICEST",
+          "TENDER",
+          "WARM",
+          "WARMEST"
+        ],
+        "preferredFamilies": [
+          "nice",
+          "warm"
+        ],
+        "familiarFamilies": [
+          "easy",
+          "nice",
+          "tender",
+          "warm"
+        ]
+      },
+      {
+        "first": "TENDER",
+        "next": [
+          "EASIER",
+          "NICE",
+          "NICER",
+          "NICEST",
+          "SWEET",
+          "WARM",
+          "WARMEST"
+        ],
+        "preferredFamilies": [
+          "nice",
+          "warm"
+        ],
+        "familiarFamilies": [
+          "easy",
+          "nice",
+          "sweet",
+          "warm"
+        ]
+      },
+      {
+        "first": "WARM",
+        "next": [
+          "EASIER",
+          "NICE",
+          "NICER",
+          "NICEST",
+          "SWEET",
+          "TENDER",
+          "WARMEST"
+        ],
+        "preferredFamilies": [
+          "nice"
+        ],
+        "familiarFamilies": [
+          "easy",
+          "nice",
+          "sweet",
+          "tender"
+        ]
+      },
+      {
+        "first": "WARMEST",
+        "next": [
+          "EASIER",
+          "NICE",
+          "NICER",
+          "NICEST",
+          "SWEET",
+          "TENDER",
+          "WARM"
+        ],
+        "preferredFamilies": [
+          "nice"
+        ],
+        "familiarFamilies": [
+          "easy",
+          "nice",
+          "sweet",
+          "tender"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 4,
+    "candidatesChecked": 10,
+    "pathsChecked": 128,
+    "removalOrder": [
+      2,
+      6,
+      9,
+      4,
+      5
+    ]
+  }
+}

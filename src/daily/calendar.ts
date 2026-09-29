@@ -24,10 +24,16 @@ export function puzzleLocation(search: string, pathname = '') {
     return { date: shared, calendar: false, month: null, replacement: `?daily=${shared}` }
   }
   const preview = params.get('preview')
+  if (preview === 'concepts') {
+    const entry = archivedPuzzles.find(entry => entry.legacyConceptId === params.get('puzzle'))
+    return { date: entry?.date ?? null, calendar: !entry, month: null,
+      replacement: entry ? `?daily=${entry.date}` : '?calendar' }
+  }
   if (preview === 'bingo' || preview === 'bingos' || preview?.startsWith('bingo-')) {
     const entry = archivedPuzzles.find(entry => entry.legacyBetaId === preview)
     return { date: entry?.date ?? null, calendar: !entry, month: null,
       replacement: entry ? `?daily=${entry.date}` : '?calendar' }
   }
+  if (preview) return { date: null, calendar: true, month: null, replacement: '?calendar' }
   return { date: params.get('daily'), calendar: params.has('calendar'), month: params.get('calendar'), replacement: null }
 }

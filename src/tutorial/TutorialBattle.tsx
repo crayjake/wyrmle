@@ -2,14 +2,12 @@ import { useCallback, useEffect, useReducer, useRef, useState } from 'react'
 import Enemy from '../components/Enemy'
 import AttackInfo from '../components/AttackInfo'
 import TileGrid from '../components/TileGrid'
-import RefillSupply from '../components/RefillSupply'
 import BattleResult from '../components/BattleResult'
 import { MyInfo } from '../components/HealthInfo'
 import { previewLetterStrike } from '../game/letterStrike'
-import { getLetterStrikeGrammarModifiers, getLetterStrikeTileSummary } from '../game/letterStrikeHud'
 import {
   canAttackInTutorial, canContinueInTutorial, createTutorial, getAllowedTutorialTileIds,
-  getTutorialMove, tutorialExamples, tutorialReducer,
+  getTutorialMove, tutorialReducer,
 } from './tutorial'
 import type { TutorialState, TutorialStep } from './tutorial'
 import './TutorialBattle.css'
@@ -26,7 +24,7 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
   const [resolving, setResolving] = useState(false)
   const tileElements = useRef<(HTMLButtonElement | null)[]>([])
   const { game, step } = state
-  const introducingBoard = ['goal', 'board', 'word-types'].includes(step)
+  const introducingBoard = ['goal', 'board'].includes(step)
   const move = getTutorialMove(state)
   const preview = previewLetterStrike(game)
   const allowedTileIds = getAllowedTutorialTileIds(state)
@@ -50,40 +48,33 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
   const onResolutionComplete = useCallback(() => setResolving(false), [])
   const showPrediction = Boolean(move && preview.valid && !resolving)
   const visiblePreview = move ? preview : lastMove?.preview
-  const jump = (step: TutorialStep) => { setResolving(false); dispatch({ type: 'jump', step }) }
   const header = <header className="header">
     <div className="title">WYRMLE</div>
     <button type="button" className="tutorial-skip" onClick={onSkip}>SKIP TUTORIAL</button>
   </header>
 
-  if (['three-won', 'two-won', 'complete'].includes(step) && !resolving) return <main className="container letter-combat tutorial-result" data-result="won" data-tutorial-step={step}>
+  if (step === 'complete' && !resolving) return <main className="container letter-combat tutorial-result" data-result="won" data-tutorial-step={step}>
     {header}
-    <BattleResult game={game} onRetry={() => jump('goal')}
-      nudge={step === 'three-won' ? 'A win unlocks 2 lives. Same board, same refills: find a shorter route.'
-        : 'Two stars! Now try the same puzzle with one life.'}
-      actions={<>
-        <button type="button" className="daily-button bingo-result-primary" onClick={() => step === 'complete' ? onComplete() : dispatch({ type: 'continue' })}>
-          {step === 'three-won' ? 'TRY 2 LIVES' : step === 'two-won' ? 'TRY THE BINGO' : 'PLAY TODAY'}
-        </button>
-        {step === 'complete' ? <button type="button" className="daily-button" onClick={() => jump('goal')}>Replay tutorial</button>
-          : <p className="daily-best">Replays keep your best stars. Losing doesn’t reduce your next attempt’s lives.</p>}
-      </>} />
+    <BattleResult game={game} actions={<>
+      <p className="practice-rating">One guess earns ★★★, two earn ★★, three earn ★.<br />Real puzzles give you one attempt, saved as you go.</p>
+      <button className="daily-button bingo-result-primary" onClick={onComplete}>Play your puzzle</button>
+    </>} />
   </main>
 
-  return <main className="container letter-combat tutorial-battle" data-tutorial-step={step} data-tutorial-reading={!move || undefined}>
+  return <main className="container letter-combat tutorial-battle" data-tutorial-step={step} data-tutorial-reading={!move || undefined} data-board-layout={game.playerResolve === 1 ? 'ring' : 'wheel'} data-bingo-hunt>
     {header}
     <div className="battle-info">
       <MyInfo name="Lives" health={game.playerResolve} maxHealth={game.encounter.startingResolve} animateLives />
-      <RefillSupply game={game} />
+      <div className="hunt-resource"><span className="resource-label">TILES LEFT</span><span>{game.tiles.filter(tile => tile.letter).length}</span></div>
     </div>
     <div className="enemy-zone">
       <Enemy key={game.encounter.id}
         name={game.encounter.enemy.word} definition={game.encounter.enemy.definition}
         partOfSpeech={game.encounter.enemy.partOfSpeech} introFinished
         revealedIndices={game.enemyLetters.map((_, index) => index)} registerLetter={registerLetter}
-        modifiers={getLetterStrikeGrammarModifiers(game)} modifierUnit="HIT"
+        modifiers={[]} previewMode="bingo-match"
         letterStates={game.enemyLetters}
-        predictedHits={showPrediction ? preview.hits : []}
+        predictedHits={showPrediction ? preview.bingoHunt?.matchingHits : []}
         predictedRecoveries={showPrediction ? preview.recoveries : []}
         resolvedHits={resolving ? lastMove?.preview.hits : undefined}
         resolvedRecoveries={resolving ? lastMove?.preview.recoveries : undefined}
@@ -91,17 +82,13 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
         onResolutionComplete={onResolutionComplete} />
       <div className="tutorial-coach" aria-label="Practice instructions" aria-live="polite" aria-atomic="true">
         <TutorialPrompt state={state} selected={Boolean(move && canAttackInTutorial(state))} />
-        {step === 'word-types' && <div className="tutorial-example-list" aria-label="Optional practice">
-          {tutorialExamples.map(example => <button type="button" className="daily-button tutorial-example" key={example.step}
-            title={example.description} onClick={() => jump(example.step)}>{example.label}</button>)}
-        </div>}
         {!move && <button type="button" className="daily-button tutorial-continue" disabled={!canContinue}
           onClick={() => dispatch({ type: 'continue' })}>Tap to continue <span aria-hidden="true">→</span></button>}
       </div>
     </div>
     <section className="player-zone" aria-label="Practice word selection">
       {!introducingBoard && <AttackInfo word={visiblePreview?.word ?? ''} damage={visiblePreview?.strikes ?? 0} maxDamage={0} metric="strikes"
-        strikePreview={visiblePreview} enemyWord={game.encounter.enemy.word}
+        strikePreview={visiblePreview} counterRules={game.encounter.counterRules} enemyWord={game.encounter.enemy.word}
         ready={canAttack}
         resolveBefore={showPrediction ? game.playerResolve : undefined}
         message={resolving ? 'Watch the result…' : !move ? undefined
@@ -109,7 +96,7 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
             : !selectedExpectedPrefix ? 'CLEAR TO START AGAIN'
               : !preview.valid ? 'KEEP BUILDING' : undefined} />}
       <div className="controls">
-        <TileGrid tiles={game.tiles} specialTiles={getLetterStrikeTileSummary(game)}
+        <TileGrid tiles={game.tiles} specialTiles={[]} layout={game.playerResolve === 1 ? 'ring' : 'wheel'} tileShape="circle"
           revealedIndices={tileIndices} registerTile={registerTile}
           selectedTileIds={game.selectedTileIds} ready={allowedTileIds.length > 0 && !resolving}
           allowedTileIds={allowedTileIds} enemyLetters={game.enemyLetters} matchHint="underline"
@@ -129,27 +116,12 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
 
 function TutorialPrompt({ state, selected }: { state: TutorialState; selected: boolean }) {
   switch (state.step) {
-    case 'goal': return <p>Make words from the tiles below to attack <strong>ARID</strong>, the enemy above. <strong>Remove all its letters to win.</strong> ARID means dry, so WATER fights it: the shared letters A and R take a hit.</p>
-    case 'board': return <p>Each hit removes a border. When a letter has no borders left, it disappears. R and I need two hits each. Every word costs one LIFE; you have three.</p>
-    case 'word-types': return <ul className="tutorial-word-types">
-      <li><strong>Counters</strong>, like WATER against dryness, hit every matching letter.</li>
-      <li><strong>Neutral</strong> means unrelated. GRID hits only its first matching letter.</li>
-      <li><strong>Similar words</strong>, like DRY, hit nothing.</li>
-    </ul>
-    case 'water': return <p>{selected
-      ? 'WATER fights dryness. The preview shows two hits: A will go, and R will lose one of its two borders. Play the word to spend one life.'
-      : 'Tap or swipe the highlighted tiles to spell WATER. Use any tiles, once each, to make words of 3+ letters. Underlined letters match the enemy. CLEAR lets you start the word again.'}</p>
-    case 'spring': return <p>Used tiles are replaced. REFILLS counts what’s left: letters still in the enemy, plus other letters in the blank box. It doesn’t show draw order. Build SPRING, a source of water, to hit R and I.</p>
-    case 'dip': return <p>One life left. DIP means to put something into liquid. Build it to remove I and D and win.</p>
-    case 'three-won': return <p>Three words, one star. Next, the same board with two lives.</p>
-    case 'rain': return <p>Same board and refills, two lives. Build RAIN: another way to bring water to dry land.</p>
-    case 'muddier': return <p>One life left. Build MUDDIER: wet ground instead of dry. R, I and D clear the remaining letters.</p>
-    case 'two-won': return <p>Two words, two stars. Next, find the one-word win.</p>
-    case 'bingo': return <p>One life. Build IRRIGATED: supplied with water. Two Rs and two Is break the armour and clear every letter.</p>
-    case 'neutral': return <p>Build GRID. It has nothing to do with dryness, so only its first matching letter gets a hit.</p>
-    case 'neutral-result': return <p>GRID used a life to crack R’s armour. Neutral words can help, but counters do more with each life.</p>
-    case 'resisted': return <p>Build DRY. It means much the same as ARID, so it won’t hit any letters.</p>
-    case 'resisted-result': return <p>DRY used a life and hit nothing. Check the preview before playing a word.</p>
-    case 'complete': return <p>Bingo! Every letter removed in one word: three stars.</p>
+    case 'goal': return <p>Find a word that means the opposite of <strong>DRY</strong> and contains D, R and Y. That’s a bingo. The tiles below hold the answer, mixed with extra letters.</p>
+    case 'board': return <p>The outlines tell you how many copies to use: <strong>two Ds, one R and one Y</strong>. Underlined tiles match those letters. You have <strong>three lives</strong> to find the bingo.</p>
+    case 'damp': return <p>{selected ? 'DAMP is an opposite adjective, just like DRY. It isn’t a bingo, but playing it removes some spare tiles. Try it.' : 'Need help? A simpler opposite clears spare tiles. Tap the highlighted tiles to spell DAMP. CLEAR lets you start your word again.'}</p>
+    case 'removed': return <p>One life used. Some spare tiles have gone; <strong>TILES LEFT</strong> counts what remains. Played letters stay available. The enemy doesn’t lose letters—you must cover them all in one word.</p>
+    case 'wet': return <p>Play <strong>WET</strong>, another opposite adjective. This removes the last spare tiles. Other words are rejected without costing a life in Normal and Easy mode.</p>
+    case 'bingo': return <p>One life left, and just the answer’s letters. Spell <strong>HYDRATED</strong>: supplied with water. Both Ds, R and Y turn red—every required copy is there.</p>
+    case 'complete': return null
   }
 }

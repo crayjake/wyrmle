@@ -1,3 +1,4 @@
+import { getDailyPuzzleId, validatePuzzleId } from './date.ts'
 import { winStars } from '../game/rating.ts'
 import { createLetterStrikeGame, submitLetterStrike } from '../game/letterStrike.ts'
 import type { LetterStrikeEncounter, LetterStrikeState } from '../game/letterStrike.ts'
@@ -10,6 +11,8 @@ export type ChallengeRecord = {
   version: 1; date: string; asset: string; revision: number; attempts: number
   bestWords: number | null
   bestSolution?: string[]
+  /** UTC date of the first win; absent on older saves with unknown completion time. */
+  wonOn?: string
   rules?: 'bingo-hunt'
   // Four/five lives are accepted only to finish a migrated historical attempt.
   run: { lives: DailyLives | 4 | 5; started: boolean; status: LetterStrikeState['status']; moves: ChallengeMove[]; hintStep?: number }
@@ -47,12 +50,17 @@ function parseChallenge(date: string, raw: string | null): ChallengeRecord | nul
     // not discard that score or the current attempt.
     if (v.bestSolution !== undefined && (!Array.isArray(v.bestSolution) || v.bestSolution.length !== v.bestWords
       || !v.bestSolution.every(word => typeof word === 'string' && /^[A-Z]{3,16}$/.test(word)))) delete v.bestSolution
+    if (v.wonOn !== undefined) {
+      try { if (typeof v.wonOn !== 'string') throw new Error(); validatePuzzleId(v.wonOn) }
+      catch { delete v.wonOn }
+    }
     return v as ChallengeRecord
   } catch { return null }
 }
 
 export function openChallenge(date: string, asset: string, encounter: LetterStrikeEncounter, storage: Pick<StorageLike, 'getItem'>) {
   const saved = readChallenge(date, storage)
+  if (!saved && storage.getItem(challengeKey(date))) throw new Error('Saved progress could not be read. It has been kept; reload to try again.')
   const fresh: ChallengeRecord = { version: 1, date, asset, revision: saved?.revision ?? 0, attempts: 0, bestWords: null,
     ...(encounter.bingoHunt ? { rules: 'bingo-hunt' as const } : {}),
     run: { lives: 3, started: false, status: 'playing', moves: [] } }
@@ -63,11 +71,11 @@ export function openChallenge(date: string, asset: string, encounter: LetterStri
   for (const move of record.run.moves) {
     const next = submitLetterStrike(game, move.ids, { hardGuess: move.hardGuess })
     if (next.error || next.playedWords.length !== game.playedWords.length + 1 || next.playedWords.at(-1)?.word !== move.word) {
-      throw new Error('This saved attempt cannot be restored. Restart this puzzle to try again.')
+      throw new Error('This saved attempt could not be restored. Reload to try again; your saved progress has been kept.')
     }
     game = next
   }
-  if (game.status !== record.run.status) throw new Error('This saved attempt is incomplete. Restart this puzzle to try again.')
+  if (game.status !== record.run.status) throw new Error('This saved attempt is incomplete. Reload to try again; your saved progress has been kept.')
   return { record, game, started: record.run.started, hintStep: record.run.hintStep ?? 1 }
 }
 
@@ -90,15 +98,16 @@ export function challengeBestSolution(record: ChallengeRecord): string[] | undef
 }
 
 export function saveChallenge(record: ChallengeRecord, game: LetterStrikeState, started: boolean,
-  storage: Pick<StorageLike, 'getItem' | 'setItem'>, hintStep = record.run.hintStep ?? 1): ChallengeRecord {
+  storage: Pick<StorageLike, 'getItem' | 'setItem'>, hintStep = record.run.hintStep ?? 1, now = new Date()): ChallengeRecord {
   if (game.encounter.startingResolve !== record.run.lives) throw new Error('Attempt lives changed.')
   const moves = game.playedWords.map(move => ({ word: move.word, ids: move.tiles.map(tile => tile.id),
     ...(move.hardGuess ? { hardGuess: true as const } : {}) }))
   if (record.rules === 'bingo-hunt' && (!game.encounter.bingoHunt || record.run.started && !started
+    || (record.bestWords !== null || record.run.status !== 'playing') && moves.length !== record.run.moves.length
     || moves.length < record.run.moves.length || record.run.moves.some((move, index) =>
       move.word !== moves[index]?.word || move.hardGuess !== moves[index]?.hardGuess
       || JSON.stringify(move.ids) !== JSON.stringify(moves[index]?.ids)))) {
-    throw new Error('Daily Bingo Hunt has one attempt. Your progress is saved.')
+    throw new Error('Each puzzle has one attempt. Your progress is saved.')
   }
   const previousSolution = challengeBestSolution(record)
   const bestSolution = game.status === 'won' && (moves.length < (record.bestWords ?? Infinity)
@@ -106,11 +115,12 @@ export function saveChallenge(record: ChallengeRecord, game: LetterStrikeState, 
   return write({ ...record, attempts: record.attempts + Number(started && !record.run.started),
     bestWords: game.status === 'won' ? Math.min(record.bestWords ?? Infinity, moves.length) : record.bestWords,
     bestSolution,
+    wonOn: record.wonOn ?? (game.status === 'won' && record.bestWords === null ? getDailyPuzzleId(now) : undefined),
     run: { lives: record.run.lives, started, status: game.status, moves, hintStep } }, record.revision, storage)
 }
 
 export function restartChallenge(record: ChallengeRecord, storage: Pick<StorageLike, 'getItem' | 'setItem'>): ChallengeRecord {
-  if (record.rules === 'bingo-hunt') throw new Error('Daily Bingo Hunt has one attempt. Your progress is saved.')
+  if (record.rules === 'bingo-hunt') throw new Error('Each puzzle has one attempt. Your progress is saved.')
   return write({ ...record, bestSolution: challengeBestSolution(record),
     run: { lives: challengeLives(record.bestWords), started: false, status: 'playing', moves: [] } }, record.revision, storage)
 }

@@ -1,0 +1,165 @@
+{
+  "accepted": true,
+  "asset": "puzzles/archive-hunt-thin-d2df5e6ad707.json",
+  "answer": "THICKENED",
+  "witnesses": [
+    [
+      "THICKENED"
+    ],
+    [
+      "THICK",
+      "THICKENED"
+    ],
+    [
+      "THICK",
+      "DENSE",
+      "THICKENED"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "THICKENED",
+      "effort": 5.619999999999999
+    }
+  ],
+  "helperEffort": 1.04,
+  "removalProof": {
+    "id": "hunt-thin",
+    "revision": "a9dbaf190eee",
+    "preferredHelpers": [
+      "THICK",
+      "DENSE",
+      "VISCOUS",
+      "HEAVY"
+    ],
+    "branches": [
+      {
+        "first": "DENSE",
+        "next": [
+          "HEAVIEST",
+          "THICK"
+        ],
+        "preferredFamilies": [
+          "thick"
+        ],
+        "familiarFamilies": [
+          "heavy",
+          "thick"
+        ]
+      },
+      {
+        "first": "DENSEST",
+        "next": [
+          "DENSE",
+          "HEAVIEST",
+          "THICK"
+        ],
+        "preferredFamilies": [
+          "thick"
+        ],
+        "familiarFamilies": [
+          "heavy",
+          "thick"
+        ]
+      },
+      {
+        "first": "HEAVIEST",
+        "next": [
+          "DENSE",
+          "THICK"
+        ],
+        "preferredFamilies": [
+          "dense",
+          "thick"
+        ],
+        "familiarFamilies": [
+          "dense",
+          "thick"
+        ]
+      },
+      {
+        "first": "HEAVY",
+        "next": [
+          "DENSE",
+          "HEAVIEST",
+          "THICK"
+        ],
+        "preferredFamilies": [
+          "dense",
+          "thick"
+        ],
+        "familiarFamilies": [
+          "dense",
+          "thick"
+        ]
+      },
+      {
+        "first": "THICK",
+        "next": [
+          "DENSE",
+          "HEAVIEST"
+        ],
+        "preferredFamilies": [
+          "dense"
+        ],
+        "familiarFamilies": [
+          "dense",
+          "heavy"
+        ]
+      },
+      {
+        "first": "VISCOUS",
+        "next": [
+          "DENSE",
+          "HEAVIEST",
+          "THICK"
+        ],
+        "preferredFamilies": [
+          "dense",
+          "thick"
+        ],
+        "familiarFamilies": [
+          "dense",
+          "heavy",
+          "thick"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 35,
+    "pathsChecked": 15,
+    "removalOrder": [
+      3,
+      5,
+      6,
+      10,
+      1,
+      9,
+      13
+    ],
+    "witnesses": [
+      [
+        "THICKENED"
+      ],
+      [
+        "THICK",
+        "THICKENED"
+      ],
+      [
+        "THICK",
+        "DENSE",
+        "THICKENED"
+      ]
+    ],
+    "startingBingos": [
+      {
+        "word": "THICKENED",
+        "effort": 5.619999999999999
+      }
+    ],
+    "helperEffort": 1.04,
+    "semanticReview": "Consistency and density, not body shape or the width of a solid. Thickened is an adjective meaning made thick in consistency. Thick and viscous oppose watery; dense and heavy use high density. Sticky alone is not the opposite of thin, and the verb THICKEN is not an adjective."
+  },
+  "review": "Consistency and density, not body shape or the width of a solid. Thickened is an adjective meaning made thick in consistency. Thick and viscous oppose watery; dense and heavy use high density. Sticky alone is not the opposite of thin, and the verb THICKEN is not an adjective."
+}

@@ -2,19 +2,19 @@ import { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import BattleScreen, { BattlePanel } from '../components/BattleScreen'
 import BattleResult from '../components/BattleResult'
 import PuzzleLoading from '../components/PuzzleLoading'
-import BingoHuntIntro from '../components/BingoHuntIntro'
-import BingoHuntInstructions from '../components/BingoHuntInstructions'
+import { ChartNoAxesColumn, GraduationCap, Share2 } from 'lucide-react'
 import type { LetterStrikeEncounter } from '../game/letterStrike'
 import { useUserPreferences } from '../useUserPreferences'
 import { getDailyPuzzleId } from './date'
-import { decodeScheduledPuzzle, scheduledPuzzle } from './scheduledPuzzle'
+import { decodeScheduledPuzzle, scheduledPuzzle, puzzleSchedule } from './scheduledPuzzle'
 import type { ScheduledPuzzle } from './scheduledPuzzle'
-import { challengeBestSolution, challengeHistory, challengeKey, challengeLives, challengeStars, openChallenge, readChallenge, restartChallenge, saveChallenge } from './challengeProgress'
+import { challengeBestSolution, challengeHistory, challengeKey, challengeStars, openChallenge, saveChallenge } from './challengeProgress'
 import type { ChallengeRecord } from './challengeProgress'
 import { shareResult } from './shareResult'
 import { challengeShareText } from './scoreShare'
 import { puzzleLocation } from './calendar'
 import { getPuzzleGuide } from './guides'
+import { winStreak } from './streak'
 import './DailyChallenge.css'
 
 const TutorialBattle = lazy(() => import('../tutorial/TutorialBattle'))
@@ -42,7 +42,7 @@ export default function DailyChallenge() {
     setTutorial(false)
   }
   if (location.calendar) return <Suspense fallback={<PuzzleLoading />}><PuzzleCalendar today={today} requestedMonth={location.month} /></Suspense>
-  if (tutorial && entry && !entry.bingoHunt) return <Suspense fallback={<PuzzleLoading />}><TutorialBattle onComplete={finishTutorial} onSkip={finishTutorial} /></Suspense>
+  if (tutorial && entry) return <Suspense fallback={<PuzzleLoading />}><TutorialBattle onComplete={finishTutorial} onSkip={finishTutorial} /></Suspense>
   if (!entry) return <main className="container"><h2>No puzzle scheduled for this date</h2><button className="daily-button" onClick={calendar}>Calendar</button></main>
   return <LoadDaily key={entry.asset} entry={entry} today={today} onTutorial={() => setTutorial(true)} />
 }
@@ -67,15 +67,10 @@ function DailyAttempt({ entry, encounter, today, onTutorial }: {
 }) {
   const [epoch, setEpoch] = useState(0)
   const [stats, setStats] = useState(false)
-  const [help, setHelp] = useState(false)
   const [error, setError] = useState('')
-  const preferences = useUserPreferences()
-  const hunt = Boolean(encounter.bingoHunt)
   const [session, setSession] = useState(() => {
-    try { return openChallenge(entry.date, entry.asset, encounter, window.localStorage) }
-    catch { return openChallenge(entry.date, entry.asset, encounter, { getItem: () => null }) }
+    return openChallenge(entry.date, entry.asset, encounter, window.localStorage)
   })
-  const [introSeen, setIntroSeen] = useState(session.started)
   const current = useRef(session.record)
   useEffect(() => {
     const refresh = (event: StorageEvent) => {
@@ -88,72 +83,40 @@ function DailyAttempt({ entry, encounter, today, onTutorial }: {
   function reload() {
     try {
       const next = openChallenge(entry.date, entry.asset, encounter, window.localStorage)
-      current.current = next.record; setSession(next); setIntroSeen(next.started); setEpoch(value => value + 1); setError('')
+      current.current = next.record; setSession(next); setEpoch(value => value + 1); setError('')
     } catch (cause) { setError(cause instanceof Error ? cause.message : 'Saved progress is unavailable.') }
   }
-  function restart() {
-    try {
-      const saved = readChallenge(entry.date, window.localStorage)
-      const latest = saved?.asset === entry.asset ? saved : openChallenge(entry.date, entry.asset, encounter, window.localStorage).record
-      current.current = restartChallenge(latest, window.localStorage)
-      reload()
-    } catch (cause) { setError(cause instanceof Error ? cause.message : 'Progress could not be saved.') }
-  }
   const record = session.record
-  const lives = challengeLives(record.bestWords)
-  const title = `${entry.date}${entry.date !== today ? ' · earlier daily' : ''}`
-  if (hunt && !introSeen) return <BingoHuntIntro enemy={encounter.enemy}
-    armour={encounter.enemyLetters.some(letter => letter.initialHits > 1)}
-    partOfSpeech={encounter.counterRules!.partOfSpeech} daily closeLabel="Calendar" onClose={calendar} error={error}
-    onStart={() => {
-      try {
-        const next = saveChallenge(current.current, session.game, true, window.localStorage)
-        current.current = next
-        // Keep the initial animation pending while persisting the single attempt.
-        setSession({ ...session, record: next }); setIntroSeen(true); setError('')
-        preferences.update({ hasCompletedOnboarding: true, hasChosenMode: true })
-      } catch (cause) { setError(cause instanceof Error ? cause.message : 'Progress could not be saved.') }
-    }} />
+  let streak = 0
+  try { streak = winStreak(challengeHistory(window.localStorage), today).current } catch { /* Result remains usable. */ }
   return <>
-    <BattleScreen key={epoch} encounter={session.game.encounter} initial={session} title={title} guide={getPuzzleGuide(entry.id)}
-      autoBegin={hunt} allowRestart={!hunt}
+    <BattleScreen key={epoch} encounter={session.game.encounter} initial={session} guide={getPuzzleGuide(entry.id)}
+      completed={record.bestWords !== null || record.run.status === 'lost'}
       bestStars={challengeStars(record.bestWords)} puzzleDate={entry.date !== today ? entry.date : undefined}
       onSave={(game, started, hintStep) => {
         try {
           const next = saveChallenge(current.current, game, started, window.localStorage, hintStep)
           current.current = next; setSession({ record: next, game, started, hintStep }); setError(''); return true
         } catch (cause) { setError(cause instanceof Error ? cause.message : 'Progress could not be saved.'); return false }
-      }} onRestart={restart} onExit={() => window.location.assign(`?calendar=${entry.date.slice(0, 7)}`)}
+      }} onExit={() => window.location.assign(`?calendar=${entry.date.slice(0, 7)}`)}
       menu={<>
-        <button className="daily-button" onClick={() => setStats(true)}>Statistics</button>
-        <button className="daily-button" onClick={hunt ? () => setHelp(true) : onTutorial}>{hunt ? 'How to play' : 'Tutorial'}</button>
-        <a className="daily-button" href="?preview=concepts">Concept previews</a>
+        <button className="settings-shortcut" onClick={() => setStats(true)}><ChartNoAxesColumn aria-hidden="true" /><span>Statistics</span></button>
+        <button className="settings-shortcut" onClick={onTutorial}><GraduationCap aria-hidden="true" /><span>Practice</span></button>
       </>}
       renderBestResult={record.bestWords === null ? undefined : close => <BattleResult
-        best={{ enemy: encounter.enemy.word, wordCount: record.bestWords!, solution: challengeBestSolution(record), bingoHunt: hunt }}
-        onRetry={close} nudge={null} actions={<>
-          <DailyShare record={record} />
-          <button className="daily-button" onClick={close}>Back to puzzle</button>
-        </>} />}
-      renderResult={game => <BattleResult game={game} onRetry={restart} allowRetry={!hunt}
-        nudge={hunt ? null : lives === 1 ? 'Next challenge: find the one-word win.' : 'Next challenge: solve it with 2 lives.'}
-        actions={<>
-          {!hunt && <button className="daily-button bingo-result-primary" onClick={restart}>
-            {game.status !== 'won' ? 'Try again' : record.bestWords === 1 ? 'Play again' : lives === 1 ? 'Try the bingo' : 'Try 2 lives'}
-          </button>}
-          <DailyShare record={record} />
-          {hunt && <button className="daily-button" onClick={calendar}>Calendar</button>}
-          <button className="daily-button" onClick={() => setStats(true)}>Statistics</button>
-          {!hunt && !(game.status === 'won' && game.playedWords.length === 1) && <p className="daily-best">{record.bestWords ? `Best: ${'★'.repeat(challengeStars(record.bestWords))} · ${record.bestWords} ${record.bestWords === 1 ? 'word' : 'words'}` : 'Replay as often as you like.'}</p>}
-        </>} />}
+        best={{ enemy: encounter.enemy.word, wordCount: record.bestWords!, solution: challengeBestSolution(record) }}
+        date={entry.date} actions={<><DailyShare record={record} /><button className="bingo-result-link" onClick={close}>Close</button></>} />}
+      renderResult={game => <BattleResult
+        {...(record.bestWords !== null ? { best: { enemy: encounter.enemy.word, wordCount: record.bestWords,
+          solution: challengeBestSolution(record) } } : { game })}
+        date={entry.date} streak={entry.date === today && record.wonOn === record.date ? streak : undefined} answer={getPuzzleGuide(entry.id)}
+        actions={<DailyShare record={record} />} />}
     />
     {error && <BattlePanel title="Progress could not be saved" onClose={() => setError('')}>
-      <p>{error}</p><div className="dev-controls"><button className="daily-button" onClick={reload}>Reload saved attempt</button>{!hunt && <button className="daily-button" onClick={restart}>Restart puzzle</button>}</div>
+      <p>{error}</p><div className="dev-controls"><button className="daily-button" onClick={reload}>Reload saved attempt</button></div>
     </BattlePanel>}
     {stats && <DailyStats onClose={() => setStats(false)} current={record} />}
-    {help && <BattlePanel title="Find the bingo" onClose={() => setHelp(false)}><BingoHuntInstructions partOfSpeech={encounter.counterRules!.partOfSpeech}
-      armour={encounter.enemyLetters.some(letter => letter.initialHits > 1)} daily
-      hard={preferences.preferences.preferredMode === 'hard' || preferences.preferences.preferredMode === 'hardcore'} /></BattlePanel>}
+
   </>
 }
 
@@ -161,22 +124,25 @@ function DailyShare({ record }: { record: ChallengeRecord }) {
   const [status, setStatus] = useState('')
   const busy = useRef(false)
   const text = challengeShareText(record)
-  return <><button className="daily-button" onClick={() => {
+  return <><button className="daily-button bingo-result-primary share-button" onClick={() => {
     if (busy.current) return
     busy.current = true
     void shareResult(text, navigator).then(result => setStatus(result === 'copied' ? 'Copied' : result === 'manual' ? 'Sharing unavailable' : '')).finally(() => { busy.current = false })
-  }}>Share</button>{status && <p role="status">{status}</p>}</>
+  }}><Share2 size={18} aria-hidden="true" />Share result</button>{status && <p role="status">{status}</p>}</>
 }
 function DailyStats({ onClose, current }: { onClose: () => void; current: ChallengeRecord }) {
   let history: ChallengeRecord[] = []
-  try { history = challengeHistory(window.localStorage) } catch { /* Keep this result usable if storage is blocked. */ }
+  try { history = challengeHistory(window.localStorage).filter(record => puzzleSchedule.some(entry => entry.date === record.date && entry.asset === record.asset)) } catch { /* Keep this result usable if storage is blocked. */ }
+  const streak = winStreak(history, getDailyPuzzleId())
   const solved = history.filter(record => record.bestWords !== null)
   return <BattlePanel title="Statistics" onClose={onClose}>
+    <div className="daily-streak-totals"><div><strong>{streak.current}</strong><span>Current streak</span></div><div><strong>{streak.longest}</strong><span>Longest streak</span></div></div>
+    <p className="streak-explanation">Win today’s puzzle to keep your streak. Any star counts.</p>
     <p>{solved.length} solved · {history.length} played</p>
     <div className="daily-star-totals">
       {[3, 2, 1].map(stars => <div key={stars}><span aria-label={`${stars} stars`}>{'★'.repeat(stars)}{'☆'.repeat(3 - stars)}</span><strong>{solved.filter(record => challengeStars(record.bestWords) === stars).length}</strong></div>)}
     </div>
-    <p className="daily-best">Your best result for each day.</p>
+    <p className="daily-best">Your results.</p>
     <ul className="daily-recent">{history.slice(0, 7).map(record => <li key={record.date}><a href={`?daily=${record.date}`}>{record.date}</a><span>{record.bestWords ? '★'.repeat(challengeStars(record.bestWords)) : record.run.status === 'lost' ? 'Unsolved' : 'In progress'}</span></li>)}</ul>
     <DailyShare record={current} />
   </BattlePanel>

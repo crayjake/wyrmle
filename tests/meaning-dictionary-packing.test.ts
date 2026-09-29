@@ -5,7 +5,6 @@ import { packDictionaryMeanings, packMeaningLexicon, unpackMeaningLexicon } from
 import dailySchedule from '../artifacts/bingo-hunt-daily-2026-09-29/previous-schedule.json' with { type: 'json' }
 import { createLetterStrikeGame, submitLetterStrike } from '../src/game/letterStrike.ts'
 import { selectWordIds } from '../src/generator/constructRefill.ts'
-import { getPuzzleGuide } from '../src/daily/guides.ts'
 
 const entry = dailySchedule.find(p => p.enemy === 'IGNITE')!
 const original = JSON.parse(readFileSync(`public/${entry.asset}`, 'utf8')).encounter
@@ -20,7 +19,7 @@ test('dictionary packing preserves every word, definition, sense and classificat
   assert.ok(JSON.stringify(compact).length < JSON.stringify(packMeaningLexicon(lexicon)).length / 4)
   const encounter = { ...original, meaningLexicon: restored, startingResolve: 1 }
   const game = createLetterStrikeGame(encounter)
-  assert.equal(submitLetterStrike(game, selectWordIds(game.tiles, getPuzzleGuide(entry.id)!.answer)!).status, 'won')
+  assert.equal(submitLetterStrike(game, selectWordIds(game.tiles, JSON.parse(readFileSync(entry.report!, 'utf8')).answer)!).status, 'won')
 })
 
 test('dictionary packing retains puzzle-specific neutral definitions and reasons verbatim', () => {

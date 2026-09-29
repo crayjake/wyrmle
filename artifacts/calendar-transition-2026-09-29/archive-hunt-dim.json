@@ -1,0 +1,300 @@
+{
+  "accepted": true,
+  "asset": "puzzles/archive-hunt-dim-4d68569ff19b.json",
+  "answer": "ILLUMINATED",
+  "witnesses": [
+    [
+      "ILLUMINATED"
+    ],
+    [
+      "BRIGHT",
+      "ILLUMINATED"
+    ],
+    [
+      "BRIGHT",
+      "LIT",
+      "ILLUMINATED"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "ILLUMINATED",
+      "effort": 5.6
+    }
+  ],
+  "helperEffort": 0.6199999999999992,
+  "removalProof": {
+    "id": "hunt-dim",
+    "revision": "894982aad680",
+    "preferredHelpers": [
+      "BRIGHT",
+      "LIGHT",
+      "LIT",
+      "RADIANT",
+      "ALIGHT"
+    ],
+    "branches": [
+      {
+        "first": "ALIGHT",
+        "next": [
+          "LIGHT",
+          "LIGHTED",
+          "LIT"
+        ],
+        "preferredFamilies": [
+          "light",
+          "lit"
+        ],
+        "familiarFamilies": [
+          "light",
+          "lighted",
+          "lit"
+        ]
+      },
+      {
+        "first": "ARDENT",
+        "next": [
+          "ALIGHT",
+          "LIGHT",
+          "LIGHTED",
+          "LIT"
+        ],
+        "preferredFamilies": [
+          "alight",
+          "light",
+          "lit"
+        ],
+        "familiarFamilies": [
+          "alight",
+          "light",
+          "lighted",
+          "lit"
+        ]
+      },
+      {
+        "first": "BEAMING",
+        "next": [
+          "ALIGHT",
+          "LIGHT",
+          "LIGHTED",
+          "LIT"
+        ],
+        "preferredFamilies": [
+          "alight",
+          "light",
+          "lit"
+        ],
+        "familiarFamilies": [
+          "alight",
+          "light",
+          "lighted",
+          "lit"
+        ]
+      },
+      {
+        "first": "BRIGHT",
+        "next": [
+          "ALIGHT",
+          "LIGHT",
+          "LIGHTED",
+          "LIT"
+        ],
+        "preferredFamilies": [
+          "alight",
+          "light",
+          "lit"
+        ],
+        "familiarFamilies": [
+          "alight",
+          "light",
+          "lighted",
+          "lit"
+        ]
+      },
+      {
+        "first": "BRILLIANT",
+        "next": [
+          "ALIGHT",
+          "LIGHT",
+          "LIGHTED",
+          "LIT"
+        ],
+        "preferredFamilies": [
+          "alight",
+          "light",
+          "lit"
+        ],
+        "familiarFamilies": [
+          "alight",
+          "light",
+          "lighted",
+          "lit"
+        ]
+      },
+      {
+        "first": "LAMBENT",
+        "next": [
+          "ALIGHT",
+          "LIGHT",
+          "LIGHTED",
+          "LIT"
+        ],
+        "preferredFamilies": [
+          "alight",
+          "light",
+          "lit"
+        ],
+        "familiarFamilies": [
+          "alight",
+          "light",
+          "lighted",
+          "lit"
+        ]
+      },
+      {
+        "first": "LIGHT",
+        "next": [
+          "ALIGHT",
+          "LIGHTED",
+          "LIT"
+        ],
+        "preferredFamilies": [
+          "alight",
+          "lit"
+        ],
+        "familiarFamilies": [
+          "alight",
+          "lighted",
+          "lit"
+        ]
+      },
+      {
+        "first": "LIGHTED",
+        "next": [
+          "ALIGHT",
+          "LIGHT",
+          "LIT"
+        ],
+        "preferredFamilies": [
+          "alight",
+          "light",
+          "lit"
+        ],
+        "familiarFamilies": [
+          "alight",
+          "light",
+          "lit"
+        ]
+      },
+      {
+        "first": "LIGHTER",
+        "next": [
+          "ALIGHT",
+          "LIGHT",
+          "LIGHTED",
+          "LIT"
+        ],
+        "preferredFamilies": [
+          "alight",
+          "lit"
+        ],
+        "familiarFamilies": [
+          "alight",
+          "lighted",
+          "lit"
+        ]
+      },
+      {
+        "first": "LIT",
+        "next": [
+          "ALIGHT",
+          "LIGHT",
+          "LIGHTED"
+        ],
+        "preferredFamilies": [
+          "alight",
+          "light"
+        ],
+        "familiarFamilies": [
+          "alight",
+          "light",
+          "lighted"
+        ]
+      },
+      {
+        "first": "LURID",
+        "next": [
+          "ALIGHT",
+          "LIGHT",
+          "LIGHTED",
+          "LIT"
+        ],
+        "preferredFamilies": [
+          "alight",
+          "light",
+          "lit"
+        ],
+        "familiarFamilies": [
+          "alight",
+          "light",
+          "lighted",
+          "lit"
+        ]
+      },
+      {
+        "first": "RADIANT",
+        "next": [
+          "ALIGHT",
+          "LIGHT",
+          "LIGHTED",
+          "LIT"
+        ],
+        "preferredFamilies": [
+          "alight",
+          "light",
+          "lit"
+        ],
+        "familiarFamilies": [
+          "alight",
+          "light",
+          "lighted",
+          "lit"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 2,
+    "minFamiliarFamilies": 3,
+    "candidatesChecked": 10,
+    "pathsChecked": 44,
+    "removalOrder": [
+      0,
+      7,
+      11,
+      2,
+      14
+    ],
+    "witnesses": [
+      [
+        "ILLUMINATED"
+      ],
+      [
+        "BRIGHT",
+        "ILLUMINATED"
+      ],
+      [
+        "BRIGHT",
+        "LIT",
+        "ILLUMINATED"
+      ]
+    ],
+    "startingBingos": [
+      {
+        "word": "ILLUMINATED",
+        "effort": 5.6
+      }
+    ],
+    "helperEffort": 0.6199999999999992,
+    "semanticReview": "Literal light levels. Illuminated and lit describe something supplied with light; bright, radiant and light are light-emitting or well-lit adjectives. Intelligence, hope, light weight and light colours are not the chosen readings. LIGHT as a verb is not the counter reading. LITER is a volume-unit noun, not more LIT: suffix stripping must not manufacture an adjective sense."
+  },
+  "review": "Literal light levels. Illuminated and lit describe something supplied with light; bright, radiant and light are light-emitting or well-lit adjectives. Intelligence, hope, light weight and light colours are not the chosen readings. LIGHT as a verb is not the counter reading. LITER is a volume-unit noun, not more LIT: suffix stripping must not manufacture an adjective sense."
+}

@@ -1,0 +1,131 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-dear-2026-09-30-c0e65fcc38b8.json",
+  "answer": "AFFORDABLE",
+  "rules": "bingo-hunt",
+  "review": "DEAR means expensive, not beloved. Price adjectives only: cheap, affordable, low, modest, moderate, fair and reasonable all describe a price. LOW uses amount, never height or mood. ECONOMICAL uses low resource cost, not economic theory. Nouns and price-cutting verbs do not count.",
+  "identity": {
+    "id": "puzzle-dear-2026-09-30",
+    "enemy": "DEAR",
+    "board": "AABCDEEFFHLOPRSW",
+    "bingos": [
+      "AFFORDABLE"
+    ],
+    "bingoFamilies": [
+      "AFFORDABLE"
+    ]
+  },
+  "witnesses": [
+    [
+      "AFFORDABLE"
+    ],
+    [
+      "CHEAP",
+      "AFFORDABLE"
+    ],
+    [
+      "CHEAP",
+      "LOW",
+      "AFFORDABLE"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "AFFORDABLE",
+      "effort": 3.5600000000000005
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "CHEAP",
+      "LOW",
+      "FREE"
+    ],
+    "branches": [
+      {
+        "first": "CHEAP",
+        "next": [
+          "FREE",
+          "LOW",
+          "LOWER"
+        ],
+        "preferredFamilies": [
+          "free",
+          "low"
+        ],
+        "familiarFamilies": [
+          "free",
+          "low"
+        ]
+      },
+      {
+        "first": "CHEAPER",
+        "next": [
+          "FREE",
+          "LOW",
+          "LOWER"
+        ],
+        "preferredFamilies": [
+          "free",
+          "low"
+        ],
+        "familiarFamilies": [
+          "free",
+          "low"
+        ]
+      },
+      {
+        "first": "FREE",
+        "next": [
+          "LOW",
+          "LOWER"
+        ],
+        "preferredFamilies": [
+          "low"
+        ],
+        "familiarFamilies": [
+          "low"
+        ]
+      },
+      {
+        "first": "LOW",
+        "next": [
+          "FREE",
+          "LOWER"
+        ],
+        "preferredFamilies": [
+          "free"
+        ],
+        "familiarFamilies": [
+          "free"
+        ]
+      },
+      {
+        "first": "LOWER",
+        "next": [
+          "FREE",
+          "LOW"
+        ],
+        "preferredFamilies": [
+          "free"
+        ],
+        "familiarFamilies": [
+          "free"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 20,
+    "pathsChecked": 12,
+    "removalOrder": [
+      0,
+      3,
+      8,
+      5,
+      6,
+      10
+    ]
+  }
+}

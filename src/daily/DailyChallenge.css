@@ -6,3 +6,10 @@
 .daily-recent { padding: 0; list-style: none; margin-block: 20px; }
 .daily-recent li { display: flex; justify-content: space-between; padding-block: 8px; font-size: 14px; }
 .daily-recent a { color: var(--blue); }
+
+.daily-streak-totals { display: flex; justify-content: space-around; gap: 16px; margin-bottom: 12px; text-align: center; }
+.daily-streak-totals div { display: grid; gap: 5px; }
+.daily-streak-totals strong { color: var(--emph); font-size: 28px; font-weight: normal; }
+.daily-streak-totals span { font-size: 12px; }
+.streak-explanation { font: 15px/1.4 var(--prose); margin-bottom: 20px; }
+.result-streak { color: var(--blue); font-size: 12px; letter-spacing: .08em; }

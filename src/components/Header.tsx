@@ -34,9 +34,9 @@ export default function Header({ wyrmDockRef, titleRef, showWyrm, onHelp, onHist
             </div>
 
             {bestStars !== undefined && <button type="button" className="header-best" onClick={onBest}
-                disabled={!onBest} aria-label={bestStars ? `View best result: ${bestStars} of 3 stars` : 'Best: not solved yet'}>
-                <span className="resource-label" aria-hidden="true">BEST</span>
-                <StarRating stars={bestStars} label={bestStars ? `Best: ${bestStars} of 3 stars` : 'Best: not solved yet'} />
+                disabled={!onBest} aria-label={bestStars ? `View result: ${bestStars} of 3 stars` : 'Score: not solved yet'}>
+                <span className="resource-label" aria-hidden="true">SCORE</span>
+                <StarRating stars={bestStars} label={bestStars ? `Score: ${bestStars} of 3 stars` : 'Score: not solved yet'} />
             </button>}
 
             <nav className="header-actions">

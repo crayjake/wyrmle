@@ -54,7 +54,6 @@ function layoutCenter(element: HTMLElement | null, container: HTMLElement | null
   return { x, y }
 }
 
-const travelDuration = 10.2
 const settleDuration = 0.35
 const smooth = (value: number) => {
   const t = Math.max(0, Math.min(1, value))
@@ -109,6 +108,7 @@ export default function WyrmDecoder({
       width: container.clientWidth, dock: dockHead, enemies, refills, tiles, wheel,
       order: getTileRevealOrder(tileCount, tilePath, seed),
     })
+    const travelDuration = wheel ? 5.8 : 10.2
     let finished = false
     let nextEvent = 0
     let stage = 'enemy'

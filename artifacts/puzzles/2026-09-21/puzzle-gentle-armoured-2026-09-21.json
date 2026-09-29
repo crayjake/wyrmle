@@ -1,0 +1,189 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-gentle-armoured-2026-09-21-da17d9a6d047.json",
+  "answer": "UNRELENTING",
+  "rules": "bingo-hunt",
+  "review": "GENTLE uses mild rather than harsh, stern or severe, not a shallow slope, nobility or a tame animal. UNRELENTING is pinned to punishingly harsh, not merely never-ceasing. HARSH, STERN and INTENSE use severe treatment or conditions. Every accepted counter is an adjective. Triple N is a copy requirement, never accumulated damage.",
+  "identity": {
+    "id": "puzzle-gentle-armoured-2026-09-21",
+    "enemy": "GENTLE",
+    "board": "AEEGHHILNNNRRSTU",
+    "bingos": [
+      "UNRELENTING"
+    ],
+    "bingoFamilies": [
+      "UNRELENTING"
+    ]
+  },
+  "witnesses": [
+    [
+      "UNRELENTING"
+    ],
+    [
+      "HARSH",
+      "UNRELENTING"
+    ],
+    [
+      "HARSH",
+      "INTENSE",
+      "UNRELENTING"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "UNRELENTING",
+      "effort": 6.76
+    }
+  ],
+  "helperEffort": 2.2200000000000006,
+  "removalProof": {
+    "preferredHelpers": [
+      "HARSH",
+      "STERN",
+      "INTENSE"
+    ],
+    "branches": [
+      {
+        "first": "AUSTERE",
+        "next": [
+          "INTENSE",
+          "INTENSER",
+          "STERN"
+        ],
+        "preferredFamilies": [
+          "intense",
+          "stern"
+        ],
+        "familiarFamilies": [
+          "intense",
+          "stern"
+        ]
+      },
+      {
+        "first": "AUSTERER",
+        "next": [
+          "AUSTERE",
+          "INTENSE",
+          "INTENSER",
+          "STERN"
+        ],
+        "preferredFamilies": [
+          "intense",
+          "stern"
+        ],
+        "familiarFamilies": [
+          "intense",
+          "stern"
+        ]
+      },
+      {
+        "first": "HARSH",
+        "next": [
+          "AUSTERE",
+          "INTENSE",
+          "INTENSER",
+          "STERN"
+        ],
+        "preferredFamilies": [
+          "intense",
+          "stern"
+        ],
+        "familiarFamilies": [
+          "austere",
+          "intense",
+          "stern"
+        ]
+      },
+      {
+        "first": "HARSHER",
+        "next": [
+          "AUSTERE",
+          "INTENSE",
+          "INTENSER",
+          "STERN"
+        ],
+        "preferredFamilies": [
+          "intense",
+          "stern"
+        ],
+        "familiarFamilies": [
+          "austere",
+          "intense",
+          "stern"
+        ]
+      },
+      {
+        "first": "INTENSE",
+        "next": [
+          "AUSTERE",
+          "INTENSER",
+          "STERN"
+        ],
+        "preferredFamilies": [
+          "stern"
+        ],
+        "familiarFamilies": [
+          "austere",
+          "stern"
+        ]
+      },
+      {
+        "first": "INTENSER",
+        "next": [
+          "AUSTERE",
+          "INTENSE",
+          "STERN"
+        ],
+        "preferredFamilies": [
+          "stern"
+        ],
+        "familiarFamilies": [
+          "austere",
+          "stern"
+        ]
+      },
+      {
+        "first": "STERN",
+        "next": [
+          "AUSTERE",
+          "INTENSE",
+          "INTENSER"
+        ],
+        "preferredFamilies": [
+          "intense"
+        ],
+        "familiarFamilies": [
+          "austere",
+          "intense"
+        ]
+      },
+      {
+        "first": "STERNER",
+        "next": [
+          "AUSTERE",
+          "INTENSE",
+          "INTENSER",
+          "STERN"
+        ],
+        "preferredFamilies": [
+          "intense"
+        ],
+        "familiarFamilies": [
+          "austere",
+          "intense"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 10,
+    "pathsChecked": 28,
+    "removalOrder": [
+      4,
+      11,
+      12,
+      5,
+      15
+    ]
+  }
+}

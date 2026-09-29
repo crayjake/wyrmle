@@ -34,7 +34,9 @@
     "benchmark:v3": "node scripts/benchmark-progression-v3.ts",
     "generate:concept-previews": "node scripts/generate-concept-previews.ts",
     "publish:antonym-daily": "node scripts/publish-antonym-daily.ts",
-    "publish:hunt-dailies": "node scripts/publish-hunt-dailies.ts"
+    "publish:hunt-dailies": "node scripts/publish-hunt-dailies.ts",
+    "generate:puzzle": "node scripts/generate-puzzle.ts",
+    "prepare:practice": "node scripts/prepare-practice.ts"
   },
   "dependencies": {
     "an-array-of-english-words": "^2.0.0",

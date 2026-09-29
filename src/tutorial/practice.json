@@ -1,0 +1,245 @@
+{
+  "id": "practice-dry-v1",
+  "enemy": {
+    "word": "DRY",
+    "definition": "lacking water or moisture",
+    "partOfSpeech": "adjective",
+    "semanticRelations": {
+      "similar": [],
+      "opposite": [
+        "DAMP",
+        "HYDRATED",
+        "SOGGY",
+        "WATERY",
+        "WET"
+      ],
+      "related": []
+    }
+  },
+  "counterRules": {
+    "kind": "antonym",
+    "partOfSpeech": "adjective",
+    "excludedWords": [
+      "DRIED",
+      "DRIER",
+      "DRIES",
+      "DRIEST",
+      "DRY",
+      "DRYAD",
+      "DRYADES",
+      "DRYADS",
+      "DRYER",
+      "DRYERS",
+      "DRYEST",
+      "DRYING",
+      "DRYLY",
+      "DRYNESS",
+      "DRYNESSES",
+      "DRYOPITHECINE",
+      "DRYOPITHECINES",
+      "DRYWALL",
+      "DRYWALLS"
+    ]
+  },
+  "startingTiles": [
+    {
+      "id": 0,
+      "letter": "Y",
+      "type": "normal"
+    },
+    {
+      "id": 1,
+      "letter": "E",
+      "type": "normal"
+    },
+    {
+      "id": 2,
+      "letter": "W",
+      "type": "normal"
+    },
+    {
+      "id": 3,
+      "letter": "R",
+      "type": "normal"
+    },
+    {
+      "id": 4,
+      "letter": "D",
+      "type": "normal"
+    },
+    {
+      "id": 5,
+      "letter": "G",
+      "type": "normal"
+    },
+    {
+      "id": 6,
+      "letter": "A",
+      "type": "normal"
+    },
+    {
+      "id": 7,
+      "letter": "P",
+      "type": "normal"
+    },
+    {
+      "id": 8,
+      "letter": "M",
+      "type": "normal"
+    },
+    {
+      "id": 9,
+      "letter": "X",
+      "type": "normal"
+    },
+    {
+      "id": 10,
+      "letter": "O",
+      "type": "normal"
+    },
+    {
+      "id": 11,
+      "letter": "S",
+      "type": "normal"
+    },
+    {
+      "id": 12,
+      "letter": "D",
+      "type": "normal"
+    },
+    {
+      "id": 13,
+      "letter": "T",
+      "type": "normal"
+    },
+    {
+      "id": 14,
+      "letter": "H",
+      "type": "normal"
+    },
+    {
+      "id": 15,
+      "letter": "G",
+      "type": "normal"
+    }
+  ],
+  "enemyLetters": [
+    {
+      "id": "enemy-0",
+      "letter": "D",
+      "initialHits": 2,
+      "hitsRemaining": 2
+    },
+    {
+      "id": "enemy-1",
+      "letter": "R",
+      "initialHits": 1,
+      "hitsRemaining": 1
+    },
+    {
+      "id": "enemy-2",
+      "letter": "Y",
+      "initialHits": 1,
+      "hitsRemaining": 1
+    }
+  ],
+  "startingResolve": 3,
+  "minimumWordLength": 3,
+  "finiteRefills": true,
+  "refillQueue": "",
+  "tileEffects": {
+    "strike": {
+      "strike": true,
+      "preventResolveLoss": false
+    },
+    "ward": {
+      "strike": false,
+      "preventResolveLoss": true
+    }
+  },
+  "meaningLexicon": {
+    "version": "wyrmle-puzzle-meanings-1",
+    "dictionaryVersion": "wyrmle-defined-dictionary-v2",
+    "profileVersion": "reviewed-antonym-previews-2",
+    "policy": "defined-only",
+    "enemyWord": "DRY",
+    "letterSupply": "ADDEGGHMOPRSTWXY",
+    "minimumWordLength": 3,
+    "maximumWordLength": 16,
+    "words": {
+      "DAMP": {
+        "definition": "slightly wet",
+        "lemma": "damp",
+        "senseId": "oewn-damp__5.00.00.wet.01",
+        "partsOfSpeech": [
+          "adjective"
+        ],
+        "relation": "opposite",
+        "reason": "Opposes dry (lacking water or moisture): slightly wet. Same part of speech.",
+        "source": "oewn-2025",
+        "evidence": "reviewed-profile"
+      },
+      "HYDRATED": {
+        "definition": "Having enough water in the body; not dehydrated.",
+        "lemma": "hydrated",
+        "senseId": "wiktionary-en:hydrated:adjective:2:85896008",
+        "partsOfSpeech": [
+          "adjective"
+        ],
+        "relation": "opposite",
+        "reason": "Reviewed adjective opposing DRY in its displayed meaning. Source: https://en.wiktionary.org/w/index.php?title=hydrated&oldid=85896008",
+        "source": "wiktionary-en",
+        "evidence": "reviewed-profile"
+      },
+      "SOGGY": {
+        "definition": "(of soil) soft and watery",
+        "lemma": "soggy",
+        "senseId": "oewn-soggy__5.00.00.wet.01",
+        "partsOfSpeech": [
+          "adjective"
+        ],
+        "relation": "opposite",
+        "reason": "Opposes dry (lacking water or moisture): (of soil) soft and watery. Same part of speech.",
+        "source": "oewn-2025",
+        "evidence": "reviewed-profile"
+      },
+      "WATERY": {
+        "definition": "filled with water",
+        "lemma": "watery",
+        "senseId": "oewn-watery__5.00.02.wet.01",
+        "partsOfSpeech": [
+          "adjective"
+        ],
+        "relation": "opposite",
+        "reason": "Opposes dry (lacking water or moisture): filled with water. Same part of speech.",
+        "source": "oewn-2025",
+        "evidence": "reviewed-profile"
+      },
+      "WET": {
+        "definition": "covered or soaked with a liquid such as water",
+        "lemma": "wet",
+        "senseId": "oewn-wet__3.00.01..",
+        "partsOfSpeech": [
+          "adjective"
+        ],
+        "relation": "opposite",
+        "reason": "Opposes dry (lacking water or moisture): covered or soaked with a liquid such as water. Same part of speech.",
+        "source": "oewn-2025",
+        "evidence": "reviewed-profile"
+      }
+    }
+  },
+  "bingoHunt": {
+    "answer": "HYDRATED",
+    "removalOrder": [
+      5,
+      9,
+      10,
+      15,
+      2,
+      7,
+      8,
+      11
+    ]
+  }
+}

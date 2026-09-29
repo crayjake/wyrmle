@@ -11,7 +11,6 @@ import { getMeaningSense } from '../scripts/lib/wordMeanings.ts'
 import dailySchedule from '../artifacts/bingo-hunt-daily-2026-09-29/previous-schedule.json' with { type: 'json' }
 import subsequentHunts from '../artifacts/bingo-hunt-daily-2026-09-29/schedule.json' with { type: 'json' }
 import { decodeScheduledPuzzle } from '../src/daily/scheduledPuzzle.ts'
-import { getPuzzleGuide } from '../src/daily/guides.ts'
 
 test('the retired combat queue from 27 September through 16 October have twenty fresh enemies, bingo families and boards', () => {
   const window = dailySchedule.filter(entry => entry.date >= '2026-09-27' && entry.date <= '2026-10-16')
@@ -28,7 +27,7 @@ test('the retired combat queue from 27 September through 16 October have twenty 
     const encounter = decodeScheduledPuzzle(payload, entry)
     const identity = puzzleIdentity(entry.id, encounter)
     assert.deepEqual(freshnessIssues(identity, [...before, ...batch]), [], entry.id)
-    assert.ok(identity.bingos.includes(getPuzzleGuide(entry.id)!.answer))
+    assert.ok(identity.bingos.includes(JSON.parse(readFileSync(entry.report!, 'utf8')).answer))
     assert.ok(history.some(old => JSON.stringify(old) === JSON.stringify(identity)), 'Remember published puzzle after retirement')
     if (entry.date === '2026-09-29') {
       assert.equal(entry.enemy, 'DEAR')

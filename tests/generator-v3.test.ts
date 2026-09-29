@@ -7,7 +7,8 @@ import { fileURLToPath } from 'node:url'
 import test from 'node:test'
 import benchmarks from '../artifacts/daily-year-v3-benchmarks-2026-09-27/benchmarks.json' with { type: 'json' }
 import rejected from '../artifacts/daily-year-v3-benchmarks-2026-09-27/rejected-days.json' with { type: 'json' }
-import { decodeScheduledPuzzle, puzzleSchedule } from '../src/daily/scheduledPuzzle.ts'
+import { decodeScheduledPuzzle } from '../src/daily/scheduledPuzzle.ts'
+import puzzleSchedule from '../artifacts/calendar-transition-2026-09-29/previous-archive.json' with { type: 'json' }
 import { packDictionaryMeanings, unpackMeaningLexicon } from '../src/game/meaningPacking.ts'
 import { meaningSupply } from '../src/game/meaningLexicon.ts'
 import { assessProgressionV3, easiestTwoWordWin, validateProgressionV3 } from '../scripts/bingo/progressionV3.ts'

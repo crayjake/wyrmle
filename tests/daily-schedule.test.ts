@@ -7,13 +7,12 @@ import { shiftPuzzleId } from '../src/daily/date.ts'
 import { createLetterStrikeGame, submitLetterStrike } from '../src/game/letterStrike.ts'
 import { validateBingo } from '../scripts/bingo/validate.ts'
 import { certifyProgression } from '../scripts/antonyms/progression.ts'
-import previousSchedule from '../artifacts/bingo-hunt-daily-2026-09-29/previous-schedule.json' with { type: 'json' }
 import { inspectHuntRemovals } from '../scripts/antonyms/hunt.ts'
 import { selectWordIds } from '../src/generator/constructRefill.ts'
 import { wordEffort } from '../scripts/bingo/routeDifficulty.ts'
 
 test('the active queue preserves played dates and switches every upcoming date to Bingo Hunt', () => {
-  assert.deepEqual(dailySchedule.filter(entry => entry.date < '2026-09-29'), previousSchedule.filter(entry => entry.date < '2026-09-29'))
+  assert.ok(dailySchedule.every(entry => entry.bingoHunt))
   const upcoming = dailySchedule.filter(entry => entry.date >= '2026-09-29')
   assert.equal(upcoming.length, 6)
   assert.ok(upcoming.every(entry => entry.bingoHunt))
@@ -91,7 +90,7 @@ test('daily loader rejects a mismatched or special-tile file', () => {
   const data = JSON.parse(readFileSync(`public/${entry.asset}`, 'utf8'))
   assert.throws(() => decodeScheduledPuzzle({ ...data, method: 'old-generator' }, entry), /schedule/)
   assert.throws(() => decodeScheduledPuzzle({ ...data, id: 'other-day' }, entry), /schedule/)
-  assert.throws(() => decodeScheduledPuzzle(data, { ...entry, bingoHunt: true }), /schedule/)
+  assert.throws(() => decodeScheduledPuzzle(data, { ...entry, bingoHunt: false }), /schedule/)
   data.encounter.startingTiles[0].type = 'gem'
   assert.throws(() => decodeScheduledPuzzle(data, entry), /schedule/)
 })

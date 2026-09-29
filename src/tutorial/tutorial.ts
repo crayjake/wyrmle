@@ -1,65 +1,20 @@
-import {
-  clearLetterStrikeSelection, createLetterStrikeGame, previewLetterStrike,
-  submitLetterStrike, toggleLetterStrikeTile,
-} from '../game/letterStrike.ts'
+import { clearLetterStrikeSelection, createLetterStrikeGame, previewLetterStrike, submitLetterStrike, toggleLetterStrikeTile } from '../game/letterStrike.ts'
 import type { LetterStrikeEncounter, LetterStrikeState } from '../game/letterStrike.ts'
+import practice from './practice.json' with { type: 'json' }
 
-import arid from './arid.json' with { type: 'json' }
-
-// The archived ARID board, armour and finite refills, with only lesson words
-// retained in its frozen lexicon. Every action still runs through the real game.
-export const tutorialEncounter = arid as unknown as LetterStrikeEncounter
-const attempt = (lives: number): LetterStrikeEncounter => ({
-  ...tutorialEncounter, id: `tutorial-arid-${lives}`, startingResolve: lives,
-})
-export const tutorialFixtures = { basic: attempt(3), two: attempt(2), bingo: attempt(1) }
+export const tutorialEncounter = practice as unknown as LetterStrikeEncounter
 export const tutorialSteps = [
-  { id: 'goal', label: 'Introduction' },
-  { id: 'board', label: 'The board' },
-  { id: 'word-types', label: 'Counters, neutral and similar words' },
-  { id: 'water', label: '3 lives · WATER' },
-  { id: 'spring', label: '3 lives · SPRING' },
-  { id: 'dip', label: '3 lives · DIP' },
-  { id: 'three-won', label: 'One star' },
-  { id: 'rain', label: '2 lives · RAIN' },
-  { id: 'muddier', label: '2 lives · MUDDIER' },
-  { id: 'two-won', label: 'Two stars' },
-  { id: 'bingo', label: '1 life · IRRIGATED' },
-  { id: 'complete', label: 'Bingo · three stars' },
-  { id: 'neutral', label: 'Optional · Neutral' },
-  { id: 'neutral-result', label: 'Neutral · result' },
-  { id: 'resisted', label: 'Optional · Similar' },
-  { id: 'resisted-result', label: 'Similar · result' },
+  { id: 'goal', label: 'The goal' }, { id: 'board', label: 'Letters and lives' },
+  { id: 'damp', label: 'First guess' }, { id: 'removed', label: 'Spare tiles' },
+  { id: 'wet', label: 'Second guess' }, { id: 'bingo', label: 'The anagram' },
+  { id: 'complete', label: 'Finished' },
 ] as const
 export type TutorialStep = typeof tutorialSteps[number]['id']
 export type TutorialState = { step: TutorialStep; game: LetterStrikeState }
 export type TutorialAction = { type: 'continue' } | { type: 'select'; tileId: number }
-  | { type: 'select-many'; tileIds: readonly number[] }
-  | { type: 'clear' } | { type: 'attack' } | { type: 'jump'; step: TutorialStep }
-
-export const tutorialExamples = [
-  { step: 'neutral', label: 'Neutral words', description: 'A neutral word hits only its first matching letter.' },
-  { step: 'resisted', label: 'Similar words', description: 'Similar concepts use a life but hit nothing.' },
-] as const satisfies readonly { step: TutorialStep; label: string; description: string }[]
-
-const routes: readonly (readonly TutorialStep[])[] = [
-  ['goal', 'board', 'word-types', 'water', 'spring', 'dip', 'three-won', 'rain', 'muddier', 'two-won', 'bingo', 'complete'],
-  ['neutral', 'neutral-result', 'word-types'],
-  ['resisted', 'resisted-result', 'word-types'],
-]
-type GuidedMove = { word: string; action: 'attack' }
-const moves: Partial<Record<TutorialStep, GuidedMove>> = Object.fromEntries(
-  [['water', 'WATER'], ['spring', 'SPRING'], ['dip', 'DIP'], ['rain', 'RAIN'],
-    ['muddier', 'MUDDIER'], ['bingo', 'IRRIGATED'], ['neutral', 'GRID'], ['resisted', 'DRY']]
-    .map(([step, word]) => [step, { word, action: 'attack' as const }]),
-)
-function enterStep(state: TutorialState, step: TutorialStep): TutorialState {
-  const lives = step === 'rain' ? 2 : step === 'bingo' ? 1
-    : ['goal', 'word-types', 'neutral', 'resisted'].includes(step) ? 3 : null
-  // Independent examples keep their own animation identity while the shared
-  // board stays mounted, so their first moves cannot reuse an earlier hit.
-  return { step, game: lives === null ? state.game
-    : createLetterStrikeGame({ ...attempt(lives), id: `tutorial-arid-${lives}-${step}` }) }
+  | { type: 'select-many'; tileIds: readonly number[] } | { type: 'clear' } | { type: 'attack' } | { type: 'jump'; step: TutorialStep }
+const moves: Partial<Record<TutorialStep, { word: string; action: 'attack' }>> = {
+  damp: { word: 'DAMP', action: 'attack' }, wet: { word: 'WET', action: 'attack' }, bingo: { word: 'HYDRATED', action: 'attack' },
 }
 export function getTutorialMove(state: TutorialState) {
   const move = moves[state.step]
@@ -72,7 +27,6 @@ export function getTutorialMove(state: TutorialState) {
   }
   return { ...move, tileIds }
 }
-
 function isGuidedWordSelected(state: TutorialState): boolean {
   const move = getTutorialMove(state)
   return Boolean(move && move.tileIds.length === state.game.selectedTileIds.length
@@ -117,24 +71,19 @@ export function tutorialReducer(state: TutorialState, action: TutorialAction): T
   if (action.type === 'continue' && !canContinueInTutorial(state)) return state
   if (action.type === 'attack' && !canAttackInTutorial(state)) return state
   if (state.step === 'complete') return state
-  const route = routes.find(route => route.includes(state.step))!
+  const route = tutorialSteps.map(step => step.id)
   const next = route[route.indexOf(state.step) + 1] ?? 'goal'
   const game = action.type === 'attack' ? submitLetterStrike(state.game) : state.game
-  return enterStep({ ...state, game }, next)
+  return { step: next, game }
 }
 
-// DEV jumps and optional examples replay real moves in their own small route.
-// They never fabricate damage, Resolve, tile identities or refill state.
+// Practice is separate from storage. Jumps replay real moves through the engine.
 export function createTutorial(step: TutorialStep = 'goal'): TutorialState {
-  const route = routes.find(route => route.includes(step))
-  if (!route) throw new Error(`Unknown tutorial example: ${step}`)
-  let state = enterStep({ step: 'goal', game: createLetterStrikeGame(tutorialEncounter) }, route[0])
+  let state: TutorialState = { step: 'goal', game: createLetterStrikeGame(tutorialEncounter) }
   while (state.step !== step) {
     const move = getTutorialMove(state)
-    if (move && !isGuidedWordSelected(state)) {
-      for (const tileId of move.tileIds) state = tutorialReducer(state, { type: 'select', tileId })
-    }
-    const next = tutorialReducer(state, { type: canAttackInTutorial(state) ? 'attack' : 'continue' })
+    if (move) for (const tileId of move.tileIds) state = tutorialReducer(state, { type: 'select', tileId })
+    const next = tutorialReducer(state, { type: move ? 'attack' : 'continue' })
     if (next === state) throw new Error(`Cannot reach tutorial step ${step}.`)
     state = next
   }

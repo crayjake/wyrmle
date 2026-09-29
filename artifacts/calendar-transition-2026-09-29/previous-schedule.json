@@ -1,0 +1,79 @@
+[
+  {
+    "date": "2026-09-26",
+    "id": "arid-irrigated",
+    "enemy": "ARID",
+    "asset": "puzzles/arid-irrigated-7ca7058b541f.json",
+    "method": "bingo-first"
+  },
+  {
+    "date": "2026-09-27",
+    "id": "ignite-extinguish",
+    "enemy": "IGNITE",
+    "asset": "puzzles/ignite-extinguish-1deff98799f1.json",
+    "method": "bingo-first",
+    "report": "artifacts/daily-month-2026-09-27/ignite-extinguish.json"
+  },
+  {
+    "date": "2026-09-28",
+    "id": "fury-cheerfully",
+    "enemy": "FURY",
+    "asset": "puzzles/fury-cheerfully-5c2f90552f86.json",
+    "method": "bingo-first",
+    "report": "artifacts/daily-month-2026-09-27/fury-cheerfully.json"
+  },
+  {
+    "date": "2026-09-29",
+    "id": "hunt-old-2026-09-29",
+    "enemy": "OLD",
+    "asset": "puzzles/hunt-old-2026-09-29-6bb6a727cb79.json",
+    "method": "bingo-first",
+    "bingoHunt": true,
+    "report": "artifacts/bingo-hunt-daily-2026-09-29/hunt-old-2026-09-29.json"
+  },
+  {
+    "date": "2026-09-30",
+    "id": "hunt-wet-2026-09-30",
+    "enemy": "WET",
+    "asset": "puzzles/hunt-wet-2026-09-30-4f50c0e99ac7.json",
+    "method": "bingo-first",
+    "bingoHunt": true,
+    "report": "artifacts/bingo-hunt-daily-2026-09-29/hunt-wet-2026-09-30.json"
+  },
+  {
+    "date": "2026-10-01",
+    "id": "hunt-loud-2026-10-01",
+    "enemy": "LOUD",
+    "asset": "puzzles/hunt-loud-2026-10-01-f5f7faa946d6.json",
+    "method": "bingo-first",
+    "bingoHunt": true,
+    "report": "artifacts/bingo-hunt-daily-2026-09-29/hunt-loud-2026-10-01.json"
+  },
+  {
+    "date": "2026-10-02",
+    "id": "hunt-dim-2026-10-02",
+    "enemy": "DIM",
+    "asset": "puzzles/hunt-dim-2026-10-02-ca76f4ac1235.json",
+    "method": "bingo-first",
+    "bingoHunt": true,
+    "report": "artifacts/bingo-hunt-daily-2026-09-29/hunt-dim-2026-10-02.json"
+  },
+  {
+    "date": "2026-10-03",
+    "id": "hunt-thin-2026-10-03",
+    "enemy": "THIN",
+    "asset": "puzzles/hunt-thin-2026-10-03-0c5e99dd0e27.json",
+    "method": "bingo-first",
+    "bingoHunt": true,
+    "report": "artifacts/bingo-hunt-daily-2026-09-29/hunt-thin-2026-10-03.json"
+  },
+  {
+    "date": "2026-10-04",
+    "id": "hunt-big-2026-10-04",
+    "enemy": "BIG",
+    "asset": "puzzles/hunt-big-2026-10-04-ea7d2ed1c948.json",
+    "method": "bingo-first",
+    "bingoHunt": true,
+    "report": "artifacts/bingo-hunt-daily-2026-09-29/hunt-big-2026-10-04.json"
+  }
+]

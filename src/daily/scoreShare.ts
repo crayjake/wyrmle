@@ -17,10 +17,10 @@ export function scoreShareUrl(date: string, bestWords: number | null, site = get
   return new URL(scoreSharePath(date, winStars(bestWords)), base).href
 }
 
-export function challengeShareText(record: { date: string; bestWords: number | null }, site = getPublicSiteUrl()): string {
+export function challengeShareText(record: { date: string; bestWords: number | null; run?: { status: string } }, site = getPublicSiteUrl()): string {
   const words = record.bestWords
-  const rating = words === null ? 'Still hunting for a win'
-    : `${'★'.repeat(winStars(words))}${'☆'.repeat(3 - winStars(words))} · Best: ${words} ${words === 1 ? 'word' : 'words'}`
+  const rating = words === null ? record.run?.status === 'lost' ? '☆☆☆ · Out of lives' : 'Not solved yet'
+    : `${'★'.repeat(winStars(words))}${'☆'.repeat(3 - winStars(words))} · ${words} ${words === 1 ? 'guess' : 'guesses'}`
   return [`WYRMLE ${record.date}`, rating, scoreShareUrl(record.date, words, site)].join('\n')
 }
 

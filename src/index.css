@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 :root {
+  --prose: Georgia, 'Times New Roman', serif;
   font-family: 'Cutive Mono', monospace;
 
   font-size: 16px;
@@ -96,6 +97,7 @@ code {
    toolbars reduce the visible height. */
 @media (max-width: 600px) and (orientation: portrait) {
   :root {
+  --prose: Georgia, 'Times New Roman', serif;
     font-size: clamp(16px, min(5vw, calc(var(--app-height, 100dvh) / 35.5)), 21.5px);
   }
 }

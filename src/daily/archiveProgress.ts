@@ -1,6 +1,6 @@
-import { bingoProgressKey, readBingoProgress } from '../experimental/bingo/progress.ts'
+import { readBingoProgress } from '../experimental/bingo/progress.ts'
 import { archivedPuzzles } from './scheduledPuzzle.ts'
-import { challengeKey } from './challengeProgress.ts'
+import { challengeBackupKey, challengeKey, readChallenge } from './challengeProgress.ts'
 import type { ChallengeRecord } from './challengeProgress.ts'
 import type { StorageLike } from './types.ts'
 
@@ -9,17 +9,22 @@ import type { StorageLike } from './types.ts'
  */
 export function migrateArchiveProgress(storage: Pick<StorageLike, 'getItem' | 'setItem'>) {
   for (const entry of archivedPuzzles) {
-    if (!entry.legacyBetaId || storage.getItem(challengeKey(entry.date)) !== null) continue
-    const old = readBingoProgress(bingoProgressKey(entry), storage)
-    const lives = ([3, 4, 5] as const).find(value => old.runs[value]?.started)
-      ?? ([3, 4, 5] as const).find(value => old.runs[value]) ?? 3
-    const run = old.runs[lives]
+    if (!entry.legacyProgressKey) continue
+    const existing = readChallenge(entry.date, storage)
+    if (existing?.asset === entry.asset) continue
+    const backup = readChallenge(entry.date, { getItem: () => storage.getItem(challengeBackupKey(entry.date, entry.asset)) })
+    const old = readBingoProgress(entry.legacyProgressKey, storage)
+    const run = old.runs[3]
     if (!run && old.bestWords === null) continue
-    const record: ChallengeRecord = { version: 1, date: entry.date, asset: entry.asset, revision: 1,
-      attempts: Math.max(old.bestWords === null ? 0 : 1, Object.values(old.runs).filter(run => run?.started).length),
+    const record: ChallengeRecord = { version: 1, date: entry.date, asset: entry.asset, revision: (existing?.revision ?? 0) + 1,
+      rules: 'bingo-hunt', attempts: Number(Boolean(run?.started || old.bestWords !== null)),
       bestWords: old.bestWords,
-      run: run ? { lives, started: run.started, status: run.status, moves: run.moves, hintStep: run.hintStep }
+      bestSolution: run?.status === 'won' && run.moves.length === old.bestWords ? run.moves.map(move => move.word) : undefined,
+      run: run ? { lives: 3, started: run.started, status: run.status, moves: run.moves, hintStep: run.hintStep }
         : { lives: 3, started: false, status: 'playing', moves: [] } }
-    storage.setItem(challengeKey(entry.date), JSON.stringify(record))
+    const next = backup?.asset === entry.asset ? { ...backup, revision: record.revision } : record
+    if (existing) storage.setItem(challengeBackupKey(existing.date, existing.asset), JSON.stringify(existing))
+    storage.setItem(challengeBackupKey(entry.date, entry.asset), JSON.stringify(next))
+    storage.setItem(challengeKey(entry.date), JSON.stringify(next))
   }
 }

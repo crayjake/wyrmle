@@ -27,7 +27,9 @@
   color: var(--emph);
   font-size: max(13px, 0.72rem);
   line-height: 1.35;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
+  font-family: var(--prose);
+  font-size: 15px;
   text-align: center;
   text-transform: none;
 }
@@ -93,3 +95,6 @@
   .tutorial-battle .attack-info { gap: 1px; }
   .tutorial-battle .attack-line { padding: 0; }
 }
+
+.practice-rating { flex-basis: 100%; font: 15px/1.5 var(--prose); margin-bottom: 14px !important; }
+.tutorial-coach p { margin: 0; }
