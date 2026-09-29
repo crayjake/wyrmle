@@ -6,7 +6,7 @@ The board uses reusable circular tiles: matching letters in the inner ring, othe
 
 | Difficulty | Definition, armour and preview | Non-antonym dictionary guesses | Hints |
 | --- | --- | --- | --- |
-| Easy | Shown | Rejected, free | Three, then reveal |
+| Easy | Shown | Rejected, free | Automatic after each helper |
 | Normal | Shown | Rejected, free | None |
 | Hard | Hidden | Cost a life, remove no tiles | None |
 

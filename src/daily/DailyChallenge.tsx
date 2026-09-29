@@ -93,10 +93,10 @@ function DailyAttempt({ entry, encounter, today, onTutorial }: {
     <BattleScreen key={epoch} encounter={session.game.encounter} initial={session} guide={getPuzzleGuide(entry.id)}
       completed={record.bestWords !== null || record.run.status === 'lost'}
       bestStars={challengeStars(record.bestWords)} puzzleDate={entry.date !== today ? entry.date : undefined}
-      onSave={(game, started, hintStep) => {
+      onSave={(game, started) => {
         try {
-          const next = saveChallenge(current.current, game, started, window.localStorage, hintStep)
-          current.current = next; setSession({ record: next, game, started, hintStep }); setError(''); return true
+          const next = saveChallenge(current.current, game, started, window.localStorage)
+          current.current = next; setSession({ record: next, game, started, hintStep: next.run.hintStep ?? 1 }); setError(''); return true
         } catch (cause) { setError(cause instanceof Error ? cause.message : 'Progress could not be saved.'); return false }
       }} onExit={() => window.location.assign(`?calendar=${entry.date.slice(0, 7)}`)}
       menu={<>

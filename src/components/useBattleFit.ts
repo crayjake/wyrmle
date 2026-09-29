@@ -2,7 +2,7 @@ import { useLayoutEffect } from 'react'
 import type { RefObject } from 'react'
 
 /** Keep the original battle proportions, shrinking only a board that cannot fit. */
-export function useBattleFit(ref: RefObject<HTMLElement | null>, boardVisible: boolean, layout = 'grid') {
+export function useBattleFit(ref: RefObject<HTMLElement | null>, boardVisible: boolean, layout = 'grid', contentKey: string | null = null) {
   useLayoutEffect(() => {
     if (!boardVisible) return
     const main = ref.current
@@ -23,11 +23,12 @@ export function useBattleFit(ref: RefObject<HTMLElement | null>, boardVisible: b
           && element.tagName !== 'DIALOG')
         available -= rows.length * numeric(style.rowGap)
         for (const row of rows) {
+          const rowStyle = getComputedStyle(row)
           // The enemy zone can expand into spare space; use its actual content.
           available -= row.classList.contains('enemy-zone')
             ? [...row.children].reduce((sum, child) => sum + height(child), 0)
+              + Math.max(0, row.children.length - 1) * numeric(rowStyle.rowGap)
             : height(row)
-          const rowStyle = getComputedStyle(row)
           available -= numeric(rowStyle.marginTop) + numeric(rowStyle.marginBottom)
         }
       }
@@ -36,11 +37,11 @@ export function useBattleFit(ref: RefObject<HTMLElement | null>, boardVisible: b
     }
     fit()
     const observer = new ResizeObserver(fit)
-    for (const element of [main, ...main.querySelectorAll('.header, .battle-info, .enemy-section, .attack-info')]) observer.observe(element)
+    for (const element of [main, ...main.querySelectorAll('.header, .battle-info, .enemy-section, .attack-info, .easy-hint')]) observer.observe(element)
     document.fonts.addEventListener('loadingdone', fit)
     return () => {
       observer.disconnect()
       document.fonts.removeEventListener('loadingdone', fit)
     }
-  }, [ref, boardVisible, layout])
+  }, [ref, boardVisible, layout, contentKey])
 }

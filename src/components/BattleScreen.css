@@ -1,13 +1,14 @@
 .beta-save-warning { margin: 0; font-size: 12px; letter-spacing: 0; text-transform: none; }
 .bingo-preview .daily-panel .dev-controls button { min-height: 44px; }
 
-.bingo-hint-content { display: grid; gap: 12px; text-align: center; }
-.bingo-hint-step { font-size: 13px; color: var(--fg); }
-.bingo-hint-text { min-height: 4.5em; font-size: 16px; line-height: 1.5; }
-.bingo-answer { overflow-wrap: anywhere; font-size: 24px; color: var(--emph); }
-.bingo-hint-actions { display: flex; gap: 8px; margin-top: 16px; }
-.bingo-hint-actions button { flex: 1; min-height: 44px; font-size: 14px; }
-.bingo-hint-actions button:disabled { opacity: 0.4; cursor: default; }
+/* Easy clues appear only after a helper has removed spare tiles. */
+.easy-hint { display: flex; align-items: flex-start; gap: 8px; align-self: center; width: min(94%, 24rem); margin: 0; padding-block: 4px; color: var(--blue); font: 15px/1.4 var(--prose); letter-spacing: 0; text-transform: none; text-align: left; }
+.easy-hint svg { flex: none; margin-top: 2px; }
+@media (prefers-reduced-motion: no-preference) {
+  .easy-hint span { animation: easy-hint-appear 220ms ease-out; }
+}
+@keyframes easy-hint-appear { from { opacity: 0; } to { opacity: 1; } }
+@media (max-height: 600px) { .easy-hint { font-size: 13px; line-height: 1.35; padding-block: 2px; } }
 
 /* Class changes happen after the enemy's hit animation resolves. Selection
    changes do not replay this animation, and ordinary dailies never opt in. */
@@ -78,4 +79,3 @@
 .settings-shortcut svg { width: 22px; height: 22px; stroke-width: 1.5; }
 .settings-shortcut:hover { color: var(--emph); }
 .settings-shortcut:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
-.bingo-hint-text, .bingo-hint-content > p:not(.bingo-answer):not(.bingo-hint-step) { font-family: var(--prose); }

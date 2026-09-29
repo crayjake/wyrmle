@@ -13,18 +13,19 @@ import WyrmDecoder from './WyrmDecoder'
 import { createLetterStrikeGame, toggleLetterStrikeTile, clearLetterStrikeSelection, previewLetterStrike, submitLetterStrike } from '../game/letterStrike'
 import type { LetterStrikeEncounter, LetterStrikeState } from '../game/letterStrike'
 import type { BingoGuide } from '../experimental/bingo/guides'
+import { progressiveHint } from '../daily/progressiveHint'
 import './BattleScreen.css'
 
 type Phase = 'waiting' | 'enemy' | 'tiles' | 'ready'
-type Panel = 'help' | 'log' | 'modes' | 'hints' | null
-export type BattleAttempt = { game: LetterStrikeState; started: boolean; hintStep?: number }
+type Panel = 'help' | 'log' | 'modes' | null
+export type BattleAttempt = { game: LetterStrikeState; started: boolean }
 
 /** Daily and archived puzzles share one battle UI and the same difficulty rules. */
 export default function BattleScreen({ encounter, initial, onSave, onExit, guide, menu, renderResult,
   renderBestResult, bestStars, puzzleDate, completed = false }: {
   encounter: LetterStrikeEncounter
   initial?: BattleAttempt
-  onSave: (game: LetterStrikeState, started: boolean, hintStep: number) => boolean
+  onSave: (game: LetterStrikeState, started: boolean) => boolean
   onExit: () => void
   guide?: BingoGuide
   menu?: ReactNode
@@ -39,7 +40,6 @@ export default function BattleScreen({ encounter, initial, onSave, onExit, guide
   const hard = preferences.preferences.preferredMode === 'hard' || preferences.preferences.preferredMode === 'hardcore'
   const hardHunt = hard && Boolean(encounter.bingoHunt)
   const [game, setGame] = useState(() => initial?.game ?? createLetterStrikeGame(encounter))
-  const hintsAvailable = easy && Boolean(guide) && !completed && game.status === 'playing'
   // Hard misses can leave spares on the final life; only collapse a true anagram.
   const finalAnagram = Boolean(encounter.bingoHunt && game.playerResolve <= 1
     && game.tiles.filter(tile => tile.letter).length === encounter.bingoHunt.answer.length)
@@ -48,7 +48,6 @@ export default function BattleScreen({ encounter, initial, onSave, onExit, guide
   const [panel, setPanel] = useState<Panel>(null)
   const [viewingBest, setViewingBest] = useState(false)
   const wasViewingBest = useRef(false)
-  const [hintStep, setHintStep] = useState(initial?.hintStep ?? 1)
   const [progressSaved, setProgressSaved] = useState(true)
   const containerRef = useRef<HTMLElement>(null)
   useLayoutEffect(() => {
@@ -86,7 +85,8 @@ export default function BattleScreen({ encounter, initial, onSave, onExit, guide
   const resolutionComplete = useCallback(() => setResolvedTurnCount(game.playedWords.length), [game.playedWords.length])
   const enemy = game.encounter.enemy
   const showResult = (completed || game.status !== 'playing') && !resolving
-  useBattleFit(containerRef, !viewingBest && !showResult, boardLayout)
+  const hint = progressiveHint(game, guide?.hints, easy && !completed && phase === 'ready', resolvedTurnCount)
+  useBattleFit(containerRef, !viewingBest && !showResult, boardLayout, hint)
   const interactive = !completed && phase === 'ready' && game.status === 'playing' && !resolving && !viewingBest
   const attackPreview = previewLetterStrike(game, undefined, { hardGuess: hardHunt })
   const preview = { ...attackPreview, amount: attackPreview.strikes, maximum: 0, bonuses: [] }
@@ -102,8 +102,8 @@ export default function BattleScreen({ encounter, initial, onSave, onExit, guide
   function clear() {
     if (interactive) setGame(clearLetterStrikeSelection)
   }
-  function persist(next: LetterStrikeState, started: boolean, step = hintStep) {
-    setProgressSaved(onSave(next, started, step))
+  function persist(next: LetterStrikeState, started: boolean) {
+    setProgressSaved(onSave(next, started))
   }
   function attack() {
     if (!interactive) return
@@ -112,12 +112,8 @@ export default function BattleScreen({ encounter, initial, onSave, onExit, guide
     setGame(next)
   }
   function begin() {
-    if (onSave(game, true, hintStep)) setPhase('enemy')
+    if (onSave(game, true)) setPhase('enemy')
     else setProgressSaved(false)
-  }
-  function showHint(step: number) {
-    persist(game, phase !== 'waiting', step)
-    setHintStep(step)
   }
   const closeBest = () => setViewingBest(false)
 
@@ -160,6 +156,9 @@ export default function BattleScreen({ encounter, initial, onSave, onExit, guide
         resolutionKey={resolving ? game.playedWords.length : undefined}
         onResolutionComplete={resolutionComplete}
         revealedIndices={revealedEnemyIndices} registerLetter={registerLetter} />
+      {hint && <p className="easy-hint" role="status" aria-label="Hint" aria-atomic="true">
+        <Lightbulb size={16} aria-hidden="true" /><span key={hint}>{hint}</span>
+      </p>}
     </div>
     <div className="player-zone">
       <AttackInfo word={preview.word} damage={preview.amount} maxDamage={preview.maximum}
@@ -185,28 +184,6 @@ export default function BattleScreen({ encounter, initial, onSave, onExit, guide
       onEnemyDecoded={enemyDecoded} onTilesDecoded={tilesDecoded} />
     </>}
 
-    {panel === 'hints' && hintsAvailable && guide && <BattlePanel title="Bingo hints" onClose={() => setPanel(null)}>
-      <div className="bingo-hint-content" aria-live="polite" aria-atomic="true">
-        {hintStep <= 3 ? <>
-          <p className="bingo-hint-step">Hint {hintStep} of 3</p>
-          <p className="bingo-hint-text">{guide.hints[hintStep - 1]}</p>
-        </> : <>
-          <p className="bingo-answer">{guide.answer}</p>
-          <p>{guide.explanation}</p>
-          <p className="bingo-hint-step">A one-word win on the starting board.</p>
-        </>}
-      </div>
-      <div className="bingo-hint-actions">
-        {hintStep <= 3 ? <>
-          <button className="daily-button" disabled={hintStep === 1} onClick={() => showHint(hintStep - 1)}>Previous hint</button>
-          <button className="daily-button" onClick={() => showHint(hintStep + 1)}>
-            {hintStep === 3 ? 'Reveal answer' : `Next hint (${hintStep + 1}/3)`}
-          </button>
-        </> : <>
-          <button className="daily-button" onClick={() => showHint(3)}>Back to hints</button>
-        </>}
-      </div>
-    </BattlePanel>}
     {panel === 'modes' && <BattlePanel title="Settings" onClose={() => setPanel(null)}>
       <fieldset className="battle-difficulty">
         <legend>Difficulty</legend>
@@ -216,13 +193,12 @@ export default function BattleScreen({ encounter, initial, onSave, onExit, guide
           <button className="daily-button" aria-pressed={hard} onClick={() => preferences.update({ preferredMode: 'hard' })}>Hard</button>
         </div>
         <p>{hard ? 'Definition, armour and guess previews are hidden. Wrong words cost a life but remove no tiles.'
-          : easy ? 'Definition and armour shown. Wrong words cost no lives. Hints available.'
+          : easy ? 'Definition and armour shown. Wrong words cost no lives. A hint appears after each guess that removes spare tiles.'
             : 'Definition and armour shown. Wrong words cost no lives. No hints.'}</p>
       </fieldset>
       <p className="settings-attempt-rule">One attempt per puzzle. Leaving saves your place.</p>
       <nav className="settings-shortcuts" aria-label="Puzzle shortcuts">
         <button className="settings-shortcut" onClick={onExit}><CalendarDays aria-hidden="true" /><span>Calendar</span></button>
-        {hintsAvailable && <button className="settings-shortcut" onClick={() => setPanel('hints')}><Lightbulb aria-hidden="true" /><span>Hints</span></button>}
         {menu}
       </nav>
     </BattlePanel>}
