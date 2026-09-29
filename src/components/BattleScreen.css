@@ -38,7 +38,7 @@
 .bingo-result-stars { position: relative; display: flex; gap: 16px; color: var(--emph); }
 .bingo-result-stars svg { width: clamp(30px, 6dvh, 46px); height: clamp(30px, 6dvh, 46px); stroke-width: 1.25; opacity: .25; }
 .bingo-result-stars svg[data-earned="true"] { fill: var(--emph); opacity: 1; animation: bingo-star-arrive 450ms ease-out both; }
-.bingo-result h1 { font-family: 'Cutive Mono', monospace; color: var(--emph); font-size: clamp(36px, 7dvh, 60px); font-weight: normal; line-height: 1.1; letter-spacing: -.03em; }
+.bingo-result h1 { font-family: Georgia, 'Times New Roman', serif; color: var(--emph); font-size: clamp(36px, 7dvh, 60px); font-weight: normal; line-height: 1.1; letter-spacing: -.03em; }
 .bingo-result h1:focus { outline: none; }
 .bingo-result-caption { font-family: var(--prose); font-size: 16px; line-height: 1.4; }
 .result-word-pair { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100%; margin-top: clamp(8px, 2dvh, 22px); }
