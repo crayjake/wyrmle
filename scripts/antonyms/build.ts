@@ -2,6 +2,7 @@
 import assert from 'node:assert/strict'
 import type { ConceptProfile } from './profiles.ts'
 import { getMeaningSense, getWordMeanings } from '../lib/wordMeanings.ts'
+import type { MeaningSense } from '../lib/wordMeanings.ts'
 import { getDefinedDictionaryWords, getDictionaryMeaning, MEANING_DICTIONARY_VERSION } from '../../src/lexicon/meaningDictionary.ts'
 import type { LetterStrikeEncounter } from '../../src/game/letterStrike.ts'
 import { MEANING_LEXICON_VERSION, meaningSupply } from '../../src/game/meaningLexicon.ts'
@@ -19,8 +20,14 @@ export function buildAntonymEncounter(profile: ConceptProfile) {
   const exact = new Set<string>(profile.roots)
   const synsets = new Set(roots.filter(root => !(profile.wordOnly as readonly string[]).includes(root.id)).map(root => root.synset))
   const source = getMeaningSense(profile.sense)!
-  const excludedWords = getDefinedDictionaryWords().filter(word => word.startsWith(profile.enemy)
-    || getWordMeanings(word).senses.some(sense => sense.lemma.toUpperCase() === source.lemma.toUpperCase()))
+  const counterType = profile.counterPartOfSpeech ?? source.partOfSpeech
+  const isCounterSense = (sense: MeaningSense) => sense.partOfSpeech === counterType && (exact.has(sense.id) || synsets.has(sense.synset))
+  const excludedWords = getDefinedDictionaryWords().filter(word => {
+    const senses = getWordMeanings(word).senses
+    // A reviewed opposite may share the enemy's spelling prefix, e.g. FEARLESSNESS.
+    return (word.startsWith(profile.enemy) || senses.some(sense => sense.lemma.toUpperCase() === source.lemma.toUpperCase()))
+      && !senses.some(isCounterSense)
+  })
   const excluded = new Set(excludedWords)
   const letters = [...profile.letters]
   const random = createRandom(`antonym-preview-v2:${profile.id}`)
@@ -47,7 +54,7 @@ export function buildAntonymEncounter(profile: ConceptProfile) {
   for (const word of getDefinedDictionaryWords()) {
     if (excluded.has(word) || word.length < 3 || word.length > 16 || !canSpell(word, [...supply])) continue
     const fallback = getDictionaryMeaning(word)!
-    const match = getWordMeanings(word).senses.find(sense => sense.partOfSpeech === encounter.counterRules!.partOfSpeech && (exact.has(sense.id) || synsets.has(sense.synset)))
+    const match = getWordMeanings(word).senses.find(isCounterSense)
     words[word] = match ? {
       definition: match.definition, lemma: match.lemma, senseId: match.id, partsOfSpeech: [match.partOfSpeech],
       relation: 'opposite', source: 'oewn-2025', evidence: exact.has(match.id) ? 'reviewed-profile' : 'lexical-expansion',

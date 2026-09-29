@@ -115,4 +115,23 @@ export const armouredHuntProfiles: HuntProfile[] = [
   return { ...source, profile: { ...source.profile, id: `${id}-armoured`, armour } }
 })
 
-export const allHuntProfiles = [...huntProfiles, ...armouredHuntProfiles]
+/** A playable three-copy board, with independently reviewed noun opposites. */
+export const threeCopyHunt: HuntProfile = {
+  helpers: ['EASE', 'NERVE'], preferredHelpers: ['EASE', 'CALM', 'NERVE', 'RELIEF'],
+  profile: { ...defaults, id: 'fear-armoured', enemy: 'FEAR',
+    definition: 'an anxious feeling in anticipation of danger', sense: 'oewn-fear__1.12.00..',
+    bingo: 'FEARLESSNESS', letters: 'FEARLESSNESSCMVI', armour: { 1: 3 },
+    roots: ['oewn-fearlessness__1.12.00..', 'oewn-fearlessness__1.07.00..',
+      'oewn-courage__1.07.00..', 'oewn-bravery__1.07.00..', 'oewn-bravery__1.12.00..',
+      'oewn-nerve__1.07.00..', 'oewn-calm__1.07.00..', 'oewn-calmness__1.12.00..',
+      'oewn-ease__1.26.02..', 'oewn-relief__1.12.00..', 'oewn-relief__1.26.00..'],
+    wordOnly: ['oewn-nerve__1.07.00..'],
+    overrides: { NERVES: { sense: 'oewn-nerves__1.26.00..', relation: 'similar',
+      reason: 'NERVES names anxiety, not the courage sense of singular NERVE.' } },
+    review: 'FEAR is the noun for an anxious feeling, not the verb or reverent awe. Opposites are nouns for courage or freedom from that anxiety. FEARLESSNESS means feeling no fear; CALM and EASE mean a settled state of mind, NERVE means courage, and RELIEF means release from distress. The same emotional noun readings were reviewed for DREAD. FEARLESS and CALM as adjectives are not the accepted word type; NERVES is anxiety and is not inherited from singular NERVE. The three E copies are required together in the bingo.',
+    hints: ['Think of the quality that lets someone face danger without being afraid.',
+      'It names a quality, rather than describing a person.', 'Twelve letters, beginning with F.'],
+  },
+}
+
+export const allHuntProfiles = [...huntProfiles, ...armouredHuntProfiles, threeCopyHunt]

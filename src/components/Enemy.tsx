@@ -110,6 +110,7 @@ export default function Enemy({
             const predicted = state && revealed && !removed && !resolution.resolving ? predictedByLetter.get(state.id) : undefined
             const targetOutcome = predicted ? (predicted.hitsAfter === 0 ? 'remove' : 'break') : undefined
             const requiredCopies = state?.initialHits ?? hitsRemaining ?? 1
+            const extraOutlines = hideCopyCounts ? 0 : Math.max(0, (hitsRemaining ?? 1) - 1)
             const matchedCopies = predicted ? requiredCopies - predicted.hitsAfter : 0
             const targetDescription = predicted && previewMode === 'bingo-match'
               ? requiredCopies > 1 ? `${matchedCopies} of ${requiredCopies} copies matched by this word` : 'matched by this word' : targetOutcome === 'remove'
@@ -157,8 +158,8 @@ export default function Enemy({
                 <span className="enemy-letter-glyph" aria-hidden={state ? true : undefined}>
                   {revealed ? removed ? '·' : letter : display[i]}
                 </span>
-                {previewMode === 'bingo-match' && !hideCopyCounts && revealed && requiredCopies > 1
-                  && <span className="enemy-copy-count" aria-hidden="true">×{requiredCopies}</span>}
+                {Array.from({ length: extraOutlines }, (_, index) => <span key={index}
+                  className="enemy-armour-outline" aria-hidden="true" style={{ inset: 2 + index * 3 }} />)}
                 {targetOutcome && <span className="enemy-target-marker" aria-hidden="true">
                   {targetOutcome === 'break' ? '−' : '×'}
                 </span>}

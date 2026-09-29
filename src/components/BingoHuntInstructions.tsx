@@ -7,7 +7,7 @@ export default function BingoHuntInstructions({ partOfSpeech, daily = false, arm
   return <div className="hunt-instructions">
     <p><strong>Find an opposite word using every enemy letter, including repeats.</strong>{hard
       ? ' Copy counts and guess previews are hidden.'
-      : <>{armour && ' ×3 means three copies, and so on.'} All red means bingo.</>}</p>
+      : <>{armour && ' Each outline needs one copy.'} All red means bingo.</>}</p>
     <p>Tap tiles in order to spell an opposite <strong>{partOfSpeech}</strong>. Underlines match the enemy; unused tiles are fine.</p>
     <p><strong>Three lives.</strong> {hard ? <>Every new word costs one, even a wrong guess. Only antonyms remove spare tiles.</>
       : <>A simpler opposite uses one and removes spare tiles.</>} Played tiles stay; no refills.</p>

@@ -68,7 +68,7 @@ function PreviewHub({ onSelect, group, onGroup, page, onPage }: { onSelect: (id:
     </div>
     <section className="concept-group" aria-labelledby="concept-rule-title">
       <h2 id="concept-rule-title">{group === 'hunt' ? 'One word to win. Three chances.' : group === 'family' ? 'One opposing idea' : group === 'power' ? 'Antonyms + POWER' : 'Same word type. Opposite meaning.'}</h2>
-      <p>{group === 'hunt' ? 'Letters stay when you play. Each simpler opposite costs a life and removes spare tiles. On your last life, just the bingo letters remain.' : group === 'family'
+      <p>{group === 'hunt' ? 'Letters stay when you play. Each simpler opposite costs a life and removes spare tiles. Two simpler opposites leave just the bingo letters.' : group === 'family'
         ? 'Every counter belongs to one named family. SEARS keeps verbs against a verb. DIRT uses cleaning verbs against a noun.'
         : 'Find opposites of the meaning shown: adjectives against adjectives, nouns against nouns. Their matching letters hit.'}</p>
       {(group === 'power' || group === 'family') && <p className="concept-extra">Each blue tile in a counter hits one extra enemy letter. Its power is used up.</p>}
@@ -89,7 +89,7 @@ function PreviewHub({ onSelect, group, onGroup, page, onPage }: { onSelect: (id:
       <span aria-live="polite">{current + 1} / {pages}</span>
       <button className="icon-button" aria-label="Next puzzles" disabled={current === pages - 1} onClick={() => onPage(current + 1)}><ChevronRight size={20} /></button>
     </nav>}
-    <p className="concept-common-rule">{group === 'hunt' ? 'Only antonyms count. Other words cost no lives.' : 'Other words do no damage. Every word uses one life.'}</p>
+    <p className="concept-common-rule">{group === 'hunt' ? 'Normal/Easy reject other words. Hard uses a life.' : 'Other words do no damage. Every word uses one life.'}</p>
     <footer className="concept-footer">
       <p>Best: ★ 3 words · ★★ 2 · ★★★ bingo<br />Progress stays on this device. Daily is separate.</p>
       <span className="concept-share-status" role="status">{shareStatus}</span>

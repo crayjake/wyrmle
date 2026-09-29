@@ -421,5 +421,28 @@
       ],
       "explanation": "NEGLIGIBLE is an opposite adjective containing every letter of BIG. It includes every required copy of the armoured letters."
     }
+  },
+  {
+    "id": "hunt-fear-armoured",
+    "enemy": "FEAR",
+    "definition": "an anxious feeling in anticipation of danger",
+    "asset": "previews/concepts/hunt-fear-armoured-3539a95177ea.json",
+    "revision": "3539a95177ea",
+    "powers": 0,
+    "bingoHunt": true,
+    "armour": {
+      "1": 3
+    },
+    "partOfSpeech": "noun",
+    "counterPartOfSpeech": "noun",
+    "guide": {
+      "answer": "FEARLESSNESS",
+      "hints": [
+        "Think of the quality that lets someone face danger without being afraid.",
+        "It names a quality, rather than describing a person.",
+        "Twelve letters, beginning with F."
+      ],
+      "explanation": "FEARLESSNESS is an opposite noun containing every letter of FEAR. It includes every required copy of the armoured letters."
+    }
   }
 ]

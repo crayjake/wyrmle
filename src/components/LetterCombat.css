@@ -2,9 +2,11 @@
   position: relative;
 }
 
-.letter-combat .enemy-letter-armoured {
-  outline: 1px solid var(--fg);
-  outline-offset: -3px;
+.letter-combat .enemy-armour-outline {
+  position: absolute;
+  border: 1px solid;
+  border-color: inherit;
+  pointer-events: none;
 }
 
 .letter-combat .enemy-letter[data-target-outcome] {
@@ -15,10 +17,6 @@
 
 .letter-combat .enemy-letter[data-target-outcome="remove"] {
   --target-colour: var(--red);
-}
-
-.letter-combat .enemy-letter-armoured[data-target-outcome] {
-  outline-color: var(--target-colour);
 }
 
 .letter-combat .enemy-letter[data-struck="true"] {
@@ -35,15 +33,6 @@
   font-family: 'Share Tech Mono', monospace;
   font-size: 0.55rem;
   line-height: 1;
-  pointer-events: none;
-}
-
-.letter-combat .enemy-copy-count {
-  position: absolute;
-  bottom: 2px;
-  right: 3px;
-  color: inherit;
-  font: max(10px, 0.5rem)/1 'Share Tech Mono', monospace;
   pointer-events: none;
 }
 

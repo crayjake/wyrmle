@@ -9,7 +9,7 @@ import { getStrikeSummary } from '../src/components/strikeSummary.ts'
 import { readBingoProgress, resumeBingoAttempt, saveBingoAttempt, restartBingoAttempt } from '../src/experimental/bingo/progress.ts'
 import { winStars } from '../src/game/rating.ts'
 import { certifyHuntProgressCompatibility, inspectHuntRemovals, planHuntRemovals } from '../scripts/antonyms/hunt.ts'
-import { allHuntProfiles, armouredHuntProfiles, huntProfiles } from '../scripts/antonyms/huntProfiles.ts'
+import { allHuntProfiles, armouredHuntProfiles, huntProfiles, threeCopyHunt } from '../scripts/antonyms/huntProfiles.ts'
 import { evaluateLetterStrike } from '../src/game/letterStrike.ts'
 import { buildAntonymEncounter } from '../scripts/antonyms/build.ts'
 import { validateBingoHunt } from '../src/game/bingoHunt.ts'
@@ -31,7 +31,7 @@ function play(state: LetterStrikeState, word: string) {
 }
 
 test('hunt wins in 1/2/3 guesses award 3/2/1 stars without damage or refills', () => {
-  assert.equal(entries.length, 10)
+  assert.equal(entries.length, 11)
   assert.deepEqual(entries.map(entry => entry.id), allHuntProfiles.map(({ profile }) => `hunt-${profile.id}`))
   for (const { profile, helpers } of allHuntProfiles) {
     const id = `hunt-${profile.id}`
@@ -149,6 +149,33 @@ test('three-copy armour is generated, counted per physical tile and required wit
     bad.enemyLetters[6].initialHits = bad.enemyLetters[6].hitsRemaining = copies
     assert.throws(() => createLetterStrikeGame(bad), /starting hits|Bingo hunt/)
   }
+})
+
+test('published FEAR uses three E copies, noun antonyms and distinct familiar follow-ups', () => {
+  const current = encounter('hunt-fear-armoured')
+  const { profile, preferredHelpers } = threeCopyHunt
+  assert.deepEqual(current.enemyLetters.map(letter => letter.initialHits), [1, 3, 1, 1])
+  const plan = planHuntRemovals(buildAntonymEncounter(profile).encounter, profile.bingo, preferredHelpers)
+  assert.deepEqual(plan.encounter.bingoHunt, current.bingoHunt)
+  assert.ok(plan.review.minPreferredFamilies >= 2)
+  assert.equal(plan.review.pathsChecked, 40)
+  const initial = createLetterStrikeGame(current)
+  // Genuine reviewed antonyms must not be excluded just for sharing an enemy prefix.
+  assert.ok(!current.counterRules!.excludedWords.includes('FEARLESSNESS'))
+  for (const word of ['FEAR', 'FEARS', 'FEARLESS', 'NERVES']) {
+    const preview = previewLetterStrike(initial, selectWordIds(initial.tiles, word)!)
+    assert.equal(preview.valid, false, word)
+  }
+  for (const word of preferredHelpers) {
+    assert.deepEqual(current.meaningLexicon!.words[word].partsOfSpeech, ['noun'])
+    assert.equal(previewLetterStrike(initial, selectWordIds(initial.tiles, word)!).valid, true)
+  }
+  const preview = previewLetterStrike(initial, selectWordIds(initial.tiles, 'EASE')!)
+  assert.deepEqual(preview.bingoHunt!.matchingHits.filter(hit => hit.letter === 'E')
+    .map(hit => [hit.hitsBefore, hit.hitsAfter]), [[3, 2], [2, 1]])
+  const won = play(initial, profile.bingo)
+  assert.equal(won.status, 'won')
+  assert.equal(won.playedWords[0].preview.bingoHunt!.matchingHits.filter(hit => hit.letter === 'E').length, 3)
 })
 
 test('Hard accepts dictionary misses but removes tiles only for antonyms, without relaxing bingo rules', () => {
