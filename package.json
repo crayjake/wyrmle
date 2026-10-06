@@ -36,6 +36,7 @@
     "publish:antonym-daily": "node scripts/publish-antonym-daily.ts",
     "publish:hunt-dailies": "node scripts/publish-hunt-dailies.ts",
     "generate:puzzle": "node scripts/generate-puzzle.ts",
+    "generate:puzzles": "node scripts/generate-puzzles.ts",
     "prepare:practice": "node scripts/prepare-practice.ts"
   },
   "dependencies": {

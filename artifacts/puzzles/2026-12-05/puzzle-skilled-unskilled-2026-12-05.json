@@ -1,0 +1,135 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-skilled-unskilled-2026-12-05-7d9c347fc65c.json",
+  "answer": "UNSKILLED",
+  "rules": "bingo-hunt",
+  "review": "Training and proficiency. RAW and NEW mean lacking training or experience, not uncooked food or a newly manufactured object. UNSKILLED and UNTRAINED are direct adjective opposites of trained proficiency. UNABLE uses lacking the necessary skill or know-how, not a temporary external obstacle. WEAK means lacking a skill, not low physical strength.",
+  "identity": {
+    "id": "puzzle-skilled-unskilled-2026-12-05",
+    "enemy": "SKILLED",
+    "board": "AABDEIKLLNORSTUW",
+    "bingos": [
+      "UNSKILLED"
+    ],
+    "bingoFamilies": [
+      "UNSKILLED"
+    ]
+  },
+  "witnesses": [
+    [
+      "UNSKILLED"
+    ],
+    [
+      "RAW",
+      "UNSKILLED"
+    ],
+    [
+      "RAW",
+      "NEW",
+      "UNSKILLED"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "UNSKILLED",
+      "effort": 5.300000000000001
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "RAW",
+      "NEW"
+    ],
+    "branches": [
+      {
+        "first": "NEW",
+        "next": [
+          "RAW",
+          "WEAK"
+        ],
+        "preferredFamilies": [
+          "raw"
+        ],
+        "familiarFamilies": [
+          "raw",
+          "weak"
+        ]
+      },
+      {
+        "first": "RAW",
+        "next": [
+          "NEW",
+          "WEAK"
+        ],
+        "preferredFamilies": [
+          "new"
+        ],
+        "familiarFamilies": [
+          "new",
+          "weak"
+        ]
+      },
+      {
+        "first": "RAWEST",
+        "next": [
+          "NEW",
+          "RAW",
+          "WEAK"
+        ],
+        "preferredFamilies": [
+          "new"
+        ],
+        "familiarFamilies": [
+          "new",
+          "weak"
+        ]
+      },
+      {
+        "first": "UNABLE",
+        "next": [
+          "NEW",
+          "RAW",
+          "WEAK"
+        ],
+        "preferredFamilies": [
+          "new",
+          "raw"
+        ],
+        "familiarFamilies": [
+          "new",
+          "raw",
+          "weak"
+        ]
+      },
+      {
+        "first": "WEAK",
+        "next": [
+          "NEW",
+          "RAW"
+        ],
+        "preferredFamilies": [
+          "new",
+          "raw"
+        ],
+        "familiarFamilies": [
+          "new",
+          "raw"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 35,
+    "pathsChecked": 12,
+    "removalOrder": [
+      1,
+      5,
+      13,
+      15,
+      3,
+      6,
+      7
+    ]
+  }
+}

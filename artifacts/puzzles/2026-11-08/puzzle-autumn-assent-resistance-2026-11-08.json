@@ -1,0 +1,178 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-autumn-assent-resistance-2026-11-08-6d9c7e41488a.json",
+  "answer": "RESISTANCE",
+  "rules": "bingo-hunt",
+  "review": "ASSENT is agreement, as a noun. RESISTANCE is the act of opposing a proposal, not electrical resistance. DISSENT, DENIAL, NAY and REFUSAL are noun opposites expressing disagreement or refusal; resisting and denying are verbs, not counters. The noun NO and its dictionary plurals mean a negative response; the two-letter singular still falls below the normal word-length rule.",
+  "identity": {
+    "id": "puzzle-autumn-assent-resistance-2026-11-08",
+    "enemy": "ASSENT",
+    "board": "ABCDEEILNORSSTUY",
+    "bingos": [
+      "RESISTANCE"
+    ],
+    "bingoFamilies": [
+      "RESISTANCE"
+    ]
+  },
+  "witnesses": [
+    [
+      "RESISTANCE"
+    ],
+    [
+      "DENIAL",
+      "RESISTANCE"
+    ],
+    [
+      "DENIAL",
+      "NAY",
+      "RESISTANCE"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "RESISTANCE",
+      "effort": 3
+    }
+  ],
+  "helperEffort": 2.1399999999999997,
+  "removalProof": {
+    "preferredHelpers": [
+      "DENIAL",
+      "NAY"
+    ],
+    "branches": [
+      {
+        "first": "DENIAL",
+        "next": [
+          "DENIALS",
+          "DISSENT",
+          "NAY",
+          "NAYS"
+        ],
+        "preferredFamilies": [
+          "nay"
+        ],
+        "familiarFamilies": [
+          "dissent",
+          "nay"
+        ]
+      },
+      {
+        "first": "DENIALS",
+        "next": [
+          "DENIAL",
+          "DISSENT",
+          "NAY",
+          "NAYS"
+        ],
+        "preferredFamilies": [
+          "nay"
+        ],
+        "familiarFamilies": [
+          "dissent",
+          "nay"
+        ]
+      },
+      {
+        "first": "DISSENT",
+        "next": [
+          "DENIAL",
+          "DENIALS",
+          "NAY",
+          "NAYS"
+        ],
+        "preferredFamilies": [
+          "denial",
+          "nay"
+        ],
+        "familiarFamilies": [
+          "denial",
+          "nay"
+        ]
+      },
+      {
+        "first": "NAY",
+        "next": [
+          "DENIAL",
+          "DENIALS",
+          "DISSENT",
+          "NAYS"
+        ],
+        "preferredFamilies": [
+          "denial"
+        ],
+        "familiarFamilies": [
+          "denial",
+          "dissent"
+        ]
+      },
+      {
+        "first": "NAYS",
+        "next": [
+          "DENIAL",
+          "DENIALS",
+          "DISSENT",
+          "NAY"
+        ],
+        "preferredFamilies": [
+          "denial"
+        ],
+        "familiarFamilies": [
+          "denial",
+          "dissent"
+        ]
+      },
+      {
+        "first": "NOES",
+        "next": [
+          "DENIAL",
+          "DENIALS",
+          "DISSENT",
+          "NAY",
+          "NAYS"
+        ],
+        "preferredFamilies": [
+          "denial",
+          "nay"
+        ],
+        "familiarFamilies": [
+          "denial",
+          "dissent",
+          "nay"
+        ]
+      },
+      {
+        "first": "NOS",
+        "next": [
+          "DENIAL",
+          "DENIALS",
+          "DISSENT",
+          "NAY",
+          "NAYS"
+        ],
+        "preferredFamilies": [
+          "denial",
+          "nay"
+        ],
+        "familiarFamilies": [
+          "denial",
+          "dissent",
+          "nay"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 20,
+    "pathsChecked": 30,
+    "removalOrder": [
+      1,
+      7,
+      15,
+      3,
+      5,
+      12
+    ]
+  }
+}

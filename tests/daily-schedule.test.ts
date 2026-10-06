@@ -11,17 +11,17 @@ import { inspectHuntRemovals } from '../scripts/antonyms/hunt.ts'
 import { selectWordIds } from '../src/generator/constructRefill.ts'
 import { wordEffort } from '../scripts/bingo/routeDifficulty.ts'
 
-test('the active queue preserves played dates and switches every upcoming date to Bingo Hunt', () => {
+test('the active queue preserves the first six dates and uses the current game rules', () => {
   assert.ok(dailySchedule.every(entry => entry.bingoHunt))
-  const upcoming = dailySchedule.filter(entry => entry.date >= '2026-09-29')
+  const upcoming = dailySchedule.filter(entry => entry.date >= '2026-09-29' && entry.date <= '2026-10-04')
   assert.equal(upcoming.length, 6)
   assert.ok(upcoming.every(entry => entry.bingoHunt))
   assert.equal(upcoming[0].enemy, 'OLD')
 })
 
 test('the queued bingo-first dailies have replayed one-, two- and three-guess wins', () => {
-  assert.equal(new Set(dailySchedule.map(entry => entry.enemy)).size, dailySchedule.length)
   const answers = new Set<string>()
+  const boards = new Set<string>()
   for (const [index, entry] of dailySchedule.entries()) {
     assert.equal(entry.date, shiftPuzzleId(dailySchedule[0].date, index))
     assert.equal(entry.method, 'bingo-first')
@@ -33,6 +33,8 @@ test('the queued bingo-first dailies have replayed one-, two- and three-guess wi
     assert.equal(report.asset, entry.asset)
     assert.ok(!answers.has(report.answer)); answers.add(report.answer)
     const encounter = decodeScheduledPuzzle(data, entry)
+    const board = encounter.startingTiles.map(tile => tile.letter).sort().join('')
+    assert.ok(!boards.has(board), `${entry.id}: starting letter pool repeats`); boards.add(board)
     assert.equal(encounter.startingResolve, 3)
     if (entry.bingoHunt) {
       assert.equal(encounter.refillQueue, '')

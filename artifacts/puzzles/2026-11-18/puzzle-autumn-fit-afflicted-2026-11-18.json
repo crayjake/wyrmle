@@ -1,0 +1,186 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-autumn-fit-afflicted-2026-11-18-a851dbc6feab.json",
+  "answer": "AFFLICTED",
+  "rules": "bingo-hunt",
+  "review": "FIT uses physical health, not suitability or clothing size. AFFLICTED, ILL, SICK, AILING and UNWELL denote poor health. UNFIT uses poor physical condition, FRAIL uses bodily weakness. Illness nouns and sick meaning immoral are excluded. STRICKEN is specifically affected by disease, not a physical strike.",
+  "identity": {
+    "id": "puzzle-autumn-fit-afflicted-2026-11-18",
+    "enemy": "FIT",
+    "board": "ACDEFFIKLLNORSTU",
+    "bingos": [
+      "AFFLICTED"
+    ],
+    "bingoFamilies": [
+      "AFFLICTED"
+    ]
+  },
+  "witnesses": [
+    [
+      "AFFLICTED"
+    ],
+    [
+      "ILL",
+      "AFFLICTED"
+    ],
+    [
+      "ILL",
+      "UNFIT",
+      "AFFLICTED"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "AFFLICTED",
+      "effort": 4.82
+    }
+  ],
+  "helperEffort": 1.96,
+  "removalProof": {
+    "preferredHelpers": [
+      "ILL",
+      "SICK",
+      "UNFIT"
+    ],
+    "branches": [
+      {
+        "first": "FRAIL",
+        "next": [
+          "ILL",
+          "UNFIT"
+        ],
+        "preferredFamilies": [
+          "ill",
+          "unfit"
+        ],
+        "familiarFamilies": [
+          "ill",
+          "unfit"
+        ]
+      },
+      {
+        "first": "FRAILEST",
+        "next": [
+          "ILL",
+          "UNFIT"
+        ],
+        "preferredFamilies": [
+          "ill",
+          "unfit"
+        ],
+        "familiarFamilies": [
+          "ill",
+          "unfit"
+        ]
+      },
+      {
+        "first": "ILL",
+        "next": [
+          "UNFIT"
+        ],
+        "preferredFamilies": [
+          "unfit"
+        ],
+        "familiarFamilies": [
+          "unfit"
+        ]
+      },
+      {
+        "first": "ILLER",
+        "next": [
+          "ILL",
+          "UNFIT"
+        ],
+        "preferredFamilies": [
+          "unfit"
+        ],
+        "familiarFamilies": [
+          "unfit"
+        ]
+      },
+      {
+        "first": "ILLEST",
+        "next": [
+          "ILL",
+          "UNFIT"
+        ],
+        "preferredFamilies": [
+          "unfit"
+        ],
+        "familiarFamilies": [
+          "unfit"
+        ]
+      },
+      {
+        "first": "SICK",
+        "next": [
+          "ILL",
+          "UNFIT"
+        ],
+        "preferredFamilies": [
+          "ill",
+          "unfit"
+        ],
+        "familiarFamilies": [
+          "ill",
+          "unfit"
+        ]
+      },
+      {
+        "first": "SICKER",
+        "next": [
+          "ILL",
+          "UNFIT"
+        ],
+        "preferredFamilies": [
+          "ill",
+          "unfit"
+        ],
+        "familiarFamilies": [
+          "ill",
+          "unfit"
+        ]
+      },
+      {
+        "first": "STRICKEN",
+        "next": [
+          "ILL",
+          "UNFIT"
+        ],
+        "preferredFamilies": [
+          "ill",
+          "unfit"
+        ],
+        "familiarFamilies": [
+          "ill",
+          "unfit"
+        ]
+      },
+      {
+        "first": "UNFIT",
+        "next": [
+          "ILL"
+        ],
+        "preferredFamilies": [
+          "ill"
+        ],
+        "familiarFamilies": [
+          "ill"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 35,
+    "pathsChecked": 16,
+    "removalOrder": [
+      1,
+      2,
+      10,
+      11,
+      5,
+      7,
+      13
+    ]
+  }
+}

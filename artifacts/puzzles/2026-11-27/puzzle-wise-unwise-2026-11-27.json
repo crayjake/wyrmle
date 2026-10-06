@@ -1,0 +1,215 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-wise-unwise-2026-11-27-6b15e4c9b7b0.json",
+  "answer": "UNWISE",
+  "rules": "bingo-hunt",
+  "review": "Judgement rather than mental health. INSANE and MAD mean very foolish, as in an insane plan, not a medical diagnosis. SILLY means foolish, and UNWISE lacks good judgement. No angry MAD or merely playful SILLY sense is used. INANE means extremely silly; WILD uses a foolish, unrealistic plan rather than untamed nature.",
+  "identity": {
+    "id": "puzzle-wise-unwise-2026-11-27",
+    "enemy": "WISE",
+    "board": "ADEILLMNNORSTUWY",
+    "bingos": [
+      "UNWISE",
+      "UNWISER",
+      "WILDEST"
+    ],
+    "bingoFamilies": [
+      "UNWISE",
+      "WILD"
+    ]
+  },
+  "witnesses": [
+    [
+      "UNWISE"
+    ],
+    [
+      "INSANE",
+      "UNWISE"
+    ],
+    [
+      "INSANE",
+      "SILLY",
+      "UNWISE"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "UNWISE",
+      "effort": 3.4200000000000004
+    },
+    {
+      "word": "UNWISER",
+      "effort": 10.2
+    },
+    {
+      "word": "WILDEST",
+      "effort": 3.7199999999999998
+    }
+  ],
+  "helperEffort": 0.7999999999999993,
+  "removalProof": {
+    "preferredHelpers": [
+      "INSANE",
+      "SILLY"
+    ],
+    "branches": [
+      {
+        "first": "INANE",
+        "next": [
+          "INSANE",
+          "SILLY"
+        ],
+        "preferredFamilies": [
+          "insane",
+          "silly"
+        ],
+        "familiarFamilies": [
+          "insane",
+          "silly"
+        ]
+      },
+      {
+        "first": "INANER",
+        "next": [
+          "INANE",
+          "INSANE",
+          "SILLY"
+        ],
+        "preferredFamilies": [
+          "insane",
+          "silly"
+        ],
+        "familiarFamilies": [
+          "insane",
+          "silly"
+        ]
+      },
+      {
+        "first": "INANEST",
+        "next": [
+          "INANE",
+          "INSANE",
+          "SILLY"
+        ],
+        "preferredFamilies": [
+          "insane",
+          "silly"
+        ],
+        "familiarFamilies": [
+          "insane",
+          "silly"
+        ]
+      },
+      {
+        "first": "INSANE",
+        "next": [
+          "INANE",
+          "SILLY"
+        ],
+        "preferredFamilies": [
+          "silly"
+        ],
+        "familiarFamilies": [
+          "inane",
+          "silly"
+        ]
+      },
+      {
+        "first": "INSANER",
+        "next": [
+          "INANE",
+          "INSANE",
+          "SILLY"
+        ],
+        "preferredFamilies": [
+          "silly"
+        ],
+        "familiarFamilies": [
+          "inane",
+          "silly"
+        ]
+      },
+      {
+        "first": "MAD",
+        "next": [
+          "INANE",
+          "INSANE",
+          "SILLY"
+        ],
+        "preferredFamilies": [
+          "insane",
+          "silly"
+        ],
+        "familiarFamilies": [
+          "inane",
+          "insane",
+          "silly"
+        ]
+      },
+      {
+        "first": "SILLY",
+        "next": [
+          "INANE",
+          "INSANE"
+        ],
+        "preferredFamilies": [
+          "insane"
+        ],
+        "familiarFamilies": [
+          "inane",
+          "insane"
+        ]
+      },
+      {
+        "first": "WILD",
+        "next": [
+          "INANE",
+          "INSANE",
+          "SILLY"
+        ],
+        "preferredFamilies": [
+          "insane",
+          "silly"
+        ],
+        "familiarFamilies": [
+          "inane",
+          "insane",
+          "silly"
+        ]
+      },
+      {
+        "first": "WILDER",
+        "next": [
+          "INANE",
+          "INSANE",
+          "SILLY"
+        ],
+        "preferredFamilies": [
+          "insane",
+          "silly"
+        ],
+        "familiarFamilies": [
+          "inane",
+          "insane",
+          "silly"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 252,
+    "pathsChecked": 24,
+    "removalOrder": [
+      2,
+      11,
+      13,
+      14,
+      15,
+      0,
+      5,
+      6,
+      8,
+      9
+    ]
+  }
+}

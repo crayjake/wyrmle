@@ -1,0 +1,193 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-autumn-elated-deflated-2026-11-19-091f95204fe1.json",
+  "answer": "DEFLATED",
+  "rules": "bingo-hunt",
+  "review": "ELATED means joyful, not physically raised. DEFLATED is brought low in spirit; SAD, LOW, BLUE, GLUM and DOWN use unhappy mood readings. Air pressure, colour, height and directional adverbs are not counter senses. DOLEFUL and DESOLATE use sadness and grief; a deserted landscape is not the selected sense. WOEFUL is grief or sorrow, not poor quality.",
+  "identity": {
+    "id": "puzzle-autumn-elated-deflated-2026-11-19",
+    "enemy": "ELATED",
+    "board": "ABDDEEFGLLMOSTUW",
+    "bingos": [
+      "DEFLATED",
+      "DESOLATE"
+    ],
+    "bingoFamilies": [
+      "DEFLATED",
+      "DESOLATE"
+    ]
+  },
+  "witnesses": [
+    [
+      "DEFLATED"
+    ],
+    [
+      "SAD",
+      "DEFLATED"
+    ],
+    [
+      "SAD",
+      "LOW",
+      "DEFLATED"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "DEFLATED",
+      "effort": 5
+    },
+    {
+      "word": "DESOLATE",
+      "effort": 4.46
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "SAD",
+      "LOW",
+      "BLUE",
+      "GLUM"
+    ],
+    "branches": [
+      {
+        "first": "BLUE",
+        "next": [
+          "LOW",
+          "WOEFUL"
+        ],
+        "preferredFamilies": [
+          "low"
+        ],
+        "familiarFamilies": [
+          "low",
+          "woeful"
+        ]
+      },
+      {
+        "first": "BLUEST",
+        "next": [
+          "BLUE",
+          "LOW",
+          "WOEFUL"
+        ],
+        "preferredFamilies": [
+          "low"
+        ],
+        "familiarFamilies": [
+          "low",
+          "woeful"
+        ]
+      },
+      {
+        "first": "DOLEFUL",
+        "next": [
+          "BLUE",
+          "LOW",
+          "WOEFUL"
+        ],
+        "preferredFamilies": [
+          "blue",
+          "low"
+        ],
+        "familiarFamilies": [
+          "blue",
+          "low",
+          "woeful"
+        ]
+      },
+      {
+        "first": "GLUM",
+        "next": [
+          "BLUE",
+          "LOW",
+          "WOEFUL"
+        ],
+        "preferredFamilies": [
+          "blue",
+          "low"
+        ],
+        "familiarFamilies": [
+          "blue",
+          "low",
+          "woeful"
+        ]
+      },
+      {
+        "first": "LOW",
+        "next": [
+          "BLUE",
+          "WOEFUL"
+        ],
+        "preferredFamilies": [
+          "blue"
+        ],
+        "familiarFamilies": [
+          "blue",
+          "woeful"
+        ]
+      },
+      {
+        "first": "LOWEST",
+        "next": [
+          "BLUE",
+          "LOW",
+          "WOEFUL"
+        ],
+        "preferredFamilies": [
+          "blue"
+        ],
+        "familiarFamilies": [
+          "blue",
+          "woeful"
+        ]
+      },
+      {
+        "first": "SAD",
+        "next": [
+          "BLUE",
+          "LOW",
+          "WOEFUL"
+        ],
+        "preferredFamilies": [
+          "blue",
+          "low"
+        ],
+        "familiarFamilies": [
+          "blue",
+          "low",
+          "woeful"
+        ]
+      },
+      {
+        "first": "WOEFUL",
+        "next": [
+          "BLUE",
+          "LOW"
+        ],
+        "preferredFamilies": [
+          "blue",
+          "low"
+        ],
+        "familiarFamilies": [
+          "blue",
+          "low"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 70,
+    "pathsChecked": 21,
+    "removalOrder": [
+      0,
+      9,
+      12,
+      13,
+      1,
+      5,
+      10,
+      14
+    ]
+  }
+}

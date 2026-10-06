@@ -1,0 +1,173 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-moral-immoral-2026-11-10-57822870fdfe.json",
+  "answer": "IMMORAL",
+  "rules": "bingo-hunt",
+  "review": "MORAL means ethically right. IMMORAL, BAD, EVIL and VILE use ethically wrong adjective senses. Bad quality, feeling ill and the noun moral at the end of a story are excluded.",
+  "identity": {
+    "id": "puzzle-oct26-moral-immoral-2026-11-10",
+    "enemy": "MORAL",
+    "board": "ABDEEILLMMOORSTV",
+    "bingos": [
+      "IMMORAL"
+    ],
+    "bingoFamilies": [
+      "IMMORAL"
+    ]
+  },
+  "witnesses": [
+    [
+      "IMMORAL"
+    ],
+    [
+      "BAD",
+      "IMMORAL"
+    ],
+    [
+      "BAD",
+      "EVIL",
+      "IMMORAL"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "IMMORAL",
+      "effort": 3.2800000000000002
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "BAD",
+      "EVIL"
+    ],
+    "branches": [
+      {
+        "first": "BAD",
+        "next": [
+          "EVIL",
+          "VILE",
+          "VILER"
+        ],
+        "preferredFamilies": [
+          "evil"
+        ],
+        "familiarFamilies": [
+          "evil",
+          "vile"
+        ]
+      },
+      {
+        "first": "EVIL",
+        "next": [
+          "BAD",
+          "VILE",
+          "VILER"
+        ],
+        "preferredFamilies": [
+          "bad"
+        ],
+        "familiarFamilies": [
+          "bad",
+          "vile"
+        ]
+      },
+      {
+        "first": "EVILER",
+        "next": [
+          "BAD",
+          "EVIL",
+          "VILE",
+          "VILER"
+        ],
+        "preferredFamilies": [
+          "bad"
+        ],
+        "familiarFamilies": [
+          "bad",
+          "vile"
+        ]
+      },
+      {
+        "first": "EVILEST",
+        "next": [
+          "BAD",
+          "EVIL",
+          "VILE",
+          "VILER"
+        ],
+        "preferredFamilies": [
+          "bad"
+        ],
+        "familiarFamilies": [
+          "bad",
+          "vile"
+        ]
+      },
+      {
+        "first": "VILE",
+        "next": [
+          "BAD",
+          "EVIL",
+          "VILER"
+        ],
+        "preferredFamilies": [
+          "bad",
+          "evil"
+        ],
+        "familiarFamilies": [
+          "bad",
+          "evil"
+        ]
+      },
+      {
+        "first": "VILER",
+        "next": [
+          "BAD",
+          "EVIL",
+          "VILE"
+        ],
+        "preferredFamilies": [
+          "bad",
+          "evil"
+        ],
+        "familiarFamilies": [
+          "bad",
+          "evil"
+        ]
+      },
+      {
+        "first": "VILEST",
+        "next": [
+          "BAD",
+          "EVIL",
+          "VILE",
+          "VILER"
+        ],
+        "preferredFamilies": [
+          "bad",
+          "evil"
+        ],
+        "familiarFamilies": [
+          "bad",
+          "evil"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 126,
+    "pathsChecked": 24,
+    "removalOrder": [
+      2,
+      8,
+      9,
+      13,
+      15,
+      1,
+      4,
+      6,
+      7
+    ]
+  }
+}

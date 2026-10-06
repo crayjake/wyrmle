@@ -1,0 +1,230 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-autumn-defiant-deferential-2026-11-17-e862aa644e04.json",
+  "answer": "DEFERENTIAL",
+  "rules": "bingo-hunt",
+  "review": "DEFIANT resists authority. DEFERENTIAL shows respect and gives way, while MEEK, TAME, DOCILE and COMPLIANT use obedience rather than resistance. TAME is pinned to docile, not boring or a domesticated animal. All accepted readings are adjectives. DEFERENT has the same respectful sense; MILD uses humble, submissive manner, not weak intensity or mild weather.",
+  "identity": {
+    "id": "puzzle-autumn-defiant-deferential-2026-11-17",
+    "enemy": "DEFIANT",
+    "board": "ACDEEEFIKLMNORTU",
+    "bingos": [
+      "DEFERENTIAL"
+    ],
+    "bingoFamilies": [
+      "DEFERENTIAL"
+    ]
+  },
+  "witnesses": [
+    [
+      "DEFERENTIAL"
+    ],
+    [
+      "TAME",
+      "DEFERENTIAL"
+    ],
+    [
+      "TAME",
+      "MEEK",
+      "DEFERENTIAL"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "DEFERENTIAL",
+      "effort": 7.84
+    }
+  ],
+  "helperEffort": 2.3600000000000003,
+  "removalProof": {
+    "preferredHelpers": [
+      "TAME",
+      "MEEK"
+    ],
+    "branches": [
+      {
+        "first": "DEFERENT",
+        "next": [
+          "MEEK",
+          "MEEKER",
+          "MILD",
+          "MILDER",
+          "TAME",
+          "TAMER"
+        ],
+        "preferredFamilies": [
+          "meek",
+          "tame"
+        ],
+        "familiarFamilies": [
+          "meek",
+          "mild",
+          "tame"
+        ]
+      },
+      {
+        "first": "DOCILE",
+        "next": [
+          "DEFERENT",
+          "MEEK",
+          "MEEKER",
+          "MILD",
+          "MILDER",
+          "TAME",
+          "TAMER"
+        ],
+        "preferredFamilies": [
+          "meek",
+          "tame"
+        ],
+        "familiarFamilies": [
+          "meek",
+          "mild",
+          "tame"
+        ]
+      },
+      {
+        "first": "DOCILER",
+        "next": [
+          "DEFERENT",
+          "MEEK",
+          "MEEKER",
+          "MILD",
+          "MILDER",
+          "TAME",
+          "TAMER"
+        ],
+        "preferredFamilies": [
+          "meek",
+          "tame"
+        ],
+        "familiarFamilies": [
+          "meek",
+          "mild",
+          "tame"
+        ]
+      },
+      {
+        "first": "MEEK",
+        "next": [
+          "DEFERENT",
+          "MEEKER",
+          "MILD",
+          "MILDER",
+          "TAME",
+          "TAMER"
+        ],
+        "preferredFamilies": [
+          "tame"
+        ],
+        "familiarFamilies": [
+          "mild",
+          "tame"
+        ]
+      },
+      {
+        "first": "MEEKER",
+        "next": [
+          "DEFERENT",
+          "MEEK",
+          "MILD",
+          "MILDER",
+          "TAME",
+          "TAMER"
+        ],
+        "preferredFamilies": [
+          "tame"
+        ],
+        "familiarFamilies": [
+          "mild",
+          "tame"
+        ]
+      },
+      {
+        "first": "MILD",
+        "next": [
+          "DEFERENT",
+          "MEEK",
+          "MEEKER",
+          "MILDER",
+          "TAME",
+          "TAMER"
+        ],
+        "preferredFamilies": [
+          "meek",
+          "tame"
+        ],
+        "familiarFamilies": [
+          "meek",
+          "tame"
+        ]
+      },
+      {
+        "first": "MILDER",
+        "next": [
+          "DEFERENT",
+          "MEEK",
+          "MEEKER",
+          "MILD",
+          "TAME",
+          "TAMER"
+        ],
+        "preferredFamilies": [
+          "meek",
+          "tame"
+        ],
+        "familiarFamilies": [
+          "meek",
+          "tame"
+        ]
+      },
+      {
+        "first": "TAME",
+        "next": [
+          "DEFERENT",
+          "MEEK",
+          "MEEKER",
+          "MILD",
+          "MILDER",
+          "TAMER"
+        ],
+        "preferredFamilies": [
+          "meek"
+        ],
+        "familiarFamilies": [
+          "meek",
+          "mild"
+        ]
+      },
+      {
+        "first": "TAMER",
+        "next": [
+          "DEFERENT",
+          "MEEK",
+          "MEEKER",
+          "MILD",
+          "MILDER",
+          "TAME"
+        ],
+        "preferredFamilies": [
+          "meek"
+        ],
+        "familiarFamilies": [
+          "meek",
+          "mild"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 10,
+    "pathsChecked": 56,
+    "removalOrder": [
+      0,
+      8,
+      9,
+      2,
+      13
+    ]
+  }
+}

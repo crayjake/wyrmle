@@ -1,0 +1,115 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-autumn-absent-observant-2026-10-30-b187e4787369.json",
+  "answer": "OBSERVANT",
+  "rules": "bingo-hunt",
+  "review": "ABSENT means mentally distracted, not physically elsewhere. OBSERVANT, ALERT and AWARE oppose inattention; all use adjective readings. The law-abiding sense of observant and awareness of facts alone are not the selected senses. ALIVE also uses mentally perceptive and responsive, not merely biologically living.",
+  "identity": {
+    "id": "puzzle-autumn-absent-observant-2026-10-30",
+    "enemy": "ABSENT",
+    "board": "AABCDEILNORSTUVW",
+    "bingos": [
+      "OBSERVANT"
+    ],
+    "bingoFamilies": [
+      "OBSERVANT"
+    ]
+  },
+  "witnesses": [
+    [
+      "OBSERVANT"
+    ],
+    [
+      "ALERT",
+      "OBSERVANT"
+    ],
+    [
+      "ALERT",
+      "AWARE",
+      "OBSERVANT"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "OBSERVANT",
+      "effort": 5.300000000000001
+    }
+  ],
+  "helperEffort": 0.33999999999999986,
+  "removalProof": {
+    "preferredHelpers": [
+      "ALERT",
+      "AWARE"
+    ],
+    "branches": [
+      {
+        "first": "ALERT",
+        "next": [
+          "AWARE",
+          "AWAREST"
+        ],
+        "preferredFamilies": [
+          "aware"
+        ],
+        "familiarFamilies": [
+          "aware"
+        ]
+      },
+      {
+        "first": "ALIVE",
+        "next": [
+          "ALERT",
+          "AWARE",
+          "AWAREST"
+        ],
+        "preferredFamilies": [
+          "alert",
+          "aware"
+        ],
+        "familiarFamilies": [
+          "alert",
+          "aware"
+        ]
+      },
+      {
+        "first": "AWARE",
+        "next": [
+          "ALERT",
+          "AWAREST"
+        ],
+        "preferredFamilies": [
+          "alert"
+        ],
+        "familiarFamilies": [
+          "alert"
+        ]
+      },
+      {
+        "first": "AWAREST",
+        "next": [
+          "ALERT",
+          "AWARE"
+        ],
+        "preferredFamilies": [
+          "alert"
+        ],
+        "familiarFamilies": [
+          "alert"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 35,
+    "pathsChecked": 9,
+    "removalOrder": [
+      1,
+      2,
+      5,
+      9,
+      10,
+      14,
+      15
+    ]
+  }
+}

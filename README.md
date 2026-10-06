@@ -31,6 +31,9 @@ Read **[the current authoring guide](docs/puzzle-authoring.md)**. It explains th
 ```sh
 npm run generate:puzzle -- --profile YOUR_PROFILE --date YYYY-MM-DD --dry-run
 npm run generate:puzzle -- --profile YOUR_PROFILE --date YYYY-MM-DD
+# Or publish a reviewed batch, after checking its dry run:
+npm run generate:puzzles -- --plan path/to/new-plan.json --dry-run
+npm run generate:puzzles -- --plan path/to/new-plan.json
 ```
 
 Profiles live in `scripts/puzzles/profiles.ts`. The generator writes an immutable puzzle, proof, schedule entry and Easy-mode hints. It checks all helper continuations and 1/2/3-guess wins. Human semantic review and playtesting remain necessary; difficulty estimates do not guarantee a particular solving order. New answers avoid the “-less” family.

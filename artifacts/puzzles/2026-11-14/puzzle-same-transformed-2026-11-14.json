@@ -1,0 +1,82 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-same-transformed-2026-11-14-ad822bbefb2d.json",
+  "answer": "TRANSFORMED",
+  "rules": "bingo-hunt",
+  "review": "SAME means unchanged, rather than an equal quantity. TRANSFORMED and ALTERED describe a changed form or character. NEW uses different from the former one, not merely recently made. OTHER and NEW mean different from the former one; DIFFERENT and CHANGED oppose sameness.",
+  "identity": {
+    "id": "puzzle-same-transformed-2026-11-14",
+    "enemy": "SAME",
+    "board": "ACDEFHILMNORRSTW",
+    "bingos": [
+      "TRANSFORMED"
+    ],
+    "bingoFamilies": [
+      "TRANSFORMED"
+    ]
+  },
+  "witnesses": [
+    [
+      "TRANSFORMED"
+    ],
+    [
+      "NEW",
+      "TRANSFORMED"
+    ],
+    [
+      "NEW",
+      "OTHER",
+      "TRANSFORMED"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "TRANSFORMED",
+      "effort": 4.4399999999999995
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "NEW",
+      "OTHER"
+    ],
+    "branches": [
+      {
+        "first": "NEW",
+        "next": [
+          "OTHER"
+        ],
+        "preferredFamilies": [
+          "other"
+        ],
+        "familiarFamilies": [
+          "other"
+        ]
+      },
+      {
+        "first": "OTHER",
+        "next": [
+          "NEW"
+        ],
+        "preferredFamilies": [
+          "new"
+        ],
+        "familiarFamilies": [
+          "new"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 10,
+    "pathsChecked": 2,
+    "removalOrder": [
+      3,
+      7,
+      15,
+      6,
+      12
+    ]
+  }
+}

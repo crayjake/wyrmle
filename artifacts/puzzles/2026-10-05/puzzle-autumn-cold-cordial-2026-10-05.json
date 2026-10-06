@@ -1,0 +1,273 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-autumn-cold-cordial-2026-10-05-f605fe8ca8aa.json",
+  "answer": "CORDIAL",
+  "rules": "bingo-hunt",
+  "review": "COLD is psychological coldness, not temperature. CORDIAL is warmly friendly, while WARM, KIND, NICE and TENDER use friendly or affectionate behaviour. Cordial as a drink and tender as a bid are not admitted. HUMANE uses compassionate treatment rather than coldness towards suffering; SOCIAL and SOCIABLE use friendly companionship, not sociological classifications.",
+  "identity": {
+    "id": "puzzle-autumn-cold-cordial-2026-10-05",
+    "enemy": "COLD",
+    "board": "ACDEHIKLMNORSTUW",
+    "bingos": [
+      "CORDIAL"
+    ],
+    "bingoFamilies": [
+      "CORDIAL"
+    ]
+  },
+  "witnesses": [
+    [
+      "CORDIAL"
+    ],
+    [
+      "WARM",
+      "CORDIAL"
+    ],
+    [
+      "WARM",
+      "KIND",
+      "CORDIAL"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "CORDIAL",
+      "effort": 4
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "WARM",
+      "KIND",
+      "NICE"
+    ],
+    "branches": [
+      {
+        "first": "HUMANE",
+        "next": [
+          "KIND",
+          "KINDER",
+          "NICE",
+          "NICER",
+          "SOCIAL"
+        ],
+        "preferredFamilies": [
+          "kind",
+          "nice"
+        ],
+        "familiarFamilies": [
+          "kind",
+          "nice",
+          "social"
+        ]
+      },
+      {
+        "first": "HUMANER",
+        "next": [
+          "KIND",
+          "KINDER",
+          "NICE",
+          "NICER",
+          "SOCIAL"
+        ],
+        "preferredFamilies": [
+          "kind",
+          "nice"
+        ],
+        "familiarFamilies": [
+          "kind",
+          "nice",
+          "social"
+        ]
+      },
+      {
+        "first": "HUMANEST",
+        "next": [
+          "KIND",
+          "KINDER",
+          "NICE",
+          "NICER",
+          "SOCIAL"
+        ],
+        "preferredFamilies": [
+          "kind",
+          "nice"
+        ],
+        "familiarFamilies": [
+          "kind",
+          "nice",
+          "social"
+        ]
+      },
+      {
+        "first": "KIND",
+        "next": [
+          "KINDER",
+          "NICE",
+          "NICER",
+          "SOCIAL"
+        ],
+        "preferredFamilies": [
+          "nice"
+        ],
+        "familiarFamilies": [
+          "nice",
+          "social"
+        ]
+      },
+      {
+        "first": "KINDER",
+        "next": [
+          "KIND",
+          "NICE",
+          "NICER",
+          "SOCIAL"
+        ],
+        "preferredFamilies": [
+          "nice"
+        ],
+        "familiarFamilies": [
+          "nice",
+          "social"
+        ]
+      },
+      {
+        "first": "KINDEST",
+        "next": [
+          "KIND",
+          "KINDER",
+          "NICE",
+          "NICER",
+          "SOCIAL"
+        ],
+        "preferredFamilies": [
+          "nice"
+        ],
+        "familiarFamilies": [
+          "nice",
+          "social"
+        ]
+      },
+      {
+        "first": "NICE",
+        "next": [
+          "KIND",
+          "KINDER",
+          "NICER",
+          "SOCIAL"
+        ],
+        "preferredFamilies": [
+          "kind"
+        ],
+        "familiarFamilies": [
+          "kind",
+          "social"
+        ]
+      },
+      {
+        "first": "NICER",
+        "next": [
+          "KIND",
+          "KINDER",
+          "NICE",
+          "SOCIAL"
+        ],
+        "preferredFamilies": [
+          "kind"
+        ],
+        "familiarFamilies": [
+          "kind",
+          "social"
+        ]
+      },
+      {
+        "first": "NICEST",
+        "next": [
+          "KIND",
+          "KINDER",
+          "NICE",
+          "NICER",
+          "SOCIAL"
+        ],
+        "preferredFamilies": [
+          "kind"
+        ],
+        "familiarFamilies": [
+          "kind",
+          "social"
+        ]
+      },
+      {
+        "first": "SOCIAL",
+        "next": [
+          "KIND",
+          "KINDER",
+          "NICE",
+          "NICER"
+        ],
+        "preferredFamilies": [
+          "kind",
+          "nice"
+        ],
+        "familiarFamilies": [
+          "kind",
+          "nice"
+        ]
+      },
+      {
+        "first": "WARM",
+        "next": [
+          "KIND",
+          "KINDER",
+          "NICE",
+          "NICER",
+          "SOCIAL"
+        ],
+        "preferredFamilies": [
+          "kind",
+          "nice"
+        ],
+        "familiarFamilies": [
+          "kind",
+          "nice",
+          "social"
+        ]
+      },
+      {
+        "first": "WARMEST",
+        "next": [
+          "KIND",
+          "KINDER",
+          "NICE",
+          "NICER",
+          "SOCIAL"
+        ],
+        "preferredFamilies": [
+          "kind",
+          "nice"
+        ],
+        "familiarFamilies": [
+          "kind",
+          "nice",
+          "social"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 126,
+    "pathsChecked": 55,
+    "removalOrder": [
+      0,
+      6,
+      7,
+      13,
+      15,
+      1,
+      8,
+      12,
+      14
+    ]
+  }
+}

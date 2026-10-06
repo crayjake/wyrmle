@@ -1,0 +1,130 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-autumn-bare-elaborate-2026-10-26-6fc2244d6c72.json",
+  "answer": "ELABORATE",
+  "rules": "bingo-hunt",
+  "review": "BARE uses absence of ornament, not nudity or scarcity. ELABORATE and FANCY denote decoration, GRAND is the magnificent-in-adornment sense and ORNATE explicitly includes decorative detail. The verb elaborate and grand as size or money are excluded. FLORID means elaborately ornamented, not a reddish complexion.",
+  "identity": {
+    "id": "puzzle-autumn-bare-elaborate-2026-10-26",
+    "enemy": "BARE",
+    "board": "AABCDEEFGILNORTY",
+    "bingos": [
+      "ELABORATE"
+    ],
+    "bingoFamilies": [
+      "ELABORATE"
+    ]
+  },
+  "witnesses": [
+    [
+      "ELABORATE"
+    ],
+    [
+      "FANCY",
+      "ELABORATE"
+    ],
+    [
+      "FANCY",
+      "GRAND",
+      "ELABORATE"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "ELABORATE",
+      "effort": 3.2800000000000007
+    }
+  ],
+  "helperEffort": 0.3000000000000007,
+  "removalProof": {
+    "preferredHelpers": [
+      "FANCY",
+      "GRAND",
+      "ORNATE"
+    ],
+    "branches": [
+      {
+        "first": "FANCIER",
+        "next": [
+          "GRAND",
+          "ORNATE"
+        ],
+        "preferredFamilies": [
+          "grand",
+          "ornate"
+        ],
+        "familiarFamilies": [
+          "grand",
+          "ornate"
+        ]
+      },
+      {
+        "first": "FANCY",
+        "next": [
+          "GRAND",
+          "ORNATE"
+        ],
+        "preferredFamilies": [
+          "grand",
+          "ornate"
+        ],
+        "familiarFamilies": [
+          "grand",
+          "ornate"
+        ]
+      },
+      {
+        "first": "FLORID",
+        "next": [
+          "GRAND",
+          "ORNATE"
+        ],
+        "preferredFamilies": [
+          "grand",
+          "ornate"
+        ],
+        "familiarFamilies": [
+          "grand",
+          "ornate"
+        ]
+      },
+      {
+        "first": "GRAND",
+        "next": [
+          "ORNATE"
+        ],
+        "preferredFamilies": [
+          "ornate"
+        ],
+        "familiarFamilies": [
+          "ornate"
+        ]
+      },
+      {
+        "first": "ORNATE",
+        "next": [
+          "GRAND"
+        ],
+        "preferredFamilies": [
+          "grand"
+        ],
+        "familiarFamilies": [
+          "grand"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 35,
+    "pathsChecked": 8,
+    "removalOrder": [
+      6,
+      7,
+      8,
+      12,
+      3,
+      9,
+      13
+    ]
+  }
+}

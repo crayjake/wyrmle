@@ -1,0 +1,246 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-autumn-adore-abhorred-2026-10-09-6b38b16f22e5.json",
+  "answer": "ABHORRED",
+  "rules": "bingo-hunt",
+  "review": "ADORE is the verb for intense love. ABHOR, HATE, LOATHE, DETEST and DESPISE oppose that feeling as verbs. Past and present verb forms remain the same word type; hate as a noun and hatred do not count.",
+  "identity": {
+    "id": "puzzle-autumn-adore-abhorred-2026-10-09",
+    "enemy": "ADORE",
+    "board": "ABDEEGHILNORRSTU",
+    "bingos": [
+      "ABHORRED"
+    ],
+    "bingoFamilies": [
+      "ABHOR"
+    ]
+  },
+  "witnesses": [
+    [
+      "ABHORRED"
+    ],
+    [
+      "HATE",
+      "ABHORRED"
+    ],
+    [
+      "HATE",
+      "LOATHE",
+      "ABHORRED"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "ABHORRED",
+      "effort": 6.18
+    }
+  ],
+  "helperEffort": 3.3800000000000003,
+  "removalProof": {
+    "preferredHelpers": [
+      "HATE",
+      "LOATHE"
+    ],
+    "branches": [
+      {
+        "first": "ABHOR",
+        "next": [
+          "HATE",
+          "HATED",
+          "LOATHE",
+          "LOATHED"
+        ],
+        "preferredFamilies": [
+          "hate",
+          "loathe"
+        ],
+        "familiarFamilies": [
+          "hate",
+          "loathe"
+        ]
+      },
+      {
+        "first": "ABHORRING",
+        "next": [
+          "ABHOR",
+          "HATE",
+          "HATED",
+          "LOATHE",
+          "LOATHED"
+        ],
+        "preferredFamilies": [
+          "hate",
+          "loathe"
+        ],
+        "familiarFamilies": [
+          "hate",
+          "loathe"
+        ]
+      },
+      {
+        "first": "ABHORS",
+        "next": [
+          "ABHOR",
+          "HATE",
+          "HATED",
+          "LOATHE",
+          "LOATHED"
+        ],
+        "preferredFamilies": [
+          "hate",
+          "loathe"
+        ],
+        "familiarFamilies": [
+          "hate",
+          "loathe"
+        ]
+      },
+      {
+        "first": "HATE",
+        "next": [
+          "ABHOR",
+          "HATED",
+          "LOATHE",
+          "LOATHED"
+        ],
+        "preferredFamilies": [
+          "loathe"
+        ],
+        "familiarFamilies": [
+          "abhor",
+          "loathe"
+        ]
+      },
+      {
+        "first": "HATED",
+        "next": [
+          "ABHOR",
+          "HATE",
+          "LOATHE",
+          "LOATHED"
+        ],
+        "preferredFamilies": [
+          "loathe"
+        ],
+        "familiarFamilies": [
+          "abhor",
+          "loathe"
+        ]
+      },
+      {
+        "first": "HATES",
+        "next": [
+          "ABHOR",
+          "HATE",
+          "HATED",
+          "LOATHE",
+          "LOATHED"
+        ],
+        "preferredFamilies": [
+          "loathe"
+        ],
+        "familiarFamilies": [
+          "abhor",
+          "loathe"
+        ]
+      },
+      {
+        "first": "HATING",
+        "next": [
+          "ABHOR",
+          "HATE",
+          "HATED",
+          "LOATHE",
+          "LOATHED"
+        ],
+        "preferredFamilies": [
+          "loathe"
+        ],
+        "familiarFamilies": [
+          "abhor",
+          "loathe"
+        ]
+      },
+      {
+        "first": "LOATHE",
+        "next": [
+          "ABHOR",
+          "HATE",
+          "HATED",
+          "LOATHED"
+        ],
+        "preferredFamilies": [
+          "hate"
+        ],
+        "familiarFamilies": [
+          "abhor",
+          "hate"
+        ]
+      },
+      {
+        "first": "LOATHED",
+        "next": [
+          "ABHOR",
+          "HATE",
+          "HATED",
+          "LOATHE"
+        ],
+        "preferredFamilies": [
+          "hate"
+        ],
+        "familiarFamilies": [
+          "abhor",
+          "hate"
+        ]
+      },
+      {
+        "first": "LOATHES",
+        "next": [
+          "ABHOR",
+          "HATE",
+          "HATED",
+          "LOATHE",
+          "LOATHED"
+        ],
+        "preferredFamilies": [
+          "hate"
+        ],
+        "familiarFamilies": [
+          "abhor",
+          "hate"
+        ]
+      },
+      {
+        "first": "LOATHING",
+        "next": [
+          "ABHOR",
+          "HATE",
+          "HATED",
+          "LOATHE",
+          "LOATHED"
+        ],
+        "preferredFamilies": [
+          "hate"
+        ],
+        "familiarFamilies": [
+          "abhor",
+          "hate"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 70,
+    "pathsChecked": 50,
+    "removalOrder": [
+      2,
+      7,
+      8,
+      11,
+      1,
+      12,
+      13,
+      14
+    ]
+  }
+}

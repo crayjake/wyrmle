@@ -1,0 +1,146 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-main-unimportant-2026-10-25-bfd1809ad1ee.json",
+  "answer": "UNIMPORTANT",
+  "rules": "bingo-hunt",
+  "review": "MAIN uses importance, not pipes or grammatical clauses. UNIMPORTANT, MINOR and PETTY all describe little importance. PETTY is not narrow-mindedness, and MINOR is not age or a musical key. PEANUT and the British informal POTTY use trivial importance, not a nut, toilet or mental state.",
+  "identity": {
+    "id": "puzzle-oct26-main-unimportant-2026-10-25",
+    "enemy": "MAIN",
+    "board": "AAEILMNNOPRSTTUY",
+    "bingos": [
+      "UNIMPORTANT"
+    ],
+    "bingoFamilies": [
+      "UNIMPORTANT"
+    ]
+  },
+  "witnesses": [
+    [
+      "UNIMPORTANT"
+    ],
+    [
+      "MINOR",
+      "UNIMPORTANT"
+    ],
+    [
+      "MINOR",
+      "PETTY",
+      "UNIMPORTANT"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "UNIMPORTANT",
+      "effort": 6.14
+    }
+  ],
+  "helperEffort": 0.8599999999999994,
+  "removalProof": {
+    "preferredHelpers": [
+      "MINOR",
+      "PETTY"
+    ],
+    "branches": [
+      {
+        "first": "MINOR",
+        "next": [
+          "PEANUT",
+          "PETTY",
+          "POTTIER",
+          "POTTY"
+        ],
+        "preferredFamilies": [
+          "petty"
+        ],
+        "familiarFamilies": [
+          "peanut",
+          "petty",
+          "potty"
+        ]
+      },
+      {
+        "first": "PEANUT",
+        "next": [
+          "MINOR",
+          "PETTY",
+          "POTTIER",
+          "POTTY"
+        ],
+        "preferredFamilies": [
+          "minor",
+          "petty"
+        ],
+        "familiarFamilies": [
+          "minor",
+          "petty",
+          "potty"
+        ]
+      },
+      {
+        "first": "PETTY",
+        "next": [
+          "MINOR",
+          "PEANUT",
+          "POTTIER",
+          "POTTY"
+        ],
+        "preferredFamilies": [
+          "minor"
+        ],
+        "familiarFamilies": [
+          "minor",
+          "peanut",
+          "potty"
+        ]
+      },
+      {
+        "first": "POTTIER",
+        "next": [
+          "MINOR",
+          "PEANUT",
+          "PETTY",
+          "POTTY"
+        ],
+        "preferredFamilies": [
+          "minor",
+          "petty"
+        ],
+        "familiarFamilies": [
+          "minor",
+          "peanut",
+          "petty"
+        ]
+      },
+      {
+        "first": "POTTY",
+        "next": [
+          "MINOR",
+          "PEANUT",
+          "PETTY",
+          "POTTIER"
+        ],
+        "preferredFamilies": [
+          "minor",
+          "petty"
+        ],
+        "familiarFamilies": [
+          "minor",
+          "peanut",
+          "petty"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 3,
+    "candidatesChecked": 10,
+    "pathsChecked": 20,
+    "removalOrder": [
+      4,
+      7,
+      9,
+      3,
+      11
+    ]
+  }
+}

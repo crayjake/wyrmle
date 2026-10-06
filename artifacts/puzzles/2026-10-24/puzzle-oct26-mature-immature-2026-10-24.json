@@ -1,0 +1,145 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-mature-immature-2026-10-24-9f1ad7b1ddba.json",
+  "answer": "IMMATURE",
+  "rules": "bingo-hunt",
+  "review": "MATURE is full natural growth, not sensible behaviour or ripeness of an investment. IMMATURE and GREEN mean not yet fully developed; YOUNG and TEEN describe an early stage of life. GREEN is the unripe adjective, not colour. All opposite readings are adjectives. EARLY uses very young. EARLIEST is not inherited as a superlative of youth: its temporal first reading does not mean least mature.",
+  "identity": {
+    "id": "puzzle-oct26-mature-immature-2026-10-24",
+    "enemy": "MATURE",
+    "board": "AAEEGILMMNORSTUY",
+    "bingos": [
+      "IMMATURE"
+    ],
+    "bingoFamilies": [
+      "IMMATURE"
+    ]
+  },
+  "witnesses": [
+    [
+      "IMMATURE"
+    ],
+    [
+      "GREEN",
+      "IMMATURE"
+    ],
+    [
+      "GREEN",
+      "TEEN",
+      "IMMATURE"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "IMMATURE",
+      "effort": 3.4799999999999995
+    }
+  ],
+  "helperEffort": 0.33999999999999986,
+  "removalProof": {
+    "preferredHelpers": [
+      "GREEN",
+      "TEEN"
+    ],
+    "branches": [
+      {
+        "first": "EARLY",
+        "next": [
+          "GREEN",
+          "TEEN"
+        ],
+        "preferredFamilies": [
+          "green",
+          "teen"
+        ],
+        "familiarFamilies": [
+          "green",
+          "teen"
+        ]
+      },
+      {
+        "first": "GREEN",
+        "next": [
+          "TEEN"
+        ],
+        "preferredFamilies": [
+          "teen"
+        ],
+        "familiarFamilies": [
+          "teen"
+        ]
+      },
+      {
+        "first": "TEEN",
+        "next": [
+          "GREEN"
+        ],
+        "preferredFamilies": [
+          "green"
+        ],
+        "familiarFamilies": [
+          "green"
+        ]
+      },
+      {
+        "first": "YOUNG",
+        "next": [
+          "GREEN",
+          "TEEN"
+        ],
+        "preferredFamilies": [
+          "green",
+          "teen"
+        ],
+        "familiarFamilies": [
+          "green",
+          "teen"
+        ]
+      },
+      {
+        "first": "YOUNGER",
+        "next": [
+          "GREEN",
+          "TEEN"
+        ],
+        "preferredFamilies": [
+          "green",
+          "teen"
+        ],
+        "familiarFamilies": [
+          "green",
+          "teen"
+        ]
+      },
+      {
+        "first": "YOUNGEST",
+        "next": [
+          "GREEN",
+          "TEEN"
+        ],
+        "preferredFamilies": [
+          "green",
+          "teen"
+        ],
+        "familiarFamilies": [
+          "green",
+          "teen"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 70,
+    "pathsChecked": 10,
+    "removalOrder": [
+      0,
+      1,
+      7,
+      12,
+      5,
+      6,
+      14,
+      15
+    ]
+  }
+}

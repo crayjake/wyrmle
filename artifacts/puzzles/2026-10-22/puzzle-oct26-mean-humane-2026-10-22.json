@@ -1,0 +1,107 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-mean-humane-2026-10-22-20e492a62ac4.json",
+  "answer": "HUMANE",
+  "rules": "bingo-hunt",
+  "review": "MEAN means malicious or unkind, not stingy or an average. HUMANE and KIND use concern for people and their suffering; WARM describes friendly and responsive feeling. NICE uses courtesy rather than appearance. All counter readings are adjectives.",
+  "identity": {
+    "id": "puzzle-oct26-mean-humane-2026-10-22",
+    "enemy": "MEAN",
+    "board": "AADEEHIKLMNORSUW",
+    "bingos": [
+      "HUMANE",
+      "HUMANER"
+    ],
+    "bingoFamilies": [
+      "HUMANE"
+    ]
+  },
+  "witnesses": [
+    [
+      "HUMANE"
+    ],
+    [
+      "KIND",
+      "HUMANE"
+    ],
+    [
+      "KIND",
+      "WARM",
+      "HUMANE"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "HUMANE",
+      "effort": 2.36
+    },
+    {
+      "word": "HUMANER",
+      "effort": 10.2
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "KIND",
+      "WARM"
+    ],
+    "branches": [
+      {
+        "first": "KIND",
+        "next": [
+          "KINDER",
+          "WARM"
+        ],
+        "preferredFamilies": [
+          "warm"
+        ],
+        "familiarFamilies": [
+          "warm"
+        ]
+      },
+      {
+        "first": "KINDER",
+        "next": [
+          "KIND",
+          "WARM"
+        ],
+        "preferredFamilies": [
+          "warm"
+        ],
+        "familiarFamilies": [
+          "warm"
+        ]
+      },
+      {
+        "first": "WARM",
+        "next": [
+          "KIND",
+          "KINDER"
+        ],
+        "preferredFamilies": [
+          "kind"
+        ],
+        "familiarFamilies": [
+          "kind"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 252,
+    "pathsChecked": 6,
+    "removalOrder": [
+      1,
+      2,
+      11,
+      12,
+      13,
+      3,
+      7,
+      8,
+      10,
+      14
+    ]
+  }
+}

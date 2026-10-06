@@ -1,0 +1,210 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-tied-sectioned-2026-12-09-140ba6525d25.json",
+  "answer": "SECTIONED",
+  "rules": "bingo-hunt",
+  "review": "TIED means joined together. SECTIONED is the adjective for divided into sections, not the mental-health detention verb. SPLIT and TORN oppose unity in the same grammatical form. Two E copies distinguish the full requirement. UNTIED is a direct adjective opposite and remains a helper because of the two-E requirement. ASUNDER, ISOLATED and DISCRETE use separation; CLEFT means split and UNLACED means not tied. CUT and BIFURCATED are divided into parts; CUTER is explicitly excluded as a comparative of CUTE.",
+  "identity": {
+    "id": "puzzle-tied-sectioned-2026-12-09",
+    "enemy": "TIED",
+    "board": "ABCDEEFILNOPRSTU",
+    "bingos": [
+      "DISCRETE",
+      "SECTIONED"
+    ],
+    "bingoFamilies": [
+      "DISCRETE",
+      "SECTIONED"
+    ]
+  },
+  "witnesses": [
+    [
+      "SECTIONED"
+    ],
+    [
+      "SPLIT",
+      "SECTIONED"
+    ],
+    [
+      "SPLIT",
+      "TORN",
+      "SECTIONED"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "DISCRETE",
+      "effort": 3.6799999999999997
+    },
+    {
+      "word": "SECTIONED",
+      "effort": 6.1
+    }
+  ],
+  "helperEffort": 0.8399999999999999,
+  "removalProof": {
+    "preferredHelpers": [
+      "SPLIT",
+      "TORN"
+    ],
+    "branches": [
+      {
+        "first": "ASUNDER",
+        "next": [
+          "SPLIT",
+          "TORN"
+        ],
+        "preferredFamilies": [
+          "split",
+          "torn"
+        ],
+        "familiarFamilies": [
+          "split",
+          "torn"
+        ]
+      },
+      {
+        "first": "BIFURCATED",
+        "next": [
+          "SPLIT",
+          "TORN"
+        ],
+        "preferredFamilies": [
+          "split",
+          "torn"
+        ],
+        "familiarFamilies": [
+          "split",
+          "torn"
+        ]
+      },
+      {
+        "first": "CLEFT",
+        "next": [
+          "SPLIT",
+          "TORN"
+        ],
+        "preferredFamilies": [
+          "split",
+          "torn"
+        ],
+        "familiarFamilies": [
+          "split",
+          "torn"
+        ]
+      },
+      {
+        "first": "CUT",
+        "next": [
+          "SPLIT",
+          "TORN"
+        ],
+        "preferredFamilies": [
+          "split",
+          "torn"
+        ],
+        "familiarFamilies": [
+          "split",
+          "torn"
+        ]
+      },
+      {
+        "first": "ISOLATED",
+        "next": [
+          "SPLIT",
+          "TORN"
+        ],
+        "preferredFamilies": [
+          "split",
+          "torn"
+        ],
+        "familiarFamilies": [
+          "split",
+          "torn"
+        ]
+      },
+      {
+        "first": "SECTIONAL",
+        "next": [
+          "SPLIT",
+          "TORN"
+        ],
+        "preferredFamilies": [
+          "split",
+          "torn"
+        ],
+        "familiarFamilies": [
+          "split",
+          "torn"
+        ]
+      },
+      {
+        "first": "SPLIT",
+        "next": [
+          "TORN"
+        ],
+        "preferredFamilies": [
+          "torn"
+        ],
+        "familiarFamilies": [
+          "torn"
+        ]
+      },
+      {
+        "first": "TORN",
+        "next": [
+          "SPLIT"
+        ],
+        "preferredFamilies": [
+          "split"
+        ],
+        "familiarFamilies": [
+          "split"
+        ]
+      },
+      {
+        "first": "UNLACED",
+        "next": [
+          "SPLIT",
+          "TORN"
+        ],
+        "preferredFamilies": [
+          "split",
+          "torn"
+        ],
+        "familiarFamilies": [
+          "split",
+          "torn"
+        ]
+      },
+      {
+        "first": "UNTIED",
+        "next": [
+          "SPLIT",
+          "TORN"
+        ],
+        "preferredFamilies": [
+          "split",
+          "torn"
+        ],
+        "familiarFamilies": [
+          "split",
+          "torn"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 35,
+    "pathsChecked": 18,
+    "removalOrder": [
+      3,
+      8,
+      13,
+      14,
+      9,
+      10,
+      15
+    ]
+  }
+}

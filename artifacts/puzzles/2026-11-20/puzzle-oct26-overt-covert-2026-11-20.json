@@ -1,0 +1,132 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-overt-covert-2026-11-20-3bae0178d43d.json",
+  "answer": "COVERT",
+  "rules": "bingo-hunt",
+  "review": "OVERT means openly observable rather than concealed. COVERT and SECRET use hidden activity; PRIVATE uses confined to particular people, rather than open to view. This excludes a shut-door reading, the noun secret, and covert as a shelter noun. CLOSE shares confined to specific people with PRIVATE, not spatial proximity.",
+  "identity": {
+    "id": "puzzle-oct26-overt-covert-2026-11-20",
+    "enemy": "OVERT",
+    "board": "AACEEEILOOPRSSTV",
+    "bingos": [
+      "COVERT"
+    ],
+    "bingoFamilies": [
+      "COVERT"
+    ]
+  },
+  "witnesses": [
+    [
+      "COVERT"
+    ],
+    [
+      "SECRET",
+      "COVERT"
+    ],
+    [
+      "SECRET",
+      "PRIVATE",
+      "COVERT"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "COVERT",
+      "effort": 2.52
+    }
+  ],
+  "helperEffort": 1.2,
+  "removalProof": {
+    "preferredHelpers": [
+      "SECRET",
+      "PRIVATE"
+    ],
+    "branches": [
+      {
+        "first": "CLOSE",
+        "next": [
+          "PRIVATE",
+          "SECRET"
+        ],
+        "preferredFamilies": [
+          "private",
+          "secret"
+        ],
+        "familiarFamilies": [
+          "private",
+          "secret"
+        ]
+      },
+      {
+        "first": "CLOSER",
+        "next": [
+          "PRIVATE",
+          "SECRET"
+        ],
+        "preferredFamilies": [
+          "private",
+          "secret"
+        ],
+        "familiarFamilies": [
+          "private",
+          "secret"
+        ]
+      },
+      {
+        "first": "CLOSEST",
+        "next": [
+          "PRIVATE",
+          "SECRET"
+        ],
+        "preferredFamilies": [
+          "private",
+          "secret"
+        ],
+        "familiarFamilies": [
+          "private",
+          "secret"
+        ]
+      },
+      {
+        "first": "PRIVATE",
+        "next": [
+          "SECRET"
+        ],
+        "preferredFamilies": [
+          "secret"
+        ],
+        "familiarFamilies": [
+          "secret"
+        ]
+      },
+      {
+        "first": "SECRET",
+        "next": [
+          "PRIVATE"
+        ],
+        "preferredFamilies": [
+          "private"
+        ],
+        "familiarFamilies": [
+          "private"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 252,
+    "pathsChecked": 8,
+    "removalOrder": [
+      2,
+      5,
+      9,
+      13,
+      14,
+      0,
+      4,
+      11,
+      12,
+      15
+    ]
+  }
+}

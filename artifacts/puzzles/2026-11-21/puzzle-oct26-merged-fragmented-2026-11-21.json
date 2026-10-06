@@ -1,0 +1,113 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-merged-fragmented-2026-11-21-66e0759d798b.json",
+  "answer": "FRAGMENTED",
+  "rules": "bingo-hunt",
+  "review": "MERGED is the adjective for parts united into a whole. FRAGMENTED means that unity is destroyed. APART is its separate/unconnected adjective reading, and TORN is divided by opposing forces, not an injury. Verb senses and the adverb apart do not qualify. SEPARATE is the adjective independent and not united. SEPARATED uses kept apart, the direct opposite of the selected union.",
+  "identity": {
+    "id": "puzzle-oct26-merged-fragmented-2026-11-21",
+    "enemy": "MERGED",
+    "board": "AAADEEFGLMNOPRST",
+    "bingos": [
+      "FRAGMENTED"
+    ],
+    "bingoFamilies": [
+      "FRAGMENTED"
+    ]
+  },
+  "witnesses": [
+    [
+      "FRAGMENTED"
+    ],
+    [
+      "APART",
+      "FRAGMENTED"
+    ],
+    [
+      "APART",
+      "TORN",
+      "FRAGMENTED"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "FRAGMENTED",
+      "effort": 5.34
+    }
+  ],
+  "helperEffort": 0.8399999999999999,
+  "removalProof": {
+    "preferredHelpers": [
+      "APART",
+      "TORN"
+    ],
+    "branches": [
+      {
+        "first": "APART",
+        "next": [
+          "TORN"
+        ],
+        "preferredFamilies": [
+          "torn"
+        ],
+        "familiarFamilies": [
+          "torn"
+        ]
+      },
+      {
+        "first": "SEPARATE",
+        "next": [
+          "APART",
+          "TORN"
+        ],
+        "preferredFamilies": [
+          "apart",
+          "torn"
+        ],
+        "familiarFamilies": [
+          "apart",
+          "torn"
+        ]
+      },
+      {
+        "first": "SEPARATED",
+        "next": [
+          "APART",
+          "TORN"
+        ],
+        "preferredFamilies": [
+          "apart",
+          "torn"
+        ],
+        "familiarFamilies": [
+          "apart",
+          "torn"
+        ]
+      },
+      {
+        "first": "TORN",
+        "next": [
+          "APART"
+        ],
+        "preferredFamilies": [
+          "apart"
+        ],
+        "familiarFamilies": [
+          "apart"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 20,
+    "pathsChecked": 6,
+    "removalOrder": [
+      4,
+      7,
+      9,
+      1,
+      2,
+      11
+    ]
+  }
+}

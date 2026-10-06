@@ -1,0 +1,418 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-autumn-hide-published-2026-12-13-68b4ca9c777d.json",
+  "answer": "PUBLISHED",
+  "rules": "bingo-hunt",
+  "review": "HIDE is concealment of information. PUBLISH makes it publicly available; AIR, BARE, REVEAL, EXPOSE and DISCLOSE make it known. This is not hiding physically behind something. Ordinary past-tense verb forms remain valid counter verbs. TELL means let information be known. UNVEIL means make manifest, UNWRAP discloses previously secret information, and OUT uses disclosure rather than location or dismissal.",
+  "identity": {
+    "id": "puzzle-autumn-hide-published-2026-12-13",
+    "enemy": "HIDE",
+    "board": "ABDEHILNOPRSTUVW",
+    "bingos": [
+      "PUBLISHED"
+    ],
+    "bingoFamilies": [
+      "PUBLISH"
+    ]
+  },
+  "witnesses": [
+    [
+      "PUBLISHED"
+    ],
+    [
+      "AIR",
+      "PUBLISHED"
+    ],
+    [
+      "AIR",
+      "BARE",
+      "PUBLISHED"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "PUBLISHED",
+      "effort": 2.4
+    }
+  ],
+  "helperEffort": 0.6400000000000006,
+  "removalProof": {
+    "preferredHelpers": [
+      "AIR",
+      "BARE"
+    ],
+    "branches": [
+      {
+        "first": "AIR",
+        "next": [
+          "AIRED",
+          "AIRS",
+          "BARE",
+          "BARED",
+          "BARES",
+          "PUBLISH"
+        ],
+        "preferredFamilies": [
+          "bare"
+        ],
+        "familiarFamilies": [
+          "bare",
+          "publish"
+        ]
+      },
+      {
+        "first": "AIRED",
+        "next": [
+          "AIR",
+          "AIRS",
+          "BARE",
+          "BARED",
+          "BARES",
+          "PUBLISH"
+        ],
+        "preferredFamilies": [
+          "bare"
+        ],
+        "familiarFamilies": [
+          "bare",
+          "publish"
+        ]
+      },
+      {
+        "first": "AIRS",
+        "next": [
+          "AIR",
+          "AIRED",
+          "BARE",
+          "BARED",
+          "BARES",
+          "PUBLISH"
+        ],
+        "preferredFamilies": [
+          "bare"
+        ],
+        "familiarFamilies": [
+          "bare",
+          "publish"
+        ]
+      },
+      {
+        "first": "BARE",
+        "next": [
+          "AIR",
+          "AIRED",
+          "AIRS",
+          "BARED",
+          "BARES",
+          "PUBLISH"
+        ],
+        "preferredFamilies": [
+          "air"
+        ],
+        "familiarFamilies": [
+          "air",
+          "publish"
+        ]
+      },
+      {
+        "first": "BARED",
+        "next": [
+          "AIR",
+          "AIRED",
+          "AIRS",
+          "BARE",
+          "BARES",
+          "PUBLISH"
+        ],
+        "preferredFamilies": [
+          "air"
+        ],
+        "familiarFamilies": [
+          "air",
+          "publish"
+        ]
+      },
+      {
+        "first": "BARES",
+        "next": [
+          "AIR",
+          "AIRED",
+          "AIRS",
+          "BARE",
+          "BARED",
+          "PUBLISH"
+        ],
+        "preferredFamilies": [
+          "air"
+        ],
+        "familiarFamilies": [
+          "air",
+          "publish"
+        ]
+      },
+      {
+        "first": "OUT",
+        "next": [
+          "AIR",
+          "AIRED",
+          "AIRS",
+          "BARE",
+          "BARED",
+          "BARES",
+          "PUBLISH"
+        ],
+        "preferredFamilies": [
+          "air",
+          "bare"
+        ],
+        "familiarFamilies": [
+          "air",
+          "bare",
+          "publish"
+        ]
+      },
+      {
+        "first": "OUTED",
+        "next": [
+          "AIR",
+          "AIRED",
+          "AIRS",
+          "BARE",
+          "BARED",
+          "BARES",
+          "PUBLISH"
+        ],
+        "preferredFamilies": [
+          "air",
+          "bare"
+        ],
+        "familiarFamilies": [
+          "air",
+          "bare",
+          "publish"
+        ]
+      },
+      {
+        "first": "OUTS",
+        "next": [
+          "AIR",
+          "AIRED",
+          "AIRS",
+          "BARE",
+          "BARED",
+          "BARES",
+          "PUBLISH"
+        ],
+        "preferredFamilies": [
+          "air",
+          "bare"
+        ],
+        "familiarFamilies": [
+          "air",
+          "bare",
+          "publish"
+        ]
+      },
+      {
+        "first": "PUBLISH",
+        "next": [
+          "AIR",
+          "AIRED",
+          "AIRS",
+          "BARE",
+          "BARED",
+          "BARES"
+        ],
+        "preferredFamilies": [
+          "air",
+          "bare"
+        ],
+        "familiarFamilies": [
+          "air",
+          "bare"
+        ]
+      },
+      {
+        "first": "SHOW",
+        "next": [
+          "AIR",
+          "AIRED",
+          "AIRS",
+          "BARE",
+          "BARED",
+          "BARES",
+          "PUBLISH"
+        ],
+        "preferredFamilies": [
+          "air",
+          "bare"
+        ],
+        "familiarFamilies": [
+          "air",
+          "bare",
+          "publish"
+        ]
+      },
+      {
+        "first": "SHOWED",
+        "next": [
+          "AIR",
+          "AIRED",
+          "AIRS",
+          "BARE",
+          "BARED",
+          "BARES",
+          "PUBLISH"
+        ],
+        "preferredFamilies": [
+          "air",
+          "bare"
+        ],
+        "familiarFamilies": [
+          "air",
+          "bare",
+          "publish"
+        ]
+      },
+      {
+        "first": "SHOWN",
+        "next": [
+          "AIR",
+          "AIRED",
+          "AIRS",
+          "BARE",
+          "BARED",
+          "BARES",
+          "PUBLISH"
+        ],
+        "preferredFamilies": [
+          "air",
+          "bare"
+        ],
+        "familiarFamilies": [
+          "air",
+          "bare",
+          "publish"
+        ]
+      },
+      {
+        "first": "TOLD",
+        "next": [
+          "AIR",
+          "AIRED",
+          "AIRS",
+          "BARE",
+          "BARED",
+          "BARES",
+          "PUBLISH"
+        ],
+        "preferredFamilies": [
+          "air",
+          "bare"
+        ],
+        "familiarFamilies": [
+          "air",
+          "bare",
+          "publish"
+        ]
+      },
+      {
+        "first": "UNVEIL",
+        "next": [
+          "AIR",
+          "AIRED",
+          "AIRS",
+          "BARE",
+          "BARED",
+          "BARES",
+          "PUBLISH"
+        ],
+        "preferredFamilies": [
+          "air",
+          "bare"
+        ],
+        "familiarFamilies": [
+          "air",
+          "bare",
+          "publish"
+        ]
+      },
+      {
+        "first": "UNVEILS",
+        "next": [
+          "AIR",
+          "AIRED",
+          "AIRS",
+          "BARE",
+          "BARED",
+          "BARES",
+          "PUBLISH"
+        ],
+        "preferredFamilies": [
+          "air",
+          "bare"
+        ],
+        "familiarFamilies": [
+          "air",
+          "bare",
+          "publish"
+        ]
+      },
+      {
+        "first": "UNWRAP",
+        "next": [
+          "AIR",
+          "AIRED",
+          "AIRS",
+          "BARE",
+          "BARED",
+          "BARES",
+          "PUBLISH"
+        ],
+        "preferredFamilies": [
+          "air",
+          "bare"
+        ],
+        "familiarFamilies": [
+          "air",
+          "bare",
+          "publish"
+        ]
+      },
+      {
+        "first": "UNWRAPS",
+        "next": [
+          "AIR",
+          "AIRED",
+          "AIRS",
+          "BARE",
+          "BARED",
+          "BARES",
+          "PUBLISH"
+        ],
+        "preferredFamilies": [
+          "air",
+          "bare"
+        ],
+        "familiarFamilies": [
+          "air",
+          "bare",
+          "publish"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 35,
+    "pathsChecked": 119,
+    "removalOrder": [
+      3,
+      4,
+      5,
+      7,
+      10,
+      11,
+      12
+    ]
+  }
+}

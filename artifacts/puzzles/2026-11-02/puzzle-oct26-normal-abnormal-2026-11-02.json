@@ -1,0 +1,100 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-normal-abnormal-2026-11-02-98a6df169eac.json",
+  "answer": "ABNORMAL",
+  "rules": "bingo-hunt",
+  "review": "NORMAL is usual or typical, not a judgement about people or health. ABNORMAL and ODD depart from that usual pattern; RARE describes uncommon occurrence. Odd numbers and lightly cooked meat do not use the accepted senses.",
+  "identity": {
+    "id": "puzzle-oct26-normal-abnormal-2026-11-02",
+    "enemy": "NORMAL",
+    "board": "AAABDDEILMNOORRS",
+    "bingos": [
+      "ABNORMAL"
+    ],
+    "bingoFamilies": [
+      "ABNORMAL"
+    ]
+  },
+  "witnesses": [
+    [
+      "ABNORMAL"
+    ],
+    [
+      "ODD",
+      "ABNORMAL"
+    ],
+    [
+      "ODD",
+      "RARE",
+      "ABNORMAL"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "ABNORMAL",
+      "effort": 3.38
+    }
+  ],
+  "helperEffort": 0.16000000000000014,
+  "removalProof": {
+    "preferredHelpers": [
+      "ODD",
+      "RARE"
+    ],
+    "branches": [
+      {
+        "first": "ODD",
+        "next": [
+          "ODDER",
+          "RARE"
+        ],
+        "preferredFamilies": [
+          "rare"
+        ],
+        "familiarFamilies": [
+          "rare"
+        ]
+      },
+      {
+        "first": "ODDER",
+        "next": [
+          "ODD",
+          "RARE"
+        ],
+        "preferredFamilies": [
+          "rare"
+        ],
+        "familiarFamilies": [
+          "rare"
+        ]
+      },
+      {
+        "first": "RARE",
+        "next": [
+          "ODD",
+          "ODDER"
+        ],
+        "preferredFamilies": [
+          "odd"
+        ],
+        "familiarFamilies": [
+          "odd"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 70,
+    "pathsChecked": 6,
+    "removalOrder": [
+      1,
+      2,
+      12,
+      13,
+      5,
+      6,
+      7,
+      10
+    ]
+  }
+}

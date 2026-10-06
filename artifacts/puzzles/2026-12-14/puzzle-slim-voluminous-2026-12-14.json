@@ -1,0 +1,158 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-slim-voluminous-2026-12-14-ff6c2c0d3987.json",
+  "answer": "VOLUMINOUS",
+  "rules": "bingo-hunt",
+  "review": "Size or quantity, not body shape. VOLUMINOUS means large in bulk or quantity. JUMBO, BIG and LARGE retain their size adjectives; the elephant and giant-person nouns do not qualify. ENORMOUS is also accepted for an extraordinarily large amount. GALORE, LEGION and NUMEROUS describe abundant quantity as adjectives, not a military-unit noun.",
+  "identity": {
+    "id": "puzzle-slim-voluminous-2026-12-14",
+    "enemy": "SLIM",
+    "board": "ABEGIJLMNOORSUUV",
+    "bingos": [
+      "VOLUMINOUS"
+    ],
+    "bingoFamilies": [
+      "VOLUMINOUS"
+    ]
+  },
+  "witnesses": [
+    [
+      "VOLUMINOUS"
+    ],
+    [
+      "BIG",
+      "VOLUMINOUS"
+    ],
+    [
+      "BIG",
+      "JUMBO",
+      "VOLUMINOUS"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "VOLUMINOUS",
+      "effort": 6.32
+    }
+  ],
+  "helperEffort": 2.24,
+  "removalProof": {
+    "preferredHelpers": [
+      "BIG",
+      "JUMBO"
+    ],
+    "branches": [
+      {
+        "first": "BIG",
+        "next": [
+          "JUMBO"
+        ],
+        "preferredFamilies": [
+          "jumbo"
+        ],
+        "familiarFamilies": [
+          "jumbo"
+        ]
+      },
+      {
+        "first": "ENORMOUS",
+        "next": [
+          "BIG",
+          "JUMBO"
+        ],
+        "preferredFamilies": [
+          "big",
+          "jumbo"
+        ],
+        "familiarFamilies": [
+          "big",
+          "jumbo"
+        ]
+      },
+      {
+        "first": "GALORE",
+        "next": [
+          "BIG",
+          "JUMBO"
+        ],
+        "preferredFamilies": [
+          "big",
+          "jumbo"
+        ],
+        "familiarFamilies": [
+          "big",
+          "jumbo"
+        ]
+      },
+      {
+        "first": "JUMBO",
+        "next": [
+          "BIG"
+        ],
+        "preferredFamilies": [
+          "big"
+        ],
+        "familiarFamilies": [
+          "big"
+        ]
+      },
+      {
+        "first": "LARGE",
+        "next": [
+          "BIG",
+          "JUMBO"
+        ],
+        "preferredFamilies": [
+          "big",
+          "jumbo"
+        ],
+        "familiarFamilies": [
+          "big",
+          "jumbo"
+        ]
+      },
+      {
+        "first": "LEGION",
+        "next": [
+          "BIG",
+          "JUMBO"
+        ],
+        "preferredFamilies": [
+          "big",
+          "jumbo"
+        ],
+        "familiarFamilies": [
+          "big",
+          "jumbo"
+        ]
+      },
+      {
+        "first": "NUMEROUS",
+        "next": [
+          "BIG",
+          "JUMBO"
+        ],
+        "preferredFamilies": [
+          "big",
+          "jumbo"
+        ],
+        "familiarFamilies": [
+          "big",
+          "jumbo"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 20,
+    "pathsChecked": 12,
+    "removalOrder": [
+      3,
+      4,
+      5,
+      7,
+      14,
+      15
+    ]
+  }
+}

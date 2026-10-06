@@ -1,0 +1,130 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-autumn-erect-recumbent-2026-10-29-e3e2d1ceec7c.json",
+  "answer": "RECUMBENT",
+  "rules": "bingo-hunt",
+  "review": "ERECT is upright posture, not its construction verb or sexual sense. RECUMBENT means lying down. FLAT and PRONE are lying postures, BENT is stooped, and SUPINE is lying face up. These are adjective postures, not movements or inclinations. PRONEST is separately excluded: its ordinary superlative is inclination, not a degree of lying down. RESUPINE is the dictionary synonym for lying face upward and remains a valid optional counter.",
+  "identity": {
+    "id": "puzzle-autumn-erect-recumbent-2026-10-29",
+    "enemy": "ERECT",
+    "board": "ABCEEFILMNOPRSTU",
+    "bingos": [
+      "RECUMBENT"
+    ],
+    "bingoFamilies": [
+      "RECUMBENT"
+    ]
+  },
+  "witnesses": [
+    [
+      "RECUMBENT"
+    ],
+    [
+      "FLAT",
+      "RECUMBENT"
+    ],
+    [
+      "FLAT",
+      "BENT",
+      "RECUMBENT"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "RECUMBENT",
+      "effort": 6.48
+    }
+  ],
+  "helperEffort": 1.0199999999999996,
+  "removalProof": {
+    "preferredHelpers": [
+      "FLAT",
+      "BENT",
+      "PRONE"
+    ],
+    "branches": [
+      {
+        "first": "BENT",
+        "next": [
+          "PRONE"
+        ],
+        "preferredFamilies": [
+          "prone"
+        ],
+        "familiarFamilies": [
+          "prone"
+        ]
+      },
+      {
+        "first": "FLAT",
+        "next": [
+          "BENT",
+          "PRONE"
+        ],
+        "preferredFamilies": [
+          "bent",
+          "prone"
+        ],
+        "familiarFamilies": [
+          "bent",
+          "prone"
+        ]
+      },
+      {
+        "first": "PRONE",
+        "next": [
+          "BENT"
+        ],
+        "preferredFamilies": [
+          "bent"
+        ],
+        "familiarFamilies": [
+          "bent"
+        ]
+      },
+      {
+        "first": "RESUPINE",
+        "next": [
+          "BENT",
+          "PRONE"
+        ],
+        "preferredFamilies": [
+          "bent",
+          "prone"
+        ],
+        "familiarFamilies": [
+          "bent",
+          "prone"
+        ]
+      },
+      {
+        "first": "SUPINE",
+        "next": [
+          "BENT",
+          "PRONE"
+        ],
+        "preferredFamilies": [
+          "bent",
+          "prone"
+        ],
+        "familiarFamilies": [
+          "bent",
+          "prone"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 35,
+    "pathsChecked": 8,
+    "removalOrder": [
+      0,
+      3,
+      4,
+      9,
+      6,
+      12,
+      13
+    ]
+  }
+}

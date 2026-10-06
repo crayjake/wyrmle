@@ -1,0 +1,85 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-late-earliest-2026-11-03-b7b0405245d1.json",
+  "answer": "EARLIEST",
+  "rules": "bingo-hunt",
+  "review": "LATE refers to position in time, not a deceased person. EARLY, FIRST and INITIAL refer to the beginning. EARLIEST is the ordinary superlative adjective of early, not an adverb. Comparative and superlative forms retain that temporal adjective sense.",
+  "identity": {
+    "id": "puzzle-oct26-late-earliest-2026-11-03",
+    "enemy": "LATE",
+    "board": "AAEEFIILLLNRSSTY",
+    "bingos": [
+      "EARLIEST"
+    ],
+    "bingoFamilies": [
+      "EARLIEST"
+    ]
+  },
+  "witnesses": [
+    [
+      "EARLIEST"
+    ],
+    [
+      "EARLY",
+      "EARLIEST"
+    ],
+    [
+      "EARLY",
+      "FIRST",
+      "EARLIEST"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "EARLIEST",
+      "effort": 2.62
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "EARLY",
+      "FIRST"
+    ],
+    "branches": [
+      {
+        "first": "EARLY",
+        "next": [
+          "FIRST"
+        ],
+        "preferredFamilies": [
+          "first"
+        ],
+        "familiarFamilies": [
+          "first"
+        ]
+      },
+      {
+        "first": "FIRST",
+        "next": [
+          "EARLY"
+        ],
+        "preferredFamilies": [
+          "early"
+        ],
+        "familiarFamilies": [
+          "early"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 70,
+    "pathsChecked": 2,
+    "removalOrder": [
+      1,
+      4,
+      8,
+      9,
+      7,
+      12,
+      13,
+      14
+    ]
+  }
+}

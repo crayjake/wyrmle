@@ -1,0 +1,85 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-loyal-disloyal-2026-10-23-fb53ef0e80d4.json",
+  "answer": "DISLOYAL",
+  "rules": "bingo-hunt",
+  "review": "LOYAL is faithful devotion. DISLOYAL abandons allegiance; FALSE means unfaithful and FICKLE describes changing affections or attachments. False facts, fickle weather and patriotism are outside this selected interpersonal sense.",
+  "identity": {
+    "id": "puzzle-oct26-loyal-disloyal-2026-10-23",
+    "enemy": "LOYAL",
+    "board": "AACDEFIKLLLOOSSY",
+    "bingos": [
+      "DISLOYAL"
+    ],
+    "bingoFamilies": [
+      "DISLOYAL"
+    ]
+  },
+  "witnesses": [
+    [
+      "DISLOYAL"
+    ],
+    [
+      "FALSE",
+      "DISLOYAL"
+    ],
+    [
+      "FALSE",
+      "FICKLE",
+      "DISLOYAL"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "DISLOYAL",
+      "effort": 5.12
+    }
+  ],
+  "helperEffort": 3.36,
+  "removalProof": {
+    "preferredHelpers": [
+      "FALSE",
+      "FICKLE"
+    ],
+    "branches": [
+      {
+        "first": "FALSE",
+        "next": [
+          "FICKLE"
+        ],
+        "preferredFamilies": [
+          "fickle"
+        ],
+        "familiarFamilies": [
+          "fickle"
+        ]
+      },
+      {
+        "first": "FICKLE",
+        "next": [
+          "FALSE"
+        ],
+        "preferredFamilies": [
+          "false"
+        ],
+        "familiarFamilies": [
+          "false"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 70,
+    "pathsChecked": 2,
+    "removalOrder": [
+      5,
+      13,
+      14,
+      15,
+      0,
+      4,
+      7,
+      12
+    ]
+  }
+}

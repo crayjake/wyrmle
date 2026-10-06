@@ -1,0 +1,201 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-yielding-unyielding-2026-12-02-933ee24ab51f.json",
+  "answer": "UNYIELDING",
+  "rules": "bingo-hunt",
+  "review": "Physical resistance to pressure, not a stubborn personality. SOLID, SET and STONY use hardness; SET is hardened like concrete. UNYIELDING is resistant to force, not a refusal to compromise.",
+  "identity": {
+    "id": "puzzle-yielding-unyielding-2026-12-02",
+    "enemy": "YIELDING",
+    "board": "ADEGHIILNNORSTUY",
+    "bingos": [
+      "UNYIELDING"
+    ],
+    "bingoFamilies": [
+      "UNYIELDING"
+    ]
+  },
+  "witnesses": [
+    [
+      "UNYIELDING"
+    ],
+    [
+      "SOLID",
+      "UNYIELDING"
+    ],
+    [
+      "SOLID",
+      "SET",
+      "UNYIELDING"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "UNYIELDING",
+      "effort": 6.66
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "SOLID",
+      "SET"
+    ],
+    "branches": [
+      {
+        "first": "HARD",
+        "next": [
+          "SET",
+          "SOLID",
+          "STONY"
+        ],
+        "preferredFamilies": [
+          "set",
+          "solid"
+        ],
+        "familiarFamilies": [
+          "set",
+          "solid",
+          "stony"
+        ]
+      },
+      {
+        "first": "HARDEST",
+        "next": [
+          "SET",
+          "SOLID",
+          "STONY"
+        ],
+        "preferredFamilies": [
+          "set",
+          "solid"
+        ],
+        "familiarFamilies": [
+          "set",
+          "solid",
+          "stony"
+        ]
+      },
+      {
+        "first": "RIGID",
+        "next": [
+          "SET",
+          "SOLID",
+          "STONY"
+        ],
+        "preferredFamilies": [
+          "set",
+          "solid"
+        ],
+        "familiarFamilies": [
+          "set",
+          "solid",
+          "stony"
+        ]
+      },
+      {
+        "first": "RIGIDEST",
+        "next": [
+          "SET",
+          "SOLID",
+          "STONY"
+        ],
+        "preferredFamilies": [
+          "set",
+          "solid"
+        ],
+        "familiarFamilies": [
+          "set",
+          "solid",
+          "stony"
+        ]
+      },
+      {
+        "first": "SET",
+        "next": [
+          "SOLID",
+          "STONY"
+        ],
+        "preferredFamilies": [
+          "solid"
+        ],
+        "familiarFamilies": [
+          "solid",
+          "stony"
+        ]
+      },
+      {
+        "first": "SOLID",
+        "next": [
+          "SET",
+          "STONY"
+        ],
+        "preferredFamilies": [
+          "set"
+        ],
+        "familiarFamilies": [
+          "set",
+          "stony"
+        ]
+      },
+      {
+        "first": "SOLIDER",
+        "next": [
+          "SET",
+          "SOLID",
+          "STONY"
+        ],
+        "preferredFamilies": [
+          "set"
+        ],
+        "familiarFamilies": [
+          "set",
+          "stony"
+        ]
+      },
+      {
+        "first": "STONIER",
+        "next": [
+          "SET",
+          "SOLID",
+          "STONY"
+        ],
+        "preferredFamilies": [
+          "set",
+          "solid"
+        ],
+        "familiarFamilies": [
+          "set",
+          "solid"
+        ]
+      },
+      {
+        "first": "STONY",
+        "next": [
+          "SET",
+          "SOLID"
+        ],
+        "preferredFamilies": [
+          "set",
+          "solid"
+        ],
+        "familiarFamilies": [
+          "set",
+          "solid"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 20,
+    "pathsChecked": 24,
+    "removalOrder": [
+      0,
+      1,
+      15,
+      11,
+      12,
+      13
+    ]
+  }
+}

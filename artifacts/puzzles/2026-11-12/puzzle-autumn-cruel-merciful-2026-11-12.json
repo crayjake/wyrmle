@@ -1,0 +1,233 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-autumn-cruel-merciful-2026-11-12-bdc9bec6eea5.json",
+  "answer": "MERCIFUL",
+  "rules": "bingo-hunt",
+  "review": "CRUEL uses inflicting suffering. MERCIFUL means showing mercy, KIND and HUMANE consider others’ suffering, NICE uses considerate character and SOFT use kindness rather than temperature or texture. Mercy and kindness are nouns and are not accepted.",
+  "identity": {
+    "id": "puzzle-autumn-cruel-merciful-2026-11-12",
+    "enemy": "CRUEL",
+    "board": "ACDEFHIKLMNORSTU",
+    "bingos": [
+      "MERCIFUL"
+    ],
+    "bingoFamilies": [
+      "MERCIFUL"
+    ]
+  },
+  "witnesses": [
+    [
+      "MERCIFUL"
+    ],
+    [
+      "KIND",
+      "MERCIFUL"
+    ],
+    [
+      "KIND",
+      "NICE",
+      "MERCIFUL"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "MERCIFUL",
+      "effort": 4.26
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "KIND",
+      "NICE",
+      "HUMANE"
+    ],
+    "branches": [
+      {
+        "first": "HUMANE",
+        "next": [
+          "HUMANER",
+          "NICE",
+          "NICER"
+        ],
+        "preferredFamilies": [
+          "nice"
+        ],
+        "familiarFamilies": [
+          "nice"
+        ]
+      },
+      {
+        "first": "HUMANER",
+        "next": [
+          "HUMANE",
+          "NICE",
+          "NICER"
+        ],
+        "preferredFamilies": [
+          "nice"
+        ],
+        "familiarFamilies": [
+          "nice"
+        ]
+      },
+      {
+        "first": "HUMANEST",
+        "next": [
+          "HUMANE",
+          "HUMANER",
+          "NICE",
+          "NICER"
+        ],
+        "preferredFamilies": [
+          "nice"
+        ],
+        "familiarFamilies": [
+          "nice"
+        ]
+      },
+      {
+        "first": "KIND",
+        "next": [
+          "HUMANE",
+          "HUMANER",
+          "NICE",
+          "NICER"
+        ],
+        "preferredFamilies": [
+          "humane",
+          "nice"
+        ],
+        "familiarFamilies": [
+          "humane",
+          "nice"
+        ]
+      },
+      {
+        "first": "KINDER",
+        "next": [
+          "HUMANE",
+          "HUMANER",
+          "NICE",
+          "NICER"
+        ],
+        "preferredFamilies": [
+          "humane",
+          "nice"
+        ],
+        "familiarFamilies": [
+          "humane",
+          "nice"
+        ]
+      },
+      {
+        "first": "KINDEST",
+        "next": [
+          "HUMANE",
+          "HUMANER",
+          "NICE",
+          "NICER"
+        ],
+        "preferredFamilies": [
+          "humane",
+          "nice"
+        ],
+        "familiarFamilies": [
+          "humane",
+          "nice"
+        ]
+      },
+      {
+        "first": "NICE",
+        "next": [
+          "HUMANE",
+          "HUMANER",
+          "NICER"
+        ],
+        "preferredFamilies": [
+          "humane"
+        ],
+        "familiarFamilies": [
+          "humane"
+        ]
+      },
+      {
+        "first": "NICER",
+        "next": [
+          "HUMANE",
+          "HUMANER",
+          "NICE"
+        ],
+        "preferredFamilies": [
+          "humane"
+        ],
+        "familiarFamilies": [
+          "humane"
+        ]
+      },
+      {
+        "first": "NICEST",
+        "next": [
+          "HUMANE",
+          "HUMANER",
+          "NICE",
+          "NICER"
+        ],
+        "preferredFamilies": [
+          "humane"
+        ],
+        "familiarFamilies": [
+          "humane"
+        ]
+      },
+      {
+        "first": "SOFT",
+        "next": [
+          "HUMANE",
+          "HUMANER",
+          "NICE",
+          "NICER"
+        ],
+        "preferredFamilies": [
+          "humane",
+          "nice"
+        ],
+        "familiarFamilies": [
+          "humane",
+          "nice"
+        ]
+      },
+      {
+        "first": "SOFTER",
+        "next": [
+          "HUMANE",
+          "HUMANER",
+          "NICE",
+          "NICER"
+        ],
+        "preferredFamilies": [
+          "humane",
+          "nice"
+        ],
+        "familiarFamilies": [
+          "humane",
+          "nice"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 70,
+    "pathsChecked": 40,
+    "removalOrder": [
+      0,
+      2,
+      6,
+      9,
+      5,
+      11,
+      12,
+      13
+    ]
+  }
+}

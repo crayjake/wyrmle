@@ -1,0 +1,216 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-autumn-dank-sunbaked-2026-11-05-b733d348c728.json",
+  "answer": "SUNBAKED",
+  "rules": "bingo-hunt",
+  "review": "DANK is damp and chilly, not slang for high quality. SUNBAKED, DRY, ARID, PARCHED and SERE describe depleted moisture. The sunbaked pottery-hardening sense is excluded; dryness in humour or alcohol is not imported. BAKED and ADUST use the same sun-dried sense as SUNBAKED; SEAR is the dry-vegetation adjective, not the burning verb.",
+  "identity": {
+    "id": "puzzle-autumn-dank-sunbaked-2026-11-05",
+    "enemy": "DANK",
+    "board": "ABCDEHIKNOPRSTUY",
+    "bingos": [
+      "SUNBAKED"
+    ],
+    "bingoFamilies": [
+      "SUNBAKED"
+    ]
+  },
+  "witnesses": [
+    [
+      "SUNBAKED"
+    ],
+    [
+      "DRY",
+      "SUNBAKED"
+    ],
+    [
+      "DRY",
+      "ARID",
+      "SUNBAKED"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "SUNBAKED",
+      "effort": 7.92
+    }
+  ],
+  "helperEffort": 2.26,
+  "removalProof": {
+    "preferredHelpers": [
+      "DRY",
+      "ARID"
+    ],
+    "branches": [
+      {
+        "first": "ADUST",
+        "next": [
+          "ARID",
+          "BAKED",
+          "DRY",
+          "SEAR"
+        ],
+        "preferredFamilies": [
+          "arid",
+          "dry"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "baked",
+          "dry",
+          "sear"
+        ]
+      },
+      {
+        "first": "ARID",
+        "next": [
+          "BAKED",
+          "DRY",
+          "SEAR"
+        ],
+        "preferredFamilies": [
+          "dry"
+        ],
+        "familiarFamilies": [
+          "baked",
+          "dry",
+          "sear"
+        ]
+      },
+      {
+        "first": "ARIDEST",
+        "next": [
+          "ARID",
+          "BAKED",
+          "DRY",
+          "SEAR"
+        ],
+        "preferredFamilies": [
+          "dry"
+        ],
+        "familiarFamilies": [
+          "baked",
+          "dry",
+          "sear"
+        ]
+      },
+      {
+        "first": "BAKED",
+        "next": [
+          "ARID",
+          "DRY",
+          "SEAR"
+        ],
+        "preferredFamilies": [
+          "arid",
+          "dry"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "dry",
+          "sear"
+        ]
+      },
+      {
+        "first": "DRIEST",
+        "next": [
+          "ARID",
+          "BAKED",
+          "DRY",
+          "SEAR"
+        ],
+        "preferredFamilies": [
+          "arid"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "baked",
+          "sear"
+        ]
+      },
+      {
+        "first": "DRY",
+        "next": [
+          "ARID",
+          "BAKED",
+          "SEAR"
+        ],
+        "preferredFamilies": [
+          "arid"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "baked",
+          "sear"
+        ]
+      },
+      {
+        "first": "DRYEST",
+        "next": [
+          "ARID",
+          "BAKED",
+          "DRY",
+          "SEAR"
+        ],
+        "preferredFamilies": [
+          "arid"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "baked",
+          "sear"
+        ]
+      },
+      {
+        "first": "PARCHED",
+        "next": [
+          "ARID",
+          "BAKED",
+          "DRY",
+          "SEAR"
+        ],
+        "preferredFamilies": [
+          "arid",
+          "dry"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "baked",
+          "dry",
+          "sear"
+        ]
+      },
+      {
+        "first": "SEAR",
+        "next": [
+          "ARID",
+          "BAKED",
+          "DRY"
+        ],
+        "preferredFamilies": [
+          "arid",
+          "dry"
+        ],
+        "familiarFamilies": [
+          "arid",
+          "baked",
+          "dry"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 3,
+    "candidatesChecked": 70,
+    "pathsChecked": 32,
+    "removalOrder": [
+      0,
+      3,
+      4,
+      8,
+      12,
+      13,
+      14,
+      15
+    ]
+  }
+}

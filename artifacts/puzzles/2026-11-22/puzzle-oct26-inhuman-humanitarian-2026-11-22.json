@@ -1,0 +1,140 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-inhuman-humanitarian-2026-11-22-2534da4c5ff1.json",
+  "answer": "HUMANITARIAN",
+  "rules": "bingo-hunt",
+  "review": "INHUMAN means cruel, not nonhuman or unusually powerful. HUMANITARIAN and HUMANE express concern for human welfare and suffering; WARM uses friendly and responsive human feeling. The noun humanitarian and temperature sense of warm are excluded. HUMANIST is the adjective sharing concern for human welfare, not the noun for an adherent of humanism.",
+  "identity": {
+    "id": "puzzle-oct26-inhuman-humanitarian-2026-11-22",
+    "enemy": "INHUMAN",
+    "board": "AAAAEHIIMNNRSTUW",
+    "bingos": [
+      "HUMANITARIAN"
+    ],
+    "bingoFamilies": [
+      "HUMANITARIAN"
+    ]
+  },
+  "witnesses": [
+    [
+      "HUMANITARIAN"
+    ],
+    [
+      "HUMANE",
+      "HUMANITARIAN"
+    ],
+    [
+      "HUMANE",
+      "WARM",
+      "HUMANITARIAN"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "HUMANITARIAN",
+      "effort": 5.38
+    }
+  ],
+  "helperEffort": 2.36,
+  "removalProof": {
+    "preferredHelpers": [
+      "HUMANE",
+      "WARM"
+    ],
+    "branches": [
+      {
+        "first": "HUMANE",
+        "next": [
+          "HUMANER",
+          "WARM"
+        ],
+        "preferredFamilies": [
+          "warm"
+        ],
+        "familiarFamilies": [
+          "warm"
+        ]
+      },
+      {
+        "first": "HUMANER",
+        "next": [
+          "HUMANE",
+          "WARM"
+        ],
+        "preferredFamilies": [
+          "warm"
+        ],
+        "familiarFamilies": [
+          "warm"
+        ]
+      },
+      {
+        "first": "HUMANEST",
+        "next": [
+          "HUMANE",
+          "HUMANER",
+          "WARM"
+        ],
+        "preferredFamilies": [
+          "warm"
+        ],
+        "familiarFamilies": [
+          "warm"
+        ]
+      },
+      {
+        "first": "HUMANIST",
+        "next": [
+          "HUMANE",
+          "HUMANER",
+          "WARM"
+        ],
+        "preferredFamilies": [
+          "humane",
+          "warm"
+        ],
+        "familiarFamilies": [
+          "humane",
+          "warm"
+        ]
+      },
+      {
+        "first": "WARM",
+        "next": [
+          "HUMANE",
+          "HUMANER"
+        ],
+        "preferredFamilies": [
+          "humane"
+        ],
+        "familiarFamilies": [
+          "humane"
+        ]
+      },
+      {
+        "first": "WARMEST",
+        "next": [
+          "HUMANE",
+          "HUMANER",
+          "WARM"
+        ],
+        "preferredFamilies": [
+          "humane"
+        ],
+        "familiarFamilies": [
+          "humane"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 6,
+    "pathsChecked": 15,
+    "removalOrder": [
+      13,
+      14,
+      7,
+      8
+    ]
+  }
+}

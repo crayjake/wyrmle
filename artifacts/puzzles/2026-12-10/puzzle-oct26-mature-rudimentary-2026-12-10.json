@@ -1,0 +1,137 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-mature-rudimentary-2026-12-10-94d186a62e22.json",
+  "answer": "RUDIMENTARY",
+  "rules": "bingo-hunt",
+  "review": "MATURE refers to full development. RUDIMENTARY is explicitly in the earliest stages of development; EARLY and PRIMAL describe those beginning stages. This excludes mature behaviour, raw food and merely simple but fully developed designs. RUDE uses early technical development, not bad manners.",
+  "identity": {
+    "id": "puzzle-oct26-mature-rudimentary-2026-12-10",
+    "enemy": "MATURE",
+    "board": "AADEILLMNPRRSTUY",
+    "bingos": [
+      "RUDIMENTARY"
+    ],
+    "bingoFamilies": [
+      "RUDIMENTARY"
+    ]
+  },
+  "witnesses": [
+    [
+      "RUDIMENTARY"
+    ],
+    [
+      "EARLY",
+      "RUDIMENTARY"
+    ],
+    [
+      "EARLY",
+      "PRIMAL",
+      "RUDIMENTARY"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "RUDIMENTARY",
+      "effort": 6.26
+    }
+  ],
+  "helperEffort": 2.9600000000000004,
+  "removalProof": {
+    "preferredHelpers": [
+      "EARLY",
+      "PRIMAL"
+    ],
+    "branches": [
+      {
+        "first": "EARLY",
+        "next": [
+          "PRIMAL",
+          "RUDE",
+          "RUDER"
+        ],
+        "preferredFamilies": [
+          "primal"
+        ],
+        "familiarFamilies": [
+          "primal",
+          "rude"
+        ]
+      },
+      {
+        "first": "PRIMAL",
+        "next": [
+          "EARLY",
+          "RUDE",
+          "RUDER"
+        ],
+        "preferredFamilies": [
+          "early"
+        ],
+        "familiarFamilies": [
+          "early",
+          "rude"
+        ]
+      },
+      {
+        "first": "RUDE",
+        "next": [
+          "EARLY",
+          "PRIMAL",
+          "RUDER"
+        ],
+        "preferredFamilies": [
+          "early",
+          "primal"
+        ],
+        "familiarFamilies": [
+          "early",
+          "primal"
+        ]
+      },
+      {
+        "first": "RUDER",
+        "next": [
+          "EARLY",
+          "PRIMAL",
+          "RUDE"
+        ],
+        "preferredFamilies": [
+          "early",
+          "primal"
+        ],
+        "familiarFamilies": [
+          "early",
+          "primal"
+        ]
+      },
+      {
+        "first": "RUDEST",
+        "next": [
+          "EARLY",
+          "PRIMAL",
+          "RUDE",
+          "RUDER"
+        ],
+        "preferredFamilies": [
+          "early",
+          "primal"
+        ],
+        "familiarFamilies": [
+          "early",
+          "primal"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 10,
+    "pathsChecked": 16,
+    "removalOrder": [
+      8,
+      12,
+      14,
+      5,
+      10
+    ]
+  }
+}

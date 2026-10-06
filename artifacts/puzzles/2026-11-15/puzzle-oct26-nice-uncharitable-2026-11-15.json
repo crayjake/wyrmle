@@ -1,0 +1,180 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-nice-uncharitable-2026-11-15-f2a6b2587bd4.json",
+  "answer": "UNCHARITABLE",
+  "rules": "bingo-hunt",
+  "review": "NICE refers to a pleasant disposition towards others, not attractive appearance or precision. UNCHARITABLE lacks love and generosity; MEAN, CRUEL and UNKIND describe the opposing malicious or hurtful disposition. These are adjective readings, not a means or charity as a noun. BRUTAL uses cruelty, not something merely very difficult. BESTIAL, BRUTE and BRUTISH use inhumane insensitivity; NASTY and NASTIER use malicious behaviour, not an unpleasant flavour.",
+  "identity": {
+    "id": "puzzle-oct26-nice-uncharitable-2026-11-15",
+    "enemy": "NICE",
+    "board": "AAABCEHILLMNRSTU",
+    "bingos": [
+      "UNCHARITABLE"
+    ],
+    "bingoFamilies": [
+      "UNCHARITABLE"
+    ]
+  },
+  "witnesses": [
+    [
+      "UNCHARITABLE"
+    ],
+    [
+      "MEAN",
+      "UNCHARITABLE"
+    ],
+    [
+      "MEAN",
+      "CRUEL",
+      "UNCHARITABLE"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "UNCHARITABLE",
+      "effort": 8.9
+    }
+  ],
+  "helperEffort": 0.7599999999999998,
+  "removalProof": {
+    "preferredHelpers": [
+      "MEAN",
+      "CRUEL"
+    ],
+    "branches": [
+      {
+        "first": "BESTIAL",
+        "next": [
+          "BRUTAL",
+          "BRUTE",
+          "CRUEL",
+          "MEAN"
+        ],
+        "preferredFamilies": [
+          "cruel",
+          "mean"
+        ],
+        "familiarFamilies": [
+          "brutal",
+          "brute",
+          "cruel",
+          "mean"
+        ]
+      },
+      {
+        "first": "BRUTAL",
+        "next": [
+          "BRUTE",
+          "CRUEL",
+          "MEAN"
+        ],
+        "preferredFamilies": [
+          "cruel",
+          "mean"
+        ],
+        "familiarFamilies": [
+          "brute",
+          "cruel",
+          "mean"
+        ]
+      },
+      {
+        "first": "BRUTE",
+        "next": [
+          "BRUTAL",
+          "CRUEL",
+          "MEAN"
+        ],
+        "preferredFamilies": [
+          "cruel",
+          "mean"
+        ],
+        "familiarFamilies": [
+          "brutal",
+          "cruel",
+          "mean"
+        ]
+      },
+      {
+        "first": "BRUTISH",
+        "next": [
+          "BRUTAL",
+          "BRUTE",
+          "CRUEL",
+          "MEAN"
+        ],
+        "preferredFamilies": [
+          "cruel",
+          "mean"
+        ],
+        "familiarFamilies": [
+          "brutal",
+          "brute",
+          "cruel",
+          "mean"
+        ]
+      },
+      {
+        "first": "CRUEL",
+        "next": [
+          "BRUTAL",
+          "BRUTE",
+          "MEAN"
+        ],
+        "preferredFamilies": [
+          "mean"
+        ],
+        "familiarFamilies": [
+          "brutal",
+          "brute",
+          "mean"
+        ]
+      },
+      {
+        "first": "MEAN",
+        "next": [
+          "BRUTAL",
+          "BRUTE",
+          "CRUEL"
+        ],
+        "preferredFamilies": [
+          "cruel"
+        ],
+        "familiarFamilies": [
+          "brutal",
+          "brute",
+          "cruel"
+        ]
+      },
+      {
+        "first": "NASTIER",
+        "next": [
+          "BRUTAL",
+          "BRUTE",
+          "CRUEL",
+          "MEAN"
+        ],
+        "preferredFamilies": [
+          "cruel",
+          "mean"
+        ],
+        "familiarFamilies": [
+          "brutal",
+          "brute",
+          "cruel",
+          "mean"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 3,
+    "candidatesChecked": 6,
+    "pathsChecked": 24,
+    "removalOrder": [
+      10,
+      11,
+      3,
+      12
+    ]
+  }
+}

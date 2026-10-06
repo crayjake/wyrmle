@@ -1,0 +1,115 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-orderly-disorderly-2026-11-29-62c29bff40c5.json",
+  "answer": "DISORDERLY",
+  "rules": "bingo-hunt",
+  "review": "ORDERLY concerns behaviour without violence or disruption. DISORDERLY, WILD and ROWDY mean uncontrolled or disruptive. Wild animals, remote places and an orderly as a hospital worker are outside the displayed sense.",
+  "identity": {
+    "id": "puzzle-oct26-orderly-disorderly-2026-11-29",
+    "enemy": "ORDERLY",
+    "board": "ADDEEILLOORRSSWY",
+    "bingos": [
+      "DISORDERLY"
+    ],
+    "bingoFamilies": [
+      "DISORDERLY"
+    ]
+  },
+  "witnesses": [
+    [
+      "DISORDERLY"
+    ],
+    [
+      "WILD",
+      "DISORDERLY"
+    ],
+    [
+      "WILD",
+      "ROWDY",
+      "DISORDERLY"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "DISORDERLY",
+      "effort": 5.7
+    }
+  ],
+  "helperEffort": 2.58,
+  "removalProof": {
+    "preferredHelpers": [
+      "WILD",
+      "ROWDY"
+    ],
+    "branches": [
+      {
+        "first": "ROWDIER",
+        "next": [
+          "ROWDY",
+          "WILD",
+          "WILDER"
+        ],
+        "preferredFamilies": [
+          "wild"
+        ],
+        "familiarFamilies": [
+          "wild"
+        ]
+      },
+      {
+        "first": "ROWDY",
+        "next": [
+          "ROWDIER",
+          "WILD",
+          "WILDER"
+        ],
+        "preferredFamilies": [
+          "wild"
+        ],
+        "familiarFamilies": [
+          "wild"
+        ]
+      },
+      {
+        "first": "WILD",
+        "next": [
+          "ROWDIER",
+          "ROWDY",
+          "WILDER"
+        ],
+        "preferredFamilies": [
+          "rowdy"
+        ],
+        "familiarFamilies": [
+          "rowdy"
+        ]
+      },
+      {
+        "first": "WILDER",
+        "next": [
+          "ROWDIER",
+          "ROWDY",
+          "WILD"
+        ],
+        "preferredFamilies": [
+          "rowdy"
+        ],
+        "familiarFamilies": [
+          "rowdy"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 20,
+    "pathsChecked": 12,
+    "removalOrder": [
+      6,
+      7,
+      10,
+      12,
+      13,
+      15
+    ]
+  }
+}

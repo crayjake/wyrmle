@@ -1,0 +1,250 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-autumn-hide-exhibited-2026-10-16-9056bbf3a6b5.json",
+  "answer": "EXHIBITED",
+  "rules": "bingo-hunt",
+  "review": "HIDE prevents something from being seen or discovered. EXHIBIT, SHOW, DISPLAY, REVEAL and BARE expose it; AIR makes something public rather than hidden. Only the make-public verb sense of AIR counts, not air as a gas or drying laundry. TELL and its past form TOLD mean let something be known, not give orders or discern.",
+  "identity": {
+    "id": "puzzle-autumn-hide-exhibited-2026-10-16",
+    "enemy": "HIDE",
+    "board": "ABDEEHIILORSTWXZ",
+    "bingos": [
+      "EXHIBITED"
+    ],
+    "bingoFamilies": [
+      "EXHIBIT"
+    ]
+  },
+  "witnesses": [
+    [
+      "EXHIBITED"
+    ],
+    [
+      "AIR",
+      "EXHIBITED"
+    ],
+    [
+      "AIR",
+      "BARE",
+      "EXHIBITED"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "EXHIBITED",
+      "effort": 3.68
+    }
+  ],
+  "helperEffort": 0.6400000000000006,
+  "removalProof": {
+    "preferredHelpers": [
+      "AIR",
+      "BARE"
+    ],
+    "branches": [
+      {
+        "first": "AIR",
+        "next": [
+          "AIRED",
+          "BARE",
+          "BARED",
+          "EXHIBIT"
+        ],
+        "preferredFamilies": [
+          "bare"
+        ],
+        "familiarFamilies": [
+          "bare",
+          "exhibit"
+        ]
+      },
+      {
+        "first": "AIRED",
+        "next": [
+          "AIR",
+          "BARE",
+          "BARED",
+          "EXHIBIT"
+        ],
+        "preferredFamilies": [
+          "bare"
+        ],
+        "familiarFamilies": [
+          "bare",
+          "exhibit"
+        ]
+      },
+      {
+        "first": "AIRS",
+        "next": [
+          "AIR",
+          "AIRED",
+          "BARE",
+          "BARED",
+          "EXHIBIT"
+        ],
+        "preferredFamilies": [
+          "bare"
+        ],
+        "familiarFamilies": [
+          "bare",
+          "exhibit"
+        ]
+      },
+      {
+        "first": "BARE",
+        "next": [
+          "AIR",
+          "AIRED",
+          "BARED",
+          "EXHIBIT"
+        ],
+        "preferredFamilies": [
+          "air"
+        ],
+        "familiarFamilies": [
+          "air",
+          "exhibit"
+        ]
+      },
+      {
+        "first": "BARED",
+        "next": [
+          "AIR",
+          "AIRED",
+          "BARE",
+          "EXHIBIT"
+        ],
+        "preferredFamilies": [
+          "air"
+        ],
+        "familiarFamilies": [
+          "air",
+          "exhibit"
+        ]
+      },
+      {
+        "first": "BARES",
+        "next": [
+          "AIR",
+          "AIRED",
+          "BARE",
+          "BARED",
+          "EXHIBIT"
+        ],
+        "preferredFamilies": [
+          "air"
+        ],
+        "familiarFamilies": [
+          "air",
+          "exhibit"
+        ]
+      },
+      {
+        "first": "EXHIBIT",
+        "next": [
+          "AIR",
+          "AIRED",
+          "BARE",
+          "BARED"
+        ],
+        "preferredFamilies": [
+          "air",
+          "bare"
+        ],
+        "familiarFamilies": [
+          "air",
+          "bare"
+        ]
+      },
+      {
+        "first": "EXHIBITS",
+        "next": [
+          "AIR",
+          "AIRED",
+          "BARE",
+          "BARED",
+          "EXHIBIT"
+        ],
+        "preferredFamilies": [
+          "air",
+          "bare"
+        ],
+        "familiarFamilies": [
+          "air",
+          "bare"
+        ]
+      },
+      {
+        "first": "SHOW",
+        "next": [
+          "AIR",
+          "AIRED",
+          "BARE",
+          "BARED",
+          "EXHIBIT"
+        ],
+        "preferredFamilies": [
+          "air",
+          "bare"
+        ],
+        "familiarFamilies": [
+          "air",
+          "bare",
+          "exhibit"
+        ]
+      },
+      {
+        "first": "SHOWED",
+        "next": [
+          "AIR",
+          "AIRED",
+          "BARE",
+          "BARED",
+          "EXHIBIT"
+        ],
+        "preferredFamilies": [
+          "air",
+          "bare"
+        ],
+        "familiarFamilies": [
+          "air",
+          "bare",
+          "exhibit"
+        ]
+      },
+      {
+        "first": "TOLD",
+        "next": [
+          "AIR",
+          "AIRED",
+          "BARE",
+          "BARED",
+          "EXHIBIT"
+        ],
+        "preferredFamilies": [
+          "air",
+          "bare"
+        ],
+        "familiarFamilies": [
+          "air",
+          "bare",
+          "exhibit"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 35,
+    "pathsChecked": 50,
+    "removalOrder": [
+      0,
+      2,
+      3,
+      5,
+      4,
+      8,
+      13
+    ]
+  }
+}

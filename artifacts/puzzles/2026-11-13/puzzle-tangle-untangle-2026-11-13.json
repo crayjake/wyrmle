@@ -1,0 +1,412 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-tangle-untangle-2026-11-13-35743277bfdb.json",
+  "answer": "UNTANGLE",
+  "rules": "bingo-hunt",
+  "review": "Literal tangled cords or threads. UNTANGLE and UNRAVEL separate them; UNDO means loosen a binding, as in undo a knot, not cancel a decision. RAVEL has a dictionary-supported disentangling verb reading as well as the confusing opposite reading; this explicit sense is accepted. UNBIND and UNLASH undo physical bindings; TEASE uses disentangling fibres, not making fun of someone.",
+  "identity": {
+    "id": "puzzle-tangle-untangle-2026-11-13",
+    "enemy": "TANGLE",
+    "board": "ABDEGHILNNORSTUV",
+    "bingos": [
+      "UNTANGLE",
+      "UNTANGLED",
+      "UNTANGLES"
+    ],
+    "bingoFamilies": [
+      "UNTANGLE"
+    ]
+  },
+  "witnesses": [
+    [
+      "UNTANGLE"
+    ],
+    [
+      "UNDO",
+      "UNTANGLE"
+    ],
+    [
+      "UNDO",
+      "UNRAVEL",
+      "UNTANGLE"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "UNTANGLE",
+      "effort": 5.72
+    },
+    {
+      "word": "UNTANGLED",
+      "effort": 7.34
+    },
+    {
+      "word": "UNTANGLES",
+      "effort": 9.1
+    }
+  ],
+  "helperEffort": 3.8200000000000003,
+  "removalProof": {
+    "preferredHelpers": [
+      "UNDO",
+      "UNRAVEL"
+    ],
+    "branches": [
+      {
+        "first": "RAVEL",
+        "next": [
+          "UNDO",
+          "UNDONE",
+          "UNRAVEL"
+        ],
+        "preferredFamilies": [
+          "undo",
+          "unravel"
+        ],
+        "familiarFamilies": [
+          "undo",
+          "unravel"
+        ]
+      },
+      {
+        "first": "RAVELING",
+        "next": [
+          "RAVEL",
+          "UNDO",
+          "UNDONE",
+          "UNRAVEL"
+        ],
+        "preferredFamilies": [
+          "undo",
+          "unravel"
+        ],
+        "familiarFamilies": [
+          "undo",
+          "unravel"
+        ]
+      },
+      {
+        "first": "RAVELS",
+        "next": [
+          "RAVEL",
+          "UNDO",
+          "UNDONE",
+          "UNRAVEL"
+        ],
+        "preferredFamilies": [
+          "undo",
+          "unravel"
+        ],
+        "familiarFamilies": [
+          "undo",
+          "unravel"
+        ]
+      },
+      {
+        "first": "TEASING",
+        "next": [
+          "RAVEL",
+          "UNDO",
+          "UNDONE",
+          "UNRAVEL"
+        ],
+        "preferredFamilies": [
+          "undo",
+          "unravel"
+        ],
+        "familiarFamilies": [
+          "ravel",
+          "undo",
+          "unravel"
+        ]
+      },
+      {
+        "first": "UNBIND",
+        "next": [
+          "RAVEL",
+          "UNDO",
+          "UNDONE",
+          "UNRAVEL"
+        ],
+        "preferredFamilies": [
+          "undo",
+          "unravel"
+        ],
+        "familiarFamilies": [
+          "ravel",
+          "undo",
+          "unravel"
+        ]
+      },
+      {
+        "first": "UNBINDS",
+        "next": [
+          "RAVEL",
+          "UNDO",
+          "UNDONE",
+          "UNRAVEL"
+        ],
+        "preferredFamilies": [
+          "undo",
+          "unravel"
+        ],
+        "familiarFamilies": [
+          "ravel",
+          "undo",
+          "unravel"
+        ]
+      },
+      {
+        "first": "UNDO",
+        "next": [
+          "RAVEL",
+          "UNDONE",
+          "UNRAVEL"
+        ],
+        "preferredFamilies": [
+          "unravel"
+        ],
+        "familiarFamilies": [
+          "ravel",
+          "unravel"
+        ]
+      },
+      {
+        "first": "UNDOING",
+        "next": [
+          "RAVEL",
+          "UNDO",
+          "UNDONE",
+          "UNRAVEL"
+        ],
+        "preferredFamilies": [
+          "unravel"
+        ],
+        "familiarFamilies": [
+          "ravel",
+          "unravel"
+        ]
+      },
+      {
+        "first": "UNDONE",
+        "next": [
+          "RAVEL",
+          "UNDO",
+          "UNRAVEL"
+        ],
+        "preferredFamilies": [
+          "unravel"
+        ],
+        "familiarFamilies": [
+          "ravel",
+          "unravel"
+        ]
+      },
+      {
+        "first": "UNLASH",
+        "next": [
+          "RAVEL",
+          "UNDO",
+          "UNDONE",
+          "UNRAVEL"
+        ],
+        "preferredFamilies": [
+          "undo",
+          "unravel"
+        ],
+        "familiarFamilies": [
+          "ravel",
+          "undo",
+          "unravel"
+        ]
+      },
+      {
+        "first": "UNLASHED",
+        "next": [
+          "RAVEL",
+          "UNDO",
+          "UNDONE",
+          "UNRAVEL"
+        ],
+        "preferredFamilies": [
+          "undo",
+          "unravel"
+        ],
+        "familiarFamilies": [
+          "ravel",
+          "undo",
+          "unravel"
+        ]
+      },
+      {
+        "first": "UNLASHING",
+        "next": [
+          "RAVEL",
+          "UNDO",
+          "UNDONE",
+          "UNRAVEL"
+        ],
+        "preferredFamilies": [
+          "undo",
+          "unravel"
+        ],
+        "familiarFamilies": [
+          "ravel",
+          "undo",
+          "unravel"
+        ]
+      },
+      {
+        "first": "UNRAVEL",
+        "next": [
+          "RAVEL",
+          "UNDO",
+          "UNDONE"
+        ],
+        "preferredFamilies": [
+          "undo"
+        ],
+        "familiarFamilies": [
+          "ravel",
+          "undo"
+        ]
+      },
+      {
+        "first": "UNRAVELING",
+        "next": [
+          "RAVEL",
+          "UNDO",
+          "UNDONE",
+          "UNRAVEL"
+        ],
+        "preferredFamilies": [
+          "undo"
+        ],
+        "familiarFamilies": [
+          "ravel",
+          "undo"
+        ]
+      },
+      {
+        "first": "UNRAVELS",
+        "next": [
+          "RAVEL",
+          "UNDO",
+          "UNDONE",
+          "UNRAVEL"
+        ],
+        "preferredFamilies": [
+          "undo"
+        ],
+        "familiarFamilies": [
+          "ravel",
+          "undo"
+        ]
+      },
+      {
+        "first": "UNSNARL",
+        "next": [
+          "RAVEL",
+          "UNDO",
+          "UNDONE",
+          "UNRAVEL"
+        ],
+        "preferredFamilies": [
+          "undo",
+          "unravel"
+        ],
+        "familiarFamilies": [
+          "ravel",
+          "undo",
+          "unravel"
+        ]
+      },
+      {
+        "first": "UNSNARLED",
+        "next": [
+          "RAVEL",
+          "UNDO",
+          "UNDONE",
+          "UNRAVEL"
+        ],
+        "preferredFamilies": [
+          "undo",
+          "unravel"
+        ],
+        "familiarFamilies": [
+          "ravel",
+          "undo",
+          "unravel"
+        ]
+      },
+      {
+        "first": "UNTIE",
+        "next": [
+          "RAVEL",
+          "UNDO",
+          "UNDONE",
+          "UNRAVEL"
+        ],
+        "preferredFamilies": [
+          "undo",
+          "unravel"
+        ],
+        "familiarFamilies": [
+          "ravel",
+          "undo",
+          "unravel"
+        ]
+      },
+      {
+        "first": "UNTIED",
+        "next": [
+          "RAVEL",
+          "UNDO",
+          "UNDONE",
+          "UNRAVEL"
+        ],
+        "preferredFamilies": [
+          "undo",
+          "unravel"
+        ],
+        "familiarFamilies": [
+          "ravel",
+          "undo",
+          "unravel"
+        ]
+      },
+      {
+        "first": "UNTIES",
+        "next": [
+          "RAVEL",
+          "UNDO",
+          "UNDONE",
+          "UNRAVEL"
+        ],
+        "preferredFamilies": [
+          "undo",
+          "unravel"
+        ],
+        "familiarFamilies": [
+          "ravel",
+          "undo",
+          "unravel"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 70,
+    "pathsChecked": 76,
+    "removalOrder": [
+      2,
+      4,
+      9,
+      10,
+      0,
+      3,
+      13,
+      14
+    ]
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-unlit-luminescent-2026-11-30-c5b71e54ad71.json",
+  "answer": "LUMINESCENT",
+  "rules": "bingo-hunt",
+  "review": "Dark versus illuminated or light-emitting. LIT, LIGHT and BRIGHT retain literal illumination meanings. LUMINESCENT emits light without heat. The two N copies rule out SUNLIT as a full answer. LITER is explicitly excluded as a unit noun. SUNNIER is accepted for more sunlight, not a cheerful disposition.",
+  "identity": {
+    "id": "puzzle-unlit-luminescent-2026-11-30",
+    "enemy": "UNLIT",
+    "board": "BCEEGHILMNNORSTU",
+    "bingos": [
+      "LUMINESCENT"
+    ],
+    "bingoFamilies": [
+      "LUMINESCENT"
+    ]
+  },
+  "witnesses": [
+    [
+      "LUMINESCENT"
+    ],
+    [
+      "LIT",
+      "LUMINESCENT"
+    ],
+    [
+      "LIT",
+      "LIGHT",
+      "LUMINESCENT"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "LUMINESCENT",
+      "effort": 7.739999999999999
+    }
+  ],
+  "helperEffort": 0.6199999999999992,
+  "removalProof": {
+    "preferredHelpers": [
+      "LIT",
+      "LIGHT"
+    ],
+    "branches": [
+      {
+        "first": "BRIGHT",
+        "next": [
+          "LIGHT",
+          "LIT",
+          "LUCENT",
+          "SUNLIT"
+        ],
+        "preferredFamilies": [
+          "light",
+          "lit"
+        ],
+        "familiarFamilies": [
+          "light",
+          "lit",
+          "lucent",
+          "sunlit"
+        ]
+      },
+      {
+        "first": "LIGHT",
+        "next": [
+          "LIT",
+          "LUCENT",
+          "SUNLIT"
+        ],
+        "preferredFamilies": [
+          "lit"
+        ],
+        "familiarFamilies": [
+          "lit",
+          "lucent",
+          "sunlit"
+        ]
+      },
+      {
+        "first": "LIGHTER",
+        "next": [
+          "LIGHT",
+          "LIT",
+          "LUCENT",
+          "SUNLIT"
+        ],
+        "preferredFamilies": [
+          "lit"
+        ],
+        "familiarFamilies": [
+          "lit",
+          "lucent",
+          "sunlit"
+        ]
+      },
+      {
+        "first": "LIT",
+        "next": [
+          "LIGHT",
+          "LUCENT",
+          "SUNLIT"
+        ],
+        "preferredFamilies": [
+          "light"
+        ],
+        "familiarFamilies": [
+          "light",
+          "lucent",
+          "sunlit"
+        ]
+      },
+      {
+        "first": "LUCENT",
+        "next": [
+          "LIGHT",
+          "LIT",
+          "SUNLIT"
+        ],
+        "preferredFamilies": [
+          "light",
+          "lit"
+        ],
+        "familiarFamilies": [
+          "light",
+          "lit",
+          "sunlit"
+        ]
+      },
+      {
+        "first": "SUNLIT",
+        "next": [
+          "LIGHT",
+          "LIT",
+          "LUCENT"
+        ],
+        "preferredFamilies": [
+          "light",
+          "lit"
+        ],
+        "familiarFamilies": [
+          "light",
+          "lit",
+          "lucent"
+        ]
+      },
+      {
+        "first": "SUNNIER",
+        "next": [
+          "LIGHT",
+          "LIT",
+          "LUCENT",
+          "SUNLIT"
+        ],
+        "preferredFamilies": [
+          "light",
+          "lit"
+        ],
+        "familiarFamilies": [
+          "light",
+          "lit",
+          "lucent",
+          "sunlit"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 3,
+    "candidatesChecked": 10,
+    "pathsChecked": 24,
+    "removalOrder": [
+      6,
+      9,
+      11,
+      1,
+      5
+    ]
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-sad-pleased-2026-11-09-ffbc40223e30.json",
+  "answer": "PLEASED",
+  "rules": "bingo-hunt",
+  "review": "Feelings of happiness oppose feeling sad. PLEASED is experiencing pleasure, not proud self-satisfaction; GLAD and HAPPY use joy, not willingness or good fortune. All counters are adjectives, including legitimate comparative forms. ELATED and GAY use joyful feelings; the orientation and colour senses of gay are not the counter readings. GLADSOME is the same explicit joy adjective.",
+  "identity": {
+    "id": "puzzle-sad-pleased-2026-11-09",
+    "enemy": "SAD",
+    "board": "ADEEGHLMNOPPRSTY",
+    "bingos": [
+      "GLADSOME",
+      "GLADSOMER",
+      "PLEASED"
+    ],
+    "bingoFamilies": [
+      "GLADSOME",
+      "PLEASED"
+    ]
+  },
+  "witnesses": [
+    [
+      "PLEASED"
+    ],
+    [
+      "GLAD",
+      "PLEASED"
+    ],
+    [
+      "GLAD",
+      "HAPPY",
+      "PLEASED"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "GLADSOME",
+      "effort": 8.239999999999998
+    },
+    {
+      "word": "GLADSOMER",
+      "effort": 11.4
+    },
+    {
+      "word": "PLEASED",
+      "effort": 1.3199999999999992
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "GLAD",
+      "HAPPY"
+    ],
+    "branches": [
+      {
+        "first": "ELATED",
+        "next": [
+          "GAY",
+          "GLAD",
+          "HAPPY"
+        ],
+        "preferredFamilies": [
+          "glad",
+          "happy"
+        ],
+        "familiarFamilies": [
+          "gay",
+          "glad",
+          "happy"
+        ]
+      },
+      {
+        "first": "GAY",
+        "next": [
+          "GLAD",
+          "HAPPY"
+        ],
+        "preferredFamilies": [
+          "glad",
+          "happy"
+        ],
+        "familiarFamilies": [
+          "glad",
+          "happy"
+        ]
+      },
+      {
+        "first": "GAYER",
+        "next": [
+          "GAY",
+          "GLAD",
+          "HAPPY"
+        ],
+        "preferredFamilies": [
+          "glad",
+          "happy"
+        ],
+        "familiarFamilies": [
+          "glad",
+          "happy"
+        ]
+      },
+      {
+        "first": "GAYEST",
+        "next": [
+          "GAY",
+          "GLAD",
+          "HAPPY"
+        ],
+        "preferredFamilies": [
+          "glad",
+          "happy"
+        ],
+        "familiarFamilies": [
+          "glad",
+          "happy"
+        ]
+      },
+      {
+        "first": "GLAD",
+        "next": [
+          "GAY",
+          "HAPPY"
+        ],
+        "preferredFamilies": [
+          "happy"
+        ],
+        "familiarFamilies": [
+          "gay",
+          "happy"
+        ]
+      },
+      {
+        "first": "HAPPY",
+        "next": [
+          "GAY",
+          "GLAD"
+        ],
+        "preferredFamilies": [
+          "glad"
+        ],
+        "familiarFamilies": [
+          "gay",
+          "glad"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 126,
+    "pathsChecked": 15,
+    "removalOrder": [
+      1,
+      5,
+      8,
+      9,
+      12,
+      0,
+      4,
+      11,
+      14
+    ]
+  }
+}

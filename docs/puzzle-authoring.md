@@ -13,7 +13,7 @@ There is one saved attempt per date. Stars are 3/2/1 for winning in 1/2/3 guesse
 ## Bingo-first construction
 
 1. Add a reviewed profile to `scripts/puzzles/profiles.ts`. Start with an enemy sense and a natural antonym containing its letters; reserve the bingo's exact multiset first. Avoid obscure dictionary curiosities and **-less / -lessness answers**, including alternative bingos. Armour may require any feasible number of copies; it is not limited to two.
-2. Pin the enemy's OEWN sense and the accepted opposite senses in `roots`. The builder expands only these reviewed synsets and their dictionary forms, not arbitrary semantic neighbours. `wordOnly` restricts a root to its exact sense when synset expansion would be too broad. Use `overrides` for misleading derived forms and `supplemental` only with an independently checked, pinned dictionary citation.
+2. Pin the enemy's OEWN sense and the accepted opposite senses in `roots`. The builder expands only these reviewed synsets and their dictionary forms, not arbitrary semantic neighbours. `wordOnly` restricts a root to its exact sense when synset expansion would be too broad. Use `overrides` for misleading derived forms and `supplemental` only with an independently checked, pinned dictionary citation. Supplemental entries default to an opposite with the required word type; explicitly set `relation: 'unrelated'` when correcting a falsely inferred word type (for example ONER is a noun, not “more ONE”).
 3. Fill the remaining positions to 16 using familiar helper words. Set `refills: ''`, `powers: []`, `routes: []`; do not set a conceptual `family` or a different `counterPartOfSpeech`. Add `helpers: ['FIRST', 'SECOND']`, `preferredHelpers`, progressive hints and a written semantic review. The existing profile format keeps three hints for historical compatibility; current Easy play uses the first two, one per helper. Make the first a useful nudge and the second more specific, without revealing the answer. There is no manual hint menu.
 4. The removal planner tries every possible first-half spare removal set. **Every accepted opening** must leave a different familiar helper family. This includes rare openings, comparatives and any word originally intended as the second guess. It then replays every legal two-helper branch and the final bingo through the game engine.
 5. Review *all* printed counters and alternate bingos, not only the intended answer. A noun cannot pass as an adjective through suffix stripping (LITER is not a comparative of LIT). Inspect likely missing antonyms too. Freeze the reviewed meanings in the published asset; runtime does not ask an LLM.
@@ -22,10 +22,10 @@ There is one saved attempt per date. Stars are 3/2/1 for winning in 1/2/3 guesse
 
 ```sh
 # Review a candidate without changing files. Choose an unused date.
-npm run generate:puzzle -- --profile gentle-armoured --date 2026-10-05 --dry-run
+npm run generate:puzzle -- --profile gentle-armoured --date 2099-01-01 --dry-run
 
 # Publish after reviewing the profile and dry-run output.
-npm run generate:puzzle -- --profile YOUR_NEW_PROFILE --date 2026-10-05
+npm run generate:puzzle -- --profile YOUR_NEW_PROFILE --date 2027-01-01
 
 # For an explicitly requested archive example, use an unused past date.
 npm run generate:puzzle -- --profile YOUR_NEW_PROFILE --date 2026-09-20 --archive
@@ -34,6 +34,17 @@ npm run generate:puzzle -- --profile YOUR_NEW_PROFILE --date 2026-09-20 --archiv
 The example profile is already published, so its dry-run demonstrates proof generation; publication rejects a duplicate enemy/answer. `--replace` explicitly permits replacing an occupied date in the selected manifest. Only use it when that replacement is requested: a changed asset gets separate progress, and the old save is backed up. Never edit an immutable puzzle file in place.
 
 The command writes a content-addressed `public/puzzles/*.json`, a proof under `artifacts/puzzles/DATE/`, the schedule or archive entry, and its Easy-mode guide. It validates the frozen file through the same decoder the app uses. The proof includes all starting bingos, word-effort scores, 1/2/3-guess witnesses, every helper continuation, and the chosen physical removal order. Generation is deterministic for a profile ID.
+
+For a batch, make a JSON plan containing `startDate` and an ordered `profiles` array of reviewed profile IDs, then run:
+
+```sh
+npm run generate:puzzles -- --plan scripts/puzzles/YOUR_PLAN.json --dry-run
+npm run generate:puzzles -- --plan scripts/puzzles/YOUR_PLAN.json
+```
+
+The batch command uses the same builder and proofs as `generate:puzzle`, loading the dictionaries once. It validates every candidate before writing any puzzle or changing the queue. It rejects occupied dates, repeated answers and repeated starting letter pools. It never replaces existing dates. Prefer new enemies; when an enemy returns, give it a genuinely different answer and letter pool and space its appearances across the queue. Do not pad a batch with inflection variants or weaken semantic or helper checks to reach a requested count.
+
+The October–December 2026 batch is recorded in `scripts/puzzles/autumn-2026.json`, with its reviewed profiles in `batch-a-h.ts`, `batch-i-r.ts` and `batch-s-z.ts` beside it. That published plan is an audit record, not a command to replace the same dates. Create a new plan for an unused range when extending the queue. Test the existing frozen batch with `tests/daily-schedule.test.ts` and `tests/queued-antonyms.test.ts`.
 
 The scheduled date opens at `?daily=YYYY-MM-DD` once released; future dates remain unavailable. For pre-release browser checks, set the browser's clock to the intended date. `?calendar` lists released puzzles. New profiles do not need a preview route.
 

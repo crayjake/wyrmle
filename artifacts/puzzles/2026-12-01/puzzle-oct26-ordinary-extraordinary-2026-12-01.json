@@ -1,0 +1,142 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-ordinary-extraordinary-2026-12-01-b5716ca8686f.json",
+  "answer": "EXTRAORDINARY",
+  "rules": "bingo-hunt",
+  "review": "ORDINARY means usual and unexceptional. EXTRAORDINARY goes beyond the usual; ODD is unusual and RARE uses an uncommon or exceptional quality. Neither odd numbers nor scarce supply is the selected counter meaning.",
+  "identity": {
+    "id": "puzzle-oct26-ordinary-extraordinary-2026-12-01",
+    "enemy": "ORDINARY",
+    "board": "AAADDEINORRRSTXY",
+    "bingos": [
+      "EXTRAORDINARY"
+    ],
+    "bingoFamilies": [
+      "EXTRAORDINARY"
+    ]
+  },
+  "witnesses": [
+    [
+      "EXTRAORDINARY"
+    ],
+    [
+      "ODD",
+      "EXTRAORDINARY"
+    ],
+    [
+      "ODD",
+      "RARE",
+      "EXTRAORDINARY"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "EXTRAORDINARY",
+      "effort": 5.079999999999999
+    }
+  ],
+  "helperEffort": 0.16000000000000014,
+  "removalProof": {
+    "preferredHelpers": [
+      "ODD",
+      "RARE"
+    ],
+    "branches": [
+      {
+        "first": "ODD",
+        "next": [
+          "ODDER",
+          "RARE",
+          "RARER"
+        ],
+        "preferredFamilies": [
+          "rare"
+        ],
+        "familiarFamilies": [
+          "rare"
+        ]
+      },
+      {
+        "first": "ODDER",
+        "next": [
+          "ODD",
+          "RARE",
+          "RARER"
+        ],
+        "preferredFamilies": [
+          "rare"
+        ],
+        "familiarFamilies": [
+          "rare"
+        ]
+      },
+      {
+        "first": "ODDEST",
+        "next": [
+          "ODD",
+          "ODDER",
+          "RARE",
+          "RARER"
+        ],
+        "preferredFamilies": [
+          "rare"
+        ],
+        "familiarFamilies": [
+          "rare"
+        ]
+      },
+      {
+        "first": "RARE",
+        "next": [
+          "ODD",
+          "ODDER",
+          "RARER"
+        ],
+        "preferredFamilies": [
+          "odd"
+        ],
+        "familiarFamilies": [
+          "odd"
+        ]
+      },
+      {
+        "first": "RARER",
+        "next": [
+          "ODD",
+          "ODDER",
+          "RARE"
+        ],
+        "preferredFamilies": [
+          "odd"
+        ],
+        "familiarFamilies": [
+          "odd"
+        ]
+      },
+      {
+        "first": "RAREST",
+        "next": [
+          "ODD",
+          "ODDER",
+          "RARE",
+          "RARER"
+        ],
+        "preferredFamilies": [
+          "odd"
+        ],
+        "familiarFamilies": [
+          "odd"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 3,
+    "pathsChecked": 20,
+    "removalOrder": [
+      0,
+      9,
+      14
+    ]
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-lodge-dislodge-2026-10-15-42094d22a8e3.json",
+  "answer": "DISLODGE",
+  "rules": "bingo-hunt",
+  "review": "LODGE means fix or force into a position. DISLODGE and FREE use remove or force out of a position; LOOSE and LOOSEN mean release from restraint. All are verbs. Housing, filing a complaint, and removing someone from political office are outside the pinned physical sense.",
+  "identity": {
+    "id": "puzzle-oct26-lodge-dislodge-2026-10-15",
+    "enemy": "LODGE",
+    "board": "ADDEEFGILLOOORSS",
+    "bingos": [
+      "DISLODGE",
+      "DISLODGES"
+    ],
+    "bingoFamilies": [
+      "DISLODGE"
+    ]
+  },
+  "witnesses": [
+    [
+      "DISLODGE"
+    ],
+    [
+      "FREE",
+      "DISLODGE"
+    ],
+    [
+      "FREE",
+      "LOOSE",
+      "DISLODGE"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "DISLODGE",
+      "effort": 5.22
+    },
+    {
+      "word": "DISLODGES",
+      "effort": 8.38
+    }
+  ],
+  "helperEffort": 0.08000000000000007,
+  "removalProof": {
+    "preferredHelpers": [
+      "FREE",
+      "LOOSE"
+    ],
+    "branches": [
+      {
+        "first": "FREE",
+        "next": [
+          "FREED",
+          "FREES",
+          "LOOSE",
+          "LOOSED"
+        ],
+        "preferredFamilies": [
+          "loose"
+        ],
+        "familiarFamilies": [
+          "loose"
+        ]
+      },
+      {
+        "first": "FREED",
+        "next": [
+          "FREE",
+          "FREES",
+          "LOOSE",
+          "LOOSED"
+        ],
+        "preferredFamilies": [
+          "loose"
+        ],
+        "familiarFamilies": [
+          "loose"
+        ]
+      },
+      {
+        "first": "FREES",
+        "next": [
+          "FREE",
+          "FREED",
+          "LOOSE",
+          "LOOSED"
+        ],
+        "preferredFamilies": [
+          "loose"
+        ],
+        "familiarFamilies": [
+          "loose"
+        ]
+      },
+      {
+        "first": "LOOSE",
+        "next": [
+          "FREE",
+          "FREED",
+          "FREES",
+          "LOOSED"
+        ],
+        "preferredFamilies": [
+          "free"
+        ],
+        "familiarFamilies": [
+          "free"
+        ]
+      },
+      {
+        "first": "LOOSED",
+        "next": [
+          "FREE",
+          "FREED",
+          "FREES",
+          "LOOSE"
+        ],
+        "preferredFamilies": [
+          "free"
+        ],
+        "familiarFamilies": [
+          "free"
+        ]
+      },
+      {
+        "first": "LOOSES",
+        "next": [
+          "FREE",
+          "FREED",
+          "FREES",
+          "LOOSE",
+          "LOOSED"
+        ],
+        "preferredFamilies": [
+          "free"
+        ],
+        "familiarFamilies": [
+          "free"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 70,
+    "pathsChecked": 25,
+    "removalOrder": [
+      1,
+      7,
+      11,
+      15,
+      6,
+      8,
+      12,
+      14
+    ]
+  }
+}

@@ -3,11 +3,15 @@ import { allHuntProfiles, tomorrowHunt } from '../antonyms/huntProfiles.ts'
 import type { HuntProfile } from '../antonyms/huntProfiles.ts'
 import newProfiles from '../antonyms/newProfiles.json' with { type: 'json' }
 import type { ConceptProfile } from '../antonyms/profiles.ts'
+import { batchProfilesAH } from './batch-a-h.ts'
+import { batchProfilesIR } from './batch-i-r.ts'
+import { batchProfilesSZ } from './batch-s-z.ts'
 
 /** A reviewed registry, not a claim that arbitrary dictionary neighbours oppose each other. */
 export const avoidsLessAnswer = (word: string) => !/LESS(?:NESS(?:ES)?|LY)?$/.test(word.toUpperCase())
 const plain = (profile: ConceptProfile): ConceptProfile => ({ ...profile, refills: '', powers: [], routes: [] })
 export const puzzleProfiles: HuntProfile[] = [
+  ...batchProfilesAH, ...batchProfilesIR, ...batchProfilesSZ,
   tomorrowHunt, ...allHuntProfiles.filter(item => avoidsLessAnswer(item.profile.bingo)).map(item => ({ ...item, profile: plain(item.profile) })),
   { profile: plain(antonymProfiles.find(p => p.id === 'stern')!), helpers: ['WARM', 'NICE'], preferredHelpers: ['WARM', 'NICE'] },
   { profile: { ...plain((newProfiles as unknown as ConceptProfile[]).find(p => p.id === 'dear')!), letters: 'AFFORDABLEHCPWES' },

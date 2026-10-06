@@ -1,0 +1,102 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-autumn-bare-baroque-2026-12-08-1aa9531b9ae7.json",
+  "answer": "BAROQUE",
+  "rules": "bingo-hunt",
+  "review": "BARE means unornamented. BAROQUE is pinned to the adjective meaning elaborately ornamented, not its historical-period noun. FANCY, ORNATE and GRAND are decoration adjectives. This uses a different answer and physical board from BARE/ELABORATE. FLORID means elaborately ornamented, not a reddish complexion.",
+  "identity": {
+    "id": "puzzle-autumn-bare-baroque-2026-12-08",
+    "enemy": "BARE",
+    "board": "ABCDEFGHLNOQRTUY",
+    "bingos": [
+      "BAROQUE"
+    ],
+    "bingoFamilies": [
+      "BAROQUE"
+    ]
+  },
+  "witnesses": [
+    [
+      "BAROQUE"
+    ],
+    [
+      "FANCY",
+      "BAROQUE"
+    ],
+    [
+      "FANCY",
+      "GRAND",
+      "BAROQUE"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "BAROQUE",
+      "effort": 3.5600000000000005
+    }
+  ],
+  "helperEffort": 0.3000000000000007,
+  "removalProof": {
+    "preferredHelpers": [
+      "FANCY",
+      "GRAND",
+      "ORNATE"
+    ],
+    "branches": [
+      {
+        "first": "FANCY",
+        "next": [
+          "GRAND",
+          "ORNATE"
+        ],
+        "preferredFamilies": [
+          "grand",
+          "ornate"
+        ],
+        "familiarFamilies": [
+          "grand",
+          "ornate"
+        ]
+      },
+      {
+        "first": "GRAND",
+        "next": [
+          "ORNATE"
+        ],
+        "preferredFamilies": [
+          "ornate"
+        ],
+        "familiarFamilies": [
+          "ornate"
+        ]
+      },
+      {
+        "first": "ORNATE",
+        "next": [
+          "GRAND"
+        ],
+        "preferredFamilies": [
+          "grand"
+        ],
+        "familiarFamilies": [
+          "grand"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 126,
+    "pathsChecked": 4,
+    "removalOrder": [
+      2,
+      6,
+      7,
+      11,
+      12,
+      3,
+      5,
+      14,
+      15
+    ]
+  }
+}

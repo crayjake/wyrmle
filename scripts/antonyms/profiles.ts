@@ -4,7 +4,7 @@ import newProfiles from './newProfiles.json' with { type: 'json' }
 export type ConceptProfile = {
   id: string; enemy: string; definition: string; sense: string; bingo: string; letters: string; refills: string; powers: string[];
   routes: string[][]; roots: string[]; wordOnly: string[]; overrides: Record<string, {sense: string; relation: SemanticRelation; reason: string}>;
-  supplemental?: Record<string, { definition: string; lemma: string; partOfSpeech: PartOfSpeech; senseId: string; sourceUrl: string }>;
+  supplemental?: Record<string, { definition: string; lemma: string; partOfSpeech: PartOfSpeech; senseId: string; sourceUrl: string; relation?: 'opposite' | 'unrelated' }>;
   review: string; hints: [string,string,string]; family?: string; counterPartOfSpeech?: PartOfSpeech
   /** Optional total copy counts by zero-based enemy slot; omitted slots need one. */
   armour?: Record<number, number>

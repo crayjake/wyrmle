@@ -1,0 +1,460 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-autumn-deter-heartened-2026-11-28-d541d093de38.json",
+  "answer": "HEARTENED",
+  "rules": "bingo-hunt",
+  "review": "DETER discourages action. HEARTEN, ENCOURAGE, URGE, CHEER and SPUR use giving encouragement, rather than merely causing happiness or controlling movement. Heartened is accepted as a verb form. Cheer as a noun and urge as a desire are outside the required type. GOAD gives courage; PROD, PUSH, NUDGE and PERSUADE encourage or impel somebody into action. Physical pokes, forceful movement and pushing goods for sale are not admitted.",
+  "identity": {
+    "id": "puzzle-autumn-deter-heartened-2026-11-28",
+    "enemy": "DETER",
+    "board": "AACDEEEGHNOPRSTU",
+    "bingos": [
+      "HEARTENED"
+    ],
+    "bingoFamilies": [
+      "HEARTEN"
+    ]
+  },
+  "witnesses": [
+    [
+      "HEARTENED"
+    ],
+    [
+      "URGE",
+      "HEARTENED"
+    ],
+    [
+      "URGE",
+      "CHEER",
+      "HEARTENED"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "HEARTENED",
+      "effort": 6.84
+    }
+  ],
+  "helperEffort": 0.8800000000000008,
+  "removalProof": {
+    "preferredHelpers": [
+      "URGE",
+      "CHEER"
+    ],
+    "branches": [
+      {
+        "first": "CHEER",
+        "next": [
+          "CHEERED",
+          "HEARTEN",
+          "NUDGE",
+          "URGE",
+          "URGED"
+        ],
+        "preferredFamilies": [
+          "urge"
+        ],
+        "familiarFamilies": [
+          "nudge",
+          "urge"
+        ]
+      },
+      {
+        "first": "CHEERED",
+        "next": [
+          "CHEER",
+          "HEARTEN",
+          "NUDGE",
+          "URGE",
+          "URGED"
+        ],
+        "preferredFamilies": [
+          "urge"
+        ],
+        "familiarFamilies": [
+          "nudge",
+          "urge"
+        ]
+      },
+      {
+        "first": "CHEERS",
+        "next": [
+          "CHEER",
+          "CHEERED",
+          "HEARTEN",
+          "NUDGE",
+          "URGE",
+          "URGED"
+        ],
+        "preferredFamilies": [
+          "urge"
+        ],
+        "familiarFamilies": [
+          "nudge",
+          "urge"
+        ]
+      },
+      {
+        "first": "ENCOURAGE",
+        "next": [
+          "CHEER",
+          "CHEERED",
+          "HEARTEN",
+          "NUDGE",
+          "URGE",
+          "URGED"
+        ],
+        "preferredFamilies": [
+          "cheer",
+          "urge"
+        ],
+        "familiarFamilies": [
+          "cheer",
+          "nudge",
+          "urge"
+        ]
+      },
+      {
+        "first": "ENCOURAGED",
+        "next": [
+          "CHEER",
+          "CHEERED",
+          "HEARTEN",
+          "NUDGE",
+          "URGE",
+          "URGED"
+        ],
+        "preferredFamilies": [
+          "cheer",
+          "urge"
+        ],
+        "familiarFamilies": [
+          "cheer",
+          "nudge",
+          "urge"
+        ]
+      },
+      {
+        "first": "ENCOURAGES",
+        "next": [
+          "CHEER",
+          "CHEERED",
+          "HEARTEN",
+          "NUDGE",
+          "URGE",
+          "URGED"
+        ],
+        "preferredFamilies": [
+          "cheer",
+          "urge"
+        ],
+        "familiarFamilies": [
+          "cheer",
+          "nudge",
+          "urge"
+        ]
+      },
+      {
+        "first": "GOAD",
+        "next": [
+          "CHEER",
+          "CHEERED",
+          "HEARTEN",
+          "NUDGE",
+          "URGE",
+          "URGED"
+        ],
+        "preferredFamilies": [
+          "cheer",
+          "urge"
+        ],
+        "familiarFamilies": [
+          "cheer",
+          "nudge",
+          "urge"
+        ]
+      },
+      {
+        "first": "GOADS",
+        "next": [
+          "CHEER",
+          "CHEERED",
+          "HEARTEN",
+          "NUDGE",
+          "URGE",
+          "URGED"
+        ],
+        "preferredFamilies": [
+          "cheer",
+          "urge"
+        ],
+        "familiarFamilies": [
+          "cheer",
+          "nudge",
+          "urge"
+        ]
+      },
+      {
+        "first": "HEARTEN",
+        "next": [
+          "CHEER",
+          "CHEERED",
+          "NUDGE",
+          "URGE",
+          "URGED"
+        ],
+        "preferredFamilies": [
+          "cheer",
+          "urge"
+        ],
+        "familiarFamilies": [
+          "cheer",
+          "nudge",
+          "urge"
+        ]
+      },
+      {
+        "first": "HEARTENS",
+        "next": [
+          "CHEER",
+          "CHEERED",
+          "HEARTEN",
+          "NUDGE",
+          "URGE",
+          "URGED"
+        ],
+        "preferredFamilies": [
+          "cheer",
+          "urge"
+        ],
+        "familiarFamilies": [
+          "cheer",
+          "nudge",
+          "urge"
+        ]
+      },
+      {
+        "first": "NUDGE",
+        "next": [
+          "CHEER",
+          "CHEERED",
+          "HEARTEN",
+          "URGE",
+          "URGED"
+        ],
+        "preferredFamilies": [
+          "cheer",
+          "urge"
+        ],
+        "familiarFamilies": [
+          "cheer",
+          "urge"
+        ]
+      },
+      {
+        "first": "NUDGES",
+        "next": [
+          "CHEER",
+          "CHEERED",
+          "HEARTEN",
+          "NUDGE",
+          "URGE",
+          "URGED"
+        ],
+        "preferredFamilies": [
+          "cheer",
+          "urge"
+        ],
+        "familiarFamilies": [
+          "cheer",
+          "urge"
+        ]
+      },
+      {
+        "first": "PERSUADE",
+        "next": [
+          "CHEER",
+          "CHEERED",
+          "HEARTEN",
+          "NUDGE",
+          "URGE",
+          "URGED"
+        ],
+        "preferredFamilies": [
+          "cheer",
+          "urge"
+        ],
+        "familiarFamilies": [
+          "cheer",
+          "nudge",
+          "urge"
+        ]
+      },
+      {
+        "first": "PROD",
+        "next": [
+          "CHEER",
+          "CHEERED",
+          "HEARTEN",
+          "NUDGE",
+          "URGE",
+          "URGED"
+        ],
+        "preferredFamilies": [
+          "cheer",
+          "urge"
+        ],
+        "familiarFamilies": [
+          "cheer",
+          "nudge",
+          "urge"
+        ]
+      },
+      {
+        "first": "PRODS",
+        "next": [
+          "CHEER",
+          "CHEERED",
+          "HEARTEN",
+          "NUDGE",
+          "URGE",
+          "URGED"
+        ],
+        "preferredFamilies": [
+          "cheer",
+          "urge"
+        ],
+        "familiarFamilies": [
+          "cheer",
+          "nudge",
+          "urge"
+        ]
+      },
+      {
+        "first": "PUSH",
+        "next": [
+          "CHEER",
+          "CHEERED",
+          "HEARTEN",
+          "NUDGE",
+          "URGE",
+          "URGED"
+        ],
+        "preferredFamilies": [
+          "cheer",
+          "urge"
+        ],
+        "familiarFamilies": [
+          "cheer",
+          "nudge",
+          "urge"
+        ]
+      },
+      {
+        "first": "PUSHED",
+        "next": [
+          "CHEER",
+          "CHEERED",
+          "HEARTEN",
+          "NUDGE",
+          "URGE",
+          "URGED"
+        ],
+        "preferredFamilies": [
+          "cheer",
+          "urge"
+        ],
+        "familiarFamilies": [
+          "cheer",
+          "nudge",
+          "urge"
+        ]
+      },
+      {
+        "first": "SPUR",
+        "next": [
+          "CHEER",
+          "CHEERED",
+          "HEARTEN",
+          "NUDGE",
+          "URGE",
+          "URGED"
+        ],
+        "preferredFamilies": [
+          "cheer",
+          "urge"
+        ],
+        "familiarFamilies": [
+          "cheer",
+          "nudge",
+          "urge"
+        ]
+      },
+      {
+        "first": "URGE",
+        "next": [
+          "CHEER",
+          "CHEERED",
+          "HEARTEN",
+          "NUDGE",
+          "URGED"
+        ],
+        "preferredFamilies": [
+          "cheer"
+        ],
+        "familiarFamilies": [
+          "cheer",
+          "nudge"
+        ]
+      },
+      {
+        "first": "URGED",
+        "next": [
+          "CHEER",
+          "CHEERED",
+          "HEARTEN",
+          "NUDGE",
+          "URGE"
+        ],
+        "preferredFamilies": [
+          "cheer"
+        ],
+        "familiarFamilies": [
+          "cheer",
+          "nudge"
+        ]
+      },
+      {
+        "first": "URGES",
+        "next": [
+          "CHEER",
+          "CHEERED",
+          "HEARTEN",
+          "NUDGE",
+          "URGE",
+          "URGED"
+        ],
+        "preferredFamilies": [
+          "cheer"
+        ],
+        "familiarFamilies": [
+          "cheer",
+          "nudge"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 35,
+    "pathsChecked": 120,
+    "removalOrder": [
+      1,
+      9,
+      10,
+      12,
+      2,
+      3,
+      11
+    ]
+  }
+}

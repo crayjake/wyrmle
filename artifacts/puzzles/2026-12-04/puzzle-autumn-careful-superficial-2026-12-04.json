@@ -1,0 +1,127 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-autumn-careful-superficial-2026-12-04-ac9988762351.json",
+  "answer": "SUPERFICIAL",
+  "rules": "bingo-hunt",
+  "review": "CAREFUL uses attention and care in work. SUPERFICIAL is specifically hasty and not thorough, not skin-deep anatomy. RASH and LAX describe lack of due care; cursory and slipshod have the same reviewed carelessness dimension. Rash as a skin condition is not a counter.",
+  "identity": {
+    "id": "puzzle-autumn-careful-superficial-2026-12-04",
+    "enemy": "CAREFUL",
+    "board": "ACEFHIILNOPRSTUX",
+    "bingos": [
+      "SUPERFICIAL"
+    ],
+    "bingoFamilies": [
+      "SUPERFICIAL"
+    ]
+  },
+  "witnesses": [
+    [
+      "SUPERFICIAL"
+    ],
+    [
+      "RASH",
+      "SUPERFICIAL"
+    ],
+    [
+      "RASH",
+      "LAX",
+      "SUPERFICIAL"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "SUPERFICIAL",
+      "effort": 5.4799999999999995
+    }
+  ],
+  "helperEffort": 1.92,
+  "removalProof": {
+    "preferredHelpers": [
+      "RASH",
+      "LAX"
+    ],
+    "branches": [
+      {
+        "first": "HASTIER",
+        "next": [
+          "LAX",
+          "LAXER",
+          "RASH"
+        ],
+        "preferredFamilies": [
+          "lax",
+          "rash"
+        ],
+        "familiarFamilies": [
+          "lax",
+          "rash"
+        ]
+      },
+      {
+        "first": "LAX",
+        "next": [
+          "LAXER",
+          "RASH"
+        ],
+        "preferredFamilies": [
+          "rash"
+        ],
+        "familiarFamilies": [
+          "rash"
+        ]
+      },
+      {
+        "first": "LAXER",
+        "next": [
+          "LAX",
+          "RASH"
+        ],
+        "preferredFamilies": [
+          "rash"
+        ],
+        "familiarFamilies": [
+          "rash"
+        ]
+      },
+      {
+        "first": "LAXEST",
+        "next": [
+          "LAX",
+          "LAXER",
+          "RASH"
+        ],
+        "preferredFamilies": [
+          "rash"
+        ],
+        "familiarFamilies": [
+          "rash"
+        ]
+      },
+      {
+        "first": "RASH",
+        "next": [
+          "LAX",
+          "LAXER"
+        ],
+        "preferredFamilies": [
+          "lax"
+        ],
+        "familiarFamilies": [
+          "lax"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 10,
+    "pathsChecked": 12,
+    "removalOrder": [
+      7,
+      10,
+      14,
+      8,
+      9
+    ]
+  }
+}

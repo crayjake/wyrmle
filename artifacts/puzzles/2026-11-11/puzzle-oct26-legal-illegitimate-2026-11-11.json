@@ -1,0 +1,81 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-legal-illegitimate-2026-11-11-3962c4d4ad19.json",
+  "answer": "ILLEGITIMATE",
+  "rules": "bingo-hunt",
+  "review": "LEGAL is permitted by law. ILLEGITIMATE uses forbidden by law, not a judgement about a child or parentage. ILLEGAL and ILLICIT are the same lawful/unlawful adjective contrast. Double E makes ILLEGAL a useful helper rather than a trivial bingo.",
+  "identity": {
+    "id": "puzzle-oct26-legal-illegitimate-2026-11-11",
+    "enemy": "LEGAL",
+    "board": "AACEEGIIILLLMSTT",
+    "bingos": [
+      "ILLEGITIMATE"
+    ],
+    "bingoFamilies": [
+      "ILLEGITIMATE"
+    ]
+  },
+  "witnesses": [
+    [
+      "ILLEGITIMATE"
+    ],
+    [
+      "ILLEGAL",
+      "ILLEGITIMATE"
+    ],
+    [
+      "ILLEGAL",
+      "ILLICIT",
+      "ILLEGITIMATE"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "ILLEGITIMATE",
+      "effort": 6.34
+    }
+  ],
+  "helperEffort": 3.34,
+  "removalProof": {
+    "preferredHelpers": [
+      "ILLEGAL",
+      "ILLICIT"
+    ],
+    "branches": [
+      {
+        "first": "ILLEGAL",
+        "next": [
+          "ILLICIT"
+        ],
+        "preferredFamilies": [
+          "illicit"
+        ],
+        "familiarFamilies": [
+          "illicit"
+        ]
+      },
+      {
+        "first": "ILLICIT",
+        "next": [
+          "ILLEGAL"
+        ],
+        "preferredFamilies": [
+          "illegal"
+        ],
+        "familiarFamilies": [
+          "illegal"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 6,
+    "pathsChecked": 2,
+    "removalOrder": [
+      10,
+      15,
+      2,
+      7
+    ]
+  }
+}

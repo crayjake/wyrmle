@@ -1,0 +1,227 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-vernal-venerable-2026-11-07-684f90a2a651.json",
+  "answer": "VENERABLE",
+  "rules": "bingo-hunt",
+  "review": "The youthful sense of VERNAL, not simply occurring in spring. VENERABLE means impressive through advanced age; OLD, AGED and ELDERLY oppose youth as adjectives. Revered without any implication of age is not sufficient. HOAR/HOARY use showing age, OVERAGE/OVERAGED mean too old, and SENILE explicitly denotes infirmity with old age.",
+  "identity": {
+    "id": "puzzle-vernal-venerable-2026-11-07",
+    "enemy": "VERNAL",
+    "board": "ABDEEEGHILNORSTV",
+    "bingos": [
+      "VENERABLE"
+    ],
+    "bingoFamilies": [
+      "VENERABLE"
+    ]
+  },
+  "witnesses": [
+    [
+      "VENERABLE"
+    ],
+    [
+      "OLD",
+      "VENERABLE"
+    ],
+    [
+      "OLD",
+      "AGED",
+      "VENERABLE"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "VENERABLE",
+      "effort": 4.859999999999999
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "OLD",
+      "AGED"
+    ],
+    "branches": [
+      {
+        "first": "AGED",
+        "next": [
+          "OLD",
+          "OLDER",
+          "OVERAGE",
+          "OVERAGED"
+        ],
+        "preferredFamilies": [
+          "old"
+        ],
+        "familiarFamilies": [
+          "old"
+        ]
+      },
+      {
+        "first": "HOAR",
+        "next": [
+          "AGED",
+          "OLD",
+          "OLDER",
+          "OVERAGE",
+          "OVERAGED"
+        ],
+        "preferredFamilies": [
+          "aged",
+          "old"
+        ],
+        "familiarFamilies": [
+          "aged",
+          "old"
+        ]
+      },
+      {
+        "first": "HOARIEST",
+        "next": [
+          "AGED",
+          "OLD",
+          "OLDER",
+          "OVERAGE",
+          "OVERAGED"
+        ],
+        "preferredFamilies": [
+          "aged",
+          "old"
+        ],
+        "familiarFamilies": [
+          "aged",
+          "old"
+        ]
+      },
+      {
+        "first": "OLD",
+        "next": [
+          "AGED",
+          "OLDER",
+          "OVERAGE",
+          "OVERAGED"
+        ],
+        "preferredFamilies": [
+          "aged"
+        ],
+        "familiarFamilies": [
+          "aged"
+        ]
+      },
+      {
+        "first": "OLDER",
+        "next": [
+          "AGED",
+          "OLD",
+          "OVERAGE",
+          "OVERAGED"
+        ],
+        "preferredFamilies": [
+          "aged"
+        ],
+        "familiarFamilies": [
+          "aged"
+        ]
+      },
+      {
+        "first": "OLDEST",
+        "next": [
+          "AGED",
+          "OLD",
+          "OLDER",
+          "OVERAGE",
+          "OVERAGED"
+        ],
+        "preferredFamilies": [
+          "aged"
+        ],
+        "familiarFamilies": [
+          "aged"
+        ]
+      },
+      {
+        "first": "OVERAGE",
+        "next": [
+          "AGED",
+          "OLD",
+          "OLDER",
+          "OVERAGED"
+        ],
+        "preferredFamilies": [
+          "aged",
+          "old"
+        ],
+        "familiarFamilies": [
+          "aged",
+          "old"
+        ]
+      },
+      {
+        "first": "OVERAGED",
+        "next": [
+          "AGED",
+          "OLD",
+          "OLDER",
+          "OVERAGE"
+        ],
+        "preferredFamilies": [
+          "aged",
+          "old"
+        ],
+        "familiarFamilies": [
+          "aged",
+          "old"
+        ]
+      },
+      {
+        "first": "SENILE",
+        "next": [
+          "AGED",
+          "OLD",
+          "OLDER",
+          "OVERAGE",
+          "OVERAGED"
+        ],
+        "preferredFamilies": [
+          "aged",
+          "old"
+        ],
+        "familiarFamilies": [
+          "aged",
+          "old"
+        ]
+      },
+      {
+        "first": "SENIOR",
+        "next": [
+          "AGED",
+          "OLD",
+          "OLDER",
+          "OVERAGE",
+          "OVERAGED"
+        ],
+        "preferredFamilies": [
+          "aged",
+          "old"
+        ],
+        "familiarFamilies": [
+          "aged",
+          "old"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 35,
+    "pathsChecked": 45,
+    "removalOrder": [
+      6,
+      7,
+      9,
+      11,
+      1,
+      4,
+      8
+    ]
+  }
+}

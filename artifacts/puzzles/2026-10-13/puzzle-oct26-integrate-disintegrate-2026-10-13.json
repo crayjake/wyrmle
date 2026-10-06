@@ -1,0 +1,746 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-integrate-disintegrate-2026-10-13-72a3fac67b63.json",
+  "answer": "DISINTEGRATE",
+  "rules": "bingo-hunt",
+  "review": "INTEGRATE is the verb for combining parts into a whole. DISINTEGRATE breaks that whole into parts; PART and SPLIT separate it. Neither social inclusion nor mathematical integration is the displayed meaning. Counter roots are verbs, not divided-state adjectives. TEAR, REND and RIP are verbs for separating a whole by force. RIPED, RIPING and TEARED are blocked: suffix inference must not manufacture tearing-apart verb inflections. SNAP uses separate abruptly, not taking a photograph.",
+  "identity": {
+    "id": "puzzle-oct26-integrate-disintegrate-2026-10-13",
+    "enemy": "INTEGRATE",
+    "board": "AADEEGIILNPRSSTT",
+    "bingos": [
+      "DISINTEGRATE",
+      "DISINTEGRATES"
+    ],
+    "bingoFamilies": [
+      "DISINTEGRATE"
+    ]
+  },
+  "witnesses": [
+    [
+      "DISINTEGRATE"
+    ],
+    [
+      "PART",
+      "DISINTEGRATE"
+    ],
+    [
+      "PART",
+      "SPLIT",
+      "DISINTEGRATE"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "DISINTEGRATE",
+      "effort": 7.44
+    },
+    {
+      "word": "DISINTEGRATES",
+      "effort": 8.98
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "PART",
+      "SPLIT"
+    ],
+    "branches": [
+      {
+        "first": "PART",
+        "next": [
+          "PARTED",
+          "PARTING",
+          "PARTS",
+          "REND",
+          "RENDS",
+          "RENT",
+          "RIP",
+          "RIPS",
+          "SNAP",
+          "SPLIT",
+          "SPLITTED",
+          "SPLITTING",
+          "TEAR",
+          "TEARING",
+          "TEARS"
+        ],
+        "preferredFamilies": [
+          "split"
+        ],
+        "familiarFamilies": [
+          "rend",
+          "rip",
+          "snap",
+          "split",
+          "tear"
+        ]
+      },
+      {
+        "first": "PARTED",
+        "next": [
+          "PART",
+          "PARTING",
+          "PARTS",
+          "REND",
+          "RENDS",
+          "RENT",
+          "RIP",
+          "RIPS",
+          "SNAP",
+          "SPLIT",
+          "SPLITTED",
+          "SPLITTING",
+          "TEAR",
+          "TEARING",
+          "TEARS"
+        ],
+        "preferredFamilies": [
+          "split"
+        ],
+        "familiarFamilies": [
+          "rend",
+          "rip",
+          "snap",
+          "split",
+          "tear"
+        ]
+      },
+      {
+        "first": "PARTING",
+        "next": [
+          "PART",
+          "PARTED",
+          "PARTS",
+          "REND",
+          "RENDS",
+          "RENT",
+          "RIP",
+          "RIPS",
+          "SNAP",
+          "SPLIT",
+          "SPLITTED",
+          "SPLITTING",
+          "TEAR",
+          "TEARING",
+          "TEARS"
+        ],
+        "preferredFamilies": [
+          "split"
+        ],
+        "familiarFamilies": [
+          "rend",
+          "rip",
+          "snap",
+          "split",
+          "tear"
+        ]
+      },
+      {
+        "first": "PARTS",
+        "next": [
+          "PART",
+          "PARTED",
+          "PARTING",
+          "REND",
+          "RENDS",
+          "RENT",
+          "RIP",
+          "RIPS",
+          "SNAP",
+          "SPLIT",
+          "SPLITTED",
+          "SPLITTING",
+          "TEAR",
+          "TEARING",
+          "TEARS"
+        ],
+        "preferredFamilies": [
+          "split"
+        ],
+        "familiarFamilies": [
+          "rend",
+          "rip",
+          "snap",
+          "split",
+          "tear"
+        ]
+      },
+      {
+        "first": "REND",
+        "next": [
+          "PART",
+          "PARTED",
+          "PARTING",
+          "PARTS",
+          "RENDS",
+          "RENT",
+          "RIP",
+          "RIPS",
+          "SNAP",
+          "SPLIT",
+          "SPLITTED",
+          "SPLITTING",
+          "TEAR",
+          "TEARING",
+          "TEARS"
+        ],
+        "preferredFamilies": [
+          "part",
+          "split"
+        ],
+        "familiarFamilies": [
+          "part",
+          "rip",
+          "snap",
+          "split",
+          "tear"
+        ]
+      },
+      {
+        "first": "RENDS",
+        "next": [
+          "PART",
+          "PARTED",
+          "PARTING",
+          "PARTS",
+          "REND",
+          "RENT",
+          "RIP",
+          "RIPS",
+          "SNAP",
+          "SPLIT",
+          "SPLITTED",
+          "SPLITTING",
+          "TEAR",
+          "TEARING",
+          "TEARS"
+        ],
+        "preferredFamilies": [
+          "part",
+          "split"
+        ],
+        "familiarFamilies": [
+          "part",
+          "rip",
+          "snap",
+          "split",
+          "tear"
+        ]
+      },
+      {
+        "first": "RENT",
+        "next": [
+          "PART",
+          "PARTED",
+          "PARTING",
+          "PARTS",
+          "REND",
+          "RENDS",
+          "RIP",
+          "RIPS",
+          "SNAP",
+          "SPLIT",
+          "SPLITTED",
+          "SPLITTING",
+          "TEAR",
+          "TEARING",
+          "TEARS"
+        ],
+        "preferredFamilies": [
+          "part",
+          "split"
+        ],
+        "familiarFamilies": [
+          "part",
+          "rip",
+          "snap",
+          "split",
+          "tear"
+        ]
+      },
+      {
+        "first": "RIP",
+        "next": [
+          "PART",
+          "PARTED",
+          "PARTING",
+          "PARTS",
+          "REND",
+          "RENDS",
+          "RENT",
+          "RIPS",
+          "SNAP",
+          "SPLIT",
+          "SPLITTED",
+          "SPLITTING",
+          "TEAR",
+          "TEARING",
+          "TEARS"
+        ],
+        "preferredFamilies": [
+          "part",
+          "split"
+        ],
+        "familiarFamilies": [
+          "part",
+          "rend",
+          "snap",
+          "split",
+          "tear"
+        ]
+      },
+      {
+        "first": "RIPS",
+        "next": [
+          "PART",
+          "PARTED",
+          "PARTING",
+          "PARTS",
+          "REND",
+          "RENDS",
+          "RENT",
+          "RIP",
+          "SNAP",
+          "SPLIT",
+          "SPLITTED",
+          "SPLITTING",
+          "TEAR",
+          "TEARING",
+          "TEARS"
+        ],
+        "preferredFamilies": [
+          "part",
+          "split"
+        ],
+        "familiarFamilies": [
+          "part",
+          "rend",
+          "snap",
+          "split",
+          "tear"
+        ]
+      },
+      {
+        "first": "SEPARATE",
+        "next": [
+          "PART",
+          "PARTED",
+          "PARTING",
+          "PARTS",
+          "REND",
+          "RENDS",
+          "RENT",
+          "RIP",
+          "RIPS",
+          "SNAP",
+          "SPLIT",
+          "SPLITTED",
+          "SPLITTING",
+          "TEAR",
+          "TEARING",
+          "TEARS"
+        ],
+        "preferredFamilies": [
+          "part",
+          "split"
+        ],
+        "familiarFamilies": [
+          "part",
+          "rend",
+          "rip",
+          "snap",
+          "split",
+          "tear"
+        ]
+      },
+      {
+        "first": "SEPARATED",
+        "next": [
+          "PART",
+          "PARTED",
+          "PARTING",
+          "PARTS",
+          "REND",
+          "RENDS",
+          "RENT",
+          "RIP",
+          "RIPS",
+          "SNAP",
+          "SPLIT",
+          "SPLITTED",
+          "SPLITTING",
+          "TEAR",
+          "TEARING",
+          "TEARS"
+        ],
+        "preferredFamilies": [
+          "part",
+          "split"
+        ],
+        "familiarFamilies": [
+          "part",
+          "rend",
+          "rip",
+          "snap",
+          "split",
+          "tear"
+        ]
+      },
+      {
+        "first": "SEPARATES",
+        "next": [
+          "PART",
+          "PARTED",
+          "PARTING",
+          "PARTS",
+          "REND",
+          "RENDS",
+          "RENT",
+          "RIP",
+          "RIPS",
+          "SNAP",
+          "SPLIT",
+          "SPLITTED",
+          "SPLITTING",
+          "TEAR",
+          "TEARING",
+          "TEARS"
+        ],
+        "preferredFamilies": [
+          "part",
+          "split"
+        ],
+        "familiarFamilies": [
+          "part",
+          "rend",
+          "rip",
+          "snap",
+          "split",
+          "tear"
+        ]
+      },
+      {
+        "first": "SEPARATING",
+        "next": [
+          "PART",
+          "PARTED",
+          "PARTING",
+          "PARTS",
+          "REND",
+          "RENDS",
+          "RENT",
+          "RIP",
+          "RIPS",
+          "SNAP",
+          "SPLIT",
+          "SPLITTED",
+          "SPLITTING",
+          "TEAR",
+          "TEARING",
+          "TEARS"
+        ],
+        "preferredFamilies": [
+          "part",
+          "split"
+        ],
+        "familiarFamilies": [
+          "part",
+          "rend",
+          "rip",
+          "snap",
+          "split",
+          "tear"
+        ]
+      },
+      {
+        "first": "SNAP",
+        "next": [
+          "PART",
+          "PARTED",
+          "PARTING",
+          "PARTS",
+          "REND",
+          "RENDS",
+          "RENT",
+          "RIP",
+          "RIPS",
+          "SPLIT",
+          "SPLITTED",
+          "SPLITTING",
+          "TEAR",
+          "TEARING",
+          "TEARS"
+        ],
+        "preferredFamilies": [
+          "part",
+          "split"
+        ],
+        "familiarFamilies": [
+          "part",
+          "rend",
+          "rip",
+          "split",
+          "tear"
+        ]
+      },
+      {
+        "first": "SNAPS",
+        "next": [
+          "PART",
+          "PARTED",
+          "PARTING",
+          "PARTS",
+          "REND",
+          "RENDS",
+          "RENT",
+          "RIP",
+          "RIPS",
+          "SNAP",
+          "SPLIT",
+          "SPLITTED",
+          "SPLITTING",
+          "TEAR",
+          "TEARING",
+          "TEARS"
+        ],
+        "preferredFamilies": [
+          "part",
+          "split"
+        ],
+        "familiarFamilies": [
+          "part",
+          "rend",
+          "rip",
+          "split",
+          "tear"
+        ]
+      },
+      {
+        "first": "SPLIT",
+        "next": [
+          "PART",
+          "PARTED",
+          "PARTING",
+          "PARTS",
+          "REND",
+          "RENDS",
+          "RENT",
+          "RIP",
+          "RIPS",
+          "SNAP",
+          "SPLITTED",
+          "SPLITTING",
+          "TEAR",
+          "TEARING",
+          "TEARS"
+        ],
+        "preferredFamilies": [
+          "part"
+        ],
+        "familiarFamilies": [
+          "part",
+          "rend",
+          "rip",
+          "snap",
+          "tear"
+        ]
+      },
+      {
+        "first": "SPLITS",
+        "next": [
+          "PART",
+          "PARTED",
+          "PARTING",
+          "PARTS",
+          "REND",
+          "RENDS",
+          "RENT",
+          "RIP",
+          "RIPS",
+          "SNAP",
+          "SPLIT",
+          "SPLITTED",
+          "SPLITTING",
+          "TEAR",
+          "TEARING",
+          "TEARS"
+        ],
+        "preferredFamilies": [
+          "part"
+        ],
+        "familiarFamilies": [
+          "part",
+          "rend",
+          "rip",
+          "snap",
+          "tear"
+        ]
+      },
+      {
+        "first": "SPLITTED",
+        "next": [
+          "PART",
+          "PARTED",
+          "PARTING",
+          "PARTS",
+          "REND",
+          "RENDS",
+          "RENT",
+          "RIP",
+          "RIPS",
+          "SNAP",
+          "SPLIT",
+          "SPLITTING",
+          "TEAR",
+          "TEARING",
+          "TEARS"
+        ],
+        "preferredFamilies": [
+          "part"
+        ],
+        "familiarFamilies": [
+          "part",
+          "rend",
+          "rip",
+          "snap",
+          "tear"
+        ]
+      },
+      {
+        "first": "SPLITTING",
+        "next": [
+          "PART",
+          "PARTED",
+          "PARTING",
+          "PARTS",
+          "REND",
+          "RENDS",
+          "RENT",
+          "RIP",
+          "RIPS",
+          "SNAP",
+          "SPLIT",
+          "SPLITTED",
+          "TEAR",
+          "TEARING",
+          "TEARS"
+        ],
+        "preferredFamilies": [
+          "part"
+        ],
+        "familiarFamilies": [
+          "part",
+          "rend",
+          "rip",
+          "snap",
+          "tear"
+        ]
+      },
+      {
+        "first": "TEAR",
+        "next": [
+          "PART",
+          "PARTED",
+          "PARTING",
+          "PARTS",
+          "REND",
+          "RENDS",
+          "RENT",
+          "RIP",
+          "RIPS",
+          "SNAP",
+          "SPLIT",
+          "SPLITTED",
+          "SPLITTING",
+          "TEARING",
+          "TEARS"
+        ],
+        "preferredFamilies": [
+          "part",
+          "split"
+        ],
+        "familiarFamilies": [
+          "part",
+          "rend",
+          "rip",
+          "snap",
+          "split"
+        ]
+      },
+      {
+        "first": "TEARING",
+        "next": [
+          "PART",
+          "PARTED",
+          "PARTING",
+          "PARTS",
+          "REND",
+          "RENDS",
+          "RENT",
+          "RIP",
+          "RIPS",
+          "SNAP",
+          "SPLIT",
+          "SPLITTED",
+          "SPLITTING",
+          "TEAR",
+          "TEARS"
+        ],
+        "preferredFamilies": [
+          "part",
+          "split"
+        ],
+        "familiarFamilies": [
+          "part",
+          "rend",
+          "rip",
+          "snap",
+          "split"
+        ]
+      },
+      {
+        "first": "TEARS",
+        "next": [
+          "PART",
+          "PARTED",
+          "PARTING",
+          "PARTS",
+          "REND",
+          "RENDS",
+          "RENT",
+          "RIP",
+          "RIPS",
+          "SNAP",
+          "SPLIT",
+          "SPLITTED",
+          "SPLITTING",
+          "TEAR",
+          "TEARING"
+        ],
+        "preferredFamilies": [
+          "part",
+          "split"
+        ],
+        "familiarFamilies": [
+          "part",
+          "rend",
+          "rip",
+          "snap",
+          "split"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 5,
+    "candidatesChecked": 6,
+    "pathsChecked": 336,
+    "removalOrder": [
+      2,
+      6,
+      1,
+      12
+    ]
+  }
+}

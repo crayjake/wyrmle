@@ -1,0 +1,101 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-mobile-immovable-2026-12-06-53fef7c40484.json",
+  "answer": "IMMOVABLE",
+  "rules": "bingo-hunt",
+  "review": "MOBILE means able to move. IMMOVABLE means not able or intended to be moved. SET is fixed and unmoving, and STILL is not in physical motion. Still as an adverb and set as a verb or collection are not admitted. STABILE also means unable or not intended to be moved.",
+  "identity": {
+    "id": "puzzle-oct26-mobile-immovable-2026-12-06",
+    "enemy": "MOBILE",
+    "board": "AABEILLLMMOOSSTV",
+    "bingos": [
+      "IMMOVABLE"
+    ],
+    "bingoFamilies": [
+      "IMMOVABLE"
+    ]
+  },
+  "witnesses": [
+    [
+      "IMMOVABLE"
+    ],
+    [
+      "SET",
+      "IMMOVABLE"
+    ],
+    [
+      "SET",
+      "STILL",
+      "IMMOVABLE"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "IMMOVABLE",
+      "effort": 5.84
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "SET",
+      "STILL"
+    ],
+    "branches": [
+      {
+        "first": "SET",
+        "next": [
+          "STABILE",
+          "STILL"
+        ],
+        "preferredFamilies": [
+          "still"
+        ],
+        "familiarFamilies": [
+          "still"
+        ]
+      },
+      {
+        "first": "STABILE",
+        "next": [
+          "SET",
+          "STILL"
+        ],
+        "preferredFamilies": [
+          "set",
+          "still"
+        ],
+        "familiarFamilies": [
+          "set",
+          "still"
+        ]
+      },
+      {
+        "first": "STILL",
+        "next": [
+          "SET",
+          "STABILE"
+        ],
+        "preferredFamilies": [
+          "set"
+        ],
+        "familiarFamilies": [
+          "set"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 35,
+    "pathsChecked": 6,
+    "removalOrder": [
+      4,
+      7,
+      9,
+      12,
+      6,
+      13,
+      14
+    ]
+  }
+}

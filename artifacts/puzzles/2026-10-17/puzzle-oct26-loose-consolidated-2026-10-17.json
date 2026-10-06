@@ -1,0 +1,161 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-loose-consolidated-2026-10-17-fe491ccd9a0f.json",
+  "answer": "CONSOLIDATED",
+  "rules": "bingo-hunt",
+  "review": "LOOSE is the structure of material whose parts are not closely packed. CONSOLIDATED forms a solid mass; SOLID, DENSE and COMPACT use the same packing dimension. Loose morals, legal consolidation and intelligent/dense wordplay are excluded. CLOSE uses having elements near each other, not a nearby deadline.",
+  "identity": {
+    "id": "puzzle-oct26-loose-consolidated-2026-10-17",
+    "enemy": "LOOSE",
+    "board": "AACDDEEILLNOOSST",
+    "bingos": [
+      "CONSOLIDATED"
+    ],
+    "bingoFamilies": [
+      "CONSOLIDATED"
+    ]
+  },
+  "witnesses": [
+    [
+      "CONSOLIDATED"
+    ],
+    [
+      "SOLID",
+      "CONSOLIDATED"
+    ],
+    [
+      "SOLID",
+      "DENSE",
+      "CONSOLIDATED"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "CONSOLIDATED",
+      "effort": 5.5600000000000005
+    }
+  ],
+  "helperEffort": 1.04,
+  "removalProof": {
+    "preferredHelpers": [
+      "SOLID",
+      "DENSE"
+    ],
+    "branches": [
+      {
+        "first": "CLOSE",
+        "next": [
+          "CLOSEST",
+          "DENSE",
+          "DENSEST",
+          "SOLID",
+          "SOLIDEST"
+        ],
+        "preferredFamilies": [
+          "dense",
+          "solid"
+        ],
+        "familiarFamilies": [
+          "dense",
+          "solid"
+        ]
+      },
+      {
+        "first": "CLOSEST",
+        "next": [
+          "CLOSE",
+          "DENSE",
+          "DENSEST",
+          "SOLID",
+          "SOLIDEST"
+        ],
+        "preferredFamilies": [
+          "dense",
+          "solid"
+        ],
+        "familiarFamilies": [
+          "dense",
+          "solid"
+        ]
+      },
+      {
+        "first": "DENSE",
+        "next": [
+          "CLOSE",
+          "CLOSEST",
+          "DENSEST",
+          "SOLID",
+          "SOLIDEST"
+        ],
+        "preferredFamilies": [
+          "solid"
+        ],
+        "familiarFamilies": [
+          "close",
+          "solid"
+        ]
+      },
+      {
+        "first": "DENSEST",
+        "next": [
+          "CLOSE",
+          "CLOSEST",
+          "DENSE",
+          "SOLID",
+          "SOLIDEST"
+        ],
+        "preferredFamilies": [
+          "solid"
+        ],
+        "familiarFamilies": [
+          "close",
+          "solid"
+        ]
+      },
+      {
+        "first": "SOLID",
+        "next": [
+          "CLOSE",
+          "CLOSEST",
+          "DENSE",
+          "DENSEST",
+          "SOLIDEST"
+        ],
+        "preferredFamilies": [
+          "dense"
+        ],
+        "familiarFamilies": [
+          "close",
+          "dense"
+        ]
+      },
+      {
+        "first": "SOLIDEST",
+        "next": [
+          "CLOSE",
+          "CLOSEST",
+          "DENSE",
+          "DENSEST",
+          "SOLID"
+        ],
+        "preferredFamilies": [
+          "dense"
+        ],
+        "familiarFamilies": [
+          "close",
+          "dense"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 6,
+    "pathsChecked": 30,
+    "removalOrder": [
+      3,
+      9,
+      12,
+      15
+    ]
+  }
+}

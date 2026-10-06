@@ -1,0 +1,417 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-inert-energetic-2026-10-11-ccbe1cf6951b.json",
+  "answer": "ENERGETIC",
+  "rules": "bingo-hunt",
+  "review": "INERT means slow and apathetic, not chemically unreactive. ENERGETIC, ACTIVE, LIVE and LIVELY describe energy and liveliness; LIVE is the adjective, not the verb meaning reside. Only these energy senses are admitted. LIVER and LIVEST are explicitly excluded: neither inherits a live-energy adjective by suffix stripping. ALIVE and VITAL use full of spirit, not merely biologically alive or essential; EAGER opposes the apathetic reading. AGILE and ASTIR use active movement; ALERT and the less familiar CANTY use quick and lively energy.",
+  "identity": {
+    "id": "puzzle-oct26-inert-energetic-2026-10-11",
+    "enemy": "INERT",
+    "board": "AACEEEGILLNRSTVY",
+    "bingos": [
+      "ENERGETIC"
+    ],
+    "bingoFamilies": [
+      "ENERGETIC"
+    ]
+  },
+  "witnesses": [
+    [
+      "ENERGETIC"
+    ],
+    [
+      "ACTIVE",
+      "ENERGETIC"
+    ],
+    [
+      "ACTIVE",
+      "LIVE",
+      "ENERGETIC"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "ENERGETIC",
+      "effort": 3.98
+    }
+  ],
+  "helperEffort": 0.6,
+  "removalProof": {
+    "preferredHelpers": [
+      "ACTIVE",
+      "LIVE"
+    ],
+    "branches": [
+      {
+        "first": "ACTIVE",
+        "next": [
+          "AGILE",
+          "AGILER",
+          "ALERT",
+          "ALIVE",
+          "CANTIER",
+          "EAGER",
+          "LIVE",
+          "VITAL"
+        ],
+        "preferredFamilies": [
+          "live"
+        ],
+        "familiarFamilies": [
+          "agile",
+          "alert",
+          "alive",
+          "eager",
+          "live",
+          "vital"
+        ]
+      },
+      {
+        "first": "AGILE",
+        "next": [
+          "ACTIVE",
+          "AGILER",
+          "ALERT",
+          "ALIVE",
+          "CANTIER",
+          "EAGER",
+          "LIVE",
+          "VITAL"
+        ],
+        "preferredFamilies": [
+          "active",
+          "live"
+        ],
+        "familiarFamilies": [
+          "active",
+          "alert",
+          "alive",
+          "eager",
+          "live",
+          "vital"
+        ]
+      },
+      {
+        "first": "AGILER",
+        "next": [
+          "ACTIVE",
+          "AGILE",
+          "ALERT",
+          "ALIVE",
+          "CANTIER",
+          "EAGER",
+          "LIVE",
+          "VITAL"
+        ],
+        "preferredFamilies": [
+          "active",
+          "live"
+        ],
+        "familiarFamilies": [
+          "active",
+          "alert",
+          "alive",
+          "eager",
+          "live",
+          "vital"
+        ]
+      },
+      {
+        "first": "AGILEST",
+        "next": [
+          "ACTIVE",
+          "AGILE",
+          "AGILER",
+          "ALERT",
+          "ALIVE",
+          "CANTIER",
+          "EAGER",
+          "LIVE",
+          "VITAL"
+        ],
+        "preferredFamilies": [
+          "active",
+          "live"
+        ],
+        "familiarFamilies": [
+          "active",
+          "alert",
+          "alive",
+          "eager",
+          "live",
+          "vital"
+        ]
+      },
+      {
+        "first": "ALERT",
+        "next": [
+          "ACTIVE",
+          "AGILE",
+          "AGILER",
+          "ALIVE",
+          "CANTIER",
+          "EAGER",
+          "LIVE",
+          "VITAL"
+        ],
+        "preferredFamilies": [
+          "active",
+          "live"
+        ],
+        "familiarFamilies": [
+          "active",
+          "agile",
+          "alive",
+          "eager",
+          "live",
+          "vital"
+        ]
+      },
+      {
+        "first": "ALIVE",
+        "next": [
+          "ACTIVE",
+          "AGILE",
+          "AGILER",
+          "ALERT",
+          "CANTIER",
+          "EAGER",
+          "LIVE",
+          "VITAL"
+        ],
+        "preferredFamilies": [
+          "active",
+          "live"
+        ],
+        "familiarFamilies": [
+          "active",
+          "agile",
+          "alert",
+          "eager",
+          "live",
+          "vital"
+        ]
+      },
+      {
+        "first": "ASTIR",
+        "next": [
+          "ACTIVE",
+          "AGILE",
+          "AGILER",
+          "ALERT",
+          "ALIVE",
+          "CANTIER",
+          "EAGER",
+          "LIVE",
+          "VITAL"
+        ],
+        "preferredFamilies": [
+          "active",
+          "live"
+        ],
+        "familiarFamilies": [
+          "active",
+          "agile",
+          "alert",
+          "alive",
+          "eager",
+          "live",
+          "vital"
+        ]
+      },
+      {
+        "first": "CANTIER",
+        "next": [
+          "ACTIVE",
+          "AGILE",
+          "AGILER",
+          "ALERT",
+          "ALIVE",
+          "EAGER",
+          "LIVE",
+          "VITAL"
+        ],
+        "preferredFamilies": [
+          "active",
+          "live"
+        ],
+        "familiarFamilies": [
+          "active",
+          "agile",
+          "alert",
+          "alive",
+          "eager",
+          "live",
+          "vital"
+        ]
+      },
+      {
+        "first": "CANTY",
+        "next": [
+          "ACTIVE",
+          "AGILE",
+          "AGILER",
+          "ALERT",
+          "ALIVE",
+          "CANTIER",
+          "EAGER",
+          "LIVE",
+          "VITAL"
+        ],
+        "preferredFamilies": [
+          "active",
+          "live"
+        ],
+        "familiarFamilies": [
+          "active",
+          "agile",
+          "alert",
+          "alive",
+          "eager",
+          "live",
+          "vital"
+        ]
+      },
+      {
+        "first": "EAGER",
+        "next": [
+          "ACTIVE",
+          "AGILE",
+          "AGILER",
+          "ALERT",
+          "ALIVE",
+          "CANTIER",
+          "LIVE",
+          "VITAL"
+        ],
+        "preferredFamilies": [
+          "active",
+          "live"
+        ],
+        "familiarFamilies": [
+          "active",
+          "agile",
+          "alert",
+          "alive",
+          "live",
+          "vital"
+        ]
+      },
+      {
+        "first": "EAGEREST",
+        "next": [
+          "ACTIVE",
+          "AGILE",
+          "AGILER",
+          "ALERT",
+          "ALIVE",
+          "CANTIER",
+          "EAGER",
+          "LIVE",
+          "VITAL"
+        ],
+        "preferredFamilies": [
+          "active",
+          "live"
+        ],
+        "familiarFamilies": [
+          "active",
+          "agile",
+          "alert",
+          "alive",
+          "live",
+          "vital"
+        ]
+      },
+      {
+        "first": "LIVE",
+        "next": [
+          "ACTIVE",
+          "AGILE",
+          "AGILER",
+          "ALERT",
+          "ALIVE",
+          "CANTIER",
+          "EAGER",
+          "VITAL"
+        ],
+        "preferredFamilies": [
+          "active"
+        ],
+        "familiarFamilies": [
+          "active",
+          "agile",
+          "alert",
+          "alive",
+          "eager",
+          "vital"
+        ]
+      },
+      {
+        "first": "LIVELY",
+        "next": [
+          "ACTIVE",
+          "AGILE",
+          "AGILER",
+          "ALERT",
+          "ALIVE",
+          "CANTIER",
+          "EAGER",
+          "LIVE",
+          "VITAL"
+        ],
+        "preferredFamilies": [
+          "active",
+          "live"
+        ],
+        "familiarFamilies": [
+          "active",
+          "agile",
+          "alert",
+          "alive",
+          "eager",
+          "live",
+          "vital"
+        ]
+      },
+      {
+        "first": "VITAL",
+        "next": [
+          "ACTIVE",
+          "AGILE",
+          "AGILER",
+          "ALERT",
+          "ALIVE",
+          "CANTIER",
+          "EAGER",
+          "LIVE"
+        ],
+        "preferredFamilies": [
+          "active",
+          "live"
+        ],
+        "familiarFamilies": [
+          "active",
+          "agile",
+          "alert",
+          "alive",
+          "eager",
+          "live"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 6,
+    "candidatesChecked": 35,
+    "pathsChecked": 117,
+    "removalOrder": [
+      3,
+      8,
+      11,
+      12,
+      2,
+      4,
+      14
+    ]
+  }
+}

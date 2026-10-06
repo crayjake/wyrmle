@@ -1,0 +1,129 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-torn-incorporated-2026-10-18-f36a56acc990.json",
+  "answer": "INCORPORATED",
+  "rules": "bingo-hunt",
+  "review": "Unity versus division. INCORPORATED is formed into one whole, not specifically registered as a business. ONE is the adjective for an indivisible unit; UNITED and TIED are joined together. No physical wound or fabric-tear reading is used. COUPLED uses joined together rather than divided.",
+  "identity": {
+    "id": "puzzle-torn-incorporated-2026-10-18",
+    "enemy": "TORN",
+    "board": "ABCDEILNOOPRRSTU",
+    "bingos": [
+      "INCORPORATE",
+      "INCORPORATED"
+    ],
+    "bingoFamilies": [
+      "INCORPORATE",
+      "INCORPORATED"
+    ]
+  },
+  "witnesses": [
+    [
+      "INCORPORATED"
+    ],
+    [
+      "ONE",
+      "INCORPORATED"
+    ],
+    [
+      "ONE",
+      "UNITED",
+      "INCORPORATED"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "INCORPORATE",
+      "effort": 4.8999999999999995
+    },
+    {
+      "word": "INCORPORATED",
+      "effort": 4.8
+    }
+  ],
+  "helperEffort": 0.6,
+  "removalProof": {
+    "preferredHelpers": [
+      "ONE",
+      "UNITED"
+    ],
+    "branches": [
+      {
+        "first": "COUPLED",
+        "next": [
+          "ONE",
+          "TIED",
+          "UNITED"
+        ],
+        "preferredFamilies": [
+          "one",
+          "united"
+        ],
+        "familiarFamilies": [
+          "one",
+          "tied",
+          "united"
+        ]
+      },
+      {
+        "first": "ONE",
+        "next": [
+          "COUPLED",
+          "TIED",
+          "UNITED"
+        ],
+        "preferredFamilies": [
+          "united"
+        ],
+        "familiarFamilies": [
+          "coupled",
+          "tied",
+          "united"
+        ]
+      },
+      {
+        "first": "TIED",
+        "next": [
+          "COUPLED",
+          "ONE",
+          "UNITED"
+        ],
+        "preferredFamilies": [
+          "one",
+          "united"
+        ],
+        "familiarFamilies": [
+          "coupled",
+          "one",
+          "united"
+        ]
+      },
+      {
+        "first": "UNITED",
+        "next": [
+          "COUPLED",
+          "ONE",
+          "TIED"
+        ],
+        "preferredFamilies": [
+          "one"
+        ],
+        "familiarFamilies": [
+          "coupled",
+          "one",
+          "tied"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 3,
+    "candidatesChecked": 6,
+    "pathsChecked": 12,
+    "removalOrder": [
+      5,
+      7,
+      0,
+      14
+    ]
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-mean-handsome-2026-12-12-fe8da2ab54df.json",
+  "answer": "HANDSOME",
+  "rules": "bingo-hunt",
+  "review": "MEAN is the stingy size of a sum, not cruelty or an arithmetic average. HANDSOME means generously large, as in a handsome donation. LARGE and AMPLE oppose the small amount. Physical beauty is not the accepted handsome reading.",
+  "identity": {
+    "id": "puzzle-oct26-mean-handsome-2026-12-12",
+    "enemy": "MEAN",
+    "board": "AADEGHLLMNOOPRSS",
+    "bingos": [
+      "HANDSOME",
+      "HANDSOMER"
+    ],
+    "bingoFamilies": [
+      "HANDSOME"
+    ]
+  },
+  "witnesses": [
+    [
+      "HANDSOME"
+    ],
+    [
+      "LARGE",
+      "HANDSOME"
+    ],
+    [
+      "LARGE",
+      "AMPLE",
+      "HANDSOME"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "HANDSOME",
+      "effort": 2.3600000000000003
+    },
+    {
+      "word": "HANDSOMER",
+      "effort": 7.74
+    }
+  ],
+  "helperEffort": 1.58,
+  "removalProof": {
+    "preferredHelpers": [
+      "LARGE",
+      "AMPLE"
+    ],
+    "branches": [
+      {
+        "first": "AMPLE",
+        "next": [
+          "AMPLER",
+          "LARGE"
+        ],
+        "preferredFamilies": [
+          "large"
+        ],
+        "familiarFamilies": [
+          "large"
+        ]
+      },
+      {
+        "first": "AMPLER",
+        "next": [
+          "AMPLE",
+          "LARGE"
+        ],
+        "preferredFamilies": [
+          "large"
+        ],
+        "familiarFamilies": [
+          "large"
+        ]
+      },
+      {
+        "first": "LARGE",
+        "next": [
+          "AMPLE",
+          "AMPLER"
+        ],
+        "preferredFamilies": [
+          "ample"
+        ],
+        "familiarFamilies": [
+          "ample"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 70,
+    "pathsChecked": 6,
+    "removalOrder": [
+      0,
+      9,
+      10,
+      13,
+      2,
+      6,
+      11,
+      14
+    ]
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-washed-unwashed-2026-11-25-2e41f5c795be.json",
+  "answer": "UNWASHED",
+  "rules": "bingo-hunt",
+  "review": "Physical cleanliness after washing. NASTY is disgustingly dirty, not unkind; DIRTY means soiled, not obscene. UNWASHED uses the literal unclean adjective, not the disparaging expression about social class. DUSTY and STAINED use physical dirt or foreign matter, not age or decorative wood staining.",
+  "identity": {
+    "id": "puzzle-washed-unwashed-2026-11-25",
+    "enemy": "WASHED",
+    "board": "ABDEHILMNORSTUWY",
+    "bingos": [
+      "UNWASHED"
+    ],
+    "bingoFamilies": [
+      "UNWASHED"
+    ]
+  },
+  "witnesses": [
+    [
+      "UNWASHED"
+    ],
+    [
+      "NASTY",
+      "UNWASHED"
+    ],
+    [
+      "NASTY",
+      "DIRTY",
+      "UNWASHED"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "UNWASHED",
+      "effort": 5.359999999999999
+    }
+  ],
+  "helperEffort": 0.5600000000000005,
+  "removalProof": {
+    "preferredHelpers": [
+      "NASTY",
+      "DIRTY"
+    ],
+    "branches": [
+      {
+        "first": "DIRTY",
+        "next": [
+          "DUSTIER",
+          "DUSTY",
+          "NASTIER",
+          "NASTY",
+          "STAINED"
+        ],
+        "preferredFamilies": [
+          "nasty"
+        ],
+        "familiarFamilies": [
+          "dusty",
+          "nasty",
+          "stained"
+        ]
+      },
+      {
+        "first": "DUSTIER",
+        "next": [
+          "DIRTY",
+          "DUSTY",
+          "NASTIER",
+          "NASTY",
+          "STAINED"
+        ],
+        "preferredFamilies": [
+          "dirty",
+          "nasty"
+        ],
+        "familiarFamilies": [
+          "dirty",
+          "nasty",
+          "stained"
+        ]
+      },
+      {
+        "first": "DUSTY",
+        "next": [
+          "DIRTY",
+          "DUSTIER",
+          "NASTIER",
+          "NASTY",
+          "STAINED"
+        ],
+        "preferredFamilies": [
+          "dirty",
+          "nasty"
+        ],
+        "familiarFamilies": [
+          "dirty",
+          "nasty",
+          "stained"
+        ]
+      },
+      {
+        "first": "NASTIER",
+        "next": [
+          "DIRTY",
+          "DUSTIER",
+          "DUSTY",
+          "NASTY",
+          "STAINED"
+        ],
+        "preferredFamilies": [
+          "dirty"
+        ],
+        "familiarFamilies": [
+          "dirty",
+          "dusty",
+          "stained"
+        ]
+      },
+      {
+        "first": "NASTY",
+        "next": [
+          "DIRTY",
+          "DUSTIER",
+          "DUSTY",
+          "NASTIER",
+          "STAINED"
+        ],
+        "preferredFamilies": [
+          "dirty"
+        ],
+        "familiarFamilies": [
+          "dirty",
+          "dusty",
+          "stained"
+        ]
+      },
+      {
+        "first": "SOILED",
+        "next": [
+          "DIRTY",
+          "DUSTIER",
+          "DUSTY",
+          "NASTIER",
+          "NASTY",
+          "STAINED"
+        ],
+        "preferredFamilies": [
+          "dirty",
+          "nasty"
+        ],
+        "familiarFamilies": [
+          "dirty",
+          "dusty",
+          "nasty",
+          "stained"
+        ]
+      },
+      {
+        "first": "STAINED",
+        "next": [
+          "DIRTY",
+          "DUSTIER",
+          "DUSTY",
+          "NASTIER",
+          "NASTY"
+        ],
+        "preferredFamilies": [
+          "dirty",
+          "nasty"
+        ],
+        "familiarFamilies": [
+          "dirty",
+          "dusty",
+          "nasty"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 3,
+    "candidatesChecked": 70,
+    "pathsChecked": 36,
+    "removalOrder": [
+      1,
+      3,
+      13,
+      14,
+      6,
+      7,
+      9,
+      15
+    ]
+  }
+}

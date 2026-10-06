@@ -70,10 +70,13 @@ export function buildAntonymEncounter(profile: ConceptProfile) {
   }
   for (const [word, entry] of Object.entries(profile.supplemental ?? {})) {
     if (!words[word]) continue
-    assert.equal(entry.partOfSpeech, encounter.counterRules!.partOfSpeech)
+    const relation = entry.relation ?? 'opposite'
+    if (relation === 'opposite') assert.equal(entry.partOfSpeech, encounter.counterRules!.partOfSpeech)
     words[word] = { definition: entry.definition, lemma: entry.lemma, senseId: entry.senseId,
-      partsOfSpeech: [entry.partOfSpeech], relation: 'opposite', source: 'wiktionary-en', evidence: 'reviewed-profile',
-      reason: `Reviewed ${entry.partOfSpeech} opposing ${profile.enemy} in its displayed meaning. Source: ${entry.sourceUrl}` }
+      partsOfSpeech: [entry.partOfSpeech], relation, source: 'wiktionary-en', evidence: 'reviewed-profile',
+      reason: relation === 'opposite'
+        ? `Reviewed ${entry.partOfSpeech} opposing ${profile.enemy} in its displayed meaning. Source: ${entry.sourceUrl}`
+        : `Reviewed ${entry.partOfSpeech}, not an opposite of the displayed ${profile.enemy} sense. Source: ${entry.sourceUrl}` }
   }
   encounter.enemy.semanticRelations.opposite = Object.keys(words).filter(word => words[word].relation === 'opposite')
   encounter.meaningLexicon = {

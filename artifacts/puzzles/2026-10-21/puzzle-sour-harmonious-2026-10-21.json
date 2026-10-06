@@ -1,0 +1,114 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-sour-harmonious-2026-10-21-731751b09e31.json",
+  "answer": "HARMONIOUS",
+  "rules": "bingo-hunt",
+  "review": "Musical sound only. SOUR means inaccurate in pitch; TRUE means in tune, PURE free from discordant tones, and HARMONIOUS musically pleasing. SWEET uses a pleasing sound, not taste; truthful TRUE and chemical purity are not the counter meanings.",
+  "identity": {
+    "id": "puzzle-sour-harmonious-2026-10-21",
+    "enemy": "SOUR",
+    "board": "AEEHILMNOOPRSTUW",
+    "bingos": [
+      "HARMONIOUS"
+    ],
+    "bingoFamilies": [
+      "HARMONIOUS"
+    ]
+  },
+  "witnesses": [
+    [
+      "HARMONIOUS"
+    ],
+    [
+      "TRUE",
+      "HARMONIOUS"
+    ],
+    [
+      "TRUE",
+      "PURE",
+      "HARMONIOUS"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "HARMONIOUS",
+      "effort": 5.7
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "TRUE",
+      "PURE"
+    ],
+    "branches": [
+      {
+        "first": "PURE",
+        "next": [
+          "PUREST",
+          "TRUE"
+        ],
+        "preferredFamilies": [
+          "true"
+        ],
+        "familiarFamilies": [
+          "true"
+        ]
+      },
+      {
+        "first": "PUREST",
+        "next": [
+          "PURE",
+          "TRUE"
+        ],
+        "preferredFamilies": [
+          "true"
+        ],
+        "familiarFamilies": [
+          "true"
+        ]
+      },
+      {
+        "first": "SWEET",
+        "next": [
+          "PURE",
+          "PUREST",
+          "TRUE"
+        ],
+        "preferredFamilies": [
+          "pure",
+          "true"
+        ],
+        "familiarFamilies": [
+          "pure",
+          "true"
+        ]
+      },
+      {
+        "first": "TRUE",
+        "next": [
+          "PURE",
+          "PUREST"
+        ],
+        "preferredFamilies": [
+          "pure"
+        ],
+        "familiarFamilies": [
+          "pure"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 20,
+    "pathsChecked": 9,
+    "removalOrder": [
+      0,
+      7,
+      12,
+      4,
+      6,
+      10
+    ]
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-autumn-hard-warmhearted-2026-11-16-99ab903f496f.json",
+  "answer": "WARMHEARTED",
+  "rules": "bingo-hunt",
+  "review": "HARD uses an emotionally cold, dispassionate manner. WARMHEARTED and WARM express warmth of feeling; TENDER, KIND and NICE use sympathy and kindness. This is not hardness of a material, difficulty, temperature, or the noun tender.",
+  "identity": {
+    "id": "puzzle-autumn-hard-warmhearted-2026-11-16",
+    "enemy": "HARD",
+    "board": "AACDEEHIKMNRRSTW",
+    "bingos": [
+      "WARMHEARTED"
+    ],
+    "bingoFamilies": [
+      "WARMHEARTED"
+    ]
+  },
+  "witnesses": [
+    [
+      "WARMHEARTED"
+    ],
+    [
+      "WARM",
+      "WARMHEARTED"
+    ],
+    [
+      "WARM",
+      "TENDER",
+      "WARMHEARTED"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "WARMHEARTED",
+      "effort": 8.98
+    }
+  ],
+  "helperEffort": 1.4200000000000004,
+  "removalProof": {
+    "preferredHelpers": [
+      "WARM",
+      "TENDER",
+      "KIND",
+      "NICE"
+    ],
+    "branches": [
+      {
+        "first": "KIND",
+        "next": [
+          "TENDER",
+          "WARM",
+          "WARMER",
+          "WARMEST"
+        ],
+        "preferredFamilies": [
+          "tender",
+          "warm"
+        ],
+        "familiarFamilies": [
+          "tender",
+          "warm"
+        ]
+      },
+      {
+        "first": "KINDER",
+        "next": [
+          "TENDER",
+          "WARM",
+          "WARMER",
+          "WARMEST"
+        ],
+        "preferredFamilies": [
+          "tender",
+          "warm"
+        ],
+        "familiarFamilies": [
+          "tender",
+          "warm"
+        ]
+      },
+      {
+        "first": "KINDEST",
+        "next": [
+          "TENDER",
+          "WARM",
+          "WARMER",
+          "WARMEST"
+        ],
+        "preferredFamilies": [
+          "tender",
+          "warm"
+        ],
+        "familiarFamilies": [
+          "tender",
+          "warm"
+        ]
+      },
+      {
+        "first": "NICE",
+        "next": [
+          "TENDER",
+          "WARM",
+          "WARMER",
+          "WARMEST"
+        ],
+        "preferredFamilies": [
+          "tender",
+          "warm"
+        ],
+        "familiarFamilies": [
+          "tender",
+          "warm"
+        ]
+      },
+      {
+        "first": "NICER",
+        "next": [
+          "TENDER",
+          "WARM",
+          "WARMER",
+          "WARMEST"
+        ],
+        "preferredFamilies": [
+          "tender",
+          "warm"
+        ],
+        "familiarFamilies": [
+          "tender",
+          "warm"
+        ]
+      },
+      {
+        "first": "NICEST",
+        "next": [
+          "TENDER",
+          "WARM",
+          "WARMER",
+          "WARMEST"
+        ],
+        "preferredFamilies": [
+          "tender",
+          "warm"
+        ],
+        "familiarFamilies": [
+          "tender",
+          "warm"
+        ]
+      },
+      {
+        "first": "TENDER",
+        "next": [
+          "WARM",
+          "WARMER",
+          "WARMEST"
+        ],
+        "preferredFamilies": [
+          "warm"
+        ],
+        "familiarFamilies": [
+          "warm"
+        ]
+      },
+      {
+        "first": "WARM",
+        "next": [
+          "TENDER",
+          "WARMER",
+          "WARMEST"
+        ],
+        "preferredFamilies": [
+          "tender"
+        ],
+        "familiarFamilies": [
+          "tender"
+        ]
+      },
+      {
+        "first": "WARMER",
+        "next": [
+          "TENDER",
+          "WARM",
+          "WARMEST"
+        ],
+        "preferredFamilies": [
+          "tender"
+        ],
+        "familiarFamilies": [
+          "tender"
+        ]
+      },
+      {
+        "first": "WARMEST",
+        "next": [
+          "TENDER",
+          "WARM",
+          "WARMER"
+        ],
+        "preferredFamilies": [
+          "tender"
+        ],
+        "familiarFamilies": [
+          "tender"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 10,
+    "pathsChecked": 36,
+    "removalOrder": [
+      4,
+      6,
+      10,
+      9,
+      12
+    ]
+  }
+}

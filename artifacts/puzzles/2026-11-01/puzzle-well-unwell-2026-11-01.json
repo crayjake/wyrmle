@@ -1,0 +1,168 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-well-unwell-2026-11-01-c130d876ca4a.json",
+  "answer": "UNWELL",
+  "rules": "bingo-hunt",
+  "review": "Health adjectives only. UNWELL, ILL and SICK oppose healthy, while SICKLY and AILING retain the same health reading. No adverb WELL, water-well noun, sick-as-excellent slang or moral evil is intended. STRICKEN uses grievously affected by disease, not a struck-off record.",
+  "identity": {
+    "id": "puzzle-well-unwell-2026-11-01",
+    "enemy": "WELL",
+    "board": "ACDEIKLLNORSTUWY",
+    "bingos": [
+      "UNWELL"
+    ],
+    "bingoFamilies": [
+      "UNWELL"
+    ]
+  },
+  "witnesses": [
+    [
+      "UNWELL"
+    ],
+    [
+      "ILL",
+      "UNWELL"
+    ],
+    [
+      "ILL",
+      "SICK",
+      "UNWELL"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "UNWELL",
+      "effort": 3.32
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "ILL",
+      "SICK"
+    ],
+    "branches": [
+      {
+        "first": "ILL",
+        "next": [
+          "SICK",
+          "SICKLY"
+        ],
+        "preferredFamilies": [
+          "sick"
+        ],
+        "familiarFamilies": [
+          "sick",
+          "sickly"
+        ]
+      },
+      {
+        "first": "ILLER",
+        "next": [
+          "ILL",
+          "SICK",
+          "SICKLY"
+        ],
+        "preferredFamilies": [
+          "sick"
+        ],
+        "familiarFamilies": [
+          "sick",
+          "sickly"
+        ]
+      },
+      {
+        "first": "ILLEST",
+        "next": [
+          "ILL",
+          "SICK",
+          "SICKLY"
+        ],
+        "preferredFamilies": [
+          "sick"
+        ],
+        "familiarFamilies": [
+          "sick",
+          "sickly"
+        ]
+      },
+      {
+        "first": "SICK",
+        "next": [
+          "ILL",
+          "SICKLY"
+        ],
+        "preferredFamilies": [
+          "ill"
+        ],
+        "familiarFamilies": [
+          "ill",
+          "sickly"
+        ]
+      },
+      {
+        "first": "SICKER",
+        "next": [
+          "ILL",
+          "SICK",
+          "SICKLY"
+        ],
+        "preferredFamilies": [
+          "ill"
+        ],
+        "familiarFamilies": [
+          "ill",
+          "sickly"
+        ]
+      },
+      {
+        "first": "SICKLY",
+        "next": [
+          "ILL",
+          "SICK"
+        ],
+        "preferredFamilies": [
+          "ill",
+          "sick"
+        ],
+        "familiarFamilies": [
+          "ill",
+          "sick"
+        ]
+      },
+      {
+        "first": "STRICKEN",
+        "next": [
+          "ILL",
+          "SICK",
+          "SICKLY"
+        ],
+        "preferredFamilies": [
+          "ill",
+          "sick"
+        ],
+        "familiarFamilies": [
+          "ill",
+          "sick",
+          "sickly"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 252,
+    "pathsChecked": 18,
+    "removalOrder": [
+      1,
+      2,
+      3,
+      4,
+      13,
+      0,
+      8,
+      9,
+      11,
+      14
+    ]
+  }
+}

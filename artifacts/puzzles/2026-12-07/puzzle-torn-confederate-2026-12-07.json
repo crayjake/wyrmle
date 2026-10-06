@@ -1,0 +1,139 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-torn-confederate-2026-12-07-33fb0c5439e9.json",
+  "answer": "CONFEDERATE",
+  "rules": "bingo-hunt",
+  "review": "TORN means divided; CONFEDERATE is the adjective for united in a league. It is not the historical proper-name noun. ONE, UNITED and TIED retain their unity readings. FEDERATE and FUSED are adjectives for unity, not their action verbs.",
+  "identity": {
+    "id": "puzzle-torn-confederate-2026-12-07",
+    "enemy": "TORN",
+    "board": "ABCDEEEFILNORSTU",
+    "bingos": [
+      "CONFEDERATE"
+    ],
+    "bingoFamilies": [
+      "CONFEDERATE"
+    ]
+  },
+  "witnesses": [
+    [
+      "CONFEDERATE"
+    ],
+    [
+      "ONE",
+      "CONFEDERATE"
+    ],
+    [
+      "ONE",
+      "UNITED",
+      "CONFEDERATE"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "CONFEDERATE",
+      "effort": 5.199999999999999
+    }
+  ],
+  "helperEffort": 0.6,
+  "removalProof": {
+    "preferredHelpers": [
+      "ONE",
+      "UNITED"
+    ],
+    "branches": [
+      {
+        "first": "FEDERATE",
+        "next": [
+          "ONE",
+          "TIED",
+          "UNITED"
+        ],
+        "preferredFamilies": [
+          "one",
+          "united"
+        ],
+        "familiarFamilies": [
+          "one",
+          "tied",
+          "united"
+        ]
+      },
+      {
+        "first": "FUSED",
+        "next": [
+          "FEDERATE",
+          "ONE",
+          "TIED",
+          "UNITED"
+        ],
+        "preferredFamilies": [
+          "one",
+          "united"
+        ],
+        "familiarFamilies": [
+          "one",
+          "tied",
+          "united"
+        ]
+      },
+      {
+        "first": "ONE",
+        "next": [
+          "FEDERATE",
+          "TIED",
+          "UNITED"
+        ],
+        "preferredFamilies": [
+          "united"
+        ],
+        "familiarFamilies": [
+          "tied",
+          "united"
+        ]
+      },
+      {
+        "first": "TIED",
+        "next": [
+          "FEDERATE",
+          "ONE",
+          "UNITED"
+        ],
+        "preferredFamilies": [
+          "one",
+          "united"
+        ],
+        "familiarFamilies": [
+          "one",
+          "united"
+        ]
+      },
+      {
+        "first": "UNITED",
+        "next": [
+          "FEDERATE",
+          "ONE",
+          "TIED"
+        ],
+        "preferredFamilies": [
+          "one"
+        ],
+        "familiarFamilies": [
+          "one",
+          "tied"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 10,
+    "pathsChecked": 16,
+    "removalOrder": [
+      8,
+      10,
+      12,
+      0,
+      9
+    ]
+  }
+}

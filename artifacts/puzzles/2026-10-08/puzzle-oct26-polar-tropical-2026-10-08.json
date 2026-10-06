@@ -1,0 +1,104 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-polar-tropical-2026-10-08-7b2431a3dea2.json",
+  "answer": "TROPICAL",
+  "rules": "bingo-hunt",
+  "review": "POLAR is the temperature adjective extremely cold. TROPICAL uses hot, humid weather; HOT, WARM and TORRID use physical heat. Geographic location alone, magnetic poles and heated emotions are excluded. TROPIC is the hot-weather adjective, not a geographical noun.",
+  "identity": {
+    "id": "puzzle-oct26-polar-tropical-2026-10-08",
+    "enemy": "POLAR",
+    "board": "AACDHILLMOOPRSTW",
+    "bingos": [
+      "TROPICAL"
+    ],
+    "bingoFamilies": [
+      "TROPICAL"
+    ]
+  },
+  "witnesses": [
+    [
+      "TROPICAL"
+    ],
+    [
+      "HOT",
+      "TROPICAL"
+    ],
+    [
+      "HOT",
+      "WARM",
+      "TROPICAL"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "TROPICAL",
+      "effort": 2.4400000000000004
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "HOT",
+      "WARM"
+    ],
+    "branches": [
+      {
+        "first": "HOT",
+        "next": [
+          "TROPIC",
+          "WARM"
+        ],
+        "preferredFamilies": [
+          "warm"
+        ],
+        "familiarFamilies": [
+          "tropic",
+          "warm"
+        ]
+      },
+      {
+        "first": "TROPIC",
+        "next": [
+          "HOT",
+          "WARM"
+        ],
+        "preferredFamilies": [
+          "hot",
+          "warm"
+        ],
+        "familiarFamilies": [
+          "hot",
+          "warm"
+        ]
+      },
+      {
+        "first": "WARM",
+        "next": [
+          "HOT",
+          "TROPIC"
+        ],
+        "preferredFamilies": [
+          "hot"
+        ],
+        "familiarFamilies": [
+          "hot",
+          "tropic"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 70,
+    "pathsChecked": 6,
+    "removalOrder": [
+      6,
+      7,
+      9,
+      12,
+      1,
+      10,
+      13,
+      14
+    ]
+  }
+}

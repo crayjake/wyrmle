@@ -1,0 +1,81 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-rare-unremarkable-2026-11-23-7ee11c8d7923.json",
+  "answer": "UNREMARKABLE",
+  "rules": "bingo-hunt",
+  "review": "RARE uses uncommon, exceptional quality, not frequency or meat. UNREMARKABLE, NORMAL and REGULAR describe the ordinary and expected. Regular appointments and normal geometry do not qualify. Double E excludes the shorter REGULAR bingo while keeping it as a helper.",
+  "identity": {
+    "id": "puzzle-oct26-rare-unremarkable-2026-11-23",
+    "enemy": "RARE",
+    "board": "AAABEEGKLMNORRSU",
+    "bingos": [
+      "UNREMARKABLE"
+    ],
+    "bingoFamilies": [
+      "UNREMARKABLE"
+    ]
+  },
+  "witnesses": [
+    [
+      "UNREMARKABLE"
+    ],
+    [
+      "NORMAL",
+      "UNREMARKABLE"
+    ],
+    [
+      "NORMAL",
+      "REGULAR",
+      "UNREMARKABLE"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "UNREMARKABLE",
+      "effort": 7.54
+    }
+  ],
+  "helperEffort": 1.2,
+  "removalProof": {
+    "preferredHelpers": [
+      "NORMAL",
+      "REGULAR"
+    ],
+    "branches": [
+      {
+        "first": "NORMAL",
+        "next": [
+          "REGULAR"
+        ],
+        "preferredFamilies": [
+          "regular"
+        ],
+        "familiarFamilies": [
+          "regular"
+        ]
+      },
+      {
+        "first": "REGULAR",
+        "next": [
+          "NORMAL"
+        ],
+        "preferredFamilies": [
+          "normal"
+        ],
+        "familiarFamilies": [
+          "normal"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 6,
+    "pathsChecked": 2,
+    "removalOrder": [
+      9,
+      10,
+      1,
+      14
+    ]
+  }
+}

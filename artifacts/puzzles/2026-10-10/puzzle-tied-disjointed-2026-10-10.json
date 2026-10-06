@@ -1,0 +1,154 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-tied-disjointed-2026-10-10-33f6d20db377.json",
+  "answer": "DISJOINTED",
+  "rules": "bingo-hunt",
+  "review": "TIED is united, not an equal score. DISJOINTED means taken apart at the joints; SPLIT and TORN use division and lost unity. SECTIONED is physically divided into sections. The two I copies are required together, so a shorter word need not win. UNTIED is a direct adjective opposite and remains a helper because of the two-I requirement. DISJOINED, ASUNDER and ISOLATED have explicit separate/unconnected adjective readings.",
+  "identity": {
+    "id": "puzzle-tied-disjointed-2026-10-10",
+    "enemy": "TIED",
+    "board": "ADDEFIIJLNOPRSTU",
+    "bingos": [
+      "DISJOINTED",
+      "DISUNITED"
+    ],
+    "bingoFamilies": [
+      "DISJOINTED",
+      "DISUNITED"
+    ]
+  },
+  "witnesses": [
+    [
+      "DISJOINTED"
+    ],
+    [
+      "SPLIT",
+      "DISJOINTED"
+    ],
+    [
+      "SPLIT",
+      "TORN",
+      "DISJOINTED"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "DISJOINTED",
+      "effort": 6.24
+    },
+    {
+      "word": "DISUNITED",
+      "effort": 7.48
+    }
+  ],
+  "helperEffort": 0.8399999999999999,
+  "removalProof": {
+    "preferredHelpers": [
+      "SPLIT",
+      "TORN"
+    ],
+    "branches": [
+      {
+        "first": "ASUNDER",
+        "next": [
+          "DISJOINED",
+          "SPLIT",
+          "TORN"
+        ],
+        "preferredFamilies": [
+          "split",
+          "torn"
+        ],
+        "familiarFamilies": [
+          "split",
+          "torn"
+        ]
+      },
+      {
+        "first": "DISJOINED",
+        "next": [
+          "SPLIT",
+          "TORN"
+        ],
+        "preferredFamilies": [
+          "split",
+          "torn"
+        ],
+        "familiarFamilies": [
+          "split",
+          "torn"
+        ]
+      },
+      {
+        "first": "ISOLATED",
+        "next": [
+          "DISJOINED",
+          "SPLIT",
+          "TORN"
+        ],
+        "preferredFamilies": [
+          "split",
+          "torn"
+        ],
+        "familiarFamilies": [
+          "split",
+          "torn"
+        ]
+      },
+      {
+        "first": "SPLIT",
+        "next": [
+          "DISJOINED",
+          "TORN"
+        ],
+        "preferredFamilies": [
+          "torn"
+        ],
+        "familiarFamilies": [
+          "torn"
+        ]
+      },
+      {
+        "first": "TORN",
+        "next": [
+          "DISJOINED",
+          "SPLIT"
+        ],
+        "preferredFamilies": [
+          "split"
+        ],
+        "familiarFamilies": [
+          "split"
+        ]
+      },
+      {
+        "first": "UNTIED",
+        "next": [
+          "DISJOINED",
+          "SPLIT",
+          "TORN"
+        ],
+        "preferredFamilies": [
+          "split",
+          "torn"
+        ],
+        "familiarFamilies": [
+          "split",
+          "torn"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 20,
+    "pathsChecked": 15,
+    "removalOrder": [
+      2,
+      8,
+      12,
+      10,
+      11,
+      14
+    ]
+  }
+}

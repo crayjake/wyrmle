@@ -1,0 +1,264 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-slim-astronomical-2026-10-14-9761d9a2c89d.json",
+  "answer": "ASTRONOMICAL",
+  "rules": "bingo-hunt",
+  "review": "SLIM is a small amount, not a slender person. ASTRONOMICAL means extremely large, as in a bill. LARGE, BIG, GIANT and GREAT all use magnitude, not importance, maturity, astronomy or praise. GALORE and LEGION use abundant quantity; MACRO is the adjective meaning very large in scale.",
+  "identity": {
+    "id": "puzzle-slim-astronomical-2026-10-14",
+    "enemy": "SLIM",
+    "board": "AABCEEGILMNOORST",
+    "bingos": [
+      "ASTRONOMICAL"
+    ],
+    "bingoFamilies": [
+      "ASTRONOMICAL"
+    ]
+  },
+  "witnesses": [
+    [
+      "ASTRONOMICAL"
+    ],
+    [
+      "LARGE",
+      "ASTRONOMICAL"
+    ],
+    [
+      "LARGE",
+      "GIANT",
+      "ASTRONOMICAL"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "ASTRONOMICAL",
+      "effort": 6.22
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "LARGE",
+      "GIANT"
+    ],
+    "branches": [
+      {
+        "first": "ASTRONOMIC",
+        "next": [
+          "GALORE",
+          "GIANT",
+          "GREAT",
+          "LARGE",
+          "LARGEST",
+          "LEGION",
+          "MACRO"
+        ],
+        "preferredFamilies": [
+          "giant",
+          "large"
+        ],
+        "familiarFamilies": [
+          "galore",
+          "giant",
+          "great",
+          "large",
+          "legion",
+          "macro"
+        ]
+      },
+      {
+        "first": "BIG",
+        "next": [
+          "ASTRONOMIC",
+          "GALORE",
+          "GIANT",
+          "GREAT",
+          "LARGE",
+          "LARGEST",
+          "LEGION",
+          "MACRO"
+        ],
+        "preferredFamilies": [
+          "giant",
+          "large"
+        ],
+        "familiarFamilies": [
+          "galore",
+          "giant",
+          "great",
+          "large",
+          "legion",
+          "macro"
+        ]
+      },
+      {
+        "first": "GALORE",
+        "next": [
+          "ASTRONOMIC",
+          "GIANT",
+          "GREAT",
+          "LARGE",
+          "LARGEST",
+          "LEGION",
+          "MACRO"
+        ],
+        "preferredFamilies": [
+          "giant",
+          "large"
+        ],
+        "familiarFamilies": [
+          "giant",
+          "great",
+          "large",
+          "legion",
+          "macro"
+        ]
+      },
+      {
+        "first": "GIANT",
+        "next": [
+          "ASTRONOMIC",
+          "GALORE",
+          "GREAT",
+          "LARGE",
+          "LARGEST",
+          "LEGION",
+          "MACRO"
+        ],
+        "preferredFamilies": [
+          "large"
+        ],
+        "familiarFamilies": [
+          "galore",
+          "great",
+          "large",
+          "legion",
+          "macro"
+        ]
+      },
+      {
+        "first": "GREAT",
+        "next": [
+          "ASTRONOMIC",
+          "GALORE",
+          "GIANT",
+          "LARGE",
+          "LARGEST",
+          "LEGION",
+          "MACRO"
+        ],
+        "preferredFamilies": [
+          "giant",
+          "large"
+        ],
+        "familiarFamilies": [
+          "galore",
+          "giant",
+          "large",
+          "legion",
+          "macro"
+        ]
+      },
+      {
+        "first": "LARGE",
+        "next": [
+          "ASTRONOMIC",
+          "GALORE",
+          "GIANT",
+          "GREAT",
+          "LARGEST",
+          "LEGION",
+          "MACRO"
+        ],
+        "preferredFamilies": [
+          "giant"
+        ],
+        "familiarFamilies": [
+          "galore",
+          "giant",
+          "great",
+          "legion",
+          "macro"
+        ]
+      },
+      {
+        "first": "LARGEST",
+        "next": [
+          "ASTRONOMIC",
+          "GALORE",
+          "GIANT",
+          "GREAT",
+          "LARGE",
+          "LEGION",
+          "MACRO"
+        ],
+        "preferredFamilies": [
+          "giant"
+        ],
+        "familiarFamilies": [
+          "galore",
+          "giant",
+          "great",
+          "legion",
+          "macro"
+        ]
+      },
+      {
+        "first": "LEGION",
+        "next": [
+          "ASTRONOMIC",
+          "GALORE",
+          "GIANT",
+          "GREAT",
+          "LARGE",
+          "LARGEST",
+          "MACRO"
+        ],
+        "preferredFamilies": [
+          "giant",
+          "large"
+        ],
+        "familiarFamilies": [
+          "galore",
+          "giant",
+          "great",
+          "large",
+          "macro"
+        ]
+      },
+      {
+        "first": "MACRO",
+        "next": [
+          "ASTRONOMIC",
+          "GALORE",
+          "GIANT",
+          "GREAT",
+          "LARGE",
+          "LARGEST",
+          "LEGION"
+        ],
+        "preferredFamilies": [
+          "giant",
+          "large"
+        ],
+        "familiarFamilies": [
+          "galore",
+          "giant",
+          "great",
+          "large",
+          "legion"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 5,
+    "candidatesChecked": 6,
+    "pathsChecked": 64,
+    "removalOrder": [
+      3,
+      7,
+      4,
+      13
+    ]
+  }
+}

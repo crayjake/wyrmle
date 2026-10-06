@@ -1,0 +1,149 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-rude-cultured-2026-10-31-e969aa701473.json",
+  "answer": "CULTURED",
+  "rules": "bingo-hunt",
+  "review": "RUDE concerns unrefined manners. CULTURED and POLITE are refined in taste and manners; NICE uses courtesy and politeness. Agriculture, bacterial cultures, and a merely attractive appearance are outside this social adjective contrast. COURTEOUS explicitly uses politeness.",
+  "identity": {
+    "id": "puzzle-oct26-rude-cultured-2026-10-31",
+    "enemy": "RUDE",
+    "board": "ACDEILLNOOPRSTUU",
+    "bingos": [
+      "CULTURED"
+    ],
+    "bingoFamilies": [
+      "CULTURED"
+    ]
+  },
+  "witnesses": [
+    [
+      "CULTURED"
+    ],
+    [
+      "POLITE",
+      "CULTURED"
+    ],
+    [
+      "POLITE",
+      "NICE",
+      "CULTURED"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "CULTURED",
+      "effort": 4.2
+    }
+  ],
+  "helperEffort": 1.7600000000000002,
+  "removalProof": {
+    "preferredHelpers": [
+      "POLITE",
+      "NICE"
+    ],
+    "branches": [
+      {
+        "first": "COURTEOUS",
+        "next": [
+          "NICE",
+          "NICER",
+          "POLITE",
+          "POLITER"
+        ],
+        "preferredFamilies": [
+          "nice",
+          "polite"
+        ],
+        "familiarFamilies": [
+          "nice",
+          "polite"
+        ]
+      },
+      {
+        "first": "NICE",
+        "next": [
+          "NICER",
+          "POLITE",
+          "POLITER"
+        ],
+        "preferredFamilies": [
+          "polite"
+        ],
+        "familiarFamilies": [
+          "polite"
+        ]
+      },
+      {
+        "first": "NICER",
+        "next": [
+          "NICE",
+          "POLITE",
+          "POLITER"
+        ],
+        "preferredFamilies": [
+          "polite"
+        ],
+        "familiarFamilies": [
+          "polite"
+        ]
+      },
+      {
+        "first": "NICEST",
+        "next": [
+          "NICE",
+          "NICER",
+          "POLITE",
+          "POLITER"
+        ],
+        "preferredFamilies": [
+          "polite"
+        ],
+        "familiarFamilies": [
+          "polite"
+        ]
+      },
+      {
+        "first": "POLITE",
+        "next": [
+          "NICE",
+          "NICER",
+          "POLITER"
+        ],
+        "preferredFamilies": [
+          "nice"
+        ],
+        "familiarFamilies": [
+          "nice"
+        ]
+      },
+      {
+        "first": "POLITER",
+        "next": [
+          "NICE",
+          "NICER",
+          "POLITE"
+        ],
+        "preferredFamilies": [
+          "nice"
+        ],
+        "familiarFamilies": [
+          "nice"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 70,
+    "pathsChecked": 20,
+    "removalOrder": [
+      3,
+      5,
+      7,
+      13,
+      4,
+      6,
+      8,
+      14
+    ]
+  }
+}

@@ -1,0 +1,332 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-autumn-dry-drippy-2026-10-20-283632d0b0bc.json",
+  "answer": "DRIPPY",
+  "rules": "bingo-hunt",
+  "review": "DRY concerns literal moisture and rain. DRIPPY is wet or leaking drops, not sentimental. WET, DAMP, MOIST, DEWY and RAINY use literal wetness. This deliberately avoids the rejected -less answers. WATERY, MISTY and SOPPY use actual moisture, not dilution, obscurity or sentimentality. TEARY means eyes full of tears, a literal moisture reading rather than merely feeling sad.",
+  "identity": {
+    "id": "puzzle-autumn-dry-drippy-2026-10-20",
+    "enemy": "DRY",
+    "board": "ADEGILMNOPPRSTWY",
+    "bingos": [
+      "DRIPPY"
+    ],
+    "bingoFamilies": [
+      "DRIPPY"
+    ]
+  },
+  "witnesses": [
+    [
+      "DRIPPY"
+    ],
+    [
+      "WET",
+      "DRIPPY"
+    ],
+    [
+      "WET",
+      "DAMP",
+      "DRIPPY"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "DRIPPY",
+      "effort": 5.359999999999999
+    }
+  ],
+  "helperEffort": 1.7599999999999998,
+  "removalProof": {
+    "preferredHelpers": [
+      "WET",
+      "DAMP"
+    ],
+    "branches": [
+      {
+        "first": "DAMP",
+        "next": [
+          "DAMPER",
+          "DEWY",
+          "TEARY",
+          "WATERY",
+          "WET"
+        ],
+        "preferredFamilies": [
+          "wet"
+        ],
+        "familiarFamilies": [
+          "dewy",
+          "teary",
+          "watery",
+          "wet"
+        ]
+      },
+      {
+        "first": "DAMPER",
+        "next": [
+          "DAMP",
+          "DEWY",
+          "TEARY",
+          "WATERY",
+          "WET"
+        ],
+        "preferredFamilies": [
+          "wet"
+        ],
+        "familiarFamilies": [
+          "dewy",
+          "teary",
+          "watery",
+          "wet"
+        ]
+      },
+      {
+        "first": "DAMPEST",
+        "next": [
+          "DAMP",
+          "DAMPER",
+          "DEWY",
+          "TEARY",
+          "WATERY",
+          "WET"
+        ],
+        "preferredFamilies": [
+          "wet"
+        ],
+        "familiarFamilies": [
+          "dewy",
+          "teary",
+          "watery",
+          "wet"
+        ]
+      },
+      {
+        "first": "DEWY",
+        "next": [
+          "DAMP",
+          "DAMPER",
+          "TEARY",
+          "WATERY",
+          "WET"
+        ],
+        "preferredFamilies": [
+          "damp",
+          "wet"
+        ],
+        "familiarFamilies": [
+          "damp",
+          "teary",
+          "watery",
+          "wet"
+        ]
+      },
+      {
+        "first": "MISTY",
+        "next": [
+          "DAMP",
+          "DAMPER",
+          "DEWY",
+          "TEARY",
+          "WATERY",
+          "WET"
+        ],
+        "preferredFamilies": [
+          "damp",
+          "wet"
+        ],
+        "familiarFamilies": [
+          "damp",
+          "dewy",
+          "teary",
+          "watery",
+          "wet"
+        ]
+      },
+      {
+        "first": "MOIST",
+        "next": [
+          "DAMP",
+          "DAMPER",
+          "DEWY",
+          "TEARY",
+          "WATERY",
+          "WET"
+        ],
+        "preferredFamilies": [
+          "damp",
+          "wet"
+        ],
+        "familiarFamilies": [
+          "damp",
+          "dewy",
+          "teary",
+          "watery",
+          "wet"
+        ]
+      },
+      {
+        "first": "MOISTER",
+        "next": [
+          "DAMP",
+          "DAMPER",
+          "DEWY",
+          "TEARY",
+          "WATERY",
+          "WET"
+        ],
+        "preferredFamilies": [
+          "damp",
+          "wet"
+        ],
+        "familiarFamilies": [
+          "damp",
+          "dewy",
+          "teary",
+          "watery",
+          "wet"
+        ]
+      },
+      {
+        "first": "RAINY",
+        "next": [
+          "DAMP",
+          "DAMPER",
+          "DEWY",
+          "TEARY",
+          "WATERY",
+          "WET"
+        ],
+        "preferredFamilies": [
+          "damp",
+          "wet"
+        ],
+        "familiarFamilies": [
+          "damp",
+          "dewy",
+          "teary",
+          "watery",
+          "wet"
+        ]
+      },
+      {
+        "first": "SOPPIER",
+        "next": [
+          "DAMP",
+          "DAMPER",
+          "DEWY",
+          "TEARY",
+          "WATERY",
+          "WET"
+        ],
+        "preferredFamilies": [
+          "damp",
+          "wet"
+        ],
+        "familiarFamilies": [
+          "damp",
+          "dewy",
+          "teary",
+          "watery",
+          "wet"
+        ]
+      },
+      {
+        "first": "SOPPY",
+        "next": [
+          "DAMP",
+          "DAMPER",
+          "DEWY",
+          "TEARY",
+          "WATERY",
+          "WET"
+        ],
+        "preferredFamilies": [
+          "damp",
+          "wet"
+        ],
+        "familiarFamilies": [
+          "damp",
+          "dewy",
+          "teary",
+          "watery",
+          "wet"
+        ]
+      },
+      {
+        "first": "TEARY",
+        "next": [
+          "DAMP",
+          "DAMPER",
+          "DEWY",
+          "WATERY",
+          "WET"
+        ],
+        "preferredFamilies": [
+          "damp",
+          "wet"
+        ],
+        "familiarFamilies": [
+          "damp",
+          "dewy",
+          "watery",
+          "wet"
+        ]
+      },
+      {
+        "first": "WATERY",
+        "next": [
+          "DAMP",
+          "DAMPER",
+          "DEWY",
+          "TEARY",
+          "WET"
+        ],
+        "preferredFamilies": [
+          "damp",
+          "wet"
+        ],
+        "familiarFamilies": [
+          "damp",
+          "dewy",
+          "teary",
+          "wet"
+        ]
+      },
+      {
+        "first": "WET",
+        "next": [
+          "DAMP",
+          "DAMPER",
+          "DEWY",
+          "TEARY",
+          "WATERY"
+        ],
+        "preferredFamilies": [
+          "damp"
+        ],
+        "familiarFamilies": [
+          "damp",
+          "dewy",
+          "teary",
+          "watery"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 4,
+    "candidatesChecked": 252,
+    "pathsChecked": 72,
+    "removalOrder": [
+      0,
+      6,
+      8,
+      11,
+      12,
+      2,
+      3,
+      4,
+      13,
+      15
+    ]
+  }
+}

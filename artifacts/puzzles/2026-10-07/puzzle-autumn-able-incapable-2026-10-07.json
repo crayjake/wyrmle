@@ -1,0 +1,103 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-autumn-able-incapable-2026-10-07-3986757f0d14.json",
+  "answer": "INCAPABLE",
+  "rules": "bingo-hunt",
+  "review": "ABLE is ability, not health or eligibility. INCAPABLE and UNABLE express absence of ability. INEPT means incompetent; UNFIT uses being below a task’s required standard. Two A copies rule out the shorter UNABLE bingo without preventing it from being a useful helper.",
+  "identity": {
+    "id": "puzzle-autumn-able-incapable-2026-10-07",
+    "enemy": "ABLE",
+    "board": "AABCDEFILNOPRSTU",
+    "bingos": [
+      "INCAPABLE"
+    ],
+    "bingoFamilies": [
+      "INCAPABLE"
+    ]
+  },
+  "witnesses": [
+    [
+      "INCAPABLE"
+    ],
+    [
+      "INEPT",
+      "INCAPABLE"
+    ],
+    [
+      "INEPT",
+      "UNFIT",
+      "INCAPABLE"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "INCAPABLE",
+      "effort": 3.9599999999999995
+    }
+  ],
+  "helperEffort": 2.74,
+  "removalProof": {
+    "preferredHelpers": [
+      "INEPT",
+      "UNFIT"
+    ],
+    "branches": [
+      {
+        "first": "INEPT",
+        "next": [
+          "UNABLE",
+          "UNFIT"
+        ],
+        "preferredFamilies": [
+          "unfit"
+        ],
+        "familiarFamilies": [
+          "unable",
+          "unfit"
+        ]
+      },
+      {
+        "first": "UNABLE",
+        "next": [
+          "INEPT",
+          "UNFIT"
+        ],
+        "preferredFamilies": [
+          "inept",
+          "unfit"
+        ],
+        "familiarFamilies": [
+          "inept",
+          "unfit"
+        ]
+      },
+      {
+        "first": "UNFIT",
+        "next": [
+          "INEPT",
+          "UNABLE"
+        ],
+        "preferredFamilies": [
+          "inept"
+        ],
+        "familiarFamilies": [
+          "inept",
+          "unable"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 35,
+    "pathsChecked": 6,
+    "removalOrder": [
+      3,
+      9,
+      10,
+      11,
+      1,
+      12,
+      13
+    ]
+  }
+}

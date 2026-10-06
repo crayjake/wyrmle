@@ -1,0 +1,181 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-autumn-hostile-hospitable-2026-11-06-b66f2c28e37b.json",
+  "answer": "HOSPITABLE",
+  "rules": "bingo-hunt",
+  "review": "HOSTILE is unwelcoming interpersonal behaviour, not opposing military forces. HOSPITABLE specifically concerns kind treatment of guests. NICE, KIND, POLITE and CIVIL oppose hostile treatment as friendly or considerate adjectives. The hospitable-to-life environmental sense is not used. SOCIAL means marked by friendly companionship; SOCIABLE means friendly and pleasant. General social classification or living in groups alone is insufficient.",
+  "identity": {
+    "id": "puzzle-autumn-hostile-hospitable-2026-11-06",
+    "enemy": "HOSTILE",
+    "board": "ABCDEHIKLNOPSTUW",
+    "bingos": [
+      "HOSPITABLE"
+    ],
+    "bingoFamilies": [
+      "HOSPITABLE"
+    ]
+  },
+  "witnesses": [
+    [
+      "HOSPITABLE"
+    ],
+    [
+      "NICE",
+      "HOSPITABLE"
+    ],
+    [
+      "NICE",
+      "POLITE",
+      "HOSPITABLE"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "HOSPITABLE",
+      "effort": 6.08
+    }
+  ],
+  "helperEffort": 1.7600000000000002,
+  "removalProof": {
+    "preferredHelpers": [
+      "NICE",
+      "POLITE",
+      "KIND"
+    ],
+    "branches": [
+      {
+        "first": "KIND",
+        "next": [
+          "NICE",
+          "NICEST",
+          "POLITE",
+          "SOCIABLE",
+          "SOCIAL"
+        ],
+        "preferredFamilies": [
+          "nice",
+          "polite"
+        ],
+        "familiarFamilies": [
+          "nice",
+          "polite",
+          "social"
+        ]
+      },
+      {
+        "first": "KINDEST",
+        "next": [
+          "NICE",
+          "NICEST",
+          "POLITE",
+          "SOCIABLE",
+          "SOCIAL"
+        ],
+        "preferredFamilies": [
+          "nice",
+          "polite"
+        ],
+        "familiarFamilies": [
+          "nice",
+          "polite",
+          "social"
+        ]
+      },
+      {
+        "first": "NICE",
+        "next": [
+          "NICEST",
+          "POLITE",
+          "SOCIABLE",
+          "SOCIAL"
+        ],
+        "preferredFamilies": [
+          "polite"
+        ],
+        "familiarFamilies": [
+          "polite",
+          "social"
+        ]
+      },
+      {
+        "first": "NICEST",
+        "next": [
+          "NICE",
+          "POLITE",
+          "SOCIABLE",
+          "SOCIAL"
+        ],
+        "preferredFamilies": [
+          "polite"
+        ],
+        "familiarFamilies": [
+          "polite",
+          "social"
+        ]
+      },
+      {
+        "first": "POLITE",
+        "next": [
+          "NICE",
+          "NICEST",
+          "SOCIABLE",
+          "SOCIAL"
+        ],
+        "preferredFamilies": [
+          "nice"
+        ],
+        "familiarFamilies": [
+          "nice",
+          "social"
+        ]
+      },
+      {
+        "first": "SOCIABLE",
+        "next": [
+          "NICE",
+          "NICEST",
+          "POLITE",
+          "SOCIAL"
+        ],
+        "preferredFamilies": [
+          "nice",
+          "polite"
+        ],
+        "familiarFamilies": [
+          "nice",
+          "polite",
+          "social"
+        ]
+      },
+      {
+        "first": "SOCIAL",
+        "next": [
+          "NICE",
+          "NICEST",
+          "POLITE",
+          "SOCIABLE"
+        ],
+        "preferredFamilies": [
+          "nice",
+          "polite"
+        ],
+        "familiarFamilies": [
+          "nice",
+          "polite"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 20,
+    "pathsChecked": 30,
+    "removalOrder": [
+      0,
+      10,
+      12,
+      5,
+      11,
+      15
+    ]
+  }
+}

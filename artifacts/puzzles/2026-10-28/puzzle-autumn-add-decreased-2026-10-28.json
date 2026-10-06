@@ -1,0 +1,288 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-autumn-add-decreased-2026-10-28-08404a441777.json",
+  "answer": "DECREASED",
+  "rules": "bingo-hunt",
+  "review": "ADD uses increasing quantity, not saying something further. DECREASE, REDUCE, CUT, LESSEN, DEDUCT and SUBTRACT are quantity-reducing verbs. Nouns such as deduction and adjectives such as reduced are not imported; the accepted forms have an independently pinned verb reading.",
+  "identity": {
+    "id": "puzzle-autumn-add-decreased-2026-10-28",
+    "enemy": "ADD",
+    "board": "ACDDEEEGILNORSTU",
+    "bingos": [
+      "DECREASED"
+    ],
+    "bingoFamilies": [
+      "DECREASE"
+    ]
+  },
+  "witnesses": [
+    [
+      "DECREASED"
+    ],
+    [
+      "CUT",
+      "DECREASED"
+    ],
+    [
+      "CUT",
+      "REDUCE",
+      "DECREASED"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "DECREASED",
+      "effort": 3.4
+    }
+  ],
+  "helperEffort": 0.6,
+  "removalProof": {
+    "preferredHelpers": [
+      "CUT",
+      "REDUCE"
+    ],
+    "branches": [
+      {
+        "first": "CUT",
+        "next": [
+          "CUTS",
+          "DECREASE",
+          "DEDUCT",
+          "DEDUCTS",
+          "REDUCE",
+          "REDUCED",
+          "REDUCES"
+        ],
+        "preferredFamilies": [
+          "reduce"
+        ],
+        "familiarFamilies": [
+          "decrease",
+          "deduct",
+          "reduce"
+        ]
+      },
+      {
+        "first": "CUTS",
+        "next": [
+          "CUT",
+          "DECREASE",
+          "DEDUCT",
+          "DEDUCTS",
+          "REDUCE",
+          "REDUCED",
+          "REDUCES"
+        ],
+        "preferredFamilies": [
+          "reduce"
+        ],
+        "familiarFamilies": [
+          "decrease",
+          "deduct",
+          "reduce"
+        ]
+      },
+      {
+        "first": "DECREASE",
+        "next": [
+          "CUT",
+          "CUTS",
+          "DEDUCT",
+          "DEDUCTS",
+          "REDUCE",
+          "REDUCED",
+          "REDUCES"
+        ],
+        "preferredFamilies": [
+          "cut",
+          "reduce"
+        ],
+        "familiarFamilies": [
+          "cut",
+          "deduct",
+          "reduce"
+        ]
+      },
+      {
+        "first": "DECREASING",
+        "next": [
+          "CUT",
+          "CUTS",
+          "DECREASE",
+          "DEDUCT",
+          "DEDUCTS",
+          "REDUCE",
+          "REDUCED",
+          "REDUCES"
+        ],
+        "preferredFamilies": [
+          "cut",
+          "reduce"
+        ],
+        "familiarFamilies": [
+          "cut",
+          "deduct",
+          "reduce"
+        ]
+      },
+      {
+        "first": "DEDUCT",
+        "next": [
+          "CUT",
+          "CUTS",
+          "DECREASE",
+          "DEDUCTS",
+          "REDUCE",
+          "REDUCED",
+          "REDUCES"
+        ],
+        "preferredFamilies": [
+          "cut",
+          "reduce"
+        ],
+        "familiarFamilies": [
+          "cut",
+          "decrease",
+          "reduce"
+        ]
+      },
+      {
+        "first": "DEDUCTING",
+        "next": [
+          "CUT",
+          "CUTS",
+          "DECREASE",
+          "DEDUCT",
+          "DEDUCTS",
+          "REDUCE",
+          "REDUCED",
+          "REDUCES"
+        ],
+        "preferredFamilies": [
+          "cut",
+          "reduce"
+        ],
+        "familiarFamilies": [
+          "cut",
+          "decrease",
+          "reduce"
+        ]
+      },
+      {
+        "first": "DEDUCTS",
+        "next": [
+          "CUT",
+          "CUTS",
+          "DECREASE",
+          "DEDUCT",
+          "REDUCE",
+          "REDUCED",
+          "REDUCES"
+        ],
+        "preferredFamilies": [
+          "cut",
+          "reduce"
+        ],
+        "familiarFamilies": [
+          "cut",
+          "decrease",
+          "reduce"
+        ]
+      },
+      {
+        "first": "REDUCE",
+        "next": [
+          "CUT",
+          "CUTS",
+          "DECREASE",
+          "DEDUCT",
+          "DEDUCTS",
+          "REDUCED",
+          "REDUCES"
+        ],
+        "preferredFamilies": [
+          "cut"
+        ],
+        "familiarFamilies": [
+          "cut",
+          "decrease",
+          "deduct"
+        ]
+      },
+      {
+        "first": "REDUCED",
+        "next": [
+          "CUT",
+          "CUTS",
+          "DECREASE",
+          "DEDUCT",
+          "DEDUCTS",
+          "REDUCE",
+          "REDUCES"
+        ],
+        "preferredFamilies": [
+          "cut"
+        ],
+        "familiarFamilies": [
+          "cut",
+          "decrease",
+          "deduct"
+        ]
+      },
+      {
+        "first": "REDUCES",
+        "next": [
+          "CUT",
+          "CUTS",
+          "DECREASE",
+          "DEDUCT",
+          "DEDUCTS",
+          "REDUCE",
+          "REDUCED"
+        ],
+        "preferredFamilies": [
+          "cut"
+        ],
+        "familiarFamilies": [
+          "cut",
+          "decrease",
+          "deduct"
+        ]
+      },
+      {
+        "first": "REDUCING",
+        "next": [
+          "CUT",
+          "CUTS",
+          "DECREASE",
+          "DEDUCT",
+          "DEDUCTS",
+          "REDUCE",
+          "REDUCED",
+          "REDUCES"
+        ],
+        "preferredFamilies": [
+          "cut"
+        ],
+        "familiarFamilies": [
+          "cut",
+          "decrease",
+          "deduct"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 3,
+    "candidatesChecked": 35,
+    "pathsChecked": 80,
+    "removalOrder": [
+      1,
+      4,
+      6,
+      14,
+      0,
+      11,
+      15
+    ]
+  }
+}

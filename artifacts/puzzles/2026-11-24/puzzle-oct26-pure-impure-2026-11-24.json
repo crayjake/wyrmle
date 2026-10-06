@@ -1,0 +1,182 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-pure-impure-2026-11-24-abfaca2d7633.json",
+  "answer": "IMPURE",
+  "rules": "bingo-hunt",
+  "review": "PURE concerns the composition of a substance. IMPURE contains foreign material; DIRTY uses physical contamination and MIXED contains different kinds. Moral purity, rude language and mixed-race identity are excluded. SOILED and SMUTTY use physical dirt; MOTLEY uses a mixture of different kinds. Oil alone and parasites are not treated as proof of impurity.",
+  "identity": {
+    "id": "puzzle-oct26-pure-impure-2026-11-24",
+    "enemy": "PURE",
+    "board": "ADEEILMOPRSTTUXY",
+    "bingos": [
+      "IMPURE",
+      "IMPUREST"
+    ],
+    "bingoFamilies": [
+      "IMPURE"
+    ]
+  },
+  "witnesses": [
+    [
+      "IMPURE"
+    ],
+    [
+      "DIRTY",
+      "IMPURE"
+    ],
+    [
+      "DIRTY",
+      "MIXED",
+      "IMPURE"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "IMPURE",
+      "effort": 3.6999999999999997
+    },
+    {
+      "word": "IMPUREST",
+      "effort": 10.8
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "DIRTY",
+      "MIXED"
+    ],
+    "branches": [
+      {
+        "first": "DIRTY",
+        "next": [
+          "MIXED"
+        ],
+        "preferredFamilies": [
+          "mixed"
+        ],
+        "familiarFamilies": [
+          "mixed"
+        ]
+      },
+      {
+        "first": "MIXED",
+        "next": [
+          "DIRTY"
+        ],
+        "preferredFamilies": [
+          "dirty"
+        ],
+        "familiarFamilies": [
+          "dirty"
+        ]
+      },
+      {
+        "first": "MOTLEY",
+        "next": [
+          "DIRTY",
+          "MIXED"
+        ],
+        "preferredFamilies": [
+          "dirty",
+          "mixed"
+        ],
+        "familiarFamilies": [
+          "dirty",
+          "mixed"
+        ]
+      },
+      {
+        "first": "MOTLEYER",
+        "next": [
+          "DIRTY",
+          "MIXED"
+        ],
+        "preferredFamilies": [
+          "dirty",
+          "mixed"
+        ],
+        "familiarFamilies": [
+          "dirty",
+          "mixed"
+        ]
+      },
+      {
+        "first": "MOTLEYEST",
+        "next": [
+          "DIRTY",
+          "MIXED"
+        ],
+        "preferredFamilies": [
+          "dirty",
+          "mixed"
+        ],
+        "familiarFamilies": [
+          "dirty",
+          "mixed"
+        ]
+      },
+      {
+        "first": "SMUTTIER",
+        "next": [
+          "DIRTY",
+          "MIXED"
+        ],
+        "preferredFamilies": [
+          "dirty",
+          "mixed"
+        ],
+        "familiarFamilies": [
+          "dirty",
+          "mixed"
+        ]
+      },
+      {
+        "first": "SMUTTY",
+        "next": [
+          "DIRTY",
+          "MIXED"
+        ],
+        "preferredFamilies": [
+          "dirty",
+          "mixed"
+        ],
+        "familiarFamilies": [
+          "dirty",
+          "mixed"
+        ]
+      },
+      {
+        "first": "SOILED",
+        "next": [
+          "DIRTY",
+          "MIXED"
+        ],
+        "preferredFamilies": [
+          "dirty",
+          "mixed"
+        ],
+        "familiarFamilies": [
+          "dirty",
+          "mixed"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 252,
+    "pathsChecked": 14,
+    "removalOrder": [
+      3,
+      4,
+      6,
+      9,
+      11,
+      5,
+      10,
+      13,
+      14,
+      15
+    ]
+  }
+}

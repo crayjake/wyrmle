@@ -1,0 +1,307 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-autumn-fact-fabrication-2026-10-06-2f534b514e87.json",
+  "answer": "FABRICATION",
+  "rules": "bingo-hunt",
+  "review": "FACT is a true statement. FABRICATION is an invented false account; LIE, FIB and FICTION use untrue-statement noun senses. Manufacturing fabrication and fictional literature are not treated as opposites of truth. The noun FICTION is accepted, not its adjective fictional. FABLE, STORY and TALE explicitly use their false-account senses; FALSITY is a false statement. True stories and literary genres are not the accepted senses.",
+  "identity": {
+    "id": "puzzle-autumn-fact-fabrication-2026-10-06",
+    "enemy": "FACT",
+    "board": "AABCEFIILNORSTUY",
+    "bingos": [
+      "FABRICATION",
+      "FABRICATIONS"
+    ],
+    "bingoFamilies": [
+      "FABRICATION"
+    ]
+  },
+  "witnesses": [
+    [
+      "FABRICATION"
+    ],
+    [
+      "LIE",
+      "FABRICATION"
+    ],
+    [
+      "LIE",
+      "FIB",
+      "FABRICATION"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "FABRICATION",
+      "effort": 5.64
+    },
+    {
+      "word": "FABRICATIONS",
+      "effort": 8.14
+    }
+  ],
+  "helperEffort": 3.6799999999999997,
+  "removalProof": {
+    "preferredHelpers": [
+      "LIE",
+      "FIB",
+      "FICTION"
+    ],
+    "branches": [
+      {
+        "first": "FABLE",
+        "next": [
+          "FIB",
+          "FICTION",
+          "LIE",
+          "TALE"
+        ],
+        "preferredFamilies": [
+          "fib",
+          "fiction",
+          "lie"
+        ],
+        "familiarFamilies": [
+          "fib",
+          "fiction",
+          "lie",
+          "tale"
+        ]
+      },
+      {
+        "first": "FABLES",
+        "next": [
+          "FABLE",
+          "FIB",
+          "FICTION",
+          "LIE",
+          "TALE"
+        ],
+        "preferredFamilies": [
+          "fib",
+          "fiction",
+          "lie"
+        ],
+        "familiarFamilies": [
+          "fib",
+          "fiction",
+          "lie",
+          "tale"
+        ]
+      },
+      {
+        "first": "FALSITY",
+        "next": [
+          "FABLE",
+          "FIB",
+          "FICTION",
+          "LIE",
+          "TALE"
+        ],
+        "preferredFamilies": [
+          "fib",
+          "fiction",
+          "lie"
+        ],
+        "familiarFamilies": [
+          "fable",
+          "fib",
+          "fiction",
+          "lie",
+          "tale"
+        ]
+      },
+      {
+        "first": "FIB",
+        "next": [
+          "FABLE",
+          "FICTION",
+          "LIE",
+          "TALE"
+        ],
+        "preferredFamilies": [
+          "fiction",
+          "lie"
+        ],
+        "familiarFamilies": [
+          "fable",
+          "fiction",
+          "lie",
+          "tale"
+        ]
+      },
+      {
+        "first": "FIBS",
+        "next": [
+          "FABLE",
+          "FIB",
+          "FICTION",
+          "LIE",
+          "TALE"
+        ],
+        "preferredFamilies": [
+          "fiction",
+          "lie"
+        ],
+        "familiarFamilies": [
+          "fable",
+          "fiction",
+          "lie",
+          "tale"
+        ]
+      },
+      {
+        "first": "FICTION",
+        "next": [
+          "FABLE",
+          "FIB",
+          "LIE",
+          "TALE"
+        ],
+        "preferredFamilies": [
+          "fib",
+          "lie"
+        ],
+        "familiarFamilies": [
+          "fable",
+          "fib",
+          "lie",
+          "tale"
+        ]
+      },
+      {
+        "first": "FICTIONS",
+        "next": [
+          "FABLE",
+          "FIB",
+          "FICTION",
+          "LIE",
+          "TALE"
+        ],
+        "preferredFamilies": [
+          "fib",
+          "lie"
+        ],
+        "familiarFamilies": [
+          "fable",
+          "fib",
+          "lie",
+          "tale"
+        ]
+      },
+      {
+        "first": "LIE",
+        "next": [
+          "FABLE",
+          "FIB",
+          "FICTION",
+          "TALE"
+        ],
+        "preferredFamilies": [
+          "fib",
+          "fiction"
+        ],
+        "familiarFamilies": [
+          "fable",
+          "fib",
+          "fiction",
+          "tale"
+        ]
+      },
+      {
+        "first": "LIES",
+        "next": [
+          "FABLE",
+          "FIB",
+          "FICTION",
+          "LIE",
+          "TALE"
+        ],
+        "preferredFamilies": [
+          "fib",
+          "fiction"
+        ],
+        "familiarFamilies": [
+          "fable",
+          "fib",
+          "fiction",
+          "tale"
+        ]
+      },
+      {
+        "first": "STORY",
+        "next": [
+          "FABLE",
+          "FIB",
+          "FICTION",
+          "LIE",
+          "TALE"
+        ],
+        "preferredFamilies": [
+          "fib",
+          "fiction",
+          "lie"
+        ],
+        "familiarFamilies": [
+          "fable",
+          "fib",
+          "fiction",
+          "lie",
+          "tale"
+        ]
+      },
+      {
+        "first": "TALE",
+        "next": [
+          "FABLE",
+          "FIB",
+          "FICTION",
+          "LIE"
+        ],
+        "preferredFamilies": [
+          "fib",
+          "fiction",
+          "lie"
+        ],
+        "familiarFamilies": [
+          "fable",
+          "fib",
+          "fiction",
+          "lie"
+        ]
+      },
+      {
+        "first": "TALES",
+        "next": [
+          "FABLE",
+          "FIB",
+          "FICTION",
+          "LIE",
+          "TALE"
+        ],
+        "preferredFamilies": [
+          "fib",
+          "fiction",
+          "lie"
+        ],
+        "familiarFamilies": [
+          "fable",
+          "fib",
+          "fiction",
+          "lie"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 2,
+    "minFamiliarFamilies": 4,
+    "candidatesChecked": 10,
+    "pathsChecked": 55,
+    "removalOrder": [
+      1,
+      6,
+      9,
+      13,
+      15
+    ]
+  }
+}

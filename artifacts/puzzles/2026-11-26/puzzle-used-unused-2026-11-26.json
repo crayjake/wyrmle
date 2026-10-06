@@ -1,0 +1,87 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-used-unused-2026-11-26-985f71afbf72.json",
+  "answer": "UNUSED",
+  "rules": "bingo-hunt",
+  "review": "Prior use, not age of a person. UNUSED, NEW and FRESH use not yet used or soiled. Newly invented, refreshed energy and recently harvested food are not counter senses.",
+  "identity": {
+    "id": "puzzle-used-unused-2026-11-26",
+    "enemy": "USED",
+    "board": "ADEFHILMNORSTUUW",
+    "bingos": [
+      "UNUSED"
+    ],
+    "bingoFamilies": [
+      "UNUSED"
+    ]
+  },
+  "witnesses": [
+    [
+      "UNUSED"
+    ],
+    [
+      "NEW",
+      "UNUSED"
+    ],
+    [
+      "NEW",
+      "FRESH",
+      "UNUSED"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "UNUSED",
+      "effort": 2.32
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "NEW",
+      "FRESH"
+    ],
+    "branches": [
+      {
+        "first": "FRESH",
+        "next": [
+          "NEW"
+        ],
+        "preferredFamilies": [
+          "new"
+        ],
+        "familiarFamilies": [
+          "new"
+        ]
+      },
+      {
+        "first": "NEW",
+        "next": [
+          "FRESH"
+        ],
+        "preferredFamilies": [
+          "fresh"
+        ],
+        "familiarFamilies": [
+          "fresh"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 252,
+    "pathsChecked": 2,
+    "removalOrder": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      1,
+      7,
+      8,
+      10,
+      14
+    ]
+  }
+}

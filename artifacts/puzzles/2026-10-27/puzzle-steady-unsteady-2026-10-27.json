@@ -1,0 +1,173 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-steady-unsteady-2026-10-27-4128da3f50b9.json",
+  "answer": "UNSTEADY",
+  "rules": "bingo-hunt",
+  "review": "Physical stability and regular movement. SHAKY and JERKY describe irregular motion; UNSTEADY is the direct opposite. The dried-meat noun JERKY and the foolish sense of jerky are not the accepted meanings. UNSTABLE uses physical lack of stability, not a psychiatric description. JOLTY and JOLTED concern jerky, irregular physical movement.",
+  "identity": {
+    "id": "puzzle-steady-unsteady-2026-10-27",
+    "enemy": "STEADY",
+    "board": "ABDEHIJKLNORSTUY",
+    "bingos": [
+      "UNSTEADY"
+    ],
+    "bingoFamilies": [
+      "UNSTEADY"
+    ]
+  },
+  "witnesses": [
+    [
+      "UNSTEADY"
+    ],
+    [
+      "SHAKY",
+      "UNSTEADY"
+    ],
+    [
+      "SHAKY",
+      "JERKY",
+      "UNSTEADY"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "UNSTEADY",
+      "effort": 5.34
+    }
+  ],
+  "helperEffort": 2.8,
+  "removalProof": {
+    "preferredHelpers": [
+      "SHAKY",
+      "JERKY"
+    ],
+    "branches": [
+      {
+        "first": "JERKY",
+        "next": [
+          "SHAKY"
+        ],
+        "preferredFamilies": [
+          "shaky"
+        ],
+        "familiarFamilies": [
+          "shaky"
+        ]
+      },
+      {
+        "first": "JOLTED",
+        "next": [
+          "JERKY",
+          "SHAKY"
+        ],
+        "preferredFamilies": [
+          "jerky",
+          "shaky"
+        ],
+        "familiarFamilies": [
+          "jerky",
+          "shaky"
+        ]
+      },
+      {
+        "first": "JOLTIER",
+        "next": [
+          "JERKY",
+          "SHAKY"
+        ],
+        "preferredFamilies": [
+          "jerky",
+          "shaky"
+        ],
+        "familiarFamilies": [
+          "jerky",
+          "shaky"
+        ]
+      },
+      {
+        "first": "JOLTY",
+        "next": [
+          "JERKY",
+          "SHAKY"
+        ],
+        "preferredFamilies": [
+          "jerky",
+          "shaky"
+        ],
+        "familiarFamilies": [
+          "jerky",
+          "shaky"
+        ]
+      },
+      {
+        "first": "SHAKIER",
+        "next": [
+          "JERKY",
+          "SHAKY"
+        ],
+        "preferredFamilies": [
+          "jerky"
+        ],
+        "familiarFamilies": [
+          "jerky"
+        ]
+      },
+      {
+        "first": "SHAKY",
+        "next": [
+          "JERKY"
+        ],
+        "preferredFamilies": [
+          "jerky"
+        ],
+        "familiarFamilies": [
+          "jerky"
+        ]
+      },
+      {
+        "first": "UNSTABLE",
+        "next": [
+          "JERKY",
+          "SHAKY"
+        ],
+        "preferredFamilies": [
+          "jerky",
+          "shaky"
+        ],
+        "familiarFamilies": [
+          "jerky",
+          "shaky"
+        ]
+      },
+      {
+        "first": "UNSTABLER",
+        "next": [
+          "JERKY",
+          "SHAKY"
+        ],
+        "preferredFamilies": [
+          "jerky",
+          "shaky"
+        ],
+        "familiarFamilies": [
+          "jerky",
+          "shaky"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 70,
+    "pathsChecked": 14,
+    "removalOrder": [
+      0,
+      3,
+      12,
+      15,
+      1,
+      4,
+      5,
+      6
+    ]
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-validate-invalidate-2026-10-19-c652d411157b.json",
+  "answer": "INVALIDATE",
+  "rules": "bingo-hunt",
+  "review": "All counters are verbs reversing legal validity. ANNUL and VOID mean cancel legal force; they are not adjective or noun substitutions. Inflected verbs preserve the same action sense.",
+  "identity": {
+    "id": "puzzle-validate-invalidate-2026-10-19",
+    "enemy": "VALIDATE",
+    "board": "AADEIILNNORSTTUV",
+    "bingos": [
+      "INVALIDATE",
+      "INVALIDATES"
+    ],
+    "bingoFamilies": [
+      "INVALIDATE"
+    ]
+  },
+  "witnesses": [
+    [
+      "INVALIDATE"
+    ],
+    [
+      "ANNUL",
+      "INVALIDATE"
+    ],
+    [
+      "ANNUL",
+      "VOID",
+      "INVALIDATE"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "INVALIDATE",
+      "effort": 6
+    },
+    {
+      "word": "INVALIDATES",
+      "effort": 8.04
+    }
+  ],
+  "helperEffort": 4.02,
+  "removalProof": {
+    "preferredHelpers": [
+      "ANNUL",
+      "VOID"
+    ],
+    "branches": [
+      {
+        "first": "ANNUL",
+        "next": [
+          "AVOID",
+          "VOID"
+        ],
+        "preferredFamilies": [
+          "void"
+        ],
+        "familiarFamilies": [
+          "avoid",
+          "void"
+        ]
+      },
+      {
+        "first": "ANNULS",
+        "next": [
+          "ANNUL",
+          "AVOID",
+          "VOID"
+        ],
+        "preferredFamilies": [
+          "void"
+        ],
+        "familiarFamilies": [
+          "avoid",
+          "void"
+        ]
+      },
+      {
+        "first": "AVOID",
+        "next": [
+          "ANNUL",
+          "VOID"
+        ],
+        "preferredFamilies": [
+          "annul",
+          "void"
+        ],
+        "familiarFamilies": [
+          "annul",
+          "void"
+        ]
+      },
+      {
+        "first": "AVOIDS",
+        "next": [
+          "ANNUL",
+          "AVOID",
+          "VOID"
+        ],
+        "preferredFamilies": [
+          "annul",
+          "void"
+        ],
+        "familiarFamilies": [
+          "annul",
+          "void"
+        ]
+      },
+      {
+        "first": "VITIATE",
+        "next": [
+          "ANNUL",
+          "AVOID",
+          "VOID"
+        ],
+        "preferredFamilies": [
+          "annul",
+          "void"
+        ],
+        "familiarFamilies": [
+          "annul",
+          "avoid",
+          "void"
+        ]
+      },
+      {
+        "first": "VITIATED",
+        "next": [
+          "ANNUL",
+          "AVOID",
+          "VOID"
+        ],
+        "preferredFamilies": [
+          "annul",
+          "void"
+        ],
+        "familiarFamilies": [
+          "annul",
+          "avoid",
+          "void"
+        ]
+      },
+      {
+        "first": "VITIATES",
+        "next": [
+          "ANNUL",
+          "AVOID",
+          "VOID"
+        ],
+        "preferredFamilies": [
+          "annul",
+          "void"
+        ],
+        "familiarFamilies": [
+          "annul",
+          "avoid",
+          "void"
+        ]
+      },
+      {
+        "first": "VOID",
+        "next": [
+          "ANNUL",
+          "AVOID"
+        ],
+        "preferredFamilies": [
+          "annul"
+        ],
+        "familiarFamilies": [
+          "annul",
+          "avoid"
+        ]
+      },
+      {
+        "first": "VOIDS",
+        "next": [
+          "ANNUL",
+          "AVOID",
+          "VOID"
+        ],
+        "preferredFamilies": [
+          "annul"
+        ],
+        "familiarFamilies": [
+          "annul",
+          "avoid"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 20,
+    "pathsChecked": 24,
+    "removalOrder": [
+      2,
+      6,
+      10,
+      8,
+      9,
+      13
+    ]
+  }
+}

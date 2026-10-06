@@ -1,0 +1,204 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-mobile-immobile-2026-10-12-0a052b621d63.json",
+  "answer": "IMMOBILE",
+  "rules": "bingo-hunt",
+  "review": "MOBILE concerns movement, not phones. IMMOBILE cannot be moved; FIRM and FAST both use securely fixed in place (as in held fast), not speed or hardness. Only those fixed-position adjective readings are accepted. SET uses its fixed and unmoving adjective sense, not the verb or collection noun. STABILE is unable to be moved. IMMOTILE is the adjective for microorganisms unable to move, the same motion dimension.",
+  "identity": {
+    "id": "puzzle-oct26-mobile-immobile-2026-10-12",
+    "enemy": "MOBILE",
+    "board": "ABEFIILLMMOORSST",
+    "bingos": [
+      "IMMOBILE"
+    ],
+    "bingoFamilies": [
+      "IMMOBILE"
+    ]
+  },
+  "witnesses": [
+    [
+      "IMMOBILE"
+    ],
+    [
+      "FIRM",
+      "IMMOBILE"
+    ],
+    [
+      "FIRM",
+      "SET",
+      "IMMOBILE"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "IMMOBILE",
+      "effort": 4.9399999999999995
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "FIRM",
+      "SET"
+    ],
+    "branches": [
+      {
+        "first": "FAST",
+        "next": [
+          "FIRM",
+          "FIRMEST",
+          "IMMOTILE",
+          "SET"
+        ],
+        "preferredFamilies": [
+          "firm",
+          "set"
+        ],
+        "familiarFamilies": [
+          "firm",
+          "set"
+        ]
+      },
+      {
+        "first": "FASTER",
+        "next": [
+          "FIRM",
+          "FIRMEST",
+          "IMMOTILE",
+          "SET"
+        ],
+        "preferredFamilies": [
+          "firm",
+          "set"
+        ],
+        "familiarFamilies": [
+          "firm",
+          "set"
+        ]
+      },
+      {
+        "first": "FIRM",
+        "next": [
+          "FIRMEST",
+          "IMMOTILE",
+          "SET"
+        ],
+        "preferredFamilies": [
+          "set"
+        ],
+        "familiarFamilies": [
+          "set"
+        ]
+      },
+      {
+        "first": "FIRMEST",
+        "next": [
+          "FIRM",
+          "IMMOTILE",
+          "SET"
+        ],
+        "preferredFamilies": [
+          "set"
+        ],
+        "familiarFamilies": [
+          "set"
+        ]
+      },
+      {
+        "first": "IMMOTILE",
+        "next": [
+          "FIRM",
+          "FIRMEST",
+          "SET"
+        ],
+        "preferredFamilies": [
+          "firm",
+          "set"
+        ],
+        "familiarFamilies": [
+          "firm",
+          "set"
+        ]
+      },
+      {
+        "first": "SET",
+        "next": [
+          "FIRM",
+          "FIRMEST",
+          "IMMOTILE"
+        ],
+        "preferredFamilies": [
+          "firm"
+        ],
+        "familiarFamilies": [
+          "firm"
+        ]
+      },
+      {
+        "first": "STABILE",
+        "next": [
+          "FIRM",
+          "FIRMEST",
+          "IMMOTILE",
+          "SET"
+        ],
+        "preferredFamilies": [
+          "firm",
+          "set"
+        ],
+        "familiarFamilies": [
+          "firm",
+          "set"
+        ]
+      },
+      {
+        "first": "STILL",
+        "next": [
+          "FIRM",
+          "FIRMEST",
+          "IMMOTILE",
+          "SET"
+        ],
+        "preferredFamilies": [
+          "firm",
+          "set"
+        ],
+        "familiarFamilies": [
+          "firm",
+          "set"
+        ]
+      },
+      {
+        "first": "STILLER",
+        "next": [
+          "FIRM",
+          "FIRMEST",
+          "IMMOTILE",
+          "SET"
+        ],
+        "preferredFamilies": [
+          "firm",
+          "set"
+        ],
+        "familiarFamilies": [
+          "firm",
+          "set"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 70,
+    "pathsChecked": 32,
+    "removalOrder": [
+      4,
+      5,
+      14,
+      15,
+      2,
+      7,
+      10,
+      13
+    ]
+  }
+}

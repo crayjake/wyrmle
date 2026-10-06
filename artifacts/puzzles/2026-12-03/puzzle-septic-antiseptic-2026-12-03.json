@@ -1,0 +1,164 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-septic-antiseptic-2026-12-03-af4d745b144d.json",
+  "answer": "ANTISEPTIC",
+  "rules": "bingo-hunt",
+  "review": "Medical cleanliness is the single sense. CLEAN is free from infection and STERILE is free from pathogens, not infertility. ANTISEPTIC uses its adjective, not a disinfectant noun. Two T copies make the longer answer necessary; ASEPTIC remains a useful helper. PRISTINE uses complete freedom from contamination, not an ancient original state.",
+  "identity": {
+    "id": "puzzle-septic-antiseptic-2026-12-03",
+    "enemy": "SEPTIC",
+    "board": "ACEEHIILNOPRSTTU",
+    "bingos": [
+      "ANTISEPTIC"
+    ],
+    "bingoFamilies": [
+      "ANTISEPTIC"
+    ]
+  },
+  "witnesses": [
+    [
+      "ANTISEPTIC"
+    ],
+    [
+      "CLEAN",
+      "ANTISEPTIC"
+    ],
+    [
+      "CLEAN",
+      "STERILE",
+      "ANTISEPTIC"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "ANTISEPTIC",
+      "effort": 6.38
+    }
+  ],
+  "helperEffort": 3.34,
+  "removalProof": {
+    "preferredHelpers": [
+      "CLEAN",
+      "STERILE"
+    ],
+    "branches": [
+      {
+        "first": "ASEPTIC",
+        "next": [
+          "CLEAN",
+          "CLEANER",
+          "CLEANEST",
+          "PRISTINE",
+          "STERILE"
+        ],
+        "preferredFamilies": [
+          "clean",
+          "sterile"
+        ],
+        "familiarFamilies": [
+          "clean",
+          "pristine",
+          "sterile"
+        ]
+      },
+      {
+        "first": "CLEAN",
+        "next": [
+          "ASEPTIC",
+          "CLEANER",
+          "CLEANEST",
+          "PRISTINE",
+          "STERILE"
+        ],
+        "preferredFamilies": [
+          "sterile"
+        ],
+        "familiarFamilies": [
+          "pristine",
+          "sterile"
+        ]
+      },
+      {
+        "first": "CLEANER",
+        "next": [
+          "ASEPTIC",
+          "CLEAN",
+          "CLEANEST",
+          "PRISTINE",
+          "STERILE"
+        ],
+        "preferredFamilies": [
+          "sterile"
+        ],
+        "familiarFamilies": [
+          "pristine",
+          "sterile"
+        ]
+      },
+      {
+        "first": "CLEANEST",
+        "next": [
+          "ASEPTIC",
+          "CLEAN",
+          "CLEANER",
+          "PRISTINE",
+          "STERILE"
+        ],
+        "preferredFamilies": [
+          "sterile"
+        ],
+        "familiarFamilies": [
+          "pristine",
+          "sterile"
+        ]
+      },
+      {
+        "first": "PRISTINE",
+        "next": [
+          "ASEPTIC",
+          "CLEAN",
+          "CLEANER",
+          "CLEANEST",
+          "STERILE"
+        ],
+        "preferredFamilies": [
+          "clean",
+          "sterile"
+        ],
+        "familiarFamilies": [
+          "clean",
+          "sterile"
+        ]
+      },
+      {
+        "first": "STERILE",
+        "next": [
+          "ASEPTIC",
+          "CLEAN",
+          "CLEANER",
+          "CLEANEST",
+          "PRISTINE"
+        ],
+        "preferredFamilies": [
+          "clean"
+        ],
+        "familiarFamilies": [
+          "clean",
+          "pristine"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 20,
+    "pathsChecked": 30,
+    "removalOrder": [
+      9,
+      11,
+      15,
+      4,
+      7,
+      14
+    ]
+  }
+}

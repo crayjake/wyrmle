@@ -1,0 +1,82 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-odd-coordinated-2026-11-04-014e23142964.json",
+  "answer": "COORDINATED",
+  "rules": "bingo-hunt",
+  "review": "ODD means unmatched, not strange or an odd number. COORDINATED is intentionally matched. MATCHED and MATED use harmonising or paired adjective readings; MATED does not refer to sexual activity here. This is the contrast between odd items and a matching set.",
+  "identity": {
+    "id": "puzzle-oct26-odd-coordinated-2026-11-04",
+    "enemy": "ODD",
+    "board": "AACDDEHILMNOORST",
+    "bingos": [
+      "COORDINATED"
+    ],
+    "bingoFamilies": [
+      "COORDINATED"
+    ]
+  },
+  "witnesses": [
+    [
+      "COORDINATED"
+    ],
+    [
+      "MATED",
+      "COORDINATED"
+    ],
+    [
+      "MATED",
+      "MATCHED",
+      "COORDINATED"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "COORDINATED",
+      "effort": 5.02
+    }
+  ],
+  "helperEffort": 3.16,
+  "removalProof": {
+    "preferredHelpers": [
+      "MATED",
+      "MATCHED"
+    ],
+    "branches": [
+      {
+        "first": "MATCHED",
+        "next": [
+          "MATED"
+        ],
+        "preferredFamilies": [
+          "mated"
+        ],
+        "familiarFamilies": [
+          "mated"
+        ]
+      },
+      {
+        "first": "MATED",
+        "next": [
+          "MATCHED"
+        ],
+        "preferredFamilies": [
+          "matched"
+        ],
+        "familiarFamilies": [
+          "matched"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 10,
+    "pathsChecked": 2,
+    "removalOrder": [
+      6,
+      9,
+      13,
+      4,
+      7
+    ]
+  }
+}

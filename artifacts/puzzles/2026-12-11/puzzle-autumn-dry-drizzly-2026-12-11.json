@@ -1,0 +1,218 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-autumn-dry-drizzly-2026-12-11-8c260d287515.json",
+  "answer": "DRIZZLY",
+  "rules": "bingo-hunt",
+  "review": "DRY here is dry weather or a dry surface. DRIZZLY and RAINY oppose dry weather; DAMP, WET, MOIST and DEWY oppose absence of moisture. No humor, alcohol or sentimental senses are used. WATERY, MISTY and SOPPY use actual moisture, not dilution, obscurity or sentimentality. TEARY means eyes full of tears, a literal moisture reading rather than merely feeling sad.",
+  "identity": {
+    "id": "puzzle-autumn-dry-drizzly-2026-12-11",
+    "enemy": "DRY",
+    "board": "ADEILMNOPRSTWYZZ",
+    "bingos": [
+      "DRIZZLY"
+    ],
+    "bingoFamilies": [
+      "DRIZZLY"
+    ]
+  },
+  "witnesses": [
+    [
+      "DRIZZLY"
+    ],
+    [
+      "DAMP",
+      "DRIZZLY"
+    ],
+    [
+      "DAMP",
+      "RAINY",
+      "DRIZZLY"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "DRIZZLY",
+      "effort": 5.88
+    }
+  ],
+  "helperEffort": 1.7599999999999998,
+  "removalProof": {
+    "preferredHelpers": [
+      "DAMP",
+      "RAINY",
+      "WET"
+    ],
+    "branches": [
+      {
+        "first": "DAMP",
+        "next": [
+          "RAINY"
+        ],
+        "preferredFamilies": [
+          "rainy"
+        ],
+        "familiarFamilies": [
+          "rainy"
+        ]
+      },
+      {
+        "first": "DAMPER",
+        "next": [
+          "DAMP",
+          "RAINY"
+        ],
+        "preferredFamilies": [
+          "rainy"
+        ],
+        "familiarFamilies": [
+          "rainy"
+        ]
+      },
+      {
+        "first": "DAMPEST",
+        "next": [
+          "DAMP",
+          "RAINY"
+        ],
+        "preferredFamilies": [
+          "rainy"
+        ],
+        "familiarFamilies": [
+          "rainy"
+        ]
+      },
+      {
+        "first": "DEWY",
+        "next": [
+          "DAMP",
+          "RAINY"
+        ],
+        "preferredFamilies": [
+          "damp",
+          "rainy"
+        ],
+        "familiarFamilies": [
+          "damp",
+          "rainy"
+        ]
+      },
+      {
+        "first": "MISTY",
+        "next": [
+          "DAMP",
+          "RAINY"
+        ],
+        "preferredFamilies": [
+          "damp",
+          "rainy"
+        ],
+        "familiarFamilies": [
+          "damp",
+          "rainy"
+        ]
+      },
+      {
+        "first": "MOIST",
+        "next": [
+          "DAMP",
+          "RAINY"
+        ],
+        "preferredFamilies": [
+          "damp",
+          "rainy"
+        ],
+        "familiarFamilies": [
+          "damp",
+          "rainy"
+        ]
+      },
+      {
+        "first": "MOISTER",
+        "next": [
+          "DAMP",
+          "RAINY"
+        ],
+        "preferredFamilies": [
+          "damp",
+          "rainy"
+        ],
+        "familiarFamilies": [
+          "damp",
+          "rainy"
+        ]
+      },
+      {
+        "first": "RAINY",
+        "next": [
+          "DAMP"
+        ],
+        "preferredFamilies": [
+          "damp"
+        ],
+        "familiarFamilies": [
+          "damp"
+        ]
+      },
+      {
+        "first": "TEARY",
+        "next": [
+          "DAMP",
+          "RAINY"
+        ],
+        "preferredFamilies": [
+          "damp",
+          "rainy"
+        ],
+        "familiarFamilies": [
+          "damp",
+          "rainy"
+        ]
+      },
+      {
+        "first": "WATERY",
+        "next": [
+          "DAMP",
+          "RAINY"
+        ],
+        "preferredFamilies": [
+          "damp",
+          "rainy"
+        ],
+        "familiarFamilies": [
+          "damp",
+          "rainy"
+        ]
+      },
+      {
+        "first": "WET",
+        "next": [
+          "DAMP",
+          "RAINY"
+        ],
+        "preferredFamilies": [
+          "damp",
+          "rainy"
+        ],
+        "familiarFamilies": [
+          "damp",
+          "rainy"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 126,
+    "pathsChecked": 20,
+    "removalOrder": [
+      0,
+      2,
+      6,
+      10,
+      11,
+      1,
+      4,
+      5,
+      14
+    ]
+  }
+}
