@@ -43,7 +43,8 @@ export default function BattleScreen({ encounter, initial, onSave, onExit, guide
   // Hard misses can leave spares on the final life; only collapse a true anagram.
   const finalAnagram = Boolean(encounter.bingoHunt && game.playerResolve <= 1
     && game.tiles.filter(tile => tile.letter).length === encounter.bingoHunt.answer.length)
-  const boardLayout = finalAnagram ? 'ring' : 'wheel'
+  const singleRing = preferences.preferences.boardLayout === 'ring'
+  const boardLayout = finalAnagram || singleRing ? 'ring' : 'wheel'
   const [phase, setPhase] = useState<Phase>(initial?.started ? 'ready' : 'waiting')
   const [panel, setPanel] = useState<Panel>(null)
   const [viewingBest, setViewingBest] = useState(false)
@@ -195,6 +196,13 @@ export default function BattleScreen({ encounter, initial, onSave, onExit, guide
         <p>{hard ? 'Definition, armour and guess previews are hidden. Wrong words cost a life but remove no tiles.'
           : easy ? 'Definition and armour shown. Wrong words cost no lives. A hint appears after each guess that removes spare tiles.'
             : 'Definition and armour shown. Wrong words cost no lives. No hints.'}</p>
+      </fieldset>
+      <fieldset className="battle-difficulty" disabled={phase === 'enemy' || phase === 'tiles'}>
+        <legend>Wheel</legend>
+        <div>
+          <button className="daily-button" aria-pressed={singleRing} onClick={() => preferences.update({ boardLayout: 'ring' })}>1 ring</button>
+          <button className="daily-button" aria-pressed={!singleRing} onClick={() => preferences.update({ boardLayout: 'wheel' })}>2 rings</button>
+        </div>
       </fieldset>
       <p className="settings-attempt-rule">One attempt per puzzle. Leaving saves your place.</p>
       <nav className="settings-shortcuts" aria-label="Puzzle shortcuts">

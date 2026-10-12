@@ -2,7 +2,7 @@
 
 A daily antonym and anagram puzzle. Find an opposite word containing every letter of the enemy, including any extra copies shown by armour outlines. Find it straight away for three stars, or spend a life on a simpler antonym to remove spare tiles. Two helpers leave just the answer's letters.
 
-The board uses reusable circular tiles: matching letters in the inner ring, other letters outside. There are three lives, no refills and one saved attempt per puzzle. Older puzzles live in the calendar. Every on-time daily win counts toward a streak, regardless of stars; archive wins earn stars without repairing missed days.
+The board uses reusable circular tiles, with two rings by default: matching letters in the inner ring, other letters outside. Settings also offers one ring; the final anagram always uses one ring. There are three lives, no refills and one saved attempt per puzzle. Older puzzles live in the calendar. Every on-time daily win counts toward a streak, regardless of stars; archive wins earn stars without repairing missed days.
 
 | Difficulty | Definition, armour and preview | Non-antonym dictionary guesses | Hints |
 | --- | --- | --- | --- |

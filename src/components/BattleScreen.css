@@ -67,6 +67,7 @@
   .bingo-result-word { font-size: 26px; }
 }
 .battle-difficulty { margin: 0; padding: 0; border: 0; }
+.battle-difficulty + .battle-difficulty { margin-top: 18px; }
 .battle-difficulty legend { margin-bottom: 12px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
 .battle-difficulty > div { display: flex; border: 1px solid var(--fg); }
 .battle-difficulty button { flex: 1; min-height: 44px; border: 0; }

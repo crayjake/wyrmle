@@ -5,6 +5,7 @@ import TileGrid from '../components/TileGrid'
 import BattleResult from '../components/BattleResult'
 import { MyInfo } from '../components/HealthInfo'
 import { previewLetterStrike } from '../game/letterStrike'
+import { useUserPreferences } from '../useUserPreferences'
 import {
   canAttackInTutorial, canContinueInTutorial, createTutorial, getAllowedTutorialTileIds,
   getTutorialMove, tutorialReducer,
@@ -20,10 +21,12 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
   onSkip: () => void
   initialStep?: TutorialStep
 }) {
+  const { preferences } = useUserPreferences()
   const [state, dispatch] = useReducer(tutorialReducer, initialStep, createTutorial)
   const [resolving, setResolving] = useState(false)
   const tileElements = useRef<(HTMLButtonElement | null)[]>([])
   const { game, step } = state
+  const boardLayout = game.playerResolve === 1 || preferences.boardLayout === 'ring' ? 'ring' : 'wheel'
   const introducingBoard = ['goal', 'board'].includes(step)
   const move = getTutorialMove(state)
   const preview = previewLetterStrike(game)
@@ -61,7 +64,7 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
     </>} />
   </main>
 
-  return <main className="container letter-combat tutorial-battle" data-tutorial-step={step} data-tutorial-reading={!move || undefined} data-board-layout={game.playerResolve === 1 ? 'ring' : 'wheel'} data-bingo-hunt>
+  return <main className="container letter-combat tutorial-battle" data-tutorial-step={step} data-tutorial-reading={!move || undefined} data-board-layout={boardLayout} data-bingo-hunt>
     {header}
     <div className="battle-info">
       <MyInfo name="Lives" health={game.playerResolve} maxHealth={game.encounter.startingResolve} animateLives />
@@ -95,7 +98,7 @@ export default function TutorialBattle({ onComplete, onSkip, initialStep = 'goal
             : !selectedExpectedPrefix ? 'CLEAR TO START AGAIN'
               : !preview.valid ? 'KEEP BUILDING' : undefined} />}
       <div className="controls">
-        <TileGrid tiles={game.tiles} specialTiles={[]} layout={game.playerResolve === 1 ? 'ring' : 'wheel'} tileShape="circle"
+        <TileGrid tiles={game.tiles} specialTiles={[]} layout={boardLayout} tileShape="circle"
           revealedIndices={tileIndices} registerTile={registerTile}
           selectedTileIds={game.selectedTileIds} ready={allowedTileIds.length > 0 && !resolving}
           allowedTileIds={allowedTileIds} enemyLetters={game.enemyLetters} matchHint="underline"
