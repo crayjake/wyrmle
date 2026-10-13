@@ -1,0 +1,120 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-one-sectional-2026-11-11-7e65f115d5c0.json",
+  "answer": "SECTIONAL",
+  "rules": "bingo-hunt",
+  "review": "ONE uses unity, as in acting as one, not the number. SECTIONAL is divided into sections; SPLIT and TORN have their unity broken. DIVIDED, SEPARATE and CLEFT remain adjectives. A sectional sofa noun and the act of splitting are not the accepted meanings.",
+  "identity": {
+    "id": "puzzle-one-sectional-2026-11-11",
+    "enemy": "ONE",
+    "board": "ABCEFGHILNOPRSTU",
+    "bingos": [
+      "SECTIONAL"
+    ],
+    "bingoFamilies": [
+      "SECTIONAL"
+    ]
+  },
+  "witnesses": [
+    [
+      "SECTIONAL"
+    ],
+    [
+      "SPLIT",
+      "SECTIONAL"
+    ],
+    [
+      "SPLIT",
+      "TORN",
+      "SECTIONAL"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "SECTIONAL",
+      "effort": 4.52
+    }
+  ],
+  "helperEffort": 0.8399999999999999,
+  "removalProof": {
+    "preferredHelpers": [
+      "SPLIT",
+      "TORN"
+    ],
+    "branches": [
+      {
+        "first": "CLEFT",
+        "next": [
+          "CUT",
+          "SPLIT",
+          "TORN"
+        ],
+        "preferredFamilies": [
+          "split",
+          "torn"
+        ],
+        "familiarFamilies": [
+          "cut",
+          "split",
+          "torn"
+        ]
+      },
+      {
+        "first": "CUT",
+        "next": [
+          "SPLIT",
+          "TORN"
+        ],
+        "preferredFamilies": [
+          "split",
+          "torn"
+        ],
+        "familiarFamilies": [
+          "split",
+          "torn"
+        ]
+      },
+      {
+        "first": "SPLIT",
+        "next": [
+          "CUT",
+          "TORN"
+        ],
+        "preferredFamilies": [
+          "torn"
+        ],
+        "familiarFamilies": [
+          "cut",
+          "torn"
+        ]
+      },
+      {
+        "first": "TORN",
+        "next": [
+          "CUT",
+          "SPLIT"
+        ],
+        "preferredFamilies": [
+          "split"
+        ],
+        "familiarFamilies": [
+          "cut",
+          "split"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 35,
+    "pathsChecked": 9,
+    "removalOrder": [
+      1,
+      8,
+      13,
+      15,
+      6,
+      9,
+      14
+    ]
+  }
+}

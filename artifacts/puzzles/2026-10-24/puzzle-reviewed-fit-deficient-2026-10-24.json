@@ -1,0 +1,129 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-reviewed-fit-deficient-2026-10-24-4366f6c668a0.json",
+  "answer": "DEFICIENT",
+  "rules": "bingo-hunt",
+  "review": "FIT means meeting the necessary standard, not physical health or garment size. DEFICIENT means falling short of the norm or requirement. UNFIT and POOR describe inadequate quality; INEPT uses inadequate competence. Double I armour keeps simple UNFIT useful but prevents it becoming an affix-only bingo.",
+  "identity": {
+    "id": "puzzle-reviewed-fit-deficient-2026-10-24",
+    "enemy": "FIT",
+    "board": "ABCDEEFIINOOPRTU",
+    "bingos": [
+      "DEFICIENT"
+    ],
+    "bingoFamilies": [
+      "DEFICIENT"
+    ]
+  },
+  "witnesses": [
+    [
+      "DEFICIENT"
+    ],
+    [
+      "POOR",
+      "DEFICIENT"
+    ],
+    [
+      "POOR",
+      "UNFIT",
+      "DEFICIENT"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "DEFICIENT",
+      "effort": 4.74
+    }
+  ],
+  "helperEffort": 1.96,
+  "removalProof": {
+    "preferredHelpers": [
+      "POOR",
+      "UNFIT",
+      "BAD",
+      "INEPT"
+    ],
+    "branches": [
+      {
+        "first": "BAD",
+        "next": [
+          "INEPT",
+          "UNFIT"
+        ],
+        "preferredFamilies": [
+          "inept",
+          "unfit"
+        ],
+        "familiarFamilies": [
+          "inept",
+          "unfit"
+        ]
+      },
+      {
+        "first": "INEPT",
+        "next": [
+          "UNFIT"
+        ],
+        "preferredFamilies": [
+          "unfit"
+        ],
+        "familiarFamilies": [
+          "unfit"
+        ]
+      },
+      {
+        "first": "INEPTER",
+        "next": [
+          "INEPT",
+          "UNFIT"
+        ],
+        "preferredFamilies": [
+          "unfit"
+        ],
+        "familiarFamilies": [
+          "unfit"
+        ]
+      },
+      {
+        "first": "POOR",
+        "next": [
+          "INEPT",
+          "UNFIT"
+        ],
+        "preferredFamilies": [
+          "inept",
+          "unfit"
+        ],
+        "familiarFamilies": [
+          "inept",
+          "unfit"
+        ]
+      },
+      {
+        "first": "UNFIT",
+        "next": [
+          "INEPT"
+        ],
+        "preferredFamilies": [
+          "inept"
+        ],
+        "familiarFamilies": [
+          "inept"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 35,
+    "pathsChecked": 8,
+    "removalOrder": [
+      4,
+      10,
+      11,
+      14,
+      0,
+      3,
+      15
+    ]
+  }
+}

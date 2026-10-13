@@ -1,0 +1,367 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-reviewed-ease-exasperate-2026-11-20-de0e28b78e4a.json",
+  "answer": "EXASPERATE",
+  "rules": "bingo-hunt",
+  "review": "EASE is the verb for calming or lessening agitation. EXASPERATE, IRRITATE, IRK, UPSET, VEX, ANNOY and RILE cause the opposite change, making someone agitated or annoyed. Noun distress and physical injury alone are outside this emotional sense. TEASE and PESTER use persistent annoyance, not flirting; SPITE uses hurt feelings. Triple E armour makes TEASE a helper and prevents its trivial prefix from being a bingo. TENSE and STRAIN use making someone anxious; ROUSE means agitate, not waking; NARK means annoy, not inform on someone.",
+  "identity": {
+    "id": "puzzle-reviewed-ease-exasperate-2026-11-20",
+    "enemy": "EASE",
+    "board": "AAEEEIKLNOPRSTUX",
+    "bingos": [
+      "EXASPERATE"
+    ],
+    "bingoFamilies": [
+      "EXASPERATE"
+    ]
+  },
+  "witnesses": [
+    [
+      "EXASPERATE"
+    ],
+    [
+      "TEASE",
+      "EXASPERATE"
+    ],
+    [
+      "TEASE",
+      "PESTER",
+      "EXASPERATE"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "EXASPERATE",
+      "effort": 8.2
+    }
+  ],
+  "helperEffort": 4.46,
+  "removalProof": {
+    "preferredHelpers": [
+      "IRK",
+      "UPSET",
+      "RILE",
+      "TEASE",
+      "PESTER"
+    ],
+    "branches": [
+      {
+        "first": "IRK",
+        "next": [
+          "IRKS",
+          "PESTER",
+          "RILE",
+          "RILES",
+          "SPITE",
+          "TEASE"
+        ],
+        "preferredFamilies": [
+          "pester",
+          "rile",
+          "tease"
+        ],
+        "familiarFamilies": [
+          "pester",
+          "rile",
+          "spite",
+          "tease"
+        ]
+      },
+      {
+        "first": "IRKS",
+        "next": [
+          "IRK",
+          "PESTER",
+          "RILE",
+          "RILES",
+          "SPITE",
+          "TEASE"
+        ],
+        "preferredFamilies": [
+          "pester",
+          "rile",
+          "tease"
+        ],
+        "familiarFamilies": [
+          "pester",
+          "rile",
+          "spite",
+          "tease"
+        ]
+      },
+      {
+        "first": "NARK",
+        "next": [
+          "IRK",
+          "IRKS",
+          "PESTER",
+          "RILE",
+          "RILES",
+          "SPITE",
+          "TEASE"
+        ],
+        "preferredFamilies": [
+          "irk",
+          "pester",
+          "rile",
+          "tease"
+        ],
+        "familiarFamilies": [
+          "irk",
+          "pester",
+          "rile",
+          "spite",
+          "tease"
+        ]
+      },
+      {
+        "first": "NARKS",
+        "next": [
+          "IRK",
+          "IRKS",
+          "PESTER",
+          "RILE",
+          "RILES",
+          "SPITE",
+          "TEASE"
+        ],
+        "preferredFamilies": [
+          "irk",
+          "pester",
+          "rile",
+          "tease"
+        ],
+        "familiarFamilies": [
+          "irk",
+          "pester",
+          "rile",
+          "spite",
+          "tease"
+        ]
+      },
+      {
+        "first": "PESTER",
+        "next": [
+          "IRK",
+          "IRKS",
+          "RILE",
+          "RILES",
+          "SPITE",
+          "TEASE"
+        ],
+        "preferredFamilies": [
+          "irk",
+          "rile",
+          "tease"
+        ],
+        "familiarFamilies": [
+          "irk",
+          "rile",
+          "spite",
+          "tease"
+        ]
+      },
+      {
+        "first": "RILE",
+        "next": [
+          "IRK",
+          "IRKS",
+          "PESTER",
+          "RILES",
+          "SPITE",
+          "TEASE"
+        ],
+        "preferredFamilies": [
+          "irk",
+          "pester",
+          "tease"
+        ],
+        "familiarFamilies": [
+          "irk",
+          "pester",
+          "spite",
+          "tease"
+        ]
+      },
+      {
+        "first": "RILES",
+        "next": [
+          "IRK",
+          "IRKS",
+          "PESTER",
+          "RILE",
+          "SPITE",
+          "TEASE"
+        ],
+        "preferredFamilies": [
+          "irk",
+          "pester",
+          "tease"
+        ],
+        "familiarFamilies": [
+          "irk",
+          "pester",
+          "spite",
+          "tease"
+        ]
+      },
+      {
+        "first": "ROUSE",
+        "next": [
+          "IRK",
+          "IRKS",
+          "PESTER",
+          "RILE",
+          "RILES",
+          "SPITE",
+          "TEASE"
+        ],
+        "preferredFamilies": [
+          "irk",
+          "pester",
+          "rile",
+          "tease"
+        ],
+        "familiarFamilies": [
+          "irk",
+          "pester",
+          "rile",
+          "spite",
+          "tease"
+        ]
+      },
+      {
+        "first": "SPITE",
+        "next": [
+          "IRK",
+          "IRKS",
+          "PESTER",
+          "RILE",
+          "RILES",
+          "TEASE"
+        ],
+        "preferredFamilies": [
+          "irk",
+          "pester",
+          "rile",
+          "tease"
+        ],
+        "familiarFamilies": [
+          "irk",
+          "pester",
+          "rile",
+          "tease"
+        ]
+      },
+      {
+        "first": "STRAIN",
+        "next": [
+          "IRK",
+          "IRKS",
+          "PESTER",
+          "RILE",
+          "RILES",
+          "SPITE",
+          "TEASE"
+        ],
+        "preferredFamilies": [
+          "irk",
+          "pester",
+          "rile",
+          "tease"
+        ],
+        "familiarFamilies": [
+          "irk",
+          "pester",
+          "rile",
+          "spite",
+          "tease"
+        ]
+      },
+      {
+        "first": "TEASE",
+        "next": [
+          "IRK",
+          "IRKS",
+          "PESTER",
+          "RILE",
+          "RILES",
+          "SPITE"
+        ],
+        "preferredFamilies": [
+          "irk",
+          "pester",
+          "rile"
+        ],
+        "familiarFamilies": [
+          "irk",
+          "pester",
+          "rile",
+          "spite"
+        ]
+      },
+      {
+        "first": "TENSE",
+        "next": [
+          "IRK",
+          "IRKS",
+          "PESTER",
+          "RILE",
+          "RILES",
+          "SPITE",
+          "TEASE"
+        ],
+        "preferredFamilies": [
+          "irk",
+          "pester",
+          "rile",
+          "tease"
+        ],
+        "familiarFamilies": [
+          "irk",
+          "pester",
+          "rile",
+          "spite",
+          "tease"
+        ]
+      },
+      {
+        "first": "UPSET",
+        "next": [
+          "IRK",
+          "IRKS",
+          "PESTER",
+          "RILE",
+          "RILES",
+          "SPITE",
+          "TEASE"
+        ],
+        "preferredFamilies": [
+          "irk",
+          "pester",
+          "rile",
+          "tease"
+        ],
+        "familiarFamilies": [
+          "irk",
+          "pester",
+          "rile",
+          "spite",
+          "tease"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 3,
+    "minFamiliarFamilies": 4,
+    "candidatesChecked": 20,
+    "pathsChecked": 84,
+    "removalOrder": [
+      6,
+      12,
+      14,
+      1,
+      7,
+      8
+    ]
+  }
+}

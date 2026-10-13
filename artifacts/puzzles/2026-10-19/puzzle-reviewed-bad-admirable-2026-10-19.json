@@ -1,0 +1,324 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-reviewed-bad-admirable-2026-10-19-4a31ef80cf9a.json",
+  "answer": "ADMIRABLE",
+  "rules": "bingo-hunt",
+  "review": "BAD refers to undesirable qualities. ADMIRABLE inspires approval, while GOOD, FINE and GREAT describe positive quality. Moral evil, spoiled food and illness are not the displayed readings. All accepted words are adjectives. GRAND uses extraordinarily good, not large in size. IDEAL uses excellence, not an imagined state. FORMIDABLE uses impressive excellence, not fear; NEAT, FAB, BRAG and MEAN have sourced positive-quality adjective readings. OLD as a non-standalone intensifier and ONE as singular eminence are not treated as general quality opposites.",
+  "identity": {
+    "id": "puzzle-reviewed-bad-admirable-2026-10-19",
+    "enemy": "BAD",
+    "board": "AABDEFGILMNOORRT",
+    "bingos": [
+      "ADMIRABLE",
+      "FORMIDABLE"
+    ],
+    "bingoFamilies": [
+      "ADMIRABLE",
+      "FORMIDABLE"
+    ]
+  },
+  "witnesses": [
+    [
+      "ADMIRABLE"
+    ],
+    [
+      "FINE",
+      "ADMIRABLE"
+    ],
+    [
+      "FINE",
+      "GRAND",
+      "ADMIRABLE"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "ADMIRABLE",
+      "effort": 4.4399999999999995
+    },
+    {
+      "word": "FORMIDABLE",
+      "effort": 4.7
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "GOOD",
+      "FINE",
+      "GREAT",
+      "GRAND",
+      "IDEAL"
+    ],
+    "branches": [
+      {
+        "first": "BRAG",
+        "next": [
+          "FAB",
+          "FINE",
+          "FINER",
+          "GRAND",
+          "IDEAL",
+          "MEAN"
+        ],
+        "preferredFamilies": [
+          "fine",
+          "grand",
+          "ideal"
+        ],
+        "familiarFamilies": [
+          "fab",
+          "fine",
+          "grand",
+          "ideal",
+          "mean"
+        ]
+      },
+      {
+        "first": "FAB",
+        "next": [
+          "BRAG",
+          "FINE",
+          "FINER",
+          "GRAND",
+          "IDEAL",
+          "MEAN"
+        ],
+        "preferredFamilies": [
+          "fine",
+          "grand",
+          "ideal"
+        ],
+        "familiarFamilies": [
+          "brag",
+          "fine",
+          "grand",
+          "ideal",
+          "mean"
+        ]
+      },
+      {
+        "first": "FINE",
+        "next": [
+          "BRAG",
+          "FAB",
+          "FINER",
+          "GRAND",
+          "IDEAL",
+          "MEAN"
+        ],
+        "preferredFamilies": [
+          "grand",
+          "ideal"
+        ],
+        "familiarFamilies": [
+          "brag",
+          "fab",
+          "grand",
+          "ideal",
+          "mean"
+        ]
+      },
+      {
+        "first": "FINER",
+        "next": [
+          "BRAG",
+          "FAB",
+          "FINE",
+          "GRAND",
+          "IDEAL",
+          "MEAN"
+        ],
+        "preferredFamilies": [
+          "grand",
+          "ideal"
+        ],
+        "familiarFamilies": [
+          "brag",
+          "fab",
+          "grand",
+          "ideal",
+          "mean"
+        ]
+      },
+      {
+        "first": "GOOD",
+        "next": [
+          "BRAG",
+          "FAB",
+          "FINE",
+          "FINER",
+          "GRAND",
+          "IDEAL",
+          "MEAN"
+        ],
+        "preferredFamilies": [
+          "fine",
+          "grand",
+          "ideal"
+        ],
+        "familiarFamilies": [
+          "brag",
+          "fab",
+          "fine",
+          "grand",
+          "ideal",
+          "mean"
+        ]
+      },
+      {
+        "first": "GRAND",
+        "next": [
+          "BRAG",
+          "FAB",
+          "FINE",
+          "FINER",
+          "IDEAL",
+          "MEAN"
+        ],
+        "preferredFamilies": [
+          "fine",
+          "ideal"
+        ],
+        "familiarFamilies": [
+          "brag",
+          "fab",
+          "fine",
+          "ideal",
+          "mean"
+        ]
+      },
+      {
+        "first": "GRANDER",
+        "next": [
+          "BRAG",
+          "FAB",
+          "FINE",
+          "FINER",
+          "GRAND",
+          "IDEAL",
+          "MEAN"
+        ],
+        "preferredFamilies": [
+          "fine",
+          "ideal"
+        ],
+        "familiarFamilies": [
+          "brag",
+          "fab",
+          "fine",
+          "ideal",
+          "mean"
+        ]
+      },
+      {
+        "first": "GREAT",
+        "next": [
+          "BRAG",
+          "FAB",
+          "FINE",
+          "FINER",
+          "GRAND",
+          "IDEAL",
+          "MEAN"
+        ],
+        "preferredFamilies": [
+          "fine",
+          "grand",
+          "ideal"
+        ],
+        "familiarFamilies": [
+          "brag",
+          "fab",
+          "fine",
+          "grand",
+          "ideal",
+          "mean"
+        ]
+      },
+      {
+        "first": "IDEAL",
+        "next": [
+          "BRAG",
+          "FAB",
+          "FINE",
+          "FINER",
+          "GRAND",
+          "MEAN"
+        ],
+        "preferredFamilies": [
+          "fine",
+          "grand"
+        ],
+        "familiarFamilies": [
+          "brag",
+          "fab",
+          "fine",
+          "grand",
+          "mean"
+        ]
+      },
+      {
+        "first": "MEAN",
+        "next": [
+          "BRAG",
+          "FAB",
+          "FINE",
+          "FINER",
+          "GRAND",
+          "IDEAL"
+        ],
+        "preferredFamilies": [
+          "fine",
+          "grand",
+          "ideal"
+        ],
+        "familiarFamilies": [
+          "brag",
+          "fab",
+          "fine",
+          "grand",
+          "ideal"
+        ]
+      },
+      {
+        "first": "NEAT",
+        "next": [
+          "BRAG",
+          "FAB",
+          "FINE",
+          "FINER",
+          "GRAND",
+          "IDEAL",
+          "MEAN"
+        ],
+        "preferredFamilies": [
+          "fine",
+          "grand",
+          "ideal"
+        ],
+        "familiarFamilies": [
+          "brag",
+          "fab",
+          "fine",
+          "grand",
+          "ideal",
+          "mean"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 2,
+    "minFamiliarFamilies": 5,
+    "candidatesChecked": 35,
+    "pathsChecked": 70,
+    "removalOrder": [
+      1,
+      2,
+      9,
+      14,
+      3,
+      7,
+      10
+    ]
+  }
+}

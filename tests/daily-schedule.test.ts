@@ -10,6 +10,8 @@ import { certifyProgression } from '../scripts/antonyms/progression.ts'
 import { inspectHuntRemovals } from '../scripts/antonyms/hunt.ts'
 import { selectWordIds } from '../src/generator/constructRefill.ts'
 import { wordEffort } from '../scripts/bingo/routeDifficulty.ts'
+import { bingoQualityIssue } from '../scripts/puzzles/answerQuality.ts'
+import { puzzleIdentity } from '../scripts/bingo/freshness.ts'
 
 test('the active queue preserves the first six dates and uses the current game rules', () => {
   assert.ok(dailySchedule.every(entry => entry.bingoHunt))
@@ -33,6 +35,10 @@ test('the queued bingo-first dailies have replayed one-, two- and three-guess wi
     assert.equal(report.asset, entry.asset)
     assert.ok(!answers.has(report.answer)); answers.add(report.answer)
     const encounter = decodeScheduledPuzzle(data, entry)
+    for (const word of puzzleIdentity(entry.id, encounter).bingos) {
+      assert.equal(bingoQualityIssue(entry.enemy, word, undefined, encounter.meaningLexicon!.words[word].lemma), undefined,
+        `${entry.date}: ${entry.enemy} / ${word} is a trivial affix bingo`)
+    }
     const board = encounter.startingTiles.map(tile => tile.letter).sort().join('')
     assert.ok(!boards.has(board), `${entry.id}: starting letter pool repeats`); boards.add(board)
     assert.equal(encounter.startingResolve, 3)

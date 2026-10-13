@@ -1,0 +1,171 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-revised-new-weatherworn-2026-11-13-d1deb0525211.json",
+  "answer": "WEATHERWORN",
+  "rules": "bingo-hunt",
+  "review": "NEW is fresh and unaffected by use or exposure. WEATHERWORN is worn by the weather, and WORN and WEATHERED express the loss of new condition. OLD and AGED use age and long duration, not an old person or skilled worker. All roots are adjectives; WORN is not the clothing verb. WATERWORN is worn by water; EARED is the shabby-page sense, not possessing ears. TORN means damaged edges, opposing pristine condition.",
+  "identity": {
+    "id": "puzzle-oct26-revised-new-weatherworn-2026-11-13",
+    "enemy": "NEW",
+    "board": "AADEEGHLNOORRTWW",
+    "bingos": [
+      "WATERWORN",
+      "WEATHERWORN"
+    ],
+    "bingoFamilies": [
+      "WATERWORN",
+      "WEATHERWORN"
+    ]
+  },
+  "witnesses": [
+    [
+      "WEATHERWORN"
+    ],
+    [
+      "OLD",
+      "WEATHERWORN"
+    ],
+    [
+      "OLD",
+      "WORN",
+      "WEATHERWORN"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "WATERWORN",
+      "effort": 11.4
+    },
+    {
+      "word": "WEATHERWORN",
+      "effort": 12.6
+    }
+  ],
+  "helperEffort": 0.4800000000000004,
+  "removalProof": {
+    "preferredHelpers": [
+      "OLD",
+      "WORN"
+    ],
+    "branches": [
+      {
+        "first": "AGED",
+        "next": [
+          "EARED",
+          "OLD",
+          "OLDER",
+          "TORN",
+          "WORN"
+        ],
+        "preferredFamilies": [
+          "old",
+          "worn"
+        ],
+        "familiarFamilies": [
+          "eared",
+          "old",
+          "torn",
+          "worn"
+        ]
+      },
+      {
+        "first": "EARED",
+        "next": [
+          "OLD",
+          "OLDER",
+          "TORN",
+          "WORN"
+        ],
+        "preferredFamilies": [
+          "old",
+          "worn"
+        ],
+        "familiarFamilies": [
+          "old",
+          "torn",
+          "worn"
+        ]
+      },
+      {
+        "first": "OLD",
+        "next": [
+          "EARED",
+          "OLDER",
+          "TORN",
+          "WORN"
+        ],
+        "preferredFamilies": [
+          "worn"
+        ],
+        "familiarFamilies": [
+          "eared",
+          "torn",
+          "worn"
+        ]
+      },
+      {
+        "first": "OLDER",
+        "next": [
+          "EARED",
+          "OLD",
+          "TORN",
+          "WORN"
+        ],
+        "preferredFamilies": [
+          "worn"
+        ],
+        "familiarFamilies": [
+          "eared",
+          "torn",
+          "worn"
+        ]
+      },
+      {
+        "first": "TORN",
+        "next": [
+          "EARED",
+          "OLD",
+          "OLDER",
+          "WORN"
+        ],
+        "preferredFamilies": [
+          "old",
+          "worn"
+        ],
+        "familiarFamilies": [
+          "eared",
+          "old",
+          "worn"
+        ]
+      },
+      {
+        "first": "WORN",
+        "next": [
+          "EARED",
+          "OLD",
+          "OLDER",
+          "TORN"
+        ],
+        "preferredFamilies": [
+          "old"
+        ],
+        "familiarFamilies": [
+          "eared",
+          "old",
+          "torn"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 3,
+    "candidatesChecked": 10,
+    "pathsChecked": 25,
+    "removalOrder": [
+      4,
+      7,
+      14,
+      1,
+      3
+    ]
+  }
+}

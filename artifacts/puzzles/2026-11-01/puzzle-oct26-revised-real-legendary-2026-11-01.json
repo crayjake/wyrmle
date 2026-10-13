@@ -1,0 +1,242 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-revised-real-legendary-2026-11-01-ee536e8e18a3.json",
+  "answer": "LEGENDARY",
+  "rules": "bingo-hunt",
+  "review": "REAL means actually existing, not a currency or genuine enthusiasm. LEGENDARY is the unreal, fabled sense, not merely famous; FALSE and FAKE use not real, rather than moral deception or disloyalty. A legendary creature is set against a real creature. All counter senses are adjectives. FABLED shares the legend sense; IDEAL exists only as an idea and DREAMLIKE is unreal, not merely an excellent or pleasant experience. The second E needs two copies. FEIGNED is not genuine; BASE uses counterfeit rather than lowly, and NEAR uses imitation rather than physical proximity.",
+  "identity": {
+    "id": "puzzle-oct26-revised-real-legendary-2026-11-01",
+    "enemy": "REAL",
+    "board": "ABDEEFGIKLMNORSY",
+    "bingos": [
+      "DREAMLIKE",
+      "LEGENDARY"
+    ],
+    "bingoFamilies": [
+      "DREAMLIKE",
+      "LEGENDARY"
+    ]
+  },
+  "witnesses": [
+    [
+      "LEGENDARY"
+    ],
+    [
+      "FALSE",
+      "LEGENDARY"
+    ],
+    [
+      "FALSE",
+      "FAKE",
+      "LEGENDARY"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "DREAMLIKE",
+      "effort": 6.359999999999999
+    },
+    {
+      "word": "LEGENDARY",
+      "effort": 2.939999999999999
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "FALSE",
+      "FAKE"
+    ],
+    "branches": [
+      {
+        "first": "BASE",
+        "next": [
+          "FAKE",
+          "FAKER",
+          "FALSE",
+          "FALSER",
+          "NEAR"
+        ],
+        "preferredFamilies": [
+          "fake",
+          "false"
+        ],
+        "familiarFamilies": [
+          "fake",
+          "false",
+          "near"
+        ]
+      },
+      {
+        "first": "BASER",
+        "next": [
+          "FAKE",
+          "FAKER",
+          "FALSE",
+          "FALSER",
+          "NEAR"
+        ],
+        "preferredFamilies": [
+          "fake",
+          "false"
+        ],
+        "familiarFamilies": [
+          "fake",
+          "false",
+          "near"
+        ]
+      },
+      {
+        "first": "FABLED",
+        "next": [
+          "FAKE",
+          "FAKER",
+          "FALSE",
+          "FALSER",
+          "NEAR"
+        ],
+        "preferredFamilies": [
+          "fake",
+          "false"
+        ],
+        "familiarFamilies": [
+          "fake",
+          "false",
+          "near"
+        ]
+      },
+      {
+        "first": "FAKE",
+        "next": [
+          "FAKER",
+          "FALSE",
+          "FALSER",
+          "NEAR"
+        ],
+        "preferredFamilies": [
+          "false"
+        ],
+        "familiarFamilies": [
+          "false",
+          "near"
+        ]
+      },
+      {
+        "first": "FAKER",
+        "next": [
+          "FAKE",
+          "FALSE",
+          "FALSER",
+          "NEAR"
+        ],
+        "preferredFamilies": [
+          "false"
+        ],
+        "familiarFamilies": [
+          "false",
+          "near"
+        ]
+      },
+      {
+        "first": "FALSE",
+        "next": [
+          "FAKE",
+          "FAKER",
+          "FALSER",
+          "NEAR"
+        ],
+        "preferredFamilies": [
+          "fake"
+        ],
+        "familiarFamilies": [
+          "fake",
+          "near"
+        ]
+      },
+      {
+        "first": "FALSER",
+        "next": [
+          "FAKE",
+          "FAKER",
+          "FALSE",
+          "NEAR"
+        ],
+        "preferredFamilies": [
+          "fake"
+        ],
+        "familiarFamilies": [
+          "fake",
+          "near"
+        ]
+      },
+      {
+        "first": "FEIGNED",
+        "next": [
+          "FAKE",
+          "FAKER",
+          "FALSE",
+          "FALSER",
+          "NEAR"
+        ],
+        "preferredFamilies": [
+          "fake",
+          "false"
+        ],
+        "familiarFamilies": [
+          "fake",
+          "false",
+          "near"
+        ]
+      },
+      {
+        "first": "IDEAL",
+        "next": [
+          "FAKE",
+          "FAKER",
+          "FALSE",
+          "FALSER",
+          "NEAR"
+        ],
+        "preferredFamilies": [
+          "fake",
+          "false"
+        ],
+        "familiarFamilies": [
+          "fake",
+          "false",
+          "near"
+        ]
+      },
+      {
+        "first": "NEAR",
+        "next": [
+          "FAKE",
+          "FAKER",
+          "FALSE",
+          "FALSER"
+        ],
+        "preferredFamilies": [
+          "fake",
+          "false"
+        ],
+        "familiarFamilies": [
+          "fake",
+          "false"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 35,
+    "pathsChecked": 45,
+    "removalOrder": [
+      1,
+      3,
+      10,
+      15,
+      11,
+      12,
+      13
+    ]
+  }
+}

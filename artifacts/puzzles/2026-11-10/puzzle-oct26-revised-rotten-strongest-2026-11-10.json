@@ -1,0 +1,253 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-revised-rotten-strongest-2026-11-10-e63b94b55c13.json",
+  "answer": "STRONGEST",
+  "rules": "bingo-hunt",
+  "review": "ROTTEN describes material made structurally unsound by decay. STRONG, SOUND, SOLID, FIRM and STURDY describe material that retains sound condition and strength. The enemy is not an insult or a taste, and STRONG does not use power or flavour. STRONGEST is the ordinary superlative of the sound-condition adjective.",
+  "identity": {
+    "id": "puzzle-oct26-revised-rotten-strongest-2026-11-10",
+    "enemy": "ROTTEN",
+    "board": "DEFGILMNORSSTTUY",
+    "bingos": [
+      "STRONGEST"
+    ],
+    "bingoFamilies": [
+      "STRONG"
+    ]
+  },
+  "witnesses": [
+    [
+      "STRONGEST"
+    ],
+    [
+      "SOUND",
+      "STRONGEST"
+    ],
+    [
+      "SOUND",
+      "STURDY",
+      "STRONGEST"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "STRONGEST",
+      "effort": 3.1599999999999997
+    }
+  ],
+  "helperEffort": 2.72,
+  "removalProof": {
+    "preferredHelpers": [
+      "SOUND",
+      "STURDY"
+    ],
+    "branches": [
+      {
+        "first": "FIRM",
+        "next": [
+          "SOUND",
+          "SOUNDER",
+          "SOUNDEST",
+          "STRONG",
+          "STURDY"
+        ],
+        "preferredFamilies": [
+          "sound",
+          "sturdy"
+        ],
+        "familiarFamilies": [
+          "sound",
+          "strong",
+          "sturdy"
+        ]
+      },
+      {
+        "first": "FIRMEST",
+        "next": [
+          "SOUND",
+          "SOUNDER",
+          "SOUNDEST",
+          "STRONG",
+          "STURDY"
+        ],
+        "preferredFamilies": [
+          "sound",
+          "sturdy"
+        ],
+        "familiarFamilies": [
+          "sound",
+          "strong",
+          "sturdy"
+        ]
+      },
+      {
+        "first": "SOLID",
+        "next": [
+          "SOUND",
+          "SOUNDER",
+          "SOUNDEST",
+          "STRONG",
+          "STURDY"
+        ],
+        "preferredFamilies": [
+          "sound",
+          "sturdy"
+        ],
+        "familiarFamilies": [
+          "sound",
+          "strong",
+          "sturdy"
+        ]
+      },
+      {
+        "first": "SOLIDER",
+        "next": [
+          "SOUND",
+          "SOUNDER",
+          "SOUNDEST",
+          "STRONG",
+          "STURDY"
+        ],
+        "preferredFamilies": [
+          "sound",
+          "sturdy"
+        ],
+        "familiarFamilies": [
+          "sound",
+          "strong",
+          "sturdy"
+        ]
+      },
+      {
+        "first": "SOLIDEST",
+        "next": [
+          "SOUND",
+          "SOUNDER",
+          "SOUNDEST",
+          "STRONG",
+          "STURDY"
+        ],
+        "preferredFamilies": [
+          "sound",
+          "sturdy"
+        ],
+        "familiarFamilies": [
+          "sound",
+          "strong",
+          "sturdy"
+        ]
+      },
+      {
+        "first": "SOUND",
+        "next": [
+          "SOUNDER",
+          "SOUNDEST",
+          "STRONG",
+          "STURDY"
+        ],
+        "preferredFamilies": [
+          "sturdy"
+        ],
+        "familiarFamilies": [
+          "strong",
+          "sturdy"
+        ]
+      },
+      {
+        "first": "SOUNDER",
+        "next": [
+          "SOUND",
+          "SOUNDEST",
+          "STRONG",
+          "STURDY"
+        ],
+        "preferredFamilies": [
+          "sturdy"
+        ],
+        "familiarFamilies": [
+          "strong",
+          "sturdy"
+        ]
+      },
+      {
+        "first": "SOUNDEST",
+        "next": [
+          "SOUND",
+          "SOUNDER",
+          "STRONG",
+          "STURDY"
+        ],
+        "preferredFamilies": [
+          "sturdy"
+        ],
+        "familiarFamilies": [
+          "strong",
+          "sturdy"
+        ]
+      },
+      {
+        "first": "STRONG",
+        "next": [
+          "SOUND",
+          "SOUNDER",
+          "SOUNDEST",
+          "STURDY"
+        ],
+        "preferredFamilies": [
+          "sound",
+          "sturdy"
+        ],
+        "familiarFamilies": [
+          "sound",
+          "sturdy"
+        ]
+      },
+      {
+        "first": "STURDIEST",
+        "next": [
+          "SOUND",
+          "SOUNDER",
+          "SOUNDEST",
+          "STRONG",
+          "STURDY"
+        ],
+        "preferredFamilies": [
+          "sound"
+        ],
+        "familiarFamilies": [
+          "sound",
+          "strong"
+        ]
+      },
+      {
+        "first": "STURDY",
+        "next": [
+          "SOUND",
+          "SOUNDER",
+          "SOUNDEST",
+          "STRONG"
+        ],
+        "preferredFamilies": [
+          "sound"
+        ],
+        "familiarFamilies": [
+          "sound",
+          "strong"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 35,
+    "pathsChecked": 50,
+    "removalOrder": [
+      1,
+      5,
+      8,
+      13,
+      6,
+      9,
+      14
+    ]
+  }
+}

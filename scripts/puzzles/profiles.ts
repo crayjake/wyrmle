@@ -6,11 +6,16 @@ import type { ConceptProfile } from '../antonyms/profiles.ts'
 import { batchProfilesAH } from './batch-a-h.ts'
 import { batchProfilesIR } from './batch-i-r.ts'
 import { batchProfilesSZ } from './batch-s-z.ts'
+import { avoidsLessAnswer, bingoQualityIssue } from './answerQuality.ts'
+import { replacementProfilesA } from './replacements-a.ts'
+import { replacementProfilesB } from './replacements-b.ts'
+import { replacementProfilesC } from './replacements-c.ts'
 
 /** A reviewed registry, not a claim that arbitrary dictionary neighbours oppose each other. */
-export const avoidsLessAnswer = (word: string) => !/LESS(?:NESS(?:ES)?|LY)?$/.test(word.toUpperCase())
+export { avoidsLessAnswer } from './answerQuality.ts'
 const plain = (profile: ConceptProfile): ConceptProfile => ({ ...profile, refills: '', powers: [], routes: [] })
-export const puzzleProfiles: HuntProfile[] = [
+const reviewedProfiles: HuntProfile[] = [
+  ...replacementProfilesA, ...replacementProfilesB, ...replacementProfilesC,
   ...batchProfilesAH, ...batchProfilesIR, ...batchProfilesSZ,
   tomorrowHunt, ...allHuntProfiles.filter(item => avoidsLessAnswer(item.profile.bingo)).map(item => ({ ...item, profile: plain(item.profile) })),
   { profile: plain(antonymProfiles.find(p => p.id === 'stern')!), helpers: ['WARM', 'NICE'], preferredHelpers: ['WARM', 'NICE'] },
@@ -30,3 +35,7 @@ export const puzzleProfiles: HuntProfile[] = [
       hints: ['Think of harsh treatment that gives you no relief.', 'It describes pressure that refuses to ease.', 'Eleven letters, beginning with U.'],
     } },
 ]
+
+// Keep historical source profiles for audit, but never offer trivial affix
+// puzzles to either current authoring command.
+export const puzzleProfiles = reviewedProfiles.filter(({ profile }) => !bingoQualityIssue(profile.enemy, profile.bingo))

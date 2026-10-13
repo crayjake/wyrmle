@@ -1,0 +1,146 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-revised-hot-hypothermic-2026-10-07-661b8a0b043d.json",
+  "answer": "HYPOTHERMIC",
+  "rules": "bingo-hunt",
+  "review": "HOT is a high physical body temperature. HYPOTHERMIC is an abnormally low body temperature, not being ill in general; COLD, COOL and ICY retain the literal temperature contrast. These are adjectives, excluding the cold illness noun and cool fashion sense. GELID is the adjective extremely cold.",
+  "identity": {
+    "id": "puzzle-oct26-revised-hot-hypothermic-2026-10-07",
+    "enemy": "HOT",
+    "board": "CDEGHHILMNOOPRTY",
+    "bingos": [
+      "HYPOTHERMIC"
+    ],
+    "bingoFamilies": [
+      "HYPOTHERMIC"
+    ]
+  },
+  "witnesses": [
+    [
+      "HYPOTHERMIC"
+    ],
+    [
+      "COLD",
+      "HYPOTHERMIC"
+    ],
+    [
+      "COLD",
+      "ICY",
+      "HYPOTHERMIC"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "HYPOTHERMIC",
+      "effort": 8.52
+    }
+  ],
+  "helperEffort": 1.92,
+  "removalProof": {
+    "preferredHelpers": [
+      "COLD",
+      "ICY",
+      "COOL"
+    ],
+    "branches": [
+      {
+        "first": "COLD",
+        "next": [
+          "COOL",
+          "COOLER",
+          "ICY"
+        ],
+        "preferredFamilies": [
+          "cool",
+          "icy"
+        ],
+        "familiarFamilies": [
+          "cool",
+          "icy"
+        ]
+      },
+      {
+        "first": "COLDER",
+        "next": [
+          "COOL",
+          "COOLER",
+          "ICY"
+        ],
+        "preferredFamilies": [
+          "cool",
+          "icy"
+        ],
+        "familiarFamilies": [
+          "cool",
+          "icy"
+        ]
+      },
+      {
+        "first": "COOL",
+        "next": [
+          "COOLER",
+          "ICY"
+        ],
+        "preferredFamilies": [
+          "icy"
+        ],
+        "familiarFamilies": [
+          "icy"
+        ]
+      },
+      {
+        "first": "COOLER",
+        "next": [
+          "COOL",
+          "ICY"
+        ],
+        "preferredFamilies": [
+          "icy"
+        ],
+        "familiarFamilies": [
+          "icy"
+        ]
+      },
+      {
+        "first": "GELID",
+        "next": [
+          "COOL",
+          "COOLER",
+          "ICY"
+        ],
+        "preferredFamilies": [
+          "cool",
+          "icy"
+        ],
+        "familiarFamilies": [
+          "cool",
+          "icy"
+        ]
+      },
+      {
+        "first": "ICY",
+        "next": [
+          "COOL",
+          "COOLER"
+        ],
+        "preferredFamilies": [
+          "cool"
+        ],
+        "familiarFamilies": [
+          "cool"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 10,
+    "pathsChecked": 15,
+    "removalOrder": [
+      5,
+      11,
+      15,
+      3,
+      12
+    ]
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-true-fraudulent-2026-10-23-067ffdb6d22a.json",
+  "answer": "FRAUDULENT",
+  "rules": "bingo-hunt",
+  "review": "TRUE is genuine rather than an imitation, not a loyal person. FRAUDULENT involves deception, as in a fraudulent certificate; FAKE and FALSE describe a misleading imitation. UNREAL means artificial rather than genuine. Every accepted reading is an adjective; the noun copy and verb forge do not qualify.",
+  "identity": {
+    "id": "puzzle-true-fraudulent-2026-10-23",
+    "enemy": "TRUE",
+    "board": "ACDEFHIKLNORSTUU",
+    "bingos": [
+      "FRAUDULENT"
+    ],
+    "bingoFamilies": [
+      "FRAUDULENT"
+    ]
+  },
+  "witnesses": [
+    [
+      "FRAUDULENT"
+    ],
+    [
+      "FAKE",
+      "FRAUDULENT"
+    ],
+    [
+      "FAKE",
+      "FALSE",
+      "FRAUDULENT"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "FRAUDULENT",
+      "effort": 4.78
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "FAKE",
+      "FALSE"
+    ],
+    "branches": [
+      {
+        "first": "FAKE",
+        "next": [
+          "FAKER",
+          "FALSE",
+          "FALSER",
+          "UNREAL"
+        ],
+        "preferredFamilies": [
+          "false"
+        ],
+        "familiarFamilies": [
+          "false",
+          "unreal"
+        ]
+      },
+      {
+        "first": "FAKER",
+        "next": [
+          "FAKE",
+          "FALSE",
+          "FALSER",
+          "UNREAL"
+        ],
+        "preferredFamilies": [
+          "false"
+        ],
+        "familiarFamilies": [
+          "false",
+          "unreal"
+        ]
+      },
+      {
+        "first": "FALSE",
+        "next": [
+          "FAKE",
+          "FAKER",
+          "FALSER",
+          "UNREAL"
+        ],
+        "preferredFamilies": [
+          "fake"
+        ],
+        "familiarFamilies": [
+          "fake",
+          "unreal"
+        ]
+      },
+      {
+        "first": "FALSER",
+        "next": [
+          "FAKE",
+          "FAKER",
+          "FALSE",
+          "UNREAL"
+        ],
+        "preferredFamilies": [
+          "fake"
+        ],
+        "familiarFamilies": [
+          "fake",
+          "unreal"
+        ]
+      },
+      {
+        "first": "UNREAL",
+        "next": [
+          "FAKE",
+          "FAKER",
+          "FALSE",
+          "FALSER"
+        ],
+        "preferredFamilies": [
+          "fake",
+          "false"
+        ],
+        "familiarFamilies": [
+          "fake",
+          "false"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 20,
+    "pathsChecked": 20,
+    "removalOrder": [
+      1,
+      10,
+      11,
+      8,
+      13,
+      15
+    ]
+  }
+}

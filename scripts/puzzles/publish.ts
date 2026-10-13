@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
-import { avoidsLessAnswer } from './profiles.ts'
+import { bingoQualityIssue } from './answerQuality.ts'
 import type { HuntProfile } from '../antonyms/huntProfiles.ts'
 import { buildAntonymEncounter } from '../antonyms/build.ts'
 import { planHuntRemovals } from '../antonyms/hunt.ts'
@@ -20,10 +20,15 @@ export function preparePuzzle(selected: HuntProfile, date: string) {
   const directory = `artifacts/puzzles/${date}`
   const id = `puzzle-${profile.id}-${date}`
   assert.ok(!profile.family && !profile.powers.length && profile.refills === '', 'Only plain same-type antonyms can be published')
-  assert.ok(avoidsLessAnswer(profile.bingo), 'Avoid -less answers, including -lessness')
+  assert.equal(bingoQualityIssue(profile.enemy, profile.bingo), undefined, `${profile.id}: ${bingoQualityIssue(profile.enemy, profile.bingo)}`)
   const built = buildAntonymEncounter(profile)
   assert.equal(built.encounter.counterRules!.partOfSpeech, built.encounter.enemy.partOfSpeech, 'Enemy and antonyms must have the same word type')
   built.encounter.id = `daily-bingo-hunt:${date}:${profile.id}:v1`
+  const identity = puzzleIdentity(id, built.encounter)
+  for (const word of identity.bingos) {
+    const issue = bingoQualityIssue(profile.enemy, word, built.source.lemma, built.encounter.meaningLexicon!.words[word].lemma)
+    assert.equal(issue, undefined, `${id}: ${word}: ${issue}`)
+  }
   const { encounter, review } = planHuntRemovals(built.encounter, profile.bingo, preferredHelpers)
   const initial = createLetterStrikeGame(encounter)
   const startingBingos = encounter.enemy.semanticRelations.opposite.flatMap(word => {
@@ -45,8 +50,6 @@ export function preparePuzzle(selected: HuntProfile, date: string) {
     assert.equal(state.status, 'won')
     assert.equal(state.playedWords.length, route.length)
   }
-  const identity = puzzleIdentity(id, encounter)
-  assert.ok(startingBingos.every(bingo => avoidsLessAnswer(bingo.word)), 'A -less alternative bingo is present')
   const payload = { version: 1, id, method: 'bingo-first',
     encounter: { ...encounter, meaningLexicon: packDictionaryMeanings(encounter.meaningLexicon!) } }
   const digest = createHash('sha256').update(JSON.stringify(payload)).digest('hex').slice(0, 12)

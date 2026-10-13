@@ -1,7 +1,9 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import { execFileSync } from 'node:child_process'
-import { readFileSync, existsSync } from 'node:fs'
+import { readFileSync, existsSync, mkdtempSync, writeFileSync, rmSync } from 'node:fs'
+import { tmpdir } from 'node:os'
+import { join } from 'node:path'
 import { puzzleProfiles, avoidsLessAnswer } from '../scripts/puzzles/profiles.ts'
 import { getMeaningSense } from '../scripts/lib/wordMeanings.ts'
 import { wordEffort } from '../scripts/bingo/routeDifficulty.ts'
@@ -40,6 +42,23 @@ test('batch date checks reject collisions before any puzzle is published', () =>
   assert.throws(() => checkPublicationDates(['2099-01-01', context.entries[0].date], context), /Date already occupied/)
   assert.throws(() => checkPublicationDates(['2026-02-30'], context), /real dates/)
   assert.doesNotThrow(() => checkPublicationDates(['2099-01-01', '2099-01-02'], context))
+})
+test('an explicit replacement batch requires --replace and can prove an occupied date without writing', () => {
+  const context = publicationContext()
+  const entry = context.entries.find(entry => entry.id.startsWith('puzzle-reviewed-fit-deficient-'))!
+  assert.ok(entry)
+  const paths = [context.manifest, 'src/daily/archive.json', 'src/daily/guides.json', `public/${entry.asset}`]
+  const before = paths.map(path => readFileSync(path, 'utf8'))
+  const directory = mkdtempSync(join(tmpdir(), 'wyrmle-replace-'))
+  try {
+    const plan = join(directory, 'plan.json')
+    writeFileSync(plan, JSON.stringify({ puzzles: [{ date: entry.date, profile: 'reviewed-fit-deficient' }] }))
+    const args = ['scripts/generate-puzzles.ts', '--plan', plan, '--dry-run']
+    assert.throws(() => execFileSync(process.execPath, args, { stdio: 'pipe' }), /Date already occupied/)
+    const output = execFileSync(process.execPath, [...args, '--replace'], { encoding: 'utf8' })
+    assert.match(output, /Validated 1 puzzles/)
+    assert.deepEqual(paths.map(path => readFileSync(path, 'utf8')), before)
+  } finally { rmSync(directory, { recursive: true, force: true }) }
 })
 test('a sourced neutral correction repairs a false comparative without admitting a noun as an adjective counter', () => {
   const base = puzzleProfiles.find(item => item.profile.id === 'old')!.profile

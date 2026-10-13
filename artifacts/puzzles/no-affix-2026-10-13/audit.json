@@ -1,0 +1,228 @@
+{
+  "date": "2026-10-13",
+  "reason": "Reject affix-only and reviewed same-root bingos, including alternative winning words.",
+  "retiredCount": 25,
+  "newBoards": 16,
+  "first": "2026-09-29",
+  "last": "2026-12-05",
+  "scheduledCount": 68,
+  "newHelperPaths": 2458,
+  "replacements": [
+    {
+      "date": "2026-10-07",
+      "profile": "oct26-revised-hot-hypothermic",
+      "enemy": "HOT",
+      "asset": "puzzles/puzzle-oct26-revised-hot-hypothermic-2026-10-07-661b8a0b043d.json",
+      "bingos": [
+        "HYPOTHERMIC"
+      ],
+      "paths": 15
+    },
+    {
+      "date": "2026-10-12",
+      "profile": "sure-precarious",
+      "enemy": "SURE",
+      "asset": "puzzles/puzzle-sure-precarious-2026-10-12-11a452e0e8c8.json",
+      "bingos": [
+        "PERILOUS",
+        "PRECARIOUS"
+      ],
+      "paths": 60
+    },
+    {
+      "date": "2026-10-13",
+      "profile": "hire-discharge",
+      "enemy": "HIRE",
+      "asset": "puzzles/puzzle-hire-discharge-2026-10-13-09a0745041e0.json",
+      "bingos": [
+        "CASHIER",
+        "DISCHARGE"
+      ],
+      "paths": 88
+    },
+    {
+      "date": "2026-10-15",
+      "profile": "oct26-revised-dress-disrobes",
+      "enemy": "DRESS",
+      "asset": "puzzles/puzzle-oct26-revised-dress-disrobes-2026-10-15-9a9f32c61d01.json",
+      "bingos": [
+        "DISROBES"
+      ],
+      "paths": 60
+    },
+    {
+      "date": "2026-10-19",
+      "profile": "reviewed-bad-admirable",
+      "enemy": "BAD",
+      "asset": "puzzles/puzzle-reviewed-bad-admirable-2026-10-19-4a31ef80cf9a.json",
+      "bingos": [
+        "ADMIRABLE",
+        "FORMIDABLE"
+      ],
+      "paths": 70
+    },
+    {
+      "date": "2026-10-23",
+      "profile": "true-fraudulent",
+      "enemy": "TRUE",
+      "asset": "puzzles/puzzle-true-fraudulent-2026-10-23-067ffdb6d22a.json",
+      "bingos": [
+        "FRAUDULENT"
+      ],
+      "paths": 20
+    },
+    {
+      "date": "2026-10-24",
+      "profile": "reviewed-fit-deficient",
+      "enemy": "FIT",
+      "asset": "puzzles/puzzle-reviewed-fit-deficient-2026-10-24-4366f6c668a0.json",
+      "bingos": [
+        "DEFICIENT"
+      ],
+      "paths": 8
+    },
+    {
+      "date": "2026-10-27",
+      "profile": "oct26-revised-rest-stirred",
+      "enemy": "REST",
+      "asset": "puzzles/puzzle-oct26-revised-rest-stirred-2026-10-27-2aece492498a.json",
+      "bingos": [
+        "STIRRED"
+      ],
+      "paths": 1830
+    },
+    {
+      "date": "2026-11-01",
+      "profile": "oct26-revised-real-legendary",
+      "enemy": "REAL",
+      "asset": "puzzles/puzzle-oct26-revised-real-legendary-2026-11-01-ee536e8e18a3.json",
+      "bingos": [
+        "DREAMLIKE",
+        "LEGENDARY"
+      ],
+      "paths": 45
+    },
+    {
+      "date": "2026-11-02",
+      "profile": "reviewed-gall-allaying",
+      "enemy": "GALL",
+      "asset": "puzzles/puzzle-reviewed-gall-allaying-2026-11-02-036efa95cf7c.json",
+      "bingos": [
+        "ALLAYING"
+      ],
+      "paths": 56
+    },
+    {
+      "date": "2026-11-10",
+      "profile": "oct26-revised-rotten-strongest",
+      "enemy": "ROTTEN",
+      "asset": "puzzles/puzzle-oct26-revised-rotten-strongest-2026-11-10-e63b94b55c13.json",
+      "bingos": [
+        "STRONGEST"
+      ],
+      "paths": 50
+    },
+    {
+      "date": "2026-11-11",
+      "profile": "one-sectional",
+      "enemy": "ONE",
+      "asset": "puzzles/puzzle-one-sectional-2026-11-11-7e65f115d5c0.json",
+      "bingos": [
+        "SECTIONAL"
+      ],
+      "paths": 9
+    },
+    {
+      "date": "2026-11-13",
+      "profile": "oct26-revised-new-weatherworn",
+      "enemy": "NEW",
+      "asset": "puzzles/puzzle-oct26-revised-new-weatherworn-2026-11-13-d1deb0525211.json",
+      "bingos": [
+        "WATERWORN",
+        "WEATHERWORN"
+      ],
+      "paths": 25
+    },
+    {
+      "date": "2026-11-20",
+      "profile": "reviewed-ease-exasperate",
+      "enemy": "EASE",
+      "asset": "puzzles/puzzle-reviewed-ease-exasperate-2026-11-20-de0e28b78e4a.json",
+      "bingos": [
+        "EXASPERATE"
+      ],
+      "paths": 84
+    },
+    {
+      "date": "2026-11-22",
+      "profile": "wrong-working",
+      "enemy": "WRONG",
+      "asset": "puzzles/puzzle-wrong-working-2026-11-22-775818d8f406.json",
+      "bingos": [
+        "WORKING"
+      ],
+      "paths": 32
+    },
+    {
+      "date": "2026-11-24",
+      "profile": "aerial-material",
+      "enemy": "AERIAL",
+      "asset": "puzzles/puzzle-aerial-material-2026-11-24-3c5f5e172ce6.json",
+      "bingos": [
+        "MATERIAL"
+      ],
+      "paths": 6
+    }
+  ],
+  "moves": [
+    {
+      "from": "2026-12-07",
+      "to": "2026-11-25",
+      "id": "puzzle-torn-confederate-2026-12-07",
+      "asset": "puzzles/puzzle-torn-confederate-2026-12-07-33fb0c5439e9.json"
+    },
+    {
+      "from": "2026-12-08",
+      "to": "2026-11-26",
+      "id": "puzzle-autumn-bare-baroque-2026-12-08",
+      "asset": "puzzles/puzzle-autumn-bare-baroque-2026-12-08-1aa9531b9ae7.json"
+    },
+    {
+      "from": "2026-12-09",
+      "to": "2026-11-27",
+      "id": "puzzle-tied-sectioned-2026-12-09",
+      "asset": "puzzles/puzzle-tied-sectioned-2026-12-09-140ba6525d25.json"
+    },
+    {
+      "from": "2026-12-10",
+      "to": "2026-11-29",
+      "id": "puzzle-oct26-mature-rudimentary-2026-12-10",
+      "asset": "puzzles/puzzle-oct26-mature-rudimentary-2026-12-10-94d186a62e22.json"
+    },
+    {
+      "from": "2026-12-11",
+      "to": "2026-12-01",
+      "id": "puzzle-autumn-dry-drizzly-2026-12-11",
+      "asset": "puzzles/puzzle-autumn-dry-drizzly-2026-12-11-8c260d287515.json"
+    },
+    {
+      "from": "2026-12-12",
+      "to": "2026-12-02",
+      "id": "puzzle-oct26-mean-handsome-2026-12-12",
+      "asset": "puzzles/puzzle-oct26-mean-handsome-2026-12-12-fe8da2ab54df.json"
+    },
+    {
+      "from": "2026-12-13",
+      "to": "2026-12-03",
+      "id": "puzzle-autumn-hide-published-2026-12-13",
+      "asset": "puzzles/puzzle-autumn-hide-published-2026-12-13-68b4ca9c777d.json"
+    },
+    {
+      "from": "2026-12-14",
+      "to": "2026-12-05",
+      "id": "puzzle-slim-voluminous-2026-12-14",
+      "asset": "puzzles/puzzle-slim-voluminous-2026-12-14-ff6c2c0d3987.json"
+    }
+  ],
+  "progress": "Old immutable assets remain available. Existing replaced-date saves are backed up by asset when new progress is saved. Only unreleased puzzles were rescheduled."
+}

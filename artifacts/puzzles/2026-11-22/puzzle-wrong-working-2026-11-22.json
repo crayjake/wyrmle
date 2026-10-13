@@ -1,0 +1,211 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-wrong-working-2026-11-22-775818d8f406.json",
+  "answer": "WORKING",
+  "rules": "bingo-hunt",
+  "review": "WRONG concerns faulty equipment, as in something wrong with the motor. WORKING means operating correctly. RIGHT and FINE describe satisfactory condition; SOUND and STRONG use defect-free construction. FIT is adequate for its purpose and SURE is reliable in operation. Directional RIGHT, moral rightness, noise SOUND and the work verb are outside these adjective readings.",
+  "identity": {
+    "id": "puzzle-wrong-working-2026-11-22",
+    "enemy": "WRONG",
+    "board": "AADEFGHIKNORSTUW",
+    "bingos": [
+      "WORKING"
+    ],
+    "bingoFamilies": [
+      "WORKING"
+    ]
+  },
+  "witnesses": [
+    [
+      "WORKING"
+    ],
+    [
+      "RIGHT",
+      "WORKING"
+    ],
+    [
+      "RIGHT",
+      "FINE",
+      "WORKING"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "WORKING",
+      "effort": 1.2
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "RIGHT",
+      "FINE"
+    ],
+    "branches": [
+      {
+        "first": "FINE",
+        "next": [
+          "FINER",
+          "FIT",
+          "RIGHT"
+        ],
+        "preferredFamilies": [
+          "right"
+        ],
+        "familiarFamilies": [
+          "fit",
+          "right"
+        ]
+      },
+      {
+        "first": "FINER",
+        "next": [
+          "FINE",
+          "FIT",
+          "RIGHT"
+        ],
+        "preferredFamilies": [
+          "right"
+        ],
+        "familiarFamilies": [
+          "fit",
+          "right"
+        ]
+      },
+      {
+        "first": "FINEST",
+        "next": [
+          "FINE",
+          "FINER",
+          "FIT",
+          "RIGHT"
+        ],
+        "preferredFamilies": [
+          "right"
+        ],
+        "familiarFamilies": [
+          "fit",
+          "right"
+        ]
+      },
+      {
+        "first": "FIT",
+        "next": [
+          "FINE",
+          "FINER",
+          "RIGHT"
+        ],
+        "preferredFamilies": [
+          "fine",
+          "right"
+        ],
+        "familiarFamilies": [
+          "fine",
+          "right"
+        ]
+      },
+      {
+        "first": "RIGHT",
+        "next": [
+          "FINE",
+          "FINER",
+          "FIT"
+        ],
+        "preferredFamilies": [
+          "fine"
+        ],
+        "familiarFamilies": [
+          "fine",
+          "fit"
+        ]
+      },
+      {
+        "first": "SOUND",
+        "next": [
+          "FINE",
+          "FINER",
+          "FIT",
+          "RIGHT"
+        ],
+        "preferredFamilies": [
+          "fine",
+          "right"
+        ],
+        "familiarFamilies": [
+          "fine",
+          "fit",
+          "right"
+        ]
+      },
+      {
+        "first": "SOUNDER",
+        "next": [
+          "FINE",
+          "FINER",
+          "FIT",
+          "RIGHT"
+        ],
+        "preferredFamilies": [
+          "fine",
+          "right"
+        ],
+        "familiarFamilies": [
+          "fine",
+          "fit",
+          "right"
+        ]
+      },
+      {
+        "first": "STRONG",
+        "next": [
+          "FINE",
+          "FINER",
+          "FIT",
+          "RIGHT"
+        ],
+        "preferredFamilies": [
+          "fine",
+          "right"
+        ],
+        "familiarFamilies": [
+          "fine",
+          "fit",
+          "right"
+        ]
+      },
+      {
+        "first": "SURE",
+        "next": [
+          "FINE",
+          "FINER",
+          "FIT",
+          "RIGHT"
+        ],
+        "preferredFamilies": [
+          "fine",
+          "right"
+        ],
+        "familiarFamilies": [
+          "fine",
+          "fit",
+          "right"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 126,
+    "pathsChecked": 32,
+    "removalOrder": [
+      0,
+      2,
+      3,
+      5,
+      11,
+      4,
+      7,
+      9,
+      14
+    ]
+  }
+}

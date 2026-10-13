@@ -1,0 +1,318 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-hire-discharge-2026-10-13-09a0745041e0.json",
+  "answer": "DISCHARGE",
+  "rules": "bingo-hunt",
+  "review": "HIRE is engaging an employee. DISCHARGE, FIRE, SACK and DISMISS release that employee from their work. CASHIER is dismissal from military employment. All readings are verbs; the retail CASHIER noun and firing weapons are excluded.",
+  "identity": {
+    "id": "puzzle-hire-discharge-2026-10-13",
+    "enemy": "HIRE",
+    "board": "ACDEFGHIKMNORSTX",
+    "bingos": [
+      "CASHIER",
+      "DISCHARGE"
+    ],
+    "bingoFamilies": [
+      "CASHIER",
+      "DISCHARGE"
+    ]
+  },
+  "witnesses": [
+    [
+      "DISCHARGE"
+    ],
+    [
+      "FIRE",
+      "DISCHARGE"
+    ],
+    [
+      "FIRE",
+      "SACK",
+      "DISCHARGE"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "CASHIER",
+      "effort": 3.0600000000000005
+    },
+    {
+      "word": "DISCHARGE",
+      "effort": 3.5399999999999996
+    }
+  ],
+  "helperEffort": 1.1799999999999997,
+  "removalProof": {
+    "preferredHelpers": [
+      "FIRE",
+      "SACK"
+    ],
+    "branches": [
+      {
+        "first": "AXE",
+        "next": [
+          "AXED",
+          "AXES",
+          "FIRE",
+          "FIRED",
+          "FIRES",
+          "SACK",
+          "SACKED"
+        ],
+        "preferredFamilies": [
+          "fire",
+          "sack"
+        ],
+        "familiarFamilies": [
+          "ax",
+          "fire",
+          "sack"
+        ]
+      },
+      {
+        "first": "AXED",
+        "next": [
+          "AXE",
+          "AXES",
+          "FIRE",
+          "FIRED",
+          "FIRES",
+          "SACK",
+          "SACKED"
+        ],
+        "preferredFamilies": [
+          "fire",
+          "sack"
+        ],
+        "familiarFamilies": [
+          "axe",
+          "fire",
+          "sack"
+        ]
+      },
+      {
+        "first": "AXES",
+        "next": [
+          "AXE",
+          "AXED",
+          "FIRE",
+          "FIRED",
+          "FIRES",
+          "SACK",
+          "SACKED"
+        ],
+        "preferredFamilies": [
+          "fire",
+          "sack"
+        ],
+        "familiarFamilies": [
+          "axe",
+          "fire",
+          "sack"
+        ]
+      },
+      {
+        "first": "AXING",
+        "next": [
+          "AXE",
+          "AXED",
+          "AXES",
+          "FIRE",
+          "FIRED",
+          "FIRES",
+          "SACK",
+          "SACKED"
+        ],
+        "preferredFamilies": [
+          "fire",
+          "sack"
+        ],
+        "familiarFamilies": [
+          "axe",
+          "fire",
+          "sack"
+        ]
+      },
+      {
+        "first": "CAN",
+        "next": [
+          "AXE",
+          "AXED",
+          "AXES",
+          "FIRE",
+          "FIRED",
+          "FIRES",
+          "SACK",
+          "SACKED"
+        ],
+        "preferredFamilies": [
+          "fire",
+          "sack"
+        ],
+        "familiarFamilies": [
+          "axe",
+          "ax",
+          "fire",
+          "sack"
+        ]
+      },
+      {
+        "first": "CANS",
+        "next": [
+          "AXE",
+          "AXED",
+          "AXES",
+          "FIRE",
+          "FIRED",
+          "FIRES",
+          "SACK",
+          "SACKED"
+        ],
+        "preferredFamilies": [
+          "fire",
+          "sack"
+        ],
+        "familiarFamilies": [
+          "axe",
+          "ax",
+          "fire",
+          "sack"
+        ]
+      },
+      {
+        "first": "FIRE",
+        "next": [
+          "AXE",
+          "AXED",
+          "AXES",
+          "FIRED",
+          "FIRES",
+          "SACK",
+          "SACKED"
+        ],
+        "preferredFamilies": [
+          "sack"
+        ],
+        "familiarFamilies": [
+          "axe",
+          "ax",
+          "sack"
+        ]
+      },
+      {
+        "first": "FIRED",
+        "next": [
+          "AXE",
+          "AXED",
+          "AXES",
+          "FIRE",
+          "FIRES",
+          "SACK",
+          "SACKED"
+        ],
+        "preferredFamilies": [
+          "sack"
+        ],
+        "familiarFamilies": [
+          "axe",
+          "ax",
+          "sack"
+        ]
+      },
+      {
+        "first": "FIRES",
+        "next": [
+          "AXE",
+          "AXED",
+          "AXES",
+          "FIRE",
+          "FIRED",
+          "SACK",
+          "SACKED"
+        ],
+        "preferredFamilies": [
+          "sack"
+        ],
+        "familiarFamilies": [
+          "axe",
+          "ax",
+          "sack"
+        ]
+      },
+      {
+        "first": "SACK",
+        "next": [
+          "AXE",
+          "AXED",
+          "AXES",
+          "FIRE",
+          "FIRED",
+          "FIRES",
+          "SACKED"
+        ],
+        "preferredFamilies": [
+          "fire"
+        ],
+        "familiarFamilies": [
+          "axe",
+          "ax",
+          "fire"
+        ]
+      },
+      {
+        "first": "SACKED",
+        "next": [
+          "AXE",
+          "AXED",
+          "AXES",
+          "FIRE",
+          "FIRED",
+          "FIRES",
+          "SACK"
+        ],
+        "preferredFamilies": [
+          "fire"
+        ],
+        "familiarFamilies": [
+          "axe",
+          "ax",
+          "fire"
+        ]
+      },
+      {
+        "first": "SACKING",
+        "next": [
+          "AXE",
+          "AXED",
+          "AXES",
+          "FIRE",
+          "FIRED",
+          "FIRES",
+          "SACK",
+          "SACKED"
+        ],
+        "preferredFamilies": [
+          "fire"
+        ],
+        "familiarFamilies": [
+          "axe",
+          "ax",
+          "fire"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 3,
+    "candidatesChecked": 35,
+    "pathsChecked": 88,
+    "removalOrder": [
+      6,
+      13,
+      14,
+      15,
+      1,
+      3,
+      11
+    ]
+  }
+}

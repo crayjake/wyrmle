@@ -1,0 +1,254 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-oct26-revised-dress-disrobes-2026-10-15-9a9f32c61d01.json",
+  "answer": "DISROBES",
+  "rules": "bingo-hunt",
+  "review": "DRESS means put clothes on. DISROBE and STRIP mean remove clothes; PEEL uses its clothing sense, DOFF takes a garment off, and BARE means remove a covering. BARE is a verb here, not a naked-state adjective. These are same-type antonyms with clothing as the shared object. DISCASE is the less familiar exact verb meaning get undressed.",
+  "identity": {
+    "id": "puzzle-oct26-revised-dress-disrobes-2026-10-15",
+    "enemy": "DRESS",
+    "board": "ABCDEEFFILOPRSST",
+    "bingos": [
+      "DISROBES"
+    ],
+    "bingoFamilies": [
+      "DISROBE"
+    ]
+  },
+  "witnesses": [
+    [
+      "DISROBES"
+    ],
+    [
+      "STRIP",
+      "DISROBES"
+    ],
+    [
+      "STRIP",
+      "BARE",
+      "DISROBES"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "DISROBES",
+      "effort": 8.54
+    }
+  ],
+  "helperEffort": 0.6400000000000006,
+  "removalProof": {
+    "preferredHelpers": [
+      "STRIP",
+      "BARE"
+    ],
+    "branches": [
+      {
+        "first": "BARE",
+        "next": [
+          "BARED",
+          "BARES",
+          "DISROBE",
+          "STRIP",
+          "STRIPS"
+        ],
+        "preferredFamilies": [
+          "strip"
+        ],
+        "familiarFamilies": [
+          "strip"
+        ]
+      },
+      {
+        "first": "BARED",
+        "next": [
+          "BARE",
+          "BARES",
+          "DISROBE",
+          "STRIP",
+          "STRIPS"
+        ],
+        "preferredFamilies": [
+          "strip"
+        ],
+        "familiarFamilies": [
+          "strip"
+        ]
+      },
+      {
+        "first": "BARES",
+        "next": [
+          "BARE",
+          "BARED",
+          "DISROBE",
+          "STRIP",
+          "STRIPS"
+        ],
+        "preferredFamilies": [
+          "strip"
+        ],
+        "familiarFamilies": [
+          "strip"
+        ]
+      },
+      {
+        "first": "DISCASE",
+        "next": [
+          "BARE",
+          "BARED",
+          "BARES",
+          "DISROBE",
+          "STRIP",
+          "STRIPS"
+        ],
+        "preferredFamilies": [
+          "bare",
+          "strip"
+        ],
+        "familiarFamilies": [
+          "bare",
+          "strip"
+        ]
+      },
+      {
+        "first": "DISROBE",
+        "next": [
+          "BARE",
+          "BARED",
+          "BARES",
+          "STRIP",
+          "STRIPS"
+        ],
+        "preferredFamilies": [
+          "bare",
+          "strip"
+        ],
+        "familiarFamilies": [
+          "bare",
+          "strip"
+        ]
+      },
+      {
+        "first": "DOFF",
+        "next": [
+          "BARE",
+          "BARED",
+          "BARES",
+          "DISROBE",
+          "STRIP",
+          "STRIPS"
+        ],
+        "preferredFamilies": [
+          "bare",
+          "strip"
+        ],
+        "familiarFamilies": [
+          "bare",
+          "strip"
+        ]
+      },
+      {
+        "first": "DOFFS",
+        "next": [
+          "BARE",
+          "BARED",
+          "BARES",
+          "DISROBE",
+          "STRIP",
+          "STRIPS"
+        ],
+        "preferredFamilies": [
+          "bare",
+          "strip"
+        ],
+        "familiarFamilies": [
+          "bare",
+          "strip"
+        ]
+      },
+      {
+        "first": "PEEL",
+        "next": [
+          "BARE",
+          "BARED",
+          "BARES",
+          "DISROBE",
+          "STRIP",
+          "STRIPS"
+        ],
+        "preferredFamilies": [
+          "bare",
+          "strip"
+        ],
+        "familiarFamilies": [
+          "bare",
+          "strip"
+        ]
+      },
+      {
+        "first": "PEELS",
+        "next": [
+          "BARE",
+          "BARED",
+          "BARES",
+          "DISROBE",
+          "STRIP",
+          "STRIPS"
+        ],
+        "preferredFamilies": [
+          "bare",
+          "strip"
+        ],
+        "familiarFamilies": [
+          "bare",
+          "strip"
+        ]
+      },
+      {
+        "first": "STRIP",
+        "next": [
+          "BARE",
+          "BARED",
+          "BARES",
+          "DISROBE",
+          "STRIPS"
+        ],
+        "preferredFamilies": [
+          "bare"
+        ],
+        "familiarFamilies": [
+          "bare"
+        ]
+      },
+      {
+        "first": "STRIPS",
+        "next": [
+          "BARE",
+          "BARED",
+          "BARES",
+          "DISROBE",
+          "STRIP"
+        ],
+        "preferredFamilies": [
+          "bare"
+        ],
+        "familiarFamilies": [
+          "bare"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 70,
+    "pathsChecked": 60,
+    "removalOrder": [
+      1,
+      6,
+      9,
+      12,
+      3,
+      7,
+      10,
+      14
+    ]
+  }
+}

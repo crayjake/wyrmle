@@ -1,0 +1,280 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-sure-precarious-2026-10-12-11a452e0e8c8.json",
+  "answer": "PRECARIOUS",
+  "rules": "bingo-hunt",
+  "review": "SURE uses secure footing, not confident belief or inevitable events. PRECARIOUS means insecure and liable to fail; RISKY, DICEY, PERILOUS and HAIRY involve danger. SHAKY, RICKETY, ROCKY and TIPSY use unstable footing or support, not drunkenness or a rocky landscape. All accepted readings are adjectives; financial and mental-health senses are excluded.",
+  "identity": {
+    "id": "puzzle-sure-precarious-2026-10-12",
+    "enemy": "SURE",
+    "board": "ACDEHIKLOPRRSTUY",
+    "bingos": [
+      "PERILOUS",
+      "PRECARIOUS"
+    ],
+    "bingoFamilies": [
+      "PERILOUS",
+      "PRECARIOUS"
+    ]
+  },
+  "witnesses": [
+    [
+      "PRECARIOUS"
+    ],
+    [
+      "RISKY",
+      "PRECARIOUS"
+    ],
+    [
+      "RISKY",
+      "SHAKY",
+      "PRECARIOUS"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "PERILOUS",
+      "effort": 4.4399999999999995
+    },
+    {
+      "word": "PRECARIOUS",
+      "effort": 5.46
+    }
+  ],
+  "helperEffort": 2.0999999999999996,
+  "removalProof": {
+    "preferredHelpers": [
+      "RISKY",
+      "SHAKY"
+    ],
+    "branches": [
+      {
+        "first": "DICEY",
+        "next": [
+          "HAIRY",
+          "RISKY",
+          "ROCKIER",
+          "ROCKY",
+          "SHAKIER",
+          "SHAKY"
+        ],
+        "preferredFamilies": [
+          "risky",
+          "shaky"
+        ],
+        "familiarFamilies": [
+          "hairy",
+          "risky",
+          "rocky",
+          "shaky"
+        ]
+      },
+      {
+        "first": "HAIRY",
+        "next": [
+          "RISKY",
+          "ROCKIER",
+          "ROCKY",
+          "SHAKIER",
+          "SHAKY"
+        ],
+        "preferredFamilies": [
+          "risky",
+          "shaky"
+        ],
+        "familiarFamilies": [
+          "risky",
+          "rocky",
+          "shaky"
+        ]
+      },
+      {
+        "first": "PARLOUS",
+        "next": [
+          "HAIRY",
+          "RISKY",
+          "ROCKIER",
+          "ROCKY",
+          "SHAKIER",
+          "SHAKY"
+        ],
+        "preferredFamilies": [
+          "risky",
+          "shaky"
+        ],
+        "familiarFamilies": [
+          "hairy",
+          "risky",
+          "rocky",
+          "shaky"
+        ]
+      },
+      {
+        "first": "RICKETY",
+        "next": [
+          "HAIRY",
+          "RISKY",
+          "ROCKIER",
+          "ROCKY",
+          "SHAKIER",
+          "SHAKY"
+        ],
+        "preferredFamilies": [
+          "risky",
+          "shaky"
+        ],
+        "familiarFamilies": [
+          "hairy",
+          "risky",
+          "rocky",
+          "shaky"
+        ]
+      },
+      {
+        "first": "RISKY",
+        "next": [
+          "HAIRY",
+          "ROCKIER",
+          "ROCKY",
+          "SHAKIER",
+          "SHAKY"
+        ],
+        "preferredFamilies": [
+          "shaky"
+        ],
+        "familiarFamilies": [
+          "hairy",
+          "rocky",
+          "shaky"
+        ]
+      },
+      {
+        "first": "ROCKIER",
+        "next": [
+          "HAIRY",
+          "RISKY",
+          "ROCKY",
+          "SHAKIER",
+          "SHAKY"
+        ],
+        "preferredFamilies": [
+          "risky",
+          "shaky"
+        ],
+        "familiarFamilies": [
+          "hairy",
+          "risky",
+          "shaky"
+        ]
+      },
+      {
+        "first": "ROCKIEST",
+        "next": [
+          "HAIRY",
+          "RISKY",
+          "ROCKIER",
+          "ROCKY",
+          "SHAKIER",
+          "SHAKY"
+        ],
+        "preferredFamilies": [
+          "risky",
+          "shaky"
+        ],
+        "familiarFamilies": [
+          "hairy",
+          "risky",
+          "shaky"
+        ]
+      },
+      {
+        "first": "ROCKY",
+        "next": [
+          "HAIRY",
+          "RISKY",
+          "ROCKIER",
+          "SHAKIER",
+          "SHAKY"
+        ],
+        "preferredFamilies": [
+          "risky",
+          "shaky"
+        ],
+        "familiarFamilies": [
+          "hairy",
+          "risky",
+          "shaky"
+        ]
+      },
+      {
+        "first": "SHAKIER",
+        "next": [
+          "HAIRY",
+          "RISKY",
+          "ROCKIER",
+          "ROCKY",
+          "SHAKY"
+        ],
+        "preferredFamilies": [
+          "risky"
+        ],
+        "familiarFamilies": [
+          "hairy",
+          "risky",
+          "rocky"
+        ]
+      },
+      {
+        "first": "SHAKY",
+        "next": [
+          "HAIRY",
+          "RISKY",
+          "ROCKIER",
+          "ROCKY",
+          "SHAKIER"
+        ],
+        "preferredFamilies": [
+          "risky"
+        ],
+        "familiarFamilies": [
+          "hairy",
+          "risky",
+          "rocky"
+        ]
+      },
+      {
+        "first": "TIPSY",
+        "next": [
+          "HAIRY",
+          "RISKY",
+          "ROCKIER",
+          "ROCKY",
+          "SHAKIER",
+          "SHAKY"
+        ],
+        "preferredFamilies": [
+          "risky",
+          "shaky"
+        ],
+        "familiarFamilies": [
+          "hairy",
+          "risky",
+          "rocky",
+          "shaky"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 3,
+    "candidatesChecked": 20,
+    "pathsChecked": 60,
+    "removalOrder": [
+      2,
+      11,
+      14,
+      3,
+      9,
+      12
+    ]
+  }
+}

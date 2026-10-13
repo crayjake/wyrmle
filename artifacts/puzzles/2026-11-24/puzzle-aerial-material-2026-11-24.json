@@ -1,0 +1,100 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-aerial-material-2026-11-24-3c5f5e172ce6.json",
+  "answer": "MATERIAL",
+  "rules": "bingo-hunt",
+  "review": "AERIAL uses the airy, insubstantial adjective rather than situated in the sky or a radio antenna. MATERIAL has physical substance. REAL and SOLID explicitly mean substantial rather than imaginary or intangible. All counters are adjectives, not cloth MATERIAL or real-number nouns.",
+  "identity": {
+    "id": "puzzle-aerial-material-2026-11-24",
+    "enemy": "AERIAL",
+    "board": "AACDEGHILMNORSTU",
+    "bingos": [
+      "MATERIAL"
+    ],
+    "bingoFamilies": [
+      "MATERIAL"
+    ]
+  },
+  "witnesses": [
+    [
+      "MATERIAL"
+    ],
+    [
+      "REAL",
+      "MATERIAL"
+    ],
+    [
+      "REAL",
+      "SOLID",
+      "MATERIAL"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "MATERIAL",
+      "effort": 1.7999999999999998
+    }
+  ],
+  "helperEffort": 0,
+  "removalProof": {
+    "preferredHelpers": [
+      "REAL",
+      "SOLID"
+    ],
+    "branches": [
+      {
+        "first": "REAL",
+        "next": [
+          "SOLID",
+          "SOLIDER"
+        ],
+        "preferredFamilies": [
+          "solid"
+        ],
+        "familiarFamilies": [
+          "solid"
+        ]
+      },
+      {
+        "first": "SOLID",
+        "next": [
+          "REAL",
+          "SOLIDER"
+        ],
+        "preferredFamilies": [
+          "real"
+        ],
+        "familiarFamilies": [
+          "real"
+        ]
+      },
+      {
+        "first": "SOLIDER",
+        "next": [
+          "REAL",
+          "SOLID"
+        ],
+        "preferredFamilies": [
+          "real"
+        ],
+        "familiarFamilies": [
+          "real"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 1,
+    "candidatesChecked": 70,
+    "pathsChecked": 6,
+    "removalOrder": [
+      4,
+      5,
+      10,
+      11,
+      3,
+      12,
+      13,
+      14
+    ]
+  }
+}

@@ -1,0 +1,318 @@
+{
+  "accepted": true,
+  "asset": "puzzles/puzzle-reviewed-gall-allaying-2026-11-02-036efa95cf7c.json",
+  "answer": "ALLAYING",
+  "rules": "bingo-hunt",
+  "review": "GALL is the verb irritate or vex, not bile, a sore or impudence. ALLAY and EASE lessen agitation; CALM, PACIFY, MOLLIFY and PLACATE soothe it. The thirst sense of allay is excluded. Every accepted form remains a verb. STILL uses calm rather than immobility; GENTLE and LENIFY use appeasing. STAY in its hunger-allaying sense is outside emotional irritation.",
+  "identity": {
+    "id": "puzzle-reviewed-gall-allaying-2026-11-02",
+    "enemy": "GALL",
+    "board": "AACEEFGILLMNPSTY",
+    "bingos": [
+      "ALLAYING"
+    ],
+    "bingoFamilies": [
+      "ALLAY"
+    ]
+  },
+  "witnesses": [
+    [
+      "ALLAYING"
+    ],
+    [
+      "CALM",
+      "ALLAYING"
+    ],
+    [
+      "CALM",
+      "PACIFY",
+      "ALLAYING"
+    ]
+  ],
+  "startingBingos": [
+    {
+      "word": "ALLAYING",
+      "effort": 7.18
+    }
+  ],
+  "helperEffort": 4.14,
+  "removalProof": {
+    "preferredHelpers": [
+      "CALM",
+      "PACIFY",
+      "EASE"
+    ],
+    "branches": [
+      {
+        "first": "ALLAY",
+        "next": [
+          "CALM",
+          "CALMING",
+          "PACIFY"
+        ],
+        "preferredFamilies": [
+          "calm",
+          "pacify"
+        ],
+        "familiarFamilies": [
+          "calm",
+          "pacify"
+        ]
+      },
+      {
+        "first": "ALLAYS",
+        "next": [
+          "ALLAY",
+          "CALM",
+          "CALMING",
+          "PACIFY"
+        ],
+        "preferredFamilies": [
+          "calm",
+          "pacify"
+        ],
+        "familiarFamilies": [
+          "calm",
+          "pacify"
+        ]
+      },
+      {
+        "first": "CALM",
+        "next": [
+          "ALLAY",
+          "CALMING",
+          "PACIFY"
+        ],
+        "preferredFamilies": [
+          "pacify"
+        ],
+        "familiarFamilies": [
+          "allay",
+          "pacify"
+        ]
+      },
+      {
+        "first": "CALMING",
+        "next": [
+          "ALLAY",
+          "CALM",
+          "PACIFY"
+        ],
+        "preferredFamilies": [
+          "pacify"
+        ],
+        "familiarFamilies": [
+          "allay",
+          "pacify"
+        ]
+      },
+      {
+        "first": "CALMS",
+        "next": [
+          "ALLAY",
+          "CALM",
+          "CALMING",
+          "PACIFY"
+        ],
+        "preferredFamilies": [
+          "pacify"
+        ],
+        "familiarFamilies": [
+          "allay",
+          "pacify"
+        ]
+      },
+      {
+        "first": "EASE",
+        "next": [
+          "ALLAY",
+          "CALM",
+          "CALMING",
+          "PACIFY"
+        ],
+        "preferredFamilies": [
+          "calm",
+          "pacify"
+        ],
+        "familiarFamilies": [
+          "allay",
+          "calm",
+          "pacify"
+        ]
+      },
+      {
+        "first": "EASING",
+        "next": [
+          "ALLAY",
+          "CALM",
+          "CALMING",
+          "PACIFY"
+        ],
+        "preferredFamilies": [
+          "calm",
+          "pacify"
+        ],
+        "familiarFamilies": [
+          "allay",
+          "calm",
+          "pacify"
+        ]
+      },
+      {
+        "first": "GENTLE",
+        "next": [
+          "ALLAY",
+          "CALM",
+          "CALMING",
+          "PACIFY"
+        ],
+        "preferredFamilies": [
+          "calm",
+          "pacify"
+        ],
+        "familiarFamilies": [
+          "allay",
+          "calm",
+          "pacify"
+        ]
+      },
+      {
+        "first": "GENTLES",
+        "next": [
+          "ALLAY",
+          "CALM",
+          "CALMING",
+          "PACIFY"
+        ],
+        "preferredFamilies": [
+          "calm",
+          "pacify"
+        ],
+        "familiarFamilies": [
+          "allay",
+          "calm",
+          "pacify"
+        ]
+      },
+      {
+        "first": "LENIFY",
+        "next": [
+          "ALLAY",
+          "CALM",
+          "CALMING",
+          "PACIFY"
+        ],
+        "preferredFamilies": [
+          "calm",
+          "pacify"
+        ],
+        "familiarFamilies": [
+          "allay",
+          "calm",
+          "pacify"
+        ]
+      },
+      {
+        "first": "PACIFY",
+        "next": [
+          "ALLAY",
+          "CALM",
+          "CALMING"
+        ],
+        "preferredFamilies": [
+          "calm"
+        ],
+        "familiarFamilies": [
+          "allay",
+          "calm"
+        ]
+      },
+      {
+        "first": "PLACATE",
+        "next": [
+          "ALLAY",
+          "CALM",
+          "CALMING",
+          "PACIFY"
+        ],
+        "preferredFamilies": [
+          "calm",
+          "pacify"
+        ],
+        "familiarFamilies": [
+          "allay",
+          "calm",
+          "pacify"
+        ]
+      },
+      {
+        "first": "PLACATES",
+        "next": [
+          "ALLAY",
+          "CALM",
+          "CALMING",
+          "PACIFY"
+        ],
+        "preferredFamilies": [
+          "calm",
+          "pacify"
+        ],
+        "familiarFamilies": [
+          "allay",
+          "calm",
+          "pacify"
+        ]
+      },
+      {
+        "first": "PLACATING",
+        "next": [
+          "ALLAY",
+          "CALM",
+          "CALMING",
+          "PACIFY"
+        ],
+        "preferredFamilies": [
+          "calm",
+          "pacify"
+        ],
+        "familiarFamilies": [
+          "allay",
+          "calm",
+          "pacify"
+        ]
+      },
+      {
+        "first": "STILL",
+        "next": [
+          "ALLAY",
+          "CALM",
+          "CALMING",
+          "PACIFY"
+        ],
+        "preferredFamilies": [
+          "calm",
+          "pacify"
+        ],
+        "familiarFamilies": [
+          "allay",
+          "calm",
+          "pacify"
+        ]
+      }
+    ],
+    "minPreferredFamilies": 1,
+    "minFamiliarFamilies": 2,
+    "candidatesChecked": 70,
+    "pathsChecked": 56,
+    "removalOrder": [
+      1,
+      2,
+      10,
+      14,
+      4,
+      8,
+      13,
+      15
+    ]
+  }
+}

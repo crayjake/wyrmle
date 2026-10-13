@@ -2,9 +2,11 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import test from 'node:test'
 import { dailySchedule, decodeScheduledPuzzle } from '../src/daily/scheduledPuzzle.ts'
+import retired from '../artifacts/puzzles/no-affix-2026-10-13/retired.json' with { type: 'json' }
 
 const encounterFor = (profile: string) => {
-  const entry = dailySchedule.find(entry => entry.id.startsWith(`puzzle-${profile}-`))
+  // A retired board remains a useful regression fixture for meaning/morphology.
+  const entry = [...dailySchedule, ...retired.map(item => item.entry)].find(entry => entry.id.startsWith(`puzzle-${profile}-`))
   assert.ok(entry, `Missing reviewed puzzle: ${profile}`)
   return decodeScheduledPuzzle(JSON.parse(readFileSync(`public/${entry.asset}`, 'utf8')), entry)
 }
